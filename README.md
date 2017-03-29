@@ -4,7 +4,7 @@ title: Platform API Client SDK - Java
 
 Documentation can be found at [https://developer.mypurecloud.com/api/rest/client-libraries/java/latest/](https://developer.mypurecloud.com/api/rest/client-libraries/java/latest/)
 
-[![platform-client-v2](https://maven-badges.herokuapp.com/maven-central/com.mypurecloud/platform-client/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.mypurecloud/platform-client-v2)
+[![platform-client-v2](https://maven-badges.herokuapp.com/maven-central/com.mypurecloud/platform-client-v2/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.mypurecloud/platform-client-v2)
 
 ## Install Using maven
 
