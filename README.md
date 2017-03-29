@@ -8,7 +8,7 @@ Documentation can be found at [https://developer.mypurecloud.com/api/rest/client
 
 ## Install Using maven
 
-Install the library from maven via the package [com.mypurecloud:platform-client](https://mvnrepository.com/artifact/com.mypurecloud/platform-client-v2)
+Install the library from maven via the package [com.mypurecloud:platform-client-v2](https://mvnrepository.com/artifact/com.mypurecloud/platform-client-v2)
 
 ## Using the Library
 
