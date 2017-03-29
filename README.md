@@ -55,7 +55,7 @@ Example of getting the authenticated user's information:
 
 ~~~
 UsersApi usersApi = new UsersApi();
-UserMe me = usersApi.getUsersMe(Arrays.asList("presence"));
+UserMe me = usersApi.getUsersMe(Collections.singletonList("presence"));
 System.out.println("Hello " + me.getName());
 ~~~
 
