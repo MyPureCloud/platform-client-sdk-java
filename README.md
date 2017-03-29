@@ -72,4 +72,4 @@ System.out.println("Hello " + me.getName());
 
 ### SDK Source Code Generation
 
-The source code for the SDK is created using the [swagger-codegen](https://github.com/MyPureCloud/swagger-codegen) project.
+The SDK is automatically regenerated and published from the API's definition after each API release. For more information on the build process, see the [platform-client-sdk-common](https://github.com/MyPureCloud/platform-client-sdk-common) project.
