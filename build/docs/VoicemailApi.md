@@ -1,0 +1,1155 @@
+---
+title: VoicemailApi
+---
+## VoicemailApi
+
+All URIs are relative to *https://api.mypurecloud.com*
+
+| Method | Description |
+| ------------- | ------------- |
+| [**deleteVoicemailMessage**](VoicemailApi.html#deleteVoicemailMessage) | Delete a message. |
+| [**deleteVoicemailMessages**](VoicemailApi.html#deleteVoicemailMessages) | Delete all voicemail messages |
+| [**getVoicemailGroupMailbox**](VoicemailApi.html#getVoicemailGroupMailbox) | Get the group&#39;s mailbox information |
+| [**getVoicemailGroupMessages**](VoicemailApi.html#getVoicemailGroupMessages) | List voicemail messages |
+| [**getVoicemailGroupPolicy**](VoicemailApi.html#getVoicemailGroupPolicy) | Get a group&#39;s voicemail policy |
+| [**getVoicemailMailbox**](VoicemailApi.html#getVoicemailMailbox) | Get the current user&#39;s mailbox information |
+| [**getVoicemailMeMailbox**](VoicemailApi.html#getVoicemailMeMailbox) | Get the current user&#39;s mailbox information |
+| [**getVoicemailMeMessages**](VoicemailApi.html#getVoicemailMeMessages) | List voicemail messages |
+| [**getVoicemailMePolicy**](VoicemailApi.html#getVoicemailMePolicy) | Get the current user&#39;s voicemail policy |
+| [**getVoicemailMessage**](VoicemailApi.html#getVoicemailMessage) | Get message. |
+| [**getVoicemailMessageMedia**](VoicemailApi.html#getVoicemailMessageMedia) | Get media playback URI for this message |
+| [**getVoicemailMessages**](VoicemailApi.html#getVoicemailMessages) | List voicemail messages |
+| [**getVoicemailPolicy**](VoicemailApi.html#getVoicemailPolicy) | Get a policy |
+| [**getVoicemailSearch**](VoicemailApi.html#getVoicemailSearch) | Search voicemails using the q64 value returned from a previous search |
+| [**getVoicemailUserpolicy**](VoicemailApi.html#getVoicemailUserpolicy) | Get a user&#39;s voicemail policy |
+| [**patchVoicemailGroupPolicy**](VoicemailApi.html#patchVoicemailGroupPolicy) | Update a group&#39;s voicemail policy |
+| [**patchVoicemailMePolicy**](VoicemailApi.html#patchVoicemailMePolicy) | Update the current user&#39;s voicemail policy |
+| [**patchVoicemailUserpolicy**](VoicemailApi.html#patchVoicemailUserpolicy) | Update a user&#39;s voicemail policy |
+| [**postVoicemailMessages**](VoicemailApi.html#postVoicemailMessages) | Copy a voicemail message to a user or group |
+| [**postVoicemailSearch**](VoicemailApi.html#postVoicemailSearch) | Search voicemails |
+| [**putVoicemailMessage**](VoicemailApi.html#putVoicemailMessage) | Update a message. |
+| [**putVoicemailPolicy**](VoicemailApi.html#putVoicemailPolicy) | Update a policy |
+{: class="table table-striped"}
+
+<a name="deleteVoicemailMessage"></a>
+
+# **deleteVoicemailMessage**
+
+> String deleteVoicemailMessage(messageId)
+
+Delete a message.
+
+
+
+Wraps DELETE /api/v2/voicemail/messages/{messageId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+String messageId = "messageId_example"; // String | Message ID
+try {
+    String result = apiInstance.deleteVoicemailMessage(messageId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#deleteVoicemailMessage");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **messageId** | **String**| Message ID | |
+{: class="table table-striped"}
+
+### Return type
+
+**String**
+
+<a name="deleteVoicemailMessages"></a>
+
+# **deleteVoicemailMessages**
+
+> String deleteVoicemailMessages()
+
+Delete all voicemail messages
+
+
+
+Wraps DELETE /api/v2/voicemail/messages  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+try {
+    String result = apiInstance.deleteVoicemailMessages();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#deleteVoicemailMessages");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+This endpoint does not require any parameters.
+{: class="table table-striped"}
+
+### Return type
+
+**String**
+
+<a name="getVoicemailGroupMailbox"></a>
+
+# **getVoicemailGroupMailbox**
+
+> [VoicemailMailboxInfo](VoicemailMailboxInfo.html) getVoicemailGroupMailbox(groupId)
+
+Get the group&#39;s mailbox information
+
+
+
+Wraps GET /api/v2/voicemail/groups/{groupId}/mailbox  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+String groupId = "groupId_example"; // String | groupId
+try {
+    VoicemailMailboxInfo result = apiInstance.getVoicemailGroupMailbox(groupId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#getVoicemailGroupMailbox");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **groupId** | **String**| groupId | |
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailMailboxInfo**](VoicemailMailboxInfo.html)
+
+<a name="getVoicemailGroupMessages"></a>
+
+# **getVoicemailGroupMessages**
+
+> [VoicemailMessageEntityListing](VoicemailMessageEntityListing.html) getVoicemailGroupMessages(groupId, pageSize, pageNumber)
+
+List voicemail messages
+
+
+
+Wraps GET /api/v2/voicemail/groups/{groupId}/messages  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+String groupId = "groupId_example"; // String | Group ID
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    VoicemailMessageEntityListing result = apiInstance.getVoicemailGroupMessages(groupId, pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#getVoicemailGroupMessages");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **groupId** | **String**| Group ID | |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html)
+
+<a name="getVoicemailGroupPolicy"></a>
+
+# **getVoicemailGroupPolicy**
+
+> [VoicemailGroupPolicy](VoicemailGroupPolicy.html) getVoicemailGroupPolicy(groupId)
+
+Get a group&#39;s voicemail policy
+
+
+
+Wraps GET /api/v2/voicemail/groups/{groupId}/policy  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+String groupId = "groupId_example"; // String | Group ID
+try {
+    VoicemailGroupPolicy result = apiInstance.getVoicemailGroupPolicy(groupId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#getVoicemailGroupPolicy");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **groupId** | **String**| Group ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailGroupPolicy**](VoicemailGroupPolicy.html)
+
+<a name="getVoicemailMailbox"></a>
+
+# **getVoicemailMailbox**
+
+> [VoicemailMailboxInfo](VoicemailMailboxInfo.html) getVoicemailMailbox()
+
+Get the current user&#39;s mailbox information
+
+
+
+Wraps GET /api/v2/voicemail/mailbox  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+try {
+    VoicemailMailboxInfo result = apiInstance.getVoicemailMailbox();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#getVoicemailMailbox");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+This endpoint does not require any parameters.
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailMailboxInfo**](VoicemailMailboxInfo.html)
+
+<a name="getVoicemailMeMailbox"></a>
+
+# **getVoicemailMeMailbox**
+
+> [VoicemailMailboxInfo](VoicemailMailboxInfo.html) getVoicemailMeMailbox()
+
+Get the current user&#39;s mailbox information
+
+
+
+Wraps GET /api/v2/voicemail/me/mailbox  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+try {
+    VoicemailMailboxInfo result = apiInstance.getVoicemailMeMailbox();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#getVoicemailMeMailbox");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+This endpoint does not require any parameters.
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailMailboxInfo**](VoicemailMailboxInfo.html)
+
+<a name="getVoicemailMeMessages"></a>
+
+# **getVoicemailMeMessages**
+
+> [VoicemailMessageEntityListing](VoicemailMessageEntityListing.html) getVoicemailMeMessages(pageSize, pageNumber)
+
+List voicemail messages
+
+
+
+Wraps GET /api/v2/voicemail/me/messages  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    VoicemailMessageEntityListing result = apiInstance.getVoicemailMeMessages(pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#getVoicemailMeMessages");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html)
+
+<a name="getVoicemailMePolicy"></a>
+
+# **getVoicemailMePolicy**
+
+> [VoicemailUserPolicy](VoicemailUserPolicy.html) getVoicemailMePolicy()
+
+Get the current user&#39;s voicemail policy
+
+
+
+Wraps GET /api/v2/voicemail/me/policy  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+try {
+    VoicemailUserPolicy result = apiInstance.getVoicemailMePolicy();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#getVoicemailMePolicy");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+This endpoint does not require any parameters.
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailUserPolicy**](VoicemailUserPolicy.html)
+
+<a name="getVoicemailMessage"></a>
+
+# **getVoicemailMessage**
+
+> [VoicemailMessage](VoicemailMessage.html) getVoicemailMessage(messageId, expand)
+
+Get message.
+
+
+
+Wraps GET /api/v2/voicemail/messages/{messageId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+String messageId = "messageId_example"; // String | Message ID
+List<String> expand = Arrays.asList("expand_example"); // List<String> | If the caller is a known user, which fields, if any, to expand
+try {
+    VoicemailMessage result = apiInstance.getVoicemailMessage(messageId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#getVoicemailMessage");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **messageId** | **String**| Message ID | |
+| **expand** | [**List&lt;String&gt;**](String.html)| If the caller is a known user, which fields, if any, to expand | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailMessage**](VoicemailMessage.html)
+
+<a name="getVoicemailMessageMedia"></a>
+
+# **getVoicemailMessageMedia**
+
+> [VoicemailMediaInfo](VoicemailMediaInfo.html) getVoicemailMessageMedia(messageId, formatId)
+
+Get media playback URI for this message
+
+
+
+Wraps GET /api/v2/voicemail/messages/{messageId}/media  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+String messageId = "messageId_example"; // String | Message ID
+String formatId = "WEBM"; // String | The desired media format.
+try {
+    VoicemailMediaInfo result = apiInstance.getVoicemailMessageMedia(messageId, formatId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#getVoicemailMessageMedia");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **messageId** | **String**| Message ID | |
+| **formatId** | **String**| The desired media format. | [optional] [default to WEBM] [enum: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE] |
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailMediaInfo**](VoicemailMediaInfo.html)
+
+<a name="getVoicemailMessages"></a>
+
+# **getVoicemailMessages**
+
+> [VoicemailMessageEntityListing](VoicemailMessageEntityListing.html) getVoicemailMessages(ids, expand)
+
+List voicemail messages
+
+
+
+Wraps GET /api/v2/voicemail/messages  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+String ids = "ids_example"; // String | An optional comma separated list of VoicemailMessage ids
+List<String> expand = Arrays.asList("expand_example"); // List<String> | If the caller is a known user, which fields, if any, to expand
+try {
+    VoicemailMessageEntityListing result = apiInstance.getVoicemailMessages(ids, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#getVoicemailMessages");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ids** | **String**| An optional comma separated list of VoicemailMessage ids | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| If the caller is a known user, which fields, if any, to expand | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html)
+
+<a name="getVoicemailPolicy"></a>
+
+# **getVoicemailPolicy**
+
+> [VoicemailOrganizationPolicy](VoicemailOrganizationPolicy.html) getVoicemailPolicy()
+
+Get a policy
+
+
+
+Wraps GET /api/v2/voicemail/policy  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+try {
+    VoicemailOrganizationPolicy result = apiInstance.getVoicemailPolicy();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#getVoicemailPolicy");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+This endpoint does not require any parameters.
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html)
+
+<a name="getVoicemailSearch"></a>
+
+# **getVoicemailSearch**
+
+> [VoicemailsSearchResponse](VoicemailsSearchResponse.html) getVoicemailSearch(q64, expand)
+
+Search voicemails using the q64 value returned from a previous search
+
+
+
+Wraps GET /api/v2/voicemail/search  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+String q64 = "q64_example"; // String | q64
+List<String> expand = Arrays.asList("expand_example"); // List<String> | expand
+try {
+    VoicemailsSearchResponse result = apiInstance.getVoicemailSearch(q64, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#getVoicemailSearch");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **q64** | **String**| q64 | |
+| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailsSearchResponse**](VoicemailsSearchResponse.html)
+
+<a name="getVoicemailUserpolicy"></a>
+
+# **getVoicemailUserpolicy**
+
+> [VoicemailUserPolicy](VoicemailUserPolicy.html) getVoicemailUserpolicy(userId)
+
+Get a user&#39;s voicemail policy
+
+
+
+Wraps GET /api/v2/voicemail/userpolicies/{userId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+String userId = "userId_example"; // String | User ID
+try {
+    VoicemailUserPolicy result = apiInstance.getVoicemailUserpolicy(userId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#getVoicemailUserpolicy");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailUserPolicy**](VoicemailUserPolicy.html)
+
+<a name="patchVoicemailGroupPolicy"></a>
+
+# **patchVoicemailGroupPolicy**
+
+> [VoicemailGroupPolicy](VoicemailGroupPolicy.html) patchVoicemailGroupPolicy(groupId, body)
+
+Update a group&#39;s voicemail policy
+
+
+
+Wraps PATCH /api/v2/voicemail/groups/{groupId}/policy  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+String groupId = "groupId_example"; // String | Group ID
+VoicemailGroupPolicy body = new VoicemailGroupPolicy(); // VoicemailGroupPolicy | The group's voicemail policy
+try {
+    VoicemailGroupPolicy result = apiInstance.patchVoicemailGroupPolicy(groupId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#patchVoicemailGroupPolicy");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **groupId** | **String**| Group ID | |
+| **body** | [**VoicemailGroupPolicy**](VoicemailGroupPolicy.html)| The group&#39;s voicemail policy | |
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailGroupPolicy**](VoicemailGroupPolicy.html)
+
+<a name="patchVoicemailMePolicy"></a>
+
+# **patchVoicemailMePolicy**
+
+> [VoicemailUserPolicy](VoicemailUserPolicy.html) patchVoicemailMePolicy(body)
+
+Update the current user&#39;s voicemail policy
+
+
+
+Wraps PATCH /api/v2/voicemail/me/policy  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+VoicemailUserPolicy body = new VoicemailUserPolicy(); // VoicemailUserPolicy | The user's voicemail policy
+try {
+    VoicemailUserPolicy result = apiInstance.patchVoicemailMePolicy(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#patchVoicemailMePolicy");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**VoicemailUserPolicy**](VoicemailUserPolicy.html)| The user&#39;s voicemail policy | |
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailUserPolicy**](VoicemailUserPolicy.html)
+
+<a name="patchVoicemailUserpolicy"></a>
+
+# **patchVoicemailUserpolicy**
+
+> [VoicemailUserPolicy](VoicemailUserPolicy.html) patchVoicemailUserpolicy(userId, body)
+
+Update a user&#39;s voicemail policy
+
+
+
+Wraps PATCH /api/v2/voicemail/userpolicies/{userId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+String userId = "userId_example"; // String | User ID
+VoicemailUserPolicy body = new VoicemailUserPolicy(); // VoicemailUserPolicy | The user's voicemail policy
+try {
+    VoicemailUserPolicy result = apiInstance.patchVoicemailUserpolicy(userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#patchVoicemailUserpolicy");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | |
+| **body** | [**VoicemailUserPolicy**](VoicemailUserPolicy.html)| The user&#39;s voicemail policy | |
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailUserPolicy**](VoicemailUserPolicy.html)
+
+<a name="postVoicemailMessages"></a>
+
+# **postVoicemailMessages**
+
+> [VoicemailMessage](VoicemailMessage.html) postVoicemailMessages(body)
+
+Copy a voicemail message to a user or group
+
+
+
+Wraps POST /api/v2/voicemail/messages  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+CopyVoicemailMessage body = new CopyVoicemailMessage(); // CopyVoicemailMessage | 
+try {
+    VoicemailMessage result = apiInstance.postVoicemailMessages(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#postVoicemailMessages");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CopyVoicemailMessage**](CopyVoicemailMessage.html)|  | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailMessage**](VoicemailMessage.html)
+
+<a name="postVoicemailSearch"></a>
+
+# **postVoicemailSearch**
+
+> [VoicemailsSearchResponse](VoicemailsSearchResponse.html) postVoicemailSearch(body)
+
+Search voicemails
+
+
+
+Wraps POST /api/v2/voicemail/search  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+VoicemailSearchRequest body = new VoicemailSearchRequest(); // VoicemailSearchRequest | Search request options
+try {
+    VoicemailsSearchResponse result = apiInstance.postVoicemailSearch(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#postVoicemailSearch");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**VoicemailSearchRequest**](VoicemailSearchRequest.html)| Search request options | |
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailsSearchResponse**](VoicemailsSearchResponse.html)
+
+<a name="putVoicemailMessage"></a>
+
+# **putVoicemailMessage**
+
+> [VoicemailMessage](VoicemailMessage.html) putVoicemailMessage(messageId, body)
+
+Update a message.
+
+
+
+Wraps PUT /api/v2/voicemail/messages/{messageId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+String messageId = "messageId_example"; // String | Message ID
+VoicemailMessage body = new VoicemailMessage(); // VoicemailMessage | VoicemailMessage
+try {
+    VoicemailMessage result = apiInstance.putVoicemailMessage(messageId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#putVoicemailMessage");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **messageId** | **String**| Message ID | |
+| **body** | [**VoicemailMessage**](VoicemailMessage.html)| VoicemailMessage | |
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailMessage**](VoicemailMessage.html)
+
+<a name="putVoicemailPolicy"></a>
+
+# **putVoicemailPolicy**
+
+> [VoicemailOrganizationPolicy](VoicemailOrganizationPolicy.html) putVoicemailPolicy(body)
+
+Update a policy
+
+
+
+Wraps PUT /api/v2/voicemail/policy  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+VoicemailOrganizationPolicy body = new VoicemailOrganizationPolicy(); // VoicemailOrganizationPolicy | Policy
+try {
+    VoicemailOrganizationPolicy result = apiInstance.putVoicemailPolicy(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#putVoicemailPolicy");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html)| Policy | |
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html)
+

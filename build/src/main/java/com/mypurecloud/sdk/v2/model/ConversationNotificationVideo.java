@@ -1,0 +1,386 @@
+package com.mypurecloud.sdk.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationNotificationAddress;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
+
+import java.io.Serializable;
+/**
+ * ConversationNotificationVideo
+ */
+
+public class ConversationNotificationVideo  implements Serializable {
+  
+
+  /**
+   * Gets or Sets state
+   */
+  public enum StateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ALERTING("ALERTING"),
+    DIALING("DIALING"),
+    CONTACTING("CONTACTING"),
+    OFFERING("OFFERING"),
+    CONNECTED("CONNECTED"),
+    DISCONNECTED("DISCONNECTED"),
+    TERMINATED("TERMINATED"),
+    NONE("NONE");
+
+    private String value;
+
+    StateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static StateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (StateEnum value : StateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return StateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private StateEnum state = null;
+  private ConversationNotificationAddress self = null;
+  private String id = null;
+  private String context = null;
+  private Boolean audioMuted = null;
+  private Boolean videoMuted = null;
+  private Boolean sharingScreen = null;
+  private String provider = null;
+
+  /**
+   * Gets or Sets disconnectType
+   */
+  public enum DisconnectTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ENDPOINT("ENDPOINT"),
+    CLIENT("CLIENT"),
+    SYSTEM("SYSTEM"),
+    TIMEOUT("TIMEOUT"),
+    TRANSFER("TRANSFER"),
+    TRANSFER_CONFERENCE("TRANSFER_CONFERENCE"),
+    TRANSFER_CONSULT("TRANSFER_CONSULT"),
+    TRANSFER_FORWARD("TRANSFER_FORWARD"),
+    TRANSFER_NOANSWER("TRANSFER_NOANSWER"),
+    TRANSFER_NOTAVAILABLE("TRANSFER_NOTAVAILABLE"),
+    TRANSPORT_FAILURE("TRANSPORT_FAILURE"),
+    ERROR("ERROR"),
+    PEER("PEER"),
+    OTHER("OTHER"),
+    SPAM("SPAM"),
+    UNCALLABLE("UNCALLABLE");
+
+    private String value;
+
+    DisconnectTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DisconnectTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DisconnectTypeEnum value : DisconnectTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DisconnectTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DisconnectTypeEnum disconnectType = null;
+  private Date connectedTime = null;
+  private Date disconnectedTime = null;
+  private Object additionalProperties = null;
+
+  
+  /**
+   **/
+  public ConversationNotificationVideo state(StateEnum state) {
+    this.state = state;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("state")
+  public StateEnum getState() {
+    return state;
+  }
+  public void setState(StateEnum state) {
+    this.state = state;
+  }
+
+
+  /**
+   **/
+  public ConversationNotificationVideo self(ConversationNotificationAddress self) {
+    this.self = self;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("self")
+  public ConversationNotificationAddress getSelf() {
+    return self;
+  }
+  public void setSelf(ConversationNotificationAddress self) {
+    this.self = self;
+  }
+
+
+  /**
+   **/
+  public ConversationNotificationVideo id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+
+  /**
+   **/
+  public ConversationNotificationVideo context(String context) {
+    this.context = context;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("context")
+  public String getContext() {
+    return context;
+  }
+  public void setContext(String context) {
+    this.context = context;
+  }
+
+
+  /**
+   **/
+  public ConversationNotificationVideo audioMuted(Boolean audioMuted) {
+    this.audioMuted = audioMuted;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("audioMuted")
+  public Boolean getAudioMuted() {
+    return audioMuted;
+  }
+  public void setAudioMuted(Boolean audioMuted) {
+    this.audioMuted = audioMuted;
+  }
+
+
+  /**
+   **/
+  public ConversationNotificationVideo videoMuted(Boolean videoMuted) {
+    this.videoMuted = videoMuted;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("videoMuted")
+  public Boolean getVideoMuted() {
+    return videoMuted;
+  }
+  public void setVideoMuted(Boolean videoMuted) {
+    this.videoMuted = videoMuted;
+  }
+
+
+  /**
+   **/
+  public ConversationNotificationVideo sharingScreen(Boolean sharingScreen) {
+    this.sharingScreen = sharingScreen;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("sharingScreen")
+  public Boolean getSharingScreen() {
+    return sharingScreen;
+  }
+  public void setSharingScreen(Boolean sharingScreen) {
+    this.sharingScreen = sharingScreen;
+  }
+
+
+  /**
+   **/
+  public ConversationNotificationVideo provider(String provider) {
+    this.provider = provider;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("provider")
+  public String getProvider() {
+    return provider;
+  }
+  public void setProvider(String provider) {
+    this.provider = provider;
+  }
+
+
+  /**
+   **/
+  public ConversationNotificationVideo disconnectType(DisconnectTypeEnum disconnectType) {
+    this.disconnectType = disconnectType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("disconnectType")
+  public DisconnectTypeEnum getDisconnectType() {
+    return disconnectType;
+  }
+  public void setDisconnectType(DisconnectTypeEnum disconnectType) {
+    this.disconnectType = disconnectType;
+  }
+
+
+  /**
+   **/
+  public ConversationNotificationVideo connectedTime(Date connectedTime) {
+    this.connectedTime = connectedTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("connectedTime")
+  public Date getConnectedTime() {
+    return connectedTime;
+  }
+  public void setConnectedTime(Date connectedTime) {
+    this.connectedTime = connectedTime;
+  }
+
+
+  /**
+   **/
+  public ConversationNotificationVideo disconnectedTime(Date disconnectedTime) {
+    this.disconnectedTime = disconnectedTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("disconnectedTime")
+  public Date getDisconnectedTime() {
+    return disconnectedTime;
+  }
+  public void setDisconnectedTime(Date disconnectedTime) {
+    this.disconnectedTime = disconnectedTime;
+  }
+
+
+  /**
+   **/
+  public ConversationNotificationVideo additionalProperties(Object additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Object getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Object additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    ConversationNotificationVideo conversationNotificationVideo = (ConversationNotificationVideo) o;
+    return Objects.equals(this.state, conversationNotificationVideo.state) &&
+        Objects.equals(this.self, conversationNotificationVideo.self) &&
+        Objects.equals(this.id, conversationNotificationVideo.id) &&
+        Objects.equals(this.context, conversationNotificationVideo.context) &&
+        Objects.equals(this.audioMuted, conversationNotificationVideo.audioMuted) &&
+        Objects.equals(this.videoMuted, conversationNotificationVideo.videoMuted) &&
+        Objects.equals(this.sharingScreen, conversationNotificationVideo.sharingScreen) &&
+        Objects.equals(this.provider, conversationNotificationVideo.provider) &&
+        Objects.equals(this.disconnectType, conversationNotificationVideo.disconnectType) &&
+        Objects.equals(this.connectedTime, conversationNotificationVideo.connectedTime) &&
+        Objects.equals(this.disconnectedTime, conversationNotificationVideo.disconnectedTime) &&
+        Objects.equals(this.additionalProperties, conversationNotificationVideo.additionalProperties);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(state, self, id, context, audioMuted, videoMuted, sharingScreen, provider, disconnectType, connectedTime, disconnectedTime, additionalProperties);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class ConversationNotificationVideo {\n");
+    
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    context: ").append(toIndentedString(context)).append("\n");
+    sb.append("    audioMuted: ").append(toIndentedString(audioMuted)).append("\n");
+    sb.append("    videoMuted: ").append(toIndentedString(videoMuted)).append("\n");
+    sb.append("    sharingScreen: ").append(toIndentedString(sharingScreen)).append("\n");
+    sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
+    sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
+    sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+

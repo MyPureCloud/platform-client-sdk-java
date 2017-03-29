@@ -1,0 +1,1800 @@
+---
+title: QualityApi
+---
+## QualityApi
+
+All URIs are relative to *https://api.mypurecloud.com*
+
+| Method | Description |
+| ------------- | ------------- |
+| [**deleteQualityCalibration**](QualityApi.html#deleteQualityCalibration) | Delete a calibration by id. |
+| [**deleteQualityConversationEvaluation**](QualityApi.html#deleteQualityConversationEvaluation) | Delete an evaluation |
+| [**deleteQualityForm**](QualityApi.html#deleteQualityForm) | Delete an evaluation form. |
+| [**deleteQualityKeywordset**](QualityApi.html#deleteQualityKeywordset) | Delete a keywordSet by id. |
+| [**deleteQualityKeywordsets**](QualityApi.html#deleteQualityKeywordsets) | Delete keyword sets |
+| [**getQualityAgentsActivity**](QualityApi.html#getQualityAgentsActivity) | Gets a list of Agent Activities |
+| [**getQualityCalibration**](QualityApi.html#getQualityCalibration) | Get a calibration by id. |
+| [**getQualityCalibrations**](QualityApi.html#getQualityCalibrations) | Get the list of calibrations |
+| [**getQualityConversationAudits**](QualityApi.html#getQualityConversationAudits) | Get audits for conversation or recording |
+| [**getQualityConversationEvaluation**](QualityApi.html#getQualityConversationEvaluation) | Get an evaluation |
+| [**getQualityEvaluationsQuery**](QualityApi.html#getQualityEvaluationsQuery) | Queries Evaluations and returns a paged list |
+| [**getQualityEvaluatorsActivity**](QualityApi.html#getQualityEvaluatorsActivity) | Get an evaluator activity |
+| [**getQualityForm**](QualityApi.html#getQualityForm) | Get an evaluation form |
+| [**getQualityFormVersions**](QualityApi.html#getQualityFormVersions) | Gets all the revisions for a specific evaluation. |
+| [**getQualityForms**](QualityApi.html#getQualityForms) | Get the list of evaluation forms |
+| [**getQualityKeywordset**](QualityApi.html#getQualityKeywordset) | Get a keywordSet by id. |
+| [**getQualityKeywordsets**](QualityApi.html#getQualityKeywordsets) | Get the list of keyword sets |
+| [**getQualityPublishedform**](QualityApi.html#getQualityPublishedform) | Get the published evaluation forms. |
+| [**getQualityPublishedforms**](QualityApi.html#getQualityPublishedforms) | Get the published evaluation forms. |
+| [**postAnalyticsEvaluationsAggregatesQuery**](QualityApi.html#postAnalyticsEvaluationsAggregatesQuery) | Query for evaluation aggregates |
+| [**postQualityCalibrations**](QualityApi.html#postQualityCalibrations) | Create a calibration |
+| [**postQualityConversationEvaluations**](QualityApi.html#postQualityConversationEvaluations) | Create an evaluation |
+| [**postQualityEvaluationsScoring**](QualityApi.html#postQualityEvaluationsScoring) | Score evaluation |
+| [**postQualityForms**](QualityApi.html#postQualityForms) | Create an evaluation form. |
+| [**postQualityKeywordsets**](QualityApi.html#postQualityKeywordsets) | Create a Keyword Set |
+| [**postQualityPublishedforms**](QualityApi.html#postQualityPublishedforms) | Publish an evaluation form. |
+| [**postQualitySpotability**](QualityApi.html#postQualitySpotability) | Retrieve the spotability statistic |
+| [**putQualityCalibration**](QualityApi.html#putQualityCalibration) | Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex |
+| [**putQualityConversationEvaluation**](QualityApi.html#putQualityConversationEvaluation) | Update an evaluation |
+| [**putQualityForm**](QualityApi.html#putQualityForm) | Update an evaluation form. |
+| [**putQualityKeywordset**](QualityApi.html#putQualityKeywordset) | Update a keywordSet to the specified keywordSet via PUT. |
+{: class="table table-striped"}
+
+<a name="deleteQualityCalibration"></a>
+
+# **deleteQualityCalibration**
+
+> [Calibration](Calibration.html) deleteQualityCalibration(calibrationId, calibratorId)
+
+Delete a calibration by id.
+
+
+
+Wraps DELETE /api/v2/quality/calibrations/{calibrationId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String calibrationId = "calibrationId_example"; // String | Calibration ID
+String calibratorId = "calibratorId_example"; // String | calibratorId
+try {
+    Calibration result = apiInstance.deleteQualityCalibration(calibrationId, calibratorId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#deleteQualityCalibration");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **calibrationId** | **String**| Calibration ID | |
+| **calibratorId** | **String**| calibratorId | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Calibration**](Calibration.html)
+
+<a name="deleteQualityConversationEvaluation"></a>
+
+# **deleteQualityConversationEvaluation**
+
+> [Evaluation](Evaluation.html) deleteQualityConversationEvaluation(conversationId, evaluationId, expand)
+
+Delete an evaluation
+
+
+
+Wraps DELETE /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String evaluationId = "evaluationId_example"; // String | evaluationId
+String expand = "expand_example"; // String | evaluatorId
+try {
+    Evaluation result = apiInstance.deleteQualityConversationEvaluation(conversationId, evaluationId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#deleteQualityConversationEvaluation");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | |
+| **evaluationId** | **String**| evaluationId | |
+| **expand** | **String**| evaluatorId | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**Evaluation**](Evaluation.html)
+
+<a name="deleteQualityForm"></a>
+
+# **deleteQualityForm**
+
+> String deleteQualityForm(formId)
+
+Delete an evaluation form.
+
+
+
+Wraps DELETE /api/v2/quality/forms/{formId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String formId = "formId_example"; // String | Form ID
+try {
+    String result = apiInstance.deleteQualityForm(formId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#deleteQualityForm");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **formId** | **String**| Form ID | |
+{: class="table table-striped"}
+
+### Return type
+
+**String**
+
+<a name="deleteQualityKeywordset"></a>
+
+# **deleteQualityKeywordset**
+
+> Void deleteQualityKeywordset(keywordSetId)
+
+Delete a keywordSet by id.
+
+
+
+Wraps DELETE /api/v2/quality/keywordsets/{keywordSetId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String keywordSetId = "keywordSetId_example"; // String | KeywordSet ID
+try {
+    apiInstance.deleteQualityKeywordset(keywordSetId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#deleteQualityKeywordset");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **keywordSetId** | **String**| KeywordSet ID | |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteQualityKeywordsets"></a>
+
+# **deleteQualityKeywordsets**
+
+> String deleteQualityKeywordsets(ids)
+
+Delete keyword sets
+
+Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
+
+Wraps DELETE /api/v2/quality/keywordsets  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String ids = "ids_example"; // String | A comma-delimited list of valid KeywordSet ids
+try {
+    String result = apiInstance.deleteQualityKeywordsets(ids);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#deleteQualityKeywordsets");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ids** | **String**| A comma-delimited list of valid KeywordSet ids | |
+{: class="table table-striped"}
+
+### Return type
+
+**String**
+
+<a name="getQualityAgentsActivity"></a>
+
+# **getQualityAgentsActivity**
+
+> [AgentActivityEntityListing](AgentActivityEntityListing.html) getQualityAgentsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group)
+
+Gets a list of Agent Activities
+
+Including the number of evaluations and average evaluation score
+
+Wraps GET /api/v2/quality/agents/activity  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String sortBy = "sortBy_example"; // String | variable name requested to sort by
+List<Object> expand = null; // List<Object> | variable name requested by expand list
+String nextPage = "nextPage_example"; // String | next page token
+String previousPage = "previousPage_example"; // String | Previous page token
+Date startTime = new Date(); // Date | Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+Date endTime = new Date(); // Date | End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+List<Object> agentUserId = null; // List<Object> | user id of agent requested
+String evaluatorUserId = "evaluatorUserId_example"; // String | user id of the evaluator
+String name = "name_example"; // String | name
+String group = "group_example"; // String | group id
+try {
+    AgentActivityEntityListing result = apiInstance.getQualityAgentsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityAgentsActivity");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
+| **sortBy** | **String**| variable name requested to sort by | [optional] |
+| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] |
+| **nextPage** | **String**| next page token | [optional] |
+| **previousPage** | **String**| Previous page token | [optional] |
+| **startTime** | **Date**| Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **endTime** | **Date**| End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **agentUserId** | [**List&lt;Object&gt;**](Object.html)| user id of agent requested | [optional] |
+| **evaluatorUserId** | **String**| user id of the evaluator | [optional] |
+| **name** | **String**| name | [optional] |
+| **group** | **String**| group id | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**AgentActivityEntityListing**](AgentActivityEntityListing.html)
+
+<a name="getQualityCalibration"></a>
+
+# **getQualityCalibration**
+
+> [Calibration](Calibration.html) getQualityCalibration(calibrationId, calibratorId)
+
+Get a calibration by id.
+
+
+
+Wraps GET /api/v2/quality/calibrations/{calibrationId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String calibrationId = "calibrationId_example"; // String | Calibration ID
+String calibratorId = "calibratorId_example"; // String | calibratorId
+try {
+    Calibration result = apiInstance.getQualityCalibration(calibrationId, calibratorId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityCalibration");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **calibrationId** | **String**| Calibration ID | |
+| **calibratorId** | **String**| calibratorId | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Calibration**](Calibration.html)
+
+<a name="getQualityCalibrations"></a>
+
+# **getQualityCalibrations**
+
+> [CalibrationEntityListing](CalibrationEntityListing.html) getQualityCalibrations(calibratorId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, startTime, endTime)
+
+Get the list of calibrations
+
+
+
+Wraps GET /api/v2/quality/calibrations  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String calibratorId = "calibratorId_example"; // String | user id of calibrator
+Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String sortBy = "sortBy_example"; // String | variable name requested to sort by
+List<Object> expand = null; // List<Object> | variable name requested by expand list
+String nextPage = "nextPage_example"; // String | next page token
+String previousPage = "previousPage_example"; // String | Previous page token
+String conversationId = "conversationId_example"; // String | conversation id
+Date startTime = new Date(); // Date | Beginning of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+Date endTime = new Date(); // Date | end of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+try {
+    CalibrationEntityListing result = apiInstance.getQualityCalibrations(calibratorId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, startTime, endTime);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityCalibrations");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **calibratorId** | **String**| user id of calibrator | |
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
+| **sortBy** | **String**| variable name requested to sort by | [optional] |
+| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] |
+| **nextPage** | **String**| next page token | [optional] |
+| **previousPage** | **String**| Previous page token | [optional] |
+| **conversationId** | **String**| conversation id | [optional] |
+| **startTime** | **Date**| Beginning of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **endTime** | **Date**| end of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**CalibrationEntityListing**](CalibrationEntityListing.html)
+
+<a name="getQualityConversationAudits"></a>
+
+# **getQualityConversationAudits**
+
+> [QualityAuditPage](QualityAuditPage.html) getQualityConversationAudits(conversationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, recordingId, entityType)
+
+Get audits for conversation or recording
+
+
+
+Wraps GET /api/v2/quality/conversations/{conversationId}/audits  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String conversationId = "conversationId_example"; // String | Conversation ID
+Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String sortBy = "sortBy_example"; // String | variable name requested to sort by
+List<Object> expand = null; // List<Object> | variable name requested by expand list
+String nextPage = "nextPage_example"; // String | next page token
+String previousPage = "previousPage_example"; // String | Previous page token
+String recordingId = "recordingId_example"; // String | id of the recording
+String entityType = "RECORDING"; // String | entity type options: Recording, Calibration, Evaluation, Annotation
+try {
+    QualityAuditPage result = apiInstance.getQualityConversationAudits(conversationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, recordingId, entityType);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityConversationAudits");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation ID | |
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
+| **sortBy** | **String**| variable name requested to sort by | [optional] |
+| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] |
+| **nextPage** | **String**| next page token | [optional] |
+| **previousPage** | **String**| Previous page token | [optional] |
+| **recordingId** | **String**| id of the recording | [optional] |
+| **entityType** | **String**| entity type options: Recording, Calibration, Evaluation, Annotation | [optional] [default to RECORDING] |
+{: class="table table-striped"}
+
+### Return type
+
+[**QualityAuditPage**](QualityAuditPage.html)
+
+<a name="getQualityConversationEvaluation"></a>
+
+# **getQualityConversationEvaluation**
+
+> [Evaluation](Evaluation.html) getQualityConversationEvaluation(conversationId, evaluationId, expand)
+
+Get an evaluation
+
+
+
+Wraps GET /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String evaluationId = "evaluationId_example"; // String | evaluationId
+String expand = "expand_example"; // String | agent, evaluator, evaluationForm
+try {
+    Evaluation result = apiInstance.getQualityConversationEvaluation(conversationId, evaluationId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityConversationEvaluation");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | |
+| **evaluationId** | **String**| evaluationId | |
+| **expand** | **String**| agent, evaluator, evaluationForm | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**Evaluation**](Evaluation.html)
+
+<a name="getQualityEvaluationsQuery"></a>
+
+# **getQualityEvaluationsQuery**
+
+> [EvaluationEntityListing](EvaluationEntityListing.html) getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum)
+
+Queries Evaluations and returns a paged list
+
+Query params must include one of conversationId, evaluatorUserId, or agentUserId
+
+Wraps GET /api/v2/quality/evaluations/query  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String sortBy = "sortBy_example"; // String | variable name requested to sort by
+List<Object> expand = null; // List<Object> | variable name requested by expand list
+String nextPage = "nextPage_example"; // String | next page token
+String previousPage = "previousPage_example"; // String | Previous page token
+String conversationId = "conversationId_example"; // String | conversationId specified
+String agentUserId = "agentUserId_example"; // String | user id of the agent
+String evaluatorUserId = "evaluatorUserId_example"; // String | evaluator user id
+String queueId = "queueId_example"; // String | queue id
+String startTime = "startTime_example"; // String | start time of the evaluation query
+String endTime = "endTime_example"; // String | end time of the evaluation query
+List<Object> evaluationState = null; // List<Object> | evaluation state options: Pending, InProgress, Finished
+Boolean isReleased = true; // Boolean | the evaluation has been released
+Boolean agentHasRead = true; // Boolean | agent has the evaluation
+Boolean expandAnswerTotalScores = true; // Boolean | get the total scores for evaluations
+Integer maximum = 56; // Integer | maximum
+try {
+    EvaluationEntityListing result = apiInstance.getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityEvaluationsQuery");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
+| **sortBy** | **String**| variable name requested to sort by | [optional] |
+| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] |
+| **nextPage** | **String**| next page token | [optional] |
+| **previousPage** | **String**| Previous page token | [optional] |
+| **conversationId** | **String**| conversationId specified | [optional] |
+| **agentUserId** | **String**| user id of the agent | [optional] |
+| **evaluatorUserId** | **String**| evaluator user id | [optional] |
+| **queueId** | **String**| queue id | [optional] |
+| **startTime** | **String**| start time of the evaluation query | [optional] |
+| **endTime** | **String**| end time of the evaluation query | [optional] |
+| **evaluationState** | [**List&lt;Object&gt;**](Object.html)| evaluation state options: Pending, InProgress, Finished | [optional] |
+| **isReleased** | **Boolean**| the evaluation has been released | [optional] |
+| **agentHasRead** | **Boolean**| agent has the evaluation | [optional] |
+| **expandAnswerTotalScores** | **Boolean**| get the total scores for evaluations | [optional] |
+| **maximum** | **Integer**| maximum | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationEntityListing**](EvaluationEntityListing.html)
+
+<a name="getQualityEvaluatorsActivity"></a>
+
+# **getQualityEvaluatorsActivity**
+
+> [EvaluatorActivityEntityListing](EvaluatorActivityEntityListing.html) getQualityEvaluatorsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, name, permission, group)
+
+Get an evaluator activity
+
+
+
+Wraps GET /api/v2/quality/evaluators/activity  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String sortBy = "sortBy_example"; // String | variable name requested to sort by
+List<Object> expand = null; // List<Object> | variable name requested by expand list
+String nextPage = "nextPage_example"; // String | next page token
+String previousPage = "previousPage_example"; // String | Previous page token
+Date startTime = new Date(); // Date | The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+Date endTime = new Date(); // Date | The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+String name = "name_example"; // String | Evaluator name
+List<Object> permission = null; // List<Object> | permission strings
+String group = "group_example"; // String | group id
+try {
+    EvaluatorActivityEntityListing result = apiInstance.getQualityEvaluatorsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, name, permission, group);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityEvaluatorsActivity");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
+| **sortBy** | **String**| variable name requested to sort by | [optional] |
+| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] |
+| **nextPage** | **String**| next page token | [optional] |
+| **previousPage** | **String**| Previous page token | [optional] |
+| **startTime** | **Date**| The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **endTime** | **Date**| The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
+| **name** | **String**| Evaluator name | [optional] |
+| **permission** | [**List&lt;Object&gt;**](Object.html)| permission strings | [optional] |
+| **group** | **String**| group id | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluatorActivityEntityListing**](EvaluatorActivityEntityListing.html)
+
+<a name="getQualityForm"></a>
+
+# **getQualityForm**
+
+> [EvaluationForm](EvaluationForm.html) getQualityForm(formId)
+
+Get an evaluation form
+
+
+
+Wraps GET /api/v2/quality/forms/{formId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String formId = "formId_example"; // String | Form ID
+try {
+    EvaluationForm result = apiInstance.getQualityForm(formId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityForm");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **formId** | **String**| Form ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationForm**](EvaluationForm.html)
+
+<a name="getQualityFormVersions"></a>
+
+# **getQualityFormVersions**
+
+> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityFormVersions(formId, pageSize, pageNumber)
+
+Gets all the revisions for a specific evaluation.
+
+
+
+Wraps GET /api/v2/quality/forms/{formId}/versions  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String formId = "formId_example"; // String | Form ID
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    EvaluationFormEntityListing result = apiInstance.getQualityFormVersions(formId, pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityFormVersions");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **formId** | **String**| Form ID | |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+
+<a name="getQualityForms"></a>
+
+# **getQualityForms**
+
+> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityForms(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name)
+
+Get the list of evaluation forms
+
+
+
+Wraps GET /api/v2/quality/forms  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String sortBy = "sortBy_example"; // String | variable name requested to sort by
+String nextPage = "nextPage_example"; // String | next page token
+String previousPage = "previousPage_example"; // String | Previous page token
+String expand = "expand_example"; // String | Expand
+String name = "name_example"; // String | Name
+try {
+    EvaluationFormEntityListing result = apiInstance.getQualityForms(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityForms");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
+| **sortBy** | **String**| variable name requested to sort by | [optional] |
+| **nextPage** | **String**| next page token | [optional] |
+| **previousPage** | **String**| Previous page token | [optional] |
+| **expand** | **String**| Expand | [optional] |
+| **name** | **String**| Name | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+
+<a name="getQualityKeywordset"></a>
+
+# **getQualityKeywordset**
+
+> [KeywordSet](KeywordSet.html) getQualityKeywordset(keywordSetId)
+
+Get a keywordSet by id.
+
+
+
+Wraps GET /api/v2/quality/keywordsets/{keywordSetId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String keywordSetId = "keywordSetId_example"; // String | KeywordSet ID
+try {
+    KeywordSet result = apiInstance.getQualityKeywordset(keywordSetId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityKeywordset");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **keywordSetId** | **String**| KeywordSet ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**KeywordSet**](KeywordSet.html)
+
+<a name="getQualityKeywordsets"></a>
+
+# **getQualityKeywordsets**
+
+> [KeywordSetEntityListing](KeywordSetEntityListing.html) getQualityKeywordsets(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, queueId, agentId, operator)
+
+Get the list of keyword sets
+
+
+
+Wraps GET /api/v2/quality/keywordsets  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String sortBy = "sortBy_example"; // String | variable name requested to sort by
+List<Object> expand = null; // List<Object> | variable name requested by expand list
+String nextPage = "nextPage_example"; // String | next page token
+String previousPage = "previousPage_example"; // String | Previous page token
+String name = "name_example"; // String | the keyword set name - used for filtering results in searches.
+String queueId = "queueId_example"; // String | the queue id - used for filtering results in searches.
+String agentId = "agentId_example"; // String | the agent id - used for filtering results in searches.
+String operator = "operator_example"; // String | If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters.
+try {
+    KeywordSetEntityListing result = apiInstance.getQualityKeywordsets(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, queueId, agentId, operator);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityKeywordsets");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
+| **sortBy** | **String**| variable name requested to sort by | [optional] |
+| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] |
+| **nextPage** | **String**| next page token | [optional] |
+| **previousPage** | **String**| Previous page token | [optional] |
+| **name** | **String**| the keyword set name - used for filtering results in searches. | [optional] |
+| **queueId** | **String**| the queue id - used for filtering results in searches. | [optional] |
+| **agentId** | **String**| the agent id - used for filtering results in searches. | [optional] |
+| **operator** | **String**| If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters. | [optional] [enum: AND, OR] |
+{: class="table table-striped"}
+
+### Return type
+
+[**KeywordSetEntityListing**](KeywordSetEntityListing.html)
+
+<a name="getQualityPublishedform"></a>
+
+# **getQualityPublishedform**
+
+> [EvaluationForm](EvaluationForm.html) getQualityPublishedform(formId)
+
+Get the published evaluation forms.
+
+
+
+Wraps GET /api/v2/quality/publishedforms/{formId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String formId = "formId_example"; // String | Form ID
+try {
+    EvaluationForm result = apiInstance.getQualityPublishedform(formId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityPublishedform");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **formId** | **String**| Form ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationForm**](EvaluationForm.html)
+
+<a name="getQualityPublishedforms"></a>
+
+# **getQualityPublishedforms**
+
+> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityPublishedforms(pageSize, pageNumber, name)
+
+Get the published evaluation forms.
+
+
+
+Wraps GET /api/v2/quality/publishedforms  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String name = "name_example"; // String | Name
+try {
+    EvaluationFormEntityListing result = apiInstance.getQualityPublishedforms(pageSize, pageNumber, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityPublishedforms");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **name** | **String**| Name | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+
+<a name="postAnalyticsEvaluationsAggregatesQuery"></a>
+
+# **postAnalyticsEvaluationsAggregatesQuery**
+
+> [AggregateQueryResponse](AggregateQueryResponse.html) postAnalyticsEvaluationsAggregatesQuery(body)
+
+Query for evaluation aggregates
+
+
+
+Wraps POST /api/v2/analytics/evaluations/aggregates/query  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+AggregationQuery body = new AggregationQuery(); // AggregationQuery | query
+try {
+    AggregateQueryResponse result = apiInstance.postAnalyticsEvaluationsAggregatesQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#postAnalyticsEvaluationsAggregatesQuery");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AggregationQuery**](AggregationQuery.html)| query | |
+{: class="table table-striped"}
+
+### Return type
+
+[**AggregateQueryResponse**](AggregateQueryResponse.html)
+
+<a name="postQualityCalibrations"></a>
+
+# **postQualityCalibrations**
+
+> [Calibration](Calibration.html) postQualityCalibrations(body, expand)
+
+Create a calibration
+
+
+
+Wraps POST /api/v2/quality/calibrations  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+CalibrationCreate body = new CalibrationCreate(); // CalibrationCreate | calibration
+String expand = "expand_example"; // String | calibratorId
+try {
+    Calibration result = apiInstance.postQualityCalibrations(body, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#postQualityCalibrations");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CalibrationCreate**](CalibrationCreate.html)| calibration | |
+| **expand** | **String**| calibratorId | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**Calibration**](Calibration.html)
+
+<a name="postQualityConversationEvaluations"></a>
+
+# **postQualityConversationEvaluations**
+
+> [Evaluation](Evaluation.html) postQualityConversationEvaluations(conversationId, body, expand)
+
+Create an evaluation
+
+
+
+Wraps POST /api/v2/quality/conversations/{conversationId}/evaluations  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String conversationId = "conversationId_example"; // String | conversationId
+Evaluation body = new Evaluation(); // Evaluation | evaluation
+String expand = "expand_example"; // String | evaluatorId
+try {
+    Evaluation result = apiInstance.postQualityConversationEvaluations(conversationId, body, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#postQualityConversationEvaluations");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | |
+| **body** | [**Evaluation**](Evaluation.html)| evaluation | |
+| **expand** | **String**| evaluatorId | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**Evaluation**](Evaluation.html)
+
+<a name="postQualityEvaluationsScoring"></a>
+
+# **postQualityEvaluationsScoring**
+
+> [EvaluationScoringSet](EvaluationScoringSet.html) postQualityEvaluationsScoring(body)
+
+Score evaluation
+
+
+
+Wraps POST /api/v2/quality/evaluations/scoring  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+EvaluationFormAndScoringSet body = new EvaluationFormAndScoringSet(); // EvaluationFormAndScoringSet | evaluationAndScoringSet
+try {
+    EvaluationScoringSet result = apiInstance.postQualityEvaluationsScoring(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#postQualityEvaluationsScoring");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**EvaluationFormAndScoringSet**](EvaluationFormAndScoringSet.html)| evaluationAndScoringSet | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationScoringSet**](EvaluationScoringSet.html)
+
+<a name="postQualityForms"></a>
+
+# **postQualityForms**
+
+> [EvaluationForm](EvaluationForm.html) postQualityForms(body)
+
+Create an evaluation form.
+
+
+
+Wraps POST /api/v2/quality/forms  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+EvaluationForm body = new EvaluationForm(); // EvaluationForm | Evaluation form
+try {
+    EvaluationForm result = apiInstance.postQualityForms(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#postQualityForms");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationForm**](EvaluationForm.html)
+
+<a name="postQualityKeywordsets"></a>
+
+# **postQualityKeywordsets**
+
+> [KeywordSet](KeywordSet.html) postQualityKeywordsets(body, expand)
+
+Create a Keyword Set
+
+
+
+Wraps POST /api/v2/quality/keywordsets  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+KeywordSet body = new KeywordSet(); // KeywordSet | keywordSet
+String expand = "expand_example"; // String | queueId
+try {
+    KeywordSet result = apiInstance.postQualityKeywordsets(body, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#postQualityKeywordsets");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**KeywordSet**](KeywordSet.html)| keywordSet | |
+| **expand** | **String**| queueId | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**KeywordSet**](KeywordSet.html)
+
+<a name="postQualityPublishedforms"></a>
+
+# **postQualityPublishedforms**
+
+> [EvaluationForm](EvaluationForm.html) postQualityPublishedforms(body)
+
+Publish an evaluation form.
+
+
+
+Wraps POST /api/v2/quality/publishedforms  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+EvaluationForm body = new EvaluationForm(); // EvaluationForm | Evaluation form
+try {
+    EvaluationForm result = apiInstance.postQualityPublishedforms(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#postQualityPublishedforms");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationForm**](EvaluationForm.html)
+
+<a name="postQualitySpotability"></a>
+
+# **postQualitySpotability**
+
+> [KeywordSet](KeywordSet.html) postQualitySpotability(body)
+
+Retrieve the spotability statistic
+
+
+
+Wraps POST /api/v2/quality/spotability  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+KeywordSet body = new KeywordSet(); // KeywordSet | Keyword Set
+try {
+    KeywordSet result = apiInstance.postQualitySpotability(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#postQualitySpotability");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**KeywordSet**](KeywordSet.html)| Keyword Set | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**KeywordSet**](KeywordSet.html)
+
+<a name="putQualityCalibration"></a>
+
+# **putQualityCalibration**
+
+> [Calibration](Calibration.html) putQualityCalibration(calibrationId, body)
+
+Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
+
+
+
+Wraps PUT /api/v2/quality/calibrations/{calibrationId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String calibrationId = "calibrationId_example"; // String | Calibration ID
+Calibration body = new Calibration(); // Calibration | Calibration
+try {
+    Calibration result = apiInstance.putQualityCalibration(calibrationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#putQualityCalibration");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **calibrationId** | **String**| Calibration ID | |
+| **body** | [**Calibration**](Calibration.html)| Calibration | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Calibration**](Calibration.html)
+
+<a name="putQualityConversationEvaluation"></a>
+
+# **putQualityConversationEvaluation**
+
+> [Evaluation](Evaluation.html) putQualityConversationEvaluation(conversationId, evaluationId, body, expand)
+
+Update an evaluation
+
+
+
+Wraps PUT /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String evaluationId = "evaluationId_example"; // String | evaluationId
+Evaluation body = new Evaluation(); // Evaluation | evaluation
+String expand = "expand_example"; // String | evaluatorId
+try {
+    Evaluation result = apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#putQualityConversationEvaluation");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | |
+| **evaluationId** | **String**| evaluationId | |
+| **body** | [**Evaluation**](Evaluation.html)| evaluation | |
+| **expand** | **String**| evaluatorId | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**Evaluation**](Evaluation.html)
+
+<a name="putQualityForm"></a>
+
+# **putQualityForm**
+
+> [EvaluationForm](EvaluationForm.html) putQualityForm(formId, body)
+
+Update an evaluation form.
+
+
+
+Wraps PUT /api/v2/quality/forms/{formId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String formId = "formId_example"; // String | Form ID
+EvaluationForm body = new EvaluationForm(); // EvaluationForm | Evaluation form
+try {
+    EvaluationForm result = apiInstance.putQualityForm(formId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#putQualityForm");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **formId** | **String**| Form ID | |
+| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationForm**](EvaluationForm.html)
+
+<a name="putQualityKeywordset"></a>
+
+# **putQualityKeywordset**
+
+> [KeywordSet](KeywordSet.html) putQualityKeywordset(keywordSetId, body)
+
+Update a keywordSet to the specified keywordSet via PUT.
+
+
+
+Wraps PUT /api/v2/quality/keywordsets/{keywordSetId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String keywordSetId = "keywordSetId_example"; // String | KeywordSet ID
+KeywordSet body = new KeywordSet(); // KeywordSet | keywordSet
+try {
+    KeywordSet result = apiInstance.putQualityKeywordset(keywordSetId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#putQualityKeywordset");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **keywordSetId** | **String**| KeywordSet ID | |
+| **body** | [**KeywordSet**](KeywordSet.html)| keywordSet | |
+{: class="table table-striped"}
+
+### Return type
+
+[**KeywordSet**](KeywordSet.html)
+
