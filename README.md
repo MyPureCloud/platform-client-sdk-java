@@ -132,6 +132,24 @@ public class UserPresenceListener implements NotificationListener<UserPresenceNo
 }
 ~~~
 
+And an example of listening to the channel metadata events (periodic heartbeat and ping/pong message):
+
+~~~
+public class ChannelMetadataListener implements NotificationListener<ChannelMetadataNotification> {
+    public String getTopic() {
+        return "channel.metadata";
+    }
+
+    public Class<?> getEventBodyClass() {
+        return ChannelMetadataNotification.class;
+    }
+
+    public void onEvent(NotificationEvent<ChannelMetadataNotification> notificationEvent) {
+        System.out.println("[channel.metadata] " + notificationEvent.getEventBody().getMessage());
+    }
+}
+~~~
+
 ## SDK Source Code Generation
 
 The SDK is automatically regenerated and published from the API's definition after each API release. For more information on the build process, see the [platform-client-sdk-common](https://github.com/MyPureCloud/platform-client-sdk-common) project.
