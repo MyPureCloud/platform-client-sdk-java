@@ -5,7 +5,7 @@
   <artifactId>platform-client-v2</artifactId>
   <packaging>jar</packaging>
   <name>platform-client-v2</name>
-  <version>1.8.3</version>
+  <version>1.8.4</version>
   <description>A Java package to interface with the PureCloud Platform API</description>
   <url>https://developer.mypurecloud.com/api/rest/client-libraries/java/latest/</url>
 
@@ -181,7 +181,7 @@
           <serverId>ossrh</serverId>
           <nexusUrl>https://oss.sonatype.org/</nexusUrl>
           <autoReleaseAfterClose>true</autoReleaseAfterClose>
-          <stagingRepositoryId>com.mypurecloud-platform-client-v2-1.8.3</stagingRepositoryId>
+          <stagingRepositoryId>com.mypurecloud-platform-client-v2-1.8.4</stagingRepositoryId>
         </configuration>
       </plugin>
 
