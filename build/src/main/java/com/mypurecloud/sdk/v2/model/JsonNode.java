@@ -15,8 +15,6 @@ import java.io.Serializable;
 
 public class JsonNode  implements Serializable {
   
-  private Boolean array = null;
-  private Boolean _null = null;
 
   /**
    * Gets or Sets nodeType
@@ -60,9 +58,11 @@ public class JsonNode  implements Serializable {
   }
   private NodeTypeEnum nodeType = null;
   private Boolean _float = null;
+  private Boolean object = null;
   private Boolean _boolean = null;
   private Boolean number = null;
-  private Boolean object = null;
+  private Boolean valueNode = null;
+  private Boolean containerNode = null;
   private Boolean missingNode = null;
   private Boolean pojo = null;
   private Boolean integralNumber = null;
@@ -75,44 +75,10 @@ public class JsonNode  implements Serializable {
   private Boolean bigInteger = null;
   private Boolean textual = null;
   private Boolean binary = null;
-  private Boolean valueNode = null;
-  private Boolean containerNode = null;
+  private Boolean array = null;
+  private Boolean _null = null;
 
   
-  /**
-   **/
-  public JsonNode array(Boolean array) {
-    this.array = array;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("array")
-  public Boolean getArray() {
-    return array;
-  }
-  public void setArray(Boolean array) {
-    this.array = array;
-  }
-
-
-  /**
-   **/
-  public JsonNode _null(Boolean _null) {
-    this._null = _null;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("null")
-  public Boolean getNull() {
-    return _null;
-  }
-  public void setNull(Boolean _null) {
-    this._null = _null;
-  }
-
-
   /**
    **/
   public JsonNode nodeType(NodeTypeEnum nodeType) {
@@ -144,6 +110,23 @@ public class JsonNode  implements Serializable {
   }
   public void setFloat(Boolean _float) {
     this._float = _float;
+  }
+
+
+  /**
+   **/
+  public JsonNode object(Boolean object) {
+    this.object = object;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("object")
+  public Boolean getObject() {
+    return object;
+  }
+  public void setObject(Boolean object) {
+    this.object = object;
   }
 
 
@@ -183,18 +166,35 @@ public class JsonNode  implements Serializable {
 
   /**
    **/
-  public JsonNode object(Boolean object) {
-    this.object = object;
+  public JsonNode valueNode(Boolean valueNode) {
+    this.valueNode = valueNode;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("object")
-  public Boolean getObject() {
-    return object;
+  @JsonProperty("valueNode")
+  public Boolean getValueNode() {
+    return valueNode;
   }
-  public void setObject(Boolean object) {
-    this.object = object;
+  public void setValueNode(Boolean valueNode) {
+    this.valueNode = valueNode;
+  }
+
+
+  /**
+   **/
+  public JsonNode containerNode(Boolean containerNode) {
+    this.containerNode = containerNode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("containerNode")
+  public Boolean getContainerNode() {
+    return containerNode;
+  }
+  public void setContainerNode(Boolean containerNode) {
+    this.containerNode = containerNode;
   }
 
 
@@ -404,35 +404,35 @@ public class JsonNode  implements Serializable {
 
   /**
    **/
-  public JsonNode valueNode(Boolean valueNode) {
-    this.valueNode = valueNode;
+  public JsonNode array(Boolean array) {
+    this.array = array;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("valueNode")
-  public Boolean getValueNode() {
-    return valueNode;
+  @JsonProperty("array")
+  public Boolean getArray() {
+    return array;
   }
-  public void setValueNode(Boolean valueNode) {
-    this.valueNode = valueNode;
+  public void setArray(Boolean array) {
+    this.array = array;
   }
 
 
   /**
    **/
-  public JsonNode containerNode(Boolean containerNode) {
-    this.containerNode = containerNode;
+  public JsonNode _null(Boolean _null) {
+    this._null = _null;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("containerNode")
-  public Boolean getContainerNode() {
-    return containerNode;
+  @JsonProperty("null")
+  public Boolean getNull() {
+    return _null;
   }
-  public void setContainerNode(Boolean containerNode) {
-    this.containerNode = containerNode;
+  public void setNull(Boolean _null) {
+    this._null = _null;
   }
 
 
@@ -445,13 +445,13 @@ public class JsonNode  implements Serializable {
       return false;
     }
     JsonNode jsonNode = (JsonNode) o;
-    return Objects.equals(this.array, jsonNode.array) &&
-        Objects.equals(this._null, jsonNode._null) &&
-        Objects.equals(this.nodeType, jsonNode.nodeType) &&
+    return Objects.equals(this.nodeType, jsonNode.nodeType) &&
         Objects.equals(this._float, jsonNode._float) &&
+        Objects.equals(this.object, jsonNode.object) &&
         Objects.equals(this._boolean, jsonNode._boolean) &&
         Objects.equals(this.number, jsonNode.number) &&
-        Objects.equals(this.object, jsonNode.object) &&
+        Objects.equals(this.valueNode, jsonNode.valueNode) &&
+        Objects.equals(this.containerNode, jsonNode.containerNode) &&
         Objects.equals(this.missingNode, jsonNode.missingNode) &&
         Objects.equals(this.pojo, jsonNode.pojo) &&
         Objects.equals(this.integralNumber, jsonNode.integralNumber) &&
@@ -464,13 +464,13 @@ public class JsonNode  implements Serializable {
         Objects.equals(this.bigInteger, jsonNode.bigInteger) &&
         Objects.equals(this.textual, jsonNode.textual) &&
         Objects.equals(this.binary, jsonNode.binary) &&
-        Objects.equals(this.valueNode, jsonNode.valueNode) &&
-        Objects.equals(this.containerNode, jsonNode.containerNode);
+        Objects.equals(this.array, jsonNode.array) &&
+        Objects.equals(this._null, jsonNode._null);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(array, _null, nodeType, _float, _boolean, number, object, missingNode, pojo, integralNumber, floatingPointNumber, _short, _int, _long, _double, bigDecimal, bigInteger, textual, binary, valueNode, containerNode);
+    return Objects.hash(nodeType, _float, object, _boolean, number, valueNode, containerNode, missingNode, pojo, integralNumber, floatingPointNumber, _short, _int, _long, _double, bigDecimal, bigInteger, textual, binary, array, _null);
   }
 
   @Override
@@ -478,13 +478,13 @@ public class JsonNode  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class JsonNode {\n");
     
-    sb.append("    array: ").append(toIndentedString(array)).append("\n");
-    sb.append("    _null: ").append(toIndentedString(_null)).append("\n");
     sb.append("    nodeType: ").append(toIndentedString(nodeType)).append("\n");
     sb.append("    _float: ").append(toIndentedString(_float)).append("\n");
+    sb.append("    object: ").append(toIndentedString(object)).append("\n");
     sb.append("    _boolean: ").append(toIndentedString(_boolean)).append("\n");
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
+    sb.append("    valueNode: ").append(toIndentedString(valueNode)).append("\n");
+    sb.append("    containerNode: ").append(toIndentedString(containerNode)).append("\n");
     sb.append("    missingNode: ").append(toIndentedString(missingNode)).append("\n");
     sb.append("    pojo: ").append(toIndentedString(pojo)).append("\n");
     sb.append("    integralNumber: ").append(toIndentedString(integralNumber)).append("\n");
@@ -497,8 +497,8 @@ public class JsonNode  implements Serializable {
     sb.append("    bigInteger: ").append(toIndentedString(bigInteger)).append("\n");
     sb.append("    textual: ").append(toIndentedString(textual)).append("\n");
     sb.append("    binary: ").append(toIndentedString(binary)).append("\n");
-    sb.append("    valueNode: ").append(toIndentedString(valueNode)).append("\n");
-    sb.append("    containerNode: ").append(toIndentedString(containerNode)).append("\n");
+    sb.append("    array: ").append(toIndentedString(array)).append("\n");
+    sb.append("    _null: ").append(toIndentedString(_null)).append("\n");
     sb.append("}");
     return sb.toString();
   }
