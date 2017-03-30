@@ -5,7 +5,7 @@
   <artifactId>platform-client-v2</artifactId>
   <packaging>jar</packaging>
   <name>platform-client-v2</name>
-  <version>1.5.0</version>
+  <version>1.6.0</version>
   <description>A Java package to interface with the PureCloud Platform API</description>
   <url>https://developer.mypurecloud.com/api/rest/client-libraries/java/latest/</url>
 
@@ -198,19 +198,6 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
-
-      <!-- Deploy to sonatype -->
-      <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.7</version>
-        <extensions>true</extensions>
-        <configuration>
-           <serverId>ossrh</serverId>
-           <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-           <autoReleaseAfterClose>true</autoReleaseAfterClose>
-        </configuration>
       </plugin>
     </plugins>
   </build>
