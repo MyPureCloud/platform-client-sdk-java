@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.mypurecloud</groupId>
     <artifactId>platform-client-v2</artifactId>
-    <version>1.3.0</version>
+    <version>1.4.0</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.mypurecloud:platform-client-v2:1.3.0"
+compile "com.mypurecloud:platform-client-v2:1.4.0"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/platform-client-v2-1.3.0.jar
+* target/platform-client-v2-1.4.0.jar
 * target/lib/*.jar
 
 ## Getting Started
