@@ -24,6 +24,7 @@ title: Queue
 | **queueFlow** | [**UriReference**](UriReference.html) | The in-queue flow to use for conversations waiting in queue. |  [optional] |
 | **callingPartyName** | **String** | The name to use for caller identification for outbound calls from this queue. |  [optional] |
 | **callingPartyNumber** | **String** | The phone number to use for caller identification for outbound calls from this queue. |  [optional] |
+| **defaultScripts** | [**Map&lt;String, Script&gt;**](Script.html) | The default script Ids for the communication types. |  [optional] |
 | **outboundEmailAddress** | [**QueueEmailAddress**](QueueEmailAddress.html) |  |  [optional] |
 | **memberCount** | **Integer** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |

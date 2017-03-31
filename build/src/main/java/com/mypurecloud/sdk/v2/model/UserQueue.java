@@ -9,6 +9,7 @@ import com.mypurecloud.sdk.v2.model.AcwSettings;
 import com.mypurecloud.sdk.v2.model.Bullseye;
 import com.mypurecloud.sdk.v2.model.MediaSetting;
 import com.mypurecloud.sdk.v2.model.QueueEmailAddress;
+import com.mypurecloud.sdk.v2.model.Script;
 import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -112,6 +113,7 @@ public class UserQueue  implements Serializable {
   private UriReference queueFlow = null;
   private String callingPartyName = null;
   private String callingPartyNumber = null;
+  private Map<String, Script> defaultScripts = new HashMap<String, Script>();
   private QueueEmailAddress outboundEmailAddress = null;
   private Boolean joined = null;
   private Integer memberCount = null;
@@ -424,6 +426,24 @@ public class UserQueue  implements Serializable {
 
 
   /**
+   * The default script Ids for the communication types.
+   **/
+  public UserQueue defaultScripts(Map<String, Script> defaultScripts) {
+    this.defaultScripts = defaultScripts;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The default script Ids for the communication types.")
+  @JsonProperty("defaultScripts")
+  public Map<String, Script> getDefaultScripts() {
+    return defaultScripts;
+  }
+  public void setDefaultScripts(Map<String, Script> defaultScripts) {
+    this.defaultScripts = defaultScripts;
+  }
+
+
+  /**
    **/
   public UserQueue outboundEmailAddress(QueueEmailAddress outboundEmailAddress) {
     this.outboundEmailAddress = outboundEmailAddress;
@@ -508,6 +528,7 @@ public class UserQueue  implements Serializable {
         Objects.equals(this.queueFlow, userQueue.queueFlow) &&
         Objects.equals(this.callingPartyName, userQueue.callingPartyName) &&
         Objects.equals(this.callingPartyNumber, userQueue.callingPartyNumber) &&
+        Objects.equals(this.defaultScripts, userQueue.defaultScripts) &&
         Objects.equals(this.outboundEmailAddress, userQueue.outboundEmailAddress) &&
         Objects.equals(this.joined, userQueue.joined) &&
         Objects.equals(this.memberCount, userQueue.memberCount) &&
@@ -516,7 +537,7 @@ public class UserQueue  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, callingPartyName, callingPartyNumber, outboundEmailAddress, joined, memberCount, selfUri);
+    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, callingPartyName, callingPartyNumber, defaultScripts, outboundEmailAddress, joined, memberCount, selfUri);
   }
 
   @Override
@@ -542,6 +563,7 @@ public class UserQueue  implements Serializable {
     sb.append("    queueFlow: ").append(toIndentedString(queueFlow)).append("\n");
     sb.append("    callingPartyName: ").append(toIndentedString(callingPartyName)).append("\n");
     sb.append("    callingPartyNumber: ").append(toIndentedString(callingPartyNumber)).append("\n");
+    sb.append("    defaultScripts: ").append(toIndentedString(defaultScripts)).append("\n");
     sb.append("    outboundEmailAddress: ").append(toIndentedString(outboundEmailAddress)).append("\n");
     sb.append("    joined: ").append(toIndentedString(joined)).append("\n");
     sb.append("    memberCount: ").append(toIndentedString(memberCount)).append("\n");

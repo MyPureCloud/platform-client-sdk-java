@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.mypurecloud</groupId>
     <artifactId>platform-client-v2</artifactId>
-    <version>2.0.0</version>
+    <version>3.0.0</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.mypurecloud:platform-client-v2:2.0.0"
+compile "com.mypurecloud:platform-client-v2:3.0.0"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/platform-client-v2-2.0.0.jar
+* target/platform-client-v2-3.0.0.jar
 * target/lib/*.jar
 
 ## Getting Started
@@ -154,21 +154,47 @@ Class | Method | HTTP request | Description
 *ArchitectApi* | [**deleteArchitectPromptResource**](docs/ArchitectApi.md#deleteArchitectPromptResource) | **DELETE** /api/v2/architect/prompts/{promptId}/resources/{languageCode} | Delete specified user prompt resource
 *ArchitectApi* | [**deleteArchitectPrompts**](docs/ArchitectApi.md#deleteArchitectPrompts) | **DELETE** /api/v2/architect/prompts | Batch-delete a list of prompts asynchronously
 *ArchitectApi* | [**deleteArchitectSystempromptResource**](docs/ArchitectApi.md#deleteArchitectSystempromptResource) | **DELETE** /api/v2/architect/systemprompts/{promptId}/resources/{languageCode} | Delete a system prompt resource override.
+*ArchitectApi* | [**deleteFlow**](docs/ArchitectApi.md#deleteFlow) | **DELETE** /api/v2/flows/{flowId} | Delete flow
+*ArchitectApi* | [**deleteFlows**](docs/ArchitectApi.md#deleteFlows) | **DELETE** /api/v2/flows | Batch-delete a list of flows asynchronously
+*ArchitectApi* | [**getArchitectDependencytracking**](docs/ArchitectApi.md#getArchitectDependencytracking) | **GET** /api/v2/architect/dependencytracking | Get Dependency Tracking objects that have a given display name
+*ArchitectApi* | [**getArchitectDependencytrackingBuild**](docs/ArchitectApi.md#getArchitectDependencytrackingBuild) | **GET** /api/v2/architect/dependencytracking/build | Get Dependency Tracking build status for an organization
+*ArchitectApi* | [**getArchitectDependencytrackingConsumedresources**](docs/ArchitectApi.md#getArchitectDependencytrackingConsumedresources) | **GET** /api/v2/architect/dependencytracking/consumedresources | Get resources that are consumed by a given Dependency Tracking object
+*ArchitectApi* | [**getArchitectDependencytrackingConsumingresources**](docs/ArchitectApi.md#getArchitectDependencytrackingConsumingresources) | **GET** /api/v2/architect/dependencytracking/consumingresources | Get resources that consume a given Dependency Tracking object
+*ArchitectApi* | [**getArchitectDependencytrackingDeletedresourceconsumers**](docs/ArchitectApi.md#getArchitectDependencytrackingDeletedresourceconsumers) | **GET** /api/v2/architect/dependencytracking/deletedresourceconsumers | Get Dependency Tracking objects that consume deleted resources
+*ArchitectApi* | [**getArchitectDependencytrackingObject**](docs/ArchitectApi.md#getArchitectDependencytrackingObject) | **GET** /api/v2/architect/dependencytracking/object | Get a Dependency Tracking object
+*ArchitectApi* | [**getArchitectDependencytrackingType**](docs/ArchitectApi.md#getArchitectDependencytrackingType) | **GET** /api/v2/architect/dependencytracking/types/{typeId} | Get a Dependency Tracking type.
+*ArchitectApi* | [**getArchitectDependencytrackingTypes**](docs/ArchitectApi.md#getArchitectDependencytrackingTypes) | **GET** /api/v2/architect/dependencytracking/types | Get Dependency Tracking types.
+*ArchitectApi* | [**getArchitectDependencytrackingUpdatedresourceconsumers**](docs/ArchitectApi.md#getArchitectDependencytrackingUpdatedresourceconsumers) | **GET** /api/v2/architect/dependencytracking/updatedresourceconsumers | Get Dependency Tracking objects that depend on updated resources
 *ArchitectApi* | [**getArchitectPrompt**](docs/ArchitectApi.md#getArchitectPrompt) | **GET** /api/v2/architect/prompts/{promptId} | Get specified user prompt
 *ArchitectApi* | [**getArchitectPromptResource**](docs/ArchitectApi.md#getArchitectPromptResource) | **GET** /api/v2/architect/prompts/{promptId}/resources/{languageCode} | Get specified user prompt resource
 *ArchitectApi* | [**getArchitectPromptResources**](docs/ArchitectApi.md#getArchitectPromptResources) | **GET** /api/v2/architect/prompts/{promptId}/resources | Get a pageable list of user prompt resources
 *ArchitectApi* | [**getArchitectPrompts**](docs/ArchitectApi.md#getArchitectPrompts) | **GET** /api/v2/architect/prompts | Get a pageable list of user prompts
 *ArchitectApi* | [**getArchitectSystemprompt**](docs/ArchitectApi.md#getArchitectSystemprompt) | **GET** /api/v2/architect/systemprompts/{promptId} | Get a system prompt
 *ArchitectApi* | [**getArchitectSystempromptResource**](docs/ArchitectApi.md#getArchitectSystempromptResource) | **GET** /api/v2/architect/systemprompts/{promptId}/resources/{languageCode} | Get a system prompt resource.
-*ArchitectApi* | [**getArchitectSystempromptResources**](docs/ArchitectApi.md#getArchitectSystempromptResources) | **GET** /api/v2/architect/systemprompts/{promptId}/resources | Get IVR System Prompt resources.
+*ArchitectApi* | [**getArchitectSystempromptResources**](docs/ArchitectApi.md#getArchitectSystempromptResources) | **GET** /api/v2/architect/systemprompts/{promptId}/resources | Get system prompt resources.
 *ArchitectApi* | [**getArchitectSystemprompts**](docs/ArchitectApi.md#getArchitectSystemprompts) | **GET** /api/v2/architect/systemprompts | Get System Prompts
+*ArchitectApi* | [**getFlow**](docs/ArchitectApi.md#getFlow) | **GET** /api/v2/flows/{flowId} | Get flow
+*ArchitectApi* | [**getFlowLatestconfiguration**](docs/ArchitectApi.md#getFlowLatestconfiguration) | **GET** /api/v2/flows/{flowId}/latestconfiguration | Get the latest configuration for flow
+*ArchitectApi* | [**getFlowVersion**](docs/ArchitectApi.md#getFlowVersion) | **GET** /api/v2/flows/{flowId}/versions/{versionId} | Get flow version
+*ArchitectApi* | [**getFlowVersionConfiguration**](docs/ArchitectApi.md#getFlowVersionConfiguration) | **GET** /api/v2/flows/{flowId}/versions/{versionId}/configuration | Create flow version configuration
+*ArchitectApi* | [**getFlowVersions**](docs/ArchitectApi.md#getFlowVersions) | **GET** /api/v2/flows/{flowId}/versions | Get flow version list
 *ArchitectApi* | [**getFlows**](docs/ArchitectApi.md#getFlows) | **GET** /api/v2/flows | Get a pageable list of flows, filtered by query parameters
+*ArchitectApi* | [**postArchitectDependencytrackingBuild**](docs/ArchitectApi.md#postArchitectDependencytrackingBuild) | **POST** /api/v2/architect/dependencytracking/build | Rebuild Dependency Tracking data for an organization
 *ArchitectApi* | [**postArchitectPromptResources**](docs/ArchitectApi.md#postArchitectPromptResources) | **POST** /api/v2/architect/prompts/{promptId}/resources | Create a new user prompt resource
 *ArchitectApi* | [**postArchitectPrompts**](docs/ArchitectApi.md#postArchitectPrompts) | **POST** /api/v2/architect/prompts | Create a new user prompt
 *ArchitectApi* | [**postArchitectSystempromptResources**](docs/ArchitectApi.md#postArchitectSystempromptResources) | **POST** /api/v2/architect/systemprompts/{promptId}/resources | Create system prompt resource override.
+*ArchitectApi* | [**postFlowVersions**](docs/ArchitectApi.md#postFlowVersions) | **POST** /api/v2/flows/{flowId}/versions | Create flow version
+*ArchitectApi* | [**postFlows**](docs/ArchitectApi.md#postFlows) | **POST** /api/v2/flows | Create flow
+*ArchitectApi* | [**postFlowsActionsCheckin**](docs/ArchitectApi.md#postFlowsActionsCheckin) | **POST** /api/v2/flows/actions/checkin | Check-in flow
+*ArchitectApi* | [**postFlowsActionsCheckout**](docs/ArchitectApi.md#postFlowsActionsCheckout) | **POST** /api/v2/flows/actions/checkout | Check-out flow
+*ArchitectApi* | [**postFlowsActionsDeactivate**](docs/ArchitectApi.md#postFlowsActionsDeactivate) | **POST** /api/v2/flows/actions/deactivate | Deactivate flow
+*ArchitectApi* | [**postFlowsActionsPublish**](docs/ArchitectApi.md#postFlowsActionsPublish) | **POST** /api/v2/flows/actions/publish | Publish flow
+*ArchitectApi* | [**postFlowsActionsRevert**](docs/ArchitectApi.md#postFlowsActionsRevert) | **POST** /api/v2/flows/actions/revert | Revert flow
+*ArchitectApi* | [**postFlowsActionsUnlock**](docs/ArchitectApi.md#postFlowsActionsUnlock) | **POST** /api/v2/flows/actions/unlock | Unlock flow
 *ArchitectApi* | [**putArchitectPrompt**](docs/ArchitectApi.md#putArchitectPrompt) | **PUT** /api/v2/architect/prompts/{promptId} | Update specified user prompt
 *ArchitectApi* | [**putArchitectPromptResource**](docs/ArchitectApi.md#putArchitectPromptResource) | **PUT** /api/v2/architect/prompts/{promptId}/resources/{languageCode} | Update specified user prompt resource
 *ArchitectApi* | [**putArchitectSystempromptResource**](docs/ArchitectApi.md#putArchitectSystempromptResource) | **PUT** /api/v2/architect/systemprompts/{promptId}/resources/{languageCode} | Updates a system prompt resource override.
+*ArchitectApi* | [**putFlow**](docs/ArchitectApi.md#putFlow) | **PUT** /api/v2/flows/{flowId} | Update flow
 *AttributesApi* | [**deleteAttribute**](docs/AttributesApi.md#deleteAttribute) | **DELETE** /api/v2/attributes/{attributeId} | Delete an existing Attribute.
 *AttributesApi* | [**getAttribute**](docs/AttributesApi.md#getAttribute) | **GET** /api/v2/attributes/{attributeId} | Get details about an existing attribute.
 *AttributesApi* | [**getAttributes**](docs/AttributesApi.md#getAttributes) | **GET** /api/v2/attributes | Gets a list of existing attributes.
@@ -411,6 +437,12 @@ Class | Method | HTTP request | Description
 *LanguagesApi* | [**getLanguagesTranslationsUser**](docs/LanguagesApi.md#getLanguagesTranslationsUser) | **GET** /api/v2/languages/translations/users/{userId} | Get effective language translation for a user
 *LanguagesApi* | [**getRoutingLanguage**](docs/LanguagesApi.md#getRoutingLanguage) | **GET** /api/v2/routing/languages/{languageId} | Get language
 *LanguagesApi* | [**postLanguages**](docs/LanguagesApi.md#postLanguages) | **POST** /api/v2/languages | Create Language (Deprecated)
+*LicenseApi* | [**getLicenseDefinition**](docs/LicenseApi.md#getLicenseDefinition) | **GET** /api/v2/license/definitions/{licenseId} | Get PureCloud license definition.
+*LicenseApi* | [**getLicenseDefinitions**](docs/LicenseApi.md#getLicenseDefinitions) | **GET** /api/v2/license/definitions | Get all PureCloud license definitions available for the organization.
+*LicenseApi* | [**getLicenseOrganization**](docs/LicenseApi.md#getLicenseOrganization) | **GET** /api/v2/license/organization | Get license assignments for the organization.
+*LicenseApi* | [**getLicenseUser**](docs/LicenseApi.md#getLicenseUser) | **GET** /api/v2/license/users/{userId} | Get licenses for specified user.
+*LicenseApi* | [**postLicenseOrganization**](docs/LicenseApi.md#postLicenseOrganization) | **POST** /api/v2/license/organization | Update the organization&#39;s license assignments in a batch.
+*LicenseApi* | [**postLicenseUsers**](docs/LicenseApi.md#postLicenseUsers) | **POST** /api/v2/license/users | Fetch user licenses in a batch.
 *LocationsApi* | [**getLocation**](docs/LocationsApi.md#getLocation) | **GET** /api/v2/locations/{locationId} | Get Location by ID.
 *LocationsApi* | [**getLocations**](docs/LocationsApi.md#getLocations) | **GET** /api/v2/locations | Get a list of all locations.
 *LocationsApi* | [**getLocationsSearch**](docs/LocationsApi.md#getLocationsSearch) | **GET** /api/v2/locations/search | Search locations using the q64 value returned from a previous search
@@ -879,6 +911,8 @@ Class | Method | HTTP request | Description
  - [ActivityCodeContainer](docs/ActivityCodeContainer.md)
  - [AcwSettings](docs/AcwSettings.md)
  - [Address](docs/Address.md)
+ - [AddressableEntityUser](docs/AddressableEntityUser.md)
+ - [AddressableLicenseDefinition](docs/AddressableLicenseDefinition.md)
  - [Adjacents](docs/Adjacents.md)
  - [Agent](docs/Agent.md)
  - [AgentActivity](docs/AgentActivity.md)
@@ -1067,6 +1101,8 @@ Class | Method | HTTP request | Description
  - [ConsultTransfer](docs/ConsultTransfer.md)
  - [ConsultTransferResponse](docs/ConsultTransferResponse.md)
  - [ConsultTransferUpdate](docs/ConsultTransferUpdate.md)
+ - [ConsumedResourcesEntityListing](docs/ConsumedResourcesEntityListing.md)
+ - [ConsumingResourcesEntityListing](docs/ConsumingResourcesEntityListing.md)
  - [Contact](docs/Contact.md)
  - [ContactAddress](docs/ContactAddress.md)
  - [ContactCallbackRequest](docs/ContactCallbackRequest.md)
@@ -1141,6 +1177,12 @@ Class | Method | HTTP request | Description
  - [DIDPoolEntityListing](docs/DIDPoolEntityListing.md)
  - [DefaultGreetingList](docs/DefaultGreetingList.md)
  - [DeleteRetention](docs/DeleteRetention.md)
+ - [Dependency](docs/Dependency.md)
+ - [DependencyObject](docs/DependencyObject.md)
+ - [DependencyObjectEntityListing](docs/DependencyObjectEntityListing.md)
+ - [DependencyStatus](docs/DependencyStatus.md)
+ - [DependencyType](docs/DependencyType.md)
+ - [DependencyTypeEntityListing](docs/DependencyTypeEntityListing.md)
  - [Destination](docs/Destination.md)
  - [Detail](docs/Detail.md)
  - [DialerAction](docs/DialerAction.md)
@@ -1274,6 +1316,7 @@ Class | Method | HTTP request | Description
  - [FacetKeyAttribute](docs/FacetKeyAttribute.md)
  - [FacetStatistics](docs/FacetStatistics.md)
  - [FacetTerm](docs/FacetTerm.md)
+ - [FailedObject](docs/FailedObject.md)
  - [FaxDataV2Notification](docs/FaxDataV2Notification.md)
  - [FaxDataV2NotificationLockData](docs/FaxDataV2NotificationLockData.md)
  - [FaxDataV2NotificationLockInfo](docs/FaxDataV2NotificationLockInfo.md)
@@ -1292,6 +1335,7 @@ Class | Method | HTTP request | Description
  - [Flow](docs/Flow.md)
  - [FlowEntityListing](docs/FlowEntityListing.md)
  - [FlowVersion](docs/FlowVersion.md)
+ - [FlowVersionEntityListing](docs/FlowVersionEntityListing.md)
  - [GSuite](docs/GSuite.md)
  - [Geolocation](docs/Geolocation.md)
  - [GeolocationSettings](docs/GeolocationSettings.md)
@@ -1344,6 +1388,14 @@ Class | Method | HTTP request | Description
  - [LanguageEntityListing](docs/LanguageEntityListing.md)
  - [Library](docs/Library.md)
  - [LibraryEntityListing](docs/LibraryEntityListing.md)
+ - [LicenseAssignmentRequest](docs/LicenseAssignmentRequest.md)
+ - [LicenseBatchAssignmentRequest](docs/LicenseBatchAssignmentRequest.md)
+ - [LicenseDefinition](docs/LicenseDefinition.md)
+ - [LicenseDefinitionListing](docs/LicenseDefinitionListing.md)
+ - [LicenseOrganization](docs/LicenseOrganization.md)
+ - [LicenseUpdateResponse](docs/LicenseUpdateResponse.md)
+ - [LicenseUpdateStatus](docs/LicenseUpdateStatus.md)
+ - [LicenseUser](docs/LicenseUser.md)
  - [Line](docs/Line.md)
  - [LineBase](docs/LineBase.md)
  - [LineBaseEntityListing](docs/LineBaseEntityListing.md)
@@ -1415,6 +1467,7 @@ Class | Method | HTTP request | Description
  - [ParticipantAttributes](docs/ParticipantAttributes.md)
  - [ParticipantBasic](docs/ParticipantBasic.md)
  - [PermissionCollectionEntityListing](docs/PermissionCollectionEntityListing.md)
+ - [Permissions](docs/Permissions.md)
  - [Phone](docs/Phone.md)
  - [PhoneBase](docs/PhoneBase.md)
  - [PhoneBaseEntityListing](docs/PhoneBaseEntityListing.md)

@@ -11,21 +11,47 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteArchitectPromptResource**](ArchitectApi.html#deleteArchitectPromptResource) | Delete specified user prompt resource |
 | [**deleteArchitectPrompts**](ArchitectApi.html#deleteArchitectPrompts) | Batch-delete a list of prompts asynchronously |
 | [**deleteArchitectSystempromptResource**](ArchitectApi.html#deleteArchitectSystempromptResource) | Delete a system prompt resource override. |
+| [**deleteFlow**](ArchitectApi.html#deleteFlow) | Delete flow |
+| [**deleteFlows**](ArchitectApi.html#deleteFlows) | Batch-delete a list of flows asynchronously |
+| [**getArchitectDependencytracking**](ArchitectApi.html#getArchitectDependencytracking) | Get Dependency Tracking objects that have a given display name |
+| [**getArchitectDependencytrackingBuild**](ArchitectApi.html#getArchitectDependencytrackingBuild) | Get Dependency Tracking build status for an organization |
+| [**getArchitectDependencytrackingConsumedresources**](ArchitectApi.html#getArchitectDependencytrackingConsumedresources) | Get resources that are consumed by a given Dependency Tracking object |
+| [**getArchitectDependencytrackingConsumingresources**](ArchitectApi.html#getArchitectDependencytrackingConsumingresources) | Get resources that consume a given Dependency Tracking object |
+| [**getArchitectDependencytrackingDeletedresourceconsumers**](ArchitectApi.html#getArchitectDependencytrackingDeletedresourceconsumers) | Get Dependency Tracking objects that consume deleted resources |
+| [**getArchitectDependencytrackingObject**](ArchitectApi.html#getArchitectDependencytrackingObject) | Get a Dependency Tracking object |
+| [**getArchitectDependencytrackingType**](ArchitectApi.html#getArchitectDependencytrackingType) | Get a Dependency Tracking type. |
+| [**getArchitectDependencytrackingTypes**](ArchitectApi.html#getArchitectDependencytrackingTypes) | Get Dependency Tracking types. |
+| [**getArchitectDependencytrackingUpdatedresourceconsumers**](ArchitectApi.html#getArchitectDependencytrackingUpdatedresourceconsumers) | Get Dependency Tracking objects that depend on updated resources |
 | [**getArchitectPrompt**](ArchitectApi.html#getArchitectPrompt) | Get specified user prompt |
 | [**getArchitectPromptResource**](ArchitectApi.html#getArchitectPromptResource) | Get specified user prompt resource |
 | [**getArchitectPromptResources**](ArchitectApi.html#getArchitectPromptResources) | Get a pageable list of user prompt resources |
 | [**getArchitectPrompts**](ArchitectApi.html#getArchitectPrompts) | Get a pageable list of user prompts |
 | [**getArchitectSystemprompt**](ArchitectApi.html#getArchitectSystemprompt) | Get a system prompt |
 | [**getArchitectSystempromptResource**](ArchitectApi.html#getArchitectSystempromptResource) | Get a system prompt resource. |
-| [**getArchitectSystempromptResources**](ArchitectApi.html#getArchitectSystempromptResources) | Get IVR System Prompt resources. |
+| [**getArchitectSystempromptResources**](ArchitectApi.html#getArchitectSystempromptResources) | Get system prompt resources. |
 | [**getArchitectSystemprompts**](ArchitectApi.html#getArchitectSystemprompts) | Get System Prompts |
+| [**getFlow**](ArchitectApi.html#getFlow) | Get flow |
+| [**getFlowLatestconfiguration**](ArchitectApi.html#getFlowLatestconfiguration) | Get the latest configuration for flow |
+| [**getFlowVersion**](ArchitectApi.html#getFlowVersion) | Get flow version |
+| [**getFlowVersionConfiguration**](ArchitectApi.html#getFlowVersionConfiguration) | Create flow version configuration |
+| [**getFlowVersions**](ArchitectApi.html#getFlowVersions) | Get flow version list |
 | [**getFlows**](ArchitectApi.html#getFlows) | Get a pageable list of flows, filtered by query parameters |
+| [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | Rebuild Dependency Tracking data for an organization |
 | [**postArchitectPromptResources**](ArchitectApi.html#postArchitectPromptResources) | Create a new user prompt resource |
 | [**postArchitectPrompts**](ArchitectApi.html#postArchitectPrompts) | Create a new user prompt |
 | [**postArchitectSystempromptResources**](ArchitectApi.html#postArchitectSystempromptResources) | Create system prompt resource override. |
+| [**postFlowVersions**](ArchitectApi.html#postFlowVersions) | Create flow version |
+| [**postFlows**](ArchitectApi.html#postFlows) | Create flow |
+| [**postFlowsActionsCheckin**](ArchitectApi.html#postFlowsActionsCheckin) | Check-in flow |
+| [**postFlowsActionsCheckout**](ArchitectApi.html#postFlowsActionsCheckout) | Check-out flow |
+| [**postFlowsActionsDeactivate**](ArchitectApi.html#postFlowsActionsDeactivate) | Deactivate flow |
+| [**postFlowsActionsPublish**](ArchitectApi.html#postFlowsActionsPublish) | Publish flow |
+| [**postFlowsActionsRevert**](ArchitectApi.html#postFlowsActionsRevert) | Revert flow |
+| [**postFlowsActionsUnlock**](ArchitectApi.html#postFlowsActionsUnlock) | Unlock flow |
 | [**putArchitectPrompt**](ArchitectApi.html#putArchitectPrompt) | Update specified user prompt |
 | [**putArchitectPromptResource**](ArchitectApi.html#putArchitectPromptResource) | Update specified user prompt resource |
 | [**putArchitectSystempromptResource**](ArchitectApi.html#putArchitectSystempromptResource) | Updates a system prompt resource override. |
+| [**putFlow**](ArchitectApi.html#putFlow) | Update flow |
 {: class="table table-striped"}
 
 <a name="deleteArchitectPrompt"></a>
@@ -235,6 +261,622 @@ try {
 ### Return type
 
 **String**
+
+<a name="deleteFlow"></a>
+
+# **deleteFlow**
+
+> Void deleteFlow(flowId)
+
+Delete flow
+
+
+
+Wraps DELETE /api/v2/flows/{flowId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String flowId = "flowId_example"; // String | Flow ID
+try {
+    apiInstance.deleteFlow(flowId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#deleteFlow");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flowId** | **String**| Flow ID | |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteFlows"></a>
+
+# **deleteFlows**
+
+> [Operation](Operation.html) deleteFlows(id)
+
+Batch-delete a list of flows asynchronously
+
+Multiple IDs can be specified, in which case all specified flows will be deleted.
+
+Wraps DELETE /api/v2/flows  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+List<String> id = Arrays.asList("id_example"); // List<String> | List of Flow IDs
+try {
+    Operation result = apiInstance.deleteFlows(id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#deleteFlows");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**List&lt;String&gt;**](String.html)| List of Flow IDs | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Operation**](Operation.html)
+
+<a name="getArchitectDependencytracking"></a>
+
+# **getArchitectDependencytracking**
+
+> [DependencyObjectEntityListing](DependencyObjectEntityListing.html) getArchitectDependencytracking(name, pageNumber, pageSize, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType)
+
+Get Dependency Tracking objects that have a given display name
+
+
+
+Wraps GET /api/v2/architect/dependencytracking  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String name = "name_example"; // String | Object name to search for
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+List<String> objectType = Arrays.asList("objectType_example"); // List<String> | Object type(s) to search for
+Boolean consumedResources = true; // Boolean | Include resources each result item consumes
+Boolean consumingResources = true; // Boolean | Include resources that consume each result item
+List<String> consumedResourceType = Arrays.asList("consumedResourceType_example"); // List<String> | Types of consumed resources to return, if consumed resources are requested
+List<String> consumingResourceType = Arrays.asList("consumingResourceType_example"); // List<String> | Types of consuming resources to return, if consuming resources are requested
+try {
+    DependencyObjectEntityListing result = apiInstance.getArchitectDependencytracking(name, pageNumber, pageSize, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectDependencytracking");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **name** | **String**| Object name to search for | |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **objectType** | [**List&lt;String&gt;**](String.html)| Object type(s) to search for | [optional] |
+| **consumedResources** | **Boolean**| Include resources each result item consumes | [optional] |
+| **consumingResources** | **Boolean**| Include resources that consume each result item | [optional] |
+| **consumedResourceType** | [**List&lt;String&gt;**](String.html)| Types of consumed resources to return, if consumed resources are requested | [optional] |
+| **consumingResourceType** | [**List&lt;String&gt;**](String.html)| Types of consuming resources to return, if consuming resources are requested | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**DependencyObjectEntityListing**](DependencyObjectEntityListing.html)
+
+<a name="getArchitectDependencytrackingBuild"></a>
+
+# **getArchitectDependencytrackingBuild**
+
+> [DependencyStatus](DependencyStatus.html) getArchitectDependencytrackingBuild()
+
+Get Dependency Tracking build status for an organization
+
+
+
+Wraps GET /api/v2/architect/dependencytracking/build  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+try {
+    DependencyStatus result = apiInstance.getArchitectDependencytrackingBuild();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectDependencytrackingBuild");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+This endpoint does not require any parameters.
+{: class="table table-striped"}
+
+### Return type
+
+[**DependencyStatus**](DependencyStatus.html)
+
+<a name="getArchitectDependencytrackingConsumedresources"></a>
+
+# **getArchitectDependencytrackingConsumedresources**
+
+> [ConsumedResourcesEntityListing](ConsumedResourcesEntityListing.html) getArchitectDependencytrackingConsumedresources(id, version, objectType, resourceType)
+
+Get resources that are consumed by a given Dependency Tracking object
+
+
+
+Wraps GET /api/v2/architect/dependencytracking/consumedresources  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String id = "id_example"; // String | Consuming object ID
+String version = "version_example"; // String | Consuming object version
+String objectType = "objectType_example"; // String | Consuming object type
+List<String> resourceType = Arrays.asList("resourceType_example"); // List<String> | Types of consumed resources to show
+try {
+    ConsumedResourcesEntityListing result = apiInstance.getArchitectDependencytrackingConsumedresources(id, version, objectType, resourceType);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectDependencytrackingConsumedresources");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **String**| Consuming object ID | |
+| **version** | **String**| Consuming object version | |
+| **objectType** | **String**| Consuming object type | [enum: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW] |
+| **resourceType** | [**List&lt;String&gt;**](String.html)| Types of consumed resources to show | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ConsumedResourcesEntityListing**](ConsumedResourcesEntityListing.html)
+
+<a name="getArchitectDependencytrackingConsumingresources"></a>
+
+# **getArchitectDependencytrackingConsumingresources**
+
+> [ConsumingResourcesEntityListing](ConsumingResourcesEntityListing.html) getArchitectDependencytrackingConsumingresources(id, objectType, resourceType)
+
+Get resources that consume a given Dependency Tracking object
+
+
+
+Wraps GET /api/v2/architect/dependencytracking/consumingresources  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String id = "id_example"; // String | Consumed object ID
+String objectType = "objectType_example"; // String | Consumed object type (only versioned object types are valid)
+List<String> resourceType = Arrays.asList("resourceType_example"); // List<String> | Types of consuming resources to show
+try {
+    ConsumingResourcesEntityListing result = apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, resourceType);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectDependencytrackingConsumingresources");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **String**| Consumed object ID | |
+| **objectType** | **String**| Consumed object type (only versioned object types are valid) | [enum: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW] |
+| **resourceType** | [**List&lt;String&gt;**](String.html)| Types of consuming resources to show | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ConsumingResourcesEntityListing**](ConsumingResourcesEntityListing.html)
+
+<a name="getArchitectDependencytrackingDeletedresourceconsumers"></a>
+
+# **getArchitectDependencytrackingDeletedresourceconsumers**
+
+> [DependencyObjectEntityListing](DependencyObjectEntityListing.html) getArchitectDependencytrackingDeletedresourceconsumers(name, objectType, flowFilter, consumedResources, consumedResourceType, pageNumber, pageSize)
+
+Get Dependency Tracking objects that consume deleted resources
+
+
+
+Wraps GET /api/v2/architect/dependencytracking/deletedresourceconsumers  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String name = "name_example"; // String | Name to search for
+List<String> objectType = Arrays.asList("objectType_example"); // List<String> | Object type(s) to search for
+String flowFilter = "flowFilter_example"; // String | Show only checkedIn or published flows
+Boolean consumedResources = false; // Boolean | Return consumed resources?
+List<String> consumedResourceType = Arrays.asList("consumedResourceType_example"); // List<String> | Resource type(s) to return
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+try {
+    DependencyObjectEntityListing result = apiInstance.getArchitectDependencytrackingDeletedresourceconsumers(name, objectType, flowFilter, consumedResources, consumedResourceType, pageNumber, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectDependencytrackingDeletedresourceconsumers");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **name** | **String**| Name to search for | [optional] |
+| **objectType** | [**List&lt;String&gt;**](String.html)| Object type(s) to search for | [optional] |
+| **flowFilter** | **String**| Show only checkedIn or published flows | [optional] [enum: checkedIn, published] |
+| **consumedResources** | **Boolean**| Return consumed resources? | [optional] [default to false] |
+| **consumedResourceType** | [**List&lt;String&gt;**](String.html)| Resource type(s) to return | [optional] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+[**DependencyObjectEntityListing**](DependencyObjectEntityListing.html)
+
+<a name="getArchitectDependencytrackingObject"></a>
+
+# **getArchitectDependencytrackingObject**
+
+> [DependencyObject](DependencyObject.html) getArchitectDependencytrackingObject(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType)
+
+Get a Dependency Tracking object
+
+
+
+Wraps GET /api/v2/architect/dependencytracking/object  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String id = "id_example"; // String | Object ID
+String version = "version_example"; // String | Object version
+String objectType = "objectType_example"; // String | Object type
+Boolean consumedResources = true; // Boolean | Include resources this item consumes
+Boolean consumingResources = true; // Boolean | Include resources that consume this item
+List<String> consumedResourceType = Arrays.asList("consumedResourceType_example"); // List<String> | Types of consumed resources to return, if consumed resources are requested
+List<String> consumingResourceType = Arrays.asList("consumingResourceType_example"); // List<String> | Types of consuming resources to return, if consuming resources are requested
+try {
+    DependencyObject result = apiInstance.getArchitectDependencytrackingObject(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectDependencytrackingObject");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **String**| Object ID | |
+| **version** | **String**| Object version | [optional] |
+| **objectType** | **String**| Object type | [optional] [enum: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW] |
+| **consumedResources** | **Boolean**| Include resources this item consumes | [optional] |
+| **consumingResources** | **Boolean**| Include resources that consume this item | [optional] |
+| **consumedResourceType** | [**List&lt;String&gt;**](String.html)| Types of consumed resources to return, if consumed resources are requested | [optional] |
+| **consumingResourceType** | [**List&lt;String&gt;**](String.html)| Types of consuming resources to return, if consuming resources are requested | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**DependencyObject**](DependencyObject.html)
+
+<a name="getArchitectDependencytrackingType"></a>
+
+# **getArchitectDependencytrackingType**
+
+> [DependencyType](DependencyType.html) getArchitectDependencytrackingType(typeId)
+
+Get a Dependency Tracking type.
+
+
+
+Wraps GET /api/v2/architect/dependencytracking/types/{typeId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String typeId = "typeId_example"; // String | Type ID
+try {
+    DependencyType result = apiInstance.getArchitectDependencytrackingType(typeId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectDependencytrackingType");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **typeId** | **String**| Type ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**DependencyType**](DependencyType.html)
+
+<a name="getArchitectDependencytrackingTypes"></a>
+
+# **getArchitectDependencytrackingTypes**
+
+> [DependencyTypeEntityListing](DependencyTypeEntityListing.html) getArchitectDependencytrackingTypes(pageNumber, pageSize)
+
+Get Dependency Tracking types.
+
+
+
+Wraps GET /api/v2/architect/dependencytracking/types  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+try {
+    DependencyTypeEntityListing result = apiInstance.getArchitectDependencytrackingTypes(pageNumber, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectDependencytrackingTypes");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+[**DependencyTypeEntityListing**](DependencyTypeEntityListing.html)
+
+<a name="getArchitectDependencytrackingUpdatedresourceconsumers"></a>
+
+# **getArchitectDependencytrackingUpdatedresourceconsumers**
+
+> [DependencyObjectEntityListing](DependencyObjectEntityListing.html) getArchitectDependencytrackingUpdatedresourceconsumers(name, objectType, consumedResources, consumedResourceType, pageNumber, pageSize)
+
+Get Dependency Tracking objects that depend on updated resources
+
+
+
+Wraps GET /api/v2/architect/dependencytracking/updatedresourceconsumers  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String name = "name_example"; // String | Name to search for
+List<String> objectType = Arrays.asList("objectType_example"); // List<String> | Object type(s) to search for
+Boolean consumedResources = false; // Boolean | Return consumed resources?
+List<String> consumedResourceType = Arrays.asList("consumedResourceType_example"); // List<String> | Resource type(s) to return
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+try {
+    DependencyObjectEntityListing result = apiInstance.getArchitectDependencytrackingUpdatedresourceconsumers(name, objectType, consumedResources, consumedResourceType, pageNumber, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectDependencytrackingUpdatedresourceconsumers");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **name** | **String**| Name to search for | [optional] |
+| **objectType** | [**List&lt;String&gt;**](String.html)| Object type(s) to search for | [optional] |
+| **consumedResources** | **Boolean**| Return consumed resources? | [optional] [default to false] |
+| **consumedResourceType** | [**List&lt;String&gt;**](String.html)| Resource type(s) to return | [optional] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+[**DependencyObjectEntityListing**](DependencyObjectEntityListing.html)
 
 <a name="getArchitectPrompt"></a>
 
@@ -564,7 +1206,7 @@ try {
 
 > [SystemPromptAssetEntityListing](SystemPromptAssetEntityListing.html) getArchitectSystempromptResources(promptId, pageNumber, pageSize, sortBy, sortOrder)
 
-Get IVR System Prompt resources.
+Get system prompt resources.
 
 
 
@@ -680,6 +1322,279 @@ try {
 
 [**SystemPromptEntityListing**](SystemPromptEntityListing.html)
 
+<a name="getFlow"></a>
+
+# **getFlow**
+
+> [Flow](Flow.html) getFlow(flowId, deleted)
+
+Get flow
+
+
+
+Wraps GET /api/v2/flows/{flowId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String flowId = "flowId_example"; // String | Flow ID
+Boolean deleted = false; // Boolean | Include deleted flows
+try {
+    Flow result = apiInstance.getFlow(flowId, deleted);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlow");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flowId** | **String**| Flow ID | |
+| **deleted** | **Boolean**| Include deleted flows | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+[**Flow**](Flow.html)
+
+<a name="getFlowLatestconfiguration"></a>
+
+# **getFlowLatestconfiguration**
+
+> Object getFlowLatestconfiguration(flowId, deleted)
+
+Get the latest configuration for flow
+
+
+
+Wraps GET /api/v2/flows/{flowId}/latestconfiguration  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String flowId = "flowId_example"; // String | Flow ID
+Boolean deleted = false; // Boolean | Include deleted flows
+try {
+    Object result = apiInstance.getFlowLatestconfiguration(flowId, deleted);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowLatestconfiguration");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flowId** | **String**| Flow ID | |
+| **deleted** | **Boolean**| Include deleted flows | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+**Object**
+
+<a name="getFlowVersion"></a>
+
+# **getFlowVersion**
+
+> [FlowVersion](FlowVersion.html) getFlowVersion(flowId, versionId, deleted)
+
+Get flow version
+
+
+
+Wraps GET /api/v2/flows/{flowId}/versions/{versionId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String flowId = "flowId_example"; // String | Flow ID
+String versionId = "versionId_example"; // String | Version ID
+String deleted = "deleted_example"; // String | Include deleted flows
+try {
+    FlowVersion result = apiInstance.getFlowVersion(flowId, versionId, deleted);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowVersion");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flowId** | **String**| Flow ID | |
+| **versionId** | **String**| Version ID | |
+| **deleted** | **String**| Include deleted flows | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**FlowVersion**](FlowVersion.html)
+
+<a name="getFlowVersionConfiguration"></a>
+
+# **getFlowVersionConfiguration**
+
+> Object getFlowVersionConfiguration(flowId, versionId, deleted)
+
+Create flow version configuration
+
+
+
+Wraps GET /api/v2/flows/{flowId}/versions/{versionId}/configuration  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String flowId = "flowId_example"; // String | Flow ID
+String versionId = "versionId_example"; // String | Version ID
+String deleted = "deleted_example"; // String | Include deleted flows
+try {
+    Object result = apiInstance.getFlowVersionConfiguration(flowId, versionId, deleted);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowVersionConfiguration");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flowId** | **String**| Flow ID | |
+| **versionId** | **String**| Version ID | |
+| **deleted** | **String**| Include deleted flows | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+**Object**
+
+<a name="getFlowVersions"></a>
+
+# **getFlowVersions**
+
+> [FlowVersionEntityListing](FlowVersionEntityListing.html) getFlowVersions(flowId, pageNumber, pageSize, deleted)
+
+Get flow version list
+
+
+
+Wraps GET /api/v2/flows/{flowId}/versions  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String flowId = "flowId_example"; // String | Flow ID
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+Boolean deleted = true; // Boolean | Include deleted flows
+try {
+    FlowVersionEntityListing result = apiInstance.getFlowVersions(flowId, pageNumber, pageSize, deleted);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowVersions");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flowId** | **String**| Flow ID | |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **deleted** | **Boolean**| Include deleted flows | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**FlowVersionEntityListing**](FlowVersionEntityListing.html)
+
 <a name="getFlows"></a>
 
 # **getFlows**
@@ -758,6 +1673,52 @@ try {
 ### Return type
 
 [**FlowEntityListing**](FlowEntityListing.html)
+
+<a name="postArchitectDependencytrackingBuild"></a>
+
+# **postArchitectDependencytrackingBuild**
+
+> Void postArchitectDependencytrackingBuild()
+
+Rebuild Dependency Tracking data for an organization
+
+
+
+Wraps POST /api/v2/architect/dependencytracking/build  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+try {
+    apiInstance.postArchitectDependencytrackingBuild();
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postArchitectDependencytrackingBuild");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+This endpoint does not require any parameters.
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
 
 <a name="postArchitectPromptResources"></a>
 
@@ -915,6 +1876,418 @@ try {
 ### Return type
 
 [**SystemPromptAsset**](SystemPromptAsset.html)
+
+<a name="postFlowVersions"></a>
+
+# **postFlowVersions**
+
+> [FlowVersion](FlowVersion.html) postFlowVersions(flowId, body)
+
+Create flow version
+
+
+
+Wraps POST /api/v2/flows/{flowId}/versions  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String flowId = "flowId_example"; // String | Flow ID
+Object body = null; // Object | 
+try {
+    FlowVersion result = apiInstance.postFlowVersions(flowId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postFlowVersions");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flowId** | **String**| Flow ID | |
+| **body** | **Object**|  | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**FlowVersion**](FlowVersion.html)
+
+<a name="postFlows"></a>
+
+# **postFlows**
+
+> [Flow](Flow.html) postFlows(body)
+
+Create flow
+
+
+
+Wraps POST /api/v2/flows  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+Flow body = new Flow(); // Flow | 
+try {
+    Flow result = apiInstance.postFlows(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postFlows");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**Flow**](Flow.html)|  | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**Flow**](Flow.html)
+
+<a name="postFlowsActionsCheckin"></a>
+
+# **postFlowsActionsCheckin**
+
+> [Flow](Flow.html) postFlowsActionsCheckin(flow)
+
+Check-in flow
+
+
+
+Wraps POST /api/v2/flows/actions/checkin  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String flow = "flow_example"; // String | Flow ID
+try {
+    Flow result = apiInstance.postFlowsActionsCheckin(flow);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postFlowsActionsCheckin");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flow** | **String**| Flow ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Flow**](Flow.html)
+
+<a name="postFlowsActionsCheckout"></a>
+
+# **postFlowsActionsCheckout**
+
+> [Flow](Flow.html) postFlowsActionsCheckout(flow)
+
+Check-out flow
+
+
+
+Wraps POST /api/v2/flows/actions/checkout  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String flow = "flow_example"; // String | Flow ID
+try {
+    Flow result = apiInstance.postFlowsActionsCheckout(flow);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postFlowsActionsCheckout");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flow** | **String**| Flow ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Flow**](Flow.html)
+
+<a name="postFlowsActionsDeactivate"></a>
+
+# **postFlowsActionsDeactivate**
+
+> [Flow](Flow.html) postFlowsActionsDeactivate(flow)
+
+Deactivate flow
+
+
+
+Wraps POST /api/v2/flows/actions/deactivate  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String flow = "flow_example"; // String | Flow ID
+try {
+    Flow result = apiInstance.postFlowsActionsDeactivate(flow);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postFlowsActionsDeactivate");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flow** | **String**| Flow ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Flow**](Flow.html)
+
+<a name="postFlowsActionsPublish"></a>
+
+# **postFlowsActionsPublish**
+
+> [Operation](Operation.html) postFlowsActionsPublish(flow, version)
+
+Publish flow
+
+
+
+Wraps POST /api/v2/flows/actions/publish  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String flow = "flow_example"; // String | Flow ID
+String version = "version_example"; // String | version
+try {
+    Operation result = apiInstance.postFlowsActionsPublish(flow, version);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postFlowsActionsPublish");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flow** | **String**| Flow ID | |
+| **version** | **String**| version | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**Operation**](Operation.html)
+
+<a name="postFlowsActionsRevert"></a>
+
+# **postFlowsActionsRevert**
+
+> [Flow](Flow.html) postFlowsActionsRevert(flow)
+
+Revert flow
+
+
+
+Wraps POST /api/v2/flows/actions/revert  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String flow = "flow_example"; // String | Flow ID
+try {
+    Flow result = apiInstance.postFlowsActionsRevert(flow);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postFlowsActionsRevert");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flow** | **String**| Flow ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Flow**](Flow.html)
+
+<a name="postFlowsActionsUnlock"></a>
+
+# **postFlowsActionsUnlock**
+
+> [Flow](Flow.html) postFlowsActionsUnlock(flow)
+
+Unlock flow
+
+Allows for unlocking a flow in the case where there is no flow configuration available, and thus a check-in will not unlock the flow. The user must have Architect Admin permissions to perform this action.
+
+Wraps POST /api/v2/flows/actions/unlock  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String flow = "flow_example"; // String | Flow ID
+try {
+    Flow result = apiInstance.postFlowsActionsUnlock(flow);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postFlowsActionsUnlock");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flow** | **String**| Flow ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Flow**](Flow.html)
 
 <a name="putArchitectPrompt"></a>
 
@@ -1078,4 +2451,57 @@ try {
 ### Return type
 
 [**SystemPromptAsset**](SystemPromptAsset.html)
+
+<a name="putFlow"></a>
+
+# **putFlow**
+
+> [Flow](Flow.html) putFlow(flowId, body)
+
+Update flow
+
+
+
+Wraps PUT /api/v2/flows/{flowId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String flowId = "flowId_example"; // String | Flow ID
+Flow body = new Flow(); // Flow | 
+try {
+    Flow result = apiInstance.putFlow(flowId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#putFlow");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flowId** | **String**| Flow ID | |
+| **body** | [**Flow**](Flow.html)|  | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**Flow**](Flow.html)
 
