@@ -124,6 +124,7 @@ import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundWrapupcodemappingsRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -148,7 +149,7 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundAttemptlimit(String attemptLimitsId) throws ApiException {
+  public String deleteOutboundAttemptlimit(String attemptLimitsId) throws IOException, ApiException {
     return deleteOutboundAttemptlimitWithHttpInfo(attemptLimitsId).getBody();
   }
 
@@ -159,12 +160,12 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundAttemptlimitWithHttpInfo(String attemptLimitsId) throws ApiException {
+  public ApiResponse<String> deleteOutboundAttemptlimitWithHttpInfo(String attemptLimitsId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'attemptLimitsId' is set
     if (attemptLimitsId == null) {
-      throw new ApiException(400, "Missing the required parameter 'attemptLimitsId' when calling deleteOutboundAttemptlimit");
+      throw new IllegalArgumentException("Missing the required parameter 'attemptLimitsId' when calling deleteOutboundAttemptlimit");
     }
     
     // create path and map variables
@@ -200,7 +201,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundAttemptlimit(DeleteOutboundAttemptlimitRequest request) throws ApiException {
+  public String deleteOutboundAttemptlimit(DeleteOutboundAttemptlimitRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -210,7 +211,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundAttemptlimit(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteOutboundAttemptlimit(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -221,7 +222,7 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundCallabletimeset(String callableTimeSetId) throws ApiException {
+  public String deleteOutboundCallabletimeset(String callableTimeSetId) throws IOException, ApiException {
     return deleteOutboundCallabletimesetWithHttpInfo(callableTimeSetId).getBody();
   }
 
@@ -232,12 +233,12 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundCallabletimesetWithHttpInfo(String callableTimeSetId) throws ApiException {
+  public ApiResponse<String> deleteOutboundCallabletimesetWithHttpInfo(String callableTimeSetId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'callableTimeSetId' is set
     if (callableTimeSetId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callableTimeSetId' when calling deleteOutboundCallabletimeset");
+      throw new IllegalArgumentException("Missing the required parameter 'callableTimeSetId' when calling deleteOutboundCallabletimeset");
     }
     
     // create path and map variables
@@ -273,7 +274,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundCallabletimeset(DeleteOutboundCallabletimesetRequest request) throws ApiException {
+  public String deleteOutboundCallabletimeset(DeleteOutboundCallabletimesetRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -283,7 +284,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundCallabletimeset(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteOutboundCallabletimeset(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -294,7 +295,7 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundCallanalysisresponseset(String callAnalysisSetId) throws ApiException {
+  public String deleteOutboundCallanalysisresponseset(String callAnalysisSetId) throws IOException, ApiException {
     return deleteOutboundCallanalysisresponsesetWithHttpInfo(callAnalysisSetId).getBody();
   }
 
@@ -305,12 +306,12 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundCallanalysisresponsesetWithHttpInfo(String callAnalysisSetId) throws ApiException {
+  public ApiResponse<String> deleteOutboundCallanalysisresponsesetWithHttpInfo(String callAnalysisSetId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'callAnalysisSetId' is set
     if (callAnalysisSetId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callAnalysisSetId' when calling deleteOutboundCallanalysisresponseset");
+      throw new IllegalArgumentException("Missing the required parameter 'callAnalysisSetId' when calling deleteOutboundCallanalysisresponseset");
     }
     
     // create path and map variables
@@ -346,7 +347,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundCallanalysisresponseset(DeleteOutboundCallanalysisresponsesetRequest request) throws ApiException {
+  public String deleteOutboundCallanalysisresponseset(DeleteOutboundCallanalysisresponsesetRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -356,7 +357,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundCallanalysisresponseset(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteOutboundCallanalysisresponseset(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -367,7 +368,7 @@ public class OutboundApi {
    * @return Campaign
    * @throws ApiException if fails to make API call
    */
-  public Campaign deleteOutboundCampaign(String campaignId) throws ApiException {
+  public Campaign deleteOutboundCampaign(String campaignId) throws IOException, ApiException {
     return deleteOutboundCampaignWithHttpInfo(campaignId).getBody();
   }
 
@@ -378,12 +379,12 @@ public class OutboundApi {
    * @return Campaign
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Campaign> deleteOutboundCampaignWithHttpInfo(String campaignId) throws ApiException {
+  public ApiResponse<Campaign> deleteOutboundCampaignWithHttpInfo(String campaignId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'campaignId' is set
     if (campaignId == null) {
-      throw new ApiException(400, "Missing the required parameter 'campaignId' when calling deleteOutboundCampaign");
+      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling deleteOutboundCampaign");
     }
     
     // create path and map variables
@@ -419,7 +420,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Campaign deleteOutboundCampaign(DeleteOutboundCampaignRequest request) throws ApiException {
+  public Campaign deleteOutboundCampaign(DeleteOutboundCampaignRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Campaign>() {});
   }
 
@@ -429,7 +430,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Campaign> deleteOutboundCampaign(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Campaign> deleteOutboundCampaign(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Campaign>invokeAPIVerbose(request, new TypeReference<Campaign>() {});
   }
 
@@ -439,7 +440,7 @@ public class OutboundApi {
    * @param campaignId Campaign ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteOutboundCampaignProgress(String campaignId) throws ApiException {
+  public void deleteOutboundCampaignProgress(String campaignId) throws IOException, ApiException {
     deleteOutboundCampaignProgressWithHttpInfo(campaignId);
   }
 
@@ -449,12 +450,12 @@ public class OutboundApi {
    * @param campaignId Campaign ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteOutboundCampaignProgressWithHttpInfo(String campaignId) throws ApiException {
+  public ApiResponse<Void> deleteOutboundCampaignProgressWithHttpInfo(String campaignId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'campaignId' is set
     if (campaignId == null) {
-      throw new ApiException(400, "Missing the required parameter 'campaignId' when calling deleteOutboundCampaignProgress");
+      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling deleteOutboundCampaignProgress");
     }
     
     // create path and map variables
@@ -490,7 +491,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteOutboundCampaignProgress(DeleteOutboundCampaignProgressRequest request) throws ApiException {
+  public void deleteOutboundCampaignProgress(DeleteOutboundCampaignProgressRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -500,7 +501,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteOutboundCampaignProgress(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteOutboundCampaignProgress(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -511,7 +512,7 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundCampaignrule(String campaignRuleId) throws ApiException {
+  public String deleteOutboundCampaignrule(String campaignRuleId) throws IOException, ApiException {
     return deleteOutboundCampaignruleWithHttpInfo(campaignRuleId).getBody();
   }
 
@@ -522,12 +523,12 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundCampaignruleWithHttpInfo(String campaignRuleId) throws ApiException {
+  public ApiResponse<String> deleteOutboundCampaignruleWithHttpInfo(String campaignRuleId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'campaignRuleId' is set
     if (campaignRuleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'campaignRuleId' when calling deleteOutboundCampaignrule");
+      throw new IllegalArgumentException("Missing the required parameter 'campaignRuleId' when calling deleteOutboundCampaignrule");
     }
     
     // create path and map variables
@@ -563,7 +564,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundCampaignrule(DeleteOutboundCampaignruleRequest request) throws ApiException {
+  public String deleteOutboundCampaignrule(DeleteOutboundCampaignruleRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -573,7 +574,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundCampaignrule(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteOutboundCampaignrule(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -584,7 +585,7 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundContactlist(String contactListId) throws ApiException {
+  public String deleteOutboundContactlist(String contactListId) throws IOException, ApiException {
     return deleteOutboundContactlistWithHttpInfo(contactListId).getBody();
   }
 
@@ -595,12 +596,12 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundContactlistWithHttpInfo(String contactListId) throws ApiException {
+  public ApiResponse<String> deleteOutboundContactlistWithHttpInfo(String contactListId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'contactListId' is set
     if (contactListId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactListId' when calling deleteOutboundContactlist");
+      throw new IllegalArgumentException("Missing the required parameter 'contactListId' when calling deleteOutboundContactlist");
     }
     
     // create path and map variables
@@ -636,7 +637,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundContactlist(DeleteOutboundContactlistRequest request) throws ApiException {
+  public String deleteOutboundContactlist(DeleteOutboundContactlistRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -646,7 +647,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundContactlist(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteOutboundContactlist(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -658,7 +659,7 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundContactlistContact(String contactListId, String contactId) throws ApiException {
+  public String deleteOutboundContactlistContact(String contactListId, String contactId) throws IOException, ApiException {
     return deleteOutboundContactlistContactWithHttpInfo(contactListId, contactId).getBody();
   }
 
@@ -670,17 +671,17 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundContactlistContactWithHttpInfo(String contactListId, String contactId) throws ApiException {
+  public ApiResponse<String> deleteOutboundContactlistContactWithHttpInfo(String contactListId, String contactId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'contactListId' is set
     if (contactListId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactListId' when calling deleteOutboundContactlistContact");
+      throw new IllegalArgumentException("Missing the required parameter 'contactListId' when calling deleteOutboundContactlistContact");
     }
     
     // verify the required parameter 'contactId' is set
     if (contactId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactId' when calling deleteOutboundContactlistContact");
+      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling deleteOutboundContactlistContact");
     }
     
     // create path and map variables
@@ -717,7 +718,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundContactlistContact(DeleteOutboundContactlistContactRequest request) throws ApiException {
+  public String deleteOutboundContactlistContact(DeleteOutboundContactlistContactRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -727,7 +728,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundContactlistContact(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteOutboundContactlistContact(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -738,7 +739,7 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundDnclist(String dncListId) throws ApiException {
+  public String deleteOutboundDnclist(String dncListId) throws IOException, ApiException {
     return deleteOutboundDnclistWithHttpInfo(dncListId).getBody();
   }
 
@@ -749,12 +750,12 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundDnclistWithHttpInfo(String dncListId) throws ApiException {
+  public ApiResponse<String> deleteOutboundDnclistWithHttpInfo(String dncListId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'dncListId' is set
     if (dncListId == null) {
-      throw new ApiException(400, "Missing the required parameter 'dncListId' when calling deleteOutboundDnclist");
+      throw new IllegalArgumentException("Missing the required parameter 'dncListId' when calling deleteOutboundDnclist");
     }
     
     // create path and map variables
@@ -790,7 +791,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundDnclist(DeleteOutboundDnclistRequest request) throws ApiException {
+  public String deleteOutboundDnclist(DeleteOutboundDnclistRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -800,7 +801,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundDnclist(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteOutboundDnclist(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -811,7 +812,7 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundRuleset(String ruleSetId) throws ApiException {
+  public String deleteOutboundRuleset(String ruleSetId) throws IOException, ApiException {
     return deleteOutboundRulesetWithHttpInfo(ruleSetId).getBody();
   }
 
@@ -822,12 +823,12 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundRulesetWithHttpInfo(String ruleSetId) throws ApiException {
+  public ApiResponse<String> deleteOutboundRulesetWithHttpInfo(String ruleSetId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'ruleSetId' is set
     if (ruleSetId == null) {
-      throw new ApiException(400, "Missing the required parameter 'ruleSetId' when calling deleteOutboundRuleset");
+      throw new IllegalArgumentException("Missing the required parameter 'ruleSetId' when calling deleteOutboundRuleset");
     }
     
     // create path and map variables
@@ -863,7 +864,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundRuleset(DeleteOutboundRulesetRequest request) throws ApiException {
+  public String deleteOutboundRuleset(DeleteOutboundRulesetRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -873,7 +874,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundRuleset(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteOutboundRuleset(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -884,7 +885,7 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundSchedulesCampaign(String campaignId) throws ApiException {
+  public String deleteOutboundSchedulesCampaign(String campaignId) throws IOException, ApiException {
     return deleteOutboundSchedulesCampaignWithHttpInfo(campaignId).getBody();
   }
 
@@ -895,12 +896,12 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundSchedulesCampaignWithHttpInfo(String campaignId) throws ApiException {
+  public ApiResponse<String> deleteOutboundSchedulesCampaignWithHttpInfo(String campaignId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'campaignId' is set
     if (campaignId == null) {
-      throw new ApiException(400, "Missing the required parameter 'campaignId' when calling deleteOutboundSchedulesCampaign");
+      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling deleteOutboundSchedulesCampaign");
     }
     
     // create path and map variables
@@ -936,7 +937,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundSchedulesCampaign(DeleteOutboundSchedulesCampaignRequest request) throws ApiException {
+  public String deleteOutboundSchedulesCampaign(DeleteOutboundSchedulesCampaignRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -946,7 +947,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundSchedulesCampaign(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteOutboundSchedulesCampaign(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -957,7 +958,7 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundSchedulesSequence(String sequenceId) throws ApiException {
+  public String deleteOutboundSchedulesSequence(String sequenceId) throws IOException, ApiException {
     return deleteOutboundSchedulesSequenceWithHttpInfo(sequenceId).getBody();
   }
 
@@ -968,12 +969,12 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundSchedulesSequenceWithHttpInfo(String sequenceId) throws ApiException {
+  public ApiResponse<String> deleteOutboundSchedulesSequenceWithHttpInfo(String sequenceId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'sequenceId' is set
     if (sequenceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'sequenceId' when calling deleteOutboundSchedulesSequence");
+      throw new IllegalArgumentException("Missing the required parameter 'sequenceId' when calling deleteOutboundSchedulesSequence");
     }
     
     // create path and map variables
@@ -1009,7 +1010,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundSchedulesSequence(DeleteOutboundSchedulesSequenceRequest request) throws ApiException {
+  public String deleteOutboundSchedulesSequence(DeleteOutboundSchedulesSequenceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -1019,7 +1020,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundSchedulesSequence(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteOutboundSchedulesSequence(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -1030,7 +1031,7 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundSequence(String sequenceId) throws ApiException {
+  public String deleteOutboundSequence(String sequenceId) throws IOException, ApiException {
     return deleteOutboundSequenceWithHttpInfo(sequenceId).getBody();
   }
 
@@ -1041,12 +1042,12 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundSequenceWithHttpInfo(String sequenceId) throws ApiException {
+  public ApiResponse<String> deleteOutboundSequenceWithHttpInfo(String sequenceId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'sequenceId' is set
     if (sequenceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'sequenceId' when calling deleteOutboundSequence");
+      throw new IllegalArgumentException("Missing the required parameter 'sequenceId' when calling deleteOutboundSequence");
     }
     
     // create path and map variables
@@ -1082,7 +1083,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteOutboundSequence(DeleteOutboundSequenceRequest request) throws ApiException {
+  public String deleteOutboundSequence(DeleteOutboundSequenceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -1092,7 +1093,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteOutboundSequence(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteOutboundSequence(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -1103,7 +1104,7 @@ public class OutboundApi {
    * @return AttemptLimits
    * @throws ApiException if fails to make API call
    */
-  public AttemptLimits getOutboundAttemptlimit(String attemptLimitsId) throws ApiException {
+  public AttemptLimits getOutboundAttemptlimit(String attemptLimitsId) throws IOException, ApiException {
     return getOutboundAttemptlimitWithHttpInfo(attemptLimitsId).getBody();
   }
 
@@ -1114,12 +1115,12 @@ public class OutboundApi {
    * @return AttemptLimits
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AttemptLimits> getOutboundAttemptlimitWithHttpInfo(String attemptLimitsId) throws ApiException {
+  public ApiResponse<AttemptLimits> getOutboundAttemptlimitWithHttpInfo(String attemptLimitsId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'attemptLimitsId' is set
     if (attemptLimitsId == null) {
-      throw new ApiException(400, "Missing the required parameter 'attemptLimitsId' when calling getOutboundAttemptlimit");
+      throw new IllegalArgumentException("Missing the required parameter 'attemptLimitsId' when calling getOutboundAttemptlimit");
     }
     
     // create path and map variables
@@ -1155,7 +1156,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public AttemptLimits getOutboundAttemptlimit(GetOutboundAttemptlimitRequest request) throws ApiException {
+  public AttemptLimits getOutboundAttemptlimit(GetOutboundAttemptlimitRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AttemptLimits>() {});
   }
 
@@ -1165,7 +1166,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AttemptLimits> getOutboundAttemptlimit(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<AttemptLimits> getOutboundAttemptlimit(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<AttemptLimits>invokeAPIVerbose(request, new TypeReference<AttemptLimits>() {});
   }
 
@@ -1181,7 +1182,7 @@ public class OutboundApi {
    * @return AttemptLimitsEntityListing
    * @throws ApiException if fails to make API call
    */
-  public AttemptLimitsEntityListing getOutboundAttemptlimits(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws ApiException {
+  public AttemptLimitsEntityListing getOutboundAttemptlimits(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
     return getOutboundAttemptlimitsWithHttpInfo(pageSize, pageNumber, filterType, name, sortBy, sortOrder).getBody();
   }
 
@@ -1197,7 +1198,7 @@ public class OutboundApi {
    * @return AttemptLimitsEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AttemptLimitsEntityListing> getOutboundAttemptlimitsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws ApiException {
+  public ApiResponse<AttemptLimitsEntityListing> getOutboundAttemptlimitsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1238,7 +1239,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public AttemptLimitsEntityListing getOutboundAttemptlimits(GetOutboundAttemptlimitsRequest request) throws ApiException {
+  public AttemptLimitsEntityListing getOutboundAttemptlimits(GetOutboundAttemptlimitsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AttemptLimitsEntityListing>() {});
   }
 
@@ -1248,7 +1249,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AttemptLimitsEntityListing> getOutboundAttemptlimits(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<AttemptLimitsEntityListing> getOutboundAttemptlimits(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<AttemptLimitsEntityListing>invokeAPIVerbose(request, new TypeReference<AttemptLimitsEntityListing>() {});
   }
 
@@ -1259,7 +1260,7 @@ public class OutboundApi {
    * @return CallableTimeSet
    * @throws ApiException if fails to make API call
    */
-  public CallableTimeSet getOutboundCallabletimeset(String callableTimeSetId) throws ApiException {
+  public CallableTimeSet getOutboundCallabletimeset(String callableTimeSetId) throws IOException, ApiException {
     return getOutboundCallabletimesetWithHttpInfo(callableTimeSetId).getBody();
   }
 
@@ -1270,12 +1271,12 @@ public class OutboundApi {
    * @return CallableTimeSet
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallableTimeSet> getOutboundCallabletimesetWithHttpInfo(String callableTimeSetId) throws ApiException {
+  public ApiResponse<CallableTimeSet> getOutboundCallabletimesetWithHttpInfo(String callableTimeSetId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'callableTimeSetId' is set
     if (callableTimeSetId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callableTimeSetId' when calling getOutboundCallabletimeset");
+      throw new IllegalArgumentException("Missing the required parameter 'callableTimeSetId' when calling getOutboundCallabletimeset");
     }
     
     // create path and map variables
@@ -1311,7 +1312,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CallableTimeSet getOutboundCallabletimeset(GetOutboundCallabletimesetRequest request) throws ApiException {
+  public CallableTimeSet getOutboundCallabletimeset(GetOutboundCallabletimesetRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallableTimeSet>() {});
   }
 
@@ -1321,7 +1322,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallableTimeSet> getOutboundCallabletimeset(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CallableTimeSet> getOutboundCallabletimeset(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CallableTimeSet>invokeAPIVerbose(request, new TypeReference<CallableTimeSet>() {});
   }
 
@@ -1337,7 +1338,7 @@ public class OutboundApi {
    * @return CallableTimeSetEntityListing
    * @throws ApiException if fails to make API call
    */
-  public CallableTimeSetEntityListing getOutboundCallabletimesets(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws ApiException {
+  public CallableTimeSetEntityListing getOutboundCallabletimesets(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
     return getOutboundCallabletimesetsWithHttpInfo(pageSize, pageNumber, filterType, name, sortBy, sortOrder).getBody();
   }
 
@@ -1353,7 +1354,7 @@ public class OutboundApi {
    * @return CallableTimeSetEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallableTimeSetEntityListing> getOutboundCallabletimesetsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws ApiException {
+  public ApiResponse<CallableTimeSetEntityListing> getOutboundCallabletimesetsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1394,7 +1395,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CallableTimeSetEntityListing getOutboundCallabletimesets(GetOutboundCallabletimesetsRequest request) throws ApiException {
+  public CallableTimeSetEntityListing getOutboundCallabletimesets(GetOutboundCallabletimesetsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallableTimeSetEntityListing>() {});
   }
 
@@ -1404,7 +1405,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallableTimeSetEntityListing> getOutboundCallabletimesets(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CallableTimeSetEntityListing> getOutboundCallabletimesets(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CallableTimeSetEntityListing>invokeAPIVerbose(request, new TypeReference<CallableTimeSetEntityListing>() {});
   }
 
@@ -1415,7 +1416,7 @@ public class OutboundApi {
    * @return ResponseSet
    * @throws ApiException if fails to make API call
    */
-  public ResponseSet getOutboundCallanalysisresponseset(String callAnalysisSetId) throws ApiException {
+  public ResponseSet getOutboundCallanalysisresponseset(String callAnalysisSetId) throws IOException, ApiException {
     return getOutboundCallanalysisresponsesetWithHttpInfo(callAnalysisSetId).getBody();
   }
 
@@ -1426,12 +1427,12 @@ public class OutboundApi {
    * @return ResponseSet
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ResponseSet> getOutboundCallanalysisresponsesetWithHttpInfo(String callAnalysisSetId) throws ApiException {
+  public ApiResponse<ResponseSet> getOutboundCallanalysisresponsesetWithHttpInfo(String callAnalysisSetId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'callAnalysisSetId' is set
     if (callAnalysisSetId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callAnalysisSetId' when calling getOutboundCallanalysisresponseset");
+      throw new IllegalArgumentException("Missing the required parameter 'callAnalysisSetId' when calling getOutboundCallanalysisresponseset");
     }
     
     // create path and map variables
@@ -1467,7 +1468,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ResponseSet getOutboundCallanalysisresponseset(GetOutboundCallanalysisresponsesetRequest request) throws ApiException {
+  public ResponseSet getOutboundCallanalysisresponseset(GetOutboundCallanalysisresponsesetRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ResponseSet>() {});
   }
 
@@ -1477,7 +1478,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ResponseSet> getOutboundCallanalysisresponseset(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ResponseSet> getOutboundCallanalysisresponseset(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ResponseSet>invokeAPIVerbose(request, new TypeReference<ResponseSet>() {});
   }
 
@@ -1493,7 +1494,7 @@ public class OutboundApi {
    * @return ResponseSetEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ResponseSetEntityListing getOutboundCallanalysisresponsesets(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws ApiException {
+  public ResponseSetEntityListing getOutboundCallanalysisresponsesets(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
     return getOutboundCallanalysisresponsesetsWithHttpInfo(pageSize, pageNumber, filterType, name, sortBy, sortOrder).getBody();
   }
 
@@ -1509,7 +1510,7 @@ public class OutboundApi {
    * @return ResponseSetEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ResponseSetEntityListing> getOutboundCallanalysisresponsesetsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws ApiException {
+  public ApiResponse<ResponseSetEntityListing> getOutboundCallanalysisresponsesetsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1550,7 +1551,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ResponseSetEntityListing getOutboundCallanalysisresponsesets(GetOutboundCallanalysisresponsesetsRequest request) throws ApiException {
+  public ResponseSetEntityListing getOutboundCallanalysisresponsesets(GetOutboundCallanalysisresponsesetsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ResponseSetEntityListing>() {});
   }
 
@@ -1560,7 +1561,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ResponseSetEntityListing> getOutboundCallanalysisresponsesets(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ResponseSetEntityListing> getOutboundCallanalysisresponsesets(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ResponseSetEntityListing>invokeAPIVerbose(request, new TypeReference<ResponseSetEntityListing>() {});
   }
 
@@ -1571,7 +1572,7 @@ public class OutboundApi {
    * @return Campaign
    * @throws ApiException if fails to make API call
    */
-  public Campaign getOutboundCampaign(String campaignId) throws ApiException {
+  public Campaign getOutboundCampaign(String campaignId) throws IOException, ApiException {
     return getOutboundCampaignWithHttpInfo(campaignId).getBody();
   }
 
@@ -1582,12 +1583,12 @@ public class OutboundApi {
    * @return Campaign
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Campaign> getOutboundCampaignWithHttpInfo(String campaignId) throws ApiException {
+  public ApiResponse<Campaign> getOutboundCampaignWithHttpInfo(String campaignId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'campaignId' is set
     if (campaignId == null) {
-      throw new ApiException(400, "Missing the required parameter 'campaignId' when calling getOutboundCampaign");
+      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling getOutboundCampaign");
     }
     
     // create path and map variables
@@ -1623,7 +1624,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Campaign getOutboundCampaign(GetOutboundCampaignRequest request) throws ApiException {
+  public Campaign getOutboundCampaign(GetOutboundCampaignRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Campaign>() {});
   }
 
@@ -1633,7 +1634,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Campaign> getOutboundCampaign(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Campaign> getOutboundCampaign(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Campaign>invokeAPIVerbose(request, new TypeReference<Campaign>() {});
   }
 
@@ -1644,7 +1645,7 @@ public class OutboundApi {
    * @return CampaignDiagnostics
    * @throws ApiException if fails to make API call
    */
-  public CampaignDiagnostics getOutboundCampaignDiagnostics(String campaignId) throws ApiException {
+  public CampaignDiagnostics getOutboundCampaignDiagnostics(String campaignId) throws IOException, ApiException {
     return getOutboundCampaignDiagnosticsWithHttpInfo(campaignId).getBody();
   }
 
@@ -1655,12 +1656,12 @@ public class OutboundApi {
    * @return CampaignDiagnostics
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignDiagnostics> getOutboundCampaignDiagnosticsWithHttpInfo(String campaignId) throws ApiException {
+  public ApiResponse<CampaignDiagnostics> getOutboundCampaignDiagnosticsWithHttpInfo(String campaignId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'campaignId' is set
     if (campaignId == null) {
-      throw new ApiException(400, "Missing the required parameter 'campaignId' when calling getOutboundCampaignDiagnostics");
+      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling getOutboundCampaignDiagnostics");
     }
     
     // create path and map variables
@@ -1696,7 +1697,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CampaignDiagnostics getOutboundCampaignDiagnostics(GetOutboundCampaignDiagnosticsRequest request) throws ApiException {
+  public CampaignDiagnostics getOutboundCampaignDiagnostics(GetOutboundCampaignDiagnosticsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignDiagnostics>() {});
   }
 
@@ -1706,7 +1707,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignDiagnostics> getOutboundCampaignDiagnostics(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CampaignDiagnostics> getOutboundCampaignDiagnostics(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CampaignDiagnostics>invokeAPIVerbose(request, new TypeReference<CampaignDiagnostics>() {});
   }
 
@@ -1717,7 +1718,7 @@ public class OutboundApi {
    * @return CampaignInteractions
    * @throws ApiException if fails to make API call
    */
-  public CampaignInteractions getOutboundCampaignInteractions(String campaignId) throws ApiException {
+  public CampaignInteractions getOutboundCampaignInteractions(String campaignId) throws IOException, ApiException {
     return getOutboundCampaignInteractionsWithHttpInfo(campaignId).getBody();
   }
 
@@ -1728,12 +1729,12 @@ public class OutboundApi {
    * @return CampaignInteractions
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignInteractions> getOutboundCampaignInteractionsWithHttpInfo(String campaignId) throws ApiException {
+  public ApiResponse<CampaignInteractions> getOutboundCampaignInteractionsWithHttpInfo(String campaignId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'campaignId' is set
     if (campaignId == null) {
-      throw new ApiException(400, "Missing the required parameter 'campaignId' when calling getOutboundCampaignInteractions");
+      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling getOutboundCampaignInteractions");
     }
     
     // create path and map variables
@@ -1769,7 +1770,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CampaignInteractions getOutboundCampaignInteractions(GetOutboundCampaignInteractionsRequest request) throws ApiException {
+  public CampaignInteractions getOutboundCampaignInteractions(GetOutboundCampaignInteractionsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignInteractions>() {});
   }
 
@@ -1779,7 +1780,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignInteractions> getOutboundCampaignInteractions(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CampaignInteractions> getOutboundCampaignInteractions(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CampaignInteractions>invokeAPIVerbose(request, new TypeReference<CampaignInteractions>() {});
   }
 
@@ -1790,7 +1791,7 @@ public class OutboundApi {
    * @return CampaignProgress
    * @throws ApiException if fails to make API call
    */
-  public CampaignProgress getOutboundCampaignProgress(String campaignId) throws ApiException {
+  public CampaignProgress getOutboundCampaignProgress(String campaignId) throws IOException, ApiException {
     return getOutboundCampaignProgressWithHttpInfo(campaignId).getBody();
   }
 
@@ -1801,12 +1802,12 @@ public class OutboundApi {
    * @return CampaignProgress
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignProgress> getOutboundCampaignProgressWithHttpInfo(String campaignId) throws ApiException {
+  public ApiResponse<CampaignProgress> getOutboundCampaignProgressWithHttpInfo(String campaignId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'campaignId' is set
     if (campaignId == null) {
-      throw new ApiException(400, "Missing the required parameter 'campaignId' when calling getOutboundCampaignProgress");
+      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling getOutboundCampaignProgress");
     }
     
     // create path and map variables
@@ -1842,7 +1843,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CampaignProgress getOutboundCampaignProgress(GetOutboundCampaignProgressRequest request) throws ApiException {
+  public CampaignProgress getOutboundCampaignProgress(GetOutboundCampaignProgressRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignProgress>() {});
   }
 
@@ -1852,7 +1853,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignProgress> getOutboundCampaignProgress(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CampaignProgress> getOutboundCampaignProgress(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CampaignProgress>invokeAPIVerbose(request, new TypeReference<CampaignProgress>() {});
   }
 
@@ -1863,7 +1864,7 @@ public class OutboundApi {
    * @return CampaignStats
    * @throws ApiException if fails to make API call
    */
-  public CampaignStats getOutboundCampaignStats(String campaignId) throws ApiException {
+  public CampaignStats getOutboundCampaignStats(String campaignId) throws IOException, ApiException {
     return getOutboundCampaignStatsWithHttpInfo(campaignId).getBody();
   }
 
@@ -1874,12 +1875,12 @@ public class OutboundApi {
    * @return CampaignStats
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignStats> getOutboundCampaignStatsWithHttpInfo(String campaignId) throws ApiException {
+  public ApiResponse<CampaignStats> getOutboundCampaignStatsWithHttpInfo(String campaignId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'campaignId' is set
     if (campaignId == null) {
-      throw new ApiException(400, "Missing the required parameter 'campaignId' when calling getOutboundCampaignStats");
+      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling getOutboundCampaignStats");
     }
     
     // create path and map variables
@@ -1915,7 +1916,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CampaignStats getOutboundCampaignStats(GetOutboundCampaignStatsRequest request) throws ApiException {
+  public CampaignStats getOutboundCampaignStats(GetOutboundCampaignStatsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignStats>() {});
   }
 
@@ -1925,7 +1926,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignStats> getOutboundCampaignStats(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CampaignStats> getOutboundCampaignStats(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CampaignStats>invokeAPIVerbose(request, new TypeReference<CampaignStats>() {});
   }
 
@@ -1936,7 +1937,7 @@ public class OutboundApi {
    * @return CampaignRule
    * @throws ApiException if fails to make API call
    */
-  public CampaignRule getOutboundCampaignrule(String campaignRuleId) throws ApiException {
+  public CampaignRule getOutboundCampaignrule(String campaignRuleId) throws IOException, ApiException {
     return getOutboundCampaignruleWithHttpInfo(campaignRuleId).getBody();
   }
 
@@ -1947,12 +1948,12 @@ public class OutboundApi {
    * @return CampaignRule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignRule> getOutboundCampaignruleWithHttpInfo(String campaignRuleId) throws ApiException {
+  public ApiResponse<CampaignRule> getOutboundCampaignruleWithHttpInfo(String campaignRuleId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'campaignRuleId' is set
     if (campaignRuleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'campaignRuleId' when calling getOutboundCampaignrule");
+      throw new IllegalArgumentException("Missing the required parameter 'campaignRuleId' when calling getOutboundCampaignrule");
     }
     
     // create path and map variables
@@ -1988,7 +1989,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CampaignRule getOutboundCampaignrule(GetOutboundCampaignruleRequest request) throws ApiException {
+  public CampaignRule getOutboundCampaignrule(GetOutboundCampaignruleRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignRule>() {});
   }
 
@@ -1998,7 +1999,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignRule> getOutboundCampaignrule(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CampaignRule> getOutboundCampaignrule(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CampaignRule>invokeAPIVerbose(request, new TypeReference<CampaignRule>() {});
   }
 
@@ -2014,7 +2015,7 @@ public class OutboundApi {
    * @return CampaignRuleEntityListing
    * @throws ApiException if fails to make API call
    */
-  public CampaignRuleEntityListing getOutboundCampaignrules(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws ApiException {
+  public CampaignRuleEntityListing getOutboundCampaignrules(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
     return getOutboundCampaignrulesWithHttpInfo(pageSize, pageNumber, filterType, name, sortBy, sortOrder).getBody();
   }
 
@@ -2030,7 +2031,7 @@ public class OutboundApi {
    * @return CampaignRuleEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignRuleEntityListing> getOutboundCampaignrulesWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws ApiException {
+  public ApiResponse<CampaignRuleEntityListing> getOutboundCampaignrulesWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -2071,7 +2072,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CampaignRuleEntityListing getOutboundCampaignrules(GetOutboundCampaignrulesRequest request) throws ApiException {
+  public CampaignRuleEntityListing getOutboundCampaignrules(GetOutboundCampaignrulesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignRuleEntityListing>() {});
   }
 
@@ -2081,7 +2082,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignRuleEntityListing> getOutboundCampaignrules(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CampaignRuleEntityListing> getOutboundCampaignrules(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CampaignRuleEntityListing>invokeAPIVerbose(request, new TypeReference<CampaignRuleEntityListing>() {});
   }
 
@@ -2102,7 +2103,7 @@ public class OutboundApi {
    * @return CampaignEntityListing
    * @throws ApiException if fails to make API call
    */
-  public CampaignEntityListing getOutboundCampaigns(Integer pageSize, Integer pageNumber, String filterType, String name, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, String sortBy, String sortOrder) throws ApiException {
+  public CampaignEntityListing getOutboundCampaigns(Integer pageSize, Integer pageNumber, String filterType, String name, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, String sortBy, String sortOrder) throws IOException, ApiException {
     return getOutboundCampaignsWithHttpInfo(pageSize, pageNumber, filterType, name, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, sortBy, sortOrder).getBody();
   }
 
@@ -2123,7 +2124,7 @@ public class OutboundApi {
    * @return CampaignEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignEntityListing> getOutboundCampaignsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, String sortBy, String sortOrder) throws ApiException {
+  public ApiResponse<CampaignEntityListing> getOutboundCampaignsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, String sortBy, String sortOrder) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -2169,7 +2170,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CampaignEntityListing getOutboundCampaigns(GetOutboundCampaignsRequest request) throws ApiException {
+  public CampaignEntityListing getOutboundCampaigns(GetOutboundCampaignsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignEntityListing>() {});
   }
 
@@ -2179,7 +2180,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignEntityListing> getOutboundCampaigns(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CampaignEntityListing> getOutboundCampaigns(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CampaignEntityListing>invokeAPIVerbose(request, new TypeReference<CampaignEntityListing>() {});
   }
 
@@ -2192,7 +2193,7 @@ public class OutboundApi {
    * @return ContactList
    * @throws ApiException if fails to make API call
    */
-  public ContactList getOutboundContactlist(String contactListId, Boolean includeImportStatus, Boolean includeSize) throws ApiException {
+  public ContactList getOutboundContactlist(String contactListId, Boolean includeImportStatus, Boolean includeSize) throws IOException, ApiException {
     return getOutboundContactlistWithHttpInfo(contactListId, includeImportStatus, includeSize).getBody();
   }
 
@@ -2205,12 +2206,12 @@ public class OutboundApi {
    * @return ContactList
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ContactList> getOutboundContactlistWithHttpInfo(String contactListId, Boolean includeImportStatus, Boolean includeSize) throws ApiException {
+  public ApiResponse<ContactList> getOutboundContactlistWithHttpInfo(String contactListId, Boolean includeImportStatus, Boolean includeSize) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'contactListId' is set
     if (contactListId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactListId' when calling getOutboundContactlist");
+      throw new IllegalArgumentException("Missing the required parameter 'contactListId' when calling getOutboundContactlist");
     }
     
     // create path and map variables
@@ -2248,7 +2249,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ContactList getOutboundContactlist(GetOutboundContactlistRequest request) throws ApiException {
+  public ContactList getOutboundContactlist(GetOutboundContactlistRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ContactList>() {});
   }
 
@@ -2258,7 +2259,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ContactList> getOutboundContactlist(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ContactList> getOutboundContactlist(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ContactList>invokeAPIVerbose(request, new TypeReference<ContactList>() {});
   }
 
@@ -2270,7 +2271,7 @@ public class OutboundApi {
    * @return DialerContact
    * @throws ApiException if fails to make API call
    */
-  public DialerContact getOutboundContactlistContact(String contactListId, String contactId) throws ApiException {
+  public DialerContact getOutboundContactlistContact(String contactListId, String contactId) throws IOException, ApiException {
     return getOutboundContactlistContactWithHttpInfo(contactListId, contactId).getBody();
   }
 
@@ -2282,17 +2283,17 @@ public class OutboundApi {
    * @return DialerContact
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DialerContact> getOutboundContactlistContactWithHttpInfo(String contactListId, String contactId) throws ApiException {
+  public ApiResponse<DialerContact> getOutboundContactlistContactWithHttpInfo(String contactListId, String contactId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'contactListId' is set
     if (contactListId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactListId' when calling getOutboundContactlistContact");
+      throw new IllegalArgumentException("Missing the required parameter 'contactListId' when calling getOutboundContactlistContact");
     }
     
     // verify the required parameter 'contactId' is set
     if (contactId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactId' when calling getOutboundContactlistContact");
+      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling getOutboundContactlistContact");
     }
     
     // create path and map variables
@@ -2329,7 +2330,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DialerContact getOutboundContactlistContact(GetOutboundContactlistContactRequest request) throws ApiException {
+  public DialerContact getOutboundContactlistContact(GetOutboundContactlistContactRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DialerContact>() {});
   }
 
@@ -2339,7 +2340,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DialerContact> getOutboundContactlistContact(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<DialerContact> getOutboundContactlistContact(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<DialerContact>invokeAPIVerbose(request, new TypeReference<DialerContact>() {});
   }
 
@@ -2351,7 +2352,7 @@ public class OutboundApi {
    * @return ExportUri
    * @throws ApiException if fails to make API call
    */
-  public ExportUri getOutboundContactlistExport(String contactListId, String download) throws ApiException {
+  public ExportUri getOutboundContactlistExport(String contactListId, String download) throws IOException, ApiException {
     return getOutboundContactlistExportWithHttpInfo(contactListId, download).getBody();
   }
 
@@ -2363,12 +2364,12 @@ public class OutboundApi {
    * @return ExportUri
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExportUri> getOutboundContactlistExportWithHttpInfo(String contactListId, String download) throws ApiException {
+  public ApiResponse<ExportUri> getOutboundContactlistExportWithHttpInfo(String contactListId, String download) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'contactListId' is set
     if (contactListId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactListId' when calling getOutboundContactlistExport");
+      throw new IllegalArgumentException("Missing the required parameter 'contactListId' when calling getOutboundContactlistExport");
     }
     
     // create path and map variables
@@ -2405,7 +2406,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ExportUri getOutboundContactlistExport(GetOutboundContactlistExportRequest request) throws ApiException {
+  public ExportUri getOutboundContactlistExport(GetOutboundContactlistExportRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExportUri>() {});
   }
 
@@ -2415,7 +2416,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExportUri> getOutboundContactlistExport(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ExportUri> getOutboundContactlistExport(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ExportUri>invokeAPIVerbose(request, new TypeReference<ExportUri>() {});
   }
 
@@ -2426,7 +2427,7 @@ public class OutboundApi {
    * @return ImportStatus
    * @throws ApiException if fails to make API call
    */
-  public ImportStatus getOutboundContactlistImportstatus(String contactListId) throws ApiException {
+  public ImportStatus getOutboundContactlistImportstatus(String contactListId) throws IOException, ApiException {
     return getOutboundContactlistImportstatusWithHttpInfo(contactListId).getBody();
   }
 
@@ -2437,12 +2438,12 @@ public class OutboundApi {
    * @return ImportStatus
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ImportStatus> getOutboundContactlistImportstatusWithHttpInfo(String contactListId) throws ApiException {
+  public ApiResponse<ImportStatus> getOutboundContactlistImportstatusWithHttpInfo(String contactListId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'contactListId' is set
     if (contactListId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactListId' when calling getOutboundContactlistImportstatus");
+      throw new IllegalArgumentException("Missing the required parameter 'contactListId' when calling getOutboundContactlistImportstatus");
     }
     
     // create path and map variables
@@ -2478,7 +2479,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ImportStatus getOutboundContactlistImportstatus(GetOutboundContactlistImportstatusRequest request) throws ApiException {
+  public ImportStatus getOutboundContactlistImportstatus(GetOutboundContactlistImportstatusRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ImportStatus>() {});
   }
 
@@ -2488,7 +2489,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ImportStatus> getOutboundContactlistImportstatus(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ImportStatus> getOutboundContactlistImportstatus(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ImportStatus>invokeAPIVerbose(request, new TypeReference<ImportStatus>() {});
   }
 
@@ -2506,7 +2507,7 @@ public class OutboundApi {
    * @return ContactListEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ContactListEntityListing getOutboundContactlists(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws ApiException {
+  public ContactListEntityListing getOutboundContactlists(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
     return getOutboundContactlistsWithHttpInfo(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, sortBy, sortOrder).getBody();
   }
 
@@ -2524,7 +2525,7 @@ public class OutboundApi {
    * @return ContactListEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ContactListEntityListing> getOutboundContactlistsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws ApiException {
+  public ApiResponse<ContactListEntityListing> getOutboundContactlistsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -2567,7 +2568,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ContactListEntityListing getOutboundContactlists(GetOutboundContactlistsRequest request) throws ApiException {
+  public ContactListEntityListing getOutboundContactlists(GetOutboundContactlistsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ContactListEntityListing>() {});
   }
 
@@ -2577,7 +2578,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ContactListEntityListing> getOutboundContactlists(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ContactListEntityListing> getOutboundContactlists(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ContactListEntityListing>invokeAPIVerbose(request, new TypeReference<ContactListEntityListing>() {});
   }
 
@@ -2590,7 +2591,7 @@ public class OutboundApi {
    * @return DncList
    * @throws ApiException if fails to make API call
    */
-  public DncList getOutboundDnclist(String dncListId, Boolean includeImportStatus, Boolean includeSize) throws ApiException {
+  public DncList getOutboundDnclist(String dncListId, Boolean includeImportStatus, Boolean includeSize) throws IOException, ApiException {
     return getOutboundDnclistWithHttpInfo(dncListId, includeImportStatus, includeSize).getBody();
   }
 
@@ -2603,12 +2604,12 @@ public class OutboundApi {
    * @return DncList
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DncList> getOutboundDnclistWithHttpInfo(String dncListId, Boolean includeImportStatus, Boolean includeSize) throws ApiException {
+  public ApiResponse<DncList> getOutboundDnclistWithHttpInfo(String dncListId, Boolean includeImportStatus, Boolean includeSize) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'dncListId' is set
     if (dncListId == null) {
-      throw new ApiException(400, "Missing the required parameter 'dncListId' when calling getOutboundDnclist");
+      throw new IllegalArgumentException("Missing the required parameter 'dncListId' when calling getOutboundDnclist");
     }
     
     // create path and map variables
@@ -2646,7 +2647,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DncList getOutboundDnclist(GetOutboundDnclistRequest request) throws ApiException {
+  public DncList getOutboundDnclist(GetOutboundDnclistRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DncList>() {});
   }
 
@@ -2656,7 +2657,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DncList> getOutboundDnclist(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<DncList> getOutboundDnclist(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<DncList>invokeAPIVerbose(request, new TypeReference<DncList>() {});
   }
 
@@ -2668,7 +2669,7 @@ public class OutboundApi {
    * @return ExportUri
    * @throws ApiException if fails to make API call
    */
-  public ExportUri getOutboundDnclistExport(String dncListId, String download) throws ApiException {
+  public ExportUri getOutboundDnclistExport(String dncListId, String download) throws IOException, ApiException {
     return getOutboundDnclistExportWithHttpInfo(dncListId, download).getBody();
   }
 
@@ -2680,12 +2681,12 @@ public class OutboundApi {
    * @return ExportUri
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExportUri> getOutboundDnclistExportWithHttpInfo(String dncListId, String download) throws ApiException {
+  public ApiResponse<ExportUri> getOutboundDnclistExportWithHttpInfo(String dncListId, String download) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'dncListId' is set
     if (dncListId == null) {
-      throw new ApiException(400, "Missing the required parameter 'dncListId' when calling getOutboundDnclistExport");
+      throw new IllegalArgumentException("Missing the required parameter 'dncListId' when calling getOutboundDnclistExport");
     }
     
     // create path and map variables
@@ -2722,7 +2723,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ExportUri getOutboundDnclistExport(GetOutboundDnclistExportRequest request) throws ApiException {
+  public ExportUri getOutboundDnclistExport(GetOutboundDnclistExportRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExportUri>() {});
   }
 
@@ -2732,7 +2733,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExportUri> getOutboundDnclistExport(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ExportUri> getOutboundDnclistExport(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ExportUri>invokeAPIVerbose(request, new TypeReference<ExportUri>() {});
   }
 
@@ -2743,7 +2744,7 @@ public class OutboundApi {
    * @return ImportStatus
    * @throws ApiException if fails to make API call
    */
-  public ImportStatus getOutboundDnclistImportstatus(String dncListId) throws ApiException {
+  public ImportStatus getOutboundDnclistImportstatus(String dncListId) throws IOException, ApiException {
     return getOutboundDnclistImportstatusWithHttpInfo(dncListId).getBody();
   }
 
@@ -2754,12 +2755,12 @@ public class OutboundApi {
    * @return ImportStatus
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ImportStatus> getOutboundDnclistImportstatusWithHttpInfo(String dncListId) throws ApiException {
+  public ApiResponse<ImportStatus> getOutboundDnclistImportstatusWithHttpInfo(String dncListId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'dncListId' is set
     if (dncListId == null) {
-      throw new ApiException(400, "Missing the required parameter 'dncListId' when calling getOutboundDnclistImportstatus");
+      throw new IllegalArgumentException("Missing the required parameter 'dncListId' when calling getOutboundDnclistImportstatus");
     }
     
     // create path and map variables
@@ -2795,7 +2796,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ImportStatus getOutboundDnclistImportstatus(GetOutboundDnclistImportstatusRequest request) throws ApiException {
+  public ImportStatus getOutboundDnclistImportstatus(GetOutboundDnclistImportstatusRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ImportStatus>() {});
   }
 
@@ -2805,7 +2806,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ImportStatus> getOutboundDnclistImportstatus(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ImportStatus> getOutboundDnclistImportstatus(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ImportStatus>invokeAPIVerbose(request, new TypeReference<ImportStatus>() {});
   }
 
@@ -2823,7 +2824,7 @@ public class OutboundApi {
    * @return DncListEntityListing
    * @throws ApiException if fails to make API call
    */
-  public DncListEntityListing getOutboundDnclists(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws ApiException {
+  public DncListEntityListing getOutboundDnclists(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
     return getOutboundDnclistsWithHttpInfo(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, sortBy, sortOrder).getBody();
   }
 
@@ -2841,7 +2842,7 @@ public class OutboundApi {
    * @return DncListEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DncListEntityListing> getOutboundDnclistsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws ApiException {
+  public ApiResponse<DncListEntityListing> getOutboundDnclistsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -2884,7 +2885,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DncListEntityListing getOutboundDnclists(GetOutboundDnclistsRequest request) throws ApiException {
+  public DncListEntityListing getOutboundDnclists(GetOutboundDnclistsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DncListEntityListing>() {});
   }
 
@@ -2894,7 +2895,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DncListEntityListing> getOutboundDnclists(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<DncListEntityListing> getOutboundDnclists(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<DncListEntityListing>invokeAPIVerbose(request, new TypeReference<DncListEntityListing>() {});
   }
 
@@ -2905,7 +2906,7 @@ public class OutboundApi {
    * @return RuleSet
    * @throws ApiException if fails to make API call
    */
-  public RuleSet getOutboundRuleset(String ruleSetId) throws ApiException {
+  public RuleSet getOutboundRuleset(String ruleSetId) throws IOException, ApiException {
     return getOutboundRulesetWithHttpInfo(ruleSetId).getBody();
   }
 
@@ -2916,12 +2917,12 @@ public class OutboundApi {
    * @return RuleSet
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RuleSet> getOutboundRulesetWithHttpInfo(String ruleSetId) throws ApiException {
+  public ApiResponse<RuleSet> getOutboundRulesetWithHttpInfo(String ruleSetId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'ruleSetId' is set
     if (ruleSetId == null) {
-      throw new ApiException(400, "Missing the required parameter 'ruleSetId' when calling getOutboundRuleset");
+      throw new IllegalArgumentException("Missing the required parameter 'ruleSetId' when calling getOutboundRuleset");
     }
     
     // create path and map variables
@@ -2957,7 +2958,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public RuleSet getOutboundRuleset(GetOutboundRulesetRequest request) throws ApiException {
+  public RuleSet getOutboundRuleset(GetOutboundRulesetRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RuleSet>() {});
   }
 
@@ -2967,7 +2968,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RuleSet> getOutboundRuleset(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<RuleSet> getOutboundRuleset(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<RuleSet>invokeAPIVerbose(request, new TypeReference<RuleSet>() {});
   }
 
@@ -2983,7 +2984,7 @@ public class OutboundApi {
    * @return RuleSetEntityListing
    * @throws ApiException if fails to make API call
    */
-  public RuleSetEntityListing getOutboundRulesets(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws ApiException {
+  public RuleSetEntityListing getOutboundRulesets(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
     return getOutboundRulesetsWithHttpInfo(pageSize, pageNumber, filterType, name, sortBy, sortOrder).getBody();
   }
 
@@ -2999,7 +3000,7 @@ public class OutboundApi {
    * @return RuleSetEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RuleSetEntityListing> getOutboundRulesetsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws ApiException {
+  public ApiResponse<RuleSetEntityListing> getOutboundRulesetsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -3040,7 +3041,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public RuleSetEntityListing getOutboundRulesets(GetOutboundRulesetsRequest request) throws ApiException {
+  public RuleSetEntityListing getOutboundRulesets(GetOutboundRulesetsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RuleSetEntityListing>() {});
   }
 
@@ -3050,7 +3051,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RuleSetEntityListing> getOutboundRulesets(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<RuleSetEntityListing> getOutboundRulesets(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<RuleSetEntityListing>invokeAPIVerbose(request, new TypeReference<RuleSetEntityListing>() {});
   }
 
@@ -3061,7 +3062,7 @@ public class OutboundApi {
    * @return CampaignSchedule
    * @throws ApiException if fails to make API call
    */
-  public CampaignSchedule getOutboundSchedulesCampaign(String campaignId) throws ApiException {
+  public CampaignSchedule getOutboundSchedulesCampaign(String campaignId) throws IOException, ApiException {
     return getOutboundSchedulesCampaignWithHttpInfo(campaignId).getBody();
   }
 
@@ -3072,12 +3073,12 @@ public class OutboundApi {
    * @return CampaignSchedule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignSchedule> getOutboundSchedulesCampaignWithHttpInfo(String campaignId) throws ApiException {
+  public ApiResponse<CampaignSchedule> getOutboundSchedulesCampaignWithHttpInfo(String campaignId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'campaignId' is set
     if (campaignId == null) {
-      throw new ApiException(400, "Missing the required parameter 'campaignId' when calling getOutboundSchedulesCampaign");
+      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling getOutboundSchedulesCampaign");
     }
     
     // create path and map variables
@@ -3113,7 +3114,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CampaignSchedule getOutboundSchedulesCampaign(GetOutboundSchedulesCampaignRequest request) throws ApiException {
+  public CampaignSchedule getOutboundSchedulesCampaign(GetOutboundSchedulesCampaignRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignSchedule>() {});
   }
 
@@ -3123,7 +3124,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignSchedule> getOutboundSchedulesCampaign(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CampaignSchedule> getOutboundSchedulesCampaign(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CampaignSchedule>invokeAPIVerbose(request, new TypeReference<CampaignSchedule>() {});
   }
 
@@ -3133,7 +3134,7 @@ public class OutboundApi {
    * @return List<CampaignSchedule>
    * @throws ApiException if fails to make API call
    */
-  public List<CampaignSchedule> getOutboundSchedulesCampaigns() throws ApiException {
+  public List<CampaignSchedule> getOutboundSchedulesCampaigns() throws IOException, ApiException {
     return getOutboundSchedulesCampaignsWithHttpInfo().getBody();
   }
 
@@ -3143,7 +3144,7 @@ public class OutboundApi {
    * @return List<CampaignSchedule>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<CampaignSchedule>> getOutboundSchedulesCampaignsWithHttpInfo() throws ApiException {
+  public ApiResponse<List<CampaignSchedule>> getOutboundSchedulesCampaignsWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -3178,7 +3179,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<CampaignSchedule> getOutboundSchedulesCampaigns(GetOutboundSchedulesCampaignsRequest request) throws ApiException {
+  public List<CampaignSchedule> getOutboundSchedulesCampaigns(GetOutboundSchedulesCampaignsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<CampaignSchedule>>() {});
   }
 
@@ -3188,7 +3189,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<CampaignSchedule>> getOutboundSchedulesCampaigns(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<CampaignSchedule>> getOutboundSchedulesCampaigns(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<CampaignSchedule>>invokeAPIVerbose(request, new TypeReference<List<CampaignSchedule>>() {});
   }
 
@@ -3199,7 +3200,7 @@ public class OutboundApi {
    * @return SequenceSchedule
    * @throws ApiException if fails to make API call
    */
-  public SequenceSchedule getOutboundSchedulesSequence(String sequenceId) throws ApiException {
+  public SequenceSchedule getOutboundSchedulesSequence(String sequenceId) throws IOException, ApiException {
     return getOutboundSchedulesSequenceWithHttpInfo(sequenceId).getBody();
   }
 
@@ -3210,12 +3211,12 @@ public class OutboundApi {
    * @return SequenceSchedule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SequenceSchedule> getOutboundSchedulesSequenceWithHttpInfo(String sequenceId) throws ApiException {
+  public ApiResponse<SequenceSchedule> getOutboundSchedulesSequenceWithHttpInfo(String sequenceId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'sequenceId' is set
     if (sequenceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'sequenceId' when calling getOutboundSchedulesSequence");
+      throw new IllegalArgumentException("Missing the required parameter 'sequenceId' when calling getOutboundSchedulesSequence");
     }
     
     // create path and map variables
@@ -3251,7 +3252,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public SequenceSchedule getOutboundSchedulesSequence(GetOutboundSchedulesSequenceRequest request) throws ApiException {
+  public SequenceSchedule getOutboundSchedulesSequence(GetOutboundSchedulesSequenceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SequenceSchedule>() {});
   }
 
@@ -3261,7 +3262,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SequenceSchedule> getOutboundSchedulesSequence(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<SequenceSchedule> getOutboundSchedulesSequence(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<SequenceSchedule>invokeAPIVerbose(request, new TypeReference<SequenceSchedule>() {});
   }
 
@@ -3271,7 +3272,7 @@ public class OutboundApi {
    * @return List<SequenceSchedule>
    * @throws ApiException if fails to make API call
    */
-  public List<SequenceSchedule> getOutboundSchedulesSequences() throws ApiException {
+  public List<SequenceSchedule> getOutboundSchedulesSequences() throws IOException, ApiException {
     return getOutboundSchedulesSequencesWithHttpInfo().getBody();
   }
 
@@ -3281,7 +3282,7 @@ public class OutboundApi {
    * @return List<SequenceSchedule>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<SequenceSchedule>> getOutboundSchedulesSequencesWithHttpInfo() throws ApiException {
+  public ApiResponse<List<SequenceSchedule>> getOutboundSchedulesSequencesWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -3316,7 +3317,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<SequenceSchedule> getOutboundSchedulesSequences(GetOutboundSchedulesSequencesRequest request) throws ApiException {
+  public List<SequenceSchedule> getOutboundSchedulesSequences(GetOutboundSchedulesSequencesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<SequenceSchedule>>() {});
   }
 
@@ -3326,7 +3327,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<SequenceSchedule>> getOutboundSchedulesSequences(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<SequenceSchedule>> getOutboundSchedulesSequences(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<SequenceSchedule>>invokeAPIVerbose(request, new TypeReference<List<SequenceSchedule>>() {});
   }
 
@@ -3337,7 +3338,7 @@ public class OutboundApi {
    * @return CampaignSequence
    * @throws ApiException if fails to make API call
    */
-  public CampaignSequence getOutboundSequence(String sequenceId) throws ApiException {
+  public CampaignSequence getOutboundSequence(String sequenceId) throws IOException, ApiException {
     return getOutboundSequenceWithHttpInfo(sequenceId).getBody();
   }
 
@@ -3348,12 +3349,12 @@ public class OutboundApi {
    * @return CampaignSequence
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignSequence> getOutboundSequenceWithHttpInfo(String sequenceId) throws ApiException {
+  public ApiResponse<CampaignSequence> getOutboundSequenceWithHttpInfo(String sequenceId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'sequenceId' is set
     if (sequenceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'sequenceId' when calling getOutboundSequence");
+      throw new IllegalArgumentException("Missing the required parameter 'sequenceId' when calling getOutboundSequence");
     }
     
     // create path and map variables
@@ -3389,7 +3390,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CampaignSequence getOutboundSequence(GetOutboundSequenceRequest request) throws ApiException {
+  public CampaignSequence getOutboundSequence(GetOutboundSequenceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignSequence>() {});
   }
 
@@ -3399,7 +3400,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignSequence> getOutboundSequence(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CampaignSequence> getOutboundSequence(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CampaignSequence>invokeAPIVerbose(request, new TypeReference<CampaignSequence>() {});
   }
 
@@ -3415,7 +3416,7 @@ public class OutboundApi {
    * @return CampaignSequenceEntityListing
    * @throws ApiException if fails to make API call
    */
-  public CampaignSequenceEntityListing getOutboundSequences(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws ApiException {
+  public CampaignSequenceEntityListing getOutboundSequences(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
     return getOutboundSequencesWithHttpInfo(pageSize, pageNumber, filterType, name, sortBy, sortOrder).getBody();
   }
 
@@ -3431,7 +3432,7 @@ public class OutboundApi {
    * @return CampaignSequenceEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignSequenceEntityListing> getOutboundSequencesWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws ApiException {
+  public ApiResponse<CampaignSequenceEntityListing> getOutboundSequencesWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -3472,7 +3473,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CampaignSequenceEntityListing getOutboundSequences(GetOutboundSequencesRequest request) throws ApiException {
+  public CampaignSequenceEntityListing getOutboundSequences(GetOutboundSequencesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignSequenceEntityListing>() {});
   }
 
@@ -3482,7 +3483,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignSequenceEntityListing> getOutboundSequences(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CampaignSequenceEntityListing> getOutboundSequences(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CampaignSequenceEntityListing>invokeAPIVerbose(request, new TypeReference<CampaignSequenceEntityListing>() {});
   }
 
@@ -3492,7 +3493,7 @@ public class OutboundApi {
    * @return WrapUpCodeMapping
    * @throws ApiException if fails to make API call
    */
-  public WrapUpCodeMapping getOutboundWrapupcodemappings() throws ApiException {
+  public WrapUpCodeMapping getOutboundWrapupcodemappings() throws IOException, ApiException {
     return getOutboundWrapupcodemappingsWithHttpInfo().getBody();
   }
 
@@ -3502,7 +3503,7 @@ public class OutboundApi {
    * @return WrapUpCodeMapping
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WrapUpCodeMapping> getOutboundWrapupcodemappingsWithHttpInfo() throws ApiException {
+  public ApiResponse<WrapUpCodeMapping> getOutboundWrapupcodemappingsWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -3537,7 +3538,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public WrapUpCodeMapping getOutboundWrapupcodemappings(GetOutboundWrapupcodemappingsRequest request) throws ApiException {
+  public WrapUpCodeMapping getOutboundWrapupcodemappings(GetOutboundWrapupcodemappingsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WrapUpCodeMapping>() {});
   }
 
@@ -3547,7 +3548,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WrapUpCodeMapping> getOutboundWrapupcodemappings(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<WrapUpCodeMapping> getOutboundWrapupcodemappings(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<WrapUpCodeMapping>invokeAPIVerbose(request, new TypeReference<WrapUpCodeMapping>() {});
   }
 
@@ -3558,7 +3559,7 @@ public class OutboundApi {
    * @return AttemptLimits
    * @throws ApiException if fails to make API call
    */
-  public AttemptLimits postOutboundAttemptlimits(AttemptLimits body) throws ApiException {
+  public AttemptLimits postOutboundAttemptlimits(AttemptLimits body) throws IOException, ApiException {
     return postOutboundAttemptlimitsWithHttpInfo(body).getBody();
   }
 
@@ -3569,12 +3570,12 @@ public class OutboundApi {
    * @return AttemptLimits
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AttemptLimits> postOutboundAttemptlimitsWithHttpInfo(AttemptLimits body) throws ApiException {
+  public ApiResponse<AttemptLimits> postOutboundAttemptlimitsWithHttpInfo(AttemptLimits body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postOutboundAttemptlimits");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundAttemptlimits");
     }
     
     // create path and map variables
@@ -3609,7 +3610,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public AttemptLimits postOutboundAttemptlimits(PostOutboundAttemptlimitsRequest request) throws ApiException {
+  public AttemptLimits postOutboundAttemptlimits(PostOutboundAttemptlimitsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AttemptLimits>() {});
   }
 
@@ -3619,7 +3620,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AttemptLimits> postOutboundAttemptlimits(ApiRequest<AttemptLimits> request) throws ApiException {
+  public ApiResponse<AttemptLimits> postOutboundAttemptlimits(ApiRequest<AttemptLimits> request) throws IOException, ApiException {
     return pcapiClient.<AttemptLimits>invokeAPIVerbose(request, new TypeReference<AttemptLimits>() {});
   }
 
@@ -3635,7 +3636,7 @@ public class OutboundApi {
    * @return AuditSearchResult
    * @throws ApiException if fails to make API call
    */
-  public AuditSearchResult postOutboundAudits(DialerAuditRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, Boolean facetsOnly) throws ApiException {
+  public AuditSearchResult postOutboundAudits(DialerAuditRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, Boolean facetsOnly) throws IOException, ApiException {
     return postOutboundAuditsWithHttpInfo(body, pageSize, pageNumber, sortBy, sortOrder, facetsOnly).getBody();
   }
 
@@ -3651,12 +3652,12 @@ public class OutboundApi {
    * @return AuditSearchResult
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AuditSearchResult> postOutboundAuditsWithHttpInfo(DialerAuditRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, Boolean facetsOnly) throws ApiException {
+  public ApiResponse<AuditSearchResult> postOutboundAuditsWithHttpInfo(DialerAuditRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, Boolean facetsOnly) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postOutboundAudits");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundAudits");
     }
     
     // create path and map variables
@@ -3696,7 +3697,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public AuditSearchResult postOutboundAudits(PostOutboundAuditsRequest request) throws ApiException {
+  public AuditSearchResult postOutboundAudits(PostOutboundAuditsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AuditSearchResult>() {});
   }
 
@@ -3706,7 +3707,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AuditSearchResult> postOutboundAudits(ApiRequest<DialerAuditRequest> request) throws ApiException {
+  public ApiResponse<AuditSearchResult> postOutboundAudits(ApiRequest<DialerAuditRequest> request) throws IOException, ApiException {
     return pcapiClient.<AuditSearchResult>invokeAPIVerbose(request, new TypeReference<AuditSearchResult>() {});
   }
 
@@ -3717,7 +3718,7 @@ public class OutboundApi {
    * @return CallableTimeSet
    * @throws ApiException if fails to make API call
    */
-  public CallableTimeSet postOutboundCallabletimesets(CallableTimeSet body) throws ApiException {
+  public CallableTimeSet postOutboundCallabletimesets(CallableTimeSet body) throws IOException, ApiException {
     return postOutboundCallabletimesetsWithHttpInfo(body).getBody();
   }
 
@@ -3728,12 +3729,12 @@ public class OutboundApi {
    * @return CallableTimeSet
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallableTimeSet> postOutboundCallabletimesetsWithHttpInfo(CallableTimeSet body) throws ApiException {
+  public ApiResponse<CallableTimeSet> postOutboundCallabletimesetsWithHttpInfo(CallableTimeSet body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postOutboundCallabletimesets");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundCallabletimesets");
     }
     
     // create path and map variables
@@ -3768,7 +3769,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CallableTimeSet postOutboundCallabletimesets(PostOutboundCallabletimesetsRequest request) throws ApiException {
+  public CallableTimeSet postOutboundCallabletimesets(PostOutboundCallabletimesetsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallableTimeSet>() {});
   }
 
@@ -3778,7 +3779,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallableTimeSet> postOutboundCallabletimesets(ApiRequest<CallableTimeSet> request) throws ApiException {
+  public ApiResponse<CallableTimeSet> postOutboundCallabletimesets(ApiRequest<CallableTimeSet> request) throws IOException, ApiException {
     return pcapiClient.<CallableTimeSet>invokeAPIVerbose(request, new TypeReference<CallableTimeSet>() {});
   }
 
@@ -3789,7 +3790,7 @@ public class OutboundApi {
    * @return ResponseSet
    * @throws ApiException if fails to make API call
    */
-  public ResponseSet postOutboundCallanalysisresponsesets(ResponseSet body) throws ApiException {
+  public ResponseSet postOutboundCallanalysisresponsesets(ResponseSet body) throws IOException, ApiException {
     return postOutboundCallanalysisresponsesetsWithHttpInfo(body).getBody();
   }
 
@@ -3800,12 +3801,12 @@ public class OutboundApi {
    * @return ResponseSet
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ResponseSet> postOutboundCallanalysisresponsesetsWithHttpInfo(ResponseSet body) throws ApiException {
+  public ApiResponse<ResponseSet> postOutboundCallanalysisresponsesetsWithHttpInfo(ResponseSet body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postOutboundCallanalysisresponsesets");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundCallanalysisresponsesets");
     }
     
     // create path and map variables
@@ -3840,7 +3841,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ResponseSet postOutboundCallanalysisresponsesets(PostOutboundCallanalysisresponsesetsRequest request) throws ApiException {
+  public ResponseSet postOutboundCallanalysisresponsesets(PostOutboundCallanalysisresponsesetsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ResponseSet>() {});
   }
 
@@ -3850,7 +3851,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ResponseSet> postOutboundCallanalysisresponsesets(ApiRequest<ResponseSet> request) throws ApiException {
+  public ApiResponse<ResponseSet> postOutboundCallanalysisresponsesets(ApiRequest<ResponseSet> request) throws IOException, ApiException {
     return pcapiClient.<ResponseSet>invokeAPIVerbose(request, new TypeReference<ResponseSet>() {});
   }
 
@@ -3862,7 +3863,7 @@ public class OutboundApi {
    * @return ContactCallbackRequest
    * @throws ApiException if fails to make API call
    */
-  public ContactCallbackRequest postOutboundCampaignCallbackSchedule(String campaignId, ContactCallbackRequest body) throws ApiException {
+  public ContactCallbackRequest postOutboundCampaignCallbackSchedule(String campaignId, ContactCallbackRequest body) throws IOException, ApiException {
     return postOutboundCampaignCallbackScheduleWithHttpInfo(campaignId, body).getBody();
   }
 
@@ -3874,17 +3875,17 @@ public class OutboundApi {
    * @return ContactCallbackRequest
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ContactCallbackRequest> postOutboundCampaignCallbackScheduleWithHttpInfo(String campaignId, ContactCallbackRequest body) throws ApiException {
+  public ApiResponse<ContactCallbackRequest> postOutboundCampaignCallbackScheduleWithHttpInfo(String campaignId, ContactCallbackRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'campaignId' is set
     if (campaignId == null) {
-      throw new ApiException(400, "Missing the required parameter 'campaignId' when calling postOutboundCampaignCallbackSchedule");
+      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling postOutboundCampaignCallbackSchedule");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postOutboundCampaignCallbackSchedule");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundCampaignCallbackSchedule");
     }
     
     // create path and map variables
@@ -3920,7 +3921,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ContactCallbackRequest postOutboundCampaignCallbackSchedule(PostOutboundCampaignCallbackScheduleRequest request) throws ApiException {
+  public ContactCallbackRequest postOutboundCampaignCallbackSchedule(PostOutboundCampaignCallbackScheduleRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ContactCallbackRequest>() {});
   }
 
@@ -3930,7 +3931,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ContactCallbackRequest> postOutboundCampaignCallbackSchedule(ApiRequest<ContactCallbackRequest> request) throws ApiException {
+  public ApiResponse<ContactCallbackRequest> postOutboundCampaignCallbackSchedule(ApiRequest<ContactCallbackRequest> request) throws IOException, ApiException {
     return pcapiClient.<ContactCallbackRequest>invokeAPIVerbose(request, new TypeReference<ContactCallbackRequest>() {});
   }
 
@@ -3941,7 +3942,7 @@ public class OutboundApi {
    * @return CampaignRule
    * @throws ApiException if fails to make API call
    */
-  public CampaignRule postOutboundCampaignrules(CampaignRule body) throws ApiException {
+  public CampaignRule postOutboundCampaignrules(CampaignRule body) throws IOException, ApiException {
     return postOutboundCampaignrulesWithHttpInfo(body).getBody();
   }
 
@@ -3952,12 +3953,12 @@ public class OutboundApi {
    * @return CampaignRule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignRule> postOutboundCampaignrulesWithHttpInfo(CampaignRule body) throws ApiException {
+  public ApiResponse<CampaignRule> postOutboundCampaignrulesWithHttpInfo(CampaignRule body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postOutboundCampaignrules");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundCampaignrules");
     }
     
     // create path and map variables
@@ -3992,7 +3993,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CampaignRule postOutboundCampaignrules(PostOutboundCampaignrulesRequest request) throws ApiException {
+  public CampaignRule postOutboundCampaignrules(PostOutboundCampaignrulesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignRule>() {});
   }
 
@@ -4002,7 +4003,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignRule> postOutboundCampaignrules(ApiRequest<CampaignRule> request) throws ApiException {
+  public ApiResponse<CampaignRule> postOutboundCampaignrules(ApiRequest<CampaignRule> request) throws IOException, ApiException {
     return pcapiClient.<CampaignRule>invokeAPIVerbose(request, new TypeReference<CampaignRule>() {});
   }
 
@@ -4013,7 +4014,7 @@ public class OutboundApi {
    * @return Campaign
    * @throws ApiException if fails to make API call
    */
-  public Campaign postOutboundCampaigns(Campaign body) throws ApiException {
+  public Campaign postOutboundCampaigns(Campaign body) throws IOException, ApiException {
     return postOutboundCampaignsWithHttpInfo(body).getBody();
   }
 
@@ -4024,12 +4025,12 @@ public class OutboundApi {
    * @return Campaign
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Campaign> postOutboundCampaignsWithHttpInfo(Campaign body) throws ApiException {
+  public ApiResponse<Campaign> postOutboundCampaignsWithHttpInfo(Campaign body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postOutboundCampaigns");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundCampaigns");
     }
     
     // create path and map variables
@@ -4064,7 +4065,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Campaign postOutboundCampaigns(PostOutboundCampaignsRequest request) throws ApiException {
+  public Campaign postOutboundCampaigns(PostOutboundCampaignsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Campaign>() {});
   }
 
@@ -4074,7 +4075,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Campaign> postOutboundCampaigns(ApiRequest<Campaign> request) throws ApiException {
+  public ApiResponse<Campaign> postOutboundCampaigns(ApiRequest<Campaign> request) throws IOException, ApiException {
     return pcapiClient.<Campaign>invokeAPIVerbose(request, new TypeReference<Campaign>() {});
   }
 
@@ -4085,7 +4086,7 @@ public class OutboundApi {
    * @return List<CampaignProgress>
    * @throws ApiException if fails to make API call
    */
-  public List<CampaignProgress> postOutboundCampaignsProgress(List<String> body) throws ApiException {
+  public List<CampaignProgress> postOutboundCampaignsProgress(List<String> body) throws IOException, ApiException {
     return postOutboundCampaignsProgressWithHttpInfo(body).getBody();
   }
 
@@ -4096,12 +4097,12 @@ public class OutboundApi {
    * @return List<CampaignProgress>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<CampaignProgress>> postOutboundCampaignsProgressWithHttpInfo(List<String> body) throws ApiException {
+  public ApiResponse<List<CampaignProgress>> postOutboundCampaignsProgressWithHttpInfo(List<String> body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postOutboundCampaignsProgress");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundCampaignsProgress");
     }
     
     // create path and map variables
@@ -4136,7 +4137,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<CampaignProgress> postOutboundCampaignsProgress(PostOutboundCampaignsProgressRequest request) throws ApiException {
+  public List<CampaignProgress> postOutboundCampaignsProgress(PostOutboundCampaignsProgressRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<CampaignProgress>>() {});
   }
 
@@ -4146,7 +4147,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<CampaignProgress>> postOutboundCampaignsProgress(ApiRequest<List<String>> request) throws ApiException {
+  public ApiResponse<List<CampaignProgress>> postOutboundCampaignsProgress(ApiRequest<List<String>> request) throws IOException, ApiException {
     return pcapiClient.<List<CampaignProgress>>invokeAPIVerbose(request, new TypeReference<List<CampaignProgress>>() {});
   }
 
@@ -4160,7 +4161,7 @@ public class OutboundApi {
    * @return List<DialerContact>
    * @throws ApiException if fails to make API call
    */
-  public List<DialerContact> postOutboundContactlistContacts(String contactListId, List<DialerContact> body, Boolean priority, Boolean clearSystemData) throws ApiException {
+  public List<DialerContact> postOutboundContactlistContacts(String contactListId, List<DialerContact> body, Boolean priority, Boolean clearSystemData) throws IOException, ApiException {
     return postOutboundContactlistContactsWithHttpInfo(contactListId, body, priority, clearSystemData).getBody();
   }
 
@@ -4174,17 +4175,17 @@ public class OutboundApi {
    * @return List<DialerContact>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<DialerContact>> postOutboundContactlistContactsWithHttpInfo(String contactListId, List<DialerContact> body, Boolean priority, Boolean clearSystemData) throws ApiException {
+  public ApiResponse<List<DialerContact>> postOutboundContactlistContactsWithHttpInfo(String contactListId, List<DialerContact> body, Boolean priority, Boolean clearSystemData) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'contactListId' is set
     if (contactListId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactListId' when calling postOutboundContactlistContacts");
+      throw new IllegalArgumentException("Missing the required parameter 'contactListId' when calling postOutboundContactlistContacts");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postOutboundContactlistContacts");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundContactlistContacts");
     }
     
     // create path and map variables
@@ -4222,7 +4223,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<DialerContact> postOutboundContactlistContacts(PostOutboundContactlistContactsRequest request) throws ApiException {
+  public List<DialerContact> postOutboundContactlistContacts(PostOutboundContactlistContactsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<DialerContact>>() {});
   }
 
@@ -4232,7 +4233,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<DialerContact>> postOutboundContactlistContacts(ApiRequest<List<DialerContact>> request) throws ApiException {
+  public ApiResponse<List<DialerContact>> postOutboundContactlistContacts(ApiRequest<List<DialerContact>> request) throws IOException, ApiException {
     return pcapiClient.<List<DialerContact>>invokeAPIVerbose(request, new TypeReference<List<DialerContact>>() {});
   }
 
@@ -4243,7 +4244,7 @@ public class OutboundApi {
    * @return UriReference
    * @throws ApiException if fails to make API call
    */
-  public UriReference postOutboundContactlistExport(String contactListId) throws ApiException {
+  public UriReference postOutboundContactlistExport(String contactListId) throws IOException, ApiException {
     return postOutboundContactlistExportWithHttpInfo(contactListId).getBody();
   }
 
@@ -4254,12 +4255,12 @@ public class OutboundApi {
    * @return UriReference
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UriReference> postOutboundContactlistExportWithHttpInfo(String contactListId) throws ApiException {
+  public ApiResponse<UriReference> postOutboundContactlistExportWithHttpInfo(String contactListId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'contactListId' is set
     if (contactListId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactListId' when calling postOutboundContactlistExport");
+      throw new IllegalArgumentException("Missing the required parameter 'contactListId' when calling postOutboundContactlistExport");
     }
     
     // create path and map variables
@@ -4295,7 +4296,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UriReference postOutboundContactlistExport(PostOutboundContactlistExportRequest request) throws ApiException {
+  public UriReference postOutboundContactlistExport(PostOutboundContactlistExportRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UriReference>() {});
   }
 
@@ -4305,7 +4306,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UriReference> postOutboundContactlistExport(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<UriReference> postOutboundContactlistExport(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<UriReference>invokeAPIVerbose(request, new TypeReference<UriReference>() {});
   }
 
@@ -4316,7 +4317,7 @@ public class OutboundApi {
    * @return ContactList
    * @throws ApiException if fails to make API call
    */
-  public ContactList postOutboundContactlists(ContactList body) throws ApiException {
+  public ContactList postOutboundContactlists(ContactList body) throws IOException, ApiException {
     return postOutboundContactlistsWithHttpInfo(body).getBody();
   }
 
@@ -4327,12 +4328,12 @@ public class OutboundApi {
    * @return ContactList
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ContactList> postOutboundContactlistsWithHttpInfo(ContactList body) throws ApiException {
+  public ApiResponse<ContactList> postOutboundContactlistsWithHttpInfo(ContactList body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postOutboundContactlists");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundContactlists");
     }
     
     // create path and map variables
@@ -4367,7 +4368,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ContactList postOutboundContactlists(PostOutboundContactlistsRequest request) throws ApiException {
+  public ContactList postOutboundContactlists(PostOutboundContactlistsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ContactList>() {});
   }
 
@@ -4377,7 +4378,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ContactList> postOutboundContactlists(ApiRequest<ContactList> request) throws ApiException {
+  public ApiResponse<ContactList> postOutboundContactlists(ApiRequest<ContactList> request) throws IOException, ApiException {
     return pcapiClient.<ContactList>invokeAPIVerbose(request, new TypeReference<ContactList>() {});
   }
 
@@ -4387,7 +4388,7 @@ public class OutboundApi {
    * @param conversationId Conversation ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void postOutboundConversationDnc(String conversationId) throws ApiException {
+  public void postOutboundConversationDnc(String conversationId) throws IOException, ApiException {
     postOutboundConversationDncWithHttpInfo(conversationId);
   }
 
@@ -4397,12 +4398,12 @@ public class OutboundApi {
    * @param conversationId Conversation ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postOutboundConversationDncWithHttpInfo(String conversationId) throws ApiException {
+  public ApiResponse<Void> postOutboundConversationDncWithHttpInfo(String conversationId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling postOutboundConversationDnc");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling postOutboundConversationDnc");
     }
     
     // create path and map variables
@@ -4438,7 +4439,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void postOutboundConversationDnc(PostOutboundConversationDncRequest request) throws ApiException {
+  public void postOutboundConversationDnc(PostOutboundConversationDncRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -4448,7 +4449,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postOutboundConversationDnc(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> postOutboundConversationDnc(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -4459,7 +4460,7 @@ public class OutboundApi {
    * @return UriReference
    * @throws ApiException if fails to make API call
    */
-  public UriReference postOutboundDnclistExport(String dncListId) throws ApiException {
+  public UriReference postOutboundDnclistExport(String dncListId) throws IOException, ApiException {
     return postOutboundDnclistExportWithHttpInfo(dncListId).getBody();
   }
 
@@ -4470,12 +4471,12 @@ public class OutboundApi {
    * @return UriReference
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UriReference> postOutboundDnclistExportWithHttpInfo(String dncListId) throws ApiException {
+  public ApiResponse<UriReference> postOutboundDnclistExportWithHttpInfo(String dncListId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'dncListId' is set
     if (dncListId == null) {
-      throw new ApiException(400, "Missing the required parameter 'dncListId' when calling postOutboundDnclistExport");
+      throw new IllegalArgumentException("Missing the required parameter 'dncListId' when calling postOutboundDnclistExport");
     }
     
     // create path and map variables
@@ -4511,7 +4512,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UriReference postOutboundDnclistExport(PostOutboundDnclistExportRequest request) throws ApiException {
+  public UriReference postOutboundDnclistExport(PostOutboundDnclistExportRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UriReference>() {});
   }
 
@@ -4521,7 +4522,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UriReference> postOutboundDnclistExport(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<UriReference> postOutboundDnclistExport(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<UriReference>invokeAPIVerbose(request, new TypeReference<UriReference>() {});
   }
 
@@ -4532,7 +4533,7 @@ public class OutboundApi {
    * @param body DNC Phone Numbers (required)
    * @throws ApiException if fails to make API call
    */
-  public void postOutboundDnclistPhonenumbers(String dncListId, List<String> body) throws ApiException {
+  public void postOutboundDnclistPhonenumbers(String dncListId, List<String> body) throws IOException, ApiException {
     postOutboundDnclistPhonenumbersWithHttpInfo(dncListId, body);
   }
 
@@ -4543,17 +4544,17 @@ public class OutboundApi {
    * @param body DNC Phone Numbers (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postOutboundDnclistPhonenumbersWithHttpInfo(String dncListId, List<String> body) throws ApiException {
+  public ApiResponse<Void> postOutboundDnclistPhonenumbersWithHttpInfo(String dncListId, List<String> body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'dncListId' is set
     if (dncListId == null) {
-      throw new ApiException(400, "Missing the required parameter 'dncListId' when calling postOutboundDnclistPhonenumbers");
+      throw new IllegalArgumentException("Missing the required parameter 'dncListId' when calling postOutboundDnclistPhonenumbers");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postOutboundDnclistPhonenumbers");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundDnclistPhonenumbers");
     }
     
     // create path and map variables
@@ -4589,7 +4590,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void postOutboundDnclistPhonenumbers(PostOutboundDnclistPhonenumbersRequest request) throws ApiException {
+  public void postOutboundDnclistPhonenumbers(PostOutboundDnclistPhonenumbersRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -4599,7 +4600,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postOutboundDnclistPhonenumbers(ApiRequest<List<String>> request) throws ApiException {
+  public ApiResponse<Void> postOutboundDnclistPhonenumbers(ApiRequest<List<String>> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -4610,7 +4611,7 @@ public class OutboundApi {
    * @return DncList
    * @throws ApiException if fails to make API call
    */
-  public DncList postOutboundDnclists(DncListCreate body) throws ApiException {
+  public DncList postOutboundDnclists(DncListCreate body) throws IOException, ApiException {
     return postOutboundDnclistsWithHttpInfo(body).getBody();
   }
 
@@ -4621,12 +4622,12 @@ public class OutboundApi {
    * @return DncList
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DncList> postOutboundDnclistsWithHttpInfo(DncListCreate body) throws ApiException {
+  public ApiResponse<DncList> postOutboundDnclistsWithHttpInfo(DncListCreate body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postOutboundDnclists");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundDnclists");
     }
     
     // create path and map variables
@@ -4661,7 +4662,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DncList postOutboundDnclists(PostOutboundDnclistsRequest request) throws ApiException {
+  public DncList postOutboundDnclists(PostOutboundDnclistsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DncList>() {});
   }
 
@@ -4671,7 +4672,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DncList> postOutboundDnclists(ApiRequest<DncListCreate> request) throws ApiException {
+  public ApiResponse<DncList> postOutboundDnclists(ApiRequest<DncListCreate> request) throws IOException, ApiException {
     return pcapiClient.<DncList>invokeAPIVerbose(request, new TypeReference<DncList>() {});
   }
 
@@ -4682,7 +4683,7 @@ public class OutboundApi {
    * @return RuleSet
    * @throws ApiException if fails to make API call
    */
-  public RuleSet postOutboundRulesets(RuleSet body) throws ApiException {
+  public RuleSet postOutboundRulesets(RuleSet body) throws IOException, ApiException {
     return postOutboundRulesetsWithHttpInfo(body).getBody();
   }
 
@@ -4693,12 +4694,12 @@ public class OutboundApi {
    * @return RuleSet
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RuleSet> postOutboundRulesetsWithHttpInfo(RuleSet body) throws ApiException {
+  public ApiResponse<RuleSet> postOutboundRulesetsWithHttpInfo(RuleSet body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postOutboundRulesets");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundRulesets");
     }
     
     // create path and map variables
@@ -4733,7 +4734,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public RuleSet postOutboundRulesets(PostOutboundRulesetsRequest request) throws ApiException {
+  public RuleSet postOutboundRulesets(PostOutboundRulesetsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RuleSet>() {});
   }
 
@@ -4743,7 +4744,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RuleSet> postOutboundRulesets(ApiRequest<RuleSet> request) throws ApiException {
+  public ApiResponse<RuleSet> postOutboundRulesets(ApiRequest<RuleSet> request) throws IOException, ApiException {
     return pcapiClient.<RuleSet>invokeAPIVerbose(request, new TypeReference<RuleSet>() {});
   }
 
@@ -4754,7 +4755,7 @@ public class OutboundApi {
    * @return CampaignSequence
    * @throws ApiException if fails to make API call
    */
-  public CampaignSequence postOutboundSequences(CampaignSequence body) throws ApiException {
+  public CampaignSequence postOutboundSequences(CampaignSequence body) throws IOException, ApiException {
     return postOutboundSequencesWithHttpInfo(body).getBody();
   }
 
@@ -4765,12 +4766,12 @@ public class OutboundApi {
    * @return CampaignSequence
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignSequence> postOutboundSequencesWithHttpInfo(CampaignSequence body) throws ApiException {
+  public ApiResponse<CampaignSequence> postOutboundSequencesWithHttpInfo(CampaignSequence body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postOutboundSequences");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundSequences");
     }
     
     // create path and map variables
@@ -4805,7 +4806,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CampaignSequence postOutboundSequences(PostOutboundSequencesRequest request) throws ApiException {
+  public CampaignSequence postOutboundSequences(PostOutboundSequencesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignSequence>() {});
   }
 
@@ -4815,7 +4816,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignSequence> postOutboundSequences(ApiRequest<CampaignSequence> request) throws ApiException {
+  public ApiResponse<CampaignSequence> postOutboundSequences(ApiRequest<CampaignSequence> request) throws IOException, ApiException {
     return pcapiClient.<CampaignSequence>invokeAPIVerbose(request, new TypeReference<CampaignSequence>() {});
   }
 
@@ -4827,7 +4828,7 @@ public class OutboundApi {
    * @return AttemptLimits
    * @throws ApiException if fails to make API call
    */
-  public AttemptLimits putOutboundAttemptlimit(String attemptLimitsId, AttemptLimits body) throws ApiException {
+  public AttemptLimits putOutboundAttemptlimit(String attemptLimitsId, AttemptLimits body) throws IOException, ApiException {
     return putOutboundAttemptlimitWithHttpInfo(attemptLimitsId, body).getBody();
   }
 
@@ -4839,17 +4840,17 @@ public class OutboundApi {
    * @return AttemptLimits
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AttemptLimits> putOutboundAttemptlimitWithHttpInfo(String attemptLimitsId, AttemptLimits body) throws ApiException {
+  public ApiResponse<AttemptLimits> putOutboundAttemptlimitWithHttpInfo(String attemptLimitsId, AttemptLimits body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'attemptLimitsId' is set
     if (attemptLimitsId == null) {
-      throw new ApiException(400, "Missing the required parameter 'attemptLimitsId' when calling putOutboundAttemptlimit");
+      throw new IllegalArgumentException("Missing the required parameter 'attemptLimitsId' when calling putOutboundAttemptlimit");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putOutboundAttemptlimit");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundAttemptlimit");
     }
     
     // create path and map variables
@@ -4885,7 +4886,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public AttemptLimits putOutboundAttemptlimit(PutOutboundAttemptlimitRequest request) throws ApiException {
+  public AttemptLimits putOutboundAttemptlimit(PutOutboundAttemptlimitRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AttemptLimits>() {});
   }
 
@@ -4895,7 +4896,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AttemptLimits> putOutboundAttemptlimit(ApiRequest<AttemptLimits> request) throws ApiException {
+  public ApiResponse<AttemptLimits> putOutboundAttemptlimit(ApiRequest<AttemptLimits> request) throws IOException, ApiException {
     return pcapiClient.<AttemptLimits>invokeAPIVerbose(request, new TypeReference<AttemptLimits>() {});
   }
 
@@ -4907,7 +4908,7 @@ public class OutboundApi {
    * @return CallableTimeSet
    * @throws ApiException if fails to make API call
    */
-  public CallableTimeSet putOutboundCallabletimeset(String callableTimeSetId, CallableTimeSet body) throws ApiException {
+  public CallableTimeSet putOutboundCallabletimeset(String callableTimeSetId, CallableTimeSet body) throws IOException, ApiException {
     return putOutboundCallabletimesetWithHttpInfo(callableTimeSetId, body).getBody();
   }
 
@@ -4919,17 +4920,17 @@ public class OutboundApi {
    * @return CallableTimeSet
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallableTimeSet> putOutboundCallabletimesetWithHttpInfo(String callableTimeSetId, CallableTimeSet body) throws ApiException {
+  public ApiResponse<CallableTimeSet> putOutboundCallabletimesetWithHttpInfo(String callableTimeSetId, CallableTimeSet body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'callableTimeSetId' is set
     if (callableTimeSetId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callableTimeSetId' when calling putOutboundCallabletimeset");
+      throw new IllegalArgumentException("Missing the required parameter 'callableTimeSetId' when calling putOutboundCallabletimeset");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putOutboundCallabletimeset");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundCallabletimeset");
     }
     
     // create path and map variables
@@ -4965,7 +4966,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CallableTimeSet putOutboundCallabletimeset(PutOutboundCallabletimesetRequest request) throws ApiException {
+  public CallableTimeSet putOutboundCallabletimeset(PutOutboundCallabletimesetRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallableTimeSet>() {});
   }
 
@@ -4975,7 +4976,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallableTimeSet> putOutboundCallabletimeset(ApiRequest<CallableTimeSet> request) throws ApiException {
+  public ApiResponse<CallableTimeSet> putOutboundCallabletimeset(ApiRequest<CallableTimeSet> request) throws IOException, ApiException {
     return pcapiClient.<CallableTimeSet>invokeAPIVerbose(request, new TypeReference<CallableTimeSet>() {});
   }
 
@@ -4987,7 +4988,7 @@ public class OutboundApi {
    * @return ResponseSet
    * @throws ApiException if fails to make API call
    */
-  public ResponseSet putOutboundCallanalysisresponseset(String callAnalysisSetId, ResponseSet body) throws ApiException {
+  public ResponseSet putOutboundCallanalysisresponseset(String callAnalysisSetId, ResponseSet body) throws IOException, ApiException {
     return putOutboundCallanalysisresponsesetWithHttpInfo(callAnalysisSetId, body).getBody();
   }
 
@@ -4999,17 +5000,17 @@ public class OutboundApi {
    * @return ResponseSet
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ResponseSet> putOutboundCallanalysisresponsesetWithHttpInfo(String callAnalysisSetId, ResponseSet body) throws ApiException {
+  public ApiResponse<ResponseSet> putOutboundCallanalysisresponsesetWithHttpInfo(String callAnalysisSetId, ResponseSet body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'callAnalysisSetId' is set
     if (callAnalysisSetId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callAnalysisSetId' when calling putOutboundCallanalysisresponseset");
+      throw new IllegalArgumentException("Missing the required parameter 'callAnalysisSetId' when calling putOutboundCallanalysisresponseset");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putOutboundCallanalysisresponseset");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundCallanalysisresponseset");
     }
     
     // create path and map variables
@@ -5045,7 +5046,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ResponseSet putOutboundCallanalysisresponseset(PutOutboundCallanalysisresponsesetRequest request) throws ApiException {
+  public ResponseSet putOutboundCallanalysisresponseset(PutOutboundCallanalysisresponsesetRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ResponseSet>() {});
   }
 
@@ -5055,7 +5056,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ResponseSet> putOutboundCallanalysisresponseset(ApiRequest<ResponseSet> request) throws ApiException {
+  public ApiResponse<ResponseSet> putOutboundCallanalysisresponseset(ApiRequest<ResponseSet> request) throws IOException, ApiException {
     return pcapiClient.<ResponseSet>invokeAPIVerbose(request, new TypeReference<ResponseSet>() {});
   }
 
@@ -5067,7 +5068,7 @@ public class OutboundApi {
    * @return Campaign
    * @throws ApiException if fails to make API call
    */
-  public Campaign putOutboundCampaign(String campaignId, Campaign body) throws ApiException {
+  public Campaign putOutboundCampaign(String campaignId, Campaign body) throws IOException, ApiException {
     return putOutboundCampaignWithHttpInfo(campaignId, body).getBody();
   }
 
@@ -5079,17 +5080,17 @@ public class OutboundApi {
    * @return Campaign
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Campaign> putOutboundCampaignWithHttpInfo(String campaignId, Campaign body) throws ApiException {
+  public ApiResponse<Campaign> putOutboundCampaignWithHttpInfo(String campaignId, Campaign body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'campaignId' is set
     if (campaignId == null) {
-      throw new ApiException(400, "Missing the required parameter 'campaignId' when calling putOutboundCampaign");
+      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling putOutboundCampaign");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putOutboundCampaign");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundCampaign");
     }
     
     // create path and map variables
@@ -5125,7 +5126,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Campaign putOutboundCampaign(PutOutboundCampaignRequest request) throws ApiException {
+  public Campaign putOutboundCampaign(PutOutboundCampaignRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Campaign>() {});
   }
 
@@ -5135,7 +5136,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Campaign> putOutboundCampaign(ApiRequest<Campaign> request) throws ApiException {
+  public ApiResponse<Campaign> putOutboundCampaign(ApiRequest<Campaign> request) throws IOException, ApiException {
     return pcapiClient.<Campaign>invokeAPIVerbose(request, new TypeReference<Campaign>() {});
   }
 
@@ -5148,7 +5149,7 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String putOutboundCampaignAgent(String campaignId, String userId, Agent body) throws ApiException {
+  public String putOutboundCampaignAgent(String campaignId, String userId, Agent body) throws IOException, ApiException {
     return putOutboundCampaignAgentWithHttpInfo(campaignId, userId, body).getBody();
   }
 
@@ -5161,22 +5162,22 @@ public class OutboundApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> putOutboundCampaignAgentWithHttpInfo(String campaignId, String userId, Agent body) throws ApiException {
+  public ApiResponse<String> putOutboundCampaignAgentWithHttpInfo(String campaignId, String userId, Agent body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'campaignId' is set
     if (campaignId == null) {
-      throw new ApiException(400, "Missing the required parameter 'campaignId' when calling putOutboundCampaignAgent");
+      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling putOutboundCampaignAgent");
     }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling putOutboundCampaignAgent");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putOutboundCampaignAgent");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putOutboundCampaignAgent");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundCampaignAgent");
     }
     
     // create path and map variables
@@ -5213,7 +5214,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String putOutboundCampaignAgent(PutOutboundCampaignAgentRequest request) throws ApiException {
+  public String putOutboundCampaignAgent(PutOutboundCampaignAgentRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -5223,7 +5224,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> putOutboundCampaignAgent(ApiRequest<Agent> request) throws ApiException {
+  public ApiResponse<String> putOutboundCampaignAgent(ApiRequest<Agent> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -5235,7 +5236,7 @@ public class OutboundApi {
    * @return CampaignRule
    * @throws ApiException if fails to make API call
    */
-  public CampaignRule putOutboundCampaignrule(String campaignRuleId, CampaignRule body) throws ApiException {
+  public CampaignRule putOutboundCampaignrule(String campaignRuleId, CampaignRule body) throws IOException, ApiException {
     return putOutboundCampaignruleWithHttpInfo(campaignRuleId, body).getBody();
   }
 
@@ -5247,17 +5248,17 @@ public class OutboundApi {
    * @return CampaignRule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignRule> putOutboundCampaignruleWithHttpInfo(String campaignRuleId, CampaignRule body) throws ApiException {
+  public ApiResponse<CampaignRule> putOutboundCampaignruleWithHttpInfo(String campaignRuleId, CampaignRule body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'campaignRuleId' is set
     if (campaignRuleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'campaignRuleId' when calling putOutboundCampaignrule");
+      throw new IllegalArgumentException("Missing the required parameter 'campaignRuleId' when calling putOutboundCampaignrule");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putOutboundCampaignrule");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundCampaignrule");
     }
     
     // create path and map variables
@@ -5293,7 +5294,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CampaignRule putOutboundCampaignrule(PutOutboundCampaignruleRequest request) throws ApiException {
+  public CampaignRule putOutboundCampaignrule(PutOutboundCampaignruleRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignRule>() {});
   }
 
@@ -5303,7 +5304,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignRule> putOutboundCampaignrule(ApiRequest<CampaignRule> request) throws ApiException {
+  public ApiResponse<CampaignRule> putOutboundCampaignrule(ApiRequest<CampaignRule> request) throws IOException, ApiException {
     return pcapiClient.<CampaignRule>invokeAPIVerbose(request, new TypeReference<CampaignRule>() {});
   }
 
@@ -5315,7 +5316,7 @@ public class OutboundApi {
    * @return ContactList
    * @throws ApiException if fails to make API call
    */
-  public ContactList putOutboundContactlist(String contactListId, ContactList body) throws ApiException {
+  public ContactList putOutboundContactlist(String contactListId, ContactList body) throws IOException, ApiException {
     return putOutboundContactlistWithHttpInfo(contactListId, body).getBody();
   }
 
@@ -5327,17 +5328,17 @@ public class OutboundApi {
    * @return ContactList
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ContactList> putOutboundContactlistWithHttpInfo(String contactListId, ContactList body) throws ApiException {
+  public ApiResponse<ContactList> putOutboundContactlistWithHttpInfo(String contactListId, ContactList body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'contactListId' is set
     if (contactListId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactListId' when calling putOutboundContactlist");
+      throw new IllegalArgumentException("Missing the required parameter 'contactListId' when calling putOutboundContactlist");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putOutboundContactlist");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundContactlist");
     }
     
     // create path and map variables
@@ -5373,7 +5374,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ContactList putOutboundContactlist(PutOutboundContactlistRequest request) throws ApiException {
+  public ContactList putOutboundContactlist(PutOutboundContactlistRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ContactList>() {});
   }
 
@@ -5383,7 +5384,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ContactList> putOutboundContactlist(ApiRequest<ContactList> request) throws ApiException {
+  public ApiResponse<ContactList> putOutboundContactlist(ApiRequest<ContactList> request) throws IOException, ApiException {
     return pcapiClient.<ContactList>invokeAPIVerbose(request, new TypeReference<ContactList>() {});
   }
 
@@ -5396,7 +5397,7 @@ public class OutboundApi {
    * @return DialerContact
    * @throws ApiException if fails to make API call
    */
-  public DialerContact putOutboundContactlistContact(String contactListId, String contactId, DialerContact body) throws ApiException {
+  public DialerContact putOutboundContactlistContact(String contactListId, String contactId, DialerContact body) throws IOException, ApiException {
     return putOutboundContactlistContactWithHttpInfo(contactListId, contactId, body).getBody();
   }
 
@@ -5409,22 +5410,22 @@ public class OutboundApi {
    * @return DialerContact
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DialerContact> putOutboundContactlistContactWithHttpInfo(String contactListId, String contactId, DialerContact body) throws ApiException {
+  public ApiResponse<DialerContact> putOutboundContactlistContactWithHttpInfo(String contactListId, String contactId, DialerContact body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'contactListId' is set
     if (contactListId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactListId' when calling putOutboundContactlistContact");
+      throw new IllegalArgumentException("Missing the required parameter 'contactListId' when calling putOutboundContactlistContact");
     }
     
     // verify the required parameter 'contactId' is set
     if (contactId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactId' when calling putOutboundContactlistContact");
+      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling putOutboundContactlistContact");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putOutboundContactlistContact");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundContactlistContact");
     }
     
     // create path and map variables
@@ -5461,7 +5462,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DialerContact putOutboundContactlistContact(PutOutboundContactlistContactRequest request) throws ApiException {
+  public DialerContact putOutboundContactlistContact(PutOutboundContactlistContactRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DialerContact>() {});
   }
 
@@ -5471,7 +5472,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DialerContact> putOutboundContactlistContact(ApiRequest<DialerContact> request) throws ApiException {
+  public ApiResponse<DialerContact> putOutboundContactlistContact(ApiRequest<DialerContact> request) throws IOException, ApiException {
     return pcapiClient.<DialerContact>invokeAPIVerbose(request, new TypeReference<DialerContact>() {});
   }
 
@@ -5483,7 +5484,7 @@ public class OutboundApi {
    * @return DncList
    * @throws ApiException if fails to make API call
    */
-  public DncList putOutboundDnclist(String dncListId, DncList body) throws ApiException {
+  public DncList putOutboundDnclist(String dncListId, DncList body) throws IOException, ApiException {
     return putOutboundDnclistWithHttpInfo(dncListId, body).getBody();
   }
 
@@ -5495,17 +5496,17 @@ public class OutboundApi {
    * @return DncList
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DncList> putOutboundDnclistWithHttpInfo(String dncListId, DncList body) throws ApiException {
+  public ApiResponse<DncList> putOutboundDnclistWithHttpInfo(String dncListId, DncList body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'dncListId' is set
     if (dncListId == null) {
-      throw new ApiException(400, "Missing the required parameter 'dncListId' when calling putOutboundDnclist");
+      throw new IllegalArgumentException("Missing the required parameter 'dncListId' when calling putOutboundDnclist");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putOutboundDnclist");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundDnclist");
     }
     
     // create path and map variables
@@ -5541,7 +5542,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DncList putOutboundDnclist(PutOutboundDnclistRequest request) throws ApiException {
+  public DncList putOutboundDnclist(PutOutboundDnclistRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DncList>() {});
   }
 
@@ -5551,7 +5552,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DncList> putOutboundDnclist(ApiRequest<DncList> request) throws ApiException {
+  public ApiResponse<DncList> putOutboundDnclist(ApiRequest<DncList> request) throws IOException, ApiException {
     return pcapiClient.<DncList>invokeAPIVerbose(request, new TypeReference<DncList>() {});
   }
 
@@ -5563,7 +5564,7 @@ public class OutboundApi {
    * @return RuleSet
    * @throws ApiException if fails to make API call
    */
-  public RuleSet putOutboundRuleset(String ruleSetId, RuleSet body) throws ApiException {
+  public RuleSet putOutboundRuleset(String ruleSetId, RuleSet body) throws IOException, ApiException {
     return putOutboundRulesetWithHttpInfo(ruleSetId, body).getBody();
   }
 
@@ -5575,17 +5576,17 @@ public class OutboundApi {
    * @return RuleSet
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RuleSet> putOutboundRulesetWithHttpInfo(String ruleSetId, RuleSet body) throws ApiException {
+  public ApiResponse<RuleSet> putOutboundRulesetWithHttpInfo(String ruleSetId, RuleSet body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'ruleSetId' is set
     if (ruleSetId == null) {
-      throw new ApiException(400, "Missing the required parameter 'ruleSetId' when calling putOutboundRuleset");
+      throw new IllegalArgumentException("Missing the required parameter 'ruleSetId' when calling putOutboundRuleset");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putOutboundRuleset");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundRuleset");
     }
     
     // create path and map variables
@@ -5621,7 +5622,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public RuleSet putOutboundRuleset(PutOutboundRulesetRequest request) throws ApiException {
+  public RuleSet putOutboundRuleset(PutOutboundRulesetRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RuleSet>() {});
   }
 
@@ -5631,7 +5632,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RuleSet> putOutboundRuleset(ApiRequest<RuleSet> request) throws ApiException {
+  public ApiResponse<RuleSet> putOutboundRuleset(ApiRequest<RuleSet> request) throws IOException, ApiException {
     return pcapiClient.<RuleSet>invokeAPIVerbose(request, new TypeReference<RuleSet>() {});
   }
 
@@ -5643,7 +5644,7 @@ public class OutboundApi {
    * @return CampaignSchedule
    * @throws ApiException if fails to make API call
    */
-  public CampaignSchedule putOutboundSchedulesCampaign(String campaignId, CampaignSchedule body) throws ApiException {
+  public CampaignSchedule putOutboundSchedulesCampaign(String campaignId, CampaignSchedule body) throws IOException, ApiException {
     return putOutboundSchedulesCampaignWithHttpInfo(campaignId, body).getBody();
   }
 
@@ -5655,17 +5656,17 @@ public class OutboundApi {
    * @return CampaignSchedule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignSchedule> putOutboundSchedulesCampaignWithHttpInfo(String campaignId, CampaignSchedule body) throws ApiException {
+  public ApiResponse<CampaignSchedule> putOutboundSchedulesCampaignWithHttpInfo(String campaignId, CampaignSchedule body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'campaignId' is set
     if (campaignId == null) {
-      throw new ApiException(400, "Missing the required parameter 'campaignId' when calling putOutboundSchedulesCampaign");
+      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling putOutboundSchedulesCampaign");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putOutboundSchedulesCampaign");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundSchedulesCampaign");
     }
     
     // create path and map variables
@@ -5701,7 +5702,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CampaignSchedule putOutboundSchedulesCampaign(PutOutboundSchedulesCampaignRequest request) throws ApiException {
+  public CampaignSchedule putOutboundSchedulesCampaign(PutOutboundSchedulesCampaignRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignSchedule>() {});
   }
 
@@ -5711,7 +5712,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignSchedule> putOutboundSchedulesCampaign(ApiRequest<CampaignSchedule> request) throws ApiException {
+  public ApiResponse<CampaignSchedule> putOutboundSchedulesCampaign(ApiRequest<CampaignSchedule> request) throws IOException, ApiException {
     return pcapiClient.<CampaignSchedule>invokeAPIVerbose(request, new TypeReference<CampaignSchedule>() {});
   }
 
@@ -5723,7 +5724,7 @@ public class OutboundApi {
    * @return SequenceSchedule
    * @throws ApiException if fails to make API call
    */
-  public SequenceSchedule putOutboundSchedulesSequence(String sequenceId, SequenceSchedule body) throws ApiException {
+  public SequenceSchedule putOutboundSchedulesSequence(String sequenceId, SequenceSchedule body) throws IOException, ApiException {
     return putOutboundSchedulesSequenceWithHttpInfo(sequenceId, body).getBody();
   }
 
@@ -5735,17 +5736,17 @@ public class OutboundApi {
    * @return SequenceSchedule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SequenceSchedule> putOutboundSchedulesSequenceWithHttpInfo(String sequenceId, SequenceSchedule body) throws ApiException {
+  public ApiResponse<SequenceSchedule> putOutboundSchedulesSequenceWithHttpInfo(String sequenceId, SequenceSchedule body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'sequenceId' is set
     if (sequenceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'sequenceId' when calling putOutboundSchedulesSequence");
+      throw new IllegalArgumentException("Missing the required parameter 'sequenceId' when calling putOutboundSchedulesSequence");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putOutboundSchedulesSequence");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundSchedulesSequence");
     }
     
     // create path and map variables
@@ -5781,7 +5782,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public SequenceSchedule putOutboundSchedulesSequence(PutOutboundSchedulesSequenceRequest request) throws ApiException {
+  public SequenceSchedule putOutboundSchedulesSequence(PutOutboundSchedulesSequenceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SequenceSchedule>() {});
   }
 
@@ -5791,7 +5792,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SequenceSchedule> putOutboundSchedulesSequence(ApiRequest<SequenceSchedule> request) throws ApiException {
+  public ApiResponse<SequenceSchedule> putOutboundSchedulesSequence(ApiRequest<SequenceSchedule> request) throws IOException, ApiException {
     return pcapiClient.<SequenceSchedule>invokeAPIVerbose(request, new TypeReference<SequenceSchedule>() {});
   }
 
@@ -5803,7 +5804,7 @@ public class OutboundApi {
    * @return CampaignSequence
    * @throws ApiException if fails to make API call
    */
-  public CampaignSequence putOutboundSequence(String sequenceId, CampaignSequence body) throws ApiException {
+  public CampaignSequence putOutboundSequence(String sequenceId, CampaignSequence body) throws IOException, ApiException {
     return putOutboundSequenceWithHttpInfo(sequenceId, body).getBody();
   }
 
@@ -5815,17 +5816,17 @@ public class OutboundApi {
    * @return CampaignSequence
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignSequence> putOutboundSequenceWithHttpInfo(String sequenceId, CampaignSequence body) throws ApiException {
+  public ApiResponse<CampaignSequence> putOutboundSequenceWithHttpInfo(String sequenceId, CampaignSequence body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'sequenceId' is set
     if (sequenceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'sequenceId' when calling putOutboundSequence");
+      throw new IllegalArgumentException("Missing the required parameter 'sequenceId' when calling putOutboundSequence");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putOutboundSequence");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundSequence");
     }
     
     // create path and map variables
@@ -5861,7 +5862,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CampaignSequence putOutboundSequence(PutOutboundSequenceRequest request) throws ApiException {
+  public CampaignSequence putOutboundSequence(PutOutboundSequenceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignSequence>() {});
   }
 
@@ -5871,7 +5872,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CampaignSequence> putOutboundSequence(ApiRequest<CampaignSequence> request) throws ApiException {
+  public ApiResponse<CampaignSequence> putOutboundSequence(ApiRequest<CampaignSequence> request) throws IOException, ApiException {
     return pcapiClient.<CampaignSequence>invokeAPIVerbose(request, new TypeReference<CampaignSequence>() {});
   }
 
@@ -5882,7 +5883,7 @@ public class OutboundApi {
    * @return WrapUpCodeMapping
    * @throws ApiException if fails to make API call
    */
-  public WrapUpCodeMapping putOutboundWrapupcodemappings(WrapUpCodeMapping body) throws ApiException {
+  public WrapUpCodeMapping putOutboundWrapupcodemappings(WrapUpCodeMapping body) throws IOException, ApiException {
     return putOutboundWrapupcodemappingsWithHttpInfo(body).getBody();
   }
 
@@ -5893,12 +5894,12 @@ public class OutboundApi {
    * @return WrapUpCodeMapping
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WrapUpCodeMapping> putOutboundWrapupcodemappingsWithHttpInfo(WrapUpCodeMapping body) throws ApiException {
+  public ApiResponse<WrapUpCodeMapping> putOutboundWrapupcodemappingsWithHttpInfo(WrapUpCodeMapping body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putOutboundWrapupcodemappings");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundWrapupcodemappings");
     }
     
     // create path and map variables
@@ -5933,7 +5934,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public WrapUpCodeMapping putOutboundWrapupcodemappings(PutOutboundWrapupcodemappingsRequest request) throws ApiException {
+  public WrapUpCodeMapping putOutboundWrapupcodemappings(PutOutboundWrapupcodemappingsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WrapUpCodeMapping>() {});
   }
 
@@ -5943,7 +5944,7 @@ public class OutboundApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WrapUpCodeMapping> putOutboundWrapupcodemappings(ApiRequest<WrapUpCodeMapping> request) throws ApiException {
+  public ApiResponse<WrapUpCodeMapping> putOutboundWrapupcodemappings(ApiRequest<WrapUpCodeMapping> request) throws IOException, ApiException {
     return pcapiClient.<WrapUpCodeMapping>invokeAPIVerbose(request, new TypeReference<WrapUpCodeMapping>() {});
   }
 

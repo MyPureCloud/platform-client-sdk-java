@@ -70,11 +70,11 @@ public class PostDocumentationSearchRequest {
         return this;
     }
 
-    public ApiRequest<DocumentationSearchRequest> withHttpInfo() throws ApiException {
+    public ApiRequest<DocumentationSearchRequest> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostDocumentationSearchRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostDocumentationSearchRequest.");
         }
         
 

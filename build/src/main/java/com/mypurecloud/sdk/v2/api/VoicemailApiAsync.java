@@ -47,6 +47,7 @@ import com.mypurecloud.sdk.v2.api.request.PostVoicemailSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PutVoicemailMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PutVoicemailPolicyRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -71,7 +72,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteVoicemailMessageAsync(DeleteVoicemailMessageRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteVoicemailMessageAsync(DeleteVoicemailMessageRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -81,7 +82,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteVoicemailMessageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteVoicemailMessageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -91,7 +92,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteVoicemailMessagesAsync(DeleteVoicemailMessagesRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteVoicemailMessagesAsync(DeleteVoicemailMessagesRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -101,7 +102,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteVoicemailMessagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteVoicemailMessagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -111,7 +112,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailMailboxInfo> getVoicemailGroupMailboxAsync(GetVoicemailGroupMailboxRequest request, AsyncApiCallback<VoicemailMailboxInfo> callback) throws ApiException {
+  public Future<VoicemailMailboxInfo> getVoicemailGroupMailboxAsync(GetVoicemailGroupMailboxRequest request, AsyncApiCallback<VoicemailMailboxInfo> callback) {
     return pcapiClient.<VoicemailMailboxInfo>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailMailboxInfo>() {}, callback);
   }
 
@@ -121,7 +122,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailMailboxInfo>> getVoicemailGroupMailboxAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMailboxInfo>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailMailboxInfo>> getVoicemailGroupMailboxAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMailboxInfo>> callback) {
     return pcapiClient.<VoicemailMailboxInfo>invokeAPIVerboseAsync(request, new TypeReference<VoicemailMailboxInfo>() {}, callback);
   }
 
@@ -131,7 +132,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailMessageEntityListing> getVoicemailGroupMessagesAsync(GetVoicemailGroupMessagesRequest request, AsyncApiCallback<VoicemailMessageEntityListing> callback) throws ApiException {
+  public Future<VoicemailMessageEntityListing> getVoicemailGroupMessagesAsync(GetVoicemailGroupMessagesRequest request, AsyncApiCallback<VoicemailMessageEntityListing> callback) {
     return pcapiClient.<VoicemailMessageEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {}, callback);
   }
 
@@ -141,7 +142,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailMessageEntityListing>> getVoicemailGroupMessagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMessageEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailMessageEntityListing>> getVoicemailGroupMessagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMessageEntityListing>> callback) {
     return pcapiClient.<VoicemailMessageEntityListing>invokeAPIVerboseAsync(request, new TypeReference<VoicemailMessageEntityListing>() {}, callback);
   }
 
@@ -151,7 +152,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailGroupPolicy> getVoicemailGroupPolicyAsync(GetVoicemailGroupPolicyRequest request, AsyncApiCallback<VoicemailGroupPolicy> callback) throws ApiException {
+  public Future<VoicemailGroupPolicy> getVoicemailGroupPolicyAsync(GetVoicemailGroupPolicyRequest request, AsyncApiCallback<VoicemailGroupPolicy> callback) {
     return pcapiClient.<VoicemailGroupPolicy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailGroupPolicy>() {}, callback);
   }
 
@@ -161,7 +162,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailGroupPolicy>> getVoicemailGroupPolicyAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailGroupPolicy>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailGroupPolicy>> getVoicemailGroupPolicyAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailGroupPolicy>> callback) {
     return pcapiClient.<VoicemailGroupPolicy>invokeAPIVerboseAsync(request, new TypeReference<VoicemailGroupPolicy>() {}, callback);
   }
 
@@ -171,7 +172,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailMailboxInfo> getVoicemailMailboxAsync(GetVoicemailMailboxRequest request, AsyncApiCallback<VoicemailMailboxInfo> callback) throws ApiException {
+  public Future<VoicemailMailboxInfo> getVoicemailMailboxAsync(GetVoicemailMailboxRequest request, AsyncApiCallback<VoicemailMailboxInfo> callback) {
     return pcapiClient.<VoicemailMailboxInfo>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailMailboxInfo>() {}, callback);
   }
 
@@ -181,7 +182,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailMailboxInfo>> getVoicemailMailboxAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMailboxInfo>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailMailboxInfo>> getVoicemailMailboxAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMailboxInfo>> callback) {
     return pcapiClient.<VoicemailMailboxInfo>invokeAPIVerboseAsync(request, new TypeReference<VoicemailMailboxInfo>() {}, callback);
   }
 
@@ -191,7 +192,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailMailboxInfo> getVoicemailMeMailboxAsync(GetVoicemailMeMailboxRequest request, AsyncApiCallback<VoicemailMailboxInfo> callback) throws ApiException {
+  public Future<VoicemailMailboxInfo> getVoicemailMeMailboxAsync(GetVoicemailMeMailboxRequest request, AsyncApiCallback<VoicemailMailboxInfo> callback) {
     return pcapiClient.<VoicemailMailboxInfo>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailMailboxInfo>() {}, callback);
   }
 
@@ -201,7 +202,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailMailboxInfo>> getVoicemailMeMailboxAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMailboxInfo>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailMailboxInfo>> getVoicemailMeMailboxAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMailboxInfo>> callback) {
     return pcapiClient.<VoicemailMailboxInfo>invokeAPIVerboseAsync(request, new TypeReference<VoicemailMailboxInfo>() {}, callback);
   }
 
@@ -211,7 +212,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailMessageEntityListing> getVoicemailMeMessagesAsync(GetVoicemailMeMessagesRequest request, AsyncApiCallback<VoicemailMessageEntityListing> callback) throws ApiException {
+  public Future<VoicemailMessageEntityListing> getVoicemailMeMessagesAsync(GetVoicemailMeMessagesRequest request, AsyncApiCallback<VoicemailMessageEntityListing> callback) {
     return pcapiClient.<VoicemailMessageEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {}, callback);
   }
 
@@ -221,7 +222,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailMessageEntityListing>> getVoicemailMeMessagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMessageEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailMessageEntityListing>> getVoicemailMeMessagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMessageEntityListing>> callback) {
     return pcapiClient.<VoicemailMessageEntityListing>invokeAPIVerboseAsync(request, new TypeReference<VoicemailMessageEntityListing>() {}, callback);
   }
 
@@ -231,7 +232,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailUserPolicy> getVoicemailMePolicyAsync(GetVoicemailMePolicyRequest request, AsyncApiCallback<VoicemailUserPolicy> callback) throws ApiException {
+  public Future<VoicemailUserPolicy> getVoicemailMePolicyAsync(GetVoicemailMePolicyRequest request, AsyncApiCallback<VoicemailUserPolicy> callback) {
     return pcapiClient.<VoicemailUserPolicy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {}, callback);
   }
 
@@ -241,7 +242,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailUserPolicy>> getVoicemailMePolicyAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailUserPolicy>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailUserPolicy>> getVoicemailMePolicyAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailUserPolicy>> callback) {
     return pcapiClient.<VoicemailUserPolicy>invokeAPIVerboseAsync(request, new TypeReference<VoicemailUserPolicy>() {}, callback);
   }
 
@@ -251,7 +252,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailMessage> getVoicemailMessageAsync(GetVoicemailMessageRequest request, AsyncApiCallback<VoicemailMessage> callback) throws ApiException {
+  public Future<VoicemailMessage> getVoicemailMessageAsync(GetVoicemailMessageRequest request, AsyncApiCallback<VoicemailMessage> callback) {
     return pcapiClient.<VoicemailMessage>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailMessage>() {}, callback);
   }
 
@@ -261,7 +262,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailMessage>> getVoicemailMessageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMessage>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailMessage>> getVoicemailMessageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMessage>> callback) {
     return pcapiClient.<VoicemailMessage>invokeAPIVerboseAsync(request, new TypeReference<VoicemailMessage>() {}, callback);
   }
 
@@ -271,7 +272,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailMediaInfo> getVoicemailMessageMediaAsync(GetVoicemailMessageMediaRequest request, AsyncApiCallback<VoicemailMediaInfo> callback) throws ApiException {
+  public Future<VoicemailMediaInfo> getVoicemailMessageMediaAsync(GetVoicemailMessageMediaRequest request, AsyncApiCallback<VoicemailMediaInfo> callback) {
     return pcapiClient.<VoicemailMediaInfo>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailMediaInfo>() {}, callback);
   }
 
@@ -281,7 +282,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailMediaInfo>> getVoicemailMessageMediaAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMediaInfo>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailMediaInfo>> getVoicemailMessageMediaAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMediaInfo>> callback) {
     return pcapiClient.<VoicemailMediaInfo>invokeAPIVerboseAsync(request, new TypeReference<VoicemailMediaInfo>() {}, callback);
   }
 
@@ -291,7 +292,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailMessageEntityListing> getVoicemailMessagesAsync(GetVoicemailMessagesRequest request, AsyncApiCallback<VoicemailMessageEntityListing> callback) throws ApiException {
+  public Future<VoicemailMessageEntityListing> getVoicemailMessagesAsync(GetVoicemailMessagesRequest request, AsyncApiCallback<VoicemailMessageEntityListing> callback) {
     return pcapiClient.<VoicemailMessageEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {}, callback);
   }
 
@@ -301,7 +302,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailMessageEntityListing>> getVoicemailMessagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMessageEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailMessageEntityListing>> getVoicemailMessagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMessageEntityListing>> callback) {
     return pcapiClient.<VoicemailMessageEntityListing>invokeAPIVerboseAsync(request, new TypeReference<VoicemailMessageEntityListing>() {}, callback);
   }
 
@@ -311,7 +312,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailOrganizationPolicy> getVoicemailPolicyAsync(GetVoicemailPolicyRequest request, AsyncApiCallback<VoicemailOrganizationPolicy> callback) throws ApiException {
+  public Future<VoicemailOrganizationPolicy> getVoicemailPolicyAsync(GetVoicemailPolicyRequest request, AsyncApiCallback<VoicemailOrganizationPolicy> callback) {
     return pcapiClient.<VoicemailOrganizationPolicy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailOrganizationPolicy>() {}, callback);
   }
 
@@ -321,7 +322,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailOrganizationPolicy>> getVoicemailPolicyAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailOrganizationPolicy>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailOrganizationPolicy>> getVoicemailPolicyAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailOrganizationPolicy>> callback) {
     return pcapiClient.<VoicemailOrganizationPolicy>invokeAPIVerboseAsync(request, new TypeReference<VoicemailOrganizationPolicy>() {}, callback);
   }
 
@@ -331,7 +332,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailsSearchResponse> getVoicemailSearchAsync(GetVoicemailSearchRequest request, AsyncApiCallback<VoicemailsSearchResponse> callback) throws ApiException {
+  public Future<VoicemailsSearchResponse> getVoicemailSearchAsync(GetVoicemailSearchRequest request, AsyncApiCallback<VoicemailsSearchResponse> callback) {
     return pcapiClient.<VoicemailsSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailsSearchResponse>() {}, callback);
   }
 
@@ -341,7 +342,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailsSearchResponse>> getVoicemailSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailsSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailsSearchResponse>> getVoicemailSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailsSearchResponse>> callback) {
     return pcapiClient.<VoicemailsSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<VoicemailsSearchResponse>() {}, callback);
   }
 
@@ -351,7 +352,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailUserPolicy> getVoicemailUserpolicyAsync(GetVoicemailUserpolicyRequest request, AsyncApiCallback<VoicemailUserPolicy> callback) throws ApiException {
+  public Future<VoicemailUserPolicy> getVoicemailUserpolicyAsync(GetVoicemailUserpolicyRequest request, AsyncApiCallback<VoicemailUserPolicy> callback) {
     return pcapiClient.<VoicemailUserPolicy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {}, callback);
   }
 
@@ -361,7 +362,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailUserPolicy>> getVoicemailUserpolicyAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailUserPolicy>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailUserPolicy>> getVoicemailUserpolicyAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailUserPolicy>> callback) {
     return pcapiClient.<VoicemailUserPolicy>invokeAPIVerboseAsync(request, new TypeReference<VoicemailUserPolicy>() {}, callback);
   }
 
@@ -371,7 +372,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailGroupPolicy> patchVoicemailGroupPolicyAsync(PatchVoicemailGroupPolicyRequest request, AsyncApiCallback<VoicemailGroupPolicy> callback) throws ApiException {
+  public Future<VoicemailGroupPolicy> patchVoicemailGroupPolicyAsync(PatchVoicemailGroupPolicyRequest request, AsyncApiCallback<VoicemailGroupPolicy> callback) {
     return pcapiClient.<VoicemailGroupPolicy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailGroupPolicy>() {}, callback);
   }
 
@@ -381,7 +382,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailGroupPolicy>> patchVoicemailGroupPolicyAsync(ApiRequest<VoicemailGroupPolicy> request, AsyncApiCallback<ApiResponse<VoicemailGroupPolicy>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailGroupPolicy>> patchVoicemailGroupPolicyAsync(ApiRequest<VoicemailGroupPolicy> request, AsyncApiCallback<ApiResponse<VoicemailGroupPolicy>> callback) {
     return pcapiClient.<VoicemailGroupPolicy>invokeAPIVerboseAsync(request, new TypeReference<VoicemailGroupPolicy>() {}, callback);
   }
 
@@ -391,7 +392,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailUserPolicy> patchVoicemailMePolicyAsync(PatchVoicemailMePolicyRequest request, AsyncApiCallback<VoicemailUserPolicy> callback) throws ApiException {
+  public Future<VoicemailUserPolicy> patchVoicemailMePolicyAsync(PatchVoicemailMePolicyRequest request, AsyncApiCallback<VoicemailUserPolicy> callback) {
     return pcapiClient.<VoicemailUserPolicy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {}, callback);
   }
 
@@ -401,7 +402,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailUserPolicy>> patchVoicemailMePolicyAsync(ApiRequest<VoicemailUserPolicy> request, AsyncApiCallback<ApiResponse<VoicemailUserPolicy>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailUserPolicy>> patchVoicemailMePolicyAsync(ApiRequest<VoicemailUserPolicy> request, AsyncApiCallback<ApiResponse<VoicemailUserPolicy>> callback) {
     return pcapiClient.<VoicemailUserPolicy>invokeAPIVerboseAsync(request, new TypeReference<VoicemailUserPolicy>() {}, callback);
   }
 
@@ -411,7 +412,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailUserPolicy> patchVoicemailUserpolicyAsync(PatchVoicemailUserpolicyRequest request, AsyncApiCallback<VoicemailUserPolicy> callback) throws ApiException {
+  public Future<VoicemailUserPolicy> patchVoicemailUserpolicyAsync(PatchVoicemailUserpolicyRequest request, AsyncApiCallback<VoicemailUserPolicy> callback) {
     return pcapiClient.<VoicemailUserPolicy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {}, callback);
   }
 
@@ -421,7 +422,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailUserPolicy>> patchVoicemailUserpolicyAsync(ApiRequest<VoicemailUserPolicy> request, AsyncApiCallback<ApiResponse<VoicemailUserPolicy>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailUserPolicy>> patchVoicemailUserpolicyAsync(ApiRequest<VoicemailUserPolicy> request, AsyncApiCallback<ApiResponse<VoicemailUserPolicy>> callback) {
     return pcapiClient.<VoicemailUserPolicy>invokeAPIVerboseAsync(request, new TypeReference<VoicemailUserPolicy>() {}, callback);
   }
 
@@ -431,7 +432,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailMessage> postVoicemailMessagesAsync(PostVoicemailMessagesRequest request, AsyncApiCallback<VoicemailMessage> callback) throws ApiException {
+  public Future<VoicemailMessage> postVoicemailMessagesAsync(PostVoicemailMessagesRequest request, AsyncApiCallback<VoicemailMessage> callback) {
     return pcapiClient.<VoicemailMessage>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailMessage>() {}, callback);
   }
 
@@ -441,7 +442,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailMessage>> postVoicemailMessagesAsync(ApiRequest<CopyVoicemailMessage> request, AsyncApiCallback<ApiResponse<VoicemailMessage>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailMessage>> postVoicemailMessagesAsync(ApiRequest<CopyVoicemailMessage> request, AsyncApiCallback<ApiResponse<VoicemailMessage>> callback) {
     return pcapiClient.<VoicemailMessage>invokeAPIVerboseAsync(request, new TypeReference<VoicemailMessage>() {}, callback);
   }
 
@@ -451,7 +452,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailsSearchResponse> postVoicemailSearchAsync(PostVoicemailSearchRequest request, AsyncApiCallback<VoicemailsSearchResponse> callback) throws ApiException {
+  public Future<VoicemailsSearchResponse> postVoicemailSearchAsync(PostVoicemailSearchRequest request, AsyncApiCallback<VoicemailsSearchResponse> callback) {
     return pcapiClient.<VoicemailsSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailsSearchResponse>() {}, callback);
   }
 
@@ -461,7 +462,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailsSearchResponse>> postVoicemailSearchAsync(ApiRequest<VoicemailSearchRequest> request, AsyncApiCallback<ApiResponse<VoicemailsSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailsSearchResponse>> postVoicemailSearchAsync(ApiRequest<VoicemailSearchRequest> request, AsyncApiCallback<ApiResponse<VoicemailsSearchResponse>> callback) {
     return pcapiClient.<VoicemailsSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<VoicemailsSearchResponse>() {}, callback);
   }
 
@@ -471,7 +472,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailMessage> putVoicemailMessageAsync(PutVoicemailMessageRequest request, AsyncApiCallback<VoicemailMessage> callback) throws ApiException {
+  public Future<VoicemailMessage> putVoicemailMessageAsync(PutVoicemailMessageRequest request, AsyncApiCallback<VoicemailMessage> callback) {
     return pcapiClient.<VoicemailMessage>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailMessage>() {}, callback);
   }
 
@@ -481,7 +482,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailMessage>> putVoicemailMessageAsync(ApiRequest<VoicemailMessage> request, AsyncApiCallback<ApiResponse<VoicemailMessage>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailMessage>> putVoicemailMessageAsync(ApiRequest<VoicemailMessage> request, AsyncApiCallback<ApiResponse<VoicemailMessage>> callback) {
     return pcapiClient.<VoicemailMessage>invokeAPIVerboseAsync(request, new TypeReference<VoicemailMessage>() {}, callback);
   }
 
@@ -491,7 +492,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailOrganizationPolicy> putVoicemailPolicyAsync(PutVoicemailPolicyRequest request, AsyncApiCallback<VoicemailOrganizationPolicy> callback) throws ApiException {
+  public Future<VoicemailOrganizationPolicy> putVoicemailPolicyAsync(PutVoicemailPolicyRequest request, AsyncApiCallback<VoicemailOrganizationPolicy> callback) {
     return pcapiClient.<VoicemailOrganizationPolicy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailOrganizationPolicy>() {}, callback);
   }
 
@@ -501,7 +502,7 @@ public class VoicemailApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailOrganizationPolicy>> putVoicemailPolicyAsync(ApiRequest<VoicemailOrganizationPolicy> request, AsyncApiCallback<ApiResponse<VoicemailOrganizationPolicy>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailOrganizationPolicy>> putVoicemailPolicyAsync(ApiRequest<VoicemailOrganizationPolicy> request, AsyncApiCallback<ApiResponse<VoicemailOrganizationPolicy>> callback) {
     return pcapiClient.<VoicemailOrganizationPolicy>invokeAPIVerboseAsync(request, new TypeReference<VoicemailOrganizationPolicy>() {}, callback);
   }
 

@@ -110,16 +110,16 @@ public class PostConversationsEmailMessagesRequest {
         return this;
     }
 
-    public ApiRequest<EmailMessage> withHttpInfo() throws ApiException {
+    public ApiRequest<EmailMessage> withHttpInfo() {
         
         // verify the required parameter 'emailId' is set
         if (this.emailId == null) {
-            throw new ApiException(400, "Missing the required parameter 'emailId' when building request for PostConversationsEmailMessagesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'emailId' when building request for PostConversationsEmailMessagesRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostConversationsEmailMessagesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostConversationsEmailMessagesRequest.");
         }
         
 

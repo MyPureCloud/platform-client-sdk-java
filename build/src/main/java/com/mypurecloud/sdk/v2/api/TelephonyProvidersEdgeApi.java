@@ -196,6 +196,7 @@ import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesSiteNumberpl
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesSiteOutboundrouteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesTrunkbasesettingRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -220,7 +221,7 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdge(String edgeId) throws ApiException {
+  public String deleteTelephonyProvidersEdge(String edgeId) throws IOException, ApiException {
     return deleteTelephonyProvidersEdgeWithHttpInfo(edgeId).getBody();
   }
 
@@ -231,12 +232,12 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgeWithHttpInfo(String edgeId) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgeWithHttpInfo(String edgeId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling deleteTelephonyProvidersEdge");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling deleteTelephonyProvidersEdge");
     }
     
     // create path and map variables
@@ -272,7 +273,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdge(DeleteTelephonyProvidersEdgeRequest request) throws ApiException {
+  public String deleteTelephonyProvidersEdge(DeleteTelephonyProvidersEdgeRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -282,7 +283,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdge(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdge(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -293,7 +294,7 @@ public class TelephonyProvidersEdgeApi {
    * @param interfaceId Interface ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteTelephonyProvidersEdgeLogicalinterface(String edgeId, String interfaceId) throws ApiException {
+  public void deleteTelephonyProvidersEdgeLogicalinterface(String edgeId, String interfaceId) throws IOException, ApiException {
     deleteTelephonyProvidersEdgeLogicalinterfaceWithHttpInfo(edgeId, interfaceId);
   }
 
@@ -304,17 +305,17 @@ public class TelephonyProvidersEdgeApi {
    * @param interfaceId Interface ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteTelephonyProvidersEdgeLogicalinterfaceWithHttpInfo(String edgeId, String interfaceId) throws ApiException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgeLogicalinterfaceWithHttpInfo(String edgeId, String interfaceId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling deleteTelephonyProvidersEdgeLogicalinterface");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling deleteTelephonyProvidersEdgeLogicalinterface");
     }
     
     // verify the required parameter 'interfaceId' is set
     if (interfaceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'interfaceId' when calling deleteTelephonyProvidersEdgeLogicalinterface");
+      throw new IllegalArgumentException("Missing the required parameter 'interfaceId' when calling deleteTelephonyProvidersEdgeLogicalinterface");
     }
     
     // create path and map variables
@@ -351,7 +352,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteTelephonyProvidersEdgeLogicalinterface(DeleteTelephonyProvidersEdgeLogicalinterfaceRequest request) throws ApiException {
+  public void deleteTelephonyProvidersEdgeLogicalinterface(DeleteTelephonyProvidersEdgeLogicalinterfaceRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -361,7 +362,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteTelephonyProvidersEdgeLogicalinterface(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgeLogicalinterface(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -372,7 +373,7 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgeSoftwareupdate(String edgeId) throws ApiException {
+  public String deleteTelephonyProvidersEdgeSoftwareupdate(String edgeId) throws IOException, ApiException {
     return deleteTelephonyProvidersEdgeSoftwareupdateWithHttpInfo(edgeId).getBody();
   }
 
@@ -383,12 +384,12 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgeSoftwareupdateWithHttpInfo(String edgeId) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgeSoftwareupdateWithHttpInfo(String edgeId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling deleteTelephonyProvidersEdgeSoftwareupdate");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling deleteTelephonyProvidersEdgeSoftwareupdate");
     }
     
     // create path and map variables
@@ -424,7 +425,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgeSoftwareupdate(DeleteTelephonyProvidersEdgeSoftwareupdateRequest request) throws ApiException {
+  public String deleteTelephonyProvidersEdgeSoftwareupdate(DeleteTelephonyProvidersEdgeSoftwareupdateRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -434,7 +435,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgeSoftwareupdate(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgeSoftwareupdate(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -445,7 +446,7 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesCertificateauthority(String certificateId) throws ApiException {
+  public String deleteTelephonyProvidersEdgesCertificateauthority(String certificateId) throws IOException, ApiException {
     return deleteTelephonyProvidersEdgesCertificateauthorityWithHttpInfo(certificateId).getBody();
   }
 
@@ -456,12 +457,12 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesCertificateauthorityWithHttpInfo(String certificateId) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesCertificateauthorityWithHttpInfo(String certificateId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'certificateId' is set
     if (certificateId == null) {
-      throw new ApiException(400, "Missing the required parameter 'certificateId' when calling deleteTelephonyProvidersEdgesCertificateauthority");
+      throw new IllegalArgumentException("Missing the required parameter 'certificateId' when calling deleteTelephonyProvidersEdgesCertificateauthority");
     }
     
     // create path and map variables
@@ -497,7 +498,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesCertificateauthority(DeleteTelephonyProvidersEdgesCertificateauthorityRequest request) throws ApiException {
+  public String deleteTelephonyProvidersEdgesCertificateauthority(DeleteTelephonyProvidersEdgesCertificateauthorityRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -507,7 +508,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesCertificateauthority(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesCertificateauthority(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -518,7 +519,7 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesDidpool(String didPoolId) throws ApiException {
+  public String deleteTelephonyProvidersEdgesDidpool(String didPoolId) throws IOException, ApiException {
     return deleteTelephonyProvidersEdgesDidpoolWithHttpInfo(didPoolId).getBody();
   }
 
@@ -529,12 +530,12 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesDidpoolWithHttpInfo(String didPoolId) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesDidpoolWithHttpInfo(String didPoolId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'didPoolId' is set
     if (didPoolId == null) {
-      throw new ApiException(400, "Missing the required parameter 'didPoolId' when calling deleteTelephonyProvidersEdgesDidpool");
+      throw new IllegalArgumentException("Missing the required parameter 'didPoolId' when calling deleteTelephonyProvidersEdgesDidpool");
     }
     
     // create path and map variables
@@ -570,7 +571,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesDidpool(DeleteTelephonyProvidersEdgesDidpoolRequest request) throws ApiException {
+  public String deleteTelephonyProvidersEdgesDidpool(DeleteTelephonyProvidersEdgesDidpoolRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -580,7 +581,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesDidpool(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesDidpool(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -591,7 +592,7 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesEdgegroup(String edgeGroupId) throws ApiException {
+  public String deleteTelephonyProvidersEdgesEdgegroup(String edgeGroupId) throws IOException, ApiException {
     return deleteTelephonyProvidersEdgesEdgegroupWithHttpInfo(edgeGroupId).getBody();
   }
 
@@ -602,12 +603,12 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesEdgegroupWithHttpInfo(String edgeGroupId) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesEdgegroupWithHttpInfo(String edgeGroupId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'edgeGroupId' is set
     if (edgeGroupId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeGroupId' when calling deleteTelephonyProvidersEdgesEdgegroup");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeGroupId' when calling deleteTelephonyProvidersEdgesEdgegroup");
     }
     
     // create path and map variables
@@ -643,7 +644,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesEdgegroup(DeleteTelephonyProvidersEdgesEdgegroupRequest request) throws ApiException {
+  public String deleteTelephonyProvidersEdgesEdgegroup(DeleteTelephonyProvidersEdgesEdgegroupRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -653,7 +654,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesEdgegroup(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesEdgegroup(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -664,7 +665,7 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesEndpoint(String endpointId) throws ApiException {
+  public String deleteTelephonyProvidersEdgesEndpoint(String endpointId) throws IOException, ApiException {
     return deleteTelephonyProvidersEdgesEndpointWithHttpInfo(endpointId).getBody();
   }
 
@@ -675,12 +676,12 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesEndpointWithHttpInfo(String endpointId) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesEndpointWithHttpInfo(String endpointId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'endpointId' is set
     if (endpointId == null) {
-      throw new ApiException(400, "Missing the required parameter 'endpointId' when calling deleteTelephonyProvidersEdgesEndpoint");
+      throw new IllegalArgumentException("Missing the required parameter 'endpointId' when calling deleteTelephonyProvidersEdgesEndpoint");
     }
     
     // create path and map variables
@@ -716,7 +717,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesEndpoint(DeleteTelephonyProvidersEdgesEndpointRequest request) throws ApiException {
+  public String deleteTelephonyProvidersEdgesEndpoint(DeleteTelephonyProvidersEdgesEndpointRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -726,7 +727,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesEndpoint(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesEndpoint(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -737,7 +738,7 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesExtensionpool(String extensionPoolId) throws ApiException {
+  public String deleteTelephonyProvidersEdgesExtensionpool(String extensionPoolId) throws IOException, ApiException {
     return deleteTelephonyProvidersEdgesExtensionpoolWithHttpInfo(extensionPoolId).getBody();
   }
 
@@ -748,12 +749,12 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesExtensionpoolWithHttpInfo(String extensionPoolId) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesExtensionpoolWithHttpInfo(String extensionPoolId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'extensionPoolId' is set
     if (extensionPoolId == null) {
-      throw new ApiException(400, "Missing the required parameter 'extensionPoolId' when calling deleteTelephonyProvidersEdgesExtensionpool");
+      throw new IllegalArgumentException("Missing the required parameter 'extensionPoolId' when calling deleteTelephonyProvidersEdgesExtensionpool");
     }
     
     // create path and map variables
@@ -789,7 +790,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesExtensionpool(DeleteTelephonyProvidersEdgesExtensionpoolRequest request) throws ApiException {
+  public String deleteTelephonyProvidersEdgesExtensionpool(DeleteTelephonyProvidersEdgesExtensionpoolRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -799,7 +800,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesExtensionpool(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesExtensionpool(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -810,7 +811,7 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesOutboundroute(String outboundRouteId) throws ApiException {
+  public String deleteTelephonyProvidersEdgesOutboundroute(String outboundRouteId) throws IOException, ApiException {
     return deleteTelephonyProvidersEdgesOutboundrouteWithHttpInfo(outboundRouteId).getBody();
   }
 
@@ -821,12 +822,12 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesOutboundrouteWithHttpInfo(String outboundRouteId) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesOutboundrouteWithHttpInfo(String outboundRouteId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'outboundRouteId' is set
     if (outboundRouteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'outboundRouteId' when calling deleteTelephonyProvidersEdgesOutboundroute");
+      throw new IllegalArgumentException("Missing the required parameter 'outboundRouteId' when calling deleteTelephonyProvidersEdgesOutboundroute");
     }
     
     // create path and map variables
@@ -862,7 +863,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesOutboundroute(DeleteTelephonyProvidersEdgesOutboundrouteRequest request) throws ApiException {
+  public String deleteTelephonyProvidersEdgesOutboundroute(DeleteTelephonyProvidersEdgesOutboundrouteRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -872,7 +873,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesOutboundroute(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesOutboundroute(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -883,7 +884,7 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesPhone(String phoneId) throws ApiException {
+  public String deleteTelephonyProvidersEdgesPhone(String phoneId) throws IOException, ApiException {
     return deleteTelephonyProvidersEdgesPhoneWithHttpInfo(phoneId).getBody();
   }
 
@@ -894,12 +895,12 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesPhoneWithHttpInfo(String phoneId) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesPhoneWithHttpInfo(String phoneId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'phoneId' is set
     if (phoneId == null) {
-      throw new ApiException(400, "Missing the required parameter 'phoneId' when calling deleteTelephonyProvidersEdgesPhone");
+      throw new IllegalArgumentException("Missing the required parameter 'phoneId' when calling deleteTelephonyProvidersEdgesPhone");
     }
     
     // create path and map variables
@@ -935,7 +936,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesPhone(DeleteTelephonyProvidersEdgesPhoneRequest request) throws ApiException {
+  public String deleteTelephonyProvidersEdgesPhone(DeleteTelephonyProvidersEdgesPhoneRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -945,7 +946,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesPhone(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesPhone(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -956,7 +957,7 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesPhonebasesetting(String phoneBaseId) throws ApiException {
+  public String deleteTelephonyProvidersEdgesPhonebasesetting(String phoneBaseId) throws IOException, ApiException {
     return deleteTelephonyProvidersEdgesPhonebasesettingWithHttpInfo(phoneBaseId).getBody();
   }
 
@@ -967,12 +968,12 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesPhonebasesettingWithHttpInfo(String phoneBaseId) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesPhonebasesettingWithHttpInfo(String phoneBaseId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'phoneBaseId' is set
     if (phoneBaseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'phoneBaseId' when calling deleteTelephonyProvidersEdgesPhonebasesetting");
+      throw new IllegalArgumentException("Missing the required parameter 'phoneBaseId' when calling deleteTelephonyProvidersEdgesPhonebasesetting");
     }
     
     // create path and map variables
@@ -1008,7 +1009,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesPhonebasesetting(DeleteTelephonyProvidersEdgesPhonebasesettingRequest request) throws ApiException {
+  public String deleteTelephonyProvidersEdgesPhonebasesetting(DeleteTelephonyProvidersEdgesPhonebasesettingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -1018,7 +1019,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesPhonebasesetting(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesPhonebasesetting(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -1029,7 +1030,7 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesSite(String siteId) throws ApiException {
+  public String deleteTelephonyProvidersEdgesSite(String siteId) throws IOException, ApiException {
     return deleteTelephonyProvidersEdgesSiteWithHttpInfo(siteId).getBody();
   }
 
@@ -1040,12 +1041,12 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesSiteWithHttpInfo(String siteId) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesSiteWithHttpInfo(String siteId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'siteId' is set
     if (siteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'siteId' when calling deleteTelephonyProvidersEdgesSite");
+      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling deleteTelephonyProvidersEdgesSite");
     }
     
     // create path and map variables
@@ -1081,7 +1082,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesSite(DeleteTelephonyProvidersEdgesSiteRequest request) throws ApiException {
+  public String deleteTelephonyProvidersEdgesSite(DeleteTelephonyProvidersEdgesSiteRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -1091,7 +1092,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesSite(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesSite(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -1103,7 +1104,7 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesSiteOutboundroute(String siteId, String outboundRouteId) throws ApiException {
+  public String deleteTelephonyProvidersEdgesSiteOutboundroute(String siteId, String outboundRouteId) throws IOException, ApiException {
     return deleteTelephonyProvidersEdgesSiteOutboundrouteWithHttpInfo(siteId, outboundRouteId).getBody();
   }
 
@@ -1115,17 +1116,17 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesSiteOutboundrouteWithHttpInfo(String siteId, String outboundRouteId) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesSiteOutboundrouteWithHttpInfo(String siteId, String outboundRouteId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'siteId' is set
     if (siteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'siteId' when calling deleteTelephonyProvidersEdgesSiteOutboundroute");
+      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling deleteTelephonyProvidersEdgesSiteOutboundroute");
     }
     
     // verify the required parameter 'outboundRouteId' is set
     if (outboundRouteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'outboundRouteId' when calling deleteTelephonyProvidersEdgesSiteOutboundroute");
+      throw new IllegalArgumentException("Missing the required parameter 'outboundRouteId' when calling deleteTelephonyProvidersEdgesSiteOutboundroute");
     }
     
     // create path and map variables
@@ -1162,7 +1163,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesSiteOutboundroute(DeleteTelephonyProvidersEdgesSiteOutboundrouteRequest request) throws ApiException {
+  public String deleteTelephonyProvidersEdgesSiteOutboundroute(DeleteTelephonyProvidersEdgesSiteOutboundrouteRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -1172,7 +1173,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesSiteOutboundroute(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesSiteOutboundroute(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -1183,7 +1184,7 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesTrunkbasesetting(String trunkBaseSettingsId) throws ApiException {
+  public String deleteTelephonyProvidersEdgesTrunkbasesetting(String trunkBaseSettingsId) throws IOException, ApiException {
     return deleteTelephonyProvidersEdgesTrunkbasesettingWithHttpInfo(trunkBaseSettingsId).getBody();
   }
 
@@ -1194,12 +1195,12 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesTrunkbasesettingWithHttpInfo(String trunkBaseSettingsId) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesTrunkbasesettingWithHttpInfo(String trunkBaseSettingsId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'trunkBaseSettingsId' is set
     if (trunkBaseSettingsId == null) {
-      throw new ApiException(400, "Missing the required parameter 'trunkBaseSettingsId' when calling deleteTelephonyProvidersEdgesTrunkbasesetting");
+      throw new IllegalArgumentException("Missing the required parameter 'trunkBaseSettingsId' when calling deleteTelephonyProvidersEdgesTrunkbasesetting");
     }
     
     // create path and map variables
@@ -1235,7 +1236,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteTelephonyProvidersEdgesTrunkbasesetting(DeleteTelephonyProvidersEdgesTrunkbasesettingRequest request) throws ApiException {
+  public String deleteTelephonyProvidersEdgesTrunkbasesetting(DeleteTelephonyProvidersEdgesTrunkbasesettingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -1245,7 +1246,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesTrunkbasesetting(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteTelephonyProvidersEdgesTrunkbasesetting(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -1257,7 +1258,7 @@ public class TelephonyProvidersEdgeApi {
    * @return SchemaCategoryEntityListing
    * @throws ApiException if fails to make API call
    */
-  public SchemaCategoryEntityListing getConfigurationSchemasEdgesVnext(Integer pageSize, Integer pageNumber) throws ApiException {
+  public SchemaCategoryEntityListing getConfigurationSchemasEdgesVnext(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return getConfigurationSchemasEdgesVnextWithHttpInfo(pageSize, pageNumber).getBody();
   }
 
@@ -1269,7 +1270,7 @@ public class TelephonyProvidersEdgeApi {
    * @return SchemaCategoryEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SchemaCategoryEntityListing> getConfigurationSchemasEdgesVnextWithHttpInfo(Integer pageSize, Integer pageNumber) throws ApiException {
+  public ApiResponse<SchemaCategoryEntityListing> getConfigurationSchemasEdgesVnextWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1306,7 +1307,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public SchemaCategoryEntityListing getConfigurationSchemasEdgesVnext(GetConfigurationSchemasEdgesVnextRequest request) throws ApiException {
+  public SchemaCategoryEntityListing getConfigurationSchemasEdgesVnext(GetConfigurationSchemasEdgesVnextRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SchemaCategoryEntityListing>() {});
   }
 
@@ -1316,7 +1317,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SchemaCategoryEntityListing> getConfigurationSchemasEdgesVnext(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<SchemaCategoryEntityListing> getConfigurationSchemasEdgesVnext(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<SchemaCategoryEntityListing>invokeAPIVerbose(request, new TypeReference<SchemaCategoryEntityListing>() {});
   }
 
@@ -1329,7 +1330,7 @@ public class TelephonyProvidersEdgeApi {
    * @return SchemaReferenceEntityListing
    * @throws ApiException if fails to make API call
    */
-  public SchemaReferenceEntityListing getConfigurationSchemasEdgesVnextSchemaCategory(String schemaCategory, Integer pageSize, Integer pageNumber) throws ApiException {
+  public SchemaReferenceEntityListing getConfigurationSchemasEdgesVnextSchemaCategory(String schemaCategory, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return getConfigurationSchemasEdgesVnextSchemaCategoryWithHttpInfo(schemaCategory, pageSize, pageNumber).getBody();
   }
 
@@ -1342,12 +1343,12 @@ public class TelephonyProvidersEdgeApi {
    * @return SchemaReferenceEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategoryWithHttpInfo(String schemaCategory, Integer pageSize, Integer pageNumber) throws ApiException {
+  public ApiResponse<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategoryWithHttpInfo(String schemaCategory, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'schemaCategory' is set
     if (schemaCategory == null) {
-      throw new ApiException(400, "Missing the required parameter 'schemaCategory' when calling getConfigurationSchemasEdgesVnextSchemaCategory");
+      throw new IllegalArgumentException("Missing the required parameter 'schemaCategory' when calling getConfigurationSchemasEdgesVnextSchemaCategory");
     }
     
     // create path and map variables
@@ -1385,7 +1386,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public SchemaReferenceEntityListing getConfigurationSchemasEdgesVnextSchemaCategory(GetConfigurationSchemasEdgesVnextSchemaCategoryRequest request) throws ApiException {
+  public SchemaReferenceEntityListing getConfigurationSchemasEdgesVnextSchemaCategory(GetConfigurationSchemasEdgesVnextSchemaCategoryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SchemaReferenceEntityListing>() {});
   }
 
@@ -1395,7 +1396,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategory(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategory(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<SchemaReferenceEntityListing>invokeAPIVerbose(request, new TypeReference<SchemaReferenceEntityListing>() {});
   }
 
@@ -1409,7 +1410,7 @@ public class TelephonyProvidersEdgeApi {
    * @return SchemaReferenceEntityListing
    * @throws ApiException if fails to make API call
    */
-  public SchemaReferenceEntityListing getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(String schemaCategory, String schemaType, Integer pageSize, Integer pageNumber) throws ApiException {
+  public SchemaReferenceEntityListing getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(String schemaCategory, String schemaType, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeWithHttpInfo(schemaCategory, schemaType, pageSize, pageNumber).getBody();
   }
 
@@ -1423,17 +1424,17 @@ public class TelephonyProvidersEdgeApi {
    * @return SchemaReferenceEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeWithHttpInfo(String schemaCategory, String schemaType, Integer pageSize, Integer pageNumber) throws ApiException {
+  public ApiResponse<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeWithHttpInfo(String schemaCategory, String schemaType, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'schemaCategory' is set
     if (schemaCategory == null) {
-      throw new ApiException(400, "Missing the required parameter 'schemaCategory' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaType");
+      throw new IllegalArgumentException("Missing the required parameter 'schemaCategory' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaType");
     }
     
     // verify the required parameter 'schemaType' is set
     if (schemaType == null) {
-      throw new ApiException(400, "Missing the required parameter 'schemaType' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaType");
+      throw new IllegalArgumentException("Missing the required parameter 'schemaType' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaType");
     }
     
     // create path and map variables
@@ -1472,7 +1473,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public SchemaReferenceEntityListing getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest request) throws ApiException {
+  public SchemaReferenceEntityListing getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SchemaReferenceEntityListing>() {});
   }
 
@@ -1482,7 +1483,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<SchemaReferenceEntityListing>invokeAPIVerbose(request, new TypeReference<SchemaReferenceEntityListing>() {});
   }
 
@@ -1495,7 +1496,7 @@ public class TelephonyProvidersEdgeApi {
    * @return Organization
    * @throws ApiException if fails to make API call
    */
-  public Organization getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(String schemaCategory, String schemaType, String schemaId) throws ApiException {
+  public Organization getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(String schemaCategory, String schemaType, String schemaId) throws IOException, ApiException {
     return getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdWithHttpInfo(schemaCategory, schemaType, schemaId).getBody();
   }
 
@@ -1508,22 +1509,22 @@ public class TelephonyProvidersEdgeApi {
    * @return Organization
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdWithHttpInfo(String schemaCategory, String schemaType, String schemaId) throws ApiException {
+  public ApiResponse<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdWithHttpInfo(String schemaCategory, String schemaType, String schemaId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'schemaCategory' is set
     if (schemaCategory == null) {
-      throw new ApiException(400, "Missing the required parameter 'schemaCategory' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId");
+      throw new IllegalArgumentException("Missing the required parameter 'schemaCategory' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId");
     }
     
     // verify the required parameter 'schemaType' is set
     if (schemaType == null) {
-      throw new ApiException(400, "Missing the required parameter 'schemaType' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId");
+      throw new IllegalArgumentException("Missing the required parameter 'schemaType' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId");
     }
     
     // verify the required parameter 'schemaId' is set
     if (schemaId == null) {
-      throw new ApiException(400, "Missing the required parameter 'schemaId' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId");
+      throw new IllegalArgumentException("Missing the required parameter 'schemaId' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId");
     }
     
     // create path and map variables
@@ -1561,7 +1562,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Organization getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest request) throws ApiException {
+  public Organization getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Organization>() {});
   }
 
@@ -1571,7 +1572,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Organization>invokeAPIVerbose(request, new TypeReference<Organization>() {});
   }
 
@@ -1587,7 +1588,7 @@ public class TelephonyProvidersEdgeApi {
    * @return Organization
    * @throws ApiException if fails to make API call
    */
-  public Organization getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(String schemaCategory, String schemaType, String schemaId, String extensionType, String metadataId, String type) throws ApiException {
+  public Organization getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(String schemaCategory, String schemaType, String schemaId, String extensionType, String metadataId, String type) throws IOException, ApiException {
     return getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdWithHttpInfo(schemaCategory, schemaType, schemaId, extensionType, metadataId, type).getBody();
   }
 
@@ -1603,32 +1604,32 @@ public class TelephonyProvidersEdgeApi {
    * @return Organization
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdWithHttpInfo(String schemaCategory, String schemaType, String schemaId, String extensionType, String metadataId, String type) throws ApiException {
+  public ApiResponse<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdWithHttpInfo(String schemaCategory, String schemaType, String schemaId, String extensionType, String metadataId, String type) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'schemaCategory' is set
     if (schemaCategory == null) {
-      throw new ApiException(400, "Missing the required parameter 'schemaCategory' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId");
+      throw new IllegalArgumentException("Missing the required parameter 'schemaCategory' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId");
     }
     
     // verify the required parameter 'schemaType' is set
     if (schemaType == null) {
-      throw new ApiException(400, "Missing the required parameter 'schemaType' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId");
+      throw new IllegalArgumentException("Missing the required parameter 'schemaType' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId");
     }
     
     // verify the required parameter 'schemaId' is set
     if (schemaId == null) {
-      throw new ApiException(400, "Missing the required parameter 'schemaId' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId");
+      throw new IllegalArgumentException("Missing the required parameter 'schemaId' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId");
     }
     
     // verify the required parameter 'extensionType' is set
     if (extensionType == null) {
-      throw new ApiException(400, "Missing the required parameter 'extensionType' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId");
+      throw new IllegalArgumentException("Missing the required parameter 'extensionType' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId");
     }
     
     // verify the required parameter 'metadataId' is set
     if (metadataId == null) {
-      throw new ApiException(400, "Missing the required parameter 'metadataId' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId");
+      throw new IllegalArgumentException("Missing the required parameter 'metadataId' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId");
     }
     
     // create path and map variables
@@ -1669,7 +1670,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Organization getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest request) throws ApiException {
+  public Organization getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Organization>() {});
   }
 
@@ -1679,7 +1680,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Organization>invokeAPIVerbose(request, new TypeReference<Organization>() {});
   }
 
@@ -1691,7 +1692,7 @@ public class TelephonyProvidersEdgeApi {
    * @return Edge
    * @throws ApiException if fails to make API call
    */
-  public Edge getTelephonyProvidersEdge(String edgeId, List<String> expand) throws ApiException {
+  public Edge getTelephonyProvidersEdge(String edgeId, List<String> expand) throws IOException, ApiException {
     return getTelephonyProvidersEdgeWithHttpInfo(edgeId, expand).getBody();
   }
 
@@ -1703,12 +1704,12 @@ public class TelephonyProvidersEdgeApi {
    * @return Edge
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Edge> getTelephonyProvidersEdgeWithHttpInfo(String edgeId, List<String> expand) throws ApiException {
+  public ApiResponse<Edge> getTelephonyProvidersEdgeWithHttpInfo(String edgeId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdge");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdge");
     }
     
     // create path and map variables
@@ -1745,7 +1746,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Edge getTelephonyProvidersEdge(GetTelephonyProvidersEdgeRequest request) throws ApiException {
+  public Edge getTelephonyProvidersEdge(GetTelephonyProvidersEdgeRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Edge>() {});
   }
 
@@ -1755,7 +1756,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Edge> getTelephonyProvidersEdge(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Edge> getTelephonyProvidersEdge(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Edge>invokeAPIVerbose(request, new TypeReference<Edge>() {});
   }
 
@@ -1767,7 +1768,7 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeLine
    * @throws ApiException if fails to make API call
    */
-  public EdgeLine getTelephonyProvidersEdgeLine(String edgeId, String lineId) throws ApiException {
+  public EdgeLine getTelephonyProvidersEdgeLine(String edgeId, String lineId) throws IOException, ApiException {
     return getTelephonyProvidersEdgeLineWithHttpInfo(edgeId, lineId).getBody();
   }
 
@@ -1779,17 +1780,17 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeLine
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeLine> getTelephonyProvidersEdgeLineWithHttpInfo(String edgeId, String lineId) throws ApiException {
+  public ApiResponse<EdgeLine> getTelephonyProvidersEdgeLineWithHttpInfo(String edgeId, String lineId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeLine");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeLine");
     }
     
     // verify the required parameter 'lineId' is set
     if (lineId == null) {
-      throw new ApiException(400, "Missing the required parameter 'lineId' when calling getTelephonyProvidersEdgeLine");
+      throw new IllegalArgumentException("Missing the required parameter 'lineId' when calling getTelephonyProvidersEdgeLine");
     }
     
     // create path and map variables
@@ -1826,7 +1827,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EdgeLine getTelephonyProvidersEdgeLine(GetTelephonyProvidersEdgeLineRequest request) throws ApiException {
+  public EdgeLine getTelephonyProvidersEdgeLine(GetTelephonyProvidersEdgeLineRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeLine>() {});
   }
 
@@ -1836,7 +1837,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeLine> getTelephonyProvidersEdgeLine(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<EdgeLine> getTelephonyProvidersEdgeLine(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<EdgeLine>invokeAPIVerbose(request, new TypeReference<EdgeLine>() {});
   }
 
@@ -1849,7 +1850,7 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeLineEntityListing
    * @throws ApiException if fails to make API call
    */
-  public EdgeLineEntityListing getTelephonyProvidersEdgeLines(String edgeId, Integer pageSize, Integer pageNumber) throws ApiException {
+  public EdgeLineEntityListing getTelephonyProvidersEdgeLines(String edgeId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return getTelephonyProvidersEdgeLinesWithHttpInfo(edgeId, pageSize, pageNumber).getBody();
   }
 
@@ -1862,12 +1863,12 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeLineEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeLineEntityListing> getTelephonyProvidersEdgeLinesWithHttpInfo(String edgeId, Integer pageSize, Integer pageNumber) throws ApiException {
+  public ApiResponse<EdgeLineEntityListing> getTelephonyProvidersEdgeLinesWithHttpInfo(String edgeId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeLines");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeLines");
     }
     
     // create path and map variables
@@ -1905,7 +1906,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EdgeLineEntityListing getTelephonyProvidersEdgeLines(GetTelephonyProvidersEdgeLinesRequest request) throws ApiException {
+  public EdgeLineEntityListing getTelephonyProvidersEdgeLines(GetTelephonyProvidersEdgeLinesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeLineEntityListing>() {});
   }
 
@@ -1915,7 +1916,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeLineEntityListing> getTelephonyProvidersEdgeLines(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<EdgeLineEntityListing> getTelephonyProvidersEdgeLines(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<EdgeLineEntityListing>invokeAPIVerbose(request, new TypeReference<EdgeLineEntityListing>() {});
   }
 
@@ -1928,7 +1929,7 @@ public class TelephonyProvidersEdgeApi {
    * @return DomainLogicalInterface
    * @throws ApiException if fails to make API call
    */
-  public DomainLogicalInterface getTelephonyProvidersEdgeLogicalinterface(String edgeId, String interfaceId, List<String> expand) throws ApiException {
+  public DomainLogicalInterface getTelephonyProvidersEdgeLogicalinterface(String edgeId, String interfaceId, List<String> expand) throws IOException, ApiException {
     return getTelephonyProvidersEdgeLogicalinterfaceWithHttpInfo(edgeId, interfaceId, expand).getBody();
   }
 
@@ -1941,17 +1942,17 @@ public class TelephonyProvidersEdgeApi {
    * @return DomainLogicalInterface
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainLogicalInterface> getTelephonyProvidersEdgeLogicalinterfaceWithHttpInfo(String edgeId, String interfaceId, List<String> expand) throws ApiException {
+  public ApiResponse<DomainLogicalInterface> getTelephonyProvidersEdgeLogicalinterfaceWithHttpInfo(String edgeId, String interfaceId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeLogicalinterface");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeLogicalinterface");
     }
     
     // verify the required parameter 'interfaceId' is set
     if (interfaceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'interfaceId' when calling getTelephonyProvidersEdgeLogicalinterface");
+      throw new IllegalArgumentException("Missing the required parameter 'interfaceId' when calling getTelephonyProvidersEdgeLogicalinterface");
     }
     
     // create path and map variables
@@ -1989,7 +1990,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DomainLogicalInterface getTelephonyProvidersEdgeLogicalinterface(GetTelephonyProvidersEdgeLogicalinterfaceRequest request) throws ApiException {
+  public DomainLogicalInterface getTelephonyProvidersEdgeLogicalinterface(GetTelephonyProvidersEdgeLogicalinterfaceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainLogicalInterface>() {});
   }
 
@@ -1999,7 +2000,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainLogicalInterface> getTelephonyProvidersEdgeLogicalinterface(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<DomainLogicalInterface> getTelephonyProvidersEdgeLogicalinterface(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<DomainLogicalInterface>invokeAPIVerbose(request, new TypeReference<DomainLogicalInterface>() {});
   }
 
@@ -2011,7 +2012,7 @@ public class TelephonyProvidersEdgeApi {
    * @return LogicalInterfaceEntityListing
    * @throws ApiException if fails to make API call
    */
-  public LogicalInterfaceEntityListing getTelephonyProvidersEdgeLogicalinterfaces(String edgeId, List<String> expand) throws ApiException {
+  public LogicalInterfaceEntityListing getTelephonyProvidersEdgeLogicalinterfaces(String edgeId, List<String> expand) throws IOException, ApiException {
     return getTelephonyProvidersEdgeLogicalinterfacesWithHttpInfo(edgeId, expand).getBody();
   }
 
@@ -2023,12 +2024,12 @@ public class TelephonyProvidersEdgeApi {
    * @return LogicalInterfaceEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LogicalInterfaceEntityListing> getTelephonyProvidersEdgeLogicalinterfacesWithHttpInfo(String edgeId, List<String> expand) throws ApiException {
+  public ApiResponse<LogicalInterfaceEntityListing> getTelephonyProvidersEdgeLogicalinterfacesWithHttpInfo(String edgeId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeLogicalinterfaces");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeLogicalinterfaces");
     }
     
     // create path and map variables
@@ -2065,7 +2066,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public LogicalInterfaceEntityListing getTelephonyProvidersEdgeLogicalinterfaces(GetTelephonyProvidersEdgeLogicalinterfacesRequest request) throws ApiException {
+  public LogicalInterfaceEntityListing getTelephonyProvidersEdgeLogicalinterfaces(GetTelephonyProvidersEdgeLogicalinterfacesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LogicalInterfaceEntityListing>() {});
   }
 
@@ -2075,7 +2076,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LogicalInterfaceEntityListing> getTelephonyProvidersEdgeLogicalinterfaces(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<LogicalInterfaceEntityListing> getTelephonyProvidersEdgeLogicalinterfaces(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<LogicalInterfaceEntityListing>invokeAPIVerbose(request, new TypeReference<LogicalInterfaceEntityListing>() {});
   }
 
@@ -2087,7 +2088,7 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeLogsJob
    * @throws ApiException if fails to make API call
    */
-  public EdgeLogsJob getTelephonyProvidersEdgeLogsJob(String edgeId, String jobId) throws ApiException {
+  public EdgeLogsJob getTelephonyProvidersEdgeLogsJob(String edgeId, String jobId) throws IOException, ApiException {
     return getTelephonyProvidersEdgeLogsJobWithHttpInfo(edgeId, jobId).getBody();
   }
 
@@ -2099,17 +2100,17 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeLogsJob
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeLogsJob> getTelephonyProvidersEdgeLogsJobWithHttpInfo(String edgeId, String jobId) throws ApiException {
+  public ApiResponse<EdgeLogsJob> getTelephonyProvidersEdgeLogsJobWithHttpInfo(String edgeId, String jobId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeLogsJob");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeLogsJob");
     }
     
     // verify the required parameter 'jobId' is set
     if (jobId == null) {
-      throw new ApiException(400, "Missing the required parameter 'jobId' when calling getTelephonyProvidersEdgeLogsJob");
+      throw new IllegalArgumentException("Missing the required parameter 'jobId' when calling getTelephonyProvidersEdgeLogsJob");
     }
     
     // create path and map variables
@@ -2146,7 +2147,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EdgeLogsJob getTelephonyProvidersEdgeLogsJob(GetTelephonyProvidersEdgeLogsJobRequest request) throws ApiException {
+  public EdgeLogsJob getTelephonyProvidersEdgeLogsJob(GetTelephonyProvidersEdgeLogsJobRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeLogsJob>() {});
   }
 
@@ -2156,7 +2157,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeLogsJob> getTelephonyProvidersEdgeLogsJob(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<EdgeLogsJob> getTelephonyProvidersEdgeLogsJob(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<EdgeLogsJob>invokeAPIVerbose(request, new TypeReference<EdgeLogsJob>() {});
   }
 
@@ -2168,7 +2169,7 @@ public class TelephonyProvidersEdgeApi {
    * @return DomainPhysicalInterface
    * @throws ApiException if fails to make API call
    */
-  public DomainPhysicalInterface getTelephonyProvidersEdgePhysicalinterface(String edgeId, String interfaceId) throws ApiException {
+  public DomainPhysicalInterface getTelephonyProvidersEdgePhysicalinterface(String edgeId, String interfaceId) throws IOException, ApiException {
     return getTelephonyProvidersEdgePhysicalinterfaceWithHttpInfo(edgeId, interfaceId).getBody();
   }
 
@@ -2180,17 +2181,17 @@ public class TelephonyProvidersEdgeApi {
    * @return DomainPhysicalInterface
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainPhysicalInterface> getTelephonyProvidersEdgePhysicalinterfaceWithHttpInfo(String edgeId, String interfaceId) throws ApiException {
+  public ApiResponse<DomainPhysicalInterface> getTelephonyProvidersEdgePhysicalinterfaceWithHttpInfo(String edgeId, String interfaceId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgePhysicalinterface");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgePhysicalinterface");
     }
     
     // verify the required parameter 'interfaceId' is set
     if (interfaceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'interfaceId' when calling getTelephonyProvidersEdgePhysicalinterface");
+      throw new IllegalArgumentException("Missing the required parameter 'interfaceId' when calling getTelephonyProvidersEdgePhysicalinterface");
     }
     
     // create path and map variables
@@ -2227,7 +2228,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DomainPhysicalInterface getTelephonyProvidersEdgePhysicalinterface(GetTelephonyProvidersEdgePhysicalinterfaceRequest request) throws ApiException {
+  public DomainPhysicalInterface getTelephonyProvidersEdgePhysicalinterface(GetTelephonyProvidersEdgePhysicalinterfaceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainPhysicalInterface>() {});
   }
 
@@ -2237,7 +2238,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainPhysicalInterface> getTelephonyProvidersEdgePhysicalinterface(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<DomainPhysicalInterface> getTelephonyProvidersEdgePhysicalinterface(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<DomainPhysicalInterface>invokeAPIVerbose(request, new TypeReference<DomainPhysicalInterface>() {});
   }
 
@@ -2248,7 +2249,7 @@ public class TelephonyProvidersEdgeApi {
    * @return PhysicalInterfaceEntityListing
    * @throws ApiException if fails to make API call
    */
-  public PhysicalInterfaceEntityListing getTelephonyProvidersEdgePhysicalinterfaces(String edgeId) throws ApiException {
+  public PhysicalInterfaceEntityListing getTelephonyProvidersEdgePhysicalinterfaces(String edgeId) throws IOException, ApiException {
     return getTelephonyProvidersEdgePhysicalinterfacesWithHttpInfo(edgeId).getBody();
   }
 
@@ -2259,12 +2260,12 @@ public class TelephonyProvidersEdgeApi {
    * @return PhysicalInterfaceEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PhysicalInterfaceEntityListing> getTelephonyProvidersEdgePhysicalinterfacesWithHttpInfo(String edgeId) throws ApiException {
+  public ApiResponse<PhysicalInterfaceEntityListing> getTelephonyProvidersEdgePhysicalinterfacesWithHttpInfo(String edgeId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgePhysicalinterfaces");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgePhysicalinterfaces");
     }
     
     // create path and map variables
@@ -2300,7 +2301,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PhysicalInterfaceEntityListing getTelephonyProvidersEdgePhysicalinterfaces(GetTelephonyProvidersEdgePhysicalinterfacesRequest request) throws ApiException {
+  public PhysicalInterfaceEntityListing getTelephonyProvidersEdgePhysicalinterfaces(GetTelephonyProvidersEdgePhysicalinterfacesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PhysicalInterfaceEntityListing>() {});
   }
 
@@ -2310,7 +2311,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PhysicalInterfaceEntityListing> getTelephonyProvidersEdgePhysicalinterfaces(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<PhysicalInterfaceEntityListing> getTelephonyProvidersEdgePhysicalinterfaces(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<PhysicalInterfaceEntityListing>invokeAPIVerbose(request, new TypeReference<PhysicalInterfaceEntityListing>() {});
   }
 
@@ -2321,7 +2322,7 @@ public class TelephonyProvidersEdgeApi {
    * @return VmPairingInfo
    * @throws ApiException if fails to make API call
    */
-  public VmPairingInfo getTelephonyProvidersEdgeSetuppackage(String edgeId) throws ApiException {
+  public VmPairingInfo getTelephonyProvidersEdgeSetuppackage(String edgeId) throws IOException, ApiException {
     return getTelephonyProvidersEdgeSetuppackageWithHttpInfo(edgeId).getBody();
   }
 
@@ -2332,12 +2333,12 @@ public class TelephonyProvidersEdgeApi {
    * @return VmPairingInfo
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VmPairingInfo> getTelephonyProvidersEdgeSetuppackageWithHttpInfo(String edgeId) throws ApiException {
+  public ApiResponse<VmPairingInfo> getTelephonyProvidersEdgeSetuppackageWithHttpInfo(String edgeId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeSetuppackage");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeSetuppackage");
     }
     
     // create path and map variables
@@ -2373,7 +2374,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VmPairingInfo getTelephonyProvidersEdgeSetuppackage(GetTelephonyProvidersEdgeSetuppackageRequest request) throws ApiException {
+  public VmPairingInfo getTelephonyProvidersEdgeSetuppackage(GetTelephonyProvidersEdgeSetuppackageRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VmPairingInfo>() {});
   }
 
@@ -2383,7 +2384,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VmPairingInfo> getTelephonyProvidersEdgeSetuppackage(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<VmPairingInfo> getTelephonyProvidersEdgeSetuppackage(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<VmPairingInfo>invokeAPIVerbose(request, new TypeReference<VmPairingInfo>() {});
   }
 
@@ -2394,7 +2395,7 @@ public class TelephonyProvidersEdgeApi {
    * @return DomainEdgeSoftwareUpdateDto
    * @throws ApiException if fails to make API call
    */
-  public DomainEdgeSoftwareUpdateDto getTelephonyProvidersEdgeSoftwareupdate(String edgeId) throws ApiException {
+  public DomainEdgeSoftwareUpdateDto getTelephonyProvidersEdgeSoftwareupdate(String edgeId) throws IOException, ApiException {
     return getTelephonyProvidersEdgeSoftwareupdateWithHttpInfo(edgeId).getBody();
   }
 
@@ -2405,12 +2406,12 @@ public class TelephonyProvidersEdgeApi {
    * @return DomainEdgeSoftwareUpdateDto
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainEdgeSoftwareUpdateDto> getTelephonyProvidersEdgeSoftwareupdateWithHttpInfo(String edgeId) throws ApiException {
+  public ApiResponse<DomainEdgeSoftwareUpdateDto> getTelephonyProvidersEdgeSoftwareupdateWithHttpInfo(String edgeId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeSoftwareupdate");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeSoftwareupdate");
     }
     
     // create path and map variables
@@ -2446,7 +2447,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DomainEdgeSoftwareUpdateDto getTelephonyProvidersEdgeSoftwareupdate(GetTelephonyProvidersEdgeSoftwareupdateRequest request) throws ApiException {
+  public DomainEdgeSoftwareUpdateDto getTelephonyProvidersEdgeSoftwareupdate(GetTelephonyProvidersEdgeSoftwareupdateRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainEdgeSoftwareUpdateDto>() {});
   }
 
@@ -2456,7 +2457,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainEdgeSoftwareUpdateDto> getTelephonyProvidersEdgeSoftwareupdate(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<DomainEdgeSoftwareUpdateDto> getTelephonyProvidersEdgeSoftwareupdate(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<DomainEdgeSoftwareUpdateDto>invokeAPIVerbose(request, new TypeReference<DomainEdgeSoftwareUpdateDto>() {});
   }
 
@@ -2467,7 +2468,7 @@ public class TelephonyProvidersEdgeApi {
    * @return DomainEdgeSoftwareVersionDtoEntityListing
    * @throws ApiException if fails to make API call
    */
-  public DomainEdgeSoftwareVersionDtoEntityListing getTelephonyProvidersEdgeSoftwareversions(String edgeId) throws ApiException {
+  public DomainEdgeSoftwareVersionDtoEntityListing getTelephonyProvidersEdgeSoftwareversions(String edgeId) throws IOException, ApiException {
     return getTelephonyProvidersEdgeSoftwareversionsWithHttpInfo(edgeId).getBody();
   }
 
@@ -2478,12 +2479,12 @@ public class TelephonyProvidersEdgeApi {
    * @return DomainEdgeSoftwareVersionDtoEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing> getTelephonyProvidersEdgeSoftwareversionsWithHttpInfo(String edgeId) throws ApiException {
+  public ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing> getTelephonyProvidersEdgeSoftwareversionsWithHttpInfo(String edgeId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeSoftwareversions");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeSoftwareversions");
     }
     
     // create path and map variables
@@ -2519,7 +2520,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DomainEdgeSoftwareVersionDtoEntityListing getTelephonyProvidersEdgeSoftwareversions(GetTelephonyProvidersEdgeSoftwareversionsRequest request) throws ApiException {
+  public DomainEdgeSoftwareVersionDtoEntityListing getTelephonyProvidersEdgeSoftwareversions(GetTelephonyProvidersEdgeSoftwareversionsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainEdgeSoftwareVersionDtoEntityListing>() {});
   }
 
@@ -2529,7 +2530,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing> getTelephonyProvidersEdgeSoftwareversions(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing> getTelephonyProvidersEdgeSoftwareversions(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<DomainEdgeSoftwareVersionDtoEntityListing>invokeAPIVerbose(request, new TypeReference<DomainEdgeSoftwareVersionDtoEntityListing>() {});
   }
 
@@ -2546,7 +2547,7 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeEntityListing
    * @throws ApiException if fails to make API call
    */
-  public EdgeEntityListing getTelephonyProvidersEdges(Integer pageSize, Integer pageNumber, String name, String siteId, String edgeGroupId, String sortBy, Boolean managed) throws ApiException {
+  public EdgeEntityListing getTelephonyProvidersEdges(Integer pageSize, Integer pageNumber, String name, String siteId, String edgeGroupId, String sortBy, Boolean managed) throws IOException, ApiException {
     return getTelephonyProvidersEdgesWithHttpInfo(pageSize, pageNumber, name, siteId, edgeGroupId, sortBy, managed).getBody();
   }
 
@@ -2563,7 +2564,7 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeEntityListing> getTelephonyProvidersEdgesWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String siteId, String edgeGroupId, String sortBy, Boolean managed) throws ApiException {
+  public ApiResponse<EdgeEntityListing> getTelephonyProvidersEdgesWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String siteId, String edgeGroupId, String sortBy, Boolean managed) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -2605,7 +2606,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EdgeEntityListing getTelephonyProvidersEdges(GetTelephonyProvidersEdgesRequest request) throws ApiException {
+  public EdgeEntityListing getTelephonyProvidersEdges(GetTelephonyProvidersEdgesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeEntityListing>() {});
   }
 
@@ -2615,7 +2616,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeEntityListing> getTelephonyProvidersEdges(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<EdgeEntityListing> getTelephonyProvidersEdges(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<EdgeEntityListing>invokeAPIVerbose(request, new TypeReference<EdgeEntityListing>() {});
   }
 
@@ -2625,7 +2626,7 @@ public class TelephonyProvidersEdgeApi {
    * @return AvailableLanguageList
    * @throws ApiException if fails to make API call
    */
-  public AvailableLanguageList getTelephonyProvidersEdgesAvailablelanguages() throws ApiException {
+  public AvailableLanguageList getTelephonyProvidersEdgesAvailablelanguages() throws IOException, ApiException {
     return getTelephonyProvidersEdgesAvailablelanguagesWithHttpInfo().getBody();
   }
 
@@ -2635,7 +2636,7 @@ public class TelephonyProvidersEdgeApi {
    * @return AvailableLanguageList
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AvailableLanguageList> getTelephonyProvidersEdgesAvailablelanguagesWithHttpInfo() throws ApiException {
+  public ApiResponse<AvailableLanguageList> getTelephonyProvidersEdgesAvailablelanguagesWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -2670,7 +2671,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public AvailableLanguageList getTelephonyProvidersEdgesAvailablelanguages(GetTelephonyProvidersEdgesAvailablelanguagesRequest request) throws ApiException {
+  public AvailableLanguageList getTelephonyProvidersEdgesAvailablelanguages(GetTelephonyProvidersEdgesAvailablelanguagesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AvailableLanguageList>() {});
   }
 
@@ -2680,7 +2681,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AvailableLanguageList> getTelephonyProvidersEdgesAvailablelanguages(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<AvailableLanguageList> getTelephonyProvidersEdgesAvailablelanguages(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<AvailableLanguageList>invokeAPIVerbose(request, new TypeReference<AvailableLanguageList>() {});
   }
 
@@ -2690,7 +2691,7 @@ public class TelephonyProvidersEdgeApi {
    * @return CertificateAuthorityEntityListing
    * @throws ApiException if fails to make API call
    */
-  public CertificateAuthorityEntityListing getTelephonyProvidersEdgesCertificateauthorities() throws ApiException {
+  public CertificateAuthorityEntityListing getTelephonyProvidersEdgesCertificateauthorities() throws IOException, ApiException {
     return getTelephonyProvidersEdgesCertificateauthoritiesWithHttpInfo().getBody();
   }
 
@@ -2700,7 +2701,7 @@ public class TelephonyProvidersEdgeApi {
    * @return CertificateAuthorityEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CertificateAuthorityEntityListing> getTelephonyProvidersEdgesCertificateauthoritiesWithHttpInfo() throws ApiException {
+  public ApiResponse<CertificateAuthorityEntityListing> getTelephonyProvidersEdgesCertificateauthoritiesWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -2735,7 +2736,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CertificateAuthorityEntityListing getTelephonyProvidersEdgesCertificateauthorities(GetTelephonyProvidersEdgesCertificateauthoritiesRequest request) throws ApiException {
+  public CertificateAuthorityEntityListing getTelephonyProvidersEdgesCertificateauthorities(GetTelephonyProvidersEdgesCertificateauthoritiesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CertificateAuthorityEntityListing>() {});
   }
 
@@ -2745,7 +2746,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CertificateAuthorityEntityListing> getTelephonyProvidersEdgesCertificateauthorities(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CertificateAuthorityEntityListing> getTelephonyProvidersEdgesCertificateauthorities(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CertificateAuthorityEntityListing>invokeAPIVerbose(request, new TypeReference<CertificateAuthorityEntityListing>() {});
   }
 
@@ -2756,7 +2757,7 @@ public class TelephonyProvidersEdgeApi {
    * @return DomainCertificateAuthority
    * @throws ApiException if fails to make API call
    */
-  public DomainCertificateAuthority getTelephonyProvidersEdgesCertificateauthority(String certificateId) throws ApiException {
+  public DomainCertificateAuthority getTelephonyProvidersEdgesCertificateauthority(String certificateId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesCertificateauthorityWithHttpInfo(certificateId).getBody();
   }
 
@@ -2767,12 +2768,12 @@ public class TelephonyProvidersEdgeApi {
    * @return DomainCertificateAuthority
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainCertificateAuthority> getTelephonyProvidersEdgesCertificateauthorityWithHttpInfo(String certificateId) throws ApiException {
+  public ApiResponse<DomainCertificateAuthority> getTelephonyProvidersEdgesCertificateauthorityWithHttpInfo(String certificateId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'certificateId' is set
     if (certificateId == null) {
-      throw new ApiException(400, "Missing the required parameter 'certificateId' when calling getTelephonyProvidersEdgesCertificateauthority");
+      throw new IllegalArgumentException("Missing the required parameter 'certificateId' when calling getTelephonyProvidersEdgesCertificateauthority");
     }
     
     // create path and map variables
@@ -2808,7 +2809,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DomainCertificateAuthority getTelephonyProvidersEdgesCertificateauthority(GetTelephonyProvidersEdgesCertificateauthorityRequest request) throws ApiException {
+  public DomainCertificateAuthority getTelephonyProvidersEdgesCertificateauthority(GetTelephonyProvidersEdgesCertificateauthorityRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainCertificateAuthority>() {});
   }
 
@@ -2818,7 +2819,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainCertificateAuthority> getTelephonyProvidersEdgesCertificateauthority(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<DomainCertificateAuthority> getTelephonyProvidersEdgesCertificateauthority(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<DomainCertificateAuthority>invokeAPIVerbose(request, new TypeReference<DomainCertificateAuthority>() {});
   }
 
@@ -2829,7 +2830,7 @@ public class TelephonyProvidersEdgeApi {
    * @return DID
    * @throws ApiException if fails to make API call
    */
-  public DID getTelephonyProvidersEdgesDid(String didId) throws ApiException {
+  public DID getTelephonyProvidersEdgesDid(String didId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesDidWithHttpInfo(didId).getBody();
   }
 
@@ -2840,12 +2841,12 @@ public class TelephonyProvidersEdgeApi {
    * @return DID
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DID> getTelephonyProvidersEdgesDidWithHttpInfo(String didId) throws ApiException {
+  public ApiResponse<DID> getTelephonyProvidersEdgesDidWithHttpInfo(String didId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'didId' is set
     if (didId == null) {
-      throw new ApiException(400, "Missing the required parameter 'didId' when calling getTelephonyProvidersEdgesDid");
+      throw new IllegalArgumentException("Missing the required parameter 'didId' when calling getTelephonyProvidersEdgesDid");
     }
     
     // create path and map variables
@@ -2881,7 +2882,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DID getTelephonyProvidersEdgesDid(GetTelephonyProvidersEdgesDidRequest request) throws ApiException {
+  public DID getTelephonyProvidersEdgesDid(GetTelephonyProvidersEdgesDidRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DID>() {});
   }
 
@@ -2891,7 +2892,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DID> getTelephonyProvidersEdgesDid(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<DID> getTelephonyProvidersEdgesDid(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<DID>invokeAPIVerbose(request, new TypeReference<DID>() {});
   }
 
@@ -2902,7 +2903,7 @@ public class TelephonyProvidersEdgeApi {
    * @return DIDPool
    * @throws ApiException if fails to make API call
    */
-  public DIDPool getTelephonyProvidersEdgesDidpool(String didPoolId) throws ApiException {
+  public DIDPool getTelephonyProvidersEdgesDidpool(String didPoolId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesDidpoolWithHttpInfo(didPoolId).getBody();
   }
 
@@ -2913,12 +2914,12 @@ public class TelephonyProvidersEdgeApi {
    * @return DIDPool
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DIDPool> getTelephonyProvidersEdgesDidpoolWithHttpInfo(String didPoolId) throws ApiException {
+  public ApiResponse<DIDPool> getTelephonyProvidersEdgesDidpoolWithHttpInfo(String didPoolId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'didPoolId' is set
     if (didPoolId == null) {
-      throw new ApiException(400, "Missing the required parameter 'didPoolId' when calling getTelephonyProvidersEdgesDidpool");
+      throw new IllegalArgumentException("Missing the required parameter 'didPoolId' when calling getTelephonyProvidersEdgesDidpool");
     }
     
     // create path and map variables
@@ -2954,7 +2955,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DIDPool getTelephonyProvidersEdgesDidpool(GetTelephonyProvidersEdgesDidpoolRequest request) throws ApiException {
+  public DIDPool getTelephonyProvidersEdgesDidpool(GetTelephonyProvidersEdgesDidpoolRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DIDPool>() {});
   }
 
@@ -2964,7 +2965,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DIDPool> getTelephonyProvidersEdgesDidpool(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<DIDPool> getTelephonyProvidersEdgesDidpool(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<DIDPool>invokeAPIVerbose(request, new TypeReference<DIDPool>() {});
   }
 
@@ -2977,7 +2978,7 @@ public class TelephonyProvidersEdgeApi {
    * @return DIDPoolEntityListing
    * @throws ApiException if fails to make API call
    */
-  public DIDPoolEntityListing getTelephonyProvidersEdgesDidpools(Integer pageSize, Integer pageNumber, String sortBy) throws ApiException {
+  public DIDPoolEntityListing getTelephonyProvidersEdgesDidpools(Integer pageSize, Integer pageNumber, String sortBy) throws IOException, ApiException {
     return getTelephonyProvidersEdgesDidpoolsWithHttpInfo(pageSize, pageNumber, sortBy).getBody();
   }
 
@@ -2990,7 +2991,7 @@ public class TelephonyProvidersEdgeApi {
    * @return DIDPoolEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DIDPoolEntityListing> getTelephonyProvidersEdgesDidpoolsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy) throws ApiException {
+  public ApiResponse<DIDPoolEntityListing> getTelephonyProvidersEdgesDidpoolsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -3028,7 +3029,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DIDPoolEntityListing getTelephonyProvidersEdgesDidpools(GetTelephonyProvidersEdgesDidpoolsRequest request) throws ApiException {
+  public DIDPoolEntityListing getTelephonyProvidersEdgesDidpools(GetTelephonyProvidersEdgesDidpoolsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DIDPoolEntityListing>() {});
   }
 
@@ -3038,7 +3039,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DIDPoolEntityListing> getTelephonyProvidersEdgesDidpools(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<DIDPoolEntityListing> getTelephonyProvidersEdgesDidpools(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<DIDPoolEntityListing>invokeAPIVerbose(request, new TypeReference<DIDPoolEntityListing>() {});
   }
 
@@ -3053,7 +3054,7 @@ public class TelephonyProvidersEdgeApi {
    * @return DIDEntityListing
    * @throws ApiException if fails to make API call
    */
-  public DIDEntityListing getTelephonyProvidersEdgesDids(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber) throws ApiException {
+  public DIDEntityListing getTelephonyProvidersEdgesDids(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber) throws IOException, ApiException {
     return getTelephonyProvidersEdgesDidsWithHttpInfo(pageSize, pageNumber, sortBy, sortOrder, phoneNumber).getBody();
   }
 
@@ -3068,7 +3069,7 @@ public class TelephonyProvidersEdgeApi {
    * @return DIDEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DIDEntityListing> getTelephonyProvidersEdgesDidsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber) throws ApiException {
+  public ApiResponse<DIDEntityListing> getTelephonyProvidersEdgesDidsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -3108,7 +3109,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DIDEntityListing getTelephonyProvidersEdgesDids(GetTelephonyProvidersEdgesDidsRequest request) throws ApiException {
+  public DIDEntityListing getTelephonyProvidersEdgesDids(GetTelephonyProvidersEdgesDidsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DIDEntityListing>() {});
   }
 
@@ -3118,7 +3119,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DIDEntityListing> getTelephonyProvidersEdgesDids(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<DIDEntityListing> getTelephonyProvidersEdgesDids(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<DIDEntityListing>invokeAPIVerbose(request, new TypeReference<DIDEntityListing>() {});
   }
 
@@ -3130,7 +3131,7 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeGroup
    * @throws ApiException if fails to make API call
    */
-  public EdgeGroup getTelephonyProvidersEdgesEdgegroup(String edgeGroupId, List<String> expand) throws ApiException {
+  public EdgeGroup getTelephonyProvidersEdgesEdgegroup(String edgeGroupId, List<String> expand) throws IOException, ApiException {
     return getTelephonyProvidersEdgesEdgegroupWithHttpInfo(edgeGroupId, expand).getBody();
   }
 
@@ -3142,12 +3143,12 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeGroup
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeGroup> getTelephonyProvidersEdgesEdgegroupWithHttpInfo(String edgeGroupId, List<String> expand) throws ApiException {
+  public ApiResponse<EdgeGroup> getTelephonyProvidersEdgesEdgegroupWithHttpInfo(String edgeGroupId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'edgeGroupId' is set
     if (edgeGroupId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeGroupId' when calling getTelephonyProvidersEdgesEdgegroup");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeGroupId' when calling getTelephonyProvidersEdgesEdgegroup");
     }
     
     // create path and map variables
@@ -3184,7 +3185,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EdgeGroup getTelephonyProvidersEdgesEdgegroup(GetTelephonyProvidersEdgesEdgegroupRequest request) throws ApiException {
+  public EdgeGroup getTelephonyProvidersEdgesEdgegroup(GetTelephonyProvidersEdgesEdgegroupRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeGroup>() {});
   }
 
@@ -3194,7 +3195,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeGroup> getTelephonyProvidersEdgesEdgegroup(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<EdgeGroup> getTelephonyProvidersEdgesEdgegroup(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<EdgeGroup>invokeAPIVerbose(request, new TypeReference<EdgeGroup>() {});
   }
 
@@ -3206,7 +3207,7 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeTrunkBase
    * @throws ApiException if fails to make API call
    */
-  public EdgeTrunkBase getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(String edgegroupId, String edgetrunkbaseId) throws ApiException {
+  public EdgeTrunkBase getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(String edgegroupId, String edgetrunkbaseId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesEdgegroupEdgetrunkbasisWithHttpInfo(edgegroupId, edgetrunkbaseId).getBody();
   }
 
@@ -3218,17 +3219,17 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeTrunkBase
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeTrunkBase> getTelephonyProvidersEdgesEdgegroupEdgetrunkbasisWithHttpInfo(String edgegroupId, String edgetrunkbaseId) throws ApiException {
+  public ApiResponse<EdgeTrunkBase> getTelephonyProvidersEdgesEdgegroupEdgetrunkbasisWithHttpInfo(String edgegroupId, String edgetrunkbaseId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'edgegroupId' is set
     if (edgegroupId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgegroupId' when calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis");
+      throw new IllegalArgumentException("Missing the required parameter 'edgegroupId' when calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis");
     }
     
     // verify the required parameter 'edgetrunkbaseId' is set
     if (edgetrunkbaseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgetrunkbaseId' when calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis");
+      throw new IllegalArgumentException("Missing the required parameter 'edgetrunkbaseId' when calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis");
     }
     
     // create path and map variables
@@ -3265,7 +3266,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EdgeTrunkBase getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(GetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest request) throws ApiException {
+  public EdgeTrunkBase getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(GetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeTrunkBase>() {});
   }
 
@@ -3275,7 +3276,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeTrunkBase> getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<EdgeTrunkBase> getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<EdgeTrunkBase>invokeAPIVerbose(request, new TypeReference<EdgeTrunkBase>() {});
   }
 
@@ -3290,7 +3291,7 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeGroupEntityListing
    * @throws ApiException if fails to make API call
    */
-  public EdgeGroupEntityListing getTelephonyProvidersEdgesEdgegroups(Integer pageSize, Integer pageNumber, String name, String sortBy, Boolean managed) throws ApiException {
+  public EdgeGroupEntityListing getTelephonyProvidersEdgesEdgegroups(Integer pageSize, Integer pageNumber, String name, String sortBy, Boolean managed) throws IOException, ApiException {
     return getTelephonyProvidersEdgesEdgegroupsWithHttpInfo(pageSize, pageNumber, name, sortBy, managed).getBody();
   }
 
@@ -3305,7 +3306,7 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeGroupEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeGroupEntityListing> getTelephonyProvidersEdgesEdgegroupsWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String sortBy, Boolean managed) throws ApiException {
+  public ApiResponse<EdgeGroupEntityListing> getTelephonyProvidersEdgesEdgegroupsWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String sortBy, Boolean managed) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -3345,7 +3346,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EdgeGroupEntityListing getTelephonyProvidersEdgesEdgegroups(GetTelephonyProvidersEdgesEdgegroupsRequest request) throws ApiException {
+  public EdgeGroupEntityListing getTelephonyProvidersEdgesEdgegroups(GetTelephonyProvidersEdgesEdgegroupsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeGroupEntityListing>() {});
   }
 
@@ -3355,7 +3356,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeGroupEntityListing> getTelephonyProvidersEdgesEdgegroups(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<EdgeGroupEntityListing> getTelephonyProvidersEdgesEdgegroups(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<EdgeGroupEntityListing>invokeAPIVerbose(request, new TypeReference<EdgeGroupEntityListing>() {});
   }
 
@@ -3365,7 +3366,7 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeVersionReport
    * @throws ApiException if fails to make API call
    */
-  public EdgeVersionReport getTelephonyProvidersEdgesEdgeversionreport() throws ApiException {
+  public EdgeVersionReport getTelephonyProvidersEdgesEdgeversionreport() throws IOException, ApiException {
     return getTelephonyProvidersEdgesEdgeversionreportWithHttpInfo().getBody();
   }
 
@@ -3375,7 +3376,7 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeVersionReport
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeVersionReport> getTelephonyProvidersEdgesEdgeversionreportWithHttpInfo() throws ApiException {
+  public ApiResponse<EdgeVersionReport> getTelephonyProvidersEdgesEdgeversionreportWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -3410,7 +3411,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EdgeVersionReport getTelephonyProvidersEdgesEdgeversionreport(GetTelephonyProvidersEdgesEdgeversionreportRequest request) throws ApiException {
+  public EdgeVersionReport getTelephonyProvidersEdgesEdgeversionreport(GetTelephonyProvidersEdgesEdgeversionreportRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeVersionReport>() {});
   }
 
@@ -3420,7 +3421,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeVersionReport> getTelephonyProvidersEdgesEdgeversionreport(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<EdgeVersionReport> getTelephonyProvidersEdgesEdgeversionreport(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<EdgeVersionReport>invokeAPIVerbose(request, new TypeReference<EdgeVersionReport>() {});
   }
 
@@ -3431,7 +3432,7 @@ public class TelephonyProvidersEdgeApi {
    * @return Endpoint
    * @throws ApiException if fails to make API call
    */
-  public Endpoint getTelephonyProvidersEdgesEndpoint(String endpointId) throws ApiException {
+  public Endpoint getTelephonyProvidersEdgesEndpoint(String endpointId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesEndpointWithHttpInfo(endpointId).getBody();
   }
 
@@ -3442,12 +3443,12 @@ public class TelephonyProvidersEdgeApi {
    * @return Endpoint
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Endpoint> getTelephonyProvidersEdgesEndpointWithHttpInfo(String endpointId) throws ApiException {
+  public ApiResponse<Endpoint> getTelephonyProvidersEdgesEndpointWithHttpInfo(String endpointId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'endpointId' is set
     if (endpointId == null) {
-      throw new ApiException(400, "Missing the required parameter 'endpointId' when calling getTelephonyProvidersEdgesEndpoint");
+      throw new IllegalArgumentException("Missing the required parameter 'endpointId' when calling getTelephonyProvidersEdgesEndpoint");
     }
     
     // create path and map variables
@@ -3483,7 +3484,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Endpoint getTelephonyProvidersEdgesEndpoint(GetTelephonyProvidersEdgesEndpointRequest request) throws ApiException {
+  public Endpoint getTelephonyProvidersEdgesEndpoint(GetTelephonyProvidersEdgesEndpointRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Endpoint>() {});
   }
 
@@ -3493,7 +3494,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Endpoint> getTelephonyProvidersEdgesEndpoint(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Endpoint> getTelephonyProvidersEdgesEndpoint(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Endpoint>invokeAPIVerbose(request, new TypeReference<Endpoint>() {});
   }
 
@@ -3507,7 +3508,7 @@ public class TelephonyProvidersEdgeApi {
    * @return EndpointEntityListing
    * @throws ApiException if fails to make API call
    */
-  public EndpointEntityListing getTelephonyProvidersEdgesEndpoints(Integer pageSize, Integer pageNumber, String name, String sortBy) throws ApiException {
+  public EndpointEntityListing getTelephonyProvidersEdgesEndpoints(Integer pageSize, Integer pageNumber, String name, String sortBy) throws IOException, ApiException {
     return getTelephonyProvidersEdgesEndpointsWithHttpInfo(pageSize, pageNumber, name, sortBy).getBody();
   }
 
@@ -3521,7 +3522,7 @@ public class TelephonyProvidersEdgeApi {
    * @return EndpointEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EndpointEntityListing> getTelephonyProvidersEdgesEndpointsWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String sortBy) throws ApiException {
+  public ApiResponse<EndpointEntityListing> getTelephonyProvidersEdgesEndpointsWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String sortBy) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -3560,7 +3561,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EndpointEntityListing getTelephonyProvidersEdgesEndpoints(GetTelephonyProvidersEdgesEndpointsRequest request) throws ApiException {
+  public EndpointEntityListing getTelephonyProvidersEdgesEndpoints(GetTelephonyProvidersEdgesEndpointsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EndpointEntityListing>() {});
   }
 
@@ -3570,7 +3571,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EndpointEntityListing> getTelephonyProvidersEdgesEndpoints(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<EndpointEntityListing> getTelephonyProvidersEdgesEndpoints(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<EndpointEntityListing>invokeAPIVerbose(request, new TypeReference<EndpointEntityListing>() {});
   }
 
@@ -3581,7 +3582,7 @@ public class TelephonyProvidersEdgeApi {
    * @return Extension
    * @throws ApiException if fails to make API call
    */
-  public Extension getTelephonyProvidersEdgesExtension(String extensionId) throws ApiException {
+  public Extension getTelephonyProvidersEdgesExtension(String extensionId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesExtensionWithHttpInfo(extensionId).getBody();
   }
 
@@ -3592,12 +3593,12 @@ public class TelephonyProvidersEdgeApi {
    * @return Extension
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Extension> getTelephonyProvidersEdgesExtensionWithHttpInfo(String extensionId) throws ApiException {
+  public ApiResponse<Extension> getTelephonyProvidersEdgesExtensionWithHttpInfo(String extensionId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'extensionId' is set
     if (extensionId == null) {
-      throw new ApiException(400, "Missing the required parameter 'extensionId' when calling getTelephonyProvidersEdgesExtension");
+      throw new IllegalArgumentException("Missing the required parameter 'extensionId' when calling getTelephonyProvidersEdgesExtension");
     }
     
     // create path and map variables
@@ -3633,7 +3634,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Extension getTelephonyProvidersEdgesExtension(GetTelephonyProvidersEdgesExtensionRequest request) throws ApiException {
+  public Extension getTelephonyProvidersEdgesExtension(GetTelephonyProvidersEdgesExtensionRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Extension>() {});
   }
 
@@ -3643,7 +3644,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Extension> getTelephonyProvidersEdgesExtension(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Extension> getTelephonyProvidersEdgesExtension(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Extension>invokeAPIVerbose(request, new TypeReference<Extension>() {});
   }
 
@@ -3654,7 +3655,7 @@ public class TelephonyProvidersEdgeApi {
    * @return ExtensionPool
    * @throws ApiException if fails to make API call
    */
-  public ExtensionPool getTelephonyProvidersEdgesExtensionpool(String extensionPoolId) throws ApiException {
+  public ExtensionPool getTelephonyProvidersEdgesExtensionpool(String extensionPoolId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesExtensionpoolWithHttpInfo(extensionPoolId).getBody();
   }
 
@@ -3665,12 +3666,12 @@ public class TelephonyProvidersEdgeApi {
    * @return ExtensionPool
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExtensionPool> getTelephonyProvidersEdgesExtensionpoolWithHttpInfo(String extensionPoolId) throws ApiException {
+  public ApiResponse<ExtensionPool> getTelephonyProvidersEdgesExtensionpoolWithHttpInfo(String extensionPoolId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'extensionPoolId' is set
     if (extensionPoolId == null) {
-      throw new ApiException(400, "Missing the required parameter 'extensionPoolId' when calling getTelephonyProvidersEdgesExtensionpool");
+      throw new IllegalArgumentException("Missing the required parameter 'extensionPoolId' when calling getTelephonyProvidersEdgesExtensionpool");
     }
     
     // create path and map variables
@@ -3706,7 +3707,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ExtensionPool getTelephonyProvidersEdgesExtensionpool(GetTelephonyProvidersEdgesExtensionpoolRequest request) throws ApiException {
+  public ExtensionPool getTelephonyProvidersEdgesExtensionpool(GetTelephonyProvidersEdgesExtensionpoolRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExtensionPool>() {});
   }
 
@@ -3716,7 +3717,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExtensionPool> getTelephonyProvidersEdgesExtensionpool(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ExtensionPool> getTelephonyProvidersEdgesExtensionpool(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ExtensionPool>invokeAPIVerbose(request, new TypeReference<ExtensionPool>() {});
   }
 
@@ -3730,7 +3731,7 @@ public class TelephonyProvidersEdgeApi {
    * @return ExtensionPoolEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ExtensionPoolEntityListing getTelephonyProvidersEdgesExtensionpools(Integer pageSize, Integer pageNumber, String sortBy, String number) throws ApiException {
+  public ExtensionPoolEntityListing getTelephonyProvidersEdgesExtensionpools(Integer pageSize, Integer pageNumber, String sortBy, String number) throws IOException, ApiException {
     return getTelephonyProvidersEdgesExtensionpoolsWithHttpInfo(pageSize, pageNumber, sortBy, number).getBody();
   }
 
@@ -3744,7 +3745,7 @@ public class TelephonyProvidersEdgeApi {
    * @return ExtensionPoolEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExtensionPoolEntityListing> getTelephonyProvidersEdgesExtensionpoolsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String number) throws ApiException {
+  public ApiResponse<ExtensionPoolEntityListing> getTelephonyProvidersEdgesExtensionpoolsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String number) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -3783,7 +3784,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ExtensionPoolEntityListing getTelephonyProvidersEdgesExtensionpools(GetTelephonyProvidersEdgesExtensionpoolsRequest request) throws ApiException {
+  public ExtensionPoolEntityListing getTelephonyProvidersEdgesExtensionpools(GetTelephonyProvidersEdgesExtensionpoolsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExtensionPoolEntityListing>() {});
   }
 
@@ -3793,7 +3794,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExtensionPoolEntityListing> getTelephonyProvidersEdgesExtensionpools(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ExtensionPoolEntityListing> getTelephonyProvidersEdgesExtensionpools(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ExtensionPoolEntityListing>invokeAPIVerbose(request, new TypeReference<ExtensionPoolEntityListing>() {});
   }
 
@@ -3808,7 +3809,7 @@ public class TelephonyProvidersEdgeApi {
    * @return ExtensionEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ExtensionEntityListing getTelephonyProvidersEdgesExtensions(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String number) throws ApiException {
+  public ExtensionEntityListing getTelephonyProvidersEdgesExtensions(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String number) throws IOException, ApiException {
     return getTelephonyProvidersEdgesExtensionsWithHttpInfo(pageSize, pageNumber, sortBy, sortOrder, number).getBody();
   }
 
@@ -3823,7 +3824,7 @@ public class TelephonyProvidersEdgeApi {
    * @return ExtensionEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExtensionEntityListing> getTelephonyProvidersEdgesExtensionsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String number) throws ApiException {
+  public ApiResponse<ExtensionEntityListing> getTelephonyProvidersEdgesExtensionsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String number) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -3863,7 +3864,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ExtensionEntityListing getTelephonyProvidersEdgesExtensions(GetTelephonyProvidersEdgesExtensionsRequest request) throws ApiException {
+  public ExtensionEntityListing getTelephonyProvidersEdgesExtensions(GetTelephonyProvidersEdgesExtensionsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExtensionEntityListing>() {});
   }
 
@@ -3873,7 +3874,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExtensionEntityListing> getTelephonyProvidersEdgesExtensions(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ExtensionEntityListing> getTelephonyProvidersEdgesExtensions(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ExtensionEntityListing>invokeAPIVerbose(request, new TypeReference<ExtensionEntityListing>() {});
   }
 
@@ -3884,7 +3885,7 @@ public class TelephonyProvidersEdgeApi {
    * @return Line
    * @throws ApiException if fails to make API call
    */
-  public Line getTelephonyProvidersEdgesLine(String lineId) throws ApiException {
+  public Line getTelephonyProvidersEdgesLine(String lineId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesLineWithHttpInfo(lineId).getBody();
   }
 
@@ -3895,12 +3896,12 @@ public class TelephonyProvidersEdgeApi {
    * @return Line
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Line> getTelephonyProvidersEdgesLineWithHttpInfo(String lineId) throws ApiException {
+  public ApiResponse<Line> getTelephonyProvidersEdgesLineWithHttpInfo(String lineId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'lineId' is set
     if (lineId == null) {
-      throw new ApiException(400, "Missing the required parameter 'lineId' when calling getTelephonyProvidersEdgesLine");
+      throw new IllegalArgumentException("Missing the required parameter 'lineId' when calling getTelephonyProvidersEdgesLine");
     }
     
     // create path and map variables
@@ -3936,7 +3937,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Line getTelephonyProvidersEdgesLine(GetTelephonyProvidersEdgesLineRequest request) throws ApiException {
+  public Line getTelephonyProvidersEdgesLine(GetTelephonyProvidersEdgesLineRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Line>() {});
   }
 
@@ -3946,7 +3947,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Line> getTelephonyProvidersEdgesLine(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Line> getTelephonyProvidersEdgesLine(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Line>invokeAPIVerbose(request, new TypeReference<Line>() {});
   }
 
@@ -3957,7 +3958,7 @@ public class TelephonyProvidersEdgeApi {
    * @return LineBase
    * @throws ApiException if fails to make API call
    */
-  public LineBase getTelephonyProvidersEdgesLinebasesetting(String lineBaseId) throws ApiException {
+  public LineBase getTelephonyProvidersEdgesLinebasesetting(String lineBaseId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesLinebasesettingWithHttpInfo(lineBaseId).getBody();
   }
 
@@ -3968,12 +3969,12 @@ public class TelephonyProvidersEdgeApi {
    * @return LineBase
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LineBase> getTelephonyProvidersEdgesLinebasesettingWithHttpInfo(String lineBaseId) throws ApiException {
+  public ApiResponse<LineBase> getTelephonyProvidersEdgesLinebasesettingWithHttpInfo(String lineBaseId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'lineBaseId' is set
     if (lineBaseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'lineBaseId' when calling getTelephonyProvidersEdgesLinebasesetting");
+      throw new IllegalArgumentException("Missing the required parameter 'lineBaseId' when calling getTelephonyProvidersEdgesLinebasesetting");
     }
     
     // create path and map variables
@@ -4009,7 +4010,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public LineBase getTelephonyProvidersEdgesLinebasesetting(GetTelephonyProvidersEdgesLinebasesettingRequest request) throws ApiException {
+  public LineBase getTelephonyProvidersEdgesLinebasesetting(GetTelephonyProvidersEdgesLinebasesettingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LineBase>() {});
   }
 
@@ -4019,7 +4020,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LineBase> getTelephonyProvidersEdgesLinebasesetting(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<LineBase> getTelephonyProvidersEdgesLinebasesetting(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<LineBase>invokeAPIVerbose(request, new TypeReference<LineBase>() {});
   }
 
@@ -4033,7 +4034,7 @@ public class TelephonyProvidersEdgeApi {
    * @return LineBaseEntityListing
    * @throws ApiException if fails to make API call
    */
-  public LineBaseEntityListing getTelephonyProvidersEdgesLinebasesettings(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws ApiException {
+  public LineBaseEntityListing getTelephonyProvidersEdgesLinebasesettings(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException, ApiException {
     return getTelephonyProvidersEdgesLinebasesettingsWithHttpInfo(pageNumber, pageSize, sortBy, sortOrder).getBody();
   }
 
@@ -4047,7 +4048,7 @@ public class TelephonyProvidersEdgeApi {
    * @return LineBaseEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LineBaseEntityListing> getTelephonyProvidersEdgesLinebasesettingsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws ApiException {
+  public ApiResponse<LineBaseEntityListing> getTelephonyProvidersEdgesLinebasesettingsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -4086,7 +4087,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public LineBaseEntityListing getTelephonyProvidersEdgesLinebasesettings(GetTelephonyProvidersEdgesLinebasesettingsRequest request) throws ApiException {
+  public LineBaseEntityListing getTelephonyProvidersEdgesLinebasesettings(GetTelephonyProvidersEdgesLinebasesettingsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LineBaseEntityListing>() {});
   }
 
@@ -4096,7 +4097,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LineBaseEntityListing> getTelephonyProvidersEdgesLinebasesettings(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<LineBaseEntityListing> getTelephonyProvidersEdgesLinebasesettings(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<LineBaseEntityListing>invokeAPIVerbose(request, new TypeReference<LineBaseEntityListing>() {});
   }
 
@@ -4111,7 +4112,7 @@ public class TelephonyProvidersEdgeApi {
    * @return LineEntityListing
    * @throws ApiException if fails to make API call
    */
-  public LineEntityListing getTelephonyProvidersEdgesLines(Integer pageSize, Integer pageNumber, String name, String sortBy, List<String> expand) throws ApiException {
+  public LineEntityListing getTelephonyProvidersEdgesLines(Integer pageSize, Integer pageNumber, String name, String sortBy, List<String> expand) throws IOException, ApiException {
     return getTelephonyProvidersEdgesLinesWithHttpInfo(pageSize, pageNumber, name, sortBy, expand).getBody();
   }
 
@@ -4126,7 +4127,7 @@ public class TelephonyProvidersEdgeApi {
    * @return LineEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LineEntityListing> getTelephonyProvidersEdgesLinesWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String sortBy, List<String> expand) throws ApiException {
+  public ApiResponse<LineEntityListing> getTelephonyProvidersEdgesLinesWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String sortBy, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -4166,7 +4167,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public LineEntityListing getTelephonyProvidersEdgesLines(GetTelephonyProvidersEdgesLinesRequest request) throws ApiException {
+  public LineEntityListing getTelephonyProvidersEdgesLines(GetTelephonyProvidersEdgesLinesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LineEntityListing>() {});
   }
 
@@ -4176,7 +4177,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LineEntityListing> getTelephonyProvidersEdgesLines(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<LineEntityListing> getTelephonyProvidersEdgesLines(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<LineEntityListing>invokeAPIVerbose(request, new TypeReference<LineEntityListing>() {});
   }
 
@@ -4187,7 +4188,7 @@ public class TelephonyProvidersEdgeApi {
    * @return Line
    * @throws ApiException if fails to make API call
    */
-  public Line getTelephonyProvidersEdgesLinesTemplate(String lineBaseSettingsId) throws ApiException {
+  public Line getTelephonyProvidersEdgesLinesTemplate(String lineBaseSettingsId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesLinesTemplateWithHttpInfo(lineBaseSettingsId).getBody();
   }
 
@@ -4198,12 +4199,12 @@ public class TelephonyProvidersEdgeApi {
    * @return Line
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Line> getTelephonyProvidersEdgesLinesTemplateWithHttpInfo(String lineBaseSettingsId) throws ApiException {
+  public ApiResponse<Line> getTelephonyProvidersEdgesLinesTemplateWithHttpInfo(String lineBaseSettingsId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'lineBaseSettingsId' is set
     if (lineBaseSettingsId == null) {
-      throw new ApiException(400, "Missing the required parameter 'lineBaseSettingsId' when calling getTelephonyProvidersEdgesLinesTemplate");
+      throw new IllegalArgumentException("Missing the required parameter 'lineBaseSettingsId' when calling getTelephonyProvidersEdgesLinesTemplate");
     }
     
     // create path and map variables
@@ -4239,7 +4240,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Line getTelephonyProvidersEdgesLinesTemplate(GetTelephonyProvidersEdgesLinesTemplateRequest request) throws ApiException {
+  public Line getTelephonyProvidersEdgesLinesTemplate(GetTelephonyProvidersEdgesLinesTemplateRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Line>() {});
   }
 
@@ -4249,7 +4250,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Line> getTelephonyProvidersEdgesLinesTemplate(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Line> getTelephonyProvidersEdgesLinesTemplate(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Line>invokeAPIVerbose(request, new TypeReference<Line>() {});
   }
 
@@ -4261,7 +4262,7 @@ public class TelephonyProvidersEdgeApi {
    * @return LogicalInterfaceEntityListing
    * @throws ApiException if fails to make API call
    */
-  public LogicalInterfaceEntityListing getTelephonyProvidersEdgesLogicalinterfaces(String edgeIds, List<String> expand) throws ApiException {
+  public LogicalInterfaceEntityListing getTelephonyProvidersEdgesLogicalinterfaces(String edgeIds, List<String> expand) throws IOException, ApiException {
     return getTelephonyProvidersEdgesLogicalinterfacesWithHttpInfo(edgeIds, expand).getBody();
   }
 
@@ -4273,12 +4274,12 @@ public class TelephonyProvidersEdgeApi {
    * @return LogicalInterfaceEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LogicalInterfaceEntityListing> getTelephonyProvidersEdgesLogicalinterfacesWithHttpInfo(String edgeIds, List<String> expand) throws ApiException {
+  public ApiResponse<LogicalInterfaceEntityListing> getTelephonyProvidersEdgesLogicalinterfacesWithHttpInfo(String edgeIds, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'edgeIds' is set
     if (edgeIds == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeIds' when calling getTelephonyProvidersEdgesLogicalinterfaces");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeIds' when calling getTelephonyProvidersEdgesLogicalinterfaces");
     }
     
     // create path and map variables
@@ -4315,7 +4316,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public LogicalInterfaceEntityListing getTelephonyProvidersEdgesLogicalinterfaces(GetTelephonyProvidersEdgesLogicalinterfacesRequest request) throws ApiException {
+  public LogicalInterfaceEntityListing getTelephonyProvidersEdgesLogicalinterfaces(GetTelephonyProvidersEdgesLogicalinterfacesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LogicalInterfaceEntityListing>() {});
   }
 
@@ -4325,7 +4326,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LogicalInterfaceEntityListing> getTelephonyProvidersEdgesLogicalinterfaces(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<LogicalInterfaceEntityListing> getTelephonyProvidersEdgesLogicalinterfaces(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<LogicalInterfaceEntityListing>invokeAPIVerbose(request, new TypeReference<LogicalInterfaceEntityListing>() {});
   }
 
@@ -4336,7 +4337,7 @@ public class TelephonyProvidersEdgeApi {
    * @return OutboundRoute
    * @throws ApiException if fails to make API call
    */
-  public OutboundRoute getTelephonyProvidersEdgesOutboundroute(String outboundRouteId) throws ApiException {
+  public OutboundRoute getTelephonyProvidersEdgesOutboundroute(String outboundRouteId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesOutboundrouteWithHttpInfo(outboundRouteId).getBody();
   }
 
@@ -4347,12 +4348,12 @@ public class TelephonyProvidersEdgeApi {
    * @return OutboundRoute
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OutboundRoute> getTelephonyProvidersEdgesOutboundrouteWithHttpInfo(String outboundRouteId) throws ApiException {
+  public ApiResponse<OutboundRoute> getTelephonyProvidersEdgesOutboundrouteWithHttpInfo(String outboundRouteId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'outboundRouteId' is set
     if (outboundRouteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'outboundRouteId' when calling getTelephonyProvidersEdgesOutboundroute");
+      throw new IllegalArgumentException("Missing the required parameter 'outboundRouteId' when calling getTelephonyProvidersEdgesOutboundroute");
     }
     
     // create path and map variables
@@ -4388,7 +4389,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OutboundRoute getTelephonyProvidersEdgesOutboundroute(GetTelephonyProvidersEdgesOutboundrouteRequest request) throws ApiException {
+  public OutboundRoute getTelephonyProvidersEdgesOutboundroute(GetTelephonyProvidersEdgesOutboundrouteRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OutboundRoute>() {});
   }
 
@@ -4398,7 +4399,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OutboundRoute> getTelephonyProvidersEdgesOutboundroute(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<OutboundRoute> getTelephonyProvidersEdgesOutboundroute(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<OutboundRoute>invokeAPIVerbose(request, new TypeReference<OutboundRoute>() {});
   }
 
@@ -4413,7 +4414,7 @@ public class TelephonyProvidersEdgeApi {
    * @return OutboundRouteEntityListing
    * @throws ApiException if fails to make API call
    */
-  public OutboundRouteEntityListing getTelephonyProvidersEdgesOutboundroutes(Integer pageSize, Integer pageNumber, String name, String siteId, String sortBy) throws ApiException {
+  public OutboundRouteEntityListing getTelephonyProvidersEdgesOutboundroutes(Integer pageSize, Integer pageNumber, String name, String siteId, String sortBy) throws IOException, ApiException {
     return getTelephonyProvidersEdgesOutboundroutesWithHttpInfo(pageSize, pageNumber, name, siteId, sortBy).getBody();
   }
 
@@ -4428,7 +4429,7 @@ public class TelephonyProvidersEdgeApi {
    * @return OutboundRouteEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OutboundRouteEntityListing> getTelephonyProvidersEdgesOutboundroutesWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String siteId, String sortBy) throws ApiException {
+  public ApiResponse<OutboundRouteEntityListing> getTelephonyProvidersEdgesOutboundroutesWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String siteId, String sortBy) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -4468,7 +4469,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OutboundRouteEntityListing getTelephonyProvidersEdgesOutboundroutes(GetTelephonyProvidersEdgesOutboundroutesRequest request) throws ApiException {
+  public OutboundRouteEntityListing getTelephonyProvidersEdgesOutboundroutes(GetTelephonyProvidersEdgesOutboundroutesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OutboundRouteEntityListing>() {});
   }
 
@@ -4478,7 +4479,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OutboundRouteEntityListing> getTelephonyProvidersEdgesOutboundroutes(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<OutboundRouteEntityListing> getTelephonyProvidersEdgesOutboundroutes(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<OutboundRouteEntityListing>invokeAPIVerbose(request, new TypeReference<OutboundRouteEntityListing>() {});
   }
 
@@ -4489,7 +4490,7 @@ public class TelephonyProvidersEdgeApi {
    * @return Phone
    * @throws ApiException if fails to make API call
    */
-  public Phone getTelephonyProvidersEdgesPhone(String phoneId) throws ApiException {
+  public Phone getTelephonyProvidersEdgesPhone(String phoneId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesPhoneWithHttpInfo(phoneId).getBody();
   }
 
@@ -4500,12 +4501,12 @@ public class TelephonyProvidersEdgeApi {
    * @return Phone
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Phone> getTelephonyProvidersEdgesPhoneWithHttpInfo(String phoneId) throws ApiException {
+  public ApiResponse<Phone> getTelephonyProvidersEdgesPhoneWithHttpInfo(String phoneId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'phoneId' is set
     if (phoneId == null) {
-      throw new ApiException(400, "Missing the required parameter 'phoneId' when calling getTelephonyProvidersEdgesPhone");
+      throw new IllegalArgumentException("Missing the required parameter 'phoneId' when calling getTelephonyProvidersEdgesPhone");
     }
     
     // create path and map variables
@@ -4541,7 +4542,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Phone getTelephonyProvidersEdgesPhone(GetTelephonyProvidersEdgesPhoneRequest request) throws ApiException {
+  public Phone getTelephonyProvidersEdgesPhone(GetTelephonyProvidersEdgesPhoneRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Phone>() {});
   }
 
@@ -4551,7 +4552,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Phone> getTelephonyProvidersEdgesPhone(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Phone> getTelephonyProvidersEdgesPhone(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Phone>invokeAPIVerbose(request, new TypeReference<Phone>() {});
   }
 
@@ -4562,7 +4563,7 @@ public class TelephonyProvidersEdgeApi {
    * @return PhoneBase
    * @throws ApiException if fails to make API call
    */
-  public PhoneBase getTelephonyProvidersEdgesPhonebasesetting(String phoneBaseId) throws ApiException {
+  public PhoneBase getTelephonyProvidersEdgesPhonebasesetting(String phoneBaseId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesPhonebasesettingWithHttpInfo(phoneBaseId).getBody();
   }
 
@@ -4573,12 +4574,12 @@ public class TelephonyProvidersEdgeApi {
    * @return PhoneBase
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PhoneBase> getTelephonyProvidersEdgesPhonebasesettingWithHttpInfo(String phoneBaseId) throws ApiException {
+  public ApiResponse<PhoneBase> getTelephonyProvidersEdgesPhonebasesettingWithHttpInfo(String phoneBaseId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'phoneBaseId' is set
     if (phoneBaseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'phoneBaseId' when calling getTelephonyProvidersEdgesPhonebasesetting");
+      throw new IllegalArgumentException("Missing the required parameter 'phoneBaseId' when calling getTelephonyProvidersEdgesPhonebasesetting");
     }
     
     // create path and map variables
@@ -4614,7 +4615,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PhoneBase getTelephonyProvidersEdgesPhonebasesetting(GetTelephonyProvidersEdgesPhonebasesettingRequest request) throws ApiException {
+  public PhoneBase getTelephonyProvidersEdgesPhonebasesetting(GetTelephonyProvidersEdgesPhonebasesettingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PhoneBase>() {});
   }
 
@@ -4624,7 +4625,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PhoneBase> getTelephonyProvidersEdgesPhonebasesetting(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<PhoneBase> getTelephonyProvidersEdgesPhonebasesetting(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<PhoneBase>invokeAPIVerbose(request, new TypeReference<PhoneBase>() {});
   }
 
@@ -4639,7 +4640,7 @@ public class TelephonyProvidersEdgeApi {
    * @return PhoneBaseEntityListing
    * @throws ApiException if fails to make API call
    */
-  public PhoneBaseEntityListing getTelephonyProvidersEdgesPhonebasesettings(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name) throws ApiException {
+  public PhoneBaseEntityListing getTelephonyProvidersEdgesPhonebasesettings(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name) throws IOException, ApiException {
     return getTelephonyProvidersEdgesPhonebasesettingsWithHttpInfo(pageSize, pageNumber, sortBy, sortOrder, name).getBody();
   }
 
@@ -4654,7 +4655,7 @@ public class TelephonyProvidersEdgeApi {
    * @return PhoneBaseEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PhoneBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettingsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name) throws ApiException {
+  public ApiResponse<PhoneBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettingsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -4694,7 +4695,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PhoneBaseEntityListing getTelephonyProvidersEdgesPhonebasesettings(GetTelephonyProvidersEdgesPhonebasesettingsRequest request) throws ApiException {
+  public PhoneBaseEntityListing getTelephonyProvidersEdgesPhonebasesettings(GetTelephonyProvidersEdgesPhonebasesettingsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PhoneBaseEntityListing>() {});
   }
 
@@ -4704,7 +4705,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PhoneBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettings(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<PhoneBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettings(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<PhoneBaseEntityListing>invokeAPIVerbose(request, new TypeReference<PhoneBaseEntityListing>() {});
   }
 
@@ -4716,7 +4717,7 @@ public class TelephonyProvidersEdgeApi {
    * @return PhoneMetaBaseEntityListing
    * @throws ApiException if fails to make API call
    */
-  public PhoneMetaBaseEntityListing getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(Integer pageSize, Integer pageNumber) throws ApiException {
+  public PhoneMetaBaseEntityListing getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesWithHttpInfo(pageSize, pageNumber).getBody();
   }
 
@@ -4728,7 +4729,7 @@ public class TelephonyProvidersEdgeApi {
    * @return PhoneMetaBaseEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PhoneMetaBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesWithHttpInfo(Integer pageSize, Integer pageNumber) throws ApiException {
+  public ApiResponse<PhoneMetaBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -4765,7 +4766,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PhoneMetaBaseEntityListing getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(GetTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesRequest request) throws ApiException {
+  public PhoneMetaBaseEntityListing getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(GetTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PhoneMetaBaseEntityListing>() {});
   }
 
@@ -4775,7 +4776,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PhoneMetaBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<PhoneMetaBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<PhoneMetaBaseEntityListing>invokeAPIVerbose(request, new TypeReference<PhoneMetaBaseEntityListing>() {});
   }
 
@@ -4786,7 +4787,7 @@ public class TelephonyProvidersEdgeApi {
    * @return PhoneBase
    * @throws ApiException if fails to make API call
    */
-  public PhoneBase getTelephonyProvidersEdgesPhonebasesettingsTemplate(String phoneMetabaseId) throws ApiException {
+  public PhoneBase getTelephonyProvidersEdgesPhonebasesettingsTemplate(String phoneMetabaseId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesPhonebasesettingsTemplateWithHttpInfo(phoneMetabaseId).getBody();
   }
 
@@ -4797,12 +4798,12 @@ public class TelephonyProvidersEdgeApi {
    * @return PhoneBase
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PhoneBase> getTelephonyProvidersEdgesPhonebasesettingsTemplateWithHttpInfo(String phoneMetabaseId) throws ApiException {
+  public ApiResponse<PhoneBase> getTelephonyProvidersEdgesPhonebasesettingsTemplateWithHttpInfo(String phoneMetabaseId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'phoneMetabaseId' is set
     if (phoneMetabaseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'phoneMetabaseId' when calling getTelephonyProvidersEdgesPhonebasesettingsTemplate");
+      throw new IllegalArgumentException("Missing the required parameter 'phoneMetabaseId' when calling getTelephonyProvidersEdgesPhonebasesettingsTemplate");
     }
     
     // create path and map variables
@@ -4838,7 +4839,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PhoneBase getTelephonyProvidersEdgesPhonebasesettingsTemplate(GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest request) throws ApiException {
+  public PhoneBase getTelephonyProvidersEdgesPhonebasesettingsTemplate(GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PhoneBase>() {});
   }
 
@@ -4848,7 +4849,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PhoneBase> getTelephonyProvidersEdgesPhonebasesettingsTemplate(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<PhoneBase> getTelephonyProvidersEdgesPhonebasesettingsTemplate(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<PhoneBase>invokeAPIVerbose(request, new TypeReference<PhoneBase>() {});
   }
 
@@ -4872,7 +4873,7 @@ public class TelephonyProvidersEdgeApi {
    * @return PhoneEntityListing
    * @throws ApiException if fails to make API call
    */
-  public PhoneEntityListing getTelephonyProvidersEdgesPhones(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String siteId, String webRtcUserId, String phoneBaseSettingsId, String linesLoggedInUserId, String linesDefaultForUserId, String phoneHardwareId, String linesId, String linesName, List<String> expand, List<String> fields) throws ApiException {
+  public PhoneEntityListing getTelephonyProvidersEdgesPhones(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String siteId, String webRtcUserId, String phoneBaseSettingsId, String linesLoggedInUserId, String linesDefaultForUserId, String phoneHardwareId, String linesId, String linesName, List<String> expand, List<String> fields) throws IOException, ApiException {
     return getTelephonyProvidersEdgesPhonesWithHttpInfo(pageNumber, pageSize, sortBy, sortOrder, siteId, webRtcUserId, phoneBaseSettingsId, linesLoggedInUserId, linesDefaultForUserId, phoneHardwareId, linesId, linesName, expand, fields).getBody();
   }
 
@@ -4896,7 +4897,7 @@ public class TelephonyProvidersEdgeApi {
    * @return PhoneEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PhoneEntityListing> getTelephonyProvidersEdgesPhonesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String siteId, String webRtcUserId, String phoneBaseSettingsId, String linesLoggedInUserId, String linesDefaultForUserId, String phoneHardwareId, String linesId, String linesName, List<String> expand, List<String> fields) throws ApiException {
+  public ApiResponse<PhoneEntityListing> getTelephonyProvidersEdgesPhonesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String siteId, String webRtcUserId, String phoneBaseSettingsId, String linesLoggedInUserId, String linesDefaultForUserId, String phoneHardwareId, String linesId, String linesName, List<String> expand, List<String> fields) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -4945,7 +4946,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PhoneEntityListing getTelephonyProvidersEdgesPhones(GetTelephonyProvidersEdgesPhonesRequest request) throws ApiException {
+  public PhoneEntityListing getTelephonyProvidersEdgesPhones(GetTelephonyProvidersEdgesPhonesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PhoneEntityListing>() {});
   }
 
@@ -4955,7 +4956,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PhoneEntityListing> getTelephonyProvidersEdgesPhones(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<PhoneEntityListing> getTelephonyProvidersEdgesPhones(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<PhoneEntityListing>invokeAPIVerbose(request, new TypeReference<PhoneEntityListing>() {});
   }
 
@@ -4966,7 +4967,7 @@ public class TelephonyProvidersEdgeApi {
    * @return Phone
    * @throws ApiException if fails to make API call
    */
-  public Phone getTelephonyProvidersEdgesPhonesTemplate(String phoneBaseSettingsId) throws ApiException {
+  public Phone getTelephonyProvidersEdgesPhonesTemplate(String phoneBaseSettingsId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesPhonesTemplateWithHttpInfo(phoneBaseSettingsId).getBody();
   }
 
@@ -4977,12 +4978,12 @@ public class TelephonyProvidersEdgeApi {
    * @return Phone
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Phone> getTelephonyProvidersEdgesPhonesTemplateWithHttpInfo(String phoneBaseSettingsId) throws ApiException {
+  public ApiResponse<Phone> getTelephonyProvidersEdgesPhonesTemplateWithHttpInfo(String phoneBaseSettingsId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'phoneBaseSettingsId' is set
     if (phoneBaseSettingsId == null) {
-      throw new ApiException(400, "Missing the required parameter 'phoneBaseSettingsId' when calling getTelephonyProvidersEdgesPhonesTemplate");
+      throw new IllegalArgumentException("Missing the required parameter 'phoneBaseSettingsId' when calling getTelephonyProvidersEdgesPhonesTemplate");
     }
     
     // create path and map variables
@@ -5018,7 +5019,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Phone getTelephonyProvidersEdgesPhonesTemplate(GetTelephonyProvidersEdgesPhonesTemplateRequest request) throws ApiException {
+  public Phone getTelephonyProvidersEdgesPhonesTemplate(GetTelephonyProvidersEdgesPhonesTemplateRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Phone>() {});
   }
 
@@ -5028,7 +5029,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Phone> getTelephonyProvidersEdgesPhonesTemplate(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Phone> getTelephonyProvidersEdgesPhonesTemplate(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Phone>invokeAPIVerbose(request, new TypeReference<Phone>() {});
   }
 
@@ -5039,7 +5040,7 @@ public class TelephonyProvidersEdgeApi {
    * @return Site
    * @throws ApiException if fails to make API call
    */
-  public Site getTelephonyProvidersEdgesSite(String siteId) throws ApiException {
+  public Site getTelephonyProvidersEdgesSite(String siteId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesSiteWithHttpInfo(siteId).getBody();
   }
 
@@ -5050,12 +5051,12 @@ public class TelephonyProvidersEdgeApi {
    * @return Site
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Site> getTelephonyProvidersEdgesSiteWithHttpInfo(String siteId) throws ApiException {
+  public ApiResponse<Site> getTelephonyProvidersEdgesSiteWithHttpInfo(String siteId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'siteId' is set
     if (siteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'siteId' when calling getTelephonyProvidersEdgesSite");
+      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling getTelephonyProvidersEdgesSite");
     }
     
     // create path and map variables
@@ -5091,7 +5092,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Site getTelephonyProvidersEdgesSite(GetTelephonyProvidersEdgesSiteRequest request) throws ApiException {
+  public Site getTelephonyProvidersEdgesSite(GetTelephonyProvidersEdgesSiteRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Site>() {});
   }
 
@@ -5101,7 +5102,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Site> getTelephonyProvidersEdgesSite(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Site> getTelephonyProvidersEdgesSite(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Site>invokeAPIVerbose(request, new TypeReference<Site>() {});
   }
 
@@ -5113,7 +5114,7 @@ public class TelephonyProvidersEdgeApi {
    * @return NumberPlan
    * @throws ApiException if fails to make API call
    */
-  public NumberPlan getTelephonyProvidersEdgesSiteNumberplan(String siteId, String numberPlanId) throws ApiException {
+  public NumberPlan getTelephonyProvidersEdgesSiteNumberplan(String siteId, String numberPlanId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesSiteNumberplanWithHttpInfo(siteId, numberPlanId).getBody();
   }
 
@@ -5125,17 +5126,17 @@ public class TelephonyProvidersEdgeApi {
    * @return NumberPlan
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<NumberPlan> getTelephonyProvidersEdgesSiteNumberplanWithHttpInfo(String siteId, String numberPlanId) throws ApiException {
+  public ApiResponse<NumberPlan> getTelephonyProvidersEdgesSiteNumberplanWithHttpInfo(String siteId, String numberPlanId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'siteId' is set
     if (siteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'siteId' when calling getTelephonyProvidersEdgesSiteNumberplan");
+      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling getTelephonyProvidersEdgesSiteNumberplan");
     }
     
     // verify the required parameter 'numberPlanId' is set
     if (numberPlanId == null) {
-      throw new ApiException(400, "Missing the required parameter 'numberPlanId' when calling getTelephonyProvidersEdgesSiteNumberplan");
+      throw new IllegalArgumentException("Missing the required parameter 'numberPlanId' when calling getTelephonyProvidersEdgesSiteNumberplan");
     }
     
     // create path and map variables
@@ -5172,7 +5173,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public NumberPlan getTelephonyProvidersEdgesSiteNumberplan(GetTelephonyProvidersEdgesSiteNumberplanRequest request) throws ApiException {
+  public NumberPlan getTelephonyProvidersEdgesSiteNumberplan(GetTelephonyProvidersEdgesSiteNumberplanRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<NumberPlan>() {});
   }
 
@@ -5182,7 +5183,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<NumberPlan> getTelephonyProvidersEdgesSiteNumberplan(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<NumberPlan> getTelephonyProvidersEdgesSiteNumberplan(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<NumberPlan>invokeAPIVerbose(request, new TypeReference<NumberPlan>() {});
   }
 
@@ -5193,7 +5194,7 @@ public class TelephonyProvidersEdgeApi {
    * @return List<NumberPlan>
    * @throws ApiException if fails to make API call
    */
-  public List<NumberPlan> getTelephonyProvidersEdgesSiteNumberplans(String siteId) throws ApiException {
+  public List<NumberPlan> getTelephonyProvidersEdgesSiteNumberplans(String siteId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesSiteNumberplansWithHttpInfo(siteId).getBody();
   }
 
@@ -5204,12 +5205,12 @@ public class TelephonyProvidersEdgeApi {
    * @return List<NumberPlan>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<NumberPlan>> getTelephonyProvidersEdgesSiteNumberplansWithHttpInfo(String siteId) throws ApiException {
+  public ApiResponse<List<NumberPlan>> getTelephonyProvidersEdgesSiteNumberplansWithHttpInfo(String siteId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'siteId' is set
     if (siteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'siteId' when calling getTelephonyProvidersEdgesSiteNumberplans");
+      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling getTelephonyProvidersEdgesSiteNumberplans");
     }
     
     // create path and map variables
@@ -5245,7 +5246,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<NumberPlan> getTelephonyProvidersEdgesSiteNumberplans(GetTelephonyProvidersEdgesSiteNumberplansRequest request) throws ApiException {
+  public List<NumberPlan> getTelephonyProvidersEdgesSiteNumberplans(GetTelephonyProvidersEdgesSiteNumberplansRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<NumberPlan>>() {});
   }
 
@@ -5255,7 +5256,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<NumberPlan>> getTelephonyProvidersEdgesSiteNumberplans(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<NumberPlan>> getTelephonyProvidersEdgesSiteNumberplans(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<NumberPlan>>invokeAPIVerbose(request, new TypeReference<List<NumberPlan>>() {});
   }
 
@@ -5267,7 +5268,7 @@ public class TelephonyProvidersEdgeApi {
    * @return List<String>
    * @throws ApiException if fails to make API call
    */
-  public List<String> getTelephonyProvidersEdgesSiteNumberplansClassifications(String siteId, String classification) throws ApiException {
+  public List<String> getTelephonyProvidersEdgesSiteNumberplansClassifications(String siteId, String classification) throws IOException, ApiException {
     return getTelephonyProvidersEdgesSiteNumberplansClassificationsWithHttpInfo(siteId, classification).getBody();
   }
 
@@ -5279,12 +5280,12 @@ public class TelephonyProvidersEdgeApi {
    * @return List<String>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<String>> getTelephonyProvidersEdgesSiteNumberplansClassificationsWithHttpInfo(String siteId, String classification) throws ApiException {
+  public ApiResponse<List<String>> getTelephonyProvidersEdgesSiteNumberplansClassificationsWithHttpInfo(String siteId, String classification) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'siteId' is set
     if (siteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'siteId' when calling getTelephonyProvidersEdgesSiteNumberplansClassifications");
+      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling getTelephonyProvidersEdgesSiteNumberplansClassifications");
     }
     
     // create path and map variables
@@ -5321,7 +5322,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<String> getTelephonyProvidersEdgesSiteNumberplansClassifications(GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest request) throws ApiException {
+  public List<String> getTelephonyProvidersEdgesSiteNumberplansClassifications(GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<String>>() {});
   }
 
@@ -5331,7 +5332,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<String>> getTelephonyProvidersEdgesSiteNumberplansClassifications(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<String>> getTelephonyProvidersEdgesSiteNumberplansClassifications(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<String>>invokeAPIVerbose(request, new TypeReference<List<String>>() {});
   }
 
@@ -5343,7 +5344,7 @@ public class TelephonyProvidersEdgeApi {
    * @return OutboundRouteBase
    * @throws ApiException if fails to make API call
    */
-  public OutboundRouteBase getTelephonyProvidersEdgesSiteOutboundroute(String siteId, String outboundRouteId) throws ApiException {
+  public OutboundRouteBase getTelephonyProvidersEdgesSiteOutboundroute(String siteId, String outboundRouteId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesSiteOutboundrouteWithHttpInfo(siteId, outboundRouteId).getBody();
   }
 
@@ -5355,17 +5356,17 @@ public class TelephonyProvidersEdgeApi {
    * @return OutboundRouteBase
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OutboundRouteBase> getTelephonyProvidersEdgesSiteOutboundrouteWithHttpInfo(String siteId, String outboundRouteId) throws ApiException {
+  public ApiResponse<OutboundRouteBase> getTelephonyProvidersEdgesSiteOutboundrouteWithHttpInfo(String siteId, String outboundRouteId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'siteId' is set
     if (siteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'siteId' when calling getTelephonyProvidersEdgesSiteOutboundroute");
+      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling getTelephonyProvidersEdgesSiteOutboundroute");
     }
     
     // verify the required parameter 'outboundRouteId' is set
     if (outboundRouteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'outboundRouteId' when calling getTelephonyProvidersEdgesSiteOutboundroute");
+      throw new IllegalArgumentException("Missing the required parameter 'outboundRouteId' when calling getTelephonyProvidersEdgesSiteOutboundroute");
     }
     
     // create path and map variables
@@ -5402,7 +5403,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OutboundRouteBase getTelephonyProvidersEdgesSiteOutboundroute(GetTelephonyProvidersEdgesSiteOutboundrouteRequest request) throws ApiException {
+  public OutboundRouteBase getTelephonyProvidersEdgesSiteOutboundroute(GetTelephonyProvidersEdgesSiteOutboundrouteRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OutboundRouteBase>() {});
   }
 
@@ -5412,7 +5413,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OutboundRouteBase> getTelephonyProvidersEdgesSiteOutboundroute(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<OutboundRouteBase> getTelephonyProvidersEdgesSiteOutboundroute(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<OutboundRouteBase>invokeAPIVerbose(request, new TypeReference<OutboundRouteBase>() {});
   }
 
@@ -5427,7 +5428,7 @@ public class TelephonyProvidersEdgeApi {
    * @return OutboundRouteBaseEntityListing
    * @throws ApiException if fails to make API call
    */
-  public OutboundRouteBaseEntityListing getTelephonyProvidersEdgesSiteOutboundroutes(String siteId, Integer pageSize, Integer pageNumber, String name, String sortBy) throws ApiException {
+  public OutboundRouteBaseEntityListing getTelephonyProvidersEdgesSiteOutboundroutes(String siteId, Integer pageSize, Integer pageNumber, String name, String sortBy) throws IOException, ApiException {
     return getTelephonyProvidersEdgesSiteOutboundroutesWithHttpInfo(siteId, pageSize, pageNumber, name, sortBy).getBody();
   }
 
@@ -5442,12 +5443,12 @@ public class TelephonyProvidersEdgeApi {
    * @return OutboundRouteBaseEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OutboundRouteBaseEntityListing> getTelephonyProvidersEdgesSiteOutboundroutesWithHttpInfo(String siteId, Integer pageSize, Integer pageNumber, String name, String sortBy) throws ApiException {
+  public ApiResponse<OutboundRouteBaseEntityListing> getTelephonyProvidersEdgesSiteOutboundroutesWithHttpInfo(String siteId, Integer pageSize, Integer pageNumber, String name, String sortBy) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'siteId' is set
     if (siteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'siteId' when calling getTelephonyProvidersEdgesSiteOutboundroutes");
+      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling getTelephonyProvidersEdgesSiteOutboundroutes");
     }
     
     // create path and map variables
@@ -5487,7 +5488,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OutboundRouteBaseEntityListing getTelephonyProvidersEdgesSiteOutboundroutes(GetTelephonyProvidersEdgesSiteOutboundroutesRequest request) throws ApiException {
+  public OutboundRouteBaseEntityListing getTelephonyProvidersEdgesSiteOutboundroutes(GetTelephonyProvidersEdgesSiteOutboundroutesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OutboundRouteBaseEntityListing>() {});
   }
 
@@ -5497,7 +5498,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OutboundRouteBaseEntityListing> getTelephonyProvidersEdgesSiteOutboundroutes(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<OutboundRouteBaseEntityListing> getTelephonyProvidersEdgesSiteOutboundroutes(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<OutboundRouteBaseEntityListing>invokeAPIVerbose(request, new TypeReference<OutboundRouteBaseEntityListing>() {});
   }
 
@@ -5514,7 +5515,7 @@ public class TelephonyProvidersEdgeApi {
    * @return SiteEntityListing
    * @throws ApiException if fails to make API call
    */
-  public SiteEntityListing getTelephonyProvidersEdgesSites(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String locationId, Boolean managed) throws ApiException {
+  public SiteEntityListing getTelephonyProvidersEdgesSites(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String locationId, Boolean managed) throws IOException, ApiException {
     return getTelephonyProvidersEdgesSitesWithHttpInfo(pageSize, pageNumber, sortBy, sortOrder, name, locationId, managed).getBody();
   }
 
@@ -5531,7 +5532,7 @@ public class TelephonyProvidersEdgeApi {
    * @return SiteEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SiteEntityListing> getTelephonyProvidersEdgesSitesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String locationId, Boolean managed) throws ApiException {
+  public ApiResponse<SiteEntityListing> getTelephonyProvidersEdgesSitesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String locationId, Boolean managed) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -5573,7 +5574,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public SiteEntityListing getTelephonyProvidersEdgesSites(GetTelephonyProvidersEdgesSitesRequest request) throws ApiException {
+  public SiteEntityListing getTelephonyProvidersEdgesSites(GetTelephonyProvidersEdgesSitesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SiteEntityListing>() {});
   }
 
@@ -5583,7 +5584,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SiteEntityListing> getTelephonyProvidersEdgesSites(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<SiteEntityListing> getTelephonyProvidersEdgesSites(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<SiteEntityListing>invokeAPIVerbose(request, new TypeReference<SiteEntityListing>() {});
   }
 
@@ -5595,7 +5596,7 @@ public class TelephonyProvidersEdgeApi {
    * @return TimeZoneEntityListing
    * @throws ApiException if fails to make API call
    */
-  public TimeZoneEntityListing getTelephonyProvidersEdgesTimezones(Integer pageSize, Integer pageNumber) throws ApiException {
+  public TimeZoneEntityListing getTelephonyProvidersEdgesTimezones(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return getTelephonyProvidersEdgesTimezonesWithHttpInfo(pageSize, pageNumber).getBody();
   }
 
@@ -5607,7 +5608,7 @@ public class TelephonyProvidersEdgeApi {
    * @return TimeZoneEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TimeZoneEntityListing> getTelephonyProvidersEdgesTimezonesWithHttpInfo(Integer pageSize, Integer pageNumber) throws ApiException {
+  public ApiResponse<TimeZoneEntityListing> getTelephonyProvidersEdgesTimezonesWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -5644,7 +5645,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public TimeZoneEntityListing getTelephonyProvidersEdgesTimezones(GetTelephonyProvidersEdgesTimezonesRequest request) throws ApiException {
+  public TimeZoneEntityListing getTelephonyProvidersEdgesTimezones(GetTelephonyProvidersEdgesTimezonesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TimeZoneEntityListing>() {});
   }
 
@@ -5654,7 +5655,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TimeZoneEntityListing> getTelephonyProvidersEdgesTimezones(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<TimeZoneEntityListing> getTelephonyProvidersEdgesTimezones(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<TimeZoneEntityListing>invokeAPIVerbose(request, new TypeReference<TimeZoneEntityListing>() {});
   }
 
@@ -5665,7 +5666,7 @@ public class TelephonyProvidersEdgeApi {
    * @return Trunk
    * @throws ApiException if fails to make API call
    */
-  public Trunk getTelephonyProvidersEdgesTrunk(String trunkId) throws ApiException {
+  public Trunk getTelephonyProvidersEdgesTrunk(String trunkId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesTrunkWithHttpInfo(trunkId).getBody();
   }
 
@@ -5676,12 +5677,12 @@ public class TelephonyProvidersEdgeApi {
    * @return Trunk
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Trunk> getTelephonyProvidersEdgesTrunkWithHttpInfo(String trunkId) throws ApiException {
+  public ApiResponse<Trunk> getTelephonyProvidersEdgesTrunkWithHttpInfo(String trunkId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'trunkId' is set
     if (trunkId == null) {
-      throw new ApiException(400, "Missing the required parameter 'trunkId' when calling getTelephonyProvidersEdgesTrunk");
+      throw new IllegalArgumentException("Missing the required parameter 'trunkId' when calling getTelephonyProvidersEdgesTrunk");
     }
     
     // create path and map variables
@@ -5717,7 +5718,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Trunk getTelephonyProvidersEdgesTrunk(GetTelephonyProvidersEdgesTrunkRequest request) throws ApiException {
+  public Trunk getTelephonyProvidersEdgesTrunk(GetTelephonyProvidersEdgesTrunkRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Trunk>() {});
   }
 
@@ -5727,7 +5728,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Trunk> getTelephonyProvidersEdgesTrunk(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Trunk> getTelephonyProvidersEdgesTrunk(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Trunk>invokeAPIVerbose(request, new TypeReference<Trunk>() {});
   }
 
@@ -5739,7 +5740,7 @@ public class TelephonyProvidersEdgeApi {
    * @return TrunkBase
    * @throws ApiException if fails to make API call
    */
-  public TrunkBase getTelephonyProvidersEdgesTrunkbasesetting(String trunkBaseSettingsId, Boolean ignoreHidden) throws ApiException {
+  public TrunkBase getTelephonyProvidersEdgesTrunkbasesetting(String trunkBaseSettingsId, Boolean ignoreHidden) throws IOException, ApiException {
     return getTelephonyProvidersEdgesTrunkbasesettingWithHttpInfo(trunkBaseSettingsId, ignoreHidden).getBody();
   }
 
@@ -5751,12 +5752,12 @@ public class TelephonyProvidersEdgeApi {
    * @return TrunkBase
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TrunkBase> getTelephonyProvidersEdgesTrunkbasesettingWithHttpInfo(String trunkBaseSettingsId, Boolean ignoreHidden) throws ApiException {
+  public ApiResponse<TrunkBase> getTelephonyProvidersEdgesTrunkbasesettingWithHttpInfo(String trunkBaseSettingsId, Boolean ignoreHidden) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'trunkBaseSettingsId' is set
     if (trunkBaseSettingsId == null) {
-      throw new ApiException(400, "Missing the required parameter 'trunkBaseSettingsId' when calling getTelephonyProvidersEdgesTrunkbasesetting");
+      throw new IllegalArgumentException("Missing the required parameter 'trunkBaseSettingsId' when calling getTelephonyProvidersEdgesTrunkbasesetting");
     }
     
     // create path and map variables
@@ -5793,7 +5794,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public TrunkBase getTelephonyProvidersEdgesTrunkbasesetting(GetTelephonyProvidersEdgesTrunkbasesettingRequest request) throws ApiException {
+  public TrunkBase getTelephonyProvidersEdgesTrunkbasesetting(GetTelephonyProvidersEdgesTrunkbasesettingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TrunkBase>() {});
   }
 
@@ -5803,7 +5804,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TrunkBase> getTelephonyProvidersEdgesTrunkbasesetting(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<TrunkBase> getTelephonyProvidersEdgesTrunkbasesetting(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<TrunkBase>invokeAPIVerbose(request, new TypeReference<TrunkBase>() {});
   }
 
@@ -5822,7 +5823,7 @@ public class TelephonyProvidersEdgeApi {
    * @return TrunkBaseEntityListing
    * @throws ApiException if fails to make API call
    */
-  public TrunkBaseEntityListing getTelephonyProvidersEdgesTrunkbasesettings(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, Boolean recordingEnabled, Boolean ignoreHidden, Boolean managed, List<String> expand, String name) throws ApiException {
+  public TrunkBaseEntityListing getTelephonyProvidersEdgesTrunkbasesettings(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, Boolean recordingEnabled, Boolean ignoreHidden, Boolean managed, List<String> expand, String name) throws IOException, ApiException {
     return getTelephonyProvidersEdgesTrunkbasesettingsWithHttpInfo(pageNumber, pageSize, sortBy, sortOrder, recordingEnabled, ignoreHidden, managed, expand, name).getBody();
   }
 
@@ -5841,7 +5842,7 @@ public class TelephonyProvidersEdgeApi {
    * @return TrunkBaseEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TrunkBaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, Boolean recordingEnabled, Boolean ignoreHidden, Boolean managed, List<String> expand, String name) throws ApiException {
+  public ApiResponse<TrunkBaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, Boolean recordingEnabled, Boolean ignoreHidden, Boolean managed, List<String> expand, String name) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -5885,7 +5886,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public TrunkBaseEntityListing getTelephonyProvidersEdgesTrunkbasesettings(GetTelephonyProvidersEdgesTrunkbasesettingsRequest request) throws ApiException {
+  public TrunkBaseEntityListing getTelephonyProvidersEdgesTrunkbasesettings(GetTelephonyProvidersEdgesTrunkbasesettingsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TrunkBaseEntityListing>() {});
   }
 
@@ -5895,7 +5896,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TrunkBaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettings(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<TrunkBaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettings(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<TrunkBaseEntityListing>invokeAPIVerbose(request, new TypeReference<TrunkBaseEntityListing>() {});
   }
 
@@ -5908,7 +5909,7 @@ public class TelephonyProvidersEdgeApi {
    * @return TrunkMetabaseEntityListing
    * @throws ApiException if fails to make API call
    */
-  public TrunkMetabaseEntityListing getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(String type, Integer pageSize, Integer pageNumber) throws ApiException {
+  public TrunkMetabaseEntityListing getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(String type, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesWithHttpInfo(type, pageSize, pageNumber).getBody();
   }
 
@@ -5921,7 +5922,7 @@ public class TelephonyProvidersEdgeApi {
    * @return TrunkMetabaseEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TrunkMetabaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesWithHttpInfo(String type, Integer pageSize, Integer pageNumber) throws ApiException {
+  public ApiResponse<TrunkMetabaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesWithHttpInfo(String type, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -5959,7 +5960,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public TrunkMetabaseEntityListing getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest request) throws ApiException {
+  public TrunkMetabaseEntityListing getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TrunkMetabaseEntityListing>() {});
   }
 
@@ -5969,7 +5970,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TrunkMetabaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<TrunkMetabaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<TrunkMetabaseEntityListing>invokeAPIVerbose(request, new TypeReference<TrunkMetabaseEntityListing>() {});
   }
 
@@ -5980,7 +5981,7 @@ public class TelephonyProvidersEdgeApi {
    * @return TrunkBase
    * @throws ApiException if fails to make API call
    */
-  public TrunkBase getTelephonyProvidersEdgesTrunkbasesettingsTemplate(String trunkMetabaseId) throws ApiException {
+  public TrunkBase getTelephonyProvidersEdgesTrunkbasesettingsTemplate(String trunkMetabaseId) throws IOException, ApiException {
     return getTelephonyProvidersEdgesTrunkbasesettingsTemplateWithHttpInfo(trunkMetabaseId).getBody();
   }
 
@@ -5991,12 +5992,12 @@ public class TelephonyProvidersEdgeApi {
    * @return TrunkBase
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TrunkBase> getTelephonyProvidersEdgesTrunkbasesettingsTemplateWithHttpInfo(String trunkMetabaseId) throws ApiException {
+  public ApiResponse<TrunkBase> getTelephonyProvidersEdgesTrunkbasesettingsTemplateWithHttpInfo(String trunkMetabaseId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'trunkMetabaseId' is set
     if (trunkMetabaseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'trunkMetabaseId' when calling getTelephonyProvidersEdgesTrunkbasesettingsTemplate");
+      throw new IllegalArgumentException("Missing the required parameter 'trunkMetabaseId' when calling getTelephonyProvidersEdgesTrunkbasesettingsTemplate");
     }
     
     // create path and map variables
@@ -6032,7 +6033,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public TrunkBase getTelephonyProvidersEdgesTrunkbasesettingsTemplate(GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest request) throws ApiException {
+  public TrunkBase getTelephonyProvidersEdgesTrunkbasesettingsTemplate(GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TrunkBase>() {});
   }
 
@@ -6042,7 +6043,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TrunkBase> getTelephonyProvidersEdgesTrunkbasesettingsTemplate(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<TrunkBase> getTelephonyProvidersEdgesTrunkbasesettingsTemplate(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<TrunkBase>invokeAPIVerbose(request, new TypeReference<TrunkBase>() {});
   }
 
@@ -6059,7 +6060,7 @@ public class TelephonyProvidersEdgeApi {
    * @return TrunkEntityListing
    * @throws ApiException if fails to make API call
    */
-  public TrunkEntityListing getTelephonyProvidersEdgesTrunks(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String edgeId, String trunkBaseId, String trunkType) throws ApiException {
+  public TrunkEntityListing getTelephonyProvidersEdgesTrunks(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String edgeId, String trunkBaseId, String trunkType) throws IOException, ApiException {
     return getTelephonyProvidersEdgesTrunksWithHttpInfo(pageNumber, pageSize, sortBy, sortOrder, edgeId, trunkBaseId, trunkType).getBody();
   }
 
@@ -6076,7 +6077,7 @@ public class TelephonyProvidersEdgeApi {
    * @return TrunkEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TrunkEntityListing> getTelephonyProvidersEdgesTrunksWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String edgeId, String trunkBaseId, String trunkType) throws ApiException {
+  public ApiResponse<TrunkEntityListing> getTelephonyProvidersEdgesTrunksWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String edgeId, String trunkBaseId, String trunkType) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -6118,7 +6119,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public TrunkEntityListing getTelephonyProvidersEdgesTrunks(GetTelephonyProvidersEdgesTrunksRequest request) throws ApiException {
+  public TrunkEntityListing getTelephonyProvidersEdgesTrunks(GetTelephonyProvidersEdgesTrunksRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TrunkEntityListing>() {});
   }
 
@@ -6128,7 +6129,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TrunkEntityListing> getTelephonyProvidersEdgesTrunks(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<TrunkEntityListing> getTelephonyProvidersEdgesTrunks(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<TrunkEntityListing>invokeAPIVerbose(request, new TypeReference<TrunkEntityListing>() {});
   }
 
@@ -6139,7 +6140,7 @@ public class TelephonyProvidersEdgeApi {
    * @return TrunkRecordingEnabledCount
    * @throws ApiException if fails to make API call
    */
-  public TrunkRecordingEnabledCount getTelephonyProvidersEdgesTrunkswithrecording(String trunkType) throws ApiException {
+  public TrunkRecordingEnabledCount getTelephonyProvidersEdgesTrunkswithrecording(String trunkType) throws IOException, ApiException {
     return getTelephonyProvidersEdgesTrunkswithrecordingWithHttpInfo(trunkType).getBody();
   }
 
@@ -6150,7 +6151,7 @@ public class TelephonyProvidersEdgeApi {
    * @return TrunkRecordingEnabledCount
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TrunkRecordingEnabledCount> getTelephonyProvidersEdgesTrunkswithrecordingWithHttpInfo(String trunkType) throws ApiException {
+  public ApiResponse<TrunkRecordingEnabledCount> getTelephonyProvidersEdgesTrunkswithrecordingWithHttpInfo(String trunkType) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -6186,7 +6187,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public TrunkRecordingEnabledCount getTelephonyProvidersEdgesTrunkswithrecording(GetTelephonyProvidersEdgesTrunkswithrecordingRequest request) throws ApiException {
+  public TrunkRecordingEnabledCount getTelephonyProvidersEdgesTrunkswithrecording(GetTelephonyProvidersEdgesTrunkswithrecordingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TrunkRecordingEnabledCount>() {});
   }
 
@@ -6196,7 +6197,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TrunkRecordingEnabledCount> getTelephonyProvidersEdgesTrunkswithrecording(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<TrunkRecordingEnabledCount> getTelephonyProvidersEdgesTrunkswithrecording(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<TrunkRecordingEnabledCount>invokeAPIVerbose(request, new TypeReference<TrunkRecordingEnabledCount>() {});
   }
 
@@ -6208,7 +6209,7 @@ public class TelephonyProvidersEdgeApi {
    * @return DomainLogicalInterface
    * @throws ApiException if fails to make API call
    */
-  public DomainLogicalInterface postTelephonyProvidersEdgeLogicalinterfaces(String edgeId, DomainLogicalInterface body) throws ApiException {
+  public DomainLogicalInterface postTelephonyProvidersEdgeLogicalinterfaces(String edgeId, DomainLogicalInterface body) throws IOException, ApiException {
     return postTelephonyProvidersEdgeLogicalinterfacesWithHttpInfo(edgeId, body).getBody();
   }
 
@@ -6220,17 +6221,17 @@ public class TelephonyProvidersEdgeApi {
    * @return DomainLogicalInterface
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainLogicalInterface> postTelephonyProvidersEdgeLogicalinterfacesWithHttpInfo(String edgeId, DomainLogicalInterface body) throws ApiException {
+  public ApiResponse<DomainLogicalInterface> postTelephonyProvidersEdgeLogicalinterfacesWithHttpInfo(String edgeId, DomainLogicalInterface body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeLogicalinterfaces");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeLogicalinterfaces");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postTelephonyProvidersEdgeLogicalinterfaces");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgeLogicalinterfaces");
     }
     
     // create path and map variables
@@ -6266,7 +6267,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DomainLogicalInterface postTelephonyProvidersEdgeLogicalinterfaces(PostTelephonyProvidersEdgeLogicalinterfacesRequest request) throws ApiException {
+  public DomainLogicalInterface postTelephonyProvidersEdgeLogicalinterfaces(PostTelephonyProvidersEdgeLogicalinterfacesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainLogicalInterface>() {});
   }
 
@@ -6276,7 +6277,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainLogicalInterface> postTelephonyProvidersEdgeLogicalinterfaces(ApiRequest<DomainLogicalInterface> request) throws ApiException {
+  public ApiResponse<DomainLogicalInterface> postTelephonyProvidersEdgeLogicalinterfaces(ApiRequest<DomainLogicalInterface> request) throws IOException, ApiException {
     return pcapiClient.<DomainLogicalInterface>invokeAPIVerbose(request, new TypeReference<DomainLogicalInterface>() {});
   }
 
@@ -6288,7 +6289,7 @@ public class TelephonyProvidersEdgeApi {
    * @param body Log upload request (required)
    * @throws ApiException if fails to make API call
    */
-  public void postTelephonyProvidersEdgeLogsJobUpload(String edgeId, String jobId, EdgeLogsJobUploadRequest body) throws ApiException {
+  public void postTelephonyProvidersEdgeLogsJobUpload(String edgeId, String jobId, EdgeLogsJobUploadRequest body) throws IOException, ApiException {
     postTelephonyProvidersEdgeLogsJobUploadWithHttpInfo(edgeId, jobId, body);
   }
 
@@ -6300,22 +6301,22 @@ public class TelephonyProvidersEdgeApi {
    * @param body Log upload request (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postTelephonyProvidersEdgeLogsJobUploadWithHttpInfo(String edgeId, String jobId, EdgeLogsJobUploadRequest body) throws ApiException {
+  public ApiResponse<Void> postTelephonyProvidersEdgeLogsJobUploadWithHttpInfo(String edgeId, String jobId, EdgeLogsJobUploadRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeLogsJobUpload");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeLogsJobUpload");
     }
     
     // verify the required parameter 'jobId' is set
     if (jobId == null) {
-      throw new ApiException(400, "Missing the required parameter 'jobId' when calling postTelephonyProvidersEdgeLogsJobUpload");
+      throw new IllegalArgumentException("Missing the required parameter 'jobId' when calling postTelephonyProvidersEdgeLogsJobUpload");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postTelephonyProvidersEdgeLogsJobUpload");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgeLogsJobUpload");
     }
     
     // create path and map variables
@@ -6352,7 +6353,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void postTelephonyProvidersEdgeLogsJobUpload(PostTelephonyProvidersEdgeLogsJobUploadRequest request) throws ApiException {
+  public void postTelephonyProvidersEdgeLogsJobUpload(PostTelephonyProvidersEdgeLogsJobUploadRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -6362,7 +6363,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postTelephonyProvidersEdgeLogsJobUpload(ApiRequest<EdgeLogsJobUploadRequest> request) throws ApiException {
+  public ApiResponse<Void> postTelephonyProvidersEdgeLogsJobUpload(ApiRequest<EdgeLogsJobUploadRequest> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -6374,7 +6375,7 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeLogsJobResponse
    * @throws ApiException if fails to make API call
    */
-  public EdgeLogsJobResponse postTelephonyProvidersEdgeLogsJobs(String edgeId, EdgeLogsJobRequest body) throws ApiException {
+  public EdgeLogsJobResponse postTelephonyProvidersEdgeLogsJobs(String edgeId, EdgeLogsJobRequest body) throws IOException, ApiException {
     return postTelephonyProvidersEdgeLogsJobsWithHttpInfo(edgeId, body).getBody();
   }
 
@@ -6386,17 +6387,17 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeLogsJobResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeLogsJobResponse> postTelephonyProvidersEdgeLogsJobsWithHttpInfo(String edgeId, EdgeLogsJobRequest body) throws ApiException {
+  public ApiResponse<EdgeLogsJobResponse> postTelephonyProvidersEdgeLogsJobsWithHttpInfo(String edgeId, EdgeLogsJobRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeLogsJobs");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeLogsJobs");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postTelephonyProvidersEdgeLogsJobs");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgeLogsJobs");
     }
     
     // create path and map variables
@@ -6432,7 +6433,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EdgeLogsJobResponse postTelephonyProvidersEdgeLogsJobs(PostTelephonyProvidersEdgeLogsJobsRequest request) throws ApiException {
+  public EdgeLogsJobResponse postTelephonyProvidersEdgeLogsJobs(PostTelephonyProvidersEdgeLogsJobsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeLogsJobResponse>() {});
   }
 
@@ -6442,7 +6443,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeLogsJobResponse> postTelephonyProvidersEdgeLogsJobs(ApiRequest<EdgeLogsJobRequest> request) throws ApiException {
+  public ApiResponse<EdgeLogsJobResponse> postTelephonyProvidersEdgeLogsJobs(ApiRequest<EdgeLogsJobRequest> request) throws IOException, ApiException {
     return pcapiClient.<EdgeLogsJobResponse>invokeAPIVerbose(request, new TypeReference<EdgeLogsJobResponse>() {});
   }
 
@@ -6454,7 +6455,7 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String postTelephonyProvidersEdgeReboot(String edgeId, EdgeRebootParameters body) throws ApiException {
+  public String postTelephonyProvidersEdgeReboot(String edgeId, EdgeRebootParameters body) throws IOException, ApiException {
     return postTelephonyProvidersEdgeRebootWithHttpInfo(edgeId, body).getBody();
   }
 
@@ -6466,12 +6467,12 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> postTelephonyProvidersEdgeRebootWithHttpInfo(String edgeId, EdgeRebootParameters body) throws ApiException {
+  public ApiResponse<String> postTelephonyProvidersEdgeRebootWithHttpInfo(String edgeId, EdgeRebootParameters body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeReboot");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeReboot");
     }
     
     // create path and map variables
@@ -6507,7 +6508,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String postTelephonyProvidersEdgeReboot(PostTelephonyProvidersEdgeRebootRequest request) throws ApiException {
+  public String postTelephonyProvidersEdgeReboot(PostTelephonyProvidersEdgeRebootRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -6517,7 +6518,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> postTelephonyProvidersEdgeReboot(ApiRequest<EdgeRebootParameters> request) throws ApiException {
+  public ApiResponse<String> postTelephonyProvidersEdgeReboot(ApiRequest<EdgeRebootParameters> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -6529,7 +6530,7 @@ public class TelephonyProvidersEdgeApi {
    * @return DomainEdgeSoftwareUpdateDto
    * @throws ApiException if fails to make API call
    */
-  public DomainEdgeSoftwareUpdateDto postTelephonyProvidersEdgeSoftwareupdate(String edgeId, DomainEdgeSoftwareUpdateDto body) throws ApiException {
+  public DomainEdgeSoftwareUpdateDto postTelephonyProvidersEdgeSoftwareupdate(String edgeId, DomainEdgeSoftwareUpdateDto body) throws IOException, ApiException {
     return postTelephonyProvidersEdgeSoftwareupdateWithHttpInfo(edgeId, body).getBody();
   }
 
@@ -6541,17 +6542,17 @@ public class TelephonyProvidersEdgeApi {
    * @return DomainEdgeSoftwareUpdateDto
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainEdgeSoftwareUpdateDto> postTelephonyProvidersEdgeSoftwareupdateWithHttpInfo(String edgeId, DomainEdgeSoftwareUpdateDto body) throws ApiException {
+  public ApiResponse<DomainEdgeSoftwareUpdateDto> postTelephonyProvidersEdgeSoftwareupdateWithHttpInfo(String edgeId, DomainEdgeSoftwareUpdateDto body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeSoftwareupdate");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeSoftwareupdate");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postTelephonyProvidersEdgeSoftwareupdate");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgeSoftwareupdate");
     }
     
     // create path and map variables
@@ -6587,7 +6588,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DomainEdgeSoftwareUpdateDto postTelephonyProvidersEdgeSoftwareupdate(PostTelephonyProvidersEdgeSoftwareupdateRequest request) throws ApiException {
+  public DomainEdgeSoftwareUpdateDto postTelephonyProvidersEdgeSoftwareupdate(PostTelephonyProvidersEdgeSoftwareupdateRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainEdgeSoftwareUpdateDto>() {});
   }
 
@@ -6597,7 +6598,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainEdgeSoftwareUpdateDto> postTelephonyProvidersEdgeSoftwareupdate(ApiRequest<DomainEdgeSoftwareUpdateDto> request) throws ApiException {
+  public ApiResponse<DomainEdgeSoftwareUpdateDto> postTelephonyProvidersEdgeSoftwareupdate(ApiRequest<DomainEdgeSoftwareUpdateDto> request) throws IOException, ApiException {
     return pcapiClient.<DomainEdgeSoftwareUpdateDto>invokeAPIVerbose(request, new TypeReference<DomainEdgeSoftwareUpdateDto>() {});
   }
 
@@ -6609,7 +6610,7 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String postTelephonyProvidersEdgeStatuscode(String edgeId, EdgeServiceStateRequest body) throws ApiException {
+  public String postTelephonyProvidersEdgeStatuscode(String edgeId, EdgeServiceStateRequest body) throws IOException, ApiException {
     return postTelephonyProvidersEdgeStatuscodeWithHttpInfo(edgeId, body).getBody();
   }
 
@@ -6621,12 +6622,12 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> postTelephonyProvidersEdgeStatuscodeWithHttpInfo(String edgeId, EdgeServiceStateRequest body) throws ApiException {
+  public ApiResponse<String> postTelephonyProvidersEdgeStatuscodeWithHttpInfo(String edgeId, EdgeServiceStateRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeStatuscode");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeStatuscode");
     }
     
     // create path and map variables
@@ -6662,7 +6663,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String postTelephonyProvidersEdgeStatuscode(PostTelephonyProvidersEdgeStatuscodeRequest request) throws ApiException {
+  public String postTelephonyProvidersEdgeStatuscode(PostTelephonyProvidersEdgeStatuscodeRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -6672,7 +6673,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> postTelephonyProvidersEdgeStatuscode(ApiRequest<EdgeServiceStateRequest> request) throws ApiException {
+  public ApiResponse<String> postTelephonyProvidersEdgeStatuscode(ApiRequest<EdgeServiceStateRequest> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -6683,7 +6684,7 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String postTelephonyProvidersEdgeUnpair(String edgeId) throws ApiException {
+  public String postTelephonyProvidersEdgeUnpair(String edgeId) throws IOException, ApiException {
     return postTelephonyProvidersEdgeUnpairWithHttpInfo(edgeId).getBody();
   }
 
@@ -6694,12 +6695,12 @@ public class TelephonyProvidersEdgeApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> postTelephonyProvidersEdgeUnpairWithHttpInfo(String edgeId) throws ApiException {
+  public ApiResponse<String> postTelephonyProvidersEdgeUnpairWithHttpInfo(String edgeId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeUnpair");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeUnpair");
     }
     
     // create path and map variables
@@ -6735,7 +6736,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String postTelephonyProvidersEdgeUnpair(PostTelephonyProvidersEdgeUnpairRequest request) throws ApiException {
+  public String postTelephonyProvidersEdgeUnpair(PostTelephonyProvidersEdgeUnpairRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -6745,7 +6746,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> postTelephonyProvidersEdgeUnpair(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> postTelephonyProvidersEdgeUnpair(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -6756,7 +6757,7 @@ public class TelephonyProvidersEdgeApi {
    * @return Edge
    * @throws ApiException if fails to make API call
    */
-  public Edge postTelephonyProvidersEdges(Edge body) throws ApiException {
+  public Edge postTelephonyProvidersEdges(Edge body) throws IOException, ApiException {
     return postTelephonyProvidersEdgesWithHttpInfo(body).getBody();
   }
 
@@ -6767,12 +6768,12 @@ public class TelephonyProvidersEdgeApi {
    * @return Edge
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Edge> postTelephonyProvidersEdgesWithHttpInfo(Edge body) throws ApiException {
+  public ApiResponse<Edge> postTelephonyProvidersEdgesWithHttpInfo(Edge body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postTelephonyProvidersEdges");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdges");
     }
     
     // create path and map variables
@@ -6807,7 +6808,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Edge postTelephonyProvidersEdges(PostTelephonyProvidersEdgesRequest request) throws ApiException {
+  public Edge postTelephonyProvidersEdges(PostTelephonyProvidersEdgesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Edge>() {});
   }
 
@@ -6817,7 +6818,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Edge> postTelephonyProvidersEdges(ApiRequest<Edge> request) throws ApiException {
+  public ApiResponse<Edge> postTelephonyProvidersEdges(ApiRequest<Edge> request) throws IOException, ApiException {
     return pcapiClient.<Edge>invokeAPIVerbose(request, new TypeReference<Edge>() {});
   }
 
@@ -6828,7 +6829,7 @@ public class TelephonyProvidersEdgeApi {
    * @return ValidateAddressResponse
    * @throws ApiException if fails to make API call
    */
-  public ValidateAddressResponse postTelephonyProvidersEdgesAddressvalidation(ValidateAddressRequest body) throws ApiException {
+  public ValidateAddressResponse postTelephonyProvidersEdgesAddressvalidation(ValidateAddressRequest body) throws IOException, ApiException {
     return postTelephonyProvidersEdgesAddressvalidationWithHttpInfo(body).getBody();
   }
 
@@ -6839,12 +6840,12 @@ public class TelephonyProvidersEdgeApi {
    * @return ValidateAddressResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ValidateAddressResponse> postTelephonyProvidersEdgesAddressvalidationWithHttpInfo(ValidateAddressRequest body) throws ApiException {
+  public ApiResponse<ValidateAddressResponse> postTelephonyProvidersEdgesAddressvalidationWithHttpInfo(ValidateAddressRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postTelephonyProvidersEdgesAddressvalidation");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesAddressvalidation");
     }
     
     // create path and map variables
@@ -6879,7 +6880,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ValidateAddressResponse postTelephonyProvidersEdgesAddressvalidation(PostTelephonyProvidersEdgesAddressvalidationRequest request) throws ApiException {
+  public ValidateAddressResponse postTelephonyProvidersEdgesAddressvalidation(PostTelephonyProvidersEdgesAddressvalidationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ValidateAddressResponse>() {});
   }
 
@@ -6889,7 +6890,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ValidateAddressResponse> postTelephonyProvidersEdgesAddressvalidation(ApiRequest<ValidateAddressRequest> request) throws ApiException {
+  public ApiResponse<ValidateAddressResponse> postTelephonyProvidersEdgesAddressvalidation(ApiRequest<ValidateAddressRequest> request) throws IOException, ApiException {
     return pcapiClient.<ValidateAddressResponse>invokeAPIVerbose(request, new TypeReference<ValidateAddressResponse>() {});
   }
 
@@ -6900,7 +6901,7 @@ public class TelephonyProvidersEdgeApi {
    * @return DomainCertificateAuthority
    * @throws ApiException if fails to make API call
    */
-  public DomainCertificateAuthority postTelephonyProvidersEdgesCertificateauthorities(DomainCertificateAuthority body) throws ApiException {
+  public DomainCertificateAuthority postTelephonyProvidersEdgesCertificateauthorities(DomainCertificateAuthority body) throws IOException, ApiException {
     return postTelephonyProvidersEdgesCertificateauthoritiesWithHttpInfo(body).getBody();
   }
 
@@ -6911,12 +6912,12 @@ public class TelephonyProvidersEdgeApi {
    * @return DomainCertificateAuthority
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainCertificateAuthority> postTelephonyProvidersEdgesCertificateauthoritiesWithHttpInfo(DomainCertificateAuthority body) throws ApiException {
+  public ApiResponse<DomainCertificateAuthority> postTelephonyProvidersEdgesCertificateauthoritiesWithHttpInfo(DomainCertificateAuthority body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postTelephonyProvidersEdgesCertificateauthorities");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesCertificateauthorities");
     }
     
     // create path and map variables
@@ -6951,7 +6952,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DomainCertificateAuthority postTelephonyProvidersEdgesCertificateauthorities(PostTelephonyProvidersEdgesCertificateauthoritiesRequest request) throws ApiException {
+  public DomainCertificateAuthority postTelephonyProvidersEdgesCertificateauthorities(PostTelephonyProvidersEdgesCertificateauthoritiesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainCertificateAuthority>() {});
   }
 
@@ -6961,7 +6962,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainCertificateAuthority> postTelephonyProvidersEdgesCertificateauthorities(ApiRequest<DomainCertificateAuthority> request) throws ApiException {
+  public ApiResponse<DomainCertificateAuthority> postTelephonyProvidersEdgesCertificateauthorities(ApiRequest<DomainCertificateAuthority> request) throws IOException, ApiException {
     return pcapiClient.<DomainCertificateAuthority>invokeAPIVerbose(request, new TypeReference<DomainCertificateAuthority>() {});
   }
 
@@ -6972,7 +6973,7 @@ public class TelephonyProvidersEdgeApi {
    * @return DIDPool
    * @throws ApiException if fails to make API call
    */
-  public DIDPool postTelephonyProvidersEdgesDidpools(DIDPool body) throws ApiException {
+  public DIDPool postTelephonyProvidersEdgesDidpools(DIDPool body) throws IOException, ApiException {
     return postTelephonyProvidersEdgesDidpoolsWithHttpInfo(body).getBody();
   }
 
@@ -6983,12 +6984,12 @@ public class TelephonyProvidersEdgeApi {
    * @return DIDPool
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DIDPool> postTelephonyProvidersEdgesDidpoolsWithHttpInfo(DIDPool body) throws ApiException {
+  public ApiResponse<DIDPool> postTelephonyProvidersEdgesDidpoolsWithHttpInfo(DIDPool body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postTelephonyProvidersEdgesDidpools");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesDidpools");
     }
     
     // create path and map variables
@@ -7023,7 +7024,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DIDPool postTelephonyProvidersEdgesDidpools(PostTelephonyProvidersEdgesDidpoolsRequest request) throws ApiException {
+  public DIDPool postTelephonyProvidersEdgesDidpools(PostTelephonyProvidersEdgesDidpoolsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DIDPool>() {});
   }
 
@@ -7033,7 +7034,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DIDPool> postTelephonyProvidersEdgesDidpools(ApiRequest<DIDPool> request) throws ApiException {
+  public ApiResponse<DIDPool> postTelephonyProvidersEdgesDidpools(ApiRequest<DIDPool> request) throws IOException, ApiException {
     return pcapiClient.<DIDPool>invokeAPIVerbose(request, new TypeReference<DIDPool>() {});
   }
 
@@ -7044,7 +7045,7 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeGroup
    * @throws ApiException if fails to make API call
    */
-  public EdgeGroup postTelephonyProvidersEdgesEdgegroups(EdgeGroup body) throws ApiException {
+  public EdgeGroup postTelephonyProvidersEdgesEdgegroups(EdgeGroup body) throws IOException, ApiException {
     return postTelephonyProvidersEdgesEdgegroupsWithHttpInfo(body).getBody();
   }
 
@@ -7055,12 +7056,12 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeGroup
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeGroup> postTelephonyProvidersEdgesEdgegroupsWithHttpInfo(EdgeGroup body) throws ApiException {
+  public ApiResponse<EdgeGroup> postTelephonyProvidersEdgesEdgegroupsWithHttpInfo(EdgeGroup body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postTelephonyProvidersEdgesEdgegroups");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesEdgegroups");
     }
     
     // create path and map variables
@@ -7095,7 +7096,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EdgeGroup postTelephonyProvidersEdgesEdgegroups(PostTelephonyProvidersEdgesEdgegroupsRequest request) throws ApiException {
+  public EdgeGroup postTelephonyProvidersEdgesEdgegroups(PostTelephonyProvidersEdgesEdgegroupsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeGroup>() {});
   }
 
@@ -7105,7 +7106,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeGroup> postTelephonyProvidersEdgesEdgegroups(ApiRequest<EdgeGroup> request) throws ApiException {
+  public ApiResponse<EdgeGroup> postTelephonyProvidersEdgesEdgegroups(ApiRequest<EdgeGroup> request) throws IOException, ApiException {
     return pcapiClient.<EdgeGroup>invokeAPIVerbose(request, new TypeReference<EdgeGroup>() {});
   }
 
@@ -7116,7 +7117,7 @@ public class TelephonyProvidersEdgeApi {
    * @return Endpoint
    * @throws ApiException if fails to make API call
    */
-  public Endpoint postTelephonyProvidersEdgesEndpoints(Endpoint body) throws ApiException {
+  public Endpoint postTelephonyProvidersEdgesEndpoints(Endpoint body) throws IOException, ApiException {
     return postTelephonyProvidersEdgesEndpointsWithHttpInfo(body).getBody();
   }
 
@@ -7127,12 +7128,12 @@ public class TelephonyProvidersEdgeApi {
    * @return Endpoint
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Endpoint> postTelephonyProvidersEdgesEndpointsWithHttpInfo(Endpoint body) throws ApiException {
+  public ApiResponse<Endpoint> postTelephonyProvidersEdgesEndpointsWithHttpInfo(Endpoint body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postTelephonyProvidersEdgesEndpoints");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesEndpoints");
     }
     
     // create path and map variables
@@ -7167,7 +7168,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Endpoint postTelephonyProvidersEdgesEndpoints(PostTelephonyProvidersEdgesEndpointsRequest request) throws ApiException {
+  public Endpoint postTelephonyProvidersEdgesEndpoints(PostTelephonyProvidersEdgesEndpointsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Endpoint>() {});
   }
 
@@ -7177,7 +7178,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Endpoint> postTelephonyProvidersEdgesEndpoints(ApiRequest<Endpoint> request) throws ApiException {
+  public ApiResponse<Endpoint> postTelephonyProvidersEdgesEndpoints(ApiRequest<Endpoint> request) throws IOException, ApiException {
     return pcapiClient.<Endpoint>invokeAPIVerbose(request, new TypeReference<Endpoint>() {});
   }
 
@@ -7188,7 +7189,7 @@ public class TelephonyProvidersEdgeApi {
    * @return ExtensionPool
    * @throws ApiException if fails to make API call
    */
-  public ExtensionPool postTelephonyProvidersEdgesExtensionpools(ExtensionPool body) throws ApiException {
+  public ExtensionPool postTelephonyProvidersEdgesExtensionpools(ExtensionPool body) throws IOException, ApiException {
     return postTelephonyProvidersEdgesExtensionpoolsWithHttpInfo(body).getBody();
   }
 
@@ -7199,12 +7200,12 @@ public class TelephonyProvidersEdgeApi {
    * @return ExtensionPool
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExtensionPool> postTelephonyProvidersEdgesExtensionpoolsWithHttpInfo(ExtensionPool body) throws ApiException {
+  public ApiResponse<ExtensionPool> postTelephonyProvidersEdgesExtensionpoolsWithHttpInfo(ExtensionPool body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postTelephonyProvidersEdgesExtensionpools");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesExtensionpools");
     }
     
     // create path and map variables
@@ -7239,7 +7240,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ExtensionPool postTelephonyProvidersEdgesExtensionpools(PostTelephonyProvidersEdgesExtensionpoolsRequest request) throws ApiException {
+  public ExtensionPool postTelephonyProvidersEdgesExtensionpools(PostTelephonyProvidersEdgesExtensionpoolsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExtensionPool>() {});
   }
 
@@ -7249,7 +7250,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExtensionPool> postTelephonyProvidersEdgesExtensionpools(ApiRequest<ExtensionPool> request) throws ApiException {
+  public ApiResponse<ExtensionPool> postTelephonyProvidersEdgesExtensionpools(ApiRequest<ExtensionPool> request) throws IOException, ApiException {
     return pcapiClient.<ExtensionPool>invokeAPIVerbose(request, new TypeReference<ExtensionPool>() {});
   }
 
@@ -7260,7 +7261,7 @@ public class TelephonyProvidersEdgeApi {
    * @return OutboundRoute
    * @throws ApiException if fails to make API call
    */
-  public OutboundRoute postTelephonyProvidersEdgesOutboundroutes(OutboundRoute body) throws ApiException {
+  public OutboundRoute postTelephonyProvidersEdgesOutboundroutes(OutboundRoute body) throws IOException, ApiException {
     return postTelephonyProvidersEdgesOutboundroutesWithHttpInfo(body).getBody();
   }
 
@@ -7271,12 +7272,12 @@ public class TelephonyProvidersEdgeApi {
    * @return OutboundRoute
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OutboundRoute> postTelephonyProvidersEdgesOutboundroutesWithHttpInfo(OutboundRoute body) throws ApiException {
+  public ApiResponse<OutboundRoute> postTelephonyProvidersEdgesOutboundroutesWithHttpInfo(OutboundRoute body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postTelephonyProvidersEdgesOutboundroutes");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesOutboundroutes");
     }
     
     // create path and map variables
@@ -7311,7 +7312,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OutboundRoute postTelephonyProvidersEdgesOutboundroutes(PostTelephonyProvidersEdgesOutboundroutesRequest request) throws ApiException {
+  public OutboundRoute postTelephonyProvidersEdgesOutboundroutes(PostTelephonyProvidersEdgesOutboundroutesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OutboundRoute>() {});
   }
 
@@ -7321,7 +7322,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OutboundRoute> postTelephonyProvidersEdgesOutboundroutes(ApiRequest<OutboundRoute> request) throws ApiException {
+  public ApiResponse<OutboundRoute> postTelephonyProvidersEdgesOutboundroutes(ApiRequest<OutboundRoute> request) throws IOException, ApiException {
     return pcapiClient.<OutboundRoute>invokeAPIVerbose(request, new TypeReference<OutboundRoute>() {});
   }
 
@@ -7331,7 +7332,7 @@ public class TelephonyProvidersEdgeApi {
    * @param phoneId Phone Id (required)
    * @throws ApiException if fails to make API call
    */
-  public void postTelephonyProvidersEdgesPhoneReboot(String phoneId) throws ApiException {
+  public void postTelephonyProvidersEdgesPhoneReboot(String phoneId) throws IOException, ApiException {
     postTelephonyProvidersEdgesPhoneRebootWithHttpInfo(phoneId);
   }
 
@@ -7341,12 +7342,12 @@ public class TelephonyProvidersEdgeApi {
    * @param phoneId Phone Id (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postTelephonyProvidersEdgesPhoneRebootWithHttpInfo(String phoneId) throws ApiException {
+  public ApiResponse<Void> postTelephonyProvidersEdgesPhoneRebootWithHttpInfo(String phoneId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'phoneId' is set
     if (phoneId == null) {
-      throw new ApiException(400, "Missing the required parameter 'phoneId' when calling postTelephonyProvidersEdgesPhoneReboot");
+      throw new IllegalArgumentException("Missing the required parameter 'phoneId' when calling postTelephonyProvidersEdgesPhoneReboot");
     }
     
     // create path and map variables
@@ -7382,7 +7383,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void postTelephonyProvidersEdgesPhoneReboot(PostTelephonyProvidersEdgesPhoneRebootRequest request) throws ApiException {
+  public void postTelephonyProvidersEdgesPhoneReboot(PostTelephonyProvidersEdgesPhoneRebootRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -7392,7 +7393,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postTelephonyProvidersEdgesPhoneReboot(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> postTelephonyProvidersEdgesPhoneReboot(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -7403,7 +7404,7 @@ public class TelephonyProvidersEdgeApi {
    * @return PhoneBase
    * @throws ApiException if fails to make API call
    */
-  public PhoneBase postTelephonyProvidersEdgesPhonebasesettings(PhoneBase body) throws ApiException {
+  public PhoneBase postTelephonyProvidersEdgesPhonebasesettings(PhoneBase body) throws IOException, ApiException {
     return postTelephonyProvidersEdgesPhonebasesettingsWithHttpInfo(body).getBody();
   }
 
@@ -7414,12 +7415,12 @@ public class TelephonyProvidersEdgeApi {
    * @return PhoneBase
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PhoneBase> postTelephonyProvidersEdgesPhonebasesettingsWithHttpInfo(PhoneBase body) throws ApiException {
+  public ApiResponse<PhoneBase> postTelephonyProvidersEdgesPhonebasesettingsWithHttpInfo(PhoneBase body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postTelephonyProvidersEdgesPhonebasesettings");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesPhonebasesettings");
     }
     
     // create path and map variables
@@ -7454,7 +7455,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PhoneBase postTelephonyProvidersEdgesPhonebasesettings(PostTelephonyProvidersEdgesPhonebasesettingsRequest request) throws ApiException {
+  public PhoneBase postTelephonyProvidersEdgesPhonebasesettings(PostTelephonyProvidersEdgesPhonebasesettingsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PhoneBase>() {});
   }
 
@@ -7464,7 +7465,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PhoneBase> postTelephonyProvidersEdgesPhonebasesettings(ApiRequest<PhoneBase> request) throws ApiException {
+  public ApiResponse<PhoneBase> postTelephonyProvidersEdgesPhonebasesettings(ApiRequest<PhoneBase> request) throws IOException, ApiException {
     return pcapiClient.<PhoneBase>invokeAPIVerbose(request, new TypeReference<PhoneBase>() {});
   }
 
@@ -7475,7 +7476,7 @@ public class TelephonyProvidersEdgeApi {
    * @return Phone
    * @throws ApiException if fails to make API call
    */
-  public Phone postTelephonyProvidersEdgesPhones(Phone body) throws ApiException {
+  public Phone postTelephonyProvidersEdgesPhones(Phone body) throws IOException, ApiException {
     return postTelephonyProvidersEdgesPhonesWithHttpInfo(body).getBody();
   }
 
@@ -7486,12 +7487,12 @@ public class TelephonyProvidersEdgeApi {
    * @return Phone
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Phone> postTelephonyProvidersEdgesPhonesWithHttpInfo(Phone body) throws ApiException {
+  public ApiResponse<Phone> postTelephonyProvidersEdgesPhonesWithHttpInfo(Phone body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postTelephonyProvidersEdgesPhones");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesPhones");
     }
     
     // create path and map variables
@@ -7526,7 +7527,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Phone postTelephonyProvidersEdgesPhones(PostTelephonyProvidersEdgesPhonesRequest request) throws ApiException {
+  public Phone postTelephonyProvidersEdgesPhones(PostTelephonyProvidersEdgesPhonesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Phone>() {});
   }
 
@@ -7536,7 +7537,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Phone> postTelephonyProvidersEdgesPhones(ApiRequest<Phone> request) throws ApiException {
+  public ApiResponse<Phone> postTelephonyProvidersEdgesPhones(ApiRequest<Phone> request) throws IOException, ApiException {
     return pcapiClient.<Phone>invokeAPIVerbose(request, new TypeReference<Phone>() {});
   }
 
@@ -7546,7 +7547,7 @@ public class TelephonyProvidersEdgeApi {
    * @param body Phones (required)
    * @throws ApiException if fails to make API call
    */
-  public void postTelephonyProvidersEdgesPhonesReboot(PhonesReboot body) throws ApiException {
+  public void postTelephonyProvidersEdgesPhonesReboot(PhonesReboot body) throws IOException, ApiException {
     postTelephonyProvidersEdgesPhonesRebootWithHttpInfo(body);
   }
 
@@ -7556,12 +7557,12 @@ public class TelephonyProvidersEdgeApi {
    * @param body Phones (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postTelephonyProvidersEdgesPhonesRebootWithHttpInfo(PhonesReboot body) throws ApiException {
+  public ApiResponse<Void> postTelephonyProvidersEdgesPhonesRebootWithHttpInfo(PhonesReboot body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postTelephonyProvidersEdgesPhonesReboot");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesPhonesReboot");
     }
     
     // create path and map variables
@@ -7596,7 +7597,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void postTelephonyProvidersEdgesPhonesReboot(PostTelephonyProvidersEdgesPhonesRebootRequest request) throws ApiException {
+  public void postTelephonyProvidersEdgesPhonesReboot(PostTelephonyProvidersEdgesPhonesRebootRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -7606,7 +7607,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postTelephonyProvidersEdgesPhonesReboot(ApiRequest<PhonesReboot> request) throws ApiException {
+  public ApiResponse<Void> postTelephonyProvidersEdgesPhonesReboot(ApiRequest<PhonesReboot> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -7618,7 +7619,7 @@ public class TelephonyProvidersEdgeApi {
    * @return OutboundRouteBase
    * @throws ApiException if fails to make API call
    */
-  public OutboundRouteBase postTelephonyProvidersEdgesSiteOutboundroutes(String siteId, OutboundRouteBase body) throws ApiException {
+  public OutboundRouteBase postTelephonyProvidersEdgesSiteOutboundroutes(String siteId, OutboundRouteBase body) throws IOException, ApiException {
     return postTelephonyProvidersEdgesSiteOutboundroutesWithHttpInfo(siteId, body).getBody();
   }
 
@@ -7630,17 +7631,17 @@ public class TelephonyProvidersEdgeApi {
    * @return OutboundRouteBase
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OutboundRouteBase> postTelephonyProvidersEdgesSiteOutboundroutesWithHttpInfo(String siteId, OutboundRouteBase body) throws ApiException {
+  public ApiResponse<OutboundRouteBase> postTelephonyProvidersEdgesSiteOutboundroutesWithHttpInfo(String siteId, OutboundRouteBase body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'siteId' is set
     if (siteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'siteId' when calling postTelephonyProvidersEdgesSiteOutboundroutes");
+      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling postTelephonyProvidersEdgesSiteOutboundroutes");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postTelephonyProvidersEdgesSiteOutboundroutes");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesSiteOutboundroutes");
     }
     
     // create path and map variables
@@ -7676,7 +7677,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OutboundRouteBase postTelephonyProvidersEdgesSiteOutboundroutes(PostTelephonyProvidersEdgesSiteOutboundroutesRequest request) throws ApiException {
+  public OutboundRouteBase postTelephonyProvidersEdgesSiteOutboundroutes(PostTelephonyProvidersEdgesSiteOutboundroutesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OutboundRouteBase>() {});
   }
 
@@ -7686,7 +7687,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OutboundRouteBase> postTelephonyProvidersEdgesSiteOutboundroutes(ApiRequest<OutboundRouteBase> request) throws ApiException {
+  public ApiResponse<OutboundRouteBase> postTelephonyProvidersEdgesSiteOutboundroutes(ApiRequest<OutboundRouteBase> request) throws IOException, ApiException {
     return pcapiClient.<OutboundRouteBase>invokeAPIVerbose(request, new TypeReference<OutboundRouteBase>() {});
   }
 
@@ -7696,7 +7697,7 @@ public class TelephonyProvidersEdgeApi {
    * @param siteId Site ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void postTelephonyProvidersEdgesSiteRebalance(String siteId) throws ApiException {
+  public void postTelephonyProvidersEdgesSiteRebalance(String siteId) throws IOException, ApiException {
     postTelephonyProvidersEdgesSiteRebalanceWithHttpInfo(siteId);
   }
 
@@ -7706,12 +7707,12 @@ public class TelephonyProvidersEdgeApi {
    * @param siteId Site ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postTelephonyProvidersEdgesSiteRebalanceWithHttpInfo(String siteId) throws ApiException {
+  public ApiResponse<Void> postTelephonyProvidersEdgesSiteRebalanceWithHttpInfo(String siteId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'siteId' is set
     if (siteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'siteId' when calling postTelephonyProvidersEdgesSiteRebalance");
+      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling postTelephonyProvidersEdgesSiteRebalance");
     }
     
     // create path and map variables
@@ -7747,7 +7748,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void postTelephonyProvidersEdgesSiteRebalance(PostTelephonyProvidersEdgesSiteRebalanceRequest request) throws ApiException {
+  public void postTelephonyProvidersEdgesSiteRebalance(PostTelephonyProvidersEdgesSiteRebalanceRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -7757,7 +7758,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postTelephonyProvidersEdgesSiteRebalance(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> postTelephonyProvidersEdgesSiteRebalance(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -7768,7 +7769,7 @@ public class TelephonyProvidersEdgeApi {
    * @return Site
    * @throws ApiException if fails to make API call
    */
-  public Site postTelephonyProvidersEdgesSites(Site body) throws ApiException {
+  public Site postTelephonyProvidersEdgesSites(Site body) throws IOException, ApiException {
     return postTelephonyProvidersEdgesSitesWithHttpInfo(body).getBody();
   }
 
@@ -7779,12 +7780,12 @@ public class TelephonyProvidersEdgeApi {
    * @return Site
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Site> postTelephonyProvidersEdgesSitesWithHttpInfo(Site body) throws ApiException {
+  public ApiResponse<Site> postTelephonyProvidersEdgesSitesWithHttpInfo(Site body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postTelephonyProvidersEdgesSites");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesSites");
     }
     
     // create path and map variables
@@ -7819,7 +7820,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Site postTelephonyProvidersEdgesSites(PostTelephonyProvidersEdgesSitesRequest request) throws ApiException {
+  public Site postTelephonyProvidersEdgesSites(PostTelephonyProvidersEdgesSitesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Site>() {});
   }
 
@@ -7829,7 +7830,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Site> postTelephonyProvidersEdgesSites(ApiRequest<Site> request) throws ApiException {
+  public ApiResponse<Site> postTelephonyProvidersEdgesSites(ApiRequest<Site> request) throws IOException, ApiException {
     return pcapiClient.<Site>invokeAPIVerbose(request, new TypeReference<Site>() {});
   }
 
@@ -7840,7 +7841,7 @@ public class TelephonyProvidersEdgeApi {
    * @return TrunkBase
    * @throws ApiException if fails to make API call
    */
-  public TrunkBase postTelephonyProvidersEdgesTrunkbasesettings(TrunkBase body) throws ApiException {
+  public TrunkBase postTelephonyProvidersEdgesTrunkbasesettings(TrunkBase body) throws IOException, ApiException {
     return postTelephonyProvidersEdgesTrunkbasesettingsWithHttpInfo(body).getBody();
   }
 
@@ -7851,12 +7852,12 @@ public class TelephonyProvidersEdgeApi {
    * @return TrunkBase
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TrunkBase> postTelephonyProvidersEdgesTrunkbasesettingsWithHttpInfo(TrunkBase body) throws ApiException {
+  public ApiResponse<TrunkBase> postTelephonyProvidersEdgesTrunkbasesettingsWithHttpInfo(TrunkBase body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postTelephonyProvidersEdgesTrunkbasesettings");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesTrunkbasesettings");
     }
     
     // create path and map variables
@@ -7891,7 +7892,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public TrunkBase postTelephonyProvidersEdgesTrunkbasesettings(PostTelephonyProvidersEdgesTrunkbasesettingsRequest request) throws ApiException {
+  public TrunkBase postTelephonyProvidersEdgesTrunkbasesettings(PostTelephonyProvidersEdgesTrunkbasesettingsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TrunkBase>() {});
   }
 
@@ -7901,7 +7902,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TrunkBase> postTelephonyProvidersEdgesTrunkbasesettings(ApiRequest<TrunkBase> request) throws ApiException {
+  public ApiResponse<TrunkBase> postTelephonyProvidersEdgesTrunkbasesettings(ApiRequest<TrunkBase> request) throws IOException, ApiException {
     return pcapiClient.<TrunkBase>invokeAPIVerbose(request, new TypeReference<TrunkBase>() {});
   }
 
@@ -7913,7 +7914,7 @@ public class TelephonyProvidersEdgeApi {
    * @return Edge
    * @throws ApiException if fails to make API call
    */
-  public Edge putTelephonyProvidersEdge(String edgeId, Edge body) throws ApiException {
+  public Edge putTelephonyProvidersEdge(String edgeId, Edge body) throws IOException, ApiException {
     return putTelephonyProvidersEdgeWithHttpInfo(edgeId, body).getBody();
   }
 
@@ -7925,17 +7926,17 @@ public class TelephonyProvidersEdgeApi {
    * @return Edge
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Edge> putTelephonyProvidersEdgeWithHttpInfo(String edgeId, Edge body) throws ApiException {
+  public ApiResponse<Edge> putTelephonyProvidersEdgeWithHttpInfo(String edgeId, Edge body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling putTelephonyProvidersEdge");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling putTelephonyProvidersEdge");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putTelephonyProvidersEdge");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdge");
     }
     
     // create path and map variables
@@ -7971,7 +7972,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Edge putTelephonyProvidersEdge(PutTelephonyProvidersEdgeRequest request) throws ApiException {
+  public Edge putTelephonyProvidersEdge(PutTelephonyProvidersEdgeRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Edge>() {});
   }
 
@@ -7981,7 +7982,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Edge> putTelephonyProvidersEdge(ApiRequest<Edge> request) throws ApiException {
+  public ApiResponse<Edge> putTelephonyProvidersEdge(ApiRequest<Edge> request) throws IOException, ApiException {
     return pcapiClient.<Edge>invokeAPIVerbose(request, new TypeReference<Edge>() {});
   }
 
@@ -7994,7 +7995,7 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeLine
    * @throws ApiException if fails to make API call
    */
-  public EdgeLine putTelephonyProvidersEdgeLine(String edgeId, String lineId, EdgeLine body) throws ApiException {
+  public EdgeLine putTelephonyProvidersEdgeLine(String edgeId, String lineId, EdgeLine body) throws IOException, ApiException {
     return putTelephonyProvidersEdgeLineWithHttpInfo(edgeId, lineId, body).getBody();
   }
 
@@ -8007,22 +8008,22 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeLine
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeLine> putTelephonyProvidersEdgeLineWithHttpInfo(String edgeId, String lineId, EdgeLine body) throws ApiException {
+  public ApiResponse<EdgeLine> putTelephonyProvidersEdgeLineWithHttpInfo(String edgeId, String lineId, EdgeLine body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling putTelephonyProvidersEdgeLine");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling putTelephonyProvidersEdgeLine");
     }
     
     // verify the required parameter 'lineId' is set
     if (lineId == null) {
-      throw new ApiException(400, "Missing the required parameter 'lineId' when calling putTelephonyProvidersEdgeLine");
+      throw new IllegalArgumentException("Missing the required parameter 'lineId' when calling putTelephonyProvidersEdgeLine");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putTelephonyProvidersEdgeLine");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgeLine");
     }
     
     // create path and map variables
@@ -8059,7 +8060,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EdgeLine putTelephonyProvidersEdgeLine(PutTelephonyProvidersEdgeLineRequest request) throws ApiException {
+  public EdgeLine putTelephonyProvidersEdgeLine(PutTelephonyProvidersEdgeLineRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeLine>() {});
   }
 
@@ -8069,7 +8070,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeLine> putTelephonyProvidersEdgeLine(ApiRequest<EdgeLine> request) throws ApiException {
+  public ApiResponse<EdgeLine> putTelephonyProvidersEdgeLine(ApiRequest<EdgeLine> request) throws IOException, ApiException {
     return pcapiClient.<EdgeLine>invokeAPIVerbose(request, new TypeReference<EdgeLine>() {});
   }
 
@@ -8082,7 +8083,7 @@ public class TelephonyProvidersEdgeApi {
    * @return DomainLogicalInterface
    * @throws ApiException if fails to make API call
    */
-  public DomainLogicalInterface putTelephonyProvidersEdgeLogicalinterface(String edgeId, String interfaceId, DomainLogicalInterface body) throws ApiException {
+  public DomainLogicalInterface putTelephonyProvidersEdgeLogicalinterface(String edgeId, String interfaceId, DomainLogicalInterface body) throws IOException, ApiException {
     return putTelephonyProvidersEdgeLogicalinterfaceWithHttpInfo(edgeId, interfaceId, body).getBody();
   }
 
@@ -8095,22 +8096,22 @@ public class TelephonyProvidersEdgeApi {
    * @return DomainLogicalInterface
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainLogicalInterface> putTelephonyProvidersEdgeLogicalinterfaceWithHttpInfo(String edgeId, String interfaceId, DomainLogicalInterface body) throws ApiException {
+  public ApiResponse<DomainLogicalInterface> putTelephonyProvidersEdgeLogicalinterfaceWithHttpInfo(String edgeId, String interfaceId, DomainLogicalInterface body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'edgeId' is set
     if (edgeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeId' when calling putTelephonyProvidersEdgeLogicalinterface");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling putTelephonyProvidersEdgeLogicalinterface");
     }
     
     // verify the required parameter 'interfaceId' is set
     if (interfaceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'interfaceId' when calling putTelephonyProvidersEdgeLogicalinterface");
+      throw new IllegalArgumentException("Missing the required parameter 'interfaceId' when calling putTelephonyProvidersEdgeLogicalinterface");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putTelephonyProvidersEdgeLogicalinterface");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgeLogicalinterface");
     }
     
     // create path and map variables
@@ -8147,7 +8148,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DomainLogicalInterface putTelephonyProvidersEdgeLogicalinterface(PutTelephonyProvidersEdgeLogicalinterfaceRequest request) throws ApiException {
+  public DomainLogicalInterface putTelephonyProvidersEdgeLogicalinterface(PutTelephonyProvidersEdgeLogicalinterfaceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainLogicalInterface>() {});
   }
 
@@ -8157,7 +8158,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainLogicalInterface> putTelephonyProvidersEdgeLogicalinterface(ApiRequest<DomainLogicalInterface> request) throws ApiException {
+  public ApiResponse<DomainLogicalInterface> putTelephonyProvidersEdgeLogicalinterface(ApiRequest<DomainLogicalInterface> request) throws IOException, ApiException {
     return pcapiClient.<DomainLogicalInterface>invokeAPIVerbose(request, new TypeReference<DomainLogicalInterface>() {});
   }
 
@@ -8169,7 +8170,7 @@ public class TelephonyProvidersEdgeApi {
    * @return DomainCertificateAuthority
    * @throws ApiException if fails to make API call
    */
-  public DomainCertificateAuthority putTelephonyProvidersEdgesCertificateauthority(String certificateId, DomainCertificateAuthority body) throws ApiException {
+  public DomainCertificateAuthority putTelephonyProvidersEdgesCertificateauthority(String certificateId, DomainCertificateAuthority body) throws IOException, ApiException {
     return putTelephonyProvidersEdgesCertificateauthorityWithHttpInfo(certificateId, body).getBody();
   }
 
@@ -8181,17 +8182,17 @@ public class TelephonyProvidersEdgeApi {
    * @return DomainCertificateAuthority
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainCertificateAuthority> putTelephonyProvidersEdgesCertificateauthorityWithHttpInfo(String certificateId, DomainCertificateAuthority body) throws ApiException {
+  public ApiResponse<DomainCertificateAuthority> putTelephonyProvidersEdgesCertificateauthorityWithHttpInfo(String certificateId, DomainCertificateAuthority body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'certificateId' is set
     if (certificateId == null) {
-      throw new ApiException(400, "Missing the required parameter 'certificateId' when calling putTelephonyProvidersEdgesCertificateauthority");
+      throw new IllegalArgumentException("Missing the required parameter 'certificateId' when calling putTelephonyProvidersEdgesCertificateauthority");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putTelephonyProvidersEdgesCertificateauthority");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesCertificateauthority");
     }
     
     // create path and map variables
@@ -8227,7 +8228,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DomainCertificateAuthority putTelephonyProvidersEdgesCertificateauthority(PutTelephonyProvidersEdgesCertificateauthorityRequest request) throws ApiException {
+  public DomainCertificateAuthority putTelephonyProvidersEdgesCertificateauthority(PutTelephonyProvidersEdgesCertificateauthorityRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainCertificateAuthority>() {});
   }
 
@@ -8237,7 +8238,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainCertificateAuthority> putTelephonyProvidersEdgesCertificateauthority(ApiRequest<DomainCertificateAuthority> request) throws ApiException {
+  public ApiResponse<DomainCertificateAuthority> putTelephonyProvidersEdgesCertificateauthority(ApiRequest<DomainCertificateAuthority> request) throws IOException, ApiException {
     return pcapiClient.<DomainCertificateAuthority>invokeAPIVerbose(request, new TypeReference<DomainCertificateAuthority>() {});
   }
 
@@ -8249,7 +8250,7 @@ public class TelephonyProvidersEdgeApi {
    * @return DID
    * @throws ApiException if fails to make API call
    */
-  public DID putTelephonyProvidersEdgesDid(String didId, DID body) throws ApiException {
+  public DID putTelephonyProvidersEdgesDid(String didId, DID body) throws IOException, ApiException {
     return putTelephonyProvidersEdgesDidWithHttpInfo(didId, body).getBody();
   }
 
@@ -8261,17 +8262,17 @@ public class TelephonyProvidersEdgeApi {
    * @return DID
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DID> putTelephonyProvidersEdgesDidWithHttpInfo(String didId, DID body) throws ApiException {
+  public ApiResponse<DID> putTelephonyProvidersEdgesDidWithHttpInfo(String didId, DID body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'didId' is set
     if (didId == null) {
-      throw new ApiException(400, "Missing the required parameter 'didId' when calling putTelephonyProvidersEdgesDid");
+      throw new IllegalArgumentException("Missing the required parameter 'didId' when calling putTelephonyProvidersEdgesDid");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putTelephonyProvidersEdgesDid");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesDid");
     }
     
     // create path and map variables
@@ -8307,7 +8308,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DID putTelephonyProvidersEdgesDid(PutTelephonyProvidersEdgesDidRequest request) throws ApiException {
+  public DID putTelephonyProvidersEdgesDid(PutTelephonyProvidersEdgesDidRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DID>() {});
   }
 
@@ -8317,7 +8318,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DID> putTelephonyProvidersEdgesDid(ApiRequest<DID> request) throws ApiException {
+  public ApiResponse<DID> putTelephonyProvidersEdgesDid(ApiRequest<DID> request) throws IOException, ApiException {
     return pcapiClient.<DID>invokeAPIVerbose(request, new TypeReference<DID>() {});
   }
 
@@ -8329,7 +8330,7 @@ public class TelephonyProvidersEdgeApi {
    * @return DIDPool
    * @throws ApiException if fails to make API call
    */
-  public DIDPool putTelephonyProvidersEdgesDidpool(String didPoolId, DIDPool body) throws ApiException {
+  public DIDPool putTelephonyProvidersEdgesDidpool(String didPoolId, DIDPool body) throws IOException, ApiException {
     return putTelephonyProvidersEdgesDidpoolWithHttpInfo(didPoolId, body).getBody();
   }
 
@@ -8341,17 +8342,17 @@ public class TelephonyProvidersEdgeApi {
    * @return DIDPool
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DIDPool> putTelephonyProvidersEdgesDidpoolWithHttpInfo(String didPoolId, DIDPool body) throws ApiException {
+  public ApiResponse<DIDPool> putTelephonyProvidersEdgesDidpoolWithHttpInfo(String didPoolId, DIDPool body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'didPoolId' is set
     if (didPoolId == null) {
-      throw new ApiException(400, "Missing the required parameter 'didPoolId' when calling putTelephonyProvidersEdgesDidpool");
+      throw new IllegalArgumentException("Missing the required parameter 'didPoolId' when calling putTelephonyProvidersEdgesDidpool");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putTelephonyProvidersEdgesDidpool");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesDidpool");
     }
     
     // create path and map variables
@@ -8387,7 +8388,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DIDPool putTelephonyProvidersEdgesDidpool(PutTelephonyProvidersEdgesDidpoolRequest request) throws ApiException {
+  public DIDPool putTelephonyProvidersEdgesDidpool(PutTelephonyProvidersEdgesDidpoolRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DIDPool>() {});
   }
 
@@ -8397,7 +8398,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DIDPool> putTelephonyProvidersEdgesDidpool(ApiRequest<DIDPool> request) throws ApiException {
+  public ApiResponse<DIDPool> putTelephonyProvidersEdgesDidpool(ApiRequest<DIDPool> request) throws IOException, ApiException {
     return pcapiClient.<DIDPool>invokeAPIVerbose(request, new TypeReference<DIDPool>() {});
   }
 
@@ -8409,7 +8410,7 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeGroup
    * @throws ApiException if fails to make API call
    */
-  public EdgeGroup putTelephonyProvidersEdgesEdgegroup(String edgeGroupId, EdgeGroup body) throws ApiException {
+  public EdgeGroup putTelephonyProvidersEdgesEdgegroup(String edgeGroupId, EdgeGroup body) throws IOException, ApiException {
     return putTelephonyProvidersEdgesEdgegroupWithHttpInfo(edgeGroupId, body).getBody();
   }
 
@@ -8421,17 +8422,17 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeGroup
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeGroup> putTelephonyProvidersEdgesEdgegroupWithHttpInfo(String edgeGroupId, EdgeGroup body) throws ApiException {
+  public ApiResponse<EdgeGroup> putTelephonyProvidersEdgesEdgegroupWithHttpInfo(String edgeGroupId, EdgeGroup body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'edgeGroupId' is set
     if (edgeGroupId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgeGroupId' when calling putTelephonyProvidersEdgesEdgegroup");
+      throw new IllegalArgumentException("Missing the required parameter 'edgeGroupId' when calling putTelephonyProvidersEdgesEdgegroup");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putTelephonyProvidersEdgesEdgegroup");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesEdgegroup");
     }
     
     // create path and map variables
@@ -8467,7 +8468,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EdgeGroup putTelephonyProvidersEdgesEdgegroup(PutTelephonyProvidersEdgesEdgegroupRequest request) throws ApiException {
+  public EdgeGroup putTelephonyProvidersEdgesEdgegroup(PutTelephonyProvidersEdgesEdgegroupRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeGroup>() {});
   }
 
@@ -8477,7 +8478,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeGroup> putTelephonyProvidersEdgesEdgegroup(ApiRequest<EdgeGroup> request) throws ApiException {
+  public ApiResponse<EdgeGroup> putTelephonyProvidersEdgesEdgegroup(ApiRequest<EdgeGroup> request) throws IOException, ApiException {
     return pcapiClient.<EdgeGroup>invokeAPIVerbose(request, new TypeReference<EdgeGroup>() {});
   }
 
@@ -8490,7 +8491,7 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeTrunkBase
    * @throws ApiException if fails to make API call
    */
-  public EdgeTrunkBase putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(String edgegroupId, String edgetrunkbaseId, EdgeTrunkBase body) throws ApiException {
+  public EdgeTrunkBase putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(String edgegroupId, String edgetrunkbaseId, EdgeTrunkBase body) throws IOException, ApiException {
     return putTelephonyProvidersEdgesEdgegroupEdgetrunkbasisWithHttpInfo(edgegroupId, edgetrunkbaseId, body).getBody();
   }
 
@@ -8503,22 +8504,22 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeTrunkBase
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeTrunkBase> putTelephonyProvidersEdgesEdgegroupEdgetrunkbasisWithHttpInfo(String edgegroupId, String edgetrunkbaseId, EdgeTrunkBase body) throws ApiException {
+  public ApiResponse<EdgeTrunkBase> putTelephonyProvidersEdgesEdgegroupEdgetrunkbasisWithHttpInfo(String edgegroupId, String edgetrunkbaseId, EdgeTrunkBase body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'edgegroupId' is set
     if (edgegroupId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgegroupId' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis");
+      throw new IllegalArgumentException("Missing the required parameter 'edgegroupId' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis");
     }
     
     // verify the required parameter 'edgetrunkbaseId' is set
     if (edgetrunkbaseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'edgetrunkbaseId' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis");
+      throw new IllegalArgumentException("Missing the required parameter 'edgetrunkbaseId' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis");
     }
     
     // create path and map variables
@@ -8555,7 +8556,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EdgeTrunkBase putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest request) throws ApiException {
+  public EdgeTrunkBase putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeTrunkBase>() {});
   }
 
@@ -8565,7 +8566,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EdgeTrunkBase> putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(ApiRequest<EdgeTrunkBase> request) throws ApiException {
+  public ApiResponse<EdgeTrunkBase> putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(ApiRequest<EdgeTrunkBase> request) throws IOException, ApiException {
     return pcapiClient.<EdgeTrunkBase>invokeAPIVerbose(request, new TypeReference<EdgeTrunkBase>() {});
   }
 
@@ -8577,7 +8578,7 @@ public class TelephonyProvidersEdgeApi {
    * @return Endpoint
    * @throws ApiException if fails to make API call
    */
-  public Endpoint putTelephonyProvidersEdgesEndpoint(String endpointId, Endpoint body) throws ApiException {
+  public Endpoint putTelephonyProvidersEdgesEndpoint(String endpointId, Endpoint body) throws IOException, ApiException {
     return putTelephonyProvidersEdgesEndpointWithHttpInfo(endpointId, body).getBody();
   }
 
@@ -8589,17 +8590,17 @@ public class TelephonyProvidersEdgeApi {
    * @return Endpoint
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Endpoint> putTelephonyProvidersEdgesEndpointWithHttpInfo(String endpointId, Endpoint body) throws ApiException {
+  public ApiResponse<Endpoint> putTelephonyProvidersEdgesEndpointWithHttpInfo(String endpointId, Endpoint body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'endpointId' is set
     if (endpointId == null) {
-      throw new ApiException(400, "Missing the required parameter 'endpointId' when calling putTelephonyProvidersEdgesEndpoint");
+      throw new IllegalArgumentException("Missing the required parameter 'endpointId' when calling putTelephonyProvidersEdgesEndpoint");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putTelephonyProvidersEdgesEndpoint");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesEndpoint");
     }
     
     // create path and map variables
@@ -8635,7 +8636,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Endpoint putTelephonyProvidersEdgesEndpoint(PutTelephonyProvidersEdgesEndpointRequest request) throws ApiException {
+  public Endpoint putTelephonyProvidersEdgesEndpoint(PutTelephonyProvidersEdgesEndpointRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Endpoint>() {});
   }
 
@@ -8645,7 +8646,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Endpoint> putTelephonyProvidersEdgesEndpoint(ApiRequest<Endpoint> request) throws ApiException {
+  public ApiResponse<Endpoint> putTelephonyProvidersEdgesEndpoint(ApiRequest<Endpoint> request) throws IOException, ApiException {
     return pcapiClient.<Endpoint>invokeAPIVerbose(request, new TypeReference<Endpoint>() {});
   }
 
@@ -8657,7 +8658,7 @@ public class TelephonyProvidersEdgeApi {
    * @return Extension
    * @throws ApiException if fails to make API call
    */
-  public Extension putTelephonyProvidersEdgesExtension(String extensionId, Extension body) throws ApiException {
+  public Extension putTelephonyProvidersEdgesExtension(String extensionId, Extension body) throws IOException, ApiException {
     return putTelephonyProvidersEdgesExtensionWithHttpInfo(extensionId, body).getBody();
   }
 
@@ -8669,17 +8670,17 @@ public class TelephonyProvidersEdgeApi {
    * @return Extension
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Extension> putTelephonyProvidersEdgesExtensionWithHttpInfo(String extensionId, Extension body) throws ApiException {
+  public ApiResponse<Extension> putTelephonyProvidersEdgesExtensionWithHttpInfo(String extensionId, Extension body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'extensionId' is set
     if (extensionId == null) {
-      throw new ApiException(400, "Missing the required parameter 'extensionId' when calling putTelephonyProvidersEdgesExtension");
+      throw new IllegalArgumentException("Missing the required parameter 'extensionId' when calling putTelephonyProvidersEdgesExtension");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putTelephonyProvidersEdgesExtension");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesExtension");
     }
     
     // create path and map variables
@@ -8715,7 +8716,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Extension putTelephonyProvidersEdgesExtension(PutTelephonyProvidersEdgesExtensionRequest request) throws ApiException {
+  public Extension putTelephonyProvidersEdgesExtension(PutTelephonyProvidersEdgesExtensionRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Extension>() {});
   }
 
@@ -8725,7 +8726,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Extension> putTelephonyProvidersEdgesExtension(ApiRequest<Extension> request) throws ApiException {
+  public ApiResponse<Extension> putTelephonyProvidersEdgesExtension(ApiRequest<Extension> request) throws IOException, ApiException {
     return pcapiClient.<Extension>invokeAPIVerbose(request, new TypeReference<Extension>() {});
   }
 
@@ -8737,7 +8738,7 @@ public class TelephonyProvidersEdgeApi {
    * @return ExtensionPool
    * @throws ApiException if fails to make API call
    */
-  public ExtensionPool putTelephonyProvidersEdgesExtensionpool(String extensionPoolId, ExtensionPool body) throws ApiException {
+  public ExtensionPool putTelephonyProvidersEdgesExtensionpool(String extensionPoolId, ExtensionPool body) throws IOException, ApiException {
     return putTelephonyProvidersEdgesExtensionpoolWithHttpInfo(extensionPoolId, body).getBody();
   }
 
@@ -8749,17 +8750,17 @@ public class TelephonyProvidersEdgeApi {
    * @return ExtensionPool
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExtensionPool> putTelephonyProvidersEdgesExtensionpoolWithHttpInfo(String extensionPoolId, ExtensionPool body) throws ApiException {
+  public ApiResponse<ExtensionPool> putTelephonyProvidersEdgesExtensionpoolWithHttpInfo(String extensionPoolId, ExtensionPool body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'extensionPoolId' is set
     if (extensionPoolId == null) {
-      throw new ApiException(400, "Missing the required parameter 'extensionPoolId' when calling putTelephonyProvidersEdgesExtensionpool");
+      throw new IllegalArgumentException("Missing the required parameter 'extensionPoolId' when calling putTelephonyProvidersEdgesExtensionpool");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putTelephonyProvidersEdgesExtensionpool");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesExtensionpool");
     }
     
     // create path and map variables
@@ -8795,7 +8796,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ExtensionPool putTelephonyProvidersEdgesExtensionpool(PutTelephonyProvidersEdgesExtensionpoolRequest request) throws ApiException {
+  public ExtensionPool putTelephonyProvidersEdgesExtensionpool(PutTelephonyProvidersEdgesExtensionpoolRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExtensionPool>() {});
   }
 
@@ -8805,7 +8806,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExtensionPool> putTelephonyProvidersEdgesExtensionpool(ApiRequest<ExtensionPool> request) throws ApiException {
+  public ApiResponse<ExtensionPool> putTelephonyProvidersEdgesExtensionpool(ApiRequest<ExtensionPool> request) throws IOException, ApiException {
     return pcapiClient.<ExtensionPool>invokeAPIVerbose(request, new TypeReference<ExtensionPool>() {});
   }
 
@@ -8817,7 +8818,7 @@ public class TelephonyProvidersEdgeApi {
    * @return OutboundRoute
    * @throws ApiException if fails to make API call
    */
-  public OutboundRoute putTelephonyProvidersEdgesOutboundroute(String outboundRouteId, OutboundRoute body) throws ApiException {
+  public OutboundRoute putTelephonyProvidersEdgesOutboundroute(String outboundRouteId, OutboundRoute body) throws IOException, ApiException {
     return putTelephonyProvidersEdgesOutboundrouteWithHttpInfo(outboundRouteId, body).getBody();
   }
 
@@ -8829,17 +8830,17 @@ public class TelephonyProvidersEdgeApi {
    * @return OutboundRoute
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OutboundRoute> putTelephonyProvidersEdgesOutboundrouteWithHttpInfo(String outboundRouteId, OutboundRoute body) throws ApiException {
+  public ApiResponse<OutboundRoute> putTelephonyProvidersEdgesOutboundrouteWithHttpInfo(String outboundRouteId, OutboundRoute body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'outboundRouteId' is set
     if (outboundRouteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'outboundRouteId' when calling putTelephonyProvidersEdgesOutboundroute");
+      throw new IllegalArgumentException("Missing the required parameter 'outboundRouteId' when calling putTelephonyProvidersEdgesOutboundroute");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putTelephonyProvidersEdgesOutboundroute");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesOutboundroute");
     }
     
     // create path and map variables
@@ -8875,7 +8876,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OutboundRoute putTelephonyProvidersEdgesOutboundroute(PutTelephonyProvidersEdgesOutboundrouteRequest request) throws ApiException {
+  public OutboundRoute putTelephonyProvidersEdgesOutboundroute(PutTelephonyProvidersEdgesOutboundrouteRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OutboundRoute>() {});
   }
 
@@ -8885,7 +8886,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OutboundRoute> putTelephonyProvidersEdgesOutboundroute(ApiRequest<OutboundRoute> request) throws ApiException {
+  public ApiResponse<OutboundRoute> putTelephonyProvidersEdgesOutboundroute(ApiRequest<OutboundRoute> request) throws IOException, ApiException {
     return pcapiClient.<OutboundRoute>invokeAPIVerbose(request, new TypeReference<OutboundRoute>() {});
   }
 
@@ -8897,7 +8898,7 @@ public class TelephonyProvidersEdgeApi {
    * @return Phone
    * @throws ApiException if fails to make API call
    */
-  public Phone putTelephonyProvidersEdgesPhone(String phoneId, Phone body) throws ApiException {
+  public Phone putTelephonyProvidersEdgesPhone(String phoneId, Phone body) throws IOException, ApiException {
     return putTelephonyProvidersEdgesPhoneWithHttpInfo(phoneId, body).getBody();
   }
 
@@ -8909,17 +8910,17 @@ public class TelephonyProvidersEdgeApi {
    * @return Phone
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Phone> putTelephonyProvidersEdgesPhoneWithHttpInfo(String phoneId, Phone body) throws ApiException {
+  public ApiResponse<Phone> putTelephonyProvidersEdgesPhoneWithHttpInfo(String phoneId, Phone body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'phoneId' is set
     if (phoneId == null) {
-      throw new ApiException(400, "Missing the required parameter 'phoneId' when calling putTelephonyProvidersEdgesPhone");
+      throw new IllegalArgumentException("Missing the required parameter 'phoneId' when calling putTelephonyProvidersEdgesPhone");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putTelephonyProvidersEdgesPhone");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesPhone");
     }
     
     // create path and map variables
@@ -8955,7 +8956,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Phone putTelephonyProvidersEdgesPhone(PutTelephonyProvidersEdgesPhoneRequest request) throws ApiException {
+  public Phone putTelephonyProvidersEdgesPhone(PutTelephonyProvidersEdgesPhoneRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Phone>() {});
   }
 
@@ -8965,7 +8966,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Phone> putTelephonyProvidersEdgesPhone(ApiRequest<Phone> request) throws ApiException {
+  public ApiResponse<Phone> putTelephonyProvidersEdgesPhone(ApiRequest<Phone> request) throws IOException, ApiException {
     return pcapiClient.<Phone>invokeAPIVerbose(request, new TypeReference<Phone>() {});
   }
 
@@ -8977,7 +8978,7 @@ public class TelephonyProvidersEdgeApi {
    * @return PhoneBase
    * @throws ApiException if fails to make API call
    */
-  public PhoneBase putTelephonyProvidersEdgesPhonebasesetting(String phoneBaseId, PhoneBase body) throws ApiException {
+  public PhoneBase putTelephonyProvidersEdgesPhonebasesetting(String phoneBaseId, PhoneBase body) throws IOException, ApiException {
     return putTelephonyProvidersEdgesPhonebasesettingWithHttpInfo(phoneBaseId, body).getBody();
   }
 
@@ -8989,17 +8990,17 @@ public class TelephonyProvidersEdgeApi {
    * @return PhoneBase
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PhoneBase> putTelephonyProvidersEdgesPhonebasesettingWithHttpInfo(String phoneBaseId, PhoneBase body) throws ApiException {
+  public ApiResponse<PhoneBase> putTelephonyProvidersEdgesPhonebasesettingWithHttpInfo(String phoneBaseId, PhoneBase body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'phoneBaseId' is set
     if (phoneBaseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'phoneBaseId' when calling putTelephonyProvidersEdgesPhonebasesetting");
+      throw new IllegalArgumentException("Missing the required parameter 'phoneBaseId' when calling putTelephonyProvidersEdgesPhonebasesetting");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putTelephonyProvidersEdgesPhonebasesetting");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesPhonebasesetting");
     }
     
     // create path and map variables
@@ -9035,7 +9036,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PhoneBase putTelephonyProvidersEdgesPhonebasesetting(PutTelephonyProvidersEdgesPhonebasesettingRequest request) throws ApiException {
+  public PhoneBase putTelephonyProvidersEdgesPhonebasesetting(PutTelephonyProvidersEdgesPhonebasesettingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PhoneBase>() {});
   }
 
@@ -9045,7 +9046,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PhoneBase> putTelephonyProvidersEdgesPhonebasesetting(ApiRequest<PhoneBase> request) throws ApiException {
+  public ApiResponse<PhoneBase> putTelephonyProvidersEdgesPhonebasesetting(ApiRequest<PhoneBase> request) throws IOException, ApiException {
     return pcapiClient.<PhoneBase>invokeAPIVerbose(request, new TypeReference<PhoneBase>() {});
   }
 
@@ -9057,7 +9058,7 @@ public class TelephonyProvidersEdgeApi {
    * @return Site
    * @throws ApiException if fails to make API call
    */
-  public Site putTelephonyProvidersEdgesSite(String siteId, Site body) throws ApiException {
+  public Site putTelephonyProvidersEdgesSite(String siteId, Site body) throws IOException, ApiException {
     return putTelephonyProvidersEdgesSiteWithHttpInfo(siteId, body).getBody();
   }
 
@@ -9069,17 +9070,17 @@ public class TelephonyProvidersEdgeApi {
    * @return Site
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Site> putTelephonyProvidersEdgesSiteWithHttpInfo(String siteId, Site body) throws ApiException {
+  public ApiResponse<Site> putTelephonyProvidersEdgesSiteWithHttpInfo(String siteId, Site body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'siteId' is set
     if (siteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'siteId' when calling putTelephonyProvidersEdgesSite");
+      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling putTelephonyProvidersEdgesSite");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putTelephonyProvidersEdgesSite");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesSite");
     }
     
     // create path and map variables
@@ -9115,7 +9116,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Site putTelephonyProvidersEdgesSite(PutTelephonyProvidersEdgesSiteRequest request) throws ApiException {
+  public Site putTelephonyProvidersEdgesSite(PutTelephonyProvidersEdgesSiteRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Site>() {});
   }
 
@@ -9125,7 +9126,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Site> putTelephonyProvidersEdgesSite(ApiRequest<Site> request) throws ApiException {
+  public ApiResponse<Site> putTelephonyProvidersEdgesSite(ApiRequest<Site> request) throws IOException, ApiException {
     return pcapiClient.<Site>invokeAPIVerbose(request, new TypeReference<Site>() {});
   }
 
@@ -9137,7 +9138,7 @@ public class TelephonyProvidersEdgeApi {
    * @return List<NumberPlan>
    * @throws ApiException if fails to make API call
    */
-  public List<NumberPlan> putTelephonyProvidersEdgesSiteNumberplans(String siteId, List<NumberPlan> body) throws ApiException {
+  public List<NumberPlan> putTelephonyProvidersEdgesSiteNumberplans(String siteId, List<NumberPlan> body) throws IOException, ApiException {
     return putTelephonyProvidersEdgesSiteNumberplansWithHttpInfo(siteId, body).getBody();
   }
 
@@ -9149,17 +9150,17 @@ public class TelephonyProvidersEdgeApi {
    * @return List<NumberPlan>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<NumberPlan>> putTelephonyProvidersEdgesSiteNumberplansWithHttpInfo(String siteId, List<NumberPlan> body) throws ApiException {
+  public ApiResponse<List<NumberPlan>> putTelephonyProvidersEdgesSiteNumberplansWithHttpInfo(String siteId, List<NumberPlan> body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'siteId' is set
     if (siteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'siteId' when calling putTelephonyProvidersEdgesSiteNumberplans");
+      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling putTelephonyProvidersEdgesSiteNumberplans");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putTelephonyProvidersEdgesSiteNumberplans");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesSiteNumberplans");
     }
     
     // create path and map variables
@@ -9195,7 +9196,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<NumberPlan> putTelephonyProvidersEdgesSiteNumberplans(PutTelephonyProvidersEdgesSiteNumberplansRequest request) throws ApiException {
+  public List<NumberPlan> putTelephonyProvidersEdgesSiteNumberplans(PutTelephonyProvidersEdgesSiteNumberplansRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<NumberPlan>>() {});
   }
 
@@ -9205,7 +9206,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<NumberPlan>> putTelephonyProvidersEdgesSiteNumberplans(ApiRequest<List<NumberPlan>> request) throws ApiException {
+  public ApiResponse<List<NumberPlan>> putTelephonyProvidersEdgesSiteNumberplans(ApiRequest<List<NumberPlan>> request) throws IOException, ApiException {
     return pcapiClient.<List<NumberPlan>>invokeAPIVerbose(request, new TypeReference<List<NumberPlan>>() {});
   }
 
@@ -9218,7 +9219,7 @@ public class TelephonyProvidersEdgeApi {
    * @return OutboundRouteBase
    * @throws ApiException if fails to make API call
    */
-  public OutboundRouteBase putTelephonyProvidersEdgesSiteOutboundroute(String siteId, String outboundRouteId, OutboundRouteBase body) throws ApiException {
+  public OutboundRouteBase putTelephonyProvidersEdgesSiteOutboundroute(String siteId, String outboundRouteId, OutboundRouteBase body) throws IOException, ApiException {
     return putTelephonyProvidersEdgesSiteOutboundrouteWithHttpInfo(siteId, outboundRouteId, body).getBody();
   }
 
@@ -9231,22 +9232,22 @@ public class TelephonyProvidersEdgeApi {
    * @return OutboundRouteBase
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OutboundRouteBase> putTelephonyProvidersEdgesSiteOutboundrouteWithHttpInfo(String siteId, String outboundRouteId, OutboundRouteBase body) throws ApiException {
+  public ApiResponse<OutboundRouteBase> putTelephonyProvidersEdgesSiteOutboundrouteWithHttpInfo(String siteId, String outboundRouteId, OutboundRouteBase body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'siteId' is set
     if (siteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'siteId' when calling putTelephonyProvidersEdgesSiteOutboundroute");
+      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling putTelephonyProvidersEdgesSiteOutboundroute");
     }
     
     // verify the required parameter 'outboundRouteId' is set
     if (outboundRouteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'outboundRouteId' when calling putTelephonyProvidersEdgesSiteOutboundroute");
+      throw new IllegalArgumentException("Missing the required parameter 'outboundRouteId' when calling putTelephonyProvidersEdgesSiteOutboundroute");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putTelephonyProvidersEdgesSiteOutboundroute");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesSiteOutboundroute");
     }
     
     // create path and map variables
@@ -9283,7 +9284,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OutboundRouteBase putTelephonyProvidersEdgesSiteOutboundroute(PutTelephonyProvidersEdgesSiteOutboundrouteRequest request) throws ApiException {
+  public OutboundRouteBase putTelephonyProvidersEdgesSiteOutboundroute(PutTelephonyProvidersEdgesSiteOutboundrouteRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OutboundRouteBase>() {});
   }
 
@@ -9293,7 +9294,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OutboundRouteBase> putTelephonyProvidersEdgesSiteOutboundroute(ApiRequest<OutboundRouteBase> request) throws ApiException {
+  public ApiResponse<OutboundRouteBase> putTelephonyProvidersEdgesSiteOutboundroute(ApiRequest<OutboundRouteBase> request) throws IOException, ApiException {
     return pcapiClient.<OutboundRouteBase>invokeAPIVerbose(request, new TypeReference<OutboundRouteBase>() {});
   }
 
@@ -9305,7 +9306,7 @@ public class TelephonyProvidersEdgeApi {
    * @return TrunkBase
    * @throws ApiException if fails to make API call
    */
-  public TrunkBase putTelephonyProvidersEdgesTrunkbasesetting(String trunkBaseSettingsId, TrunkBase body) throws ApiException {
+  public TrunkBase putTelephonyProvidersEdgesTrunkbasesetting(String trunkBaseSettingsId, TrunkBase body) throws IOException, ApiException {
     return putTelephonyProvidersEdgesTrunkbasesettingWithHttpInfo(trunkBaseSettingsId, body).getBody();
   }
 
@@ -9317,17 +9318,17 @@ public class TelephonyProvidersEdgeApi {
    * @return TrunkBase
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TrunkBase> putTelephonyProvidersEdgesTrunkbasesettingWithHttpInfo(String trunkBaseSettingsId, TrunkBase body) throws ApiException {
+  public ApiResponse<TrunkBase> putTelephonyProvidersEdgesTrunkbasesettingWithHttpInfo(String trunkBaseSettingsId, TrunkBase body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'trunkBaseSettingsId' is set
     if (trunkBaseSettingsId == null) {
-      throw new ApiException(400, "Missing the required parameter 'trunkBaseSettingsId' when calling putTelephonyProvidersEdgesTrunkbasesetting");
+      throw new IllegalArgumentException("Missing the required parameter 'trunkBaseSettingsId' when calling putTelephonyProvidersEdgesTrunkbasesetting");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putTelephonyProvidersEdgesTrunkbasesetting");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesTrunkbasesetting");
     }
     
     // create path and map variables
@@ -9363,7 +9364,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public TrunkBase putTelephonyProvidersEdgesTrunkbasesetting(PutTelephonyProvidersEdgesTrunkbasesettingRequest request) throws ApiException {
+  public TrunkBase putTelephonyProvidersEdgesTrunkbasesetting(PutTelephonyProvidersEdgesTrunkbasesettingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TrunkBase>() {});
   }
 
@@ -9373,7 +9374,7 @@ public class TelephonyProvidersEdgeApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TrunkBase> putTelephonyProvidersEdgesTrunkbasesetting(ApiRequest<TrunkBase> request) throws ApiException {
+  public ApiResponse<TrunkBase> putTelephonyProvidersEdgesTrunkbasesetting(ApiRequest<TrunkBase> request) throws IOException, ApiException {
     return pcapiClient.<TrunkBase>invokeAPIVerbose(request, new TypeReference<TrunkBase>() {});
   }
 

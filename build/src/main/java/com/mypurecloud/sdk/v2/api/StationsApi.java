@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteStationAssociateduserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetStationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetStationsRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -43,7 +44,7 @@ public class StationsApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteStationAssociateduser(String stationId) throws ApiException {
+  public String deleteStationAssociateduser(String stationId) throws IOException, ApiException {
     return deleteStationAssociateduserWithHttpInfo(stationId).getBody();
   }
 
@@ -54,12 +55,12 @@ public class StationsApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteStationAssociateduserWithHttpInfo(String stationId) throws ApiException {
+  public ApiResponse<String> deleteStationAssociateduserWithHttpInfo(String stationId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'stationId' is set
     if (stationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'stationId' when calling deleteStationAssociateduser");
+      throw new IllegalArgumentException("Missing the required parameter 'stationId' when calling deleteStationAssociateduser");
     }
     
     // create path and map variables
@@ -95,7 +96,7 @@ public class StationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteStationAssociateduser(DeleteStationAssociateduserRequest request) throws ApiException {
+  public String deleteStationAssociateduser(DeleteStationAssociateduserRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -105,7 +106,7 @@ public class StationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteStationAssociateduser(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteStationAssociateduser(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -116,7 +117,7 @@ public class StationsApi {
    * @return Station
    * @throws ApiException if fails to make API call
    */
-  public Station getStation(String stationId) throws ApiException {
+  public Station getStation(String stationId) throws IOException, ApiException {
     return getStationWithHttpInfo(stationId).getBody();
   }
 
@@ -127,12 +128,12 @@ public class StationsApi {
    * @return Station
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Station> getStationWithHttpInfo(String stationId) throws ApiException {
+  public ApiResponse<Station> getStationWithHttpInfo(String stationId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'stationId' is set
     if (stationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'stationId' when calling getStation");
+      throw new IllegalArgumentException("Missing the required parameter 'stationId' when calling getStation");
     }
     
     // create path and map variables
@@ -168,7 +169,7 @@ public class StationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Station getStation(GetStationRequest request) throws ApiException {
+  public Station getStation(GetStationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Station>() {});
   }
 
@@ -178,7 +179,7 @@ public class StationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Station> getStation(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Station> getStation(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Station>invokeAPIVerbose(request, new TypeReference<Station>() {});
   }
 
@@ -194,7 +195,7 @@ public class StationsApi {
    * @return StationEntityListing
    * @throws ApiException if fails to make API call
    */
-  public StationEntityListing getStations(Integer pageSize, Integer pageNumber, String sortBy, String name, String id, String lineAppearanceId) throws ApiException {
+  public StationEntityListing getStations(Integer pageSize, Integer pageNumber, String sortBy, String name, String id, String lineAppearanceId) throws IOException, ApiException {
     return getStationsWithHttpInfo(pageSize, pageNumber, sortBy, name, id, lineAppearanceId).getBody();
   }
 
@@ -210,7 +211,7 @@ public class StationsApi {
    * @return StationEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<StationEntityListing> getStationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String name, String id, String lineAppearanceId) throws ApiException {
+  public ApiResponse<StationEntityListing> getStationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String name, String id, String lineAppearanceId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -251,7 +252,7 @@ public class StationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public StationEntityListing getStations(GetStationsRequest request) throws ApiException {
+  public StationEntityListing getStations(GetStationsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<StationEntityListing>() {});
   }
 
@@ -261,7 +262,7 @@ public class StationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<StationEntityListing> getStations(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<StationEntityListing> getStations(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<StationEntityListing>invokeAPIVerbose(request, new TypeReference<StationEntityListing>() {});
   }
 

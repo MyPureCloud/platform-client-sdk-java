@@ -108,21 +108,21 @@ public class PutRoutingEmailDomainRouteRequest {
         return this;
     }
 
-    public ApiRequest<InboundRoute> withHttpInfo() throws ApiException {
+    public ApiRequest<InboundRoute> withHttpInfo() {
         
         // verify the required parameter 'domainName' is set
         if (this.domainName == null) {
-            throw new ApiException(400, "Missing the required parameter 'domainName' when building request for PutRoutingEmailDomainRouteRequest.");
+            throw new IllegalStateException("Missing the required parameter 'domainName' when building request for PutRoutingEmailDomainRouteRequest.");
         }
         
         // verify the required parameter 'routeId' is set
         if (this.routeId == null) {
-            throw new ApiException(400, "Missing the required parameter 'routeId' when building request for PutRoutingEmailDomainRouteRequest.");
+            throw new IllegalStateException("Missing the required parameter 'routeId' when building request for PutRoutingEmailDomainRouteRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutRoutingEmailDomainRouteRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutRoutingEmailDomainRouteRequest.");
         }
         
 

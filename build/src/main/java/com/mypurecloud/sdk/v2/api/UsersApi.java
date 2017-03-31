@@ -82,6 +82,7 @@ import com.mypurecloud.sdk.v2.api.request.PutUserRoutingstatusRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserStationAssociatedstationStationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserStationDefaultstationStationIdRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -106,7 +107,7 @@ public class UsersApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteUser(String userId) throws ApiException {
+  public Empty deleteUser(String userId) throws IOException, ApiException {
     return deleteUserWithHttpInfo(userId).getBody();
   }
 
@@ -117,12 +118,12 @@ public class UsersApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteUserWithHttpInfo(String userId) throws ApiException {
+  public ApiResponse<Empty> deleteUserWithHttpInfo(String userId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling deleteUser");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling deleteUser");
     }
     
     // create path and map variables
@@ -158,7 +159,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteUser(DeleteUserRequest request) throws ApiException {
+  public Empty deleteUser(DeleteUserRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
   }
 
@@ -168,7 +169,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteUser(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Empty> deleteUser(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
   }
 
@@ -178,7 +179,7 @@ public class UsersApi {
    * @param userId User ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteUserRoles(String userId) throws ApiException {
+  public void deleteUserRoles(String userId) throws IOException, ApiException {
     deleteUserRolesWithHttpInfo(userId);
   }
 
@@ -188,12 +189,12 @@ public class UsersApi {
    * @param userId User ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteUserRolesWithHttpInfo(String userId) throws ApiException {
+  public ApiResponse<Void> deleteUserRolesWithHttpInfo(String userId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling deleteUserRoles");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling deleteUserRoles");
     }
     
     // create path and map variables
@@ -229,7 +230,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteUserRoles(DeleteUserRolesRequest request) throws ApiException {
+  public void deleteUserRoles(DeleteUserRolesRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -239,7 +240,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteUserRoles(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteUserRoles(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -251,7 +252,7 @@ public class UsersApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteUserRoutingskill(String userId, String skillId) throws ApiException {
+  public String deleteUserRoutingskill(String userId, String skillId) throws IOException, ApiException {
     return deleteUserRoutingskillWithHttpInfo(userId, skillId).getBody();
   }
 
@@ -263,17 +264,17 @@ public class UsersApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteUserRoutingskillWithHttpInfo(String userId, String skillId) throws ApiException {
+  public ApiResponse<String> deleteUserRoutingskillWithHttpInfo(String userId, String skillId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling deleteUserRoutingskill");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling deleteUserRoutingskill");
     }
     
     // verify the required parameter 'skillId' is set
     if (skillId == null) {
-      throw new ApiException(400, "Missing the required parameter 'skillId' when calling deleteUserRoutingskill");
+      throw new IllegalArgumentException("Missing the required parameter 'skillId' when calling deleteUserRoutingskill");
     }
     
     // create path and map variables
@@ -310,7 +311,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteUserRoutingskill(DeleteUserRoutingskillRequest request) throws ApiException {
+  public String deleteUserRoutingskill(DeleteUserRoutingskillRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -320,7 +321,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteUserRoutingskill(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteUserRoutingskill(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -330,7 +331,7 @@ public class UsersApi {
    * @param userId User ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteUserStationAssociatedstation(String userId) throws ApiException {
+  public void deleteUserStationAssociatedstation(String userId) throws IOException, ApiException {
     deleteUserStationAssociatedstationWithHttpInfo(userId);
   }
 
@@ -340,12 +341,12 @@ public class UsersApi {
    * @param userId User ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteUserStationAssociatedstationWithHttpInfo(String userId) throws ApiException {
+  public ApiResponse<Void> deleteUserStationAssociatedstationWithHttpInfo(String userId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling deleteUserStationAssociatedstation");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling deleteUserStationAssociatedstation");
     }
     
     // create path and map variables
@@ -381,7 +382,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteUserStationAssociatedstation(DeleteUserStationAssociatedstationRequest request) throws ApiException {
+  public void deleteUserStationAssociatedstation(DeleteUserStationAssociatedstationRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -391,7 +392,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteUserStationAssociatedstation(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteUserStationAssociatedstation(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -401,7 +402,7 @@ public class UsersApi {
    * @param userId User ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteUserStationDefaultstation(String userId) throws ApiException {
+  public void deleteUserStationDefaultstation(String userId) throws IOException, ApiException {
     deleteUserStationDefaultstationWithHttpInfo(userId);
   }
 
@@ -411,12 +412,12 @@ public class UsersApi {
    * @param userId User ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteUserStationDefaultstationWithHttpInfo(String userId) throws ApiException {
+  public ApiResponse<Void> deleteUserStationDefaultstationWithHttpInfo(String userId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling deleteUserStationDefaultstation");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling deleteUserStationDefaultstation");
     }
     
     // create path and map variables
@@ -452,7 +453,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteUserStationDefaultstation(DeleteUserStationDefaultstationRequest request) throws ApiException {
+  public void deleteUserStationDefaultstation(DeleteUserStationDefaultstationRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -462,7 +463,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteUserStationDefaultstation(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteUserStationDefaultstation(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -473,7 +474,7 @@ public class UsersApi {
    * @return FieldConfig
    * @throws ApiException if fails to make API call
    */
-  public FieldConfig getFieldconfig(String type) throws ApiException {
+  public FieldConfig getFieldconfig(String type) throws IOException, ApiException {
     return getFieldconfigWithHttpInfo(type).getBody();
   }
 
@@ -484,12 +485,12 @@ public class UsersApi {
    * @return FieldConfig
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<FieldConfig> getFieldconfigWithHttpInfo(String type) throws ApiException {
+  public ApiResponse<FieldConfig> getFieldconfigWithHttpInfo(String type) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'type' is set
     if (type == null) {
-      throw new ApiException(400, "Missing the required parameter 'type' when calling getFieldconfig");
+      throw new IllegalArgumentException("Missing the required parameter 'type' when calling getFieldconfig");
     }
     
     // create path and map variables
@@ -525,7 +526,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public FieldConfig getFieldconfig(GetFieldconfigRequest request) throws ApiException {
+  public FieldConfig getFieldconfig(GetFieldconfigRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FieldConfig>() {});
   }
 
@@ -535,7 +536,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<FieldConfig> getFieldconfig(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<FieldConfig> getFieldconfig(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<FieldConfig>invokeAPIVerbose(request, new TypeReference<FieldConfig>() {});
   }
 
@@ -547,7 +548,7 @@ public class UsersApi {
    * @return User
    * @throws ApiException if fails to make API call
    */
-  public User getUser(String userId, List<String> expand) throws ApiException {
+  public User getUser(String userId, List<String> expand) throws IOException, ApiException {
     return getUserWithHttpInfo(userId, expand).getBody();
   }
 
@@ -559,12 +560,12 @@ public class UsersApi {
    * @return User
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<User> getUserWithHttpInfo(String userId, List<String> expand) throws ApiException {
+  public ApiResponse<User> getUserWithHttpInfo(String userId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getUser");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUser");
     }
     
     // create path and map variables
@@ -601,7 +602,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public User getUser(GetUserRequest request) throws ApiException {
+  public User getUser(GetUserRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<User>() {});
   }
 
@@ -611,7 +612,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<User> getUser(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<User> getUser(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<User>invokeAPIVerbose(request, new TypeReference<User>() {});
   }
 
@@ -623,7 +624,7 @@ public class UsersApi {
    * @return Adjacents
    * @throws ApiException if fails to make API call
    */
-  public Adjacents getUserAdjacents(String userId, List<String> expand) throws ApiException {
+  public Adjacents getUserAdjacents(String userId, List<String> expand) throws IOException, ApiException {
     return getUserAdjacentsWithHttpInfo(userId, expand).getBody();
   }
 
@@ -635,12 +636,12 @@ public class UsersApi {
    * @return Adjacents
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Adjacents> getUserAdjacentsWithHttpInfo(String userId, List<String> expand) throws ApiException {
+  public ApiResponse<Adjacents> getUserAdjacentsWithHttpInfo(String userId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getUserAdjacents");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserAdjacents");
     }
     
     // create path and map variables
@@ -677,7 +678,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Adjacents getUserAdjacents(GetUserAdjacentsRequest request) throws ApiException {
+  public Adjacents getUserAdjacents(GetUserAdjacentsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Adjacents>() {});
   }
 
@@ -687,7 +688,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Adjacents> getUserAdjacents(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Adjacents> getUserAdjacents(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Adjacents>invokeAPIVerbose(request, new TypeReference<Adjacents>() {});
   }
 
@@ -698,7 +699,7 @@ public class UsersApi {
    * @return CallForwarding
    * @throws ApiException if fails to make API call
    */
-  public CallForwarding getUserCallforwarding(String userId) throws ApiException {
+  public CallForwarding getUserCallforwarding(String userId) throws IOException, ApiException {
     return getUserCallforwardingWithHttpInfo(userId).getBody();
   }
 
@@ -709,12 +710,12 @@ public class UsersApi {
    * @return CallForwarding
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallForwarding> getUserCallforwardingWithHttpInfo(String userId) throws ApiException {
+  public ApiResponse<CallForwarding> getUserCallforwardingWithHttpInfo(String userId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getUserCallforwarding");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserCallforwarding");
     }
     
     // create path and map variables
@@ -750,7 +751,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CallForwarding getUserCallforwarding(GetUserCallforwardingRequest request) throws ApiException {
+  public CallForwarding getUserCallforwarding(GetUserCallforwardingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallForwarding>() {});
   }
 
@@ -760,7 +761,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallForwarding> getUserCallforwarding(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CallForwarding> getUserCallforwarding(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CallForwarding>invokeAPIVerbose(request, new TypeReference<CallForwarding>() {});
   }
 
@@ -772,7 +773,7 @@ public class UsersApi {
    * @return List<User>
    * @throws ApiException if fails to make API call
    */
-  public List<User> getUserDirectreports(String userId, List<String> expand) throws ApiException {
+  public List<User> getUserDirectreports(String userId, List<String> expand) throws IOException, ApiException {
     return getUserDirectreportsWithHttpInfo(userId, expand).getBody();
   }
 
@@ -784,12 +785,12 @@ public class UsersApi {
    * @return List<User>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<User>> getUserDirectreportsWithHttpInfo(String userId, List<String> expand) throws ApiException {
+  public ApiResponse<List<User>> getUserDirectreportsWithHttpInfo(String userId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getUserDirectreports");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserDirectreports");
     }
     
     // create path and map variables
@@ -826,7 +827,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<User> getUserDirectreports(GetUserDirectreportsRequest request) throws ApiException {
+  public List<User> getUserDirectreports(GetUserDirectreportsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<User>>() {});
   }
 
@@ -836,7 +837,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<User>> getUserDirectreports(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<User>> getUserDirectreports(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<User>>invokeAPIVerbose(request, new TypeReference<List<User>>() {});
   }
 
@@ -851,7 +852,7 @@ public class UsersApi {
    * @return UserEntityListing
    * @throws ApiException if fails to make API call
    */
-  public UserEntityListing getUserFavorites(String userId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws ApiException {
+  public UserEntityListing getUserFavorites(String userId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException, ApiException {
     return getUserFavoritesWithHttpInfo(userId, pageSize, pageNumber, sortOrder, expand).getBody();
   }
 
@@ -866,12 +867,12 @@ public class UsersApi {
    * @return UserEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserEntityListing> getUserFavoritesWithHttpInfo(String userId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws ApiException {
+  public ApiResponse<UserEntityListing> getUserFavoritesWithHttpInfo(String userId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getUserFavorites");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserFavorites");
     }
     
     // create path and map variables
@@ -911,7 +912,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserEntityListing getUserFavorites(GetUserFavoritesRequest request) throws ApiException {
+  public UserEntityListing getUserFavorites(GetUserFavoritesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserEntityListing>() {});
   }
 
@@ -921,7 +922,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserEntityListing> getUserFavorites(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<UserEntityListing> getUserFavorites(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<UserEntityListing>invokeAPIVerbose(request, new TypeReference<UserEntityListing>() {});
   }
 
@@ -933,7 +934,7 @@ public class UsersApi {
    * @return Geolocation
    * @throws ApiException if fails to make API call
    */
-  public Geolocation getUserGeolocation(String userId, String clientId) throws ApiException {
+  public Geolocation getUserGeolocation(String userId, String clientId) throws IOException, ApiException {
     return getUserGeolocationWithHttpInfo(userId, clientId).getBody();
   }
 
@@ -945,17 +946,17 @@ public class UsersApi {
    * @return Geolocation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Geolocation> getUserGeolocationWithHttpInfo(String userId, String clientId) throws ApiException {
+  public ApiResponse<Geolocation> getUserGeolocationWithHttpInfo(String userId, String clientId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getUserGeolocation");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserGeolocation");
     }
     
     // verify the required parameter 'clientId' is set
     if (clientId == null) {
-      throw new ApiException(400, "Missing the required parameter 'clientId' when calling getUserGeolocation");
+      throw new IllegalArgumentException("Missing the required parameter 'clientId' when calling getUserGeolocation");
     }
     
     // create path and map variables
@@ -992,7 +993,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Geolocation getUserGeolocation(GetUserGeolocationRequest request) throws ApiException {
+  public Geolocation getUserGeolocation(GetUserGeolocationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Geolocation>() {});
   }
 
@@ -1002,7 +1003,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Geolocation> getUserGeolocation(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Geolocation> getUserGeolocation(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Geolocation>invokeAPIVerbose(request, new TypeReference<Geolocation>() {});
   }
 
@@ -1013,7 +1014,7 @@ public class UsersApi {
    * @return OutOfOffice
    * @throws ApiException if fails to make API call
    */
-  public OutOfOffice getUserOutofoffice(String userId) throws ApiException {
+  public OutOfOffice getUserOutofoffice(String userId) throws IOException, ApiException {
     return getUserOutofofficeWithHttpInfo(userId).getBody();
   }
 
@@ -1024,12 +1025,12 @@ public class UsersApi {
    * @return OutOfOffice
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OutOfOffice> getUserOutofofficeWithHttpInfo(String userId) throws ApiException {
+  public ApiResponse<OutOfOffice> getUserOutofofficeWithHttpInfo(String userId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getUserOutofoffice");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserOutofoffice");
     }
     
     // create path and map variables
@@ -1065,7 +1066,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OutOfOffice getUserOutofoffice(GetUserOutofofficeRequest request) throws ApiException {
+  public OutOfOffice getUserOutofoffice(GetUserOutofofficeRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OutOfOffice>() {});
   }
 
@@ -1075,7 +1076,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OutOfOffice> getUserOutofoffice(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<OutOfOffice> getUserOutofoffice(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<OutOfOffice>invokeAPIVerbose(request, new TypeReference<OutOfOffice>() {});
   }
 
@@ -1086,7 +1087,7 @@ public class UsersApi {
    * @return List<String>
    * @throws ApiException if fails to make API call
    */
-  public List<String> getUserProfileskills(String userId) throws ApiException {
+  public List<String> getUserProfileskills(String userId) throws IOException, ApiException {
     return getUserProfileskillsWithHttpInfo(userId).getBody();
   }
 
@@ -1097,12 +1098,12 @@ public class UsersApi {
    * @return List<String>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<String>> getUserProfileskillsWithHttpInfo(String userId) throws ApiException {
+  public ApiResponse<List<String>> getUserProfileskillsWithHttpInfo(String userId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getUserProfileskills");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserProfileskills");
     }
     
     // create path and map variables
@@ -1138,7 +1139,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<String> getUserProfileskills(GetUserProfileskillsRequest request) throws ApiException {
+  public List<String> getUserProfileskills(GetUserProfileskillsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<String>>() {});
   }
 
@@ -1148,7 +1149,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<String>> getUserProfileskills(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<String>> getUserProfileskills(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<String>>invokeAPIVerbose(request, new TypeReference<List<String>>() {});
   }
 
@@ -1162,7 +1163,7 @@ public class UsersApi {
    * @return UserQueueEntityListing
    * @throws ApiException if fails to make API call
    */
-  public UserQueueEntityListing getUserQueues(String userId, Integer pageSize, Integer pageNumber, Boolean joined) throws ApiException {
+  public UserQueueEntityListing getUserQueues(String userId, Integer pageSize, Integer pageNumber, Boolean joined) throws IOException, ApiException {
     return getUserQueuesWithHttpInfo(userId, pageSize, pageNumber, joined).getBody();
   }
 
@@ -1176,12 +1177,12 @@ public class UsersApi {
    * @return UserQueueEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserQueueEntityListing> getUserQueuesWithHttpInfo(String userId, Integer pageSize, Integer pageNumber, Boolean joined) throws ApiException {
+  public ApiResponse<UserQueueEntityListing> getUserQueuesWithHttpInfo(String userId, Integer pageSize, Integer pageNumber, Boolean joined) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getUserQueues");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserQueues");
     }
     
     // create path and map variables
@@ -1220,7 +1221,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserQueueEntityListing getUserQueues(GetUserQueuesRequest request) throws ApiException {
+  public UserQueueEntityListing getUserQueues(GetUserQueuesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserQueueEntityListing>() {});
   }
 
@@ -1230,7 +1231,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserQueueEntityListing> getUserQueues(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<UserQueueEntityListing> getUserQueues(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<UserQueueEntityListing>invokeAPIVerbose(request, new TypeReference<UserQueueEntityListing>() {});
   }
 
@@ -1241,7 +1242,7 @@ public class UsersApi {
    * @return UserAuthorization
    * @throws ApiException if fails to make API call
    */
-  public UserAuthorization getUserRoles(String userId) throws ApiException {
+  public UserAuthorization getUserRoles(String userId) throws IOException, ApiException {
     return getUserRolesWithHttpInfo(userId).getBody();
   }
 
@@ -1252,12 +1253,12 @@ public class UsersApi {
    * @return UserAuthorization
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserAuthorization> getUserRolesWithHttpInfo(String userId) throws ApiException {
+  public ApiResponse<UserAuthorization> getUserRolesWithHttpInfo(String userId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getUserRoles");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserRoles");
     }
     
     // create path and map variables
@@ -1293,7 +1294,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserAuthorization getUserRoles(GetUserRolesRequest request) throws ApiException {
+  public UserAuthorization getUserRoles(GetUserRolesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserAuthorization>() {});
   }
 
@@ -1303,7 +1304,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserAuthorization> getUserRoles(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<UserAuthorization> getUserRoles(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<UserAuthorization>invokeAPIVerbose(request, new TypeReference<UserAuthorization>() {});
   }
 
@@ -1317,7 +1318,7 @@ public class UsersApi {
    * @return UserSkillEntityListing
    * @throws ApiException if fails to make API call
    */
-  public UserSkillEntityListing getUserRoutingskills(String userId, Integer pageSize, Integer pageNumber, String sortOrder) throws ApiException {
+  public UserSkillEntityListing getUserRoutingskills(String userId, Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
     return getUserRoutingskillsWithHttpInfo(userId, pageSize, pageNumber, sortOrder).getBody();
   }
 
@@ -1331,12 +1332,12 @@ public class UsersApi {
    * @return UserSkillEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserSkillEntityListing> getUserRoutingskillsWithHttpInfo(String userId, Integer pageSize, Integer pageNumber, String sortOrder) throws ApiException {
+  public ApiResponse<UserSkillEntityListing> getUserRoutingskillsWithHttpInfo(String userId, Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getUserRoutingskills");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserRoutingskills");
     }
     
     // create path and map variables
@@ -1375,7 +1376,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserSkillEntityListing getUserRoutingskills(GetUserRoutingskillsRequest request) throws ApiException {
+  public UserSkillEntityListing getUserRoutingskills(GetUserRoutingskillsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserSkillEntityListing>() {});
   }
 
@@ -1385,7 +1386,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserSkillEntityListing> getUserRoutingskills(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<UserSkillEntityListing> getUserRoutingskills(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<UserSkillEntityListing>invokeAPIVerbose(request, new TypeReference<UserSkillEntityListing>() {});
   }
 
@@ -1396,7 +1397,7 @@ public class UsersApi {
    * @return RoutingStatus
    * @throws ApiException if fails to make API call
    */
-  public RoutingStatus getUserRoutingstatus(String userId) throws ApiException {
+  public RoutingStatus getUserRoutingstatus(String userId) throws IOException, ApiException {
     return getUserRoutingstatusWithHttpInfo(userId).getBody();
   }
 
@@ -1407,12 +1408,12 @@ public class UsersApi {
    * @return RoutingStatus
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RoutingStatus> getUserRoutingstatusWithHttpInfo(String userId) throws ApiException {
+  public ApiResponse<RoutingStatus> getUserRoutingstatusWithHttpInfo(String userId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getUserRoutingstatus");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserRoutingstatus");
     }
     
     // create path and map variables
@@ -1448,7 +1449,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public RoutingStatus getUserRoutingstatus(GetUserRoutingstatusRequest request) throws ApiException {
+  public RoutingStatus getUserRoutingstatus(GetUserRoutingstatusRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RoutingStatus>() {});
   }
 
@@ -1458,7 +1459,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RoutingStatus> getUserRoutingstatus(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<RoutingStatus> getUserRoutingstatus(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<RoutingStatus>invokeAPIVerbose(request, new TypeReference<RoutingStatus>() {});
   }
 
@@ -1469,7 +1470,7 @@ public class UsersApi {
    * @return UserStations
    * @throws ApiException if fails to make API call
    */
-  public UserStations getUserStation(String userId) throws ApiException {
+  public UserStations getUserStation(String userId) throws IOException, ApiException {
     return getUserStationWithHttpInfo(userId).getBody();
   }
 
@@ -1480,12 +1481,12 @@ public class UsersApi {
    * @return UserStations
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserStations> getUserStationWithHttpInfo(String userId) throws ApiException {
+  public ApiResponse<UserStations> getUserStationWithHttpInfo(String userId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getUserStation");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserStation");
     }
     
     // create path and map variables
@@ -1521,7 +1522,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserStations getUserStation(GetUserStationRequest request) throws ApiException {
+  public UserStations getUserStation(GetUserStationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserStations>() {});
   }
 
@@ -1531,7 +1532,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserStations> getUserStation(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<UserStations> getUserStation(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<UserStations>invokeAPIVerbose(request, new TypeReference<UserStations>() {});
   }
 
@@ -1543,7 +1544,7 @@ public class UsersApi {
    * @return List<User>
    * @throws ApiException if fails to make API call
    */
-  public List<User> getUserSuperiors(String userId, List<String> expand) throws ApiException {
+  public List<User> getUserSuperiors(String userId, List<String> expand) throws IOException, ApiException {
     return getUserSuperiorsWithHttpInfo(userId, expand).getBody();
   }
 
@@ -1555,12 +1556,12 @@ public class UsersApi {
    * @return List<User>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<User>> getUserSuperiorsWithHttpInfo(String userId, List<String> expand) throws ApiException {
+  public ApiResponse<List<User>> getUserSuperiorsWithHttpInfo(String userId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getUserSuperiors");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserSuperiors");
     }
     
     // create path and map variables
@@ -1597,7 +1598,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<User> getUserSuperiors(GetUserSuperiorsRequest request) throws ApiException {
+  public List<User> getUserSuperiors(GetUserSuperiorsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<User>>() {});
   }
 
@@ -1607,7 +1608,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<User>> getUserSuperiors(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<User>> getUserSuperiors(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<User>>invokeAPIVerbose(request, new TypeReference<List<User>>() {});
   }
 
@@ -1622,7 +1623,7 @@ public class UsersApi {
    * @return UserEntityListing
    * @throws ApiException if fails to make API call
    */
-  public UserEntityListing getUsers(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder, List<String> expand) throws ApiException {
+  public UserEntityListing getUsers(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder, List<String> expand) throws IOException, ApiException {
     return getUsersWithHttpInfo(pageSize, pageNumber, id, sortOrder, expand).getBody();
   }
 
@@ -1637,7 +1638,7 @@ public class UsersApi {
    * @return UserEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserEntityListing> getUsersWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder, List<String> expand) throws ApiException {
+  public ApiResponse<UserEntityListing> getUsersWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1677,7 +1678,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserEntityListing getUsers(GetUsersRequest request) throws ApiException {
+  public UserEntityListing getUsers(GetUsersRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserEntityListing>() {});
   }
 
@@ -1687,7 +1688,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserEntityListing> getUsers(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<UserEntityListing> getUsers(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<UserEntityListing>invokeAPIVerbose(request, new TypeReference<UserEntityListing>() {});
   }
 
@@ -1698,7 +1699,7 @@ public class UsersApi {
    * @return UserMe
    * @throws ApiException if fails to make API call
    */
-  public UserMe getUsersMe(List<String> expand) throws ApiException {
+  public UserMe getUsersMe(List<String> expand) throws IOException, ApiException {
     return getUsersMeWithHttpInfo(expand).getBody();
   }
 
@@ -1709,7 +1710,7 @@ public class UsersApi {
    * @return UserMe
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserMe> getUsersMeWithHttpInfo(List<String> expand) throws ApiException {
+  public ApiResponse<UserMe> getUsersMeWithHttpInfo(List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1745,7 +1746,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserMe getUsersMe(GetUsersMeRequest request) throws ApiException {
+  public UserMe getUsersMe(GetUsersMeRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserMe>() {});
   }
 
@@ -1755,7 +1756,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserMe> getUsersMe(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<UserMe> getUsersMe(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<UserMe>invokeAPIVerbose(request, new TypeReference<UserMe>() {});
   }
 
@@ -1767,7 +1768,7 @@ public class UsersApi {
    * @return UsersSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public UsersSearchResponse getUsersSearch(String q64, List<String> expand) throws ApiException {
+  public UsersSearchResponse getUsersSearch(String q64, List<String> expand) throws IOException, ApiException {
     return getUsersSearchWithHttpInfo(q64, expand).getBody();
   }
 
@@ -1779,12 +1780,12 @@ public class UsersApi {
    * @return UsersSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UsersSearchResponse> getUsersSearchWithHttpInfo(String q64, List<String> expand) throws ApiException {
+  public ApiResponse<UsersSearchResponse> getUsersSearchWithHttpInfo(String q64, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'q64' is set
     if (q64 == null) {
-      throw new ApiException(400, "Missing the required parameter 'q64' when calling getUsersSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'q64' when calling getUsersSearch");
     }
     
     // create path and map variables
@@ -1821,7 +1822,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UsersSearchResponse getUsersSearch(GetUsersSearchRequest request) throws ApiException {
+  public UsersSearchResponse getUsersSearch(GetUsersSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UsersSearchResponse>() {});
   }
 
@@ -1831,7 +1832,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UsersSearchResponse> getUsersSearch(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<UsersSearchResponse> getUsersSearch(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<UsersSearchResponse>invokeAPIVerbose(request, new TypeReference<UsersSearchResponse>() {});
   }
 
@@ -1843,7 +1844,7 @@ public class UsersApi {
    * @return User
    * @throws ApiException if fails to make API call
    */
-  public User patchUser(String userId, User body) throws ApiException {
+  public User patchUser(String userId, User body) throws IOException, ApiException {
     return patchUserWithHttpInfo(userId, body).getBody();
   }
 
@@ -1855,17 +1856,17 @@ public class UsersApi {
    * @return User
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<User> patchUserWithHttpInfo(String userId, User body) throws ApiException {
+  public ApiResponse<User> patchUserWithHttpInfo(String userId, User body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling patchUser");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling patchUser");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchUser");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchUser");
     }
     
     // create path and map variables
@@ -1901,7 +1902,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public User patchUser(PatchUserRequest request) throws ApiException {
+  public User patchUser(PatchUserRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<User>() {});
   }
 
@@ -1911,7 +1912,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<User> patchUser(ApiRequest<User> request) throws ApiException {
+  public ApiResponse<User> patchUser(ApiRequest<User> request) throws IOException, ApiException {
     return pcapiClient.<User>invokeAPIVerbose(request, new TypeReference<User>() {});
   }
 
@@ -1923,7 +1924,7 @@ public class UsersApi {
    * @return CallForwarding
    * @throws ApiException if fails to make API call
    */
-  public CallForwarding patchUserCallforwarding(String userId, CallForwarding body) throws ApiException {
+  public CallForwarding patchUserCallforwarding(String userId, CallForwarding body) throws IOException, ApiException {
     return patchUserCallforwardingWithHttpInfo(userId, body).getBody();
   }
 
@@ -1935,17 +1936,17 @@ public class UsersApi {
    * @return CallForwarding
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallForwarding> patchUserCallforwardingWithHttpInfo(String userId, CallForwarding body) throws ApiException {
+  public ApiResponse<CallForwarding> patchUserCallforwardingWithHttpInfo(String userId, CallForwarding body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling patchUserCallforwarding");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling patchUserCallforwarding");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchUserCallforwarding");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchUserCallforwarding");
     }
     
     // create path and map variables
@@ -1981,7 +1982,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CallForwarding patchUserCallforwarding(PatchUserCallforwardingRequest request) throws ApiException {
+  public CallForwarding patchUserCallforwarding(PatchUserCallforwardingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallForwarding>() {});
   }
 
@@ -1991,7 +1992,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallForwarding> patchUserCallforwarding(ApiRequest<CallForwarding> request) throws ApiException {
+  public ApiResponse<CallForwarding> patchUserCallforwarding(ApiRequest<CallForwarding> request) throws IOException, ApiException {
     return pcapiClient.<CallForwarding>invokeAPIVerbose(request, new TypeReference<CallForwarding>() {});
   }
 
@@ -2004,7 +2005,7 @@ public class UsersApi {
    * @return Geolocation
    * @throws ApiException if fails to make API call
    */
-  public Geolocation patchUserGeolocation(String userId, String clientId, Geolocation body) throws ApiException {
+  public Geolocation patchUserGeolocation(String userId, String clientId, Geolocation body) throws IOException, ApiException {
     return patchUserGeolocationWithHttpInfo(userId, clientId, body).getBody();
   }
 
@@ -2017,22 +2018,22 @@ public class UsersApi {
    * @return Geolocation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Geolocation> patchUserGeolocationWithHttpInfo(String userId, String clientId, Geolocation body) throws ApiException {
+  public ApiResponse<Geolocation> patchUserGeolocationWithHttpInfo(String userId, String clientId, Geolocation body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling patchUserGeolocation");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling patchUserGeolocation");
     }
     
     // verify the required parameter 'clientId' is set
     if (clientId == null) {
-      throw new ApiException(400, "Missing the required parameter 'clientId' when calling patchUserGeolocation");
+      throw new IllegalArgumentException("Missing the required parameter 'clientId' when calling patchUserGeolocation");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchUserGeolocation");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchUserGeolocation");
     }
     
     // create path and map variables
@@ -2069,7 +2070,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Geolocation patchUserGeolocation(PatchUserGeolocationRequest request) throws ApiException {
+  public Geolocation patchUserGeolocation(PatchUserGeolocationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Geolocation>() {});
   }
 
@@ -2079,7 +2080,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Geolocation> patchUserGeolocation(ApiRequest<Geolocation> request) throws ApiException {
+  public ApiResponse<Geolocation> patchUserGeolocation(ApiRequest<Geolocation> request) throws IOException, ApiException {
     return pcapiClient.<Geolocation>invokeAPIVerbose(request, new TypeReference<Geolocation>() {});
   }
 
@@ -2092,7 +2093,7 @@ public class UsersApi {
    * @return UserQueue
    * @throws ApiException if fails to make API call
    */
-  public UserQueue patchUserQueue(String queueId, String userId, UserQueue body) throws ApiException {
+  public UserQueue patchUserQueue(String queueId, String userId, UserQueue body) throws IOException, ApiException {
     return patchUserQueueWithHttpInfo(queueId, userId, body).getBody();
   }
 
@@ -2105,22 +2106,22 @@ public class UsersApi {
    * @return UserQueue
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserQueue> patchUserQueueWithHttpInfo(String queueId, String userId, UserQueue body) throws ApiException {
+  public ApiResponse<UserQueue> patchUserQueueWithHttpInfo(String queueId, String userId, UserQueue body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'queueId' is set
     if (queueId == null) {
-      throw new ApiException(400, "Missing the required parameter 'queueId' when calling patchUserQueue");
+      throw new IllegalArgumentException("Missing the required parameter 'queueId' when calling patchUserQueue");
     }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling patchUserQueue");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling patchUserQueue");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchUserQueue");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchUserQueue");
     }
     
     // create path and map variables
@@ -2157,7 +2158,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserQueue patchUserQueue(PatchUserQueueRequest request) throws ApiException {
+  public UserQueue patchUserQueue(PatchUserQueueRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserQueue>() {});
   }
 
@@ -2167,7 +2168,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserQueue> patchUserQueue(ApiRequest<UserQueue> request) throws ApiException {
+  public ApiResponse<UserQueue> patchUserQueue(ApiRequest<UserQueue> request) throws IOException, ApiException {
     return pcapiClient.<UserQueue>invokeAPIVerbose(request, new TypeReference<UserQueue>() {});
   }
 
@@ -2179,7 +2180,7 @@ public class UsersApi {
    * @return UserQueueEntityListing
    * @throws ApiException if fails to make API call
    */
-  public UserQueueEntityListing patchUserQueues(String userId, List<UserQueue> body) throws ApiException {
+  public UserQueueEntityListing patchUserQueues(String userId, List<UserQueue> body) throws IOException, ApiException {
     return patchUserQueuesWithHttpInfo(userId, body).getBody();
   }
 
@@ -2191,17 +2192,17 @@ public class UsersApi {
    * @return UserQueueEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserQueueEntityListing> patchUserQueuesWithHttpInfo(String userId, List<UserQueue> body) throws ApiException {
+  public ApiResponse<UserQueueEntityListing> patchUserQueuesWithHttpInfo(String userId, List<UserQueue> body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling patchUserQueues");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling patchUserQueues");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchUserQueues");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchUserQueues");
     }
     
     // create path and map variables
@@ -2237,7 +2238,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserQueueEntityListing patchUserQueues(PatchUserQueuesRequest request) throws ApiException {
+  public UserQueueEntityListing patchUserQueues(PatchUserQueuesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserQueueEntityListing>() {});
   }
 
@@ -2247,7 +2248,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserQueueEntityListing> patchUserQueues(ApiRequest<List<UserQueue>> request) throws ApiException {
+  public ApiResponse<UserQueueEntityListing> patchUserQueues(ApiRequest<List<UserQueue>> request) throws IOException, ApiException {
     return pcapiClient.<UserQueueEntityListing>invokeAPIVerbose(request, new TypeReference<UserQueueEntityListing>() {});
   }
 
@@ -2258,7 +2259,7 @@ public class UsersApi {
    * @return PresenceQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public PresenceQueryResponse postAnalyticsUsersAggregatesQuery(AggregationQuery body) throws ApiException {
+  public PresenceQueryResponse postAnalyticsUsersAggregatesQuery(AggregationQuery body) throws IOException, ApiException {
     return postAnalyticsUsersAggregatesQueryWithHttpInfo(body).getBody();
   }
 
@@ -2269,12 +2270,12 @@ public class UsersApi {
    * @return PresenceQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PresenceQueryResponse> postAnalyticsUsersAggregatesQueryWithHttpInfo(AggregationQuery body) throws ApiException {
+  public ApiResponse<PresenceQueryResponse> postAnalyticsUsersAggregatesQueryWithHttpInfo(AggregationQuery body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAnalyticsUsersAggregatesQuery");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsUsersAggregatesQuery");
     }
     
     // create path and map variables
@@ -2309,7 +2310,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PresenceQueryResponse postAnalyticsUsersAggregatesQuery(PostAnalyticsUsersAggregatesQueryRequest request) throws ApiException {
+  public PresenceQueryResponse postAnalyticsUsersAggregatesQuery(PostAnalyticsUsersAggregatesQueryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PresenceQueryResponse>() {});
   }
 
@@ -2319,7 +2320,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PresenceQueryResponse> postAnalyticsUsersAggregatesQuery(ApiRequest<AggregationQuery> request) throws ApiException {
+  public ApiResponse<PresenceQueryResponse> postAnalyticsUsersAggregatesQuery(ApiRequest<AggregationQuery> request) throws IOException, ApiException {
     return pcapiClient.<PresenceQueryResponse>invokeAPIVerbose(request, new TypeReference<PresenceQueryResponse>() {});
   }
 
@@ -2330,7 +2331,7 @@ public class UsersApi {
    * @return AnalyticsUserDetailsQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(UserDetailsQuery body) throws ApiException {
+  public AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(UserDetailsQuery body) throws IOException, ApiException {
     return postAnalyticsUsersDetailsQueryWithHttpInfo(body).getBody();
   }
 
@@ -2341,12 +2342,12 @@ public class UsersApi {
    * @return AnalyticsUserDetailsQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AnalyticsUserDetailsQueryResponse> postAnalyticsUsersDetailsQueryWithHttpInfo(UserDetailsQuery body) throws ApiException {
+  public ApiResponse<AnalyticsUserDetailsQueryResponse> postAnalyticsUsersDetailsQueryWithHttpInfo(UserDetailsQuery body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAnalyticsUsersDetailsQuery");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsUsersDetailsQuery");
     }
     
     // create path and map variables
@@ -2381,7 +2382,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(PostAnalyticsUsersDetailsQueryRequest request) throws ApiException {
+  public AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(PostAnalyticsUsersDetailsQueryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AnalyticsUserDetailsQueryResponse>() {});
   }
 
@@ -2391,7 +2392,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AnalyticsUserDetailsQueryResponse> postAnalyticsUsersDetailsQuery(ApiRequest<UserDetailsQuery> request) throws ApiException {
+  public ApiResponse<AnalyticsUserDetailsQueryResponse> postAnalyticsUsersDetailsQuery(ApiRequest<UserDetailsQuery> request) throws IOException, ApiException {
     return pcapiClient.<AnalyticsUserDetailsQueryResponse>invokeAPIVerbose(request, new TypeReference<AnalyticsUserDetailsQueryResponse>() {});
   }
 
@@ -2402,7 +2403,7 @@ public class UsersApi {
    * @return ObservationQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public ObservationQueryResponse postAnalyticsUsersObservationsQuery(ObservationQuery body) throws ApiException {
+  public ObservationQueryResponse postAnalyticsUsersObservationsQuery(ObservationQuery body) throws IOException, ApiException {
     return postAnalyticsUsersObservationsQueryWithHttpInfo(body).getBody();
   }
 
@@ -2413,12 +2414,12 @@ public class UsersApi {
    * @return ObservationQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ObservationQueryResponse> postAnalyticsUsersObservationsQueryWithHttpInfo(ObservationQuery body) throws ApiException {
+  public ApiResponse<ObservationQueryResponse> postAnalyticsUsersObservationsQueryWithHttpInfo(ObservationQuery body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAnalyticsUsersObservationsQuery");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsUsersObservationsQuery");
     }
     
     // create path and map variables
@@ -2453,7 +2454,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ObservationQueryResponse postAnalyticsUsersObservationsQuery(PostAnalyticsUsersObservationsQueryRequest request) throws ApiException {
+  public ObservationQueryResponse postAnalyticsUsersObservationsQuery(PostAnalyticsUsersObservationsQueryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ObservationQueryResponse>() {});
   }
 
@@ -2463,7 +2464,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ObservationQueryResponse> postAnalyticsUsersObservationsQuery(ApiRequest<ObservationQuery> request) throws ApiException {
+  public ApiResponse<ObservationQueryResponse> postAnalyticsUsersObservationsQuery(ApiRequest<ObservationQuery> request) throws IOException, ApiException {
     return pcapiClient.<ObservationQueryResponse>invokeAPIVerbose(request, new TypeReference<ObservationQueryResponse>() {});
   }
 
@@ -2475,7 +2476,7 @@ public class UsersApi {
    * @return UserRoutingSkill
    * @throws ApiException if fails to make API call
    */
-  public UserRoutingSkill postUserRoutingskills(String userId, UserRoutingSkillPost body) throws ApiException {
+  public UserRoutingSkill postUserRoutingskills(String userId, UserRoutingSkillPost body) throws IOException, ApiException {
     return postUserRoutingskillsWithHttpInfo(userId, body).getBody();
   }
 
@@ -2487,17 +2488,17 @@ public class UsersApi {
    * @return UserRoutingSkill
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserRoutingSkill> postUserRoutingskillsWithHttpInfo(String userId, UserRoutingSkillPost body) throws ApiException {
+  public ApiResponse<UserRoutingSkill> postUserRoutingskillsWithHttpInfo(String userId, UserRoutingSkillPost body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling postUserRoutingskills");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling postUserRoutingskills");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postUserRoutingskills");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postUserRoutingskills");
     }
     
     // create path and map variables
@@ -2533,7 +2534,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserRoutingSkill postUserRoutingskills(PostUserRoutingskillsRequest request) throws ApiException {
+  public UserRoutingSkill postUserRoutingskills(PostUserRoutingskillsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserRoutingSkill>() {});
   }
 
@@ -2543,7 +2544,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserRoutingSkill> postUserRoutingskills(ApiRequest<UserRoutingSkillPost> request) throws ApiException {
+  public ApiResponse<UserRoutingSkill> postUserRoutingskills(ApiRequest<UserRoutingSkillPost> request) throws IOException, ApiException {
     return pcapiClient.<UserRoutingSkill>invokeAPIVerbose(request, new TypeReference<UserRoutingSkill>() {});
   }
 
@@ -2554,7 +2555,7 @@ public class UsersApi {
    * @return User
    * @throws ApiException if fails to make API call
    */
-  public User postUsers(CreateUser body) throws ApiException {
+  public User postUsers(CreateUser body) throws IOException, ApiException {
     return postUsersWithHttpInfo(body).getBody();
   }
 
@@ -2565,12 +2566,12 @@ public class UsersApi {
    * @return User
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<User> postUsersWithHttpInfo(CreateUser body) throws ApiException {
+  public ApiResponse<User> postUsersWithHttpInfo(CreateUser body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postUsers");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postUsers");
     }
     
     // create path and map variables
@@ -2605,7 +2606,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public User postUsers(PostUsersRequest request) throws ApiException {
+  public User postUsers(PostUsersRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<User>() {});
   }
 
@@ -2615,7 +2616,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<User> postUsers(ApiRequest<CreateUser> request) throws ApiException {
+  public ApiResponse<User> postUsers(ApiRequest<CreateUser> request) throws IOException, ApiException {
     return pcapiClient.<User>invokeAPIVerbose(request, new TypeReference<User>() {});
   }
 
@@ -2626,7 +2627,7 @@ public class UsersApi {
    * @return UsersSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public UsersSearchResponse postUsersSearch(UserSearchRequest body) throws ApiException {
+  public UsersSearchResponse postUsersSearch(UserSearchRequest body) throws IOException, ApiException {
     return postUsersSearchWithHttpInfo(body).getBody();
   }
 
@@ -2637,12 +2638,12 @@ public class UsersApi {
    * @return UsersSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UsersSearchResponse> postUsersSearchWithHttpInfo(UserSearchRequest body) throws ApiException {
+  public ApiResponse<UsersSearchResponse> postUsersSearchWithHttpInfo(UserSearchRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postUsersSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postUsersSearch");
     }
     
     // create path and map variables
@@ -2677,7 +2678,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UsersSearchResponse postUsersSearch(PostUsersSearchRequest request) throws ApiException {
+  public UsersSearchResponse postUsersSearch(PostUsersSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UsersSearchResponse>() {});
   }
 
@@ -2687,7 +2688,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UsersSearchResponse> postUsersSearch(ApiRequest<UserSearchRequest> request) throws ApiException {
+  public ApiResponse<UsersSearchResponse> postUsersSearch(ApiRequest<UserSearchRequest> request) throws IOException, ApiException {
     return pcapiClient.<UsersSearchResponse>invokeAPIVerbose(request, new TypeReference<UsersSearchResponse>() {});
   }
 
@@ -2699,7 +2700,7 @@ public class UsersApi {
    * @return CallForwarding
    * @throws ApiException if fails to make API call
    */
-  public CallForwarding putUserCallforwarding(String userId, CallForwarding body) throws ApiException {
+  public CallForwarding putUserCallforwarding(String userId, CallForwarding body) throws IOException, ApiException {
     return putUserCallforwardingWithHttpInfo(userId, body).getBody();
   }
 
@@ -2711,17 +2712,17 @@ public class UsersApi {
    * @return CallForwarding
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallForwarding> putUserCallforwardingWithHttpInfo(String userId, CallForwarding body) throws ApiException {
+  public ApiResponse<CallForwarding> putUserCallforwardingWithHttpInfo(String userId, CallForwarding body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling putUserCallforwarding");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putUserCallforwarding");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putUserCallforwarding");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putUserCallforwarding");
     }
     
     // create path and map variables
@@ -2757,7 +2758,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CallForwarding putUserCallforwarding(PutUserCallforwardingRequest request) throws ApiException {
+  public CallForwarding putUserCallforwarding(PutUserCallforwardingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallForwarding>() {});
   }
 
@@ -2767,7 +2768,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallForwarding> putUserCallforwarding(ApiRequest<CallForwarding> request) throws ApiException {
+  public ApiResponse<CallForwarding> putUserCallforwarding(ApiRequest<CallForwarding> request) throws IOException, ApiException {
     return pcapiClient.<CallForwarding>invokeAPIVerbose(request, new TypeReference<CallForwarding>() {});
   }
 
@@ -2779,7 +2780,7 @@ public class UsersApi {
    * @return OutOfOffice
    * @throws ApiException if fails to make API call
    */
-  public OutOfOffice putUserOutofoffice(String userId, OutOfOffice body) throws ApiException {
+  public OutOfOffice putUserOutofoffice(String userId, OutOfOffice body) throws IOException, ApiException {
     return putUserOutofofficeWithHttpInfo(userId, body).getBody();
   }
 
@@ -2791,17 +2792,17 @@ public class UsersApi {
    * @return OutOfOffice
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OutOfOffice> putUserOutofofficeWithHttpInfo(String userId, OutOfOffice body) throws ApiException {
+  public ApiResponse<OutOfOffice> putUserOutofofficeWithHttpInfo(String userId, OutOfOffice body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling putUserOutofoffice");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putUserOutofoffice");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putUserOutofoffice");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putUserOutofoffice");
     }
     
     // create path and map variables
@@ -2837,7 +2838,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OutOfOffice putUserOutofoffice(PutUserOutofofficeRequest request) throws ApiException {
+  public OutOfOffice putUserOutofoffice(PutUserOutofofficeRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OutOfOffice>() {});
   }
 
@@ -2847,7 +2848,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OutOfOffice> putUserOutofoffice(ApiRequest<OutOfOffice> request) throws ApiException {
+  public ApiResponse<OutOfOffice> putUserOutofoffice(ApiRequest<OutOfOffice> request) throws IOException, ApiException {
     return pcapiClient.<OutOfOffice>invokeAPIVerbose(request, new TypeReference<OutOfOffice>() {});
   }
 
@@ -2859,7 +2860,7 @@ public class UsersApi {
    * @return List<String>
    * @throws ApiException if fails to make API call
    */
-  public List<String> putUserProfileskills(String userId, List<String> body) throws ApiException {
+  public List<String> putUserProfileskills(String userId, List<String> body) throws IOException, ApiException {
     return putUserProfileskillsWithHttpInfo(userId, body).getBody();
   }
 
@@ -2871,12 +2872,12 @@ public class UsersApi {
    * @return List<String>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<String>> putUserProfileskillsWithHttpInfo(String userId, List<String> body) throws ApiException {
+  public ApiResponse<List<String>> putUserProfileskillsWithHttpInfo(String userId, List<String> body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling putUserProfileskills");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putUserProfileskills");
     }
     
     // create path and map variables
@@ -2912,7 +2913,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<String> putUserProfileskills(PutUserProfileskillsRequest request) throws ApiException {
+  public List<String> putUserProfileskills(PutUserProfileskillsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<String>>() {});
   }
 
@@ -2922,7 +2923,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<String>> putUserProfileskills(ApiRequest<List<String>> request) throws ApiException {
+  public ApiResponse<List<String>> putUserProfileskills(ApiRequest<List<String>> request) throws IOException, ApiException {
     return pcapiClient.<List<String>>invokeAPIVerbose(request, new TypeReference<List<String>>() {});
   }
 
@@ -2934,7 +2935,7 @@ public class UsersApi {
    * @return UserAuthorization
    * @throws ApiException if fails to make API call
    */
-  public UserAuthorization putUserRoles(String userId, List<String> body) throws ApiException {
+  public UserAuthorization putUserRoles(String userId, List<String> body) throws IOException, ApiException {
     return putUserRolesWithHttpInfo(userId, body).getBody();
   }
 
@@ -2946,17 +2947,17 @@ public class UsersApi {
    * @return UserAuthorization
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserAuthorization> putUserRolesWithHttpInfo(String userId, List<String> body) throws ApiException {
+  public ApiResponse<UserAuthorization> putUserRolesWithHttpInfo(String userId, List<String> body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling putUserRoles");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putUserRoles");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putUserRoles");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putUserRoles");
     }
     
     // create path and map variables
@@ -2992,7 +2993,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserAuthorization putUserRoles(PutUserRolesRequest request) throws ApiException {
+  public UserAuthorization putUserRoles(PutUserRolesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserAuthorization>() {});
   }
 
@@ -3002,7 +3003,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserAuthorization> putUserRoles(ApiRequest<List<String>> request) throws ApiException {
+  public ApiResponse<UserAuthorization> putUserRoles(ApiRequest<List<String>> request) throws IOException, ApiException {
     return pcapiClient.<UserAuthorization>invokeAPIVerbose(request, new TypeReference<UserAuthorization>() {});
   }
 
@@ -3015,7 +3016,7 @@ public class UsersApi {
    * @return UserRoutingSkill
    * @throws ApiException if fails to make API call
    */
-  public UserRoutingSkill putUserRoutingskill(String userId, String skillId, UserRoutingSkill body) throws ApiException {
+  public UserRoutingSkill putUserRoutingskill(String userId, String skillId, UserRoutingSkill body) throws IOException, ApiException {
     return putUserRoutingskillWithHttpInfo(userId, skillId, body).getBody();
   }
 
@@ -3028,22 +3029,22 @@ public class UsersApi {
    * @return UserRoutingSkill
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserRoutingSkill> putUserRoutingskillWithHttpInfo(String userId, String skillId, UserRoutingSkill body) throws ApiException {
+  public ApiResponse<UserRoutingSkill> putUserRoutingskillWithHttpInfo(String userId, String skillId, UserRoutingSkill body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling putUserRoutingskill");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putUserRoutingskill");
     }
     
     // verify the required parameter 'skillId' is set
     if (skillId == null) {
-      throw new ApiException(400, "Missing the required parameter 'skillId' when calling putUserRoutingskill");
+      throw new IllegalArgumentException("Missing the required parameter 'skillId' when calling putUserRoutingskill");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putUserRoutingskill");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putUserRoutingskill");
     }
     
     // create path and map variables
@@ -3080,7 +3081,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserRoutingSkill putUserRoutingskill(PutUserRoutingskillRequest request) throws ApiException {
+  public UserRoutingSkill putUserRoutingskill(PutUserRoutingskillRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserRoutingSkill>() {});
   }
 
@@ -3090,7 +3091,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserRoutingSkill> putUserRoutingskill(ApiRequest<UserRoutingSkill> request) throws ApiException {
+  public ApiResponse<UserRoutingSkill> putUserRoutingskill(ApiRequest<UserRoutingSkill> request) throws IOException, ApiException {
     return pcapiClient.<UserRoutingSkill>invokeAPIVerbose(request, new TypeReference<UserRoutingSkill>() {});
   }
 
@@ -3102,7 +3103,7 @@ public class UsersApi {
    * @return RoutingStatus
    * @throws ApiException if fails to make API call
    */
-  public RoutingStatus putUserRoutingstatus(String userId, RoutingStatus body) throws ApiException {
+  public RoutingStatus putUserRoutingstatus(String userId, RoutingStatus body) throws IOException, ApiException {
     return putUserRoutingstatusWithHttpInfo(userId, body).getBody();
   }
 
@@ -3114,17 +3115,17 @@ public class UsersApi {
    * @return RoutingStatus
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RoutingStatus> putUserRoutingstatusWithHttpInfo(String userId, RoutingStatus body) throws ApiException {
+  public ApiResponse<RoutingStatus> putUserRoutingstatusWithHttpInfo(String userId, RoutingStatus body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling putUserRoutingstatus");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putUserRoutingstatus");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putUserRoutingstatus");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putUserRoutingstatus");
     }
     
     // create path and map variables
@@ -3160,7 +3161,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public RoutingStatus putUserRoutingstatus(PutUserRoutingstatusRequest request) throws ApiException {
+  public RoutingStatus putUserRoutingstatus(PutUserRoutingstatusRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RoutingStatus>() {});
   }
 
@@ -3170,7 +3171,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RoutingStatus> putUserRoutingstatus(ApiRequest<RoutingStatus> request) throws ApiException {
+  public ApiResponse<RoutingStatus> putUserRoutingstatus(ApiRequest<RoutingStatus> request) throws IOException, ApiException {
     return pcapiClient.<RoutingStatus>invokeAPIVerbose(request, new TypeReference<RoutingStatus>() {});
   }
 
@@ -3181,7 +3182,7 @@ public class UsersApi {
    * @param stationId stationId (required)
    * @throws ApiException if fails to make API call
    */
-  public void putUserStationAssociatedstationStationId(String userId, String stationId) throws ApiException {
+  public void putUserStationAssociatedstationStationId(String userId, String stationId) throws IOException, ApiException {
     putUserStationAssociatedstationStationIdWithHttpInfo(userId, stationId);
   }
 
@@ -3192,17 +3193,17 @@ public class UsersApi {
    * @param stationId stationId (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> putUserStationAssociatedstationStationIdWithHttpInfo(String userId, String stationId) throws ApiException {
+  public ApiResponse<Void> putUserStationAssociatedstationStationIdWithHttpInfo(String userId, String stationId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling putUserStationAssociatedstationStationId");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putUserStationAssociatedstationStationId");
     }
     
     // verify the required parameter 'stationId' is set
     if (stationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'stationId' when calling putUserStationAssociatedstationStationId");
+      throw new IllegalArgumentException("Missing the required parameter 'stationId' when calling putUserStationAssociatedstationStationId");
     }
     
     // create path and map variables
@@ -3239,7 +3240,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void putUserStationAssociatedstationStationId(PutUserStationAssociatedstationStationIdRequest request) throws ApiException {
+  public void putUserStationAssociatedstationStationId(PutUserStationAssociatedstationStationIdRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -3249,7 +3250,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> putUserStationAssociatedstationStationId(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> putUserStationAssociatedstationStationId(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -3260,7 +3261,7 @@ public class UsersApi {
    * @param stationId stationId (required)
    * @throws ApiException if fails to make API call
    */
-  public void putUserStationDefaultstationStationId(String userId, String stationId) throws ApiException {
+  public void putUserStationDefaultstationStationId(String userId, String stationId) throws IOException, ApiException {
     putUserStationDefaultstationStationIdWithHttpInfo(userId, stationId);
   }
 
@@ -3271,17 +3272,17 @@ public class UsersApi {
    * @param stationId stationId (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> putUserStationDefaultstationStationIdWithHttpInfo(String userId, String stationId) throws ApiException {
+  public ApiResponse<Void> putUserStationDefaultstationStationIdWithHttpInfo(String userId, String stationId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling putUserStationDefaultstationStationId");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putUserStationDefaultstationStationId");
     }
     
     // verify the required parameter 'stationId' is set
     if (stationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'stationId' when calling putUserStationDefaultstationStationId");
+      throw new IllegalArgumentException("Missing the required parameter 'stationId' when calling putUserStationDefaultstationStationId");
     }
     
     // create path and map variables
@@ -3318,7 +3319,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void putUserStationDefaultstationStationId(PutUserStationDefaultstationStationIdRequest request) throws ApiException {
+  public void putUserStationDefaultstationStationId(PutUserStationDefaultstationStationIdRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -3328,7 +3329,7 @@ public class UsersApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> putUserStationDefaultstationStationId(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> putUserStationDefaultstationStationId(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 

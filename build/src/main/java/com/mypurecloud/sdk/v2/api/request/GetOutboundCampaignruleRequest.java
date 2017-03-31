@@ -91,11 +91,11 @@ public class GetOutboundCampaignruleRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'campaignRuleId' is set
         if (this.campaignRuleId == null) {
-            throw new ApiException(400, "Missing the required parameter 'campaignRuleId' when building request for GetOutboundCampaignruleRequest.");
+            throw new IllegalStateException("Missing the required parameter 'campaignRuleId' when building request for GetOutboundCampaignruleRequest.");
         }
         
 

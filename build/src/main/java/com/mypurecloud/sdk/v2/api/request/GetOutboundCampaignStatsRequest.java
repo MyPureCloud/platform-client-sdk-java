@@ -91,11 +91,11 @@ public class GetOutboundCampaignStatsRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'campaignId' is set
         if (this.campaignId == null) {
-            throw new ApiException(400, "Missing the required parameter 'campaignId' when building request for GetOutboundCampaignStatsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'campaignId' when building request for GetOutboundCampaignStatsRequest.");
         }
         
 

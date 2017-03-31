@@ -134,16 +134,16 @@ public class PutTelephonyProvidersEdgesTrunkbasesettingRequest {
         return this;
     }
 
-    public ApiRequest<TrunkBase> withHttpInfo() throws ApiException {
+    public ApiRequest<TrunkBase> withHttpInfo() {
         
         // verify the required parameter 'trunkBaseSettingsId' is set
         if (this.trunkBaseSettingsId == null) {
-            throw new ApiException(400, "Missing the required parameter 'trunkBaseSettingsId' when building request for PutTelephonyProvidersEdgesTrunkbasesettingRequest.");
+            throw new IllegalStateException("Missing the required parameter 'trunkBaseSettingsId' when building request for PutTelephonyProvidersEdgesTrunkbasesettingRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesTrunkbasesettingRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesTrunkbasesettingRequest.");
         }
         
 

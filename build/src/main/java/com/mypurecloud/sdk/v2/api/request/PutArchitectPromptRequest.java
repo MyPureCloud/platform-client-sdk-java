@@ -82,11 +82,11 @@ public class PutArchitectPromptRequest {
         return this;
     }
 
-    public ApiRequest<Prompt> withHttpInfo() throws ApiException {
+    public ApiRequest<Prompt> withHttpInfo() {
         
         // verify the required parameter 'promptId' is set
         if (this.promptId == null) {
-            throw new ApiException(400, "Missing the required parameter 'promptId' when building request for PutArchitectPromptRequest.");
+            throw new IllegalStateException("Missing the required parameter 'promptId' when building request for PutArchitectPromptRequest.");
         }
         
 

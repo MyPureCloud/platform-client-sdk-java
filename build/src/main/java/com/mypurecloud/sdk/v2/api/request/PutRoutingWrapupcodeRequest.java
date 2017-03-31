@@ -94,16 +94,16 @@ public class PutRoutingWrapupcodeRequest {
         return this;
     }
 
-    public ApiRequest<WrapupCode> withHttpInfo() throws ApiException {
+    public ApiRequest<WrapupCode> withHttpInfo() {
         
         // verify the required parameter 'codeId' is set
         if (this.codeId == null) {
-            throw new ApiException(400, "Missing the required parameter 'codeId' when building request for PutRoutingWrapupcodeRequest.");
+            throw new IllegalStateException("Missing the required parameter 'codeId' when building request for PutRoutingWrapupcodeRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutRoutingWrapupcodeRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutRoutingWrapupcodeRequest.");
         }
         
 

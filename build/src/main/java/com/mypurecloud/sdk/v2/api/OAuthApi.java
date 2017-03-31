@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOauthClientSecretRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOauthClientsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOauthClientRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -45,7 +46,7 @@ public class OAuthApi {
    * @param clientId Client ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteOauthClient(String clientId) throws ApiException {
+  public void deleteOauthClient(String clientId) throws IOException, ApiException {
     deleteOauthClientWithHttpInfo(clientId);
   }
 
@@ -55,12 +56,12 @@ public class OAuthApi {
    * @param clientId Client ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteOauthClientWithHttpInfo(String clientId) throws ApiException {
+  public ApiResponse<Void> deleteOauthClientWithHttpInfo(String clientId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'clientId' is set
     if (clientId == null) {
-      throw new ApiException(400, "Missing the required parameter 'clientId' when calling deleteOauthClient");
+      throw new IllegalArgumentException("Missing the required parameter 'clientId' when calling deleteOauthClient");
     }
     
     // create path and map variables
@@ -96,7 +97,7 @@ public class OAuthApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteOauthClient(DeleteOauthClientRequest request) throws ApiException {
+  public void deleteOauthClient(DeleteOauthClientRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -106,7 +107,7 @@ public class OAuthApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteOauthClient(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteOauthClient(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -117,7 +118,7 @@ public class OAuthApi {
    * @return OAuthClient
    * @throws ApiException if fails to make API call
    */
-  public OAuthClient getOauthClient(String clientId) throws ApiException {
+  public OAuthClient getOauthClient(String clientId) throws IOException, ApiException {
     return getOauthClientWithHttpInfo(clientId).getBody();
   }
 
@@ -128,12 +129,12 @@ public class OAuthApi {
    * @return OAuthClient
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthClient> getOauthClientWithHttpInfo(String clientId) throws ApiException {
+  public ApiResponse<OAuthClient> getOauthClientWithHttpInfo(String clientId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'clientId' is set
     if (clientId == null) {
-      throw new ApiException(400, "Missing the required parameter 'clientId' when calling getOauthClient");
+      throw new IllegalArgumentException("Missing the required parameter 'clientId' when calling getOauthClient");
     }
     
     // create path and map variables
@@ -169,7 +170,7 @@ public class OAuthApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OAuthClient getOauthClient(GetOauthClientRequest request) throws ApiException {
+  public OAuthClient getOauthClient(GetOauthClientRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthClient>() {});
   }
 
@@ -179,7 +180,7 @@ public class OAuthApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthClient> getOauthClient(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<OAuthClient> getOauthClient(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<OAuthClient>invokeAPIVerbose(request, new TypeReference<OAuthClient>() {});
   }
 
@@ -189,7 +190,7 @@ public class OAuthApi {
    * @return OAuthClientEntityListing
    * @throws ApiException if fails to make API call
    */
-  public OAuthClientEntityListing getOauthClients() throws ApiException {
+  public OAuthClientEntityListing getOauthClients() throws IOException, ApiException {
     return getOauthClientsWithHttpInfo().getBody();
   }
 
@@ -199,7 +200,7 @@ public class OAuthApi {
    * @return OAuthClientEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthClientEntityListing> getOauthClientsWithHttpInfo() throws ApiException {
+  public ApiResponse<OAuthClientEntityListing> getOauthClientsWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -234,7 +235,7 @@ public class OAuthApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OAuthClientEntityListing getOauthClients(GetOauthClientsRequest request) throws ApiException {
+  public OAuthClientEntityListing getOauthClients(GetOauthClientsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthClientEntityListing>() {});
   }
 
@@ -244,7 +245,7 @@ public class OAuthApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthClientEntityListing> getOauthClients(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<OAuthClientEntityListing> getOauthClients(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<OAuthClientEntityListing>invokeAPIVerbose(request, new TypeReference<OAuthClientEntityListing>() {});
   }
 
@@ -255,7 +256,7 @@ public class OAuthApi {
    * @return OAuthClient
    * @throws ApiException if fails to make API call
    */
-  public OAuthClient postOauthClientSecret(String clientId) throws ApiException {
+  public OAuthClient postOauthClientSecret(String clientId) throws IOException, ApiException {
     return postOauthClientSecretWithHttpInfo(clientId).getBody();
   }
 
@@ -266,12 +267,12 @@ public class OAuthApi {
    * @return OAuthClient
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthClient> postOauthClientSecretWithHttpInfo(String clientId) throws ApiException {
+  public ApiResponse<OAuthClient> postOauthClientSecretWithHttpInfo(String clientId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'clientId' is set
     if (clientId == null) {
-      throw new ApiException(400, "Missing the required parameter 'clientId' when calling postOauthClientSecret");
+      throw new IllegalArgumentException("Missing the required parameter 'clientId' when calling postOauthClientSecret");
     }
     
     // create path and map variables
@@ -307,7 +308,7 @@ public class OAuthApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OAuthClient postOauthClientSecret(PostOauthClientSecretRequest request) throws ApiException {
+  public OAuthClient postOauthClientSecret(PostOauthClientSecretRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthClient>() {});
   }
 
@@ -317,7 +318,7 @@ public class OAuthApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthClient> postOauthClientSecret(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<OAuthClient> postOauthClientSecret(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<OAuthClient>invokeAPIVerbose(request, new TypeReference<OAuthClient>() {});
   }
 
@@ -328,7 +329,7 @@ public class OAuthApi {
    * @return OAuthClient
    * @throws ApiException if fails to make API call
    */
-  public OAuthClient postOauthClients(OAuthClient body) throws ApiException {
+  public OAuthClient postOauthClients(OAuthClient body) throws IOException, ApiException {
     return postOauthClientsWithHttpInfo(body).getBody();
   }
 
@@ -339,12 +340,12 @@ public class OAuthApi {
    * @return OAuthClient
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthClient> postOauthClientsWithHttpInfo(OAuthClient body) throws ApiException {
+  public ApiResponse<OAuthClient> postOauthClientsWithHttpInfo(OAuthClient body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postOauthClients");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOauthClients");
     }
     
     // create path and map variables
@@ -379,7 +380,7 @@ public class OAuthApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OAuthClient postOauthClients(PostOauthClientsRequest request) throws ApiException {
+  public OAuthClient postOauthClients(PostOauthClientsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthClient>() {});
   }
 
@@ -389,7 +390,7 @@ public class OAuthApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthClient> postOauthClients(ApiRequest<OAuthClient> request) throws ApiException {
+  public ApiResponse<OAuthClient> postOauthClients(ApiRequest<OAuthClient> request) throws IOException, ApiException {
     return pcapiClient.<OAuthClient>invokeAPIVerbose(request, new TypeReference<OAuthClient>() {});
   }
 
@@ -401,7 +402,7 @@ public class OAuthApi {
    * @return OAuthClient
    * @throws ApiException if fails to make API call
    */
-  public OAuthClient putOauthClient(String clientId, OAuthClient body) throws ApiException {
+  public OAuthClient putOauthClient(String clientId, OAuthClient body) throws IOException, ApiException {
     return putOauthClientWithHttpInfo(clientId, body).getBody();
   }
 
@@ -413,17 +414,17 @@ public class OAuthApi {
    * @return OAuthClient
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthClient> putOauthClientWithHttpInfo(String clientId, OAuthClient body) throws ApiException {
+  public ApiResponse<OAuthClient> putOauthClientWithHttpInfo(String clientId, OAuthClient body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'clientId' is set
     if (clientId == null) {
-      throw new ApiException(400, "Missing the required parameter 'clientId' when calling putOauthClient");
+      throw new IllegalArgumentException("Missing the required parameter 'clientId' when calling putOauthClient");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putOauthClient");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOauthClient");
     }
     
     // create path and map variables
@@ -459,7 +460,7 @@ public class OAuthApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OAuthClient putOauthClient(PutOauthClientRequest request) throws ApiException {
+  public OAuthClient putOauthClient(PutOauthClientRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthClient>() {});
   }
 
@@ -469,7 +470,7 @@ public class OAuthApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthClient> putOauthClient(ApiRequest<OAuthClient> request) throws ApiException {
+  public ApiResponse<OAuthClient> putOauthClient(ApiRequest<OAuthClient> request) throws IOException, ApiException {
     return pcapiClient.<OAuthClient>invokeAPIVerbose(request, new TypeReference<OAuthClient>() {});
   }
 

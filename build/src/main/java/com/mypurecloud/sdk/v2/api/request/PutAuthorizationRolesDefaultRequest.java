@@ -65,11 +65,11 @@ public class PutAuthorizationRolesDefaultRequest {
         return this;
     }
 
-    public ApiRequest<List<DomainOrganizationRole>> withHttpInfo() throws ApiException {
+    public ApiRequest<List<DomainOrganizationRole>> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutAuthorizationRolesDefaultRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutAuthorizationRolesDefaultRequest.");
         }
         
 

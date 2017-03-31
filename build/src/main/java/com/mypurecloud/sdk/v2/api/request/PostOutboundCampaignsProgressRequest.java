@@ -91,11 +91,11 @@ public class PostOutboundCampaignsProgressRequest {
         return this;
     }
 
-    public ApiRequest<List<String>> withHttpInfo() throws ApiException {
+    public ApiRequest<List<String>> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostOutboundCampaignsProgressRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostOutboundCampaignsProgressRequest.");
         }
         
 

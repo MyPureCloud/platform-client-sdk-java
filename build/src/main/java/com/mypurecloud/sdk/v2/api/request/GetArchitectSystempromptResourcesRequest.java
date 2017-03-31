@@ -124,11 +124,11 @@ public class GetArchitectSystempromptResourcesRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'promptId' is set
         if (this.promptId == null) {
-            throw new ApiException(400, "Missing the required parameter 'promptId' when building request for GetArchitectSystempromptResourcesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'promptId' when building request for GetArchitectSystempromptResourcesRequest.");
         }
         
 

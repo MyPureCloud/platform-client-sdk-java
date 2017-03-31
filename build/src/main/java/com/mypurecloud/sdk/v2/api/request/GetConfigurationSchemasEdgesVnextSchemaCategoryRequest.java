@@ -148,11 +148,11 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategoryRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'schemaCategory' is set
         if (this.schemaCategory == null) {
-            throw new ApiException(400, "Missing the required parameter 'schemaCategory' when building request for GetConfigurationSchemasEdgesVnextSchemaCategoryRequest.");
+            throw new IllegalStateException("Missing the required parameter 'schemaCategory' when building request for GetConfigurationSchemasEdgesVnextSchemaCategoryRequest.");
         }
         
 

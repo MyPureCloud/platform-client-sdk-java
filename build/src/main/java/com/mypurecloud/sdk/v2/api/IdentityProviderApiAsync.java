@@ -55,6 +55,7 @@ import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersPingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersPurecloudRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersSalesforceRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -79,7 +80,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Empty> deleteIdentityprovidersAdfsAsync(DeleteIdentityprovidersAdfsRequest request, AsyncApiCallback<Empty> callback) throws ApiException {
+  public Future<Empty> deleteIdentityprovidersAdfsAsync(DeleteIdentityprovidersAdfsRequest request, AsyncApiCallback<Empty> callback) {
     return pcapiClient.<Empty>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, callback);
   }
 
@@ -89,7 +90,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Empty>> deleteIdentityprovidersAdfsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) throws ApiException {
+  public Future<ApiResponse<Empty>> deleteIdentityprovidersAdfsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
     return pcapiClient.<Empty>invokeAPIVerboseAsync(request, new TypeReference<Empty>() {}, callback);
   }
 
@@ -99,7 +100,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Empty> deleteIdentityprovidersCicAsync(DeleteIdentityprovidersCicRequest request, AsyncApiCallback<Empty> callback) throws ApiException {
+  public Future<Empty> deleteIdentityprovidersCicAsync(DeleteIdentityprovidersCicRequest request, AsyncApiCallback<Empty> callback) {
     return pcapiClient.<Empty>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, callback);
   }
 
@@ -109,7 +110,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Empty>> deleteIdentityprovidersCicAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) throws ApiException {
+  public Future<ApiResponse<Empty>> deleteIdentityprovidersCicAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
     return pcapiClient.<Empty>invokeAPIVerboseAsync(request, new TypeReference<Empty>() {}, callback);
   }
 
@@ -119,7 +120,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Empty> deleteIdentityprovidersGsuiteAsync(DeleteIdentityprovidersGsuiteRequest request, AsyncApiCallback<Empty> callback) throws ApiException {
+  public Future<Empty> deleteIdentityprovidersGsuiteAsync(DeleteIdentityprovidersGsuiteRequest request, AsyncApiCallback<Empty> callback) {
     return pcapiClient.<Empty>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, callback);
   }
 
@@ -129,7 +130,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Empty>> deleteIdentityprovidersGsuiteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) throws ApiException {
+  public Future<ApiResponse<Empty>> deleteIdentityprovidersGsuiteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
     return pcapiClient.<Empty>invokeAPIVerboseAsync(request, new TypeReference<Empty>() {}, callback);
   }
 
@@ -139,7 +140,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Empty> deleteIdentityprovidersIdentitynowAsync(DeleteIdentityprovidersIdentitynowRequest request, AsyncApiCallback<Empty> callback) throws ApiException {
+  public Future<Empty> deleteIdentityprovidersIdentitynowAsync(DeleteIdentityprovidersIdentitynowRequest request, AsyncApiCallback<Empty> callback) {
     return pcapiClient.<Empty>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, callback);
   }
 
@@ -149,7 +150,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Empty>> deleteIdentityprovidersIdentitynowAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) throws ApiException {
+  public Future<ApiResponse<Empty>> deleteIdentityprovidersIdentitynowAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
     return pcapiClient.<Empty>invokeAPIVerboseAsync(request, new TypeReference<Empty>() {}, callback);
   }
 
@@ -159,7 +160,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Empty> deleteIdentityprovidersOktaAsync(DeleteIdentityprovidersOktaRequest request, AsyncApiCallback<Empty> callback) throws ApiException {
+  public Future<Empty> deleteIdentityprovidersOktaAsync(DeleteIdentityprovidersOktaRequest request, AsyncApiCallback<Empty> callback) {
     return pcapiClient.<Empty>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, callback);
   }
 
@@ -169,7 +170,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Empty>> deleteIdentityprovidersOktaAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) throws ApiException {
+  public Future<ApiResponse<Empty>> deleteIdentityprovidersOktaAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
     return pcapiClient.<Empty>invokeAPIVerboseAsync(request, new TypeReference<Empty>() {}, callback);
   }
 
@@ -179,7 +180,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Empty> deleteIdentityprovidersOneloginAsync(DeleteIdentityprovidersOneloginRequest request, AsyncApiCallback<Empty> callback) throws ApiException {
+  public Future<Empty> deleteIdentityprovidersOneloginAsync(DeleteIdentityprovidersOneloginRequest request, AsyncApiCallback<Empty> callback) {
     return pcapiClient.<Empty>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, callback);
   }
 
@@ -189,7 +190,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Empty>> deleteIdentityprovidersOneloginAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) throws ApiException {
+  public Future<ApiResponse<Empty>> deleteIdentityprovidersOneloginAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
     return pcapiClient.<Empty>invokeAPIVerboseAsync(request, new TypeReference<Empty>() {}, callback);
   }
 
@@ -199,7 +200,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Empty> deleteIdentityprovidersPingAsync(DeleteIdentityprovidersPingRequest request, AsyncApiCallback<Empty> callback) throws ApiException {
+  public Future<Empty> deleteIdentityprovidersPingAsync(DeleteIdentityprovidersPingRequest request, AsyncApiCallback<Empty> callback) {
     return pcapiClient.<Empty>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, callback);
   }
 
@@ -209,7 +210,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Empty>> deleteIdentityprovidersPingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) throws ApiException {
+  public Future<ApiResponse<Empty>> deleteIdentityprovidersPingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
     return pcapiClient.<Empty>invokeAPIVerboseAsync(request, new TypeReference<Empty>() {}, callback);
   }
 
@@ -219,7 +220,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Empty> deleteIdentityprovidersPurecloudAsync(DeleteIdentityprovidersPurecloudRequest request, AsyncApiCallback<Empty> callback) throws ApiException {
+  public Future<Empty> deleteIdentityprovidersPurecloudAsync(DeleteIdentityprovidersPurecloudRequest request, AsyncApiCallback<Empty> callback) {
     return pcapiClient.<Empty>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, callback);
   }
 
@@ -229,7 +230,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Empty>> deleteIdentityprovidersPurecloudAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) throws ApiException {
+  public Future<ApiResponse<Empty>> deleteIdentityprovidersPurecloudAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
     return pcapiClient.<Empty>invokeAPIVerboseAsync(request, new TypeReference<Empty>() {}, callback);
   }
 
@@ -239,7 +240,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Empty> deleteIdentityprovidersSalesforceAsync(DeleteIdentityprovidersSalesforceRequest request, AsyncApiCallback<Empty> callback) throws ApiException {
+  public Future<Empty> deleteIdentityprovidersSalesforceAsync(DeleteIdentityprovidersSalesforceRequest request, AsyncApiCallback<Empty> callback) {
     return pcapiClient.<Empty>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, callback);
   }
 
@@ -249,7 +250,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Empty>> deleteIdentityprovidersSalesforceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) throws ApiException {
+  public Future<ApiResponse<Empty>> deleteIdentityprovidersSalesforceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
     return pcapiClient.<Empty>invokeAPIVerboseAsync(request, new TypeReference<Empty>() {}, callback);
   }
 
@@ -259,7 +260,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OAuthProviderEntityListing> getIdentityprovidersAsync(GetIdentityprovidersRequest request, AsyncApiCallback<OAuthProviderEntityListing> callback) throws ApiException {
+  public Future<OAuthProviderEntityListing> getIdentityprovidersAsync(GetIdentityprovidersRequest request, AsyncApiCallback<OAuthProviderEntityListing> callback) {
     return pcapiClient.<OAuthProviderEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OAuthProviderEntityListing>() {}, callback);
   }
 
@@ -269,7 +270,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OAuthProviderEntityListing>> getIdentityprovidersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OAuthProviderEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<OAuthProviderEntityListing>> getIdentityprovidersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OAuthProviderEntityListing>> callback) {
     return pcapiClient.<OAuthProviderEntityListing>invokeAPIVerboseAsync(request, new TypeReference<OAuthProviderEntityListing>() {}, callback);
   }
 
@@ -279,7 +280,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ADFS> getIdentityprovidersAdfsAsync(GetIdentityprovidersAdfsRequest request, AsyncApiCallback<ADFS> callback) throws ApiException {
+  public Future<ADFS> getIdentityprovidersAdfsAsync(GetIdentityprovidersAdfsRequest request, AsyncApiCallback<ADFS> callback) {
     return pcapiClient.<ADFS>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ADFS>() {}, callback);
   }
 
@@ -289,7 +290,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ADFS>> getIdentityprovidersAdfsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ADFS>> callback) throws ApiException {
+  public Future<ApiResponse<ADFS>> getIdentityprovidersAdfsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ADFS>> callback) {
     return pcapiClient.<ADFS>invokeAPIVerboseAsync(request, new TypeReference<ADFS>() {}, callback);
   }
 
@@ -299,7 +300,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CustomerInteractionCenter> getIdentityprovidersCicAsync(GetIdentityprovidersCicRequest request, AsyncApiCallback<CustomerInteractionCenter> callback) throws ApiException {
+  public Future<CustomerInteractionCenter> getIdentityprovidersCicAsync(GetIdentityprovidersCicRequest request, AsyncApiCallback<CustomerInteractionCenter> callback) {
     return pcapiClient.<CustomerInteractionCenter>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CustomerInteractionCenter>() {}, callback);
   }
 
@@ -309,7 +310,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CustomerInteractionCenter>> getIdentityprovidersCicAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CustomerInteractionCenter>> callback) throws ApiException {
+  public Future<ApiResponse<CustomerInteractionCenter>> getIdentityprovidersCicAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CustomerInteractionCenter>> callback) {
     return pcapiClient.<CustomerInteractionCenter>invokeAPIVerboseAsync(request, new TypeReference<CustomerInteractionCenter>() {}, callback);
   }
 
@@ -319,7 +320,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<GSuite> getIdentityprovidersGsuiteAsync(GetIdentityprovidersGsuiteRequest request, AsyncApiCallback<GSuite> callback) throws ApiException {
+  public Future<GSuite> getIdentityprovidersGsuiteAsync(GetIdentityprovidersGsuiteRequest request, AsyncApiCallback<GSuite> callback) {
     return pcapiClient.<GSuite>invokeAPIAsync(request.withHttpInfo(), new TypeReference<GSuite>() {}, callback);
   }
 
@@ -329,7 +330,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<GSuite>> getIdentityprovidersGsuiteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GSuite>> callback) throws ApiException {
+  public Future<ApiResponse<GSuite>> getIdentityprovidersGsuiteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GSuite>> callback) {
     return pcapiClient.<GSuite>invokeAPIVerboseAsync(request, new TypeReference<GSuite>() {}, callback);
   }
 
@@ -339,7 +340,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<IdentityNow> getIdentityprovidersIdentitynowAsync(GetIdentityprovidersIdentitynowRequest request, AsyncApiCallback<IdentityNow> callback) throws ApiException {
+  public Future<IdentityNow> getIdentityprovidersIdentitynowAsync(GetIdentityprovidersIdentitynowRequest request, AsyncApiCallback<IdentityNow> callback) {
     return pcapiClient.<IdentityNow>invokeAPIAsync(request.withHttpInfo(), new TypeReference<IdentityNow>() {}, callback);
   }
 
@@ -349,7 +350,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<IdentityNow>> getIdentityprovidersIdentitynowAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<IdentityNow>> callback) throws ApiException {
+  public Future<ApiResponse<IdentityNow>> getIdentityprovidersIdentitynowAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<IdentityNow>> callback) {
     return pcapiClient.<IdentityNow>invokeAPIVerboseAsync(request, new TypeReference<IdentityNow>() {}, callback);
   }
 
@@ -359,7 +360,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Okta> getIdentityprovidersOktaAsync(GetIdentityprovidersOktaRequest request, AsyncApiCallback<Okta> callback) throws ApiException {
+  public Future<Okta> getIdentityprovidersOktaAsync(GetIdentityprovidersOktaRequest request, AsyncApiCallback<Okta> callback) {
     return pcapiClient.<Okta>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Okta>() {}, callback);
   }
 
@@ -369,7 +370,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Okta>> getIdentityprovidersOktaAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Okta>> callback) throws ApiException {
+  public Future<ApiResponse<Okta>> getIdentityprovidersOktaAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Okta>> callback) {
     return pcapiClient.<Okta>invokeAPIVerboseAsync(request, new TypeReference<Okta>() {}, callback);
   }
 
@@ -379,7 +380,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OneLogin> getIdentityprovidersOneloginAsync(GetIdentityprovidersOneloginRequest request, AsyncApiCallback<OneLogin> callback) throws ApiException {
+  public Future<OneLogin> getIdentityprovidersOneloginAsync(GetIdentityprovidersOneloginRequest request, AsyncApiCallback<OneLogin> callback) {
     return pcapiClient.<OneLogin>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OneLogin>() {}, callback);
   }
 
@@ -389,7 +390,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OneLogin>> getIdentityprovidersOneloginAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OneLogin>> callback) throws ApiException {
+  public Future<ApiResponse<OneLogin>> getIdentityprovidersOneloginAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OneLogin>> callback) {
     return pcapiClient.<OneLogin>invokeAPIVerboseAsync(request, new TypeReference<OneLogin>() {}, callback);
   }
 
@@ -399,7 +400,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<PingIdentity> getIdentityprovidersPingAsync(GetIdentityprovidersPingRequest request, AsyncApiCallback<PingIdentity> callback) throws ApiException {
+  public Future<PingIdentity> getIdentityprovidersPingAsync(GetIdentityprovidersPingRequest request, AsyncApiCallback<PingIdentity> callback) {
     return pcapiClient.<PingIdentity>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PingIdentity>() {}, callback);
   }
 
@@ -409,7 +410,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<PingIdentity>> getIdentityprovidersPingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PingIdentity>> callback) throws ApiException {
+  public Future<ApiResponse<PingIdentity>> getIdentityprovidersPingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PingIdentity>> callback) {
     return pcapiClient.<PingIdentity>invokeAPIVerboseAsync(request, new TypeReference<PingIdentity>() {}, callback);
   }
 
@@ -419,7 +420,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<PureCloud> getIdentityprovidersPurecloudAsync(GetIdentityprovidersPurecloudRequest request, AsyncApiCallback<PureCloud> callback) throws ApiException {
+  public Future<PureCloud> getIdentityprovidersPurecloudAsync(GetIdentityprovidersPurecloudRequest request, AsyncApiCallback<PureCloud> callback) {
     return pcapiClient.<PureCloud>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PureCloud>() {}, callback);
   }
 
@@ -429,7 +430,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<PureCloud>> getIdentityprovidersPurecloudAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PureCloud>> callback) throws ApiException {
+  public Future<ApiResponse<PureCloud>> getIdentityprovidersPurecloudAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PureCloud>> callback) {
     return pcapiClient.<PureCloud>invokeAPIVerboseAsync(request, new TypeReference<PureCloud>() {}, callback);
   }
 
@@ -439,7 +440,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Salesforce> getIdentityprovidersSalesforceAsync(GetIdentityprovidersSalesforceRequest request, AsyncApiCallback<Salesforce> callback) throws ApiException {
+  public Future<Salesforce> getIdentityprovidersSalesforceAsync(GetIdentityprovidersSalesforceRequest request, AsyncApiCallback<Salesforce> callback) {
     return pcapiClient.<Salesforce>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Salesforce>() {}, callback);
   }
 
@@ -449,7 +450,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Salesforce>> getIdentityprovidersSalesforceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Salesforce>> callback) throws ApiException {
+  public Future<ApiResponse<Salesforce>> getIdentityprovidersSalesforceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Salesforce>> callback) {
     return pcapiClient.<Salesforce>invokeAPIVerboseAsync(request, new TypeReference<Salesforce>() {}, callback);
   }
 
@@ -459,7 +460,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OAuthProvider> putIdentityprovidersAdfsAsync(PutIdentityprovidersAdfsRequest request, AsyncApiCallback<OAuthProvider> callback) throws ApiException {
+  public Future<OAuthProvider> putIdentityprovidersAdfsAsync(PutIdentityprovidersAdfsRequest request, AsyncApiCallback<OAuthProvider> callback) {
     return pcapiClient.<OAuthProvider>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, callback);
   }
 
@@ -469,7 +470,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersAdfsAsync(ApiRequest<ADFS> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) throws ApiException {
+  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersAdfsAsync(ApiRequest<ADFS> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
     return pcapiClient.<OAuthProvider>invokeAPIVerboseAsync(request, new TypeReference<OAuthProvider>() {}, callback);
   }
 
@@ -479,7 +480,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OAuthProvider> putIdentityprovidersCicAsync(PutIdentityprovidersCicRequest request, AsyncApiCallback<OAuthProvider> callback) throws ApiException {
+  public Future<OAuthProvider> putIdentityprovidersCicAsync(PutIdentityprovidersCicRequest request, AsyncApiCallback<OAuthProvider> callback) {
     return pcapiClient.<OAuthProvider>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, callback);
   }
 
@@ -489,7 +490,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersCicAsync(ApiRequest<CustomerInteractionCenter> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) throws ApiException {
+  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersCicAsync(ApiRequest<CustomerInteractionCenter> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
     return pcapiClient.<OAuthProvider>invokeAPIVerboseAsync(request, new TypeReference<OAuthProvider>() {}, callback);
   }
 
@@ -499,7 +500,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OAuthProvider> putIdentityprovidersGsuiteAsync(PutIdentityprovidersGsuiteRequest request, AsyncApiCallback<OAuthProvider> callback) throws ApiException {
+  public Future<OAuthProvider> putIdentityprovidersGsuiteAsync(PutIdentityprovidersGsuiteRequest request, AsyncApiCallback<OAuthProvider> callback) {
     return pcapiClient.<OAuthProvider>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, callback);
   }
 
@@ -509,7 +510,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersGsuiteAsync(ApiRequest<GSuite> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) throws ApiException {
+  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersGsuiteAsync(ApiRequest<GSuite> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
     return pcapiClient.<OAuthProvider>invokeAPIVerboseAsync(request, new TypeReference<OAuthProvider>() {}, callback);
   }
 
@@ -519,7 +520,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<IdentityNow> putIdentityprovidersIdentitynowAsync(PutIdentityprovidersIdentitynowRequest request, AsyncApiCallback<IdentityNow> callback) throws ApiException {
+  public Future<IdentityNow> putIdentityprovidersIdentitynowAsync(PutIdentityprovidersIdentitynowRequest request, AsyncApiCallback<IdentityNow> callback) {
     return pcapiClient.<IdentityNow>invokeAPIAsync(request.withHttpInfo(), new TypeReference<IdentityNow>() {}, callback);
   }
 
@@ -529,7 +530,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<IdentityNow>> putIdentityprovidersIdentitynowAsync(ApiRequest<IdentityNow> request, AsyncApiCallback<ApiResponse<IdentityNow>> callback) throws ApiException {
+  public Future<ApiResponse<IdentityNow>> putIdentityprovidersIdentitynowAsync(ApiRequest<IdentityNow> request, AsyncApiCallback<ApiResponse<IdentityNow>> callback) {
     return pcapiClient.<IdentityNow>invokeAPIVerboseAsync(request, new TypeReference<IdentityNow>() {}, callback);
   }
 
@@ -539,7 +540,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OAuthProvider> putIdentityprovidersOktaAsync(PutIdentityprovidersOktaRequest request, AsyncApiCallback<OAuthProvider> callback) throws ApiException {
+  public Future<OAuthProvider> putIdentityprovidersOktaAsync(PutIdentityprovidersOktaRequest request, AsyncApiCallback<OAuthProvider> callback) {
     return pcapiClient.<OAuthProvider>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, callback);
   }
 
@@ -549,7 +550,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersOktaAsync(ApiRequest<Okta> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) throws ApiException {
+  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersOktaAsync(ApiRequest<Okta> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
     return pcapiClient.<OAuthProvider>invokeAPIVerboseAsync(request, new TypeReference<OAuthProvider>() {}, callback);
   }
 
@@ -559,7 +560,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OAuthProvider> putIdentityprovidersOneloginAsync(PutIdentityprovidersOneloginRequest request, AsyncApiCallback<OAuthProvider> callback) throws ApiException {
+  public Future<OAuthProvider> putIdentityprovidersOneloginAsync(PutIdentityprovidersOneloginRequest request, AsyncApiCallback<OAuthProvider> callback) {
     return pcapiClient.<OAuthProvider>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, callback);
   }
 
@@ -569,7 +570,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersOneloginAsync(ApiRequest<OneLogin> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) throws ApiException {
+  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersOneloginAsync(ApiRequest<OneLogin> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
     return pcapiClient.<OAuthProvider>invokeAPIVerboseAsync(request, new TypeReference<OAuthProvider>() {}, callback);
   }
 
@@ -579,7 +580,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OAuthProvider> putIdentityprovidersPingAsync(PutIdentityprovidersPingRequest request, AsyncApiCallback<OAuthProvider> callback) throws ApiException {
+  public Future<OAuthProvider> putIdentityprovidersPingAsync(PutIdentityprovidersPingRequest request, AsyncApiCallback<OAuthProvider> callback) {
     return pcapiClient.<OAuthProvider>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, callback);
   }
 
@@ -589,7 +590,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersPingAsync(ApiRequest<PingIdentity> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) throws ApiException {
+  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersPingAsync(ApiRequest<PingIdentity> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
     return pcapiClient.<OAuthProvider>invokeAPIVerboseAsync(request, new TypeReference<OAuthProvider>() {}, callback);
   }
 
@@ -599,7 +600,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OAuthProvider> putIdentityprovidersPurecloudAsync(PutIdentityprovidersPurecloudRequest request, AsyncApiCallback<OAuthProvider> callback) throws ApiException {
+  public Future<OAuthProvider> putIdentityprovidersPurecloudAsync(PutIdentityprovidersPurecloudRequest request, AsyncApiCallback<OAuthProvider> callback) {
     return pcapiClient.<OAuthProvider>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, callback);
   }
 
@@ -609,7 +610,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersPurecloudAsync(ApiRequest<PureCloud> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) throws ApiException {
+  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersPurecloudAsync(ApiRequest<PureCloud> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
     return pcapiClient.<OAuthProvider>invokeAPIVerboseAsync(request, new TypeReference<OAuthProvider>() {}, callback);
   }
 
@@ -619,7 +620,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OAuthProvider> putIdentityprovidersSalesforceAsync(PutIdentityprovidersSalesforceRequest request, AsyncApiCallback<OAuthProvider> callback) throws ApiException {
+  public Future<OAuthProvider> putIdentityprovidersSalesforceAsync(PutIdentityprovidersSalesforceRequest request, AsyncApiCallback<OAuthProvider> callback) {
     return pcapiClient.<OAuthProvider>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, callback);
   }
 
@@ -629,7 +630,7 @@ public class IdentityProviderApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersSalesforceAsync(ApiRequest<Salesforce> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) throws ApiException {
+  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersSalesforceAsync(ApiRequest<Salesforce> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
     return pcapiClient.<OAuthProvider>invokeAPIVerboseAsync(request, new TypeReference<OAuthProvider>() {}, callback);
   }
 

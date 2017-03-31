@@ -76,11 +76,11 @@ public class GetAnalyticsReportingScheduleRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'scheduleId' is set
         if (this.scheduleId == null) {
-            throw new ApiException(400, "Missing the required parameter 'scheduleId' when building request for GetAnalyticsReportingScheduleRequest.");
+            throw new IllegalStateException("Missing the required parameter 'scheduleId' when building request for GetAnalyticsReportingScheduleRequest.");
         }
         
 

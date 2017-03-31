@@ -102,21 +102,21 @@ public class PutConversationRecordingRequest {
         return this;
     }
 
-    public ApiRequest<Recording> withHttpInfo() throws ApiException {
+    public ApiRequest<Recording> withHttpInfo() {
         
         // verify the required parameter 'conversationId' is set
         if (this.conversationId == null) {
-            throw new ApiException(400, "Missing the required parameter 'conversationId' when building request for PutConversationRecordingRequest.");
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PutConversationRecordingRequest.");
         }
         
         // verify the required parameter 'recordingId' is set
         if (this.recordingId == null) {
-            throw new ApiException(400, "Missing the required parameter 'recordingId' when building request for PutConversationRecordingRequest.");
+            throw new IllegalStateException("Missing the required parameter 'recordingId' when building request for PutConversationRecordingRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutConversationRecordingRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutConversationRecordingRequest.");
         }
         
 

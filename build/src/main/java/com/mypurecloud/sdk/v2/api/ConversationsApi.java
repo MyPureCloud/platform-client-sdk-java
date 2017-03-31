@@ -130,6 +130,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsFaxesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailMessagesDraftRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -155,7 +156,7 @@ public class ConversationsApi {
    * @param addCommunicationCode addCommunicationCode (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteConversationParticipantCode(String conversationId, String participantId, String addCommunicationCode) throws ApiException {
+  public void deleteConversationParticipantCode(String conversationId, String participantId, String addCommunicationCode) throws IOException, ApiException {
     deleteConversationParticipantCodeWithHttpInfo(conversationId, participantId, addCommunicationCode);
   }
 
@@ -167,22 +168,22 @@ public class ConversationsApi {
    * @param addCommunicationCode addCommunicationCode (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteConversationParticipantCodeWithHttpInfo(String conversationId, String participantId, String addCommunicationCode) throws ApiException {
+  public ApiResponse<Void> deleteConversationParticipantCodeWithHttpInfo(String conversationId, String participantId, String addCommunicationCode) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling deleteConversationParticipantCode");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling deleteConversationParticipantCode");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling deleteConversationParticipantCode");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling deleteConversationParticipantCode");
     }
     
     // verify the required parameter 'addCommunicationCode' is set
     if (addCommunicationCode == null) {
-      throw new ApiException(400, "Missing the required parameter 'addCommunicationCode' when calling deleteConversationParticipantCode");
+      throw new IllegalArgumentException("Missing the required parameter 'addCommunicationCode' when calling deleteConversationParticipantCode");
     }
     
     // create path and map variables
@@ -220,7 +221,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteConversationParticipantCode(DeleteConversationParticipantCodeRequest request) throws ApiException {
+  public void deleteConversationParticipantCode(DeleteConversationParticipantCodeRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -230,7 +231,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteConversationParticipantCode(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteConversationParticipantCode(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -242,7 +243,7 @@ public class ConversationsApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteConversationsCallParticipantConsult(String callId, String participantId) throws ApiException {
+  public String deleteConversationsCallParticipantConsult(String callId, String participantId) throws IOException, ApiException {
     return deleteConversationsCallParticipantConsultWithHttpInfo(callId, participantId).getBody();
   }
 
@@ -254,17 +255,17 @@ public class ConversationsApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteConversationsCallParticipantConsultWithHttpInfo(String callId, String participantId) throws ApiException {
+  public ApiResponse<String> deleteConversationsCallParticipantConsultWithHttpInfo(String callId, String participantId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'callId' is set
     if (callId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callId' when calling deleteConversationsCallParticipantConsult");
+      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling deleteConversationsCallParticipantConsult");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling deleteConversationsCallParticipantConsult");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling deleteConversationsCallParticipantConsult");
     }
     
     // create path and map variables
@@ -301,7 +302,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteConversationsCallParticipantConsult(DeleteConversationsCallParticipantConsultRequest request) throws ApiException {
+  public String deleteConversationsCallParticipantConsult(DeleteConversationsCallParticipantConsultRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -311,7 +312,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteConversationsCallParticipantConsult(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteConversationsCallParticipantConsult(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -323,7 +324,7 @@ public class ConversationsApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteConversationsEmailMessagesDraftAttachment(String emailId, String attachmentId) throws ApiException {
+  public String deleteConversationsEmailMessagesDraftAttachment(String emailId, String attachmentId) throws IOException, ApiException {
     return deleteConversationsEmailMessagesDraftAttachmentWithHttpInfo(emailId, attachmentId).getBody();
   }
 
@@ -335,17 +336,17 @@ public class ConversationsApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteConversationsEmailMessagesDraftAttachmentWithHttpInfo(String emailId, String attachmentId) throws ApiException {
+  public ApiResponse<String> deleteConversationsEmailMessagesDraftAttachmentWithHttpInfo(String emailId, String attachmentId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'emailId' is set
     if (emailId == null) {
-      throw new ApiException(400, "Missing the required parameter 'emailId' when calling deleteConversationsEmailMessagesDraftAttachment");
+      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling deleteConversationsEmailMessagesDraftAttachment");
     }
     
     // verify the required parameter 'attachmentId' is set
     if (attachmentId == null) {
-      throw new ApiException(400, "Missing the required parameter 'attachmentId' when calling deleteConversationsEmailMessagesDraftAttachment");
+      throw new IllegalArgumentException("Missing the required parameter 'attachmentId' when calling deleteConversationsEmailMessagesDraftAttachment");
     }
     
     // create path and map variables
@@ -382,7 +383,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteConversationsEmailMessagesDraftAttachment(DeleteConversationsEmailMessagesDraftAttachmentRequest request) throws ApiException {
+  public String deleteConversationsEmailMessagesDraftAttachment(DeleteConversationsEmailMessagesDraftAttachmentRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -392,7 +393,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteConversationsEmailMessagesDraftAttachment(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteConversationsEmailMessagesDraftAttachment(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -403,7 +404,7 @@ public class ConversationsApi {
    * @return AnalyticsConversation
    * @throws ApiException if fails to make API call
    */
-  public AnalyticsConversation getAnalyticsConversationDetails(String conversationId) throws ApiException {
+  public AnalyticsConversation getAnalyticsConversationDetails(String conversationId) throws IOException, ApiException {
     return getAnalyticsConversationDetailsWithHttpInfo(conversationId).getBody();
   }
 
@@ -414,12 +415,12 @@ public class ConversationsApi {
    * @return AnalyticsConversation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AnalyticsConversation> getAnalyticsConversationDetailsWithHttpInfo(String conversationId) throws ApiException {
+  public ApiResponse<AnalyticsConversation> getAnalyticsConversationDetailsWithHttpInfo(String conversationId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling getAnalyticsConversationDetails");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling getAnalyticsConversationDetails");
     }
     
     // create path and map variables
@@ -455,7 +456,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public AnalyticsConversation getAnalyticsConversationDetails(GetAnalyticsConversationDetailsRequest request) throws ApiException {
+  public AnalyticsConversation getAnalyticsConversationDetails(GetAnalyticsConversationDetailsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AnalyticsConversation>() {});
   }
 
@@ -465,7 +466,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AnalyticsConversation> getAnalyticsConversationDetails(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<AnalyticsConversation> getAnalyticsConversationDetails(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<AnalyticsConversation>invokeAPIVerbose(request, new TypeReference<AnalyticsConversation>() {});
   }
 
@@ -476,7 +477,7 @@ public class ConversationsApi {
    * @return Conversation
    * @throws ApiException if fails to make API call
    */
-  public Conversation getConversation(String conversationId) throws ApiException {
+  public Conversation getConversation(String conversationId) throws IOException, ApiException {
     return getConversationWithHttpInfo(conversationId).getBody();
   }
 
@@ -487,12 +488,12 @@ public class ConversationsApi {
    * @return Conversation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Conversation> getConversationWithHttpInfo(String conversationId) throws ApiException {
+  public ApiResponse<Conversation> getConversationWithHttpInfo(String conversationId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling getConversation");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling getConversation");
     }
     
     // create path and map variables
@@ -528,7 +529,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Conversation getConversation(GetConversationRequest request) throws ApiException {
+  public Conversation getConversation(GetConversationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Conversation>() {});
   }
 
@@ -538,7 +539,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Conversation> getConversation(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Conversation> getConversation(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Conversation>invokeAPIVerbose(request, new TypeReference<Conversation>() {});
   }
 
@@ -551,7 +552,7 @@ public class ConversationsApi {
    * @return WrapupCode
    * @throws ApiException if fails to make API call
    */
-  public WrapupCode getConversationParticipantWrapup(String conversationId, String participantId, Boolean provisional) throws ApiException {
+  public WrapupCode getConversationParticipantWrapup(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
     return getConversationParticipantWrapupWithHttpInfo(conversationId, participantId, provisional).getBody();
   }
 
@@ -564,17 +565,17 @@ public class ConversationsApi {
    * @return WrapupCode
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WrapupCode> getConversationParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws ApiException {
+  public ApiResponse<WrapupCode> getConversationParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling getConversationParticipantWrapup");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling getConversationParticipantWrapup");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling getConversationParticipantWrapup");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationParticipantWrapup");
     }
     
     // create path and map variables
@@ -612,7 +613,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public WrapupCode getConversationParticipantWrapup(GetConversationParticipantWrapupRequest request) throws ApiException {
+  public WrapupCode getConversationParticipantWrapup(GetConversationParticipantWrapupRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WrapupCode>() {});
   }
 
@@ -622,7 +623,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WrapupCode> getConversationParticipantWrapup(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<WrapupCode> getConversationParticipantWrapup(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<WrapupCode>invokeAPIVerbose(request, new TypeReference<WrapupCode>() {});
   }
 
@@ -634,7 +635,7 @@ public class ConversationsApi {
    * @return List<WrapupCode>
    * @throws ApiException if fails to make API call
    */
-  public List<WrapupCode> getConversationParticipantWrapupcodes(String conversationId, String participantId) throws ApiException {
+  public List<WrapupCode> getConversationParticipantWrapupcodes(String conversationId, String participantId) throws IOException, ApiException {
     return getConversationParticipantWrapupcodesWithHttpInfo(conversationId, participantId).getBody();
   }
 
@@ -646,17 +647,17 @@ public class ConversationsApi {
    * @return List<WrapupCode>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<WrapupCode>> getConversationParticipantWrapupcodesWithHttpInfo(String conversationId, String participantId) throws ApiException {
+  public ApiResponse<List<WrapupCode>> getConversationParticipantWrapupcodesWithHttpInfo(String conversationId, String participantId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling getConversationParticipantWrapupcodes");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling getConversationParticipantWrapupcodes");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling getConversationParticipantWrapupcodes");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationParticipantWrapupcodes");
     }
     
     // create path and map variables
@@ -693,7 +694,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<WrapupCode> getConversationParticipantWrapupcodes(GetConversationParticipantWrapupcodesRequest request) throws ApiException {
+  public List<WrapupCode> getConversationParticipantWrapupcodes(GetConversationParticipantWrapupcodesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {});
   }
 
@@ -703,7 +704,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<WrapupCode>> getConversationParticipantWrapupcodes(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<WrapupCode>> getConversationParticipantWrapupcodes(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<WrapupCode>>invokeAPIVerbose(request, new TypeReference<List<WrapupCode>>() {});
   }
 
@@ -714,7 +715,7 @@ public class ConversationsApi {
    * @return ConversationEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ConversationEntityListing getConversations(String communicationType) throws ApiException {
+  public ConversationEntityListing getConversations(String communicationType) throws IOException, ApiException {
     return getConversationsWithHttpInfo(communicationType).getBody();
   }
 
@@ -725,7 +726,7 @@ public class ConversationsApi {
    * @return ConversationEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ConversationEntityListing> getConversationsWithHttpInfo(String communicationType) throws ApiException {
+  public ApiResponse<ConversationEntityListing> getConversationsWithHttpInfo(String communicationType) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -761,7 +762,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ConversationEntityListing getConversations(GetConversationsRequest request) throws ApiException {
+  public ConversationEntityListing getConversations(GetConversationsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ConversationEntityListing>() {});
   }
 
@@ -771,7 +772,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ConversationEntityListing> getConversations(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ConversationEntityListing> getConversations(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ConversationEntityListing>invokeAPIVerbose(request, new TypeReference<ConversationEntityListing>() {});
   }
 
@@ -782,7 +783,7 @@ public class ConversationsApi {
    * @return CallConversation
    * @throws ApiException if fails to make API call
    */
-  public CallConversation getConversationsCall(String callId) throws ApiException {
+  public CallConversation getConversationsCall(String callId) throws IOException, ApiException {
     return getConversationsCallWithHttpInfo(callId).getBody();
   }
 
@@ -793,12 +794,12 @@ public class ConversationsApi {
    * @return CallConversation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallConversation> getConversationsCallWithHttpInfo(String callId) throws ApiException {
+  public ApiResponse<CallConversation> getConversationsCallWithHttpInfo(String callId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'callId' is set
     if (callId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callId' when calling getConversationsCall");
+      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling getConversationsCall");
     }
     
     // create path and map variables
@@ -834,7 +835,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CallConversation getConversationsCall(GetConversationsCallRequest request) throws ApiException {
+  public CallConversation getConversationsCall(GetConversationsCallRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallConversation>() {});
   }
 
@@ -844,7 +845,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallConversation> getConversationsCall(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CallConversation> getConversationsCall(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CallConversation>invokeAPIVerbose(request, new TypeReference<CallConversation>() {});
   }
 
@@ -857,7 +858,7 @@ public class ConversationsApi {
    * @return Wrapup
    * @throws ApiException if fails to make API call
    */
-  public Wrapup getConversationsCallParticipantWrapup(String callId, String participantId, Boolean provisional) throws ApiException {
+  public Wrapup getConversationsCallParticipantWrapup(String callId, String participantId, Boolean provisional) throws IOException, ApiException {
     return getConversationsCallParticipantWrapupWithHttpInfo(callId, participantId, provisional).getBody();
   }
 
@@ -870,17 +871,17 @@ public class ConversationsApi {
    * @return Wrapup
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Wrapup> getConversationsCallParticipantWrapupWithHttpInfo(String callId, String participantId, Boolean provisional) throws ApiException {
+  public ApiResponse<Wrapup> getConversationsCallParticipantWrapupWithHttpInfo(String callId, String participantId, Boolean provisional) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'callId' is set
     if (callId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callId' when calling getConversationsCallParticipantWrapup");
+      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling getConversationsCallParticipantWrapup");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling getConversationsCallParticipantWrapup");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationsCallParticipantWrapup");
     }
     
     // create path and map variables
@@ -918,7 +919,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Wrapup getConversationsCallParticipantWrapup(GetConversationsCallParticipantWrapupRequest request) throws ApiException {
+  public Wrapup getConversationsCallParticipantWrapup(GetConversationsCallParticipantWrapupRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Wrapup>() {});
   }
 
@@ -928,7 +929,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Wrapup> getConversationsCallParticipantWrapup(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Wrapup> getConversationsCallParticipantWrapup(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Wrapup>invokeAPIVerbose(request, new TypeReference<Wrapup>() {});
   }
 
@@ -940,7 +941,7 @@ public class ConversationsApi {
    * @return List<WrapupCode>
    * @throws ApiException if fails to make API call
    */
-  public List<WrapupCode> getConversationsCallParticipantWrapupcodes(String callId, String participantId) throws ApiException {
+  public List<WrapupCode> getConversationsCallParticipantWrapupcodes(String callId, String participantId) throws IOException, ApiException {
     return getConversationsCallParticipantWrapupcodesWithHttpInfo(callId, participantId).getBody();
   }
 
@@ -952,17 +953,17 @@ public class ConversationsApi {
    * @return List<WrapupCode>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<WrapupCode>> getConversationsCallParticipantWrapupcodesWithHttpInfo(String callId, String participantId) throws ApiException {
+  public ApiResponse<List<WrapupCode>> getConversationsCallParticipantWrapupcodesWithHttpInfo(String callId, String participantId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'callId' is set
     if (callId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callId' when calling getConversationsCallParticipantWrapupcodes");
+      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling getConversationsCallParticipantWrapupcodes");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling getConversationsCallParticipantWrapupcodes");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationsCallParticipantWrapupcodes");
     }
     
     // create path and map variables
@@ -999,7 +1000,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<WrapupCode> getConversationsCallParticipantWrapupcodes(GetConversationsCallParticipantWrapupcodesRequest request) throws ApiException {
+  public List<WrapupCode> getConversationsCallParticipantWrapupcodes(GetConversationsCallParticipantWrapupcodesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {});
   }
 
@@ -1009,7 +1010,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<WrapupCode>> getConversationsCallParticipantWrapupcodes(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<WrapupCode>> getConversationsCallParticipantWrapupcodes(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<WrapupCode>>invokeAPIVerbose(request, new TypeReference<List<WrapupCode>>() {});
   }
 
@@ -1020,7 +1021,7 @@ public class ConversationsApi {
    * @return CallbackConversation
    * @throws ApiException if fails to make API call
    */
-  public CallbackConversation getConversationsCallback(String callbackId) throws ApiException {
+  public CallbackConversation getConversationsCallback(String callbackId) throws IOException, ApiException {
     return getConversationsCallbackWithHttpInfo(callbackId).getBody();
   }
 
@@ -1031,12 +1032,12 @@ public class ConversationsApi {
    * @return CallbackConversation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallbackConversation> getConversationsCallbackWithHttpInfo(String callbackId) throws ApiException {
+  public ApiResponse<CallbackConversation> getConversationsCallbackWithHttpInfo(String callbackId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'callbackId' is set
     if (callbackId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callbackId' when calling getConversationsCallback");
+      throw new IllegalArgumentException("Missing the required parameter 'callbackId' when calling getConversationsCallback");
     }
     
     // create path and map variables
@@ -1072,7 +1073,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CallbackConversation getConversationsCallback(GetConversationsCallbackRequest request) throws ApiException {
+  public CallbackConversation getConversationsCallback(GetConversationsCallbackRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallbackConversation>() {});
   }
 
@@ -1082,7 +1083,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallbackConversation> getConversationsCallback(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CallbackConversation> getConversationsCallback(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CallbackConversation>invokeAPIVerbose(request, new TypeReference<CallbackConversation>() {});
   }
 
@@ -1095,7 +1096,7 @@ public class ConversationsApi {
    * @return Wrapup
    * @throws ApiException if fails to make API call
    */
-  public Wrapup getConversationsCallbackParticipantWrapup(String callbackId, String participantId, Boolean provisional) throws ApiException {
+  public Wrapup getConversationsCallbackParticipantWrapup(String callbackId, String participantId, Boolean provisional) throws IOException, ApiException {
     return getConversationsCallbackParticipantWrapupWithHttpInfo(callbackId, participantId, provisional).getBody();
   }
 
@@ -1108,17 +1109,17 @@ public class ConversationsApi {
    * @return Wrapup
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Wrapup> getConversationsCallbackParticipantWrapupWithHttpInfo(String callbackId, String participantId, Boolean provisional) throws ApiException {
+  public ApiResponse<Wrapup> getConversationsCallbackParticipantWrapupWithHttpInfo(String callbackId, String participantId, Boolean provisional) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'callbackId' is set
     if (callbackId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callbackId' when calling getConversationsCallbackParticipantWrapup");
+      throw new IllegalArgumentException("Missing the required parameter 'callbackId' when calling getConversationsCallbackParticipantWrapup");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling getConversationsCallbackParticipantWrapup");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationsCallbackParticipantWrapup");
     }
     
     // create path and map variables
@@ -1156,7 +1157,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Wrapup getConversationsCallbackParticipantWrapup(GetConversationsCallbackParticipantWrapupRequest request) throws ApiException {
+  public Wrapup getConversationsCallbackParticipantWrapup(GetConversationsCallbackParticipantWrapupRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Wrapup>() {});
   }
 
@@ -1166,7 +1167,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Wrapup> getConversationsCallbackParticipantWrapup(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Wrapup> getConversationsCallbackParticipantWrapup(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Wrapup>invokeAPIVerbose(request, new TypeReference<Wrapup>() {});
   }
 
@@ -1178,7 +1179,7 @@ public class ConversationsApi {
    * @return List<WrapupCode>
    * @throws ApiException if fails to make API call
    */
-  public List<WrapupCode> getConversationsCallbackParticipantWrapupcodes(String callbackId, String participantId) throws ApiException {
+  public List<WrapupCode> getConversationsCallbackParticipantWrapupcodes(String callbackId, String participantId) throws IOException, ApiException {
     return getConversationsCallbackParticipantWrapupcodesWithHttpInfo(callbackId, participantId).getBody();
   }
 
@@ -1190,17 +1191,17 @@ public class ConversationsApi {
    * @return List<WrapupCode>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<WrapupCode>> getConversationsCallbackParticipantWrapupcodesWithHttpInfo(String callbackId, String participantId) throws ApiException {
+  public ApiResponse<List<WrapupCode>> getConversationsCallbackParticipantWrapupcodesWithHttpInfo(String callbackId, String participantId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'callbackId' is set
     if (callbackId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callbackId' when calling getConversationsCallbackParticipantWrapupcodes");
+      throw new IllegalArgumentException("Missing the required parameter 'callbackId' when calling getConversationsCallbackParticipantWrapupcodes");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling getConversationsCallbackParticipantWrapupcodes");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationsCallbackParticipantWrapupcodes");
     }
     
     // create path and map variables
@@ -1237,7 +1238,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<WrapupCode> getConversationsCallbackParticipantWrapupcodes(GetConversationsCallbackParticipantWrapupcodesRequest request) throws ApiException {
+  public List<WrapupCode> getConversationsCallbackParticipantWrapupcodes(GetConversationsCallbackParticipantWrapupcodesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {});
   }
 
@@ -1247,7 +1248,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<WrapupCode>> getConversationsCallbackParticipantWrapupcodes(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<WrapupCode>> getConversationsCallbackParticipantWrapupcodes(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<WrapupCode>>invokeAPIVerbose(request, new TypeReference<List<WrapupCode>>() {});
   }
 
@@ -1257,7 +1258,7 @@ public class ConversationsApi {
    * @return CallbackConversationEntityListing
    * @throws ApiException if fails to make API call
    */
-  public CallbackConversationEntityListing getConversationsCallbacks() throws ApiException {
+  public CallbackConversationEntityListing getConversationsCallbacks() throws IOException, ApiException {
     return getConversationsCallbacksWithHttpInfo().getBody();
   }
 
@@ -1267,7 +1268,7 @@ public class ConversationsApi {
    * @return CallbackConversationEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallbackConversationEntityListing> getConversationsCallbacksWithHttpInfo() throws ApiException {
+  public ApiResponse<CallbackConversationEntityListing> getConversationsCallbacksWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1302,7 +1303,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CallbackConversationEntityListing getConversationsCallbacks(GetConversationsCallbacksRequest request) throws ApiException {
+  public CallbackConversationEntityListing getConversationsCallbacks(GetConversationsCallbacksRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallbackConversationEntityListing>() {});
   }
 
@@ -1312,7 +1313,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallbackConversationEntityListing> getConversationsCallbacks(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CallbackConversationEntityListing> getConversationsCallbacks(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CallbackConversationEntityListing>invokeAPIVerbose(request, new TypeReference<CallbackConversationEntityListing>() {});
   }
 
@@ -1322,7 +1323,7 @@ public class ConversationsApi {
    * @return CallConversationEntityListing
    * @throws ApiException if fails to make API call
    */
-  public CallConversationEntityListing getConversationsCalls() throws ApiException {
+  public CallConversationEntityListing getConversationsCalls() throws IOException, ApiException {
     return getConversationsCallsWithHttpInfo().getBody();
   }
 
@@ -1332,7 +1333,7 @@ public class ConversationsApi {
    * @return CallConversationEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallConversationEntityListing> getConversationsCallsWithHttpInfo() throws ApiException {
+  public ApiResponse<CallConversationEntityListing> getConversationsCallsWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1367,7 +1368,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CallConversationEntityListing getConversationsCalls(GetConversationsCallsRequest request) throws ApiException {
+  public CallConversationEntityListing getConversationsCalls(GetConversationsCallsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallConversationEntityListing>() {});
   }
 
@@ -1377,7 +1378,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallConversationEntityListing> getConversationsCalls(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CallConversationEntityListing> getConversationsCalls(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CallConversationEntityListing>invokeAPIVerbose(request, new TypeReference<CallConversationEntityListing>() {});
   }
 
@@ -1390,7 +1391,7 @@ public class ConversationsApi {
    * @return CallConversationEntityListing
    * @throws ApiException if fails to make API call
    */
-  public CallConversationEntityListing getConversationsCallsHistory(Integer pageSize, Integer pageNumber, String interval) throws ApiException {
+  public CallConversationEntityListing getConversationsCallsHistory(Integer pageSize, Integer pageNumber, String interval) throws IOException, ApiException {
     return getConversationsCallsHistoryWithHttpInfo(pageSize, pageNumber, interval).getBody();
   }
 
@@ -1403,7 +1404,7 @@ public class ConversationsApi {
    * @return CallConversationEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallConversationEntityListing> getConversationsCallsHistoryWithHttpInfo(Integer pageSize, Integer pageNumber, String interval) throws ApiException {
+  public ApiResponse<CallConversationEntityListing> getConversationsCallsHistoryWithHttpInfo(Integer pageSize, Integer pageNumber, String interval) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1441,7 +1442,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CallConversationEntityListing getConversationsCallsHistory(GetConversationsCallsHistoryRequest request) throws ApiException {
+  public CallConversationEntityListing getConversationsCallsHistory(GetConversationsCallsHistoryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallConversationEntityListing>() {});
   }
 
@@ -1451,7 +1452,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CallConversationEntityListing> getConversationsCallsHistory(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CallConversationEntityListing> getConversationsCallsHistory(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CallConversationEntityListing>invokeAPIVerbose(request, new TypeReference<CallConversationEntityListing>() {});
   }
 
@@ -1461,7 +1462,7 @@ public class ConversationsApi {
    * @return MaxParticipants
    * @throws ApiException if fails to make API call
    */
-  public MaxParticipants getConversationsCallsMaximumconferenceparties() throws ApiException {
+  public MaxParticipants getConversationsCallsMaximumconferenceparties() throws IOException, ApiException {
     return getConversationsCallsMaximumconferencepartiesWithHttpInfo().getBody();
   }
 
@@ -1471,7 +1472,7 @@ public class ConversationsApi {
    * @return MaxParticipants
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<MaxParticipants> getConversationsCallsMaximumconferencepartiesWithHttpInfo() throws ApiException {
+  public ApiResponse<MaxParticipants> getConversationsCallsMaximumconferencepartiesWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1506,7 +1507,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public MaxParticipants getConversationsCallsMaximumconferenceparties(GetConversationsCallsMaximumconferencepartiesRequest request) throws ApiException {
+  public MaxParticipants getConversationsCallsMaximumconferenceparties(GetConversationsCallsMaximumconferencepartiesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<MaxParticipants>() {});
   }
 
@@ -1516,7 +1517,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<MaxParticipants> getConversationsCallsMaximumconferenceparties(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<MaxParticipants> getConversationsCallsMaximumconferenceparties(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<MaxParticipants>invokeAPIVerbose(request, new TypeReference<MaxParticipants>() {});
   }
 
@@ -1527,7 +1528,7 @@ public class ConversationsApi {
    * @return ChatConversation
    * @throws ApiException if fails to make API call
    */
-  public ChatConversation getConversationsChat(String chatId) throws ApiException {
+  public ChatConversation getConversationsChat(String chatId) throws IOException, ApiException {
     return getConversationsChatWithHttpInfo(chatId).getBody();
   }
 
@@ -1538,12 +1539,12 @@ public class ConversationsApi {
    * @return ChatConversation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ChatConversation> getConversationsChatWithHttpInfo(String chatId) throws ApiException {
+  public ApiResponse<ChatConversation> getConversationsChatWithHttpInfo(String chatId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'chatId' is set
     if (chatId == null) {
-      throw new ApiException(400, "Missing the required parameter 'chatId' when calling getConversationsChat");
+      throw new IllegalArgumentException("Missing the required parameter 'chatId' when calling getConversationsChat");
     }
     
     // create path and map variables
@@ -1579,7 +1580,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ChatConversation getConversationsChat(GetConversationsChatRequest request) throws ApiException {
+  public ChatConversation getConversationsChat(GetConversationsChatRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ChatConversation>() {});
   }
 
@@ -1589,7 +1590,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ChatConversation> getConversationsChat(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ChatConversation> getConversationsChat(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ChatConversation>invokeAPIVerbose(request, new TypeReference<ChatConversation>() {});
   }
 
@@ -1602,7 +1603,7 @@ public class ConversationsApi {
    * @return Wrapup
    * @throws ApiException if fails to make API call
    */
-  public Wrapup getConversationsChatParticipantWrapup(String chatId, String participantId, Boolean provisional) throws ApiException {
+  public Wrapup getConversationsChatParticipantWrapup(String chatId, String participantId, Boolean provisional) throws IOException, ApiException {
     return getConversationsChatParticipantWrapupWithHttpInfo(chatId, participantId, provisional).getBody();
   }
 
@@ -1615,17 +1616,17 @@ public class ConversationsApi {
    * @return Wrapup
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Wrapup> getConversationsChatParticipantWrapupWithHttpInfo(String chatId, String participantId, Boolean provisional) throws ApiException {
+  public ApiResponse<Wrapup> getConversationsChatParticipantWrapupWithHttpInfo(String chatId, String participantId, Boolean provisional) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'chatId' is set
     if (chatId == null) {
-      throw new ApiException(400, "Missing the required parameter 'chatId' when calling getConversationsChatParticipantWrapup");
+      throw new IllegalArgumentException("Missing the required parameter 'chatId' when calling getConversationsChatParticipantWrapup");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling getConversationsChatParticipantWrapup");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationsChatParticipantWrapup");
     }
     
     // create path and map variables
@@ -1663,7 +1664,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Wrapup getConversationsChatParticipantWrapup(GetConversationsChatParticipantWrapupRequest request) throws ApiException {
+  public Wrapup getConversationsChatParticipantWrapup(GetConversationsChatParticipantWrapupRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Wrapup>() {});
   }
 
@@ -1673,7 +1674,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Wrapup> getConversationsChatParticipantWrapup(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Wrapup> getConversationsChatParticipantWrapup(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Wrapup>invokeAPIVerbose(request, new TypeReference<Wrapup>() {});
   }
 
@@ -1685,7 +1686,7 @@ public class ConversationsApi {
    * @return List<WrapupCode>
    * @throws ApiException if fails to make API call
    */
-  public List<WrapupCode> getConversationsChatParticipantWrapupcodes(String chatId, String participantId) throws ApiException {
+  public List<WrapupCode> getConversationsChatParticipantWrapupcodes(String chatId, String participantId) throws IOException, ApiException {
     return getConversationsChatParticipantWrapupcodesWithHttpInfo(chatId, participantId).getBody();
   }
 
@@ -1697,17 +1698,17 @@ public class ConversationsApi {
    * @return List<WrapupCode>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<WrapupCode>> getConversationsChatParticipantWrapupcodesWithHttpInfo(String chatId, String participantId) throws ApiException {
+  public ApiResponse<List<WrapupCode>> getConversationsChatParticipantWrapupcodesWithHttpInfo(String chatId, String participantId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'chatId' is set
     if (chatId == null) {
-      throw new ApiException(400, "Missing the required parameter 'chatId' when calling getConversationsChatParticipantWrapupcodes");
+      throw new IllegalArgumentException("Missing the required parameter 'chatId' when calling getConversationsChatParticipantWrapupcodes");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling getConversationsChatParticipantWrapupcodes");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationsChatParticipantWrapupcodes");
     }
     
     // create path and map variables
@@ -1744,7 +1745,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<WrapupCode> getConversationsChatParticipantWrapupcodes(GetConversationsChatParticipantWrapupcodesRequest request) throws ApiException {
+  public List<WrapupCode> getConversationsChatParticipantWrapupcodes(GetConversationsChatParticipantWrapupcodesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {});
   }
 
@@ -1754,7 +1755,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<WrapupCode>> getConversationsChatParticipantWrapupcodes(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<WrapupCode>> getConversationsChatParticipantWrapupcodes(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<WrapupCode>>invokeAPIVerbose(request, new TypeReference<List<WrapupCode>>() {});
   }
 
@@ -1764,7 +1765,7 @@ public class ConversationsApi {
    * @return ChatConversationEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ChatConversationEntityListing getConversationsChats() throws ApiException {
+  public ChatConversationEntityListing getConversationsChats() throws IOException, ApiException {
     return getConversationsChatsWithHttpInfo().getBody();
   }
 
@@ -1774,7 +1775,7 @@ public class ConversationsApi {
    * @return ChatConversationEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ChatConversationEntityListing> getConversationsChatsWithHttpInfo() throws ApiException {
+  public ApiResponse<ChatConversationEntityListing> getConversationsChatsWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1809,7 +1810,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ChatConversationEntityListing getConversationsChats(GetConversationsChatsRequest request) throws ApiException {
+  public ChatConversationEntityListing getConversationsChats(GetConversationsChatsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ChatConversationEntityListing>() {});
   }
 
@@ -1819,7 +1820,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ChatConversationEntityListing> getConversationsChats(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ChatConversationEntityListing> getConversationsChats(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ChatConversationEntityListing>invokeAPIVerbose(request, new TypeReference<ChatConversationEntityListing>() {});
   }
 
@@ -1830,7 +1831,7 @@ public class ConversationsApi {
    * @return CobrowseConversation
    * @throws ApiException if fails to make API call
    */
-  public CobrowseConversation getConversationsCobrowsesession(String cobrowseId) throws ApiException {
+  public CobrowseConversation getConversationsCobrowsesession(String cobrowseId) throws IOException, ApiException {
     return getConversationsCobrowsesessionWithHttpInfo(cobrowseId).getBody();
   }
 
@@ -1841,12 +1842,12 @@ public class ConversationsApi {
    * @return CobrowseConversation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CobrowseConversation> getConversationsCobrowsesessionWithHttpInfo(String cobrowseId) throws ApiException {
+  public ApiResponse<CobrowseConversation> getConversationsCobrowsesessionWithHttpInfo(String cobrowseId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'cobrowseId' is set
     if (cobrowseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'cobrowseId' when calling getConversationsCobrowsesession");
+      throw new IllegalArgumentException("Missing the required parameter 'cobrowseId' when calling getConversationsCobrowsesession");
     }
     
     // create path and map variables
@@ -1882,7 +1883,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CobrowseConversation getConversationsCobrowsesession(GetConversationsCobrowsesessionRequest request) throws ApiException {
+  public CobrowseConversation getConversationsCobrowsesession(GetConversationsCobrowsesessionRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CobrowseConversation>() {});
   }
 
@@ -1892,7 +1893,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CobrowseConversation> getConversationsCobrowsesession(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CobrowseConversation> getConversationsCobrowsesession(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CobrowseConversation>invokeAPIVerbose(request, new TypeReference<CobrowseConversation>() {});
   }
 
@@ -1905,7 +1906,7 @@ public class ConversationsApi {
    * @return Wrapup
    * @throws ApiException if fails to make API call
    */
-  public Wrapup getConversationsCobrowsesessionParticipantWrapup(String cobrowseId, String participantId, Boolean provisional) throws ApiException {
+  public Wrapup getConversationsCobrowsesessionParticipantWrapup(String cobrowseId, String participantId, Boolean provisional) throws IOException, ApiException {
     return getConversationsCobrowsesessionParticipantWrapupWithHttpInfo(cobrowseId, participantId, provisional).getBody();
   }
 
@@ -1918,17 +1919,17 @@ public class ConversationsApi {
    * @return Wrapup
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Wrapup> getConversationsCobrowsesessionParticipantWrapupWithHttpInfo(String cobrowseId, String participantId, Boolean provisional) throws ApiException {
+  public ApiResponse<Wrapup> getConversationsCobrowsesessionParticipantWrapupWithHttpInfo(String cobrowseId, String participantId, Boolean provisional) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'cobrowseId' is set
     if (cobrowseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'cobrowseId' when calling getConversationsCobrowsesessionParticipantWrapup");
+      throw new IllegalArgumentException("Missing the required parameter 'cobrowseId' when calling getConversationsCobrowsesessionParticipantWrapup");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling getConversationsCobrowsesessionParticipantWrapup");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationsCobrowsesessionParticipantWrapup");
     }
     
     // create path and map variables
@@ -1966,7 +1967,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Wrapup getConversationsCobrowsesessionParticipantWrapup(GetConversationsCobrowsesessionParticipantWrapupRequest request) throws ApiException {
+  public Wrapup getConversationsCobrowsesessionParticipantWrapup(GetConversationsCobrowsesessionParticipantWrapupRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Wrapup>() {});
   }
 
@@ -1976,7 +1977,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Wrapup> getConversationsCobrowsesessionParticipantWrapup(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Wrapup> getConversationsCobrowsesessionParticipantWrapup(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Wrapup>invokeAPIVerbose(request, new TypeReference<Wrapup>() {});
   }
 
@@ -1988,7 +1989,7 @@ public class ConversationsApi {
    * @return List<WrapupCode>
    * @throws ApiException if fails to make API call
    */
-  public List<WrapupCode> getConversationsCobrowsesessionParticipantWrapupcodes(String cobrowseId, String participantId) throws ApiException {
+  public List<WrapupCode> getConversationsCobrowsesessionParticipantWrapupcodes(String cobrowseId, String participantId) throws IOException, ApiException {
     return getConversationsCobrowsesessionParticipantWrapupcodesWithHttpInfo(cobrowseId, participantId).getBody();
   }
 
@@ -2000,17 +2001,17 @@ public class ConversationsApi {
    * @return List<WrapupCode>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<WrapupCode>> getConversationsCobrowsesessionParticipantWrapupcodesWithHttpInfo(String cobrowseId, String participantId) throws ApiException {
+  public ApiResponse<List<WrapupCode>> getConversationsCobrowsesessionParticipantWrapupcodesWithHttpInfo(String cobrowseId, String participantId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'cobrowseId' is set
     if (cobrowseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'cobrowseId' when calling getConversationsCobrowsesessionParticipantWrapupcodes");
+      throw new IllegalArgumentException("Missing the required parameter 'cobrowseId' when calling getConversationsCobrowsesessionParticipantWrapupcodes");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling getConversationsCobrowsesessionParticipantWrapupcodes");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationsCobrowsesessionParticipantWrapupcodes");
     }
     
     // create path and map variables
@@ -2047,7 +2048,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<WrapupCode> getConversationsCobrowsesessionParticipantWrapupcodes(GetConversationsCobrowsesessionParticipantWrapupcodesRequest request) throws ApiException {
+  public List<WrapupCode> getConversationsCobrowsesessionParticipantWrapupcodes(GetConversationsCobrowsesessionParticipantWrapupcodesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {});
   }
 
@@ -2057,7 +2058,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<WrapupCode>> getConversationsCobrowsesessionParticipantWrapupcodes(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<WrapupCode>> getConversationsCobrowsesessionParticipantWrapupcodes(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<WrapupCode>>invokeAPIVerbose(request, new TypeReference<List<WrapupCode>>() {});
   }
 
@@ -2067,7 +2068,7 @@ public class ConversationsApi {
    * @return CobrowseConversationEntityListing
    * @throws ApiException if fails to make API call
    */
-  public CobrowseConversationEntityListing getConversationsCobrowsesessions() throws ApiException {
+  public CobrowseConversationEntityListing getConversationsCobrowsesessions() throws IOException, ApiException {
     return getConversationsCobrowsesessionsWithHttpInfo().getBody();
   }
 
@@ -2077,7 +2078,7 @@ public class ConversationsApi {
    * @return CobrowseConversationEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CobrowseConversationEntityListing> getConversationsCobrowsesessionsWithHttpInfo() throws ApiException {
+  public ApiResponse<CobrowseConversationEntityListing> getConversationsCobrowsesessionsWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -2112,7 +2113,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CobrowseConversationEntityListing getConversationsCobrowsesessions(GetConversationsCobrowsesessionsRequest request) throws ApiException {
+  public CobrowseConversationEntityListing getConversationsCobrowsesessions(GetConversationsCobrowsesessionsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CobrowseConversationEntityListing>() {});
   }
 
@@ -2122,7 +2123,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CobrowseConversationEntityListing> getConversationsCobrowsesessions(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CobrowseConversationEntityListing> getConversationsCobrowsesessions(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CobrowseConversationEntityListing>invokeAPIVerbose(request, new TypeReference<CobrowseConversationEntityListing>() {});
   }
 
@@ -2133,7 +2134,7 @@ public class ConversationsApi {
    * @return EmailConversation
    * @throws ApiException if fails to make API call
    */
-  public EmailConversation getConversationsEmail(String emailId) throws ApiException {
+  public EmailConversation getConversationsEmail(String emailId) throws IOException, ApiException {
     return getConversationsEmailWithHttpInfo(emailId).getBody();
   }
 
@@ -2144,12 +2145,12 @@ public class ConversationsApi {
    * @return EmailConversation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EmailConversation> getConversationsEmailWithHttpInfo(String emailId) throws ApiException {
+  public ApiResponse<EmailConversation> getConversationsEmailWithHttpInfo(String emailId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'emailId' is set
     if (emailId == null) {
-      throw new ApiException(400, "Missing the required parameter 'emailId' when calling getConversationsEmail");
+      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling getConversationsEmail");
     }
     
     // create path and map variables
@@ -2185,7 +2186,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EmailConversation getConversationsEmail(GetConversationsEmailRequest request) throws ApiException {
+  public EmailConversation getConversationsEmail(GetConversationsEmailRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EmailConversation>() {});
   }
 
@@ -2195,7 +2196,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EmailConversation> getConversationsEmail(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<EmailConversation> getConversationsEmail(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<EmailConversation>invokeAPIVerbose(request, new TypeReference<EmailConversation>() {});
   }
 
@@ -2207,7 +2208,7 @@ public class ConversationsApi {
    * @return EmailMessage
    * @throws ApiException if fails to make API call
    */
-  public EmailMessage getConversationsEmailMessage(String emailId, String messageId) throws ApiException {
+  public EmailMessage getConversationsEmailMessage(String emailId, String messageId) throws IOException, ApiException {
     return getConversationsEmailMessageWithHttpInfo(emailId, messageId).getBody();
   }
 
@@ -2219,17 +2220,17 @@ public class ConversationsApi {
    * @return EmailMessage
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EmailMessage> getConversationsEmailMessageWithHttpInfo(String emailId, String messageId) throws ApiException {
+  public ApiResponse<EmailMessage> getConversationsEmailMessageWithHttpInfo(String emailId, String messageId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'emailId' is set
     if (emailId == null) {
-      throw new ApiException(400, "Missing the required parameter 'emailId' when calling getConversationsEmailMessage");
+      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling getConversationsEmailMessage");
     }
     
     // verify the required parameter 'messageId' is set
     if (messageId == null) {
-      throw new ApiException(400, "Missing the required parameter 'messageId' when calling getConversationsEmailMessage");
+      throw new IllegalArgumentException("Missing the required parameter 'messageId' when calling getConversationsEmailMessage");
     }
     
     // create path and map variables
@@ -2266,7 +2267,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EmailMessage getConversationsEmailMessage(GetConversationsEmailMessageRequest request) throws ApiException {
+  public EmailMessage getConversationsEmailMessage(GetConversationsEmailMessageRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EmailMessage>() {});
   }
 
@@ -2276,7 +2277,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EmailMessage> getConversationsEmailMessage(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<EmailMessage> getConversationsEmailMessage(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<EmailMessage>invokeAPIVerbose(request, new TypeReference<EmailMessage>() {});
   }
 
@@ -2287,7 +2288,7 @@ public class ConversationsApi {
    * @return EmailMessageListing
    * @throws ApiException if fails to make API call
    */
-  public EmailMessageListing getConversationsEmailMessages(String emailId) throws ApiException {
+  public EmailMessageListing getConversationsEmailMessages(String emailId) throws IOException, ApiException {
     return getConversationsEmailMessagesWithHttpInfo(emailId).getBody();
   }
 
@@ -2298,12 +2299,12 @@ public class ConversationsApi {
    * @return EmailMessageListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EmailMessageListing> getConversationsEmailMessagesWithHttpInfo(String emailId) throws ApiException {
+  public ApiResponse<EmailMessageListing> getConversationsEmailMessagesWithHttpInfo(String emailId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'emailId' is set
     if (emailId == null) {
-      throw new ApiException(400, "Missing the required parameter 'emailId' when calling getConversationsEmailMessages");
+      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling getConversationsEmailMessages");
     }
     
     // create path and map variables
@@ -2339,7 +2340,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EmailMessageListing getConversationsEmailMessages(GetConversationsEmailMessagesRequest request) throws ApiException {
+  public EmailMessageListing getConversationsEmailMessages(GetConversationsEmailMessagesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EmailMessageListing>() {});
   }
 
@@ -2349,7 +2350,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EmailMessageListing> getConversationsEmailMessages(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<EmailMessageListing> getConversationsEmailMessages(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<EmailMessageListing>invokeAPIVerbose(request, new TypeReference<EmailMessageListing>() {});
   }
 
@@ -2360,7 +2361,7 @@ public class ConversationsApi {
    * @return EmailMessage
    * @throws ApiException if fails to make API call
    */
-  public EmailMessage getConversationsEmailMessagesDraft(String emailId) throws ApiException {
+  public EmailMessage getConversationsEmailMessagesDraft(String emailId) throws IOException, ApiException {
     return getConversationsEmailMessagesDraftWithHttpInfo(emailId).getBody();
   }
 
@@ -2371,12 +2372,12 @@ public class ConversationsApi {
    * @return EmailMessage
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EmailMessage> getConversationsEmailMessagesDraftWithHttpInfo(String emailId) throws ApiException {
+  public ApiResponse<EmailMessage> getConversationsEmailMessagesDraftWithHttpInfo(String emailId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'emailId' is set
     if (emailId == null) {
-      throw new ApiException(400, "Missing the required parameter 'emailId' when calling getConversationsEmailMessagesDraft");
+      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling getConversationsEmailMessagesDraft");
     }
     
     // create path and map variables
@@ -2412,7 +2413,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EmailMessage getConversationsEmailMessagesDraft(GetConversationsEmailMessagesDraftRequest request) throws ApiException {
+  public EmailMessage getConversationsEmailMessagesDraft(GetConversationsEmailMessagesDraftRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EmailMessage>() {});
   }
 
@@ -2422,7 +2423,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EmailMessage> getConversationsEmailMessagesDraft(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<EmailMessage> getConversationsEmailMessagesDraft(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<EmailMessage>invokeAPIVerbose(request, new TypeReference<EmailMessage>() {});
   }
 
@@ -2435,7 +2436,7 @@ public class ConversationsApi {
    * @return Wrapup
    * @throws ApiException if fails to make API call
    */
-  public Wrapup getConversationsEmailParticipantWrapup(String emailId, String participantId, Boolean provisional) throws ApiException {
+  public Wrapup getConversationsEmailParticipantWrapup(String emailId, String participantId, Boolean provisional) throws IOException, ApiException {
     return getConversationsEmailParticipantWrapupWithHttpInfo(emailId, participantId, provisional).getBody();
   }
 
@@ -2448,17 +2449,17 @@ public class ConversationsApi {
    * @return Wrapup
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Wrapup> getConversationsEmailParticipantWrapupWithHttpInfo(String emailId, String participantId, Boolean provisional) throws ApiException {
+  public ApiResponse<Wrapup> getConversationsEmailParticipantWrapupWithHttpInfo(String emailId, String participantId, Boolean provisional) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'emailId' is set
     if (emailId == null) {
-      throw new ApiException(400, "Missing the required parameter 'emailId' when calling getConversationsEmailParticipantWrapup");
+      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling getConversationsEmailParticipantWrapup");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling getConversationsEmailParticipantWrapup");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationsEmailParticipantWrapup");
     }
     
     // create path and map variables
@@ -2496,7 +2497,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Wrapup getConversationsEmailParticipantWrapup(GetConversationsEmailParticipantWrapupRequest request) throws ApiException {
+  public Wrapup getConversationsEmailParticipantWrapup(GetConversationsEmailParticipantWrapupRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Wrapup>() {});
   }
 
@@ -2506,7 +2507,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Wrapup> getConversationsEmailParticipantWrapup(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Wrapup> getConversationsEmailParticipantWrapup(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Wrapup>invokeAPIVerbose(request, new TypeReference<Wrapup>() {});
   }
 
@@ -2518,7 +2519,7 @@ public class ConversationsApi {
    * @return List<WrapupCode>
    * @throws ApiException if fails to make API call
    */
-  public List<WrapupCode> getConversationsEmailParticipantWrapupcodes(String emailId, String participantId) throws ApiException {
+  public List<WrapupCode> getConversationsEmailParticipantWrapupcodes(String emailId, String participantId) throws IOException, ApiException {
     return getConversationsEmailParticipantWrapupcodesWithHttpInfo(emailId, participantId).getBody();
   }
 
@@ -2530,17 +2531,17 @@ public class ConversationsApi {
    * @return List<WrapupCode>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<WrapupCode>> getConversationsEmailParticipantWrapupcodesWithHttpInfo(String emailId, String participantId) throws ApiException {
+  public ApiResponse<List<WrapupCode>> getConversationsEmailParticipantWrapupcodesWithHttpInfo(String emailId, String participantId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'emailId' is set
     if (emailId == null) {
-      throw new ApiException(400, "Missing the required parameter 'emailId' when calling getConversationsEmailParticipantWrapupcodes");
+      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling getConversationsEmailParticipantWrapupcodes");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling getConversationsEmailParticipantWrapupcodes");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationsEmailParticipantWrapupcodes");
     }
     
     // create path and map variables
@@ -2577,7 +2578,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<WrapupCode> getConversationsEmailParticipantWrapupcodes(GetConversationsEmailParticipantWrapupcodesRequest request) throws ApiException {
+  public List<WrapupCode> getConversationsEmailParticipantWrapupcodes(GetConversationsEmailParticipantWrapupcodesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {});
   }
 
@@ -2587,7 +2588,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<WrapupCode>> getConversationsEmailParticipantWrapupcodes(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<WrapupCode>> getConversationsEmailParticipantWrapupcodes(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<WrapupCode>>invokeAPIVerbose(request, new TypeReference<List<WrapupCode>>() {});
   }
 
@@ -2597,7 +2598,7 @@ public class ConversationsApi {
    * @return EmailConversationEntityListing
    * @throws ApiException if fails to make API call
    */
-  public EmailConversationEntityListing getConversationsEmails() throws ApiException {
+  public EmailConversationEntityListing getConversationsEmails() throws IOException, ApiException {
     return getConversationsEmailsWithHttpInfo().getBody();
   }
 
@@ -2607,7 +2608,7 @@ public class ConversationsApi {
    * @return EmailConversationEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EmailConversationEntityListing> getConversationsEmailsWithHttpInfo() throws ApiException {
+  public ApiResponse<EmailConversationEntityListing> getConversationsEmailsWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -2642,7 +2643,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EmailConversationEntityListing getConversationsEmails(GetConversationsEmailsRequest request) throws ApiException {
+  public EmailConversationEntityListing getConversationsEmails(GetConversationsEmailsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EmailConversationEntityListing>() {});
   }
 
@@ -2652,7 +2653,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EmailConversationEntityListing> getConversationsEmails(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<EmailConversationEntityListing> getConversationsEmails(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<EmailConversationEntityListing>invokeAPIVerbose(request, new TypeReference<EmailConversationEntityListing>() {});
   }
 
@@ -2664,7 +2665,7 @@ public class ConversationsApi {
    * @param body Update request (required)
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationParticipant(String conversationId, String participantId, MediaParticipantRequest body) throws ApiException {
+  public void patchConversationParticipant(String conversationId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
     patchConversationParticipantWithHttpInfo(conversationId, participantId, body);
   }
 
@@ -2676,22 +2677,22 @@ public class ConversationsApi {
    * @param body Update request (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationParticipantWithHttpInfo(String conversationId, String participantId, MediaParticipantRequest body) throws ApiException {
+  public ApiResponse<Void> patchConversationParticipantWithHttpInfo(String conversationId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling patchConversationParticipant");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling patchConversationParticipant");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling patchConversationParticipant");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationParticipant");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationParticipant");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationParticipant");
     }
     
     // create path and map variables
@@ -2728,7 +2729,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationParticipant(PatchConversationParticipantRequest request) throws ApiException {
+  public void patchConversationParticipant(PatchConversationParticipantRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -2738,7 +2739,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationParticipant(ApiRequest<MediaParticipantRequest> request) throws ApiException {
+  public ApiResponse<Void> patchConversationParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -2750,7 +2751,7 @@ public class ConversationsApi {
    * @param body Participant attributes (required)
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationParticipantAttributes(String conversationId, String participantId, ParticipantAttributes body) throws ApiException {
+  public void patchConversationParticipantAttributes(String conversationId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
     patchConversationParticipantAttributesWithHttpInfo(conversationId, participantId, body);
   }
 
@@ -2762,22 +2763,22 @@ public class ConversationsApi {
    * @param body Participant attributes (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationParticipantAttributesWithHttpInfo(String conversationId, String participantId, ParticipantAttributes body) throws ApiException {
+  public ApiResponse<Void> patchConversationParticipantAttributesWithHttpInfo(String conversationId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling patchConversationParticipantAttributes");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling patchConversationParticipantAttributes");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling patchConversationParticipantAttributes");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationParticipantAttributes");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationParticipantAttributes");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationParticipantAttributes");
     }
     
     // create path and map variables
@@ -2814,7 +2815,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationParticipantAttributes(PatchConversationParticipantAttributesRequest request) throws ApiException {
+  public void patchConversationParticipantAttributes(PatchConversationParticipantAttributesRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -2824,7 +2825,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws ApiException {
+  public ApiResponse<Void> patchConversationParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -2836,7 +2837,7 @@ public class ConversationsApi {
    * @return Conversation
    * @throws ApiException if fails to make API call
    */
-  public Conversation patchConversationsCall(String callId, Conversation body) throws ApiException {
+  public Conversation patchConversationsCall(String callId, Conversation body) throws IOException, ApiException {
     return patchConversationsCallWithHttpInfo(callId, body).getBody();
   }
 
@@ -2848,17 +2849,17 @@ public class ConversationsApi {
    * @return Conversation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Conversation> patchConversationsCallWithHttpInfo(String callId, Conversation body) throws ApiException {
+  public ApiResponse<Conversation> patchConversationsCallWithHttpInfo(String callId, Conversation body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'callId' is set
     if (callId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callId' when calling patchConversationsCall");
+      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling patchConversationsCall");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationsCall");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCall");
     }
     
     // create path and map variables
@@ -2894,7 +2895,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Conversation patchConversationsCall(PatchConversationsCallRequest request) throws ApiException {
+  public Conversation patchConversationsCall(PatchConversationsCallRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Conversation>() {});
   }
 
@@ -2904,7 +2905,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Conversation> patchConversationsCall(ApiRequest<Conversation> request) throws ApiException {
+  public ApiResponse<Conversation> patchConversationsCall(ApiRequest<Conversation> request) throws IOException, ApiException {
     return pcapiClient.<Conversation>invokeAPIVerbose(request, new TypeReference<Conversation>() {});
   }
 
@@ -2916,7 +2917,7 @@ public class ConversationsApi {
    * @param body Participant request (required)
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationsCallParticipant(String callId, String participantId, MediaParticipantRequest body) throws ApiException {
+  public void patchConversationsCallParticipant(String callId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
     patchConversationsCallParticipantWithHttpInfo(callId, participantId, body);
   }
 
@@ -2928,22 +2929,22 @@ public class ConversationsApi {
    * @param body Participant request (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationsCallParticipantWithHttpInfo(String callId, String participantId, MediaParticipantRequest body) throws ApiException {
+  public ApiResponse<Void> patchConversationsCallParticipantWithHttpInfo(String callId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'callId' is set
     if (callId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callId' when calling patchConversationsCallParticipant");
+      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling patchConversationsCallParticipant");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling patchConversationsCallParticipant");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsCallParticipant");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationsCallParticipant");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCallParticipant");
     }
     
     // create path and map variables
@@ -2980,7 +2981,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationsCallParticipant(PatchConversationsCallParticipantRequest request) throws ApiException {
+  public void patchConversationsCallParticipant(PatchConversationsCallParticipantRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -2990,7 +2991,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationsCallParticipant(ApiRequest<MediaParticipantRequest> request) throws ApiException {
+  public ApiResponse<Void> patchConversationsCallParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -3002,7 +3003,7 @@ public class ConversationsApi {
    * @param body Participant attributes (required)
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationsCallParticipantAttributes(String callId, String participantId, ParticipantAttributes body) throws ApiException {
+  public void patchConversationsCallParticipantAttributes(String callId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
     patchConversationsCallParticipantAttributesWithHttpInfo(callId, participantId, body);
   }
 
@@ -3014,22 +3015,22 @@ public class ConversationsApi {
    * @param body Participant attributes (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationsCallParticipantAttributesWithHttpInfo(String callId, String participantId, ParticipantAttributes body) throws ApiException {
+  public ApiResponse<Void> patchConversationsCallParticipantAttributesWithHttpInfo(String callId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'callId' is set
     if (callId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callId' when calling patchConversationsCallParticipantAttributes");
+      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling patchConversationsCallParticipantAttributes");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling patchConversationsCallParticipantAttributes");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsCallParticipantAttributes");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationsCallParticipantAttributes");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCallParticipantAttributes");
     }
     
     // create path and map variables
@@ -3066,7 +3067,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationsCallParticipantAttributes(PatchConversationsCallParticipantAttributesRequest request) throws ApiException {
+  public void patchConversationsCallParticipantAttributes(PatchConversationsCallParticipantAttributesRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -3076,7 +3077,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationsCallParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws ApiException {
+  public ApiResponse<Void> patchConversationsCallParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -3090,7 +3091,7 @@ public class ConversationsApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public Empty patchConversationsCallParticipantCommunication(String callId, String participantId, String communicationId, MediaParticipantRequest body) throws ApiException {
+  public Empty patchConversationsCallParticipantCommunication(String callId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
     return patchConversationsCallParticipantCommunicationWithHttpInfo(callId, participantId, communicationId, body).getBody();
   }
 
@@ -3104,27 +3105,27 @@ public class ConversationsApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> patchConversationsCallParticipantCommunicationWithHttpInfo(String callId, String participantId, String communicationId, MediaParticipantRequest body) throws ApiException {
+  public ApiResponse<Empty> patchConversationsCallParticipantCommunicationWithHttpInfo(String callId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'callId' is set
     if (callId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callId' when calling patchConversationsCallParticipantCommunication");
+      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling patchConversationsCallParticipantCommunication");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling patchConversationsCallParticipantCommunication");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsCallParticipantCommunication");
     }
     
     // verify the required parameter 'communicationId' is set
     if (communicationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'communicationId' when calling patchConversationsCallParticipantCommunication");
+      throw new IllegalArgumentException("Missing the required parameter 'communicationId' when calling patchConversationsCallParticipantCommunication");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationsCallParticipantCommunication");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCallParticipantCommunication");
     }
     
     // create path and map variables
@@ -3162,7 +3163,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Empty patchConversationsCallParticipantCommunication(PatchConversationsCallParticipantCommunicationRequest request) throws ApiException {
+  public Empty patchConversationsCallParticipantCommunication(PatchConversationsCallParticipantCommunicationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
   }
 
@@ -3172,7 +3173,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> patchConversationsCallParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws ApiException {
+  public ApiResponse<Empty> patchConversationsCallParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
     return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
   }
 
@@ -3185,7 +3186,7 @@ public class ConversationsApi {
    * @return ConsultTransferResponse
    * @throws ApiException if fails to make API call
    */
-  public ConsultTransferResponse patchConversationsCallParticipantConsult(String callId, String participantId, ConsultTransferUpdate body) throws ApiException {
+  public ConsultTransferResponse patchConversationsCallParticipantConsult(String callId, String participantId, ConsultTransferUpdate body) throws IOException, ApiException {
     return patchConversationsCallParticipantConsultWithHttpInfo(callId, participantId, body).getBody();
   }
 
@@ -3198,22 +3199,22 @@ public class ConversationsApi {
    * @return ConsultTransferResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ConsultTransferResponse> patchConversationsCallParticipantConsultWithHttpInfo(String callId, String participantId, ConsultTransferUpdate body) throws ApiException {
+  public ApiResponse<ConsultTransferResponse> patchConversationsCallParticipantConsultWithHttpInfo(String callId, String participantId, ConsultTransferUpdate body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'callId' is set
     if (callId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callId' when calling patchConversationsCallParticipantConsult");
+      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling patchConversationsCallParticipantConsult");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling patchConversationsCallParticipantConsult");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsCallParticipantConsult");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationsCallParticipantConsult");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCallParticipantConsult");
     }
     
     // create path and map variables
@@ -3250,7 +3251,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ConsultTransferResponse patchConversationsCallParticipantConsult(PatchConversationsCallParticipantConsultRequest request) throws ApiException {
+  public ConsultTransferResponse patchConversationsCallParticipantConsult(PatchConversationsCallParticipantConsultRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ConsultTransferResponse>() {});
   }
 
@@ -3260,7 +3261,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ConsultTransferResponse> patchConversationsCallParticipantConsult(ApiRequest<ConsultTransferUpdate> request) throws ApiException {
+  public ApiResponse<ConsultTransferResponse> patchConversationsCallParticipantConsult(ApiRequest<ConsultTransferUpdate> request) throws IOException, ApiException {
     return pcapiClient.<ConsultTransferResponse>invokeAPIVerbose(request, new TypeReference<ConsultTransferResponse>() {});
   }
 
@@ -3272,7 +3273,7 @@ public class ConversationsApi {
    * @return Conversation
    * @throws ApiException if fails to make API call
    */
-  public Conversation patchConversationsCallback(String callbackId, Conversation body) throws ApiException {
+  public Conversation patchConversationsCallback(String callbackId, Conversation body) throws IOException, ApiException {
     return patchConversationsCallbackWithHttpInfo(callbackId, body).getBody();
   }
 
@@ -3284,17 +3285,17 @@ public class ConversationsApi {
    * @return Conversation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Conversation> patchConversationsCallbackWithHttpInfo(String callbackId, Conversation body) throws ApiException {
+  public ApiResponse<Conversation> patchConversationsCallbackWithHttpInfo(String callbackId, Conversation body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'callbackId' is set
     if (callbackId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callbackId' when calling patchConversationsCallback");
+      throw new IllegalArgumentException("Missing the required parameter 'callbackId' when calling patchConversationsCallback");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationsCallback");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCallback");
     }
     
     // create path and map variables
@@ -3330,7 +3331,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Conversation patchConversationsCallback(PatchConversationsCallbackRequest request) throws ApiException {
+  public Conversation patchConversationsCallback(PatchConversationsCallbackRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Conversation>() {});
   }
 
@@ -3340,7 +3341,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Conversation> patchConversationsCallback(ApiRequest<Conversation> request) throws ApiException {
+  public ApiResponse<Conversation> patchConversationsCallback(ApiRequest<Conversation> request) throws IOException, ApiException {
     return pcapiClient.<Conversation>invokeAPIVerbose(request, new TypeReference<Conversation>() {});
   }
 
@@ -3352,7 +3353,7 @@ public class ConversationsApi {
    * @param body Participant (required)
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationsCallbackParticipant(String callbackId, String participantId, MediaParticipantRequest body) throws ApiException {
+  public void patchConversationsCallbackParticipant(String callbackId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
     patchConversationsCallbackParticipantWithHttpInfo(callbackId, participantId, body);
   }
 
@@ -3364,22 +3365,22 @@ public class ConversationsApi {
    * @param body Participant (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationsCallbackParticipantWithHttpInfo(String callbackId, String participantId, MediaParticipantRequest body) throws ApiException {
+  public ApiResponse<Void> patchConversationsCallbackParticipantWithHttpInfo(String callbackId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'callbackId' is set
     if (callbackId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callbackId' when calling patchConversationsCallbackParticipant");
+      throw new IllegalArgumentException("Missing the required parameter 'callbackId' when calling patchConversationsCallbackParticipant");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling patchConversationsCallbackParticipant");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsCallbackParticipant");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationsCallbackParticipant");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCallbackParticipant");
     }
     
     // create path and map variables
@@ -3416,7 +3417,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationsCallbackParticipant(PatchConversationsCallbackParticipantRequest request) throws ApiException {
+  public void patchConversationsCallbackParticipant(PatchConversationsCallbackParticipantRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -3426,7 +3427,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationsCallbackParticipant(ApiRequest<MediaParticipantRequest> request) throws ApiException {
+  public ApiResponse<Void> patchConversationsCallbackParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -3438,7 +3439,7 @@ public class ConversationsApi {
    * @param body Attributes (required)
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationsCallbackParticipantAttributes(String callbackId, String participantId, ParticipantAttributes body) throws ApiException {
+  public void patchConversationsCallbackParticipantAttributes(String callbackId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
     patchConversationsCallbackParticipantAttributesWithHttpInfo(callbackId, participantId, body);
   }
 
@@ -3450,22 +3451,22 @@ public class ConversationsApi {
    * @param body Attributes (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationsCallbackParticipantAttributesWithHttpInfo(String callbackId, String participantId, ParticipantAttributes body) throws ApiException {
+  public ApiResponse<Void> patchConversationsCallbackParticipantAttributesWithHttpInfo(String callbackId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'callbackId' is set
     if (callbackId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callbackId' when calling patchConversationsCallbackParticipantAttributes");
+      throw new IllegalArgumentException("Missing the required parameter 'callbackId' when calling patchConversationsCallbackParticipantAttributes");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling patchConversationsCallbackParticipantAttributes");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsCallbackParticipantAttributes");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationsCallbackParticipantAttributes");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCallbackParticipantAttributes");
     }
     
     // create path and map variables
@@ -3502,7 +3503,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationsCallbackParticipantAttributes(PatchConversationsCallbackParticipantAttributesRequest request) throws ApiException {
+  public void patchConversationsCallbackParticipantAttributes(PatchConversationsCallbackParticipantAttributesRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -3512,7 +3513,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationsCallbackParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws ApiException {
+  public ApiResponse<Void> patchConversationsCallbackParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -3526,7 +3527,7 @@ public class ConversationsApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public Empty patchConversationsCallbackParticipantCommunication(String callbackId, String participantId, String communicationId, MediaParticipantRequest body) throws ApiException {
+  public Empty patchConversationsCallbackParticipantCommunication(String callbackId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
     return patchConversationsCallbackParticipantCommunicationWithHttpInfo(callbackId, participantId, communicationId, body).getBody();
   }
 
@@ -3540,27 +3541,27 @@ public class ConversationsApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> patchConversationsCallbackParticipantCommunicationWithHttpInfo(String callbackId, String participantId, String communicationId, MediaParticipantRequest body) throws ApiException {
+  public ApiResponse<Empty> patchConversationsCallbackParticipantCommunicationWithHttpInfo(String callbackId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'callbackId' is set
     if (callbackId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callbackId' when calling patchConversationsCallbackParticipantCommunication");
+      throw new IllegalArgumentException("Missing the required parameter 'callbackId' when calling patchConversationsCallbackParticipantCommunication");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling patchConversationsCallbackParticipantCommunication");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsCallbackParticipantCommunication");
     }
     
     // verify the required parameter 'communicationId' is set
     if (communicationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'communicationId' when calling patchConversationsCallbackParticipantCommunication");
+      throw new IllegalArgumentException("Missing the required parameter 'communicationId' when calling patchConversationsCallbackParticipantCommunication");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationsCallbackParticipantCommunication");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCallbackParticipantCommunication");
     }
     
     // create path and map variables
@@ -3598,7 +3599,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Empty patchConversationsCallbackParticipantCommunication(PatchConversationsCallbackParticipantCommunicationRequest request) throws ApiException {
+  public Empty patchConversationsCallbackParticipantCommunication(PatchConversationsCallbackParticipantCommunicationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
   }
 
@@ -3608,7 +3609,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> patchConversationsCallbackParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws ApiException {
+  public ApiResponse<Empty> patchConversationsCallbackParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
     return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
   }
 
@@ -3620,7 +3621,7 @@ public class ConversationsApi {
    * @return Conversation
    * @throws ApiException if fails to make API call
    */
-  public Conversation patchConversationsChat(String chatId, Conversation body) throws ApiException {
+  public Conversation patchConversationsChat(String chatId, Conversation body) throws IOException, ApiException {
     return patchConversationsChatWithHttpInfo(chatId, body).getBody();
   }
 
@@ -3632,17 +3633,17 @@ public class ConversationsApi {
    * @return Conversation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Conversation> patchConversationsChatWithHttpInfo(String chatId, Conversation body) throws ApiException {
+  public ApiResponse<Conversation> patchConversationsChatWithHttpInfo(String chatId, Conversation body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'chatId' is set
     if (chatId == null) {
-      throw new ApiException(400, "Missing the required parameter 'chatId' when calling patchConversationsChat");
+      throw new IllegalArgumentException("Missing the required parameter 'chatId' when calling patchConversationsChat");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationsChat");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsChat");
     }
     
     // create path and map variables
@@ -3678,7 +3679,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Conversation patchConversationsChat(PatchConversationsChatRequest request) throws ApiException {
+  public Conversation patchConversationsChat(PatchConversationsChatRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Conversation>() {});
   }
 
@@ -3688,7 +3689,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Conversation> patchConversationsChat(ApiRequest<Conversation> request) throws ApiException {
+  public ApiResponse<Conversation> patchConversationsChat(ApiRequest<Conversation> request) throws IOException, ApiException {
     return pcapiClient.<Conversation>invokeAPIVerbose(request, new TypeReference<Conversation>() {});
   }
 
@@ -3700,7 +3701,7 @@ public class ConversationsApi {
    * @param body Update request (required)
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationsChatParticipant(String chatId, String participantId, MediaParticipantRequest body) throws ApiException {
+  public void patchConversationsChatParticipant(String chatId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
     patchConversationsChatParticipantWithHttpInfo(chatId, participantId, body);
   }
 
@@ -3712,22 +3713,22 @@ public class ConversationsApi {
    * @param body Update request (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationsChatParticipantWithHttpInfo(String chatId, String participantId, MediaParticipantRequest body) throws ApiException {
+  public ApiResponse<Void> patchConversationsChatParticipantWithHttpInfo(String chatId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'chatId' is set
     if (chatId == null) {
-      throw new ApiException(400, "Missing the required parameter 'chatId' when calling patchConversationsChatParticipant");
+      throw new IllegalArgumentException("Missing the required parameter 'chatId' when calling patchConversationsChatParticipant");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling patchConversationsChatParticipant");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsChatParticipant");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationsChatParticipant");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsChatParticipant");
     }
     
     // create path and map variables
@@ -3764,7 +3765,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationsChatParticipant(PatchConversationsChatParticipantRequest request) throws ApiException {
+  public void patchConversationsChatParticipant(PatchConversationsChatParticipantRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -3774,7 +3775,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationsChatParticipant(ApiRequest<MediaParticipantRequest> request) throws ApiException {
+  public ApiResponse<Void> patchConversationsChatParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -3786,7 +3787,7 @@ public class ConversationsApi {
    * @param body Participant attributes (required)
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationsChatParticipantAttributes(String chatId, String participantId, ParticipantAttributes body) throws ApiException {
+  public void patchConversationsChatParticipantAttributes(String chatId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
     patchConversationsChatParticipantAttributesWithHttpInfo(chatId, participantId, body);
   }
 
@@ -3798,22 +3799,22 @@ public class ConversationsApi {
    * @param body Participant attributes (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationsChatParticipantAttributesWithHttpInfo(String chatId, String participantId, ParticipantAttributes body) throws ApiException {
+  public ApiResponse<Void> patchConversationsChatParticipantAttributesWithHttpInfo(String chatId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'chatId' is set
     if (chatId == null) {
-      throw new ApiException(400, "Missing the required parameter 'chatId' when calling patchConversationsChatParticipantAttributes");
+      throw new IllegalArgumentException("Missing the required parameter 'chatId' when calling patchConversationsChatParticipantAttributes");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling patchConversationsChatParticipantAttributes");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsChatParticipantAttributes");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationsChatParticipantAttributes");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsChatParticipantAttributes");
     }
     
     // create path and map variables
@@ -3850,7 +3851,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationsChatParticipantAttributes(PatchConversationsChatParticipantAttributesRequest request) throws ApiException {
+  public void patchConversationsChatParticipantAttributes(PatchConversationsChatParticipantAttributesRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -3860,7 +3861,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationsChatParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws ApiException {
+  public ApiResponse<Void> patchConversationsChatParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -3874,7 +3875,7 @@ public class ConversationsApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public Empty patchConversationsChatParticipantCommunication(String chatId, String participantId, String communicationId, MediaParticipantRequest body) throws ApiException {
+  public Empty patchConversationsChatParticipantCommunication(String chatId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
     return patchConversationsChatParticipantCommunicationWithHttpInfo(chatId, participantId, communicationId, body).getBody();
   }
 
@@ -3888,27 +3889,27 @@ public class ConversationsApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> patchConversationsChatParticipantCommunicationWithHttpInfo(String chatId, String participantId, String communicationId, MediaParticipantRequest body) throws ApiException {
+  public ApiResponse<Empty> patchConversationsChatParticipantCommunicationWithHttpInfo(String chatId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'chatId' is set
     if (chatId == null) {
-      throw new ApiException(400, "Missing the required parameter 'chatId' when calling patchConversationsChatParticipantCommunication");
+      throw new IllegalArgumentException("Missing the required parameter 'chatId' when calling patchConversationsChatParticipantCommunication");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling patchConversationsChatParticipantCommunication");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsChatParticipantCommunication");
     }
     
     // verify the required parameter 'communicationId' is set
     if (communicationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'communicationId' when calling patchConversationsChatParticipantCommunication");
+      throw new IllegalArgumentException("Missing the required parameter 'communicationId' when calling patchConversationsChatParticipantCommunication");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationsChatParticipantCommunication");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsChatParticipantCommunication");
     }
     
     // create path and map variables
@@ -3946,7 +3947,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Empty patchConversationsChatParticipantCommunication(PatchConversationsChatParticipantCommunicationRequest request) throws ApiException {
+  public Empty patchConversationsChatParticipantCommunication(PatchConversationsChatParticipantCommunicationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
   }
 
@@ -3956,7 +3957,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> patchConversationsChatParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws ApiException {
+  public ApiResponse<Empty> patchConversationsChatParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
     return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
   }
 
@@ -3968,7 +3969,7 @@ public class ConversationsApi {
    * @return Conversation
    * @throws ApiException if fails to make API call
    */
-  public Conversation patchConversationsCobrowsesession(String cobrowseId, Conversation body) throws ApiException {
+  public Conversation patchConversationsCobrowsesession(String cobrowseId, Conversation body) throws IOException, ApiException {
     return patchConversationsCobrowsesessionWithHttpInfo(cobrowseId, body).getBody();
   }
 
@@ -3980,17 +3981,17 @@ public class ConversationsApi {
    * @return Conversation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Conversation> patchConversationsCobrowsesessionWithHttpInfo(String cobrowseId, Conversation body) throws ApiException {
+  public ApiResponse<Conversation> patchConversationsCobrowsesessionWithHttpInfo(String cobrowseId, Conversation body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'cobrowseId' is set
     if (cobrowseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'cobrowseId' when calling patchConversationsCobrowsesession");
+      throw new IllegalArgumentException("Missing the required parameter 'cobrowseId' when calling patchConversationsCobrowsesession");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationsCobrowsesession");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCobrowsesession");
     }
     
     // create path and map variables
@@ -4026,7 +4027,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Conversation patchConversationsCobrowsesession(PatchConversationsCobrowsesessionRequest request) throws ApiException {
+  public Conversation patchConversationsCobrowsesession(PatchConversationsCobrowsesessionRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Conversation>() {});
   }
 
@@ -4036,7 +4037,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Conversation> patchConversationsCobrowsesession(ApiRequest<Conversation> request) throws ApiException {
+  public ApiResponse<Conversation> patchConversationsCobrowsesession(ApiRequest<Conversation> request) throws IOException, ApiException {
     return pcapiClient.<Conversation>invokeAPIVerbose(request, new TypeReference<Conversation>() {});
   }
 
@@ -4048,7 +4049,7 @@ public class ConversationsApi {
    * @param body  (optional)
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationsCobrowsesessionParticipant(String cobrowseId, String participantId, MediaParticipantRequest body) throws ApiException {
+  public void patchConversationsCobrowsesessionParticipant(String cobrowseId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
     patchConversationsCobrowsesessionParticipantWithHttpInfo(cobrowseId, participantId, body);
   }
 
@@ -4060,17 +4061,17 @@ public class ConversationsApi {
    * @param body  (optional)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationsCobrowsesessionParticipantWithHttpInfo(String cobrowseId, String participantId, MediaParticipantRequest body) throws ApiException {
+  public ApiResponse<Void> patchConversationsCobrowsesessionParticipantWithHttpInfo(String cobrowseId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'cobrowseId' is set
     if (cobrowseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'cobrowseId' when calling patchConversationsCobrowsesessionParticipant");
+      throw new IllegalArgumentException("Missing the required parameter 'cobrowseId' when calling patchConversationsCobrowsesessionParticipant");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling patchConversationsCobrowsesessionParticipant");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsCobrowsesessionParticipant");
     }
     
     // create path and map variables
@@ -4107,7 +4108,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationsCobrowsesessionParticipant(PatchConversationsCobrowsesessionParticipantRequest request) throws ApiException {
+  public void patchConversationsCobrowsesessionParticipant(PatchConversationsCobrowsesessionParticipantRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -4117,7 +4118,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationsCobrowsesessionParticipant(ApiRequest<MediaParticipantRequest> request) throws ApiException {
+  public ApiResponse<Void> patchConversationsCobrowsesessionParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -4129,7 +4130,7 @@ public class ConversationsApi {
    * @param body  (optional)
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationsCobrowsesessionParticipantAttributes(String cobrowseId, String participantId, ParticipantAttributes body) throws ApiException {
+  public void patchConversationsCobrowsesessionParticipantAttributes(String cobrowseId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
     patchConversationsCobrowsesessionParticipantAttributesWithHttpInfo(cobrowseId, participantId, body);
   }
 
@@ -4141,17 +4142,17 @@ public class ConversationsApi {
    * @param body  (optional)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationsCobrowsesessionParticipantAttributesWithHttpInfo(String cobrowseId, String participantId, ParticipantAttributes body) throws ApiException {
+  public ApiResponse<Void> patchConversationsCobrowsesessionParticipantAttributesWithHttpInfo(String cobrowseId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'cobrowseId' is set
     if (cobrowseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'cobrowseId' when calling patchConversationsCobrowsesessionParticipantAttributes");
+      throw new IllegalArgumentException("Missing the required parameter 'cobrowseId' when calling patchConversationsCobrowsesessionParticipantAttributes");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling patchConversationsCobrowsesessionParticipantAttributes");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsCobrowsesessionParticipantAttributes");
     }
     
     // create path and map variables
@@ -4188,7 +4189,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationsCobrowsesessionParticipantAttributes(PatchConversationsCobrowsesessionParticipantAttributesRequest request) throws ApiException {
+  public void patchConversationsCobrowsesessionParticipantAttributes(PatchConversationsCobrowsesessionParticipantAttributesRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -4198,7 +4199,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationsCobrowsesessionParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws ApiException {
+  public ApiResponse<Void> patchConversationsCobrowsesessionParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -4212,7 +4213,7 @@ public class ConversationsApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public Empty patchConversationsCobrowsesessionParticipantCommunication(String cobrowseId, String participantId, String communicationId, MediaParticipantRequest body) throws ApiException {
+  public Empty patchConversationsCobrowsesessionParticipantCommunication(String cobrowseId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
     return patchConversationsCobrowsesessionParticipantCommunicationWithHttpInfo(cobrowseId, participantId, communicationId, body).getBody();
   }
 
@@ -4226,27 +4227,27 @@ public class ConversationsApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> patchConversationsCobrowsesessionParticipantCommunicationWithHttpInfo(String cobrowseId, String participantId, String communicationId, MediaParticipantRequest body) throws ApiException {
+  public ApiResponse<Empty> patchConversationsCobrowsesessionParticipantCommunicationWithHttpInfo(String cobrowseId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'cobrowseId' is set
     if (cobrowseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'cobrowseId' when calling patchConversationsCobrowsesessionParticipantCommunication");
+      throw new IllegalArgumentException("Missing the required parameter 'cobrowseId' when calling patchConversationsCobrowsesessionParticipantCommunication");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling patchConversationsCobrowsesessionParticipantCommunication");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsCobrowsesessionParticipantCommunication");
     }
     
     // verify the required parameter 'communicationId' is set
     if (communicationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'communicationId' when calling patchConversationsCobrowsesessionParticipantCommunication");
+      throw new IllegalArgumentException("Missing the required parameter 'communicationId' when calling patchConversationsCobrowsesessionParticipantCommunication");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationsCobrowsesessionParticipantCommunication");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCobrowsesessionParticipantCommunication");
     }
     
     // create path and map variables
@@ -4284,7 +4285,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Empty patchConversationsCobrowsesessionParticipantCommunication(PatchConversationsCobrowsesessionParticipantCommunicationRequest request) throws ApiException {
+  public Empty patchConversationsCobrowsesessionParticipantCommunication(PatchConversationsCobrowsesessionParticipantCommunicationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
   }
 
@@ -4294,7 +4295,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> patchConversationsCobrowsesessionParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws ApiException {
+  public ApiResponse<Empty> patchConversationsCobrowsesessionParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
     return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
   }
 
@@ -4306,7 +4307,7 @@ public class ConversationsApi {
    * @return Conversation
    * @throws ApiException if fails to make API call
    */
-  public Conversation patchConversationsEmail(String emailId, Conversation body) throws ApiException {
+  public Conversation patchConversationsEmail(String emailId, Conversation body) throws IOException, ApiException {
     return patchConversationsEmailWithHttpInfo(emailId, body).getBody();
   }
 
@@ -4318,17 +4319,17 @@ public class ConversationsApi {
    * @return Conversation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Conversation> patchConversationsEmailWithHttpInfo(String emailId, Conversation body) throws ApiException {
+  public ApiResponse<Conversation> patchConversationsEmailWithHttpInfo(String emailId, Conversation body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'emailId' is set
     if (emailId == null) {
-      throw new ApiException(400, "Missing the required parameter 'emailId' when calling patchConversationsEmail");
+      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling patchConversationsEmail");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationsEmail");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsEmail");
     }
     
     // create path and map variables
@@ -4364,7 +4365,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Conversation patchConversationsEmail(PatchConversationsEmailRequest request) throws ApiException {
+  public Conversation patchConversationsEmail(PatchConversationsEmailRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Conversation>() {});
   }
 
@@ -4374,7 +4375,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Conversation> patchConversationsEmail(ApiRequest<Conversation> request) throws ApiException {
+  public ApiResponse<Conversation> patchConversationsEmail(ApiRequest<Conversation> request) throws IOException, ApiException {
     return pcapiClient.<Conversation>invokeAPIVerbose(request, new TypeReference<Conversation>() {});
   }
 
@@ -4386,7 +4387,7 @@ public class ConversationsApi {
    * @param body Update request (required)
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationsEmailParticipant(String emailId, String participantId, MediaParticipantRequest body) throws ApiException {
+  public void patchConversationsEmailParticipant(String emailId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
     patchConversationsEmailParticipantWithHttpInfo(emailId, participantId, body);
   }
 
@@ -4398,22 +4399,22 @@ public class ConversationsApi {
    * @param body Update request (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationsEmailParticipantWithHttpInfo(String emailId, String participantId, MediaParticipantRequest body) throws ApiException {
+  public ApiResponse<Void> patchConversationsEmailParticipantWithHttpInfo(String emailId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'emailId' is set
     if (emailId == null) {
-      throw new ApiException(400, "Missing the required parameter 'emailId' when calling patchConversationsEmailParticipant");
+      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling patchConversationsEmailParticipant");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling patchConversationsEmailParticipant");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsEmailParticipant");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationsEmailParticipant");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsEmailParticipant");
     }
     
     // create path and map variables
@@ -4450,7 +4451,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationsEmailParticipant(PatchConversationsEmailParticipantRequest request) throws ApiException {
+  public void patchConversationsEmailParticipant(PatchConversationsEmailParticipantRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -4460,7 +4461,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationsEmailParticipant(ApiRequest<MediaParticipantRequest> request) throws ApiException {
+  public ApiResponse<Void> patchConversationsEmailParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -4472,7 +4473,7 @@ public class ConversationsApi {
    * @param body Participant attributes (required)
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationsEmailParticipantAttributes(String emailId, String participantId, ParticipantAttributes body) throws ApiException {
+  public void patchConversationsEmailParticipantAttributes(String emailId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
     patchConversationsEmailParticipantAttributesWithHttpInfo(emailId, participantId, body);
   }
 
@@ -4484,22 +4485,22 @@ public class ConversationsApi {
    * @param body Participant attributes (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationsEmailParticipantAttributesWithHttpInfo(String emailId, String participantId, ParticipantAttributes body) throws ApiException {
+  public ApiResponse<Void> patchConversationsEmailParticipantAttributesWithHttpInfo(String emailId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'emailId' is set
     if (emailId == null) {
-      throw new ApiException(400, "Missing the required parameter 'emailId' when calling patchConversationsEmailParticipantAttributes");
+      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling patchConversationsEmailParticipantAttributes");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling patchConversationsEmailParticipantAttributes");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsEmailParticipantAttributes");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationsEmailParticipantAttributes");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsEmailParticipantAttributes");
     }
     
     // create path and map variables
@@ -4536,7 +4537,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void patchConversationsEmailParticipantAttributes(PatchConversationsEmailParticipantAttributesRequest request) throws ApiException {
+  public void patchConversationsEmailParticipantAttributes(PatchConversationsEmailParticipantAttributesRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -4546,7 +4547,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchConversationsEmailParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws ApiException {
+  public ApiResponse<Void> patchConversationsEmailParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -4560,7 +4561,7 @@ public class ConversationsApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public Empty patchConversationsEmailParticipantCommunication(String emailId, String participantId, String communicationId, MediaParticipantRequest body) throws ApiException {
+  public Empty patchConversationsEmailParticipantCommunication(String emailId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
     return patchConversationsEmailParticipantCommunicationWithHttpInfo(emailId, participantId, communicationId, body).getBody();
   }
 
@@ -4574,27 +4575,27 @@ public class ConversationsApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> patchConversationsEmailParticipantCommunicationWithHttpInfo(String emailId, String participantId, String communicationId, MediaParticipantRequest body) throws ApiException {
+  public ApiResponse<Empty> patchConversationsEmailParticipantCommunicationWithHttpInfo(String emailId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'emailId' is set
     if (emailId == null) {
-      throw new ApiException(400, "Missing the required parameter 'emailId' when calling patchConversationsEmailParticipantCommunication");
+      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling patchConversationsEmailParticipantCommunication");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling patchConversationsEmailParticipantCommunication");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsEmailParticipantCommunication");
     }
     
     // verify the required parameter 'communicationId' is set
     if (communicationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'communicationId' when calling patchConversationsEmailParticipantCommunication");
+      throw new IllegalArgumentException("Missing the required parameter 'communicationId' when calling patchConversationsEmailParticipantCommunication");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchConversationsEmailParticipantCommunication");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsEmailParticipantCommunication");
     }
     
     // create path and map variables
@@ -4632,7 +4633,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Empty patchConversationsEmailParticipantCommunication(PatchConversationsEmailParticipantCommunicationRequest request) throws ApiException {
+  public Empty patchConversationsEmailParticipantCommunication(PatchConversationsEmailParticipantCommunicationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
   }
 
@@ -4642,7 +4643,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> patchConversationsEmailParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws ApiException {
+  public ApiResponse<Empty> patchConversationsEmailParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
     return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
   }
 
@@ -4654,7 +4655,7 @@ public class ConversationsApi {
    * @return PropertyIndexRequest
    * @throws ApiException if fails to make API call
    */
-  public PropertyIndexRequest postAnalyticsConversationDetailsProperties(String conversationId, PropertyIndexRequest body) throws ApiException {
+  public PropertyIndexRequest postAnalyticsConversationDetailsProperties(String conversationId, PropertyIndexRequest body) throws IOException, ApiException {
     return postAnalyticsConversationDetailsPropertiesWithHttpInfo(conversationId, body).getBody();
   }
 
@@ -4666,17 +4667,17 @@ public class ConversationsApi {
    * @return PropertyIndexRequest
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PropertyIndexRequest> postAnalyticsConversationDetailsPropertiesWithHttpInfo(String conversationId, PropertyIndexRequest body) throws ApiException {
+  public ApiResponse<PropertyIndexRequest> postAnalyticsConversationDetailsPropertiesWithHttpInfo(String conversationId, PropertyIndexRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling postAnalyticsConversationDetailsProperties");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling postAnalyticsConversationDetailsProperties");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAnalyticsConversationDetailsProperties");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsConversationDetailsProperties");
     }
     
     // create path and map variables
@@ -4712,7 +4713,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PropertyIndexRequest postAnalyticsConversationDetailsProperties(PostAnalyticsConversationDetailsPropertiesRequest request) throws ApiException {
+  public PropertyIndexRequest postAnalyticsConversationDetailsProperties(PostAnalyticsConversationDetailsPropertiesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PropertyIndexRequest>() {});
   }
 
@@ -4722,7 +4723,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PropertyIndexRequest> postAnalyticsConversationDetailsProperties(ApiRequest<PropertyIndexRequest> request) throws ApiException {
+  public ApiResponse<PropertyIndexRequest> postAnalyticsConversationDetailsProperties(ApiRequest<PropertyIndexRequest> request) throws IOException, ApiException {
     return pcapiClient.<PropertyIndexRequest>invokeAPIVerbose(request, new TypeReference<PropertyIndexRequest>() {});
   }
 
@@ -4733,7 +4734,7 @@ public class ConversationsApi {
    * @return AggregateQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public AggregateQueryResponse postAnalyticsConversationsAggregatesQuery(AggregationQuery body) throws ApiException {
+  public AggregateQueryResponse postAnalyticsConversationsAggregatesQuery(AggregationQuery body) throws IOException, ApiException {
     return postAnalyticsConversationsAggregatesQueryWithHttpInfo(body).getBody();
   }
 
@@ -4744,12 +4745,12 @@ public class ConversationsApi {
    * @return AggregateQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AggregateQueryResponse> postAnalyticsConversationsAggregatesQueryWithHttpInfo(AggregationQuery body) throws ApiException {
+  public ApiResponse<AggregateQueryResponse> postAnalyticsConversationsAggregatesQueryWithHttpInfo(AggregationQuery body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAnalyticsConversationsAggregatesQuery");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsConversationsAggregatesQuery");
     }
     
     // create path and map variables
@@ -4784,7 +4785,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public AggregateQueryResponse postAnalyticsConversationsAggregatesQuery(PostAnalyticsConversationsAggregatesQueryRequest request) throws ApiException {
+  public AggregateQueryResponse postAnalyticsConversationsAggregatesQuery(PostAnalyticsConversationsAggregatesQueryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {});
   }
 
@@ -4794,7 +4795,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AggregateQueryResponse> postAnalyticsConversationsAggregatesQuery(ApiRequest<AggregationQuery> request) throws ApiException {
+  public ApiResponse<AggregateQueryResponse> postAnalyticsConversationsAggregatesQuery(ApiRequest<AggregationQuery> request) throws IOException, ApiException {
     return pcapiClient.<AggregateQueryResponse>invokeAPIVerbose(request, new TypeReference<AggregateQueryResponse>() {});
   }
 
@@ -4805,7 +4806,7 @@ public class ConversationsApi {
    * @return AnalyticsConversationQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(ConversationQuery body) throws ApiException {
+  public AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(ConversationQuery body) throws IOException, ApiException {
     return postAnalyticsConversationsDetailsQueryWithHttpInfo(body).getBody();
   }
 
@@ -4816,12 +4817,12 @@ public class ConversationsApi {
    * @return AnalyticsConversationQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AnalyticsConversationQueryResponse> postAnalyticsConversationsDetailsQueryWithHttpInfo(ConversationQuery body) throws ApiException {
+  public ApiResponse<AnalyticsConversationQueryResponse> postAnalyticsConversationsDetailsQueryWithHttpInfo(ConversationQuery body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAnalyticsConversationsDetailsQuery");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsConversationsDetailsQuery");
     }
     
     // create path and map variables
@@ -4856,7 +4857,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(PostAnalyticsConversationsDetailsQueryRequest request) throws ApiException {
+  public AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(PostAnalyticsConversationsDetailsQueryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AnalyticsConversationQueryResponse>() {});
   }
 
@@ -4866,7 +4867,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AnalyticsConversationQueryResponse> postAnalyticsConversationsDetailsQuery(ApiRequest<ConversationQuery> request) throws ApiException {
+  public ApiResponse<AnalyticsConversationQueryResponse> postAnalyticsConversationsDetailsQuery(ApiRequest<ConversationQuery> request) throws IOException, ApiException {
     return pcapiClient.<AnalyticsConversationQueryResponse>invokeAPIVerbose(request, new TypeReference<AnalyticsConversationQueryResponse>() {});
   }
 
@@ -4878,7 +4879,7 @@ public class ConversationsApi {
    * @param body  (optional)
    * @throws ApiException if fails to make API call
    */
-  public void postConversationParticipantCallbacks(String conversationId, String participantId, CreateCallbackCommand body) throws ApiException {
+  public void postConversationParticipantCallbacks(String conversationId, String participantId, CreateCallbackCommand body) throws IOException, ApiException {
     postConversationParticipantCallbacksWithHttpInfo(conversationId, participantId, body);
   }
 
@@ -4890,17 +4891,17 @@ public class ConversationsApi {
    * @param body  (optional)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postConversationParticipantCallbacksWithHttpInfo(String conversationId, String participantId, CreateCallbackCommand body) throws ApiException {
+  public ApiResponse<Void> postConversationParticipantCallbacksWithHttpInfo(String conversationId, String participantId, CreateCallbackCommand body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling postConversationParticipantCallbacks");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling postConversationParticipantCallbacks");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling postConversationParticipantCallbacks");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling postConversationParticipantCallbacks");
     }
     
     // create path and map variables
@@ -4937,7 +4938,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void postConversationParticipantCallbacks(PostConversationParticipantCallbacksRequest request) throws ApiException {
+  public void postConversationParticipantCallbacks(PostConversationParticipantCallbacksRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -4947,7 +4948,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postConversationParticipantCallbacks(ApiRequest<CreateCallbackCommand> request) throws ApiException {
+  public ApiResponse<Void> postConversationParticipantCallbacks(ApiRequest<CreateCallbackCommand> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -4959,7 +4960,7 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if fails to make API call
    */
-  public void postConversationParticipantReplace(String conversationId, String participantId, TransferRequest body) throws ApiException {
+  public void postConversationParticipantReplace(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
     postConversationParticipantReplaceWithHttpInfo(conversationId, participantId, body);
   }
 
@@ -4971,22 +4972,22 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postConversationParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws ApiException {
+  public ApiResponse<Void> postConversationParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling postConversationParticipantReplace");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling postConversationParticipantReplace");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling postConversationParticipantReplace");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling postConversationParticipantReplace");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postConversationParticipantReplace");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationParticipantReplace");
     }
     
     // create path and map variables
@@ -5023,7 +5024,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void postConversationParticipantReplace(PostConversationParticipantReplaceRequest request) throws ApiException {
+  public void postConversationParticipantReplace(PostConversationParticipantReplaceRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -5033,7 +5034,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postConversationParticipantReplace(ApiRequest<TransferRequest> request) throws ApiException {
+  public ApiResponse<Void> postConversationParticipantReplace(ApiRequest<TransferRequest> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -5045,7 +5046,7 @@ public class ConversationsApi {
    * @return Conversation
    * @throws ApiException if fails to make API call
    */
-  public Conversation postConversationsCall(String callId, CallCommand body) throws ApiException {
+  public Conversation postConversationsCall(String callId, CallCommand body) throws IOException, ApiException {
     return postConversationsCallWithHttpInfo(callId, body).getBody();
   }
 
@@ -5057,17 +5058,17 @@ public class ConversationsApi {
    * @return Conversation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Conversation> postConversationsCallWithHttpInfo(String callId, CallCommand body) throws ApiException {
+  public ApiResponse<Conversation> postConversationsCallWithHttpInfo(String callId, CallCommand body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'callId' is set
     if (callId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callId' when calling postConversationsCall");
+      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling postConversationsCall");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postConversationsCall");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsCall");
     }
     
     // create path and map variables
@@ -5103,7 +5104,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Conversation postConversationsCall(PostConversationsCallRequest request) throws ApiException {
+  public Conversation postConversationsCall(PostConversationsCallRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Conversation>() {});
   }
 
@@ -5113,7 +5114,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Conversation> postConversationsCall(ApiRequest<CallCommand> request) throws ApiException {
+  public ApiResponse<Conversation> postConversationsCall(ApiRequest<CallCommand> request) throws IOException, ApiException {
     return pcapiClient.<Conversation>invokeAPIVerbose(request, new TypeReference<Conversation>() {});
   }
 
@@ -5126,7 +5127,7 @@ public class ConversationsApi {
    * @return ConsultTransferResponse
    * @throws ApiException if fails to make API call
    */
-  public ConsultTransferResponse postConversationsCallParticipantConsult(String callId, String participantId, ConsultTransfer body) throws ApiException {
+  public ConsultTransferResponse postConversationsCallParticipantConsult(String callId, String participantId, ConsultTransfer body) throws IOException, ApiException {
     return postConversationsCallParticipantConsultWithHttpInfo(callId, participantId, body).getBody();
   }
 
@@ -5139,22 +5140,22 @@ public class ConversationsApi {
    * @return ConsultTransferResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsultWithHttpInfo(String callId, String participantId, ConsultTransfer body) throws ApiException {
+  public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsultWithHttpInfo(String callId, String participantId, ConsultTransfer body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'callId' is set
     if (callId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callId' when calling postConversationsCallParticipantConsult");
+      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling postConversationsCallParticipantConsult");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling postConversationsCallParticipantConsult");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling postConversationsCallParticipantConsult");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postConversationsCallParticipantConsult");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsCallParticipantConsult");
     }
     
     // create path and map variables
@@ -5191,7 +5192,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ConsultTransferResponse postConversationsCallParticipantConsult(PostConversationsCallParticipantConsultRequest request) throws ApiException {
+  public ConsultTransferResponse postConversationsCallParticipantConsult(PostConversationsCallParticipantConsultRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ConsultTransferResponse>() {});
   }
 
@@ -5201,7 +5202,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsult(ApiRequest<ConsultTransfer> request) throws ApiException {
+  public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsult(ApiRequest<ConsultTransfer> request) throws IOException, ApiException {
     return pcapiClient.<ConsultTransferResponse>invokeAPIVerbose(request, new TypeReference<ConsultTransferResponse>() {});
   }
 
@@ -5212,7 +5213,7 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @throws ApiException if fails to make API call
    */
-  public void postConversationsCallParticipantMonitor(String callId, String participantId) throws ApiException {
+  public void postConversationsCallParticipantMonitor(String callId, String participantId) throws IOException, ApiException {
     postConversationsCallParticipantMonitorWithHttpInfo(callId, participantId);
   }
 
@@ -5223,17 +5224,17 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postConversationsCallParticipantMonitorWithHttpInfo(String callId, String participantId) throws ApiException {
+  public ApiResponse<Void> postConversationsCallParticipantMonitorWithHttpInfo(String callId, String participantId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'callId' is set
     if (callId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callId' when calling postConversationsCallParticipantMonitor");
+      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling postConversationsCallParticipantMonitor");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling postConversationsCallParticipantMonitor");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling postConversationsCallParticipantMonitor");
     }
     
     // create path and map variables
@@ -5270,7 +5271,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void postConversationsCallParticipantMonitor(PostConversationsCallParticipantMonitorRequest request) throws ApiException {
+  public void postConversationsCallParticipantMonitor(PostConversationsCallParticipantMonitorRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -5280,7 +5281,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postConversationsCallParticipantMonitor(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> postConversationsCallParticipantMonitor(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -5292,7 +5293,7 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if fails to make API call
    */
-  public void postConversationsCallParticipantReplace(String callId, String participantId, TransferRequest body) throws ApiException {
+  public void postConversationsCallParticipantReplace(String callId, String participantId, TransferRequest body) throws IOException, ApiException {
     postConversationsCallParticipantReplaceWithHttpInfo(callId, participantId, body);
   }
 
@@ -5304,22 +5305,22 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postConversationsCallParticipantReplaceWithHttpInfo(String callId, String participantId, TransferRequest body) throws ApiException {
+  public ApiResponse<Void> postConversationsCallParticipantReplaceWithHttpInfo(String callId, String participantId, TransferRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'callId' is set
     if (callId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callId' when calling postConversationsCallParticipantReplace");
+      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling postConversationsCallParticipantReplace");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling postConversationsCallParticipantReplace");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling postConversationsCallParticipantReplace");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postConversationsCallParticipantReplace");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsCallParticipantReplace");
     }
     
     // create path and map variables
@@ -5356,7 +5357,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void postConversationsCallParticipantReplace(PostConversationsCallParticipantReplaceRequest request) throws ApiException {
+  public void postConversationsCallParticipantReplace(PostConversationsCallParticipantReplaceRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -5366,7 +5367,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postConversationsCallParticipantReplace(ApiRequest<TransferRequest> request) throws ApiException {
+  public ApiResponse<Void> postConversationsCallParticipantReplace(ApiRequest<TransferRequest> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -5378,7 +5379,7 @@ public class ConversationsApi {
    * @return Conversation
    * @throws ApiException if fails to make API call
    */
-  public Conversation postConversationsCallParticipants(String callId, Conversation body) throws ApiException {
+  public Conversation postConversationsCallParticipants(String callId, Conversation body) throws IOException, ApiException {
     return postConversationsCallParticipantsWithHttpInfo(callId, body).getBody();
   }
 
@@ -5390,17 +5391,17 @@ public class ConversationsApi {
    * @return Conversation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Conversation> postConversationsCallParticipantsWithHttpInfo(String callId, Conversation body) throws ApiException {
+  public ApiResponse<Conversation> postConversationsCallParticipantsWithHttpInfo(String callId, Conversation body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'callId' is set
     if (callId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callId' when calling postConversationsCallParticipants");
+      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling postConversationsCallParticipants");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postConversationsCallParticipants");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsCallParticipants");
     }
     
     // create path and map variables
@@ -5436,7 +5437,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Conversation postConversationsCallParticipants(PostConversationsCallParticipantsRequest request) throws ApiException {
+  public Conversation postConversationsCallParticipants(PostConversationsCallParticipantsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Conversation>() {});
   }
 
@@ -5446,7 +5447,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Conversation> postConversationsCallParticipants(ApiRequest<Conversation> request) throws ApiException {
+  public ApiResponse<Conversation> postConversationsCallParticipants(ApiRequest<Conversation> request) throws IOException, ApiException {
     return pcapiClient.<Conversation>invokeAPIVerbose(request, new TypeReference<Conversation>() {});
   }
 
@@ -5458,7 +5459,7 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if fails to make API call
    */
-  public void postConversationsCallbackParticipantReplace(String callbackId, String participantId, TransferRequest body) throws ApiException {
+  public void postConversationsCallbackParticipantReplace(String callbackId, String participantId, TransferRequest body) throws IOException, ApiException {
     postConversationsCallbackParticipantReplaceWithHttpInfo(callbackId, participantId, body);
   }
 
@@ -5470,22 +5471,22 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postConversationsCallbackParticipantReplaceWithHttpInfo(String callbackId, String participantId, TransferRequest body) throws ApiException {
+  public ApiResponse<Void> postConversationsCallbackParticipantReplaceWithHttpInfo(String callbackId, String participantId, TransferRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'callbackId' is set
     if (callbackId == null) {
-      throw new ApiException(400, "Missing the required parameter 'callbackId' when calling postConversationsCallbackParticipantReplace");
+      throw new IllegalArgumentException("Missing the required parameter 'callbackId' when calling postConversationsCallbackParticipantReplace");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling postConversationsCallbackParticipantReplace");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling postConversationsCallbackParticipantReplace");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postConversationsCallbackParticipantReplace");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsCallbackParticipantReplace");
     }
     
     // create path and map variables
@@ -5522,7 +5523,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void postConversationsCallbackParticipantReplace(PostConversationsCallbackParticipantReplaceRequest request) throws ApiException {
+  public void postConversationsCallbackParticipantReplace(PostConversationsCallbackParticipantReplaceRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -5532,7 +5533,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postConversationsCallbackParticipantReplace(ApiRequest<TransferRequest> request) throws ApiException {
+  public ApiResponse<Void> postConversationsCallbackParticipantReplace(ApiRequest<TransferRequest> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -5543,7 +5544,7 @@ public class ConversationsApi {
    * @return CreateCallbackResponse
    * @throws ApiException if fails to make API call
    */
-  public CreateCallbackResponse postConversationsCallbacks(CreateCallbackCommand body) throws ApiException {
+  public CreateCallbackResponse postConversationsCallbacks(CreateCallbackCommand body) throws IOException, ApiException {
     return postConversationsCallbacksWithHttpInfo(body).getBody();
   }
 
@@ -5554,12 +5555,12 @@ public class ConversationsApi {
    * @return CreateCallbackResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CreateCallbackResponse> postConversationsCallbacksWithHttpInfo(CreateCallbackCommand body) throws ApiException {
+  public ApiResponse<CreateCallbackResponse> postConversationsCallbacksWithHttpInfo(CreateCallbackCommand body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postConversationsCallbacks");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsCallbacks");
     }
     
     // create path and map variables
@@ -5594,7 +5595,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CreateCallbackResponse postConversationsCallbacks(PostConversationsCallbacksRequest request) throws ApiException {
+  public CreateCallbackResponse postConversationsCallbacks(PostConversationsCallbacksRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CreateCallbackResponse>() {});
   }
 
@@ -5604,7 +5605,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CreateCallbackResponse> postConversationsCallbacks(ApiRequest<CreateCallbackCommand> request) throws ApiException {
+  public ApiResponse<CreateCallbackResponse> postConversationsCallbacks(ApiRequest<CreateCallbackCommand> request) throws IOException, ApiException {
     return pcapiClient.<CreateCallbackResponse>invokeAPIVerbose(request, new TypeReference<CreateCallbackResponse>() {});
   }
 
@@ -5615,7 +5616,7 @@ public class ConversationsApi {
    * @return CreateCallResponse
    * @throws ApiException if fails to make API call
    */
-  public CreateCallResponse postConversationsCalls(CreateCallRequest body) throws ApiException {
+  public CreateCallResponse postConversationsCalls(CreateCallRequest body) throws IOException, ApiException {
     return postConversationsCallsWithHttpInfo(body).getBody();
   }
 
@@ -5626,12 +5627,12 @@ public class ConversationsApi {
    * @return CreateCallResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CreateCallResponse> postConversationsCallsWithHttpInfo(CreateCallRequest body) throws ApiException {
+  public ApiResponse<CreateCallResponse> postConversationsCallsWithHttpInfo(CreateCallRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postConversationsCalls");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsCalls");
     }
     
     // create path and map variables
@@ -5666,7 +5667,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CreateCallResponse postConversationsCalls(PostConversationsCallsRequest request) throws ApiException {
+  public CreateCallResponse postConversationsCalls(PostConversationsCallsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CreateCallResponse>() {});
   }
 
@@ -5676,7 +5677,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CreateCallResponse> postConversationsCalls(ApiRequest<CreateCallRequest> request) throws ApiException {
+  public ApiResponse<CreateCallResponse> postConversationsCalls(ApiRequest<CreateCallRequest> request) throws IOException, ApiException {
     return pcapiClient.<CreateCallResponse>invokeAPIVerbose(request, new TypeReference<CreateCallResponse>() {});
   }
 
@@ -5688,7 +5689,7 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if fails to make API call
    */
-  public void postConversationsChatParticipantReplace(String chatId, String participantId, TransferRequest body) throws ApiException {
+  public void postConversationsChatParticipantReplace(String chatId, String participantId, TransferRequest body) throws IOException, ApiException {
     postConversationsChatParticipantReplaceWithHttpInfo(chatId, participantId, body);
   }
 
@@ -5700,22 +5701,22 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postConversationsChatParticipantReplaceWithHttpInfo(String chatId, String participantId, TransferRequest body) throws ApiException {
+  public ApiResponse<Void> postConversationsChatParticipantReplaceWithHttpInfo(String chatId, String participantId, TransferRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'chatId' is set
     if (chatId == null) {
-      throw new ApiException(400, "Missing the required parameter 'chatId' when calling postConversationsChatParticipantReplace");
+      throw new IllegalArgumentException("Missing the required parameter 'chatId' when calling postConversationsChatParticipantReplace");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling postConversationsChatParticipantReplace");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling postConversationsChatParticipantReplace");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postConversationsChatParticipantReplace");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsChatParticipantReplace");
     }
     
     // create path and map variables
@@ -5752,7 +5753,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void postConversationsChatParticipantReplace(PostConversationsChatParticipantReplaceRequest request) throws ApiException {
+  public void postConversationsChatParticipantReplace(PostConversationsChatParticipantReplaceRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -5762,7 +5763,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postConversationsChatParticipantReplace(ApiRequest<TransferRequest> request) throws ApiException {
+  public ApiResponse<Void> postConversationsChatParticipantReplace(ApiRequest<TransferRequest> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -5773,7 +5774,7 @@ public class ConversationsApi {
    * @return ChatConversation
    * @throws ApiException if fails to make API call
    */
-  public ChatConversation postConversationsChats(CreateWebChatRequest body) throws ApiException {
+  public ChatConversation postConversationsChats(CreateWebChatRequest body) throws IOException, ApiException {
     return postConversationsChatsWithHttpInfo(body).getBody();
   }
 
@@ -5784,12 +5785,12 @@ public class ConversationsApi {
    * @return ChatConversation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ChatConversation> postConversationsChatsWithHttpInfo(CreateWebChatRequest body) throws ApiException {
+  public ApiResponse<ChatConversation> postConversationsChatsWithHttpInfo(CreateWebChatRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postConversationsChats");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsChats");
     }
     
     // create path and map variables
@@ -5824,7 +5825,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ChatConversation postConversationsChats(PostConversationsChatsRequest request) throws ApiException {
+  public ChatConversation postConversationsChats(PostConversationsChatsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ChatConversation>() {});
   }
 
@@ -5834,7 +5835,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ChatConversation> postConversationsChats(ApiRequest<CreateWebChatRequest> request) throws ApiException {
+  public ApiResponse<ChatConversation> postConversationsChats(ApiRequest<CreateWebChatRequest> request) throws IOException, ApiException {
     return pcapiClient.<ChatConversation>invokeAPIVerbose(request, new TypeReference<ChatConversation>() {});
   }
 
@@ -5846,7 +5847,7 @@ public class ConversationsApi {
    * @param body  (optional)
    * @throws ApiException if fails to make API call
    */
-  public void postConversationsCobrowsesessionParticipantReplace(String cobrowseId, String participantId, TransferRequest body) throws ApiException {
+  public void postConversationsCobrowsesessionParticipantReplace(String cobrowseId, String participantId, TransferRequest body) throws IOException, ApiException {
     postConversationsCobrowsesessionParticipantReplaceWithHttpInfo(cobrowseId, participantId, body);
   }
 
@@ -5858,17 +5859,17 @@ public class ConversationsApi {
    * @param body  (optional)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postConversationsCobrowsesessionParticipantReplaceWithHttpInfo(String cobrowseId, String participantId, TransferRequest body) throws ApiException {
+  public ApiResponse<Void> postConversationsCobrowsesessionParticipantReplaceWithHttpInfo(String cobrowseId, String participantId, TransferRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'cobrowseId' is set
     if (cobrowseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'cobrowseId' when calling postConversationsCobrowsesessionParticipantReplace");
+      throw new IllegalArgumentException("Missing the required parameter 'cobrowseId' when calling postConversationsCobrowsesessionParticipantReplace");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling postConversationsCobrowsesessionParticipantReplace");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling postConversationsCobrowsesessionParticipantReplace");
     }
     
     // create path and map variables
@@ -5905,7 +5906,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void postConversationsCobrowsesessionParticipantReplace(PostConversationsCobrowsesessionParticipantReplaceRequest request) throws ApiException {
+  public void postConversationsCobrowsesessionParticipantReplace(PostConversationsCobrowsesessionParticipantReplaceRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -5915,7 +5916,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postConversationsCobrowsesessionParticipantReplace(ApiRequest<TransferRequest> request) throws ApiException {
+  public ApiResponse<Void> postConversationsCobrowsesessionParticipantReplace(ApiRequest<TransferRequest> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -5927,7 +5928,7 @@ public class ConversationsApi {
    * @return EmailMessage
    * @throws ApiException if fails to make API call
    */
-  public EmailMessage postConversationsEmailMessages(String emailId, EmailMessage body) throws ApiException {
+  public EmailMessage postConversationsEmailMessages(String emailId, EmailMessage body) throws IOException, ApiException {
     return postConversationsEmailMessagesWithHttpInfo(emailId, body).getBody();
   }
 
@@ -5939,17 +5940,17 @@ public class ConversationsApi {
    * @return EmailMessage
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EmailMessage> postConversationsEmailMessagesWithHttpInfo(String emailId, EmailMessage body) throws ApiException {
+  public ApiResponse<EmailMessage> postConversationsEmailMessagesWithHttpInfo(String emailId, EmailMessage body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'emailId' is set
     if (emailId == null) {
-      throw new ApiException(400, "Missing the required parameter 'emailId' when calling postConversationsEmailMessages");
+      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling postConversationsEmailMessages");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postConversationsEmailMessages");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsEmailMessages");
     }
     
     // create path and map variables
@@ -5985,7 +5986,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EmailMessage postConversationsEmailMessages(PostConversationsEmailMessagesRequest request) throws ApiException {
+  public EmailMessage postConversationsEmailMessages(PostConversationsEmailMessagesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EmailMessage>() {});
   }
 
@@ -5995,7 +5996,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EmailMessage> postConversationsEmailMessages(ApiRequest<EmailMessage> request) throws ApiException {
+  public ApiResponse<EmailMessage> postConversationsEmailMessages(ApiRequest<EmailMessage> request) throws IOException, ApiException {
     return pcapiClient.<EmailMessage>invokeAPIVerbose(request, new TypeReference<EmailMessage>() {});
   }
 
@@ -6007,7 +6008,7 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if fails to make API call
    */
-  public void postConversationsEmailParticipantReplace(String emailId, String participantId, TransferRequest body) throws ApiException {
+  public void postConversationsEmailParticipantReplace(String emailId, String participantId, TransferRequest body) throws IOException, ApiException {
     postConversationsEmailParticipantReplaceWithHttpInfo(emailId, participantId, body);
   }
 
@@ -6019,22 +6020,22 @@ public class ConversationsApi {
    * @param body Transfer request (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postConversationsEmailParticipantReplaceWithHttpInfo(String emailId, String participantId, TransferRequest body) throws ApiException {
+  public ApiResponse<Void> postConversationsEmailParticipantReplaceWithHttpInfo(String emailId, String participantId, TransferRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'emailId' is set
     if (emailId == null) {
-      throw new ApiException(400, "Missing the required parameter 'emailId' when calling postConversationsEmailParticipantReplace");
+      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling postConversationsEmailParticipantReplace");
     }
     
     // verify the required parameter 'participantId' is set
     if (participantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'participantId' when calling postConversationsEmailParticipantReplace");
+      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling postConversationsEmailParticipantReplace");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postConversationsEmailParticipantReplace");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsEmailParticipantReplace");
     }
     
     // create path and map variables
@@ -6071,7 +6072,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void postConversationsEmailParticipantReplace(PostConversationsEmailParticipantReplaceRequest request) throws ApiException {
+  public void postConversationsEmailParticipantReplace(PostConversationsEmailParticipantReplaceRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -6081,7 +6082,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postConversationsEmailParticipantReplace(ApiRequest<TransferRequest> request) throws ApiException {
+  public ApiResponse<Void> postConversationsEmailParticipantReplace(ApiRequest<TransferRequest> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -6092,7 +6093,7 @@ public class ConversationsApi {
    * @return EmailConversation
    * @throws ApiException if fails to make API call
    */
-  public EmailConversation postConversationsEmails(CreateEmailRequest body) throws ApiException {
+  public EmailConversation postConversationsEmails(CreateEmailRequest body) throws IOException, ApiException {
     return postConversationsEmailsWithHttpInfo(body).getBody();
   }
 
@@ -6103,12 +6104,12 @@ public class ConversationsApi {
    * @return EmailConversation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EmailConversation> postConversationsEmailsWithHttpInfo(CreateEmailRequest body) throws ApiException {
+  public ApiResponse<EmailConversation> postConversationsEmailsWithHttpInfo(CreateEmailRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postConversationsEmails");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsEmails");
     }
     
     // create path and map variables
@@ -6143,7 +6144,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EmailConversation postConversationsEmails(PostConversationsEmailsRequest request) throws ApiException {
+  public EmailConversation postConversationsEmails(PostConversationsEmailsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EmailConversation>() {});
   }
 
@@ -6153,7 +6154,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EmailConversation> postConversationsEmails(ApiRequest<CreateEmailRequest> request) throws ApiException {
+  public ApiResponse<EmailConversation> postConversationsEmails(ApiRequest<CreateEmailRequest> request) throws IOException, ApiException {
     return pcapiClient.<EmailConversation>invokeAPIVerbose(request, new TypeReference<EmailConversation>() {});
   }
 
@@ -6164,7 +6165,7 @@ public class ConversationsApi {
    * @return FaxSendResponse
    * @throws ApiException if fails to make API call
    */
-  public FaxSendResponse postConversationsFaxes(FaxSendRequest body) throws ApiException {
+  public FaxSendResponse postConversationsFaxes(FaxSendRequest body) throws IOException, ApiException {
     return postConversationsFaxesWithHttpInfo(body).getBody();
   }
 
@@ -6175,12 +6176,12 @@ public class ConversationsApi {
    * @return FaxSendResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<FaxSendResponse> postConversationsFaxesWithHttpInfo(FaxSendRequest body) throws ApiException {
+  public ApiResponse<FaxSendResponse> postConversationsFaxesWithHttpInfo(FaxSendRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postConversationsFaxes");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsFaxes");
     }
     
     // create path and map variables
@@ -6215,7 +6216,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public FaxSendResponse postConversationsFaxes(PostConversationsFaxesRequest request) throws ApiException {
+  public FaxSendResponse postConversationsFaxes(PostConversationsFaxesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FaxSendResponse>() {});
   }
 
@@ -6225,7 +6226,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<FaxSendResponse> postConversationsFaxes(ApiRequest<FaxSendRequest> request) throws ApiException {
+  public ApiResponse<FaxSendResponse> postConversationsFaxes(ApiRequest<FaxSendRequest> request) throws IOException, ApiException {
     return pcapiClient.<FaxSendResponse>invokeAPIVerbose(request, new TypeReference<FaxSendResponse>() {});
   }
 
@@ -6237,7 +6238,7 @@ public class ConversationsApi {
    * @return EmailMessage
    * @throws ApiException if fails to make API call
    */
-  public EmailMessage putConversationsEmailMessagesDraft(String emailId, EmailMessage body) throws ApiException {
+  public EmailMessage putConversationsEmailMessagesDraft(String emailId, EmailMessage body) throws IOException, ApiException {
     return putConversationsEmailMessagesDraftWithHttpInfo(emailId, body).getBody();
   }
 
@@ -6249,17 +6250,17 @@ public class ConversationsApi {
    * @return EmailMessage
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EmailMessage> putConversationsEmailMessagesDraftWithHttpInfo(String emailId, EmailMessage body) throws ApiException {
+  public ApiResponse<EmailMessage> putConversationsEmailMessagesDraftWithHttpInfo(String emailId, EmailMessage body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'emailId' is set
     if (emailId == null) {
-      throw new ApiException(400, "Missing the required parameter 'emailId' when calling putConversationsEmailMessagesDraft");
+      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling putConversationsEmailMessagesDraft");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putConversationsEmailMessagesDraft");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putConversationsEmailMessagesDraft");
     }
     
     // create path and map variables
@@ -6295,7 +6296,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EmailMessage putConversationsEmailMessagesDraft(PutConversationsEmailMessagesDraftRequest request) throws ApiException {
+  public EmailMessage putConversationsEmailMessagesDraft(PutConversationsEmailMessagesDraftRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EmailMessage>() {});
   }
 
@@ -6305,7 +6306,7 @@ public class ConversationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EmailMessage> putConversationsEmailMessagesDraft(ApiRequest<EmailMessage> request) throws ApiException {
+  public ApiResponse<EmailMessage> putConversationsEmailMessagesDraft(ApiRequest<EmailMessage> request) throws IOException, ApiException {
     return pcapiClient.<EmailMessage>invokeAPIVerbose(request, new TypeReference<EmailMessage>() {});
   }
 

@@ -67,11 +67,11 @@ public class GetWorkforcemanagementManagementunitActivitycodesRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'muId' is set
         if (this.muId == null) {
-            throw new ApiException(400, "Missing the required parameter 'muId' when building request for GetWorkforcemanagementManagementunitActivitycodesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'muId' when building request for GetWorkforcemanagementManagementunitActivitycodesRequest.");
         }
         
 

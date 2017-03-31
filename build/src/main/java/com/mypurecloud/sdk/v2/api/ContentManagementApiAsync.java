@@ -82,6 +82,7 @@ import com.mypurecloud.sdk.v2.api.request.PutContentmanagementWorkspaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutContentmanagementWorkspaceMemberRequest;
 import com.mypurecloud.sdk.v2.api.request.PutContentmanagementWorkspaceTagvalueRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -106,7 +107,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteContentmanagementDocumentAsync(DeleteContentmanagementDocumentRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteContentmanagementDocumentAsync(DeleteContentmanagementDocumentRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -116,7 +117,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteContentmanagementDocumentAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteContentmanagementDocumentAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -126,7 +127,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteContentmanagementShareAsync(DeleteContentmanagementShareRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteContentmanagementShareAsync(DeleteContentmanagementShareRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -136,7 +137,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteContentmanagementShareAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteContentmanagementShareAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -146,7 +147,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteContentmanagementStatusStatusIdAsync(DeleteContentmanagementStatusStatusIdRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteContentmanagementStatusStatusIdAsync(DeleteContentmanagementStatusStatusIdRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -156,7 +157,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteContentmanagementStatusStatusIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteContentmanagementStatusStatusIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -166,7 +167,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteContentmanagementWorkspaceAsync(DeleteContentmanagementWorkspaceRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteContentmanagementWorkspaceAsync(DeleteContentmanagementWorkspaceRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -176,7 +177,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteContentmanagementWorkspaceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteContentmanagementWorkspaceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -186,7 +187,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteContentmanagementWorkspaceMemberAsync(DeleteContentmanagementWorkspaceMemberRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteContentmanagementWorkspaceMemberAsync(DeleteContentmanagementWorkspaceMemberRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -196,7 +197,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteContentmanagementWorkspaceMemberAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteContentmanagementWorkspaceMemberAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -206,7 +207,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteContentmanagementWorkspaceTagvalueAsync(DeleteContentmanagementWorkspaceTagvalueRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteContentmanagementWorkspaceTagvalueAsync(DeleteContentmanagementWorkspaceTagvalueRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -216,7 +217,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteContentmanagementWorkspaceTagvalueAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteContentmanagementWorkspaceTagvalueAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -226,7 +227,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Document> getContentmanagementDocumentAsync(GetContentmanagementDocumentRequest request, AsyncApiCallback<Document> callback) throws ApiException {
+  public Future<Document> getContentmanagementDocumentAsync(GetContentmanagementDocumentRequest request, AsyncApiCallback<Document> callback) {
     return pcapiClient.<Document>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Document>() {}, callback);
   }
 
@@ -236,7 +237,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Document>> getContentmanagementDocumentAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Document>> callback) throws ApiException {
+  public Future<ApiResponse<Document>> getContentmanagementDocumentAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Document>> callback) {
     return pcapiClient.<Document>invokeAPIVerboseAsync(request, new TypeReference<Document>() {}, callback);
   }
 
@@ -246,7 +247,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DocumentAuditEntityListing> getContentmanagementDocumentAuditsAsync(GetContentmanagementDocumentAuditsRequest request, AsyncApiCallback<DocumentAuditEntityListing> callback) throws ApiException {
+  public Future<DocumentAuditEntityListing> getContentmanagementDocumentAuditsAsync(GetContentmanagementDocumentAuditsRequest request, AsyncApiCallback<DocumentAuditEntityListing> callback) {
     return pcapiClient.<DocumentAuditEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DocumentAuditEntityListing>() {}, callback);
   }
 
@@ -256,7 +257,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DocumentAuditEntityListing>> getContentmanagementDocumentAuditsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DocumentAuditEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<DocumentAuditEntityListing>> getContentmanagementDocumentAuditsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DocumentAuditEntityListing>> callback) {
     return pcapiClient.<DocumentAuditEntityListing>invokeAPIVerboseAsync(request, new TypeReference<DocumentAuditEntityListing>() {}, callback);
   }
 
@@ -266,7 +267,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DownloadResponse> getContentmanagementDocumentContentAsync(GetContentmanagementDocumentContentRequest request, AsyncApiCallback<DownloadResponse> callback) throws ApiException {
+  public Future<DownloadResponse> getContentmanagementDocumentContentAsync(GetContentmanagementDocumentContentRequest request, AsyncApiCallback<DownloadResponse> callback) {
     return pcapiClient.<DownloadResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DownloadResponse>() {}, callback);
   }
 
@@ -276,7 +277,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DownloadResponse>> getContentmanagementDocumentContentAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DownloadResponse>> callback) throws ApiException {
+  public Future<ApiResponse<DownloadResponse>> getContentmanagementDocumentContentAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DownloadResponse>> callback) {
     return pcapiClient.<DownloadResponse>invokeAPIVerboseAsync(request, new TypeReference<DownloadResponse>() {}, callback);
   }
 
@@ -286,7 +287,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DocumentEntityListing> getContentmanagementDocumentsAsync(GetContentmanagementDocumentsRequest request, AsyncApiCallback<DocumentEntityListing> callback) throws ApiException {
+  public Future<DocumentEntityListing> getContentmanagementDocumentsAsync(GetContentmanagementDocumentsRequest request, AsyncApiCallback<DocumentEntityListing> callback) {
     return pcapiClient.<DocumentEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DocumentEntityListing>() {}, callback);
   }
 
@@ -296,7 +297,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DocumentEntityListing>> getContentmanagementDocumentsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DocumentEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<DocumentEntityListing>> getContentmanagementDocumentsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DocumentEntityListing>> callback) {
     return pcapiClient.<DocumentEntityListing>invokeAPIVerboseAsync(request, new TypeReference<DocumentEntityListing>() {}, callback);
   }
 
@@ -306,7 +307,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<QueryResults> getContentmanagementQueryAsync(GetContentmanagementQueryRequest request, AsyncApiCallback<QueryResults> callback) throws ApiException {
+  public Future<QueryResults> getContentmanagementQueryAsync(GetContentmanagementQueryRequest request, AsyncApiCallback<QueryResults> callback) {
     return pcapiClient.<QueryResults>invokeAPIAsync(request.withHttpInfo(), new TypeReference<QueryResults>() {}, callback);
   }
 
@@ -316,7 +317,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<QueryResults>> getContentmanagementQueryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<QueryResults>> callback) throws ApiException {
+  public Future<ApiResponse<QueryResults>> getContentmanagementQueryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<QueryResults>> callback) {
     return pcapiClient.<QueryResults>invokeAPIVerboseAsync(request, new TypeReference<QueryResults>() {}, callback);
   }
 
@@ -326,7 +327,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<SecurityProfile> getContentmanagementSecurityprofileAsync(GetContentmanagementSecurityprofileRequest request, AsyncApiCallback<SecurityProfile> callback) throws ApiException {
+  public Future<SecurityProfile> getContentmanagementSecurityprofileAsync(GetContentmanagementSecurityprofileRequest request, AsyncApiCallback<SecurityProfile> callback) {
     return pcapiClient.<SecurityProfile>invokeAPIAsync(request.withHttpInfo(), new TypeReference<SecurityProfile>() {}, callback);
   }
 
@@ -336,7 +337,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<SecurityProfile>> getContentmanagementSecurityprofileAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SecurityProfile>> callback) throws ApiException {
+  public Future<ApiResponse<SecurityProfile>> getContentmanagementSecurityprofileAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SecurityProfile>> callback) {
     return pcapiClient.<SecurityProfile>invokeAPIVerboseAsync(request, new TypeReference<SecurityProfile>() {}, callback);
   }
 
@@ -346,7 +347,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<SecurityProfileEntityListing> getContentmanagementSecurityprofilesAsync(GetContentmanagementSecurityprofilesRequest request, AsyncApiCallback<SecurityProfileEntityListing> callback) throws ApiException {
+  public Future<SecurityProfileEntityListing> getContentmanagementSecurityprofilesAsync(GetContentmanagementSecurityprofilesRequest request, AsyncApiCallback<SecurityProfileEntityListing> callback) {
     return pcapiClient.<SecurityProfileEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<SecurityProfileEntityListing>() {}, callback);
   }
 
@@ -356,7 +357,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<SecurityProfileEntityListing>> getContentmanagementSecurityprofilesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SecurityProfileEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<SecurityProfileEntityListing>> getContentmanagementSecurityprofilesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SecurityProfileEntityListing>> callback) {
     return pcapiClient.<SecurityProfileEntityListing>invokeAPIVerboseAsync(request, new TypeReference<SecurityProfileEntityListing>() {}, callback);
   }
 
@@ -366,7 +367,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Share> getContentmanagementShareAsync(GetContentmanagementShareRequest request, AsyncApiCallback<Share> callback) throws ApiException {
+  public Future<Share> getContentmanagementShareAsync(GetContentmanagementShareRequest request, AsyncApiCallback<Share> callback) {
     return pcapiClient.<Share>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Share>() {}, callback);
   }
 
@@ -376,7 +377,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Share>> getContentmanagementShareAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Share>> callback) throws ApiException {
+  public Future<ApiResponse<Share>> getContentmanagementShareAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Share>> callback) {
     return pcapiClient.<Share>invokeAPIVerboseAsync(request, new TypeReference<Share>() {}, callback);
   }
 
@@ -386,7 +387,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<SharedResponse> getContentmanagementSharedSharedIdAsync(GetContentmanagementSharedSharedIdRequest request, AsyncApiCallback<SharedResponse> callback) throws ApiException {
+  public Future<SharedResponse> getContentmanagementSharedSharedIdAsync(GetContentmanagementSharedSharedIdRequest request, AsyncApiCallback<SharedResponse> callback) {
     return pcapiClient.<SharedResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<SharedResponse>() {}, callback);
   }
 
@@ -396,7 +397,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<SharedResponse>> getContentmanagementSharedSharedIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SharedResponse>> callback) throws ApiException {
+  public Future<ApiResponse<SharedResponse>> getContentmanagementSharedSharedIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SharedResponse>> callback) {
     return pcapiClient.<SharedResponse>invokeAPIVerboseAsync(request, new TypeReference<SharedResponse>() {}, callback);
   }
 
@@ -406,7 +407,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ShareEntityListing> getContentmanagementSharesAsync(GetContentmanagementSharesRequest request, AsyncApiCallback<ShareEntityListing> callback) throws ApiException {
+  public Future<ShareEntityListing> getContentmanagementSharesAsync(GetContentmanagementSharesRequest request, AsyncApiCallback<ShareEntityListing> callback) {
     return pcapiClient.<ShareEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ShareEntityListing>() {}, callback);
   }
 
@@ -416,7 +417,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ShareEntityListing>> getContentmanagementSharesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ShareEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<ShareEntityListing>> getContentmanagementSharesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ShareEntityListing>> callback) {
     return pcapiClient.<ShareEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ShareEntityListing>() {}, callback);
   }
 
@@ -426,7 +427,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CommandStatusEntityListing> getContentmanagementStatusAsync(GetContentmanagementStatusRequest request, AsyncApiCallback<CommandStatusEntityListing> callback) throws ApiException {
+  public Future<CommandStatusEntityListing> getContentmanagementStatusAsync(GetContentmanagementStatusRequest request, AsyncApiCallback<CommandStatusEntityListing> callback) {
     return pcapiClient.<CommandStatusEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CommandStatusEntityListing>() {}, callback);
   }
 
@@ -436,7 +437,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CommandStatusEntityListing>> getContentmanagementStatusAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CommandStatusEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<CommandStatusEntityListing>> getContentmanagementStatusAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CommandStatusEntityListing>> callback) {
     return pcapiClient.<CommandStatusEntityListing>invokeAPIVerboseAsync(request, new TypeReference<CommandStatusEntityListing>() {}, callback);
   }
 
@@ -446,7 +447,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CommandStatus> getContentmanagementStatusStatusIdAsync(GetContentmanagementStatusStatusIdRequest request, AsyncApiCallback<CommandStatus> callback) throws ApiException {
+  public Future<CommandStatus> getContentmanagementStatusStatusIdAsync(GetContentmanagementStatusStatusIdRequest request, AsyncApiCallback<CommandStatus> callback) {
     return pcapiClient.<CommandStatus>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CommandStatus>() {}, callback);
   }
 
@@ -456,7 +457,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CommandStatus>> getContentmanagementStatusStatusIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CommandStatus>> callback) throws ApiException {
+  public Future<ApiResponse<CommandStatus>> getContentmanagementStatusStatusIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CommandStatus>> callback) {
     return pcapiClient.<CommandStatus>invokeAPIVerboseAsync(request, new TypeReference<CommandStatus>() {}, callback);
   }
 
@@ -466,7 +467,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Usage> getContentmanagementUsageAsync(GetContentmanagementUsageRequest request, AsyncApiCallback<Usage> callback) throws ApiException {
+  public Future<Usage> getContentmanagementUsageAsync(GetContentmanagementUsageRequest request, AsyncApiCallback<Usage> callback) {
     return pcapiClient.<Usage>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Usage>() {}, callback);
   }
 
@@ -476,7 +477,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Usage>> getContentmanagementUsageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Usage>> callback) throws ApiException {
+  public Future<ApiResponse<Usage>> getContentmanagementUsageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Usage>> callback) {
     return pcapiClient.<Usage>invokeAPIVerboseAsync(request, new TypeReference<Usage>() {}, callback);
   }
 
@@ -486,7 +487,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Workspace> getContentmanagementWorkspaceAsync(GetContentmanagementWorkspaceRequest request, AsyncApiCallback<Workspace> callback) throws ApiException {
+  public Future<Workspace> getContentmanagementWorkspaceAsync(GetContentmanagementWorkspaceRequest request, AsyncApiCallback<Workspace> callback) {
     return pcapiClient.<Workspace>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Workspace>() {}, callback);
   }
 
@@ -496,7 +497,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Workspace>> getContentmanagementWorkspaceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Workspace>> callback) throws ApiException {
+  public Future<ApiResponse<Workspace>> getContentmanagementWorkspaceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Workspace>> callback) {
     return pcapiClient.<Workspace>invokeAPIVerboseAsync(request, new TypeReference<Workspace>() {}, callback);
   }
 
@@ -506,7 +507,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DocumentEntityListing> getContentmanagementWorkspaceDocumentsAsync(GetContentmanagementWorkspaceDocumentsRequest request, AsyncApiCallback<DocumentEntityListing> callback) throws ApiException {
+  public Future<DocumentEntityListing> getContentmanagementWorkspaceDocumentsAsync(GetContentmanagementWorkspaceDocumentsRequest request, AsyncApiCallback<DocumentEntityListing> callback) {
     return pcapiClient.<DocumentEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DocumentEntityListing>() {}, callback);
   }
 
@@ -516,7 +517,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DocumentEntityListing>> getContentmanagementWorkspaceDocumentsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DocumentEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<DocumentEntityListing>> getContentmanagementWorkspaceDocumentsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DocumentEntityListing>> callback) {
     return pcapiClient.<DocumentEntityListing>invokeAPIVerboseAsync(request, new TypeReference<DocumentEntityListing>() {}, callback);
   }
 
@@ -526,7 +527,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<WorkspaceMember> getContentmanagementWorkspaceMemberAsync(GetContentmanagementWorkspaceMemberRequest request, AsyncApiCallback<WorkspaceMember> callback) throws ApiException {
+  public Future<WorkspaceMember> getContentmanagementWorkspaceMemberAsync(GetContentmanagementWorkspaceMemberRequest request, AsyncApiCallback<WorkspaceMember> callback) {
     return pcapiClient.<WorkspaceMember>invokeAPIAsync(request.withHttpInfo(), new TypeReference<WorkspaceMember>() {}, callback);
   }
 
@@ -536,7 +537,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<WorkspaceMember>> getContentmanagementWorkspaceMemberAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<WorkspaceMember>> callback) throws ApiException {
+  public Future<ApiResponse<WorkspaceMember>> getContentmanagementWorkspaceMemberAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<WorkspaceMember>> callback) {
     return pcapiClient.<WorkspaceMember>invokeAPIVerboseAsync(request, new TypeReference<WorkspaceMember>() {}, callback);
   }
 
@@ -546,7 +547,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<WorkspaceMemberEntityListing> getContentmanagementWorkspaceMembersAsync(GetContentmanagementWorkspaceMembersRequest request, AsyncApiCallback<WorkspaceMemberEntityListing> callback) throws ApiException {
+  public Future<WorkspaceMemberEntityListing> getContentmanagementWorkspaceMembersAsync(GetContentmanagementWorkspaceMembersRequest request, AsyncApiCallback<WorkspaceMemberEntityListing> callback) {
     return pcapiClient.<WorkspaceMemberEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<WorkspaceMemberEntityListing>() {}, callback);
   }
 
@@ -556,7 +557,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<WorkspaceMemberEntityListing>> getContentmanagementWorkspaceMembersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<WorkspaceMemberEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<WorkspaceMemberEntityListing>> getContentmanagementWorkspaceMembersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<WorkspaceMemberEntityListing>> callback) {
     return pcapiClient.<WorkspaceMemberEntityListing>invokeAPIVerboseAsync(request, new TypeReference<WorkspaceMemberEntityListing>() {}, callback);
   }
 
@@ -566,7 +567,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<TagValue> getContentmanagementWorkspaceTagvalueAsync(GetContentmanagementWorkspaceTagvalueRequest request, AsyncApiCallback<TagValue> callback) throws ApiException {
+  public Future<TagValue> getContentmanagementWorkspaceTagvalueAsync(GetContentmanagementWorkspaceTagvalueRequest request, AsyncApiCallback<TagValue> callback) {
     return pcapiClient.<TagValue>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TagValue>() {}, callback);
   }
 
@@ -576,7 +577,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<TagValue>> getContentmanagementWorkspaceTagvalueAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TagValue>> callback) throws ApiException {
+  public Future<ApiResponse<TagValue>> getContentmanagementWorkspaceTagvalueAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TagValue>> callback) {
     return pcapiClient.<TagValue>invokeAPIVerboseAsync(request, new TypeReference<TagValue>() {}, callback);
   }
 
@@ -586,7 +587,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<TagValueEntityListing> getContentmanagementWorkspaceTagvaluesAsync(GetContentmanagementWorkspaceTagvaluesRequest request, AsyncApiCallback<TagValueEntityListing> callback) throws ApiException {
+  public Future<TagValueEntityListing> getContentmanagementWorkspaceTagvaluesAsync(GetContentmanagementWorkspaceTagvaluesRequest request, AsyncApiCallback<TagValueEntityListing> callback) {
     return pcapiClient.<TagValueEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TagValueEntityListing>() {}, callback);
   }
 
@@ -596,7 +597,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<TagValueEntityListing>> getContentmanagementWorkspaceTagvaluesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TagValueEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<TagValueEntityListing>> getContentmanagementWorkspaceTagvaluesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TagValueEntityListing>> callback) {
     return pcapiClient.<TagValueEntityListing>invokeAPIVerboseAsync(request, new TypeReference<TagValueEntityListing>() {}, callback);
   }
 
@@ -606,7 +607,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<WorkspaceEntityListing> getContentmanagementWorkspacesAsync(GetContentmanagementWorkspacesRequest request, AsyncApiCallback<WorkspaceEntityListing> callback) throws ApiException {
+  public Future<WorkspaceEntityListing> getContentmanagementWorkspacesAsync(GetContentmanagementWorkspacesRequest request, AsyncApiCallback<WorkspaceEntityListing> callback) {
     return pcapiClient.<WorkspaceEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<WorkspaceEntityListing>() {}, callback);
   }
 
@@ -616,7 +617,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<WorkspaceEntityListing>> getContentmanagementWorkspacesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<WorkspaceEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<WorkspaceEntityListing>> getContentmanagementWorkspacesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<WorkspaceEntityListing>> callback) {
     return pcapiClient.<WorkspaceEntityListing>invokeAPIVerboseAsync(request, new TypeReference<WorkspaceEntityListing>() {}, callback);
   }
 
@@ -626,7 +627,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<QueryResults> postContentmanagementAuditqueryAsync(PostContentmanagementAuditqueryRequest request, AsyncApiCallback<QueryResults> callback) throws ApiException {
+  public Future<QueryResults> postContentmanagementAuditqueryAsync(PostContentmanagementAuditqueryRequest request, AsyncApiCallback<QueryResults> callback) {
     return pcapiClient.<QueryResults>invokeAPIAsync(request.withHttpInfo(), new TypeReference<QueryResults>() {}, callback);
   }
 
@@ -636,7 +637,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<QueryResults>> postContentmanagementAuditqueryAsync(ApiRequest<ContentQueryRequest> request, AsyncApiCallback<ApiResponse<QueryResults>> callback) throws ApiException {
+  public Future<ApiResponse<QueryResults>> postContentmanagementAuditqueryAsync(ApiRequest<ContentQueryRequest> request, AsyncApiCallback<ApiResponse<QueryResults>> callback) {
     return pcapiClient.<QueryResults>invokeAPIVerboseAsync(request, new TypeReference<QueryResults>() {}, callback);
   }
 
@@ -646,7 +647,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Document> postContentmanagementDocumentAsync(PostContentmanagementDocumentRequest request, AsyncApiCallback<Document> callback) throws ApiException {
+  public Future<Document> postContentmanagementDocumentAsync(PostContentmanagementDocumentRequest request, AsyncApiCallback<Document> callback) {
     return pcapiClient.<Document>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Document>() {}, callback);
   }
 
@@ -656,7 +657,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Document>> postContentmanagementDocumentAsync(ApiRequest<DocumentUpdate> request, AsyncApiCallback<ApiResponse<Document>> callback) throws ApiException {
+  public Future<ApiResponse<Document>> postContentmanagementDocumentAsync(ApiRequest<DocumentUpdate> request, AsyncApiCallback<ApiResponse<Document>> callback) {
     return pcapiClient.<Document>invokeAPIVerboseAsync(request, new TypeReference<Document>() {}, callback);
   }
 
@@ -666,7 +667,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ReplaceResponse> postContentmanagementDocumentContentAsync(PostContentmanagementDocumentContentRequest request, AsyncApiCallback<ReplaceResponse> callback) throws ApiException {
+  public Future<ReplaceResponse> postContentmanagementDocumentContentAsync(PostContentmanagementDocumentContentRequest request, AsyncApiCallback<ReplaceResponse> callback) {
     return pcapiClient.<ReplaceResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ReplaceResponse>() {}, callback);
   }
 
@@ -676,7 +677,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ReplaceResponse>> postContentmanagementDocumentContentAsync(ApiRequest<ReplaceRequest> request, AsyncApiCallback<ApiResponse<ReplaceResponse>> callback) throws ApiException {
+  public Future<ApiResponse<ReplaceResponse>> postContentmanagementDocumentContentAsync(ApiRequest<ReplaceRequest> request, AsyncApiCallback<ApiResponse<ReplaceResponse>> callback) {
     return pcapiClient.<ReplaceResponse>invokeAPIVerboseAsync(request, new TypeReference<ReplaceResponse>() {}, callback);
   }
 
@@ -686,7 +687,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Document> postContentmanagementDocumentsAsync(PostContentmanagementDocumentsRequest request, AsyncApiCallback<Document> callback) throws ApiException {
+  public Future<Document> postContentmanagementDocumentsAsync(PostContentmanagementDocumentsRequest request, AsyncApiCallback<Document> callback) {
     return pcapiClient.<Document>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Document>() {}, callback);
   }
 
@@ -696,7 +697,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Document>> postContentmanagementDocumentsAsync(ApiRequest<DocumentUpload> request, AsyncApiCallback<ApiResponse<Document>> callback) throws ApiException {
+  public Future<ApiResponse<Document>> postContentmanagementDocumentsAsync(ApiRequest<DocumentUpload> request, AsyncApiCallback<ApiResponse<Document>> callback) {
     return pcapiClient.<Document>invokeAPIVerboseAsync(request, new TypeReference<Document>() {}, callback);
   }
 
@@ -706,7 +707,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<QueryResults> postContentmanagementQueryAsync(PostContentmanagementQueryRequest request, AsyncApiCallback<QueryResults> callback) throws ApiException {
+  public Future<QueryResults> postContentmanagementQueryAsync(PostContentmanagementQueryRequest request, AsyncApiCallback<QueryResults> callback) {
     return pcapiClient.<QueryResults>invokeAPIAsync(request.withHttpInfo(), new TypeReference<QueryResults>() {}, callback);
   }
 
@@ -716,7 +717,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<QueryResults>> postContentmanagementQueryAsync(ApiRequest<QueryRequest> request, AsyncApiCallback<ApiResponse<QueryResults>> callback) throws ApiException {
+  public Future<ApiResponse<QueryResults>> postContentmanagementQueryAsync(ApiRequest<QueryRequest> request, AsyncApiCallback<ApiResponse<QueryResults>> callback) {
     return pcapiClient.<QueryResults>invokeAPIVerboseAsync(request, new TypeReference<QueryResults>() {}, callback);
   }
 
@@ -726,7 +727,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CreateShareResponse> postContentmanagementSharesAsync(PostContentmanagementSharesRequest request, AsyncApiCallback<CreateShareResponse> callback) throws ApiException {
+  public Future<CreateShareResponse> postContentmanagementSharesAsync(PostContentmanagementSharesRequest request, AsyncApiCallback<CreateShareResponse> callback) {
     return pcapiClient.<CreateShareResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CreateShareResponse>() {}, callback);
   }
 
@@ -736,7 +737,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CreateShareResponse>> postContentmanagementSharesAsync(ApiRequest<CreateShareRequest> request, AsyncApiCallback<ApiResponse<CreateShareResponse>> callback) throws ApiException {
+  public Future<ApiResponse<CreateShareResponse>> postContentmanagementSharesAsync(ApiRequest<CreateShareRequest> request, AsyncApiCallback<ApiResponse<CreateShareResponse>> callback) {
     return pcapiClient.<CreateShareResponse>invokeAPIVerboseAsync(request, new TypeReference<CreateShareResponse>() {}, callback);
   }
 
@@ -746,7 +747,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<TagValue> postContentmanagementWorkspaceTagvaluesAsync(PostContentmanagementWorkspaceTagvaluesRequest request, AsyncApiCallback<TagValue> callback) throws ApiException {
+  public Future<TagValue> postContentmanagementWorkspaceTagvaluesAsync(PostContentmanagementWorkspaceTagvaluesRequest request, AsyncApiCallback<TagValue> callback) {
     return pcapiClient.<TagValue>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TagValue>() {}, callback);
   }
 
@@ -756,7 +757,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<TagValue>> postContentmanagementWorkspaceTagvaluesAsync(ApiRequest<TagValue> request, AsyncApiCallback<ApiResponse<TagValue>> callback) throws ApiException {
+  public Future<ApiResponse<TagValue>> postContentmanagementWorkspaceTagvaluesAsync(ApiRequest<TagValue> request, AsyncApiCallback<ApiResponse<TagValue>> callback) {
     return pcapiClient.<TagValue>invokeAPIVerboseAsync(request, new TypeReference<TagValue>() {}, callback);
   }
 
@@ -766,7 +767,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<TagValueEntityListing> postContentmanagementWorkspaceTagvaluesQueryAsync(PostContentmanagementWorkspaceTagvaluesQueryRequest request, AsyncApiCallback<TagValueEntityListing> callback) throws ApiException {
+  public Future<TagValueEntityListing> postContentmanagementWorkspaceTagvaluesQueryAsync(PostContentmanagementWorkspaceTagvaluesQueryRequest request, AsyncApiCallback<TagValueEntityListing> callback) {
     return pcapiClient.<TagValueEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TagValueEntityListing>() {}, callback);
   }
 
@@ -776,7 +777,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<TagValueEntityListing>> postContentmanagementWorkspaceTagvaluesQueryAsync(ApiRequest<TagQueryRequest> request, AsyncApiCallback<ApiResponse<TagValueEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<TagValueEntityListing>> postContentmanagementWorkspaceTagvaluesQueryAsync(ApiRequest<TagQueryRequest> request, AsyncApiCallback<ApiResponse<TagValueEntityListing>> callback) {
     return pcapiClient.<TagValueEntityListing>invokeAPIVerboseAsync(request, new TypeReference<TagValueEntityListing>() {}, callback);
   }
 
@@ -786,7 +787,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Workspace> postContentmanagementWorkspacesAsync(PostContentmanagementWorkspacesRequest request, AsyncApiCallback<Workspace> callback) throws ApiException {
+  public Future<Workspace> postContentmanagementWorkspacesAsync(PostContentmanagementWorkspacesRequest request, AsyncApiCallback<Workspace> callback) {
     return pcapiClient.<Workspace>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Workspace>() {}, callback);
   }
 
@@ -796,7 +797,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Workspace>> postContentmanagementWorkspacesAsync(ApiRequest<WorkspaceCreate> request, AsyncApiCallback<ApiResponse<Workspace>> callback) throws ApiException {
+  public Future<ApiResponse<Workspace>> postContentmanagementWorkspacesAsync(ApiRequest<WorkspaceCreate> request, AsyncApiCallback<ApiResponse<Workspace>> callback) {
     return pcapiClient.<Workspace>invokeAPIVerboseAsync(request, new TypeReference<Workspace>() {}, callback);
   }
 
@@ -806,7 +807,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Workspace> putContentmanagementWorkspaceAsync(PutContentmanagementWorkspaceRequest request, AsyncApiCallback<Workspace> callback) throws ApiException {
+  public Future<Workspace> putContentmanagementWorkspaceAsync(PutContentmanagementWorkspaceRequest request, AsyncApiCallback<Workspace> callback) {
     return pcapiClient.<Workspace>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Workspace>() {}, callback);
   }
 
@@ -816,7 +817,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Workspace>> putContentmanagementWorkspaceAsync(ApiRequest<Workspace> request, AsyncApiCallback<ApiResponse<Workspace>> callback) throws ApiException {
+  public Future<ApiResponse<Workspace>> putContentmanagementWorkspaceAsync(ApiRequest<Workspace> request, AsyncApiCallback<ApiResponse<Workspace>> callback) {
     return pcapiClient.<Workspace>invokeAPIVerboseAsync(request, new TypeReference<Workspace>() {}, callback);
   }
 
@@ -826,7 +827,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<WorkspaceMember> putContentmanagementWorkspaceMemberAsync(PutContentmanagementWorkspaceMemberRequest request, AsyncApiCallback<WorkspaceMember> callback) throws ApiException {
+  public Future<WorkspaceMember> putContentmanagementWorkspaceMemberAsync(PutContentmanagementWorkspaceMemberRequest request, AsyncApiCallback<WorkspaceMember> callback) {
     return pcapiClient.<WorkspaceMember>invokeAPIAsync(request.withHttpInfo(), new TypeReference<WorkspaceMember>() {}, callback);
   }
 
@@ -836,7 +837,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<WorkspaceMember>> putContentmanagementWorkspaceMemberAsync(ApiRequest<WorkspaceMember> request, AsyncApiCallback<ApiResponse<WorkspaceMember>> callback) throws ApiException {
+  public Future<ApiResponse<WorkspaceMember>> putContentmanagementWorkspaceMemberAsync(ApiRequest<WorkspaceMember> request, AsyncApiCallback<ApiResponse<WorkspaceMember>> callback) {
     return pcapiClient.<WorkspaceMember>invokeAPIVerboseAsync(request, new TypeReference<WorkspaceMember>() {}, callback);
   }
 
@@ -846,7 +847,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<TagValue> putContentmanagementWorkspaceTagvalueAsync(PutContentmanagementWorkspaceTagvalueRequest request, AsyncApiCallback<TagValue> callback) throws ApiException {
+  public Future<TagValue> putContentmanagementWorkspaceTagvalueAsync(PutContentmanagementWorkspaceTagvalueRequest request, AsyncApiCallback<TagValue> callback) {
     return pcapiClient.<TagValue>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TagValue>() {}, callback);
   }
 
@@ -856,7 +857,7 @@ public class ContentManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<TagValue>> putContentmanagementWorkspaceTagvalueAsync(ApiRequest<TagValue> request, AsyncApiCallback<ApiResponse<TagValue>> callback) throws ApiException {
+  public Future<ApiResponse<TagValue>> putContentmanagementWorkspaceTagvalueAsync(ApiRequest<TagValue> request, AsyncApiCallback<ApiResponse<TagValue>> callback) {
     return pcapiClient.<TagValue>invokeAPIVerboseAsync(request, new TypeReference<TagValue>() {}, callback);
   }
 

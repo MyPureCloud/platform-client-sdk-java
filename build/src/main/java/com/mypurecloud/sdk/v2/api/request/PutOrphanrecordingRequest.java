@@ -88,11 +88,11 @@ public class PutOrphanrecordingRequest {
         return this;
     }
 
-    public ApiRequest<OrphanUpdateRequest> withHttpInfo() throws ApiException {
+    public ApiRequest<OrphanUpdateRequest> withHttpInfo() {
         
         // verify the required parameter 'orphanId' is set
         if (this.orphanId == null) {
-            throw new ApiException(400, "Missing the required parameter 'orphanId' when building request for PutOrphanrecordingRequest.");
+            throw new IllegalStateException("Missing the required parameter 'orphanId' when building request for PutOrphanrecordingRequest.");
         }
         
 

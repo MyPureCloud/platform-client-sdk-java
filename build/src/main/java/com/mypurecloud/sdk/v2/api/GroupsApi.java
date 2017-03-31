@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.api.request.PostGroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGroupsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGroupRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -57,7 +58,7 @@ public class GroupsApi {
    * @param groupId Group ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteGroup(String groupId) throws ApiException {
+  public void deleteGroup(String groupId) throws IOException, ApiException {
     deleteGroupWithHttpInfo(groupId);
   }
 
@@ -67,12 +68,12 @@ public class GroupsApi {
    * @param groupId Group ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteGroupWithHttpInfo(String groupId) throws ApiException {
+  public ApiResponse<Void> deleteGroupWithHttpInfo(String groupId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'groupId' is set
     if (groupId == null) {
-      throw new ApiException(400, "Missing the required parameter 'groupId' when calling deleteGroup");
+      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling deleteGroup");
     }
     
     // create path and map variables
@@ -108,7 +109,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteGroup(DeleteGroupRequest request) throws ApiException {
+  public void deleteGroup(DeleteGroupRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -118,7 +119,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteGroup(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteGroup(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -130,7 +131,7 @@ public class GroupsApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteGroupMembers(String groupId, String ids) throws ApiException {
+  public Empty deleteGroupMembers(String groupId, String ids) throws IOException, ApiException {
     return deleteGroupMembersWithHttpInfo(groupId, ids).getBody();
   }
 
@@ -142,17 +143,17 @@ public class GroupsApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteGroupMembersWithHttpInfo(String groupId, String ids) throws ApiException {
+  public ApiResponse<Empty> deleteGroupMembersWithHttpInfo(String groupId, String ids) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'groupId' is set
     if (groupId == null) {
-      throw new ApiException(400, "Missing the required parameter 'groupId' when calling deleteGroupMembers");
+      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling deleteGroupMembers");
     }
     
     // verify the required parameter 'ids' is set
     if (ids == null) {
-      throw new ApiException(400, "Missing the required parameter 'ids' when calling deleteGroupMembers");
+      throw new IllegalArgumentException("Missing the required parameter 'ids' when calling deleteGroupMembers");
     }
     
     // create path and map variables
@@ -189,7 +190,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteGroupMembers(DeleteGroupMembersRequest request) throws ApiException {
+  public Empty deleteGroupMembers(DeleteGroupMembersRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
   }
 
@@ -199,7 +200,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteGroupMembers(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Empty> deleteGroupMembers(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
   }
 
@@ -210,7 +211,7 @@ public class GroupsApi {
    * @return FieldConfig
    * @throws ApiException if fails to make API call
    */
-  public FieldConfig getFieldconfig(String type) throws ApiException {
+  public FieldConfig getFieldconfig(String type) throws IOException, ApiException {
     return getFieldconfigWithHttpInfo(type).getBody();
   }
 
@@ -221,12 +222,12 @@ public class GroupsApi {
    * @return FieldConfig
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<FieldConfig> getFieldconfigWithHttpInfo(String type) throws ApiException {
+  public ApiResponse<FieldConfig> getFieldconfigWithHttpInfo(String type) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'type' is set
     if (type == null) {
-      throw new ApiException(400, "Missing the required parameter 'type' when calling getFieldconfig");
+      throw new IllegalArgumentException("Missing the required parameter 'type' when calling getFieldconfig");
     }
     
     // create path and map variables
@@ -262,7 +263,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public FieldConfig getFieldconfig(GetFieldconfigRequest request) throws ApiException {
+  public FieldConfig getFieldconfig(GetFieldconfigRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FieldConfig>() {});
   }
 
@@ -272,7 +273,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<FieldConfig> getFieldconfig(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<FieldConfig> getFieldconfig(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<FieldConfig>invokeAPIVerbose(request, new TypeReference<FieldConfig>() {});
   }
 
@@ -283,7 +284,7 @@ public class GroupsApi {
    * @return Group
    * @throws ApiException if fails to make API call
    */
-  public Group getGroup(String groupId) throws ApiException {
+  public Group getGroup(String groupId) throws IOException, ApiException {
     return getGroupWithHttpInfo(groupId).getBody();
   }
 
@@ -294,12 +295,12 @@ public class GroupsApi {
    * @return Group
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Group> getGroupWithHttpInfo(String groupId) throws ApiException {
+  public ApiResponse<Group> getGroupWithHttpInfo(String groupId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'groupId' is set
     if (groupId == null) {
-      throw new ApiException(400, "Missing the required parameter 'groupId' when calling getGroup");
+      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling getGroup");
     }
     
     // create path and map variables
@@ -335,7 +336,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Group getGroup(GetGroupRequest request) throws ApiException {
+  public Group getGroup(GetGroupRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Group>() {});
   }
 
@@ -345,7 +346,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Group> getGroup(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Group> getGroup(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Group>invokeAPIVerbose(request, new TypeReference<Group>() {});
   }
 
@@ -360,7 +361,7 @@ public class GroupsApi {
    * @return UserEntityListing
    * @throws ApiException if fails to make API call
    */
-  public UserEntityListing getGroupMembers(String groupId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws ApiException {
+  public UserEntityListing getGroupMembers(String groupId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException, ApiException {
     return getGroupMembersWithHttpInfo(groupId, pageSize, pageNumber, sortOrder, expand).getBody();
   }
 
@@ -375,12 +376,12 @@ public class GroupsApi {
    * @return UserEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserEntityListing> getGroupMembersWithHttpInfo(String groupId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws ApiException {
+  public ApiResponse<UserEntityListing> getGroupMembersWithHttpInfo(String groupId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'groupId' is set
     if (groupId == null) {
-      throw new ApiException(400, "Missing the required parameter 'groupId' when calling getGroupMembers");
+      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling getGroupMembers");
     }
     
     // create path and map variables
@@ -420,7 +421,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserEntityListing getGroupMembers(GetGroupMembersRequest request) throws ApiException {
+  public UserEntityListing getGroupMembers(GetGroupMembersRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserEntityListing>() {});
   }
 
@@ -430,7 +431,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserEntityListing> getGroupMembers(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<UserEntityListing> getGroupMembers(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<UserEntityListing>invokeAPIVerbose(request, new TypeReference<UserEntityListing>() {});
   }
 
@@ -443,7 +444,7 @@ public class GroupsApi {
    * @return GroupEntityListing
    * @throws ApiException if fails to make API call
    */
-  public GroupEntityListing getGroups(Integer pageSize, Integer pageNumber, String sortOrder) throws ApiException {
+  public GroupEntityListing getGroups(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
     return getGroupsWithHttpInfo(pageSize, pageNumber, sortOrder).getBody();
   }
 
@@ -456,7 +457,7 @@ public class GroupsApi {
    * @return GroupEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<GroupEntityListing> getGroupsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder) throws ApiException {
+  public ApiResponse<GroupEntityListing> getGroupsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -494,7 +495,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public GroupEntityListing getGroups(GetGroupsRequest request) throws ApiException {
+  public GroupEntityListing getGroups(GetGroupsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<GroupEntityListing>() {});
   }
 
@@ -504,7 +505,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<GroupEntityListing> getGroups(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<GroupEntityListing> getGroups(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<GroupEntityListing>invokeAPIVerbose(request, new TypeReference<GroupEntityListing>() {});
   }
 
@@ -516,7 +517,7 @@ public class GroupsApi {
    * @return GroupsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public GroupsSearchResponse getGroupsSearch(String q64, List<String> expand) throws ApiException {
+  public GroupsSearchResponse getGroupsSearch(String q64, List<String> expand) throws IOException, ApiException {
     return getGroupsSearchWithHttpInfo(q64, expand).getBody();
   }
 
@@ -528,12 +529,12 @@ public class GroupsApi {
    * @return GroupsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<GroupsSearchResponse> getGroupsSearchWithHttpInfo(String q64, List<String> expand) throws ApiException {
+  public ApiResponse<GroupsSearchResponse> getGroupsSearchWithHttpInfo(String q64, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'q64' is set
     if (q64 == null) {
-      throw new ApiException(400, "Missing the required parameter 'q64' when calling getGroupsSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'q64' when calling getGroupsSearch");
     }
     
     // create path and map variables
@@ -570,7 +571,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public GroupsSearchResponse getGroupsSearch(GetGroupsSearchRequest request) throws ApiException {
+  public GroupsSearchResponse getGroupsSearch(GetGroupsSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<GroupsSearchResponse>() {});
   }
 
@@ -580,7 +581,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<GroupsSearchResponse> getGroupsSearch(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<GroupsSearchResponse> getGroupsSearch(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<GroupsSearchResponse>invokeAPIVerbose(request, new TypeReference<GroupsSearchResponse>() {});
   }
 
@@ -592,7 +593,7 @@ public class GroupsApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public Empty postGroupMembers(String groupId, GroupMembersUpdate body) throws ApiException {
+  public Empty postGroupMembers(String groupId, GroupMembersUpdate body) throws IOException, ApiException {
     return postGroupMembersWithHttpInfo(groupId, body).getBody();
   }
 
@@ -604,17 +605,17 @@ public class GroupsApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> postGroupMembersWithHttpInfo(String groupId, GroupMembersUpdate body) throws ApiException {
+  public ApiResponse<Empty> postGroupMembersWithHttpInfo(String groupId, GroupMembersUpdate body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'groupId' is set
     if (groupId == null) {
-      throw new ApiException(400, "Missing the required parameter 'groupId' when calling postGroupMembers");
+      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling postGroupMembers");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postGroupMembers");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postGroupMembers");
     }
     
     // create path and map variables
@@ -650,7 +651,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Empty postGroupMembers(PostGroupMembersRequest request) throws ApiException {
+  public Empty postGroupMembers(PostGroupMembersRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
   }
 
@@ -660,7 +661,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> postGroupMembers(ApiRequest<GroupMembersUpdate> request) throws ApiException {
+  public ApiResponse<Empty> postGroupMembers(ApiRequest<GroupMembersUpdate> request) throws IOException, ApiException {
     return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
   }
 
@@ -671,7 +672,7 @@ public class GroupsApi {
    * @return Group
    * @throws ApiException if fails to make API call
    */
-  public Group postGroups(Group body) throws ApiException {
+  public Group postGroups(Group body) throws IOException, ApiException {
     return postGroupsWithHttpInfo(body).getBody();
   }
 
@@ -682,12 +683,12 @@ public class GroupsApi {
    * @return Group
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Group> postGroupsWithHttpInfo(Group body) throws ApiException {
+  public ApiResponse<Group> postGroupsWithHttpInfo(Group body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postGroups");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postGroups");
     }
     
     // create path and map variables
@@ -722,7 +723,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Group postGroups(PostGroupsRequest request) throws ApiException {
+  public Group postGroups(PostGroupsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Group>() {});
   }
 
@@ -732,7 +733,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Group> postGroups(ApiRequest<Group> request) throws ApiException {
+  public ApiResponse<Group> postGroups(ApiRequest<Group> request) throws IOException, ApiException {
     return pcapiClient.<Group>invokeAPIVerbose(request, new TypeReference<Group>() {});
   }
 
@@ -743,7 +744,7 @@ public class GroupsApi {
    * @return GroupsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public GroupsSearchResponse postGroupsSearch(GroupSearchRequest body) throws ApiException {
+  public GroupsSearchResponse postGroupsSearch(GroupSearchRequest body) throws IOException, ApiException {
     return postGroupsSearchWithHttpInfo(body).getBody();
   }
 
@@ -754,12 +755,12 @@ public class GroupsApi {
    * @return GroupsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<GroupsSearchResponse> postGroupsSearchWithHttpInfo(GroupSearchRequest body) throws ApiException {
+  public ApiResponse<GroupsSearchResponse> postGroupsSearchWithHttpInfo(GroupSearchRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postGroupsSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postGroupsSearch");
     }
     
     // create path and map variables
@@ -794,7 +795,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public GroupsSearchResponse postGroupsSearch(PostGroupsSearchRequest request) throws ApiException {
+  public GroupsSearchResponse postGroupsSearch(PostGroupsSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<GroupsSearchResponse>() {});
   }
 
@@ -804,7 +805,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<GroupsSearchResponse> postGroupsSearch(ApiRequest<GroupSearchRequest> request) throws ApiException {
+  public ApiResponse<GroupsSearchResponse> postGroupsSearch(ApiRequest<GroupSearchRequest> request) throws IOException, ApiException {
     return pcapiClient.<GroupsSearchResponse>invokeAPIVerbose(request, new TypeReference<GroupsSearchResponse>() {});
   }
 
@@ -816,7 +817,7 @@ public class GroupsApi {
    * @return Group
    * @throws ApiException if fails to make API call
    */
-  public Group putGroup(String groupId, GroupUpdate body) throws ApiException {
+  public Group putGroup(String groupId, GroupUpdate body) throws IOException, ApiException {
     return putGroupWithHttpInfo(groupId, body).getBody();
   }
 
@@ -828,12 +829,12 @@ public class GroupsApi {
    * @return Group
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Group> putGroupWithHttpInfo(String groupId, GroupUpdate body) throws ApiException {
+  public ApiResponse<Group> putGroupWithHttpInfo(String groupId, GroupUpdate body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'groupId' is set
     if (groupId == null) {
-      throw new ApiException(400, "Missing the required parameter 'groupId' when calling putGroup");
+      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling putGroup");
     }
     
     // create path and map variables
@@ -869,7 +870,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Group putGroup(PutGroupRequest request) throws ApiException {
+  public Group putGroup(PutGroupRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Group>() {});
   }
 
@@ -879,7 +880,7 @@ public class GroupsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Group> putGroup(ApiRequest<GroupUpdate> request) throws ApiException {
+  public ApiResponse<Group> putGroup(ApiRequest<GroupUpdate> request) throws IOException, ApiException {
     return pcapiClient.<Group>invokeAPIVerbose(request, new TypeReference<Group>() {});
   }
 

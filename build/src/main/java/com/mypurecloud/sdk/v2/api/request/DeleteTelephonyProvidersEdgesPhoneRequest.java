@@ -120,11 +120,11 @@ public class DeleteTelephonyProvidersEdgesPhoneRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'phoneId' is set
         if (this.phoneId == null) {
-            throw new ApiException(400, "Missing the required parameter 'phoneId' when building request for DeleteTelephonyProvidersEdgesPhoneRequest.");
+            throw new IllegalStateException("Missing the required parameter 'phoneId' when building request for DeleteTelephonyProvidersEdgesPhoneRequest.");
         }
         
 

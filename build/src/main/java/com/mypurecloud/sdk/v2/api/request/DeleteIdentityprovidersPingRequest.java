@@ -55,7 +55,7 @@ public class DeleteIdentityprovidersPingRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/identityproviders/ping")                .withCustomHeaders(customHeaders)

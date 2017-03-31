@@ -64,6 +64,7 @@ import com.mypurecloud.sdk.v2.api.request.PutRecordingMediaretentionpolicyReques
 import com.mypurecloud.sdk.v2.api.request.PutRecordingRecordingkeysRotationscheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingSettingsRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -89,7 +90,7 @@ public class RecordingApi {
    * @param annotationId Annotation ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteConversationRecordingAnnotation(String conversationId, String recordingId, String annotationId) throws ApiException {
+  public void deleteConversationRecordingAnnotation(String conversationId, String recordingId, String annotationId) throws IOException, ApiException {
     deleteConversationRecordingAnnotationWithHttpInfo(conversationId, recordingId, annotationId);
   }
 
@@ -101,22 +102,22 @@ public class RecordingApi {
    * @param annotationId Annotation ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteConversationRecordingAnnotationWithHttpInfo(String conversationId, String recordingId, String annotationId) throws ApiException {
+  public ApiResponse<Void> deleteConversationRecordingAnnotationWithHttpInfo(String conversationId, String recordingId, String annotationId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling deleteConversationRecordingAnnotation");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling deleteConversationRecordingAnnotation");
     }
     
     // verify the required parameter 'recordingId' is set
     if (recordingId == null) {
-      throw new ApiException(400, "Missing the required parameter 'recordingId' when calling deleteConversationRecordingAnnotation");
+      throw new IllegalArgumentException("Missing the required parameter 'recordingId' when calling deleteConversationRecordingAnnotation");
     }
     
     // verify the required parameter 'annotationId' is set
     if (annotationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'annotationId' when calling deleteConversationRecordingAnnotation");
+      throw new IllegalArgumentException("Missing the required parameter 'annotationId' when calling deleteConversationRecordingAnnotation");
     }
     
     // create path and map variables
@@ -154,7 +155,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteConversationRecordingAnnotation(DeleteConversationRecordingAnnotationRequest request) throws ApiException {
+  public void deleteConversationRecordingAnnotation(DeleteConversationRecordingAnnotationRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -164,7 +165,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteConversationRecordingAnnotation(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteConversationRecordingAnnotation(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -175,7 +176,7 @@ public class RecordingApi {
    * @return OrphanRecording
    * @throws ApiException if fails to make API call
    */
-  public OrphanRecording deleteOrphanrecording(String orphanId) throws ApiException {
+  public OrphanRecording deleteOrphanrecording(String orphanId) throws IOException, ApiException {
     return deleteOrphanrecordingWithHttpInfo(orphanId).getBody();
   }
 
@@ -186,12 +187,12 @@ public class RecordingApi {
    * @return OrphanRecording
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrphanRecording> deleteOrphanrecordingWithHttpInfo(String orphanId) throws ApiException {
+  public ApiResponse<OrphanRecording> deleteOrphanrecordingWithHttpInfo(String orphanId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'orphanId' is set
     if (orphanId == null) {
-      throw new ApiException(400, "Missing the required parameter 'orphanId' when calling deleteOrphanrecording");
+      throw new IllegalArgumentException("Missing the required parameter 'orphanId' when calling deleteOrphanrecording");
     }
     
     // create path and map variables
@@ -227,7 +228,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OrphanRecording deleteOrphanrecording(DeleteOrphanrecordingRequest request) throws ApiException {
+  public OrphanRecording deleteOrphanrecording(DeleteOrphanrecordingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrphanRecording>() {});
   }
 
@@ -237,7 +238,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrphanRecording> deleteOrphanrecording(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<OrphanRecording> deleteOrphanrecording(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<OrphanRecording>invokeAPIVerbose(request, new TypeReference<OrphanRecording>() {});
   }
 
@@ -248,7 +249,7 @@ public class RecordingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteRecordingMediaretentionpolicies(String ids) throws ApiException {
+  public String deleteRecordingMediaretentionpolicies(String ids) throws IOException, ApiException {
     return deleteRecordingMediaretentionpoliciesWithHttpInfo(ids).getBody();
   }
 
@@ -259,12 +260,12 @@ public class RecordingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteRecordingMediaretentionpoliciesWithHttpInfo(String ids) throws ApiException {
+  public ApiResponse<String> deleteRecordingMediaretentionpoliciesWithHttpInfo(String ids) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'ids' is set
     if (ids == null) {
-      throw new ApiException(400, "Missing the required parameter 'ids' when calling deleteRecordingMediaretentionpolicies");
+      throw new IllegalArgumentException("Missing the required parameter 'ids' when calling deleteRecordingMediaretentionpolicies");
     }
     
     // create path and map variables
@@ -300,7 +301,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteRecordingMediaretentionpolicies(DeleteRecordingMediaretentionpoliciesRequest request) throws ApiException {
+  public String deleteRecordingMediaretentionpolicies(DeleteRecordingMediaretentionpoliciesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -310,7 +311,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteRecordingMediaretentionpolicies(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteRecordingMediaretentionpolicies(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -321,7 +322,7 @@ public class RecordingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteRecordingMediaretentionpolicy(String policyId) throws ApiException {
+  public String deleteRecordingMediaretentionpolicy(String policyId) throws IOException, ApiException {
     return deleteRecordingMediaretentionpolicyWithHttpInfo(policyId).getBody();
   }
 
@@ -332,12 +333,12 @@ public class RecordingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteRecordingMediaretentionpolicyWithHttpInfo(String policyId) throws ApiException {
+  public ApiResponse<String> deleteRecordingMediaretentionpolicyWithHttpInfo(String policyId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'policyId' is set
     if (policyId == null) {
-      throw new ApiException(400, "Missing the required parameter 'policyId' when calling deleteRecordingMediaretentionpolicy");
+      throw new IllegalArgumentException("Missing the required parameter 'policyId' when calling deleteRecordingMediaretentionpolicy");
     }
     
     // create path and map variables
@@ -373,7 +374,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteRecordingMediaretentionpolicy(DeleteRecordingMediaretentionpolicyRequest request) throws ApiException {
+  public String deleteRecordingMediaretentionpolicy(DeleteRecordingMediaretentionpolicyRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -383,7 +384,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteRecordingMediaretentionpolicy(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteRecordingMediaretentionpolicy(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -398,7 +399,7 @@ public class RecordingApi {
    * @return Recording
    * @throws ApiException if fails to make API call
    */
-  public Recording getConversationRecording(String conversationId, String recordingId, String formatId, Boolean download, String fileName) throws ApiException {
+  public Recording getConversationRecording(String conversationId, String recordingId, String formatId, Boolean download, String fileName) throws IOException, ApiException {
     return getConversationRecordingWithHttpInfo(conversationId, recordingId, formatId, download, fileName).getBody();
   }
 
@@ -413,17 +414,17 @@ public class RecordingApi {
    * @return Recording
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Recording> getConversationRecordingWithHttpInfo(String conversationId, String recordingId, String formatId, Boolean download, String fileName) throws ApiException {
+  public ApiResponse<Recording> getConversationRecordingWithHttpInfo(String conversationId, String recordingId, String formatId, Boolean download, String fileName) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling getConversationRecording");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling getConversationRecording");
     }
     
     // verify the required parameter 'recordingId' is set
     if (recordingId == null) {
-      throw new ApiException(400, "Missing the required parameter 'recordingId' when calling getConversationRecording");
+      throw new IllegalArgumentException("Missing the required parameter 'recordingId' when calling getConversationRecording");
     }
     
     // create path and map variables
@@ -463,7 +464,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Recording getConversationRecording(GetConversationRecordingRequest request) throws ApiException {
+  public Recording getConversationRecording(GetConversationRecordingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Recording>() {});
   }
 
@@ -473,7 +474,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Recording> getConversationRecording(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Recording> getConversationRecording(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Recording>invokeAPIVerbose(request, new TypeReference<Recording>() {});
   }
 
@@ -486,7 +487,7 @@ public class RecordingApi {
    * @return Annotation
    * @throws ApiException if fails to make API call
    */
-  public Annotation getConversationRecordingAnnotation(String conversationId, String recordingId, String annotationId) throws ApiException {
+  public Annotation getConversationRecordingAnnotation(String conversationId, String recordingId, String annotationId) throws IOException, ApiException {
     return getConversationRecordingAnnotationWithHttpInfo(conversationId, recordingId, annotationId).getBody();
   }
 
@@ -499,22 +500,22 @@ public class RecordingApi {
    * @return Annotation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Annotation> getConversationRecordingAnnotationWithHttpInfo(String conversationId, String recordingId, String annotationId) throws ApiException {
+  public ApiResponse<Annotation> getConversationRecordingAnnotationWithHttpInfo(String conversationId, String recordingId, String annotationId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling getConversationRecordingAnnotation");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling getConversationRecordingAnnotation");
     }
     
     // verify the required parameter 'recordingId' is set
     if (recordingId == null) {
-      throw new ApiException(400, "Missing the required parameter 'recordingId' when calling getConversationRecordingAnnotation");
+      throw new IllegalArgumentException("Missing the required parameter 'recordingId' when calling getConversationRecordingAnnotation");
     }
     
     // verify the required parameter 'annotationId' is set
     if (annotationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'annotationId' when calling getConversationRecordingAnnotation");
+      throw new IllegalArgumentException("Missing the required parameter 'annotationId' when calling getConversationRecordingAnnotation");
     }
     
     // create path and map variables
@@ -552,7 +553,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Annotation getConversationRecordingAnnotation(GetConversationRecordingAnnotationRequest request) throws ApiException {
+  public Annotation getConversationRecordingAnnotation(GetConversationRecordingAnnotationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Annotation>() {});
   }
 
@@ -562,7 +563,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Annotation> getConversationRecordingAnnotation(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Annotation> getConversationRecordingAnnotation(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Annotation>invokeAPIVerbose(request, new TypeReference<Annotation>() {});
   }
 
@@ -574,7 +575,7 @@ public class RecordingApi {
    * @return List<Annotation>
    * @throws ApiException if fails to make API call
    */
-  public List<Annotation> getConversationRecordingAnnotations(String conversationId, String recordingId) throws ApiException {
+  public List<Annotation> getConversationRecordingAnnotations(String conversationId, String recordingId) throws IOException, ApiException {
     return getConversationRecordingAnnotationsWithHttpInfo(conversationId, recordingId).getBody();
   }
 
@@ -586,17 +587,17 @@ public class RecordingApi {
    * @return List<Annotation>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<Annotation>> getConversationRecordingAnnotationsWithHttpInfo(String conversationId, String recordingId) throws ApiException {
+  public ApiResponse<List<Annotation>> getConversationRecordingAnnotationsWithHttpInfo(String conversationId, String recordingId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling getConversationRecordingAnnotations");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling getConversationRecordingAnnotations");
     }
     
     // verify the required parameter 'recordingId' is set
     if (recordingId == null) {
-      throw new ApiException(400, "Missing the required parameter 'recordingId' when calling getConversationRecordingAnnotations");
+      throw new IllegalArgumentException("Missing the required parameter 'recordingId' when calling getConversationRecordingAnnotations");
     }
     
     // create path and map variables
@@ -633,7 +634,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<Annotation> getConversationRecordingAnnotations(GetConversationRecordingAnnotationsRequest request) throws ApiException {
+  public List<Annotation> getConversationRecordingAnnotations(GetConversationRecordingAnnotationsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<Annotation>>() {});
   }
 
@@ -643,7 +644,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<Annotation>> getConversationRecordingAnnotations(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<Annotation>> getConversationRecordingAnnotations(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<Annotation>>invokeAPIVerbose(request, new TypeReference<List<Annotation>>() {});
   }
 
@@ -656,7 +657,7 @@ public class RecordingApi {
    * @return List<Recording>
    * @throws ApiException if fails to make API call
    */
-  public List<Recording> getConversationRecordings(String conversationId, Integer maxWaitMs, String formatId) throws ApiException {
+  public List<Recording> getConversationRecordings(String conversationId, Integer maxWaitMs, String formatId) throws IOException, ApiException {
     return getConversationRecordingsWithHttpInfo(conversationId, maxWaitMs, formatId).getBody();
   }
 
@@ -669,12 +670,12 @@ public class RecordingApi {
    * @return List<Recording>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<Recording>> getConversationRecordingsWithHttpInfo(String conversationId, Integer maxWaitMs, String formatId) throws ApiException {
+  public ApiResponse<List<Recording>> getConversationRecordingsWithHttpInfo(String conversationId, Integer maxWaitMs, String formatId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling getConversationRecordings");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling getConversationRecordings");
     }
     
     // create path and map variables
@@ -712,7 +713,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<Recording> getConversationRecordings(GetConversationRecordingsRequest request) throws ApiException {
+  public List<Recording> getConversationRecordings(GetConversationRecordingsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<Recording>>() {});
   }
 
@@ -722,7 +723,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<Recording>> getConversationRecordings(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<Recording>> getConversationRecordings(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<Recording>>invokeAPIVerbose(request, new TypeReference<List<Recording>>() {});
   }
 
@@ -733,7 +734,7 @@ public class RecordingApi {
    * @return OrphanRecording
    * @throws ApiException if fails to make API call
    */
-  public OrphanRecording getOrphanrecording(String orphanId) throws ApiException {
+  public OrphanRecording getOrphanrecording(String orphanId) throws IOException, ApiException {
     return getOrphanrecordingWithHttpInfo(orphanId).getBody();
   }
 
@@ -744,12 +745,12 @@ public class RecordingApi {
    * @return OrphanRecording
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrphanRecording> getOrphanrecordingWithHttpInfo(String orphanId) throws ApiException {
+  public ApiResponse<OrphanRecording> getOrphanrecordingWithHttpInfo(String orphanId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'orphanId' is set
     if (orphanId == null) {
-      throw new ApiException(400, "Missing the required parameter 'orphanId' when calling getOrphanrecording");
+      throw new IllegalArgumentException("Missing the required parameter 'orphanId' when calling getOrphanrecording");
     }
     
     // create path and map variables
@@ -785,7 +786,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OrphanRecording getOrphanrecording(GetOrphanrecordingRequest request) throws ApiException {
+  public OrphanRecording getOrphanrecording(GetOrphanrecordingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrphanRecording>() {});
   }
 
@@ -795,7 +796,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrphanRecording> getOrphanrecording(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<OrphanRecording> getOrphanrecording(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<OrphanRecording>invokeAPIVerbose(request, new TypeReference<OrphanRecording>() {});
   }
 
@@ -809,7 +810,7 @@ public class RecordingApi {
    * @return Recording
    * @throws ApiException if fails to make API call
    */
-  public Recording getOrphanrecordingMedia(String orphanId, String formatId, Boolean download, String fileName) throws ApiException {
+  public Recording getOrphanrecordingMedia(String orphanId, String formatId, Boolean download, String fileName) throws IOException, ApiException {
     return getOrphanrecordingMediaWithHttpInfo(orphanId, formatId, download, fileName).getBody();
   }
 
@@ -823,12 +824,12 @@ public class RecordingApi {
    * @return Recording
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Recording> getOrphanrecordingMediaWithHttpInfo(String orphanId, String formatId, Boolean download, String fileName) throws ApiException {
+  public ApiResponse<Recording> getOrphanrecordingMediaWithHttpInfo(String orphanId, String formatId, Boolean download, String fileName) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'orphanId' is set
     if (orphanId == null) {
-      throw new ApiException(400, "Missing the required parameter 'orphanId' when calling getOrphanrecordingMedia");
+      throw new IllegalArgumentException("Missing the required parameter 'orphanId' when calling getOrphanrecordingMedia");
     }
     
     // create path and map variables
@@ -867,7 +868,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Recording getOrphanrecordingMedia(GetOrphanrecordingMediaRequest request) throws ApiException {
+  public Recording getOrphanrecordingMedia(GetOrphanrecordingMediaRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Recording>() {});
   }
 
@@ -877,7 +878,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Recording> getOrphanrecordingMedia(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Recording> getOrphanrecordingMedia(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Recording>invokeAPIVerbose(request, new TypeReference<Recording>() {});
   }
 
@@ -894,7 +895,7 @@ public class RecordingApi {
    * @return OrphanRecordingListing
    * @throws ApiException if fails to make API call
    */
-  public OrphanRecordingListing getOrphanrecordings(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Boolean hasConversation) throws ApiException {
+  public OrphanRecordingListing getOrphanrecordings(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Boolean hasConversation) throws IOException, ApiException {
     return getOrphanrecordingsWithHttpInfo(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation).getBody();
   }
 
@@ -911,7 +912,7 @@ public class RecordingApi {
    * @return OrphanRecordingListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrphanRecordingListing> getOrphanrecordingsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Boolean hasConversation) throws ApiException {
+  public ApiResponse<OrphanRecordingListing> getOrphanrecordingsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Boolean hasConversation) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -953,7 +954,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OrphanRecordingListing getOrphanrecordings(GetOrphanrecordingsRequest request) throws ApiException {
+  public OrphanRecordingListing getOrphanrecordings(GetOrphanrecordingsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrphanRecordingListing>() {});
   }
 
@@ -963,7 +964,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrphanRecordingListing> getOrphanrecordings(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<OrphanRecordingListing> getOrphanrecordings(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<OrphanRecordingListing>invokeAPIVerbose(request, new TypeReference<OrphanRecordingListing>() {});
   }
 
@@ -974,7 +975,7 @@ public class RecordingApi {
    * @return LocalEncryptionConfiguration
    * @throws ApiException if fails to make API call
    */
-  public LocalEncryptionConfiguration getRecordingLocalkeysSetting(String settingsId) throws ApiException {
+  public LocalEncryptionConfiguration getRecordingLocalkeysSetting(String settingsId) throws IOException, ApiException {
     return getRecordingLocalkeysSettingWithHttpInfo(settingsId).getBody();
   }
 
@@ -985,12 +986,12 @@ public class RecordingApi {
    * @return LocalEncryptionConfiguration
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LocalEncryptionConfiguration> getRecordingLocalkeysSettingWithHttpInfo(String settingsId) throws ApiException {
+  public ApiResponse<LocalEncryptionConfiguration> getRecordingLocalkeysSettingWithHttpInfo(String settingsId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'settingsId' is set
     if (settingsId == null) {
-      throw new ApiException(400, "Missing the required parameter 'settingsId' when calling getRecordingLocalkeysSetting");
+      throw new IllegalArgumentException("Missing the required parameter 'settingsId' when calling getRecordingLocalkeysSetting");
     }
     
     // create path and map variables
@@ -1026,7 +1027,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public LocalEncryptionConfiguration getRecordingLocalkeysSetting(GetRecordingLocalkeysSettingRequest request) throws ApiException {
+  public LocalEncryptionConfiguration getRecordingLocalkeysSetting(GetRecordingLocalkeysSettingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {});
   }
 
@@ -1036,7 +1037,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LocalEncryptionConfiguration> getRecordingLocalkeysSetting(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<LocalEncryptionConfiguration> getRecordingLocalkeysSetting(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<LocalEncryptionConfiguration>invokeAPIVerbose(request, new TypeReference<LocalEncryptionConfiguration>() {});
   }
 
@@ -1046,7 +1047,7 @@ public class RecordingApi {
    * @return LocalEncryptionConfigurationListing
    * @throws ApiException if fails to make API call
    */
-  public LocalEncryptionConfigurationListing getRecordingLocalkeysSettings() throws ApiException {
+  public LocalEncryptionConfigurationListing getRecordingLocalkeysSettings() throws IOException, ApiException {
     return getRecordingLocalkeysSettingsWithHttpInfo().getBody();
   }
 
@@ -1056,7 +1057,7 @@ public class RecordingApi {
    * @return LocalEncryptionConfigurationListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LocalEncryptionConfigurationListing> getRecordingLocalkeysSettingsWithHttpInfo() throws ApiException {
+  public ApiResponse<LocalEncryptionConfigurationListing> getRecordingLocalkeysSettingsWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1091,7 +1092,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public LocalEncryptionConfigurationListing getRecordingLocalkeysSettings(GetRecordingLocalkeysSettingsRequest request) throws ApiException {
+  public LocalEncryptionConfigurationListing getRecordingLocalkeysSettings(GetRecordingLocalkeysSettingsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LocalEncryptionConfigurationListing>() {});
   }
 
@@ -1101,7 +1102,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LocalEncryptionConfigurationListing> getRecordingLocalkeysSettings(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<LocalEncryptionConfigurationListing> getRecordingLocalkeysSettings(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<LocalEncryptionConfigurationListing>invokeAPIVerbose(request, new TypeReference<LocalEncryptionConfigurationListing>() {});
   }
 
@@ -1121,7 +1122,7 @@ public class RecordingApi {
    * @return PolicyEntityListing
    * @throws ApiException if fails to make API call
    */
-  public PolicyEntityListing getRecordingMediaretentionpolicies(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) throws ApiException {
+  public PolicyEntityListing getRecordingMediaretentionpolicies(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) throws IOException, ApiException {
     return getRecordingMediaretentionpoliciesWithHttpInfo(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors).getBody();
   }
 
@@ -1141,7 +1142,7 @@ public class RecordingApi {
    * @return PolicyEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PolicyEntityListing> getRecordingMediaretentionpoliciesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) throws ApiException {
+  public ApiResponse<PolicyEntityListing> getRecordingMediaretentionpoliciesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1186,7 +1187,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PolicyEntityListing getRecordingMediaretentionpolicies(GetRecordingMediaretentionpoliciesRequest request) throws ApiException {
+  public PolicyEntityListing getRecordingMediaretentionpolicies(GetRecordingMediaretentionpoliciesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PolicyEntityListing>() {});
   }
 
@@ -1196,7 +1197,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PolicyEntityListing> getRecordingMediaretentionpolicies(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<PolicyEntityListing> getRecordingMediaretentionpolicies(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<PolicyEntityListing>invokeAPIVerbose(request, new TypeReference<PolicyEntityListing>() {});
   }
 
@@ -1207,7 +1208,7 @@ public class RecordingApi {
    * @return Policy
    * @throws ApiException if fails to make API call
    */
-  public Policy getRecordingMediaretentionpolicy(String policyId) throws ApiException {
+  public Policy getRecordingMediaretentionpolicy(String policyId) throws IOException, ApiException {
     return getRecordingMediaretentionpolicyWithHttpInfo(policyId).getBody();
   }
 
@@ -1218,12 +1219,12 @@ public class RecordingApi {
    * @return Policy
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Policy> getRecordingMediaretentionpolicyWithHttpInfo(String policyId) throws ApiException {
+  public ApiResponse<Policy> getRecordingMediaretentionpolicyWithHttpInfo(String policyId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'policyId' is set
     if (policyId == null) {
-      throw new ApiException(400, "Missing the required parameter 'policyId' when calling getRecordingMediaretentionpolicy");
+      throw new IllegalArgumentException("Missing the required parameter 'policyId' when calling getRecordingMediaretentionpolicy");
     }
     
     // create path and map variables
@@ -1259,7 +1260,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Policy getRecordingMediaretentionpolicy(GetRecordingMediaretentionpolicyRequest request) throws ApiException {
+  public Policy getRecordingMediaretentionpolicy(GetRecordingMediaretentionpolicyRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Policy>() {});
   }
 
@@ -1269,7 +1270,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Policy> getRecordingMediaretentionpolicy(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Policy> getRecordingMediaretentionpolicy(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Policy>invokeAPIVerbose(request, new TypeReference<Policy>() {});
   }
 
@@ -1281,7 +1282,7 @@ public class RecordingApi {
    * @return EncryptionKeyEntityListing
    * @throws ApiException if fails to make API call
    */
-  public EncryptionKeyEntityListing getRecordingRecordingkeys(Integer pageSize, Integer pageNumber) throws ApiException {
+  public EncryptionKeyEntityListing getRecordingRecordingkeys(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return getRecordingRecordingkeysWithHttpInfo(pageSize, pageNumber).getBody();
   }
 
@@ -1293,7 +1294,7 @@ public class RecordingApi {
    * @return EncryptionKeyEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EncryptionKeyEntityListing> getRecordingRecordingkeysWithHttpInfo(Integer pageSize, Integer pageNumber) throws ApiException {
+  public ApiResponse<EncryptionKeyEntityListing> getRecordingRecordingkeysWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1330,7 +1331,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EncryptionKeyEntityListing getRecordingRecordingkeys(GetRecordingRecordingkeysRequest request) throws ApiException {
+  public EncryptionKeyEntityListing getRecordingRecordingkeys(GetRecordingRecordingkeysRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EncryptionKeyEntityListing>() {});
   }
 
@@ -1340,7 +1341,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EncryptionKeyEntityListing> getRecordingRecordingkeys(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<EncryptionKeyEntityListing> getRecordingRecordingkeys(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<EncryptionKeyEntityListing>invokeAPIVerbose(request, new TypeReference<EncryptionKeyEntityListing>() {});
   }
 
@@ -1350,7 +1351,7 @@ public class RecordingApi {
    * @return KeyRotationSchedule
    * @throws ApiException if fails to make API call
    */
-  public KeyRotationSchedule getRecordingRecordingkeysRotationschedule() throws ApiException {
+  public KeyRotationSchedule getRecordingRecordingkeysRotationschedule() throws IOException, ApiException {
     return getRecordingRecordingkeysRotationscheduleWithHttpInfo().getBody();
   }
 
@@ -1360,7 +1361,7 @@ public class RecordingApi {
    * @return KeyRotationSchedule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<KeyRotationSchedule> getRecordingRecordingkeysRotationscheduleWithHttpInfo() throws ApiException {
+  public ApiResponse<KeyRotationSchedule> getRecordingRecordingkeysRotationscheduleWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1395,7 +1396,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public KeyRotationSchedule getRecordingRecordingkeysRotationschedule(GetRecordingRecordingkeysRotationscheduleRequest request) throws ApiException {
+  public KeyRotationSchedule getRecordingRecordingkeysRotationschedule(GetRecordingRecordingkeysRotationscheduleRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<KeyRotationSchedule>() {});
   }
 
@@ -1405,7 +1406,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<KeyRotationSchedule> getRecordingRecordingkeysRotationschedule(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<KeyRotationSchedule> getRecordingRecordingkeysRotationschedule(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<KeyRotationSchedule>invokeAPIVerbose(request, new TypeReference<KeyRotationSchedule>() {});
   }
 
@@ -1416,7 +1417,7 @@ public class RecordingApi {
    * @return RecordingSettings
    * @throws ApiException if fails to make API call
    */
-  public RecordingSettings getRecordingSettings(Boolean createDefault) throws ApiException {
+  public RecordingSettings getRecordingSettings(Boolean createDefault) throws IOException, ApiException {
     return getRecordingSettingsWithHttpInfo(createDefault).getBody();
   }
 
@@ -1427,7 +1428,7 @@ public class RecordingApi {
    * @return RecordingSettings
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RecordingSettings> getRecordingSettingsWithHttpInfo(Boolean createDefault) throws ApiException {
+  public ApiResponse<RecordingSettings> getRecordingSettingsWithHttpInfo(Boolean createDefault) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1463,7 +1464,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public RecordingSettings getRecordingSettings(GetRecordingSettingsRequest request) throws ApiException {
+  public RecordingSettings getRecordingSettings(GetRecordingSettingsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RecordingSettings>() {});
   }
 
@@ -1473,7 +1474,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RecordingSettings> getRecordingSettings(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<RecordingSettings> getRecordingSettings(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<RecordingSettings>invokeAPIVerbose(request, new TypeReference<RecordingSettings>() {});
   }
 
@@ -1485,7 +1486,7 @@ public class RecordingApi {
    * @return ScreenRecordingSessionListing
    * @throws ApiException if fails to make API call
    */
-  public ScreenRecordingSessionListing getRecordingsScreensessions(Integer pageSize, Integer pageNumber) throws ApiException {
+  public ScreenRecordingSessionListing getRecordingsScreensessions(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return getRecordingsScreensessionsWithHttpInfo(pageSize, pageNumber).getBody();
   }
 
@@ -1497,7 +1498,7 @@ public class RecordingApi {
    * @return ScreenRecordingSessionListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ScreenRecordingSessionListing> getRecordingsScreensessionsWithHttpInfo(Integer pageSize, Integer pageNumber) throws ApiException {
+  public ApiResponse<ScreenRecordingSessionListing> getRecordingsScreensessionsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1534,7 +1535,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ScreenRecordingSessionListing getRecordingsScreensessions(GetRecordingsScreensessionsRequest request) throws ApiException {
+  public ScreenRecordingSessionListing getRecordingsScreensessions(GetRecordingsScreensessionsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ScreenRecordingSessionListing>() {});
   }
 
@@ -1544,7 +1545,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ScreenRecordingSessionListing> getRecordingsScreensessions(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ScreenRecordingSessionListing> getRecordingsScreensessions(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ScreenRecordingSessionListing>invokeAPIVerbose(request, new TypeReference<ScreenRecordingSessionListing>() {});
   }
 
@@ -1556,7 +1557,7 @@ public class RecordingApi {
    * @return Policy
    * @throws ApiException if fails to make API call
    */
-  public Policy patchRecordingMediaretentionpolicy(String policyId, Policy body) throws ApiException {
+  public Policy patchRecordingMediaretentionpolicy(String policyId, Policy body) throws IOException, ApiException {
     return patchRecordingMediaretentionpolicyWithHttpInfo(policyId, body).getBody();
   }
 
@@ -1568,17 +1569,17 @@ public class RecordingApi {
    * @return Policy
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Policy> patchRecordingMediaretentionpolicyWithHttpInfo(String policyId, Policy body) throws ApiException {
+  public ApiResponse<Policy> patchRecordingMediaretentionpolicyWithHttpInfo(String policyId, Policy body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'policyId' is set
     if (policyId == null) {
-      throw new ApiException(400, "Missing the required parameter 'policyId' when calling patchRecordingMediaretentionpolicy");
+      throw new IllegalArgumentException("Missing the required parameter 'policyId' when calling patchRecordingMediaretentionpolicy");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchRecordingMediaretentionpolicy");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchRecordingMediaretentionpolicy");
     }
     
     // create path and map variables
@@ -1614,7 +1615,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Policy patchRecordingMediaretentionpolicy(PatchRecordingMediaretentionpolicyRequest request) throws ApiException {
+  public Policy patchRecordingMediaretentionpolicy(PatchRecordingMediaretentionpolicyRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Policy>() {});
   }
 
@@ -1624,7 +1625,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Policy> patchRecordingMediaretentionpolicy(ApiRequest<Policy> request) throws ApiException {
+  public ApiResponse<Policy> patchRecordingMediaretentionpolicy(ApiRequest<Policy> request) throws IOException, ApiException {
     return pcapiClient.<Policy>invokeAPIVerbose(request, new TypeReference<Policy>() {});
   }
 
@@ -1635,7 +1636,7 @@ public class RecordingApi {
    * @param body  (optional)
    * @throws ApiException if fails to make API call
    */
-  public void patchRecordingsScreensession(String recordingSessionId, ScreenRecordingSessionRequest body) throws ApiException {
+  public void patchRecordingsScreensession(String recordingSessionId, ScreenRecordingSessionRequest body) throws IOException, ApiException {
     patchRecordingsScreensessionWithHttpInfo(recordingSessionId, body);
   }
 
@@ -1646,12 +1647,12 @@ public class RecordingApi {
    * @param body  (optional)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchRecordingsScreensessionWithHttpInfo(String recordingSessionId, ScreenRecordingSessionRequest body) throws ApiException {
+  public ApiResponse<Void> patchRecordingsScreensessionWithHttpInfo(String recordingSessionId, ScreenRecordingSessionRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'recordingSessionId' is set
     if (recordingSessionId == null) {
-      throw new ApiException(400, "Missing the required parameter 'recordingSessionId' when calling patchRecordingsScreensession");
+      throw new IllegalArgumentException("Missing the required parameter 'recordingSessionId' when calling patchRecordingsScreensession");
     }
     
     // create path and map variables
@@ -1687,7 +1688,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void patchRecordingsScreensession(PatchRecordingsScreensessionRequest request) throws ApiException {
+  public void patchRecordingsScreensession(PatchRecordingsScreensessionRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -1697,7 +1698,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchRecordingsScreensession(ApiRequest<ScreenRecordingSessionRequest> request) throws ApiException {
+  public ApiResponse<Void> patchRecordingsScreensession(ApiRequest<ScreenRecordingSessionRequest> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -1710,7 +1711,7 @@ public class RecordingApi {
    * @return Annotation
    * @throws ApiException if fails to make API call
    */
-  public Annotation postConversationRecordingAnnotations(String conversationId, String recordingId, Annotation body) throws ApiException {
+  public Annotation postConversationRecordingAnnotations(String conversationId, String recordingId, Annotation body) throws IOException, ApiException {
     return postConversationRecordingAnnotationsWithHttpInfo(conversationId, recordingId, body).getBody();
   }
 
@@ -1723,22 +1724,22 @@ public class RecordingApi {
    * @return Annotation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Annotation> postConversationRecordingAnnotationsWithHttpInfo(String conversationId, String recordingId, Annotation body) throws ApiException {
+  public ApiResponse<Annotation> postConversationRecordingAnnotationsWithHttpInfo(String conversationId, String recordingId, Annotation body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling postConversationRecordingAnnotations");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling postConversationRecordingAnnotations");
     }
     
     // verify the required parameter 'recordingId' is set
     if (recordingId == null) {
-      throw new ApiException(400, "Missing the required parameter 'recordingId' when calling postConversationRecordingAnnotations");
+      throw new IllegalArgumentException("Missing the required parameter 'recordingId' when calling postConversationRecordingAnnotations");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postConversationRecordingAnnotations");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationRecordingAnnotations");
     }
     
     // create path and map variables
@@ -1775,7 +1776,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Annotation postConversationRecordingAnnotations(PostConversationRecordingAnnotationsRequest request) throws ApiException {
+  public Annotation postConversationRecordingAnnotations(PostConversationRecordingAnnotationsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Annotation>() {});
   }
 
@@ -1785,7 +1786,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Annotation> postConversationRecordingAnnotations(ApiRequest<Annotation> request) throws ApiException {
+  public ApiResponse<Annotation> postConversationRecordingAnnotations(ApiRequest<Annotation> request) throws IOException, ApiException {
     return pcapiClient.<Annotation>invokeAPIVerbose(request, new TypeReference<Annotation>() {});
   }
 
@@ -1796,7 +1797,7 @@ public class RecordingApi {
    * @return EncryptionKey
    * @throws ApiException if fails to make API call
    */
-  public EncryptionKey postRecordingLocalkeys(LocalEncryptionKeyRequest body) throws ApiException {
+  public EncryptionKey postRecordingLocalkeys(LocalEncryptionKeyRequest body) throws IOException, ApiException {
     return postRecordingLocalkeysWithHttpInfo(body).getBody();
   }
 
@@ -1807,12 +1808,12 @@ public class RecordingApi {
    * @return EncryptionKey
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EncryptionKey> postRecordingLocalkeysWithHttpInfo(LocalEncryptionKeyRequest body) throws ApiException {
+  public ApiResponse<EncryptionKey> postRecordingLocalkeysWithHttpInfo(LocalEncryptionKeyRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postRecordingLocalkeys");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postRecordingLocalkeys");
     }
     
     // create path and map variables
@@ -1847,7 +1848,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EncryptionKey postRecordingLocalkeys(PostRecordingLocalkeysRequest request) throws ApiException {
+  public EncryptionKey postRecordingLocalkeys(PostRecordingLocalkeysRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EncryptionKey>() {});
   }
 
@@ -1857,7 +1858,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EncryptionKey> postRecordingLocalkeys(ApiRequest<LocalEncryptionKeyRequest> request) throws ApiException {
+  public ApiResponse<EncryptionKey> postRecordingLocalkeys(ApiRequest<LocalEncryptionKeyRequest> request) throws IOException, ApiException {
     return pcapiClient.<EncryptionKey>invokeAPIVerbose(request, new TypeReference<EncryptionKey>() {});
   }
 
@@ -1868,7 +1869,7 @@ public class RecordingApi {
    * @return LocalEncryptionConfiguration
    * @throws ApiException if fails to make API call
    */
-  public LocalEncryptionConfiguration postRecordingLocalkeysSettings(LocalEncryptionConfiguration body) throws ApiException {
+  public LocalEncryptionConfiguration postRecordingLocalkeysSettings(LocalEncryptionConfiguration body) throws IOException, ApiException {
     return postRecordingLocalkeysSettingsWithHttpInfo(body).getBody();
   }
 
@@ -1879,12 +1880,12 @@ public class RecordingApi {
    * @return LocalEncryptionConfiguration
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LocalEncryptionConfiguration> postRecordingLocalkeysSettingsWithHttpInfo(LocalEncryptionConfiguration body) throws ApiException {
+  public ApiResponse<LocalEncryptionConfiguration> postRecordingLocalkeysSettingsWithHttpInfo(LocalEncryptionConfiguration body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postRecordingLocalkeysSettings");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postRecordingLocalkeysSettings");
     }
     
     // create path and map variables
@@ -1919,7 +1920,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public LocalEncryptionConfiguration postRecordingLocalkeysSettings(PostRecordingLocalkeysSettingsRequest request) throws ApiException {
+  public LocalEncryptionConfiguration postRecordingLocalkeysSettings(PostRecordingLocalkeysSettingsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {});
   }
 
@@ -1929,7 +1930,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LocalEncryptionConfiguration> postRecordingLocalkeysSettings(ApiRequest<LocalEncryptionConfiguration> request) throws ApiException {
+  public ApiResponse<LocalEncryptionConfiguration> postRecordingLocalkeysSettings(ApiRequest<LocalEncryptionConfiguration> request) throws IOException, ApiException {
     return pcapiClient.<LocalEncryptionConfiguration>invokeAPIVerbose(request, new TypeReference<LocalEncryptionConfiguration>() {});
   }
 
@@ -1940,7 +1941,7 @@ public class RecordingApi {
    * @return Policy
    * @throws ApiException if fails to make API call
    */
-  public Policy postRecordingMediaretentionpolicies(PolicyCreate body) throws ApiException {
+  public Policy postRecordingMediaretentionpolicies(PolicyCreate body) throws IOException, ApiException {
     return postRecordingMediaretentionpoliciesWithHttpInfo(body).getBody();
   }
 
@@ -1951,12 +1952,12 @@ public class RecordingApi {
    * @return Policy
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Policy> postRecordingMediaretentionpoliciesWithHttpInfo(PolicyCreate body) throws ApiException {
+  public ApiResponse<Policy> postRecordingMediaretentionpoliciesWithHttpInfo(PolicyCreate body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postRecordingMediaretentionpolicies");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postRecordingMediaretentionpolicies");
     }
     
     // create path and map variables
@@ -1991,7 +1992,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Policy postRecordingMediaretentionpolicies(PostRecordingMediaretentionpoliciesRequest request) throws ApiException {
+  public Policy postRecordingMediaretentionpolicies(PostRecordingMediaretentionpoliciesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Policy>() {});
   }
 
@@ -2001,7 +2002,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Policy> postRecordingMediaretentionpolicies(ApiRequest<PolicyCreate> request) throws ApiException {
+  public ApiResponse<Policy> postRecordingMediaretentionpolicies(ApiRequest<PolicyCreate> request) throws IOException, ApiException {
     return pcapiClient.<Policy>invokeAPIVerbose(request, new TypeReference<Policy>() {});
   }
 
@@ -2011,7 +2012,7 @@ public class RecordingApi {
    * @return EncryptionKey
    * @throws ApiException if fails to make API call
    */
-  public EncryptionKey postRecordingRecordingkeys() throws ApiException {
+  public EncryptionKey postRecordingRecordingkeys() throws IOException, ApiException {
     return postRecordingRecordingkeysWithHttpInfo().getBody();
   }
 
@@ -2021,7 +2022,7 @@ public class RecordingApi {
    * @return EncryptionKey
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EncryptionKey> postRecordingRecordingkeysWithHttpInfo() throws ApiException {
+  public ApiResponse<EncryptionKey> postRecordingRecordingkeysWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -2056,7 +2057,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EncryptionKey postRecordingRecordingkeys(PostRecordingRecordingkeysRequest request) throws ApiException {
+  public EncryptionKey postRecordingRecordingkeys(PostRecordingRecordingkeysRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EncryptionKey>() {});
   }
 
@@ -2066,7 +2067,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EncryptionKey> postRecordingRecordingkeys(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<EncryptionKey> postRecordingRecordingkeys(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<EncryptionKey>invokeAPIVerbose(request, new TypeReference<EncryptionKey>() {});
   }
 
@@ -2079,7 +2080,7 @@ public class RecordingApi {
    * @return Recording
    * @throws ApiException if fails to make API call
    */
-  public Recording putConversationRecording(String conversationId, String recordingId, Recording body) throws ApiException {
+  public Recording putConversationRecording(String conversationId, String recordingId, Recording body) throws IOException, ApiException {
     return putConversationRecordingWithHttpInfo(conversationId, recordingId, body).getBody();
   }
 
@@ -2092,22 +2093,22 @@ public class RecordingApi {
    * @return Recording
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Recording> putConversationRecordingWithHttpInfo(String conversationId, String recordingId, Recording body) throws ApiException {
+  public ApiResponse<Recording> putConversationRecordingWithHttpInfo(String conversationId, String recordingId, Recording body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling putConversationRecording");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling putConversationRecording");
     }
     
     // verify the required parameter 'recordingId' is set
     if (recordingId == null) {
-      throw new ApiException(400, "Missing the required parameter 'recordingId' when calling putConversationRecording");
+      throw new IllegalArgumentException("Missing the required parameter 'recordingId' when calling putConversationRecording");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putConversationRecording");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putConversationRecording");
     }
     
     // create path and map variables
@@ -2144,7 +2145,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Recording putConversationRecording(PutConversationRecordingRequest request) throws ApiException {
+  public Recording putConversationRecording(PutConversationRecordingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Recording>() {});
   }
 
@@ -2154,7 +2155,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Recording> putConversationRecording(ApiRequest<Recording> request) throws ApiException {
+  public ApiResponse<Recording> putConversationRecording(ApiRequest<Recording> request) throws IOException, ApiException {
     return pcapiClient.<Recording>invokeAPIVerbose(request, new TypeReference<Recording>() {});
   }
 
@@ -2168,7 +2169,7 @@ public class RecordingApi {
    * @return Annotation
    * @throws ApiException if fails to make API call
    */
-  public Annotation putConversationRecordingAnnotation(String conversationId, String recordingId, String annotationId, Annotation body) throws ApiException {
+  public Annotation putConversationRecordingAnnotation(String conversationId, String recordingId, String annotationId, Annotation body) throws IOException, ApiException {
     return putConversationRecordingAnnotationWithHttpInfo(conversationId, recordingId, annotationId, body).getBody();
   }
 
@@ -2182,27 +2183,27 @@ public class RecordingApi {
    * @return Annotation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Annotation> putConversationRecordingAnnotationWithHttpInfo(String conversationId, String recordingId, String annotationId, Annotation body) throws ApiException {
+  public ApiResponse<Annotation> putConversationRecordingAnnotationWithHttpInfo(String conversationId, String recordingId, String annotationId, Annotation body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling putConversationRecordingAnnotation");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling putConversationRecordingAnnotation");
     }
     
     // verify the required parameter 'recordingId' is set
     if (recordingId == null) {
-      throw new ApiException(400, "Missing the required parameter 'recordingId' when calling putConversationRecordingAnnotation");
+      throw new IllegalArgumentException("Missing the required parameter 'recordingId' when calling putConversationRecordingAnnotation");
     }
     
     // verify the required parameter 'annotationId' is set
     if (annotationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'annotationId' when calling putConversationRecordingAnnotation");
+      throw new IllegalArgumentException("Missing the required parameter 'annotationId' when calling putConversationRecordingAnnotation");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putConversationRecordingAnnotation");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putConversationRecordingAnnotation");
     }
     
     // create path and map variables
@@ -2240,7 +2241,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Annotation putConversationRecordingAnnotation(PutConversationRecordingAnnotationRequest request) throws ApiException {
+  public Annotation putConversationRecordingAnnotation(PutConversationRecordingAnnotationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Annotation>() {});
   }
 
@@ -2250,7 +2251,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Annotation> putConversationRecordingAnnotation(ApiRequest<Annotation> request) throws ApiException {
+  public ApiResponse<Annotation> putConversationRecordingAnnotation(ApiRequest<Annotation> request) throws IOException, ApiException {
     return pcapiClient.<Annotation>invokeAPIVerbose(request, new TypeReference<Annotation>() {});
   }
 
@@ -2262,7 +2263,7 @@ public class RecordingApi {
    * @return Recording
    * @throws ApiException if fails to make API call
    */
-  public Recording putOrphanrecording(String orphanId, OrphanUpdateRequest body) throws ApiException {
+  public Recording putOrphanrecording(String orphanId, OrphanUpdateRequest body) throws IOException, ApiException {
     return putOrphanrecordingWithHttpInfo(orphanId, body).getBody();
   }
 
@@ -2274,12 +2275,12 @@ public class RecordingApi {
    * @return Recording
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Recording> putOrphanrecordingWithHttpInfo(String orphanId, OrphanUpdateRequest body) throws ApiException {
+  public ApiResponse<Recording> putOrphanrecordingWithHttpInfo(String orphanId, OrphanUpdateRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'orphanId' is set
     if (orphanId == null) {
-      throw new ApiException(400, "Missing the required parameter 'orphanId' when calling putOrphanrecording");
+      throw new IllegalArgumentException("Missing the required parameter 'orphanId' when calling putOrphanrecording");
     }
     
     // create path and map variables
@@ -2315,7 +2316,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Recording putOrphanrecording(PutOrphanrecordingRequest request) throws ApiException {
+  public Recording putOrphanrecording(PutOrphanrecordingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Recording>() {});
   }
 
@@ -2325,7 +2326,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Recording> putOrphanrecording(ApiRequest<OrphanUpdateRequest> request) throws ApiException {
+  public ApiResponse<Recording> putOrphanrecording(ApiRequest<OrphanUpdateRequest> request) throws IOException, ApiException {
     return pcapiClient.<Recording>invokeAPIVerbose(request, new TypeReference<Recording>() {});
   }
 
@@ -2337,7 +2338,7 @@ public class RecordingApi {
    * @return LocalEncryptionConfiguration
    * @throws ApiException if fails to make API call
    */
-  public LocalEncryptionConfiguration putRecordingLocalkeysSetting(String settingsId, LocalEncryptionConfiguration body) throws ApiException {
+  public LocalEncryptionConfiguration putRecordingLocalkeysSetting(String settingsId, LocalEncryptionConfiguration body) throws IOException, ApiException {
     return putRecordingLocalkeysSettingWithHttpInfo(settingsId, body).getBody();
   }
 
@@ -2349,17 +2350,17 @@ public class RecordingApi {
    * @return LocalEncryptionConfiguration
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LocalEncryptionConfiguration> putRecordingLocalkeysSettingWithHttpInfo(String settingsId, LocalEncryptionConfiguration body) throws ApiException {
+  public ApiResponse<LocalEncryptionConfiguration> putRecordingLocalkeysSettingWithHttpInfo(String settingsId, LocalEncryptionConfiguration body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'settingsId' is set
     if (settingsId == null) {
-      throw new ApiException(400, "Missing the required parameter 'settingsId' when calling putRecordingLocalkeysSetting");
+      throw new IllegalArgumentException("Missing the required parameter 'settingsId' when calling putRecordingLocalkeysSetting");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putRecordingLocalkeysSetting");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putRecordingLocalkeysSetting");
     }
     
     // create path and map variables
@@ -2395,7 +2396,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public LocalEncryptionConfiguration putRecordingLocalkeysSetting(PutRecordingLocalkeysSettingRequest request) throws ApiException {
+  public LocalEncryptionConfiguration putRecordingLocalkeysSetting(PutRecordingLocalkeysSettingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {});
   }
 
@@ -2405,7 +2406,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LocalEncryptionConfiguration> putRecordingLocalkeysSetting(ApiRequest<LocalEncryptionConfiguration> request) throws ApiException {
+  public ApiResponse<LocalEncryptionConfiguration> putRecordingLocalkeysSetting(ApiRequest<LocalEncryptionConfiguration> request) throws IOException, ApiException {
     return pcapiClient.<LocalEncryptionConfiguration>invokeAPIVerbose(request, new TypeReference<LocalEncryptionConfiguration>() {});
   }
 
@@ -2417,7 +2418,7 @@ public class RecordingApi {
    * @return Policy
    * @throws ApiException if fails to make API call
    */
-  public Policy putRecordingMediaretentionpolicy(String policyId, Policy body) throws ApiException {
+  public Policy putRecordingMediaretentionpolicy(String policyId, Policy body) throws IOException, ApiException {
     return putRecordingMediaretentionpolicyWithHttpInfo(policyId, body).getBody();
   }
 
@@ -2429,17 +2430,17 @@ public class RecordingApi {
    * @return Policy
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Policy> putRecordingMediaretentionpolicyWithHttpInfo(String policyId, Policy body) throws ApiException {
+  public ApiResponse<Policy> putRecordingMediaretentionpolicyWithHttpInfo(String policyId, Policy body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'policyId' is set
     if (policyId == null) {
-      throw new ApiException(400, "Missing the required parameter 'policyId' when calling putRecordingMediaretentionpolicy");
+      throw new IllegalArgumentException("Missing the required parameter 'policyId' when calling putRecordingMediaretentionpolicy");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putRecordingMediaretentionpolicy");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putRecordingMediaretentionpolicy");
     }
     
     // create path and map variables
@@ -2475,7 +2476,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Policy putRecordingMediaretentionpolicy(PutRecordingMediaretentionpolicyRequest request) throws ApiException {
+  public Policy putRecordingMediaretentionpolicy(PutRecordingMediaretentionpolicyRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Policy>() {});
   }
 
@@ -2485,7 +2486,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Policy> putRecordingMediaretentionpolicy(ApiRequest<Policy> request) throws ApiException {
+  public ApiResponse<Policy> putRecordingMediaretentionpolicy(ApiRequest<Policy> request) throws IOException, ApiException {
     return pcapiClient.<Policy>invokeAPIVerbose(request, new TypeReference<Policy>() {});
   }
 
@@ -2496,7 +2497,7 @@ public class RecordingApi {
    * @return KeyRotationSchedule
    * @throws ApiException if fails to make API call
    */
-  public KeyRotationSchedule putRecordingRecordingkeysRotationschedule(KeyRotationSchedule body) throws ApiException {
+  public KeyRotationSchedule putRecordingRecordingkeysRotationschedule(KeyRotationSchedule body) throws IOException, ApiException {
     return putRecordingRecordingkeysRotationscheduleWithHttpInfo(body).getBody();
   }
 
@@ -2507,12 +2508,12 @@ public class RecordingApi {
    * @return KeyRotationSchedule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<KeyRotationSchedule> putRecordingRecordingkeysRotationscheduleWithHttpInfo(KeyRotationSchedule body) throws ApiException {
+  public ApiResponse<KeyRotationSchedule> putRecordingRecordingkeysRotationscheduleWithHttpInfo(KeyRotationSchedule body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putRecordingRecordingkeysRotationschedule");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putRecordingRecordingkeysRotationschedule");
     }
     
     // create path and map variables
@@ -2547,7 +2548,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public KeyRotationSchedule putRecordingRecordingkeysRotationschedule(PutRecordingRecordingkeysRotationscheduleRequest request) throws ApiException {
+  public KeyRotationSchedule putRecordingRecordingkeysRotationschedule(PutRecordingRecordingkeysRotationscheduleRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<KeyRotationSchedule>() {});
   }
 
@@ -2557,7 +2558,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<KeyRotationSchedule> putRecordingRecordingkeysRotationschedule(ApiRequest<KeyRotationSchedule> request) throws ApiException {
+  public ApiResponse<KeyRotationSchedule> putRecordingRecordingkeysRotationschedule(ApiRequest<KeyRotationSchedule> request) throws IOException, ApiException {
     return pcapiClient.<KeyRotationSchedule>invokeAPIVerbose(request, new TypeReference<KeyRotationSchedule>() {});
   }
 
@@ -2568,7 +2569,7 @@ public class RecordingApi {
    * @return RecordingSettings
    * @throws ApiException if fails to make API call
    */
-  public RecordingSettings putRecordingSettings(RecordingSettings body) throws ApiException {
+  public RecordingSettings putRecordingSettings(RecordingSettings body) throws IOException, ApiException {
     return putRecordingSettingsWithHttpInfo(body).getBody();
   }
 
@@ -2579,12 +2580,12 @@ public class RecordingApi {
    * @return RecordingSettings
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RecordingSettings> putRecordingSettingsWithHttpInfo(RecordingSettings body) throws ApiException {
+  public ApiResponse<RecordingSettings> putRecordingSettingsWithHttpInfo(RecordingSettings body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putRecordingSettings");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putRecordingSettings");
     }
     
     // create path and map variables
@@ -2619,7 +2620,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public RecordingSettings putRecordingSettings(PutRecordingSettingsRequest request) throws ApiException {
+  public RecordingSettings putRecordingSettings(PutRecordingSettingsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RecordingSettings>() {});
   }
 
@@ -2629,7 +2630,7 @@ public class RecordingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RecordingSettings> putRecordingSettings(ApiRequest<RecordingSettings> request) throws ApiException {
+  public ApiResponse<RecordingSettings> putRecordingSettings(ApiRequest<RecordingSettings> request) throws IOException, ApiException {
     return pcapiClient.<RecordingSettings>invokeAPIVerbose(request, new TypeReference<RecordingSettings>() {});
   }
 

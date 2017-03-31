@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.api.request.GetDateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTimezonesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCertificateDetailsRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -46,7 +47,7 @@ public class UtilitiesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ServerDate> getDateAsync(GetDateRequest request, AsyncApiCallback<ServerDate> callback) throws ApiException {
+  public Future<ServerDate> getDateAsync(GetDateRequest request, AsyncApiCallback<ServerDate> callback) {
     return pcapiClient.<ServerDate>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ServerDate>() {}, callback);
   }
 
@@ -56,7 +57,7 @@ public class UtilitiesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ServerDate>> getDateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ServerDate>> callback) throws ApiException {
+  public Future<ApiResponse<ServerDate>> getDateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ServerDate>> callback) {
     return pcapiClient.<ServerDate>invokeAPIVerboseAsync(request, new TypeReference<ServerDate>() {}, callback);
   }
 
@@ -66,7 +67,7 @@ public class UtilitiesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<TimeZoneEntityListing> getTimezonesAsync(GetTimezonesRequest request, AsyncApiCallback<TimeZoneEntityListing> callback) throws ApiException {
+  public Future<TimeZoneEntityListing> getTimezonesAsync(GetTimezonesRequest request, AsyncApiCallback<TimeZoneEntityListing> callback) {
     return pcapiClient.<TimeZoneEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TimeZoneEntityListing>() {}, callback);
   }
 
@@ -76,7 +77,7 @@ public class UtilitiesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<TimeZoneEntityListing>> getTimezonesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TimeZoneEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<TimeZoneEntityListing>> getTimezonesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TimeZoneEntityListing>> callback) {
     return pcapiClient.<TimeZoneEntityListing>invokeAPIVerboseAsync(request, new TypeReference<TimeZoneEntityListing>() {}, callback);
   }
 
@@ -86,7 +87,7 @@ public class UtilitiesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ParsedCertificate> postCertificateDetailsAsync(PostCertificateDetailsRequest request, AsyncApiCallback<ParsedCertificate> callback) throws ApiException {
+  public Future<ParsedCertificate> postCertificateDetailsAsync(PostCertificateDetailsRequest request, AsyncApiCallback<ParsedCertificate> callback) {
     return pcapiClient.<ParsedCertificate>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ParsedCertificate>() {}, callback);
   }
 
@@ -96,7 +97,7 @@ public class UtilitiesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ParsedCertificate>> postCertificateDetailsAsync(ApiRequest<Certificate> request, AsyncApiCallback<ApiResponse<ParsedCertificate>> callback) throws ApiException {
+  public Future<ApiResponse<ParsedCertificate>> postCertificateDetailsAsync(ApiRequest<Certificate> request, AsyncApiCallback<ApiResponse<ParsedCertificate>> callback) {
     return pcapiClient.<ParsedCertificate>invokeAPIVerboseAsync(request, new TypeReference<ParsedCertificate>() {}, callback);
   }
 

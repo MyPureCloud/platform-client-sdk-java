@@ -80,11 +80,11 @@ public class PostAnalyticsQueuesObservationsQueryRequest {
         return this;
     }
 
-    public ApiRequest<ObservationQuery> withHttpInfo() throws ApiException {
+    public ApiRequest<ObservationQuery> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostAnalyticsQueuesObservationsQueryRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostAnalyticsQueuesObservationsQueryRequest.");
         }
         
 

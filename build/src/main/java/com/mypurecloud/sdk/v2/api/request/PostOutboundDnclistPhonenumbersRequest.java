@@ -105,16 +105,16 @@ public class PostOutboundDnclistPhonenumbersRequest {
         return this;
     }
 
-    public ApiRequest<List<String>> withHttpInfo() throws ApiException {
+    public ApiRequest<List<String>> withHttpInfo() {
         
         // verify the required parameter 'dncListId' is set
         if (this.dncListId == null) {
-            throw new ApiException(400, "Missing the required parameter 'dncListId' when building request for PostOutboundDnclistPhonenumbersRequest.");
+            throw new IllegalStateException("Missing the required parameter 'dncListId' when building request for PostOutboundDnclistPhonenumbersRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostOutboundDnclistPhonenumbersRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostOutboundDnclistPhonenumbersRequest.");
         }
         
 

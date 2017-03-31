@@ -74,11 +74,11 @@ public class GetQualityKeywordsetRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'keywordSetId' is set
         if (this.keywordSetId == null) {
-            throw new ApiException(400, "Missing the required parameter 'keywordSetId' when building request for GetQualityKeywordsetRequest.");
+            throw new IllegalStateException("Missing the required parameter 'keywordSetId' when building request for GetQualityKeywordsetRequest.");
         }
         
 

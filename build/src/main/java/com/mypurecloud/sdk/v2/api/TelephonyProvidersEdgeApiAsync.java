@@ -197,6 +197,7 @@ import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesSiteNumberpl
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesSiteOutboundrouteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesTrunkbasesettingRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -221,7 +222,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteTelephonyProvidersEdgeAsync(DeleteTelephonyProvidersEdgeRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteTelephonyProvidersEdgeAsync(DeleteTelephonyProvidersEdgeRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -231,7 +232,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -241,7 +242,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteTelephonyProvidersEdgeLogicalinterfaceAsync(DeleteTelephonyProvidersEdgeLogicalinterfaceRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteTelephonyProvidersEdgeLogicalinterfaceAsync(DeleteTelephonyProvidersEdgeLogicalinterfaceRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -251,7 +252,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteTelephonyProvidersEdgeLogicalinterfaceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteTelephonyProvidersEdgeLogicalinterfaceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -261,7 +262,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteTelephonyProvidersEdgeSoftwareupdateAsync(DeleteTelephonyProvidersEdgeSoftwareupdateRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteTelephonyProvidersEdgeSoftwareupdateAsync(DeleteTelephonyProvidersEdgeSoftwareupdateRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -271,7 +272,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgeSoftwareupdateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgeSoftwareupdateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -281,7 +282,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteTelephonyProvidersEdgesCertificateauthorityAsync(DeleteTelephonyProvidersEdgesCertificateauthorityRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteTelephonyProvidersEdgesCertificateauthorityAsync(DeleteTelephonyProvidersEdgesCertificateauthorityRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -291,7 +292,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesCertificateauthorityAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesCertificateauthorityAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -301,7 +302,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteTelephonyProvidersEdgesDidpoolAsync(DeleteTelephonyProvidersEdgesDidpoolRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteTelephonyProvidersEdgesDidpoolAsync(DeleteTelephonyProvidersEdgesDidpoolRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -311,7 +312,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesDidpoolAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesDidpoolAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -321,7 +322,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteTelephonyProvidersEdgesEdgegroupAsync(DeleteTelephonyProvidersEdgesEdgegroupRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteTelephonyProvidersEdgesEdgegroupAsync(DeleteTelephonyProvidersEdgesEdgegroupRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -331,7 +332,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesEdgegroupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesEdgegroupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -341,7 +342,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteTelephonyProvidersEdgesEndpointAsync(DeleteTelephonyProvidersEdgesEndpointRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteTelephonyProvidersEdgesEndpointAsync(DeleteTelephonyProvidersEdgesEndpointRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -351,7 +352,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesEndpointAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesEndpointAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -361,7 +362,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteTelephonyProvidersEdgesExtensionpoolAsync(DeleteTelephonyProvidersEdgesExtensionpoolRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteTelephonyProvidersEdgesExtensionpoolAsync(DeleteTelephonyProvidersEdgesExtensionpoolRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -371,7 +372,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesExtensionpoolAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesExtensionpoolAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -381,7 +382,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteTelephonyProvidersEdgesOutboundrouteAsync(DeleteTelephonyProvidersEdgesOutboundrouteRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteTelephonyProvidersEdgesOutboundrouteAsync(DeleteTelephonyProvidersEdgesOutboundrouteRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -391,7 +392,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesOutboundrouteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesOutboundrouteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -401,7 +402,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteTelephonyProvidersEdgesPhoneAsync(DeleteTelephonyProvidersEdgesPhoneRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteTelephonyProvidersEdgesPhoneAsync(DeleteTelephonyProvidersEdgesPhoneRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -411,7 +412,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesPhoneAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesPhoneAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -421,7 +422,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteTelephonyProvidersEdgesPhonebasesettingAsync(DeleteTelephonyProvidersEdgesPhonebasesettingRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteTelephonyProvidersEdgesPhonebasesettingAsync(DeleteTelephonyProvidersEdgesPhonebasesettingRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -431,7 +432,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesPhonebasesettingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesPhonebasesettingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -441,7 +442,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteTelephonyProvidersEdgesSiteAsync(DeleteTelephonyProvidersEdgesSiteRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteTelephonyProvidersEdgesSiteAsync(DeleteTelephonyProvidersEdgesSiteRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -451,7 +452,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesSiteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesSiteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -461,7 +462,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteTelephonyProvidersEdgesSiteOutboundrouteAsync(DeleteTelephonyProvidersEdgesSiteOutboundrouteRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteTelephonyProvidersEdgesSiteOutboundrouteAsync(DeleteTelephonyProvidersEdgesSiteOutboundrouteRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -471,7 +472,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesSiteOutboundrouteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesSiteOutboundrouteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -481,7 +482,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteTelephonyProvidersEdgesTrunkbasesettingAsync(DeleteTelephonyProvidersEdgesTrunkbasesettingRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteTelephonyProvidersEdgesTrunkbasesettingAsync(DeleteTelephonyProvidersEdgesTrunkbasesettingRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -491,7 +492,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesTrunkbasesettingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesTrunkbasesettingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -501,7 +502,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<SchemaCategoryEntityListing> getConfigurationSchemasEdgesVnextAsync(GetConfigurationSchemasEdgesVnextRequest request, AsyncApiCallback<SchemaCategoryEntityListing> callback) throws ApiException {
+  public Future<SchemaCategoryEntityListing> getConfigurationSchemasEdgesVnextAsync(GetConfigurationSchemasEdgesVnextRequest request, AsyncApiCallback<SchemaCategoryEntityListing> callback) {
     return pcapiClient.<SchemaCategoryEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<SchemaCategoryEntityListing>() {}, callback);
   }
 
@@ -511,7 +512,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<SchemaCategoryEntityListing>> getConfigurationSchemasEdgesVnextAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SchemaCategoryEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<SchemaCategoryEntityListing>> getConfigurationSchemasEdgesVnextAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SchemaCategoryEntityListing>> callback) {
     return pcapiClient.<SchemaCategoryEntityListing>invokeAPIVerboseAsync(request, new TypeReference<SchemaCategoryEntityListing>() {}, callback);
   }
 
@@ -521,7 +522,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategoryAsync(GetConfigurationSchemasEdgesVnextSchemaCategoryRequest request, AsyncApiCallback<SchemaReferenceEntityListing> callback) throws ApiException {
+  public Future<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategoryAsync(GetConfigurationSchemasEdgesVnextSchemaCategoryRequest request, AsyncApiCallback<SchemaReferenceEntityListing> callback) {
     return pcapiClient.<SchemaReferenceEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<SchemaReferenceEntityListing>() {}, callback);
   }
 
@@ -531,7 +532,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<SchemaReferenceEntityListing>> getConfigurationSchemasEdgesVnextSchemaCategoryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SchemaReferenceEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<SchemaReferenceEntityListing>> getConfigurationSchemasEdgesVnextSchemaCategoryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SchemaReferenceEntityListing>> callback) {
     return pcapiClient.<SchemaReferenceEntityListing>invokeAPIVerboseAsync(request, new TypeReference<SchemaReferenceEntityListing>() {}, callback);
   }
 
@@ -541,7 +542,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeAsync(GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest request, AsyncApiCallback<SchemaReferenceEntityListing> callback) throws ApiException {
+  public Future<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeAsync(GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest request, AsyncApiCallback<SchemaReferenceEntityListing> callback) {
     return pcapiClient.<SchemaReferenceEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<SchemaReferenceEntityListing>() {}, callback);
   }
 
@@ -551,7 +552,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<SchemaReferenceEntityListing>> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SchemaReferenceEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<SchemaReferenceEntityListing>> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SchemaReferenceEntityListing>> callback) {
     return pcapiClient.<SchemaReferenceEntityListing>invokeAPIVerboseAsync(request, new TypeReference<SchemaReferenceEntityListing>() {}, callback);
   }
 
@@ -561,7 +562,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdAsync(GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest request, AsyncApiCallback<Organization> callback) throws ApiException {
+  public Future<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdAsync(GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest request, AsyncApiCallback<Organization> callback) {
     return pcapiClient.<Organization>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Organization>() {}, callback);
   }
 
@@ -571,7 +572,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Organization>> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Organization>> callback) throws ApiException {
+  public Future<ApiResponse<Organization>> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Organization>> callback) {
     return pcapiClient.<Organization>invokeAPIVerboseAsync(request, new TypeReference<Organization>() {}, callback);
   }
 
@@ -581,7 +582,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdAsync(GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest request, AsyncApiCallback<Organization> callback) throws ApiException {
+  public Future<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdAsync(GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest request, AsyncApiCallback<Organization> callback) {
     return pcapiClient.<Organization>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Organization>() {}, callback);
   }
 
@@ -591,7 +592,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Organization>> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Organization>> callback) throws ApiException {
+  public Future<ApiResponse<Organization>> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Organization>> callback) {
     return pcapiClient.<Organization>invokeAPIVerboseAsync(request, new TypeReference<Organization>() {}, callback);
   }
 
@@ -601,7 +602,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Edge> getTelephonyProvidersEdgeAsync(GetTelephonyProvidersEdgeRequest request, AsyncApiCallback<Edge> callback) throws ApiException {
+  public Future<Edge> getTelephonyProvidersEdgeAsync(GetTelephonyProvidersEdgeRequest request, AsyncApiCallback<Edge> callback) {
     return pcapiClient.<Edge>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Edge>() {}, callback);
   }
 
@@ -611,7 +612,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Edge>> getTelephonyProvidersEdgeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Edge>> callback) throws ApiException {
+  public Future<ApiResponse<Edge>> getTelephonyProvidersEdgeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Edge>> callback) {
     return pcapiClient.<Edge>invokeAPIVerboseAsync(request, new TypeReference<Edge>() {}, callback);
   }
 
@@ -621,7 +622,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EdgeLine> getTelephonyProvidersEdgeLineAsync(GetTelephonyProvidersEdgeLineRequest request, AsyncApiCallback<EdgeLine> callback) throws ApiException {
+  public Future<EdgeLine> getTelephonyProvidersEdgeLineAsync(GetTelephonyProvidersEdgeLineRequest request, AsyncApiCallback<EdgeLine> callback) {
     return pcapiClient.<EdgeLine>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeLine>() {}, callback);
   }
 
@@ -631,7 +632,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EdgeLine>> getTelephonyProvidersEdgeLineAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeLine>> callback) throws ApiException {
+  public Future<ApiResponse<EdgeLine>> getTelephonyProvidersEdgeLineAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeLine>> callback) {
     return pcapiClient.<EdgeLine>invokeAPIVerboseAsync(request, new TypeReference<EdgeLine>() {}, callback);
   }
 
@@ -641,7 +642,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EdgeLineEntityListing> getTelephonyProvidersEdgeLinesAsync(GetTelephonyProvidersEdgeLinesRequest request, AsyncApiCallback<EdgeLineEntityListing> callback) throws ApiException {
+  public Future<EdgeLineEntityListing> getTelephonyProvidersEdgeLinesAsync(GetTelephonyProvidersEdgeLinesRequest request, AsyncApiCallback<EdgeLineEntityListing> callback) {
     return pcapiClient.<EdgeLineEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeLineEntityListing>() {}, callback);
   }
 
@@ -651,7 +652,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EdgeLineEntityListing>> getTelephonyProvidersEdgeLinesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeLineEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<EdgeLineEntityListing>> getTelephonyProvidersEdgeLinesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeLineEntityListing>> callback) {
     return pcapiClient.<EdgeLineEntityListing>invokeAPIVerboseAsync(request, new TypeReference<EdgeLineEntityListing>() {}, callback);
   }
 
@@ -661,7 +662,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DomainLogicalInterface> getTelephonyProvidersEdgeLogicalinterfaceAsync(GetTelephonyProvidersEdgeLogicalinterfaceRequest request, AsyncApiCallback<DomainLogicalInterface> callback) throws ApiException {
+  public Future<DomainLogicalInterface> getTelephonyProvidersEdgeLogicalinterfaceAsync(GetTelephonyProvidersEdgeLogicalinterfaceRequest request, AsyncApiCallback<DomainLogicalInterface> callback) {
     return pcapiClient.<DomainLogicalInterface>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainLogicalInterface>() {}, callback);
   }
 
@@ -671,7 +672,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DomainLogicalInterface>> getTelephonyProvidersEdgeLogicalinterfaceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainLogicalInterface>> callback) throws ApiException {
+  public Future<ApiResponse<DomainLogicalInterface>> getTelephonyProvidersEdgeLogicalinterfaceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainLogicalInterface>> callback) {
     return pcapiClient.<DomainLogicalInterface>invokeAPIVerboseAsync(request, new TypeReference<DomainLogicalInterface>() {}, callback);
   }
 
@@ -681,7 +682,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<LogicalInterfaceEntityListing> getTelephonyProvidersEdgeLogicalinterfacesAsync(GetTelephonyProvidersEdgeLogicalinterfacesRequest request, AsyncApiCallback<LogicalInterfaceEntityListing> callback) throws ApiException {
+  public Future<LogicalInterfaceEntityListing> getTelephonyProvidersEdgeLogicalinterfacesAsync(GetTelephonyProvidersEdgeLogicalinterfacesRequest request, AsyncApiCallback<LogicalInterfaceEntityListing> callback) {
     return pcapiClient.<LogicalInterfaceEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LogicalInterfaceEntityListing>() {}, callback);
   }
 
@@ -691,7 +692,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<LogicalInterfaceEntityListing>> getTelephonyProvidersEdgeLogicalinterfacesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LogicalInterfaceEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<LogicalInterfaceEntityListing>> getTelephonyProvidersEdgeLogicalinterfacesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LogicalInterfaceEntityListing>> callback) {
     return pcapiClient.<LogicalInterfaceEntityListing>invokeAPIVerboseAsync(request, new TypeReference<LogicalInterfaceEntityListing>() {}, callback);
   }
 
@@ -701,7 +702,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EdgeLogsJob> getTelephonyProvidersEdgeLogsJobAsync(GetTelephonyProvidersEdgeLogsJobRequest request, AsyncApiCallback<EdgeLogsJob> callback) throws ApiException {
+  public Future<EdgeLogsJob> getTelephonyProvidersEdgeLogsJobAsync(GetTelephonyProvidersEdgeLogsJobRequest request, AsyncApiCallback<EdgeLogsJob> callback) {
     return pcapiClient.<EdgeLogsJob>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeLogsJob>() {}, callback);
   }
 
@@ -711,7 +712,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EdgeLogsJob>> getTelephonyProvidersEdgeLogsJobAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeLogsJob>> callback) throws ApiException {
+  public Future<ApiResponse<EdgeLogsJob>> getTelephonyProvidersEdgeLogsJobAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeLogsJob>> callback) {
     return pcapiClient.<EdgeLogsJob>invokeAPIVerboseAsync(request, new TypeReference<EdgeLogsJob>() {}, callback);
   }
 
@@ -721,7 +722,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DomainPhysicalInterface> getTelephonyProvidersEdgePhysicalinterfaceAsync(GetTelephonyProvidersEdgePhysicalinterfaceRequest request, AsyncApiCallback<DomainPhysicalInterface> callback) throws ApiException {
+  public Future<DomainPhysicalInterface> getTelephonyProvidersEdgePhysicalinterfaceAsync(GetTelephonyProvidersEdgePhysicalinterfaceRequest request, AsyncApiCallback<DomainPhysicalInterface> callback) {
     return pcapiClient.<DomainPhysicalInterface>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainPhysicalInterface>() {}, callback);
   }
 
@@ -731,7 +732,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DomainPhysicalInterface>> getTelephonyProvidersEdgePhysicalinterfaceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainPhysicalInterface>> callback) throws ApiException {
+  public Future<ApiResponse<DomainPhysicalInterface>> getTelephonyProvidersEdgePhysicalinterfaceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainPhysicalInterface>> callback) {
     return pcapiClient.<DomainPhysicalInterface>invokeAPIVerboseAsync(request, new TypeReference<DomainPhysicalInterface>() {}, callback);
   }
 
@@ -741,7 +742,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<PhysicalInterfaceEntityListing> getTelephonyProvidersEdgePhysicalinterfacesAsync(GetTelephonyProvidersEdgePhysicalinterfacesRequest request, AsyncApiCallback<PhysicalInterfaceEntityListing> callback) throws ApiException {
+  public Future<PhysicalInterfaceEntityListing> getTelephonyProvidersEdgePhysicalinterfacesAsync(GetTelephonyProvidersEdgePhysicalinterfacesRequest request, AsyncApiCallback<PhysicalInterfaceEntityListing> callback) {
     return pcapiClient.<PhysicalInterfaceEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PhysicalInterfaceEntityListing>() {}, callback);
   }
 
@@ -751,7 +752,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<PhysicalInterfaceEntityListing>> getTelephonyProvidersEdgePhysicalinterfacesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PhysicalInterfaceEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<PhysicalInterfaceEntityListing>> getTelephonyProvidersEdgePhysicalinterfacesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PhysicalInterfaceEntityListing>> callback) {
     return pcapiClient.<PhysicalInterfaceEntityListing>invokeAPIVerboseAsync(request, new TypeReference<PhysicalInterfaceEntityListing>() {}, callback);
   }
 
@@ -761,7 +762,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VmPairingInfo> getTelephonyProvidersEdgeSetuppackageAsync(GetTelephonyProvidersEdgeSetuppackageRequest request, AsyncApiCallback<VmPairingInfo> callback) throws ApiException {
+  public Future<VmPairingInfo> getTelephonyProvidersEdgeSetuppackageAsync(GetTelephonyProvidersEdgeSetuppackageRequest request, AsyncApiCallback<VmPairingInfo> callback) {
     return pcapiClient.<VmPairingInfo>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VmPairingInfo>() {}, callback);
   }
 
@@ -771,7 +772,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VmPairingInfo>> getTelephonyProvidersEdgeSetuppackageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VmPairingInfo>> callback) throws ApiException {
+  public Future<ApiResponse<VmPairingInfo>> getTelephonyProvidersEdgeSetuppackageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VmPairingInfo>> callback) {
     return pcapiClient.<VmPairingInfo>invokeAPIVerboseAsync(request, new TypeReference<VmPairingInfo>() {}, callback);
   }
 
@@ -781,7 +782,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DomainEdgeSoftwareUpdateDto> getTelephonyProvidersEdgeSoftwareupdateAsync(GetTelephonyProvidersEdgeSoftwareupdateRequest request, AsyncApiCallback<DomainEdgeSoftwareUpdateDto> callback) throws ApiException {
+  public Future<DomainEdgeSoftwareUpdateDto> getTelephonyProvidersEdgeSoftwareupdateAsync(GetTelephonyProvidersEdgeSoftwareupdateRequest request, AsyncApiCallback<DomainEdgeSoftwareUpdateDto> callback) {
     return pcapiClient.<DomainEdgeSoftwareUpdateDto>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainEdgeSoftwareUpdateDto>() {}, callback);
   }
 
@@ -791,7 +792,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DomainEdgeSoftwareUpdateDto>> getTelephonyProvidersEdgeSoftwareupdateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainEdgeSoftwareUpdateDto>> callback) throws ApiException {
+  public Future<ApiResponse<DomainEdgeSoftwareUpdateDto>> getTelephonyProvidersEdgeSoftwareupdateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainEdgeSoftwareUpdateDto>> callback) {
     return pcapiClient.<DomainEdgeSoftwareUpdateDto>invokeAPIVerboseAsync(request, new TypeReference<DomainEdgeSoftwareUpdateDto>() {}, callback);
   }
 
@@ -801,7 +802,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DomainEdgeSoftwareVersionDtoEntityListing> getTelephonyProvidersEdgeSoftwareversionsAsync(GetTelephonyProvidersEdgeSoftwareversionsRequest request, AsyncApiCallback<DomainEdgeSoftwareVersionDtoEntityListing> callback) throws ApiException {
+  public Future<DomainEdgeSoftwareVersionDtoEntityListing> getTelephonyProvidersEdgeSoftwareversionsAsync(GetTelephonyProvidersEdgeSoftwareversionsRequest request, AsyncApiCallback<DomainEdgeSoftwareVersionDtoEntityListing> callback) {
     return pcapiClient.<DomainEdgeSoftwareVersionDtoEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainEdgeSoftwareVersionDtoEntityListing>() {}, callback);
   }
 
@@ -811,7 +812,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing>> getTelephonyProvidersEdgeSoftwareversionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing>> getTelephonyProvidersEdgeSoftwareversionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing>> callback) {
     return pcapiClient.<DomainEdgeSoftwareVersionDtoEntityListing>invokeAPIVerboseAsync(request, new TypeReference<DomainEdgeSoftwareVersionDtoEntityListing>() {}, callback);
   }
 
@@ -821,7 +822,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EdgeEntityListing> getTelephonyProvidersEdgesAsync(GetTelephonyProvidersEdgesRequest request, AsyncApiCallback<EdgeEntityListing> callback) throws ApiException {
+  public Future<EdgeEntityListing> getTelephonyProvidersEdgesAsync(GetTelephonyProvidersEdgesRequest request, AsyncApiCallback<EdgeEntityListing> callback) {
     return pcapiClient.<EdgeEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeEntityListing>() {}, callback);
   }
 
@@ -831,7 +832,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EdgeEntityListing>> getTelephonyProvidersEdgesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<EdgeEntityListing>> getTelephonyProvidersEdgesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeEntityListing>> callback) {
     return pcapiClient.<EdgeEntityListing>invokeAPIVerboseAsync(request, new TypeReference<EdgeEntityListing>() {}, callback);
   }
 
@@ -841,7 +842,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<AvailableLanguageList> getTelephonyProvidersEdgesAvailablelanguagesAsync(GetTelephonyProvidersEdgesAvailablelanguagesRequest request, AsyncApiCallback<AvailableLanguageList> callback) throws ApiException {
+  public Future<AvailableLanguageList> getTelephonyProvidersEdgesAvailablelanguagesAsync(GetTelephonyProvidersEdgesAvailablelanguagesRequest request, AsyncApiCallback<AvailableLanguageList> callback) {
     return pcapiClient.<AvailableLanguageList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<AvailableLanguageList>() {}, callback);
   }
 
@@ -851,7 +852,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<AvailableLanguageList>> getTelephonyProvidersEdgesAvailablelanguagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AvailableLanguageList>> callback) throws ApiException {
+  public Future<ApiResponse<AvailableLanguageList>> getTelephonyProvidersEdgesAvailablelanguagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AvailableLanguageList>> callback) {
     return pcapiClient.<AvailableLanguageList>invokeAPIVerboseAsync(request, new TypeReference<AvailableLanguageList>() {}, callback);
   }
 
@@ -861,7 +862,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CertificateAuthorityEntityListing> getTelephonyProvidersEdgesCertificateauthoritiesAsync(GetTelephonyProvidersEdgesCertificateauthoritiesRequest request, AsyncApiCallback<CertificateAuthorityEntityListing> callback) throws ApiException {
+  public Future<CertificateAuthorityEntityListing> getTelephonyProvidersEdgesCertificateauthoritiesAsync(GetTelephonyProvidersEdgesCertificateauthoritiesRequest request, AsyncApiCallback<CertificateAuthorityEntityListing> callback) {
     return pcapiClient.<CertificateAuthorityEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CertificateAuthorityEntityListing>() {}, callback);
   }
 
@@ -871,7 +872,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CertificateAuthorityEntityListing>> getTelephonyProvidersEdgesCertificateauthoritiesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CertificateAuthorityEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<CertificateAuthorityEntityListing>> getTelephonyProvidersEdgesCertificateauthoritiesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CertificateAuthorityEntityListing>> callback) {
     return pcapiClient.<CertificateAuthorityEntityListing>invokeAPIVerboseAsync(request, new TypeReference<CertificateAuthorityEntityListing>() {}, callback);
   }
 
@@ -881,7 +882,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DomainCertificateAuthority> getTelephonyProvidersEdgesCertificateauthorityAsync(GetTelephonyProvidersEdgesCertificateauthorityRequest request, AsyncApiCallback<DomainCertificateAuthority> callback) throws ApiException {
+  public Future<DomainCertificateAuthority> getTelephonyProvidersEdgesCertificateauthorityAsync(GetTelephonyProvidersEdgesCertificateauthorityRequest request, AsyncApiCallback<DomainCertificateAuthority> callback) {
     return pcapiClient.<DomainCertificateAuthority>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainCertificateAuthority>() {}, callback);
   }
 
@@ -891,7 +892,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DomainCertificateAuthority>> getTelephonyProvidersEdgesCertificateauthorityAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainCertificateAuthority>> callback) throws ApiException {
+  public Future<ApiResponse<DomainCertificateAuthority>> getTelephonyProvidersEdgesCertificateauthorityAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainCertificateAuthority>> callback) {
     return pcapiClient.<DomainCertificateAuthority>invokeAPIVerboseAsync(request, new TypeReference<DomainCertificateAuthority>() {}, callback);
   }
 
@@ -901,7 +902,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DID> getTelephonyProvidersEdgesDidAsync(GetTelephonyProvidersEdgesDidRequest request, AsyncApiCallback<DID> callback) throws ApiException {
+  public Future<DID> getTelephonyProvidersEdgesDidAsync(GetTelephonyProvidersEdgesDidRequest request, AsyncApiCallback<DID> callback) {
     return pcapiClient.<DID>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DID>() {}, callback);
   }
 
@@ -911,7 +912,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DID>> getTelephonyProvidersEdgesDidAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DID>> callback) throws ApiException {
+  public Future<ApiResponse<DID>> getTelephonyProvidersEdgesDidAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DID>> callback) {
     return pcapiClient.<DID>invokeAPIVerboseAsync(request, new TypeReference<DID>() {}, callback);
   }
 
@@ -921,7 +922,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DIDPool> getTelephonyProvidersEdgesDidpoolAsync(GetTelephonyProvidersEdgesDidpoolRequest request, AsyncApiCallback<DIDPool> callback) throws ApiException {
+  public Future<DIDPool> getTelephonyProvidersEdgesDidpoolAsync(GetTelephonyProvidersEdgesDidpoolRequest request, AsyncApiCallback<DIDPool> callback) {
     return pcapiClient.<DIDPool>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DIDPool>() {}, callback);
   }
 
@@ -931,7 +932,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DIDPool>> getTelephonyProvidersEdgesDidpoolAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DIDPool>> callback) throws ApiException {
+  public Future<ApiResponse<DIDPool>> getTelephonyProvidersEdgesDidpoolAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DIDPool>> callback) {
     return pcapiClient.<DIDPool>invokeAPIVerboseAsync(request, new TypeReference<DIDPool>() {}, callback);
   }
 
@@ -941,7 +942,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DIDPoolEntityListing> getTelephonyProvidersEdgesDidpoolsAsync(GetTelephonyProvidersEdgesDidpoolsRequest request, AsyncApiCallback<DIDPoolEntityListing> callback) throws ApiException {
+  public Future<DIDPoolEntityListing> getTelephonyProvidersEdgesDidpoolsAsync(GetTelephonyProvidersEdgesDidpoolsRequest request, AsyncApiCallback<DIDPoolEntityListing> callback) {
     return pcapiClient.<DIDPoolEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DIDPoolEntityListing>() {}, callback);
   }
 
@@ -951,7 +952,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DIDPoolEntityListing>> getTelephonyProvidersEdgesDidpoolsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DIDPoolEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<DIDPoolEntityListing>> getTelephonyProvidersEdgesDidpoolsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DIDPoolEntityListing>> callback) {
     return pcapiClient.<DIDPoolEntityListing>invokeAPIVerboseAsync(request, new TypeReference<DIDPoolEntityListing>() {}, callback);
   }
 
@@ -961,7 +962,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DIDEntityListing> getTelephonyProvidersEdgesDidsAsync(GetTelephonyProvidersEdgesDidsRequest request, AsyncApiCallback<DIDEntityListing> callback) throws ApiException {
+  public Future<DIDEntityListing> getTelephonyProvidersEdgesDidsAsync(GetTelephonyProvidersEdgesDidsRequest request, AsyncApiCallback<DIDEntityListing> callback) {
     return pcapiClient.<DIDEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DIDEntityListing>() {}, callback);
   }
 
@@ -971,7 +972,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DIDEntityListing>> getTelephonyProvidersEdgesDidsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DIDEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<DIDEntityListing>> getTelephonyProvidersEdgesDidsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DIDEntityListing>> callback) {
     return pcapiClient.<DIDEntityListing>invokeAPIVerboseAsync(request, new TypeReference<DIDEntityListing>() {}, callback);
   }
 
@@ -981,7 +982,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EdgeGroup> getTelephonyProvidersEdgesEdgegroupAsync(GetTelephonyProvidersEdgesEdgegroupRequest request, AsyncApiCallback<EdgeGroup> callback) throws ApiException {
+  public Future<EdgeGroup> getTelephonyProvidersEdgesEdgegroupAsync(GetTelephonyProvidersEdgesEdgegroupRequest request, AsyncApiCallback<EdgeGroup> callback) {
     return pcapiClient.<EdgeGroup>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeGroup>() {}, callback);
   }
 
@@ -991,7 +992,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EdgeGroup>> getTelephonyProvidersEdgesEdgegroupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeGroup>> callback) throws ApiException {
+  public Future<ApiResponse<EdgeGroup>> getTelephonyProvidersEdgesEdgegroupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeGroup>> callback) {
     return pcapiClient.<EdgeGroup>invokeAPIVerboseAsync(request, new TypeReference<EdgeGroup>() {}, callback);
   }
 
@@ -1001,7 +1002,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EdgeTrunkBase> getTelephonyProvidersEdgesEdgegroupEdgetrunkbasisAsync(GetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest request, AsyncApiCallback<EdgeTrunkBase> callback) throws ApiException {
+  public Future<EdgeTrunkBase> getTelephonyProvidersEdgesEdgegroupEdgetrunkbasisAsync(GetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest request, AsyncApiCallback<EdgeTrunkBase> callback) {
     return pcapiClient.<EdgeTrunkBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeTrunkBase>() {}, callback);
   }
 
@@ -1011,7 +1012,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EdgeTrunkBase>> getTelephonyProvidersEdgesEdgegroupEdgetrunkbasisAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeTrunkBase>> callback) throws ApiException {
+  public Future<ApiResponse<EdgeTrunkBase>> getTelephonyProvidersEdgesEdgegroupEdgetrunkbasisAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeTrunkBase>> callback) {
     return pcapiClient.<EdgeTrunkBase>invokeAPIVerboseAsync(request, new TypeReference<EdgeTrunkBase>() {}, callback);
   }
 
@@ -1021,7 +1022,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EdgeGroupEntityListing> getTelephonyProvidersEdgesEdgegroupsAsync(GetTelephonyProvidersEdgesEdgegroupsRequest request, AsyncApiCallback<EdgeGroupEntityListing> callback) throws ApiException {
+  public Future<EdgeGroupEntityListing> getTelephonyProvidersEdgesEdgegroupsAsync(GetTelephonyProvidersEdgesEdgegroupsRequest request, AsyncApiCallback<EdgeGroupEntityListing> callback) {
     return pcapiClient.<EdgeGroupEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeGroupEntityListing>() {}, callback);
   }
 
@@ -1031,7 +1032,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EdgeGroupEntityListing>> getTelephonyProvidersEdgesEdgegroupsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeGroupEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<EdgeGroupEntityListing>> getTelephonyProvidersEdgesEdgegroupsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeGroupEntityListing>> callback) {
     return pcapiClient.<EdgeGroupEntityListing>invokeAPIVerboseAsync(request, new TypeReference<EdgeGroupEntityListing>() {}, callback);
   }
 
@@ -1041,7 +1042,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EdgeVersionReport> getTelephonyProvidersEdgesEdgeversionreportAsync(GetTelephonyProvidersEdgesEdgeversionreportRequest request, AsyncApiCallback<EdgeVersionReport> callback) throws ApiException {
+  public Future<EdgeVersionReport> getTelephonyProvidersEdgesEdgeversionreportAsync(GetTelephonyProvidersEdgesEdgeversionreportRequest request, AsyncApiCallback<EdgeVersionReport> callback) {
     return pcapiClient.<EdgeVersionReport>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeVersionReport>() {}, callback);
   }
 
@@ -1051,7 +1052,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EdgeVersionReport>> getTelephonyProvidersEdgesEdgeversionreportAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeVersionReport>> callback) throws ApiException {
+  public Future<ApiResponse<EdgeVersionReport>> getTelephonyProvidersEdgesEdgeversionreportAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeVersionReport>> callback) {
     return pcapiClient.<EdgeVersionReport>invokeAPIVerboseAsync(request, new TypeReference<EdgeVersionReport>() {}, callback);
   }
 
@@ -1061,7 +1062,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Endpoint> getTelephonyProvidersEdgesEndpointAsync(GetTelephonyProvidersEdgesEndpointRequest request, AsyncApiCallback<Endpoint> callback) throws ApiException {
+  public Future<Endpoint> getTelephonyProvidersEdgesEndpointAsync(GetTelephonyProvidersEdgesEndpointRequest request, AsyncApiCallback<Endpoint> callback) {
     return pcapiClient.<Endpoint>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Endpoint>() {}, callback);
   }
 
@@ -1071,7 +1072,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Endpoint>> getTelephonyProvidersEdgesEndpointAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Endpoint>> callback) throws ApiException {
+  public Future<ApiResponse<Endpoint>> getTelephonyProvidersEdgesEndpointAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Endpoint>> callback) {
     return pcapiClient.<Endpoint>invokeAPIVerboseAsync(request, new TypeReference<Endpoint>() {}, callback);
   }
 
@@ -1081,7 +1082,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EndpointEntityListing> getTelephonyProvidersEdgesEndpointsAsync(GetTelephonyProvidersEdgesEndpointsRequest request, AsyncApiCallback<EndpointEntityListing> callback) throws ApiException {
+  public Future<EndpointEntityListing> getTelephonyProvidersEdgesEndpointsAsync(GetTelephonyProvidersEdgesEndpointsRequest request, AsyncApiCallback<EndpointEntityListing> callback) {
     return pcapiClient.<EndpointEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EndpointEntityListing>() {}, callback);
   }
 
@@ -1091,7 +1092,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EndpointEntityListing>> getTelephonyProvidersEdgesEndpointsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EndpointEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<EndpointEntityListing>> getTelephonyProvidersEdgesEndpointsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EndpointEntityListing>> callback) {
     return pcapiClient.<EndpointEntityListing>invokeAPIVerboseAsync(request, new TypeReference<EndpointEntityListing>() {}, callback);
   }
 
@@ -1101,7 +1102,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Extension> getTelephonyProvidersEdgesExtensionAsync(GetTelephonyProvidersEdgesExtensionRequest request, AsyncApiCallback<Extension> callback) throws ApiException {
+  public Future<Extension> getTelephonyProvidersEdgesExtensionAsync(GetTelephonyProvidersEdgesExtensionRequest request, AsyncApiCallback<Extension> callback) {
     return pcapiClient.<Extension>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Extension>() {}, callback);
   }
 
@@ -1111,7 +1112,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Extension>> getTelephonyProvidersEdgesExtensionAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Extension>> callback) throws ApiException {
+  public Future<ApiResponse<Extension>> getTelephonyProvidersEdgesExtensionAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Extension>> callback) {
     return pcapiClient.<Extension>invokeAPIVerboseAsync(request, new TypeReference<Extension>() {}, callback);
   }
 
@@ -1121,7 +1122,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ExtensionPool> getTelephonyProvidersEdgesExtensionpoolAsync(GetTelephonyProvidersEdgesExtensionpoolRequest request, AsyncApiCallback<ExtensionPool> callback) throws ApiException {
+  public Future<ExtensionPool> getTelephonyProvidersEdgesExtensionpoolAsync(GetTelephonyProvidersEdgesExtensionpoolRequest request, AsyncApiCallback<ExtensionPool> callback) {
     return pcapiClient.<ExtensionPool>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExtensionPool>() {}, callback);
   }
 
@@ -1131,7 +1132,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ExtensionPool>> getTelephonyProvidersEdgesExtensionpoolAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExtensionPool>> callback) throws ApiException {
+  public Future<ApiResponse<ExtensionPool>> getTelephonyProvidersEdgesExtensionpoolAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExtensionPool>> callback) {
     return pcapiClient.<ExtensionPool>invokeAPIVerboseAsync(request, new TypeReference<ExtensionPool>() {}, callback);
   }
 
@@ -1141,7 +1142,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ExtensionPoolEntityListing> getTelephonyProvidersEdgesExtensionpoolsAsync(GetTelephonyProvidersEdgesExtensionpoolsRequest request, AsyncApiCallback<ExtensionPoolEntityListing> callback) throws ApiException {
+  public Future<ExtensionPoolEntityListing> getTelephonyProvidersEdgesExtensionpoolsAsync(GetTelephonyProvidersEdgesExtensionpoolsRequest request, AsyncApiCallback<ExtensionPoolEntityListing> callback) {
     return pcapiClient.<ExtensionPoolEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExtensionPoolEntityListing>() {}, callback);
   }
 
@@ -1151,7 +1152,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ExtensionPoolEntityListing>> getTelephonyProvidersEdgesExtensionpoolsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExtensionPoolEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<ExtensionPoolEntityListing>> getTelephonyProvidersEdgesExtensionpoolsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExtensionPoolEntityListing>> callback) {
     return pcapiClient.<ExtensionPoolEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ExtensionPoolEntityListing>() {}, callback);
   }
 
@@ -1161,7 +1162,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ExtensionEntityListing> getTelephonyProvidersEdgesExtensionsAsync(GetTelephonyProvidersEdgesExtensionsRequest request, AsyncApiCallback<ExtensionEntityListing> callback) throws ApiException {
+  public Future<ExtensionEntityListing> getTelephonyProvidersEdgesExtensionsAsync(GetTelephonyProvidersEdgesExtensionsRequest request, AsyncApiCallback<ExtensionEntityListing> callback) {
     return pcapiClient.<ExtensionEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExtensionEntityListing>() {}, callback);
   }
 
@@ -1171,7 +1172,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ExtensionEntityListing>> getTelephonyProvidersEdgesExtensionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExtensionEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<ExtensionEntityListing>> getTelephonyProvidersEdgesExtensionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExtensionEntityListing>> callback) {
     return pcapiClient.<ExtensionEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ExtensionEntityListing>() {}, callback);
   }
 
@@ -1181,7 +1182,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Line> getTelephonyProvidersEdgesLineAsync(GetTelephonyProvidersEdgesLineRequest request, AsyncApiCallback<Line> callback) throws ApiException {
+  public Future<Line> getTelephonyProvidersEdgesLineAsync(GetTelephonyProvidersEdgesLineRequest request, AsyncApiCallback<Line> callback) {
     return pcapiClient.<Line>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Line>() {}, callback);
   }
 
@@ -1191,7 +1192,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Line>> getTelephonyProvidersEdgesLineAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Line>> callback) throws ApiException {
+  public Future<ApiResponse<Line>> getTelephonyProvidersEdgesLineAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Line>> callback) {
     return pcapiClient.<Line>invokeAPIVerboseAsync(request, new TypeReference<Line>() {}, callback);
   }
 
@@ -1201,7 +1202,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<LineBase> getTelephonyProvidersEdgesLinebasesettingAsync(GetTelephonyProvidersEdgesLinebasesettingRequest request, AsyncApiCallback<LineBase> callback) throws ApiException {
+  public Future<LineBase> getTelephonyProvidersEdgesLinebasesettingAsync(GetTelephonyProvidersEdgesLinebasesettingRequest request, AsyncApiCallback<LineBase> callback) {
     return pcapiClient.<LineBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LineBase>() {}, callback);
   }
 
@@ -1211,7 +1212,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<LineBase>> getTelephonyProvidersEdgesLinebasesettingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LineBase>> callback) throws ApiException {
+  public Future<ApiResponse<LineBase>> getTelephonyProvidersEdgesLinebasesettingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LineBase>> callback) {
     return pcapiClient.<LineBase>invokeAPIVerboseAsync(request, new TypeReference<LineBase>() {}, callback);
   }
 
@@ -1221,7 +1222,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<LineBaseEntityListing> getTelephonyProvidersEdgesLinebasesettingsAsync(GetTelephonyProvidersEdgesLinebasesettingsRequest request, AsyncApiCallback<LineBaseEntityListing> callback) throws ApiException {
+  public Future<LineBaseEntityListing> getTelephonyProvidersEdgesLinebasesettingsAsync(GetTelephonyProvidersEdgesLinebasesettingsRequest request, AsyncApiCallback<LineBaseEntityListing> callback) {
     return pcapiClient.<LineBaseEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LineBaseEntityListing>() {}, callback);
   }
 
@@ -1231,7 +1232,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<LineBaseEntityListing>> getTelephonyProvidersEdgesLinebasesettingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LineBaseEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<LineBaseEntityListing>> getTelephonyProvidersEdgesLinebasesettingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LineBaseEntityListing>> callback) {
     return pcapiClient.<LineBaseEntityListing>invokeAPIVerboseAsync(request, new TypeReference<LineBaseEntityListing>() {}, callback);
   }
 
@@ -1241,7 +1242,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<LineEntityListing> getTelephonyProvidersEdgesLinesAsync(GetTelephonyProvidersEdgesLinesRequest request, AsyncApiCallback<LineEntityListing> callback) throws ApiException {
+  public Future<LineEntityListing> getTelephonyProvidersEdgesLinesAsync(GetTelephonyProvidersEdgesLinesRequest request, AsyncApiCallback<LineEntityListing> callback) {
     return pcapiClient.<LineEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LineEntityListing>() {}, callback);
   }
 
@@ -1251,7 +1252,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<LineEntityListing>> getTelephonyProvidersEdgesLinesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LineEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<LineEntityListing>> getTelephonyProvidersEdgesLinesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LineEntityListing>> callback) {
     return pcapiClient.<LineEntityListing>invokeAPIVerboseAsync(request, new TypeReference<LineEntityListing>() {}, callback);
   }
 
@@ -1261,7 +1262,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Line> getTelephonyProvidersEdgesLinesTemplateAsync(GetTelephonyProvidersEdgesLinesTemplateRequest request, AsyncApiCallback<Line> callback) throws ApiException {
+  public Future<Line> getTelephonyProvidersEdgesLinesTemplateAsync(GetTelephonyProvidersEdgesLinesTemplateRequest request, AsyncApiCallback<Line> callback) {
     return pcapiClient.<Line>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Line>() {}, callback);
   }
 
@@ -1271,7 +1272,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Line>> getTelephonyProvidersEdgesLinesTemplateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Line>> callback) throws ApiException {
+  public Future<ApiResponse<Line>> getTelephonyProvidersEdgesLinesTemplateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Line>> callback) {
     return pcapiClient.<Line>invokeAPIVerboseAsync(request, new TypeReference<Line>() {}, callback);
   }
 
@@ -1281,7 +1282,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<LogicalInterfaceEntityListing> getTelephonyProvidersEdgesLogicalinterfacesAsync(GetTelephonyProvidersEdgesLogicalinterfacesRequest request, AsyncApiCallback<LogicalInterfaceEntityListing> callback) throws ApiException {
+  public Future<LogicalInterfaceEntityListing> getTelephonyProvidersEdgesLogicalinterfacesAsync(GetTelephonyProvidersEdgesLogicalinterfacesRequest request, AsyncApiCallback<LogicalInterfaceEntityListing> callback) {
     return pcapiClient.<LogicalInterfaceEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LogicalInterfaceEntityListing>() {}, callback);
   }
 
@@ -1291,7 +1292,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<LogicalInterfaceEntityListing>> getTelephonyProvidersEdgesLogicalinterfacesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LogicalInterfaceEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<LogicalInterfaceEntityListing>> getTelephonyProvidersEdgesLogicalinterfacesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LogicalInterfaceEntityListing>> callback) {
     return pcapiClient.<LogicalInterfaceEntityListing>invokeAPIVerboseAsync(request, new TypeReference<LogicalInterfaceEntityListing>() {}, callback);
   }
 
@@ -1301,7 +1302,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OutboundRoute> getTelephonyProvidersEdgesOutboundrouteAsync(GetTelephonyProvidersEdgesOutboundrouteRequest request, AsyncApiCallback<OutboundRoute> callback) throws ApiException {
+  public Future<OutboundRoute> getTelephonyProvidersEdgesOutboundrouteAsync(GetTelephonyProvidersEdgesOutboundrouteRequest request, AsyncApiCallback<OutboundRoute> callback) {
     return pcapiClient.<OutboundRoute>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OutboundRoute>() {}, callback);
   }
 
@@ -1311,7 +1312,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OutboundRoute>> getTelephonyProvidersEdgesOutboundrouteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OutboundRoute>> callback) throws ApiException {
+  public Future<ApiResponse<OutboundRoute>> getTelephonyProvidersEdgesOutboundrouteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OutboundRoute>> callback) {
     return pcapiClient.<OutboundRoute>invokeAPIVerboseAsync(request, new TypeReference<OutboundRoute>() {}, callback);
   }
 
@@ -1321,7 +1322,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OutboundRouteEntityListing> getTelephonyProvidersEdgesOutboundroutesAsync(GetTelephonyProvidersEdgesOutboundroutesRequest request, AsyncApiCallback<OutboundRouteEntityListing> callback) throws ApiException {
+  public Future<OutboundRouteEntityListing> getTelephonyProvidersEdgesOutboundroutesAsync(GetTelephonyProvidersEdgesOutboundroutesRequest request, AsyncApiCallback<OutboundRouteEntityListing> callback) {
     return pcapiClient.<OutboundRouteEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OutboundRouteEntityListing>() {}, callback);
   }
 
@@ -1331,7 +1332,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OutboundRouteEntityListing>> getTelephonyProvidersEdgesOutboundroutesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OutboundRouteEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<OutboundRouteEntityListing>> getTelephonyProvidersEdgesOutboundroutesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OutboundRouteEntityListing>> callback) {
     return pcapiClient.<OutboundRouteEntityListing>invokeAPIVerboseAsync(request, new TypeReference<OutboundRouteEntityListing>() {}, callback);
   }
 
@@ -1341,7 +1342,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Phone> getTelephonyProvidersEdgesPhoneAsync(GetTelephonyProvidersEdgesPhoneRequest request, AsyncApiCallback<Phone> callback) throws ApiException {
+  public Future<Phone> getTelephonyProvidersEdgesPhoneAsync(GetTelephonyProvidersEdgesPhoneRequest request, AsyncApiCallback<Phone> callback) {
     return pcapiClient.<Phone>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Phone>() {}, callback);
   }
 
@@ -1351,7 +1352,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Phone>> getTelephonyProvidersEdgesPhoneAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Phone>> callback) throws ApiException {
+  public Future<ApiResponse<Phone>> getTelephonyProvidersEdgesPhoneAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Phone>> callback) {
     return pcapiClient.<Phone>invokeAPIVerboseAsync(request, new TypeReference<Phone>() {}, callback);
   }
 
@@ -1361,7 +1362,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<PhoneBase> getTelephonyProvidersEdgesPhonebasesettingAsync(GetTelephonyProvidersEdgesPhonebasesettingRequest request, AsyncApiCallback<PhoneBase> callback) throws ApiException {
+  public Future<PhoneBase> getTelephonyProvidersEdgesPhonebasesettingAsync(GetTelephonyProvidersEdgesPhonebasesettingRequest request, AsyncApiCallback<PhoneBase> callback) {
     return pcapiClient.<PhoneBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PhoneBase>() {}, callback);
   }
 
@@ -1371,7 +1372,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<PhoneBase>> getTelephonyProvidersEdgesPhonebasesettingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PhoneBase>> callback) throws ApiException {
+  public Future<ApiResponse<PhoneBase>> getTelephonyProvidersEdgesPhonebasesettingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PhoneBase>> callback) {
     return pcapiClient.<PhoneBase>invokeAPIVerboseAsync(request, new TypeReference<PhoneBase>() {}, callback);
   }
 
@@ -1381,7 +1382,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<PhoneBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettingsAsync(GetTelephonyProvidersEdgesPhonebasesettingsRequest request, AsyncApiCallback<PhoneBaseEntityListing> callback) throws ApiException {
+  public Future<PhoneBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettingsAsync(GetTelephonyProvidersEdgesPhonebasesettingsRequest request, AsyncApiCallback<PhoneBaseEntityListing> callback) {
     return pcapiClient.<PhoneBaseEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PhoneBaseEntityListing>() {}, callback);
   }
 
@@ -1391,7 +1392,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<PhoneBaseEntityListing>> getTelephonyProvidersEdgesPhonebasesettingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PhoneBaseEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<PhoneBaseEntityListing>> getTelephonyProvidersEdgesPhonebasesettingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PhoneBaseEntityListing>> callback) {
     return pcapiClient.<PhoneBaseEntityListing>invokeAPIVerboseAsync(request, new TypeReference<PhoneBaseEntityListing>() {}, callback);
   }
 
@@ -1401,7 +1402,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<PhoneMetaBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesAsync(GetTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesRequest request, AsyncApiCallback<PhoneMetaBaseEntityListing> callback) throws ApiException {
+  public Future<PhoneMetaBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesAsync(GetTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesRequest request, AsyncApiCallback<PhoneMetaBaseEntityListing> callback) {
     return pcapiClient.<PhoneMetaBaseEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PhoneMetaBaseEntityListing>() {}, callback);
   }
 
@@ -1411,7 +1412,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<PhoneMetaBaseEntityListing>> getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PhoneMetaBaseEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<PhoneMetaBaseEntityListing>> getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PhoneMetaBaseEntityListing>> callback) {
     return pcapiClient.<PhoneMetaBaseEntityListing>invokeAPIVerboseAsync(request, new TypeReference<PhoneMetaBaseEntityListing>() {}, callback);
   }
 
@@ -1421,7 +1422,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<PhoneBase> getTelephonyProvidersEdgesPhonebasesettingsTemplateAsync(GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest request, AsyncApiCallback<PhoneBase> callback) throws ApiException {
+  public Future<PhoneBase> getTelephonyProvidersEdgesPhonebasesettingsTemplateAsync(GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest request, AsyncApiCallback<PhoneBase> callback) {
     return pcapiClient.<PhoneBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PhoneBase>() {}, callback);
   }
 
@@ -1431,7 +1432,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<PhoneBase>> getTelephonyProvidersEdgesPhonebasesettingsTemplateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PhoneBase>> callback) throws ApiException {
+  public Future<ApiResponse<PhoneBase>> getTelephonyProvidersEdgesPhonebasesettingsTemplateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PhoneBase>> callback) {
     return pcapiClient.<PhoneBase>invokeAPIVerboseAsync(request, new TypeReference<PhoneBase>() {}, callback);
   }
 
@@ -1441,7 +1442,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<PhoneEntityListing> getTelephonyProvidersEdgesPhonesAsync(GetTelephonyProvidersEdgesPhonesRequest request, AsyncApiCallback<PhoneEntityListing> callback) throws ApiException {
+  public Future<PhoneEntityListing> getTelephonyProvidersEdgesPhonesAsync(GetTelephonyProvidersEdgesPhonesRequest request, AsyncApiCallback<PhoneEntityListing> callback) {
     return pcapiClient.<PhoneEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PhoneEntityListing>() {}, callback);
   }
 
@@ -1451,7 +1452,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<PhoneEntityListing>> getTelephonyProvidersEdgesPhonesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PhoneEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<PhoneEntityListing>> getTelephonyProvidersEdgesPhonesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PhoneEntityListing>> callback) {
     return pcapiClient.<PhoneEntityListing>invokeAPIVerboseAsync(request, new TypeReference<PhoneEntityListing>() {}, callback);
   }
 
@@ -1461,7 +1462,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Phone> getTelephonyProvidersEdgesPhonesTemplateAsync(GetTelephonyProvidersEdgesPhonesTemplateRequest request, AsyncApiCallback<Phone> callback) throws ApiException {
+  public Future<Phone> getTelephonyProvidersEdgesPhonesTemplateAsync(GetTelephonyProvidersEdgesPhonesTemplateRequest request, AsyncApiCallback<Phone> callback) {
     return pcapiClient.<Phone>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Phone>() {}, callback);
   }
 
@@ -1471,7 +1472,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Phone>> getTelephonyProvidersEdgesPhonesTemplateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Phone>> callback) throws ApiException {
+  public Future<ApiResponse<Phone>> getTelephonyProvidersEdgesPhonesTemplateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Phone>> callback) {
     return pcapiClient.<Phone>invokeAPIVerboseAsync(request, new TypeReference<Phone>() {}, callback);
   }
 
@@ -1481,7 +1482,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Site> getTelephonyProvidersEdgesSiteAsync(GetTelephonyProvidersEdgesSiteRequest request, AsyncApiCallback<Site> callback) throws ApiException {
+  public Future<Site> getTelephonyProvidersEdgesSiteAsync(GetTelephonyProvidersEdgesSiteRequest request, AsyncApiCallback<Site> callback) {
     return pcapiClient.<Site>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Site>() {}, callback);
   }
 
@@ -1491,7 +1492,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Site>> getTelephonyProvidersEdgesSiteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Site>> callback) throws ApiException {
+  public Future<ApiResponse<Site>> getTelephonyProvidersEdgesSiteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Site>> callback) {
     return pcapiClient.<Site>invokeAPIVerboseAsync(request, new TypeReference<Site>() {}, callback);
   }
 
@@ -1501,7 +1502,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<NumberPlan> getTelephonyProvidersEdgesSiteNumberplanAsync(GetTelephonyProvidersEdgesSiteNumberplanRequest request, AsyncApiCallback<NumberPlan> callback) throws ApiException {
+  public Future<NumberPlan> getTelephonyProvidersEdgesSiteNumberplanAsync(GetTelephonyProvidersEdgesSiteNumberplanRequest request, AsyncApiCallback<NumberPlan> callback) {
     return pcapiClient.<NumberPlan>invokeAPIAsync(request.withHttpInfo(), new TypeReference<NumberPlan>() {}, callback);
   }
 
@@ -1511,7 +1512,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<NumberPlan>> getTelephonyProvidersEdgesSiteNumberplanAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<NumberPlan>> callback) throws ApiException {
+  public Future<ApiResponse<NumberPlan>> getTelephonyProvidersEdgesSiteNumberplanAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<NumberPlan>> callback) {
     return pcapiClient.<NumberPlan>invokeAPIVerboseAsync(request, new TypeReference<NumberPlan>() {}, callback);
   }
 
@@ -1521,7 +1522,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<NumberPlan>> getTelephonyProvidersEdgesSiteNumberplansAsync(GetTelephonyProvidersEdgesSiteNumberplansRequest request, AsyncApiCallback<List<NumberPlan>> callback) throws ApiException {
+  public Future<List<NumberPlan>> getTelephonyProvidersEdgesSiteNumberplansAsync(GetTelephonyProvidersEdgesSiteNumberplansRequest request, AsyncApiCallback<List<NumberPlan>> callback) {
     return pcapiClient.<List<NumberPlan>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<NumberPlan>>() {}, callback);
   }
 
@@ -1531,7 +1532,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<NumberPlan>>> getTelephonyProvidersEdgesSiteNumberplansAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<NumberPlan>>> callback) throws ApiException {
+  public Future<ApiResponse<List<NumberPlan>>> getTelephonyProvidersEdgesSiteNumberplansAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<NumberPlan>>> callback) {
     return pcapiClient.<List<NumberPlan>>invokeAPIVerboseAsync(request, new TypeReference<List<NumberPlan>>() {}, callback);
   }
 
@@ -1541,7 +1542,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<String>> getTelephonyProvidersEdgesSiteNumberplansClassificationsAsync(GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest request, AsyncApiCallback<List<String>> callback) throws ApiException {
+  public Future<List<String>> getTelephonyProvidersEdgesSiteNumberplansClassificationsAsync(GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest request, AsyncApiCallback<List<String>> callback) {
     return pcapiClient.<List<String>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<String>>() {}, callback);
   }
 
@@ -1551,7 +1552,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<String>>> getTelephonyProvidersEdgesSiteNumberplansClassificationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<String>>> callback) throws ApiException {
+  public Future<ApiResponse<List<String>>> getTelephonyProvidersEdgesSiteNumberplansClassificationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<String>>> callback) {
     return pcapiClient.<List<String>>invokeAPIVerboseAsync(request, new TypeReference<List<String>>() {}, callback);
   }
 
@@ -1561,7 +1562,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OutboundRouteBase> getTelephonyProvidersEdgesSiteOutboundrouteAsync(GetTelephonyProvidersEdgesSiteOutboundrouteRequest request, AsyncApiCallback<OutboundRouteBase> callback) throws ApiException {
+  public Future<OutboundRouteBase> getTelephonyProvidersEdgesSiteOutboundrouteAsync(GetTelephonyProvidersEdgesSiteOutboundrouteRequest request, AsyncApiCallback<OutboundRouteBase> callback) {
     return pcapiClient.<OutboundRouteBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OutboundRouteBase>() {}, callback);
   }
 
@@ -1571,7 +1572,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OutboundRouteBase>> getTelephonyProvidersEdgesSiteOutboundrouteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OutboundRouteBase>> callback) throws ApiException {
+  public Future<ApiResponse<OutboundRouteBase>> getTelephonyProvidersEdgesSiteOutboundrouteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OutboundRouteBase>> callback) {
     return pcapiClient.<OutboundRouteBase>invokeAPIVerboseAsync(request, new TypeReference<OutboundRouteBase>() {}, callback);
   }
 
@@ -1581,7 +1582,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OutboundRouteBaseEntityListing> getTelephonyProvidersEdgesSiteOutboundroutesAsync(GetTelephonyProvidersEdgesSiteOutboundroutesRequest request, AsyncApiCallback<OutboundRouteBaseEntityListing> callback) throws ApiException {
+  public Future<OutboundRouteBaseEntityListing> getTelephonyProvidersEdgesSiteOutboundroutesAsync(GetTelephonyProvidersEdgesSiteOutboundroutesRequest request, AsyncApiCallback<OutboundRouteBaseEntityListing> callback) {
     return pcapiClient.<OutboundRouteBaseEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OutboundRouteBaseEntityListing>() {}, callback);
   }
 
@@ -1591,7 +1592,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OutboundRouteBaseEntityListing>> getTelephonyProvidersEdgesSiteOutboundroutesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OutboundRouteBaseEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<OutboundRouteBaseEntityListing>> getTelephonyProvidersEdgesSiteOutboundroutesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OutboundRouteBaseEntityListing>> callback) {
     return pcapiClient.<OutboundRouteBaseEntityListing>invokeAPIVerboseAsync(request, new TypeReference<OutboundRouteBaseEntityListing>() {}, callback);
   }
 
@@ -1601,7 +1602,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<SiteEntityListing> getTelephonyProvidersEdgesSitesAsync(GetTelephonyProvidersEdgesSitesRequest request, AsyncApiCallback<SiteEntityListing> callback) throws ApiException {
+  public Future<SiteEntityListing> getTelephonyProvidersEdgesSitesAsync(GetTelephonyProvidersEdgesSitesRequest request, AsyncApiCallback<SiteEntityListing> callback) {
     return pcapiClient.<SiteEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<SiteEntityListing>() {}, callback);
   }
 
@@ -1611,7 +1612,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<SiteEntityListing>> getTelephonyProvidersEdgesSitesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SiteEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<SiteEntityListing>> getTelephonyProvidersEdgesSitesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SiteEntityListing>> callback) {
     return pcapiClient.<SiteEntityListing>invokeAPIVerboseAsync(request, new TypeReference<SiteEntityListing>() {}, callback);
   }
 
@@ -1621,7 +1622,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<TimeZoneEntityListing> getTelephonyProvidersEdgesTimezonesAsync(GetTelephonyProvidersEdgesTimezonesRequest request, AsyncApiCallback<TimeZoneEntityListing> callback) throws ApiException {
+  public Future<TimeZoneEntityListing> getTelephonyProvidersEdgesTimezonesAsync(GetTelephonyProvidersEdgesTimezonesRequest request, AsyncApiCallback<TimeZoneEntityListing> callback) {
     return pcapiClient.<TimeZoneEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TimeZoneEntityListing>() {}, callback);
   }
 
@@ -1631,7 +1632,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<TimeZoneEntityListing>> getTelephonyProvidersEdgesTimezonesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TimeZoneEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<TimeZoneEntityListing>> getTelephonyProvidersEdgesTimezonesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TimeZoneEntityListing>> callback) {
     return pcapiClient.<TimeZoneEntityListing>invokeAPIVerboseAsync(request, new TypeReference<TimeZoneEntityListing>() {}, callback);
   }
 
@@ -1641,7 +1642,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Trunk> getTelephonyProvidersEdgesTrunkAsync(GetTelephonyProvidersEdgesTrunkRequest request, AsyncApiCallback<Trunk> callback) throws ApiException {
+  public Future<Trunk> getTelephonyProvidersEdgesTrunkAsync(GetTelephonyProvidersEdgesTrunkRequest request, AsyncApiCallback<Trunk> callback) {
     return pcapiClient.<Trunk>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Trunk>() {}, callback);
   }
 
@@ -1651,7 +1652,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Trunk>> getTelephonyProvidersEdgesTrunkAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Trunk>> callback) throws ApiException {
+  public Future<ApiResponse<Trunk>> getTelephonyProvidersEdgesTrunkAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Trunk>> callback) {
     return pcapiClient.<Trunk>invokeAPIVerboseAsync(request, new TypeReference<Trunk>() {}, callback);
   }
 
@@ -1661,7 +1662,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<TrunkBase> getTelephonyProvidersEdgesTrunkbasesettingAsync(GetTelephonyProvidersEdgesTrunkbasesettingRequest request, AsyncApiCallback<TrunkBase> callback) throws ApiException {
+  public Future<TrunkBase> getTelephonyProvidersEdgesTrunkbasesettingAsync(GetTelephonyProvidersEdgesTrunkbasesettingRequest request, AsyncApiCallback<TrunkBase> callback) {
     return pcapiClient.<TrunkBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TrunkBase>() {}, callback);
   }
 
@@ -1671,7 +1672,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<TrunkBase>> getTelephonyProvidersEdgesTrunkbasesettingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TrunkBase>> callback) throws ApiException {
+  public Future<ApiResponse<TrunkBase>> getTelephonyProvidersEdgesTrunkbasesettingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TrunkBase>> callback) {
     return pcapiClient.<TrunkBase>invokeAPIVerboseAsync(request, new TypeReference<TrunkBase>() {}, callback);
   }
 
@@ -1681,7 +1682,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<TrunkBaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsAsync(GetTelephonyProvidersEdgesTrunkbasesettingsRequest request, AsyncApiCallback<TrunkBaseEntityListing> callback) throws ApiException {
+  public Future<TrunkBaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsAsync(GetTelephonyProvidersEdgesTrunkbasesettingsRequest request, AsyncApiCallback<TrunkBaseEntityListing> callback) {
     return pcapiClient.<TrunkBaseEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TrunkBaseEntityListing>() {}, callback);
   }
 
@@ -1691,7 +1692,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<TrunkBaseEntityListing>> getTelephonyProvidersEdgesTrunkbasesettingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TrunkBaseEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<TrunkBaseEntityListing>> getTelephonyProvidersEdgesTrunkbasesettingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TrunkBaseEntityListing>> callback) {
     return pcapiClient.<TrunkBaseEntityListing>invokeAPIVerboseAsync(request, new TypeReference<TrunkBaseEntityListing>() {}, callback);
   }
 
@@ -1701,7 +1702,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<TrunkMetabaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesAsync(GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest request, AsyncApiCallback<TrunkMetabaseEntityListing> callback) throws ApiException {
+  public Future<TrunkMetabaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesAsync(GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest request, AsyncApiCallback<TrunkMetabaseEntityListing> callback) {
     return pcapiClient.<TrunkMetabaseEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TrunkMetabaseEntityListing>() {}, callback);
   }
 
@@ -1711,7 +1712,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<TrunkMetabaseEntityListing>> getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TrunkMetabaseEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<TrunkMetabaseEntityListing>> getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TrunkMetabaseEntityListing>> callback) {
     return pcapiClient.<TrunkMetabaseEntityListing>invokeAPIVerboseAsync(request, new TypeReference<TrunkMetabaseEntityListing>() {}, callback);
   }
 
@@ -1721,7 +1722,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<TrunkBase> getTelephonyProvidersEdgesTrunkbasesettingsTemplateAsync(GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest request, AsyncApiCallback<TrunkBase> callback) throws ApiException {
+  public Future<TrunkBase> getTelephonyProvidersEdgesTrunkbasesettingsTemplateAsync(GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest request, AsyncApiCallback<TrunkBase> callback) {
     return pcapiClient.<TrunkBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TrunkBase>() {}, callback);
   }
 
@@ -1731,7 +1732,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<TrunkBase>> getTelephonyProvidersEdgesTrunkbasesettingsTemplateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TrunkBase>> callback) throws ApiException {
+  public Future<ApiResponse<TrunkBase>> getTelephonyProvidersEdgesTrunkbasesettingsTemplateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TrunkBase>> callback) {
     return pcapiClient.<TrunkBase>invokeAPIVerboseAsync(request, new TypeReference<TrunkBase>() {}, callback);
   }
 
@@ -1741,7 +1742,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<TrunkEntityListing> getTelephonyProvidersEdgesTrunksAsync(GetTelephonyProvidersEdgesTrunksRequest request, AsyncApiCallback<TrunkEntityListing> callback) throws ApiException {
+  public Future<TrunkEntityListing> getTelephonyProvidersEdgesTrunksAsync(GetTelephonyProvidersEdgesTrunksRequest request, AsyncApiCallback<TrunkEntityListing> callback) {
     return pcapiClient.<TrunkEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TrunkEntityListing>() {}, callback);
   }
 
@@ -1751,7 +1752,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<TrunkEntityListing>> getTelephonyProvidersEdgesTrunksAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TrunkEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<TrunkEntityListing>> getTelephonyProvidersEdgesTrunksAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TrunkEntityListing>> callback) {
     return pcapiClient.<TrunkEntityListing>invokeAPIVerboseAsync(request, new TypeReference<TrunkEntityListing>() {}, callback);
   }
 
@@ -1761,7 +1762,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<TrunkRecordingEnabledCount> getTelephonyProvidersEdgesTrunkswithrecordingAsync(GetTelephonyProvidersEdgesTrunkswithrecordingRequest request, AsyncApiCallback<TrunkRecordingEnabledCount> callback) throws ApiException {
+  public Future<TrunkRecordingEnabledCount> getTelephonyProvidersEdgesTrunkswithrecordingAsync(GetTelephonyProvidersEdgesTrunkswithrecordingRequest request, AsyncApiCallback<TrunkRecordingEnabledCount> callback) {
     return pcapiClient.<TrunkRecordingEnabledCount>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TrunkRecordingEnabledCount>() {}, callback);
   }
 
@@ -1771,7 +1772,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<TrunkRecordingEnabledCount>> getTelephonyProvidersEdgesTrunkswithrecordingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TrunkRecordingEnabledCount>> callback) throws ApiException {
+  public Future<ApiResponse<TrunkRecordingEnabledCount>> getTelephonyProvidersEdgesTrunkswithrecordingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TrunkRecordingEnabledCount>> callback) {
     return pcapiClient.<TrunkRecordingEnabledCount>invokeAPIVerboseAsync(request, new TypeReference<TrunkRecordingEnabledCount>() {}, callback);
   }
 
@@ -1781,7 +1782,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DomainLogicalInterface> postTelephonyProvidersEdgeLogicalinterfacesAsync(PostTelephonyProvidersEdgeLogicalinterfacesRequest request, AsyncApiCallback<DomainLogicalInterface> callback) throws ApiException {
+  public Future<DomainLogicalInterface> postTelephonyProvidersEdgeLogicalinterfacesAsync(PostTelephonyProvidersEdgeLogicalinterfacesRequest request, AsyncApiCallback<DomainLogicalInterface> callback) {
     return pcapiClient.<DomainLogicalInterface>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainLogicalInterface>() {}, callback);
   }
 
@@ -1791,7 +1792,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DomainLogicalInterface>> postTelephonyProvidersEdgeLogicalinterfacesAsync(ApiRequest<DomainLogicalInterface> request, AsyncApiCallback<ApiResponse<DomainLogicalInterface>> callback) throws ApiException {
+  public Future<ApiResponse<DomainLogicalInterface>> postTelephonyProvidersEdgeLogicalinterfacesAsync(ApiRequest<DomainLogicalInterface> request, AsyncApiCallback<ApiResponse<DomainLogicalInterface>> callback) {
     return pcapiClient.<DomainLogicalInterface>invokeAPIVerboseAsync(request, new TypeReference<DomainLogicalInterface>() {}, callback);
   }
 
@@ -1801,7 +1802,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> postTelephonyProvidersEdgeLogsJobUploadAsync(PostTelephonyProvidersEdgeLogsJobUploadRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> postTelephonyProvidersEdgeLogsJobUploadAsync(PostTelephonyProvidersEdgeLogsJobUploadRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -1811,7 +1812,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> postTelephonyProvidersEdgeLogsJobUploadAsync(ApiRequest<EdgeLogsJobUploadRequest> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> postTelephonyProvidersEdgeLogsJobUploadAsync(ApiRequest<EdgeLogsJobUploadRequest> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -1821,7 +1822,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EdgeLogsJobResponse> postTelephonyProvidersEdgeLogsJobsAsync(PostTelephonyProvidersEdgeLogsJobsRequest request, AsyncApiCallback<EdgeLogsJobResponse> callback) throws ApiException {
+  public Future<EdgeLogsJobResponse> postTelephonyProvidersEdgeLogsJobsAsync(PostTelephonyProvidersEdgeLogsJobsRequest request, AsyncApiCallback<EdgeLogsJobResponse> callback) {
     return pcapiClient.<EdgeLogsJobResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeLogsJobResponse>() {}, callback);
   }
 
@@ -1831,7 +1832,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EdgeLogsJobResponse>> postTelephonyProvidersEdgeLogsJobsAsync(ApiRequest<EdgeLogsJobRequest> request, AsyncApiCallback<ApiResponse<EdgeLogsJobResponse>> callback) throws ApiException {
+  public Future<ApiResponse<EdgeLogsJobResponse>> postTelephonyProvidersEdgeLogsJobsAsync(ApiRequest<EdgeLogsJobRequest> request, AsyncApiCallback<ApiResponse<EdgeLogsJobResponse>> callback) {
     return pcapiClient.<EdgeLogsJobResponse>invokeAPIVerboseAsync(request, new TypeReference<EdgeLogsJobResponse>() {}, callback);
   }
 
@@ -1841,7 +1842,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> postTelephonyProvidersEdgeRebootAsync(PostTelephonyProvidersEdgeRebootRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> postTelephonyProvidersEdgeRebootAsync(PostTelephonyProvidersEdgeRebootRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -1851,7 +1852,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> postTelephonyProvidersEdgeRebootAsync(ApiRequest<EdgeRebootParameters> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> postTelephonyProvidersEdgeRebootAsync(ApiRequest<EdgeRebootParameters> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -1861,7 +1862,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DomainEdgeSoftwareUpdateDto> postTelephonyProvidersEdgeSoftwareupdateAsync(PostTelephonyProvidersEdgeSoftwareupdateRequest request, AsyncApiCallback<DomainEdgeSoftwareUpdateDto> callback) throws ApiException {
+  public Future<DomainEdgeSoftwareUpdateDto> postTelephonyProvidersEdgeSoftwareupdateAsync(PostTelephonyProvidersEdgeSoftwareupdateRequest request, AsyncApiCallback<DomainEdgeSoftwareUpdateDto> callback) {
     return pcapiClient.<DomainEdgeSoftwareUpdateDto>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainEdgeSoftwareUpdateDto>() {}, callback);
   }
 
@@ -1871,7 +1872,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DomainEdgeSoftwareUpdateDto>> postTelephonyProvidersEdgeSoftwareupdateAsync(ApiRequest<DomainEdgeSoftwareUpdateDto> request, AsyncApiCallback<ApiResponse<DomainEdgeSoftwareUpdateDto>> callback) throws ApiException {
+  public Future<ApiResponse<DomainEdgeSoftwareUpdateDto>> postTelephonyProvidersEdgeSoftwareupdateAsync(ApiRequest<DomainEdgeSoftwareUpdateDto> request, AsyncApiCallback<ApiResponse<DomainEdgeSoftwareUpdateDto>> callback) {
     return pcapiClient.<DomainEdgeSoftwareUpdateDto>invokeAPIVerboseAsync(request, new TypeReference<DomainEdgeSoftwareUpdateDto>() {}, callback);
   }
 
@@ -1881,7 +1882,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> postTelephonyProvidersEdgeStatuscodeAsync(PostTelephonyProvidersEdgeStatuscodeRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> postTelephonyProvidersEdgeStatuscodeAsync(PostTelephonyProvidersEdgeStatuscodeRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -1891,7 +1892,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> postTelephonyProvidersEdgeStatuscodeAsync(ApiRequest<EdgeServiceStateRequest> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> postTelephonyProvidersEdgeStatuscodeAsync(ApiRequest<EdgeServiceStateRequest> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -1901,7 +1902,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> postTelephonyProvidersEdgeUnpairAsync(PostTelephonyProvidersEdgeUnpairRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> postTelephonyProvidersEdgeUnpairAsync(PostTelephonyProvidersEdgeUnpairRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -1911,7 +1912,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> postTelephonyProvidersEdgeUnpairAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> postTelephonyProvidersEdgeUnpairAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -1921,7 +1922,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Edge> postTelephonyProvidersEdgesAsync(PostTelephonyProvidersEdgesRequest request, AsyncApiCallback<Edge> callback) throws ApiException {
+  public Future<Edge> postTelephonyProvidersEdgesAsync(PostTelephonyProvidersEdgesRequest request, AsyncApiCallback<Edge> callback) {
     return pcapiClient.<Edge>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Edge>() {}, callback);
   }
 
@@ -1931,7 +1932,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Edge>> postTelephonyProvidersEdgesAsync(ApiRequest<Edge> request, AsyncApiCallback<ApiResponse<Edge>> callback) throws ApiException {
+  public Future<ApiResponse<Edge>> postTelephonyProvidersEdgesAsync(ApiRequest<Edge> request, AsyncApiCallback<ApiResponse<Edge>> callback) {
     return pcapiClient.<Edge>invokeAPIVerboseAsync(request, new TypeReference<Edge>() {}, callback);
   }
 
@@ -1941,7 +1942,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ValidateAddressResponse> postTelephonyProvidersEdgesAddressvalidationAsync(PostTelephonyProvidersEdgesAddressvalidationRequest request, AsyncApiCallback<ValidateAddressResponse> callback) throws ApiException {
+  public Future<ValidateAddressResponse> postTelephonyProvidersEdgesAddressvalidationAsync(PostTelephonyProvidersEdgesAddressvalidationRequest request, AsyncApiCallback<ValidateAddressResponse> callback) {
     return pcapiClient.<ValidateAddressResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ValidateAddressResponse>() {}, callback);
   }
 
@@ -1951,7 +1952,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ValidateAddressResponse>> postTelephonyProvidersEdgesAddressvalidationAsync(ApiRequest<ValidateAddressRequest> request, AsyncApiCallback<ApiResponse<ValidateAddressResponse>> callback) throws ApiException {
+  public Future<ApiResponse<ValidateAddressResponse>> postTelephonyProvidersEdgesAddressvalidationAsync(ApiRequest<ValidateAddressRequest> request, AsyncApiCallback<ApiResponse<ValidateAddressResponse>> callback) {
     return pcapiClient.<ValidateAddressResponse>invokeAPIVerboseAsync(request, new TypeReference<ValidateAddressResponse>() {}, callback);
   }
 
@@ -1961,7 +1962,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DomainCertificateAuthority> postTelephonyProvidersEdgesCertificateauthoritiesAsync(PostTelephonyProvidersEdgesCertificateauthoritiesRequest request, AsyncApiCallback<DomainCertificateAuthority> callback) throws ApiException {
+  public Future<DomainCertificateAuthority> postTelephonyProvidersEdgesCertificateauthoritiesAsync(PostTelephonyProvidersEdgesCertificateauthoritiesRequest request, AsyncApiCallback<DomainCertificateAuthority> callback) {
     return pcapiClient.<DomainCertificateAuthority>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainCertificateAuthority>() {}, callback);
   }
 
@@ -1971,7 +1972,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DomainCertificateAuthority>> postTelephonyProvidersEdgesCertificateauthoritiesAsync(ApiRequest<DomainCertificateAuthority> request, AsyncApiCallback<ApiResponse<DomainCertificateAuthority>> callback) throws ApiException {
+  public Future<ApiResponse<DomainCertificateAuthority>> postTelephonyProvidersEdgesCertificateauthoritiesAsync(ApiRequest<DomainCertificateAuthority> request, AsyncApiCallback<ApiResponse<DomainCertificateAuthority>> callback) {
     return pcapiClient.<DomainCertificateAuthority>invokeAPIVerboseAsync(request, new TypeReference<DomainCertificateAuthority>() {}, callback);
   }
 
@@ -1981,7 +1982,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DIDPool> postTelephonyProvidersEdgesDidpoolsAsync(PostTelephonyProvidersEdgesDidpoolsRequest request, AsyncApiCallback<DIDPool> callback) throws ApiException {
+  public Future<DIDPool> postTelephonyProvidersEdgesDidpoolsAsync(PostTelephonyProvidersEdgesDidpoolsRequest request, AsyncApiCallback<DIDPool> callback) {
     return pcapiClient.<DIDPool>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DIDPool>() {}, callback);
   }
 
@@ -1991,7 +1992,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DIDPool>> postTelephonyProvidersEdgesDidpoolsAsync(ApiRequest<DIDPool> request, AsyncApiCallback<ApiResponse<DIDPool>> callback) throws ApiException {
+  public Future<ApiResponse<DIDPool>> postTelephonyProvidersEdgesDidpoolsAsync(ApiRequest<DIDPool> request, AsyncApiCallback<ApiResponse<DIDPool>> callback) {
     return pcapiClient.<DIDPool>invokeAPIVerboseAsync(request, new TypeReference<DIDPool>() {}, callback);
   }
 
@@ -2001,7 +2002,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EdgeGroup> postTelephonyProvidersEdgesEdgegroupsAsync(PostTelephonyProvidersEdgesEdgegroupsRequest request, AsyncApiCallback<EdgeGroup> callback) throws ApiException {
+  public Future<EdgeGroup> postTelephonyProvidersEdgesEdgegroupsAsync(PostTelephonyProvidersEdgesEdgegroupsRequest request, AsyncApiCallback<EdgeGroup> callback) {
     return pcapiClient.<EdgeGroup>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeGroup>() {}, callback);
   }
 
@@ -2011,7 +2012,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EdgeGroup>> postTelephonyProvidersEdgesEdgegroupsAsync(ApiRequest<EdgeGroup> request, AsyncApiCallback<ApiResponse<EdgeGroup>> callback) throws ApiException {
+  public Future<ApiResponse<EdgeGroup>> postTelephonyProvidersEdgesEdgegroupsAsync(ApiRequest<EdgeGroup> request, AsyncApiCallback<ApiResponse<EdgeGroup>> callback) {
     return pcapiClient.<EdgeGroup>invokeAPIVerboseAsync(request, new TypeReference<EdgeGroup>() {}, callback);
   }
 
@@ -2021,7 +2022,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Endpoint> postTelephonyProvidersEdgesEndpointsAsync(PostTelephonyProvidersEdgesEndpointsRequest request, AsyncApiCallback<Endpoint> callback) throws ApiException {
+  public Future<Endpoint> postTelephonyProvidersEdgesEndpointsAsync(PostTelephonyProvidersEdgesEndpointsRequest request, AsyncApiCallback<Endpoint> callback) {
     return pcapiClient.<Endpoint>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Endpoint>() {}, callback);
   }
 
@@ -2031,7 +2032,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Endpoint>> postTelephonyProvidersEdgesEndpointsAsync(ApiRequest<Endpoint> request, AsyncApiCallback<ApiResponse<Endpoint>> callback) throws ApiException {
+  public Future<ApiResponse<Endpoint>> postTelephonyProvidersEdgesEndpointsAsync(ApiRequest<Endpoint> request, AsyncApiCallback<ApiResponse<Endpoint>> callback) {
     return pcapiClient.<Endpoint>invokeAPIVerboseAsync(request, new TypeReference<Endpoint>() {}, callback);
   }
 
@@ -2041,7 +2042,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ExtensionPool> postTelephonyProvidersEdgesExtensionpoolsAsync(PostTelephonyProvidersEdgesExtensionpoolsRequest request, AsyncApiCallback<ExtensionPool> callback) throws ApiException {
+  public Future<ExtensionPool> postTelephonyProvidersEdgesExtensionpoolsAsync(PostTelephonyProvidersEdgesExtensionpoolsRequest request, AsyncApiCallback<ExtensionPool> callback) {
     return pcapiClient.<ExtensionPool>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExtensionPool>() {}, callback);
   }
 
@@ -2051,7 +2052,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ExtensionPool>> postTelephonyProvidersEdgesExtensionpoolsAsync(ApiRequest<ExtensionPool> request, AsyncApiCallback<ApiResponse<ExtensionPool>> callback) throws ApiException {
+  public Future<ApiResponse<ExtensionPool>> postTelephonyProvidersEdgesExtensionpoolsAsync(ApiRequest<ExtensionPool> request, AsyncApiCallback<ApiResponse<ExtensionPool>> callback) {
     return pcapiClient.<ExtensionPool>invokeAPIVerboseAsync(request, new TypeReference<ExtensionPool>() {}, callback);
   }
 
@@ -2061,7 +2062,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OutboundRoute> postTelephonyProvidersEdgesOutboundroutesAsync(PostTelephonyProvidersEdgesOutboundroutesRequest request, AsyncApiCallback<OutboundRoute> callback) throws ApiException {
+  public Future<OutboundRoute> postTelephonyProvidersEdgesOutboundroutesAsync(PostTelephonyProvidersEdgesOutboundroutesRequest request, AsyncApiCallback<OutboundRoute> callback) {
     return pcapiClient.<OutboundRoute>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OutboundRoute>() {}, callback);
   }
 
@@ -2071,7 +2072,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OutboundRoute>> postTelephonyProvidersEdgesOutboundroutesAsync(ApiRequest<OutboundRoute> request, AsyncApiCallback<ApiResponse<OutboundRoute>> callback) throws ApiException {
+  public Future<ApiResponse<OutboundRoute>> postTelephonyProvidersEdgesOutboundroutesAsync(ApiRequest<OutboundRoute> request, AsyncApiCallback<ApiResponse<OutboundRoute>> callback) {
     return pcapiClient.<OutboundRoute>invokeAPIVerboseAsync(request, new TypeReference<OutboundRoute>() {}, callback);
   }
 
@@ -2081,7 +2082,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> postTelephonyProvidersEdgesPhoneRebootAsync(PostTelephonyProvidersEdgesPhoneRebootRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> postTelephonyProvidersEdgesPhoneRebootAsync(PostTelephonyProvidersEdgesPhoneRebootRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -2091,7 +2092,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> postTelephonyProvidersEdgesPhoneRebootAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> postTelephonyProvidersEdgesPhoneRebootAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -2101,7 +2102,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<PhoneBase> postTelephonyProvidersEdgesPhonebasesettingsAsync(PostTelephonyProvidersEdgesPhonebasesettingsRequest request, AsyncApiCallback<PhoneBase> callback) throws ApiException {
+  public Future<PhoneBase> postTelephonyProvidersEdgesPhonebasesettingsAsync(PostTelephonyProvidersEdgesPhonebasesettingsRequest request, AsyncApiCallback<PhoneBase> callback) {
     return pcapiClient.<PhoneBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PhoneBase>() {}, callback);
   }
 
@@ -2111,7 +2112,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<PhoneBase>> postTelephonyProvidersEdgesPhonebasesettingsAsync(ApiRequest<PhoneBase> request, AsyncApiCallback<ApiResponse<PhoneBase>> callback) throws ApiException {
+  public Future<ApiResponse<PhoneBase>> postTelephonyProvidersEdgesPhonebasesettingsAsync(ApiRequest<PhoneBase> request, AsyncApiCallback<ApiResponse<PhoneBase>> callback) {
     return pcapiClient.<PhoneBase>invokeAPIVerboseAsync(request, new TypeReference<PhoneBase>() {}, callback);
   }
 
@@ -2121,7 +2122,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Phone> postTelephonyProvidersEdgesPhonesAsync(PostTelephonyProvidersEdgesPhonesRequest request, AsyncApiCallback<Phone> callback) throws ApiException {
+  public Future<Phone> postTelephonyProvidersEdgesPhonesAsync(PostTelephonyProvidersEdgesPhonesRequest request, AsyncApiCallback<Phone> callback) {
     return pcapiClient.<Phone>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Phone>() {}, callback);
   }
 
@@ -2131,7 +2132,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Phone>> postTelephonyProvidersEdgesPhonesAsync(ApiRequest<Phone> request, AsyncApiCallback<ApiResponse<Phone>> callback) throws ApiException {
+  public Future<ApiResponse<Phone>> postTelephonyProvidersEdgesPhonesAsync(ApiRequest<Phone> request, AsyncApiCallback<ApiResponse<Phone>> callback) {
     return pcapiClient.<Phone>invokeAPIVerboseAsync(request, new TypeReference<Phone>() {}, callback);
   }
 
@@ -2141,7 +2142,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> postTelephonyProvidersEdgesPhonesRebootAsync(PostTelephonyProvidersEdgesPhonesRebootRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> postTelephonyProvidersEdgesPhonesRebootAsync(PostTelephonyProvidersEdgesPhonesRebootRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -2151,7 +2152,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> postTelephonyProvidersEdgesPhonesRebootAsync(ApiRequest<PhonesReboot> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> postTelephonyProvidersEdgesPhonesRebootAsync(ApiRequest<PhonesReboot> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -2161,7 +2162,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OutboundRouteBase> postTelephonyProvidersEdgesSiteOutboundroutesAsync(PostTelephonyProvidersEdgesSiteOutboundroutesRequest request, AsyncApiCallback<OutboundRouteBase> callback) throws ApiException {
+  public Future<OutboundRouteBase> postTelephonyProvidersEdgesSiteOutboundroutesAsync(PostTelephonyProvidersEdgesSiteOutboundroutesRequest request, AsyncApiCallback<OutboundRouteBase> callback) {
     return pcapiClient.<OutboundRouteBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OutboundRouteBase>() {}, callback);
   }
 
@@ -2171,7 +2172,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OutboundRouteBase>> postTelephonyProvidersEdgesSiteOutboundroutesAsync(ApiRequest<OutboundRouteBase> request, AsyncApiCallback<ApiResponse<OutboundRouteBase>> callback) throws ApiException {
+  public Future<ApiResponse<OutboundRouteBase>> postTelephonyProvidersEdgesSiteOutboundroutesAsync(ApiRequest<OutboundRouteBase> request, AsyncApiCallback<ApiResponse<OutboundRouteBase>> callback) {
     return pcapiClient.<OutboundRouteBase>invokeAPIVerboseAsync(request, new TypeReference<OutboundRouteBase>() {}, callback);
   }
 
@@ -2181,7 +2182,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> postTelephonyProvidersEdgesSiteRebalanceAsync(PostTelephonyProvidersEdgesSiteRebalanceRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> postTelephonyProvidersEdgesSiteRebalanceAsync(PostTelephonyProvidersEdgesSiteRebalanceRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -2191,7 +2192,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> postTelephonyProvidersEdgesSiteRebalanceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> postTelephonyProvidersEdgesSiteRebalanceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -2201,7 +2202,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Site> postTelephonyProvidersEdgesSitesAsync(PostTelephonyProvidersEdgesSitesRequest request, AsyncApiCallback<Site> callback) throws ApiException {
+  public Future<Site> postTelephonyProvidersEdgesSitesAsync(PostTelephonyProvidersEdgesSitesRequest request, AsyncApiCallback<Site> callback) {
     return pcapiClient.<Site>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Site>() {}, callback);
   }
 
@@ -2211,7 +2212,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Site>> postTelephonyProvidersEdgesSitesAsync(ApiRequest<Site> request, AsyncApiCallback<ApiResponse<Site>> callback) throws ApiException {
+  public Future<ApiResponse<Site>> postTelephonyProvidersEdgesSitesAsync(ApiRequest<Site> request, AsyncApiCallback<ApiResponse<Site>> callback) {
     return pcapiClient.<Site>invokeAPIVerboseAsync(request, new TypeReference<Site>() {}, callback);
   }
 
@@ -2221,7 +2222,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<TrunkBase> postTelephonyProvidersEdgesTrunkbasesettingsAsync(PostTelephonyProvidersEdgesTrunkbasesettingsRequest request, AsyncApiCallback<TrunkBase> callback) throws ApiException {
+  public Future<TrunkBase> postTelephonyProvidersEdgesTrunkbasesettingsAsync(PostTelephonyProvidersEdgesTrunkbasesettingsRequest request, AsyncApiCallback<TrunkBase> callback) {
     return pcapiClient.<TrunkBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TrunkBase>() {}, callback);
   }
 
@@ -2231,7 +2232,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<TrunkBase>> postTelephonyProvidersEdgesTrunkbasesettingsAsync(ApiRequest<TrunkBase> request, AsyncApiCallback<ApiResponse<TrunkBase>> callback) throws ApiException {
+  public Future<ApiResponse<TrunkBase>> postTelephonyProvidersEdgesTrunkbasesettingsAsync(ApiRequest<TrunkBase> request, AsyncApiCallback<ApiResponse<TrunkBase>> callback) {
     return pcapiClient.<TrunkBase>invokeAPIVerboseAsync(request, new TypeReference<TrunkBase>() {}, callback);
   }
 
@@ -2241,7 +2242,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Edge> putTelephonyProvidersEdgeAsync(PutTelephonyProvidersEdgeRequest request, AsyncApiCallback<Edge> callback) throws ApiException {
+  public Future<Edge> putTelephonyProvidersEdgeAsync(PutTelephonyProvidersEdgeRequest request, AsyncApiCallback<Edge> callback) {
     return pcapiClient.<Edge>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Edge>() {}, callback);
   }
 
@@ -2251,7 +2252,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Edge>> putTelephonyProvidersEdgeAsync(ApiRequest<Edge> request, AsyncApiCallback<ApiResponse<Edge>> callback) throws ApiException {
+  public Future<ApiResponse<Edge>> putTelephonyProvidersEdgeAsync(ApiRequest<Edge> request, AsyncApiCallback<ApiResponse<Edge>> callback) {
     return pcapiClient.<Edge>invokeAPIVerboseAsync(request, new TypeReference<Edge>() {}, callback);
   }
 
@@ -2261,7 +2262,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EdgeLine> putTelephonyProvidersEdgeLineAsync(PutTelephonyProvidersEdgeLineRequest request, AsyncApiCallback<EdgeLine> callback) throws ApiException {
+  public Future<EdgeLine> putTelephonyProvidersEdgeLineAsync(PutTelephonyProvidersEdgeLineRequest request, AsyncApiCallback<EdgeLine> callback) {
     return pcapiClient.<EdgeLine>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeLine>() {}, callback);
   }
 
@@ -2271,7 +2272,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EdgeLine>> putTelephonyProvidersEdgeLineAsync(ApiRequest<EdgeLine> request, AsyncApiCallback<ApiResponse<EdgeLine>> callback) throws ApiException {
+  public Future<ApiResponse<EdgeLine>> putTelephonyProvidersEdgeLineAsync(ApiRequest<EdgeLine> request, AsyncApiCallback<ApiResponse<EdgeLine>> callback) {
     return pcapiClient.<EdgeLine>invokeAPIVerboseAsync(request, new TypeReference<EdgeLine>() {}, callback);
   }
 
@@ -2281,7 +2282,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DomainLogicalInterface> putTelephonyProvidersEdgeLogicalinterfaceAsync(PutTelephonyProvidersEdgeLogicalinterfaceRequest request, AsyncApiCallback<DomainLogicalInterface> callback) throws ApiException {
+  public Future<DomainLogicalInterface> putTelephonyProvidersEdgeLogicalinterfaceAsync(PutTelephonyProvidersEdgeLogicalinterfaceRequest request, AsyncApiCallback<DomainLogicalInterface> callback) {
     return pcapiClient.<DomainLogicalInterface>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainLogicalInterface>() {}, callback);
   }
 
@@ -2291,7 +2292,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DomainLogicalInterface>> putTelephonyProvidersEdgeLogicalinterfaceAsync(ApiRequest<DomainLogicalInterface> request, AsyncApiCallback<ApiResponse<DomainLogicalInterface>> callback) throws ApiException {
+  public Future<ApiResponse<DomainLogicalInterface>> putTelephonyProvidersEdgeLogicalinterfaceAsync(ApiRequest<DomainLogicalInterface> request, AsyncApiCallback<ApiResponse<DomainLogicalInterface>> callback) {
     return pcapiClient.<DomainLogicalInterface>invokeAPIVerboseAsync(request, new TypeReference<DomainLogicalInterface>() {}, callback);
   }
 
@@ -2301,7 +2302,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DomainCertificateAuthority> putTelephonyProvidersEdgesCertificateauthorityAsync(PutTelephonyProvidersEdgesCertificateauthorityRequest request, AsyncApiCallback<DomainCertificateAuthority> callback) throws ApiException {
+  public Future<DomainCertificateAuthority> putTelephonyProvidersEdgesCertificateauthorityAsync(PutTelephonyProvidersEdgesCertificateauthorityRequest request, AsyncApiCallback<DomainCertificateAuthority> callback) {
     return pcapiClient.<DomainCertificateAuthority>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainCertificateAuthority>() {}, callback);
   }
 
@@ -2311,7 +2312,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DomainCertificateAuthority>> putTelephonyProvidersEdgesCertificateauthorityAsync(ApiRequest<DomainCertificateAuthority> request, AsyncApiCallback<ApiResponse<DomainCertificateAuthority>> callback) throws ApiException {
+  public Future<ApiResponse<DomainCertificateAuthority>> putTelephonyProvidersEdgesCertificateauthorityAsync(ApiRequest<DomainCertificateAuthority> request, AsyncApiCallback<ApiResponse<DomainCertificateAuthority>> callback) {
     return pcapiClient.<DomainCertificateAuthority>invokeAPIVerboseAsync(request, new TypeReference<DomainCertificateAuthority>() {}, callback);
   }
 
@@ -2321,7 +2322,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DID> putTelephonyProvidersEdgesDidAsync(PutTelephonyProvidersEdgesDidRequest request, AsyncApiCallback<DID> callback) throws ApiException {
+  public Future<DID> putTelephonyProvidersEdgesDidAsync(PutTelephonyProvidersEdgesDidRequest request, AsyncApiCallback<DID> callback) {
     return pcapiClient.<DID>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DID>() {}, callback);
   }
 
@@ -2331,7 +2332,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DID>> putTelephonyProvidersEdgesDidAsync(ApiRequest<DID> request, AsyncApiCallback<ApiResponse<DID>> callback) throws ApiException {
+  public Future<ApiResponse<DID>> putTelephonyProvidersEdgesDidAsync(ApiRequest<DID> request, AsyncApiCallback<ApiResponse<DID>> callback) {
     return pcapiClient.<DID>invokeAPIVerboseAsync(request, new TypeReference<DID>() {}, callback);
   }
 
@@ -2341,7 +2342,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DIDPool> putTelephonyProvidersEdgesDidpoolAsync(PutTelephonyProvidersEdgesDidpoolRequest request, AsyncApiCallback<DIDPool> callback) throws ApiException {
+  public Future<DIDPool> putTelephonyProvidersEdgesDidpoolAsync(PutTelephonyProvidersEdgesDidpoolRequest request, AsyncApiCallback<DIDPool> callback) {
     return pcapiClient.<DIDPool>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DIDPool>() {}, callback);
   }
 
@@ -2351,7 +2352,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DIDPool>> putTelephonyProvidersEdgesDidpoolAsync(ApiRequest<DIDPool> request, AsyncApiCallback<ApiResponse<DIDPool>> callback) throws ApiException {
+  public Future<ApiResponse<DIDPool>> putTelephonyProvidersEdgesDidpoolAsync(ApiRequest<DIDPool> request, AsyncApiCallback<ApiResponse<DIDPool>> callback) {
     return pcapiClient.<DIDPool>invokeAPIVerboseAsync(request, new TypeReference<DIDPool>() {}, callback);
   }
 
@@ -2361,7 +2362,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EdgeGroup> putTelephonyProvidersEdgesEdgegroupAsync(PutTelephonyProvidersEdgesEdgegroupRequest request, AsyncApiCallback<EdgeGroup> callback) throws ApiException {
+  public Future<EdgeGroup> putTelephonyProvidersEdgesEdgegroupAsync(PutTelephonyProvidersEdgesEdgegroupRequest request, AsyncApiCallback<EdgeGroup> callback) {
     return pcapiClient.<EdgeGroup>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeGroup>() {}, callback);
   }
 
@@ -2371,7 +2372,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EdgeGroup>> putTelephonyProvidersEdgesEdgegroupAsync(ApiRequest<EdgeGroup> request, AsyncApiCallback<ApiResponse<EdgeGroup>> callback) throws ApiException {
+  public Future<ApiResponse<EdgeGroup>> putTelephonyProvidersEdgesEdgegroupAsync(ApiRequest<EdgeGroup> request, AsyncApiCallback<ApiResponse<EdgeGroup>> callback) {
     return pcapiClient.<EdgeGroup>invokeAPIVerboseAsync(request, new TypeReference<EdgeGroup>() {}, callback);
   }
 
@@ -2381,7 +2382,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EdgeTrunkBase> putTelephonyProvidersEdgesEdgegroupEdgetrunkbasisAsync(PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest request, AsyncApiCallback<EdgeTrunkBase> callback) throws ApiException {
+  public Future<EdgeTrunkBase> putTelephonyProvidersEdgesEdgegroupEdgetrunkbasisAsync(PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest request, AsyncApiCallback<EdgeTrunkBase> callback) {
     return pcapiClient.<EdgeTrunkBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeTrunkBase>() {}, callback);
   }
 
@@ -2391,7 +2392,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EdgeTrunkBase>> putTelephonyProvidersEdgesEdgegroupEdgetrunkbasisAsync(ApiRequest<EdgeTrunkBase> request, AsyncApiCallback<ApiResponse<EdgeTrunkBase>> callback) throws ApiException {
+  public Future<ApiResponse<EdgeTrunkBase>> putTelephonyProvidersEdgesEdgegroupEdgetrunkbasisAsync(ApiRequest<EdgeTrunkBase> request, AsyncApiCallback<ApiResponse<EdgeTrunkBase>> callback) {
     return pcapiClient.<EdgeTrunkBase>invokeAPIVerboseAsync(request, new TypeReference<EdgeTrunkBase>() {}, callback);
   }
 
@@ -2401,7 +2402,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Endpoint> putTelephonyProvidersEdgesEndpointAsync(PutTelephonyProvidersEdgesEndpointRequest request, AsyncApiCallback<Endpoint> callback) throws ApiException {
+  public Future<Endpoint> putTelephonyProvidersEdgesEndpointAsync(PutTelephonyProvidersEdgesEndpointRequest request, AsyncApiCallback<Endpoint> callback) {
     return pcapiClient.<Endpoint>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Endpoint>() {}, callback);
   }
 
@@ -2411,7 +2412,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Endpoint>> putTelephonyProvidersEdgesEndpointAsync(ApiRequest<Endpoint> request, AsyncApiCallback<ApiResponse<Endpoint>> callback) throws ApiException {
+  public Future<ApiResponse<Endpoint>> putTelephonyProvidersEdgesEndpointAsync(ApiRequest<Endpoint> request, AsyncApiCallback<ApiResponse<Endpoint>> callback) {
     return pcapiClient.<Endpoint>invokeAPIVerboseAsync(request, new TypeReference<Endpoint>() {}, callback);
   }
 
@@ -2421,7 +2422,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Extension> putTelephonyProvidersEdgesExtensionAsync(PutTelephonyProvidersEdgesExtensionRequest request, AsyncApiCallback<Extension> callback) throws ApiException {
+  public Future<Extension> putTelephonyProvidersEdgesExtensionAsync(PutTelephonyProvidersEdgesExtensionRequest request, AsyncApiCallback<Extension> callback) {
     return pcapiClient.<Extension>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Extension>() {}, callback);
   }
 
@@ -2431,7 +2432,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Extension>> putTelephonyProvidersEdgesExtensionAsync(ApiRequest<Extension> request, AsyncApiCallback<ApiResponse<Extension>> callback) throws ApiException {
+  public Future<ApiResponse<Extension>> putTelephonyProvidersEdgesExtensionAsync(ApiRequest<Extension> request, AsyncApiCallback<ApiResponse<Extension>> callback) {
     return pcapiClient.<Extension>invokeAPIVerboseAsync(request, new TypeReference<Extension>() {}, callback);
   }
 
@@ -2441,7 +2442,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ExtensionPool> putTelephonyProvidersEdgesExtensionpoolAsync(PutTelephonyProvidersEdgesExtensionpoolRequest request, AsyncApiCallback<ExtensionPool> callback) throws ApiException {
+  public Future<ExtensionPool> putTelephonyProvidersEdgesExtensionpoolAsync(PutTelephonyProvidersEdgesExtensionpoolRequest request, AsyncApiCallback<ExtensionPool> callback) {
     return pcapiClient.<ExtensionPool>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExtensionPool>() {}, callback);
   }
 
@@ -2451,7 +2452,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ExtensionPool>> putTelephonyProvidersEdgesExtensionpoolAsync(ApiRequest<ExtensionPool> request, AsyncApiCallback<ApiResponse<ExtensionPool>> callback) throws ApiException {
+  public Future<ApiResponse<ExtensionPool>> putTelephonyProvidersEdgesExtensionpoolAsync(ApiRequest<ExtensionPool> request, AsyncApiCallback<ApiResponse<ExtensionPool>> callback) {
     return pcapiClient.<ExtensionPool>invokeAPIVerboseAsync(request, new TypeReference<ExtensionPool>() {}, callback);
   }
 
@@ -2461,7 +2462,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OutboundRoute> putTelephonyProvidersEdgesOutboundrouteAsync(PutTelephonyProvidersEdgesOutboundrouteRequest request, AsyncApiCallback<OutboundRoute> callback) throws ApiException {
+  public Future<OutboundRoute> putTelephonyProvidersEdgesOutboundrouteAsync(PutTelephonyProvidersEdgesOutboundrouteRequest request, AsyncApiCallback<OutboundRoute> callback) {
     return pcapiClient.<OutboundRoute>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OutboundRoute>() {}, callback);
   }
 
@@ -2471,7 +2472,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OutboundRoute>> putTelephonyProvidersEdgesOutboundrouteAsync(ApiRequest<OutboundRoute> request, AsyncApiCallback<ApiResponse<OutboundRoute>> callback) throws ApiException {
+  public Future<ApiResponse<OutboundRoute>> putTelephonyProvidersEdgesOutboundrouteAsync(ApiRequest<OutboundRoute> request, AsyncApiCallback<ApiResponse<OutboundRoute>> callback) {
     return pcapiClient.<OutboundRoute>invokeAPIVerboseAsync(request, new TypeReference<OutboundRoute>() {}, callback);
   }
 
@@ -2481,7 +2482,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Phone> putTelephonyProvidersEdgesPhoneAsync(PutTelephonyProvidersEdgesPhoneRequest request, AsyncApiCallback<Phone> callback) throws ApiException {
+  public Future<Phone> putTelephonyProvidersEdgesPhoneAsync(PutTelephonyProvidersEdgesPhoneRequest request, AsyncApiCallback<Phone> callback) {
     return pcapiClient.<Phone>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Phone>() {}, callback);
   }
 
@@ -2491,7 +2492,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Phone>> putTelephonyProvidersEdgesPhoneAsync(ApiRequest<Phone> request, AsyncApiCallback<ApiResponse<Phone>> callback) throws ApiException {
+  public Future<ApiResponse<Phone>> putTelephonyProvidersEdgesPhoneAsync(ApiRequest<Phone> request, AsyncApiCallback<ApiResponse<Phone>> callback) {
     return pcapiClient.<Phone>invokeAPIVerboseAsync(request, new TypeReference<Phone>() {}, callback);
   }
 
@@ -2501,7 +2502,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<PhoneBase> putTelephonyProvidersEdgesPhonebasesettingAsync(PutTelephonyProvidersEdgesPhonebasesettingRequest request, AsyncApiCallback<PhoneBase> callback) throws ApiException {
+  public Future<PhoneBase> putTelephonyProvidersEdgesPhonebasesettingAsync(PutTelephonyProvidersEdgesPhonebasesettingRequest request, AsyncApiCallback<PhoneBase> callback) {
     return pcapiClient.<PhoneBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PhoneBase>() {}, callback);
   }
 
@@ -2511,7 +2512,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<PhoneBase>> putTelephonyProvidersEdgesPhonebasesettingAsync(ApiRequest<PhoneBase> request, AsyncApiCallback<ApiResponse<PhoneBase>> callback) throws ApiException {
+  public Future<ApiResponse<PhoneBase>> putTelephonyProvidersEdgesPhonebasesettingAsync(ApiRequest<PhoneBase> request, AsyncApiCallback<ApiResponse<PhoneBase>> callback) {
     return pcapiClient.<PhoneBase>invokeAPIVerboseAsync(request, new TypeReference<PhoneBase>() {}, callback);
   }
 
@@ -2521,7 +2522,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Site> putTelephonyProvidersEdgesSiteAsync(PutTelephonyProvidersEdgesSiteRequest request, AsyncApiCallback<Site> callback) throws ApiException {
+  public Future<Site> putTelephonyProvidersEdgesSiteAsync(PutTelephonyProvidersEdgesSiteRequest request, AsyncApiCallback<Site> callback) {
     return pcapiClient.<Site>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Site>() {}, callback);
   }
 
@@ -2531,7 +2532,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Site>> putTelephonyProvidersEdgesSiteAsync(ApiRequest<Site> request, AsyncApiCallback<ApiResponse<Site>> callback) throws ApiException {
+  public Future<ApiResponse<Site>> putTelephonyProvidersEdgesSiteAsync(ApiRequest<Site> request, AsyncApiCallback<ApiResponse<Site>> callback) {
     return pcapiClient.<Site>invokeAPIVerboseAsync(request, new TypeReference<Site>() {}, callback);
   }
 
@@ -2541,7 +2542,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<NumberPlan>> putTelephonyProvidersEdgesSiteNumberplansAsync(PutTelephonyProvidersEdgesSiteNumberplansRequest request, AsyncApiCallback<List<NumberPlan>> callback) throws ApiException {
+  public Future<List<NumberPlan>> putTelephonyProvidersEdgesSiteNumberplansAsync(PutTelephonyProvidersEdgesSiteNumberplansRequest request, AsyncApiCallback<List<NumberPlan>> callback) {
     return pcapiClient.<List<NumberPlan>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<NumberPlan>>() {}, callback);
   }
 
@@ -2551,7 +2552,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<NumberPlan>>> putTelephonyProvidersEdgesSiteNumberplansAsync(ApiRequest<List<NumberPlan>> request, AsyncApiCallback<ApiResponse<List<NumberPlan>>> callback) throws ApiException {
+  public Future<ApiResponse<List<NumberPlan>>> putTelephonyProvidersEdgesSiteNumberplansAsync(ApiRequest<List<NumberPlan>> request, AsyncApiCallback<ApiResponse<List<NumberPlan>>> callback) {
     return pcapiClient.<List<NumberPlan>>invokeAPIVerboseAsync(request, new TypeReference<List<NumberPlan>>() {}, callback);
   }
 
@@ -2561,7 +2562,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OutboundRouteBase> putTelephonyProvidersEdgesSiteOutboundrouteAsync(PutTelephonyProvidersEdgesSiteOutboundrouteRequest request, AsyncApiCallback<OutboundRouteBase> callback) throws ApiException {
+  public Future<OutboundRouteBase> putTelephonyProvidersEdgesSiteOutboundrouteAsync(PutTelephonyProvidersEdgesSiteOutboundrouteRequest request, AsyncApiCallback<OutboundRouteBase> callback) {
     return pcapiClient.<OutboundRouteBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OutboundRouteBase>() {}, callback);
   }
 
@@ -2571,7 +2572,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OutboundRouteBase>> putTelephonyProvidersEdgesSiteOutboundrouteAsync(ApiRequest<OutboundRouteBase> request, AsyncApiCallback<ApiResponse<OutboundRouteBase>> callback) throws ApiException {
+  public Future<ApiResponse<OutboundRouteBase>> putTelephonyProvidersEdgesSiteOutboundrouteAsync(ApiRequest<OutboundRouteBase> request, AsyncApiCallback<ApiResponse<OutboundRouteBase>> callback) {
     return pcapiClient.<OutboundRouteBase>invokeAPIVerboseAsync(request, new TypeReference<OutboundRouteBase>() {}, callback);
   }
 
@@ -2581,7 +2582,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<TrunkBase> putTelephonyProvidersEdgesTrunkbasesettingAsync(PutTelephonyProvidersEdgesTrunkbasesettingRequest request, AsyncApiCallback<TrunkBase> callback) throws ApiException {
+  public Future<TrunkBase> putTelephonyProvidersEdgesTrunkbasesettingAsync(PutTelephonyProvidersEdgesTrunkbasesettingRequest request, AsyncApiCallback<TrunkBase> callback) {
     return pcapiClient.<TrunkBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TrunkBase>() {}, callback);
   }
 
@@ -2591,7 +2592,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<TrunkBase>> putTelephonyProvidersEdgesTrunkbasesettingAsync(ApiRequest<TrunkBase> request, AsyncApiCallback<ApiResponse<TrunkBase>> callback) throws ApiException {
+  public Future<ApiResponse<TrunkBase>> putTelephonyProvidersEdgesTrunkbasesettingAsync(ApiRequest<TrunkBase> request, AsyncApiCallback<ApiResponse<TrunkBase>> callback) {
     return pcapiClient.<TrunkBase>invokeAPIVerboseAsync(request, new TypeReference<TrunkBase>() {}, callback);
   }
 

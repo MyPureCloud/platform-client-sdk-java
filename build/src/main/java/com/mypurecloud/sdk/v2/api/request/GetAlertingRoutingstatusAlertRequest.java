@@ -89,11 +89,11 @@ public class GetAlertingRoutingstatusAlertRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'alertId' is set
         if (this.alertId == null) {
-            throw new ApiException(400, "Missing the required parameter 'alertId' when building request for GetAlertingRoutingstatusAlertRequest.");
+            throw new IllegalStateException("Missing the required parameter 'alertId' when building request for GetAlertingRoutingstatusAlertRequest.");
         }
         
 

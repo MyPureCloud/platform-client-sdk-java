@@ -72,6 +72,20 @@ public class GetResponsemanagementResponsesRequest {
 	    return this;
 	}
 
+	private String expand;
+	public String getExpand() {
+		return this.expand;
+	}
+
+	public void setExpand(String expand) {
+		this.expand = expand;
+	}
+
+	public GetResponsemanagementResponsesRequest withExpand(String expand) {
+	    this.setExpand(expand);
+	    return this;
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -91,11 +105,11 @@ public class GetResponsemanagementResponsesRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'libraryId' is set
         if (this.libraryId == null) {
-            throw new ApiException(400, "Missing the required parameter 'libraryId' when building request for GetResponsemanagementResponsesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'libraryId' when building request for GetResponsemanagementResponsesRequest.");
         }
         
 
@@ -105,6 +119,8 @@ public class GetResponsemanagementResponsesRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("pageSize", "", pageSize)
+        
+                .withQueryParameters("expand", "", expand)
                         .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -138,6 +154,10 @@ public class GetResponsemanagementResponsesRequest {
 		}
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
+			return this;
+		}
+		public Builder withExpand(String expand) {
+			request.setExpand(expand);
 			return this;
 		}
 

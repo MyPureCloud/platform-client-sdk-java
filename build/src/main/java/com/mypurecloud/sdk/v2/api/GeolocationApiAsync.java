@@ -21,6 +21,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserGeolocationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchGeolocationsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserGeolocationRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -45,7 +46,7 @@ public class GeolocationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<GeolocationSettings> getGeolocationsSettingsAsync(GetGeolocationsSettingsRequest request, AsyncApiCallback<GeolocationSettings> callback) throws ApiException {
+  public Future<GeolocationSettings> getGeolocationsSettingsAsync(GetGeolocationsSettingsRequest request, AsyncApiCallback<GeolocationSettings> callback) {
     return pcapiClient.<GeolocationSettings>invokeAPIAsync(request.withHttpInfo(), new TypeReference<GeolocationSettings>() {}, callback);
   }
 
@@ -55,7 +56,7 @@ public class GeolocationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<GeolocationSettings>> getGeolocationsSettingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GeolocationSettings>> callback) throws ApiException {
+  public Future<ApiResponse<GeolocationSettings>> getGeolocationsSettingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GeolocationSettings>> callback) {
     return pcapiClient.<GeolocationSettings>invokeAPIVerboseAsync(request, new TypeReference<GeolocationSettings>() {}, callback);
   }
 
@@ -65,7 +66,7 @@ public class GeolocationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Geolocation> getUserGeolocationAsync(GetUserGeolocationRequest request, AsyncApiCallback<Geolocation> callback) throws ApiException {
+  public Future<Geolocation> getUserGeolocationAsync(GetUserGeolocationRequest request, AsyncApiCallback<Geolocation> callback) {
     return pcapiClient.<Geolocation>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Geolocation>() {}, callback);
   }
 
@@ -75,7 +76,7 @@ public class GeolocationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Geolocation>> getUserGeolocationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Geolocation>> callback) throws ApiException {
+  public Future<ApiResponse<Geolocation>> getUserGeolocationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Geolocation>> callback) {
     return pcapiClient.<Geolocation>invokeAPIVerboseAsync(request, new TypeReference<Geolocation>() {}, callback);
   }
 
@@ -85,7 +86,7 @@ public class GeolocationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<GeolocationSettings> patchGeolocationsSettingsAsync(PatchGeolocationsSettingsRequest request, AsyncApiCallback<GeolocationSettings> callback) throws ApiException {
+  public Future<GeolocationSettings> patchGeolocationsSettingsAsync(PatchGeolocationsSettingsRequest request, AsyncApiCallback<GeolocationSettings> callback) {
     return pcapiClient.<GeolocationSettings>invokeAPIAsync(request.withHttpInfo(), new TypeReference<GeolocationSettings>() {}, callback);
   }
 
@@ -95,7 +96,7 @@ public class GeolocationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<GeolocationSettings>> patchGeolocationsSettingsAsync(ApiRequest<GeolocationSettings> request, AsyncApiCallback<ApiResponse<GeolocationSettings>> callback) throws ApiException {
+  public Future<ApiResponse<GeolocationSettings>> patchGeolocationsSettingsAsync(ApiRequest<GeolocationSettings> request, AsyncApiCallback<ApiResponse<GeolocationSettings>> callback) {
     return pcapiClient.<GeolocationSettings>invokeAPIVerboseAsync(request, new TypeReference<GeolocationSettings>() {}, callback);
   }
 
@@ -105,7 +106,7 @@ public class GeolocationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Geolocation> patchUserGeolocationAsync(PatchUserGeolocationRequest request, AsyncApiCallback<Geolocation> callback) throws ApiException {
+  public Future<Geolocation> patchUserGeolocationAsync(PatchUserGeolocationRequest request, AsyncApiCallback<Geolocation> callback) {
     return pcapiClient.<Geolocation>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Geolocation>() {}, callback);
   }
 
@@ -115,7 +116,7 @@ public class GeolocationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Geolocation>> patchUserGeolocationAsync(ApiRequest<Geolocation> request, AsyncApiCallback<ApiResponse<Geolocation>> callback) throws ApiException {
+  public Future<ApiResponse<Geolocation>> patchUserGeolocationAsync(ApiRequest<Geolocation> request, AsyncApiCallback<ApiResponse<Geolocation>> callback) {
     return pcapiClient.<Geolocation>invokeAPIVerboseAsync(request, new TypeReference<Geolocation>() {}, callback);
   }
 

@@ -69,11 +69,11 @@ public class PutIdentityprovidersGsuiteRequest {
         return this;
     }
 
-    public ApiRequest<GSuite> withHttpInfo() throws ApiException {
+    public ApiRequest<GSuite> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutIdentityprovidersGsuiteRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutIdentityprovidersGsuiteRequest.");
         }
         
 

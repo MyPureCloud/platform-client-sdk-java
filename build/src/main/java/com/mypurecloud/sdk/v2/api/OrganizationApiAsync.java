@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOrganizationsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOrganizationsFeatureRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrganizationsMeRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -47,7 +48,7 @@ public class OrganizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<FieldConfig> getFieldconfigAsync(GetFieldconfigRequest request, AsyncApiCallback<FieldConfig> callback) throws ApiException {
+  public Future<FieldConfig> getFieldconfigAsync(GetFieldconfigRequest request, AsyncApiCallback<FieldConfig> callback) {
     return pcapiClient.<FieldConfig>invokeAPIAsync(request.withHttpInfo(), new TypeReference<FieldConfig>() {}, callback);
   }
 
@@ -57,7 +58,7 @@ public class OrganizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<FieldConfig>> getFieldconfigAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FieldConfig>> callback) throws ApiException {
+  public Future<ApiResponse<FieldConfig>> getFieldconfigAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FieldConfig>> callback) {
     return pcapiClient.<FieldConfig>invokeAPIVerboseAsync(request, new TypeReference<FieldConfig>() {}, callback);
   }
 
@@ -67,7 +68,7 @@ public class OrganizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Organization> getOrganizationsMeAsync(GetOrganizationsMeRequest request, AsyncApiCallback<Organization> callback) throws ApiException {
+  public Future<Organization> getOrganizationsMeAsync(GetOrganizationsMeRequest request, AsyncApiCallback<Organization> callback) {
     return pcapiClient.<Organization>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Organization>() {}, callback);
   }
 
@@ -77,7 +78,7 @@ public class OrganizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Organization>> getOrganizationsMeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Organization>> callback) throws ApiException {
+  public Future<ApiResponse<Organization>> getOrganizationsMeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Organization>> callback) {
     return pcapiClient.<Organization>invokeAPIVerboseAsync(request, new TypeReference<Organization>() {}, callback);
   }
 
@@ -87,7 +88,7 @@ public class OrganizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OrganizationFeatures> patchOrganizationsFeatureAsync(PatchOrganizationsFeatureRequest request, AsyncApiCallback<OrganizationFeatures> callback) throws ApiException {
+  public Future<OrganizationFeatures> patchOrganizationsFeatureAsync(PatchOrganizationsFeatureRequest request, AsyncApiCallback<OrganizationFeatures> callback) {
     return pcapiClient.<OrganizationFeatures>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OrganizationFeatures>() {}, callback);
   }
 
@@ -97,7 +98,7 @@ public class OrganizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OrganizationFeatures>> patchOrganizationsFeatureAsync(ApiRequest<FeatureState> request, AsyncApiCallback<ApiResponse<OrganizationFeatures>> callback) throws ApiException {
+  public Future<ApiResponse<OrganizationFeatures>> patchOrganizationsFeatureAsync(ApiRequest<FeatureState> request, AsyncApiCallback<ApiResponse<OrganizationFeatures>> callback) {
     return pcapiClient.<OrganizationFeatures>invokeAPIVerboseAsync(request, new TypeReference<OrganizationFeatures>() {}, callback);
   }
 
@@ -107,7 +108,7 @@ public class OrganizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Organization> putOrganizationsMeAsync(PutOrganizationsMeRequest request, AsyncApiCallback<Organization> callback) throws ApiException {
+  public Future<Organization> putOrganizationsMeAsync(PutOrganizationsMeRequest request, AsyncApiCallback<Organization> callback) {
     return pcapiClient.<Organization>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Organization>() {}, callback);
   }
 
@@ -117,7 +118,7 @@ public class OrganizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Organization>> putOrganizationsMeAsync(ApiRequest<Organization> request, AsyncApiCallback<ApiResponse<Organization>> callback) throws ApiException {
+  public Future<ApiResponse<Organization>> putOrganizationsMeAsync(ApiRequest<Organization> request, AsyncApiCallback<ApiResponse<Organization>> callback) {
     return pcapiClient.<Organization>invokeAPIVerboseAsync(request, new TypeReference<Organization>() {}, callback);
   }
 

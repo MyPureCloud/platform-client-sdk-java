@@ -120,11 +120,11 @@ public class GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'phoneMetabaseId' is set
         if (this.phoneMetabaseId == null) {
-            throw new ApiException(400, "Missing the required parameter 'phoneMetabaseId' when building request for GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest.");
+            throw new IllegalStateException("Missing the required parameter 'phoneMetabaseId' when building request for GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest.");
         }
         
 

@@ -134,16 +134,16 @@ public class PutTelephonyProvidersEdgesOutboundrouteRequest {
         return this;
     }
 
-    public ApiRequest<OutboundRoute> withHttpInfo() throws ApiException {
+    public ApiRequest<OutboundRoute> withHttpInfo() {
         
         // verify the required parameter 'outboundRouteId' is set
         if (this.outboundRouteId == null) {
-            throw new ApiException(400, "Missing the required parameter 'outboundRouteId' when building request for PutTelephonyProvidersEdgesOutboundrouteRequest.");
+            throw new IllegalStateException("Missing the required parameter 'outboundRouteId' when building request for PutTelephonyProvidersEdgesOutboundrouteRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesOutboundrouteRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesOutboundrouteRequest.");
         }
         
 

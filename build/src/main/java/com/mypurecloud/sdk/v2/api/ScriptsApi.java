@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdPageRequest
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdPagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdVariablesRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -50,7 +51,7 @@ public class ScriptsApi {
    * @return Script
    * @throws ApiException if fails to make API call
    */
-  public Script getScript(String scriptId) throws ApiException {
+  public Script getScript(String scriptId) throws IOException, ApiException {
     return getScriptWithHttpInfo(scriptId).getBody();
   }
 
@@ -61,12 +62,12 @@ public class ScriptsApi {
    * @return Script
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Script> getScriptWithHttpInfo(String scriptId) throws ApiException {
+  public ApiResponse<Script> getScriptWithHttpInfo(String scriptId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'scriptId' is set
     if (scriptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'scriptId' when calling getScript");
+      throw new IllegalArgumentException("Missing the required parameter 'scriptId' when calling getScript");
     }
     
     // create path and map variables
@@ -102,7 +103,7 @@ public class ScriptsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Script getScript(GetScriptRequest request) throws ApiException {
+  public Script getScript(GetScriptRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Script>() {});
   }
 
@@ -112,7 +113,7 @@ public class ScriptsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Script> getScript(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Script> getScript(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Script>invokeAPIVerbose(request, new TypeReference<Script>() {});
   }
 
@@ -124,7 +125,7 @@ public class ScriptsApi {
    * @return Page
    * @throws ApiException if fails to make API call
    */
-  public Page getScriptPage(String scriptId, String pageId) throws ApiException {
+  public Page getScriptPage(String scriptId, String pageId) throws IOException, ApiException {
     return getScriptPageWithHttpInfo(scriptId, pageId).getBody();
   }
 
@@ -136,17 +137,17 @@ public class ScriptsApi {
    * @return Page
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Page> getScriptPageWithHttpInfo(String scriptId, String pageId) throws ApiException {
+  public ApiResponse<Page> getScriptPageWithHttpInfo(String scriptId, String pageId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'scriptId' is set
     if (scriptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'scriptId' when calling getScriptPage");
+      throw new IllegalArgumentException("Missing the required parameter 'scriptId' when calling getScriptPage");
     }
     
     // verify the required parameter 'pageId' is set
     if (pageId == null) {
-      throw new ApiException(400, "Missing the required parameter 'pageId' when calling getScriptPage");
+      throw new IllegalArgumentException("Missing the required parameter 'pageId' when calling getScriptPage");
     }
     
     // create path and map variables
@@ -183,7 +184,7 @@ public class ScriptsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Page getScriptPage(GetScriptPageRequest request) throws ApiException {
+  public Page getScriptPage(GetScriptPageRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Page>() {});
   }
 
@@ -193,7 +194,7 @@ public class ScriptsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Page> getScriptPage(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Page> getScriptPage(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Page>invokeAPIVerbose(request, new TypeReference<Page>() {});
   }
 
@@ -204,7 +205,7 @@ public class ScriptsApi {
    * @return List<Page>
    * @throws ApiException if fails to make API call
    */
-  public List<Page> getScriptPages(String scriptId) throws ApiException {
+  public List<Page> getScriptPages(String scriptId) throws IOException, ApiException {
     return getScriptPagesWithHttpInfo(scriptId).getBody();
   }
 
@@ -215,12 +216,12 @@ public class ScriptsApi {
    * @return List<Page>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<Page>> getScriptPagesWithHttpInfo(String scriptId) throws ApiException {
+  public ApiResponse<List<Page>> getScriptPagesWithHttpInfo(String scriptId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'scriptId' is set
     if (scriptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'scriptId' when calling getScriptPages");
+      throw new IllegalArgumentException("Missing the required parameter 'scriptId' when calling getScriptPages");
     }
     
     // create path and map variables
@@ -256,7 +257,7 @@ public class ScriptsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<Page> getScriptPages(GetScriptPagesRequest request) throws ApiException {
+  public List<Page> getScriptPages(GetScriptPagesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<Page>>() {});
   }
 
@@ -266,7 +267,7 @@ public class ScriptsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<Page>> getScriptPages(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<Page>> getScriptPages(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<Page>>invokeAPIVerbose(request, new TypeReference<List<Page>>() {});
   }
 
@@ -284,7 +285,7 @@ public class ScriptsApi {
    * @return ScriptEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ScriptEntityListing getScripts(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder) throws ApiException {
+  public ScriptEntityListing getScripts(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder) throws IOException, ApiException {
     return getScriptsWithHttpInfo(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder).getBody();
   }
 
@@ -302,7 +303,7 @@ public class ScriptsApi {
    * @return ScriptEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ScriptEntityListing> getScriptsWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder) throws ApiException {
+  public ApiResponse<ScriptEntityListing> getScriptsWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -345,7 +346,7 @@ public class ScriptsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ScriptEntityListing getScripts(GetScriptsRequest request) throws ApiException {
+  public ScriptEntityListing getScripts(GetScriptsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ScriptEntityListing>() {});
   }
 
@@ -355,7 +356,7 @@ public class ScriptsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ScriptEntityListing> getScripts(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ScriptEntityListing> getScripts(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ScriptEntityListing>invokeAPIVerbose(request, new TypeReference<ScriptEntityListing>() {});
   }
 
@@ -371,7 +372,7 @@ public class ScriptsApi {
    * @return ScriptEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ScriptEntityListing getScriptsPublished(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId) throws ApiException {
+  public ScriptEntityListing getScriptsPublished(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId) throws IOException, ApiException {
     return getScriptsPublishedWithHttpInfo(pageSize, pageNumber, expand, name, feature, flowId).getBody();
   }
 
@@ -387,7 +388,7 @@ public class ScriptsApi {
    * @return ScriptEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ScriptEntityListing> getScriptsPublishedWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId) throws ApiException {
+  public ApiResponse<ScriptEntityListing> getScriptsPublishedWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -428,7 +429,7 @@ public class ScriptsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ScriptEntityListing getScriptsPublished(GetScriptsPublishedRequest request) throws ApiException {
+  public ScriptEntityListing getScriptsPublished(GetScriptsPublishedRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ScriptEntityListing>() {});
   }
 
@@ -438,7 +439,7 @@ public class ScriptsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ScriptEntityListing> getScriptsPublished(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ScriptEntityListing> getScriptsPublished(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ScriptEntityListing>invokeAPIVerbose(request, new TypeReference<ScriptEntityListing>() {});
   }
 
@@ -449,7 +450,7 @@ public class ScriptsApi {
    * @return Script
    * @throws ApiException if fails to make API call
    */
-  public Script getScriptsPublishedScriptId(String scriptId) throws ApiException {
+  public Script getScriptsPublishedScriptId(String scriptId) throws IOException, ApiException {
     return getScriptsPublishedScriptIdWithHttpInfo(scriptId).getBody();
   }
 
@@ -460,12 +461,12 @@ public class ScriptsApi {
    * @return Script
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Script> getScriptsPublishedScriptIdWithHttpInfo(String scriptId) throws ApiException {
+  public ApiResponse<Script> getScriptsPublishedScriptIdWithHttpInfo(String scriptId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'scriptId' is set
     if (scriptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'scriptId' when calling getScriptsPublishedScriptId");
+      throw new IllegalArgumentException("Missing the required parameter 'scriptId' when calling getScriptsPublishedScriptId");
     }
     
     // create path and map variables
@@ -501,7 +502,7 @@ public class ScriptsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Script getScriptsPublishedScriptId(GetScriptsPublishedScriptIdRequest request) throws ApiException {
+  public Script getScriptsPublishedScriptId(GetScriptsPublishedScriptIdRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Script>() {});
   }
 
@@ -511,7 +512,7 @@ public class ScriptsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Script> getScriptsPublishedScriptId(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Script> getScriptsPublishedScriptId(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Script>invokeAPIVerbose(request, new TypeReference<Script>() {});
   }
 
@@ -523,7 +524,7 @@ public class ScriptsApi {
    * @return Page
    * @throws ApiException if fails to make API call
    */
-  public Page getScriptsPublishedScriptIdPage(String scriptId, String pageId) throws ApiException {
+  public Page getScriptsPublishedScriptIdPage(String scriptId, String pageId) throws IOException, ApiException {
     return getScriptsPublishedScriptIdPageWithHttpInfo(scriptId, pageId).getBody();
   }
 
@@ -535,17 +536,17 @@ public class ScriptsApi {
    * @return Page
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Page> getScriptsPublishedScriptIdPageWithHttpInfo(String scriptId, String pageId) throws ApiException {
+  public ApiResponse<Page> getScriptsPublishedScriptIdPageWithHttpInfo(String scriptId, String pageId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'scriptId' is set
     if (scriptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'scriptId' when calling getScriptsPublishedScriptIdPage");
+      throw new IllegalArgumentException("Missing the required parameter 'scriptId' when calling getScriptsPublishedScriptIdPage");
     }
     
     // verify the required parameter 'pageId' is set
     if (pageId == null) {
-      throw new ApiException(400, "Missing the required parameter 'pageId' when calling getScriptsPublishedScriptIdPage");
+      throw new IllegalArgumentException("Missing the required parameter 'pageId' when calling getScriptsPublishedScriptIdPage");
     }
     
     // create path and map variables
@@ -582,7 +583,7 @@ public class ScriptsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Page getScriptsPublishedScriptIdPage(GetScriptsPublishedScriptIdPageRequest request) throws ApiException {
+  public Page getScriptsPublishedScriptIdPage(GetScriptsPublishedScriptIdPageRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Page>() {});
   }
 
@@ -592,7 +593,7 @@ public class ScriptsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Page> getScriptsPublishedScriptIdPage(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Page> getScriptsPublishedScriptIdPage(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Page>invokeAPIVerbose(request, new TypeReference<Page>() {});
   }
 
@@ -603,7 +604,7 @@ public class ScriptsApi {
    * @return List<Page>
    * @throws ApiException if fails to make API call
    */
-  public List<Page> getScriptsPublishedScriptIdPages(String scriptId) throws ApiException {
+  public List<Page> getScriptsPublishedScriptIdPages(String scriptId) throws IOException, ApiException {
     return getScriptsPublishedScriptIdPagesWithHttpInfo(scriptId).getBody();
   }
 
@@ -614,12 +615,12 @@ public class ScriptsApi {
    * @return List<Page>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<Page>> getScriptsPublishedScriptIdPagesWithHttpInfo(String scriptId) throws ApiException {
+  public ApiResponse<List<Page>> getScriptsPublishedScriptIdPagesWithHttpInfo(String scriptId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'scriptId' is set
     if (scriptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'scriptId' when calling getScriptsPublishedScriptIdPages");
+      throw new IllegalArgumentException("Missing the required parameter 'scriptId' when calling getScriptsPublishedScriptIdPages");
     }
     
     // create path and map variables
@@ -655,7 +656,7 @@ public class ScriptsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<Page> getScriptsPublishedScriptIdPages(GetScriptsPublishedScriptIdPagesRequest request) throws ApiException {
+  public List<Page> getScriptsPublishedScriptIdPages(GetScriptsPublishedScriptIdPagesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<Page>>() {});
   }
 
@@ -665,7 +666,7 @@ public class ScriptsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<Page>> getScriptsPublishedScriptIdPages(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<Page>> getScriptsPublishedScriptIdPages(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<Page>>invokeAPIVerbose(request, new TypeReference<List<Page>>() {});
   }
 
@@ -679,7 +680,7 @@ public class ScriptsApi {
    * @return Object
    * @throws ApiException if fails to make API call
    */
-  public Object getScriptsPublishedScriptIdVariables(String scriptId, String input, String output, String type) throws ApiException {
+  public Object getScriptsPublishedScriptIdVariables(String scriptId, String input, String output, String type) throws IOException, ApiException {
     return getScriptsPublishedScriptIdVariablesWithHttpInfo(scriptId, input, output, type).getBody();
   }
 
@@ -693,12 +694,12 @@ public class ScriptsApi {
    * @return Object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Object> getScriptsPublishedScriptIdVariablesWithHttpInfo(String scriptId, String input, String output, String type) throws ApiException {
+  public ApiResponse<Object> getScriptsPublishedScriptIdVariablesWithHttpInfo(String scriptId, String input, String output, String type) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'scriptId' is set
     if (scriptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'scriptId' when calling getScriptsPublishedScriptIdVariables");
+      throw new IllegalArgumentException("Missing the required parameter 'scriptId' when calling getScriptsPublishedScriptIdVariables");
     }
     
     // create path and map variables
@@ -737,7 +738,7 @@ public class ScriptsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Object getScriptsPublishedScriptIdVariables(GetScriptsPublishedScriptIdVariablesRequest request) throws ApiException {
+  public Object getScriptsPublishedScriptIdVariables(GetScriptsPublishedScriptIdVariablesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Object>() {});
   }
 
@@ -747,7 +748,7 @@ public class ScriptsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Object> getScriptsPublishedScriptIdVariables(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Object> getScriptsPublishedScriptIdVariables(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Object>invokeAPIVerbose(request, new TypeReference<Object>() {});
   }
 

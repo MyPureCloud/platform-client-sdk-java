@@ -88,11 +88,11 @@ public class PostQualityCalibrationsRequest {
         return this;
     }
 
-    public ApiRequest<CalibrationCreate> withHttpInfo() throws ApiException {
+    public ApiRequest<CalibrationCreate> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostQualityCalibrationsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostQualityCalibrationsRequest.");
         }
         
 

@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOrganizationsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOrganizationsFeatureRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrganizationsMeRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -46,7 +47,7 @@ public class OrganizationApi {
    * @return FieldConfig
    * @throws ApiException if fails to make API call
    */
-  public FieldConfig getFieldconfig(String type) throws ApiException {
+  public FieldConfig getFieldconfig(String type) throws IOException, ApiException {
     return getFieldconfigWithHttpInfo(type).getBody();
   }
 
@@ -57,12 +58,12 @@ public class OrganizationApi {
    * @return FieldConfig
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<FieldConfig> getFieldconfigWithHttpInfo(String type) throws ApiException {
+  public ApiResponse<FieldConfig> getFieldconfigWithHttpInfo(String type) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'type' is set
     if (type == null) {
-      throw new ApiException(400, "Missing the required parameter 'type' when calling getFieldconfig");
+      throw new IllegalArgumentException("Missing the required parameter 'type' when calling getFieldconfig");
     }
     
     // create path and map variables
@@ -98,7 +99,7 @@ public class OrganizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public FieldConfig getFieldconfig(GetFieldconfigRequest request) throws ApiException {
+  public FieldConfig getFieldconfig(GetFieldconfigRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FieldConfig>() {});
   }
 
@@ -108,7 +109,7 @@ public class OrganizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<FieldConfig> getFieldconfig(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<FieldConfig> getFieldconfig(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<FieldConfig>invokeAPIVerbose(request, new TypeReference<FieldConfig>() {});
   }
 
@@ -118,7 +119,7 @@ public class OrganizationApi {
    * @return Organization
    * @throws ApiException if fails to make API call
    */
-  public Organization getOrganizationsMe() throws ApiException {
+  public Organization getOrganizationsMe() throws IOException, ApiException {
     return getOrganizationsMeWithHttpInfo().getBody();
   }
 
@@ -128,7 +129,7 @@ public class OrganizationApi {
    * @return Organization
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Organization> getOrganizationsMeWithHttpInfo() throws ApiException {
+  public ApiResponse<Organization> getOrganizationsMeWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -163,7 +164,7 @@ public class OrganizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Organization getOrganizationsMe(GetOrganizationsMeRequest request) throws ApiException {
+  public Organization getOrganizationsMe(GetOrganizationsMeRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Organization>() {});
   }
 
@@ -173,7 +174,7 @@ public class OrganizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Organization> getOrganizationsMe(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Organization> getOrganizationsMe(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Organization>invokeAPIVerbose(request, new TypeReference<Organization>() {});
   }
 
@@ -185,7 +186,7 @@ public class OrganizationApi {
    * @return OrganizationFeatures
    * @throws ApiException if fails to make API call
    */
-  public OrganizationFeatures patchOrganizationsFeature(String featureName, FeatureState enabled) throws ApiException {
+  public OrganizationFeatures patchOrganizationsFeature(String featureName, FeatureState enabled) throws IOException, ApiException {
     return patchOrganizationsFeatureWithHttpInfo(featureName, enabled).getBody();
   }
 
@@ -197,17 +198,17 @@ public class OrganizationApi {
    * @return OrganizationFeatures
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrganizationFeatures> patchOrganizationsFeatureWithHttpInfo(String featureName, FeatureState enabled) throws ApiException {
+  public ApiResponse<OrganizationFeatures> patchOrganizationsFeatureWithHttpInfo(String featureName, FeatureState enabled) throws IOException, ApiException {
     Object pclocalVarPostBody = enabled;
     
     // verify the required parameter 'featureName' is set
     if (featureName == null) {
-      throw new ApiException(400, "Missing the required parameter 'featureName' when calling patchOrganizationsFeature");
+      throw new IllegalArgumentException("Missing the required parameter 'featureName' when calling patchOrganizationsFeature");
     }
     
     // verify the required parameter 'enabled' is set
     if (enabled == null) {
-      throw new ApiException(400, "Missing the required parameter 'enabled' when calling patchOrganizationsFeature");
+      throw new IllegalArgumentException("Missing the required parameter 'enabled' when calling patchOrganizationsFeature");
     }
     
     // create path and map variables
@@ -243,7 +244,7 @@ public class OrganizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OrganizationFeatures patchOrganizationsFeature(PatchOrganizationsFeatureRequest request) throws ApiException {
+  public OrganizationFeatures patchOrganizationsFeature(PatchOrganizationsFeatureRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrganizationFeatures>() {});
   }
 
@@ -253,7 +254,7 @@ public class OrganizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrganizationFeatures> patchOrganizationsFeature(ApiRequest<FeatureState> request) throws ApiException {
+  public ApiResponse<OrganizationFeatures> patchOrganizationsFeature(ApiRequest<FeatureState> request) throws IOException, ApiException {
     return pcapiClient.<OrganizationFeatures>invokeAPIVerbose(request, new TypeReference<OrganizationFeatures>() {});
   }
 
@@ -264,7 +265,7 @@ public class OrganizationApi {
    * @return Organization
    * @throws ApiException if fails to make API call
    */
-  public Organization putOrganizationsMe(Organization body) throws ApiException {
+  public Organization putOrganizationsMe(Organization body) throws IOException, ApiException {
     return putOrganizationsMeWithHttpInfo(body).getBody();
   }
 
@@ -275,7 +276,7 @@ public class OrganizationApi {
    * @return Organization
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Organization> putOrganizationsMeWithHttpInfo(Organization body) throws ApiException {
+  public ApiResponse<Organization> putOrganizationsMeWithHttpInfo(Organization body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // create path and map variables
@@ -310,7 +311,7 @@ public class OrganizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Organization putOrganizationsMe(PutOrganizationsMeRequest request) throws ApiException {
+  public Organization putOrganizationsMe(PutOrganizationsMeRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Organization>() {});
   }
 
@@ -320,7 +321,7 @@ public class OrganizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Organization> putOrganizationsMe(ApiRequest<Organization> request) throws ApiException {
+  public ApiResponse<Organization> putOrganizationsMe(ApiRequest<Organization> request) throws IOException, ApiException {
     return pcapiClient.<Organization>invokeAPIVerbose(request, new TypeReference<Organization>() {});
   }
 

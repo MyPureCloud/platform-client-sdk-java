@@ -65,11 +65,11 @@ public class DeleteAuthorizationRoleRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'roleId' is set
         if (this.roleId == null) {
-            throw new ApiException(400, "Missing the required parameter 'roleId' when building request for DeleteAuthorizationRoleRequest.");
+            throw new IllegalStateException("Missing the required parameter 'roleId' when building request for DeleteAuthorizationRoleRequest.");
         }
         
 

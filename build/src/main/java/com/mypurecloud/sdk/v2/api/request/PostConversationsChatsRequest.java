@@ -96,11 +96,11 @@ public class PostConversationsChatsRequest {
         return this;
     }
 
-    public ApiRequest<CreateWebChatRequest> withHttpInfo() throws ApiException {
+    public ApiRequest<CreateWebChatRequest> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostConversationsChatsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostConversationsChatsRequest.");
         }
         
 

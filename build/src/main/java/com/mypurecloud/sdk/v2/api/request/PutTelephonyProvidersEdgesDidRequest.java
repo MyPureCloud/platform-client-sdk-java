@@ -134,16 +134,16 @@ public class PutTelephonyProvidersEdgesDidRequest {
         return this;
     }
 
-    public ApiRequest<DID> withHttpInfo() throws ApiException {
+    public ApiRequest<DID> withHttpInfo() {
         
         // verify the required parameter 'didId' is set
         if (this.didId == null) {
-            throw new ApiException(400, "Missing the required parameter 'didId' when building request for PutTelephonyProvidersEdgesDidRequest.");
+            throw new IllegalStateException("Missing the required parameter 'didId' when building request for PutTelephonyProvidersEdgesDidRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesDidRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesDidRequest.");
         }
         
 

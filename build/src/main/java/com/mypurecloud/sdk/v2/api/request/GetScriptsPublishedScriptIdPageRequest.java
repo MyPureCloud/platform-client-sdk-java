@@ -74,16 +74,16 @@ public class GetScriptsPublishedScriptIdPageRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'scriptId' is set
         if (this.scriptId == null) {
-            throw new ApiException(400, "Missing the required parameter 'scriptId' when building request for GetScriptsPublishedScriptIdPageRequest.");
+            throw new IllegalStateException("Missing the required parameter 'scriptId' when building request for GetScriptsPublishedScriptIdPageRequest.");
         }
         
         // verify the required parameter 'pageId' is set
         if (this.pageId == null) {
-            throw new ApiException(400, "Missing the required parameter 'pageId' when building request for GetScriptsPublishedScriptIdPageRequest.");
+            throw new IllegalStateException("Missing the required parameter 'pageId' when building request for GetScriptsPublishedScriptIdPageRequest.");
         }
         
 

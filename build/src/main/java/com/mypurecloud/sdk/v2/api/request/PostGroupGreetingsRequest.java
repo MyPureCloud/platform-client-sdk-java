@@ -76,16 +76,16 @@ public class PostGroupGreetingsRequest {
         return this;
     }
 
-    public ApiRequest<Greeting> withHttpInfo() throws ApiException {
+    public ApiRequest<Greeting> withHttpInfo() {
         
         // verify the required parameter 'groupId' is set
         if (this.groupId == null) {
-            throw new ApiException(400, "Missing the required parameter 'groupId' when building request for PostGroupGreetingsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'groupId' when building request for PostGroupGreetingsRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostGroupGreetingsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostGroupGreetingsRequest.");
         }
         
 

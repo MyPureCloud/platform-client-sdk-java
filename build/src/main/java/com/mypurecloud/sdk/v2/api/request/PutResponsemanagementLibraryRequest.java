@@ -77,16 +77,16 @@ public class PutResponsemanagementLibraryRequest {
         return this;
     }
 
-    public ApiRequest<Library> withHttpInfo() throws ApiException {
+    public ApiRequest<Library> withHttpInfo() {
         
         // verify the required parameter 'libraryId' is set
         if (this.libraryId == null) {
-            throw new ApiException(400, "Missing the required parameter 'libraryId' when building request for PutResponsemanagementLibraryRequest.");
+            throw new IllegalStateException("Missing the required parameter 'libraryId' when building request for PutResponsemanagementLibraryRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutResponsemanagementLibraryRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutResponsemanagementLibraryRequest.");
         }
         
 

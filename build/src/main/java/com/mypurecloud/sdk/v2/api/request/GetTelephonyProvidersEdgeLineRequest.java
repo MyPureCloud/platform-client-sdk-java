@@ -134,16 +134,16 @@ public class GetTelephonyProvidersEdgeLineRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'edgeId' is set
         if (this.edgeId == null) {
-            throw new ApiException(400, "Missing the required parameter 'edgeId' when building request for GetTelephonyProvidersEdgeLineRequest.");
+            throw new IllegalStateException("Missing the required parameter 'edgeId' when building request for GetTelephonyProvidersEdgeLineRequest.");
         }
         
         // verify the required parameter 'lineId' is set
         if (this.lineId == null) {
-            throw new ApiException(400, "Missing the required parameter 'lineId' when building request for GetTelephonyProvidersEdgeLineRequest.");
+            throw new IllegalStateException("Missing the required parameter 'lineId' when building request for GetTelephonyProvidersEdgeLineRequest.");
         }
         
 

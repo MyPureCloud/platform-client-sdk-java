@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSearchSuggestRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostVoicemailSearchRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -66,7 +67,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DocumentationSearchResponse> getDocumentationSearchAsync(GetDocumentationSearchRequest request, AsyncApiCallback<DocumentationSearchResponse> callback) throws ApiException {
+  public Future<DocumentationSearchResponse> getDocumentationSearchAsync(GetDocumentationSearchRequest request, AsyncApiCallback<DocumentationSearchResponse> callback) {
     return pcapiClient.<DocumentationSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DocumentationSearchResponse>() {}, callback);
   }
 
@@ -76,7 +77,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DocumentationSearchResponse>> getDocumentationSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DocumentationSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<DocumentationSearchResponse>> getDocumentationSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DocumentationSearchResponse>> callback) {
     return pcapiClient.<DocumentationSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<DocumentationSearchResponse>() {}, callback);
   }
 
@@ -86,7 +87,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<GroupsSearchResponse> getGroupsSearchAsync(GetGroupsSearchRequest request, AsyncApiCallback<GroupsSearchResponse> callback) throws ApiException {
+  public Future<GroupsSearchResponse> getGroupsSearchAsync(GetGroupsSearchRequest request, AsyncApiCallback<GroupsSearchResponse> callback) {
     return pcapiClient.<GroupsSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<GroupsSearchResponse>() {}, callback);
   }
 
@@ -96,7 +97,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<GroupsSearchResponse>> getGroupsSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GroupsSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<GroupsSearchResponse>> getGroupsSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GroupsSearchResponse>> callback) {
     return pcapiClient.<GroupsSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<GroupsSearchResponse>() {}, callback);
   }
 
@@ -106,7 +107,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<LocationsSearchResponse> getLocationsSearchAsync(GetLocationsSearchRequest request, AsyncApiCallback<LocationsSearchResponse> callback) throws ApiException {
+  public Future<LocationsSearchResponse> getLocationsSearchAsync(GetLocationsSearchRequest request, AsyncApiCallback<LocationsSearchResponse> callback) {
     return pcapiClient.<LocationsSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LocationsSearchResponse>() {}, callback);
   }
 
@@ -116,7 +117,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<LocationsSearchResponse>> getLocationsSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LocationsSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<LocationsSearchResponse>> getLocationsSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LocationsSearchResponse>> callback) {
     return pcapiClient.<LocationsSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<LocationsSearchResponse>() {}, callback);
   }
 
@@ -126,7 +127,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<JsonNodeSearchResponse> getSearchAsync(GetSearchRequest request, AsyncApiCallback<JsonNodeSearchResponse> callback) throws ApiException {
+  public Future<JsonNodeSearchResponse> getSearchAsync(GetSearchRequest request, AsyncApiCallback<JsonNodeSearchResponse> callback) {
     return pcapiClient.<JsonNodeSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {}, callback);
   }
 
@@ -136,7 +137,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<JsonNodeSearchResponse>> getSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<JsonNodeSearchResponse>> getSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>> callback) {
     return pcapiClient.<JsonNodeSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<JsonNodeSearchResponse>() {}, callback);
   }
 
@@ -146,7 +147,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<JsonNodeSearchResponse> getSearchSuggestAsync(GetSearchSuggestRequest request, AsyncApiCallback<JsonNodeSearchResponse> callback) throws ApiException {
+  public Future<JsonNodeSearchResponse> getSearchSuggestAsync(GetSearchSuggestRequest request, AsyncApiCallback<JsonNodeSearchResponse> callback) {
     return pcapiClient.<JsonNodeSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {}, callback);
   }
 
@@ -156,7 +157,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<JsonNodeSearchResponse>> getSearchSuggestAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<JsonNodeSearchResponse>> getSearchSuggestAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>> callback) {
     return pcapiClient.<JsonNodeSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<JsonNodeSearchResponse>() {}, callback);
   }
 
@@ -166,7 +167,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UsersSearchResponse> getUsersSearchAsync(GetUsersSearchRequest request, AsyncApiCallback<UsersSearchResponse> callback) throws ApiException {
+  public Future<UsersSearchResponse> getUsersSearchAsync(GetUsersSearchRequest request, AsyncApiCallback<UsersSearchResponse> callback) {
     return pcapiClient.<UsersSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UsersSearchResponse>() {}, callback);
   }
 
@@ -176,7 +177,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UsersSearchResponse>> getUsersSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UsersSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<UsersSearchResponse>> getUsersSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UsersSearchResponse>> callback) {
     return pcapiClient.<UsersSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<UsersSearchResponse>() {}, callback);
   }
 
@@ -186,7 +187,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailsSearchResponse> getVoicemailSearchAsync(GetVoicemailSearchRequest request, AsyncApiCallback<VoicemailsSearchResponse> callback) throws ApiException {
+  public Future<VoicemailsSearchResponse> getVoicemailSearchAsync(GetVoicemailSearchRequest request, AsyncApiCallback<VoicemailsSearchResponse> callback) {
     return pcapiClient.<VoicemailsSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailsSearchResponse>() {}, callback);
   }
 
@@ -196,7 +197,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailsSearchResponse>> getVoicemailSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailsSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailsSearchResponse>> getVoicemailSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailsSearchResponse>> callback) {
     return pcapiClient.<VoicemailsSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<VoicemailsSearchResponse>() {}, callback);
   }
 
@@ -206,7 +207,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DocumentationSearchResponse> postDocumentationSearchAsync(PostDocumentationSearchRequest request, AsyncApiCallback<DocumentationSearchResponse> callback) throws ApiException {
+  public Future<DocumentationSearchResponse> postDocumentationSearchAsync(PostDocumentationSearchRequest request, AsyncApiCallback<DocumentationSearchResponse> callback) {
     return pcapiClient.<DocumentationSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DocumentationSearchResponse>() {}, callback);
   }
 
@@ -216,7 +217,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DocumentationSearchResponse>> postDocumentationSearchAsync(ApiRequest<DocumentationSearchRequest> request, AsyncApiCallback<ApiResponse<DocumentationSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<DocumentationSearchResponse>> postDocumentationSearchAsync(ApiRequest<DocumentationSearchRequest> request, AsyncApiCallback<ApiResponse<DocumentationSearchResponse>> callback) {
     return pcapiClient.<DocumentationSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<DocumentationSearchResponse>() {}, callback);
   }
 
@@ -226,7 +227,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<GroupsSearchResponse> postGroupsSearchAsync(PostGroupsSearchRequest request, AsyncApiCallback<GroupsSearchResponse> callback) throws ApiException {
+  public Future<GroupsSearchResponse> postGroupsSearchAsync(PostGroupsSearchRequest request, AsyncApiCallback<GroupsSearchResponse> callback) {
     return pcapiClient.<GroupsSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<GroupsSearchResponse>() {}, callback);
   }
 
@@ -236,7 +237,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<GroupsSearchResponse>> postGroupsSearchAsync(ApiRequest<GroupSearchRequest> request, AsyncApiCallback<ApiResponse<GroupsSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<GroupsSearchResponse>> postGroupsSearchAsync(ApiRequest<GroupSearchRequest> request, AsyncApiCallback<ApiResponse<GroupsSearchResponse>> callback) {
     return pcapiClient.<GroupsSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<GroupsSearchResponse>() {}, callback);
   }
 
@@ -246,7 +247,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<LocationsSearchResponse> postLocationsSearchAsync(PostLocationsSearchRequest request, AsyncApiCallback<LocationsSearchResponse> callback) throws ApiException {
+  public Future<LocationsSearchResponse> postLocationsSearchAsync(PostLocationsSearchRequest request, AsyncApiCallback<LocationsSearchResponse> callback) {
     return pcapiClient.<LocationsSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LocationsSearchResponse>() {}, callback);
   }
 
@@ -256,7 +257,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<LocationsSearchResponse>> postLocationsSearchAsync(ApiRequest<LocationSearchRequest> request, AsyncApiCallback<ApiResponse<LocationsSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<LocationsSearchResponse>> postLocationsSearchAsync(ApiRequest<LocationSearchRequest> request, AsyncApiCallback<ApiResponse<LocationsSearchResponse>> callback) {
     return pcapiClient.<LocationsSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<LocationsSearchResponse>() {}, callback);
   }
 
@@ -266,7 +267,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<JsonNodeSearchResponse> postSearchAsync(PostSearchRequest request, AsyncApiCallback<JsonNodeSearchResponse> callback) throws ApiException {
+  public Future<JsonNodeSearchResponse> postSearchAsync(PostSearchRequest request, AsyncApiCallback<JsonNodeSearchResponse> callback) {
     return pcapiClient.<JsonNodeSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {}, callback);
   }
 
@@ -276,7 +277,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<JsonNodeSearchResponse>> postSearchAsync(ApiRequest<SearchRequest> request, AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<JsonNodeSearchResponse>> postSearchAsync(ApiRequest<SearchRequest> request, AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>> callback) {
     return pcapiClient.<JsonNodeSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<JsonNodeSearchResponse>() {}, callback);
   }
 
@@ -286,7 +287,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<JsonNodeSearchResponse> postSearchSuggestAsync(PostSearchSuggestRequest request, AsyncApiCallback<JsonNodeSearchResponse> callback) throws ApiException {
+  public Future<JsonNodeSearchResponse> postSearchSuggestAsync(PostSearchSuggestRequest request, AsyncApiCallback<JsonNodeSearchResponse> callback) {
     return pcapiClient.<JsonNodeSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {}, callback);
   }
 
@@ -296,7 +297,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<JsonNodeSearchResponse>> postSearchSuggestAsync(ApiRequest<SuggestSearchRequest> request, AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<JsonNodeSearchResponse>> postSearchSuggestAsync(ApiRequest<SuggestSearchRequest> request, AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>> callback) {
     return pcapiClient.<JsonNodeSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<JsonNodeSearchResponse>() {}, callback);
   }
 
@@ -306,7 +307,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UsersSearchResponse> postUsersSearchAsync(PostUsersSearchRequest request, AsyncApiCallback<UsersSearchResponse> callback) throws ApiException {
+  public Future<UsersSearchResponse> postUsersSearchAsync(PostUsersSearchRequest request, AsyncApiCallback<UsersSearchResponse> callback) {
     return pcapiClient.<UsersSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UsersSearchResponse>() {}, callback);
   }
 
@@ -316,7 +317,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UsersSearchResponse>> postUsersSearchAsync(ApiRequest<UserSearchRequest> request, AsyncApiCallback<ApiResponse<UsersSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<UsersSearchResponse>> postUsersSearchAsync(ApiRequest<UserSearchRequest> request, AsyncApiCallback<ApiResponse<UsersSearchResponse>> callback) {
     return pcapiClient.<UsersSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<UsersSearchResponse>() {}, callback);
   }
 
@@ -326,7 +327,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<VoicemailsSearchResponse> postVoicemailSearchAsync(PostVoicemailSearchRequest request, AsyncApiCallback<VoicemailsSearchResponse> callback) throws ApiException {
+  public Future<VoicemailsSearchResponse> postVoicemailSearchAsync(PostVoicemailSearchRequest request, AsyncApiCallback<VoicemailsSearchResponse> callback) {
     return pcapiClient.<VoicemailsSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailsSearchResponse>() {}, callback);
   }
 
@@ -336,7 +337,7 @@ public class SearchApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<VoicemailsSearchResponse>> postVoicemailSearchAsync(ApiRequest<VoicemailSearchRequest> request, AsyncApiCallback<ApiResponse<VoicemailsSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<VoicemailsSearchResponse>> postVoicemailSearchAsync(ApiRequest<VoicemailSearchRequest> request, AsyncApiCallback<ApiResponse<VoicemailsSearchResponse>> callback) {
     return pcapiClient.<VoicemailsSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<VoicemailsSearchResponse>() {}, callback);
   }
 

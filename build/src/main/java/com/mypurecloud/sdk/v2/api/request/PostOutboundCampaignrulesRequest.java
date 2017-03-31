@@ -91,11 +91,11 @@ public class PostOutboundCampaignrulesRequest {
         return this;
     }
 
-    public ApiRequest<CampaignRule> withHttpInfo() throws ApiException {
+    public ApiRequest<CampaignRule> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostOutboundCampaignrulesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostOutboundCampaignrulesRequest.");
         }
         
 

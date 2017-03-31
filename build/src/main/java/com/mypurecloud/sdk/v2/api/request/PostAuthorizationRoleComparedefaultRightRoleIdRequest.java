@@ -93,21 +93,21 @@ public class PostAuthorizationRoleComparedefaultRightRoleIdRequest {
         return this;
     }
 
-    public ApiRequest<DomainOrganizationRole> withHttpInfo() throws ApiException {
+    public ApiRequest<DomainOrganizationRole> withHttpInfo() {
         
         // verify the required parameter 'leftRoleId' is set
         if (this.leftRoleId == null) {
-            throw new ApiException(400, "Missing the required parameter 'leftRoleId' when building request for PostAuthorizationRoleComparedefaultRightRoleIdRequest.");
+            throw new IllegalStateException("Missing the required parameter 'leftRoleId' when building request for PostAuthorizationRoleComparedefaultRightRoleIdRequest.");
         }
         
         // verify the required parameter 'rightRoleId' is set
         if (this.rightRoleId == null) {
-            throw new ApiException(400, "Missing the required parameter 'rightRoleId' when building request for PostAuthorizationRoleComparedefaultRightRoleIdRequest.");
+            throw new IllegalStateException("Missing the required parameter 'rightRoleId' when building request for PostAuthorizationRoleComparedefaultRightRoleIdRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostAuthorizationRoleComparedefaultRightRoleIdRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostAuthorizationRoleComparedefaultRightRoleIdRequest.");
         }
         
 

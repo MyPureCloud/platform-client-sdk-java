@@ -35,6 +35,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementTimeoffrequest
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitSchedulesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSchedulesRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -59,7 +60,7 @@ public class WorkforceManagementApi {
    * @return List<UserScheduleAdherence>
    * @throws ApiException if fails to make API call
    */
-  public List<UserScheduleAdherence> getWorkforcemanagementAdherence(List<String> userId) throws ApiException {
+  public List<UserScheduleAdherence> getWorkforcemanagementAdherence(List<String> userId) throws IOException, ApiException {
     return getWorkforcemanagementAdherenceWithHttpInfo(userId).getBody();
   }
 
@@ -70,12 +71,12 @@ public class WorkforceManagementApi {
    * @return List<UserScheduleAdherence>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<UserScheduleAdherence>> getWorkforcemanagementAdherenceWithHttpInfo(List<String> userId) throws ApiException {
+  public ApiResponse<List<UserScheduleAdherence>> getWorkforcemanagementAdherenceWithHttpInfo(List<String> userId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getWorkforcemanagementAdherence");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getWorkforcemanagementAdherence");
     }
     
     // create path and map variables
@@ -111,7 +112,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<UserScheduleAdherence> getWorkforcemanagementAdherence(GetWorkforcemanagementAdherenceRequest request) throws ApiException {
+  public List<UserScheduleAdherence> getWorkforcemanagementAdherence(GetWorkforcemanagementAdherenceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<UserScheduleAdherence>>() {});
   }
 
@@ -121,7 +122,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<UserScheduleAdherence>> getWorkforcemanagementAdherence(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<UserScheduleAdherence>> getWorkforcemanagementAdherence(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<UserScheduleAdherence>>invokeAPIVerbose(request, new TypeReference<List<UserScheduleAdherence>>() {});
   }
 
@@ -132,7 +133,7 @@ public class WorkforceManagementApi {
    * @return ActivityCodeContainer
    * @throws ApiException if fails to make API call
    */
-  public ActivityCodeContainer getWorkforcemanagementManagementunitActivitycodes(String muId) throws ApiException {
+  public ActivityCodeContainer getWorkforcemanagementManagementunitActivitycodes(String muId) throws IOException, ApiException {
     return getWorkforcemanagementManagementunitActivitycodesWithHttpInfo(muId).getBody();
   }
 
@@ -143,12 +144,12 @@ public class WorkforceManagementApi {
    * @return ActivityCodeContainer
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ActivityCodeContainer> getWorkforcemanagementManagementunitActivitycodesWithHttpInfo(String muId) throws ApiException {
+  public ApiResponse<ActivityCodeContainer> getWorkforcemanagementManagementunitActivitycodesWithHttpInfo(String muId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'muId' is set
     if (muId == null) {
-      throw new ApiException(400, "Missing the required parameter 'muId' when calling getWorkforcemanagementManagementunitActivitycodes");
+      throw new IllegalArgumentException("Missing the required parameter 'muId' when calling getWorkforcemanagementManagementunitActivitycodes");
     }
     
     // create path and map variables
@@ -184,7 +185,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ActivityCodeContainer getWorkforcemanagementManagementunitActivitycodes(GetWorkforcemanagementManagementunitActivitycodesRequest request) throws ApiException {
+  public ActivityCodeContainer getWorkforcemanagementManagementunitActivitycodes(GetWorkforcemanagementManagementunitActivitycodesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ActivityCodeContainer>() {});
   }
 
@@ -194,7 +195,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ActivityCodeContainer> getWorkforcemanagementManagementunitActivitycodes(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ActivityCodeContainer> getWorkforcemanagementManagementunitActivitycodes(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ActivityCodeContainer>invokeAPIVerbose(request, new TypeReference<ActivityCodeContainer>() {});
   }
 
@@ -207,7 +208,7 @@ public class WorkforceManagementApi {
    * @return TimeOffRequest
    * @throws ApiException if fails to make API call
    */
-  public TimeOffRequest getWorkforcemanagementManagementunitUserTimeoffrequest(String muId, String userId, String timeOffRequestId) throws ApiException {
+  public TimeOffRequest getWorkforcemanagementManagementunitUserTimeoffrequest(String muId, String userId, String timeOffRequestId) throws IOException, ApiException {
     return getWorkforcemanagementManagementunitUserTimeoffrequestWithHttpInfo(muId, userId, timeOffRequestId).getBody();
   }
 
@@ -220,22 +221,22 @@ public class WorkforceManagementApi {
    * @return TimeOffRequest
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TimeOffRequest> getWorkforcemanagementManagementunitUserTimeoffrequestWithHttpInfo(String muId, String userId, String timeOffRequestId) throws ApiException {
+  public ApiResponse<TimeOffRequest> getWorkforcemanagementManagementunitUserTimeoffrequestWithHttpInfo(String muId, String userId, String timeOffRequestId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'muId' is set
     if (muId == null) {
-      throw new ApiException(400, "Missing the required parameter 'muId' when calling getWorkforcemanagementManagementunitUserTimeoffrequest");
+      throw new IllegalArgumentException("Missing the required parameter 'muId' when calling getWorkforcemanagementManagementunitUserTimeoffrequest");
     }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getWorkforcemanagementManagementunitUserTimeoffrequest");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getWorkforcemanagementManagementunitUserTimeoffrequest");
     }
     
     // verify the required parameter 'timeOffRequestId' is set
     if (timeOffRequestId == null) {
-      throw new ApiException(400, "Missing the required parameter 'timeOffRequestId' when calling getWorkforcemanagementManagementunitUserTimeoffrequest");
+      throw new IllegalArgumentException("Missing the required parameter 'timeOffRequestId' when calling getWorkforcemanagementManagementunitUserTimeoffrequest");
     }
     
     // create path and map variables
@@ -273,7 +274,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public TimeOffRequest getWorkforcemanagementManagementunitUserTimeoffrequest(GetWorkforcemanagementManagementunitUserTimeoffrequestRequest request) throws ApiException {
+  public TimeOffRequest getWorkforcemanagementManagementunitUserTimeoffrequest(GetWorkforcemanagementManagementunitUserTimeoffrequestRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TimeOffRequest>() {});
   }
 
@@ -283,7 +284,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TimeOffRequest> getWorkforcemanagementManagementunitUserTimeoffrequest(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<TimeOffRequest> getWorkforcemanagementManagementunitUserTimeoffrequest(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<TimeOffRequest>invokeAPIVerbose(request, new TypeReference<TimeOffRequest>() {});
   }
 
@@ -296,7 +297,7 @@ public class WorkforceManagementApi {
    * @return TimeOffRequestList
    * @throws ApiException if fails to make API call
    */
-  public TimeOffRequestList getWorkforcemanagementManagementunitUserTimeoffrequests(String muId, String userId, Boolean recentlyReviewed) throws ApiException {
+  public TimeOffRequestList getWorkforcemanagementManagementunitUserTimeoffrequests(String muId, String userId, Boolean recentlyReviewed) throws IOException, ApiException {
     return getWorkforcemanagementManagementunitUserTimeoffrequestsWithHttpInfo(muId, userId, recentlyReviewed).getBody();
   }
 
@@ -309,17 +310,17 @@ public class WorkforceManagementApi {
    * @return TimeOffRequestList
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TimeOffRequestList> getWorkforcemanagementManagementunitUserTimeoffrequestsWithHttpInfo(String muId, String userId, Boolean recentlyReviewed) throws ApiException {
+  public ApiResponse<TimeOffRequestList> getWorkforcemanagementManagementunitUserTimeoffrequestsWithHttpInfo(String muId, String userId, Boolean recentlyReviewed) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'muId' is set
     if (muId == null) {
-      throw new ApiException(400, "Missing the required parameter 'muId' when calling getWorkforcemanagementManagementunitUserTimeoffrequests");
+      throw new IllegalArgumentException("Missing the required parameter 'muId' when calling getWorkforcemanagementManagementunitUserTimeoffrequests");
     }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getWorkforcemanagementManagementunitUserTimeoffrequests");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getWorkforcemanagementManagementunitUserTimeoffrequests");
     }
     
     // create path and map variables
@@ -357,7 +358,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public TimeOffRequestList getWorkforcemanagementManagementunitUserTimeoffrequests(GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest request) throws ApiException {
+  public TimeOffRequestList getWorkforcemanagementManagementunitUserTimeoffrequests(GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TimeOffRequestList>() {});
   }
 
@@ -367,7 +368,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TimeOffRequestList> getWorkforcemanagementManagementunitUserTimeoffrequests(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<TimeOffRequestList> getWorkforcemanagementManagementunitUserTimeoffrequests(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<TimeOffRequestList>invokeAPIVerbose(request, new TypeReference<TimeOffRequestList>() {});
   }
 
@@ -378,7 +379,7 @@ public class WorkforceManagementApi {
    * @return WfmUserEntityListing
    * @throws ApiException if fails to make API call
    */
-  public WfmUserEntityListing getWorkforcemanagementManagementunitUsers(String muId) throws ApiException {
+  public WfmUserEntityListing getWorkforcemanagementManagementunitUsers(String muId) throws IOException, ApiException {
     return getWorkforcemanagementManagementunitUsersWithHttpInfo(muId).getBody();
   }
 
@@ -389,12 +390,12 @@ public class WorkforceManagementApi {
    * @return WfmUserEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WfmUserEntityListing> getWorkforcemanagementManagementunitUsersWithHttpInfo(String muId) throws ApiException {
+  public ApiResponse<WfmUserEntityListing> getWorkforcemanagementManagementunitUsersWithHttpInfo(String muId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'muId' is set
     if (muId == null) {
-      throw new ApiException(400, "Missing the required parameter 'muId' when calling getWorkforcemanagementManagementunitUsers");
+      throw new IllegalArgumentException("Missing the required parameter 'muId' when calling getWorkforcemanagementManagementunitUsers");
     }
     
     // create path and map variables
@@ -430,7 +431,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public WfmUserEntityListing getWorkforcemanagementManagementunitUsers(GetWorkforcemanagementManagementunitUsersRequest request) throws ApiException {
+  public WfmUserEntityListing getWorkforcemanagementManagementunitUsers(GetWorkforcemanagementManagementunitUsersRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WfmUserEntityListing>() {});
   }
 
@@ -440,7 +441,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WfmUserEntityListing> getWorkforcemanagementManagementunitUsers(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<WfmUserEntityListing> getWorkforcemanagementManagementunitUsers(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<WfmUserEntityListing>invokeAPIVerbose(request, new TypeReference<WfmUserEntityListing>() {});
   }
 
@@ -453,7 +454,7 @@ public class WorkforceManagementApi {
    * @return List<ManagementUnit>
    * @throws ApiException if fails to make API call
    */
-  public List<ManagementUnit> getWorkforcemanagementManagementunits(String selector, Integer pageSize, Integer pageNumber) throws ApiException {
+  public List<ManagementUnit> getWorkforcemanagementManagementunits(String selector, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return getWorkforcemanagementManagementunitsWithHttpInfo(selector, pageSize, pageNumber).getBody();
   }
 
@@ -466,7 +467,7 @@ public class WorkforceManagementApi {
    * @return List<ManagementUnit>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<ManagementUnit>> getWorkforcemanagementManagementunitsWithHttpInfo(String selector, Integer pageSize, Integer pageNumber) throws ApiException {
+  public ApiResponse<List<ManagementUnit>> getWorkforcemanagementManagementunitsWithHttpInfo(String selector, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -504,7 +505,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<ManagementUnit> getWorkforcemanagementManagementunits(GetWorkforcemanagementManagementunitsRequest request) throws ApiException {
+  public List<ManagementUnit> getWorkforcemanagementManagementunits(GetWorkforcemanagementManagementunitsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<ManagementUnit>>() {});
   }
 
@@ -514,7 +515,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<ManagementUnit>> getWorkforcemanagementManagementunits(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<ManagementUnit>> getWorkforcemanagementManagementunits(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<ManagementUnit>>invokeAPIVerbose(request, new TypeReference<List<ManagementUnit>>() {});
   }
 
@@ -525,7 +526,7 @@ public class WorkforceManagementApi {
    * @return TimeOffRequest
    * @throws ApiException if fails to make API call
    */
-  public TimeOffRequest getWorkforcemanagementTimeoffrequest(String timeOffRequestId) throws ApiException {
+  public TimeOffRequest getWorkforcemanagementTimeoffrequest(String timeOffRequestId) throws IOException, ApiException {
     return getWorkforcemanagementTimeoffrequestWithHttpInfo(timeOffRequestId).getBody();
   }
 
@@ -536,12 +537,12 @@ public class WorkforceManagementApi {
    * @return TimeOffRequest
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TimeOffRequest> getWorkforcemanagementTimeoffrequestWithHttpInfo(String timeOffRequestId) throws ApiException {
+  public ApiResponse<TimeOffRequest> getWorkforcemanagementTimeoffrequestWithHttpInfo(String timeOffRequestId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'timeOffRequestId' is set
     if (timeOffRequestId == null) {
-      throw new ApiException(400, "Missing the required parameter 'timeOffRequestId' when calling getWorkforcemanagementTimeoffrequest");
+      throw new IllegalArgumentException("Missing the required parameter 'timeOffRequestId' when calling getWorkforcemanagementTimeoffrequest");
     }
     
     // create path and map variables
@@ -577,7 +578,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public TimeOffRequest getWorkforcemanagementTimeoffrequest(GetWorkforcemanagementTimeoffrequestRequest request) throws ApiException {
+  public TimeOffRequest getWorkforcemanagementTimeoffrequest(GetWorkforcemanagementTimeoffrequestRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TimeOffRequest>() {});
   }
 
@@ -587,7 +588,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TimeOffRequest> getWorkforcemanagementTimeoffrequest(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<TimeOffRequest> getWorkforcemanagementTimeoffrequest(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<TimeOffRequest>invokeAPIVerbose(request, new TypeReference<TimeOffRequest>() {});
   }
 
@@ -598,7 +599,7 @@ public class WorkforceManagementApi {
    * @return TimeOffRequestList
    * @throws ApiException if fails to make API call
    */
-  public TimeOffRequestList getWorkforcemanagementTimeoffrequests(Boolean recentlyReviewed) throws ApiException {
+  public TimeOffRequestList getWorkforcemanagementTimeoffrequests(Boolean recentlyReviewed) throws IOException, ApiException {
     return getWorkforcemanagementTimeoffrequestsWithHttpInfo(recentlyReviewed).getBody();
   }
 
@@ -609,7 +610,7 @@ public class WorkforceManagementApi {
    * @return TimeOffRequestList
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TimeOffRequestList> getWorkforcemanagementTimeoffrequestsWithHttpInfo(Boolean recentlyReviewed) throws ApiException {
+  public ApiResponse<TimeOffRequestList> getWorkforcemanagementTimeoffrequestsWithHttpInfo(Boolean recentlyReviewed) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -645,7 +646,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public TimeOffRequestList getWorkforcemanagementTimeoffrequests(GetWorkforcemanagementTimeoffrequestsRequest request) throws ApiException {
+  public TimeOffRequestList getWorkforcemanagementTimeoffrequests(GetWorkforcemanagementTimeoffrequestsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TimeOffRequestList>() {});
   }
 
@@ -655,7 +656,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TimeOffRequestList> getWorkforcemanagementTimeoffrequests(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<TimeOffRequestList> getWorkforcemanagementTimeoffrequests(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<TimeOffRequestList>invokeAPIVerbose(request, new TypeReference<TimeOffRequestList>() {});
   }
 
@@ -666,7 +667,7 @@ public class WorkforceManagementApi {
    * @param body  (optional)
    * @throws ApiException if fails to make API call
    */
-  public void patchWorkforcemanagementTimeoffrequest(String timeOffRequestId, TimeOffRequestPatch body) throws ApiException {
+  public void patchWorkforcemanagementTimeoffrequest(String timeOffRequestId, TimeOffRequestPatch body) throws IOException, ApiException {
     patchWorkforcemanagementTimeoffrequestWithHttpInfo(timeOffRequestId, body);
   }
 
@@ -677,12 +678,12 @@ public class WorkforceManagementApi {
    * @param body  (optional)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchWorkforcemanagementTimeoffrequestWithHttpInfo(String timeOffRequestId, TimeOffRequestPatch body) throws ApiException {
+  public ApiResponse<Void> patchWorkforcemanagementTimeoffrequestWithHttpInfo(String timeOffRequestId, TimeOffRequestPatch body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'timeOffRequestId' is set
     if (timeOffRequestId == null) {
-      throw new ApiException(400, "Missing the required parameter 'timeOffRequestId' when calling patchWorkforcemanagementTimeoffrequest");
+      throw new IllegalArgumentException("Missing the required parameter 'timeOffRequestId' when calling patchWorkforcemanagementTimeoffrequest");
     }
     
     // create path and map variables
@@ -718,7 +719,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void patchWorkforcemanagementTimeoffrequest(PatchWorkforcemanagementTimeoffrequestRequest request) throws ApiException {
+  public void patchWorkforcemanagementTimeoffrequest(PatchWorkforcemanagementTimeoffrequestRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -728,7 +729,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> patchWorkforcemanagementTimeoffrequest(ApiRequest<TimeOffRequestPatch> request) throws ApiException {
+  public ApiResponse<Void> patchWorkforcemanagementTimeoffrequest(ApiRequest<TimeOffRequestPatch> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -740,7 +741,7 @@ public class WorkforceManagementApi {
    * @return UserScheduleContainer
    * @throws ApiException if fails to make API call
    */
-  public UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(String muId, UserListScheduleRequestBody body) throws ApiException {
+  public UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(String muId, UserListScheduleRequestBody body) throws IOException, ApiException {
     return postWorkforcemanagementManagementunitSchedulesSearchWithHttpInfo(muId, body).getBody();
   }
 
@@ -752,12 +753,12 @@ public class WorkforceManagementApi {
    * @return UserScheduleContainer
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserScheduleContainer> postWorkforcemanagementManagementunitSchedulesSearchWithHttpInfo(String muId, UserListScheduleRequestBody body) throws ApiException {
+  public ApiResponse<UserScheduleContainer> postWorkforcemanagementManagementunitSchedulesSearchWithHttpInfo(String muId, UserListScheduleRequestBody body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'muId' is set
     if (muId == null) {
-      throw new ApiException(400, "Missing the required parameter 'muId' when calling postWorkforcemanagementManagementunitSchedulesSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'muId' when calling postWorkforcemanagementManagementunitSchedulesSearch");
     }
     
     // create path and map variables
@@ -793,7 +794,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(PostWorkforcemanagementManagementunitSchedulesSearchRequest request) throws ApiException {
+  public UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(PostWorkforcemanagementManagementunitSchedulesSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserScheduleContainer>() {});
   }
 
@@ -803,7 +804,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserScheduleContainer> postWorkforcemanagementManagementunitSchedulesSearch(ApiRequest<UserListScheduleRequestBody> request) throws ApiException {
+  public ApiResponse<UserScheduleContainer> postWorkforcemanagementManagementunitSchedulesSearch(ApiRequest<UserListScheduleRequestBody> request) throws IOException, ApiException {
     return pcapiClient.<UserScheduleContainer>invokeAPIVerbose(request, new TypeReference<UserScheduleContainer>() {});
   }
 
@@ -814,7 +815,7 @@ public class WorkforceManagementApi {
    * @return UserScheduleContainer
    * @throws ApiException if fails to make API call
    */
-  public UserScheduleContainer postWorkforcemanagementSchedules(CurrentUserScheduleRequestBody body) throws ApiException {
+  public UserScheduleContainer postWorkforcemanagementSchedules(CurrentUserScheduleRequestBody body) throws IOException, ApiException {
     return postWorkforcemanagementSchedulesWithHttpInfo(body).getBody();
   }
 
@@ -825,7 +826,7 @@ public class WorkforceManagementApi {
    * @return UserScheduleContainer
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserScheduleContainer> postWorkforcemanagementSchedulesWithHttpInfo(CurrentUserScheduleRequestBody body) throws ApiException {
+  public ApiResponse<UserScheduleContainer> postWorkforcemanagementSchedulesWithHttpInfo(CurrentUserScheduleRequestBody body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // create path and map variables
@@ -860,7 +861,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserScheduleContainer postWorkforcemanagementSchedules(PostWorkforcemanagementSchedulesRequest request) throws ApiException {
+  public UserScheduleContainer postWorkforcemanagementSchedules(PostWorkforcemanagementSchedulesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserScheduleContainer>() {});
   }
 
@@ -870,7 +871,7 @@ public class WorkforceManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserScheduleContainer> postWorkforcemanagementSchedules(ApiRequest<CurrentUserScheduleRequestBody> request) throws ApiException {
+  public ApiResponse<UserScheduleContainer> postWorkforcemanagementSchedules(ApiRequest<CurrentUserScheduleRequestBody> request) throws IOException, ApiException {
     return pcapiClient.<UserScheduleContainer>invokeAPIVerbose(request, new TypeReference<UserScheduleContainer>() {});
   }
 

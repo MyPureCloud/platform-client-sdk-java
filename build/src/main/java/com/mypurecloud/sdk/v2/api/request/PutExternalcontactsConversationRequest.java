@@ -81,11 +81,11 @@ public class PutExternalcontactsConversationRequest {
         return this;
     }
 
-    public ApiRequest<ConversationAssociation> withHttpInfo() throws ApiException {
+    public ApiRequest<ConversationAssociation> withHttpInfo() {
         
         // verify the required parameter 'conversationId' is set
         if (this.conversationId == null) {
-            throw new ApiException(400, "Missing the required parameter 'conversationId' when building request for PutExternalcontactsConversationRequest.");
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PutExternalcontactsConversationRequest.");
         }
         
 

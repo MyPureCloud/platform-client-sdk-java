@@ -124,7 +124,7 @@ public class GetConversationsCallsHistoryRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/conversations/calls/history")

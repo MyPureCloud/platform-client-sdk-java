@@ -88,16 +88,16 @@ public class PutQualityKeywordsetRequest {
         return this;
     }
 
-    public ApiRequest<KeywordSet> withHttpInfo() throws ApiException {
+    public ApiRequest<KeywordSet> withHttpInfo() {
         
         // verify the required parameter 'keywordSetId' is set
         if (this.keywordSetId == null) {
-            throw new ApiException(400, "Missing the required parameter 'keywordSetId' when building request for PutQualityKeywordsetRequest.");
+            throw new IllegalStateException("Missing the required parameter 'keywordSetId' when building request for PutQualityKeywordsetRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutQualityKeywordsetRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutQualityKeywordsetRequest.");
         }
         
 

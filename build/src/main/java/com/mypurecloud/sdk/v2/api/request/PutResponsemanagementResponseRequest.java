@@ -58,6 +58,20 @@ public class PutResponsemanagementResponseRequest {
 	    return this;
 	}
 
+	private String expand;
+	public String getExpand() {
+		return this.expand;
+	}
+
+	public void setExpand(String expand) {
+		this.expand = expand;
+	}
+
+	public PutResponsemanagementResponseRequest withExpand(String expand) {
+	    this.setExpand(expand);
+	    return this;
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -77,21 +91,23 @@ public class PutResponsemanagementResponseRequest {
         return this;
     }
 
-    public ApiRequest<Response> withHttpInfo() throws ApiException {
+    public ApiRequest<Response> withHttpInfo() {
         
         // verify the required parameter 'responseId' is set
         if (this.responseId == null) {
-            throw new ApiException(400, "Missing the required parameter 'responseId' when building request for PutResponsemanagementResponseRequest.");
+            throw new IllegalStateException("Missing the required parameter 'responseId' when building request for PutResponsemanagementResponseRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutResponsemanagementResponseRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutResponsemanagementResponseRequest.");
         }
         
 
         return ApiRequestBuilder.create("PUT", "/api/v2/responsemanagement/responses/{responseId}")
                 .withPathParameter("responseId", responseId)
+        
+                .withQueryParameters("expand", "", expand)
         
                 .withBody(body)
                 .withCustomHeaders(customHeaders)
@@ -123,6 +139,10 @@ public class PutResponsemanagementResponseRequest {
 		}
 		public Builder withBody(Response body) {
 			request.setBody(body);
+			return this;
+		}
+		public Builder withExpand(String expand) {
+			request.setExpand(expand);
 			return this;
 		}
 

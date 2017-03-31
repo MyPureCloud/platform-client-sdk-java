@@ -91,11 +91,11 @@ public class PostOutboundContactlistsRequest {
         return this;
     }
 
-    public ApiRequest<ContactList> withHttpInfo() throws ApiException {
+    public ApiRequest<ContactList> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostOutboundContactlistsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostOutboundContactlistsRequest.");
         }
         
 

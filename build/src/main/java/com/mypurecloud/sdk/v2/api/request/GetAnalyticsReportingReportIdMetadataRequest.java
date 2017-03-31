@@ -90,11 +90,11 @@ public class GetAnalyticsReportingReportIdMetadataRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'reportId' is set
         if (this.reportId == null) {
-            throw new ApiException(400, "Missing the required parameter 'reportId' when building request for GetAnalyticsReportingReportIdMetadataRequest.");
+            throw new IllegalStateException("Missing the required parameter 'reportId' when building request for GetAnalyticsReportingReportIdMetadataRequest.");
         }
         
 

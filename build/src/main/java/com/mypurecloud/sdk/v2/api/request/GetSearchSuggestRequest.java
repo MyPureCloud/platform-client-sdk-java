@@ -88,11 +88,11 @@ public class GetSearchSuggestRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'q64' is set
         if (this.q64 == null) {
-            throw new ApiException(400, "Missing the required parameter 'q64' when building request for GetSearchSuggestRequest.");
+            throw new IllegalStateException("Missing the required parameter 'q64' when building request for GetSearchSuggestRequest.");
         }
         
 

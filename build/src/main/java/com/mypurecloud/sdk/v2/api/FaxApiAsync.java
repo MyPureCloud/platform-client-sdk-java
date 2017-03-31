@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.api.request.GetFaxDocumentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFaxSummaryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFaxDocumentRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -49,7 +50,7 @@ public class FaxApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteFaxDocumentAsync(DeleteFaxDocumentRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteFaxDocumentAsync(DeleteFaxDocumentRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -59,7 +60,7 @@ public class FaxApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteFaxDocumentAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteFaxDocumentAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -69,7 +70,7 @@ public class FaxApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<FaxDocument> getFaxDocumentAsync(GetFaxDocumentRequest request, AsyncApiCallback<FaxDocument> callback) throws ApiException {
+  public Future<FaxDocument> getFaxDocumentAsync(GetFaxDocumentRequest request, AsyncApiCallback<FaxDocument> callback) {
     return pcapiClient.<FaxDocument>invokeAPIAsync(request.withHttpInfo(), new TypeReference<FaxDocument>() {}, callback);
   }
 
@@ -79,7 +80,7 @@ public class FaxApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<FaxDocument>> getFaxDocumentAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FaxDocument>> callback) throws ApiException {
+  public Future<ApiResponse<FaxDocument>> getFaxDocumentAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FaxDocument>> callback) {
     return pcapiClient.<FaxDocument>invokeAPIVerboseAsync(request, new TypeReference<FaxDocument>() {}, callback);
   }
 
@@ -89,7 +90,7 @@ public class FaxApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DownloadResponse> getFaxDocumentContentAsync(GetFaxDocumentContentRequest request, AsyncApiCallback<DownloadResponse> callback) throws ApiException {
+  public Future<DownloadResponse> getFaxDocumentContentAsync(GetFaxDocumentContentRequest request, AsyncApiCallback<DownloadResponse> callback) {
     return pcapiClient.<DownloadResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DownloadResponse>() {}, callback);
   }
 
@@ -99,7 +100,7 @@ public class FaxApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DownloadResponse>> getFaxDocumentContentAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DownloadResponse>> callback) throws ApiException {
+  public Future<ApiResponse<DownloadResponse>> getFaxDocumentContentAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DownloadResponse>> callback) {
     return pcapiClient.<DownloadResponse>invokeAPIVerboseAsync(request, new TypeReference<DownloadResponse>() {}, callback);
   }
 
@@ -109,7 +110,7 @@ public class FaxApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<FaxDocumentEntityListing> getFaxDocumentsAsync(GetFaxDocumentsRequest request, AsyncApiCallback<FaxDocumentEntityListing> callback) throws ApiException {
+  public Future<FaxDocumentEntityListing> getFaxDocumentsAsync(GetFaxDocumentsRequest request, AsyncApiCallback<FaxDocumentEntityListing> callback) {
     return pcapiClient.<FaxDocumentEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<FaxDocumentEntityListing>() {}, callback);
   }
 
@@ -119,7 +120,7 @@ public class FaxApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<FaxDocumentEntityListing>> getFaxDocumentsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FaxDocumentEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<FaxDocumentEntityListing>> getFaxDocumentsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FaxDocumentEntityListing>> callback) {
     return pcapiClient.<FaxDocumentEntityListing>invokeAPIVerboseAsync(request, new TypeReference<FaxDocumentEntityListing>() {}, callback);
   }
 
@@ -129,7 +130,7 @@ public class FaxApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<FaxSummary> getFaxSummaryAsync(GetFaxSummaryRequest request, AsyncApiCallback<FaxSummary> callback) throws ApiException {
+  public Future<FaxSummary> getFaxSummaryAsync(GetFaxSummaryRequest request, AsyncApiCallback<FaxSummary> callback) {
     return pcapiClient.<FaxSummary>invokeAPIAsync(request.withHttpInfo(), new TypeReference<FaxSummary>() {}, callback);
   }
 
@@ -139,7 +140,7 @@ public class FaxApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<FaxSummary>> getFaxSummaryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FaxSummary>> callback) throws ApiException {
+  public Future<ApiResponse<FaxSummary>> getFaxSummaryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FaxSummary>> callback) {
     return pcapiClient.<FaxSummary>invokeAPIVerboseAsync(request, new TypeReference<FaxSummary>() {}, callback);
   }
 
@@ -149,7 +150,7 @@ public class FaxApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<FaxDocument> putFaxDocumentAsync(PutFaxDocumentRequest request, AsyncApiCallback<FaxDocument> callback) throws ApiException {
+  public Future<FaxDocument> putFaxDocumentAsync(PutFaxDocumentRequest request, AsyncApiCallback<FaxDocument> callback) {
     return pcapiClient.<FaxDocument>invokeAPIAsync(request.withHttpInfo(), new TypeReference<FaxDocument>() {}, callback);
   }
 
@@ -159,7 +160,7 @@ public class FaxApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<FaxDocument>> putFaxDocumentAsync(ApiRequest<FaxDocument> request, AsyncApiCallback<ApiResponse<FaxDocument>> callback) throws ApiException {
+  public Future<ApiResponse<FaxDocument>> putFaxDocumentAsync(ApiRequest<FaxDocument> request, AsyncApiCallback<ApiResponse<FaxDocument>> callback) {
     return pcapiClient.<FaxDocument>invokeAPIVerboseAsync(request, new TypeReference<FaxDocument>() {}, callback);
   }
 

@@ -81,11 +81,11 @@ public class PutExternalcontactsOrganizationRequest {
         return this;
     }
 
-    public ApiRequest<ExternalOrganization> withHttpInfo() throws ApiException {
+    public ApiRequest<ExternalOrganization> withHttpInfo() {
         
         // verify the required parameter 'externalOrganizationId' is set
         if (this.externalOrganizationId == null) {
-            throw new ApiException(400, "Missing the required parameter 'externalOrganizationId' when building request for PutExternalcontactsOrganizationRequest.");
+            throw new IllegalStateException("Missing the required parameter 'externalOrganizationId' when building request for PutExternalcontactsOrganizationRequest.");
         }
         
 

@@ -91,11 +91,11 @@ public class DeleteOutboundAttemptlimitRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'attemptLimitsId' is set
         if (this.attemptLimitsId == null) {
-            throw new ApiException(400, "Missing the required parameter 'attemptLimitsId' when building request for DeleteOutboundAttemptlimitRequest.");
+            throw new IllegalStateException("Missing the required parameter 'attemptLimitsId' when building request for DeleteOutboundAttemptlimitRequest.");
         }
         
 

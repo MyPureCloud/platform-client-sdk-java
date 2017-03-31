@@ -80,11 +80,11 @@ public class DeleteRoutingEmailDomainRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'domainId' is set
         if (this.domainId == null) {
-            throw new ApiException(400, "Missing the required parameter 'domainId' when building request for DeleteRoutingEmailDomainRequest.");
+            throw new IllegalStateException("Missing the required parameter 'domainId' when building request for DeleteRoutingEmailDomainRequest.");
         }
         
 

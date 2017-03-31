@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserrecordingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserrecordingsSummaryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserrecordingRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -49,7 +50,7 @@ public class UserRecordingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteUserrecordingAsync(DeleteUserrecordingRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteUserrecordingAsync(DeleteUserrecordingRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -59,7 +60,7 @@ public class UserRecordingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteUserrecordingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteUserrecordingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -69,7 +70,7 @@ public class UserRecordingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UserRecording> getUserrecordingAsync(GetUserrecordingRequest request, AsyncApiCallback<UserRecording> callback) throws ApiException {
+  public Future<UserRecording> getUserrecordingAsync(GetUserrecordingRequest request, AsyncApiCallback<UserRecording> callback) {
     return pcapiClient.<UserRecording>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserRecording>() {}, callback);
   }
 
@@ -79,7 +80,7 @@ public class UserRecordingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UserRecording>> getUserrecordingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserRecording>> callback) throws ApiException {
+  public Future<ApiResponse<UserRecording>> getUserrecordingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserRecording>> callback) {
     return pcapiClient.<UserRecording>invokeAPIVerboseAsync(request, new TypeReference<UserRecording>() {}, callback);
   }
 
@@ -89,7 +90,7 @@ public class UserRecordingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DownloadResponse> getUserrecordingMediaAsync(GetUserrecordingMediaRequest request, AsyncApiCallback<DownloadResponse> callback) throws ApiException {
+  public Future<DownloadResponse> getUserrecordingMediaAsync(GetUserrecordingMediaRequest request, AsyncApiCallback<DownloadResponse> callback) {
     return pcapiClient.<DownloadResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DownloadResponse>() {}, callback);
   }
 
@@ -99,7 +100,7 @@ public class UserRecordingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DownloadResponse>> getUserrecordingMediaAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DownloadResponse>> callback) throws ApiException {
+  public Future<ApiResponse<DownloadResponse>> getUserrecordingMediaAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DownloadResponse>> callback) {
     return pcapiClient.<DownloadResponse>invokeAPIVerboseAsync(request, new TypeReference<DownloadResponse>() {}, callback);
   }
 
@@ -109,7 +110,7 @@ public class UserRecordingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UserRecordingEntityListing> getUserrecordingsAsync(GetUserrecordingsRequest request, AsyncApiCallback<UserRecordingEntityListing> callback) throws ApiException {
+  public Future<UserRecordingEntityListing> getUserrecordingsAsync(GetUserrecordingsRequest request, AsyncApiCallback<UserRecordingEntityListing> callback) {
     return pcapiClient.<UserRecordingEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserRecordingEntityListing>() {}, callback);
   }
 
@@ -119,7 +120,7 @@ public class UserRecordingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UserRecordingEntityListing>> getUserrecordingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserRecordingEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<UserRecordingEntityListing>> getUserrecordingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserRecordingEntityListing>> callback) {
     return pcapiClient.<UserRecordingEntityListing>invokeAPIVerboseAsync(request, new TypeReference<UserRecordingEntityListing>() {}, callback);
   }
 
@@ -129,7 +130,7 @@ public class UserRecordingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<FaxSummary> getUserrecordingsSummaryAsync(GetUserrecordingsSummaryRequest request, AsyncApiCallback<FaxSummary> callback) throws ApiException {
+  public Future<FaxSummary> getUserrecordingsSummaryAsync(GetUserrecordingsSummaryRequest request, AsyncApiCallback<FaxSummary> callback) {
     return pcapiClient.<FaxSummary>invokeAPIAsync(request.withHttpInfo(), new TypeReference<FaxSummary>() {}, callback);
   }
 
@@ -139,7 +140,7 @@ public class UserRecordingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<FaxSummary>> getUserrecordingsSummaryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FaxSummary>> callback) throws ApiException {
+  public Future<ApiResponse<FaxSummary>> getUserrecordingsSummaryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FaxSummary>> callback) {
     return pcapiClient.<FaxSummary>invokeAPIVerboseAsync(request, new TypeReference<FaxSummary>() {}, callback);
   }
 
@@ -149,7 +150,7 @@ public class UserRecordingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UserRecording> putUserrecordingAsync(PutUserrecordingRequest request, AsyncApiCallback<UserRecording> callback) throws ApiException {
+  public Future<UserRecording> putUserrecordingAsync(PutUserrecordingRequest request, AsyncApiCallback<UserRecording> callback) {
     return pcapiClient.<UserRecording>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserRecording>() {}, callback);
   }
 
@@ -159,7 +160,7 @@ public class UserRecordingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UserRecording>> putUserrecordingAsync(ApiRequest<UserRecording> request, AsyncApiCallback<ApiResponse<UserRecording>> callback) throws ApiException {
+  public Future<ApiResponse<UserRecording>> putUserrecordingAsync(ApiRequest<UserRecording> request, AsyncApiCallback<ApiResponse<UserRecording>> callback) {
     return pcapiClient.<UserRecording>invokeAPIVerboseAsync(request, new TypeReference<UserRecording>() {}, callback);
   }
 

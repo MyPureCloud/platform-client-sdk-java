@@ -105,16 +105,16 @@ public class PutOutboundCallanalysisresponsesetRequest {
         return this;
     }
 
-    public ApiRequest<ResponseSet> withHttpInfo() throws ApiException {
+    public ApiRequest<ResponseSet> withHttpInfo() {
         
         // verify the required parameter 'callAnalysisSetId' is set
         if (this.callAnalysisSetId == null) {
-            throw new ApiException(400, "Missing the required parameter 'callAnalysisSetId' when building request for PutOutboundCallanalysisresponsesetRequest.");
+            throw new IllegalStateException("Missing the required parameter 'callAnalysisSetId' when building request for PutOutboundCallanalysisresponsesetRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutOutboundCallanalysisresponsesetRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutOutboundCallanalysisresponsesetRequest.");
         }
         
 

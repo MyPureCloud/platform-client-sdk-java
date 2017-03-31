@@ -88,11 +88,11 @@ public class PostQualityKeywordsetsRequest {
         return this;
     }
 
-    public ApiRequest<KeywordSet> withHttpInfo() throws ApiException {
+    public ApiRequest<KeywordSet> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostQualityKeywordsetsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostQualityKeywordsetsRequest.");
         }
         
 

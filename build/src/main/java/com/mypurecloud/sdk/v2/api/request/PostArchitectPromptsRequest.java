@@ -68,7 +68,7 @@ public class PostArchitectPromptsRequest {
         return this;
     }
 
-    public ApiRequest<Prompt> withHttpInfo() throws ApiException {
+    public ApiRequest<Prompt> withHttpInfo() {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/architect/prompts")

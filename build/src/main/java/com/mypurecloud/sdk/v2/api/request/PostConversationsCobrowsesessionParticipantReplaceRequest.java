@@ -124,16 +124,16 @@ public class PostConversationsCobrowsesessionParticipantReplaceRequest {
         return this;
     }
 
-    public ApiRequest<TransferRequest> withHttpInfo() throws ApiException {
+    public ApiRequest<TransferRequest> withHttpInfo() {
         
         // verify the required parameter 'cobrowseId' is set
         if (this.cobrowseId == null) {
-            throw new ApiException(400, "Missing the required parameter 'cobrowseId' when building request for PostConversationsCobrowsesessionParticipantReplaceRequest.");
+            throw new IllegalStateException("Missing the required parameter 'cobrowseId' when building request for PostConversationsCobrowsesessionParticipantReplaceRequest.");
         }
         
         // verify the required parameter 'participantId' is set
         if (this.participantId == null) {
-            throw new ApiException(400, "Missing the required parameter 'participantId' when building request for PostConversationsCobrowsesessionParticipantReplaceRequest.");
+            throw new IllegalStateException("Missing the required parameter 'participantId' when building request for PostConversationsCobrowsesessionParticipantReplaceRequest.");
         }
         
 

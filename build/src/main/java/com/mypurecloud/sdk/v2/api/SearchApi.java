@@ -41,6 +41,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSearchSuggestRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostVoicemailSearchRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -65,7 +66,7 @@ public class SearchApi {
    * @return DocumentationSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public DocumentationSearchResponse getDocumentationSearch(String q64) throws ApiException {
+  public DocumentationSearchResponse getDocumentationSearch(String q64) throws IOException, ApiException {
     return getDocumentationSearchWithHttpInfo(q64).getBody();
   }
 
@@ -76,12 +77,12 @@ public class SearchApi {
    * @return DocumentationSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DocumentationSearchResponse> getDocumentationSearchWithHttpInfo(String q64) throws ApiException {
+  public ApiResponse<DocumentationSearchResponse> getDocumentationSearchWithHttpInfo(String q64) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'q64' is set
     if (q64 == null) {
-      throw new ApiException(400, "Missing the required parameter 'q64' when calling getDocumentationSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'q64' when calling getDocumentationSearch");
     }
     
     // create path and map variables
@@ -117,7 +118,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DocumentationSearchResponse getDocumentationSearch(GetDocumentationSearchRequest request) throws ApiException {
+  public DocumentationSearchResponse getDocumentationSearch(GetDocumentationSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DocumentationSearchResponse>() {});
   }
 
@@ -127,7 +128,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DocumentationSearchResponse> getDocumentationSearch(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<DocumentationSearchResponse> getDocumentationSearch(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<DocumentationSearchResponse>invokeAPIVerbose(request, new TypeReference<DocumentationSearchResponse>() {});
   }
 
@@ -139,7 +140,7 @@ public class SearchApi {
    * @return GroupsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public GroupsSearchResponse getGroupsSearch(String q64, List<String> expand) throws ApiException {
+  public GroupsSearchResponse getGroupsSearch(String q64, List<String> expand) throws IOException, ApiException {
     return getGroupsSearchWithHttpInfo(q64, expand).getBody();
   }
 
@@ -151,12 +152,12 @@ public class SearchApi {
    * @return GroupsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<GroupsSearchResponse> getGroupsSearchWithHttpInfo(String q64, List<String> expand) throws ApiException {
+  public ApiResponse<GroupsSearchResponse> getGroupsSearchWithHttpInfo(String q64, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'q64' is set
     if (q64 == null) {
-      throw new ApiException(400, "Missing the required parameter 'q64' when calling getGroupsSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'q64' when calling getGroupsSearch");
     }
     
     // create path and map variables
@@ -193,7 +194,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public GroupsSearchResponse getGroupsSearch(GetGroupsSearchRequest request) throws ApiException {
+  public GroupsSearchResponse getGroupsSearch(GetGroupsSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<GroupsSearchResponse>() {});
   }
 
@@ -203,7 +204,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<GroupsSearchResponse> getGroupsSearch(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<GroupsSearchResponse> getGroupsSearch(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<GroupsSearchResponse>invokeAPIVerbose(request, new TypeReference<GroupsSearchResponse>() {});
   }
 
@@ -215,7 +216,7 @@ public class SearchApi {
    * @return LocationsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public LocationsSearchResponse getLocationsSearch(String q64, List<String> expand) throws ApiException {
+  public LocationsSearchResponse getLocationsSearch(String q64, List<String> expand) throws IOException, ApiException {
     return getLocationsSearchWithHttpInfo(q64, expand).getBody();
   }
 
@@ -227,12 +228,12 @@ public class SearchApi {
    * @return LocationsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LocationsSearchResponse> getLocationsSearchWithHttpInfo(String q64, List<String> expand) throws ApiException {
+  public ApiResponse<LocationsSearchResponse> getLocationsSearchWithHttpInfo(String q64, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'q64' is set
     if (q64 == null) {
-      throw new ApiException(400, "Missing the required parameter 'q64' when calling getLocationsSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'q64' when calling getLocationsSearch");
     }
     
     // create path and map variables
@@ -269,7 +270,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public LocationsSearchResponse getLocationsSearch(GetLocationsSearchRequest request) throws ApiException {
+  public LocationsSearchResponse getLocationsSearch(GetLocationsSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LocationsSearchResponse>() {});
   }
 
@@ -279,7 +280,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LocationsSearchResponse> getLocationsSearch(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<LocationsSearchResponse> getLocationsSearch(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<LocationsSearchResponse>invokeAPIVerbose(request, new TypeReference<LocationsSearchResponse>() {});
   }
 
@@ -292,7 +293,7 @@ public class SearchApi {
    * @return JsonNodeSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public JsonNodeSearchResponse getSearch(String q64, List<String> expand, Boolean profile) throws ApiException {
+  public JsonNodeSearchResponse getSearch(String q64, List<String> expand, Boolean profile) throws IOException, ApiException {
     return getSearchWithHttpInfo(q64, expand, profile).getBody();
   }
 
@@ -305,12 +306,12 @@ public class SearchApi {
    * @return JsonNodeSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<JsonNodeSearchResponse> getSearchWithHttpInfo(String q64, List<String> expand, Boolean profile) throws ApiException {
+  public ApiResponse<JsonNodeSearchResponse> getSearchWithHttpInfo(String q64, List<String> expand, Boolean profile) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'q64' is set
     if (q64 == null) {
-      throw new ApiException(400, "Missing the required parameter 'q64' when calling getSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'q64' when calling getSearch");
     }
     
     // create path and map variables
@@ -348,7 +349,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public JsonNodeSearchResponse getSearch(GetSearchRequest request) throws ApiException {
+  public JsonNodeSearchResponse getSearch(GetSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {});
   }
 
@@ -358,7 +359,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<JsonNodeSearchResponse> getSearch(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<JsonNodeSearchResponse> getSearch(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<JsonNodeSearchResponse>invokeAPIVerbose(request, new TypeReference<JsonNodeSearchResponse>() {});
   }
 
@@ -371,7 +372,7 @@ public class SearchApi {
    * @return JsonNodeSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public JsonNodeSearchResponse getSearchSuggest(String q64, List<String> expand, Boolean profile) throws ApiException {
+  public JsonNodeSearchResponse getSearchSuggest(String q64, List<String> expand, Boolean profile) throws IOException, ApiException {
     return getSearchSuggestWithHttpInfo(q64, expand, profile).getBody();
   }
 
@@ -384,12 +385,12 @@ public class SearchApi {
    * @return JsonNodeSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<JsonNodeSearchResponse> getSearchSuggestWithHttpInfo(String q64, List<String> expand, Boolean profile) throws ApiException {
+  public ApiResponse<JsonNodeSearchResponse> getSearchSuggestWithHttpInfo(String q64, List<String> expand, Boolean profile) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'q64' is set
     if (q64 == null) {
-      throw new ApiException(400, "Missing the required parameter 'q64' when calling getSearchSuggest");
+      throw new IllegalArgumentException("Missing the required parameter 'q64' when calling getSearchSuggest");
     }
     
     // create path and map variables
@@ -427,7 +428,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public JsonNodeSearchResponse getSearchSuggest(GetSearchSuggestRequest request) throws ApiException {
+  public JsonNodeSearchResponse getSearchSuggest(GetSearchSuggestRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {});
   }
 
@@ -437,7 +438,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<JsonNodeSearchResponse> getSearchSuggest(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<JsonNodeSearchResponse> getSearchSuggest(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<JsonNodeSearchResponse>invokeAPIVerbose(request, new TypeReference<JsonNodeSearchResponse>() {});
   }
 
@@ -449,7 +450,7 @@ public class SearchApi {
    * @return UsersSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public UsersSearchResponse getUsersSearch(String q64, List<String> expand) throws ApiException {
+  public UsersSearchResponse getUsersSearch(String q64, List<String> expand) throws IOException, ApiException {
     return getUsersSearchWithHttpInfo(q64, expand).getBody();
   }
 
@@ -461,12 +462,12 @@ public class SearchApi {
    * @return UsersSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UsersSearchResponse> getUsersSearchWithHttpInfo(String q64, List<String> expand) throws ApiException {
+  public ApiResponse<UsersSearchResponse> getUsersSearchWithHttpInfo(String q64, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'q64' is set
     if (q64 == null) {
-      throw new ApiException(400, "Missing the required parameter 'q64' when calling getUsersSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'q64' when calling getUsersSearch");
     }
     
     // create path and map variables
@@ -503,7 +504,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UsersSearchResponse getUsersSearch(GetUsersSearchRequest request) throws ApiException {
+  public UsersSearchResponse getUsersSearch(GetUsersSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UsersSearchResponse>() {});
   }
 
@@ -513,7 +514,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UsersSearchResponse> getUsersSearch(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<UsersSearchResponse> getUsersSearch(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<UsersSearchResponse>invokeAPIVerbose(request, new TypeReference<UsersSearchResponse>() {});
   }
 
@@ -525,7 +526,7 @@ public class SearchApi {
    * @return VoicemailsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public VoicemailsSearchResponse getVoicemailSearch(String q64, List<String> expand) throws ApiException {
+  public VoicemailsSearchResponse getVoicemailSearch(String q64, List<String> expand) throws IOException, ApiException {
     return getVoicemailSearchWithHttpInfo(q64, expand).getBody();
   }
 
@@ -537,12 +538,12 @@ public class SearchApi {
    * @return VoicemailsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailsSearchResponse> getVoicemailSearchWithHttpInfo(String q64, List<String> expand) throws ApiException {
+  public ApiResponse<VoicemailsSearchResponse> getVoicemailSearchWithHttpInfo(String q64, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'q64' is set
     if (q64 == null) {
-      throw new ApiException(400, "Missing the required parameter 'q64' when calling getVoicemailSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'q64' when calling getVoicemailSearch");
     }
     
     // create path and map variables
@@ -579,7 +580,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailsSearchResponse getVoicemailSearch(GetVoicemailSearchRequest request) throws ApiException {
+  public VoicemailsSearchResponse getVoicemailSearch(GetVoicemailSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailsSearchResponse>() {});
   }
 
@@ -589,7 +590,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailsSearchResponse> getVoicemailSearch(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<VoicemailsSearchResponse> getVoicemailSearch(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailsSearchResponse>invokeAPIVerbose(request, new TypeReference<VoicemailsSearchResponse>() {});
   }
 
@@ -600,7 +601,7 @@ public class SearchApi {
    * @return DocumentationSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public DocumentationSearchResponse postDocumentationSearch(DocumentationSearchRequest body) throws ApiException {
+  public DocumentationSearchResponse postDocumentationSearch(DocumentationSearchRequest body) throws IOException, ApiException {
     return postDocumentationSearchWithHttpInfo(body).getBody();
   }
 
@@ -611,12 +612,12 @@ public class SearchApi {
    * @return DocumentationSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DocumentationSearchResponse> postDocumentationSearchWithHttpInfo(DocumentationSearchRequest body) throws ApiException {
+  public ApiResponse<DocumentationSearchResponse> postDocumentationSearchWithHttpInfo(DocumentationSearchRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postDocumentationSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postDocumentationSearch");
     }
     
     // create path and map variables
@@ -651,7 +652,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DocumentationSearchResponse postDocumentationSearch(PostDocumentationSearchRequest request) throws ApiException {
+  public DocumentationSearchResponse postDocumentationSearch(PostDocumentationSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DocumentationSearchResponse>() {});
   }
 
@@ -661,7 +662,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DocumentationSearchResponse> postDocumentationSearch(ApiRequest<DocumentationSearchRequest> request) throws ApiException {
+  public ApiResponse<DocumentationSearchResponse> postDocumentationSearch(ApiRequest<DocumentationSearchRequest> request) throws IOException, ApiException {
     return pcapiClient.<DocumentationSearchResponse>invokeAPIVerbose(request, new TypeReference<DocumentationSearchResponse>() {});
   }
 
@@ -672,7 +673,7 @@ public class SearchApi {
    * @return GroupsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public GroupsSearchResponse postGroupsSearch(GroupSearchRequest body) throws ApiException {
+  public GroupsSearchResponse postGroupsSearch(GroupSearchRequest body) throws IOException, ApiException {
     return postGroupsSearchWithHttpInfo(body).getBody();
   }
 
@@ -683,12 +684,12 @@ public class SearchApi {
    * @return GroupsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<GroupsSearchResponse> postGroupsSearchWithHttpInfo(GroupSearchRequest body) throws ApiException {
+  public ApiResponse<GroupsSearchResponse> postGroupsSearchWithHttpInfo(GroupSearchRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postGroupsSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postGroupsSearch");
     }
     
     // create path and map variables
@@ -723,7 +724,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public GroupsSearchResponse postGroupsSearch(PostGroupsSearchRequest request) throws ApiException {
+  public GroupsSearchResponse postGroupsSearch(PostGroupsSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<GroupsSearchResponse>() {});
   }
 
@@ -733,7 +734,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<GroupsSearchResponse> postGroupsSearch(ApiRequest<GroupSearchRequest> request) throws ApiException {
+  public ApiResponse<GroupsSearchResponse> postGroupsSearch(ApiRequest<GroupSearchRequest> request) throws IOException, ApiException {
     return pcapiClient.<GroupsSearchResponse>invokeAPIVerbose(request, new TypeReference<GroupsSearchResponse>() {});
   }
 
@@ -744,7 +745,7 @@ public class SearchApi {
    * @return LocationsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public LocationsSearchResponse postLocationsSearch(LocationSearchRequest body) throws ApiException {
+  public LocationsSearchResponse postLocationsSearch(LocationSearchRequest body) throws IOException, ApiException {
     return postLocationsSearchWithHttpInfo(body).getBody();
   }
 
@@ -755,12 +756,12 @@ public class SearchApi {
    * @return LocationsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LocationsSearchResponse> postLocationsSearchWithHttpInfo(LocationSearchRequest body) throws ApiException {
+  public ApiResponse<LocationsSearchResponse> postLocationsSearchWithHttpInfo(LocationSearchRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postLocationsSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postLocationsSearch");
     }
     
     // create path and map variables
@@ -795,7 +796,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public LocationsSearchResponse postLocationsSearch(PostLocationsSearchRequest request) throws ApiException {
+  public LocationsSearchResponse postLocationsSearch(PostLocationsSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LocationsSearchResponse>() {});
   }
 
@@ -805,7 +806,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LocationsSearchResponse> postLocationsSearch(ApiRequest<LocationSearchRequest> request) throws ApiException {
+  public ApiResponse<LocationsSearchResponse> postLocationsSearch(ApiRequest<LocationSearchRequest> request) throws IOException, ApiException {
     return pcapiClient.<LocationsSearchResponse>invokeAPIVerbose(request, new TypeReference<LocationsSearchResponse>() {});
   }
 
@@ -817,7 +818,7 @@ public class SearchApi {
    * @return JsonNodeSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public JsonNodeSearchResponse postSearch(SearchRequest body, Boolean profile) throws ApiException {
+  public JsonNodeSearchResponse postSearch(SearchRequest body, Boolean profile) throws IOException, ApiException {
     return postSearchWithHttpInfo(body, profile).getBody();
   }
 
@@ -829,12 +830,12 @@ public class SearchApi {
    * @return JsonNodeSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<JsonNodeSearchResponse> postSearchWithHttpInfo(SearchRequest body, Boolean profile) throws ApiException {
+  public ApiResponse<JsonNodeSearchResponse> postSearchWithHttpInfo(SearchRequest body, Boolean profile) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postSearch");
     }
     
     // create path and map variables
@@ -870,7 +871,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public JsonNodeSearchResponse postSearch(PostSearchRequest request) throws ApiException {
+  public JsonNodeSearchResponse postSearch(PostSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {});
   }
 
@@ -880,7 +881,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<JsonNodeSearchResponse> postSearch(ApiRequest<SearchRequest> request) throws ApiException {
+  public ApiResponse<JsonNodeSearchResponse> postSearch(ApiRequest<SearchRequest> request) throws IOException, ApiException {
     return pcapiClient.<JsonNodeSearchResponse>invokeAPIVerbose(request, new TypeReference<JsonNodeSearchResponse>() {});
   }
 
@@ -892,7 +893,7 @@ public class SearchApi {
    * @return JsonNodeSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public JsonNodeSearchResponse postSearchSuggest(SuggestSearchRequest body, Boolean profile) throws ApiException {
+  public JsonNodeSearchResponse postSearchSuggest(SuggestSearchRequest body, Boolean profile) throws IOException, ApiException {
     return postSearchSuggestWithHttpInfo(body, profile).getBody();
   }
 
@@ -904,12 +905,12 @@ public class SearchApi {
    * @return JsonNodeSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<JsonNodeSearchResponse> postSearchSuggestWithHttpInfo(SuggestSearchRequest body, Boolean profile) throws ApiException {
+  public ApiResponse<JsonNodeSearchResponse> postSearchSuggestWithHttpInfo(SuggestSearchRequest body, Boolean profile) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postSearchSuggest");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postSearchSuggest");
     }
     
     // create path and map variables
@@ -945,7 +946,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public JsonNodeSearchResponse postSearchSuggest(PostSearchSuggestRequest request) throws ApiException {
+  public JsonNodeSearchResponse postSearchSuggest(PostSearchSuggestRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {});
   }
 
@@ -955,7 +956,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<JsonNodeSearchResponse> postSearchSuggest(ApiRequest<SuggestSearchRequest> request) throws ApiException {
+  public ApiResponse<JsonNodeSearchResponse> postSearchSuggest(ApiRequest<SuggestSearchRequest> request) throws IOException, ApiException {
     return pcapiClient.<JsonNodeSearchResponse>invokeAPIVerbose(request, new TypeReference<JsonNodeSearchResponse>() {});
   }
 
@@ -966,7 +967,7 @@ public class SearchApi {
    * @return UsersSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public UsersSearchResponse postUsersSearch(UserSearchRequest body) throws ApiException {
+  public UsersSearchResponse postUsersSearch(UserSearchRequest body) throws IOException, ApiException {
     return postUsersSearchWithHttpInfo(body).getBody();
   }
 
@@ -977,12 +978,12 @@ public class SearchApi {
    * @return UsersSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UsersSearchResponse> postUsersSearchWithHttpInfo(UserSearchRequest body) throws ApiException {
+  public ApiResponse<UsersSearchResponse> postUsersSearchWithHttpInfo(UserSearchRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postUsersSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postUsersSearch");
     }
     
     // create path and map variables
@@ -1017,7 +1018,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UsersSearchResponse postUsersSearch(PostUsersSearchRequest request) throws ApiException {
+  public UsersSearchResponse postUsersSearch(PostUsersSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UsersSearchResponse>() {});
   }
 
@@ -1027,7 +1028,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UsersSearchResponse> postUsersSearch(ApiRequest<UserSearchRequest> request) throws ApiException {
+  public ApiResponse<UsersSearchResponse> postUsersSearch(ApiRequest<UserSearchRequest> request) throws IOException, ApiException {
     return pcapiClient.<UsersSearchResponse>invokeAPIVerbose(request, new TypeReference<UsersSearchResponse>() {});
   }
 
@@ -1038,7 +1039,7 @@ public class SearchApi {
    * @return VoicemailsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public VoicemailsSearchResponse postVoicemailSearch(VoicemailSearchRequest body) throws ApiException {
+  public VoicemailsSearchResponse postVoicemailSearch(VoicemailSearchRequest body) throws IOException, ApiException {
     return postVoicemailSearchWithHttpInfo(body).getBody();
   }
 
@@ -1049,12 +1050,12 @@ public class SearchApi {
    * @return VoicemailsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailsSearchResponse> postVoicemailSearchWithHttpInfo(VoicemailSearchRequest body) throws ApiException {
+  public ApiResponse<VoicemailsSearchResponse> postVoicemailSearchWithHttpInfo(VoicemailSearchRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postVoicemailSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postVoicemailSearch");
     }
     
     // create path and map variables
@@ -1089,7 +1090,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailsSearchResponse postVoicemailSearch(PostVoicemailSearchRequest request) throws ApiException {
+  public VoicemailsSearchResponse postVoicemailSearch(PostVoicemailSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailsSearchResponse>() {});
   }
 
@@ -1099,7 +1100,7 @@ public class SearchApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailsSearchResponse> postVoicemailSearch(ApiRequest<VoicemailSearchRequest> request) throws ApiException {
+  public ApiResponse<VoicemailsSearchResponse> postVoicemailSearch(ApiRequest<VoicemailSearchRequest> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailsSearchResponse>invokeAPIVerbose(request, new TypeReference<VoicemailsSearchResponse>() {});
   }
 

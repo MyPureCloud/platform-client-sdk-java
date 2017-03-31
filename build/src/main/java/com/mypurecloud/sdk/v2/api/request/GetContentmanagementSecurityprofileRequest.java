@@ -86,11 +86,11 @@ public class GetContentmanagementSecurityprofileRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'securityProfileId' is set
         if (this.securityProfileId == null) {
-            throw new ApiException(400, "Missing the required parameter 'securityProfileId' when building request for GetContentmanagementSecurityprofileRequest.");
+            throw new IllegalStateException("Missing the required parameter 'securityProfileId' when building request for GetContentmanagementSecurityprofileRequest.");
         }
         
 

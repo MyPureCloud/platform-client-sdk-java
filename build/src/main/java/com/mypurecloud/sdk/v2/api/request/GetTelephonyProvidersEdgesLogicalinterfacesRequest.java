@@ -134,11 +134,11 @@ public class GetTelephonyProvidersEdgesLogicalinterfacesRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'edgeIds' is set
         if (this.edgeIds == null) {
-            throw new ApiException(400, "Missing the required parameter 'edgeIds' when building request for GetTelephonyProvidersEdgesLogicalinterfacesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'edgeIds' when building request for GetTelephonyProvidersEdgesLogicalinterfacesRequest.");
         }
         
 

@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteStationAssociateduserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetStationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetStationsRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -44,7 +45,7 @@ public class StationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteStationAssociateduserAsync(DeleteStationAssociateduserRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteStationAssociateduserAsync(DeleteStationAssociateduserRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -54,7 +55,7 @@ public class StationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteStationAssociateduserAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteStationAssociateduserAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -64,7 +65,7 @@ public class StationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Station> getStationAsync(GetStationRequest request, AsyncApiCallback<Station> callback) throws ApiException {
+  public Future<Station> getStationAsync(GetStationRequest request, AsyncApiCallback<Station> callback) {
     return pcapiClient.<Station>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Station>() {}, callback);
   }
 
@@ -74,7 +75,7 @@ public class StationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Station>> getStationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Station>> callback) throws ApiException {
+  public Future<ApiResponse<Station>> getStationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Station>> callback) {
     return pcapiClient.<Station>invokeAPIVerboseAsync(request, new TypeReference<Station>() {}, callback);
   }
 
@@ -84,7 +85,7 @@ public class StationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<StationEntityListing> getStationsAsync(GetStationsRequest request, AsyncApiCallback<StationEntityListing> callback) throws ApiException {
+  public Future<StationEntityListing> getStationsAsync(GetStationsRequest request, AsyncApiCallback<StationEntityListing> callback) {
     return pcapiClient.<StationEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<StationEntityListing>() {}, callback);
   }
 
@@ -94,7 +95,7 @@ public class StationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<StationEntityListing>> getStationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<StationEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<StationEntityListing>> getStationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<StationEntityListing>> callback) {
     return pcapiClient.<StationEntityListing>invokeAPIVerboseAsync(request, new TypeReference<StationEntityListing>() {}, callback);
   }
 

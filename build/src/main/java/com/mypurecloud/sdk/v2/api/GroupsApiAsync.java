@@ -35,6 +35,7 @@ import com.mypurecloud.sdk.v2.api.request.PostGroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGroupsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGroupRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -59,7 +60,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteGroupAsync(DeleteGroupRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteGroupAsync(DeleteGroupRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -69,7 +70,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteGroupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteGroupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -79,7 +80,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Empty> deleteGroupMembersAsync(DeleteGroupMembersRequest request, AsyncApiCallback<Empty> callback) throws ApiException {
+  public Future<Empty> deleteGroupMembersAsync(DeleteGroupMembersRequest request, AsyncApiCallback<Empty> callback) {
     return pcapiClient.<Empty>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, callback);
   }
 
@@ -89,7 +90,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Empty>> deleteGroupMembersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) throws ApiException {
+  public Future<ApiResponse<Empty>> deleteGroupMembersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
     return pcapiClient.<Empty>invokeAPIVerboseAsync(request, new TypeReference<Empty>() {}, callback);
   }
 
@@ -99,7 +100,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<FieldConfig> getFieldconfigAsync(GetFieldconfigRequest request, AsyncApiCallback<FieldConfig> callback) throws ApiException {
+  public Future<FieldConfig> getFieldconfigAsync(GetFieldconfigRequest request, AsyncApiCallback<FieldConfig> callback) {
     return pcapiClient.<FieldConfig>invokeAPIAsync(request.withHttpInfo(), new TypeReference<FieldConfig>() {}, callback);
   }
 
@@ -109,7 +110,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<FieldConfig>> getFieldconfigAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FieldConfig>> callback) throws ApiException {
+  public Future<ApiResponse<FieldConfig>> getFieldconfigAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FieldConfig>> callback) {
     return pcapiClient.<FieldConfig>invokeAPIVerboseAsync(request, new TypeReference<FieldConfig>() {}, callback);
   }
 
@@ -119,7 +120,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Group> getGroupAsync(GetGroupRequest request, AsyncApiCallback<Group> callback) throws ApiException {
+  public Future<Group> getGroupAsync(GetGroupRequest request, AsyncApiCallback<Group> callback) {
     return pcapiClient.<Group>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Group>() {}, callback);
   }
 
@@ -129,7 +130,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Group>> getGroupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Group>> callback) throws ApiException {
+  public Future<ApiResponse<Group>> getGroupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Group>> callback) {
     return pcapiClient.<Group>invokeAPIVerboseAsync(request, new TypeReference<Group>() {}, callback);
   }
 
@@ -139,7 +140,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UserEntityListing> getGroupMembersAsync(GetGroupMembersRequest request, AsyncApiCallback<UserEntityListing> callback) throws ApiException {
+  public Future<UserEntityListing> getGroupMembersAsync(GetGroupMembersRequest request, AsyncApiCallback<UserEntityListing> callback) {
     return pcapiClient.<UserEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserEntityListing>() {}, callback);
   }
 
@@ -149,7 +150,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UserEntityListing>> getGroupMembersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<UserEntityListing>> getGroupMembersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserEntityListing>> callback) {
     return pcapiClient.<UserEntityListing>invokeAPIVerboseAsync(request, new TypeReference<UserEntityListing>() {}, callback);
   }
 
@@ -159,7 +160,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<GroupEntityListing> getGroupsAsync(GetGroupsRequest request, AsyncApiCallback<GroupEntityListing> callback) throws ApiException {
+  public Future<GroupEntityListing> getGroupsAsync(GetGroupsRequest request, AsyncApiCallback<GroupEntityListing> callback) {
     return pcapiClient.<GroupEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<GroupEntityListing>() {}, callback);
   }
 
@@ -169,7 +170,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<GroupEntityListing>> getGroupsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GroupEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<GroupEntityListing>> getGroupsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GroupEntityListing>> callback) {
     return pcapiClient.<GroupEntityListing>invokeAPIVerboseAsync(request, new TypeReference<GroupEntityListing>() {}, callback);
   }
 
@@ -179,7 +180,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<GroupsSearchResponse> getGroupsSearchAsync(GetGroupsSearchRequest request, AsyncApiCallback<GroupsSearchResponse> callback) throws ApiException {
+  public Future<GroupsSearchResponse> getGroupsSearchAsync(GetGroupsSearchRequest request, AsyncApiCallback<GroupsSearchResponse> callback) {
     return pcapiClient.<GroupsSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<GroupsSearchResponse>() {}, callback);
   }
 
@@ -189,7 +190,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<GroupsSearchResponse>> getGroupsSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GroupsSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<GroupsSearchResponse>> getGroupsSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GroupsSearchResponse>> callback) {
     return pcapiClient.<GroupsSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<GroupsSearchResponse>() {}, callback);
   }
 
@@ -199,7 +200,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Empty> postGroupMembersAsync(PostGroupMembersRequest request, AsyncApiCallback<Empty> callback) throws ApiException {
+  public Future<Empty> postGroupMembersAsync(PostGroupMembersRequest request, AsyncApiCallback<Empty> callback) {
     return pcapiClient.<Empty>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, callback);
   }
 
@@ -209,7 +210,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Empty>> postGroupMembersAsync(ApiRequest<GroupMembersUpdate> request, AsyncApiCallback<ApiResponse<Empty>> callback) throws ApiException {
+  public Future<ApiResponse<Empty>> postGroupMembersAsync(ApiRequest<GroupMembersUpdate> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
     return pcapiClient.<Empty>invokeAPIVerboseAsync(request, new TypeReference<Empty>() {}, callback);
   }
 
@@ -219,7 +220,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Group> postGroupsAsync(PostGroupsRequest request, AsyncApiCallback<Group> callback) throws ApiException {
+  public Future<Group> postGroupsAsync(PostGroupsRequest request, AsyncApiCallback<Group> callback) {
     return pcapiClient.<Group>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Group>() {}, callback);
   }
 
@@ -229,7 +230,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Group>> postGroupsAsync(ApiRequest<Group> request, AsyncApiCallback<ApiResponse<Group>> callback) throws ApiException {
+  public Future<ApiResponse<Group>> postGroupsAsync(ApiRequest<Group> request, AsyncApiCallback<ApiResponse<Group>> callback) {
     return pcapiClient.<Group>invokeAPIVerboseAsync(request, new TypeReference<Group>() {}, callback);
   }
 
@@ -239,7 +240,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<GroupsSearchResponse> postGroupsSearchAsync(PostGroupsSearchRequest request, AsyncApiCallback<GroupsSearchResponse> callback) throws ApiException {
+  public Future<GroupsSearchResponse> postGroupsSearchAsync(PostGroupsSearchRequest request, AsyncApiCallback<GroupsSearchResponse> callback) {
     return pcapiClient.<GroupsSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<GroupsSearchResponse>() {}, callback);
   }
 
@@ -249,7 +250,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<GroupsSearchResponse>> postGroupsSearchAsync(ApiRequest<GroupSearchRequest> request, AsyncApiCallback<ApiResponse<GroupsSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<GroupsSearchResponse>> postGroupsSearchAsync(ApiRequest<GroupSearchRequest> request, AsyncApiCallback<ApiResponse<GroupsSearchResponse>> callback) {
     return pcapiClient.<GroupsSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<GroupsSearchResponse>() {}, callback);
   }
 
@@ -259,7 +260,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Group> putGroupAsync(PutGroupRequest request, AsyncApiCallback<Group> callback) throws ApiException {
+  public Future<Group> putGroupAsync(PutGroupRequest request, AsyncApiCallback<Group> callback) {
     return pcapiClient.<Group>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Group>() {}, callback);
   }
 
@@ -269,7 +270,7 @@ public class GroupsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Group>> putGroupAsync(ApiRequest<GroupUpdate> request, AsyncApiCallback<ApiResponse<Group>> callback) throws ApiException {
+  public Future<ApiResponse<Group>> putGroupAsync(ApiRequest<GroupUpdate> request, AsyncApiCallback<ApiResponse<Group>> callback) {
     return pcapiClient.<Group>invokeAPIVerboseAsync(request, new TypeReference<Group>() {}, callback);
   }
 

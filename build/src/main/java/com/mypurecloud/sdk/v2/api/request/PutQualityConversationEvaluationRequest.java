@@ -116,21 +116,21 @@ public class PutQualityConversationEvaluationRequest {
         return this;
     }
 
-    public ApiRequest<Evaluation> withHttpInfo() throws ApiException {
+    public ApiRequest<Evaluation> withHttpInfo() {
         
         // verify the required parameter 'conversationId' is set
         if (this.conversationId == null) {
-            throw new ApiException(400, "Missing the required parameter 'conversationId' when building request for PutQualityConversationEvaluationRequest.");
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PutQualityConversationEvaluationRequest.");
         }
         
         // verify the required parameter 'evaluationId' is set
         if (this.evaluationId == null) {
-            throw new ApiException(400, "Missing the required parameter 'evaluationId' when building request for PutQualityConversationEvaluationRequest.");
+            throw new IllegalStateException("Missing the required parameter 'evaluationId' when building request for PutQualityConversationEvaluationRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutQualityConversationEvaluationRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutQualityConversationEvaluationRequest.");
         }
         
 

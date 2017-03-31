@@ -134,16 +134,16 @@ public class PutTelephonyProvidersEdgesCertificateauthorityRequest {
         return this;
     }
 
-    public ApiRequest<DomainCertificateAuthority> withHttpInfo() throws ApiException {
+    public ApiRequest<DomainCertificateAuthority> withHttpInfo() {
         
         // verify the required parameter 'certificateId' is set
         if (this.certificateId == null) {
-            throw new ApiException(400, "Missing the required parameter 'certificateId' when building request for PutTelephonyProvidersEdgesCertificateauthorityRequest.");
+            throw new IllegalStateException("Missing the required parameter 'certificateId' when building request for PutTelephonyProvidersEdgesCertificateauthorityRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesCertificateauthorityRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesCertificateauthorityRequest.");
         }
         
 

@@ -81,6 +81,7 @@ import com.mypurecloud.sdk.v2.api.request.PutRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserRoutingskillRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -105,7 +106,7 @@ public class RoutingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteRoutingEmailDomain(String domainId) throws ApiException {
+  public String deleteRoutingEmailDomain(String domainId) throws IOException, ApiException {
     return deleteRoutingEmailDomainWithHttpInfo(domainId).getBody();
   }
 
@@ -116,12 +117,12 @@ public class RoutingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteRoutingEmailDomainWithHttpInfo(String domainId) throws ApiException {
+  public ApiResponse<String> deleteRoutingEmailDomainWithHttpInfo(String domainId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'domainId' is set
     if (domainId == null) {
-      throw new ApiException(400, "Missing the required parameter 'domainId' when calling deleteRoutingEmailDomain");
+      throw new IllegalArgumentException("Missing the required parameter 'domainId' when calling deleteRoutingEmailDomain");
     }
     
     // create path and map variables
@@ -157,7 +158,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteRoutingEmailDomain(DeleteRoutingEmailDomainRequest request) throws ApiException {
+  public String deleteRoutingEmailDomain(DeleteRoutingEmailDomainRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -167,7 +168,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteRoutingEmailDomain(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteRoutingEmailDomain(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -179,7 +180,7 @@ public class RoutingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteRoutingEmailDomainRoute(String domainName, String routeId) throws ApiException {
+  public String deleteRoutingEmailDomainRoute(String domainName, String routeId) throws IOException, ApiException {
     return deleteRoutingEmailDomainRouteWithHttpInfo(domainName, routeId).getBody();
   }
 
@@ -191,17 +192,17 @@ public class RoutingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteRoutingEmailDomainRouteWithHttpInfo(String domainName, String routeId) throws ApiException {
+  public ApiResponse<String> deleteRoutingEmailDomainRouteWithHttpInfo(String domainName, String routeId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'domainName' is set
     if (domainName == null) {
-      throw new ApiException(400, "Missing the required parameter 'domainName' when calling deleteRoutingEmailDomainRoute");
+      throw new IllegalArgumentException("Missing the required parameter 'domainName' when calling deleteRoutingEmailDomainRoute");
     }
     
     // verify the required parameter 'routeId' is set
     if (routeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'routeId' when calling deleteRoutingEmailDomainRoute");
+      throw new IllegalArgumentException("Missing the required parameter 'routeId' when calling deleteRoutingEmailDomainRoute");
     }
     
     // create path and map variables
@@ -238,7 +239,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteRoutingEmailDomainRoute(DeleteRoutingEmailDomainRouteRequest request) throws ApiException {
+  public String deleteRoutingEmailDomainRoute(DeleteRoutingEmailDomainRouteRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -248,7 +249,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteRoutingEmailDomainRoute(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteRoutingEmailDomainRoute(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -260,7 +261,7 @@ public class RoutingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteRoutingQueue(String queueId, Boolean forceDelete) throws ApiException {
+  public String deleteRoutingQueue(String queueId, Boolean forceDelete) throws IOException, ApiException {
     return deleteRoutingQueueWithHttpInfo(queueId, forceDelete).getBody();
   }
 
@@ -272,12 +273,12 @@ public class RoutingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteRoutingQueueWithHttpInfo(String queueId, Boolean forceDelete) throws ApiException {
+  public ApiResponse<String> deleteRoutingQueueWithHttpInfo(String queueId, Boolean forceDelete) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'queueId' is set
     if (queueId == null) {
-      throw new ApiException(400, "Missing the required parameter 'queueId' when calling deleteRoutingQueue");
+      throw new IllegalArgumentException("Missing the required parameter 'queueId' when calling deleteRoutingQueue");
     }
     
     // create path and map variables
@@ -314,7 +315,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteRoutingQueue(DeleteRoutingQueueRequest request) throws ApiException {
+  public String deleteRoutingQueue(DeleteRoutingQueueRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -324,7 +325,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteRoutingQueue(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteRoutingQueue(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -336,7 +337,7 @@ public class RoutingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteRoutingQueueUser(String queueId, String memberId) throws ApiException {
+  public String deleteRoutingQueueUser(String queueId, String memberId) throws IOException, ApiException {
     return deleteRoutingQueueUserWithHttpInfo(queueId, memberId).getBody();
   }
 
@@ -348,17 +349,17 @@ public class RoutingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteRoutingQueueUserWithHttpInfo(String queueId, String memberId) throws ApiException {
+  public ApiResponse<String> deleteRoutingQueueUserWithHttpInfo(String queueId, String memberId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'queueId' is set
     if (queueId == null) {
-      throw new ApiException(400, "Missing the required parameter 'queueId' when calling deleteRoutingQueueUser");
+      throw new IllegalArgumentException("Missing the required parameter 'queueId' when calling deleteRoutingQueueUser");
     }
     
     // verify the required parameter 'memberId' is set
     if (memberId == null) {
-      throw new ApiException(400, "Missing the required parameter 'memberId' when calling deleteRoutingQueueUser");
+      throw new IllegalArgumentException("Missing the required parameter 'memberId' when calling deleteRoutingQueueUser");
     }
     
     // create path and map variables
@@ -395,7 +396,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteRoutingQueueUser(DeleteRoutingQueueUserRequest request) throws ApiException {
+  public String deleteRoutingQueueUser(DeleteRoutingQueueUserRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -405,7 +406,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteRoutingQueueUser(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteRoutingQueueUser(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -417,7 +418,7 @@ public class RoutingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteRoutingQueueWrapupcode(String queueId, String codeId) throws ApiException {
+  public String deleteRoutingQueueWrapupcode(String queueId, String codeId) throws IOException, ApiException {
     return deleteRoutingQueueWrapupcodeWithHttpInfo(queueId, codeId).getBody();
   }
 
@@ -429,17 +430,17 @@ public class RoutingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteRoutingQueueWrapupcodeWithHttpInfo(String queueId, String codeId) throws ApiException {
+  public ApiResponse<String> deleteRoutingQueueWrapupcodeWithHttpInfo(String queueId, String codeId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'queueId' is set
     if (queueId == null) {
-      throw new ApiException(400, "Missing the required parameter 'queueId' when calling deleteRoutingQueueWrapupcode");
+      throw new IllegalArgumentException("Missing the required parameter 'queueId' when calling deleteRoutingQueueWrapupcode");
     }
     
     // verify the required parameter 'codeId' is set
     if (codeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'codeId' when calling deleteRoutingQueueWrapupcode");
+      throw new IllegalArgumentException("Missing the required parameter 'codeId' when calling deleteRoutingQueueWrapupcode");
     }
     
     // create path and map variables
@@ -476,7 +477,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteRoutingQueueWrapupcode(DeleteRoutingQueueWrapupcodeRequest request) throws ApiException {
+  public String deleteRoutingQueueWrapupcode(DeleteRoutingQueueWrapupcodeRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -486,7 +487,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteRoutingQueueWrapupcode(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteRoutingQueueWrapupcode(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -497,7 +498,7 @@ public class RoutingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteRoutingSkill(String skillId) throws ApiException {
+  public String deleteRoutingSkill(String skillId) throws IOException, ApiException {
     return deleteRoutingSkillWithHttpInfo(skillId).getBody();
   }
 
@@ -508,12 +509,12 @@ public class RoutingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteRoutingSkillWithHttpInfo(String skillId) throws ApiException {
+  public ApiResponse<String> deleteRoutingSkillWithHttpInfo(String skillId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'skillId' is set
     if (skillId == null) {
-      throw new ApiException(400, "Missing the required parameter 'skillId' when calling deleteRoutingSkill");
+      throw new IllegalArgumentException("Missing the required parameter 'skillId' when calling deleteRoutingSkill");
     }
     
     // create path and map variables
@@ -549,7 +550,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteRoutingSkill(DeleteRoutingSkillRequest request) throws ApiException {
+  public String deleteRoutingSkill(DeleteRoutingSkillRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -559,7 +560,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteRoutingSkill(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteRoutingSkill(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -569,7 +570,7 @@ public class RoutingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteRoutingUtilization() throws ApiException {
+  public String deleteRoutingUtilization() throws IOException, ApiException {
     return deleteRoutingUtilizationWithHttpInfo().getBody();
   }
 
@@ -579,7 +580,7 @@ public class RoutingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteRoutingUtilizationWithHttpInfo() throws ApiException {
+  public ApiResponse<String> deleteRoutingUtilizationWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -614,7 +615,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteRoutingUtilization(DeleteRoutingUtilizationRequest request) throws ApiException {
+  public String deleteRoutingUtilization(DeleteRoutingUtilizationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -624,7 +625,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteRoutingUtilization(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteRoutingUtilization(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -635,7 +636,7 @@ public class RoutingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteRoutingWrapupcode(String codeId) throws ApiException {
+  public String deleteRoutingWrapupcode(String codeId) throws IOException, ApiException {
     return deleteRoutingWrapupcodeWithHttpInfo(codeId).getBody();
   }
 
@@ -646,12 +647,12 @@ public class RoutingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteRoutingWrapupcodeWithHttpInfo(String codeId) throws ApiException {
+  public ApiResponse<String> deleteRoutingWrapupcodeWithHttpInfo(String codeId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'codeId' is set
     if (codeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'codeId' when calling deleteRoutingWrapupcode");
+      throw new IllegalArgumentException("Missing the required parameter 'codeId' when calling deleteRoutingWrapupcode");
     }
     
     // create path and map variables
@@ -687,7 +688,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteRoutingWrapupcode(DeleteRoutingWrapupcodeRequest request) throws ApiException {
+  public String deleteRoutingWrapupcode(DeleteRoutingWrapupcodeRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -697,7 +698,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteRoutingWrapupcode(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteRoutingWrapupcode(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -709,7 +710,7 @@ public class RoutingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteUserRoutingskill(String userId, String skillId) throws ApiException {
+  public String deleteUserRoutingskill(String userId, String skillId) throws IOException, ApiException {
     return deleteUserRoutingskillWithHttpInfo(userId, skillId).getBody();
   }
 
@@ -721,17 +722,17 @@ public class RoutingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteUserRoutingskillWithHttpInfo(String userId, String skillId) throws ApiException {
+  public ApiResponse<String> deleteUserRoutingskillWithHttpInfo(String userId, String skillId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling deleteUserRoutingskill");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling deleteUserRoutingskill");
     }
     
     // verify the required parameter 'skillId' is set
     if (skillId == null) {
-      throw new ApiException(400, "Missing the required parameter 'skillId' when calling deleteUserRoutingskill");
+      throw new IllegalArgumentException("Missing the required parameter 'skillId' when calling deleteUserRoutingskill");
     }
     
     // create path and map variables
@@ -768,7 +769,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteUserRoutingskill(DeleteUserRoutingskillRequest request) throws ApiException {
+  public String deleteUserRoutingskill(DeleteUserRoutingskillRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -778,7 +779,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteUserRoutingskill(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteUserRoutingskill(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -789,7 +790,7 @@ public class RoutingApi {
    * @return InboundDomain
    * @throws ApiException if fails to make API call
    */
-  public InboundDomain getRoutingEmailDomain(String domainId) throws ApiException {
+  public InboundDomain getRoutingEmailDomain(String domainId) throws IOException, ApiException {
     return getRoutingEmailDomainWithHttpInfo(domainId).getBody();
   }
 
@@ -800,12 +801,12 @@ public class RoutingApi {
    * @return InboundDomain
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InboundDomain> getRoutingEmailDomainWithHttpInfo(String domainId) throws ApiException {
+  public ApiResponse<InboundDomain> getRoutingEmailDomainWithHttpInfo(String domainId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'domainId' is set
     if (domainId == null) {
-      throw new ApiException(400, "Missing the required parameter 'domainId' when calling getRoutingEmailDomain");
+      throw new IllegalArgumentException("Missing the required parameter 'domainId' when calling getRoutingEmailDomain");
     }
     
     // create path and map variables
@@ -841,7 +842,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public InboundDomain getRoutingEmailDomain(GetRoutingEmailDomainRequest request) throws ApiException {
+  public InboundDomain getRoutingEmailDomain(GetRoutingEmailDomainRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<InboundDomain>() {});
   }
 
@@ -851,7 +852,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InboundDomain> getRoutingEmailDomain(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<InboundDomain> getRoutingEmailDomain(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<InboundDomain>invokeAPIVerbose(request, new TypeReference<InboundDomain>() {});
   }
 
@@ -863,7 +864,7 @@ public class RoutingApi {
    * @return InboundRoute
    * @throws ApiException if fails to make API call
    */
-  public InboundRoute getRoutingEmailDomainRoute(String domainName, String routeId) throws ApiException {
+  public InboundRoute getRoutingEmailDomainRoute(String domainName, String routeId) throws IOException, ApiException {
     return getRoutingEmailDomainRouteWithHttpInfo(domainName, routeId).getBody();
   }
 
@@ -875,17 +876,17 @@ public class RoutingApi {
    * @return InboundRoute
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InboundRoute> getRoutingEmailDomainRouteWithHttpInfo(String domainName, String routeId) throws ApiException {
+  public ApiResponse<InboundRoute> getRoutingEmailDomainRouteWithHttpInfo(String domainName, String routeId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'domainName' is set
     if (domainName == null) {
-      throw new ApiException(400, "Missing the required parameter 'domainName' when calling getRoutingEmailDomainRoute");
+      throw new IllegalArgumentException("Missing the required parameter 'domainName' when calling getRoutingEmailDomainRoute");
     }
     
     // verify the required parameter 'routeId' is set
     if (routeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'routeId' when calling getRoutingEmailDomainRoute");
+      throw new IllegalArgumentException("Missing the required parameter 'routeId' when calling getRoutingEmailDomainRoute");
     }
     
     // create path and map variables
@@ -922,7 +923,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public InboundRoute getRoutingEmailDomainRoute(GetRoutingEmailDomainRouteRequest request) throws ApiException {
+  public InboundRoute getRoutingEmailDomainRoute(GetRoutingEmailDomainRouteRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<InboundRoute>() {});
   }
 
@@ -932,7 +933,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InboundRoute> getRoutingEmailDomainRoute(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<InboundRoute> getRoutingEmailDomainRoute(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<InboundRoute>invokeAPIVerbose(request, new TypeReference<InboundRoute>() {});
   }
 
@@ -946,7 +947,7 @@ public class RoutingApi {
    * @return InboundRouteEntityListing
    * @throws ApiException if fails to make API call
    */
-  public InboundRouteEntityListing getRoutingEmailDomainRoutes(String domainName, Integer pageSize, Integer pageNumber, String pattern) throws ApiException {
+  public InboundRouteEntityListing getRoutingEmailDomainRoutes(String domainName, Integer pageSize, Integer pageNumber, String pattern) throws IOException, ApiException {
     return getRoutingEmailDomainRoutesWithHttpInfo(domainName, pageSize, pageNumber, pattern).getBody();
   }
 
@@ -960,12 +961,12 @@ public class RoutingApi {
    * @return InboundRouteEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InboundRouteEntityListing> getRoutingEmailDomainRoutesWithHttpInfo(String domainName, Integer pageSize, Integer pageNumber, String pattern) throws ApiException {
+  public ApiResponse<InboundRouteEntityListing> getRoutingEmailDomainRoutesWithHttpInfo(String domainName, Integer pageSize, Integer pageNumber, String pattern) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'domainName' is set
     if (domainName == null) {
-      throw new ApiException(400, "Missing the required parameter 'domainName' when calling getRoutingEmailDomainRoutes");
+      throw new IllegalArgumentException("Missing the required parameter 'domainName' when calling getRoutingEmailDomainRoutes");
     }
     
     // create path and map variables
@@ -1004,7 +1005,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public InboundRouteEntityListing getRoutingEmailDomainRoutes(GetRoutingEmailDomainRoutesRequest request) throws ApiException {
+  public InboundRouteEntityListing getRoutingEmailDomainRoutes(GetRoutingEmailDomainRoutesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<InboundRouteEntityListing>() {});
   }
 
@@ -1014,7 +1015,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InboundRouteEntityListing> getRoutingEmailDomainRoutes(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<InboundRouteEntityListing> getRoutingEmailDomainRoutes(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<InboundRouteEntityListing>invokeAPIVerbose(request, new TypeReference<InboundRouteEntityListing>() {});
   }
 
@@ -1024,7 +1025,7 @@ public class RoutingApi {
    * @return InboundDomainEntityListing
    * @throws ApiException if fails to make API call
    */
-  public InboundDomainEntityListing getRoutingEmailDomains() throws ApiException {
+  public InboundDomainEntityListing getRoutingEmailDomains() throws IOException, ApiException {
     return getRoutingEmailDomainsWithHttpInfo().getBody();
   }
 
@@ -1034,7 +1035,7 @@ public class RoutingApi {
    * @return InboundDomainEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InboundDomainEntityListing> getRoutingEmailDomainsWithHttpInfo() throws ApiException {
+  public ApiResponse<InboundDomainEntityListing> getRoutingEmailDomainsWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1069,7 +1070,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public InboundDomainEntityListing getRoutingEmailDomains(GetRoutingEmailDomainsRequest request) throws ApiException {
+  public InboundDomainEntityListing getRoutingEmailDomains(GetRoutingEmailDomainsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<InboundDomainEntityListing>() {});
   }
 
@@ -1079,7 +1080,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InboundDomainEntityListing> getRoutingEmailDomains(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<InboundDomainEntityListing> getRoutingEmailDomains(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<InboundDomainEntityListing>invokeAPIVerbose(request, new TypeReference<InboundDomainEntityListing>() {});
   }
 
@@ -1089,7 +1090,7 @@ public class RoutingApi {
    * @return EmailSetup
    * @throws ApiException if fails to make API call
    */
-  public EmailSetup getRoutingEmailSetup() throws ApiException {
+  public EmailSetup getRoutingEmailSetup() throws IOException, ApiException {
     return getRoutingEmailSetupWithHttpInfo().getBody();
   }
 
@@ -1099,7 +1100,7 @@ public class RoutingApi {
    * @return EmailSetup
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EmailSetup> getRoutingEmailSetupWithHttpInfo() throws ApiException {
+  public ApiResponse<EmailSetup> getRoutingEmailSetupWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1134,7 +1135,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EmailSetup getRoutingEmailSetup(GetRoutingEmailSetupRequest request) throws ApiException {
+  public EmailSetup getRoutingEmailSetup(GetRoutingEmailSetupRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EmailSetup>() {});
   }
 
@@ -1144,7 +1145,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EmailSetup> getRoutingEmailSetup(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<EmailSetup> getRoutingEmailSetup(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<EmailSetup>invokeAPIVerbose(request, new TypeReference<EmailSetup>() {});
   }
 
@@ -1158,7 +1159,7 @@ public class RoutingApi {
    * @return LanguageEntityListing
    * @throws ApiException if fails to make API call
    */
-  public LanguageEntityListing getRoutingLanguages(Integer pageSize, Integer pageNumber, String sortOrder, String name) throws ApiException {
+  public LanguageEntityListing getRoutingLanguages(Integer pageSize, Integer pageNumber, String sortOrder, String name) throws IOException, ApiException {
     return getRoutingLanguagesWithHttpInfo(pageSize, pageNumber, sortOrder, name).getBody();
   }
 
@@ -1172,7 +1173,7 @@ public class RoutingApi {
    * @return LanguageEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LanguageEntityListing> getRoutingLanguagesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder, String name) throws ApiException {
+  public ApiResponse<LanguageEntityListing> getRoutingLanguagesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder, String name) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1211,7 +1212,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public LanguageEntityListing getRoutingLanguages(GetRoutingLanguagesRequest request) throws ApiException {
+  public LanguageEntityListing getRoutingLanguages(GetRoutingLanguagesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LanguageEntityListing>() {});
   }
 
@@ -1221,7 +1222,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LanguageEntityListing> getRoutingLanguages(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<LanguageEntityListing> getRoutingLanguages(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<LanguageEntityListing>invokeAPIVerbose(request, new TypeReference<LanguageEntityListing>() {});
   }
 
@@ -1232,7 +1233,7 @@ public class RoutingApi {
    * @return Queue
    * @throws ApiException if fails to make API call
    */
-  public Queue getRoutingQueue(String queueId) throws ApiException {
+  public Queue getRoutingQueue(String queueId) throws IOException, ApiException {
     return getRoutingQueueWithHttpInfo(queueId).getBody();
   }
 
@@ -1243,12 +1244,12 @@ public class RoutingApi {
    * @return Queue
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Queue> getRoutingQueueWithHttpInfo(String queueId) throws ApiException {
+  public ApiResponse<Queue> getRoutingQueueWithHttpInfo(String queueId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'queueId' is set
     if (queueId == null) {
-      throw new ApiException(400, "Missing the required parameter 'queueId' when calling getRoutingQueue");
+      throw new IllegalArgumentException("Missing the required parameter 'queueId' when calling getRoutingQueue");
     }
     
     // create path and map variables
@@ -1284,7 +1285,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Queue getRoutingQueue(GetRoutingQueueRequest request) throws ApiException {
+  public Queue getRoutingQueue(GetRoutingQueueRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Queue>() {});
   }
 
@@ -1294,7 +1295,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Queue> getRoutingQueue(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Queue> getRoutingQueue(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Queue>invokeAPIVerbose(request, new TypeReference<Queue>() {});
   }
 
@@ -1306,7 +1307,7 @@ public class RoutingApi {
    * @return EstimatedWaitTimePredictions
    * @throws ApiException if fails to make API call
    */
-  public EstimatedWaitTimePredictions getRoutingQueueEstimatedwaittime(String queueId, String conversationId) throws ApiException {
+  public EstimatedWaitTimePredictions getRoutingQueueEstimatedwaittime(String queueId, String conversationId) throws IOException, ApiException {
     return getRoutingQueueEstimatedwaittimeWithHttpInfo(queueId, conversationId).getBody();
   }
 
@@ -1318,12 +1319,12 @@ public class RoutingApi {
    * @return EstimatedWaitTimePredictions
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EstimatedWaitTimePredictions> getRoutingQueueEstimatedwaittimeWithHttpInfo(String queueId, String conversationId) throws ApiException {
+  public ApiResponse<EstimatedWaitTimePredictions> getRoutingQueueEstimatedwaittimeWithHttpInfo(String queueId, String conversationId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'queueId' is set
     if (queueId == null) {
-      throw new ApiException(400, "Missing the required parameter 'queueId' when calling getRoutingQueueEstimatedwaittime");
+      throw new IllegalArgumentException("Missing the required parameter 'queueId' when calling getRoutingQueueEstimatedwaittime");
     }
     
     // create path and map variables
@@ -1360,7 +1361,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EstimatedWaitTimePredictions getRoutingQueueEstimatedwaittime(GetRoutingQueueEstimatedwaittimeRequest request) throws ApiException {
+  public EstimatedWaitTimePredictions getRoutingQueueEstimatedwaittime(GetRoutingQueueEstimatedwaittimeRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EstimatedWaitTimePredictions>() {});
   }
 
@@ -1370,7 +1371,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EstimatedWaitTimePredictions> getRoutingQueueEstimatedwaittime(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<EstimatedWaitTimePredictions> getRoutingQueueEstimatedwaittime(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<EstimatedWaitTimePredictions>invokeAPIVerbose(request, new TypeReference<EstimatedWaitTimePredictions>() {});
   }
 
@@ -1382,7 +1383,7 @@ public class RoutingApi {
    * @return EstimatedWaitTimePredictions
    * @throws ApiException if fails to make API call
    */
-  public EstimatedWaitTimePredictions getRoutingQueueMediatypeEstimatedwaittime(String queueId, String mediaType) throws ApiException {
+  public EstimatedWaitTimePredictions getRoutingQueueMediatypeEstimatedwaittime(String queueId, String mediaType) throws IOException, ApiException {
     return getRoutingQueueMediatypeEstimatedwaittimeWithHttpInfo(queueId, mediaType).getBody();
   }
 
@@ -1394,17 +1395,17 @@ public class RoutingApi {
    * @return EstimatedWaitTimePredictions
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EstimatedWaitTimePredictions> getRoutingQueueMediatypeEstimatedwaittimeWithHttpInfo(String queueId, String mediaType) throws ApiException {
+  public ApiResponse<EstimatedWaitTimePredictions> getRoutingQueueMediatypeEstimatedwaittimeWithHttpInfo(String queueId, String mediaType) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'queueId' is set
     if (queueId == null) {
-      throw new ApiException(400, "Missing the required parameter 'queueId' when calling getRoutingQueueMediatypeEstimatedwaittime");
+      throw new IllegalArgumentException("Missing the required parameter 'queueId' when calling getRoutingQueueMediatypeEstimatedwaittime");
     }
     
     // verify the required parameter 'mediaType' is set
     if (mediaType == null) {
-      throw new ApiException(400, "Missing the required parameter 'mediaType' when calling getRoutingQueueMediatypeEstimatedwaittime");
+      throw new IllegalArgumentException("Missing the required parameter 'mediaType' when calling getRoutingQueueMediatypeEstimatedwaittime");
     }
     
     // create path and map variables
@@ -1441,7 +1442,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public EstimatedWaitTimePredictions getRoutingQueueMediatypeEstimatedwaittime(GetRoutingQueueMediatypeEstimatedwaittimeRequest request) throws ApiException {
+  public EstimatedWaitTimePredictions getRoutingQueueMediatypeEstimatedwaittime(GetRoutingQueueMediatypeEstimatedwaittimeRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EstimatedWaitTimePredictions>() {});
   }
 
@@ -1451,7 +1452,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<EstimatedWaitTimePredictions> getRoutingQueueMediatypeEstimatedwaittime(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<EstimatedWaitTimePredictions> getRoutingQueueMediatypeEstimatedwaittime(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<EstimatedWaitTimePredictions>invokeAPIVerbose(request, new TypeReference<EstimatedWaitTimePredictions>() {});
   }
 
@@ -1473,7 +1474,7 @@ public class RoutingApi {
    * @return QueueMemberEntityListing
    * @throws ApiException if fails to make API call
    */
-  public QueueMemberEntityListing getRoutingQueueUsers(String queueId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) throws ApiException {
+  public QueueMemberEntityListing getRoutingQueueUsers(String queueId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) throws IOException, ApiException {
     return getRoutingQueueUsersWithHttpInfo(queueId, pageSize, pageNumber, sortBy, expand, joined, name, profileSkills, skills, languages, routingStatus, presence).getBody();
   }
 
@@ -1495,12 +1496,12 @@ public class RoutingApi {
    * @return QueueMemberEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<QueueMemberEntityListing> getRoutingQueueUsersWithHttpInfo(String queueId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) throws ApiException {
+  public ApiResponse<QueueMemberEntityListing> getRoutingQueueUsersWithHttpInfo(String queueId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'queueId' is set
     if (queueId == null) {
-      throw new ApiException(400, "Missing the required parameter 'queueId' when calling getRoutingQueueUsers");
+      throw new IllegalArgumentException("Missing the required parameter 'queueId' when calling getRoutingQueueUsers");
     }
     
     // create path and map variables
@@ -1547,7 +1548,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public QueueMemberEntityListing getRoutingQueueUsers(GetRoutingQueueUsersRequest request) throws ApiException {
+  public QueueMemberEntityListing getRoutingQueueUsers(GetRoutingQueueUsersRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<QueueMemberEntityListing>() {});
   }
 
@@ -1557,7 +1558,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<QueueMemberEntityListing> getRoutingQueueUsers(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<QueueMemberEntityListing> getRoutingQueueUsers(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<QueueMemberEntityListing>invokeAPIVerbose(request, new TypeReference<QueueMemberEntityListing>() {});
   }
 
@@ -1568,7 +1569,7 @@ public class RoutingApi {
    * @return WrapupCodeEntityListing
    * @throws ApiException if fails to make API call
    */
-  public WrapupCodeEntityListing getRoutingQueueWrapupcodes(String queueId) throws ApiException {
+  public WrapupCodeEntityListing getRoutingQueueWrapupcodes(String queueId) throws IOException, ApiException {
     return getRoutingQueueWrapupcodesWithHttpInfo(queueId).getBody();
   }
 
@@ -1579,12 +1580,12 @@ public class RoutingApi {
    * @return WrapupCodeEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WrapupCodeEntityListing> getRoutingQueueWrapupcodesWithHttpInfo(String queueId) throws ApiException {
+  public ApiResponse<WrapupCodeEntityListing> getRoutingQueueWrapupcodesWithHttpInfo(String queueId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'queueId' is set
     if (queueId == null) {
-      throw new ApiException(400, "Missing the required parameter 'queueId' when calling getRoutingQueueWrapupcodes");
+      throw new IllegalArgumentException("Missing the required parameter 'queueId' when calling getRoutingQueueWrapupcodes");
     }
     
     // create path and map variables
@@ -1620,7 +1621,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public WrapupCodeEntityListing getRoutingQueueWrapupcodes(GetRoutingQueueWrapupcodesRequest request) throws ApiException {
+  public WrapupCodeEntityListing getRoutingQueueWrapupcodes(GetRoutingQueueWrapupcodesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WrapupCodeEntityListing>() {});
   }
 
@@ -1630,7 +1631,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WrapupCodeEntityListing> getRoutingQueueWrapupcodes(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<WrapupCodeEntityListing> getRoutingQueueWrapupcodes(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<WrapupCodeEntityListing>invokeAPIVerbose(request, new TypeReference<WrapupCodeEntityListing>() {});
   }
 
@@ -1645,7 +1646,7 @@ public class RoutingApi {
    * @return QueueEntityListing
    * @throws ApiException if fails to make API call
    */
-  public QueueEntityListing getRoutingQueues(Integer pageSize, Integer pageNumber, String sortBy, String name, Boolean active) throws ApiException {
+  public QueueEntityListing getRoutingQueues(Integer pageSize, Integer pageNumber, String sortBy, String name, Boolean active) throws IOException, ApiException {
     return getRoutingQueuesWithHttpInfo(pageSize, pageNumber, sortBy, name, active).getBody();
   }
 
@@ -1660,7 +1661,7 @@ public class RoutingApi {
    * @return QueueEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<QueueEntityListing> getRoutingQueuesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String name, Boolean active) throws ApiException {
+  public ApiResponse<QueueEntityListing> getRoutingQueuesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String name, Boolean active) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1700,7 +1701,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public QueueEntityListing getRoutingQueues(GetRoutingQueuesRequest request) throws ApiException {
+  public QueueEntityListing getRoutingQueues(GetRoutingQueuesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<QueueEntityListing>() {});
   }
 
@@ -1710,7 +1711,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<QueueEntityListing> getRoutingQueues(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<QueueEntityListing> getRoutingQueues(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<QueueEntityListing>invokeAPIVerbose(request, new TypeReference<QueueEntityListing>() {});
   }
 
@@ -1721,7 +1722,7 @@ public class RoutingApi {
    * @return RoutingSkill
    * @throws ApiException if fails to make API call
    */
-  public RoutingSkill getRoutingSkill(String skillId) throws ApiException {
+  public RoutingSkill getRoutingSkill(String skillId) throws IOException, ApiException {
     return getRoutingSkillWithHttpInfo(skillId).getBody();
   }
 
@@ -1732,12 +1733,12 @@ public class RoutingApi {
    * @return RoutingSkill
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RoutingSkill> getRoutingSkillWithHttpInfo(String skillId) throws ApiException {
+  public ApiResponse<RoutingSkill> getRoutingSkillWithHttpInfo(String skillId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'skillId' is set
     if (skillId == null) {
-      throw new ApiException(400, "Missing the required parameter 'skillId' when calling getRoutingSkill");
+      throw new IllegalArgumentException("Missing the required parameter 'skillId' when calling getRoutingSkill");
     }
     
     // create path and map variables
@@ -1773,7 +1774,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public RoutingSkill getRoutingSkill(GetRoutingSkillRequest request) throws ApiException {
+  public RoutingSkill getRoutingSkill(GetRoutingSkillRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RoutingSkill>() {});
   }
 
@@ -1783,7 +1784,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RoutingSkill> getRoutingSkill(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<RoutingSkill> getRoutingSkill(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<RoutingSkill>invokeAPIVerbose(request, new TypeReference<RoutingSkill>() {});
   }
 
@@ -1796,7 +1797,7 @@ public class RoutingApi {
    * @return SkillEntityListing
    * @throws ApiException if fails to make API call
    */
-  public SkillEntityListing getRoutingSkills(Integer pageSize, Integer pageNumber, String name) throws ApiException {
+  public SkillEntityListing getRoutingSkills(Integer pageSize, Integer pageNumber, String name) throws IOException, ApiException {
     return getRoutingSkillsWithHttpInfo(pageSize, pageNumber, name).getBody();
   }
 
@@ -1809,7 +1810,7 @@ public class RoutingApi {
    * @return SkillEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SkillEntityListing> getRoutingSkillsWithHttpInfo(Integer pageSize, Integer pageNumber, String name) throws ApiException {
+  public ApiResponse<SkillEntityListing> getRoutingSkillsWithHttpInfo(Integer pageSize, Integer pageNumber, String name) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1847,7 +1848,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public SkillEntityListing getRoutingSkills(GetRoutingSkillsRequest request) throws ApiException {
+  public SkillEntityListing getRoutingSkills(GetRoutingSkillsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SkillEntityListing>() {});
   }
 
@@ -1857,7 +1858,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SkillEntityListing> getRoutingSkills(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<SkillEntityListing> getRoutingSkills(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<SkillEntityListing>invokeAPIVerbose(request, new TypeReference<SkillEntityListing>() {});
   }
 
@@ -1867,7 +1868,7 @@ public class RoutingApi {
    * @return Utilization
    * @throws ApiException if fails to make API call
    */
-  public Utilization getRoutingUtilization() throws ApiException {
+  public Utilization getRoutingUtilization() throws IOException, ApiException {
     return getRoutingUtilizationWithHttpInfo().getBody();
   }
 
@@ -1877,7 +1878,7 @@ public class RoutingApi {
    * @return Utilization
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Utilization> getRoutingUtilizationWithHttpInfo() throws ApiException {
+  public ApiResponse<Utilization> getRoutingUtilizationWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1912,7 +1913,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Utilization getRoutingUtilization(GetRoutingUtilizationRequest request) throws ApiException {
+  public Utilization getRoutingUtilization(GetRoutingUtilizationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Utilization>() {});
   }
 
@@ -1922,7 +1923,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Utilization> getRoutingUtilization(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Utilization> getRoutingUtilization(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Utilization>invokeAPIVerbose(request, new TypeReference<Utilization>() {});
   }
 
@@ -1933,7 +1934,7 @@ public class RoutingApi {
    * @return WrapupCode
    * @throws ApiException if fails to make API call
    */
-  public WrapupCode getRoutingWrapupcode(String codeId) throws ApiException {
+  public WrapupCode getRoutingWrapupcode(String codeId) throws IOException, ApiException {
     return getRoutingWrapupcodeWithHttpInfo(codeId).getBody();
   }
 
@@ -1944,12 +1945,12 @@ public class RoutingApi {
    * @return WrapupCode
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WrapupCode> getRoutingWrapupcodeWithHttpInfo(String codeId) throws ApiException {
+  public ApiResponse<WrapupCode> getRoutingWrapupcodeWithHttpInfo(String codeId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'codeId' is set
     if (codeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'codeId' when calling getRoutingWrapupcode");
+      throw new IllegalArgumentException("Missing the required parameter 'codeId' when calling getRoutingWrapupcode");
     }
     
     // create path and map variables
@@ -1985,7 +1986,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public WrapupCode getRoutingWrapupcode(GetRoutingWrapupcodeRequest request) throws ApiException {
+  public WrapupCode getRoutingWrapupcode(GetRoutingWrapupcodeRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WrapupCode>() {});
   }
 
@@ -1995,7 +1996,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WrapupCode> getRoutingWrapupcode(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<WrapupCode> getRoutingWrapupcode(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<WrapupCode>invokeAPIVerbose(request, new TypeReference<WrapupCode>() {});
   }
 
@@ -2008,7 +2009,7 @@ public class RoutingApi {
    * @return WrapupCodeEntityListing
    * @throws ApiException if fails to make API call
    */
-  public WrapupCodeEntityListing getRoutingWrapupcodes(Integer pageSize, Integer pageNumber, String sortBy) throws ApiException {
+  public WrapupCodeEntityListing getRoutingWrapupcodes(Integer pageSize, Integer pageNumber, String sortBy) throws IOException, ApiException {
     return getRoutingWrapupcodesWithHttpInfo(pageSize, pageNumber, sortBy).getBody();
   }
 
@@ -2021,7 +2022,7 @@ public class RoutingApi {
    * @return WrapupCodeEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WrapupCodeEntityListing> getRoutingWrapupcodesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy) throws ApiException {
+  public ApiResponse<WrapupCodeEntityListing> getRoutingWrapupcodesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -2059,7 +2060,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public WrapupCodeEntityListing getRoutingWrapupcodes(GetRoutingWrapupcodesRequest request) throws ApiException {
+  public WrapupCodeEntityListing getRoutingWrapupcodes(GetRoutingWrapupcodesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WrapupCodeEntityListing>() {});
   }
 
@@ -2069,7 +2070,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WrapupCodeEntityListing> getRoutingWrapupcodes(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<WrapupCodeEntityListing> getRoutingWrapupcodes(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<WrapupCodeEntityListing>invokeAPIVerbose(request, new TypeReference<WrapupCodeEntityListing>() {});
   }
 
@@ -2083,7 +2084,7 @@ public class RoutingApi {
    * @return UserSkillEntityListing
    * @throws ApiException if fails to make API call
    */
-  public UserSkillEntityListing getUserRoutingskills(String userId, Integer pageSize, Integer pageNumber, String sortOrder) throws ApiException {
+  public UserSkillEntityListing getUserRoutingskills(String userId, Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
     return getUserRoutingskillsWithHttpInfo(userId, pageSize, pageNumber, sortOrder).getBody();
   }
 
@@ -2097,12 +2098,12 @@ public class RoutingApi {
    * @return UserSkillEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserSkillEntityListing> getUserRoutingskillsWithHttpInfo(String userId, Integer pageSize, Integer pageNumber, String sortOrder) throws ApiException {
+  public ApiResponse<UserSkillEntityListing> getUserRoutingskillsWithHttpInfo(String userId, Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getUserRoutingskills");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserRoutingskills");
     }
     
     // create path and map variables
@@ -2141,7 +2142,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserSkillEntityListing getUserRoutingskills(GetUserRoutingskillsRequest request) throws ApiException {
+  public UserSkillEntityListing getUserRoutingskills(GetUserRoutingskillsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserSkillEntityListing>() {});
   }
 
@@ -2151,7 +2152,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserSkillEntityListing> getUserRoutingskills(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<UserSkillEntityListing> getUserRoutingskills(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<UserSkillEntityListing>invokeAPIVerbose(request, new TypeReference<UserSkillEntityListing>() {});
   }
 
@@ -2164,7 +2165,7 @@ public class RoutingApi {
    * @return QueueMember
    * @throws ApiException if fails to make API call
    */
-  public QueueMember patchRoutingQueueUser(String queueId, String memberId, QueueMember body) throws ApiException {
+  public QueueMember patchRoutingQueueUser(String queueId, String memberId, QueueMember body) throws IOException, ApiException {
     return patchRoutingQueueUserWithHttpInfo(queueId, memberId, body).getBody();
   }
 
@@ -2177,22 +2178,22 @@ public class RoutingApi {
    * @return QueueMember
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<QueueMember> patchRoutingQueueUserWithHttpInfo(String queueId, String memberId, QueueMember body) throws ApiException {
+  public ApiResponse<QueueMember> patchRoutingQueueUserWithHttpInfo(String queueId, String memberId, QueueMember body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'queueId' is set
     if (queueId == null) {
-      throw new ApiException(400, "Missing the required parameter 'queueId' when calling patchRoutingQueueUser");
+      throw new IllegalArgumentException("Missing the required parameter 'queueId' when calling patchRoutingQueueUser");
     }
     
     // verify the required parameter 'memberId' is set
     if (memberId == null) {
-      throw new ApiException(400, "Missing the required parameter 'memberId' when calling patchRoutingQueueUser");
+      throw new IllegalArgumentException("Missing the required parameter 'memberId' when calling patchRoutingQueueUser");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchRoutingQueueUser");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchRoutingQueueUser");
     }
     
     // create path and map variables
@@ -2229,7 +2230,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public QueueMember patchRoutingQueueUser(PatchRoutingQueueUserRequest request) throws ApiException {
+  public QueueMember patchRoutingQueueUser(PatchRoutingQueueUserRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<QueueMember>() {});
   }
 
@@ -2239,7 +2240,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<QueueMember> patchRoutingQueueUser(ApiRequest<QueueMember> request) throws ApiException {
+  public ApiResponse<QueueMember> patchRoutingQueueUser(ApiRequest<QueueMember> request) throws IOException, ApiException {
     return pcapiClient.<QueueMember>invokeAPIVerbose(request, new TypeReference<QueueMember>() {});
   }
 
@@ -2251,7 +2252,7 @@ public class RoutingApi {
    * @return QueueMemberEntityListing
    * @throws ApiException if fails to make API call
    */
-  public QueueMemberEntityListing patchRoutingQueueUsers(String queueId, List<QueueMember> body) throws ApiException {
+  public QueueMemberEntityListing patchRoutingQueueUsers(String queueId, List<QueueMember> body) throws IOException, ApiException {
     return patchRoutingQueueUsersWithHttpInfo(queueId, body).getBody();
   }
 
@@ -2263,17 +2264,17 @@ public class RoutingApi {
    * @return QueueMemberEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<QueueMemberEntityListing> patchRoutingQueueUsersWithHttpInfo(String queueId, List<QueueMember> body) throws ApiException {
+  public ApiResponse<QueueMemberEntityListing> patchRoutingQueueUsersWithHttpInfo(String queueId, List<QueueMember> body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'queueId' is set
     if (queueId == null) {
-      throw new ApiException(400, "Missing the required parameter 'queueId' when calling patchRoutingQueueUsers");
+      throw new IllegalArgumentException("Missing the required parameter 'queueId' when calling patchRoutingQueueUsers");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchRoutingQueueUsers");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchRoutingQueueUsers");
     }
     
     // create path and map variables
@@ -2309,7 +2310,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public QueueMemberEntityListing patchRoutingQueueUsers(PatchRoutingQueueUsersRequest request) throws ApiException {
+  public QueueMemberEntityListing patchRoutingQueueUsers(PatchRoutingQueueUsersRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<QueueMemberEntityListing>() {});
   }
 
@@ -2319,7 +2320,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<QueueMemberEntityListing> patchRoutingQueueUsers(ApiRequest<List<QueueMember>> request) throws ApiException {
+  public ApiResponse<QueueMemberEntityListing> patchRoutingQueueUsers(ApiRequest<List<QueueMember>> request) throws IOException, ApiException {
     return pcapiClient.<QueueMemberEntityListing>invokeAPIVerbose(request, new TypeReference<QueueMemberEntityListing>() {});
   }
 
@@ -2330,7 +2331,7 @@ public class RoutingApi {
    * @return QualifierMappingObservationQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public QualifierMappingObservationQueryResponse postAnalyticsQueuesObservationsQuery(ObservationQuery body) throws ApiException {
+  public QualifierMappingObservationQueryResponse postAnalyticsQueuesObservationsQuery(ObservationQuery body) throws IOException, ApiException {
     return postAnalyticsQueuesObservationsQueryWithHttpInfo(body).getBody();
   }
 
@@ -2341,12 +2342,12 @@ public class RoutingApi {
    * @return QualifierMappingObservationQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<QualifierMappingObservationQueryResponse> postAnalyticsQueuesObservationsQueryWithHttpInfo(ObservationQuery body) throws ApiException {
+  public ApiResponse<QualifierMappingObservationQueryResponse> postAnalyticsQueuesObservationsQueryWithHttpInfo(ObservationQuery body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAnalyticsQueuesObservationsQuery");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsQueuesObservationsQuery");
     }
     
     // create path and map variables
@@ -2381,7 +2382,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public QualifierMappingObservationQueryResponse postAnalyticsQueuesObservationsQuery(PostAnalyticsQueuesObservationsQueryRequest request) throws ApiException {
+  public QualifierMappingObservationQueryResponse postAnalyticsQueuesObservationsQuery(PostAnalyticsQueuesObservationsQueryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<QualifierMappingObservationQueryResponse>() {});
   }
 
@@ -2391,7 +2392,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<QualifierMappingObservationQueryResponse> postAnalyticsQueuesObservationsQuery(ApiRequest<ObservationQuery> request) throws ApiException {
+  public ApiResponse<QualifierMappingObservationQueryResponse> postAnalyticsQueuesObservationsQuery(ApiRequest<ObservationQuery> request) throws IOException, ApiException {
     return pcapiClient.<QualifierMappingObservationQueryResponse>invokeAPIVerbose(request, new TypeReference<QualifierMappingObservationQueryResponse>() {});
   }
 
@@ -2403,7 +2404,7 @@ public class RoutingApi {
    * @return InboundRoute
    * @throws ApiException if fails to make API call
    */
-  public InboundRoute postRoutingEmailDomainRoutes(String domainName, InboundRoute body) throws ApiException {
+  public InboundRoute postRoutingEmailDomainRoutes(String domainName, InboundRoute body) throws IOException, ApiException {
     return postRoutingEmailDomainRoutesWithHttpInfo(domainName, body).getBody();
   }
 
@@ -2415,17 +2416,17 @@ public class RoutingApi {
    * @return InboundRoute
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InboundRoute> postRoutingEmailDomainRoutesWithHttpInfo(String domainName, InboundRoute body) throws ApiException {
+  public ApiResponse<InboundRoute> postRoutingEmailDomainRoutesWithHttpInfo(String domainName, InboundRoute body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'domainName' is set
     if (domainName == null) {
-      throw new ApiException(400, "Missing the required parameter 'domainName' when calling postRoutingEmailDomainRoutes");
+      throw new IllegalArgumentException("Missing the required parameter 'domainName' when calling postRoutingEmailDomainRoutes");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postRoutingEmailDomainRoutes");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postRoutingEmailDomainRoutes");
     }
     
     // create path and map variables
@@ -2461,7 +2462,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public InboundRoute postRoutingEmailDomainRoutes(PostRoutingEmailDomainRoutesRequest request) throws ApiException {
+  public InboundRoute postRoutingEmailDomainRoutes(PostRoutingEmailDomainRoutesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<InboundRoute>() {});
   }
 
@@ -2471,7 +2472,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InboundRoute> postRoutingEmailDomainRoutes(ApiRequest<InboundRoute> request) throws ApiException {
+  public ApiResponse<InboundRoute> postRoutingEmailDomainRoutes(ApiRequest<InboundRoute> request) throws IOException, ApiException {
     return pcapiClient.<InboundRoute>invokeAPIVerbose(request, new TypeReference<InboundRoute>() {});
   }
 
@@ -2482,7 +2483,7 @@ public class RoutingApi {
    * @return InboundDomain
    * @throws ApiException if fails to make API call
    */
-  public InboundDomain postRoutingEmailDomains(InboundDomain body) throws ApiException {
+  public InboundDomain postRoutingEmailDomains(InboundDomain body) throws IOException, ApiException {
     return postRoutingEmailDomainsWithHttpInfo(body).getBody();
   }
 
@@ -2493,12 +2494,12 @@ public class RoutingApi {
    * @return InboundDomain
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InboundDomain> postRoutingEmailDomainsWithHttpInfo(InboundDomain body) throws ApiException {
+  public ApiResponse<InboundDomain> postRoutingEmailDomainsWithHttpInfo(InboundDomain body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postRoutingEmailDomains");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postRoutingEmailDomains");
     }
     
     // create path and map variables
@@ -2533,7 +2534,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public InboundDomain postRoutingEmailDomains(PostRoutingEmailDomainsRequest request) throws ApiException {
+  public InboundDomain postRoutingEmailDomains(PostRoutingEmailDomainsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<InboundDomain>() {});
   }
 
@@ -2543,7 +2544,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InboundDomain> postRoutingEmailDomains(ApiRequest<InboundDomain> request) throws ApiException {
+  public ApiResponse<InboundDomain> postRoutingEmailDomains(ApiRequest<InboundDomain> request) throws IOException, ApiException {
     return pcapiClient.<InboundDomain>invokeAPIVerbose(request, new TypeReference<InboundDomain>() {});
   }
 
@@ -2554,7 +2555,7 @@ public class RoutingApi {
    * @return Language
    * @throws ApiException if fails to make API call
    */
-  public Language postRoutingLanguages(Language body) throws ApiException {
+  public Language postRoutingLanguages(Language body) throws IOException, ApiException {
     return postRoutingLanguagesWithHttpInfo(body).getBody();
   }
 
@@ -2565,12 +2566,12 @@ public class RoutingApi {
    * @return Language
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Language> postRoutingLanguagesWithHttpInfo(Language body) throws ApiException {
+  public ApiResponse<Language> postRoutingLanguagesWithHttpInfo(Language body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postRoutingLanguages");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postRoutingLanguages");
     }
     
     // create path and map variables
@@ -2605,7 +2606,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Language postRoutingLanguages(PostRoutingLanguagesRequest request) throws ApiException {
+  public Language postRoutingLanguages(PostRoutingLanguagesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Language>() {});
   }
 
@@ -2615,7 +2616,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Language> postRoutingLanguages(ApiRequest<Language> request) throws ApiException {
+  public ApiResponse<Language> postRoutingLanguages(ApiRequest<Language> request) throws IOException, ApiException {
     return pcapiClient.<Language>invokeAPIVerbose(request, new TypeReference<Language>() {});
   }
 
@@ -2628,7 +2629,7 @@ public class RoutingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String postRoutingQueueUsers(String queueId, List<QueueMember> body, Boolean delete) throws ApiException {
+  public String postRoutingQueueUsers(String queueId, List<QueueMember> body, Boolean delete) throws IOException, ApiException {
     return postRoutingQueueUsersWithHttpInfo(queueId, body, delete).getBody();
   }
 
@@ -2641,17 +2642,17 @@ public class RoutingApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> postRoutingQueueUsersWithHttpInfo(String queueId, List<QueueMember> body, Boolean delete) throws ApiException {
+  public ApiResponse<String> postRoutingQueueUsersWithHttpInfo(String queueId, List<QueueMember> body, Boolean delete) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'queueId' is set
     if (queueId == null) {
-      throw new ApiException(400, "Missing the required parameter 'queueId' when calling postRoutingQueueUsers");
+      throw new IllegalArgumentException("Missing the required parameter 'queueId' when calling postRoutingQueueUsers");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postRoutingQueueUsers");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postRoutingQueueUsers");
     }
     
     // create path and map variables
@@ -2688,7 +2689,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String postRoutingQueueUsers(PostRoutingQueueUsersRequest request) throws ApiException {
+  public String postRoutingQueueUsers(PostRoutingQueueUsersRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -2698,7 +2699,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> postRoutingQueueUsers(ApiRequest<List<QueueMember>> request) throws ApiException {
+  public ApiResponse<String> postRoutingQueueUsers(ApiRequest<List<QueueMember>> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -2710,7 +2711,7 @@ public class RoutingApi {
    * @return List<WrapupCode>
    * @throws ApiException if fails to make API call
    */
-  public List<WrapupCode> postRoutingQueueWrapupcodes(String queueId, List<WrapupCode> body) throws ApiException {
+  public List<WrapupCode> postRoutingQueueWrapupcodes(String queueId, List<WrapupCode> body) throws IOException, ApiException {
     return postRoutingQueueWrapupcodesWithHttpInfo(queueId, body).getBody();
   }
 
@@ -2722,17 +2723,17 @@ public class RoutingApi {
    * @return List<WrapupCode>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<WrapupCode>> postRoutingQueueWrapupcodesWithHttpInfo(String queueId, List<WrapupCode> body) throws ApiException {
+  public ApiResponse<List<WrapupCode>> postRoutingQueueWrapupcodesWithHttpInfo(String queueId, List<WrapupCode> body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'queueId' is set
     if (queueId == null) {
-      throw new ApiException(400, "Missing the required parameter 'queueId' when calling postRoutingQueueWrapupcodes");
+      throw new IllegalArgumentException("Missing the required parameter 'queueId' when calling postRoutingQueueWrapupcodes");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postRoutingQueueWrapupcodes");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postRoutingQueueWrapupcodes");
     }
     
     // create path and map variables
@@ -2768,7 +2769,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<WrapupCode> postRoutingQueueWrapupcodes(PostRoutingQueueWrapupcodesRequest request) throws ApiException {
+  public List<WrapupCode> postRoutingQueueWrapupcodes(PostRoutingQueueWrapupcodesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {});
   }
 
@@ -2778,7 +2779,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<WrapupCode>> postRoutingQueueWrapupcodes(ApiRequest<List<WrapupCode>> request) throws ApiException {
+  public ApiResponse<List<WrapupCode>> postRoutingQueueWrapupcodes(ApiRequest<List<WrapupCode>> request) throws IOException, ApiException {
     return pcapiClient.<List<WrapupCode>>invokeAPIVerbose(request, new TypeReference<List<WrapupCode>>() {});
   }
 
@@ -2789,7 +2790,7 @@ public class RoutingApi {
    * @return Queue
    * @throws ApiException if fails to make API call
    */
-  public Queue postRoutingQueues(CreateQueueRequest body) throws ApiException {
+  public Queue postRoutingQueues(CreateQueueRequest body) throws IOException, ApiException {
     return postRoutingQueuesWithHttpInfo(body).getBody();
   }
 
@@ -2800,12 +2801,12 @@ public class RoutingApi {
    * @return Queue
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Queue> postRoutingQueuesWithHttpInfo(CreateQueueRequest body) throws ApiException {
+  public ApiResponse<Queue> postRoutingQueuesWithHttpInfo(CreateQueueRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postRoutingQueues");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postRoutingQueues");
     }
     
     // create path and map variables
@@ -2840,7 +2841,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Queue postRoutingQueues(PostRoutingQueuesRequest request) throws ApiException {
+  public Queue postRoutingQueues(PostRoutingQueuesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Queue>() {});
   }
 
@@ -2850,7 +2851,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Queue> postRoutingQueues(ApiRequest<CreateQueueRequest> request) throws ApiException {
+  public ApiResponse<Queue> postRoutingQueues(ApiRequest<CreateQueueRequest> request) throws IOException, ApiException {
     return pcapiClient.<Queue>invokeAPIVerbose(request, new TypeReference<Queue>() {});
   }
 
@@ -2861,7 +2862,7 @@ public class RoutingApi {
    * @return RoutingSkill
    * @throws ApiException if fails to make API call
    */
-  public RoutingSkill postRoutingSkills(RoutingSkill body) throws ApiException {
+  public RoutingSkill postRoutingSkills(RoutingSkill body) throws IOException, ApiException {
     return postRoutingSkillsWithHttpInfo(body).getBody();
   }
 
@@ -2872,12 +2873,12 @@ public class RoutingApi {
    * @return RoutingSkill
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RoutingSkill> postRoutingSkillsWithHttpInfo(RoutingSkill body) throws ApiException {
+  public ApiResponse<RoutingSkill> postRoutingSkillsWithHttpInfo(RoutingSkill body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postRoutingSkills");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postRoutingSkills");
     }
     
     // create path and map variables
@@ -2912,7 +2913,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public RoutingSkill postRoutingSkills(PostRoutingSkillsRequest request) throws ApiException {
+  public RoutingSkill postRoutingSkills(PostRoutingSkillsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RoutingSkill>() {});
   }
 
@@ -2922,7 +2923,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RoutingSkill> postRoutingSkills(ApiRequest<RoutingSkill> request) throws ApiException {
+  public ApiResponse<RoutingSkill> postRoutingSkills(ApiRequest<RoutingSkill> request) throws IOException, ApiException {
     return pcapiClient.<RoutingSkill>invokeAPIVerbose(request, new TypeReference<RoutingSkill>() {});
   }
 
@@ -2933,7 +2934,7 @@ public class RoutingApi {
    * @return WrapupCode
    * @throws ApiException if fails to make API call
    */
-  public WrapupCode postRoutingWrapupcodes(WrapupCode body) throws ApiException {
+  public WrapupCode postRoutingWrapupcodes(WrapupCode body) throws IOException, ApiException {
     return postRoutingWrapupcodesWithHttpInfo(body).getBody();
   }
 
@@ -2944,12 +2945,12 @@ public class RoutingApi {
    * @return WrapupCode
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WrapupCode> postRoutingWrapupcodesWithHttpInfo(WrapupCode body) throws ApiException {
+  public ApiResponse<WrapupCode> postRoutingWrapupcodesWithHttpInfo(WrapupCode body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postRoutingWrapupcodes");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postRoutingWrapupcodes");
     }
     
     // create path and map variables
@@ -2984,7 +2985,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public WrapupCode postRoutingWrapupcodes(PostRoutingWrapupcodesRequest request) throws ApiException {
+  public WrapupCode postRoutingWrapupcodes(PostRoutingWrapupcodesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WrapupCode>() {});
   }
 
@@ -2994,7 +2995,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WrapupCode> postRoutingWrapupcodes(ApiRequest<WrapupCode> request) throws ApiException {
+  public ApiResponse<WrapupCode> postRoutingWrapupcodes(ApiRequest<WrapupCode> request) throws IOException, ApiException {
     return pcapiClient.<WrapupCode>invokeAPIVerbose(request, new TypeReference<WrapupCode>() {});
   }
 
@@ -3006,7 +3007,7 @@ public class RoutingApi {
    * @return UserRoutingSkill
    * @throws ApiException if fails to make API call
    */
-  public UserRoutingSkill postUserRoutingskills(String userId, UserRoutingSkillPost body) throws ApiException {
+  public UserRoutingSkill postUserRoutingskills(String userId, UserRoutingSkillPost body) throws IOException, ApiException {
     return postUserRoutingskillsWithHttpInfo(userId, body).getBody();
   }
 
@@ -3018,17 +3019,17 @@ public class RoutingApi {
    * @return UserRoutingSkill
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserRoutingSkill> postUserRoutingskillsWithHttpInfo(String userId, UserRoutingSkillPost body) throws ApiException {
+  public ApiResponse<UserRoutingSkill> postUserRoutingskillsWithHttpInfo(String userId, UserRoutingSkillPost body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling postUserRoutingskills");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling postUserRoutingskills");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postUserRoutingskills");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postUserRoutingskills");
     }
     
     // create path and map variables
@@ -3064,7 +3065,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserRoutingSkill postUserRoutingskills(PostUserRoutingskillsRequest request) throws ApiException {
+  public UserRoutingSkill postUserRoutingskills(PostUserRoutingskillsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserRoutingSkill>() {});
   }
 
@@ -3074,7 +3075,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserRoutingSkill> postUserRoutingskills(ApiRequest<UserRoutingSkillPost> request) throws ApiException {
+  public ApiResponse<UserRoutingSkill> postUserRoutingskills(ApiRequest<UserRoutingSkillPost> request) throws IOException, ApiException {
     return pcapiClient.<UserRoutingSkill>invokeAPIVerbose(request, new TypeReference<UserRoutingSkill>() {});
   }
 
@@ -3087,7 +3088,7 @@ public class RoutingApi {
    * @return InboundRoute
    * @throws ApiException if fails to make API call
    */
-  public InboundRoute putRoutingEmailDomainRoute(String domainName, String routeId, InboundRoute body) throws ApiException {
+  public InboundRoute putRoutingEmailDomainRoute(String domainName, String routeId, InboundRoute body) throws IOException, ApiException {
     return putRoutingEmailDomainRouteWithHttpInfo(domainName, routeId, body).getBody();
   }
 
@@ -3100,22 +3101,22 @@ public class RoutingApi {
    * @return InboundRoute
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InboundRoute> putRoutingEmailDomainRouteWithHttpInfo(String domainName, String routeId, InboundRoute body) throws ApiException {
+  public ApiResponse<InboundRoute> putRoutingEmailDomainRouteWithHttpInfo(String domainName, String routeId, InboundRoute body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'domainName' is set
     if (domainName == null) {
-      throw new ApiException(400, "Missing the required parameter 'domainName' when calling putRoutingEmailDomainRoute");
+      throw new IllegalArgumentException("Missing the required parameter 'domainName' when calling putRoutingEmailDomainRoute");
     }
     
     // verify the required parameter 'routeId' is set
     if (routeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'routeId' when calling putRoutingEmailDomainRoute");
+      throw new IllegalArgumentException("Missing the required parameter 'routeId' when calling putRoutingEmailDomainRoute");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putRoutingEmailDomainRoute");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putRoutingEmailDomainRoute");
     }
     
     // create path and map variables
@@ -3152,7 +3153,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public InboundRoute putRoutingEmailDomainRoute(PutRoutingEmailDomainRouteRequest request) throws ApiException {
+  public InboundRoute putRoutingEmailDomainRoute(PutRoutingEmailDomainRouteRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<InboundRoute>() {});
   }
 
@@ -3162,7 +3163,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InboundRoute> putRoutingEmailDomainRoute(ApiRequest<InboundRoute> request) throws ApiException {
+  public ApiResponse<InboundRoute> putRoutingEmailDomainRoute(ApiRequest<InboundRoute> request) throws IOException, ApiException {
     return pcapiClient.<InboundRoute>invokeAPIVerbose(request, new TypeReference<InboundRoute>() {});
   }
 
@@ -3174,7 +3175,7 @@ public class RoutingApi {
    * @return Queue
    * @throws ApiException if fails to make API call
    */
-  public Queue putRoutingQueue(String queueId, Queue body) throws ApiException {
+  public Queue putRoutingQueue(String queueId, Queue body) throws IOException, ApiException {
     return putRoutingQueueWithHttpInfo(queueId, body).getBody();
   }
 
@@ -3186,17 +3187,17 @@ public class RoutingApi {
    * @return Queue
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Queue> putRoutingQueueWithHttpInfo(String queueId, Queue body) throws ApiException {
+  public ApiResponse<Queue> putRoutingQueueWithHttpInfo(String queueId, Queue body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'queueId' is set
     if (queueId == null) {
-      throw new ApiException(400, "Missing the required parameter 'queueId' when calling putRoutingQueue");
+      throw new IllegalArgumentException("Missing the required parameter 'queueId' when calling putRoutingQueue");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putRoutingQueue");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putRoutingQueue");
     }
     
     // create path and map variables
@@ -3232,7 +3233,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Queue putRoutingQueue(PutRoutingQueueRequest request) throws ApiException {
+  public Queue putRoutingQueue(PutRoutingQueueRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Queue>() {});
   }
 
@@ -3242,7 +3243,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Queue> putRoutingQueue(ApiRequest<Queue> request) throws ApiException {
+  public ApiResponse<Queue> putRoutingQueue(ApiRequest<Queue> request) throws IOException, ApiException {
     return pcapiClient.<Queue>invokeAPIVerbose(request, new TypeReference<Queue>() {});
   }
 
@@ -3253,7 +3254,7 @@ public class RoutingApi {
    * @return Utilization
    * @throws ApiException if fails to make API call
    */
-  public Utilization putRoutingUtilization(Utilization body) throws ApiException {
+  public Utilization putRoutingUtilization(Utilization body) throws IOException, ApiException {
     return putRoutingUtilizationWithHttpInfo(body).getBody();
   }
 
@@ -3264,12 +3265,12 @@ public class RoutingApi {
    * @return Utilization
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Utilization> putRoutingUtilizationWithHttpInfo(Utilization body) throws ApiException {
+  public ApiResponse<Utilization> putRoutingUtilizationWithHttpInfo(Utilization body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putRoutingUtilization");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putRoutingUtilization");
     }
     
     // create path and map variables
@@ -3304,7 +3305,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Utilization putRoutingUtilization(PutRoutingUtilizationRequest request) throws ApiException {
+  public Utilization putRoutingUtilization(PutRoutingUtilizationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Utilization>() {});
   }
 
@@ -3314,7 +3315,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Utilization> putRoutingUtilization(ApiRequest<Utilization> request) throws ApiException {
+  public ApiResponse<Utilization> putRoutingUtilization(ApiRequest<Utilization> request) throws IOException, ApiException {
     return pcapiClient.<Utilization>invokeAPIVerbose(request, new TypeReference<Utilization>() {});
   }
 
@@ -3326,7 +3327,7 @@ public class RoutingApi {
    * @return WrapupCode
    * @throws ApiException if fails to make API call
    */
-  public WrapupCode putRoutingWrapupcode(String codeId, WrapupCode body) throws ApiException {
+  public WrapupCode putRoutingWrapupcode(String codeId, WrapupCode body) throws IOException, ApiException {
     return putRoutingWrapupcodeWithHttpInfo(codeId, body).getBody();
   }
 
@@ -3338,17 +3339,17 @@ public class RoutingApi {
    * @return WrapupCode
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WrapupCode> putRoutingWrapupcodeWithHttpInfo(String codeId, WrapupCode body) throws ApiException {
+  public ApiResponse<WrapupCode> putRoutingWrapupcodeWithHttpInfo(String codeId, WrapupCode body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'codeId' is set
     if (codeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'codeId' when calling putRoutingWrapupcode");
+      throw new IllegalArgumentException("Missing the required parameter 'codeId' when calling putRoutingWrapupcode");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putRoutingWrapupcode");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putRoutingWrapupcode");
     }
     
     // create path and map variables
@@ -3384,7 +3385,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public WrapupCode putRoutingWrapupcode(PutRoutingWrapupcodeRequest request) throws ApiException {
+  public WrapupCode putRoutingWrapupcode(PutRoutingWrapupcodeRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WrapupCode>() {});
   }
 
@@ -3394,7 +3395,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WrapupCode> putRoutingWrapupcode(ApiRequest<WrapupCode> request) throws ApiException {
+  public ApiResponse<WrapupCode> putRoutingWrapupcode(ApiRequest<WrapupCode> request) throws IOException, ApiException {
     return pcapiClient.<WrapupCode>invokeAPIVerbose(request, new TypeReference<WrapupCode>() {});
   }
 
@@ -3407,7 +3408,7 @@ public class RoutingApi {
    * @return UserRoutingSkill
    * @throws ApiException if fails to make API call
    */
-  public UserRoutingSkill putUserRoutingskill(String userId, String skillId, UserRoutingSkill body) throws ApiException {
+  public UserRoutingSkill putUserRoutingskill(String userId, String skillId, UserRoutingSkill body) throws IOException, ApiException {
     return putUserRoutingskillWithHttpInfo(userId, skillId, body).getBody();
   }
 
@@ -3420,22 +3421,22 @@ public class RoutingApi {
    * @return UserRoutingSkill
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserRoutingSkill> putUserRoutingskillWithHttpInfo(String userId, String skillId, UserRoutingSkill body) throws ApiException {
+  public ApiResponse<UserRoutingSkill> putUserRoutingskillWithHttpInfo(String userId, String skillId, UserRoutingSkill body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling putUserRoutingskill");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putUserRoutingskill");
     }
     
     // verify the required parameter 'skillId' is set
     if (skillId == null) {
-      throw new ApiException(400, "Missing the required parameter 'skillId' when calling putUserRoutingskill");
+      throw new IllegalArgumentException("Missing the required parameter 'skillId' when calling putUserRoutingskill");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putUserRoutingskill");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putUserRoutingskill");
     }
     
     // create path and map variables
@@ -3472,7 +3473,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserRoutingSkill putUserRoutingskill(PutUserRoutingskillRequest request) throws ApiException {
+  public UserRoutingSkill putUserRoutingskill(PutUserRoutingskillRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserRoutingSkill>() {});
   }
 
@@ -3482,7 +3483,7 @@ public class RoutingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserRoutingSkill> putUserRoutingskill(ApiRequest<UserRoutingSkill> request) throws ApiException {
+  public ApiResponse<UserRoutingSkill> putUserRoutingskill(ApiRequest<UserRoutingSkill> request) throws IOException, ApiException {
     return pcapiClient.<UserRoutingSkill>invokeAPIVerbose(request, new TypeReference<UserRoutingSkill>() {});
   }
 

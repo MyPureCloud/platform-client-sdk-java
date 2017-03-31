@@ -66,6 +66,7 @@ import com.mypurecloud.sdk.v2.api.request.PutAlertingInteractionstatsRuleRequest
 import com.mypurecloud.sdk.v2.api.request.PutAlertingRoutingstatusRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAlertingUserpresenceRuleRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -89,7 +90,7 @@ public class AlertingApi {
    * @param alertId Alert ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteAlertingHeartbeatAlert(String alertId) throws ApiException {
+  public void deleteAlertingHeartbeatAlert(String alertId) throws IOException, ApiException {
     deleteAlertingHeartbeatAlertWithHttpInfo(alertId);
   }
 
@@ -99,12 +100,12 @@ public class AlertingApi {
    * @param alertId Alert ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteAlertingHeartbeatAlertWithHttpInfo(String alertId) throws ApiException {
+  public ApiResponse<Void> deleteAlertingHeartbeatAlertWithHttpInfo(String alertId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'alertId' is set
     if (alertId == null) {
-      throw new ApiException(400, "Missing the required parameter 'alertId' when calling deleteAlertingHeartbeatAlert");
+      throw new IllegalArgumentException("Missing the required parameter 'alertId' when calling deleteAlertingHeartbeatAlert");
     }
     
     // create path and map variables
@@ -140,7 +141,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteAlertingHeartbeatAlert(DeleteAlertingHeartbeatAlertRequest request) throws ApiException {
+  public void deleteAlertingHeartbeatAlert(DeleteAlertingHeartbeatAlertRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -150,7 +151,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteAlertingHeartbeatAlert(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteAlertingHeartbeatAlert(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -160,7 +161,7 @@ public class AlertingApi {
    * @param ruleId Rule ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteAlertingHeartbeatRule(String ruleId) throws ApiException {
+  public void deleteAlertingHeartbeatRule(String ruleId) throws IOException, ApiException {
     deleteAlertingHeartbeatRuleWithHttpInfo(ruleId);
   }
 
@@ -170,12 +171,12 @@ public class AlertingApi {
    * @param ruleId Rule ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteAlertingHeartbeatRuleWithHttpInfo(String ruleId) throws ApiException {
+  public ApiResponse<Void> deleteAlertingHeartbeatRuleWithHttpInfo(String ruleId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'ruleId' is set
     if (ruleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'ruleId' when calling deleteAlertingHeartbeatRule");
+      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling deleteAlertingHeartbeatRule");
     }
     
     // create path and map variables
@@ -211,7 +212,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteAlertingHeartbeatRule(DeleteAlertingHeartbeatRuleRequest request) throws ApiException {
+  public void deleteAlertingHeartbeatRule(DeleteAlertingHeartbeatRuleRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -221,7 +222,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteAlertingHeartbeatRule(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteAlertingHeartbeatRule(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -231,7 +232,7 @@ public class AlertingApi {
    * @param alertId Alert ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteAlertingInteractionstatsAlert(String alertId) throws ApiException {
+  public void deleteAlertingInteractionstatsAlert(String alertId) throws IOException, ApiException {
     deleteAlertingInteractionstatsAlertWithHttpInfo(alertId);
   }
 
@@ -241,12 +242,12 @@ public class AlertingApi {
    * @param alertId Alert ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteAlertingInteractionstatsAlertWithHttpInfo(String alertId) throws ApiException {
+  public ApiResponse<Void> deleteAlertingInteractionstatsAlertWithHttpInfo(String alertId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'alertId' is set
     if (alertId == null) {
-      throw new ApiException(400, "Missing the required parameter 'alertId' when calling deleteAlertingInteractionstatsAlert");
+      throw new IllegalArgumentException("Missing the required parameter 'alertId' when calling deleteAlertingInteractionstatsAlert");
     }
     
     // create path and map variables
@@ -282,7 +283,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteAlertingInteractionstatsAlert(DeleteAlertingInteractionstatsAlertRequest request) throws ApiException {
+  public void deleteAlertingInteractionstatsAlert(DeleteAlertingInteractionstatsAlertRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -292,7 +293,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteAlertingInteractionstatsAlert(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteAlertingInteractionstatsAlert(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -302,7 +303,7 @@ public class AlertingApi {
    * @param ruleId Rule ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteAlertingInteractionstatsRule(String ruleId) throws ApiException {
+  public void deleteAlertingInteractionstatsRule(String ruleId) throws IOException, ApiException {
     deleteAlertingInteractionstatsRuleWithHttpInfo(ruleId);
   }
 
@@ -312,12 +313,12 @@ public class AlertingApi {
    * @param ruleId Rule ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteAlertingInteractionstatsRuleWithHttpInfo(String ruleId) throws ApiException {
+  public ApiResponse<Void> deleteAlertingInteractionstatsRuleWithHttpInfo(String ruleId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'ruleId' is set
     if (ruleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'ruleId' when calling deleteAlertingInteractionstatsRule");
+      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling deleteAlertingInteractionstatsRule");
     }
     
     // create path and map variables
@@ -353,7 +354,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteAlertingInteractionstatsRule(DeleteAlertingInteractionstatsRuleRequest request) throws ApiException {
+  public void deleteAlertingInteractionstatsRule(DeleteAlertingInteractionstatsRuleRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -363,7 +364,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteAlertingInteractionstatsRule(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteAlertingInteractionstatsRule(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -373,7 +374,7 @@ public class AlertingApi {
    * @param alertId Alert ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteAlertingRoutingstatusAlert(String alertId) throws ApiException {
+  public void deleteAlertingRoutingstatusAlert(String alertId) throws IOException, ApiException {
     deleteAlertingRoutingstatusAlertWithHttpInfo(alertId);
   }
 
@@ -383,12 +384,12 @@ public class AlertingApi {
    * @param alertId Alert ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteAlertingRoutingstatusAlertWithHttpInfo(String alertId) throws ApiException {
+  public ApiResponse<Void> deleteAlertingRoutingstatusAlertWithHttpInfo(String alertId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'alertId' is set
     if (alertId == null) {
-      throw new ApiException(400, "Missing the required parameter 'alertId' when calling deleteAlertingRoutingstatusAlert");
+      throw new IllegalArgumentException("Missing the required parameter 'alertId' when calling deleteAlertingRoutingstatusAlert");
     }
     
     // create path and map variables
@@ -424,7 +425,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteAlertingRoutingstatusAlert(DeleteAlertingRoutingstatusAlertRequest request) throws ApiException {
+  public void deleteAlertingRoutingstatusAlert(DeleteAlertingRoutingstatusAlertRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -434,7 +435,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteAlertingRoutingstatusAlert(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteAlertingRoutingstatusAlert(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -444,7 +445,7 @@ public class AlertingApi {
    * @param ruleId Rule ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteAlertingRoutingstatusRule(String ruleId) throws ApiException {
+  public void deleteAlertingRoutingstatusRule(String ruleId) throws IOException, ApiException {
     deleteAlertingRoutingstatusRuleWithHttpInfo(ruleId);
   }
 
@@ -454,12 +455,12 @@ public class AlertingApi {
    * @param ruleId Rule ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteAlertingRoutingstatusRuleWithHttpInfo(String ruleId) throws ApiException {
+  public ApiResponse<Void> deleteAlertingRoutingstatusRuleWithHttpInfo(String ruleId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'ruleId' is set
     if (ruleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'ruleId' when calling deleteAlertingRoutingstatusRule");
+      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling deleteAlertingRoutingstatusRule");
     }
     
     // create path and map variables
@@ -495,7 +496,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteAlertingRoutingstatusRule(DeleteAlertingRoutingstatusRuleRequest request) throws ApiException {
+  public void deleteAlertingRoutingstatusRule(DeleteAlertingRoutingstatusRuleRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -505,7 +506,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteAlertingRoutingstatusRule(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteAlertingRoutingstatusRule(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -515,7 +516,7 @@ public class AlertingApi {
    * @param alertId Alert ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteAlertingUserpresenceAlert(String alertId) throws ApiException {
+  public void deleteAlertingUserpresenceAlert(String alertId) throws IOException, ApiException {
     deleteAlertingUserpresenceAlertWithHttpInfo(alertId);
   }
 
@@ -525,12 +526,12 @@ public class AlertingApi {
    * @param alertId Alert ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteAlertingUserpresenceAlertWithHttpInfo(String alertId) throws ApiException {
+  public ApiResponse<Void> deleteAlertingUserpresenceAlertWithHttpInfo(String alertId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'alertId' is set
     if (alertId == null) {
-      throw new ApiException(400, "Missing the required parameter 'alertId' when calling deleteAlertingUserpresenceAlert");
+      throw new IllegalArgumentException("Missing the required parameter 'alertId' when calling deleteAlertingUserpresenceAlert");
     }
     
     // create path and map variables
@@ -566,7 +567,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteAlertingUserpresenceAlert(DeleteAlertingUserpresenceAlertRequest request) throws ApiException {
+  public void deleteAlertingUserpresenceAlert(DeleteAlertingUserpresenceAlertRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -576,7 +577,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteAlertingUserpresenceAlert(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteAlertingUserpresenceAlert(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -586,7 +587,7 @@ public class AlertingApi {
    * @param ruleId Rule ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteAlertingUserpresenceRule(String ruleId) throws ApiException {
+  public void deleteAlertingUserpresenceRule(String ruleId) throws IOException, ApiException {
     deleteAlertingUserpresenceRuleWithHttpInfo(ruleId);
   }
 
@@ -596,12 +597,12 @@ public class AlertingApi {
    * @param ruleId Rule ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteAlertingUserpresenceRuleWithHttpInfo(String ruleId) throws ApiException {
+  public ApiResponse<Void> deleteAlertingUserpresenceRuleWithHttpInfo(String ruleId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'ruleId' is set
     if (ruleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'ruleId' when calling deleteAlertingUserpresenceRule");
+      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling deleteAlertingUserpresenceRule");
     }
     
     // create path and map variables
@@ -637,7 +638,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteAlertingUserpresenceRule(DeleteAlertingUserpresenceRuleRequest request) throws ApiException {
+  public void deleteAlertingUserpresenceRule(DeleteAlertingUserpresenceRuleRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -647,7 +648,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteAlertingUserpresenceRule(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteAlertingUserpresenceRule(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -659,7 +660,7 @@ public class AlertingApi {
    * @return HeartBeatAlert
    * @throws ApiException if fails to make API call
    */
-  public HeartBeatAlert getAlertingHeartbeatAlert(String alertId, List<String> expand) throws ApiException {
+  public HeartBeatAlert getAlertingHeartbeatAlert(String alertId, List<String> expand) throws IOException, ApiException {
     return getAlertingHeartbeatAlertWithHttpInfo(alertId, expand).getBody();
   }
 
@@ -671,12 +672,12 @@ public class AlertingApi {
    * @return HeartBeatAlert
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<HeartBeatAlert> getAlertingHeartbeatAlertWithHttpInfo(String alertId, List<String> expand) throws ApiException {
+  public ApiResponse<HeartBeatAlert> getAlertingHeartbeatAlertWithHttpInfo(String alertId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'alertId' is set
     if (alertId == null) {
-      throw new ApiException(400, "Missing the required parameter 'alertId' when calling getAlertingHeartbeatAlert");
+      throw new IllegalArgumentException("Missing the required parameter 'alertId' when calling getAlertingHeartbeatAlert");
     }
     
     // create path and map variables
@@ -713,7 +714,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public HeartBeatAlert getAlertingHeartbeatAlert(GetAlertingHeartbeatAlertRequest request) throws ApiException {
+  public HeartBeatAlert getAlertingHeartbeatAlert(GetAlertingHeartbeatAlertRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<HeartBeatAlert>() {});
   }
 
@@ -723,7 +724,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<HeartBeatAlert> getAlertingHeartbeatAlert(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<HeartBeatAlert> getAlertingHeartbeatAlert(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<HeartBeatAlert>invokeAPIVerbose(request, new TypeReference<HeartBeatAlert>() {});
   }
 
@@ -734,7 +735,7 @@ public class AlertingApi {
    * @return HeartBeatAlertContainer
    * @throws ApiException if fails to make API call
    */
-  public HeartBeatAlertContainer getAlertingHeartbeatAlerts(List<String> expand) throws ApiException {
+  public HeartBeatAlertContainer getAlertingHeartbeatAlerts(List<String> expand) throws IOException, ApiException {
     return getAlertingHeartbeatAlertsWithHttpInfo(expand).getBody();
   }
 
@@ -745,7 +746,7 @@ public class AlertingApi {
    * @return HeartBeatAlertContainer
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<HeartBeatAlertContainer> getAlertingHeartbeatAlertsWithHttpInfo(List<String> expand) throws ApiException {
+  public ApiResponse<HeartBeatAlertContainer> getAlertingHeartbeatAlertsWithHttpInfo(List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -781,7 +782,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public HeartBeatAlertContainer getAlertingHeartbeatAlerts(GetAlertingHeartbeatAlertsRequest request) throws ApiException {
+  public HeartBeatAlertContainer getAlertingHeartbeatAlerts(GetAlertingHeartbeatAlertsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<HeartBeatAlertContainer>() {});
   }
 
@@ -791,7 +792,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<HeartBeatAlertContainer> getAlertingHeartbeatAlerts(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<HeartBeatAlertContainer> getAlertingHeartbeatAlerts(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<HeartBeatAlertContainer>invokeAPIVerbose(request, new TypeReference<HeartBeatAlertContainer>() {});
   }
 
@@ -803,7 +804,7 @@ public class AlertingApi {
    * @return HeartBeatRule
    * @throws ApiException if fails to make API call
    */
-  public HeartBeatRule getAlertingHeartbeatRule(String ruleId, List<String> expand) throws ApiException {
+  public HeartBeatRule getAlertingHeartbeatRule(String ruleId, List<String> expand) throws IOException, ApiException {
     return getAlertingHeartbeatRuleWithHttpInfo(ruleId, expand).getBody();
   }
 
@@ -815,12 +816,12 @@ public class AlertingApi {
    * @return HeartBeatRule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<HeartBeatRule> getAlertingHeartbeatRuleWithHttpInfo(String ruleId, List<String> expand) throws ApiException {
+  public ApiResponse<HeartBeatRule> getAlertingHeartbeatRuleWithHttpInfo(String ruleId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'ruleId' is set
     if (ruleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'ruleId' when calling getAlertingHeartbeatRule");
+      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling getAlertingHeartbeatRule");
     }
     
     // create path and map variables
@@ -857,7 +858,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public HeartBeatRule getAlertingHeartbeatRule(GetAlertingHeartbeatRuleRequest request) throws ApiException {
+  public HeartBeatRule getAlertingHeartbeatRule(GetAlertingHeartbeatRuleRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<HeartBeatRule>() {});
   }
 
@@ -867,7 +868,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<HeartBeatRule> getAlertingHeartbeatRule(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<HeartBeatRule> getAlertingHeartbeatRule(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<HeartBeatRule>invokeAPIVerbose(request, new TypeReference<HeartBeatRule>() {});
   }
 
@@ -878,7 +879,7 @@ public class AlertingApi {
    * @return HeartBeatRuleContainer
    * @throws ApiException if fails to make API call
    */
-  public HeartBeatRuleContainer getAlertingHeartbeatRules(List<String> expand) throws ApiException {
+  public HeartBeatRuleContainer getAlertingHeartbeatRules(List<String> expand) throws IOException, ApiException {
     return getAlertingHeartbeatRulesWithHttpInfo(expand).getBody();
   }
 
@@ -889,7 +890,7 @@ public class AlertingApi {
    * @return HeartBeatRuleContainer
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<HeartBeatRuleContainer> getAlertingHeartbeatRulesWithHttpInfo(List<String> expand) throws ApiException {
+  public ApiResponse<HeartBeatRuleContainer> getAlertingHeartbeatRulesWithHttpInfo(List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -925,7 +926,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public HeartBeatRuleContainer getAlertingHeartbeatRules(GetAlertingHeartbeatRulesRequest request) throws ApiException {
+  public HeartBeatRuleContainer getAlertingHeartbeatRules(GetAlertingHeartbeatRulesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<HeartBeatRuleContainer>() {});
   }
 
@@ -935,7 +936,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<HeartBeatRuleContainer> getAlertingHeartbeatRules(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<HeartBeatRuleContainer> getAlertingHeartbeatRules(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<HeartBeatRuleContainer>invokeAPIVerbose(request, new TypeReference<HeartBeatRuleContainer>() {});
   }
 
@@ -947,7 +948,7 @@ public class AlertingApi {
    * @return InteractionStatsAlert
    * @throws ApiException if fails to make API call
    */
-  public InteractionStatsAlert getAlertingInteractionstatsAlert(String alertId, List<String> expand) throws ApiException {
+  public InteractionStatsAlert getAlertingInteractionstatsAlert(String alertId, List<String> expand) throws IOException, ApiException {
     return getAlertingInteractionstatsAlertWithHttpInfo(alertId, expand).getBody();
   }
 
@@ -959,12 +960,12 @@ public class AlertingApi {
    * @return InteractionStatsAlert
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InteractionStatsAlert> getAlertingInteractionstatsAlertWithHttpInfo(String alertId, List<String> expand) throws ApiException {
+  public ApiResponse<InteractionStatsAlert> getAlertingInteractionstatsAlertWithHttpInfo(String alertId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'alertId' is set
     if (alertId == null) {
-      throw new ApiException(400, "Missing the required parameter 'alertId' when calling getAlertingInteractionstatsAlert");
+      throw new IllegalArgumentException("Missing the required parameter 'alertId' when calling getAlertingInteractionstatsAlert");
     }
     
     // create path and map variables
@@ -1001,7 +1002,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public InteractionStatsAlert getAlertingInteractionstatsAlert(GetAlertingInteractionstatsAlertRequest request) throws ApiException {
+  public InteractionStatsAlert getAlertingInteractionstatsAlert(GetAlertingInteractionstatsAlertRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<InteractionStatsAlert>() {});
   }
 
@@ -1011,7 +1012,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InteractionStatsAlert> getAlertingInteractionstatsAlert(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<InteractionStatsAlert> getAlertingInteractionstatsAlert(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<InteractionStatsAlert>invokeAPIVerbose(request, new TypeReference<InteractionStatsAlert>() {});
   }
 
@@ -1022,7 +1023,7 @@ public class AlertingApi {
    * @return InteractionStatsAlertContainer
    * @throws ApiException if fails to make API call
    */
-  public InteractionStatsAlertContainer getAlertingInteractionstatsAlerts(List<String> expand) throws ApiException {
+  public InteractionStatsAlertContainer getAlertingInteractionstatsAlerts(List<String> expand) throws IOException, ApiException {
     return getAlertingInteractionstatsAlertsWithHttpInfo(expand).getBody();
   }
 
@@ -1033,7 +1034,7 @@ public class AlertingApi {
    * @return InteractionStatsAlertContainer
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InteractionStatsAlertContainer> getAlertingInteractionstatsAlertsWithHttpInfo(List<String> expand) throws ApiException {
+  public ApiResponse<InteractionStatsAlertContainer> getAlertingInteractionstatsAlertsWithHttpInfo(List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1069,7 +1070,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public InteractionStatsAlertContainer getAlertingInteractionstatsAlerts(GetAlertingInteractionstatsAlertsRequest request) throws ApiException {
+  public InteractionStatsAlertContainer getAlertingInteractionstatsAlerts(GetAlertingInteractionstatsAlertsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<InteractionStatsAlertContainer>() {});
   }
 
@@ -1079,7 +1080,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InteractionStatsAlertContainer> getAlertingInteractionstatsAlerts(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<InteractionStatsAlertContainer> getAlertingInteractionstatsAlerts(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<InteractionStatsAlertContainer>invokeAPIVerbose(request, new TypeReference<InteractionStatsAlertContainer>() {});
   }
 
@@ -1089,7 +1090,7 @@ public class AlertingApi {
    * @return UnreadMetric
    * @throws ApiException if fails to make API call
    */
-  public UnreadMetric getAlertingInteractionstatsAlertsUnread() throws ApiException {
+  public UnreadMetric getAlertingInteractionstatsAlertsUnread() throws IOException, ApiException {
     return getAlertingInteractionstatsAlertsUnreadWithHttpInfo().getBody();
   }
 
@@ -1099,7 +1100,7 @@ public class AlertingApi {
    * @return UnreadMetric
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UnreadMetric> getAlertingInteractionstatsAlertsUnreadWithHttpInfo() throws ApiException {
+  public ApiResponse<UnreadMetric> getAlertingInteractionstatsAlertsUnreadWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1134,7 +1135,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UnreadMetric getAlertingInteractionstatsAlertsUnread(GetAlertingInteractionstatsAlertsUnreadRequest request) throws ApiException {
+  public UnreadMetric getAlertingInteractionstatsAlertsUnread(GetAlertingInteractionstatsAlertsUnreadRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UnreadMetric>() {});
   }
 
@@ -1144,7 +1145,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UnreadMetric> getAlertingInteractionstatsAlertsUnread(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<UnreadMetric> getAlertingInteractionstatsAlertsUnread(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<UnreadMetric>invokeAPIVerbose(request, new TypeReference<UnreadMetric>() {});
   }
 
@@ -1156,7 +1157,7 @@ public class AlertingApi {
    * @return InteractionStatsRule
    * @throws ApiException if fails to make API call
    */
-  public InteractionStatsRule getAlertingInteractionstatsRule(String ruleId, List<String> expand) throws ApiException {
+  public InteractionStatsRule getAlertingInteractionstatsRule(String ruleId, List<String> expand) throws IOException, ApiException {
     return getAlertingInteractionstatsRuleWithHttpInfo(ruleId, expand).getBody();
   }
 
@@ -1168,12 +1169,12 @@ public class AlertingApi {
    * @return InteractionStatsRule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InteractionStatsRule> getAlertingInteractionstatsRuleWithHttpInfo(String ruleId, List<String> expand) throws ApiException {
+  public ApiResponse<InteractionStatsRule> getAlertingInteractionstatsRuleWithHttpInfo(String ruleId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'ruleId' is set
     if (ruleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'ruleId' when calling getAlertingInteractionstatsRule");
+      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling getAlertingInteractionstatsRule");
     }
     
     // create path and map variables
@@ -1210,7 +1211,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public InteractionStatsRule getAlertingInteractionstatsRule(GetAlertingInteractionstatsRuleRequest request) throws ApiException {
+  public InteractionStatsRule getAlertingInteractionstatsRule(GetAlertingInteractionstatsRuleRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<InteractionStatsRule>() {});
   }
 
@@ -1220,7 +1221,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InteractionStatsRule> getAlertingInteractionstatsRule(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<InteractionStatsRule> getAlertingInteractionstatsRule(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<InteractionStatsRule>invokeAPIVerbose(request, new TypeReference<InteractionStatsRule>() {});
   }
 
@@ -1231,7 +1232,7 @@ public class AlertingApi {
    * @return InteractionStatsRuleContainer
    * @throws ApiException if fails to make API call
    */
-  public InteractionStatsRuleContainer getAlertingInteractionstatsRules(List<String> expand) throws ApiException {
+  public InteractionStatsRuleContainer getAlertingInteractionstatsRules(List<String> expand) throws IOException, ApiException {
     return getAlertingInteractionstatsRulesWithHttpInfo(expand).getBody();
   }
 
@@ -1242,7 +1243,7 @@ public class AlertingApi {
    * @return InteractionStatsRuleContainer
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InteractionStatsRuleContainer> getAlertingInteractionstatsRulesWithHttpInfo(List<String> expand) throws ApiException {
+  public ApiResponse<InteractionStatsRuleContainer> getAlertingInteractionstatsRulesWithHttpInfo(List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1278,7 +1279,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public InteractionStatsRuleContainer getAlertingInteractionstatsRules(GetAlertingInteractionstatsRulesRequest request) throws ApiException {
+  public InteractionStatsRuleContainer getAlertingInteractionstatsRules(GetAlertingInteractionstatsRulesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<InteractionStatsRuleContainer>() {});
   }
 
@@ -1288,7 +1289,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InteractionStatsRuleContainer> getAlertingInteractionstatsRules(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<InteractionStatsRuleContainer> getAlertingInteractionstatsRules(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<InteractionStatsRuleContainer>invokeAPIVerbose(request, new TypeReference<InteractionStatsRuleContainer>() {});
   }
 
@@ -1300,7 +1301,7 @@ public class AlertingApi {
    * @return RoutingStatusAlert
    * @throws ApiException if fails to make API call
    */
-  public RoutingStatusAlert getAlertingRoutingstatusAlert(String alertId, List<String> expand) throws ApiException {
+  public RoutingStatusAlert getAlertingRoutingstatusAlert(String alertId, List<String> expand) throws IOException, ApiException {
     return getAlertingRoutingstatusAlertWithHttpInfo(alertId, expand).getBody();
   }
 
@@ -1312,12 +1313,12 @@ public class AlertingApi {
    * @return RoutingStatusAlert
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RoutingStatusAlert> getAlertingRoutingstatusAlertWithHttpInfo(String alertId, List<String> expand) throws ApiException {
+  public ApiResponse<RoutingStatusAlert> getAlertingRoutingstatusAlertWithHttpInfo(String alertId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'alertId' is set
     if (alertId == null) {
-      throw new ApiException(400, "Missing the required parameter 'alertId' when calling getAlertingRoutingstatusAlert");
+      throw new IllegalArgumentException("Missing the required parameter 'alertId' when calling getAlertingRoutingstatusAlert");
     }
     
     // create path and map variables
@@ -1354,7 +1355,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public RoutingStatusAlert getAlertingRoutingstatusAlert(GetAlertingRoutingstatusAlertRequest request) throws ApiException {
+  public RoutingStatusAlert getAlertingRoutingstatusAlert(GetAlertingRoutingstatusAlertRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RoutingStatusAlert>() {});
   }
 
@@ -1364,7 +1365,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RoutingStatusAlert> getAlertingRoutingstatusAlert(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<RoutingStatusAlert> getAlertingRoutingstatusAlert(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<RoutingStatusAlert>invokeAPIVerbose(request, new TypeReference<RoutingStatusAlert>() {});
   }
 
@@ -1375,7 +1376,7 @@ public class AlertingApi {
    * @return RoutingStatusAlertContainer
    * @throws ApiException if fails to make API call
    */
-  public RoutingStatusAlertContainer getAlertingRoutingstatusAlerts(List<String> expand) throws ApiException {
+  public RoutingStatusAlertContainer getAlertingRoutingstatusAlerts(List<String> expand) throws IOException, ApiException {
     return getAlertingRoutingstatusAlertsWithHttpInfo(expand).getBody();
   }
 
@@ -1386,7 +1387,7 @@ public class AlertingApi {
    * @return RoutingStatusAlertContainer
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RoutingStatusAlertContainer> getAlertingRoutingstatusAlertsWithHttpInfo(List<String> expand) throws ApiException {
+  public ApiResponse<RoutingStatusAlertContainer> getAlertingRoutingstatusAlertsWithHttpInfo(List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1422,7 +1423,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public RoutingStatusAlertContainer getAlertingRoutingstatusAlerts(GetAlertingRoutingstatusAlertsRequest request) throws ApiException {
+  public RoutingStatusAlertContainer getAlertingRoutingstatusAlerts(GetAlertingRoutingstatusAlertsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RoutingStatusAlertContainer>() {});
   }
 
@@ -1432,7 +1433,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RoutingStatusAlertContainer> getAlertingRoutingstatusAlerts(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<RoutingStatusAlertContainer> getAlertingRoutingstatusAlerts(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<RoutingStatusAlertContainer>invokeAPIVerbose(request, new TypeReference<RoutingStatusAlertContainer>() {});
   }
 
@@ -1444,7 +1445,7 @@ public class AlertingApi {
    * @return RoutingStatusRule
    * @throws ApiException if fails to make API call
    */
-  public RoutingStatusRule getAlertingRoutingstatusRule(String ruleId, List<String> expand) throws ApiException {
+  public RoutingStatusRule getAlertingRoutingstatusRule(String ruleId, List<String> expand) throws IOException, ApiException {
     return getAlertingRoutingstatusRuleWithHttpInfo(ruleId, expand).getBody();
   }
 
@@ -1456,12 +1457,12 @@ public class AlertingApi {
    * @return RoutingStatusRule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RoutingStatusRule> getAlertingRoutingstatusRuleWithHttpInfo(String ruleId, List<String> expand) throws ApiException {
+  public ApiResponse<RoutingStatusRule> getAlertingRoutingstatusRuleWithHttpInfo(String ruleId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'ruleId' is set
     if (ruleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'ruleId' when calling getAlertingRoutingstatusRule");
+      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling getAlertingRoutingstatusRule");
     }
     
     // create path and map variables
@@ -1498,7 +1499,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public RoutingStatusRule getAlertingRoutingstatusRule(GetAlertingRoutingstatusRuleRequest request) throws ApiException {
+  public RoutingStatusRule getAlertingRoutingstatusRule(GetAlertingRoutingstatusRuleRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RoutingStatusRule>() {});
   }
 
@@ -1508,7 +1509,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RoutingStatusRule> getAlertingRoutingstatusRule(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<RoutingStatusRule> getAlertingRoutingstatusRule(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<RoutingStatusRule>invokeAPIVerbose(request, new TypeReference<RoutingStatusRule>() {});
   }
 
@@ -1519,7 +1520,7 @@ public class AlertingApi {
    * @return RoutingStatusRuleContainer
    * @throws ApiException if fails to make API call
    */
-  public RoutingStatusRuleContainer getAlertingRoutingstatusRules(List<String> expand) throws ApiException {
+  public RoutingStatusRuleContainer getAlertingRoutingstatusRules(List<String> expand) throws IOException, ApiException {
     return getAlertingRoutingstatusRulesWithHttpInfo(expand).getBody();
   }
 
@@ -1530,7 +1531,7 @@ public class AlertingApi {
    * @return RoutingStatusRuleContainer
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RoutingStatusRuleContainer> getAlertingRoutingstatusRulesWithHttpInfo(List<String> expand) throws ApiException {
+  public ApiResponse<RoutingStatusRuleContainer> getAlertingRoutingstatusRulesWithHttpInfo(List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1566,7 +1567,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public RoutingStatusRuleContainer getAlertingRoutingstatusRules(GetAlertingRoutingstatusRulesRequest request) throws ApiException {
+  public RoutingStatusRuleContainer getAlertingRoutingstatusRules(GetAlertingRoutingstatusRulesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RoutingStatusRuleContainer>() {});
   }
 
@@ -1576,7 +1577,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RoutingStatusRuleContainer> getAlertingRoutingstatusRules(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<RoutingStatusRuleContainer> getAlertingRoutingstatusRules(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<RoutingStatusRuleContainer>invokeAPIVerbose(request, new TypeReference<RoutingStatusRuleContainer>() {});
   }
 
@@ -1588,7 +1589,7 @@ public class AlertingApi {
    * @return UserPresenceAlert
    * @throws ApiException if fails to make API call
    */
-  public UserPresenceAlert getAlertingUserpresenceAlert(String alertId, List<String> expand) throws ApiException {
+  public UserPresenceAlert getAlertingUserpresenceAlert(String alertId, List<String> expand) throws IOException, ApiException {
     return getAlertingUserpresenceAlertWithHttpInfo(alertId, expand).getBody();
   }
 
@@ -1600,12 +1601,12 @@ public class AlertingApi {
    * @return UserPresenceAlert
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserPresenceAlert> getAlertingUserpresenceAlertWithHttpInfo(String alertId, List<String> expand) throws ApiException {
+  public ApiResponse<UserPresenceAlert> getAlertingUserpresenceAlertWithHttpInfo(String alertId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'alertId' is set
     if (alertId == null) {
-      throw new ApiException(400, "Missing the required parameter 'alertId' when calling getAlertingUserpresenceAlert");
+      throw new IllegalArgumentException("Missing the required parameter 'alertId' when calling getAlertingUserpresenceAlert");
     }
     
     // create path and map variables
@@ -1642,7 +1643,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserPresenceAlert getAlertingUserpresenceAlert(GetAlertingUserpresenceAlertRequest request) throws ApiException {
+  public UserPresenceAlert getAlertingUserpresenceAlert(GetAlertingUserpresenceAlertRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserPresenceAlert>() {});
   }
 
@@ -1652,7 +1653,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserPresenceAlert> getAlertingUserpresenceAlert(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<UserPresenceAlert> getAlertingUserpresenceAlert(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<UserPresenceAlert>invokeAPIVerbose(request, new TypeReference<UserPresenceAlert>() {});
   }
 
@@ -1663,7 +1664,7 @@ public class AlertingApi {
    * @return UserPresenceAlertContainer
    * @throws ApiException if fails to make API call
    */
-  public UserPresenceAlertContainer getAlertingUserpresenceAlerts(List<String> expand) throws ApiException {
+  public UserPresenceAlertContainer getAlertingUserpresenceAlerts(List<String> expand) throws IOException, ApiException {
     return getAlertingUserpresenceAlertsWithHttpInfo(expand).getBody();
   }
 
@@ -1674,7 +1675,7 @@ public class AlertingApi {
    * @return UserPresenceAlertContainer
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserPresenceAlertContainer> getAlertingUserpresenceAlertsWithHttpInfo(List<String> expand) throws ApiException {
+  public ApiResponse<UserPresenceAlertContainer> getAlertingUserpresenceAlertsWithHttpInfo(List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1710,7 +1711,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserPresenceAlertContainer getAlertingUserpresenceAlerts(GetAlertingUserpresenceAlertsRequest request) throws ApiException {
+  public UserPresenceAlertContainer getAlertingUserpresenceAlerts(GetAlertingUserpresenceAlertsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserPresenceAlertContainer>() {});
   }
 
@@ -1720,7 +1721,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserPresenceAlertContainer> getAlertingUserpresenceAlerts(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<UserPresenceAlertContainer> getAlertingUserpresenceAlerts(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<UserPresenceAlertContainer>invokeAPIVerbose(request, new TypeReference<UserPresenceAlertContainer>() {});
   }
 
@@ -1732,7 +1733,7 @@ public class AlertingApi {
    * @return UserPresenceRule
    * @throws ApiException if fails to make API call
    */
-  public UserPresenceRule getAlertingUserpresenceRule(String ruleId, List<String> expand) throws ApiException {
+  public UserPresenceRule getAlertingUserpresenceRule(String ruleId, List<String> expand) throws IOException, ApiException {
     return getAlertingUserpresenceRuleWithHttpInfo(ruleId, expand).getBody();
   }
 
@@ -1744,12 +1745,12 @@ public class AlertingApi {
    * @return UserPresenceRule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserPresenceRule> getAlertingUserpresenceRuleWithHttpInfo(String ruleId, List<String> expand) throws ApiException {
+  public ApiResponse<UserPresenceRule> getAlertingUserpresenceRuleWithHttpInfo(String ruleId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'ruleId' is set
     if (ruleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'ruleId' when calling getAlertingUserpresenceRule");
+      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling getAlertingUserpresenceRule");
     }
     
     // create path and map variables
@@ -1786,7 +1787,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserPresenceRule getAlertingUserpresenceRule(GetAlertingUserpresenceRuleRequest request) throws ApiException {
+  public UserPresenceRule getAlertingUserpresenceRule(GetAlertingUserpresenceRuleRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserPresenceRule>() {});
   }
 
@@ -1796,7 +1797,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserPresenceRule> getAlertingUserpresenceRule(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<UserPresenceRule> getAlertingUserpresenceRule(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<UserPresenceRule>invokeAPIVerbose(request, new TypeReference<UserPresenceRule>() {});
   }
 
@@ -1807,7 +1808,7 @@ public class AlertingApi {
    * @return UserPresenceRuleContainer
    * @throws ApiException if fails to make API call
    */
-  public UserPresenceRuleContainer getAlertingUserpresenceRules(List<String> expand) throws ApiException {
+  public UserPresenceRuleContainer getAlertingUserpresenceRules(List<String> expand) throws IOException, ApiException {
     return getAlertingUserpresenceRulesWithHttpInfo(expand).getBody();
   }
 
@@ -1818,7 +1819,7 @@ public class AlertingApi {
    * @return UserPresenceRuleContainer
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserPresenceRuleContainer> getAlertingUserpresenceRulesWithHttpInfo(List<String> expand) throws ApiException {
+  public ApiResponse<UserPresenceRuleContainer> getAlertingUserpresenceRulesWithHttpInfo(List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1854,7 +1855,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserPresenceRuleContainer getAlertingUserpresenceRules(GetAlertingUserpresenceRulesRequest request) throws ApiException {
+  public UserPresenceRuleContainer getAlertingUserpresenceRules(GetAlertingUserpresenceRulesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserPresenceRuleContainer>() {});
   }
 
@@ -1864,7 +1865,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserPresenceRuleContainer> getAlertingUserpresenceRules(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<UserPresenceRuleContainer> getAlertingUserpresenceRules(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<UserPresenceRuleContainer>invokeAPIVerbose(request, new TypeReference<UserPresenceRuleContainer>() {});
   }
 
@@ -1876,7 +1877,7 @@ public class AlertingApi {
    * @return HeartBeatRule
    * @throws ApiException if fails to make API call
    */
-  public HeartBeatRule postAlertingHeartbeatRules(HeartBeatRule body, List<String> expand) throws ApiException {
+  public HeartBeatRule postAlertingHeartbeatRules(HeartBeatRule body, List<String> expand) throws IOException, ApiException {
     return postAlertingHeartbeatRulesWithHttpInfo(body, expand).getBody();
   }
 
@@ -1888,12 +1889,12 @@ public class AlertingApi {
    * @return HeartBeatRule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<HeartBeatRule> postAlertingHeartbeatRulesWithHttpInfo(HeartBeatRule body, List<String> expand) throws ApiException {
+  public ApiResponse<HeartBeatRule> postAlertingHeartbeatRulesWithHttpInfo(HeartBeatRule body, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAlertingHeartbeatRules");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAlertingHeartbeatRules");
     }
     
     // create path and map variables
@@ -1929,7 +1930,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public HeartBeatRule postAlertingHeartbeatRules(PostAlertingHeartbeatRulesRequest request) throws ApiException {
+  public HeartBeatRule postAlertingHeartbeatRules(PostAlertingHeartbeatRulesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<HeartBeatRule>() {});
   }
 
@@ -1939,7 +1940,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<HeartBeatRule> postAlertingHeartbeatRules(ApiRequest<HeartBeatRule> request) throws ApiException {
+  public ApiResponse<HeartBeatRule> postAlertingHeartbeatRules(ApiRequest<HeartBeatRule> request) throws IOException, ApiException {
     return pcapiClient.<HeartBeatRule>invokeAPIVerbose(request, new TypeReference<HeartBeatRule>() {});
   }
 
@@ -1951,7 +1952,7 @@ public class AlertingApi {
    * @return InteractionStatsRule
    * @throws ApiException if fails to make API call
    */
-  public InteractionStatsRule postAlertingInteractionstatsRules(InteractionStatsRule body, List<String> expand) throws ApiException {
+  public InteractionStatsRule postAlertingInteractionstatsRules(InteractionStatsRule body, List<String> expand) throws IOException, ApiException {
     return postAlertingInteractionstatsRulesWithHttpInfo(body, expand).getBody();
   }
 
@@ -1963,12 +1964,12 @@ public class AlertingApi {
    * @return InteractionStatsRule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InteractionStatsRule> postAlertingInteractionstatsRulesWithHttpInfo(InteractionStatsRule body, List<String> expand) throws ApiException {
+  public ApiResponse<InteractionStatsRule> postAlertingInteractionstatsRulesWithHttpInfo(InteractionStatsRule body, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAlertingInteractionstatsRules");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAlertingInteractionstatsRules");
     }
     
     // create path and map variables
@@ -2004,7 +2005,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public InteractionStatsRule postAlertingInteractionstatsRules(PostAlertingInteractionstatsRulesRequest request) throws ApiException {
+  public InteractionStatsRule postAlertingInteractionstatsRules(PostAlertingInteractionstatsRulesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<InteractionStatsRule>() {});
   }
 
@@ -2014,7 +2015,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InteractionStatsRule> postAlertingInteractionstatsRules(ApiRequest<InteractionStatsRule> request) throws ApiException {
+  public ApiResponse<InteractionStatsRule> postAlertingInteractionstatsRules(ApiRequest<InteractionStatsRule> request) throws IOException, ApiException {
     return pcapiClient.<InteractionStatsRule>invokeAPIVerbose(request, new TypeReference<InteractionStatsRule>() {});
   }
 
@@ -2026,7 +2027,7 @@ public class AlertingApi {
    * @return RoutingStatusRule
    * @throws ApiException if fails to make API call
    */
-  public RoutingStatusRule postAlertingRoutingstatusRules(RoutingStatusRule body, List<String> expand) throws ApiException {
+  public RoutingStatusRule postAlertingRoutingstatusRules(RoutingStatusRule body, List<String> expand) throws IOException, ApiException {
     return postAlertingRoutingstatusRulesWithHttpInfo(body, expand).getBody();
   }
 
@@ -2038,12 +2039,12 @@ public class AlertingApi {
    * @return RoutingStatusRule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RoutingStatusRule> postAlertingRoutingstatusRulesWithHttpInfo(RoutingStatusRule body, List<String> expand) throws ApiException {
+  public ApiResponse<RoutingStatusRule> postAlertingRoutingstatusRulesWithHttpInfo(RoutingStatusRule body, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAlertingRoutingstatusRules");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAlertingRoutingstatusRules");
     }
     
     // create path and map variables
@@ -2079,7 +2080,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public RoutingStatusRule postAlertingRoutingstatusRules(PostAlertingRoutingstatusRulesRequest request) throws ApiException {
+  public RoutingStatusRule postAlertingRoutingstatusRules(PostAlertingRoutingstatusRulesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RoutingStatusRule>() {});
   }
 
@@ -2089,7 +2090,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RoutingStatusRule> postAlertingRoutingstatusRules(ApiRequest<RoutingStatusRule> request) throws ApiException {
+  public ApiResponse<RoutingStatusRule> postAlertingRoutingstatusRules(ApiRequest<RoutingStatusRule> request) throws IOException, ApiException {
     return pcapiClient.<RoutingStatusRule>invokeAPIVerbose(request, new TypeReference<RoutingStatusRule>() {});
   }
 
@@ -2101,7 +2102,7 @@ public class AlertingApi {
    * @return UserPresenceRule
    * @throws ApiException if fails to make API call
    */
-  public UserPresenceRule postAlertingUserpresenceRules(UserPresenceRule body, List<String> expand) throws ApiException {
+  public UserPresenceRule postAlertingUserpresenceRules(UserPresenceRule body, List<String> expand) throws IOException, ApiException {
     return postAlertingUserpresenceRulesWithHttpInfo(body, expand).getBody();
   }
 
@@ -2113,12 +2114,12 @@ public class AlertingApi {
    * @return UserPresenceRule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserPresenceRule> postAlertingUserpresenceRulesWithHttpInfo(UserPresenceRule body, List<String> expand) throws ApiException {
+  public ApiResponse<UserPresenceRule> postAlertingUserpresenceRulesWithHttpInfo(UserPresenceRule body, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAlertingUserpresenceRules");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAlertingUserpresenceRules");
     }
     
     // create path and map variables
@@ -2154,7 +2155,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserPresenceRule postAlertingUserpresenceRules(PostAlertingUserpresenceRulesRequest request) throws ApiException {
+  public UserPresenceRule postAlertingUserpresenceRules(PostAlertingUserpresenceRulesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserPresenceRule>() {});
   }
 
@@ -2164,7 +2165,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserPresenceRule> postAlertingUserpresenceRules(ApiRequest<UserPresenceRule> request) throws ApiException {
+  public ApiResponse<UserPresenceRule> postAlertingUserpresenceRules(ApiRequest<UserPresenceRule> request) throws IOException, ApiException {
     return pcapiClient.<UserPresenceRule>invokeAPIVerbose(request, new TypeReference<UserPresenceRule>() {});
   }
 
@@ -2177,7 +2178,7 @@ public class AlertingApi {
    * @return HeartBeatRule
    * @throws ApiException if fails to make API call
    */
-  public HeartBeatRule putAlertingHeartbeatRule(String ruleId, HeartBeatRule body, List<String> expand) throws ApiException {
+  public HeartBeatRule putAlertingHeartbeatRule(String ruleId, HeartBeatRule body, List<String> expand) throws IOException, ApiException {
     return putAlertingHeartbeatRuleWithHttpInfo(ruleId, body, expand).getBody();
   }
 
@@ -2190,17 +2191,17 @@ public class AlertingApi {
    * @return HeartBeatRule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<HeartBeatRule> putAlertingHeartbeatRuleWithHttpInfo(String ruleId, HeartBeatRule body, List<String> expand) throws ApiException {
+  public ApiResponse<HeartBeatRule> putAlertingHeartbeatRuleWithHttpInfo(String ruleId, HeartBeatRule body, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'ruleId' is set
     if (ruleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'ruleId' when calling putAlertingHeartbeatRule");
+      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling putAlertingHeartbeatRule");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putAlertingHeartbeatRule");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAlertingHeartbeatRule");
     }
     
     // create path and map variables
@@ -2237,7 +2238,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public HeartBeatRule putAlertingHeartbeatRule(PutAlertingHeartbeatRuleRequest request) throws ApiException {
+  public HeartBeatRule putAlertingHeartbeatRule(PutAlertingHeartbeatRuleRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<HeartBeatRule>() {});
   }
 
@@ -2247,7 +2248,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<HeartBeatRule> putAlertingHeartbeatRule(ApiRequest<HeartBeatRule> request) throws ApiException {
+  public ApiResponse<HeartBeatRule> putAlertingHeartbeatRule(ApiRequest<HeartBeatRule> request) throws IOException, ApiException {
     return pcapiClient.<HeartBeatRule>invokeAPIVerbose(request, new TypeReference<HeartBeatRule>() {});
   }
 
@@ -2260,7 +2261,7 @@ public class AlertingApi {
    * @return UnreadStatus
    * @throws ApiException if fails to make API call
    */
-  public UnreadStatus putAlertingInteractionstatsAlert(String alertId, UnreadStatus body, List<String> expand) throws ApiException {
+  public UnreadStatus putAlertingInteractionstatsAlert(String alertId, UnreadStatus body, List<String> expand) throws IOException, ApiException {
     return putAlertingInteractionstatsAlertWithHttpInfo(alertId, body, expand).getBody();
   }
 
@@ -2273,17 +2274,17 @@ public class AlertingApi {
    * @return UnreadStatus
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UnreadStatus> putAlertingInteractionstatsAlertWithHttpInfo(String alertId, UnreadStatus body, List<String> expand) throws ApiException {
+  public ApiResponse<UnreadStatus> putAlertingInteractionstatsAlertWithHttpInfo(String alertId, UnreadStatus body, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'alertId' is set
     if (alertId == null) {
-      throw new ApiException(400, "Missing the required parameter 'alertId' when calling putAlertingInteractionstatsAlert");
+      throw new IllegalArgumentException("Missing the required parameter 'alertId' when calling putAlertingInteractionstatsAlert");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putAlertingInteractionstatsAlert");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAlertingInteractionstatsAlert");
     }
     
     // create path and map variables
@@ -2320,7 +2321,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UnreadStatus putAlertingInteractionstatsAlert(PutAlertingInteractionstatsAlertRequest request) throws ApiException {
+  public UnreadStatus putAlertingInteractionstatsAlert(PutAlertingInteractionstatsAlertRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UnreadStatus>() {});
   }
 
@@ -2330,7 +2331,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UnreadStatus> putAlertingInteractionstatsAlert(ApiRequest<UnreadStatus> request) throws ApiException {
+  public ApiResponse<UnreadStatus> putAlertingInteractionstatsAlert(ApiRequest<UnreadStatus> request) throws IOException, ApiException {
     return pcapiClient.<UnreadStatus>invokeAPIVerbose(request, new TypeReference<UnreadStatus>() {});
   }
 
@@ -2343,7 +2344,7 @@ public class AlertingApi {
    * @return InteractionStatsRule
    * @throws ApiException if fails to make API call
    */
-  public InteractionStatsRule putAlertingInteractionstatsRule(String ruleId, InteractionStatsRule body, List<String> expand) throws ApiException {
+  public InteractionStatsRule putAlertingInteractionstatsRule(String ruleId, InteractionStatsRule body, List<String> expand) throws IOException, ApiException {
     return putAlertingInteractionstatsRuleWithHttpInfo(ruleId, body, expand).getBody();
   }
 
@@ -2356,17 +2357,17 @@ public class AlertingApi {
    * @return InteractionStatsRule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InteractionStatsRule> putAlertingInteractionstatsRuleWithHttpInfo(String ruleId, InteractionStatsRule body, List<String> expand) throws ApiException {
+  public ApiResponse<InteractionStatsRule> putAlertingInteractionstatsRuleWithHttpInfo(String ruleId, InteractionStatsRule body, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'ruleId' is set
     if (ruleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'ruleId' when calling putAlertingInteractionstatsRule");
+      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling putAlertingInteractionstatsRule");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putAlertingInteractionstatsRule");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAlertingInteractionstatsRule");
     }
     
     // create path and map variables
@@ -2403,7 +2404,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public InteractionStatsRule putAlertingInteractionstatsRule(PutAlertingInteractionstatsRuleRequest request) throws ApiException {
+  public InteractionStatsRule putAlertingInteractionstatsRule(PutAlertingInteractionstatsRuleRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<InteractionStatsRule>() {});
   }
 
@@ -2413,7 +2414,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<InteractionStatsRule> putAlertingInteractionstatsRule(ApiRequest<InteractionStatsRule> request) throws ApiException {
+  public ApiResponse<InteractionStatsRule> putAlertingInteractionstatsRule(ApiRequest<InteractionStatsRule> request) throws IOException, ApiException {
     return pcapiClient.<InteractionStatsRule>invokeAPIVerbose(request, new TypeReference<InteractionStatsRule>() {});
   }
 
@@ -2426,7 +2427,7 @@ public class AlertingApi {
    * @return RoutingStatusRule
    * @throws ApiException if fails to make API call
    */
-  public RoutingStatusRule putAlertingRoutingstatusRule(String ruleId, RoutingStatusRule body, List<String> expand) throws ApiException {
+  public RoutingStatusRule putAlertingRoutingstatusRule(String ruleId, RoutingStatusRule body, List<String> expand) throws IOException, ApiException {
     return putAlertingRoutingstatusRuleWithHttpInfo(ruleId, body, expand).getBody();
   }
 
@@ -2439,17 +2440,17 @@ public class AlertingApi {
    * @return RoutingStatusRule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RoutingStatusRule> putAlertingRoutingstatusRuleWithHttpInfo(String ruleId, RoutingStatusRule body, List<String> expand) throws ApiException {
+  public ApiResponse<RoutingStatusRule> putAlertingRoutingstatusRuleWithHttpInfo(String ruleId, RoutingStatusRule body, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'ruleId' is set
     if (ruleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'ruleId' when calling putAlertingRoutingstatusRule");
+      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling putAlertingRoutingstatusRule");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putAlertingRoutingstatusRule");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAlertingRoutingstatusRule");
     }
     
     // create path and map variables
@@ -2486,7 +2487,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public RoutingStatusRule putAlertingRoutingstatusRule(PutAlertingRoutingstatusRuleRequest request) throws ApiException {
+  public RoutingStatusRule putAlertingRoutingstatusRule(PutAlertingRoutingstatusRuleRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RoutingStatusRule>() {});
   }
 
@@ -2496,7 +2497,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RoutingStatusRule> putAlertingRoutingstatusRule(ApiRequest<RoutingStatusRule> request) throws ApiException {
+  public ApiResponse<RoutingStatusRule> putAlertingRoutingstatusRule(ApiRequest<RoutingStatusRule> request) throws IOException, ApiException {
     return pcapiClient.<RoutingStatusRule>invokeAPIVerbose(request, new TypeReference<RoutingStatusRule>() {});
   }
 
@@ -2509,7 +2510,7 @@ public class AlertingApi {
    * @return UserPresenceRule
    * @throws ApiException if fails to make API call
    */
-  public UserPresenceRule putAlertingUserpresenceRule(String ruleId, UserPresenceRule body, List<String> expand) throws ApiException {
+  public UserPresenceRule putAlertingUserpresenceRule(String ruleId, UserPresenceRule body, List<String> expand) throws IOException, ApiException {
     return putAlertingUserpresenceRuleWithHttpInfo(ruleId, body, expand).getBody();
   }
 
@@ -2522,17 +2523,17 @@ public class AlertingApi {
    * @return UserPresenceRule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserPresenceRule> putAlertingUserpresenceRuleWithHttpInfo(String ruleId, UserPresenceRule body, List<String> expand) throws ApiException {
+  public ApiResponse<UserPresenceRule> putAlertingUserpresenceRuleWithHttpInfo(String ruleId, UserPresenceRule body, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'ruleId' is set
     if (ruleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'ruleId' when calling putAlertingUserpresenceRule");
+      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling putAlertingUserpresenceRule");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putAlertingUserpresenceRule");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAlertingUserpresenceRule");
     }
     
     // create path and map variables
@@ -2569,7 +2570,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserPresenceRule putAlertingUserpresenceRule(PutAlertingUserpresenceRuleRequest request) throws ApiException {
+  public UserPresenceRule putAlertingUserpresenceRule(PutAlertingUserpresenceRuleRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserPresenceRule>() {});
   }
 
@@ -2579,7 +2580,7 @@ public class AlertingApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserPresenceRule> putAlertingUserpresenceRule(ApiRequest<UserPresenceRule> request) throws ApiException {
+  public ApiResponse<UserPresenceRule> putAlertingUserpresenceRule(ApiRequest<UserPresenceRule> request) throws IOException, ApiException {
     return pcapiClient.<UserPresenceRule>invokeAPIVerbose(request, new TypeReference<UserPresenceRule>() {});
   }
 

@@ -114,21 +114,21 @@ public class PutContentmanagementWorkspaceTagvalueRequest {
         return this;
     }
 
-    public ApiRequest<TagValue> withHttpInfo() throws ApiException {
+    public ApiRequest<TagValue> withHttpInfo() {
         
         // verify the required parameter 'workspaceId' is set
         if (this.workspaceId == null) {
-            throw new ApiException(400, "Missing the required parameter 'workspaceId' when building request for PutContentmanagementWorkspaceTagvalueRequest.");
+            throw new IllegalStateException("Missing the required parameter 'workspaceId' when building request for PutContentmanagementWorkspaceTagvalueRequest.");
         }
         
         // verify the required parameter 'tagId' is set
         if (this.tagId == null) {
-            throw new ApiException(400, "Missing the required parameter 'tagId' when building request for PutContentmanagementWorkspaceTagvalueRequest.");
+            throw new IllegalStateException("Missing the required parameter 'tagId' when building request for PutContentmanagementWorkspaceTagvalueRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutContentmanagementWorkspaceTagvalueRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutContentmanagementWorkspaceTagvalueRequest.");
         }
         
 

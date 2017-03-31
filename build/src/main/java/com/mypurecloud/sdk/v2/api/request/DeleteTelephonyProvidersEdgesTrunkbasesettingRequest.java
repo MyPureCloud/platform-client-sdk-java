@@ -120,11 +120,11 @@ public class DeleteTelephonyProvidersEdgesTrunkbasesettingRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'trunkBaseSettingsId' is set
         if (this.trunkBaseSettingsId == null) {
-            throw new ApiException(400, "Missing the required parameter 'trunkBaseSettingsId' when building request for DeleteTelephonyProvidersEdgesTrunkbasesettingRequest.");
+            throw new IllegalStateException("Missing the required parameter 'trunkBaseSettingsId' when building request for DeleteTelephonyProvidersEdgesTrunkbasesettingRequest.");
         }
         
 

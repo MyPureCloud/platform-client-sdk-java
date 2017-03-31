@@ -105,16 +105,16 @@ public class PutOutboundSchedulesSequenceRequest {
         return this;
     }
 
-    public ApiRequest<SequenceSchedule> withHttpInfo() throws ApiException {
+    public ApiRequest<SequenceSchedule> withHttpInfo() {
         
         // verify the required parameter 'sequenceId' is set
         if (this.sequenceId == null) {
-            throw new ApiException(400, "Missing the required parameter 'sequenceId' when building request for PutOutboundSchedulesSequenceRequest.");
+            throw new IllegalStateException("Missing the required parameter 'sequenceId' when building request for PutOutboundSchedulesSequenceRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutOutboundSchedulesSequenceRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutOutboundSchedulesSequenceRequest.");
         }
         
 

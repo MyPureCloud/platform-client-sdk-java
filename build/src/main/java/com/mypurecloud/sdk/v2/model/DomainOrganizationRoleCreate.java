@@ -25,8 +25,8 @@ public class DomainOrganizationRoleCreate  implements Serializable {
   private List<DomainPermissionPolicy> permissionPolicies = new ArrayList<DomainPermissionPolicy>();
   private Integer userCount = null;
   private Boolean roleNeedsUpdate = null;
-  private Boolean _default = null;
   private Boolean base = null;
+  private Boolean _default = null;
   private String selfUri = null;
 
   
@@ -160,23 +160,6 @@ public class DomainOrganizationRoleCreate  implements Serializable {
 
   /**
    **/
-  public DomainOrganizationRoleCreate _default(Boolean _default) {
-    this._default = _default;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("default")
-  public Boolean getDefault() {
-    return _default;
-  }
-  public void setDefault(Boolean _default) {
-    this._default = _default;
-  }
-
-
-  /**
-   **/
   public DomainOrganizationRoleCreate base(Boolean base) {
     this.base = base;
     return this;
@@ -189,6 +172,23 @@ public class DomainOrganizationRoleCreate  implements Serializable {
   }
   public void setBase(Boolean base) {
     this.base = base;
+  }
+
+
+  /**
+   **/
+  public DomainOrganizationRoleCreate _default(Boolean _default) {
+    this._default = _default;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("default")
+  public Boolean getDefault() {
+    return _default;
+  }
+  public void setDefault(Boolean _default) {
+    this._default = _default;
   }
 
 
@@ -216,14 +216,14 @@ public class DomainOrganizationRoleCreate  implements Serializable {
         Objects.equals(this.permissionPolicies, domainOrganizationRoleCreate.permissionPolicies) &&
         Objects.equals(this.userCount, domainOrganizationRoleCreate.userCount) &&
         Objects.equals(this.roleNeedsUpdate, domainOrganizationRoleCreate.roleNeedsUpdate) &&
-        Objects.equals(this._default, domainOrganizationRoleCreate._default) &&
         Objects.equals(this.base, domainOrganizationRoleCreate.base) &&
+        Objects.equals(this._default, domainOrganizationRoleCreate._default) &&
         Objects.equals(this.selfUri, domainOrganizationRoleCreate.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, defaultRoleId, permissions, permissionPolicies, userCount, roleNeedsUpdate, _default, base, selfUri);
+    return Objects.hash(id, name, description, defaultRoleId, permissions, permissionPolicies, userCount, roleNeedsUpdate, base, _default, selfUri);
   }
 
   @Override
@@ -239,8 +239,8 @@ public class DomainOrganizationRoleCreate  implements Serializable {
     sb.append("    permissionPolicies: ").append(toIndentedString(permissionPolicies)).append("\n");
     sb.append("    userCount: ").append(toIndentedString(userCount)).append("\n");
     sb.append("    roleNeedsUpdate: ").append(toIndentedString(roleNeedsUpdate)).append("\n");
-    sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
     sb.append("    base: ").append(toIndentedString(base)).append("\n");
+    sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

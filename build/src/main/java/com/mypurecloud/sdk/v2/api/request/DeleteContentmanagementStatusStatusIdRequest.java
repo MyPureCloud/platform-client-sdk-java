@@ -86,11 +86,11 @@ public class DeleteContentmanagementStatusStatusIdRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'statusId' is set
         if (this.statusId == null) {
-            throw new ApiException(400, "Missing the required parameter 'statusId' when building request for DeleteContentmanagementStatusStatusIdRequest.");
+            throw new IllegalStateException("Missing the required parameter 'statusId' when building request for DeleteContentmanagementStatusStatusIdRequest.");
         }
         
 

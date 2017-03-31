@@ -133,16 +133,16 @@ public class PostOutboundContactlistContactsRequest {
         return this;
     }
 
-    public ApiRequest<List<DialerContact>> withHttpInfo() throws ApiException {
+    public ApiRequest<List<DialerContact>> withHttpInfo() {
         
         // verify the required parameter 'contactListId' is set
         if (this.contactListId == null) {
-            throw new ApiException(400, "Missing the required parameter 'contactListId' when building request for PostOutboundContactlistContactsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'contactListId' when building request for PostOutboundContactlistContactsRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostOutboundContactlistContactsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostOutboundContactlistContactsRequest.");
         }
         
 

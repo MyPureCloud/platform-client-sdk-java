@@ -54,6 +54,7 @@ import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationRequest
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsRelationshipRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -78,7 +79,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteExternalcontactsContactAsync(DeleteExternalcontactsContactRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteExternalcontactsContactAsync(DeleteExternalcontactsContactRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -88,7 +89,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteExternalcontactsContactAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteExternalcontactsContactAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -98,7 +99,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteExternalcontactsContactNoteAsync(DeleteExternalcontactsContactNoteRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteExternalcontactsContactNoteAsync(DeleteExternalcontactsContactNoteRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -108,7 +109,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteExternalcontactsContactNoteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteExternalcontactsContactNoteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -118,7 +119,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteExternalcontactsOrganizationAsync(DeleteExternalcontactsOrganizationRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteExternalcontactsOrganizationAsync(DeleteExternalcontactsOrganizationRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -128,7 +129,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteExternalcontactsOrganizationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteExternalcontactsOrganizationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -138,7 +139,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteExternalcontactsOrganizationNoteAsync(DeleteExternalcontactsOrganizationNoteRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteExternalcontactsOrganizationNoteAsync(DeleteExternalcontactsOrganizationNoteRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -148,7 +149,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteExternalcontactsOrganizationNoteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteExternalcontactsOrganizationNoteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -158,7 +159,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteExternalcontactsRelationshipAsync(DeleteExternalcontactsRelationshipRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteExternalcontactsRelationshipAsync(DeleteExternalcontactsRelationshipRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -168,7 +169,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteExternalcontactsRelationshipAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteExternalcontactsRelationshipAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -178,7 +179,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ExternalContact> getExternalcontactsContactAsync(GetExternalcontactsContactRequest request, AsyncApiCallback<ExternalContact> callback) throws ApiException {
+  public Future<ExternalContact> getExternalcontactsContactAsync(GetExternalcontactsContactRequest request, AsyncApiCallback<ExternalContact> callback) {
     return pcapiClient.<ExternalContact>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExternalContact>() {}, callback);
   }
 
@@ -188,7 +189,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ExternalContact>> getExternalcontactsContactAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExternalContact>> callback) throws ApiException {
+  public Future<ApiResponse<ExternalContact>> getExternalcontactsContactAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExternalContact>> callback) {
     return pcapiClient.<ExternalContact>invokeAPIVerboseAsync(request, new TypeReference<ExternalContact>() {}, callback);
   }
 
@@ -198,7 +199,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Note> getExternalcontactsContactNoteAsync(GetExternalcontactsContactNoteRequest request, AsyncApiCallback<Note> callback) throws ApiException {
+  public Future<Note> getExternalcontactsContactNoteAsync(GetExternalcontactsContactNoteRequest request, AsyncApiCallback<Note> callback) {
     return pcapiClient.<Note>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Note>() {}, callback);
   }
 
@@ -208,7 +209,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Note>> getExternalcontactsContactNoteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Note>> callback) throws ApiException {
+  public Future<ApiResponse<Note>> getExternalcontactsContactNoteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Note>> callback) {
     return pcapiClient.<Note>invokeAPIVerboseAsync(request, new TypeReference<Note>() {}, callback);
   }
 
@@ -218,7 +219,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<NoteListing> getExternalcontactsContactNotesAsync(GetExternalcontactsContactNotesRequest request, AsyncApiCallback<NoteListing> callback) throws ApiException {
+  public Future<NoteListing> getExternalcontactsContactNotesAsync(GetExternalcontactsContactNotesRequest request, AsyncApiCallback<NoteListing> callback) {
     return pcapiClient.<NoteListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<NoteListing>() {}, callback);
   }
 
@@ -228,7 +229,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<NoteListing>> getExternalcontactsContactNotesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<NoteListing>> callback) throws ApiException {
+  public Future<ApiResponse<NoteListing>> getExternalcontactsContactNotesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<NoteListing>> callback) {
     return pcapiClient.<NoteListing>invokeAPIVerboseAsync(request, new TypeReference<NoteListing>() {}, callback);
   }
 
@@ -238,7 +239,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ContactListing> getExternalcontactsContactsAsync(GetExternalcontactsContactsRequest request, AsyncApiCallback<ContactListing> callback) throws ApiException {
+  public Future<ContactListing> getExternalcontactsContactsAsync(GetExternalcontactsContactsRequest request, AsyncApiCallback<ContactListing> callback) {
     return pcapiClient.<ContactListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ContactListing>() {}, callback);
   }
 
@@ -248,7 +249,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ContactListing>> getExternalcontactsContactsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ContactListing>> callback) throws ApiException {
+  public Future<ApiResponse<ContactListing>> getExternalcontactsContactsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ContactListing>> callback) {
     return pcapiClient.<ContactListing>invokeAPIVerboseAsync(request, new TypeReference<ContactListing>() {}, callback);
   }
 
@@ -258,7 +259,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ExternalOrganization> getExternalcontactsOrganizationAsync(GetExternalcontactsOrganizationRequest request, AsyncApiCallback<ExternalOrganization> callback) throws ApiException {
+  public Future<ExternalOrganization> getExternalcontactsOrganizationAsync(GetExternalcontactsOrganizationRequest request, AsyncApiCallback<ExternalOrganization> callback) {
     return pcapiClient.<ExternalOrganization>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {}, callback);
   }
 
@@ -268,7 +269,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ExternalOrganization>> getExternalcontactsOrganizationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExternalOrganization>> callback) throws ApiException {
+  public Future<ApiResponse<ExternalOrganization>> getExternalcontactsOrganizationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExternalOrganization>> callback) {
     return pcapiClient.<ExternalOrganization>invokeAPIVerboseAsync(request, new TypeReference<ExternalOrganization>() {}, callback);
   }
 
@@ -278,7 +279,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ContactListing> getExternalcontactsOrganizationContactsAsync(GetExternalcontactsOrganizationContactsRequest request, AsyncApiCallback<ContactListing> callback) throws ApiException {
+  public Future<ContactListing> getExternalcontactsOrganizationContactsAsync(GetExternalcontactsOrganizationContactsRequest request, AsyncApiCallback<ContactListing> callback) {
     return pcapiClient.<ContactListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ContactListing>() {}, callback);
   }
 
@@ -288,7 +289,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ContactListing>> getExternalcontactsOrganizationContactsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ContactListing>> callback) throws ApiException {
+  public Future<ApiResponse<ContactListing>> getExternalcontactsOrganizationContactsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ContactListing>> callback) {
     return pcapiClient.<ContactListing>invokeAPIVerboseAsync(request, new TypeReference<ContactListing>() {}, callback);
   }
 
@@ -298,7 +299,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Note> getExternalcontactsOrganizationNoteAsync(GetExternalcontactsOrganizationNoteRequest request, AsyncApiCallback<Note> callback) throws ApiException {
+  public Future<Note> getExternalcontactsOrganizationNoteAsync(GetExternalcontactsOrganizationNoteRequest request, AsyncApiCallback<Note> callback) {
     return pcapiClient.<Note>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Note>() {}, callback);
   }
 
@@ -308,7 +309,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Note>> getExternalcontactsOrganizationNoteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Note>> callback) throws ApiException {
+  public Future<ApiResponse<Note>> getExternalcontactsOrganizationNoteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Note>> callback) {
     return pcapiClient.<Note>invokeAPIVerboseAsync(request, new TypeReference<Note>() {}, callback);
   }
 
@@ -318,7 +319,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<NoteListing> getExternalcontactsOrganizationNotesAsync(GetExternalcontactsOrganizationNotesRequest request, AsyncApiCallback<NoteListing> callback) throws ApiException {
+  public Future<NoteListing> getExternalcontactsOrganizationNotesAsync(GetExternalcontactsOrganizationNotesRequest request, AsyncApiCallback<NoteListing> callback) {
     return pcapiClient.<NoteListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<NoteListing>() {}, callback);
   }
 
@@ -328,7 +329,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<NoteListing>> getExternalcontactsOrganizationNotesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<NoteListing>> callback) throws ApiException {
+  public Future<ApiResponse<NoteListing>> getExternalcontactsOrganizationNotesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<NoteListing>> callback) {
     return pcapiClient.<NoteListing>invokeAPIVerboseAsync(request, new TypeReference<NoteListing>() {}, callback);
   }
 
@@ -338,7 +339,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<RelationshipListing> getExternalcontactsOrganizationRelationshipsAsync(GetExternalcontactsOrganizationRelationshipsRequest request, AsyncApiCallback<RelationshipListing> callback) throws ApiException {
+  public Future<RelationshipListing> getExternalcontactsOrganizationRelationshipsAsync(GetExternalcontactsOrganizationRelationshipsRequest request, AsyncApiCallback<RelationshipListing> callback) {
     return pcapiClient.<RelationshipListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<RelationshipListing>() {}, callback);
   }
 
@@ -348,7 +349,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<RelationshipListing>> getExternalcontactsOrganizationRelationshipsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RelationshipListing>> callback) throws ApiException {
+  public Future<ApiResponse<RelationshipListing>> getExternalcontactsOrganizationRelationshipsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RelationshipListing>> callback) {
     return pcapiClient.<RelationshipListing>invokeAPIVerboseAsync(request, new TypeReference<RelationshipListing>() {}, callback);
   }
 
@@ -358,7 +359,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ExternalOrganizationListing> getExternalcontactsOrganizationsAsync(GetExternalcontactsOrganizationsRequest request, AsyncApiCallback<ExternalOrganizationListing> callback) throws ApiException {
+  public Future<ExternalOrganizationListing> getExternalcontactsOrganizationsAsync(GetExternalcontactsOrganizationsRequest request, AsyncApiCallback<ExternalOrganizationListing> callback) {
     return pcapiClient.<ExternalOrganizationListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExternalOrganizationListing>() {}, callback);
   }
 
@@ -368,7 +369,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ExternalOrganizationListing>> getExternalcontactsOrganizationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExternalOrganizationListing>> callback) throws ApiException {
+  public Future<ApiResponse<ExternalOrganizationListing>> getExternalcontactsOrganizationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExternalOrganizationListing>> callback) {
     return pcapiClient.<ExternalOrganizationListing>invokeAPIVerboseAsync(request, new TypeReference<ExternalOrganizationListing>() {}, callback);
   }
 
@@ -378,7 +379,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Relationship> getExternalcontactsRelationshipAsync(GetExternalcontactsRelationshipRequest request, AsyncApiCallback<Relationship> callback) throws ApiException {
+  public Future<Relationship> getExternalcontactsRelationshipAsync(GetExternalcontactsRelationshipRequest request, AsyncApiCallback<Relationship> callback) {
     return pcapiClient.<Relationship>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Relationship>() {}, callback);
   }
 
@@ -388,7 +389,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Relationship>> getExternalcontactsRelationshipAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Relationship>> callback) throws ApiException {
+  public Future<ApiResponse<Relationship>> getExternalcontactsRelationshipAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Relationship>> callback) {
     return pcapiClient.<Relationship>invokeAPIVerboseAsync(request, new TypeReference<Relationship>() {}, callback);
   }
 
@@ -398,7 +399,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ReverseWhitepagesLookupResult> getExternalcontactsReversewhitepageslookupAsync(GetExternalcontactsReversewhitepageslookupRequest request, AsyncApiCallback<ReverseWhitepagesLookupResult> callback) throws ApiException {
+  public Future<ReverseWhitepagesLookupResult> getExternalcontactsReversewhitepageslookupAsync(GetExternalcontactsReversewhitepageslookupRequest request, AsyncApiCallback<ReverseWhitepagesLookupResult> callback) {
     return pcapiClient.<ReverseWhitepagesLookupResult>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ReverseWhitepagesLookupResult>() {}, callback);
   }
 
@@ -408,7 +409,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ReverseWhitepagesLookupResult>> getExternalcontactsReversewhitepageslookupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReverseWhitepagesLookupResult>> callback) throws ApiException {
+  public Future<ApiResponse<ReverseWhitepagesLookupResult>> getExternalcontactsReversewhitepageslookupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReverseWhitepagesLookupResult>> callback) {
     return pcapiClient.<ReverseWhitepagesLookupResult>invokeAPIVerboseAsync(request, new TypeReference<ReverseWhitepagesLookupResult>() {}, callback);
   }
 
@@ -418,7 +419,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> postExternalcontactsContactAssociateconversationAsync(PostExternalcontactsContactAssociateconversationRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> postExternalcontactsContactAssociateconversationAsync(PostExternalcontactsContactAssociateconversationRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -428,7 +429,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> postExternalcontactsContactAssociateconversationAsync(ApiRequest<ConversationAssociation> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> postExternalcontactsContactAssociateconversationAsync(ApiRequest<ConversationAssociation> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -438,7 +439,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Note> postExternalcontactsContactNotesAsync(PostExternalcontactsContactNotesRequest request, AsyncApiCallback<Note> callback) throws ApiException {
+  public Future<Note> postExternalcontactsContactNotesAsync(PostExternalcontactsContactNotesRequest request, AsyncApiCallback<Note> callback) {
     return pcapiClient.<Note>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Note>() {}, callback);
   }
 
@@ -448,7 +449,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Note>> postExternalcontactsContactNotesAsync(ApiRequest<Note> request, AsyncApiCallback<ApiResponse<Note>> callback) throws ApiException {
+  public Future<ApiResponse<Note>> postExternalcontactsContactNotesAsync(ApiRequest<Note> request, AsyncApiCallback<ApiResponse<Note>> callback) {
     return pcapiClient.<Note>invokeAPIVerboseAsync(request, new TypeReference<Note>() {}, callback);
   }
 
@@ -458,7 +459,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ExternalContact> postExternalcontactsContactsAsync(PostExternalcontactsContactsRequest request, AsyncApiCallback<ExternalContact> callback) throws ApiException {
+  public Future<ExternalContact> postExternalcontactsContactsAsync(PostExternalcontactsContactsRequest request, AsyncApiCallback<ExternalContact> callback) {
     return pcapiClient.<ExternalContact>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExternalContact>() {}, callback);
   }
 
@@ -468,7 +469,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ExternalContact>> postExternalcontactsContactsAsync(ApiRequest<ExternalContact> request, AsyncApiCallback<ApiResponse<ExternalContact>> callback) throws ApiException {
+  public Future<ApiResponse<ExternalContact>> postExternalcontactsContactsAsync(ApiRequest<ExternalContact> request, AsyncApiCallback<ApiResponse<ExternalContact>> callback) {
     return pcapiClient.<ExternalContact>invokeAPIVerboseAsync(request, new TypeReference<ExternalContact>() {}, callback);
   }
 
@@ -478,7 +479,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Note> postExternalcontactsOrganizationNotesAsync(PostExternalcontactsOrganizationNotesRequest request, AsyncApiCallback<Note> callback) throws ApiException {
+  public Future<Note> postExternalcontactsOrganizationNotesAsync(PostExternalcontactsOrganizationNotesRequest request, AsyncApiCallback<Note> callback) {
     return pcapiClient.<Note>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Note>() {}, callback);
   }
 
@@ -488,7 +489,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Note>> postExternalcontactsOrganizationNotesAsync(ApiRequest<Note> request, AsyncApiCallback<ApiResponse<Note>> callback) throws ApiException {
+  public Future<ApiResponse<Note>> postExternalcontactsOrganizationNotesAsync(ApiRequest<Note> request, AsyncApiCallback<ApiResponse<Note>> callback) {
     return pcapiClient.<Note>invokeAPIVerboseAsync(request, new TypeReference<Note>() {}, callback);
   }
 
@@ -498,7 +499,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ExternalOrganization> postExternalcontactsOrganizationsAsync(PostExternalcontactsOrganizationsRequest request, AsyncApiCallback<ExternalOrganization> callback) throws ApiException {
+  public Future<ExternalOrganization> postExternalcontactsOrganizationsAsync(PostExternalcontactsOrganizationsRequest request, AsyncApiCallback<ExternalOrganization> callback) {
     return pcapiClient.<ExternalOrganization>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {}, callback);
   }
 
@@ -508,7 +509,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ExternalOrganization>> postExternalcontactsOrganizationsAsync(ApiRequest<ExternalOrganization> request, AsyncApiCallback<ApiResponse<ExternalOrganization>> callback) throws ApiException {
+  public Future<ApiResponse<ExternalOrganization>> postExternalcontactsOrganizationsAsync(ApiRequest<ExternalOrganization> request, AsyncApiCallback<ApiResponse<ExternalOrganization>> callback) {
     return pcapiClient.<ExternalOrganization>invokeAPIVerboseAsync(request, new TypeReference<ExternalOrganization>() {}, callback);
   }
 
@@ -518,7 +519,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Relationship> postExternalcontactsRelationshipsAsync(PostExternalcontactsRelationshipsRequest request, AsyncApiCallback<Relationship> callback) throws ApiException {
+  public Future<Relationship> postExternalcontactsRelationshipsAsync(PostExternalcontactsRelationshipsRequest request, AsyncApiCallback<Relationship> callback) {
     return pcapiClient.<Relationship>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Relationship>() {}, callback);
   }
 
@@ -528,7 +529,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Relationship>> postExternalcontactsRelationshipsAsync(ApiRequest<Relationship> request, AsyncApiCallback<ApiResponse<Relationship>> callback) throws ApiException {
+  public Future<ApiResponse<Relationship>> postExternalcontactsRelationshipsAsync(ApiRequest<Relationship> request, AsyncApiCallback<ApiResponse<Relationship>> callback) {
     return pcapiClient.<Relationship>invokeAPIVerboseAsync(request, new TypeReference<Relationship>() {}, callback);
   }
 
@@ -538,7 +539,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ExternalContact> putExternalcontactsContactAsync(PutExternalcontactsContactRequest request, AsyncApiCallback<ExternalContact> callback) throws ApiException {
+  public Future<ExternalContact> putExternalcontactsContactAsync(PutExternalcontactsContactRequest request, AsyncApiCallback<ExternalContact> callback) {
     return pcapiClient.<ExternalContact>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExternalContact>() {}, callback);
   }
 
@@ -548,7 +549,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ExternalContact>> putExternalcontactsContactAsync(ApiRequest<ExternalContact> request, AsyncApiCallback<ApiResponse<ExternalContact>> callback) throws ApiException {
+  public Future<ApiResponse<ExternalContact>> putExternalcontactsContactAsync(ApiRequest<ExternalContact> request, AsyncApiCallback<ApiResponse<ExternalContact>> callback) {
     return pcapiClient.<ExternalContact>invokeAPIVerboseAsync(request, new TypeReference<ExternalContact>() {}, callback);
   }
 
@@ -558,7 +559,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Note> putExternalcontactsContactNoteAsync(PutExternalcontactsContactNoteRequest request, AsyncApiCallback<Note> callback) throws ApiException {
+  public Future<Note> putExternalcontactsContactNoteAsync(PutExternalcontactsContactNoteRequest request, AsyncApiCallback<Note> callback) {
     return pcapiClient.<Note>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Note>() {}, callback);
   }
 
@@ -568,7 +569,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Note>> putExternalcontactsContactNoteAsync(ApiRequest<Note> request, AsyncApiCallback<ApiResponse<Note>> callback) throws ApiException {
+  public Future<ApiResponse<Note>> putExternalcontactsContactNoteAsync(ApiRequest<Note> request, AsyncApiCallback<ApiResponse<Note>> callback) {
     return pcapiClient.<Note>invokeAPIVerboseAsync(request, new TypeReference<Note>() {}, callback);
   }
 
@@ -578,7 +579,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> putExternalcontactsConversationAsync(PutExternalcontactsConversationRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> putExternalcontactsConversationAsync(PutExternalcontactsConversationRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -588,7 +589,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> putExternalcontactsConversationAsync(ApiRequest<ConversationAssociation> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> putExternalcontactsConversationAsync(ApiRequest<ConversationAssociation> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -598,7 +599,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ExternalOrganization> putExternalcontactsOrganizationAsync(PutExternalcontactsOrganizationRequest request, AsyncApiCallback<ExternalOrganization> callback) throws ApiException {
+  public Future<ExternalOrganization> putExternalcontactsOrganizationAsync(PutExternalcontactsOrganizationRequest request, AsyncApiCallback<ExternalOrganization> callback) {
     return pcapiClient.<ExternalOrganization>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {}, callback);
   }
 
@@ -608,7 +609,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ExternalOrganization>> putExternalcontactsOrganizationAsync(ApiRequest<ExternalOrganization> request, AsyncApiCallback<ApiResponse<ExternalOrganization>> callback) throws ApiException {
+  public Future<ApiResponse<ExternalOrganization>> putExternalcontactsOrganizationAsync(ApiRequest<ExternalOrganization> request, AsyncApiCallback<ApiResponse<ExternalOrganization>> callback) {
     return pcapiClient.<ExternalOrganization>invokeAPIVerboseAsync(request, new TypeReference<ExternalOrganization>() {}, callback);
   }
 
@@ -618,7 +619,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Note> putExternalcontactsOrganizationNoteAsync(PutExternalcontactsOrganizationNoteRequest request, AsyncApiCallback<Note> callback) throws ApiException {
+  public Future<Note> putExternalcontactsOrganizationNoteAsync(PutExternalcontactsOrganizationNoteRequest request, AsyncApiCallback<Note> callback) {
     return pcapiClient.<Note>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Note>() {}, callback);
   }
 
@@ -628,7 +629,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Note>> putExternalcontactsOrganizationNoteAsync(ApiRequest<Note> request, AsyncApiCallback<ApiResponse<Note>> callback) throws ApiException {
+  public Future<ApiResponse<Note>> putExternalcontactsOrganizationNoteAsync(ApiRequest<Note> request, AsyncApiCallback<ApiResponse<Note>> callback) {
     return pcapiClient.<Note>invokeAPIVerboseAsync(request, new TypeReference<Note>() {}, callback);
   }
 
@@ -638,7 +639,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Relationship> putExternalcontactsRelationshipAsync(PutExternalcontactsRelationshipRequest request, AsyncApiCallback<Relationship> callback) throws ApiException {
+  public Future<Relationship> putExternalcontactsRelationshipAsync(PutExternalcontactsRelationshipRequest request, AsyncApiCallback<Relationship> callback) {
     return pcapiClient.<Relationship>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Relationship>() {}, callback);
   }
 
@@ -648,7 +649,7 @@ public class ExternalContactsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Relationship>> putExternalcontactsRelationshipAsync(ApiRequest<Relationship> request, AsyncApiCallback<ApiResponse<Relationship>> callback) throws ApiException {
+  public Future<ApiResponse<Relationship>> putExternalcontactsRelationshipAsync(ApiRequest<Relationship> request, AsyncApiCallback<ApiResponse<Relationship>> callback) {
     return pcapiClient.<Relationship>invokeAPIVerboseAsync(request, new TypeReference<Relationship>() {}, callback);
   }
 

@@ -32,6 +32,7 @@ import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponsesQueryRe
 import com.mypurecloud.sdk.v2.api.request.PutResponsemanagementLibraryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutResponsemanagementResponseRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +57,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteResponsemanagementLibraryAsync(DeleteResponsemanagementLibraryRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteResponsemanagementLibraryAsync(DeleteResponsemanagementLibraryRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -66,7 +67,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteResponsemanagementLibraryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteResponsemanagementLibraryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -76,7 +77,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteResponsemanagementResponseAsync(DeleteResponsemanagementResponseRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteResponsemanagementResponseAsync(DeleteResponsemanagementResponseRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -86,7 +87,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteResponsemanagementResponseAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteResponsemanagementResponseAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -96,7 +97,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<LibraryEntityListing> getResponsemanagementLibrariesAsync(GetResponsemanagementLibrariesRequest request, AsyncApiCallback<LibraryEntityListing> callback) throws ApiException {
+  public Future<LibraryEntityListing> getResponsemanagementLibrariesAsync(GetResponsemanagementLibrariesRequest request, AsyncApiCallback<LibraryEntityListing> callback) {
     return pcapiClient.<LibraryEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LibraryEntityListing>() {}, callback);
   }
 
@@ -106,7 +107,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<LibraryEntityListing>> getResponsemanagementLibrariesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LibraryEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<LibraryEntityListing>> getResponsemanagementLibrariesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LibraryEntityListing>> callback) {
     return pcapiClient.<LibraryEntityListing>invokeAPIVerboseAsync(request, new TypeReference<LibraryEntityListing>() {}, callback);
   }
 
@@ -116,7 +117,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Library> getResponsemanagementLibraryAsync(GetResponsemanagementLibraryRequest request, AsyncApiCallback<Library> callback) throws ApiException {
+  public Future<Library> getResponsemanagementLibraryAsync(GetResponsemanagementLibraryRequest request, AsyncApiCallback<Library> callback) {
     return pcapiClient.<Library>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Library>() {}, callback);
   }
 
@@ -126,7 +127,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Library>> getResponsemanagementLibraryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Library>> callback) throws ApiException {
+  public Future<ApiResponse<Library>> getResponsemanagementLibraryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Library>> callback) {
     return pcapiClient.<Library>invokeAPIVerboseAsync(request, new TypeReference<Library>() {}, callback);
   }
 
@@ -136,7 +137,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Response> getResponsemanagementResponseAsync(GetResponsemanagementResponseRequest request, AsyncApiCallback<Response> callback) throws ApiException {
+  public Future<Response> getResponsemanagementResponseAsync(GetResponsemanagementResponseRequest request, AsyncApiCallback<Response> callback) {
     return pcapiClient.<Response>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Response>() {}, callback);
   }
 
@@ -146,7 +147,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Response>> getResponsemanagementResponseAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Response>> callback) throws ApiException {
+  public Future<ApiResponse<Response>> getResponsemanagementResponseAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Response>> callback) {
     return pcapiClient.<Response>invokeAPIVerboseAsync(request, new TypeReference<Response>() {}, callback);
   }
 
@@ -156,7 +157,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ResponseEntityListing> getResponsemanagementResponsesAsync(GetResponsemanagementResponsesRequest request, AsyncApiCallback<ResponseEntityListing> callback) throws ApiException {
+  public Future<ResponseEntityListing> getResponsemanagementResponsesAsync(GetResponsemanagementResponsesRequest request, AsyncApiCallback<ResponseEntityListing> callback) {
     return pcapiClient.<ResponseEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ResponseEntityListing>() {}, callback);
   }
 
@@ -166,7 +167,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ResponseEntityListing>> getResponsemanagementResponsesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ResponseEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<ResponseEntityListing>> getResponsemanagementResponsesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ResponseEntityListing>> callback) {
     return pcapiClient.<ResponseEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ResponseEntityListing>() {}, callback);
   }
 
@@ -176,7 +177,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Library> postResponsemanagementLibrariesAsync(PostResponsemanagementLibrariesRequest request, AsyncApiCallback<Library> callback) throws ApiException {
+  public Future<Library> postResponsemanagementLibrariesAsync(PostResponsemanagementLibrariesRequest request, AsyncApiCallback<Library> callback) {
     return pcapiClient.<Library>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Library>() {}, callback);
   }
 
@@ -186,7 +187,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Library>> postResponsemanagementLibrariesAsync(ApiRequest<Library> request, AsyncApiCallback<ApiResponse<Library>> callback) throws ApiException {
+  public Future<ApiResponse<Library>> postResponsemanagementLibrariesAsync(ApiRequest<Library> request, AsyncApiCallback<ApiResponse<Library>> callback) {
     return pcapiClient.<Library>invokeAPIVerboseAsync(request, new TypeReference<Library>() {}, callback);
   }
 
@@ -196,7 +197,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Response> postResponsemanagementResponsesAsync(PostResponsemanagementResponsesRequest request, AsyncApiCallback<Response> callback) throws ApiException {
+  public Future<Response> postResponsemanagementResponsesAsync(PostResponsemanagementResponsesRequest request, AsyncApiCallback<Response> callback) {
     return pcapiClient.<Response>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Response>() {}, callback);
   }
 
@@ -206,7 +207,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Response>> postResponsemanagementResponsesAsync(ApiRequest<Response> request, AsyncApiCallback<ApiResponse<Response>> callback) throws ApiException {
+  public Future<ApiResponse<Response>> postResponsemanagementResponsesAsync(ApiRequest<Response> request, AsyncApiCallback<ApiResponse<Response>> callback) {
     return pcapiClient.<Response>invokeAPIVerboseAsync(request, new TypeReference<Response>() {}, callback);
   }
 
@@ -216,7 +217,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ResponseQueryResults> postResponsemanagementResponsesQueryAsync(PostResponsemanagementResponsesQueryRequest request, AsyncApiCallback<ResponseQueryResults> callback) throws ApiException {
+  public Future<ResponseQueryResults> postResponsemanagementResponsesQueryAsync(PostResponsemanagementResponsesQueryRequest request, AsyncApiCallback<ResponseQueryResults> callback) {
     return pcapiClient.<ResponseQueryResults>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ResponseQueryResults>() {}, callback);
   }
 
@@ -226,7 +227,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ResponseQueryResults>> postResponsemanagementResponsesQueryAsync(ApiRequest<ResponseQueryRequest> request, AsyncApiCallback<ApiResponse<ResponseQueryResults>> callback) throws ApiException {
+  public Future<ApiResponse<ResponseQueryResults>> postResponsemanagementResponsesQueryAsync(ApiRequest<ResponseQueryRequest> request, AsyncApiCallback<ApiResponse<ResponseQueryResults>> callback) {
     return pcapiClient.<ResponseQueryResults>invokeAPIVerboseAsync(request, new TypeReference<ResponseQueryResults>() {}, callback);
   }
 
@@ -236,7 +237,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Library> putResponsemanagementLibraryAsync(PutResponsemanagementLibraryRequest request, AsyncApiCallback<Library> callback) throws ApiException {
+  public Future<Library> putResponsemanagementLibraryAsync(PutResponsemanagementLibraryRequest request, AsyncApiCallback<Library> callback) {
     return pcapiClient.<Library>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Library>() {}, callback);
   }
 
@@ -246,7 +247,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Library>> putResponsemanagementLibraryAsync(ApiRequest<Library> request, AsyncApiCallback<ApiResponse<Library>> callback) throws ApiException {
+  public Future<ApiResponse<Library>> putResponsemanagementLibraryAsync(ApiRequest<Library> request, AsyncApiCallback<ApiResponse<Library>> callback) {
     return pcapiClient.<Library>invokeAPIVerboseAsync(request, new TypeReference<Library>() {}, callback);
   }
 
@@ -256,7 +257,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Response> putResponsemanagementResponseAsync(PutResponsemanagementResponseRequest request, AsyncApiCallback<Response> callback) throws ApiException {
+  public Future<Response> putResponsemanagementResponseAsync(PutResponsemanagementResponseRequest request, AsyncApiCallback<Response> callback) {
     return pcapiClient.<Response>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Response>() {}, callback);
   }
 
@@ -266,7 +267,7 @@ public class ResponseManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Response>> putResponsemanagementResponseAsync(ApiRequest<Response> request, AsyncApiCallback<ApiResponse<Response>> callback) throws ApiException {
+  public Future<ApiResponse<Response>> putResponsemanagementResponseAsync(ApiRequest<Response> request, AsyncApiCallback<ApiResponse<Response>> callback) {
     return pcapiClient.<Response>invokeAPIVerboseAsync(request, new TypeReference<Response>() {}, callback);
   }
 

@@ -105,16 +105,16 @@ public class PutOutboundDnclistRequest {
         return this;
     }
 
-    public ApiRequest<DncList> withHttpInfo() throws ApiException {
+    public ApiRequest<DncList> withHttpInfo() {
         
         // verify the required parameter 'dncListId' is set
         if (this.dncListId == null) {
-            throw new ApiException(400, "Missing the required parameter 'dncListId' when building request for PutOutboundDnclistRequest.");
+            throw new IllegalStateException("Missing the required parameter 'dncListId' when building request for PutOutboundDnclistRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutOutboundDnclistRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutOutboundDnclistRequest.");
         }
         
 

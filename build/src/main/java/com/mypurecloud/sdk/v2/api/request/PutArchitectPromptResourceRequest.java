@@ -96,16 +96,16 @@ public class PutArchitectPromptResourceRequest {
         return this;
     }
 
-    public ApiRequest<PromptAsset> withHttpInfo() throws ApiException {
+    public ApiRequest<PromptAsset> withHttpInfo() {
         
         // verify the required parameter 'promptId' is set
         if (this.promptId == null) {
-            throw new ApiException(400, "Missing the required parameter 'promptId' when building request for PutArchitectPromptResourceRequest.");
+            throw new IllegalStateException("Missing the required parameter 'promptId' when building request for PutArchitectPromptResourceRequest.");
         }
         
         // verify the required parameter 'languageCode' is set
         if (this.languageCode == null) {
-            throw new ApiException(400, "Missing the required parameter 'languageCode' when building request for PutArchitectPromptResourceRequest.");
+            throw new IllegalStateException("Missing the required parameter 'languageCode' when building request for PutArchitectPromptResourceRequest.");
         }
         
 

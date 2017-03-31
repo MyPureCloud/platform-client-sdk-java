@@ -54,6 +54,7 @@ import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersPingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersPurecloudRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersSalesforceRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -77,7 +78,7 @@ public class IdentityProviderApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteIdentityprovidersAdfs() throws ApiException {
+  public Empty deleteIdentityprovidersAdfs() throws IOException, ApiException {
     return deleteIdentityprovidersAdfsWithHttpInfo().getBody();
   }
 
@@ -87,7 +88,7 @@ public class IdentityProviderApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteIdentityprovidersAdfsWithHttpInfo() throws ApiException {
+  public ApiResponse<Empty> deleteIdentityprovidersAdfsWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -122,7 +123,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteIdentityprovidersAdfs(DeleteIdentityprovidersAdfsRequest request) throws ApiException {
+  public Empty deleteIdentityprovidersAdfs(DeleteIdentityprovidersAdfsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
   }
 
@@ -132,7 +133,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteIdentityprovidersAdfs(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Empty> deleteIdentityprovidersAdfs(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
   }
 
@@ -142,7 +143,7 @@ public class IdentityProviderApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteIdentityprovidersCic() throws ApiException {
+  public Empty deleteIdentityprovidersCic() throws IOException, ApiException {
     return deleteIdentityprovidersCicWithHttpInfo().getBody();
   }
 
@@ -152,7 +153,7 @@ public class IdentityProviderApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteIdentityprovidersCicWithHttpInfo() throws ApiException {
+  public ApiResponse<Empty> deleteIdentityprovidersCicWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -187,7 +188,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteIdentityprovidersCic(DeleteIdentityprovidersCicRequest request) throws ApiException {
+  public Empty deleteIdentityprovidersCic(DeleteIdentityprovidersCicRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
   }
 
@@ -197,7 +198,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteIdentityprovidersCic(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Empty> deleteIdentityprovidersCic(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
   }
 
@@ -207,7 +208,7 @@ public class IdentityProviderApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteIdentityprovidersGsuite() throws ApiException {
+  public Empty deleteIdentityprovidersGsuite() throws IOException, ApiException {
     return deleteIdentityprovidersGsuiteWithHttpInfo().getBody();
   }
 
@@ -217,7 +218,7 @@ public class IdentityProviderApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteIdentityprovidersGsuiteWithHttpInfo() throws ApiException {
+  public ApiResponse<Empty> deleteIdentityprovidersGsuiteWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -252,7 +253,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteIdentityprovidersGsuite(DeleteIdentityprovidersGsuiteRequest request) throws ApiException {
+  public Empty deleteIdentityprovidersGsuite(DeleteIdentityprovidersGsuiteRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
   }
 
@@ -262,7 +263,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteIdentityprovidersGsuite(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Empty> deleteIdentityprovidersGsuite(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
   }
 
@@ -272,7 +273,7 @@ public class IdentityProviderApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteIdentityprovidersIdentitynow() throws ApiException {
+  public Empty deleteIdentityprovidersIdentitynow() throws IOException, ApiException {
     return deleteIdentityprovidersIdentitynowWithHttpInfo().getBody();
   }
 
@@ -282,7 +283,7 @@ public class IdentityProviderApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteIdentityprovidersIdentitynowWithHttpInfo() throws ApiException {
+  public ApiResponse<Empty> deleteIdentityprovidersIdentitynowWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -317,7 +318,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteIdentityprovidersIdentitynow(DeleteIdentityprovidersIdentitynowRequest request) throws ApiException {
+  public Empty deleteIdentityprovidersIdentitynow(DeleteIdentityprovidersIdentitynowRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
   }
 
@@ -327,7 +328,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteIdentityprovidersIdentitynow(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Empty> deleteIdentityprovidersIdentitynow(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
   }
 
@@ -337,7 +338,7 @@ public class IdentityProviderApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteIdentityprovidersOkta() throws ApiException {
+  public Empty deleteIdentityprovidersOkta() throws IOException, ApiException {
     return deleteIdentityprovidersOktaWithHttpInfo().getBody();
   }
 
@@ -347,7 +348,7 @@ public class IdentityProviderApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteIdentityprovidersOktaWithHttpInfo() throws ApiException {
+  public ApiResponse<Empty> deleteIdentityprovidersOktaWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -382,7 +383,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteIdentityprovidersOkta(DeleteIdentityprovidersOktaRequest request) throws ApiException {
+  public Empty deleteIdentityprovidersOkta(DeleteIdentityprovidersOktaRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
   }
 
@@ -392,7 +393,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteIdentityprovidersOkta(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Empty> deleteIdentityprovidersOkta(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
   }
 
@@ -402,7 +403,7 @@ public class IdentityProviderApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteIdentityprovidersOnelogin() throws ApiException {
+  public Empty deleteIdentityprovidersOnelogin() throws IOException, ApiException {
     return deleteIdentityprovidersOneloginWithHttpInfo().getBody();
   }
 
@@ -412,7 +413,7 @@ public class IdentityProviderApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteIdentityprovidersOneloginWithHttpInfo() throws ApiException {
+  public ApiResponse<Empty> deleteIdentityprovidersOneloginWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -447,7 +448,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteIdentityprovidersOnelogin(DeleteIdentityprovidersOneloginRequest request) throws ApiException {
+  public Empty deleteIdentityprovidersOnelogin(DeleteIdentityprovidersOneloginRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
   }
 
@@ -457,7 +458,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteIdentityprovidersOnelogin(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Empty> deleteIdentityprovidersOnelogin(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
   }
 
@@ -467,7 +468,7 @@ public class IdentityProviderApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteIdentityprovidersPing() throws ApiException {
+  public Empty deleteIdentityprovidersPing() throws IOException, ApiException {
     return deleteIdentityprovidersPingWithHttpInfo().getBody();
   }
 
@@ -477,7 +478,7 @@ public class IdentityProviderApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteIdentityprovidersPingWithHttpInfo() throws ApiException {
+  public ApiResponse<Empty> deleteIdentityprovidersPingWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -512,7 +513,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteIdentityprovidersPing(DeleteIdentityprovidersPingRequest request) throws ApiException {
+  public Empty deleteIdentityprovidersPing(DeleteIdentityprovidersPingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
   }
 
@@ -522,7 +523,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteIdentityprovidersPing(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Empty> deleteIdentityprovidersPing(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
   }
 
@@ -532,7 +533,7 @@ public class IdentityProviderApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteIdentityprovidersPurecloud() throws ApiException {
+  public Empty deleteIdentityprovidersPurecloud() throws IOException, ApiException {
     return deleteIdentityprovidersPurecloudWithHttpInfo().getBody();
   }
 
@@ -542,7 +543,7 @@ public class IdentityProviderApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteIdentityprovidersPurecloudWithHttpInfo() throws ApiException {
+  public ApiResponse<Empty> deleteIdentityprovidersPurecloudWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -577,7 +578,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteIdentityprovidersPurecloud(DeleteIdentityprovidersPurecloudRequest request) throws ApiException {
+  public Empty deleteIdentityprovidersPurecloud(DeleteIdentityprovidersPurecloudRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
   }
 
@@ -587,7 +588,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteIdentityprovidersPurecloud(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Empty> deleteIdentityprovidersPurecloud(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
   }
 
@@ -597,7 +598,7 @@ public class IdentityProviderApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteIdentityprovidersSalesforce() throws ApiException {
+  public Empty deleteIdentityprovidersSalesforce() throws IOException, ApiException {
     return deleteIdentityprovidersSalesforceWithHttpInfo().getBody();
   }
 
@@ -607,7 +608,7 @@ public class IdentityProviderApi {
    * @return Empty
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteIdentityprovidersSalesforceWithHttpInfo() throws ApiException {
+  public ApiResponse<Empty> deleteIdentityprovidersSalesforceWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -642,7 +643,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Empty deleteIdentityprovidersSalesforce(DeleteIdentityprovidersSalesforceRequest request) throws ApiException {
+  public Empty deleteIdentityprovidersSalesforce(DeleteIdentityprovidersSalesforceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
   }
 
@@ -652,7 +653,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Empty> deleteIdentityprovidersSalesforce(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Empty> deleteIdentityprovidersSalesforce(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
   }
 
@@ -662,7 +663,7 @@ public class IdentityProviderApi {
    * @return OAuthProviderEntityListing
    * @throws ApiException if fails to make API call
    */
-  public OAuthProviderEntityListing getIdentityproviders() throws ApiException {
+  public OAuthProviderEntityListing getIdentityproviders() throws IOException, ApiException {
     return getIdentityprovidersWithHttpInfo().getBody();
   }
 
@@ -672,7 +673,7 @@ public class IdentityProviderApi {
    * @return OAuthProviderEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthProviderEntityListing> getIdentityprovidersWithHttpInfo() throws ApiException {
+  public ApiResponse<OAuthProviderEntityListing> getIdentityprovidersWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -707,7 +708,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OAuthProviderEntityListing getIdentityproviders(GetIdentityprovidersRequest request) throws ApiException {
+  public OAuthProviderEntityListing getIdentityproviders(GetIdentityprovidersRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthProviderEntityListing>() {});
   }
 
@@ -717,7 +718,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthProviderEntityListing> getIdentityproviders(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<OAuthProviderEntityListing> getIdentityproviders(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<OAuthProviderEntityListing>invokeAPIVerbose(request, new TypeReference<OAuthProviderEntityListing>() {});
   }
 
@@ -727,7 +728,7 @@ public class IdentityProviderApi {
    * @return ADFS
    * @throws ApiException if fails to make API call
    */
-  public ADFS getIdentityprovidersAdfs() throws ApiException {
+  public ADFS getIdentityprovidersAdfs() throws IOException, ApiException {
     return getIdentityprovidersAdfsWithHttpInfo().getBody();
   }
 
@@ -737,7 +738,7 @@ public class IdentityProviderApi {
    * @return ADFS
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ADFS> getIdentityprovidersAdfsWithHttpInfo() throws ApiException {
+  public ApiResponse<ADFS> getIdentityprovidersAdfsWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -772,7 +773,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ADFS getIdentityprovidersAdfs(GetIdentityprovidersAdfsRequest request) throws ApiException {
+  public ADFS getIdentityprovidersAdfs(GetIdentityprovidersAdfsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ADFS>() {});
   }
 
@@ -782,7 +783,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ADFS> getIdentityprovidersAdfs(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ADFS> getIdentityprovidersAdfs(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ADFS>invokeAPIVerbose(request, new TypeReference<ADFS>() {});
   }
 
@@ -792,7 +793,7 @@ public class IdentityProviderApi {
    * @return CustomerInteractionCenter
    * @throws ApiException if fails to make API call
    */
-  public CustomerInteractionCenter getIdentityprovidersCic() throws ApiException {
+  public CustomerInteractionCenter getIdentityprovidersCic() throws IOException, ApiException {
     return getIdentityprovidersCicWithHttpInfo().getBody();
   }
 
@@ -802,7 +803,7 @@ public class IdentityProviderApi {
    * @return CustomerInteractionCenter
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CustomerInteractionCenter> getIdentityprovidersCicWithHttpInfo() throws ApiException {
+  public ApiResponse<CustomerInteractionCenter> getIdentityprovidersCicWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -837,7 +838,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CustomerInteractionCenter getIdentityprovidersCic(GetIdentityprovidersCicRequest request) throws ApiException {
+  public CustomerInteractionCenter getIdentityprovidersCic(GetIdentityprovidersCicRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CustomerInteractionCenter>() {});
   }
 
@@ -847,7 +848,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CustomerInteractionCenter> getIdentityprovidersCic(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CustomerInteractionCenter> getIdentityprovidersCic(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CustomerInteractionCenter>invokeAPIVerbose(request, new TypeReference<CustomerInteractionCenter>() {});
   }
 
@@ -857,7 +858,7 @@ public class IdentityProviderApi {
    * @return GSuite
    * @throws ApiException if fails to make API call
    */
-  public GSuite getIdentityprovidersGsuite() throws ApiException {
+  public GSuite getIdentityprovidersGsuite() throws IOException, ApiException {
     return getIdentityprovidersGsuiteWithHttpInfo().getBody();
   }
 
@@ -867,7 +868,7 @@ public class IdentityProviderApi {
    * @return GSuite
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<GSuite> getIdentityprovidersGsuiteWithHttpInfo() throws ApiException {
+  public ApiResponse<GSuite> getIdentityprovidersGsuiteWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -902,7 +903,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public GSuite getIdentityprovidersGsuite(GetIdentityprovidersGsuiteRequest request) throws ApiException {
+  public GSuite getIdentityprovidersGsuite(GetIdentityprovidersGsuiteRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<GSuite>() {});
   }
 
@@ -912,7 +913,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<GSuite> getIdentityprovidersGsuite(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<GSuite> getIdentityprovidersGsuite(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<GSuite>invokeAPIVerbose(request, new TypeReference<GSuite>() {});
   }
 
@@ -922,7 +923,7 @@ public class IdentityProviderApi {
    * @return IdentityNow
    * @throws ApiException if fails to make API call
    */
-  public IdentityNow getIdentityprovidersIdentitynow() throws ApiException {
+  public IdentityNow getIdentityprovidersIdentitynow() throws IOException, ApiException {
     return getIdentityprovidersIdentitynowWithHttpInfo().getBody();
   }
 
@@ -932,7 +933,7 @@ public class IdentityProviderApi {
    * @return IdentityNow
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<IdentityNow> getIdentityprovidersIdentitynowWithHttpInfo() throws ApiException {
+  public ApiResponse<IdentityNow> getIdentityprovidersIdentitynowWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -967,7 +968,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public IdentityNow getIdentityprovidersIdentitynow(GetIdentityprovidersIdentitynowRequest request) throws ApiException {
+  public IdentityNow getIdentityprovidersIdentitynow(GetIdentityprovidersIdentitynowRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<IdentityNow>() {});
   }
 
@@ -977,7 +978,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<IdentityNow> getIdentityprovidersIdentitynow(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<IdentityNow> getIdentityprovidersIdentitynow(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<IdentityNow>invokeAPIVerbose(request, new TypeReference<IdentityNow>() {});
   }
 
@@ -987,7 +988,7 @@ public class IdentityProviderApi {
    * @return Okta
    * @throws ApiException if fails to make API call
    */
-  public Okta getIdentityprovidersOkta() throws ApiException {
+  public Okta getIdentityprovidersOkta() throws IOException, ApiException {
     return getIdentityprovidersOktaWithHttpInfo().getBody();
   }
 
@@ -997,7 +998,7 @@ public class IdentityProviderApi {
    * @return Okta
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Okta> getIdentityprovidersOktaWithHttpInfo() throws ApiException {
+  public ApiResponse<Okta> getIdentityprovidersOktaWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1032,7 +1033,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Okta getIdentityprovidersOkta(GetIdentityprovidersOktaRequest request) throws ApiException {
+  public Okta getIdentityprovidersOkta(GetIdentityprovidersOktaRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Okta>() {});
   }
 
@@ -1042,7 +1043,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Okta> getIdentityprovidersOkta(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Okta> getIdentityprovidersOkta(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Okta>invokeAPIVerbose(request, new TypeReference<Okta>() {});
   }
 
@@ -1052,7 +1053,7 @@ public class IdentityProviderApi {
    * @return OneLogin
    * @throws ApiException if fails to make API call
    */
-  public OneLogin getIdentityprovidersOnelogin() throws ApiException {
+  public OneLogin getIdentityprovidersOnelogin() throws IOException, ApiException {
     return getIdentityprovidersOneloginWithHttpInfo().getBody();
   }
 
@@ -1062,7 +1063,7 @@ public class IdentityProviderApi {
    * @return OneLogin
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OneLogin> getIdentityprovidersOneloginWithHttpInfo() throws ApiException {
+  public ApiResponse<OneLogin> getIdentityprovidersOneloginWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1097,7 +1098,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OneLogin getIdentityprovidersOnelogin(GetIdentityprovidersOneloginRequest request) throws ApiException {
+  public OneLogin getIdentityprovidersOnelogin(GetIdentityprovidersOneloginRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OneLogin>() {});
   }
 
@@ -1107,7 +1108,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OneLogin> getIdentityprovidersOnelogin(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<OneLogin> getIdentityprovidersOnelogin(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<OneLogin>invokeAPIVerbose(request, new TypeReference<OneLogin>() {});
   }
 
@@ -1117,7 +1118,7 @@ public class IdentityProviderApi {
    * @return PingIdentity
    * @throws ApiException if fails to make API call
    */
-  public PingIdentity getIdentityprovidersPing() throws ApiException {
+  public PingIdentity getIdentityprovidersPing() throws IOException, ApiException {
     return getIdentityprovidersPingWithHttpInfo().getBody();
   }
 
@@ -1127,7 +1128,7 @@ public class IdentityProviderApi {
    * @return PingIdentity
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PingIdentity> getIdentityprovidersPingWithHttpInfo() throws ApiException {
+  public ApiResponse<PingIdentity> getIdentityprovidersPingWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1162,7 +1163,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PingIdentity getIdentityprovidersPing(GetIdentityprovidersPingRequest request) throws ApiException {
+  public PingIdentity getIdentityprovidersPing(GetIdentityprovidersPingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PingIdentity>() {});
   }
 
@@ -1172,7 +1173,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PingIdentity> getIdentityprovidersPing(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<PingIdentity> getIdentityprovidersPing(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<PingIdentity>invokeAPIVerbose(request, new TypeReference<PingIdentity>() {});
   }
 
@@ -1182,7 +1183,7 @@ public class IdentityProviderApi {
    * @return PureCloud
    * @throws ApiException if fails to make API call
    */
-  public PureCloud getIdentityprovidersPurecloud() throws ApiException {
+  public PureCloud getIdentityprovidersPurecloud() throws IOException, ApiException {
     return getIdentityprovidersPurecloudWithHttpInfo().getBody();
   }
 
@@ -1192,7 +1193,7 @@ public class IdentityProviderApi {
    * @return PureCloud
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PureCloud> getIdentityprovidersPurecloudWithHttpInfo() throws ApiException {
+  public ApiResponse<PureCloud> getIdentityprovidersPurecloudWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1227,7 +1228,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PureCloud getIdentityprovidersPurecloud(GetIdentityprovidersPurecloudRequest request) throws ApiException {
+  public PureCloud getIdentityprovidersPurecloud(GetIdentityprovidersPurecloudRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PureCloud>() {});
   }
 
@@ -1237,7 +1238,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PureCloud> getIdentityprovidersPurecloud(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<PureCloud> getIdentityprovidersPurecloud(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<PureCloud>invokeAPIVerbose(request, new TypeReference<PureCloud>() {});
   }
 
@@ -1247,7 +1248,7 @@ public class IdentityProviderApi {
    * @return Salesforce
    * @throws ApiException if fails to make API call
    */
-  public Salesforce getIdentityprovidersSalesforce() throws ApiException {
+  public Salesforce getIdentityprovidersSalesforce() throws IOException, ApiException {
     return getIdentityprovidersSalesforceWithHttpInfo().getBody();
   }
 
@@ -1257,7 +1258,7 @@ public class IdentityProviderApi {
    * @return Salesforce
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Salesforce> getIdentityprovidersSalesforceWithHttpInfo() throws ApiException {
+  public ApiResponse<Salesforce> getIdentityprovidersSalesforceWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1292,7 +1293,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Salesforce getIdentityprovidersSalesforce(GetIdentityprovidersSalesforceRequest request) throws ApiException {
+  public Salesforce getIdentityprovidersSalesforce(GetIdentityprovidersSalesforceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Salesforce>() {});
   }
 
@@ -1302,7 +1303,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Salesforce> getIdentityprovidersSalesforce(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Salesforce> getIdentityprovidersSalesforce(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Salesforce>invokeAPIVerbose(request, new TypeReference<Salesforce>() {});
   }
 
@@ -1313,7 +1314,7 @@ public class IdentityProviderApi {
    * @return OAuthProvider
    * @throws ApiException if fails to make API call
    */
-  public OAuthProvider putIdentityprovidersAdfs(ADFS body) throws ApiException {
+  public OAuthProvider putIdentityprovidersAdfs(ADFS body) throws IOException, ApiException {
     return putIdentityprovidersAdfsWithHttpInfo(body).getBody();
   }
 
@@ -1324,12 +1325,12 @@ public class IdentityProviderApi {
    * @return OAuthProvider
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersAdfsWithHttpInfo(ADFS body) throws ApiException {
+  public ApiResponse<OAuthProvider> putIdentityprovidersAdfsWithHttpInfo(ADFS body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putIdentityprovidersAdfs");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putIdentityprovidersAdfs");
     }
     
     // create path and map variables
@@ -1364,7 +1365,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OAuthProvider putIdentityprovidersAdfs(PutIdentityprovidersAdfsRequest request) throws ApiException {
+  public OAuthProvider putIdentityprovidersAdfs(PutIdentityprovidersAdfsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
   }
 
@@ -1374,7 +1375,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersAdfs(ApiRequest<ADFS> request) throws ApiException {
+  public ApiResponse<OAuthProvider> putIdentityprovidersAdfs(ApiRequest<ADFS> request) throws IOException, ApiException {
     return pcapiClient.<OAuthProvider>invokeAPIVerbose(request, new TypeReference<OAuthProvider>() {});
   }
 
@@ -1385,7 +1386,7 @@ public class IdentityProviderApi {
    * @return OAuthProvider
    * @throws ApiException if fails to make API call
    */
-  public OAuthProvider putIdentityprovidersCic(CustomerInteractionCenter body) throws ApiException {
+  public OAuthProvider putIdentityprovidersCic(CustomerInteractionCenter body) throws IOException, ApiException {
     return putIdentityprovidersCicWithHttpInfo(body).getBody();
   }
 
@@ -1396,12 +1397,12 @@ public class IdentityProviderApi {
    * @return OAuthProvider
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersCicWithHttpInfo(CustomerInteractionCenter body) throws ApiException {
+  public ApiResponse<OAuthProvider> putIdentityprovidersCicWithHttpInfo(CustomerInteractionCenter body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putIdentityprovidersCic");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putIdentityprovidersCic");
     }
     
     // create path and map variables
@@ -1436,7 +1437,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OAuthProvider putIdentityprovidersCic(PutIdentityprovidersCicRequest request) throws ApiException {
+  public OAuthProvider putIdentityprovidersCic(PutIdentityprovidersCicRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
   }
 
@@ -1446,7 +1447,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersCic(ApiRequest<CustomerInteractionCenter> request) throws ApiException {
+  public ApiResponse<OAuthProvider> putIdentityprovidersCic(ApiRequest<CustomerInteractionCenter> request) throws IOException, ApiException {
     return pcapiClient.<OAuthProvider>invokeAPIVerbose(request, new TypeReference<OAuthProvider>() {});
   }
 
@@ -1457,7 +1458,7 @@ public class IdentityProviderApi {
    * @return OAuthProvider
    * @throws ApiException if fails to make API call
    */
-  public OAuthProvider putIdentityprovidersGsuite(GSuite body) throws ApiException {
+  public OAuthProvider putIdentityprovidersGsuite(GSuite body) throws IOException, ApiException {
     return putIdentityprovidersGsuiteWithHttpInfo(body).getBody();
   }
 
@@ -1468,12 +1469,12 @@ public class IdentityProviderApi {
    * @return OAuthProvider
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersGsuiteWithHttpInfo(GSuite body) throws ApiException {
+  public ApiResponse<OAuthProvider> putIdentityprovidersGsuiteWithHttpInfo(GSuite body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putIdentityprovidersGsuite");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putIdentityprovidersGsuite");
     }
     
     // create path and map variables
@@ -1508,7 +1509,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OAuthProvider putIdentityprovidersGsuite(PutIdentityprovidersGsuiteRequest request) throws ApiException {
+  public OAuthProvider putIdentityprovidersGsuite(PutIdentityprovidersGsuiteRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
   }
 
@@ -1518,7 +1519,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersGsuite(ApiRequest<GSuite> request) throws ApiException {
+  public ApiResponse<OAuthProvider> putIdentityprovidersGsuite(ApiRequest<GSuite> request) throws IOException, ApiException {
     return pcapiClient.<OAuthProvider>invokeAPIVerbose(request, new TypeReference<OAuthProvider>() {});
   }
 
@@ -1529,7 +1530,7 @@ public class IdentityProviderApi {
    * @return IdentityNow
    * @throws ApiException if fails to make API call
    */
-  public IdentityNow putIdentityprovidersIdentitynow(IdentityNow body) throws ApiException {
+  public IdentityNow putIdentityprovidersIdentitynow(IdentityNow body) throws IOException, ApiException {
     return putIdentityprovidersIdentitynowWithHttpInfo(body).getBody();
   }
 
@@ -1540,12 +1541,12 @@ public class IdentityProviderApi {
    * @return IdentityNow
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<IdentityNow> putIdentityprovidersIdentitynowWithHttpInfo(IdentityNow body) throws ApiException {
+  public ApiResponse<IdentityNow> putIdentityprovidersIdentitynowWithHttpInfo(IdentityNow body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putIdentityprovidersIdentitynow");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putIdentityprovidersIdentitynow");
     }
     
     // create path and map variables
@@ -1580,7 +1581,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public IdentityNow putIdentityprovidersIdentitynow(PutIdentityprovidersIdentitynowRequest request) throws ApiException {
+  public IdentityNow putIdentityprovidersIdentitynow(PutIdentityprovidersIdentitynowRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<IdentityNow>() {});
   }
 
@@ -1590,7 +1591,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<IdentityNow> putIdentityprovidersIdentitynow(ApiRequest<IdentityNow> request) throws ApiException {
+  public ApiResponse<IdentityNow> putIdentityprovidersIdentitynow(ApiRequest<IdentityNow> request) throws IOException, ApiException {
     return pcapiClient.<IdentityNow>invokeAPIVerbose(request, new TypeReference<IdentityNow>() {});
   }
 
@@ -1601,7 +1602,7 @@ public class IdentityProviderApi {
    * @return OAuthProvider
    * @throws ApiException if fails to make API call
    */
-  public OAuthProvider putIdentityprovidersOkta(Okta body) throws ApiException {
+  public OAuthProvider putIdentityprovidersOkta(Okta body) throws IOException, ApiException {
     return putIdentityprovidersOktaWithHttpInfo(body).getBody();
   }
 
@@ -1612,12 +1613,12 @@ public class IdentityProviderApi {
    * @return OAuthProvider
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersOktaWithHttpInfo(Okta body) throws ApiException {
+  public ApiResponse<OAuthProvider> putIdentityprovidersOktaWithHttpInfo(Okta body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putIdentityprovidersOkta");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putIdentityprovidersOkta");
     }
     
     // create path and map variables
@@ -1652,7 +1653,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OAuthProvider putIdentityprovidersOkta(PutIdentityprovidersOktaRequest request) throws ApiException {
+  public OAuthProvider putIdentityprovidersOkta(PutIdentityprovidersOktaRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
   }
 
@@ -1662,7 +1663,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersOkta(ApiRequest<Okta> request) throws ApiException {
+  public ApiResponse<OAuthProvider> putIdentityprovidersOkta(ApiRequest<Okta> request) throws IOException, ApiException {
     return pcapiClient.<OAuthProvider>invokeAPIVerbose(request, new TypeReference<OAuthProvider>() {});
   }
 
@@ -1673,7 +1674,7 @@ public class IdentityProviderApi {
    * @return OAuthProvider
    * @throws ApiException if fails to make API call
    */
-  public OAuthProvider putIdentityprovidersOnelogin(OneLogin body) throws ApiException {
+  public OAuthProvider putIdentityprovidersOnelogin(OneLogin body) throws IOException, ApiException {
     return putIdentityprovidersOneloginWithHttpInfo(body).getBody();
   }
 
@@ -1684,12 +1685,12 @@ public class IdentityProviderApi {
    * @return OAuthProvider
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersOneloginWithHttpInfo(OneLogin body) throws ApiException {
+  public ApiResponse<OAuthProvider> putIdentityprovidersOneloginWithHttpInfo(OneLogin body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putIdentityprovidersOnelogin");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putIdentityprovidersOnelogin");
     }
     
     // create path and map variables
@@ -1724,7 +1725,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OAuthProvider putIdentityprovidersOnelogin(PutIdentityprovidersOneloginRequest request) throws ApiException {
+  public OAuthProvider putIdentityprovidersOnelogin(PutIdentityprovidersOneloginRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
   }
 
@@ -1734,7 +1735,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersOnelogin(ApiRequest<OneLogin> request) throws ApiException {
+  public ApiResponse<OAuthProvider> putIdentityprovidersOnelogin(ApiRequest<OneLogin> request) throws IOException, ApiException {
     return pcapiClient.<OAuthProvider>invokeAPIVerbose(request, new TypeReference<OAuthProvider>() {});
   }
 
@@ -1745,7 +1746,7 @@ public class IdentityProviderApi {
    * @return OAuthProvider
    * @throws ApiException if fails to make API call
    */
-  public OAuthProvider putIdentityprovidersPing(PingIdentity body) throws ApiException {
+  public OAuthProvider putIdentityprovidersPing(PingIdentity body) throws IOException, ApiException {
     return putIdentityprovidersPingWithHttpInfo(body).getBody();
   }
 
@@ -1756,12 +1757,12 @@ public class IdentityProviderApi {
    * @return OAuthProvider
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersPingWithHttpInfo(PingIdentity body) throws ApiException {
+  public ApiResponse<OAuthProvider> putIdentityprovidersPingWithHttpInfo(PingIdentity body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putIdentityprovidersPing");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putIdentityprovidersPing");
     }
     
     // create path and map variables
@@ -1796,7 +1797,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OAuthProvider putIdentityprovidersPing(PutIdentityprovidersPingRequest request) throws ApiException {
+  public OAuthProvider putIdentityprovidersPing(PutIdentityprovidersPingRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
   }
 
@@ -1806,7 +1807,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersPing(ApiRequest<PingIdentity> request) throws ApiException {
+  public ApiResponse<OAuthProvider> putIdentityprovidersPing(ApiRequest<PingIdentity> request) throws IOException, ApiException {
     return pcapiClient.<OAuthProvider>invokeAPIVerbose(request, new TypeReference<OAuthProvider>() {});
   }
 
@@ -1817,7 +1818,7 @@ public class IdentityProviderApi {
    * @return OAuthProvider
    * @throws ApiException if fails to make API call
    */
-  public OAuthProvider putIdentityprovidersPurecloud(PureCloud body) throws ApiException {
+  public OAuthProvider putIdentityprovidersPurecloud(PureCloud body) throws IOException, ApiException {
     return putIdentityprovidersPurecloudWithHttpInfo(body).getBody();
   }
 
@@ -1828,12 +1829,12 @@ public class IdentityProviderApi {
    * @return OAuthProvider
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersPurecloudWithHttpInfo(PureCloud body) throws ApiException {
+  public ApiResponse<OAuthProvider> putIdentityprovidersPurecloudWithHttpInfo(PureCloud body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putIdentityprovidersPurecloud");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putIdentityprovidersPurecloud");
     }
     
     // create path and map variables
@@ -1868,7 +1869,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OAuthProvider putIdentityprovidersPurecloud(PutIdentityprovidersPurecloudRequest request) throws ApiException {
+  public OAuthProvider putIdentityprovidersPurecloud(PutIdentityprovidersPurecloudRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
   }
 
@@ -1878,7 +1879,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersPurecloud(ApiRequest<PureCloud> request) throws ApiException {
+  public ApiResponse<OAuthProvider> putIdentityprovidersPurecloud(ApiRequest<PureCloud> request) throws IOException, ApiException {
     return pcapiClient.<OAuthProvider>invokeAPIVerbose(request, new TypeReference<OAuthProvider>() {});
   }
 
@@ -1889,7 +1890,7 @@ public class IdentityProviderApi {
    * @return OAuthProvider
    * @throws ApiException if fails to make API call
    */
-  public OAuthProvider putIdentityprovidersSalesforce(Salesforce body) throws ApiException {
+  public OAuthProvider putIdentityprovidersSalesforce(Salesforce body) throws IOException, ApiException {
     return putIdentityprovidersSalesforceWithHttpInfo(body).getBody();
   }
 
@@ -1900,12 +1901,12 @@ public class IdentityProviderApi {
    * @return OAuthProvider
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersSalesforceWithHttpInfo(Salesforce body) throws ApiException {
+  public ApiResponse<OAuthProvider> putIdentityprovidersSalesforceWithHttpInfo(Salesforce body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putIdentityprovidersSalesforce");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putIdentityprovidersSalesforce");
     }
     
     // create path and map variables
@@ -1940,7 +1941,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OAuthProvider putIdentityprovidersSalesforce(PutIdentityprovidersSalesforceRequest request) throws ApiException {
+  public OAuthProvider putIdentityprovidersSalesforce(PutIdentityprovidersSalesforceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
   }
 
@@ -1950,7 +1951,7 @@ public class IdentityProviderApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersSalesforce(ApiRequest<Salesforce> request) throws ApiException {
+  public ApiResponse<OAuthProvider> putIdentityprovidersSalesforce(ApiRequest<Salesforce> request) throws IOException, ApiException {
     return pcapiClient.<OAuthProvider>invokeAPIVerbose(request, new TypeReference<OAuthProvider>() {});
   }
 

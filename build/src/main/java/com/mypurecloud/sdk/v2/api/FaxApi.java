@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.api.request.GetFaxDocumentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFaxSummaryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFaxDocumentRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -47,7 +48,7 @@ public class FaxApi {
    * @param documentId Document ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteFaxDocument(String documentId) throws ApiException {
+  public void deleteFaxDocument(String documentId) throws IOException, ApiException {
     deleteFaxDocumentWithHttpInfo(documentId);
   }
 
@@ -57,12 +58,12 @@ public class FaxApi {
    * @param documentId Document ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteFaxDocumentWithHttpInfo(String documentId) throws ApiException {
+  public ApiResponse<Void> deleteFaxDocumentWithHttpInfo(String documentId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'documentId' is set
     if (documentId == null) {
-      throw new ApiException(400, "Missing the required parameter 'documentId' when calling deleteFaxDocument");
+      throw new IllegalArgumentException("Missing the required parameter 'documentId' when calling deleteFaxDocument");
     }
     
     // create path and map variables
@@ -98,7 +99,7 @@ public class FaxApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteFaxDocument(DeleteFaxDocumentRequest request) throws ApiException {
+  public void deleteFaxDocument(DeleteFaxDocumentRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -108,7 +109,7 @@ public class FaxApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteFaxDocument(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteFaxDocument(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -119,7 +120,7 @@ public class FaxApi {
    * @return FaxDocument
    * @throws ApiException if fails to make API call
    */
-  public FaxDocument getFaxDocument(String documentId) throws ApiException {
+  public FaxDocument getFaxDocument(String documentId) throws IOException, ApiException {
     return getFaxDocumentWithHttpInfo(documentId).getBody();
   }
 
@@ -130,12 +131,12 @@ public class FaxApi {
    * @return FaxDocument
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<FaxDocument> getFaxDocumentWithHttpInfo(String documentId) throws ApiException {
+  public ApiResponse<FaxDocument> getFaxDocumentWithHttpInfo(String documentId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'documentId' is set
     if (documentId == null) {
-      throw new ApiException(400, "Missing the required parameter 'documentId' when calling getFaxDocument");
+      throw new IllegalArgumentException("Missing the required parameter 'documentId' when calling getFaxDocument");
     }
     
     // create path and map variables
@@ -171,7 +172,7 @@ public class FaxApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public FaxDocument getFaxDocument(GetFaxDocumentRequest request) throws ApiException {
+  public FaxDocument getFaxDocument(GetFaxDocumentRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FaxDocument>() {});
   }
 
@@ -181,7 +182,7 @@ public class FaxApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<FaxDocument> getFaxDocument(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<FaxDocument> getFaxDocument(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<FaxDocument>invokeAPIVerbose(request, new TypeReference<FaxDocument>() {});
   }
 
@@ -192,7 +193,7 @@ public class FaxApi {
    * @return DownloadResponse
    * @throws ApiException if fails to make API call
    */
-  public DownloadResponse getFaxDocumentContent(String documentId) throws ApiException {
+  public DownloadResponse getFaxDocumentContent(String documentId) throws IOException, ApiException {
     return getFaxDocumentContentWithHttpInfo(documentId).getBody();
   }
 
@@ -203,12 +204,12 @@ public class FaxApi {
    * @return DownloadResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DownloadResponse> getFaxDocumentContentWithHttpInfo(String documentId) throws ApiException {
+  public ApiResponse<DownloadResponse> getFaxDocumentContentWithHttpInfo(String documentId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'documentId' is set
     if (documentId == null) {
-      throw new ApiException(400, "Missing the required parameter 'documentId' when calling getFaxDocumentContent");
+      throw new IllegalArgumentException("Missing the required parameter 'documentId' when calling getFaxDocumentContent");
     }
     
     // create path and map variables
@@ -244,7 +245,7 @@ public class FaxApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DownloadResponse getFaxDocumentContent(GetFaxDocumentContentRequest request) throws ApiException {
+  public DownloadResponse getFaxDocumentContent(GetFaxDocumentContentRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DownloadResponse>() {});
   }
 
@@ -254,7 +255,7 @@ public class FaxApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DownloadResponse> getFaxDocumentContent(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<DownloadResponse> getFaxDocumentContent(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<DownloadResponse>invokeAPIVerbose(request, new TypeReference<DownloadResponse>() {});
   }
 
@@ -266,7 +267,7 @@ public class FaxApi {
    * @return FaxDocumentEntityListing
    * @throws ApiException if fails to make API call
    */
-  public FaxDocumentEntityListing getFaxDocuments(Integer pageSize, Integer pageNumber) throws ApiException {
+  public FaxDocumentEntityListing getFaxDocuments(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return getFaxDocumentsWithHttpInfo(pageSize, pageNumber).getBody();
   }
 
@@ -278,7 +279,7 @@ public class FaxApi {
    * @return FaxDocumentEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<FaxDocumentEntityListing> getFaxDocumentsWithHttpInfo(Integer pageSize, Integer pageNumber) throws ApiException {
+  public ApiResponse<FaxDocumentEntityListing> getFaxDocumentsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -315,7 +316,7 @@ public class FaxApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public FaxDocumentEntityListing getFaxDocuments(GetFaxDocumentsRequest request) throws ApiException {
+  public FaxDocumentEntityListing getFaxDocuments(GetFaxDocumentsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FaxDocumentEntityListing>() {});
   }
 
@@ -325,7 +326,7 @@ public class FaxApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<FaxDocumentEntityListing> getFaxDocuments(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<FaxDocumentEntityListing> getFaxDocuments(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<FaxDocumentEntityListing>invokeAPIVerbose(request, new TypeReference<FaxDocumentEntityListing>() {});
   }
 
@@ -335,7 +336,7 @@ public class FaxApi {
    * @return FaxSummary
    * @throws ApiException if fails to make API call
    */
-  public FaxSummary getFaxSummary() throws ApiException {
+  public FaxSummary getFaxSummary() throws IOException, ApiException {
     return getFaxSummaryWithHttpInfo().getBody();
   }
 
@@ -345,7 +346,7 @@ public class FaxApi {
    * @return FaxSummary
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<FaxSummary> getFaxSummaryWithHttpInfo() throws ApiException {
+  public ApiResponse<FaxSummary> getFaxSummaryWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -380,7 +381,7 @@ public class FaxApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public FaxSummary getFaxSummary(GetFaxSummaryRequest request) throws ApiException {
+  public FaxSummary getFaxSummary(GetFaxSummaryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FaxSummary>() {});
   }
 
@@ -390,7 +391,7 @@ public class FaxApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<FaxSummary> getFaxSummary(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<FaxSummary> getFaxSummary(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<FaxSummary>invokeAPIVerbose(request, new TypeReference<FaxSummary>() {});
   }
 
@@ -402,7 +403,7 @@ public class FaxApi {
    * @return FaxDocument
    * @throws ApiException if fails to make API call
    */
-  public FaxDocument putFaxDocument(String documentId, FaxDocument body) throws ApiException {
+  public FaxDocument putFaxDocument(String documentId, FaxDocument body) throws IOException, ApiException {
     return putFaxDocumentWithHttpInfo(documentId, body).getBody();
   }
 
@@ -414,17 +415,17 @@ public class FaxApi {
    * @return FaxDocument
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<FaxDocument> putFaxDocumentWithHttpInfo(String documentId, FaxDocument body) throws ApiException {
+  public ApiResponse<FaxDocument> putFaxDocumentWithHttpInfo(String documentId, FaxDocument body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'documentId' is set
     if (documentId == null) {
-      throw new ApiException(400, "Missing the required parameter 'documentId' when calling putFaxDocument");
+      throw new IllegalArgumentException("Missing the required parameter 'documentId' when calling putFaxDocument");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putFaxDocument");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putFaxDocument");
     }
     
     // create path and map variables
@@ -460,7 +461,7 @@ public class FaxApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public FaxDocument putFaxDocument(PutFaxDocumentRequest request) throws ApiException {
+  public FaxDocument putFaxDocument(PutFaxDocumentRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FaxDocument>() {});
   }
 
@@ -470,7 +471,7 @@ public class FaxApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<FaxDocument> putFaxDocument(ApiRequest<FaxDocument> request) throws ApiException {
+  public ApiResponse<FaxDocument> putFaxDocument(ApiRequest<FaxDocument> request) throws IOException, ApiException {
     return pcapiClient.<FaxDocument>invokeAPIVerbose(request, new TypeReference<FaxDocument>() {});
   }
 

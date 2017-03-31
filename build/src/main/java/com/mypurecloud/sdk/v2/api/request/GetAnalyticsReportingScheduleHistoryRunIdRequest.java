@@ -90,16 +90,16 @@ public class GetAnalyticsReportingScheduleHistoryRunIdRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'runId' is set
         if (this.runId == null) {
-            throw new ApiException(400, "Missing the required parameter 'runId' when building request for GetAnalyticsReportingScheduleHistoryRunIdRequest.");
+            throw new IllegalStateException("Missing the required parameter 'runId' when building request for GetAnalyticsReportingScheduleHistoryRunIdRequest.");
         }
         
         // verify the required parameter 'scheduleId' is set
         if (this.scheduleId == null) {
-            throw new ApiException(400, "Missing the required parameter 'scheduleId' when building request for GetAnalyticsReportingScheduleHistoryRunIdRequest.");
+            throw new IllegalStateException("Missing the required parameter 'scheduleId' when building request for GetAnalyticsReportingScheduleHistoryRunIdRequest.");
         }
         
 

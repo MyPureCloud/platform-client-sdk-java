@@ -103,16 +103,16 @@ public class PutAlertingInteractionstatsAlertRequest {
         return this;
     }
 
-    public ApiRequest<UnreadStatus> withHttpInfo() throws ApiException {
+    public ApiRequest<UnreadStatus> withHttpInfo() {
         
         // verify the required parameter 'alertId' is set
         if (this.alertId == null) {
-            throw new ApiException(400, "Missing the required parameter 'alertId' when building request for PutAlertingInteractionstatsAlertRequest.");
+            throw new IllegalStateException("Missing the required parameter 'alertId' when building request for PutAlertingInteractionstatsAlertRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutAlertingInteractionstatsAlertRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutAlertingInteractionstatsAlertRequest.");
         }
         
 

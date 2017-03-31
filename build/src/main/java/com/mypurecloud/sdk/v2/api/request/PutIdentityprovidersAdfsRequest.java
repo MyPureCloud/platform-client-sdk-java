@@ -69,11 +69,11 @@ public class PutIdentityprovidersAdfsRequest {
         return this;
     }
 
-    public ApiRequest<ADFS> withHttpInfo() throws ApiException {
+    public ApiRequest<ADFS> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutIdentityprovidersAdfsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutIdentityprovidersAdfsRequest.");
         }
         
 

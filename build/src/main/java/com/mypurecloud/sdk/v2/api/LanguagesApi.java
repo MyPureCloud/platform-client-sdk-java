@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLanguagesTranslationsUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguagesRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -50,7 +51,7 @@ public class LanguagesApi {
    * @param languageId Language ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteLanguage(String languageId) throws ApiException {
+  public void deleteLanguage(String languageId) throws IOException, ApiException {
     deleteLanguageWithHttpInfo(languageId);
   }
 
@@ -60,12 +61,12 @@ public class LanguagesApi {
    * @param languageId Language ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteLanguageWithHttpInfo(String languageId) throws ApiException {
+  public ApiResponse<Void> deleteLanguageWithHttpInfo(String languageId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'languageId' is set
     if (languageId == null) {
-      throw new ApiException(400, "Missing the required parameter 'languageId' when calling deleteLanguage");
+      throw new IllegalArgumentException("Missing the required parameter 'languageId' when calling deleteLanguage");
     }
     
     // create path and map variables
@@ -101,7 +102,7 @@ public class LanguagesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteLanguage(DeleteLanguageRequest request) throws ApiException {
+  public void deleteLanguage(DeleteLanguageRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -111,7 +112,7 @@ public class LanguagesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteLanguage(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteLanguage(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -121,7 +122,7 @@ public class LanguagesApi {
    * @param languageId Language ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteRoutingLanguage(String languageId) throws ApiException {
+  public void deleteRoutingLanguage(String languageId) throws IOException, ApiException {
     deleteRoutingLanguageWithHttpInfo(languageId);
   }
 
@@ -131,12 +132,12 @@ public class LanguagesApi {
    * @param languageId Language ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteRoutingLanguageWithHttpInfo(String languageId) throws ApiException {
+  public ApiResponse<Void> deleteRoutingLanguageWithHttpInfo(String languageId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'languageId' is set
     if (languageId == null) {
-      throw new ApiException(400, "Missing the required parameter 'languageId' when calling deleteRoutingLanguage");
+      throw new IllegalArgumentException("Missing the required parameter 'languageId' when calling deleteRoutingLanguage");
     }
     
     // create path and map variables
@@ -172,7 +173,7 @@ public class LanguagesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteRoutingLanguage(DeleteRoutingLanguageRequest request) throws ApiException {
+  public void deleteRoutingLanguage(DeleteRoutingLanguageRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -182,7 +183,7 @@ public class LanguagesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteRoutingLanguage(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteRoutingLanguage(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -193,7 +194,7 @@ public class LanguagesApi {
    * @return Language
    * @throws ApiException if fails to make API call
    */
-  public Language getLanguage(String languageId) throws ApiException {
+  public Language getLanguage(String languageId) throws IOException, ApiException {
     return getLanguageWithHttpInfo(languageId).getBody();
   }
 
@@ -204,12 +205,12 @@ public class LanguagesApi {
    * @return Language
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Language> getLanguageWithHttpInfo(String languageId) throws ApiException {
+  public ApiResponse<Language> getLanguageWithHttpInfo(String languageId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'languageId' is set
     if (languageId == null) {
-      throw new ApiException(400, "Missing the required parameter 'languageId' when calling getLanguage");
+      throw new IllegalArgumentException("Missing the required parameter 'languageId' when calling getLanguage");
     }
     
     // create path and map variables
@@ -245,7 +246,7 @@ public class LanguagesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Language getLanguage(GetLanguageRequest request) throws ApiException {
+  public Language getLanguage(GetLanguageRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Language>() {});
   }
 
@@ -255,7 +256,7 @@ public class LanguagesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Language> getLanguage(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Language> getLanguage(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Language>invokeAPIVerbose(request, new TypeReference<Language>() {});
   }
 
@@ -269,7 +270,7 @@ public class LanguagesApi {
    * @return LanguageEntityListing
    * @throws ApiException if fails to make API call
    */
-  public LanguageEntityListing getLanguages(Integer pageSize, Integer pageNumber, String sortOrder, String name) throws ApiException {
+  public LanguageEntityListing getLanguages(Integer pageSize, Integer pageNumber, String sortOrder, String name) throws IOException, ApiException {
     return getLanguagesWithHttpInfo(pageSize, pageNumber, sortOrder, name).getBody();
   }
 
@@ -283,7 +284,7 @@ public class LanguagesApi {
    * @return LanguageEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LanguageEntityListing> getLanguagesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder, String name) throws ApiException {
+  public ApiResponse<LanguageEntityListing> getLanguagesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder, String name) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -322,7 +323,7 @@ public class LanguagesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public LanguageEntityListing getLanguages(GetLanguagesRequest request) throws ApiException {
+  public LanguageEntityListing getLanguages(GetLanguagesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LanguageEntityListing>() {});
   }
 
@@ -332,7 +333,7 @@ public class LanguagesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LanguageEntityListing> getLanguages(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<LanguageEntityListing> getLanguages(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<LanguageEntityListing>invokeAPIVerbose(request, new TypeReference<LanguageEntityListing>() {});
   }
 
@@ -342,7 +343,7 @@ public class LanguagesApi {
    * @return AvailableTranslations
    * @throws ApiException if fails to make API call
    */
-  public AvailableTranslations getLanguagesTranslations() throws ApiException {
+  public AvailableTranslations getLanguagesTranslations() throws IOException, ApiException {
     return getLanguagesTranslationsWithHttpInfo().getBody();
   }
 
@@ -352,7 +353,7 @@ public class LanguagesApi {
    * @return AvailableTranslations
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AvailableTranslations> getLanguagesTranslationsWithHttpInfo() throws ApiException {
+  public ApiResponse<AvailableTranslations> getLanguagesTranslationsWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -387,7 +388,7 @@ public class LanguagesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public AvailableTranslations getLanguagesTranslations(GetLanguagesTranslationsRequest request) throws ApiException {
+  public AvailableTranslations getLanguagesTranslations(GetLanguagesTranslationsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AvailableTranslations>() {});
   }
 
@@ -397,7 +398,7 @@ public class LanguagesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AvailableTranslations> getLanguagesTranslations(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<AvailableTranslations> getLanguagesTranslations(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<AvailableTranslations>invokeAPIVerbose(request, new TypeReference<AvailableTranslations>() {});
   }
 
@@ -408,7 +409,7 @@ public class LanguagesApi {
    * @return Map<String, Object>
    * @throws ApiException if fails to make API call
    */
-  public Map<String, Object> getLanguagesTranslationsBuiltin(String language) throws ApiException {
+  public Map<String, Object> getLanguagesTranslationsBuiltin(String language) throws IOException, ApiException {
     return getLanguagesTranslationsBuiltinWithHttpInfo(language).getBody();
   }
 
@@ -419,12 +420,12 @@ public class LanguagesApi {
    * @return Map<String, Object>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Map<String, Object>> getLanguagesTranslationsBuiltinWithHttpInfo(String language) throws ApiException {
+  public ApiResponse<Map<String, Object>> getLanguagesTranslationsBuiltinWithHttpInfo(String language) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'language' is set
     if (language == null) {
-      throw new ApiException(400, "Missing the required parameter 'language' when calling getLanguagesTranslationsBuiltin");
+      throw new IllegalArgumentException("Missing the required parameter 'language' when calling getLanguagesTranslationsBuiltin");
     }
     
     // create path and map variables
@@ -460,7 +461,7 @@ public class LanguagesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Map<String, Object> getLanguagesTranslationsBuiltin(GetLanguagesTranslationsBuiltinRequest request) throws ApiException {
+  public Map<String, Object> getLanguagesTranslationsBuiltin(GetLanguagesTranslationsBuiltinRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Map<String, Object>>() {});
   }
 
@@ -470,7 +471,7 @@ public class LanguagesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Map<String, Object>> getLanguagesTranslationsBuiltin(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Map<String, Object>> getLanguagesTranslationsBuiltin(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Map<String, Object>>invokeAPIVerbose(request, new TypeReference<Map<String, Object>>() {});
   }
 
@@ -481,7 +482,7 @@ public class LanguagesApi {
    * @return Map<String, Object>
    * @throws ApiException if fails to make API call
    */
-  public Map<String, Object> getLanguagesTranslationsOrganization(String language) throws ApiException {
+  public Map<String, Object> getLanguagesTranslationsOrganization(String language) throws IOException, ApiException {
     return getLanguagesTranslationsOrganizationWithHttpInfo(language).getBody();
   }
 
@@ -492,12 +493,12 @@ public class LanguagesApi {
    * @return Map<String, Object>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Map<String, Object>> getLanguagesTranslationsOrganizationWithHttpInfo(String language) throws ApiException {
+  public ApiResponse<Map<String, Object>> getLanguagesTranslationsOrganizationWithHttpInfo(String language) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'language' is set
     if (language == null) {
-      throw new ApiException(400, "Missing the required parameter 'language' when calling getLanguagesTranslationsOrganization");
+      throw new IllegalArgumentException("Missing the required parameter 'language' when calling getLanguagesTranslationsOrganization");
     }
     
     // create path and map variables
@@ -533,7 +534,7 @@ public class LanguagesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Map<String, Object> getLanguagesTranslationsOrganization(GetLanguagesTranslationsOrganizationRequest request) throws ApiException {
+  public Map<String, Object> getLanguagesTranslationsOrganization(GetLanguagesTranslationsOrganizationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Map<String, Object>>() {});
   }
 
@@ -543,7 +544,7 @@ public class LanguagesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Map<String, Object>> getLanguagesTranslationsOrganization(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Map<String, Object>> getLanguagesTranslationsOrganization(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Map<String, Object>>invokeAPIVerbose(request, new TypeReference<Map<String, Object>>() {});
   }
 
@@ -554,7 +555,7 @@ public class LanguagesApi {
    * @return Map<String, Object>
    * @throws ApiException if fails to make API call
    */
-  public Map<String, Object> getLanguagesTranslationsUser(String userId) throws ApiException {
+  public Map<String, Object> getLanguagesTranslationsUser(String userId) throws IOException, ApiException {
     return getLanguagesTranslationsUserWithHttpInfo(userId).getBody();
   }
 
@@ -565,12 +566,12 @@ public class LanguagesApi {
    * @return Map<String, Object>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Map<String, Object>> getLanguagesTranslationsUserWithHttpInfo(String userId) throws ApiException {
+  public ApiResponse<Map<String, Object>> getLanguagesTranslationsUserWithHttpInfo(String userId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getLanguagesTranslationsUser");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getLanguagesTranslationsUser");
     }
     
     // create path and map variables
@@ -606,7 +607,7 @@ public class LanguagesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Map<String, Object> getLanguagesTranslationsUser(GetLanguagesTranslationsUserRequest request) throws ApiException {
+  public Map<String, Object> getLanguagesTranslationsUser(GetLanguagesTranslationsUserRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Map<String, Object>>() {});
   }
 
@@ -616,7 +617,7 @@ public class LanguagesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Map<String, Object>> getLanguagesTranslationsUser(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Map<String, Object>> getLanguagesTranslationsUser(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Map<String, Object>>invokeAPIVerbose(request, new TypeReference<Map<String, Object>>() {});
   }
 
@@ -627,7 +628,7 @@ public class LanguagesApi {
    * @return Language
    * @throws ApiException if fails to make API call
    */
-  public Language getRoutingLanguage(String languageId) throws ApiException {
+  public Language getRoutingLanguage(String languageId) throws IOException, ApiException {
     return getRoutingLanguageWithHttpInfo(languageId).getBody();
   }
 
@@ -638,12 +639,12 @@ public class LanguagesApi {
    * @return Language
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Language> getRoutingLanguageWithHttpInfo(String languageId) throws ApiException {
+  public ApiResponse<Language> getRoutingLanguageWithHttpInfo(String languageId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'languageId' is set
     if (languageId == null) {
-      throw new ApiException(400, "Missing the required parameter 'languageId' when calling getRoutingLanguage");
+      throw new IllegalArgumentException("Missing the required parameter 'languageId' when calling getRoutingLanguage");
     }
     
     // create path and map variables
@@ -679,7 +680,7 @@ public class LanguagesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Language getRoutingLanguage(GetRoutingLanguageRequest request) throws ApiException {
+  public Language getRoutingLanguage(GetRoutingLanguageRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Language>() {});
   }
 
@@ -689,7 +690,7 @@ public class LanguagesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Language> getRoutingLanguage(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Language> getRoutingLanguage(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Language>invokeAPIVerbose(request, new TypeReference<Language>() {});
   }
 
@@ -700,7 +701,7 @@ public class LanguagesApi {
    * @return Language
    * @throws ApiException if fails to make API call
    */
-  public Language postLanguages(Language body) throws ApiException {
+  public Language postLanguages(Language body) throws IOException, ApiException {
     return postLanguagesWithHttpInfo(body).getBody();
   }
 
@@ -711,12 +712,12 @@ public class LanguagesApi {
    * @return Language
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Language> postLanguagesWithHttpInfo(Language body) throws ApiException {
+  public ApiResponse<Language> postLanguagesWithHttpInfo(Language body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postLanguages");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postLanguages");
     }
     
     // create path and map variables
@@ -751,7 +752,7 @@ public class LanguagesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Language postLanguages(PostLanguagesRequest request) throws ApiException {
+  public Language postLanguages(PostLanguagesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Language>() {});
   }
 
@@ -761,7 +762,7 @@ public class LanguagesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Language> postLanguages(ApiRequest<Language> request) throws ApiException {
+  public ApiResponse<Language> postLanguages(ApiRequest<Language> request) throws IOException, ApiException {
     return pcapiClient.<Language>invokeAPIVerbose(request, new TypeReference<Language>() {});
   }
 

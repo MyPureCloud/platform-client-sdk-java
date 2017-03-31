@@ -66,11 +66,11 @@ public class PostGroupsRequest {
         return this;
     }
 
-    public ApiRequest<Group> withHttpInfo() throws ApiException {
+    public ApiRequest<Group> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostGroupsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostGroupsRequest.");
         }
         
 

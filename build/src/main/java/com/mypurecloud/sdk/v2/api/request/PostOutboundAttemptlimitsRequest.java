@@ -91,11 +91,11 @@ public class PostOutboundAttemptlimitsRequest {
         return this;
     }
 
-    public ApiRequest<AttemptLimits> withHttpInfo() throws ApiException {
+    public ApiRequest<AttemptLimits> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostOutboundAttemptlimitsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostOutboundAttemptlimitsRequest.");
         }
         
 

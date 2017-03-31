@@ -53,6 +53,7 @@ import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationRequest
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsRelationshipRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -76,7 +77,7 @@ public class ExternalContactsApi {
    * @param contactId ExternalContact ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteExternalcontactsContact(String contactId) throws ApiException {
+  public void deleteExternalcontactsContact(String contactId) throws IOException, ApiException {
     deleteExternalcontactsContactWithHttpInfo(contactId);
   }
 
@@ -86,12 +87,12 @@ public class ExternalContactsApi {
    * @param contactId ExternalContact ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteExternalcontactsContactWithHttpInfo(String contactId) throws ApiException {
+  public ApiResponse<Void> deleteExternalcontactsContactWithHttpInfo(String contactId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'contactId' is set
     if (contactId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactId' when calling deleteExternalcontactsContact");
+      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling deleteExternalcontactsContact");
     }
     
     // create path and map variables
@@ -127,7 +128,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteExternalcontactsContact(DeleteExternalcontactsContactRequest request) throws ApiException {
+  public void deleteExternalcontactsContact(DeleteExternalcontactsContactRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -137,7 +138,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteExternalcontactsContact(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteExternalcontactsContact(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -148,7 +149,7 @@ public class ExternalContactsApi {
    * @param noteId Note Id (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteExternalcontactsContactNote(String contactId, String noteId) throws ApiException {
+  public void deleteExternalcontactsContactNote(String contactId, String noteId) throws IOException, ApiException {
     deleteExternalcontactsContactNoteWithHttpInfo(contactId, noteId);
   }
 
@@ -159,17 +160,17 @@ public class ExternalContactsApi {
    * @param noteId Note Id (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteExternalcontactsContactNoteWithHttpInfo(String contactId, String noteId) throws ApiException {
+  public ApiResponse<Void> deleteExternalcontactsContactNoteWithHttpInfo(String contactId, String noteId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'contactId' is set
     if (contactId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactId' when calling deleteExternalcontactsContactNote");
+      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling deleteExternalcontactsContactNote");
     }
     
     // verify the required parameter 'noteId' is set
     if (noteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'noteId' when calling deleteExternalcontactsContactNote");
+      throw new IllegalArgumentException("Missing the required parameter 'noteId' when calling deleteExternalcontactsContactNote");
     }
     
     // create path and map variables
@@ -206,7 +207,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteExternalcontactsContactNote(DeleteExternalcontactsContactNoteRequest request) throws ApiException {
+  public void deleteExternalcontactsContactNote(DeleteExternalcontactsContactNoteRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -216,7 +217,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteExternalcontactsContactNote(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteExternalcontactsContactNote(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -226,7 +227,7 @@ public class ExternalContactsApi {
    * @param externalOrganizationId External Organization ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteExternalcontactsOrganization(String externalOrganizationId) throws ApiException {
+  public void deleteExternalcontactsOrganization(String externalOrganizationId) throws IOException, ApiException {
     deleteExternalcontactsOrganizationWithHttpInfo(externalOrganizationId);
   }
 
@@ -236,12 +237,12 @@ public class ExternalContactsApi {
    * @param externalOrganizationId External Organization ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteExternalcontactsOrganizationWithHttpInfo(String externalOrganizationId) throws ApiException {
+  public ApiResponse<Void> deleteExternalcontactsOrganizationWithHttpInfo(String externalOrganizationId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'externalOrganizationId' is set
     if (externalOrganizationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'externalOrganizationId' when calling deleteExternalcontactsOrganization");
+      throw new IllegalArgumentException("Missing the required parameter 'externalOrganizationId' when calling deleteExternalcontactsOrganization");
     }
     
     // create path and map variables
@@ -277,7 +278,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteExternalcontactsOrganization(DeleteExternalcontactsOrganizationRequest request) throws ApiException {
+  public void deleteExternalcontactsOrganization(DeleteExternalcontactsOrganizationRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -287,7 +288,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteExternalcontactsOrganization(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteExternalcontactsOrganization(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -298,7 +299,7 @@ public class ExternalContactsApi {
    * @param noteId Note Id (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteExternalcontactsOrganizationNote(String externalOrganizationId, String noteId) throws ApiException {
+  public void deleteExternalcontactsOrganizationNote(String externalOrganizationId, String noteId) throws IOException, ApiException {
     deleteExternalcontactsOrganizationNoteWithHttpInfo(externalOrganizationId, noteId);
   }
 
@@ -309,17 +310,17 @@ public class ExternalContactsApi {
    * @param noteId Note Id (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteExternalcontactsOrganizationNoteWithHttpInfo(String externalOrganizationId, String noteId) throws ApiException {
+  public ApiResponse<Void> deleteExternalcontactsOrganizationNoteWithHttpInfo(String externalOrganizationId, String noteId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'externalOrganizationId' is set
     if (externalOrganizationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'externalOrganizationId' when calling deleteExternalcontactsOrganizationNote");
+      throw new IllegalArgumentException("Missing the required parameter 'externalOrganizationId' when calling deleteExternalcontactsOrganizationNote");
     }
     
     // verify the required parameter 'noteId' is set
     if (noteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'noteId' when calling deleteExternalcontactsOrganizationNote");
+      throw new IllegalArgumentException("Missing the required parameter 'noteId' when calling deleteExternalcontactsOrganizationNote");
     }
     
     // create path and map variables
@@ -356,7 +357,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteExternalcontactsOrganizationNote(DeleteExternalcontactsOrganizationNoteRequest request) throws ApiException {
+  public void deleteExternalcontactsOrganizationNote(DeleteExternalcontactsOrganizationNoteRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -366,7 +367,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteExternalcontactsOrganizationNote(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteExternalcontactsOrganizationNote(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -376,7 +377,7 @@ public class ExternalContactsApi {
    * @param relationshipId Relationship Id (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteExternalcontactsRelationship(String relationshipId) throws ApiException {
+  public void deleteExternalcontactsRelationship(String relationshipId) throws IOException, ApiException {
     deleteExternalcontactsRelationshipWithHttpInfo(relationshipId);
   }
 
@@ -386,12 +387,12 @@ public class ExternalContactsApi {
    * @param relationshipId Relationship Id (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteExternalcontactsRelationshipWithHttpInfo(String relationshipId) throws ApiException {
+  public ApiResponse<Void> deleteExternalcontactsRelationshipWithHttpInfo(String relationshipId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'relationshipId' is set
     if (relationshipId == null) {
-      throw new ApiException(400, "Missing the required parameter 'relationshipId' when calling deleteExternalcontactsRelationship");
+      throw new IllegalArgumentException("Missing the required parameter 'relationshipId' when calling deleteExternalcontactsRelationship");
     }
     
     // create path and map variables
@@ -427,7 +428,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteExternalcontactsRelationship(DeleteExternalcontactsRelationshipRequest request) throws ApiException {
+  public void deleteExternalcontactsRelationship(DeleteExternalcontactsRelationshipRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -437,7 +438,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteExternalcontactsRelationship(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteExternalcontactsRelationship(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -449,7 +450,7 @@ public class ExternalContactsApi {
    * @return ExternalContact
    * @throws ApiException if fails to make API call
    */
-  public ExternalContact getExternalcontactsContact(String contactId, List<String> expand) throws ApiException {
+  public ExternalContact getExternalcontactsContact(String contactId, List<String> expand) throws IOException, ApiException {
     return getExternalcontactsContactWithHttpInfo(contactId, expand).getBody();
   }
 
@@ -461,12 +462,12 @@ public class ExternalContactsApi {
    * @return ExternalContact
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExternalContact> getExternalcontactsContactWithHttpInfo(String contactId, List<String> expand) throws ApiException {
+  public ApiResponse<ExternalContact> getExternalcontactsContactWithHttpInfo(String contactId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'contactId' is set
     if (contactId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactId' when calling getExternalcontactsContact");
+      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling getExternalcontactsContact");
     }
     
     // create path and map variables
@@ -503,7 +504,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ExternalContact getExternalcontactsContact(GetExternalcontactsContactRequest request) throws ApiException {
+  public ExternalContact getExternalcontactsContact(GetExternalcontactsContactRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExternalContact>() {});
   }
 
@@ -513,7 +514,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExternalContact> getExternalcontactsContact(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ExternalContact> getExternalcontactsContact(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ExternalContact>invokeAPIVerbose(request, new TypeReference<ExternalContact>() {});
   }
 
@@ -526,7 +527,7 @@ public class ExternalContactsApi {
    * @return Note
    * @throws ApiException if fails to make API call
    */
-  public Note getExternalcontactsContactNote(String contactId, String noteId, List<String> expand) throws ApiException {
+  public Note getExternalcontactsContactNote(String contactId, String noteId, List<String> expand) throws IOException, ApiException {
     return getExternalcontactsContactNoteWithHttpInfo(contactId, noteId, expand).getBody();
   }
 
@@ -539,17 +540,17 @@ public class ExternalContactsApi {
    * @return Note
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Note> getExternalcontactsContactNoteWithHttpInfo(String contactId, String noteId, List<String> expand) throws ApiException {
+  public ApiResponse<Note> getExternalcontactsContactNoteWithHttpInfo(String contactId, String noteId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'contactId' is set
     if (contactId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactId' when calling getExternalcontactsContactNote");
+      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling getExternalcontactsContactNote");
     }
     
     // verify the required parameter 'noteId' is set
     if (noteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'noteId' when calling getExternalcontactsContactNote");
+      throw new IllegalArgumentException("Missing the required parameter 'noteId' when calling getExternalcontactsContactNote");
     }
     
     // create path and map variables
@@ -587,7 +588,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Note getExternalcontactsContactNote(GetExternalcontactsContactNoteRequest request) throws ApiException {
+  public Note getExternalcontactsContactNote(GetExternalcontactsContactNoteRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Note>() {});
   }
 
@@ -597,7 +598,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Note> getExternalcontactsContactNote(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Note> getExternalcontactsContactNote(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Note>invokeAPIVerbose(request, new TypeReference<Note>() {});
   }
 
@@ -612,7 +613,7 @@ public class ExternalContactsApi {
    * @return NoteListing
    * @throws ApiException if fails to make API call
    */
-  public NoteListing getExternalcontactsContactNotes(String contactId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws ApiException {
+  public NoteListing getExternalcontactsContactNotes(String contactId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException, ApiException {
     return getExternalcontactsContactNotesWithHttpInfo(contactId, pageSize, pageNumber, sortOrder, expand).getBody();
   }
 
@@ -627,12 +628,12 @@ public class ExternalContactsApi {
    * @return NoteListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<NoteListing> getExternalcontactsContactNotesWithHttpInfo(String contactId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws ApiException {
+  public ApiResponse<NoteListing> getExternalcontactsContactNotesWithHttpInfo(String contactId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'contactId' is set
     if (contactId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactId' when calling getExternalcontactsContactNotes");
+      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling getExternalcontactsContactNotes");
     }
     
     // create path and map variables
@@ -672,7 +673,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public NoteListing getExternalcontactsContactNotes(GetExternalcontactsContactNotesRequest request) throws ApiException {
+  public NoteListing getExternalcontactsContactNotes(GetExternalcontactsContactNotesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<NoteListing>() {});
   }
 
@@ -682,7 +683,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<NoteListing> getExternalcontactsContactNotes(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<NoteListing> getExternalcontactsContactNotes(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<NoteListing>invokeAPIVerbose(request, new TypeReference<NoteListing>() {});
   }
 
@@ -697,7 +698,7 @@ public class ExternalContactsApi {
    * @return ContactListing
    * @throws ApiException if fails to make API call
    */
-  public ContactListing getExternalcontactsContacts(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) throws ApiException {
+  public ContactListing getExternalcontactsContacts(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) throws IOException, ApiException {
     return getExternalcontactsContactsWithHttpInfo(pageSize, pageNumber, q, sortOrder, expand).getBody();
   }
 
@@ -712,7 +713,7 @@ public class ExternalContactsApi {
    * @return ContactListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ContactListing> getExternalcontactsContactsWithHttpInfo(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) throws ApiException {
+  public ApiResponse<ContactListing> getExternalcontactsContactsWithHttpInfo(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -752,7 +753,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ContactListing getExternalcontactsContacts(GetExternalcontactsContactsRequest request) throws ApiException {
+  public ContactListing getExternalcontactsContacts(GetExternalcontactsContactsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ContactListing>() {});
   }
 
@@ -762,7 +763,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ContactListing> getExternalcontactsContacts(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ContactListing> getExternalcontactsContacts(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ContactListing>invokeAPIVerbose(request, new TypeReference<ContactListing>() {});
   }
 
@@ -774,7 +775,7 @@ public class ExternalContactsApi {
    * @return ExternalOrganization
    * @throws ApiException if fails to make API call
    */
-  public ExternalOrganization getExternalcontactsOrganization(String externalOrganizationId, List<String> expand) throws ApiException {
+  public ExternalOrganization getExternalcontactsOrganization(String externalOrganizationId, List<String> expand) throws IOException, ApiException {
     return getExternalcontactsOrganizationWithHttpInfo(externalOrganizationId, expand).getBody();
   }
 
@@ -786,12 +787,12 @@ public class ExternalContactsApi {
    * @return ExternalOrganization
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExternalOrganization> getExternalcontactsOrganizationWithHttpInfo(String externalOrganizationId, List<String> expand) throws ApiException {
+  public ApiResponse<ExternalOrganization> getExternalcontactsOrganizationWithHttpInfo(String externalOrganizationId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'externalOrganizationId' is set
     if (externalOrganizationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'externalOrganizationId' when calling getExternalcontactsOrganization");
+      throw new IllegalArgumentException("Missing the required parameter 'externalOrganizationId' when calling getExternalcontactsOrganization");
     }
     
     // create path and map variables
@@ -828,7 +829,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ExternalOrganization getExternalcontactsOrganization(GetExternalcontactsOrganizationRequest request) throws ApiException {
+  public ExternalOrganization getExternalcontactsOrganization(GetExternalcontactsOrganizationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {});
   }
 
@@ -838,7 +839,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExternalOrganization> getExternalcontactsOrganization(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ExternalOrganization> getExternalcontactsOrganization(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ExternalOrganization>invokeAPIVerbose(request, new TypeReference<ExternalOrganization>() {});
   }
 
@@ -854,7 +855,7 @@ public class ExternalContactsApi {
    * @return ContactListing
    * @throws ApiException if fails to make API call
    */
-  public ContactListing getExternalcontactsOrganizationContacts(String externalOrganizationId, Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) throws ApiException {
+  public ContactListing getExternalcontactsOrganizationContacts(String externalOrganizationId, Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) throws IOException, ApiException {
     return getExternalcontactsOrganizationContactsWithHttpInfo(externalOrganizationId, pageSize, pageNumber, q, sortOrder, expand).getBody();
   }
 
@@ -870,12 +871,12 @@ public class ExternalContactsApi {
    * @return ContactListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ContactListing> getExternalcontactsOrganizationContactsWithHttpInfo(String externalOrganizationId, Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) throws ApiException {
+  public ApiResponse<ContactListing> getExternalcontactsOrganizationContactsWithHttpInfo(String externalOrganizationId, Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'externalOrganizationId' is set
     if (externalOrganizationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'externalOrganizationId' when calling getExternalcontactsOrganizationContacts");
+      throw new IllegalArgumentException("Missing the required parameter 'externalOrganizationId' when calling getExternalcontactsOrganizationContacts");
     }
     
     // create path and map variables
@@ -916,7 +917,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ContactListing getExternalcontactsOrganizationContacts(GetExternalcontactsOrganizationContactsRequest request) throws ApiException {
+  public ContactListing getExternalcontactsOrganizationContacts(GetExternalcontactsOrganizationContactsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ContactListing>() {});
   }
 
@@ -926,7 +927,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ContactListing> getExternalcontactsOrganizationContacts(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ContactListing> getExternalcontactsOrganizationContacts(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ContactListing>invokeAPIVerbose(request, new TypeReference<ContactListing>() {});
   }
 
@@ -939,7 +940,7 @@ public class ExternalContactsApi {
    * @return Note
    * @throws ApiException if fails to make API call
    */
-  public Note getExternalcontactsOrganizationNote(String externalOrganizationId, String noteId, List<String> expand) throws ApiException {
+  public Note getExternalcontactsOrganizationNote(String externalOrganizationId, String noteId, List<String> expand) throws IOException, ApiException {
     return getExternalcontactsOrganizationNoteWithHttpInfo(externalOrganizationId, noteId, expand).getBody();
   }
 
@@ -952,17 +953,17 @@ public class ExternalContactsApi {
    * @return Note
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Note> getExternalcontactsOrganizationNoteWithHttpInfo(String externalOrganizationId, String noteId, List<String> expand) throws ApiException {
+  public ApiResponse<Note> getExternalcontactsOrganizationNoteWithHttpInfo(String externalOrganizationId, String noteId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'externalOrganizationId' is set
     if (externalOrganizationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'externalOrganizationId' when calling getExternalcontactsOrganizationNote");
+      throw new IllegalArgumentException("Missing the required parameter 'externalOrganizationId' when calling getExternalcontactsOrganizationNote");
     }
     
     // verify the required parameter 'noteId' is set
     if (noteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'noteId' when calling getExternalcontactsOrganizationNote");
+      throw new IllegalArgumentException("Missing the required parameter 'noteId' when calling getExternalcontactsOrganizationNote");
     }
     
     // create path and map variables
@@ -1000,7 +1001,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Note getExternalcontactsOrganizationNote(GetExternalcontactsOrganizationNoteRequest request) throws ApiException {
+  public Note getExternalcontactsOrganizationNote(GetExternalcontactsOrganizationNoteRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Note>() {});
   }
 
@@ -1010,7 +1011,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Note> getExternalcontactsOrganizationNote(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Note> getExternalcontactsOrganizationNote(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Note>invokeAPIVerbose(request, new TypeReference<Note>() {});
   }
 
@@ -1025,7 +1026,7 @@ public class ExternalContactsApi {
    * @return NoteListing
    * @throws ApiException if fails to make API call
    */
-  public NoteListing getExternalcontactsOrganizationNotes(String externalOrganizationId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws ApiException {
+  public NoteListing getExternalcontactsOrganizationNotes(String externalOrganizationId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException, ApiException {
     return getExternalcontactsOrganizationNotesWithHttpInfo(externalOrganizationId, pageSize, pageNumber, sortOrder, expand).getBody();
   }
 
@@ -1040,12 +1041,12 @@ public class ExternalContactsApi {
    * @return NoteListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<NoteListing> getExternalcontactsOrganizationNotesWithHttpInfo(String externalOrganizationId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws ApiException {
+  public ApiResponse<NoteListing> getExternalcontactsOrganizationNotesWithHttpInfo(String externalOrganizationId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'externalOrganizationId' is set
     if (externalOrganizationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'externalOrganizationId' when calling getExternalcontactsOrganizationNotes");
+      throw new IllegalArgumentException("Missing the required parameter 'externalOrganizationId' when calling getExternalcontactsOrganizationNotes");
     }
     
     // create path and map variables
@@ -1085,7 +1086,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public NoteListing getExternalcontactsOrganizationNotes(GetExternalcontactsOrganizationNotesRequest request) throws ApiException {
+  public NoteListing getExternalcontactsOrganizationNotes(GetExternalcontactsOrganizationNotesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<NoteListing>() {});
   }
 
@@ -1095,7 +1096,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<NoteListing> getExternalcontactsOrganizationNotes(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<NoteListing> getExternalcontactsOrganizationNotes(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<NoteListing>invokeAPIVerbose(request, new TypeReference<NoteListing>() {});
   }
 
@@ -1110,7 +1111,7 @@ public class ExternalContactsApi {
    * @return RelationshipListing
    * @throws ApiException if fails to make API call
    */
-  public RelationshipListing getExternalcontactsOrganizationRelationships(String externalOrganizationId, Integer pageSize, Integer pageNumber, String expand, String sortOrder) throws ApiException {
+  public RelationshipListing getExternalcontactsOrganizationRelationships(String externalOrganizationId, Integer pageSize, Integer pageNumber, String expand, String sortOrder) throws IOException, ApiException {
     return getExternalcontactsOrganizationRelationshipsWithHttpInfo(externalOrganizationId, pageSize, pageNumber, expand, sortOrder).getBody();
   }
 
@@ -1125,12 +1126,12 @@ public class ExternalContactsApi {
    * @return RelationshipListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RelationshipListing> getExternalcontactsOrganizationRelationshipsWithHttpInfo(String externalOrganizationId, Integer pageSize, Integer pageNumber, String expand, String sortOrder) throws ApiException {
+  public ApiResponse<RelationshipListing> getExternalcontactsOrganizationRelationshipsWithHttpInfo(String externalOrganizationId, Integer pageSize, Integer pageNumber, String expand, String sortOrder) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'externalOrganizationId' is set
     if (externalOrganizationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'externalOrganizationId' when calling getExternalcontactsOrganizationRelationships");
+      throw new IllegalArgumentException("Missing the required parameter 'externalOrganizationId' when calling getExternalcontactsOrganizationRelationships");
     }
     
     // create path and map variables
@@ -1170,7 +1171,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public RelationshipListing getExternalcontactsOrganizationRelationships(GetExternalcontactsOrganizationRelationshipsRequest request) throws ApiException {
+  public RelationshipListing getExternalcontactsOrganizationRelationships(GetExternalcontactsOrganizationRelationshipsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RelationshipListing>() {});
   }
 
@@ -1180,7 +1181,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RelationshipListing> getExternalcontactsOrganizationRelationships(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<RelationshipListing> getExternalcontactsOrganizationRelationships(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<RelationshipListing>invokeAPIVerbose(request, new TypeReference<RelationshipListing>() {});
   }
 
@@ -1195,7 +1196,7 @@ public class ExternalContactsApi {
    * @return ExternalOrganizationListing
    * @throws ApiException if fails to make API call
    */
-  public ExternalOrganizationListing getExternalcontactsOrganizations(Integer pageSize, Integer pageNumber, String q, String sortOrder, String expand) throws ApiException {
+  public ExternalOrganizationListing getExternalcontactsOrganizations(Integer pageSize, Integer pageNumber, String q, String sortOrder, String expand) throws IOException, ApiException {
     return getExternalcontactsOrganizationsWithHttpInfo(pageSize, pageNumber, q, sortOrder, expand).getBody();
   }
 
@@ -1210,7 +1211,7 @@ public class ExternalContactsApi {
    * @return ExternalOrganizationListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExternalOrganizationListing> getExternalcontactsOrganizationsWithHttpInfo(Integer pageSize, Integer pageNumber, String q, String sortOrder, String expand) throws ApiException {
+  public ApiResponse<ExternalOrganizationListing> getExternalcontactsOrganizationsWithHttpInfo(Integer pageSize, Integer pageNumber, String q, String sortOrder, String expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1250,7 +1251,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ExternalOrganizationListing getExternalcontactsOrganizations(GetExternalcontactsOrganizationsRequest request) throws ApiException {
+  public ExternalOrganizationListing getExternalcontactsOrganizations(GetExternalcontactsOrganizationsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExternalOrganizationListing>() {});
   }
 
@@ -1260,7 +1261,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExternalOrganizationListing> getExternalcontactsOrganizations(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ExternalOrganizationListing> getExternalcontactsOrganizations(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ExternalOrganizationListing>invokeAPIVerbose(request, new TypeReference<ExternalOrganizationListing>() {});
   }
 
@@ -1272,7 +1273,7 @@ public class ExternalContactsApi {
    * @return Relationship
    * @throws ApiException if fails to make API call
    */
-  public Relationship getExternalcontactsRelationship(String relationshipId, String expand) throws ApiException {
+  public Relationship getExternalcontactsRelationship(String relationshipId, String expand) throws IOException, ApiException {
     return getExternalcontactsRelationshipWithHttpInfo(relationshipId, expand).getBody();
   }
 
@@ -1284,12 +1285,12 @@ public class ExternalContactsApi {
    * @return Relationship
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Relationship> getExternalcontactsRelationshipWithHttpInfo(String relationshipId, String expand) throws ApiException {
+  public ApiResponse<Relationship> getExternalcontactsRelationshipWithHttpInfo(String relationshipId, String expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'relationshipId' is set
     if (relationshipId == null) {
-      throw new ApiException(400, "Missing the required parameter 'relationshipId' when calling getExternalcontactsRelationship");
+      throw new IllegalArgumentException("Missing the required parameter 'relationshipId' when calling getExternalcontactsRelationship");
     }
     
     // create path and map variables
@@ -1326,7 +1327,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Relationship getExternalcontactsRelationship(GetExternalcontactsRelationshipRequest request) throws ApiException {
+  public Relationship getExternalcontactsRelationship(GetExternalcontactsRelationshipRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Relationship>() {});
   }
 
@@ -1336,7 +1337,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Relationship> getExternalcontactsRelationship(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Relationship> getExternalcontactsRelationship(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Relationship>invokeAPIVerbose(request, new TypeReference<Relationship>() {});
   }
 
@@ -1348,7 +1349,7 @@ public class ExternalContactsApi {
    * @return ReverseWhitepagesLookupResult
    * @throws ApiException if fails to make API call
    */
-  public ReverseWhitepagesLookupResult getExternalcontactsReversewhitepageslookup(String lookupVal, List<String> expand) throws ApiException {
+  public ReverseWhitepagesLookupResult getExternalcontactsReversewhitepageslookup(String lookupVal, List<String> expand) throws IOException, ApiException {
     return getExternalcontactsReversewhitepageslookupWithHttpInfo(lookupVal, expand).getBody();
   }
 
@@ -1360,12 +1361,12 @@ public class ExternalContactsApi {
    * @return ReverseWhitepagesLookupResult
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReverseWhitepagesLookupResult> getExternalcontactsReversewhitepageslookupWithHttpInfo(String lookupVal, List<String> expand) throws ApiException {
+  public ApiResponse<ReverseWhitepagesLookupResult> getExternalcontactsReversewhitepageslookupWithHttpInfo(String lookupVal, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'lookupVal' is set
     if (lookupVal == null) {
-      throw new ApiException(400, "Missing the required parameter 'lookupVal' when calling getExternalcontactsReversewhitepageslookup");
+      throw new IllegalArgumentException("Missing the required parameter 'lookupVal' when calling getExternalcontactsReversewhitepageslookup");
     }
     
     // create path and map variables
@@ -1402,7 +1403,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ReverseWhitepagesLookupResult getExternalcontactsReversewhitepageslookup(GetExternalcontactsReversewhitepageslookupRequest request) throws ApiException {
+  public ReverseWhitepagesLookupResult getExternalcontactsReversewhitepageslookup(GetExternalcontactsReversewhitepageslookupRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ReverseWhitepagesLookupResult>() {});
   }
 
@@ -1412,7 +1413,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReverseWhitepagesLookupResult> getExternalcontactsReversewhitepageslookup(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ReverseWhitepagesLookupResult> getExternalcontactsReversewhitepageslookup(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ReverseWhitepagesLookupResult>invokeAPIVerbose(request, new TypeReference<ReverseWhitepagesLookupResult>() {});
   }
 
@@ -1423,7 +1424,7 @@ public class ExternalContactsApi {
    * @param body ConversationAssociation (optional)
    * @throws ApiException if fails to make API call
    */
-  public void postExternalcontactsContactAssociateconversation(String contactId, ConversationAssociation body) throws ApiException {
+  public void postExternalcontactsContactAssociateconversation(String contactId, ConversationAssociation body) throws IOException, ApiException {
     postExternalcontactsContactAssociateconversationWithHttpInfo(contactId, body);
   }
 
@@ -1434,12 +1435,12 @@ public class ExternalContactsApi {
    * @param body ConversationAssociation (optional)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postExternalcontactsContactAssociateconversationWithHttpInfo(String contactId, ConversationAssociation body) throws ApiException {
+  public ApiResponse<Void> postExternalcontactsContactAssociateconversationWithHttpInfo(String contactId, ConversationAssociation body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'contactId' is set
     if (contactId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactId' when calling postExternalcontactsContactAssociateconversation");
+      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling postExternalcontactsContactAssociateconversation");
     }
     
     // create path and map variables
@@ -1475,7 +1476,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void postExternalcontactsContactAssociateconversation(PostExternalcontactsContactAssociateconversationRequest request) throws ApiException {
+  public void postExternalcontactsContactAssociateconversation(PostExternalcontactsContactAssociateconversationRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -1485,7 +1486,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> postExternalcontactsContactAssociateconversation(ApiRequest<ConversationAssociation> request) throws ApiException {
+  public ApiResponse<Void> postExternalcontactsContactAssociateconversation(ApiRequest<ConversationAssociation> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -1497,7 +1498,7 @@ public class ExternalContactsApi {
    * @return Note
    * @throws ApiException if fails to make API call
    */
-  public Note postExternalcontactsContactNotes(String contactId, Note body) throws ApiException {
+  public Note postExternalcontactsContactNotes(String contactId, Note body) throws IOException, ApiException {
     return postExternalcontactsContactNotesWithHttpInfo(contactId, body).getBody();
   }
 
@@ -1509,12 +1510,12 @@ public class ExternalContactsApi {
    * @return Note
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Note> postExternalcontactsContactNotesWithHttpInfo(String contactId, Note body) throws ApiException {
+  public ApiResponse<Note> postExternalcontactsContactNotesWithHttpInfo(String contactId, Note body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'contactId' is set
     if (contactId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactId' when calling postExternalcontactsContactNotes");
+      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling postExternalcontactsContactNotes");
     }
     
     // create path and map variables
@@ -1550,7 +1551,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Note postExternalcontactsContactNotes(PostExternalcontactsContactNotesRequest request) throws ApiException {
+  public Note postExternalcontactsContactNotes(PostExternalcontactsContactNotesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Note>() {});
   }
 
@@ -1560,7 +1561,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Note> postExternalcontactsContactNotes(ApiRequest<Note> request) throws ApiException {
+  public ApiResponse<Note> postExternalcontactsContactNotes(ApiRequest<Note> request) throws IOException, ApiException {
     return pcapiClient.<Note>invokeAPIVerbose(request, new TypeReference<Note>() {});
   }
 
@@ -1571,7 +1572,7 @@ public class ExternalContactsApi {
    * @return ExternalContact
    * @throws ApiException if fails to make API call
    */
-  public ExternalContact postExternalcontactsContacts(ExternalContact body) throws ApiException {
+  public ExternalContact postExternalcontactsContacts(ExternalContact body) throws IOException, ApiException {
     return postExternalcontactsContactsWithHttpInfo(body).getBody();
   }
 
@@ -1582,7 +1583,7 @@ public class ExternalContactsApi {
    * @return ExternalContact
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExternalContact> postExternalcontactsContactsWithHttpInfo(ExternalContact body) throws ApiException {
+  public ApiResponse<ExternalContact> postExternalcontactsContactsWithHttpInfo(ExternalContact body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // create path and map variables
@@ -1617,7 +1618,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ExternalContact postExternalcontactsContacts(PostExternalcontactsContactsRequest request) throws ApiException {
+  public ExternalContact postExternalcontactsContacts(PostExternalcontactsContactsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExternalContact>() {});
   }
 
@@ -1627,7 +1628,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExternalContact> postExternalcontactsContacts(ApiRequest<ExternalContact> request) throws ApiException {
+  public ApiResponse<ExternalContact> postExternalcontactsContacts(ApiRequest<ExternalContact> request) throws IOException, ApiException {
     return pcapiClient.<ExternalContact>invokeAPIVerbose(request, new TypeReference<ExternalContact>() {});
   }
 
@@ -1639,7 +1640,7 @@ public class ExternalContactsApi {
    * @return Note
    * @throws ApiException if fails to make API call
    */
-  public Note postExternalcontactsOrganizationNotes(String externalOrganizationId, Note body) throws ApiException {
+  public Note postExternalcontactsOrganizationNotes(String externalOrganizationId, Note body) throws IOException, ApiException {
     return postExternalcontactsOrganizationNotesWithHttpInfo(externalOrganizationId, body).getBody();
   }
 
@@ -1651,12 +1652,12 @@ public class ExternalContactsApi {
    * @return Note
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Note> postExternalcontactsOrganizationNotesWithHttpInfo(String externalOrganizationId, Note body) throws ApiException {
+  public ApiResponse<Note> postExternalcontactsOrganizationNotesWithHttpInfo(String externalOrganizationId, Note body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'externalOrganizationId' is set
     if (externalOrganizationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'externalOrganizationId' when calling postExternalcontactsOrganizationNotes");
+      throw new IllegalArgumentException("Missing the required parameter 'externalOrganizationId' when calling postExternalcontactsOrganizationNotes");
     }
     
     // create path and map variables
@@ -1692,7 +1693,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Note postExternalcontactsOrganizationNotes(PostExternalcontactsOrganizationNotesRequest request) throws ApiException {
+  public Note postExternalcontactsOrganizationNotes(PostExternalcontactsOrganizationNotesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Note>() {});
   }
 
@@ -1702,7 +1703,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Note> postExternalcontactsOrganizationNotes(ApiRequest<Note> request) throws ApiException {
+  public ApiResponse<Note> postExternalcontactsOrganizationNotes(ApiRequest<Note> request) throws IOException, ApiException {
     return pcapiClient.<Note>invokeAPIVerbose(request, new TypeReference<Note>() {});
   }
 
@@ -1713,7 +1714,7 @@ public class ExternalContactsApi {
    * @return ExternalOrganization
    * @throws ApiException if fails to make API call
    */
-  public ExternalOrganization postExternalcontactsOrganizations(ExternalOrganization body) throws ApiException {
+  public ExternalOrganization postExternalcontactsOrganizations(ExternalOrganization body) throws IOException, ApiException {
     return postExternalcontactsOrganizationsWithHttpInfo(body).getBody();
   }
 
@@ -1724,7 +1725,7 @@ public class ExternalContactsApi {
    * @return ExternalOrganization
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExternalOrganization> postExternalcontactsOrganizationsWithHttpInfo(ExternalOrganization body) throws ApiException {
+  public ApiResponse<ExternalOrganization> postExternalcontactsOrganizationsWithHttpInfo(ExternalOrganization body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // create path and map variables
@@ -1759,7 +1760,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ExternalOrganization postExternalcontactsOrganizations(PostExternalcontactsOrganizationsRequest request) throws ApiException {
+  public ExternalOrganization postExternalcontactsOrganizations(PostExternalcontactsOrganizationsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {});
   }
 
@@ -1769,7 +1770,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExternalOrganization> postExternalcontactsOrganizations(ApiRequest<ExternalOrganization> request) throws ApiException {
+  public ApiResponse<ExternalOrganization> postExternalcontactsOrganizations(ApiRequest<ExternalOrganization> request) throws IOException, ApiException {
     return pcapiClient.<ExternalOrganization>invokeAPIVerbose(request, new TypeReference<ExternalOrganization>() {});
   }
 
@@ -1780,7 +1781,7 @@ public class ExternalContactsApi {
    * @return Relationship
    * @throws ApiException if fails to make API call
    */
-  public Relationship postExternalcontactsRelationships(Relationship body) throws ApiException {
+  public Relationship postExternalcontactsRelationships(Relationship body) throws IOException, ApiException {
     return postExternalcontactsRelationshipsWithHttpInfo(body).getBody();
   }
 
@@ -1791,7 +1792,7 @@ public class ExternalContactsApi {
    * @return Relationship
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Relationship> postExternalcontactsRelationshipsWithHttpInfo(Relationship body) throws ApiException {
+  public ApiResponse<Relationship> postExternalcontactsRelationshipsWithHttpInfo(Relationship body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // create path and map variables
@@ -1826,7 +1827,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Relationship postExternalcontactsRelationships(PostExternalcontactsRelationshipsRequest request) throws ApiException {
+  public Relationship postExternalcontactsRelationships(PostExternalcontactsRelationshipsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Relationship>() {});
   }
 
@@ -1836,7 +1837,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Relationship> postExternalcontactsRelationships(ApiRequest<Relationship> request) throws ApiException {
+  public ApiResponse<Relationship> postExternalcontactsRelationships(ApiRequest<Relationship> request) throws IOException, ApiException {
     return pcapiClient.<Relationship>invokeAPIVerbose(request, new TypeReference<Relationship>() {});
   }
 
@@ -1848,7 +1849,7 @@ public class ExternalContactsApi {
    * @return ExternalContact
    * @throws ApiException if fails to make API call
    */
-  public ExternalContact putExternalcontactsContact(String contactId, ExternalContact body) throws ApiException {
+  public ExternalContact putExternalcontactsContact(String contactId, ExternalContact body) throws IOException, ApiException {
     return putExternalcontactsContactWithHttpInfo(contactId, body).getBody();
   }
 
@@ -1860,12 +1861,12 @@ public class ExternalContactsApi {
    * @return ExternalContact
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExternalContact> putExternalcontactsContactWithHttpInfo(String contactId, ExternalContact body) throws ApiException {
+  public ApiResponse<ExternalContact> putExternalcontactsContactWithHttpInfo(String contactId, ExternalContact body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'contactId' is set
     if (contactId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactId' when calling putExternalcontactsContact");
+      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling putExternalcontactsContact");
     }
     
     // create path and map variables
@@ -1901,7 +1902,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ExternalContact putExternalcontactsContact(PutExternalcontactsContactRequest request) throws ApiException {
+  public ExternalContact putExternalcontactsContact(PutExternalcontactsContactRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExternalContact>() {});
   }
 
@@ -1911,7 +1912,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExternalContact> putExternalcontactsContact(ApiRequest<ExternalContact> request) throws ApiException {
+  public ApiResponse<ExternalContact> putExternalcontactsContact(ApiRequest<ExternalContact> request) throws IOException, ApiException {
     return pcapiClient.<ExternalContact>invokeAPIVerbose(request, new TypeReference<ExternalContact>() {});
   }
 
@@ -1924,7 +1925,7 @@ public class ExternalContactsApi {
    * @return Note
    * @throws ApiException if fails to make API call
    */
-  public Note putExternalcontactsContactNote(String contactId, String noteId, Note body) throws ApiException {
+  public Note putExternalcontactsContactNote(String contactId, String noteId, Note body) throws IOException, ApiException {
     return putExternalcontactsContactNoteWithHttpInfo(contactId, noteId, body).getBody();
   }
 
@@ -1937,17 +1938,17 @@ public class ExternalContactsApi {
    * @return Note
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Note> putExternalcontactsContactNoteWithHttpInfo(String contactId, String noteId, Note body) throws ApiException {
+  public ApiResponse<Note> putExternalcontactsContactNoteWithHttpInfo(String contactId, String noteId, Note body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'contactId' is set
     if (contactId == null) {
-      throw new ApiException(400, "Missing the required parameter 'contactId' when calling putExternalcontactsContactNote");
+      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling putExternalcontactsContactNote");
     }
     
     // verify the required parameter 'noteId' is set
     if (noteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'noteId' when calling putExternalcontactsContactNote");
+      throw new IllegalArgumentException("Missing the required parameter 'noteId' when calling putExternalcontactsContactNote");
     }
     
     // create path and map variables
@@ -1984,7 +1985,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Note putExternalcontactsContactNote(PutExternalcontactsContactNoteRequest request) throws ApiException {
+  public Note putExternalcontactsContactNote(PutExternalcontactsContactNoteRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Note>() {});
   }
 
@@ -1994,7 +1995,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Note> putExternalcontactsContactNote(ApiRequest<Note> request) throws ApiException {
+  public ApiResponse<Note> putExternalcontactsContactNote(ApiRequest<Note> request) throws IOException, ApiException {
     return pcapiClient.<Note>invokeAPIVerbose(request, new TypeReference<Note>() {});
   }
 
@@ -2005,7 +2006,7 @@ public class ExternalContactsApi {
    * @param body ConversationAssociation (optional)
    * @throws ApiException if fails to make API call
    */
-  public void putExternalcontactsConversation(String conversationId, ConversationAssociation body) throws ApiException {
+  public void putExternalcontactsConversation(String conversationId, ConversationAssociation body) throws IOException, ApiException {
     putExternalcontactsConversationWithHttpInfo(conversationId, body);
   }
 
@@ -2016,12 +2017,12 @@ public class ExternalContactsApi {
    * @param body ConversationAssociation (optional)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> putExternalcontactsConversationWithHttpInfo(String conversationId, ConversationAssociation body) throws ApiException {
+  public ApiResponse<Void> putExternalcontactsConversationWithHttpInfo(String conversationId, ConversationAssociation body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling putExternalcontactsConversation");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling putExternalcontactsConversation");
     }
     
     // create path and map variables
@@ -2057,7 +2058,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void putExternalcontactsConversation(PutExternalcontactsConversationRequest request) throws ApiException {
+  public void putExternalcontactsConversation(PutExternalcontactsConversationRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -2067,7 +2068,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> putExternalcontactsConversation(ApiRequest<ConversationAssociation> request) throws ApiException {
+  public ApiResponse<Void> putExternalcontactsConversation(ApiRequest<ConversationAssociation> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -2079,7 +2080,7 @@ public class ExternalContactsApi {
    * @return ExternalOrganization
    * @throws ApiException if fails to make API call
    */
-  public ExternalOrganization putExternalcontactsOrganization(String externalOrganizationId, ExternalOrganization body) throws ApiException {
+  public ExternalOrganization putExternalcontactsOrganization(String externalOrganizationId, ExternalOrganization body) throws IOException, ApiException {
     return putExternalcontactsOrganizationWithHttpInfo(externalOrganizationId, body).getBody();
   }
 
@@ -2091,12 +2092,12 @@ public class ExternalContactsApi {
    * @return ExternalOrganization
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExternalOrganization> putExternalcontactsOrganizationWithHttpInfo(String externalOrganizationId, ExternalOrganization body) throws ApiException {
+  public ApiResponse<ExternalOrganization> putExternalcontactsOrganizationWithHttpInfo(String externalOrganizationId, ExternalOrganization body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'externalOrganizationId' is set
     if (externalOrganizationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'externalOrganizationId' when calling putExternalcontactsOrganization");
+      throw new IllegalArgumentException("Missing the required parameter 'externalOrganizationId' when calling putExternalcontactsOrganization");
     }
     
     // create path and map variables
@@ -2132,7 +2133,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ExternalOrganization putExternalcontactsOrganization(PutExternalcontactsOrganizationRequest request) throws ApiException {
+  public ExternalOrganization putExternalcontactsOrganization(PutExternalcontactsOrganizationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {});
   }
 
@@ -2142,7 +2143,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ExternalOrganization> putExternalcontactsOrganization(ApiRequest<ExternalOrganization> request) throws ApiException {
+  public ApiResponse<ExternalOrganization> putExternalcontactsOrganization(ApiRequest<ExternalOrganization> request) throws IOException, ApiException {
     return pcapiClient.<ExternalOrganization>invokeAPIVerbose(request, new TypeReference<ExternalOrganization>() {});
   }
 
@@ -2155,7 +2156,7 @@ public class ExternalContactsApi {
    * @return Note
    * @throws ApiException if fails to make API call
    */
-  public Note putExternalcontactsOrganizationNote(String externalOrganizationId, String noteId, Note body) throws ApiException {
+  public Note putExternalcontactsOrganizationNote(String externalOrganizationId, String noteId, Note body) throws IOException, ApiException {
     return putExternalcontactsOrganizationNoteWithHttpInfo(externalOrganizationId, noteId, body).getBody();
   }
 
@@ -2168,17 +2169,17 @@ public class ExternalContactsApi {
    * @return Note
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Note> putExternalcontactsOrganizationNoteWithHttpInfo(String externalOrganizationId, String noteId, Note body) throws ApiException {
+  public ApiResponse<Note> putExternalcontactsOrganizationNoteWithHttpInfo(String externalOrganizationId, String noteId, Note body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'externalOrganizationId' is set
     if (externalOrganizationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'externalOrganizationId' when calling putExternalcontactsOrganizationNote");
+      throw new IllegalArgumentException("Missing the required parameter 'externalOrganizationId' when calling putExternalcontactsOrganizationNote");
     }
     
     // verify the required parameter 'noteId' is set
     if (noteId == null) {
-      throw new ApiException(400, "Missing the required parameter 'noteId' when calling putExternalcontactsOrganizationNote");
+      throw new IllegalArgumentException("Missing the required parameter 'noteId' when calling putExternalcontactsOrganizationNote");
     }
     
     // create path and map variables
@@ -2215,7 +2216,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Note putExternalcontactsOrganizationNote(PutExternalcontactsOrganizationNoteRequest request) throws ApiException {
+  public Note putExternalcontactsOrganizationNote(PutExternalcontactsOrganizationNoteRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Note>() {});
   }
 
@@ -2225,7 +2226,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Note> putExternalcontactsOrganizationNote(ApiRequest<Note> request) throws ApiException {
+  public ApiResponse<Note> putExternalcontactsOrganizationNote(ApiRequest<Note> request) throws IOException, ApiException {
     return pcapiClient.<Note>invokeAPIVerbose(request, new TypeReference<Note>() {});
   }
 
@@ -2237,7 +2238,7 @@ public class ExternalContactsApi {
    * @return Relationship
    * @throws ApiException if fails to make API call
    */
-  public Relationship putExternalcontactsRelationship(String relationshipId, Relationship body) throws ApiException {
+  public Relationship putExternalcontactsRelationship(String relationshipId, Relationship body) throws IOException, ApiException {
     return putExternalcontactsRelationshipWithHttpInfo(relationshipId, body).getBody();
   }
 
@@ -2249,12 +2250,12 @@ public class ExternalContactsApi {
    * @return Relationship
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Relationship> putExternalcontactsRelationshipWithHttpInfo(String relationshipId, Relationship body) throws ApiException {
+  public ApiResponse<Relationship> putExternalcontactsRelationshipWithHttpInfo(String relationshipId, Relationship body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'relationshipId' is set
     if (relationshipId == null) {
-      throw new ApiException(400, "Missing the required parameter 'relationshipId' when calling putExternalcontactsRelationship");
+      throw new IllegalArgumentException("Missing the required parameter 'relationshipId' when calling putExternalcontactsRelationship");
     }
     
     // create path and map variables
@@ -2290,7 +2291,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Relationship putExternalcontactsRelationship(PutExternalcontactsRelationshipRequest request) throws ApiException {
+  public Relationship putExternalcontactsRelationship(PutExternalcontactsRelationshipRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Relationship>() {});
   }
 
@@ -2300,7 +2301,7 @@ public class ExternalContactsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Relationship> putExternalcontactsRelationship(ApiRequest<Relationship> request) throws ApiException {
+  public ApiResponse<Relationship> putExternalcontactsRelationship(ApiRequest<Relationship> request) throws IOException, ApiException {
     return pcapiClient.<Relationship>invokeAPIVerbose(request, new TypeReference<Relationship>() {});
   }
 

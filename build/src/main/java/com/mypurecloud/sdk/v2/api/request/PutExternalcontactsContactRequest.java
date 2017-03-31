@@ -81,11 +81,11 @@ public class PutExternalcontactsContactRequest {
         return this;
     }
 
-    public ApiRequest<ExternalContact> withHttpInfo() throws ApiException {
+    public ApiRequest<ExternalContact> withHttpInfo() {
         
         // verify the required parameter 'contactId' is set
         if (this.contactId == null) {
-            throw new ApiException(400, "Missing the required parameter 'contactId' when building request for PutExternalcontactsContactRequest.");
+            throw new IllegalStateException("Missing the required parameter 'contactId' when building request for PutExternalcontactsContactRequest.");
         }
         
 

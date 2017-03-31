@@ -100,11 +100,11 @@ public class GetContentmanagementShareRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'shareId' is set
         if (this.shareId == null) {
-            throw new ApiException(400, "Missing the required parameter 'shareId' when building request for GetContentmanagementShareRequest.");
+            throw new IllegalStateException("Missing the required parameter 'shareId' when building request for GetContentmanagementShareRequest.");
         }
         
 

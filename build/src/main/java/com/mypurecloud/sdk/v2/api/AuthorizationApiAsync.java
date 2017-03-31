@@ -40,6 +40,7 @@ import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRoleUsersRemoveRequest
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRolesDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserRolesRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -64,7 +65,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteAuthorizationRoleAsync(DeleteAuthorizationRoleRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteAuthorizationRoleAsync(DeleteAuthorizationRoleRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -74,7 +75,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteAuthorizationRoleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteAuthorizationRoleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -84,7 +85,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteUserRolesAsync(DeleteUserRolesRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteUserRolesAsync(DeleteUserRolesRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -94,7 +95,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteUserRolesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteUserRolesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -104,7 +105,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<PermissionCollectionEntityListing> getAuthorizationPermissionsAsync(GetAuthorizationPermissionsRequest request, AsyncApiCallback<PermissionCollectionEntityListing> callback) throws ApiException {
+  public Future<PermissionCollectionEntityListing> getAuthorizationPermissionsAsync(GetAuthorizationPermissionsRequest request, AsyncApiCallback<PermissionCollectionEntityListing> callback) {
     return pcapiClient.<PermissionCollectionEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PermissionCollectionEntityListing>() {}, callback);
   }
 
@@ -114,7 +115,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<PermissionCollectionEntityListing>> getAuthorizationPermissionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PermissionCollectionEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<PermissionCollectionEntityListing>> getAuthorizationPermissionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PermissionCollectionEntityListing>> callback) {
     return pcapiClient.<PermissionCollectionEntityListing>invokeAPIVerboseAsync(request, new TypeReference<PermissionCollectionEntityListing>() {}, callback);
   }
 
@@ -124,7 +125,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OrganizationProductEntityListing> getAuthorizationProductsAsync(GetAuthorizationProductsRequest request, AsyncApiCallback<OrganizationProductEntityListing> callback) throws ApiException {
+  public Future<OrganizationProductEntityListing> getAuthorizationProductsAsync(GetAuthorizationProductsRequest request, AsyncApiCallback<OrganizationProductEntityListing> callback) {
     return pcapiClient.<OrganizationProductEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OrganizationProductEntityListing>() {}, callback);
   }
 
@@ -134,7 +135,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OrganizationProductEntityListing>> getAuthorizationProductsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrganizationProductEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<OrganizationProductEntityListing>> getAuthorizationProductsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrganizationProductEntityListing>> callback) {
     return pcapiClient.<OrganizationProductEntityListing>invokeAPIVerboseAsync(request, new TypeReference<OrganizationProductEntityListing>() {}, callback);
   }
 
@@ -144,7 +145,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DomainOrganizationRole> getAuthorizationRoleAsync(GetAuthorizationRoleRequest request, AsyncApiCallback<DomainOrganizationRole> callback) throws ApiException {
+  public Future<DomainOrganizationRole> getAuthorizationRoleAsync(GetAuthorizationRoleRequest request, AsyncApiCallback<DomainOrganizationRole> callback) {
     return pcapiClient.<DomainOrganizationRole>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainOrganizationRole>() {}, callback);
   }
 
@@ -154,7 +155,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DomainOrganizationRole>> getAuthorizationRoleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainOrganizationRole>> callback) throws ApiException {
+  public Future<ApiResponse<DomainOrganizationRole>> getAuthorizationRoleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainOrganizationRole>> callback) {
     return pcapiClient.<DomainOrganizationRole>invokeAPIVerboseAsync(request, new TypeReference<DomainOrganizationRole>() {}, callback);
   }
 
@@ -164,7 +165,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DomainOrgRoleDifference> getAuthorizationRoleComparedefaultRightRoleIdAsync(GetAuthorizationRoleComparedefaultRightRoleIdRequest request, AsyncApiCallback<DomainOrgRoleDifference> callback) throws ApiException {
+  public Future<DomainOrgRoleDifference> getAuthorizationRoleComparedefaultRightRoleIdAsync(GetAuthorizationRoleComparedefaultRightRoleIdRequest request, AsyncApiCallback<DomainOrgRoleDifference> callback) {
     return pcapiClient.<DomainOrgRoleDifference>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainOrgRoleDifference>() {}, callback);
   }
 
@@ -174,7 +175,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DomainOrgRoleDifference>> getAuthorizationRoleComparedefaultRightRoleIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainOrgRoleDifference>> callback) throws ApiException {
+  public Future<ApiResponse<DomainOrgRoleDifference>> getAuthorizationRoleComparedefaultRightRoleIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainOrgRoleDifference>> callback) {
     return pcapiClient.<DomainOrgRoleDifference>invokeAPIVerboseAsync(request, new TypeReference<DomainOrgRoleDifference>() {}, callback);
   }
 
@@ -184,7 +185,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OrganizationRoleEntityListing> getAuthorizationRolesAsync(GetAuthorizationRolesRequest request, AsyncApiCallback<OrganizationRoleEntityListing> callback) throws ApiException {
+  public Future<OrganizationRoleEntityListing> getAuthorizationRolesAsync(GetAuthorizationRolesRequest request, AsyncApiCallback<OrganizationRoleEntityListing> callback) {
     return pcapiClient.<OrganizationRoleEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OrganizationRoleEntityListing>() {}, callback);
   }
 
@@ -194,7 +195,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OrganizationRoleEntityListing>> getAuthorizationRolesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrganizationRoleEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<OrganizationRoleEntityListing>> getAuthorizationRolesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrganizationRoleEntityListing>> callback) {
     return pcapiClient.<OrganizationRoleEntityListing>invokeAPIVerboseAsync(request, new TypeReference<OrganizationRoleEntityListing>() {}, callback);
   }
 
@@ -204,7 +205,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UserAuthorization> getUserRolesAsync(GetUserRolesRequest request, AsyncApiCallback<UserAuthorization> callback) throws ApiException {
+  public Future<UserAuthorization> getUserRolesAsync(GetUserRolesRequest request, AsyncApiCallback<UserAuthorization> callback) {
     return pcapiClient.<UserAuthorization>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserAuthorization>() {}, callback);
   }
 
@@ -214,7 +215,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UserAuthorization>> getUserRolesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserAuthorization>> callback) throws ApiException {
+  public Future<ApiResponse<UserAuthorization>> getUserRolesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserAuthorization>> callback) {
     return pcapiClient.<UserAuthorization>invokeAPIVerboseAsync(request, new TypeReference<UserAuthorization>() {}, callback);
   }
 
@@ -224,7 +225,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DomainOrganizationRole> patchAuthorizationRoleAsync(PatchAuthorizationRoleRequest request, AsyncApiCallback<DomainOrganizationRole> callback) throws ApiException {
+  public Future<DomainOrganizationRole> patchAuthorizationRoleAsync(PatchAuthorizationRoleRequest request, AsyncApiCallback<DomainOrganizationRole> callback) {
     return pcapiClient.<DomainOrganizationRole>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainOrganizationRole>() {}, callback);
   }
 
@@ -234,7 +235,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DomainOrganizationRole>> patchAuthorizationRoleAsync(ApiRequest<DomainOrganizationRole> request, AsyncApiCallback<ApiResponse<DomainOrganizationRole>> callback) throws ApiException {
+  public Future<ApiResponse<DomainOrganizationRole>> patchAuthorizationRoleAsync(ApiRequest<DomainOrganizationRole> request, AsyncApiCallback<ApiResponse<DomainOrganizationRole>> callback) {
     return pcapiClient.<DomainOrganizationRole>invokeAPIVerboseAsync(request, new TypeReference<DomainOrganizationRole>() {}, callback);
   }
 
@@ -244,7 +245,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DomainOrgRoleDifference> postAuthorizationRoleComparedefaultRightRoleIdAsync(PostAuthorizationRoleComparedefaultRightRoleIdRequest request, AsyncApiCallback<DomainOrgRoleDifference> callback) throws ApiException {
+  public Future<DomainOrgRoleDifference> postAuthorizationRoleComparedefaultRightRoleIdAsync(PostAuthorizationRoleComparedefaultRightRoleIdRequest request, AsyncApiCallback<DomainOrgRoleDifference> callback) {
     return pcapiClient.<DomainOrgRoleDifference>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainOrgRoleDifference>() {}, callback);
   }
 
@@ -254,7 +255,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DomainOrgRoleDifference>> postAuthorizationRoleComparedefaultRightRoleIdAsync(ApiRequest<DomainOrganizationRole> request, AsyncApiCallback<ApiResponse<DomainOrgRoleDifference>> callback) throws ApiException {
+  public Future<ApiResponse<DomainOrgRoleDifference>> postAuthorizationRoleComparedefaultRightRoleIdAsync(ApiRequest<DomainOrganizationRole> request, AsyncApiCallback<ApiResponse<DomainOrgRoleDifference>> callback) {
     return pcapiClient.<DomainOrgRoleDifference>invokeAPIVerboseAsync(request, new TypeReference<DomainOrgRoleDifference>() {}, callback);
   }
 
@@ -264,7 +265,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DomainOrganizationRole> postAuthorizationRolesAsync(PostAuthorizationRolesRequest request, AsyncApiCallback<DomainOrganizationRole> callback) throws ApiException {
+  public Future<DomainOrganizationRole> postAuthorizationRolesAsync(PostAuthorizationRolesRequest request, AsyncApiCallback<DomainOrganizationRole> callback) {
     return pcapiClient.<DomainOrganizationRole>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainOrganizationRole>() {}, callback);
   }
 
@@ -274,7 +275,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DomainOrganizationRole>> postAuthorizationRolesAsync(ApiRequest<DomainOrganizationRoleCreate> request, AsyncApiCallback<ApiResponse<DomainOrganizationRole>> callback) throws ApiException {
+  public Future<ApiResponse<DomainOrganizationRole>> postAuthorizationRolesAsync(ApiRequest<DomainOrganizationRoleCreate> request, AsyncApiCallback<ApiResponse<DomainOrganizationRole>> callback) {
     return pcapiClient.<DomainOrganizationRole>invokeAPIVerboseAsync(request, new TypeReference<DomainOrganizationRole>() {}, callback);
   }
 
@@ -284,7 +285,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OrganizationRoleEntityListing> postAuthorizationRolesDefaultAsync(PostAuthorizationRolesDefaultRequest request, AsyncApiCallback<OrganizationRoleEntityListing> callback) throws ApiException {
+  public Future<OrganizationRoleEntityListing> postAuthorizationRolesDefaultAsync(PostAuthorizationRolesDefaultRequest request, AsyncApiCallback<OrganizationRoleEntityListing> callback) {
     return pcapiClient.<OrganizationRoleEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OrganizationRoleEntityListing>() {}, callback);
   }
 
@@ -294,7 +295,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OrganizationRoleEntityListing>> postAuthorizationRolesDefaultAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrganizationRoleEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<OrganizationRoleEntityListing>> postAuthorizationRolesDefaultAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrganizationRoleEntityListing>> callback) {
     return pcapiClient.<OrganizationRoleEntityListing>invokeAPIVerboseAsync(request, new TypeReference<OrganizationRoleEntityListing>() {}, callback);
   }
 
@@ -304,7 +305,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DomainOrganizationRole> putAuthorizationRoleAsync(PutAuthorizationRoleRequest request, AsyncApiCallback<DomainOrganizationRole> callback) throws ApiException {
+  public Future<DomainOrganizationRole> putAuthorizationRoleAsync(PutAuthorizationRoleRequest request, AsyncApiCallback<DomainOrganizationRole> callback) {
     return pcapiClient.<DomainOrganizationRole>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainOrganizationRole>() {}, callback);
   }
 
@@ -314,7 +315,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DomainOrganizationRole>> putAuthorizationRoleAsync(ApiRequest<DomainOrganizationRoleUpdate> request, AsyncApiCallback<ApiResponse<DomainOrganizationRole>> callback) throws ApiException {
+  public Future<ApiResponse<DomainOrganizationRole>> putAuthorizationRoleAsync(ApiRequest<DomainOrganizationRoleUpdate> request, AsyncApiCallback<ApiResponse<DomainOrganizationRole>> callback) {
     return pcapiClient.<DomainOrganizationRole>invokeAPIVerboseAsync(request, new TypeReference<DomainOrganizationRole>() {}, callback);
   }
 
@@ -324,7 +325,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<String>> putAuthorizationRoleUsersAddAsync(PutAuthorizationRoleUsersAddRequest request, AsyncApiCallback<List<String>> callback) throws ApiException {
+  public Future<List<String>> putAuthorizationRoleUsersAddAsync(PutAuthorizationRoleUsersAddRequest request, AsyncApiCallback<List<String>> callback) {
     return pcapiClient.<List<String>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<String>>() {}, callback);
   }
 
@@ -334,7 +335,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<String>>> putAuthorizationRoleUsersAddAsync(ApiRequest<List<String>> request, AsyncApiCallback<ApiResponse<List<String>>> callback) throws ApiException {
+  public Future<ApiResponse<List<String>>> putAuthorizationRoleUsersAddAsync(ApiRequest<List<String>> request, AsyncApiCallback<ApiResponse<List<String>>> callback) {
     return pcapiClient.<List<String>>invokeAPIVerboseAsync(request, new TypeReference<List<String>>() {}, callback);
   }
 
@@ -344,7 +345,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<String>> putAuthorizationRoleUsersRemoveAsync(PutAuthorizationRoleUsersRemoveRequest request, AsyncApiCallback<List<String>> callback) throws ApiException {
+  public Future<List<String>> putAuthorizationRoleUsersRemoveAsync(PutAuthorizationRoleUsersRemoveRequest request, AsyncApiCallback<List<String>> callback) {
     return pcapiClient.<List<String>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<String>>() {}, callback);
   }
 
@@ -354,7 +355,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<String>>> putAuthorizationRoleUsersRemoveAsync(ApiRequest<List<String>> request, AsyncApiCallback<ApiResponse<List<String>>> callback) throws ApiException {
+  public Future<ApiResponse<List<String>>> putAuthorizationRoleUsersRemoveAsync(ApiRequest<List<String>> request, AsyncApiCallback<ApiResponse<List<String>>> callback) {
     return pcapiClient.<List<String>>invokeAPIVerboseAsync(request, new TypeReference<List<String>>() {}, callback);
   }
 
@@ -364,7 +365,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OrganizationRoleEntityListing> putAuthorizationRolesDefaultAsync(PutAuthorizationRolesDefaultRequest request, AsyncApiCallback<OrganizationRoleEntityListing> callback) throws ApiException {
+  public Future<OrganizationRoleEntityListing> putAuthorizationRolesDefaultAsync(PutAuthorizationRolesDefaultRequest request, AsyncApiCallback<OrganizationRoleEntityListing> callback) {
     return pcapiClient.<OrganizationRoleEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OrganizationRoleEntityListing>() {}, callback);
   }
 
@@ -374,7 +375,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OrganizationRoleEntityListing>> putAuthorizationRolesDefaultAsync(ApiRequest<List<DomainOrganizationRole>> request, AsyncApiCallback<ApiResponse<OrganizationRoleEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<OrganizationRoleEntityListing>> putAuthorizationRolesDefaultAsync(ApiRequest<List<DomainOrganizationRole>> request, AsyncApiCallback<ApiResponse<OrganizationRoleEntityListing>> callback) {
     return pcapiClient.<OrganizationRoleEntityListing>invokeAPIVerboseAsync(request, new TypeReference<OrganizationRoleEntityListing>() {}, callback);
   }
 
@@ -384,7 +385,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UserAuthorization> putUserRolesAsync(PutUserRolesRequest request, AsyncApiCallback<UserAuthorization> callback) throws ApiException {
+  public Future<UserAuthorization> putUserRolesAsync(PutUserRolesRequest request, AsyncApiCallback<UserAuthorization> callback) {
     return pcapiClient.<UserAuthorization>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserAuthorization>() {}, callback);
   }
 
@@ -394,7 +395,7 @@ public class AuthorizationApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UserAuthorization>> putUserRolesAsync(ApiRequest<List<String>> request, AsyncApiCallback<ApiResponse<UserAuthorization>> callback) throws ApiException {
+  public Future<ApiResponse<UserAuthorization>> putUserRolesAsync(ApiRequest<List<String>> request, AsyncApiCallback<ApiResponse<UserAuthorization>> callback) {
     return pcapiClient.<UserAuthorization>invokeAPIVerboseAsync(request, new TypeReference<UserAuthorization>() {}, callback);
   }
 

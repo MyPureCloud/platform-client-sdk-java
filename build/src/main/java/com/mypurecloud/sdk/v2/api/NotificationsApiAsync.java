@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.api.request.PostNotificationsChannelSubscriptionsR
 import com.mypurecloud.sdk.v2.api.request.PostNotificationsChannelsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutNotificationsChannelSubscriptionsRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -51,7 +52,7 @@ public class NotificationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteNotificationsChannelSubscriptionsAsync(DeleteNotificationsChannelSubscriptionsRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteNotificationsChannelSubscriptionsAsync(DeleteNotificationsChannelSubscriptionsRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -61,7 +62,7 @@ public class NotificationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteNotificationsChannelSubscriptionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteNotificationsChannelSubscriptionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -71,7 +72,7 @@ public class NotificationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<AvailableTopicEntityListing> getNotificationsAvailabletopicsAsync(GetNotificationsAvailabletopicsRequest request, AsyncApiCallback<AvailableTopicEntityListing> callback) throws ApiException {
+  public Future<AvailableTopicEntityListing> getNotificationsAvailabletopicsAsync(GetNotificationsAvailabletopicsRequest request, AsyncApiCallback<AvailableTopicEntityListing> callback) {
     return pcapiClient.<AvailableTopicEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<AvailableTopicEntityListing>() {}, callback);
   }
 
@@ -81,7 +82,7 @@ public class NotificationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<AvailableTopicEntityListing>> getNotificationsAvailabletopicsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AvailableTopicEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<AvailableTopicEntityListing>> getNotificationsAvailabletopicsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AvailableTopicEntityListing>> callback) {
     return pcapiClient.<AvailableTopicEntityListing>invokeAPIVerboseAsync(request, new TypeReference<AvailableTopicEntityListing>() {}, callback);
   }
 
@@ -91,7 +92,7 @@ public class NotificationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ChannelTopicEntityListing> getNotificationsChannelSubscriptionsAsync(GetNotificationsChannelSubscriptionsRequest request, AsyncApiCallback<ChannelTopicEntityListing> callback) throws ApiException {
+  public Future<ChannelTopicEntityListing> getNotificationsChannelSubscriptionsAsync(GetNotificationsChannelSubscriptionsRequest request, AsyncApiCallback<ChannelTopicEntityListing> callback) {
     return pcapiClient.<ChannelTopicEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {}, callback);
   }
 
@@ -101,7 +102,7 @@ public class NotificationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ChannelTopicEntityListing>> getNotificationsChannelSubscriptionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<ChannelTopicEntityListing>> getNotificationsChannelSubscriptionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>> callback) {
     return pcapiClient.<ChannelTopicEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ChannelTopicEntityListing>() {}, callback);
   }
 
@@ -111,7 +112,7 @@ public class NotificationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ChannelEntityListing> getNotificationsChannelsAsync(GetNotificationsChannelsRequest request, AsyncApiCallback<ChannelEntityListing> callback) throws ApiException {
+  public Future<ChannelEntityListing> getNotificationsChannelsAsync(GetNotificationsChannelsRequest request, AsyncApiCallback<ChannelEntityListing> callback) {
     return pcapiClient.<ChannelEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ChannelEntityListing>() {}, callback);
   }
 
@@ -121,7 +122,7 @@ public class NotificationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ChannelEntityListing>> getNotificationsChannelsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ChannelEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<ChannelEntityListing>> getNotificationsChannelsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ChannelEntityListing>> callback) {
     return pcapiClient.<ChannelEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ChannelEntityListing>() {}, callback);
   }
 
@@ -131,7 +132,7 @@ public class NotificationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ChannelTopicEntityListing> postNotificationsChannelSubscriptionsAsync(PostNotificationsChannelSubscriptionsRequest request, AsyncApiCallback<ChannelTopicEntityListing> callback) throws ApiException {
+  public Future<ChannelTopicEntityListing> postNotificationsChannelSubscriptionsAsync(PostNotificationsChannelSubscriptionsRequest request, AsyncApiCallback<ChannelTopicEntityListing> callback) {
     return pcapiClient.<ChannelTopicEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {}, callback);
   }
 
@@ -141,7 +142,7 @@ public class NotificationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ChannelTopicEntityListing>> postNotificationsChannelSubscriptionsAsync(ApiRequest<List<ChannelTopic>> request, AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<ChannelTopicEntityListing>> postNotificationsChannelSubscriptionsAsync(ApiRequest<List<ChannelTopic>> request, AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>> callback) {
     return pcapiClient.<ChannelTopicEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ChannelTopicEntityListing>() {}, callback);
   }
 
@@ -151,7 +152,7 @@ public class NotificationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Channel> postNotificationsChannelsAsync(PostNotificationsChannelsRequest request, AsyncApiCallback<Channel> callback) throws ApiException {
+  public Future<Channel> postNotificationsChannelsAsync(PostNotificationsChannelsRequest request, AsyncApiCallback<Channel> callback) {
     return pcapiClient.<Channel>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Channel>() {}, callback);
   }
 
@@ -161,7 +162,7 @@ public class NotificationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Channel>> postNotificationsChannelsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Channel>> callback) throws ApiException {
+  public Future<ApiResponse<Channel>> postNotificationsChannelsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Channel>> callback) {
     return pcapiClient.<Channel>invokeAPIVerboseAsync(request, new TypeReference<Channel>() {}, callback);
   }
 
@@ -171,7 +172,7 @@ public class NotificationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ChannelTopicEntityListing> putNotificationsChannelSubscriptionsAsync(PutNotificationsChannelSubscriptionsRequest request, AsyncApiCallback<ChannelTopicEntityListing> callback) throws ApiException {
+  public Future<ChannelTopicEntityListing> putNotificationsChannelSubscriptionsAsync(PutNotificationsChannelSubscriptionsRequest request, AsyncApiCallback<ChannelTopicEntityListing> callback) {
     return pcapiClient.<ChannelTopicEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {}, callback);
   }
 
@@ -181,7 +182,7 @@ public class NotificationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ChannelTopicEntityListing>> putNotificationsChannelSubscriptionsAsync(ApiRequest<List<ChannelTopic>> request, AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<ChannelTopicEntityListing>> putNotificationsChannelSubscriptionsAsync(ApiRequest<List<ChannelTopic>> request, AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>> callback) {
     return pcapiClient.<ChannelTopicEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ChannelTopicEntityListing>() {}, callback);
   }
 

@@ -13,6 +13,7 @@ import java.io.InputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.net.Proxy;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -317,16 +318,12 @@ public class ApiClient implements AutoCloseable {
         }
     }
 
-    /**
+/**
      * Serialize the given Java object into string according the given
      * Content-Type (only JSON is supported for now).
      */
-    public String serialize(Object obj) throws ApiException {
-        try {
-            return objectMapper.writeValueAsString(obj);
-        } catch (JsonProcessingException e) {
-            throw new ApiException(e);
-        }
+    public String serialize(Object obj) throws IOException {
+        return objectMapper.writeValueAsString(obj);
     }
 
     /**
@@ -367,7 +364,7 @@ public class ApiClient implements AutoCloseable {
         return url.toString();
     }
 
-    private ApiClientConnectorRequest prepareConnectorRequest(ApiRequest<?> request) throws Exception {
+    private ApiClientConnectorRequest prepareConnectorRequest(ApiRequest<?> request) throws IOException {
         final String path = request.getPath();
         final List<Pair> queryParams = new ArrayList<>(request.getQueryParams());
 
@@ -404,7 +401,7 @@ public class ApiClient implements AutoCloseable {
         final Map<String, Object> formParams = request.getFormParams();
         final String serializedBody;
         if (body != null && !formParams.isEmpty()) {
-            throw new ApiException(500, "Cannot have body and form params");
+            throw new IllegalStateException("Request cannot have both form and body parameters.");
         }
         else if (body != null) {
             serializedBody = serialize(body);
@@ -449,7 +446,7 @@ public class ApiClient implements AutoCloseable {
         };
     }
 
-    private <T> ApiResponse<T> interpretConnectorResponse(ApiClientConnectorResponse response, TypeReference<T> returnType) throws Exception {
+    private <T> ApiResponse<T> interpretConnectorResponse(ApiClientConnectorResponse response, TypeReference<T> returnType) throws ApiException, IOException {
         int statusCode = response.getStatusCode();
         String reasonPhrase = response.getStatusReasonPhrase();
         Map<String, String> headers = response.getHeaders();
@@ -468,55 +465,7 @@ public class ApiClient implements AutoCloseable {
             else {
                 entity = null;
             }
-            return new ApiResponse<T>() {
-                @Override
-                public Exception getException() {
-                    return null;
-                }
-
-                @Override
-                public Integer getStatusCode() {
-                    return statusCode;
-                }
-
-                @Override
-                public String getStatusReasonPhrase() {
-                    return reasonPhrase;
-                }
-
-                @Override
-                public boolean hasRawBody() {
-                    return (body != null);
-                }
-
-                @Override
-                public String getRawBody() {
-                    return body;
-                }
-
-                @Override
-                public T getBody() {
-                    return entity;
-                }
-
-                @Override
-                public Map<String, String> getHeaders() {
-                    return headers;
-                }
-
-                @Override
-                public String getHeader(String key) {
-                    return headers.get(key);
-                }
-
-                @Override
-                public String getCorrelationId() {
-                    return getHeader("ININ-Correlation-ID");
-                }
-
-                @Override
-                public void close() throws Exception { }
-            };
+            return new ApiResponseWrapper<>(statusCode, reasonPhrase, headers, body, entity);
         }
         else {
             String message = "error";
@@ -525,10 +474,22 @@ public class ApiClient implements AutoCloseable {
         }
     }
 
-    private <T> ApiResponse<T> getAPIResponse(ApiRequest<?> request, TypeReference<T> returnType) throws Exception {
+    private <T> ApiResponse<T> getAPIResponse(ApiRequest<?> request, TypeReference<T> returnType) throws IOException, ApiException {
         ApiClientConnectorRequest connectorRequest = prepareConnectorRequest(request);
-        try (ApiClientConnectorResponse connectorResponse = connector.invoke(connectorRequest)) {
+        ApiClientConnectorResponse connectorResponse = null;
+        try {
+            connectorResponse = connector.invoke(connectorRequest);
             return interpretConnectorResponse(connectorResponse, returnType);
+        }
+        finally {
+            if (connectorResponse != null) {
+                try {
+                    connectorResponse.close();
+                }
+                catch (Throwable exception) {
+                    throw new RuntimeException(exception);
+                }
+            }
         }
     }
 
@@ -610,48 +571,55 @@ public class ApiClient implements AutoCloseable {
      * @param authNames    The authentications to apply
      * @return The response body in type of string
      */
-    public <T> ApiResponse<T> invokeAPIVerbose(String path, String method, List<Pair> queryParams, Object body, Map<String, String> headerParams, Map<String, Object> formParams, String accept, String contentType, String[] authNames, TypeReference<T> returnType) throws ApiException {
+    public <T> ApiResponse<T> invokeAPIVerbose(String path, String method, List<Pair> queryParams, Object body, Map<String, String> headerParams, Map<String, Object> formParams, String accept, String contentType, String[] authNames, TypeReference<T> returnType) throws ApiException, IOException {
         return invokeAPIVerbose(new ApiRequestWrapper<>(path, method, queryParams, body, headerParams, formParams, accept, contentType, authNames), returnType);
     }
 
-    public <T> ApiResponse<T> invokeAPIVerbose(ApiRequest<?> request, TypeReference<T> returnType) throws ApiException {
+    public <T> ApiResponse<T> invokeAPIVerbose(ApiRequest<?> request, TypeReference<T> returnType) throws ApiException, IOException {
         try {
             return getAPIResponse(request, returnType);
         }
-        catch (Exception exception) {
+        catch (ApiException exception) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<T> response = (ApiResponse<T>)exception;
+            return response;
+        }
+        catch (Throwable exception) {
             if (shouldThrowErrors) {
-                if (exception instanceof ApiException) {
-                    throw (ApiException)exception;
+                if (exception instanceof IOException) {
+                    throw (IOException) exception;
                 }
-                throw new ApiException(exception);
+                throw new IOException("Failed to complete HTTP request.", exception);
             }
             return new ApiExceptionResponse<>(exception);
         }
     }
 
     public <T> Future<ApiResponse<T>> invokeAPIVerboseAsync(ApiRequest<?> request, TypeReference<T> returnType, AsyncApiCallback<ApiResponse<T>> callback) {
-        if (shouldThrowErrors) {
-            return getAPIResponseAsync(request, returnType, callback);
-        }
-        else {
-            SettableFuture<ApiResponse<T>> future = SettableFuture.create();
-            getAPIResponseAsync(request, returnType, new AsyncApiCallback<ApiResponse<T>>() {
-                @Override
-                public void onCompleted(ApiResponse<T> response) {
+        SettableFuture<ApiResponse<T>> future = SettableFuture.create();
+        getAPIResponseAsync(request, returnType, new AsyncApiCallback<ApiResponse<T>>() {
+            @Override
+            public void onCompleted(ApiResponse<T> response) {
+                notifySuccess(future, callback, response);
+            }
+
+            @Override
+            public void onFailed(Throwable exception) {
+                if (exception instanceof ApiException) {
+                    @SuppressWarnings("unchecked")
+                    ApiResponse<T> response = (ApiResponse<T>)exception;
                     notifySuccess(future, callback, response);
                 }
-
-                @Override
-                public void onFailed(Throwable exception) {
-                    if (!(exception instanceof Exception)) {
-                        exception = new ExecutionException(exception);
-
-                    }
-                    notifySuccess(future, callback, new ApiExceptionResponse<>((Exception)exception));
+                else if (shouldThrowErrors) {
+                    notifyFailure(future, callback, exception);
                 }
-            });
-            return future;
-        }
+                else {
+                    notifySuccess(future, callback, new ApiExceptionResponse<>(exception));
+
+                }
+            }
+        });
+        return future;
     }
 
     /**
@@ -668,7 +636,7 @@ public class ApiClient implements AutoCloseable {
      * @param authNames    The authentications to apply
      * @return The response body in type of string
      */
-    public <T> T invokeAPI(String path, String method, List<Pair> queryParams, Object body, Map<String, String> headerParams, Map<String, Object> formParams, String accept, String contentType, String[] authNames, TypeReference<T> returnType) throws ApiException {
+    public <T> T invokeAPI(String path, String method, List<Pair> queryParams, Object body, Map<String, String> headerParams, Map<String, Object> formParams, String accept, String contentType, String[] authNames, TypeReference<T> returnType) throws ApiException, IOException {
         T response = null;
         try {
             response = invokeAPIVerbose(path, method, queryParams, body, headerParams, formParams, accept, contentType, authNames, returnType).getBody();
@@ -687,7 +655,7 @@ public class ApiClient implements AutoCloseable {
      * @param request The request object
      * @return The response body in type of string
      */
-    public <T> T invokeAPI(ApiRequest<?> request, TypeReference<T> returnType) throws ApiException {
+    public <T> T invokeAPI(ApiRequest<?> request, TypeReference<T> returnType) throws ApiException, IOException {
         T response = null;
         try {
             response = invokeAPIVerbose(request, returnType).getBody();
@@ -710,7 +678,7 @@ public class ApiClient implements AutoCloseable {
 
             @Override
             public void onFailed(Throwable exception) {
-                notifySuccess(future, callback, null);
+                notifyFailure(future, callback, exception);
             }
         });
         return future;
@@ -836,6 +804,11 @@ public class ApiClient implements AutoCloseable {
 
         public Builder withDetailLevel(DetailLevel detailLevel) {
             properties.setProperty(ApiClientConnectorProperty.DETAIL_LEVEL, detailLevel);
+            return this;
+        }
+
+        public Builder withProxy(Proxy proxy) {
+            properties.setProperty(ApiClientConnectorProperty.PROXY, proxy);
             return this;
         }
 
@@ -967,11 +940,75 @@ public class ApiClient implements AutoCloseable {
         }
     }
 
+    private static class ApiResponseWrapper<T> implements ApiResponse<T> {
+        private final int statusCode;
+        private final String reasonPhrase;
+        private final Map<String, String> headers;
+        private final String body;
+        private final T entity;
+
+        public ApiResponseWrapper(int statusCode, String reasonPhrase, Map<String, String> headers, String body, T entity) {
+            this.statusCode = statusCode;
+            this.reasonPhrase = reasonPhrase;
+            this.headers = Collections.unmodifiableMap(headers);
+            this.body = body;
+            this.entity = entity;
+        }
+
+        @Override
+        public Exception getException() {
+            return null;
+        }
+
+        @Override
+        public Integer getStatusCode() {
+            return statusCode;
+        }
+
+        @Override
+        public String getStatusReasonPhrase() {
+            return reasonPhrase;
+        }
+
+        @Override
+        public boolean hasRawBody() {
+            return (body != null && !body.isEmpty());
+        }
+
+        @Override
+        public String getRawBody() {
+            return body;
+        }
+
+        @Override
+        public T getBody() {
+            return entity;
+        }
+
+        @Override
+        public Map<String, String> getHeaders() {
+            return headers;
+        }
+
+        @Override
+        public String getHeader(String key) {
+            return headers.get(key);
+        }
+
+        @Override
+        public String getCorrelationId() {
+            return headers.get("ININ-Correlation-ID");
+        }
+
+        @Override
+        public void close() throws Exception { }
+    }
+
     private static class ApiExceptionResponse<T> implements ApiResponse<T> {
         private final Exception exception;
 
-        public ApiExceptionResponse(Exception exception) {
-            this.exception = exception;
+        public ApiExceptionResponse(Throwable exception) {
+            this.exception = (exception instanceof Exception) ? (Exception)exception : new RuntimeException(exception);
         }
 
         @Override

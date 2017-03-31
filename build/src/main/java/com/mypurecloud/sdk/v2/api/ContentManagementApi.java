@@ -81,6 +81,7 @@ import com.mypurecloud.sdk.v2.api.request.PutContentmanagementWorkspaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutContentmanagementWorkspaceMemberRequest;
 import com.mypurecloud.sdk.v2.api.request.PutContentmanagementWorkspaceTagvalueRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -105,7 +106,7 @@ public class ContentManagementApi {
    * @param override Override any lock on the document (optional)
    * @throws ApiException if fails to make API call
    */
-  public void deleteContentmanagementDocument(String documentId, Boolean override) throws ApiException {
+  public void deleteContentmanagementDocument(String documentId, Boolean override) throws IOException, ApiException {
     deleteContentmanagementDocumentWithHttpInfo(documentId, override);
   }
 
@@ -116,12 +117,12 @@ public class ContentManagementApi {
    * @param override Override any lock on the document (optional)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteContentmanagementDocumentWithHttpInfo(String documentId, Boolean override) throws ApiException {
+  public ApiResponse<Void> deleteContentmanagementDocumentWithHttpInfo(String documentId, Boolean override) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'documentId' is set
     if (documentId == null) {
-      throw new ApiException(400, "Missing the required parameter 'documentId' when calling deleteContentmanagementDocument");
+      throw new IllegalArgumentException("Missing the required parameter 'documentId' when calling deleteContentmanagementDocument");
     }
     
     // create path and map variables
@@ -158,7 +159,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteContentmanagementDocument(DeleteContentmanagementDocumentRequest request) throws ApiException {
+  public void deleteContentmanagementDocument(DeleteContentmanagementDocumentRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -168,7 +169,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteContentmanagementDocument(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteContentmanagementDocument(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -178,7 +179,7 @@ public class ContentManagementApi {
    * @param shareId Share ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteContentmanagementShare(String shareId) throws ApiException {
+  public void deleteContentmanagementShare(String shareId) throws IOException, ApiException {
     deleteContentmanagementShareWithHttpInfo(shareId);
   }
 
@@ -188,12 +189,12 @@ public class ContentManagementApi {
    * @param shareId Share ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteContentmanagementShareWithHttpInfo(String shareId) throws ApiException {
+  public ApiResponse<Void> deleteContentmanagementShareWithHttpInfo(String shareId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'shareId' is set
     if (shareId == null) {
-      throw new ApiException(400, "Missing the required parameter 'shareId' when calling deleteContentmanagementShare");
+      throw new IllegalArgumentException("Missing the required parameter 'shareId' when calling deleteContentmanagementShare");
     }
     
     // create path and map variables
@@ -229,7 +230,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteContentmanagementShare(DeleteContentmanagementShareRequest request) throws ApiException {
+  public void deleteContentmanagementShare(DeleteContentmanagementShareRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -239,7 +240,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteContentmanagementShare(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteContentmanagementShare(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -249,7 +250,7 @@ public class ContentManagementApi {
    * @param statusId Status ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteContentmanagementStatusStatusId(String statusId) throws ApiException {
+  public void deleteContentmanagementStatusStatusId(String statusId) throws IOException, ApiException {
     deleteContentmanagementStatusStatusIdWithHttpInfo(statusId);
   }
 
@@ -259,12 +260,12 @@ public class ContentManagementApi {
    * @param statusId Status ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteContentmanagementStatusStatusIdWithHttpInfo(String statusId) throws ApiException {
+  public ApiResponse<Void> deleteContentmanagementStatusStatusIdWithHttpInfo(String statusId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'statusId' is set
     if (statusId == null) {
-      throw new ApiException(400, "Missing the required parameter 'statusId' when calling deleteContentmanagementStatusStatusId");
+      throw new IllegalArgumentException("Missing the required parameter 'statusId' when calling deleteContentmanagementStatusStatusId");
     }
     
     // create path and map variables
@@ -300,7 +301,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteContentmanagementStatusStatusId(DeleteContentmanagementStatusStatusIdRequest request) throws ApiException {
+  public void deleteContentmanagementStatusStatusId(DeleteContentmanagementStatusStatusIdRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -310,7 +311,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteContentmanagementStatusStatusId(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteContentmanagementStatusStatusId(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -321,7 +322,7 @@ public class ContentManagementApi {
    * @param moveChildrenToWorkspaceId New location for objects in deleted workspace. (optional)
    * @throws ApiException if fails to make API call
    */
-  public void deleteContentmanagementWorkspace(String workspaceId, String moveChildrenToWorkspaceId) throws ApiException {
+  public void deleteContentmanagementWorkspace(String workspaceId, String moveChildrenToWorkspaceId) throws IOException, ApiException {
     deleteContentmanagementWorkspaceWithHttpInfo(workspaceId, moveChildrenToWorkspaceId);
   }
 
@@ -332,12 +333,12 @@ public class ContentManagementApi {
    * @param moveChildrenToWorkspaceId New location for objects in deleted workspace. (optional)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteContentmanagementWorkspaceWithHttpInfo(String workspaceId, String moveChildrenToWorkspaceId) throws ApiException {
+  public ApiResponse<Void> deleteContentmanagementWorkspaceWithHttpInfo(String workspaceId, String moveChildrenToWorkspaceId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'workspaceId' is set
     if (workspaceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'workspaceId' when calling deleteContentmanagementWorkspace");
+      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling deleteContentmanagementWorkspace");
     }
     
     // create path and map variables
@@ -374,7 +375,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteContentmanagementWorkspace(DeleteContentmanagementWorkspaceRequest request) throws ApiException {
+  public void deleteContentmanagementWorkspace(DeleteContentmanagementWorkspaceRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -384,7 +385,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteContentmanagementWorkspace(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteContentmanagementWorkspace(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -395,7 +396,7 @@ public class ContentManagementApi {
    * @param memberId Member ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteContentmanagementWorkspaceMember(String workspaceId, String memberId) throws ApiException {
+  public void deleteContentmanagementWorkspaceMember(String workspaceId, String memberId) throws IOException, ApiException {
     deleteContentmanagementWorkspaceMemberWithHttpInfo(workspaceId, memberId);
   }
 
@@ -406,17 +407,17 @@ public class ContentManagementApi {
    * @param memberId Member ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteContentmanagementWorkspaceMemberWithHttpInfo(String workspaceId, String memberId) throws ApiException {
+  public ApiResponse<Void> deleteContentmanagementWorkspaceMemberWithHttpInfo(String workspaceId, String memberId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'workspaceId' is set
     if (workspaceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'workspaceId' when calling deleteContentmanagementWorkspaceMember");
+      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling deleteContentmanagementWorkspaceMember");
     }
     
     // verify the required parameter 'memberId' is set
     if (memberId == null) {
-      throw new ApiException(400, "Missing the required parameter 'memberId' when calling deleteContentmanagementWorkspaceMember");
+      throw new IllegalArgumentException("Missing the required parameter 'memberId' when calling deleteContentmanagementWorkspaceMember");
     }
     
     // create path and map variables
@@ -453,7 +454,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteContentmanagementWorkspaceMember(DeleteContentmanagementWorkspaceMemberRequest request) throws ApiException {
+  public void deleteContentmanagementWorkspaceMember(DeleteContentmanagementWorkspaceMemberRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -463,7 +464,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteContentmanagementWorkspaceMember(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteContentmanagementWorkspaceMember(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -474,7 +475,7 @@ public class ContentManagementApi {
    * @param tagId Tag ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteContentmanagementWorkspaceTagvalue(String workspaceId, String tagId) throws ApiException {
+  public void deleteContentmanagementWorkspaceTagvalue(String workspaceId, String tagId) throws IOException, ApiException {
     deleteContentmanagementWorkspaceTagvalueWithHttpInfo(workspaceId, tagId);
   }
 
@@ -485,17 +486,17 @@ public class ContentManagementApi {
    * @param tagId Tag ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteContentmanagementWorkspaceTagvalueWithHttpInfo(String workspaceId, String tagId) throws ApiException {
+  public ApiResponse<Void> deleteContentmanagementWorkspaceTagvalueWithHttpInfo(String workspaceId, String tagId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'workspaceId' is set
     if (workspaceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'workspaceId' when calling deleteContentmanagementWorkspaceTagvalue");
+      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling deleteContentmanagementWorkspaceTagvalue");
     }
     
     // verify the required parameter 'tagId' is set
     if (tagId == null) {
-      throw new ApiException(400, "Missing the required parameter 'tagId' when calling deleteContentmanagementWorkspaceTagvalue");
+      throw new IllegalArgumentException("Missing the required parameter 'tagId' when calling deleteContentmanagementWorkspaceTagvalue");
     }
     
     // create path and map variables
@@ -532,7 +533,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteContentmanagementWorkspaceTagvalue(DeleteContentmanagementWorkspaceTagvalueRequest request) throws ApiException {
+  public void deleteContentmanagementWorkspaceTagvalue(DeleteContentmanagementWorkspaceTagvalueRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -542,7 +543,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteContentmanagementWorkspaceTagvalue(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteContentmanagementWorkspaceTagvalue(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -554,7 +555,7 @@ public class ContentManagementApi {
    * @return Document
    * @throws ApiException if fails to make API call
    */
-  public Document getContentmanagementDocument(String documentId, List<String> expand) throws ApiException {
+  public Document getContentmanagementDocument(String documentId, List<String> expand) throws IOException, ApiException {
     return getContentmanagementDocumentWithHttpInfo(documentId, expand).getBody();
   }
 
@@ -566,12 +567,12 @@ public class ContentManagementApi {
    * @return Document
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Document> getContentmanagementDocumentWithHttpInfo(String documentId, List<String> expand) throws ApiException {
+  public ApiResponse<Document> getContentmanagementDocumentWithHttpInfo(String documentId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'documentId' is set
     if (documentId == null) {
-      throw new ApiException(400, "Missing the required parameter 'documentId' when calling getContentmanagementDocument");
+      throw new IllegalArgumentException("Missing the required parameter 'documentId' when calling getContentmanagementDocument");
     }
     
     // create path and map variables
@@ -608,7 +609,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Document getContentmanagementDocument(GetContentmanagementDocumentRequest request) throws ApiException {
+  public Document getContentmanagementDocument(GetContentmanagementDocumentRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Document>() {});
   }
 
@@ -618,7 +619,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Document> getContentmanagementDocument(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Document> getContentmanagementDocument(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Document>invokeAPIVerbose(request, new TypeReference<Document>() {});
   }
 
@@ -635,7 +636,7 @@ public class ContentManagementApi {
    * @return DocumentAuditEntityListing
    * @throws ApiException if fails to make API call
    */
-  public DocumentAuditEntityListing getContentmanagementDocumentAudits(String documentId, Integer pageSize, Integer pageNumber, String transactionFilter, String level, String sortBy, String sortOrder) throws ApiException {
+  public DocumentAuditEntityListing getContentmanagementDocumentAudits(String documentId, Integer pageSize, Integer pageNumber, String transactionFilter, String level, String sortBy, String sortOrder) throws IOException, ApiException {
     return getContentmanagementDocumentAuditsWithHttpInfo(documentId, pageSize, pageNumber, transactionFilter, level, sortBy, sortOrder).getBody();
   }
 
@@ -652,12 +653,12 @@ public class ContentManagementApi {
    * @return DocumentAuditEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DocumentAuditEntityListing> getContentmanagementDocumentAuditsWithHttpInfo(String documentId, Integer pageSize, Integer pageNumber, String transactionFilter, String level, String sortBy, String sortOrder) throws ApiException {
+  public ApiResponse<DocumentAuditEntityListing> getContentmanagementDocumentAuditsWithHttpInfo(String documentId, Integer pageSize, Integer pageNumber, String transactionFilter, String level, String sortBy, String sortOrder) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'documentId' is set
     if (documentId == null) {
-      throw new ApiException(400, "Missing the required parameter 'documentId' when calling getContentmanagementDocumentAudits");
+      throw new IllegalArgumentException("Missing the required parameter 'documentId' when calling getContentmanagementDocumentAudits");
     }
     
     // create path and map variables
@@ -699,7 +700,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DocumentAuditEntityListing getContentmanagementDocumentAudits(GetContentmanagementDocumentAuditsRequest request) throws ApiException {
+  public DocumentAuditEntityListing getContentmanagementDocumentAudits(GetContentmanagementDocumentAuditsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DocumentAuditEntityListing>() {});
   }
 
@@ -709,7 +710,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DocumentAuditEntityListing> getContentmanagementDocumentAudits(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<DocumentAuditEntityListing> getContentmanagementDocumentAudits(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<DocumentAuditEntityListing>invokeAPIVerbose(request, new TypeReference<DocumentAuditEntityListing>() {});
   }
 
@@ -722,7 +723,7 @@ public class ContentManagementApi {
    * @return DownloadResponse
    * @throws ApiException if fails to make API call
    */
-  public DownloadResponse getContentmanagementDocumentContent(String documentId, String disposition, String contentType) throws ApiException {
+  public DownloadResponse getContentmanagementDocumentContent(String documentId, String disposition, String contentType) throws IOException, ApiException {
     return getContentmanagementDocumentContentWithHttpInfo(documentId, disposition, contentType).getBody();
   }
 
@@ -735,12 +736,12 @@ public class ContentManagementApi {
    * @return DownloadResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DownloadResponse> getContentmanagementDocumentContentWithHttpInfo(String documentId, String disposition, String contentType) throws ApiException {
+  public ApiResponse<DownloadResponse> getContentmanagementDocumentContentWithHttpInfo(String documentId, String disposition, String contentType) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'documentId' is set
     if (documentId == null) {
-      throw new ApiException(400, "Missing the required parameter 'documentId' when calling getContentmanagementDocumentContent");
+      throw new IllegalArgumentException("Missing the required parameter 'documentId' when calling getContentmanagementDocumentContent");
     }
     
     // create path and map variables
@@ -778,7 +779,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DownloadResponse getContentmanagementDocumentContent(GetContentmanagementDocumentContentRequest request) throws ApiException {
+  public DownloadResponse getContentmanagementDocumentContent(GetContentmanagementDocumentContentRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DownloadResponse>() {});
   }
 
@@ -788,7 +789,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DownloadResponse> getContentmanagementDocumentContent(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<DownloadResponse> getContentmanagementDocumentContent(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<DownloadResponse>invokeAPIVerbose(request, new TypeReference<DownloadResponse>() {});
   }
 
@@ -805,7 +806,7 @@ public class ContentManagementApi {
    * @return DocumentEntityListing
    * @throws ApiException if fails to make API call
    */
-  public DocumentEntityListing getContentmanagementDocuments(String workspaceId, String name, List<String> expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws ApiException {
+  public DocumentEntityListing getContentmanagementDocuments(String workspaceId, String name, List<String> expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException, ApiException {
     return getContentmanagementDocumentsWithHttpInfo(workspaceId, name, expand, pageSize, pageNumber, sortBy, sortOrder).getBody();
   }
 
@@ -822,12 +823,12 @@ public class ContentManagementApi {
    * @return DocumentEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DocumentEntityListing> getContentmanagementDocumentsWithHttpInfo(String workspaceId, String name, List<String> expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws ApiException {
+  public ApiResponse<DocumentEntityListing> getContentmanagementDocumentsWithHttpInfo(String workspaceId, String name, List<String> expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'workspaceId' is set
     if (workspaceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'workspaceId' when calling getContentmanagementDocuments");
+      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling getContentmanagementDocuments");
     }
     
     // create path and map variables
@@ -869,7 +870,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DocumentEntityListing getContentmanagementDocuments(GetContentmanagementDocumentsRequest request) throws ApiException {
+  public DocumentEntityListing getContentmanagementDocuments(GetContentmanagementDocumentsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DocumentEntityListing>() {});
   }
 
@@ -879,7 +880,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DocumentEntityListing> getContentmanagementDocuments(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<DocumentEntityListing> getContentmanagementDocuments(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<DocumentEntityListing>invokeAPIVerbose(request, new TypeReference<DocumentEntityListing>() {});
   }
 
@@ -895,7 +896,7 @@ public class ContentManagementApi {
    * @return QueryResults
    * @throws ApiException if fails to make API call
    */
-  public QueryResults getContentmanagementQuery(String queryPhrase, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, List<String> expand) throws ApiException {
+  public QueryResults getContentmanagementQuery(String queryPhrase, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, List<String> expand) throws IOException, ApiException {
     return getContentmanagementQueryWithHttpInfo(queryPhrase, pageSize, pageNumber, sortBy, sortOrder, expand).getBody();
   }
 
@@ -911,12 +912,12 @@ public class ContentManagementApi {
    * @return QueryResults
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<QueryResults> getContentmanagementQueryWithHttpInfo(String queryPhrase, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, List<String> expand) throws ApiException {
+  public ApiResponse<QueryResults> getContentmanagementQueryWithHttpInfo(String queryPhrase, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'queryPhrase' is set
     if (queryPhrase == null) {
-      throw new ApiException(400, "Missing the required parameter 'queryPhrase' when calling getContentmanagementQuery");
+      throw new IllegalArgumentException("Missing the required parameter 'queryPhrase' when calling getContentmanagementQuery");
     }
     
     // create path and map variables
@@ -957,7 +958,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public QueryResults getContentmanagementQuery(GetContentmanagementQueryRequest request) throws ApiException {
+  public QueryResults getContentmanagementQuery(GetContentmanagementQueryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<QueryResults>() {});
   }
 
@@ -967,7 +968,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<QueryResults> getContentmanagementQuery(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<QueryResults> getContentmanagementQuery(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<QueryResults>invokeAPIVerbose(request, new TypeReference<QueryResults>() {});
   }
 
@@ -978,7 +979,7 @@ public class ContentManagementApi {
    * @return SecurityProfile
    * @throws ApiException if fails to make API call
    */
-  public SecurityProfile getContentmanagementSecurityprofile(String securityProfileId) throws ApiException {
+  public SecurityProfile getContentmanagementSecurityprofile(String securityProfileId) throws IOException, ApiException {
     return getContentmanagementSecurityprofileWithHttpInfo(securityProfileId).getBody();
   }
 
@@ -989,12 +990,12 @@ public class ContentManagementApi {
    * @return SecurityProfile
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SecurityProfile> getContentmanagementSecurityprofileWithHttpInfo(String securityProfileId) throws ApiException {
+  public ApiResponse<SecurityProfile> getContentmanagementSecurityprofileWithHttpInfo(String securityProfileId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'securityProfileId' is set
     if (securityProfileId == null) {
-      throw new ApiException(400, "Missing the required parameter 'securityProfileId' when calling getContentmanagementSecurityprofile");
+      throw new IllegalArgumentException("Missing the required parameter 'securityProfileId' when calling getContentmanagementSecurityprofile");
     }
     
     // create path and map variables
@@ -1030,7 +1031,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public SecurityProfile getContentmanagementSecurityprofile(GetContentmanagementSecurityprofileRequest request) throws ApiException {
+  public SecurityProfile getContentmanagementSecurityprofile(GetContentmanagementSecurityprofileRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SecurityProfile>() {});
   }
 
@@ -1040,7 +1041,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SecurityProfile> getContentmanagementSecurityprofile(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<SecurityProfile> getContentmanagementSecurityprofile(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<SecurityProfile>invokeAPIVerbose(request, new TypeReference<SecurityProfile>() {});
   }
 
@@ -1050,7 +1051,7 @@ public class ContentManagementApi {
    * @return SecurityProfileEntityListing
    * @throws ApiException if fails to make API call
    */
-  public SecurityProfileEntityListing getContentmanagementSecurityprofiles() throws ApiException {
+  public SecurityProfileEntityListing getContentmanagementSecurityprofiles() throws IOException, ApiException {
     return getContentmanagementSecurityprofilesWithHttpInfo().getBody();
   }
 
@@ -1060,7 +1061,7 @@ public class ContentManagementApi {
    * @return SecurityProfileEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SecurityProfileEntityListing> getContentmanagementSecurityprofilesWithHttpInfo() throws ApiException {
+  public ApiResponse<SecurityProfileEntityListing> getContentmanagementSecurityprofilesWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1095,7 +1096,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public SecurityProfileEntityListing getContentmanagementSecurityprofiles(GetContentmanagementSecurityprofilesRequest request) throws ApiException {
+  public SecurityProfileEntityListing getContentmanagementSecurityprofiles(GetContentmanagementSecurityprofilesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SecurityProfileEntityListing>() {});
   }
 
@@ -1105,7 +1106,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SecurityProfileEntityListing> getContentmanagementSecurityprofiles(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<SecurityProfileEntityListing> getContentmanagementSecurityprofiles(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<SecurityProfileEntityListing>invokeAPIVerbose(request, new TypeReference<SecurityProfileEntityListing>() {});
   }
 
@@ -1117,7 +1118,7 @@ public class ContentManagementApi {
    * @return Share
    * @throws ApiException if fails to make API call
    */
-  public Share getContentmanagementShare(String shareId, List<String> expand) throws ApiException {
+  public Share getContentmanagementShare(String shareId, List<String> expand) throws IOException, ApiException {
     return getContentmanagementShareWithHttpInfo(shareId, expand).getBody();
   }
 
@@ -1129,12 +1130,12 @@ public class ContentManagementApi {
    * @return Share
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Share> getContentmanagementShareWithHttpInfo(String shareId, List<String> expand) throws ApiException {
+  public ApiResponse<Share> getContentmanagementShareWithHttpInfo(String shareId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'shareId' is set
     if (shareId == null) {
-      throw new ApiException(400, "Missing the required parameter 'shareId' when calling getContentmanagementShare");
+      throw new IllegalArgumentException("Missing the required parameter 'shareId' when calling getContentmanagementShare");
     }
     
     // create path and map variables
@@ -1171,7 +1172,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Share getContentmanagementShare(GetContentmanagementShareRequest request) throws ApiException {
+  public Share getContentmanagementShare(GetContentmanagementShareRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Share>() {});
   }
 
@@ -1181,7 +1182,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Share> getContentmanagementShare(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Share> getContentmanagementShare(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Share>invokeAPIVerbose(request, new TypeReference<Share>() {});
   }
 
@@ -1196,7 +1197,7 @@ public class ContentManagementApi {
    * @return SharedResponse
    * @throws ApiException if fails to make API call
    */
-  public SharedResponse getContentmanagementSharedSharedId(String sharedId, Boolean redirect, String disposition, String contentType, String expand) throws ApiException {
+  public SharedResponse getContentmanagementSharedSharedId(String sharedId, Boolean redirect, String disposition, String contentType, String expand) throws IOException, ApiException {
     return getContentmanagementSharedSharedIdWithHttpInfo(sharedId, redirect, disposition, contentType, expand).getBody();
   }
 
@@ -1211,12 +1212,12 @@ public class ContentManagementApi {
    * @return SharedResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SharedResponse> getContentmanagementSharedSharedIdWithHttpInfo(String sharedId, Boolean redirect, String disposition, String contentType, String expand) throws ApiException {
+  public ApiResponse<SharedResponse> getContentmanagementSharedSharedIdWithHttpInfo(String sharedId, Boolean redirect, String disposition, String contentType, String expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'sharedId' is set
     if (sharedId == null) {
-      throw new ApiException(400, "Missing the required parameter 'sharedId' when calling getContentmanagementSharedSharedId");
+      throw new IllegalArgumentException("Missing the required parameter 'sharedId' when calling getContentmanagementSharedSharedId");
     }
     
     // create path and map variables
@@ -1256,7 +1257,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public SharedResponse getContentmanagementSharedSharedId(GetContentmanagementSharedSharedIdRequest request) throws ApiException {
+  public SharedResponse getContentmanagementSharedSharedId(GetContentmanagementSharedSharedIdRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SharedResponse>() {});
   }
 
@@ -1266,7 +1267,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SharedResponse> getContentmanagementSharedSharedId(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<SharedResponse> getContentmanagementSharedSharedId(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<SharedResponse>invokeAPIVerbose(request, new TypeReference<SharedResponse>() {});
   }
 
@@ -1280,7 +1281,7 @@ public class ContentManagementApi {
    * @return ShareEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ShareEntityListing getContentmanagementShares(String entityId, List<String> expand, Integer pageSize, Integer pageNumber) throws ApiException {
+  public ShareEntityListing getContentmanagementShares(String entityId, List<String> expand, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return getContentmanagementSharesWithHttpInfo(entityId, expand, pageSize, pageNumber).getBody();
   }
 
@@ -1294,7 +1295,7 @@ public class ContentManagementApi {
    * @return ShareEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ShareEntityListing> getContentmanagementSharesWithHttpInfo(String entityId, List<String> expand, Integer pageSize, Integer pageNumber) throws ApiException {
+  public ApiResponse<ShareEntityListing> getContentmanagementSharesWithHttpInfo(String entityId, List<String> expand, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1333,7 +1334,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ShareEntityListing getContentmanagementShares(GetContentmanagementSharesRequest request) throws ApiException {
+  public ShareEntityListing getContentmanagementShares(GetContentmanagementSharesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ShareEntityListing>() {});
   }
 
@@ -1343,7 +1344,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ShareEntityListing> getContentmanagementShares(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ShareEntityListing> getContentmanagementShares(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ShareEntityListing>invokeAPIVerbose(request, new TypeReference<ShareEntityListing>() {});
   }
 
@@ -1355,7 +1356,7 @@ public class ContentManagementApi {
    * @return CommandStatusEntityListing
    * @throws ApiException if fails to make API call
    */
-  public CommandStatusEntityListing getContentmanagementStatus(Integer pageSize, Integer pageNumber) throws ApiException {
+  public CommandStatusEntityListing getContentmanagementStatus(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return getContentmanagementStatusWithHttpInfo(pageSize, pageNumber).getBody();
   }
 
@@ -1367,7 +1368,7 @@ public class ContentManagementApi {
    * @return CommandStatusEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CommandStatusEntityListing> getContentmanagementStatusWithHttpInfo(Integer pageSize, Integer pageNumber) throws ApiException {
+  public ApiResponse<CommandStatusEntityListing> getContentmanagementStatusWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1404,7 +1405,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CommandStatusEntityListing getContentmanagementStatus(GetContentmanagementStatusRequest request) throws ApiException {
+  public CommandStatusEntityListing getContentmanagementStatus(GetContentmanagementStatusRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CommandStatusEntityListing>() {});
   }
 
@@ -1414,7 +1415,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CommandStatusEntityListing> getContentmanagementStatus(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CommandStatusEntityListing> getContentmanagementStatus(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CommandStatusEntityListing>invokeAPIVerbose(request, new TypeReference<CommandStatusEntityListing>() {});
   }
 
@@ -1425,7 +1426,7 @@ public class ContentManagementApi {
    * @return CommandStatus
    * @throws ApiException if fails to make API call
    */
-  public CommandStatus getContentmanagementStatusStatusId(String statusId) throws ApiException {
+  public CommandStatus getContentmanagementStatusStatusId(String statusId) throws IOException, ApiException {
     return getContentmanagementStatusStatusIdWithHttpInfo(statusId).getBody();
   }
 
@@ -1436,12 +1437,12 @@ public class ContentManagementApi {
    * @return CommandStatus
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CommandStatus> getContentmanagementStatusStatusIdWithHttpInfo(String statusId) throws ApiException {
+  public ApiResponse<CommandStatus> getContentmanagementStatusStatusIdWithHttpInfo(String statusId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'statusId' is set
     if (statusId == null) {
-      throw new ApiException(400, "Missing the required parameter 'statusId' when calling getContentmanagementStatusStatusId");
+      throw new IllegalArgumentException("Missing the required parameter 'statusId' when calling getContentmanagementStatusStatusId");
     }
     
     // create path and map variables
@@ -1477,7 +1478,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CommandStatus getContentmanagementStatusStatusId(GetContentmanagementStatusStatusIdRequest request) throws ApiException {
+  public CommandStatus getContentmanagementStatusStatusId(GetContentmanagementStatusStatusIdRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CommandStatus>() {});
   }
 
@@ -1487,7 +1488,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CommandStatus> getContentmanagementStatusStatusId(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<CommandStatus> getContentmanagementStatusStatusId(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<CommandStatus>invokeAPIVerbose(request, new TypeReference<CommandStatus>() {});
   }
 
@@ -1497,7 +1498,7 @@ public class ContentManagementApi {
    * @return Usage
    * @throws ApiException if fails to make API call
    */
-  public Usage getContentmanagementUsage() throws ApiException {
+  public Usage getContentmanagementUsage() throws IOException, ApiException {
     return getContentmanagementUsageWithHttpInfo().getBody();
   }
 
@@ -1507,7 +1508,7 @@ public class ContentManagementApi {
    * @return Usage
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Usage> getContentmanagementUsageWithHttpInfo() throws ApiException {
+  public ApiResponse<Usage> getContentmanagementUsageWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -1542,7 +1543,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Usage getContentmanagementUsage(GetContentmanagementUsageRequest request) throws ApiException {
+  public Usage getContentmanagementUsage(GetContentmanagementUsageRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Usage>() {});
   }
 
@@ -1552,7 +1553,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Usage> getContentmanagementUsage(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Usage> getContentmanagementUsage(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Usage>invokeAPIVerbose(request, new TypeReference<Usage>() {});
   }
 
@@ -1564,7 +1565,7 @@ public class ContentManagementApi {
    * @return Workspace
    * @throws ApiException if fails to make API call
    */
-  public Workspace getContentmanagementWorkspace(String workspaceId, List<String> expand) throws ApiException {
+  public Workspace getContentmanagementWorkspace(String workspaceId, List<String> expand) throws IOException, ApiException {
     return getContentmanagementWorkspaceWithHttpInfo(workspaceId, expand).getBody();
   }
 
@@ -1576,12 +1577,12 @@ public class ContentManagementApi {
    * @return Workspace
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Workspace> getContentmanagementWorkspaceWithHttpInfo(String workspaceId, List<String> expand) throws ApiException {
+  public ApiResponse<Workspace> getContentmanagementWorkspaceWithHttpInfo(String workspaceId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'workspaceId' is set
     if (workspaceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'workspaceId' when calling getContentmanagementWorkspace");
+      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling getContentmanagementWorkspace");
     }
     
     // create path and map variables
@@ -1618,7 +1619,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Workspace getContentmanagementWorkspace(GetContentmanagementWorkspaceRequest request) throws ApiException {
+  public Workspace getContentmanagementWorkspace(GetContentmanagementWorkspaceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Workspace>() {});
   }
 
@@ -1628,7 +1629,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Workspace> getContentmanagementWorkspace(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Workspace> getContentmanagementWorkspace(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Workspace>invokeAPIVerbose(request, new TypeReference<Workspace>() {});
   }
 
@@ -1644,7 +1645,7 @@ public class ContentManagementApi {
    * @return DocumentEntityListing
    * @throws ApiException if fails to make API call
    */
-  public DocumentEntityListing getContentmanagementWorkspaceDocuments(String workspaceId, List<String> expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws ApiException {
+  public DocumentEntityListing getContentmanagementWorkspaceDocuments(String workspaceId, List<String> expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException, ApiException {
     return getContentmanagementWorkspaceDocumentsWithHttpInfo(workspaceId, expand, pageSize, pageNumber, sortBy, sortOrder).getBody();
   }
 
@@ -1660,12 +1661,12 @@ public class ContentManagementApi {
    * @return DocumentEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DocumentEntityListing> getContentmanagementWorkspaceDocumentsWithHttpInfo(String workspaceId, List<String> expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws ApiException {
+  public ApiResponse<DocumentEntityListing> getContentmanagementWorkspaceDocumentsWithHttpInfo(String workspaceId, List<String> expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'workspaceId' is set
     if (workspaceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'workspaceId' when calling getContentmanagementWorkspaceDocuments");
+      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling getContentmanagementWorkspaceDocuments");
     }
     
     // create path and map variables
@@ -1706,7 +1707,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DocumentEntityListing getContentmanagementWorkspaceDocuments(GetContentmanagementWorkspaceDocumentsRequest request) throws ApiException {
+  public DocumentEntityListing getContentmanagementWorkspaceDocuments(GetContentmanagementWorkspaceDocumentsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DocumentEntityListing>() {});
   }
 
@@ -1716,7 +1717,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DocumentEntityListing> getContentmanagementWorkspaceDocuments(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<DocumentEntityListing> getContentmanagementWorkspaceDocuments(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<DocumentEntityListing>invokeAPIVerbose(request, new TypeReference<DocumentEntityListing>() {});
   }
 
@@ -1729,7 +1730,7 @@ public class ContentManagementApi {
    * @return WorkspaceMember
    * @throws ApiException if fails to make API call
    */
-  public WorkspaceMember getContentmanagementWorkspaceMember(String workspaceId, String memberId, List<String> expand) throws ApiException {
+  public WorkspaceMember getContentmanagementWorkspaceMember(String workspaceId, String memberId, List<String> expand) throws IOException, ApiException {
     return getContentmanagementWorkspaceMemberWithHttpInfo(workspaceId, memberId, expand).getBody();
   }
 
@@ -1742,17 +1743,17 @@ public class ContentManagementApi {
    * @return WorkspaceMember
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WorkspaceMember> getContentmanagementWorkspaceMemberWithHttpInfo(String workspaceId, String memberId, List<String> expand) throws ApiException {
+  public ApiResponse<WorkspaceMember> getContentmanagementWorkspaceMemberWithHttpInfo(String workspaceId, String memberId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'workspaceId' is set
     if (workspaceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'workspaceId' when calling getContentmanagementWorkspaceMember");
+      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling getContentmanagementWorkspaceMember");
     }
     
     // verify the required parameter 'memberId' is set
     if (memberId == null) {
-      throw new ApiException(400, "Missing the required parameter 'memberId' when calling getContentmanagementWorkspaceMember");
+      throw new IllegalArgumentException("Missing the required parameter 'memberId' when calling getContentmanagementWorkspaceMember");
     }
     
     // create path and map variables
@@ -1790,7 +1791,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public WorkspaceMember getContentmanagementWorkspaceMember(GetContentmanagementWorkspaceMemberRequest request) throws ApiException {
+  public WorkspaceMember getContentmanagementWorkspaceMember(GetContentmanagementWorkspaceMemberRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WorkspaceMember>() {});
   }
 
@@ -1800,7 +1801,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WorkspaceMember> getContentmanagementWorkspaceMember(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<WorkspaceMember> getContentmanagementWorkspaceMember(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<WorkspaceMember>invokeAPIVerbose(request, new TypeReference<WorkspaceMember>() {});
   }
 
@@ -1814,7 +1815,7 @@ public class ContentManagementApi {
    * @return WorkspaceMemberEntityListing
    * @throws ApiException if fails to make API call
    */
-  public WorkspaceMemberEntityListing getContentmanagementWorkspaceMembers(String workspaceId, Integer pageSize, Integer pageNumber, List<String> expand) throws ApiException {
+  public WorkspaceMemberEntityListing getContentmanagementWorkspaceMembers(String workspaceId, Integer pageSize, Integer pageNumber, List<String> expand) throws IOException, ApiException {
     return getContentmanagementWorkspaceMembersWithHttpInfo(workspaceId, pageSize, pageNumber, expand).getBody();
   }
 
@@ -1828,12 +1829,12 @@ public class ContentManagementApi {
    * @return WorkspaceMemberEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WorkspaceMemberEntityListing> getContentmanagementWorkspaceMembersWithHttpInfo(String workspaceId, Integer pageSize, Integer pageNumber, List<String> expand) throws ApiException {
+  public ApiResponse<WorkspaceMemberEntityListing> getContentmanagementWorkspaceMembersWithHttpInfo(String workspaceId, Integer pageSize, Integer pageNumber, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'workspaceId' is set
     if (workspaceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'workspaceId' when calling getContentmanagementWorkspaceMembers");
+      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling getContentmanagementWorkspaceMembers");
     }
     
     // create path and map variables
@@ -1872,7 +1873,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public WorkspaceMemberEntityListing getContentmanagementWorkspaceMembers(GetContentmanagementWorkspaceMembersRequest request) throws ApiException {
+  public WorkspaceMemberEntityListing getContentmanagementWorkspaceMembers(GetContentmanagementWorkspaceMembersRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WorkspaceMemberEntityListing>() {});
   }
 
@@ -1882,7 +1883,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WorkspaceMemberEntityListing> getContentmanagementWorkspaceMembers(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<WorkspaceMemberEntityListing> getContentmanagementWorkspaceMembers(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<WorkspaceMemberEntityListing>invokeAPIVerbose(request, new TypeReference<WorkspaceMemberEntityListing>() {});
   }
 
@@ -1895,7 +1896,7 @@ public class ContentManagementApi {
    * @return TagValue
    * @throws ApiException if fails to make API call
    */
-  public TagValue getContentmanagementWorkspaceTagvalue(String workspaceId, String tagId, List<String> expand) throws ApiException {
+  public TagValue getContentmanagementWorkspaceTagvalue(String workspaceId, String tagId, List<String> expand) throws IOException, ApiException {
     return getContentmanagementWorkspaceTagvalueWithHttpInfo(workspaceId, tagId, expand).getBody();
   }
 
@@ -1908,17 +1909,17 @@ public class ContentManagementApi {
    * @return TagValue
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TagValue> getContentmanagementWorkspaceTagvalueWithHttpInfo(String workspaceId, String tagId, List<String> expand) throws ApiException {
+  public ApiResponse<TagValue> getContentmanagementWorkspaceTagvalueWithHttpInfo(String workspaceId, String tagId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'workspaceId' is set
     if (workspaceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'workspaceId' when calling getContentmanagementWorkspaceTagvalue");
+      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling getContentmanagementWorkspaceTagvalue");
     }
     
     // verify the required parameter 'tagId' is set
     if (tagId == null) {
-      throw new ApiException(400, "Missing the required parameter 'tagId' when calling getContentmanagementWorkspaceTagvalue");
+      throw new IllegalArgumentException("Missing the required parameter 'tagId' when calling getContentmanagementWorkspaceTagvalue");
     }
     
     // create path and map variables
@@ -1956,7 +1957,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public TagValue getContentmanagementWorkspaceTagvalue(GetContentmanagementWorkspaceTagvalueRequest request) throws ApiException {
+  public TagValue getContentmanagementWorkspaceTagvalue(GetContentmanagementWorkspaceTagvalueRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TagValue>() {});
   }
 
@@ -1966,7 +1967,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TagValue> getContentmanagementWorkspaceTagvalue(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<TagValue> getContentmanagementWorkspaceTagvalue(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<TagValue>invokeAPIVerbose(request, new TypeReference<TagValue>() {});
   }
 
@@ -1981,7 +1982,7 @@ public class ContentManagementApi {
    * @return TagValueEntityListing
    * @throws ApiException if fails to make API call
    */
-  public TagValueEntityListing getContentmanagementWorkspaceTagvalues(String workspaceId, String value, Integer pageSize, Integer pageNumber, List<String> expand) throws ApiException {
+  public TagValueEntityListing getContentmanagementWorkspaceTagvalues(String workspaceId, String value, Integer pageSize, Integer pageNumber, List<String> expand) throws IOException, ApiException {
     return getContentmanagementWorkspaceTagvaluesWithHttpInfo(workspaceId, value, pageSize, pageNumber, expand).getBody();
   }
 
@@ -1996,12 +1997,12 @@ public class ContentManagementApi {
    * @return TagValueEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TagValueEntityListing> getContentmanagementWorkspaceTagvaluesWithHttpInfo(String workspaceId, String value, Integer pageSize, Integer pageNumber, List<String> expand) throws ApiException {
+  public ApiResponse<TagValueEntityListing> getContentmanagementWorkspaceTagvaluesWithHttpInfo(String workspaceId, String value, Integer pageSize, Integer pageNumber, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'workspaceId' is set
     if (workspaceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'workspaceId' when calling getContentmanagementWorkspaceTagvalues");
+      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling getContentmanagementWorkspaceTagvalues");
     }
     
     // create path and map variables
@@ -2041,7 +2042,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public TagValueEntityListing getContentmanagementWorkspaceTagvalues(GetContentmanagementWorkspaceTagvaluesRequest request) throws ApiException {
+  public TagValueEntityListing getContentmanagementWorkspaceTagvalues(GetContentmanagementWorkspaceTagvaluesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TagValueEntityListing>() {});
   }
 
@@ -2051,7 +2052,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TagValueEntityListing> getContentmanagementWorkspaceTagvalues(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<TagValueEntityListing> getContentmanagementWorkspaceTagvalues(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<TagValueEntityListing>invokeAPIVerbose(request, new TypeReference<TagValueEntityListing>() {});
   }
 
@@ -2065,7 +2066,7 @@ public class ContentManagementApi {
    * @return WorkspaceEntityListing
    * @throws ApiException if fails to make API call
    */
-  public WorkspaceEntityListing getContentmanagementWorkspaces(Integer pageSize, Integer pageNumber, List<String> access, List<String> expand) throws ApiException {
+  public WorkspaceEntityListing getContentmanagementWorkspaces(Integer pageSize, Integer pageNumber, List<String> access, List<String> expand) throws IOException, ApiException {
     return getContentmanagementWorkspacesWithHttpInfo(pageSize, pageNumber, access, expand).getBody();
   }
 
@@ -2079,7 +2080,7 @@ public class ContentManagementApi {
    * @return WorkspaceEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WorkspaceEntityListing> getContentmanagementWorkspacesWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> access, List<String> expand) throws ApiException {
+  public ApiResponse<WorkspaceEntityListing> getContentmanagementWorkspacesWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> access, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -2118,7 +2119,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public WorkspaceEntityListing getContentmanagementWorkspaces(GetContentmanagementWorkspacesRequest request) throws ApiException {
+  public WorkspaceEntityListing getContentmanagementWorkspaces(GetContentmanagementWorkspacesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WorkspaceEntityListing>() {});
   }
 
@@ -2128,7 +2129,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WorkspaceEntityListing> getContentmanagementWorkspaces(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<WorkspaceEntityListing> getContentmanagementWorkspaces(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<WorkspaceEntityListing>invokeAPIVerbose(request, new TypeReference<WorkspaceEntityListing>() {});
   }
 
@@ -2139,7 +2140,7 @@ public class ContentManagementApi {
    * @return QueryResults
    * @throws ApiException if fails to make API call
    */
-  public QueryResults postContentmanagementAuditquery(ContentQueryRequest body) throws ApiException {
+  public QueryResults postContentmanagementAuditquery(ContentQueryRequest body) throws IOException, ApiException {
     return postContentmanagementAuditqueryWithHttpInfo(body).getBody();
   }
 
@@ -2150,12 +2151,12 @@ public class ContentManagementApi {
    * @return QueryResults
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<QueryResults> postContentmanagementAuditqueryWithHttpInfo(ContentQueryRequest body) throws ApiException {
+  public ApiResponse<QueryResults> postContentmanagementAuditqueryWithHttpInfo(ContentQueryRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postContentmanagementAuditquery");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postContentmanagementAuditquery");
     }
     
     // create path and map variables
@@ -2190,7 +2191,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public QueryResults postContentmanagementAuditquery(PostContentmanagementAuditqueryRequest request) throws ApiException {
+  public QueryResults postContentmanagementAuditquery(PostContentmanagementAuditqueryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<QueryResults>() {});
   }
 
@@ -2200,7 +2201,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<QueryResults> postContentmanagementAuditquery(ApiRequest<ContentQueryRequest> request) throws ApiException {
+  public ApiResponse<QueryResults> postContentmanagementAuditquery(ApiRequest<ContentQueryRequest> request) throws IOException, ApiException {
     return pcapiClient.<QueryResults>invokeAPIVerbose(request, new TypeReference<QueryResults>() {});
   }
 
@@ -2214,7 +2215,7 @@ public class ContentManagementApi {
    * @return Document
    * @throws ApiException if fails to make API call
    */
-  public Document postContentmanagementDocument(String documentId, DocumentUpdate body, String expand, Boolean override) throws ApiException {
+  public Document postContentmanagementDocument(String documentId, DocumentUpdate body, String expand, Boolean override) throws IOException, ApiException {
     return postContentmanagementDocumentWithHttpInfo(documentId, body, expand, override).getBody();
   }
 
@@ -2228,17 +2229,17 @@ public class ContentManagementApi {
    * @return Document
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Document> postContentmanagementDocumentWithHttpInfo(String documentId, DocumentUpdate body, String expand, Boolean override) throws ApiException {
+  public ApiResponse<Document> postContentmanagementDocumentWithHttpInfo(String documentId, DocumentUpdate body, String expand, Boolean override) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'documentId' is set
     if (documentId == null) {
-      throw new ApiException(400, "Missing the required parameter 'documentId' when calling postContentmanagementDocument");
+      throw new IllegalArgumentException("Missing the required parameter 'documentId' when calling postContentmanagementDocument");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postContentmanagementDocument");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postContentmanagementDocument");
     }
     
     // create path and map variables
@@ -2276,7 +2277,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Document postContentmanagementDocument(PostContentmanagementDocumentRequest request) throws ApiException {
+  public Document postContentmanagementDocument(PostContentmanagementDocumentRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Document>() {});
   }
 
@@ -2286,7 +2287,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Document> postContentmanagementDocument(ApiRequest<DocumentUpdate> request) throws ApiException {
+  public ApiResponse<Document> postContentmanagementDocument(ApiRequest<DocumentUpdate> request) throws IOException, ApiException {
     return pcapiClient.<Document>invokeAPIVerbose(request, new TypeReference<Document>() {});
   }
 
@@ -2299,7 +2300,7 @@ public class ContentManagementApi {
    * @return ReplaceResponse
    * @throws ApiException if fails to make API call
    */
-  public ReplaceResponse postContentmanagementDocumentContent(String documentId, ReplaceRequest body, Boolean override) throws ApiException {
+  public ReplaceResponse postContentmanagementDocumentContent(String documentId, ReplaceRequest body, Boolean override) throws IOException, ApiException {
     return postContentmanagementDocumentContentWithHttpInfo(documentId, body, override).getBody();
   }
 
@@ -2312,17 +2313,17 @@ public class ContentManagementApi {
    * @return ReplaceResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReplaceResponse> postContentmanagementDocumentContentWithHttpInfo(String documentId, ReplaceRequest body, Boolean override) throws ApiException {
+  public ApiResponse<ReplaceResponse> postContentmanagementDocumentContentWithHttpInfo(String documentId, ReplaceRequest body, Boolean override) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'documentId' is set
     if (documentId == null) {
-      throw new ApiException(400, "Missing the required parameter 'documentId' when calling postContentmanagementDocumentContent");
+      throw new IllegalArgumentException("Missing the required parameter 'documentId' when calling postContentmanagementDocumentContent");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postContentmanagementDocumentContent");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postContentmanagementDocumentContent");
     }
     
     // create path and map variables
@@ -2359,7 +2360,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ReplaceResponse postContentmanagementDocumentContent(PostContentmanagementDocumentContentRequest request) throws ApiException {
+  public ReplaceResponse postContentmanagementDocumentContent(PostContentmanagementDocumentContentRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ReplaceResponse>() {});
   }
 
@@ -2369,7 +2370,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReplaceResponse> postContentmanagementDocumentContent(ApiRequest<ReplaceRequest> request) throws ApiException {
+  public ApiResponse<ReplaceResponse> postContentmanagementDocumentContent(ApiRequest<ReplaceRequest> request) throws IOException, ApiException {
     return pcapiClient.<ReplaceResponse>invokeAPIVerbose(request, new TypeReference<ReplaceResponse>() {});
   }
 
@@ -2383,7 +2384,7 @@ public class ContentManagementApi {
    * @return Document
    * @throws ApiException if fails to make API call
    */
-  public Document postContentmanagementDocuments(DocumentUpload body, String copySource, String moveSource, Boolean override) throws ApiException {
+  public Document postContentmanagementDocuments(DocumentUpload body, String copySource, String moveSource, Boolean override) throws IOException, ApiException {
     return postContentmanagementDocumentsWithHttpInfo(body, copySource, moveSource, override).getBody();
   }
 
@@ -2397,12 +2398,12 @@ public class ContentManagementApi {
    * @return Document
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Document> postContentmanagementDocumentsWithHttpInfo(DocumentUpload body, String copySource, String moveSource, Boolean override) throws ApiException {
+  public ApiResponse<Document> postContentmanagementDocumentsWithHttpInfo(DocumentUpload body, String copySource, String moveSource, Boolean override) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postContentmanagementDocuments");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postContentmanagementDocuments");
     }
     
     // create path and map variables
@@ -2440,7 +2441,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Document postContentmanagementDocuments(PostContentmanagementDocumentsRequest request) throws ApiException {
+  public Document postContentmanagementDocuments(PostContentmanagementDocumentsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Document>() {});
   }
 
@@ -2450,7 +2451,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Document> postContentmanagementDocuments(ApiRequest<DocumentUpload> request) throws ApiException {
+  public ApiResponse<Document> postContentmanagementDocuments(ApiRequest<DocumentUpload> request) throws IOException, ApiException {
     return pcapiClient.<Document>invokeAPIVerbose(request, new TypeReference<Document>() {});
   }
 
@@ -2462,7 +2463,7 @@ public class ContentManagementApi {
    * @return QueryResults
    * @throws ApiException if fails to make API call
    */
-  public QueryResults postContentmanagementQuery(QueryRequest body, String expand) throws ApiException {
+  public QueryResults postContentmanagementQuery(QueryRequest body, String expand) throws IOException, ApiException {
     return postContentmanagementQueryWithHttpInfo(body, expand).getBody();
   }
 
@@ -2474,12 +2475,12 @@ public class ContentManagementApi {
    * @return QueryResults
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<QueryResults> postContentmanagementQueryWithHttpInfo(QueryRequest body, String expand) throws ApiException {
+  public ApiResponse<QueryResults> postContentmanagementQueryWithHttpInfo(QueryRequest body, String expand) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postContentmanagementQuery");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postContentmanagementQuery");
     }
     
     // create path and map variables
@@ -2515,7 +2516,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public QueryResults postContentmanagementQuery(PostContentmanagementQueryRequest request) throws ApiException {
+  public QueryResults postContentmanagementQuery(PostContentmanagementQueryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<QueryResults>() {});
   }
 
@@ -2525,7 +2526,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<QueryResults> postContentmanagementQuery(ApiRequest<QueryRequest> request) throws ApiException {
+  public ApiResponse<QueryResults> postContentmanagementQuery(ApiRequest<QueryRequest> request) throws IOException, ApiException {
     return pcapiClient.<QueryResults>invokeAPIVerbose(request, new TypeReference<QueryResults>() {});
   }
 
@@ -2536,7 +2537,7 @@ public class ContentManagementApi {
    * @return CreateShareResponse
    * @throws ApiException if fails to make API call
    */
-  public CreateShareResponse postContentmanagementShares(CreateShareRequest body) throws ApiException {
+  public CreateShareResponse postContentmanagementShares(CreateShareRequest body) throws IOException, ApiException {
     return postContentmanagementSharesWithHttpInfo(body).getBody();
   }
 
@@ -2547,12 +2548,12 @@ public class ContentManagementApi {
    * @return CreateShareResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CreateShareResponse> postContentmanagementSharesWithHttpInfo(CreateShareRequest body) throws ApiException {
+  public ApiResponse<CreateShareResponse> postContentmanagementSharesWithHttpInfo(CreateShareRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postContentmanagementShares");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postContentmanagementShares");
     }
     
     // create path and map variables
@@ -2587,7 +2588,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public CreateShareResponse postContentmanagementShares(PostContentmanagementSharesRequest request) throws ApiException {
+  public CreateShareResponse postContentmanagementShares(PostContentmanagementSharesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CreateShareResponse>() {});
   }
 
@@ -2597,7 +2598,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<CreateShareResponse> postContentmanagementShares(ApiRequest<CreateShareRequest> request) throws ApiException {
+  public ApiResponse<CreateShareResponse> postContentmanagementShares(ApiRequest<CreateShareRequest> request) throws IOException, ApiException {
     return pcapiClient.<CreateShareResponse>invokeAPIVerbose(request, new TypeReference<CreateShareResponse>() {});
   }
 
@@ -2609,7 +2610,7 @@ public class ContentManagementApi {
    * @return TagValue
    * @throws ApiException if fails to make API call
    */
-  public TagValue postContentmanagementWorkspaceTagvalues(String workspaceId, TagValue body) throws ApiException {
+  public TagValue postContentmanagementWorkspaceTagvalues(String workspaceId, TagValue body) throws IOException, ApiException {
     return postContentmanagementWorkspaceTagvaluesWithHttpInfo(workspaceId, body).getBody();
   }
 
@@ -2621,17 +2622,17 @@ public class ContentManagementApi {
    * @return TagValue
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TagValue> postContentmanagementWorkspaceTagvaluesWithHttpInfo(String workspaceId, TagValue body) throws ApiException {
+  public ApiResponse<TagValue> postContentmanagementWorkspaceTagvaluesWithHttpInfo(String workspaceId, TagValue body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'workspaceId' is set
     if (workspaceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'workspaceId' when calling postContentmanagementWorkspaceTagvalues");
+      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling postContentmanagementWorkspaceTagvalues");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postContentmanagementWorkspaceTagvalues");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postContentmanagementWorkspaceTagvalues");
     }
     
     // create path and map variables
@@ -2667,7 +2668,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public TagValue postContentmanagementWorkspaceTagvalues(PostContentmanagementWorkspaceTagvaluesRequest request) throws ApiException {
+  public TagValue postContentmanagementWorkspaceTagvalues(PostContentmanagementWorkspaceTagvaluesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TagValue>() {});
   }
 
@@ -2677,7 +2678,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TagValue> postContentmanagementWorkspaceTagvalues(ApiRequest<TagValue> request) throws ApiException {
+  public ApiResponse<TagValue> postContentmanagementWorkspaceTagvalues(ApiRequest<TagValue> request) throws IOException, ApiException {
     return pcapiClient.<TagValue>invokeAPIVerbose(request, new TypeReference<TagValue>() {});
   }
 
@@ -2690,7 +2691,7 @@ public class ContentManagementApi {
    * @return TagValueEntityListing
    * @throws ApiException if fails to make API call
    */
-  public TagValueEntityListing postContentmanagementWorkspaceTagvaluesQuery(String workspaceId, TagQueryRequest body, List<String> expand) throws ApiException {
+  public TagValueEntityListing postContentmanagementWorkspaceTagvaluesQuery(String workspaceId, TagQueryRequest body, List<String> expand) throws IOException, ApiException {
     return postContentmanagementWorkspaceTagvaluesQueryWithHttpInfo(workspaceId, body, expand).getBody();
   }
 
@@ -2703,17 +2704,17 @@ public class ContentManagementApi {
    * @return TagValueEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TagValueEntityListing> postContentmanagementWorkspaceTagvaluesQueryWithHttpInfo(String workspaceId, TagQueryRequest body, List<String> expand) throws ApiException {
+  public ApiResponse<TagValueEntityListing> postContentmanagementWorkspaceTagvaluesQueryWithHttpInfo(String workspaceId, TagQueryRequest body, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'workspaceId' is set
     if (workspaceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'workspaceId' when calling postContentmanagementWorkspaceTagvaluesQuery");
+      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling postContentmanagementWorkspaceTagvaluesQuery");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postContentmanagementWorkspaceTagvaluesQuery");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postContentmanagementWorkspaceTagvaluesQuery");
     }
     
     // create path and map variables
@@ -2750,7 +2751,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public TagValueEntityListing postContentmanagementWorkspaceTagvaluesQuery(PostContentmanagementWorkspaceTagvaluesQueryRequest request) throws ApiException {
+  public TagValueEntityListing postContentmanagementWorkspaceTagvaluesQuery(PostContentmanagementWorkspaceTagvaluesQueryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TagValueEntityListing>() {});
   }
 
@@ -2760,7 +2761,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TagValueEntityListing> postContentmanagementWorkspaceTagvaluesQuery(ApiRequest<TagQueryRequest> request) throws ApiException {
+  public ApiResponse<TagValueEntityListing> postContentmanagementWorkspaceTagvaluesQuery(ApiRequest<TagQueryRequest> request) throws IOException, ApiException {
     return pcapiClient.<TagValueEntityListing>invokeAPIVerbose(request, new TypeReference<TagValueEntityListing>() {});
   }
 
@@ -2771,7 +2772,7 @@ public class ContentManagementApi {
    * @return Workspace
    * @throws ApiException if fails to make API call
    */
-  public Workspace postContentmanagementWorkspaces(WorkspaceCreate body) throws ApiException {
+  public Workspace postContentmanagementWorkspaces(WorkspaceCreate body) throws IOException, ApiException {
     return postContentmanagementWorkspacesWithHttpInfo(body).getBody();
   }
 
@@ -2782,12 +2783,12 @@ public class ContentManagementApi {
    * @return Workspace
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Workspace> postContentmanagementWorkspacesWithHttpInfo(WorkspaceCreate body) throws ApiException {
+  public ApiResponse<Workspace> postContentmanagementWorkspacesWithHttpInfo(WorkspaceCreate body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postContentmanagementWorkspaces");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postContentmanagementWorkspaces");
     }
     
     // create path and map variables
@@ -2822,7 +2823,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Workspace postContentmanagementWorkspaces(PostContentmanagementWorkspacesRequest request) throws ApiException {
+  public Workspace postContentmanagementWorkspaces(PostContentmanagementWorkspacesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Workspace>() {});
   }
 
@@ -2832,7 +2833,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Workspace> postContentmanagementWorkspaces(ApiRequest<WorkspaceCreate> request) throws ApiException {
+  public ApiResponse<Workspace> postContentmanagementWorkspaces(ApiRequest<WorkspaceCreate> request) throws IOException, ApiException {
     return pcapiClient.<Workspace>invokeAPIVerbose(request, new TypeReference<Workspace>() {});
   }
 
@@ -2844,7 +2845,7 @@ public class ContentManagementApi {
    * @return Workspace
    * @throws ApiException if fails to make API call
    */
-  public Workspace putContentmanagementWorkspace(String workspaceId, Workspace body) throws ApiException {
+  public Workspace putContentmanagementWorkspace(String workspaceId, Workspace body) throws IOException, ApiException {
     return putContentmanagementWorkspaceWithHttpInfo(workspaceId, body).getBody();
   }
 
@@ -2856,17 +2857,17 @@ public class ContentManagementApi {
    * @return Workspace
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Workspace> putContentmanagementWorkspaceWithHttpInfo(String workspaceId, Workspace body) throws ApiException {
+  public ApiResponse<Workspace> putContentmanagementWorkspaceWithHttpInfo(String workspaceId, Workspace body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'workspaceId' is set
     if (workspaceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'workspaceId' when calling putContentmanagementWorkspace");
+      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling putContentmanagementWorkspace");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putContentmanagementWorkspace");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putContentmanagementWorkspace");
     }
     
     // create path and map variables
@@ -2902,7 +2903,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Workspace putContentmanagementWorkspace(PutContentmanagementWorkspaceRequest request) throws ApiException {
+  public Workspace putContentmanagementWorkspace(PutContentmanagementWorkspaceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Workspace>() {});
   }
 
@@ -2912,7 +2913,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Workspace> putContentmanagementWorkspace(ApiRequest<Workspace> request) throws ApiException {
+  public ApiResponse<Workspace> putContentmanagementWorkspace(ApiRequest<Workspace> request) throws IOException, ApiException {
     return pcapiClient.<Workspace>invokeAPIVerbose(request, new TypeReference<Workspace>() {});
   }
 
@@ -2925,7 +2926,7 @@ public class ContentManagementApi {
    * @return WorkspaceMember
    * @throws ApiException if fails to make API call
    */
-  public WorkspaceMember putContentmanagementWorkspaceMember(String workspaceId, String memberId, WorkspaceMember body) throws ApiException {
+  public WorkspaceMember putContentmanagementWorkspaceMember(String workspaceId, String memberId, WorkspaceMember body) throws IOException, ApiException {
     return putContentmanagementWorkspaceMemberWithHttpInfo(workspaceId, memberId, body).getBody();
   }
 
@@ -2938,22 +2939,22 @@ public class ContentManagementApi {
    * @return WorkspaceMember
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WorkspaceMember> putContentmanagementWorkspaceMemberWithHttpInfo(String workspaceId, String memberId, WorkspaceMember body) throws ApiException {
+  public ApiResponse<WorkspaceMember> putContentmanagementWorkspaceMemberWithHttpInfo(String workspaceId, String memberId, WorkspaceMember body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'workspaceId' is set
     if (workspaceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'workspaceId' when calling putContentmanagementWorkspaceMember");
+      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling putContentmanagementWorkspaceMember");
     }
     
     // verify the required parameter 'memberId' is set
     if (memberId == null) {
-      throw new ApiException(400, "Missing the required parameter 'memberId' when calling putContentmanagementWorkspaceMember");
+      throw new IllegalArgumentException("Missing the required parameter 'memberId' when calling putContentmanagementWorkspaceMember");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putContentmanagementWorkspaceMember");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putContentmanagementWorkspaceMember");
     }
     
     // create path and map variables
@@ -2990,7 +2991,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public WorkspaceMember putContentmanagementWorkspaceMember(PutContentmanagementWorkspaceMemberRequest request) throws ApiException {
+  public WorkspaceMember putContentmanagementWorkspaceMember(PutContentmanagementWorkspaceMemberRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WorkspaceMember>() {});
   }
 
@@ -3000,7 +3001,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<WorkspaceMember> putContentmanagementWorkspaceMember(ApiRequest<WorkspaceMember> request) throws ApiException {
+  public ApiResponse<WorkspaceMember> putContentmanagementWorkspaceMember(ApiRequest<WorkspaceMember> request) throws IOException, ApiException {
     return pcapiClient.<WorkspaceMember>invokeAPIVerbose(request, new TypeReference<WorkspaceMember>() {});
   }
 
@@ -3013,7 +3014,7 @@ public class ContentManagementApi {
    * @return TagValue
    * @throws ApiException if fails to make API call
    */
-  public TagValue putContentmanagementWorkspaceTagvalue(String workspaceId, String tagId, TagValue body) throws ApiException {
+  public TagValue putContentmanagementWorkspaceTagvalue(String workspaceId, String tagId, TagValue body) throws IOException, ApiException {
     return putContentmanagementWorkspaceTagvalueWithHttpInfo(workspaceId, tagId, body).getBody();
   }
 
@@ -3026,22 +3027,22 @@ public class ContentManagementApi {
    * @return TagValue
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TagValue> putContentmanagementWorkspaceTagvalueWithHttpInfo(String workspaceId, String tagId, TagValue body) throws ApiException {
+  public ApiResponse<TagValue> putContentmanagementWorkspaceTagvalueWithHttpInfo(String workspaceId, String tagId, TagValue body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'workspaceId' is set
     if (workspaceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'workspaceId' when calling putContentmanagementWorkspaceTagvalue");
+      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling putContentmanagementWorkspaceTagvalue");
     }
     
     // verify the required parameter 'tagId' is set
     if (tagId == null) {
-      throw new ApiException(400, "Missing the required parameter 'tagId' when calling putContentmanagementWorkspaceTagvalue");
+      throw new IllegalArgumentException("Missing the required parameter 'tagId' when calling putContentmanagementWorkspaceTagvalue");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putContentmanagementWorkspaceTagvalue");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putContentmanagementWorkspaceTagvalue");
     }
     
     // create path and map variables
@@ -3078,7 +3079,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public TagValue putContentmanagementWorkspaceTagvalue(PutContentmanagementWorkspaceTagvalueRequest request) throws ApiException {
+  public TagValue putContentmanagementWorkspaceTagvalue(PutContentmanagementWorkspaceTagvalueRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TagValue>() {});
   }
 
@@ -3088,7 +3089,7 @@ public class ContentManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TagValue> putContentmanagementWorkspaceTagvalue(ApiRequest<TagValue> request) throws ApiException {
+  public ApiResponse<TagValue> putContentmanagementWorkspaceTagvalue(ApiRequest<TagValue> request) throws IOException, ApiException {
     return pcapiClient.<TagValue>invokeAPIVerbose(request, new TypeReference<TagValue>() {});
   }
 

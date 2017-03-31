@@ -94,16 +94,16 @@ public class DeleteRoutingEmailDomainRouteRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'domainName' is set
         if (this.domainName == null) {
-            throw new ApiException(400, "Missing the required parameter 'domainName' when building request for DeleteRoutingEmailDomainRouteRequest.");
+            throw new IllegalStateException("Missing the required parameter 'domainName' when building request for DeleteRoutingEmailDomainRouteRequest.");
         }
         
         // verify the required parameter 'routeId' is set
         if (this.routeId == null) {
-            throw new ApiException(400, "Missing the required parameter 'routeId' when building request for DeleteRoutingEmailDomainRouteRequest.");
+            throw new IllegalStateException("Missing the required parameter 'routeId' when building request for DeleteRoutingEmailDomainRouteRequest.");
         }
         
 

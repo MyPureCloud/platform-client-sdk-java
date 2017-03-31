@@ -79,16 +79,16 @@ public class GetAuthorizationRoleComparedefaultRightRoleIdRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'leftRoleId' is set
         if (this.leftRoleId == null) {
-            throw new ApiException(400, "Missing the required parameter 'leftRoleId' when building request for GetAuthorizationRoleComparedefaultRightRoleIdRequest.");
+            throw new IllegalStateException("Missing the required parameter 'leftRoleId' when building request for GetAuthorizationRoleComparedefaultRightRoleIdRequest.");
         }
         
         // verify the required parameter 'rightRoleId' is set
         if (this.rightRoleId == null) {
-            throw new ApiException(400, "Missing the required parameter 'rightRoleId' when building request for GetAuthorizationRoleComparedefaultRightRoleIdRequest.");
+            throw new IllegalStateException("Missing the required parameter 'rightRoleId' when building request for GetAuthorizationRoleComparedefaultRightRoleIdRequest.");
         }
         
 

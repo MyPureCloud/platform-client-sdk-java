@@ -90,16 +90,16 @@ public class PutAnalyticsReportingScheduleRequest {
         return this;
     }
 
-    public ApiRequest<ReportSchedule> withHttpInfo() throws ApiException {
+    public ApiRequest<ReportSchedule> withHttpInfo() {
         
         // verify the required parameter 'scheduleId' is set
         if (this.scheduleId == null) {
-            throw new ApiException(400, "Missing the required parameter 'scheduleId' when building request for PutAnalyticsReportingScheduleRequest.");
+            throw new IllegalStateException("Missing the required parameter 'scheduleId' when building request for PutAnalyticsReportingScheduleRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutAnalyticsReportingScheduleRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutAnalyticsReportingScheduleRequest.");
         }
         
 

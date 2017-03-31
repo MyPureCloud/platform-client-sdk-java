@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.api.request.PutArchitectPromptRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectPromptResourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectSystempromptResourceRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -68,7 +69,7 @@ public class ArchitectApi {
    * @param allResources Whether or not to delete all the prompt resources (optional)
    * @throws ApiException if fails to make API call
    */
-  public void deleteArchitectPrompt(String promptId, Boolean allResources) throws ApiException {
+  public void deleteArchitectPrompt(String promptId, Boolean allResources) throws IOException, ApiException {
     deleteArchitectPromptWithHttpInfo(promptId, allResources);
   }
 
@@ -79,12 +80,12 @@ public class ArchitectApi {
    * @param allResources Whether or not to delete all the prompt resources (optional)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteArchitectPromptWithHttpInfo(String promptId, Boolean allResources) throws ApiException {
+  public ApiResponse<Void> deleteArchitectPromptWithHttpInfo(String promptId, Boolean allResources) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'promptId' is set
     if (promptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'promptId' when calling deleteArchitectPrompt");
+      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling deleteArchitectPrompt");
     }
     
     // create path and map variables
@@ -121,7 +122,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteArchitectPrompt(DeleteArchitectPromptRequest request) throws ApiException {
+  public void deleteArchitectPrompt(DeleteArchitectPromptRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -131,7 +132,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteArchitectPrompt(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteArchitectPrompt(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -142,7 +143,7 @@ public class ArchitectApi {
    * @param languageCode Language (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteArchitectPromptResource(String promptId, String languageCode) throws ApiException {
+  public void deleteArchitectPromptResource(String promptId, String languageCode) throws IOException, ApiException {
     deleteArchitectPromptResourceWithHttpInfo(promptId, languageCode);
   }
 
@@ -153,17 +154,17 @@ public class ArchitectApi {
    * @param languageCode Language (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteArchitectPromptResourceWithHttpInfo(String promptId, String languageCode) throws ApiException {
+  public ApiResponse<Void> deleteArchitectPromptResourceWithHttpInfo(String promptId, String languageCode) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'promptId' is set
     if (promptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'promptId' when calling deleteArchitectPromptResource");
+      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling deleteArchitectPromptResource");
     }
     
     // verify the required parameter 'languageCode' is set
     if (languageCode == null) {
-      throw new ApiException(400, "Missing the required parameter 'languageCode' when calling deleteArchitectPromptResource");
+      throw new IllegalArgumentException("Missing the required parameter 'languageCode' when calling deleteArchitectPromptResource");
     }
     
     // create path and map variables
@@ -200,7 +201,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteArchitectPromptResource(DeleteArchitectPromptResourceRequest request) throws ApiException {
+  public void deleteArchitectPromptResource(DeleteArchitectPromptResourceRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -210,7 +211,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteArchitectPromptResource(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteArchitectPromptResource(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -221,7 +222,7 @@ public class ArchitectApi {
    * @return Operation
    * @throws ApiException if fails to make API call
    */
-  public Operation deleteArchitectPrompts(List<String> id) throws ApiException {
+  public Operation deleteArchitectPrompts(List<String> id) throws IOException, ApiException {
     return deleteArchitectPromptsWithHttpInfo(id).getBody();
   }
 
@@ -232,12 +233,12 @@ public class ArchitectApi {
    * @return Operation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Operation> deleteArchitectPromptsWithHttpInfo(List<String> id) throws ApiException {
+  public ApiResponse<Operation> deleteArchitectPromptsWithHttpInfo(List<String> id) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'id' is set
     if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling deleteArchitectPrompts");
+      throw new IllegalArgumentException("Missing the required parameter 'id' when calling deleteArchitectPrompts");
     }
     
     // create path and map variables
@@ -273,7 +274,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Operation deleteArchitectPrompts(DeleteArchitectPromptsRequest request) throws ApiException {
+  public Operation deleteArchitectPrompts(DeleteArchitectPromptsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Operation>() {});
   }
 
@@ -283,7 +284,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Operation> deleteArchitectPrompts(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Operation> deleteArchitectPrompts(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Operation>invokeAPIVerbose(request, new TypeReference<Operation>() {});
   }
 
@@ -295,7 +296,7 @@ public class ArchitectApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteArchitectSystempromptResource(String promptId, String languageCode) throws ApiException {
+  public String deleteArchitectSystempromptResource(String promptId, String languageCode) throws IOException, ApiException {
     return deleteArchitectSystempromptResourceWithHttpInfo(promptId, languageCode).getBody();
   }
 
@@ -307,17 +308,17 @@ public class ArchitectApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteArchitectSystempromptResourceWithHttpInfo(String promptId, String languageCode) throws ApiException {
+  public ApiResponse<String> deleteArchitectSystempromptResourceWithHttpInfo(String promptId, String languageCode) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'promptId' is set
     if (promptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'promptId' when calling deleteArchitectSystempromptResource");
+      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling deleteArchitectSystempromptResource");
     }
     
     // verify the required parameter 'languageCode' is set
     if (languageCode == null) {
-      throw new ApiException(400, "Missing the required parameter 'languageCode' when calling deleteArchitectSystempromptResource");
+      throw new IllegalArgumentException("Missing the required parameter 'languageCode' when calling deleteArchitectSystempromptResource");
     }
     
     // create path and map variables
@@ -354,7 +355,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteArchitectSystempromptResource(DeleteArchitectSystempromptResourceRequest request) throws ApiException {
+  public String deleteArchitectSystempromptResource(DeleteArchitectSystempromptResourceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -364,7 +365,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteArchitectSystempromptResource(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteArchitectSystempromptResource(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -375,7 +376,7 @@ public class ArchitectApi {
    * @return Prompt
    * @throws ApiException if fails to make API call
    */
-  public Prompt getArchitectPrompt(String promptId) throws ApiException {
+  public Prompt getArchitectPrompt(String promptId) throws IOException, ApiException {
     return getArchitectPromptWithHttpInfo(promptId).getBody();
   }
 
@@ -386,12 +387,12 @@ public class ArchitectApi {
    * @return Prompt
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Prompt> getArchitectPromptWithHttpInfo(String promptId) throws ApiException {
+  public ApiResponse<Prompt> getArchitectPromptWithHttpInfo(String promptId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'promptId' is set
     if (promptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'promptId' when calling getArchitectPrompt");
+      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling getArchitectPrompt");
     }
     
     // create path and map variables
@@ -427,7 +428,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Prompt getArchitectPrompt(GetArchitectPromptRequest request) throws ApiException {
+  public Prompt getArchitectPrompt(GetArchitectPromptRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Prompt>() {});
   }
 
@@ -437,7 +438,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Prompt> getArchitectPrompt(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Prompt> getArchitectPrompt(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Prompt>invokeAPIVerbose(request, new TypeReference<Prompt>() {});
   }
 
@@ -449,7 +450,7 @@ public class ArchitectApi {
    * @return PromptAsset
    * @throws ApiException if fails to make API call
    */
-  public PromptAsset getArchitectPromptResource(String promptId, String languageCode) throws ApiException {
+  public PromptAsset getArchitectPromptResource(String promptId, String languageCode) throws IOException, ApiException {
     return getArchitectPromptResourceWithHttpInfo(promptId, languageCode).getBody();
   }
 
@@ -461,17 +462,17 @@ public class ArchitectApi {
    * @return PromptAsset
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PromptAsset> getArchitectPromptResourceWithHttpInfo(String promptId, String languageCode) throws ApiException {
+  public ApiResponse<PromptAsset> getArchitectPromptResourceWithHttpInfo(String promptId, String languageCode) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'promptId' is set
     if (promptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'promptId' when calling getArchitectPromptResource");
+      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling getArchitectPromptResource");
     }
     
     // verify the required parameter 'languageCode' is set
     if (languageCode == null) {
-      throw new ApiException(400, "Missing the required parameter 'languageCode' when calling getArchitectPromptResource");
+      throw new IllegalArgumentException("Missing the required parameter 'languageCode' when calling getArchitectPromptResource");
     }
     
     // create path and map variables
@@ -508,7 +509,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PromptAsset getArchitectPromptResource(GetArchitectPromptResourceRequest request) throws ApiException {
+  public PromptAsset getArchitectPromptResource(GetArchitectPromptResourceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PromptAsset>() {});
   }
 
@@ -518,7 +519,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PromptAsset> getArchitectPromptResource(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<PromptAsset> getArchitectPromptResource(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<PromptAsset>invokeAPIVerbose(request, new TypeReference<PromptAsset>() {});
   }
 
@@ -531,7 +532,7 @@ public class ArchitectApi {
    * @return PromptAssetEntityListing
    * @throws ApiException if fails to make API call
    */
-  public PromptAssetEntityListing getArchitectPromptResources(String promptId, Integer pageNumber, Integer pageSize) throws ApiException {
+  public PromptAssetEntityListing getArchitectPromptResources(String promptId, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
     return getArchitectPromptResourcesWithHttpInfo(promptId, pageNumber, pageSize).getBody();
   }
 
@@ -544,12 +545,12 @@ public class ArchitectApi {
    * @return PromptAssetEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PromptAssetEntityListing> getArchitectPromptResourcesWithHttpInfo(String promptId, Integer pageNumber, Integer pageSize) throws ApiException {
+  public ApiResponse<PromptAssetEntityListing> getArchitectPromptResourcesWithHttpInfo(String promptId, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'promptId' is set
     if (promptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'promptId' when calling getArchitectPromptResources");
+      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling getArchitectPromptResources");
     }
     
     // create path and map variables
@@ -587,7 +588,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PromptAssetEntityListing getArchitectPromptResources(GetArchitectPromptResourcesRequest request) throws ApiException {
+  public PromptAssetEntityListing getArchitectPromptResources(GetArchitectPromptResourcesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PromptAssetEntityListing>() {});
   }
 
@@ -597,7 +598,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PromptAssetEntityListing> getArchitectPromptResources(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<PromptAssetEntityListing> getArchitectPromptResources(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<PromptAssetEntityListing>invokeAPIVerbose(request, new TypeReference<PromptAssetEntityListing>() {});
   }
 
@@ -612,7 +613,7 @@ public class ArchitectApi {
    * @return PromptEntityListing
    * @throws ApiException if fails to make API call
    */
-  public PromptEntityListing getArchitectPrompts(Integer pageNumber, Integer pageSize, String name, String description, String nameOrDescription) throws ApiException {
+  public PromptEntityListing getArchitectPrompts(Integer pageNumber, Integer pageSize, String name, String description, String nameOrDescription) throws IOException, ApiException {
     return getArchitectPromptsWithHttpInfo(pageNumber, pageSize, name, description, nameOrDescription).getBody();
   }
 
@@ -627,7 +628,7 @@ public class ArchitectApi {
    * @return PromptEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PromptEntityListing> getArchitectPromptsWithHttpInfo(Integer pageNumber, Integer pageSize, String name, String description, String nameOrDescription) throws ApiException {
+  public ApiResponse<PromptEntityListing> getArchitectPromptsWithHttpInfo(Integer pageNumber, Integer pageSize, String name, String description, String nameOrDescription) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -667,7 +668,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PromptEntityListing getArchitectPrompts(GetArchitectPromptsRequest request) throws ApiException {
+  public PromptEntityListing getArchitectPrompts(GetArchitectPromptsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PromptEntityListing>() {});
   }
 
@@ -677,7 +678,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PromptEntityListing> getArchitectPrompts(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<PromptEntityListing> getArchitectPrompts(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<PromptEntityListing>invokeAPIVerbose(request, new TypeReference<PromptEntityListing>() {});
   }
 
@@ -688,7 +689,7 @@ public class ArchitectApi {
    * @return SystemPrompt
    * @throws ApiException if fails to make API call
    */
-  public SystemPrompt getArchitectSystemprompt(String promptId) throws ApiException {
+  public SystemPrompt getArchitectSystemprompt(String promptId) throws IOException, ApiException {
     return getArchitectSystempromptWithHttpInfo(promptId).getBody();
   }
 
@@ -699,12 +700,12 @@ public class ArchitectApi {
    * @return SystemPrompt
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SystemPrompt> getArchitectSystempromptWithHttpInfo(String promptId) throws ApiException {
+  public ApiResponse<SystemPrompt> getArchitectSystempromptWithHttpInfo(String promptId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'promptId' is set
     if (promptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'promptId' when calling getArchitectSystemprompt");
+      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling getArchitectSystemprompt");
     }
     
     // create path and map variables
@@ -740,7 +741,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public SystemPrompt getArchitectSystemprompt(GetArchitectSystempromptRequest request) throws ApiException {
+  public SystemPrompt getArchitectSystemprompt(GetArchitectSystempromptRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SystemPrompt>() {});
   }
 
@@ -750,7 +751,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SystemPrompt> getArchitectSystemprompt(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<SystemPrompt> getArchitectSystemprompt(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<SystemPrompt>invokeAPIVerbose(request, new TypeReference<SystemPrompt>() {});
   }
 
@@ -762,7 +763,7 @@ public class ArchitectApi {
    * @return SystemPromptAsset
    * @throws ApiException if fails to make API call
    */
-  public SystemPromptAsset getArchitectSystempromptResource(String promptId, String languageCode) throws ApiException {
+  public SystemPromptAsset getArchitectSystempromptResource(String promptId, String languageCode) throws IOException, ApiException {
     return getArchitectSystempromptResourceWithHttpInfo(promptId, languageCode).getBody();
   }
 
@@ -774,17 +775,17 @@ public class ArchitectApi {
    * @return SystemPromptAsset
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SystemPromptAsset> getArchitectSystempromptResourceWithHttpInfo(String promptId, String languageCode) throws ApiException {
+  public ApiResponse<SystemPromptAsset> getArchitectSystempromptResourceWithHttpInfo(String promptId, String languageCode) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'promptId' is set
     if (promptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'promptId' when calling getArchitectSystempromptResource");
+      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling getArchitectSystempromptResource");
     }
     
     // verify the required parameter 'languageCode' is set
     if (languageCode == null) {
-      throw new ApiException(400, "Missing the required parameter 'languageCode' when calling getArchitectSystempromptResource");
+      throw new IllegalArgumentException("Missing the required parameter 'languageCode' when calling getArchitectSystempromptResource");
     }
     
     // create path and map variables
@@ -821,7 +822,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public SystemPromptAsset getArchitectSystempromptResource(GetArchitectSystempromptResourceRequest request) throws ApiException {
+  public SystemPromptAsset getArchitectSystempromptResource(GetArchitectSystempromptResourceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SystemPromptAsset>() {});
   }
 
@@ -831,7 +832,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SystemPromptAsset> getArchitectSystempromptResource(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<SystemPromptAsset> getArchitectSystempromptResource(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<SystemPromptAsset>invokeAPIVerbose(request, new TypeReference<SystemPromptAsset>() {});
   }
 
@@ -846,7 +847,7 @@ public class ArchitectApi {
    * @return SystemPromptAssetEntityListing
    * @throws ApiException if fails to make API call
    */
-  public SystemPromptAssetEntityListing getArchitectSystempromptResources(String promptId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws ApiException {
+  public SystemPromptAssetEntityListing getArchitectSystempromptResources(String promptId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException, ApiException {
     return getArchitectSystempromptResourcesWithHttpInfo(promptId, pageNumber, pageSize, sortBy, sortOrder).getBody();
   }
 
@@ -861,12 +862,12 @@ public class ArchitectApi {
    * @return SystemPromptAssetEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SystemPromptAssetEntityListing> getArchitectSystempromptResourcesWithHttpInfo(String promptId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws ApiException {
+  public ApiResponse<SystemPromptAssetEntityListing> getArchitectSystempromptResourcesWithHttpInfo(String promptId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'promptId' is set
     if (promptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'promptId' when calling getArchitectSystempromptResources");
+      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling getArchitectSystempromptResources");
     }
     
     // create path and map variables
@@ -906,7 +907,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public SystemPromptAssetEntityListing getArchitectSystempromptResources(GetArchitectSystempromptResourcesRequest request) throws ApiException {
+  public SystemPromptAssetEntityListing getArchitectSystempromptResources(GetArchitectSystempromptResourcesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SystemPromptAssetEntityListing>() {});
   }
 
@@ -916,7 +917,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SystemPromptAssetEntityListing> getArchitectSystempromptResources(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<SystemPromptAssetEntityListing> getArchitectSystempromptResources(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<SystemPromptAssetEntityListing>invokeAPIVerbose(request, new TypeReference<SystemPromptAssetEntityListing>() {});
   }
 
@@ -933,7 +934,7 @@ public class ArchitectApi {
    * @return SystemPromptEntityListing
    * @throws ApiException if fails to make API call
    */
-  public SystemPromptEntityListing getArchitectSystemprompts(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String description, String nameOrDescription) throws ApiException {
+  public SystemPromptEntityListing getArchitectSystemprompts(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String description, String nameOrDescription) throws IOException, ApiException {
     return getArchitectSystempromptsWithHttpInfo(pageNumber, pageSize, sortBy, sortOrder, name, description, nameOrDescription).getBody();
   }
 
@@ -950,7 +951,7 @@ public class ArchitectApi {
    * @return SystemPromptEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SystemPromptEntityListing> getArchitectSystempromptsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String description, String nameOrDescription) throws ApiException {
+  public ApiResponse<SystemPromptEntityListing> getArchitectSystempromptsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String description, String nameOrDescription) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -992,7 +993,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public SystemPromptEntityListing getArchitectSystemprompts(GetArchitectSystempromptsRequest request) throws ApiException {
+  public SystemPromptEntityListing getArchitectSystemprompts(GetArchitectSystempromptsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SystemPromptEntityListing>() {});
   }
 
@@ -1002,7 +1003,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SystemPromptEntityListing> getArchitectSystemprompts(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<SystemPromptEntityListing> getArchitectSystemprompts(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<SystemPromptEntityListing>invokeAPIVerbose(request, new TypeReference<SystemPromptEntityListing>() {});
   }
 
@@ -1027,7 +1028,7 @@ public class ArchitectApi {
    * @return FlowEntityListing
    * @throws ApiException if fails to make API call
    */
-  public FlowEntityListing getFlows(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas) throws ApiException {
+  public FlowEntityListing getFlows(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas) throws IOException, ApiException {
     return getFlowsWithHttpInfo(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas).getBody();
   }
 
@@ -1052,12 +1053,12 @@ public class ArchitectApi {
    * @return FlowEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<FlowEntityListing> getFlowsWithHttpInfo(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas) throws ApiException {
+  public ApiResponse<FlowEntityListing> getFlowsWithHttpInfo(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'type' is set
     if (type == null) {
-      throw new ApiException(400, "Missing the required parameter 'type' when calling getFlows");
+      throw new IllegalArgumentException("Missing the required parameter 'type' when calling getFlows");
     }
     
     // create path and map variables
@@ -1107,7 +1108,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public FlowEntityListing getFlows(GetFlowsRequest request) throws ApiException {
+  public FlowEntityListing getFlows(GetFlowsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FlowEntityListing>() {});
   }
 
@@ -1117,7 +1118,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<FlowEntityListing> getFlows(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<FlowEntityListing> getFlows(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<FlowEntityListing>invokeAPIVerbose(request, new TypeReference<FlowEntityListing>() {});
   }
 
@@ -1129,7 +1130,7 @@ public class ArchitectApi {
    * @return PromptAsset
    * @throws ApiException if fails to make API call
    */
-  public PromptAsset postArchitectPromptResources(String promptId, PromptAssetCreate body) throws ApiException {
+  public PromptAsset postArchitectPromptResources(String promptId, PromptAssetCreate body) throws IOException, ApiException {
     return postArchitectPromptResourcesWithHttpInfo(promptId, body).getBody();
   }
 
@@ -1141,12 +1142,12 @@ public class ArchitectApi {
    * @return PromptAsset
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PromptAsset> postArchitectPromptResourcesWithHttpInfo(String promptId, PromptAssetCreate body) throws ApiException {
+  public ApiResponse<PromptAsset> postArchitectPromptResourcesWithHttpInfo(String promptId, PromptAssetCreate body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'promptId' is set
     if (promptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'promptId' when calling postArchitectPromptResources");
+      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling postArchitectPromptResources");
     }
     
     // create path and map variables
@@ -1182,7 +1183,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PromptAsset postArchitectPromptResources(PostArchitectPromptResourcesRequest request) throws ApiException {
+  public PromptAsset postArchitectPromptResources(PostArchitectPromptResourcesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PromptAsset>() {});
   }
 
@@ -1192,7 +1193,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PromptAsset> postArchitectPromptResources(ApiRequest<PromptAssetCreate> request) throws ApiException {
+  public ApiResponse<PromptAsset> postArchitectPromptResources(ApiRequest<PromptAssetCreate> request) throws IOException, ApiException {
     return pcapiClient.<PromptAsset>invokeAPIVerbose(request, new TypeReference<PromptAsset>() {});
   }
 
@@ -1203,7 +1204,7 @@ public class ArchitectApi {
    * @return Prompt
    * @throws ApiException if fails to make API call
    */
-  public Prompt postArchitectPrompts(Prompt body) throws ApiException {
+  public Prompt postArchitectPrompts(Prompt body) throws IOException, ApiException {
     return postArchitectPromptsWithHttpInfo(body).getBody();
   }
 
@@ -1214,7 +1215,7 @@ public class ArchitectApi {
    * @return Prompt
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Prompt> postArchitectPromptsWithHttpInfo(Prompt body) throws ApiException {
+  public ApiResponse<Prompt> postArchitectPromptsWithHttpInfo(Prompt body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // create path and map variables
@@ -1249,7 +1250,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Prompt postArchitectPrompts(PostArchitectPromptsRequest request) throws ApiException {
+  public Prompt postArchitectPrompts(PostArchitectPromptsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Prompt>() {});
   }
 
@@ -1259,7 +1260,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Prompt> postArchitectPrompts(ApiRequest<Prompt> request) throws ApiException {
+  public ApiResponse<Prompt> postArchitectPrompts(ApiRequest<Prompt> request) throws IOException, ApiException {
     return pcapiClient.<Prompt>invokeAPIVerbose(request, new TypeReference<Prompt>() {});
   }
 
@@ -1271,7 +1272,7 @@ public class ArchitectApi {
    * @return SystemPromptAsset
    * @throws ApiException if fails to make API call
    */
-  public SystemPromptAsset postArchitectSystempromptResources(String promptId, SystemPromptAsset body) throws ApiException {
+  public SystemPromptAsset postArchitectSystempromptResources(String promptId, SystemPromptAsset body) throws IOException, ApiException {
     return postArchitectSystempromptResourcesWithHttpInfo(promptId, body).getBody();
   }
 
@@ -1283,12 +1284,12 @@ public class ArchitectApi {
    * @return SystemPromptAsset
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SystemPromptAsset> postArchitectSystempromptResourcesWithHttpInfo(String promptId, SystemPromptAsset body) throws ApiException {
+  public ApiResponse<SystemPromptAsset> postArchitectSystempromptResourcesWithHttpInfo(String promptId, SystemPromptAsset body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'promptId' is set
     if (promptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'promptId' when calling postArchitectSystempromptResources");
+      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling postArchitectSystempromptResources");
     }
     
     // create path and map variables
@@ -1324,7 +1325,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public SystemPromptAsset postArchitectSystempromptResources(PostArchitectSystempromptResourcesRequest request) throws ApiException {
+  public SystemPromptAsset postArchitectSystempromptResources(PostArchitectSystempromptResourcesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SystemPromptAsset>() {});
   }
 
@@ -1334,7 +1335,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SystemPromptAsset> postArchitectSystempromptResources(ApiRequest<SystemPromptAsset> request) throws ApiException {
+  public ApiResponse<SystemPromptAsset> postArchitectSystempromptResources(ApiRequest<SystemPromptAsset> request) throws IOException, ApiException {
     return pcapiClient.<SystemPromptAsset>invokeAPIVerbose(request, new TypeReference<SystemPromptAsset>() {});
   }
 
@@ -1346,7 +1347,7 @@ public class ArchitectApi {
    * @return Prompt
    * @throws ApiException if fails to make API call
    */
-  public Prompt putArchitectPrompt(String promptId, Prompt body) throws ApiException {
+  public Prompt putArchitectPrompt(String promptId, Prompt body) throws IOException, ApiException {
     return putArchitectPromptWithHttpInfo(promptId, body).getBody();
   }
 
@@ -1358,12 +1359,12 @@ public class ArchitectApi {
    * @return Prompt
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Prompt> putArchitectPromptWithHttpInfo(String promptId, Prompt body) throws ApiException {
+  public ApiResponse<Prompt> putArchitectPromptWithHttpInfo(String promptId, Prompt body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'promptId' is set
     if (promptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'promptId' when calling putArchitectPrompt");
+      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling putArchitectPrompt");
     }
     
     // create path and map variables
@@ -1399,7 +1400,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Prompt putArchitectPrompt(PutArchitectPromptRequest request) throws ApiException {
+  public Prompt putArchitectPrompt(PutArchitectPromptRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Prompt>() {});
   }
 
@@ -1409,7 +1410,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Prompt> putArchitectPrompt(ApiRequest<Prompt> request) throws ApiException {
+  public ApiResponse<Prompt> putArchitectPrompt(ApiRequest<Prompt> request) throws IOException, ApiException {
     return pcapiClient.<Prompt>invokeAPIVerbose(request, new TypeReference<Prompt>() {});
   }
 
@@ -1422,7 +1423,7 @@ public class ArchitectApi {
    * @return PromptAsset
    * @throws ApiException if fails to make API call
    */
-  public PromptAsset putArchitectPromptResource(String promptId, String languageCode, PromptAsset body) throws ApiException {
+  public PromptAsset putArchitectPromptResource(String promptId, String languageCode, PromptAsset body) throws IOException, ApiException {
     return putArchitectPromptResourceWithHttpInfo(promptId, languageCode, body).getBody();
   }
 
@@ -1435,17 +1436,17 @@ public class ArchitectApi {
    * @return PromptAsset
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PromptAsset> putArchitectPromptResourceWithHttpInfo(String promptId, String languageCode, PromptAsset body) throws ApiException {
+  public ApiResponse<PromptAsset> putArchitectPromptResourceWithHttpInfo(String promptId, String languageCode, PromptAsset body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'promptId' is set
     if (promptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'promptId' when calling putArchitectPromptResource");
+      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling putArchitectPromptResource");
     }
     
     // verify the required parameter 'languageCode' is set
     if (languageCode == null) {
-      throw new ApiException(400, "Missing the required parameter 'languageCode' when calling putArchitectPromptResource");
+      throw new IllegalArgumentException("Missing the required parameter 'languageCode' when calling putArchitectPromptResource");
     }
     
     // create path and map variables
@@ -1482,7 +1483,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PromptAsset putArchitectPromptResource(PutArchitectPromptResourceRequest request) throws ApiException {
+  public PromptAsset putArchitectPromptResource(PutArchitectPromptResourceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PromptAsset>() {});
   }
 
@@ -1492,7 +1493,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PromptAsset> putArchitectPromptResource(ApiRequest<PromptAsset> request) throws ApiException {
+  public ApiResponse<PromptAsset> putArchitectPromptResource(ApiRequest<PromptAsset> request) throws IOException, ApiException {
     return pcapiClient.<PromptAsset>invokeAPIVerbose(request, new TypeReference<PromptAsset>() {});
   }
 
@@ -1505,7 +1506,7 @@ public class ArchitectApi {
    * @return SystemPromptAsset
    * @throws ApiException if fails to make API call
    */
-  public SystemPromptAsset putArchitectSystempromptResource(String promptId, String languageCode, SystemPromptAsset body) throws ApiException {
+  public SystemPromptAsset putArchitectSystempromptResource(String promptId, String languageCode, SystemPromptAsset body) throws IOException, ApiException {
     return putArchitectSystempromptResourceWithHttpInfo(promptId, languageCode, body).getBody();
   }
 
@@ -1518,17 +1519,17 @@ public class ArchitectApi {
    * @return SystemPromptAsset
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SystemPromptAsset> putArchitectSystempromptResourceWithHttpInfo(String promptId, String languageCode, SystemPromptAsset body) throws ApiException {
+  public ApiResponse<SystemPromptAsset> putArchitectSystempromptResourceWithHttpInfo(String promptId, String languageCode, SystemPromptAsset body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'promptId' is set
     if (promptId == null) {
-      throw new ApiException(400, "Missing the required parameter 'promptId' when calling putArchitectSystempromptResource");
+      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling putArchitectSystempromptResource");
     }
     
     // verify the required parameter 'languageCode' is set
     if (languageCode == null) {
-      throw new ApiException(400, "Missing the required parameter 'languageCode' when calling putArchitectSystempromptResource");
+      throw new IllegalArgumentException("Missing the required parameter 'languageCode' when calling putArchitectSystempromptResource");
     }
     
     // create path and map variables
@@ -1565,7 +1566,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public SystemPromptAsset putArchitectSystempromptResource(PutArchitectSystempromptResourceRequest request) throws ApiException {
+  public SystemPromptAsset putArchitectSystempromptResource(PutArchitectSystempromptResourceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SystemPromptAsset>() {});
   }
 
@@ -1575,7 +1576,7 @@ public class ArchitectApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<SystemPromptAsset> putArchitectSystempromptResource(ApiRequest<SystemPromptAsset> request) throws ApiException {
+  public ApiResponse<SystemPromptAsset> putArchitectSystempromptResource(ApiRequest<SystemPromptAsset> request) throws IOException, ApiException {
     return pcapiClient.<SystemPromptAsset>invokeAPIVerbose(request, new TypeReference<SystemPromptAsset>() {});
   }
 

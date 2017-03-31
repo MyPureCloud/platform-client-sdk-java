@@ -36,6 +36,7 @@ import com.mypurecloud.sdk.v2.api.request.PutGreetingsDefaultsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGroupGreetingsDefaultsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserGreetingsDefaultsRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -60,7 +61,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteGreetingAsync(DeleteGreetingRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteGreetingAsync(DeleteGreetingRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -70,7 +71,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteGreetingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteGreetingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -80,7 +81,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Greeting> getGreetingAsync(GetGreetingRequest request, AsyncApiCallback<Greeting> callback) throws ApiException {
+  public Future<Greeting> getGreetingAsync(GetGreetingRequest request, AsyncApiCallback<Greeting> callback) {
     return pcapiClient.<Greeting>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Greeting>() {}, callback);
   }
 
@@ -90,7 +91,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Greeting>> getGreetingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Greeting>> callback) throws ApiException {
+  public Future<ApiResponse<Greeting>> getGreetingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Greeting>> callback) {
     return pcapiClient.<Greeting>invokeAPIVerboseAsync(request, new TypeReference<Greeting>() {}, callback);
   }
 
@@ -100,7 +101,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<GreetingMediaInfo> getGreetingMediaAsync(GetGreetingMediaRequest request, AsyncApiCallback<GreetingMediaInfo> callback) throws ApiException {
+  public Future<GreetingMediaInfo> getGreetingMediaAsync(GetGreetingMediaRequest request, AsyncApiCallback<GreetingMediaInfo> callback) {
     return pcapiClient.<GreetingMediaInfo>invokeAPIAsync(request.withHttpInfo(), new TypeReference<GreetingMediaInfo>() {}, callback);
   }
 
@@ -110,7 +111,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<GreetingMediaInfo>> getGreetingMediaAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GreetingMediaInfo>> callback) throws ApiException {
+  public Future<ApiResponse<GreetingMediaInfo>> getGreetingMediaAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GreetingMediaInfo>> callback) {
     return pcapiClient.<GreetingMediaInfo>invokeAPIVerboseAsync(request, new TypeReference<GreetingMediaInfo>() {}, callback);
   }
 
@@ -120,7 +121,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DomainEntityListing> getGreetingsAsync(GetGreetingsRequest request, AsyncApiCallback<DomainEntityListing> callback) throws ApiException {
+  public Future<DomainEntityListing> getGreetingsAsync(GetGreetingsRequest request, AsyncApiCallback<DomainEntityListing> callback) {
     return pcapiClient.<DomainEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainEntityListing>() {}, callback);
   }
 
@@ -130,7 +131,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DomainEntityListing>> getGreetingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<DomainEntityListing>> getGreetingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainEntityListing>> callback) {
     return pcapiClient.<DomainEntityListing>invokeAPIVerboseAsync(request, new TypeReference<DomainEntityListing>() {}, callback);
   }
 
@@ -140,7 +141,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DefaultGreetingList> getGreetingsDefaultsAsync(GetGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) throws ApiException {
+  public Future<DefaultGreetingList> getGreetingsDefaultsAsync(GetGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
     return pcapiClient.<DefaultGreetingList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, callback);
   }
 
@@ -150,7 +151,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DefaultGreetingList>> getGreetingsDefaultsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) throws ApiException {
+  public Future<ApiResponse<DefaultGreetingList>> getGreetingsDefaultsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
     return pcapiClient.<DefaultGreetingList>invokeAPIVerboseAsync(request, new TypeReference<DefaultGreetingList>() {}, callback);
   }
 
@@ -160,7 +161,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<GreetingListing> getGroupGreetingsAsync(GetGroupGreetingsRequest request, AsyncApiCallback<GreetingListing> callback) throws ApiException {
+  public Future<GreetingListing> getGroupGreetingsAsync(GetGroupGreetingsRequest request, AsyncApiCallback<GreetingListing> callback) {
     return pcapiClient.<GreetingListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<GreetingListing>() {}, callback);
   }
 
@@ -170,7 +171,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<GreetingListing>> getGroupGreetingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GreetingListing>> callback) throws ApiException {
+  public Future<ApiResponse<GreetingListing>> getGroupGreetingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GreetingListing>> callback) {
     return pcapiClient.<GreetingListing>invokeAPIVerboseAsync(request, new TypeReference<GreetingListing>() {}, callback);
   }
 
@@ -180,7 +181,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DefaultGreetingList> getGroupGreetingsDefaultsAsync(GetGroupGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) throws ApiException {
+  public Future<DefaultGreetingList> getGroupGreetingsDefaultsAsync(GetGroupGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
     return pcapiClient.<DefaultGreetingList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, callback);
   }
 
@@ -190,7 +191,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DefaultGreetingList>> getGroupGreetingsDefaultsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) throws ApiException {
+  public Future<ApiResponse<DefaultGreetingList>> getGroupGreetingsDefaultsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
     return pcapiClient.<DefaultGreetingList>invokeAPIVerboseAsync(request, new TypeReference<DefaultGreetingList>() {}, callback);
   }
 
@@ -200,7 +201,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DomainEntityListing> getUserGreetingsAsync(GetUserGreetingsRequest request, AsyncApiCallback<DomainEntityListing> callback) throws ApiException {
+  public Future<DomainEntityListing> getUserGreetingsAsync(GetUserGreetingsRequest request, AsyncApiCallback<DomainEntityListing> callback) {
     return pcapiClient.<DomainEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainEntityListing>() {}, callback);
   }
 
@@ -210,7 +211,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DomainEntityListing>> getUserGreetingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<DomainEntityListing>> getUserGreetingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainEntityListing>> callback) {
     return pcapiClient.<DomainEntityListing>invokeAPIVerboseAsync(request, new TypeReference<DomainEntityListing>() {}, callback);
   }
 
@@ -220,7 +221,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DefaultGreetingList> getUserGreetingsDefaultsAsync(GetUserGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) throws ApiException {
+  public Future<DefaultGreetingList> getUserGreetingsDefaultsAsync(GetUserGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
     return pcapiClient.<DefaultGreetingList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, callback);
   }
 
@@ -230,7 +231,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DefaultGreetingList>> getUserGreetingsDefaultsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) throws ApiException {
+  public Future<ApiResponse<DefaultGreetingList>> getUserGreetingsDefaultsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
     return pcapiClient.<DefaultGreetingList>invokeAPIVerboseAsync(request, new TypeReference<DefaultGreetingList>() {}, callback);
   }
 
@@ -240,7 +241,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DefaultGreetingList> postGreetingsAsync(PostGreetingsRequest request, AsyncApiCallback<DefaultGreetingList> callback) throws ApiException {
+  public Future<DefaultGreetingList> postGreetingsAsync(PostGreetingsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
     return pcapiClient.<DefaultGreetingList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, callback);
   }
 
@@ -250,7 +251,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DefaultGreetingList>> postGreetingsAsync(ApiRequest<Greeting> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) throws ApiException {
+  public Future<ApiResponse<DefaultGreetingList>> postGreetingsAsync(ApiRequest<Greeting> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
     return pcapiClient.<DefaultGreetingList>invokeAPIVerboseAsync(request, new TypeReference<DefaultGreetingList>() {}, callback);
   }
 
@@ -260,7 +261,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Greeting> postGroupGreetingsAsync(PostGroupGreetingsRequest request, AsyncApiCallback<Greeting> callback) throws ApiException {
+  public Future<Greeting> postGroupGreetingsAsync(PostGroupGreetingsRequest request, AsyncApiCallback<Greeting> callback) {
     return pcapiClient.<Greeting>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Greeting>() {}, callback);
   }
 
@@ -270,7 +271,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Greeting>> postGroupGreetingsAsync(ApiRequest<Greeting> request, AsyncApiCallback<ApiResponse<Greeting>> callback) throws ApiException {
+  public Future<ApiResponse<Greeting>> postGroupGreetingsAsync(ApiRequest<Greeting> request, AsyncApiCallback<ApiResponse<Greeting>> callback) {
     return pcapiClient.<Greeting>invokeAPIVerboseAsync(request, new TypeReference<Greeting>() {}, callback);
   }
 
@@ -280,7 +281,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Greeting> postUserGreetingsAsync(PostUserGreetingsRequest request, AsyncApiCallback<Greeting> callback) throws ApiException {
+  public Future<Greeting> postUserGreetingsAsync(PostUserGreetingsRequest request, AsyncApiCallback<Greeting> callback) {
     return pcapiClient.<Greeting>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Greeting>() {}, callback);
   }
 
@@ -290,7 +291,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Greeting>> postUserGreetingsAsync(ApiRequest<Greeting> request, AsyncApiCallback<ApiResponse<Greeting>> callback) throws ApiException {
+  public Future<ApiResponse<Greeting>> postUserGreetingsAsync(ApiRequest<Greeting> request, AsyncApiCallback<ApiResponse<Greeting>> callback) {
     return pcapiClient.<Greeting>invokeAPIVerboseAsync(request, new TypeReference<Greeting>() {}, callback);
   }
 
@@ -300,7 +301,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Greeting> putGreetingAsync(PutGreetingRequest request, AsyncApiCallback<Greeting> callback) throws ApiException {
+  public Future<Greeting> putGreetingAsync(PutGreetingRequest request, AsyncApiCallback<Greeting> callback) {
     return pcapiClient.<Greeting>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Greeting>() {}, callback);
   }
 
@@ -310,7 +311,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Greeting>> putGreetingAsync(ApiRequest<Greeting> request, AsyncApiCallback<ApiResponse<Greeting>> callback) throws ApiException {
+  public Future<ApiResponse<Greeting>> putGreetingAsync(ApiRequest<Greeting> request, AsyncApiCallback<ApiResponse<Greeting>> callback) {
     return pcapiClient.<Greeting>invokeAPIVerboseAsync(request, new TypeReference<Greeting>() {}, callback);
   }
 
@@ -320,7 +321,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DefaultGreetingList> putGreetingsDefaultsAsync(PutGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) throws ApiException {
+  public Future<DefaultGreetingList> putGreetingsDefaultsAsync(PutGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
     return pcapiClient.<DefaultGreetingList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, callback);
   }
 
@@ -330,7 +331,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DefaultGreetingList>> putGreetingsDefaultsAsync(ApiRequest<DefaultGreetingList> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) throws ApiException {
+  public Future<ApiResponse<DefaultGreetingList>> putGreetingsDefaultsAsync(ApiRequest<DefaultGreetingList> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
     return pcapiClient.<DefaultGreetingList>invokeAPIVerboseAsync(request, new TypeReference<DefaultGreetingList>() {}, callback);
   }
 
@@ -340,7 +341,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DefaultGreetingList> putGroupGreetingsDefaultsAsync(PutGroupGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) throws ApiException {
+  public Future<DefaultGreetingList> putGroupGreetingsDefaultsAsync(PutGroupGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
     return pcapiClient.<DefaultGreetingList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, callback);
   }
 
@@ -350,7 +351,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DefaultGreetingList>> putGroupGreetingsDefaultsAsync(ApiRequest<DefaultGreetingList> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) throws ApiException {
+  public Future<ApiResponse<DefaultGreetingList>> putGroupGreetingsDefaultsAsync(ApiRequest<DefaultGreetingList> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
     return pcapiClient.<DefaultGreetingList>invokeAPIVerboseAsync(request, new TypeReference<DefaultGreetingList>() {}, callback);
   }
 
@@ -360,7 +361,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DefaultGreetingList> putUserGreetingsDefaultsAsync(PutUserGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) throws ApiException {
+  public Future<DefaultGreetingList> putUserGreetingsDefaultsAsync(PutUserGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
     return pcapiClient.<DefaultGreetingList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, callback);
   }
 
@@ -370,7 +371,7 @@ public class GreetingsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DefaultGreetingList>> putUserGreetingsDefaultsAsync(ApiRequest<DefaultGreetingList> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) throws ApiException {
+  public Future<ApiResponse<DefaultGreetingList>> putUserGreetingsDefaultsAsync(ApiRequest<DefaultGreetingList> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
     return pcapiClient.<DefaultGreetingList>invokeAPIVerboseAsync(request, new TypeReference<DefaultGreetingList>() {}, callback);
   }
 

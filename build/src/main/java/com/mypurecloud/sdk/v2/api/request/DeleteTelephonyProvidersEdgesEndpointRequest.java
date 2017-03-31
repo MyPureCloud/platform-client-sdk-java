@@ -120,11 +120,11 @@ public class DeleteTelephonyProvidersEdgesEndpointRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'endpointId' is set
         if (this.endpointId == null) {
-            throw new ApiException(400, "Missing the required parameter 'endpointId' when building request for DeleteTelephonyProvidersEdgesEndpointRequest.");
+            throw new IllegalStateException("Missing the required parameter 'endpointId' when building request for DeleteTelephonyProvidersEdgesEndpointRequest.");
         }
         
 

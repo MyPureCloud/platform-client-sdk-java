@@ -69,11 +69,11 @@ public class PutIdentityprovidersIdentitynowRequest {
         return this;
     }
 
-    public ApiRequest<IdentityNow> withHttpInfo() throws ApiException {
+    public ApiRequest<IdentityNow> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutIdentityprovidersIdentitynowRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutIdentityprovidersIdentitynowRequest.");
         }
         
 

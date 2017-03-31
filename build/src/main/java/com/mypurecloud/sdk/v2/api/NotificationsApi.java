@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.api.request.PostNotificationsChannelSubscriptionsR
 import com.mypurecloud.sdk.v2.api.request.PostNotificationsChannelsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutNotificationsChannelSubscriptionsRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -49,7 +50,7 @@ public class NotificationsApi {
    * @param channelId Channel ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteNotificationsChannelSubscriptions(String channelId) throws ApiException {
+  public void deleteNotificationsChannelSubscriptions(String channelId) throws IOException, ApiException {
     deleteNotificationsChannelSubscriptionsWithHttpInfo(channelId);
   }
 
@@ -59,12 +60,12 @@ public class NotificationsApi {
    * @param channelId Channel ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteNotificationsChannelSubscriptionsWithHttpInfo(String channelId) throws ApiException {
+  public ApiResponse<Void> deleteNotificationsChannelSubscriptionsWithHttpInfo(String channelId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'channelId' is set
     if (channelId == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelId' when calling deleteNotificationsChannelSubscriptions");
+      throw new IllegalArgumentException("Missing the required parameter 'channelId' when calling deleteNotificationsChannelSubscriptions");
     }
     
     // create path and map variables
@@ -100,7 +101,7 @@ public class NotificationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteNotificationsChannelSubscriptions(DeleteNotificationsChannelSubscriptionsRequest request) throws ApiException {
+  public void deleteNotificationsChannelSubscriptions(DeleteNotificationsChannelSubscriptionsRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -110,7 +111,7 @@ public class NotificationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteNotificationsChannelSubscriptions(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteNotificationsChannelSubscriptions(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -121,7 +122,7 @@ public class NotificationsApi {
    * @return AvailableTopicEntityListing
    * @throws ApiException if fails to make API call
    */
-  public AvailableTopicEntityListing getNotificationsAvailabletopics(List<String> expand) throws ApiException {
+  public AvailableTopicEntityListing getNotificationsAvailabletopics(List<String> expand) throws IOException, ApiException {
     return getNotificationsAvailabletopicsWithHttpInfo(expand).getBody();
   }
 
@@ -132,7 +133,7 @@ public class NotificationsApi {
    * @return AvailableTopicEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AvailableTopicEntityListing> getNotificationsAvailabletopicsWithHttpInfo(List<String> expand) throws ApiException {
+  public ApiResponse<AvailableTopicEntityListing> getNotificationsAvailabletopicsWithHttpInfo(List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -168,7 +169,7 @@ public class NotificationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public AvailableTopicEntityListing getNotificationsAvailabletopics(GetNotificationsAvailabletopicsRequest request) throws ApiException {
+  public AvailableTopicEntityListing getNotificationsAvailabletopics(GetNotificationsAvailabletopicsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AvailableTopicEntityListing>() {});
   }
 
@@ -178,7 +179,7 @@ public class NotificationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AvailableTopicEntityListing> getNotificationsAvailabletopics(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<AvailableTopicEntityListing> getNotificationsAvailabletopics(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<AvailableTopicEntityListing>invokeAPIVerbose(request, new TypeReference<AvailableTopicEntityListing>() {});
   }
 
@@ -189,7 +190,7 @@ public class NotificationsApi {
    * @return ChannelTopicEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ChannelTopicEntityListing getNotificationsChannelSubscriptions(String channelId) throws ApiException {
+  public ChannelTopicEntityListing getNotificationsChannelSubscriptions(String channelId) throws IOException, ApiException {
     return getNotificationsChannelSubscriptionsWithHttpInfo(channelId).getBody();
   }
 
@@ -200,12 +201,12 @@ public class NotificationsApi {
    * @return ChannelTopicEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ChannelTopicEntityListing> getNotificationsChannelSubscriptionsWithHttpInfo(String channelId) throws ApiException {
+  public ApiResponse<ChannelTopicEntityListing> getNotificationsChannelSubscriptionsWithHttpInfo(String channelId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'channelId' is set
     if (channelId == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelId' when calling getNotificationsChannelSubscriptions");
+      throw new IllegalArgumentException("Missing the required parameter 'channelId' when calling getNotificationsChannelSubscriptions");
     }
     
     // create path and map variables
@@ -241,7 +242,7 @@ public class NotificationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ChannelTopicEntityListing getNotificationsChannelSubscriptions(GetNotificationsChannelSubscriptionsRequest request) throws ApiException {
+  public ChannelTopicEntityListing getNotificationsChannelSubscriptions(GetNotificationsChannelSubscriptionsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {});
   }
 
@@ -251,7 +252,7 @@ public class NotificationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ChannelTopicEntityListing> getNotificationsChannelSubscriptions(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ChannelTopicEntityListing> getNotificationsChannelSubscriptions(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ChannelTopicEntityListing>invokeAPIVerbose(request, new TypeReference<ChannelTopicEntityListing>() {});
   }
 
@@ -261,7 +262,7 @@ public class NotificationsApi {
    * @return ChannelEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ChannelEntityListing getNotificationsChannels() throws ApiException {
+  public ChannelEntityListing getNotificationsChannels() throws IOException, ApiException {
     return getNotificationsChannelsWithHttpInfo().getBody();
   }
 
@@ -271,7 +272,7 @@ public class NotificationsApi {
    * @return ChannelEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ChannelEntityListing> getNotificationsChannelsWithHttpInfo() throws ApiException {
+  public ApiResponse<ChannelEntityListing> getNotificationsChannelsWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -306,7 +307,7 @@ public class NotificationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ChannelEntityListing getNotificationsChannels(GetNotificationsChannelsRequest request) throws ApiException {
+  public ChannelEntityListing getNotificationsChannels(GetNotificationsChannelsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ChannelEntityListing>() {});
   }
 
@@ -316,7 +317,7 @@ public class NotificationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ChannelEntityListing> getNotificationsChannels(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ChannelEntityListing> getNotificationsChannels(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ChannelEntityListing>invokeAPIVerbose(request, new TypeReference<ChannelEntityListing>() {});
   }
 
@@ -328,7 +329,7 @@ public class NotificationsApi {
    * @return ChannelTopicEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ChannelTopicEntityListing postNotificationsChannelSubscriptions(String channelId, List<ChannelTopic> body) throws ApiException {
+  public ChannelTopicEntityListing postNotificationsChannelSubscriptions(String channelId, List<ChannelTopic> body) throws IOException, ApiException {
     return postNotificationsChannelSubscriptionsWithHttpInfo(channelId, body).getBody();
   }
 
@@ -340,17 +341,17 @@ public class NotificationsApi {
    * @return ChannelTopicEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ChannelTopicEntityListing> postNotificationsChannelSubscriptionsWithHttpInfo(String channelId, List<ChannelTopic> body) throws ApiException {
+  public ApiResponse<ChannelTopicEntityListing> postNotificationsChannelSubscriptionsWithHttpInfo(String channelId, List<ChannelTopic> body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'channelId' is set
     if (channelId == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelId' when calling postNotificationsChannelSubscriptions");
+      throw new IllegalArgumentException("Missing the required parameter 'channelId' when calling postNotificationsChannelSubscriptions");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postNotificationsChannelSubscriptions");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postNotificationsChannelSubscriptions");
     }
     
     // create path and map variables
@@ -386,7 +387,7 @@ public class NotificationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ChannelTopicEntityListing postNotificationsChannelSubscriptions(PostNotificationsChannelSubscriptionsRequest request) throws ApiException {
+  public ChannelTopicEntityListing postNotificationsChannelSubscriptions(PostNotificationsChannelSubscriptionsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {});
   }
 
@@ -396,7 +397,7 @@ public class NotificationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ChannelTopicEntityListing> postNotificationsChannelSubscriptions(ApiRequest<List<ChannelTopic>> request) throws ApiException {
+  public ApiResponse<ChannelTopicEntityListing> postNotificationsChannelSubscriptions(ApiRequest<List<ChannelTopic>> request) throws IOException, ApiException {
     return pcapiClient.<ChannelTopicEntityListing>invokeAPIVerbose(request, new TypeReference<ChannelTopicEntityListing>() {});
   }
 
@@ -406,7 +407,7 @@ public class NotificationsApi {
    * @return Channel
    * @throws ApiException if fails to make API call
    */
-  public Channel postNotificationsChannels() throws ApiException {
+  public Channel postNotificationsChannels() throws IOException, ApiException {
     return postNotificationsChannelsWithHttpInfo().getBody();
   }
 
@@ -416,7 +417,7 @@ public class NotificationsApi {
    * @return Channel
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Channel> postNotificationsChannelsWithHttpInfo() throws ApiException {
+  public ApiResponse<Channel> postNotificationsChannelsWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -451,7 +452,7 @@ public class NotificationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Channel postNotificationsChannels(PostNotificationsChannelsRequest request) throws ApiException {
+  public Channel postNotificationsChannels(PostNotificationsChannelsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Channel>() {});
   }
 
@@ -461,7 +462,7 @@ public class NotificationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Channel> postNotificationsChannels(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Channel> postNotificationsChannels(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Channel>invokeAPIVerbose(request, new TypeReference<Channel>() {});
   }
 
@@ -473,7 +474,7 @@ public class NotificationsApi {
    * @return ChannelTopicEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ChannelTopicEntityListing putNotificationsChannelSubscriptions(String channelId, List<ChannelTopic> body) throws ApiException {
+  public ChannelTopicEntityListing putNotificationsChannelSubscriptions(String channelId, List<ChannelTopic> body) throws IOException, ApiException {
     return putNotificationsChannelSubscriptionsWithHttpInfo(channelId, body).getBody();
   }
 
@@ -485,17 +486,17 @@ public class NotificationsApi {
    * @return ChannelTopicEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ChannelTopicEntityListing> putNotificationsChannelSubscriptionsWithHttpInfo(String channelId, List<ChannelTopic> body) throws ApiException {
+  public ApiResponse<ChannelTopicEntityListing> putNotificationsChannelSubscriptionsWithHttpInfo(String channelId, List<ChannelTopic> body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'channelId' is set
     if (channelId == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelId' when calling putNotificationsChannelSubscriptions");
+      throw new IllegalArgumentException("Missing the required parameter 'channelId' when calling putNotificationsChannelSubscriptions");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putNotificationsChannelSubscriptions");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putNotificationsChannelSubscriptions");
     }
     
     // create path and map variables
@@ -531,7 +532,7 @@ public class NotificationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ChannelTopicEntityListing putNotificationsChannelSubscriptions(PutNotificationsChannelSubscriptionsRequest request) throws ApiException {
+  public ChannelTopicEntityListing putNotificationsChannelSubscriptions(PutNotificationsChannelSubscriptionsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {});
   }
 
@@ -541,7 +542,7 @@ public class NotificationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ChannelTopicEntityListing> putNotificationsChannelSubscriptions(ApiRequest<List<ChannelTopic>> request) throws ApiException {
+  public ApiResponse<ChannelTopicEntityListing> putNotificationsChannelSubscriptions(ApiRequest<List<ChannelTopic>> request) throws IOException, ApiException {
     return pcapiClient.<ChannelTopicEntityListing>invokeAPIVerbose(request, new TypeReference<ChannelTopicEntityListing>() {});
   }
 

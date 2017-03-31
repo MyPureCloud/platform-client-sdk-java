@@ -134,16 +134,16 @@ public class DeleteTelephonyProvidersEdgeLogicalinterfaceRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'edgeId' is set
         if (this.edgeId == null) {
-            throw new ApiException(400, "Missing the required parameter 'edgeId' when building request for DeleteTelephonyProvidersEdgeLogicalinterfaceRequest.");
+            throw new IllegalStateException("Missing the required parameter 'edgeId' when building request for DeleteTelephonyProvidersEdgeLogicalinterfaceRequest.");
         }
         
         // verify the required parameter 'interfaceId' is set
         if (this.interfaceId == null) {
-            throw new ApiException(400, "Missing the required parameter 'interfaceId' when building request for DeleteTelephonyProvidersEdgeLogicalinterfaceRequest.");
+            throw new IllegalStateException("Missing the required parameter 'interfaceId' when building request for DeleteTelephonyProvidersEdgeLogicalinterfaceRequest.");
         }
         
 

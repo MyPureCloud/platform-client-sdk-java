@@ -100,16 +100,16 @@ public class DeleteContentmanagementWorkspaceMemberRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'workspaceId' is set
         if (this.workspaceId == null) {
-            throw new ApiException(400, "Missing the required parameter 'workspaceId' when building request for DeleteContentmanagementWorkspaceMemberRequest.");
+            throw new IllegalStateException("Missing the required parameter 'workspaceId' when building request for DeleteContentmanagementWorkspaceMemberRequest.");
         }
         
         // verify the required parameter 'memberId' is set
         if (this.memberId == null) {
-            throw new ApiException(400, "Missing the required parameter 'memberId' when building request for DeleteContentmanagementWorkspaceMemberRequest.");
+            throw new IllegalStateException("Missing the required parameter 'memberId' when building request for DeleteContentmanagementWorkspaceMemberRequest.");
         }
         
 

@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponsesQueryRe
 import com.mypurecloud.sdk.v2.api.request.PutResponsemanagementLibraryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutResponsemanagementResponseRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -54,7 +55,7 @@ public class ResponseManagementApi {
    * @param libraryId Library ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteResponsemanagementLibrary(String libraryId) throws ApiException {
+  public void deleteResponsemanagementLibrary(String libraryId) throws IOException, ApiException {
     deleteResponsemanagementLibraryWithHttpInfo(libraryId);
   }
 
@@ -64,12 +65,12 @@ public class ResponseManagementApi {
    * @param libraryId Library ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteResponsemanagementLibraryWithHttpInfo(String libraryId) throws ApiException {
+  public ApiResponse<Void> deleteResponsemanagementLibraryWithHttpInfo(String libraryId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'libraryId' is set
     if (libraryId == null) {
-      throw new ApiException(400, "Missing the required parameter 'libraryId' when calling deleteResponsemanagementLibrary");
+      throw new IllegalArgumentException("Missing the required parameter 'libraryId' when calling deleteResponsemanagementLibrary");
     }
     
     // create path and map variables
@@ -105,7 +106,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteResponsemanagementLibrary(DeleteResponsemanagementLibraryRequest request) throws ApiException {
+  public void deleteResponsemanagementLibrary(DeleteResponsemanagementLibraryRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -115,7 +116,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteResponsemanagementLibrary(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteResponsemanagementLibrary(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -125,7 +126,7 @@ public class ResponseManagementApi {
    * @param responseId Response ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteResponsemanagementResponse(String responseId) throws ApiException {
+  public void deleteResponsemanagementResponse(String responseId) throws IOException, ApiException {
     deleteResponsemanagementResponseWithHttpInfo(responseId);
   }
 
@@ -135,12 +136,12 @@ public class ResponseManagementApi {
    * @param responseId Response ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteResponsemanagementResponseWithHttpInfo(String responseId) throws ApiException {
+  public ApiResponse<Void> deleteResponsemanagementResponseWithHttpInfo(String responseId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'responseId' is set
     if (responseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'responseId' when calling deleteResponsemanagementResponse");
+      throw new IllegalArgumentException("Missing the required parameter 'responseId' when calling deleteResponsemanagementResponse");
     }
     
     // create path and map variables
@@ -176,7 +177,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteResponsemanagementResponse(DeleteResponsemanagementResponseRequest request) throws ApiException {
+  public void deleteResponsemanagementResponse(DeleteResponsemanagementResponseRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -186,7 +187,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteResponsemanagementResponse(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteResponsemanagementResponse(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -198,7 +199,7 @@ public class ResponseManagementApi {
    * @return LibraryEntityListing
    * @throws ApiException if fails to make API call
    */
-  public LibraryEntityListing getResponsemanagementLibraries(Integer pageNumber, Integer pageSize) throws ApiException {
+  public LibraryEntityListing getResponsemanagementLibraries(Integer pageNumber, Integer pageSize) throws IOException, ApiException {
     return getResponsemanagementLibrariesWithHttpInfo(pageNumber, pageSize).getBody();
   }
 
@@ -210,7 +211,7 @@ public class ResponseManagementApi {
    * @return LibraryEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LibraryEntityListing> getResponsemanagementLibrariesWithHttpInfo(Integer pageNumber, Integer pageSize) throws ApiException {
+  public ApiResponse<LibraryEntityListing> getResponsemanagementLibrariesWithHttpInfo(Integer pageNumber, Integer pageSize) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -247,7 +248,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public LibraryEntityListing getResponsemanagementLibraries(GetResponsemanagementLibrariesRequest request) throws ApiException {
+  public LibraryEntityListing getResponsemanagementLibraries(GetResponsemanagementLibrariesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LibraryEntityListing>() {});
   }
 
@@ -257,7 +258,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LibraryEntityListing> getResponsemanagementLibraries(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<LibraryEntityListing> getResponsemanagementLibraries(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<LibraryEntityListing>invokeAPIVerbose(request, new TypeReference<LibraryEntityListing>() {});
   }
 
@@ -268,7 +269,7 @@ public class ResponseManagementApi {
    * @return Library
    * @throws ApiException if fails to make API call
    */
-  public Library getResponsemanagementLibrary(String libraryId) throws ApiException {
+  public Library getResponsemanagementLibrary(String libraryId) throws IOException, ApiException {
     return getResponsemanagementLibraryWithHttpInfo(libraryId).getBody();
   }
 
@@ -279,12 +280,12 @@ public class ResponseManagementApi {
    * @return Library
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Library> getResponsemanagementLibraryWithHttpInfo(String libraryId) throws ApiException {
+  public ApiResponse<Library> getResponsemanagementLibraryWithHttpInfo(String libraryId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'libraryId' is set
     if (libraryId == null) {
-      throw new ApiException(400, "Missing the required parameter 'libraryId' when calling getResponsemanagementLibrary");
+      throw new IllegalArgumentException("Missing the required parameter 'libraryId' when calling getResponsemanagementLibrary");
     }
     
     // create path and map variables
@@ -320,7 +321,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Library getResponsemanagementLibrary(GetResponsemanagementLibraryRequest request) throws ApiException {
+  public Library getResponsemanagementLibrary(GetResponsemanagementLibraryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Library>() {});
   }
 
@@ -330,7 +331,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Library> getResponsemanagementLibrary(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Library> getResponsemanagementLibrary(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Library>invokeAPIVerbose(request, new TypeReference<Library>() {});
   }
 
@@ -338,26 +339,28 @@ public class ResponseManagementApi {
    * Get details about an existing response.
    * 
    * @param responseId Response ID (required)
+   * @param expand Expand instructions for the return value. (optional)
    * @return Response
    * @throws ApiException if fails to make API call
    */
-  public Response getResponsemanagementResponse(String responseId) throws ApiException {
-    return getResponsemanagementResponseWithHttpInfo(responseId).getBody();
+  public Response getResponsemanagementResponse(String responseId, String expand) throws IOException, ApiException {
+    return getResponsemanagementResponseWithHttpInfo(responseId, expand).getBody();
   }
 
   /**
    * Get details about an existing response.
    * 
    * @param responseId Response ID (required)
+   * @param expand Expand instructions for the return value. (optional)
    * @return Response
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Response> getResponsemanagementResponseWithHttpInfo(String responseId) throws ApiException {
+  public ApiResponse<Response> getResponsemanagementResponseWithHttpInfo(String responseId, String expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'responseId' is set
     if (responseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'responseId' when calling getResponsemanagementResponse");
+      throw new IllegalArgumentException("Missing the required parameter 'responseId' when calling getResponsemanagementResponse");
     }
     
     // create path and map variables
@@ -369,6 +372,7 @@ public class ResponseManagementApi {
     Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
     Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
 
+    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
 
     
     
@@ -393,7 +397,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Response getResponsemanagementResponse(GetResponsemanagementResponseRequest request) throws ApiException {
+  public Response getResponsemanagementResponse(GetResponsemanagementResponseRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Response>() {});
   }
 
@@ -403,7 +407,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Response> getResponsemanagementResponse(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Response> getResponsemanagementResponse(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Response>invokeAPIVerbose(request, new TypeReference<Response>() {});
   }
 
@@ -413,11 +417,12 @@ public class ResponseManagementApi {
    * @param libraryId Library ID (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
+   * @param expand Expand instructions for the return value. (optional)
    * @return ResponseEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ResponseEntityListing getResponsemanagementResponses(String libraryId, Integer pageNumber, Integer pageSize) throws ApiException {
-    return getResponsemanagementResponsesWithHttpInfo(libraryId, pageNumber, pageSize).getBody();
+  public ResponseEntityListing getResponsemanagementResponses(String libraryId, Integer pageNumber, Integer pageSize, String expand) throws IOException, ApiException {
+    return getResponsemanagementResponsesWithHttpInfo(libraryId, pageNumber, pageSize, expand).getBody();
   }
 
   /**
@@ -426,15 +431,16 @@ public class ResponseManagementApi {
    * @param libraryId Library ID (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
+   * @param expand Expand instructions for the return value. (optional)
    * @return ResponseEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ResponseEntityListing> getResponsemanagementResponsesWithHttpInfo(String libraryId, Integer pageNumber, Integer pageSize) throws ApiException {
+  public ApiResponse<ResponseEntityListing> getResponsemanagementResponsesWithHttpInfo(String libraryId, Integer pageNumber, Integer pageSize, String expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'libraryId' is set
     if (libraryId == null) {
-      throw new ApiException(400, "Missing the required parameter 'libraryId' when calling getResponsemanagementResponses");
+      throw new IllegalArgumentException("Missing the required parameter 'libraryId' when calling getResponsemanagementResponses");
     }
     
     // create path and map variables
@@ -448,6 +454,7 @@ public class ResponseManagementApi {
     pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "libraryId", libraryId));
     pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
     pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
+    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
 
     
     
@@ -472,7 +479,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ResponseEntityListing getResponsemanagementResponses(GetResponsemanagementResponsesRequest request) throws ApiException {
+  public ResponseEntityListing getResponsemanagementResponses(GetResponsemanagementResponsesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ResponseEntityListing>() {});
   }
 
@@ -482,7 +489,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ResponseEntityListing> getResponsemanagementResponses(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ResponseEntityListing> getResponsemanagementResponses(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ResponseEntityListing>invokeAPIVerbose(request, new TypeReference<ResponseEntityListing>() {});
   }
 
@@ -493,7 +500,7 @@ public class ResponseManagementApi {
    * @return Library
    * @throws ApiException if fails to make API call
    */
-  public Library postResponsemanagementLibraries(Library body) throws ApiException {
+  public Library postResponsemanagementLibraries(Library body) throws IOException, ApiException {
     return postResponsemanagementLibrariesWithHttpInfo(body).getBody();
   }
 
@@ -504,12 +511,12 @@ public class ResponseManagementApi {
    * @return Library
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Library> postResponsemanagementLibrariesWithHttpInfo(Library body) throws ApiException {
+  public ApiResponse<Library> postResponsemanagementLibrariesWithHttpInfo(Library body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postResponsemanagementLibraries");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postResponsemanagementLibraries");
     }
     
     // create path and map variables
@@ -544,7 +551,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Library postResponsemanagementLibraries(PostResponsemanagementLibrariesRequest request) throws ApiException {
+  public Library postResponsemanagementLibraries(PostResponsemanagementLibrariesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Library>() {});
   }
 
@@ -554,7 +561,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Library> postResponsemanagementLibraries(ApiRequest<Library> request) throws ApiException {
+  public ApiResponse<Library> postResponsemanagementLibraries(ApiRequest<Library> request) throws IOException, ApiException {
     return pcapiClient.<Library>invokeAPIVerbose(request, new TypeReference<Library>() {});
   }
 
@@ -562,26 +569,28 @@ public class ResponseManagementApi {
    * Create a response.
    * 
    * @param body Response (required)
+   * @param expand Expand instructions for the return value. (optional)
    * @return Response
    * @throws ApiException if fails to make API call
    */
-  public Response postResponsemanagementResponses(Response body) throws ApiException {
-    return postResponsemanagementResponsesWithHttpInfo(body).getBody();
+  public Response postResponsemanagementResponses(Response body, String expand) throws IOException, ApiException {
+    return postResponsemanagementResponsesWithHttpInfo(body, expand).getBody();
   }
 
   /**
    * Create a response.
    * 
    * @param body Response (required)
+   * @param expand Expand instructions for the return value. (optional)
    * @return Response
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Response> postResponsemanagementResponsesWithHttpInfo(Response body) throws ApiException {
+  public ApiResponse<Response> postResponsemanagementResponsesWithHttpInfo(Response body, String expand) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postResponsemanagementResponses");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postResponsemanagementResponses");
     }
     
     // create path and map variables
@@ -592,6 +601,7 @@ public class ResponseManagementApi {
     Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
     Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
 
+    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
 
     
     
@@ -616,7 +626,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Response postResponsemanagementResponses(PostResponsemanagementResponsesRequest request) throws ApiException {
+  public Response postResponsemanagementResponses(PostResponsemanagementResponsesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Response>() {});
   }
 
@@ -626,7 +636,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Response> postResponsemanagementResponses(ApiRequest<Response> request) throws ApiException {
+  public ApiResponse<Response> postResponsemanagementResponses(ApiRequest<Response> request) throws IOException, ApiException {
     return pcapiClient.<Response>invokeAPIVerbose(request, new TypeReference<Response>() {});
   }
 
@@ -637,7 +647,7 @@ public class ResponseManagementApi {
    * @return ResponseQueryResults
    * @throws ApiException if fails to make API call
    */
-  public ResponseQueryResults postResponsemanagementResponsesQuery(ResponseQueryRequest body) throws ApiException {
+  public ResponseQueryResults postResponsemanagementResponsesQuery(ResponseQueryRequest body) throws IOException, ApiException {
     return postResponsemanagementResponsesQueryWithHttpInfo(body).getBody();
   }
 
@@ -648,12 +658,12 @@ public class ResponseManagementApi {
    * @return ResponseQueryResults
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ResponseQueryResults> postResponsemanagementResponsesQueryWithHttpInfo(ResponseQueryRequest body) throws ApiException {
+  public ApiResponse<ResponseQueryResults> postResponsemanagementResponsesQueryWithHttpInfo(ResponseQueryRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postResponsemanagementResponsesQuery");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postResponsemanagementResponsesQuery");
     }
     
     // create path and map variables
@@ -688,7 +698,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ResponseQueryResults postResponsemanagementResponsesQuery(PostResponsemanagementResponsesQueryRequest request) throws ApiException {
+  public ResponseQueryResults postResponsemanagementResponsesQuery(PostResponsemanagementResponsesQueryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ResponseQueryResults>() {});
   }
 
@@ -698,7 +708,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ResponseQueryResults> postResponsemanagementResponsesQuery(ApiRequest<ResponseQueryRequest> request) throws ApiException {
+  public ApiResponse<ResponseQueryResults> postResponsemanagementResponsesQuery(ApiRequest<ResponseQueryRequest> request) throws IOException, ApiException {
     return pcapiClient.<ResponseQueryResults>invokeAPIVerbose(request, new TypeReference<ResponseQueryResults>() {});
   }
 
@@ -710,7 +720,7 @@ public class ResponseManagementApi {
    * @return Library
    * @throws ApiException if fails to make API call
    */
-  public Library putResponsemanagementLibrary(String libraryId, Library body) throws ApiException {
+  public Library putResponsemanagementLibrary(String libraryId, Library body) throws IOException, ApiException {
     return putResponsemanagementLibraryWithHttpInfo(libraryId, body).getBody();
   }
 
@@ -722,17 +732,17 @@ public class ResponseManagementApi {
    * @return Library
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Library> putResponsemanagementLibraryWithHttpInfo(String libraryId, Library body) throws ApiException {
+  public ApiResponse<Library> putResponsemanagementLibraryWithHttpInfo(String libraryId, Library body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'libraryId' is set
     if (libraryId == null) {
-      throw new ApiException(400, "Missing the required parameter 'libraryId' when calling putResponsemanagementLibrary");
+      throw new IllegalArgumentException("Missing the required parameter 'libraryId' when calling putResponsemanagementLibrary");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putResponsemanagementLibrary");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putResponsemanagementLibrary");
     }
     
     // create path and map variables
@@ -768,7 +778,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Library putResponsemanagementLibrary(PutResponsemanagementLibraryRequest request) throws ApiException {
+  public Library putResponsemanagementLibrary(PutResponsemanagementLibraryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Library>() {});
   }
 
@@ -778,7 +788,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Library> putResponsemanagementLibrary(ApiRequest<Library> request) throws ApiException {
+  public ApiResponse<Library> putResponsemanagementLibrary(ApiRequest<Library> request) throws IOException, ApiException {
     return pcapiClient.<Library>invokeAPIVerbose(request, new TypeReference<Library>() {});
   }
 
@@ -787,11 +797,12 @@ public class ResponseManagementApi {
    * Fields that can be updated: name, libraries, and texts. The most recent version is required for updates.
    * @param responseId Response ID (required)
    * @param body Response (required)
+   * @param expand Expand instructions for the return value. (optional)
    * @return Response
    * @throws ApiException if fails to make API call
    */
-  public Response putResponsemanagementResponse(String responseId, Response body) throws ApiException {
-    return putResponsemanagementResponseWithHttpInfo(responseId, body).getBody();
+  public Response putResponsemanagementResponse(String responseId, Response body, String expand) throws IOException, ApiException {
+    return putResponsemanagementResponseWithHttpInfo(responseId, body, expand).getBody();
   }
 
   /**
@@ -799,20 +810,21 @@ public class ResponseManagementApi {
    * Fields that can be updated: name, libraries, and texts. The most recent version is required for updates.
    * @param responseId Response ID (required)
    * @param body Response (required)
+   * @param expand Expand instructions for the return value. (optional)
    * @return Response
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Response> putResponsemanagementResponseWithHttpInfo(String responseId, Response body) throws ApiException {
+  public ApiResponse<Response> putResponsemanagementResponseWithHttpInfo(String responseId, Response body, String expand) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'responseId' is set
     if (responseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'responseId' when calling putResponsemanagementResponse");
+      throw new IllegalArgumentException("Missing the required parameter 'responseId' when calling putResponsemanagementResponse");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putResponsemanagementResponse");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putResponsemanagementResponse");
     }
     
     // create path and map variables
@@ -824,6 +836,7 @@ public class ResponseManagementApi {
     Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
     Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
 
+    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
 
     
     
@@ -848,7 +861,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Response putResponsemanagementResponse(PutResponsemanagementResponseRequest request) throws ApiException {
+  public Response putResponsemanagementResponse(PutResponsemanagementResponseRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Response>() {});
   }
 
@@ -858,7 +871,7 @@ public class ResponseManagementApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Response> putResponsemanagementResponse(ApiRequest<Response> request) throws ApiException {
+  public ApiResponse<Response> putResponsemanagementResponse(ApiRequest<Response> request) throws IOException, ApiException {
     return pcapiClient.<Response>invokeAPIVerbose(request, new TypeReference<Response>() {});
   }
 

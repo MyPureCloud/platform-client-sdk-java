@@ -60,11 +60,11 @@ public class GetLanguagesTranslationsUserRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'userId' is set
         if (this.userId == null) {
-            throw new ApiException(400, "Missing the required parameter 'userId' when building request for GetLanguagesTranslationsUserRequest.");
+            throw new IllegalStateException("Missing the required parameter 'userId' when building request for GetLanguagesTranslationsUserRequest.");
         }
         
 

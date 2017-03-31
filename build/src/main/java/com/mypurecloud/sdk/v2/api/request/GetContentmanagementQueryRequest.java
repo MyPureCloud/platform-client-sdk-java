@@ -156,11 +156,11 @@ public class GetContentmanagementQueryRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'queryPhrase' is set
         if (this.queryPhrase == null) {
-            throw new ApiException(400, "Missing the required parameter 'queryPhrase' when building request for GetContentmanagementQueryRequest.");
+            throw new IllegalStateException("Missing the required parameter 'queryPhrase' when building request for GetContentmanagementQueryRequest.");
         }
         
 

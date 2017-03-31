@@ -73,16 +73,16 @@ public class PutOauthClientRequest {
         return this;
     }
 
-    public ApiRequest<OAuthClient> withHttpInfo() throws ApiException {
+    public ApiRequest<OAuthClient> withHttpInfo() {
         
         // verify the required parameter 'clientId' is set
         if (this.clientId == null) {
-            throw new ApiException(400, "Missing the required parameter 'clientId' when building request for PutOauthClientRequest.");
+            throw new IllegalStateException("Missing the required parameter 'clientId' when building request for PutOauthClientRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutOauthClientRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutOauthClientRequest.");
         }
         
 

@@ -59,11 +59,11 @@ public class GetStationRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'stationId' is set
         if (this.stationId == null) {
-            throw new ApiException(400, "Missing the required parameter 'stationId' when building request for GetStationRequest.");
+            throw new IllegalStateException("Missing the required parameter 'stationId' when building request for GetStationRequest.");
         }
         
 

@@ -120,11 +120,11 @@ public class PostTelephonyProvidersEdgesDidpoolsRequest {
         return this;
     }
 
-    public ApiRequest<DIDPool> withHttpInfo() throws ApiException {
+    public ApiRequest<DIDPool> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostTelephonyProvidersEdgesDidpoolsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostTelephonyProvidersEdgesDidpoolsRequest.");
         }
         
 

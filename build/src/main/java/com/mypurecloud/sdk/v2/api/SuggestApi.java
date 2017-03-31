@@ -21,6 +21,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSearchSuggestRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSearchSuggestRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -47,7 +48,7 @@ public class SuggestApi {
    * @return JsonNodeSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public JsonNodeSearchResponse getSearch(String q64, List<String> expand, Boolean profile) throws ApiException {
+  public JsonNodeSearchResponse getSearch(String q64, List<String> expand, Boolean profile) throws IOException, ApiException {
     return getSearchWithHttpInfo(q64, expand, profile).getBody();
   }
 
@@ -60,12 +61,12 @@ public class SuggestApi {
    * @return JsonNodeSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<JsonNodeSearchResponse> getSearchWithHttpInfo(String q64, List<String> expand, Boolean profile) throws ApiException {
+  public ApiResponse<JsonNodeSearchResponse> getSearchWithHttpInfo(String q64, List<String> expand, Boolean profile) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'q64' is set
     if (q64 == null) {
-      throw new ApiException(400, "Missing the required parameter 'q64' when calling getSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'q64' when calling getSearch");
     }
     
     // create path and map variables
@@ -103,7 +104,7 @@ public class SuggestApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public JsonNodeSearchResponse getSearch(GetSearchRequest request) throws ApiException {
+  public JsonNodeSearchResponse getSearch(GetSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {});
   }
 
@@ -113,7 +114,7 @@ public class SuggestApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<JsonNodeSearchResponse> getSearch(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<JsonNodeSearchResponse> getSearch(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<JsonNodeSearchResponse>invokeAPIVerbose(request, new TypeReference<JsonNodeSearchResponse>() {});
   }
 
@@ -126,7 +127,7 @@ public class SuggestApi {
    * @return JsonNodeSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public JsonNodeSearchResponse getSearchSuggest(String q64, List<String> expand, Boolean profile) throws ApiException {
+  public JsonNodeSearchResponse getSearchSuggest(String q64, List<String> expand, Boolean profile) throws IOException, ApiException {
     return getSearchSuggestWithHttpInfo(q64, expand, profile).getBody();
   }
 
@@ -139,12 +140,12 @@ public class SuggestApi {
    * @return JsonNodeSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<JsonNodeSearchResponse> getSearchSuggestWithHttpInfo(String q64, List<String> expand, Boolean profile) throws ApiException {
+  public ApiResponse<JsonNodeSearchResponse> getSearchSuggestWithHttpInfo(String q64, List<String> expand, Boolean profile) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'q64' is set
     if (q64 == null) {
-      throw new ApiException(400, "Missing the required parameter 'q64' when calling getSearchSuggest");
+      throw new IllegalArgumentException("Missing the required parameter 'q64' when calling getSearchSuggest");
     }
     
     // create path and map variables
@@ -182,7 +183,7 @@ public class SuggestApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public JsonNodeSearchResponse getSearchSuggest(GetSearchSuggestRequest request) throws ApiException {
+  public JsonNodeSearchResponse getSearchSuggest(GetSearchSuggestRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {});
   }
 
@@ -192,7 +193,7 @@ public class SuggestApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<JsonNodeSearchResponse> getSearchSuggest(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<JsonNodeSearchResponse> getSearchSuggest(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<JsonNodeSearchResponse>invokeAPIVerbose(request, new TypeReference<JsonNodeSearchResponse>() {});
   }
 
@@ -204,7 +205,7 @@ public class SuggestApi {
    * @return JsonNodeSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public JsonNodeSearchResponse postSearch(SearchRequest body, Boolean profile) throws ApiException {
+  public JsonNodeSearchResponse postSearch(SearchRequest body, Boolean profile) throws IOException, ApiException {
     return postSearchWithHttpInfo(body, profile).getBody();
   }
 
@@ -216,12 +217,12 @@ public class SuggestApi {
    * @return JsonNodeSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<JsonNodeSearchResponse> postSearchWithHttpInfo(SearchRequest body, Boolean profile) throws ApiException {
+  public ApiResponse<JsonNodeSearchResponse> postSearchWithHttpInfo(SearchRequest body, Boolean profile) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postSearch");
     }
     
     // create path and map variables
@@ -257,7 +258,7 @@ public class SuggestApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public JsonNodeSearchResponse postSearch(PostSearchRequest request) throws ApiException {
+  public JsonNodeSearchResponse postSearch(PostSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {});
   }
 
@@ -267,7 +268,7 @@ public class SuggestApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<JsonNodeSearchResponse> postSearch(ApiRequest<SearchRequest> request) throws ApiException {
+  public ApiResponse<JsonNodeSearchResponse> postSearch(ApiRequest<SearchRequest> request) throws IOException, ApiException {
     return pcapiClient.<JsonNodeSearchResponse>invokeAPIVerbose(request, new TypeReference<JsonNodeSearchResponse>() {});
   }
 
@@ -279,7 +280,7 @@ public class SuggestApi {
    * @return JsonNodeSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public JsonNodeSearchResponse postSearchSuggest(SuggestSearchRequest body, Boolean profile) throws ApiException {
+  public JsonNodeSearchResponse postSearchSuggest(SuggestSearchRequest body, Boolean profile) throws IOException, ApiException {
     return postSearchSuggestWithHttpInfo(body, profile).getBody();
   }
 
@@ -291,12 +292,12 @@ public class SuggestApi {
    * @return JsonNodeSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<JsonNodeSearchResponse> postSearchSuggestWithHttpInfo(SuggestSearchRequest body, Boolean profile) throws ApiException {
+  public ApiResponse<JsonNodeSearchResponse> postSearchSuggestWithHttpInfo(SuggestSearchRequest body, Boolean profile) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postSearchSuggest");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postSearchSuggest");
     }
     
     // create path and map variables
@@ -332,7 +333,7 @@ public class SuggestApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public JsonNodeSearchResponse postSearchSuggest(PostSearchSuggestRequest request) throws ApiException {
+  public JsonNodeSearchResponse postSearchSuggest(PostSearchSuggestRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {});
   }
 
@@ -342,7 +343,7 @@ public class SuggestApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<JsonNodeSearchResponse> postSearchSuggest(ApiRequest<SuggestSearchRequest> request) throws ApiException {
+  public ApiResponse<JsonNodeSearchResponse> postSearchSuggest(ApiRequest<SuggestSearchRequest> request) throws IOException, ApiException {
     return pcapiClient.<JsonNodeSearchResponse>invokeAPIVerbose(request, new TypeReference<JsonNodeSearchResponse>() {});
   }
 

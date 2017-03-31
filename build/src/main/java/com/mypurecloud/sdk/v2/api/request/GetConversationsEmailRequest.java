@@ -96,11 +96,11 @@ public class GetConversationsEmailRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'emailId' is set
         if (this.emailId == null) {
-            throw new ApiException(400, "Missing the required parameter 'emailId' when building request for GetConversationsEmailRequest.");
+            throw new IllegalStateException("Missing the required parameter 'emailId' when building request for GetConversationsEmailRequest.");
         }
         
 

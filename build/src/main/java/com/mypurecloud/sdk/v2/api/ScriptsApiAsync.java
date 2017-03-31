@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdPageRequest
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdPagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdVariablesRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -51,7 +52,7 @@ public class ScriptsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Script> getScriptAsync(GetScriptRequest request, AsyncApiCallback<Script> callback) throws ApiException {
+  public Future<Script> getScriptAsync(GetScriptRequest request, AsyncApiCallback<Script> callback) {
     return pcapiClient.<Script>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Script>() {}, callback);
   }
 
@@ -61,7 +62,7 @@ public class ScriptsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Script>> getScriptAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Script>> callback) throws ApiException {
+  public Future<ApiResponse<Script>> getScriptAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Script>> callback) {
     return pcapiClient.<Script>invokeAPIVerboseAsync(request, new TypeReference<Script>() {}, callback);
   }
 
@@ -71,7 +72,7 @@ public class ScriptsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Page> getScriptPageAsync(GetScriptPageRequest request, AsyncApiCallback<Page> callback) throws ApiException {
+  public Future<Page> getScriptPageAsync(GetScriptPageRequest request, AsyncApiCallback<Page> callback) {
     return pcapiClient.<Page>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Page>() {}, callback);
   }
 
@@ -81,7 +82,7 @@ public class ScriptsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Page>> getScriptPageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Page>> callback) throws ApiException {
+  public Future<ApiResponse<Page>> getScriptPageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Page>> callback) {
     return pcapiClient.<Page>invokeAPIVerboseAsync(request, new TypeReference<Page>() {}, callback);
   }
 
@@ -91,7 +92,7 @@ public class ScriptsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<Page>> getScriptPagesAsync(GetScriptPagesRequest request, AsyncApiCallback<List<Page>> callback) throws ApiException {
+  public Future<List<Page>> getScriptPagesAsync(GetScriptPagesRequest request, AsyncApiCallback<List<Page>> callback) {
     return pcapiClient.<List<Page>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<Page>>() {}, callback);
   }
 
@@ -101,7 +102,7 @@ public class ScriptsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<Page>>> getScriptPagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<Page>>> callback) throws ApiException {
+  public Future<ApiResponse<List<Page>>> getScriptPagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<Page>>> callback) {
     return pcapiClient.<List<Page>>invokeAPIVerboseAsync(request, new TypeReference<List<Page>>() {}, callback);
   }
 
@@ -111,7 +112,7 @@ public class ScriptsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ScriptEntityListing> getScriptsAsync(GetScriptsRequest request, AsyncApiCallback<ScriptEntityListing> callback) throws ApiException {
+  public Future<ScriptEntityListing> getScriptsAsync(GetScriptsRequest request, AsyncApiCallback<ScriptEntityListing> callback) {
     return pcapiClient.<ScriptEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ScriptEntityListing>() {}, callback);
   }
 
@@ -121,7 +122,7 @@ public class ScriptsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ScriptEntityListing>> getScriptsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ScriptEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<ScriptEntityListing>> getScriptsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ScriptEntityListing>> callback) {
     return pcapiClient.<ScriptEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ScriptEntityListing>() {}, callback);
   }
 
@@ -131,7 +132,7 @@ public class ScriptsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ScriptEntityListing> getScriptsPublishedAsync(GetScriptsPublishedRequest request, AsyncApiCallback<ScriptEntityListing> callback) throws ApiException {
+  public Future<ScriptEntityListing> getScriptsPublishedAsync(GetScriptsPublishedRequest request, AsyncApiCallback<ScriptEntityListing> callback) {
     return pcapiClient.<ScriptEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ScriptEntityListing>() {}, callback);
   }
 
@@ -141,7 +142,7 @@ public class ScriptsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ScriptEntityListing>> getScriptsPublishedAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ScriptEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<ScriptEntityListing>> getScriptsPublishedAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ScriptEntityListing>> callback) {
     return pcapiClient.<ScriptEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ScriptEntityListing>() {}, callback);
   }
 
@@ -151,7 +152,7 @@ public class ScriptsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Script> getScriptsPublishedScriptIdAsync(GetScriptsPublishedScriptIdRequest request, AsyncApiCallback<Script> callback) throws ApiException {
+  public Future<Script> getScriptsPublishedScriptIdAsync(GetScriptsPublishedScriptIdRequest request, AsyncApiCallback<Script> callback) {
     return pcapiClient.<Script>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Script>() {}, callback);
   }
 
@@ -161,7 +162,7 @@ public class ScriptsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Script>> getScriptsPublishedScriptIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Script>> callback) throws ApiException {
+  public Future<ApiResponse<Script>> getScriptsPublishedScriptIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Script>> callback) {
     return pcapiClient.<Script>invokeAPIVerboseAsync(request, new TypeReference<Script>() {}, callback);
   }
 
@@ -171,7 +172,7 @@ public class ScriptsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Page> getScriptsPublishedScriptIdPageAsync(GetScriptsPublishedScriptIdPageRequest request, AsyncApiCallback<Page> callback) throws ApiException {
+  public Future<Page> getScriptsPublishedScriptIdPageAsync(GetScriptsPublishedScriptIdPageRequest request, AsyncApiCallback<Page> callback) {
     return pcapiClient.<Page>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Page>() {}, callback);
   }
 
@@ -181,7 +182,7 @@ public class ScriptsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Page>> getScriptsPublishedScriptIdPageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Page>> callback) throws ApiException {
+  public Future<ApiResponse<Page>> getScriptsPublishedScriptIdPageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Page>> callback) {
     return pcapiClient.<Page>invokeAPIVerboseAsync(request, new TypeReference<Page>() {}, callback);
   }
 
@@ -191,7 +192,7 @@ public class ScriptsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<Page>> getScriptsPublishedScriptIdPagesAsync(GetScriptsPublishedScriptIdPagesRequest request, AsyncApiCallback<List<Page>> callback) throws ApiException {
+  public Future<List<Page>> getScriptsPublishedScriptIdPagesAsync(GetScriptsPublishedScriptIdPagesRequest request, AsyncApiCallback<List<Page>> callback) {
     return pcapiClient.<List<Page>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<Page>>() {}, callback);
   }
 
@@ -201,7 +202,7 @@ public class ScriptsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<Page>>> getScriptsPublishedScriptIdPagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<Page>>> callback) throws ApiException {
+  public Future<ApiResponse<List<Page>>> getScriptsPublishedScriptIdPagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<Page>>> callback) {
     return pcapiClient.<List<Page>>invokeAPIVerboseAsync(request, new TypeReference<List<Page>>() {}, callback);
   }
 
@@ -211,7 +212,7 @@ public class ScriptsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Object> getScriptsPublishedScriptIdVariablesAsync(GetScriptsPublishedScriptIdVariablesRequest request, AsyncApiCallback<Object> callback) throws ApiException {
+  public Future<Object> getScriptsPublishedScriptIdVariablesAsync(GetScriptsPublishedScriptIdVariablesRequest request, AsyncApiCallback<Object> callback) {
     return pcapiClient.<Object>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Object>() {}, callback);
   }
 
@@ -221,7 +222,7 @@ public class ScriptsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Object>> getScriptsPublishedScriptIdVariablesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Object>> callback) throws ApiException {
+  public Future<ApiResponse<Object>> getScriptsPublishedScriptIdVariablesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Object>> callback) {
     return pcapiClient.<Object>invokeAPIVerboseAsync(request, new TypeReference<Object>() {}, callback);
   }
 

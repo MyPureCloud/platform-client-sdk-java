@@ -53,7 +53,7 @@ public class DeleteVoicemailMessagesRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/voicemail/messages")                .withCustomHeaders(customHeaders)

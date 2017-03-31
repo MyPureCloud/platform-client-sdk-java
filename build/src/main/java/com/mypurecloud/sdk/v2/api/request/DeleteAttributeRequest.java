@@ -60,11 +60,11 @@ public class DeleteAttributeRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'attributeId' is set
         if (this.attributeId == null) {
-            throw new ApiException(400, "Missing the required parameter 'attributeId' when building request for DeleteAttributeRequest.");
+            throw new IllegalStateException("Missing the required parameter 'attributeId' when building request for DeleteAttributeRequest.");
         }
         
 

@@ -66,7 +66,7 @@ public class GetRoutingUtilizationRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/routing/utilization")                .withCustomHeaders(customHeaders)

@@ -120,11 +120,11 @@ public class PostTelephonyProvidersEdgesOutboundroutesRequest {
         return this;
     }
 
-    public ApiRequest<OutboundRoute> withHttpInfo() throws ApiException {
+    public ApiRequest<OutboundRoute> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostTelephonyProvidersEdgesOutboundroutesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostTelephonyProvidersEdgesOutboundroutesRequest.");
         }
         
 

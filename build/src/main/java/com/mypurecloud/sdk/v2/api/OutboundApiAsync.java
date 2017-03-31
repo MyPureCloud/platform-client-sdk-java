@@ -125,6 +125,7 @@ import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundWrapupcodemappingsRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -149,7 +150,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteOutboundAttemptlimitAsync(DeleteOutboundAttemptlimitRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteOutboundAttemptlimitAsync(DeleteOutboundAttemptlimitRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -159,7 +160,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteOutboundAttemptlimitAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteOutboundAttemptlimitAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -169,7 +170,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteOutboundCallabletimesetAsync(DeleteOutboundCallabletimesetRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteOutboundCallabletimesetAsync(DeleteOutboundCallabletimesetRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -179,7 +180,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteOutboundCallabletimesetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteOutboundCallabletimesetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -189,7 +190,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteOutboundCallanalysisresponsesetAsync(DeleteOutboundCallanalysisresponsesetRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteOutboundCallanalysisresponsesetAsync(DeleteOutboundCallanalysisresponsesetRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -199,7 +200,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteOutboundCallanalysisresponsesetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteOutboundCallanalysisresponsesetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -209,7 +210,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Campaign> deleteOutboundCampaignAsync(DeleteOutboundCampaignRequest request, AsyncApiCallback<Campaign> callback) throws ApiException {
+  public Future<Campaign> deleteOutboundCampaignAsync(DeleteOutboundCampaignRequest request, AsyncApiCallback<Campaign> callback) {
     return pcapiClient.<Campaign>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Campaign>() {}, callback);
   }
 
@@ -219,7 +220,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Campaign>> deleteOutboundCampaignAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Campaign>> callback) throws ApiException {
+  public Future<ApiResponse<Campaign>> deleteOutboundCampaignAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Campaign>> callback) {
     return pcapiClient.<Campaign>invokeAPIVerboseAsync(request, new TypeReference<Campaign>() {}, callback);
   }
 
@@ -229,7 +230,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteOutboundCampaignProgressAsync(DeleteOutboundCampaignProgressRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteOutboundCampaignProgressAsync(DeleteOutboundCampaignProgressRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -239,7 +240,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteOutboundCampaignProgressAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteOutboundCampaignProgressAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -249,7 +250,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteOutboundCampaignruleAsync(DeleteOutboundCampaignruleRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteOutboundCampaignruleAsync(DeleteOutboundCampaignruleRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -259,7 +260,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteOutboundCampaignruleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteOutboundCampaignruleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -269,7 +270,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteOutboundContactlistAsync(DeleteOutboundContactlistRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteOutboundContactlistAsync(DeleteOutboundContactlistRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -279,7 +280,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteOutboundContactlistAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteOutboundContactlistAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -289,7 +290,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteOutboundContactlistContactAsync(DeleteOutboundContactlistContactRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteOutboundContactlistContactAsync(DeleteOutboundContactlistContactRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -299,7 +300,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteOutboundContactlistContactAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteOutboundContactlistContactAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -309,7 +310,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteOutboundDnclistAsync(DeleteOutboundDnclistRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteOutboundDnclistAsync(DeleteOutboundDnclistRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -319,7 +320,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteOutboundDnclistAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteOutboundDnclistAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -329,7 +330,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteOutboundRulesetAsync(DeleteOutboundRulesetRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteOutboundRulesetAsync(DeleteOutboundRulesetRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -339,7 +340,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteOutboundRulesetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteOutboundRulesetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -349,7 +350,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteOutboundSchedulesCampaignAsync(DeleteOutboundSchedulesCampaignRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteOutboundSchedulesCampaignAsync(DeleteOutboundSchedulesCampaignRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -359,7 +360,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteOutboundSchedulesCampaignAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteOutboundSchedulesCampaignAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -369,7 +370,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteOutboundSchedulesSequenceAsync(DeleteOutboundSchedulesSequenceRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteOutboundSchedulesSequenceAsync(DeleteOutboundSchedulesSequenceRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -379,7 +380,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteOutboundSchedulesSequenceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteOutboundSchedulesSequenceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -389,7 +390,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteOutboundSequenceAsync(DeleteOutboundSequenceRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteOutboundSequenceAsync(DeleteOutboundSequenceRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -399,7 +400,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteOutboundSequenceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteOutboundSequenceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -409,7 +410,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<AttemptLimits> getOutboundAttemptlimitAsync(GetOutboundAttemptlimitRequest request, AsyncApiCallback<AttemptLimits> callback) throws ApiException {
+  public Future<AttemptLimits> getOutboundAttemptlimitAsync(GetOutboundAttemptlimitRequest request, AsyncApiCallback<AttemptLimits> callback) {
     return pcapiClient.<AttemptLimits>invokeAPIAsync(request.withHttpInfo(), new TypeReference<AttemptLimits>() {}, callback);
   }
 
@@ -419,7 +420,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<AttemptLimits>> getOutboundAttemptlimitAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AttemptLimits>> callback) throws ApiException {
+  public Future<ApiResponse<AttemptLimits>> getOutboundAttemptlimitAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AttemptLimits>> callback) {
     return pcapiClient.<AttemptLimits>invokeAPIVerboseAsync(request, new TypeReference<AttemptLimits>() {}, callback);
   }
 
@@ -429,7 +430,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<AttemptLimitsEntityListing> getOutboundAttemptlimitsAsync(GetOutboundAttemptlimitsRequest request, AsyncApiCallback<AttemptLimitsEntityListing> callback) throws ApiException {
+  public Future<AttemptLimitsEntityListing> getOutboundAttemptlimitsAsync(GetOutboundAttemptlimitsRequest request, AsyncApiCallback<AttemptLimitsEntityListing> callback) {
     return pcapiClient.<AttemptLimitsEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<AttemptLimitsEntityListing>() {}, callback);
   }
 
@@ -439,7 +440,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<AttemptLimitsEntityListing>> getOutboundAttemptlimitsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AttemptLimitsEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<AttemptLimitsEntityListing>> getOutboundAttemptlimitsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AttemptLimitsEntityListing>> callback) {
     return pcapiClient.<AttemptLimitsEntityListing>invokeAPIVerboseAsync(request, new TypeReference<AttemptLimitsEntityListing>() {}, callback);
   }
 
@@ -449,7 +450,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CallableTimeSet> getOutboundCallabletimesetAsync(GetOutboundCallabletimesetRequest request, AsyncApiCallback<CallableTimeSet> callback) throws ApiException {
+  public Future<CallableTimeSet> getOutboundCallabletimesetAsync(GetOutboundCallabletimesetRequest request, AsyncApiCallback<CallableTimeSet> callback) {
     return pcapiClient.<CallableTimeSet>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CallableTimeSet>() {}, callback);
   }
 
@@ -459,7 +460,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CallableTimeSet>> getOutboundCallabletimesetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CallableTimeSet>> callback) throws ApiException {
+  public Future<ApiResponse<CallableTimeSet>> getOutboundCallabletimesetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CallableTimeSet>> callback) {
     return pcapiClient.<CallableTimeSet>invokeAPIVerboseAsync(request, new TypeReference<CallableTimeSet>() {}, callback);
   }
 
@@ -469,7 +470,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CallableTimeSetEntityListing> getOutboundCallabletimesetsAsync(GetOutboundCallabletimesetsRequest request, AsyncApiCallback<CallableTimeSetEntityListing> callback) throws ApiException {
+  public Future<CallableTimeSetEntityListing> getOutboundCallabletimesetsAsync(GetOutboundCallabletimesetsRequest request, AsyncApiCallback<CallableTimeSetEntityListing> callback) {
     return pcapiClient.<CallableTimeSetEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CallableTimeSetEntityListing>() {}, callback);
   }
 
@@ -479,7 +480,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CallableTimeSetEntityListing>> getOutboundCallabletimesetsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CallableTimeSetEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<CallableTimeSetEntityListing>> getOutboundCallabletimesetsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CallableTimeSetEntityListing>> callback) {
     return pcapiClient.<CallableTimeSetEntityListing>invokeAPIVerboseAsync(request, new TypeReference<CallableTimeSetEntityListing>() {}, callback);
   }
 
@@ -489,7 +490,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ResponseSet> getOutboundCallanalysisresponsesetAsync(GetOutboundCallanalysisresponsesetRequest request, AsyncApiCallback<ResponseSet> callback) throws ApiException {
+  public Future<ResponseSet> getOutboundCallanalysisresponsesetAsync(GetOutboundCallanalysisresponsesetRequest request, AsyncApiCallback<ResponseSet> callback) {
     return pcapiClient.<ResponseSet>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ResponseSet>() {}, callback);
   }
 
@@ -499,7 +500,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ResponseSet>> getOutboundCallanalysisresponsesetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ResponseSet>> callback) throws ApiException {
+  public Future<ApiResponse<ResponseSet>> getOutboundCallanalysisresponsesetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ResponseSet>> callback) {
     return pcapiClient.<ResponseSet>invokeAPIVerboseAsync(request, new TypeReference<ResponseSet>() {}, callback);
   }
 
@@ -509,7 +510,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ResponseSetEntityListing> getOutboundCallanalysisresponsesetsAsync(GetOutboundCallanalysisresponsesetsRequest request, AsyncApiCallback<ResponseSetEntityListing> callback) throws ApiException {
+  public Future<ResponseSetEntityListing> getOutboundCallanalysisresponsesetsAsync(GetOutboundCallanalysisresponsesetsRequest request, AsyncApiCallback<ResponseSetEntityListing> callback) {
     return pcapiClient.<ResponseSetEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ResponseSetEntityListing>() {}, callback);
   }
 
@@ -519,7 +520,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ResponseSetEntityListing>> getOutboundCallanalysisresponsesetsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ResponseSetEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<ResponseSetEntityListing>> getOutboundCallanalysisresponsesetsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ResponseSetEntityListing>> callback) {
     return pcapiClient.<ResponseSetEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ResponseSetEntityListing>() {}, callback);
   }
 
@@ -529,7 +530,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Campaign> getOutboundCampaignAsync(GetOutboundCampaignRequest request, AsyncApiCallback<Campaign> callback) throws ApiException {
+  public Future<Campaign> getOutboundCampaignAsync(GetOutboundCampaignRequest request, AsyncApiCallback<Campaign> callback) {
     return pcapiClient.<Campaign>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Campaign>() {}, callback);
   }
 
@@ -539,7 +540,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Campaign>> getOutboundCampaignAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Campaign>> callback) throws ApiException {
+  public Future<ApiResponse<Campaign>> getOutboundCampaignAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Campaign>> callback) {
     return pcapiClient.<Campaign>invokeAPIVerboseAsync(request, new TypeReference<Campaign>() {}, callback);
   }
 
@@ -549,7 +550,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CampaignDiagnostics> getOutboundCampaignDiagnosticsAsync(GetOutboundCampaignDiagnosticsRequest request, AsyncApiCallback<CampaignDiagnostics> callback) throws ApiException {
+  public Future<CampaignDiagnostics> getOutboundCampaignDiagnosticsAsync(GetOutboundCampaignDiagnosticsRequest request, AsyncApiCallback<CampaignDiagnostics> callback) {
     return pcapiClient.<CampaignDiagnostics>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CampaignDiagnostics>() {}, callback);
   }
 
@@ -559,7 +560,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CampaignDiagnostics>> getOutboundCampaignDiagnosticsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignDiagnostics>> callback) throws ApiException {
+  public Future<ApiResponse<CampaignDiagnostics>> getOutboundCampaignDiagnosticsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignDiagnostics>> callback) {
     return pcapiClient.<CampaignDiagnostics>invokeAPIVerboseAsync(request, new TypeReference<CampaignDiagnostics>() {}, callback);
   }
 
@@ -569,7 +570,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CampaignInteractions> getOutboundCampaignInteractionsAsync(GetOutboundCampaignInteractionsRequest request, AsyncApiCallback<CampaignInteractions> callback) throws ApiException {
+  public Future<CampaignInteractions> getOutboundCampaignInteractionsAsync(GetOutboundCampaignInteractionsRequest request, AsyncApiCallback<CampaignInteractions> callback) {
     return pcapiClient.<CampaignInteractions>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CampaignInteractions>() {}, callback);
   }
 
@@ -579,7 +580,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CampaignInteractions>> getOutboundCampaignInteractionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignInteractions>> callback) throws ApiException {
+  public Future<ApiResponse<CampaignInteractions>> getOutboundCampaignInteractionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignInteractions>> callback) {
     return pcapiClient.<CampaignInteractions>invokeAPIVerboseAsync(request, new TypeReference<CampaignInteractions>() {}, callback);
   }
 
@@ -589,7 +590,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CampaignProgress> getOutboundCampaignProgressAsync(GetOutboundCampaignProgressRequest request, AsyncApiCallback<CampaignProgress> callback) throws ApiException {
+  public Future<CampaignProgress> getOutboundCampaignProgressAsync(GetOutboundCampaignProgressRequest request, AsyncApiCallback<CampaignProgress> callback) {
     return pcapiClient.<CampaignProgress>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CampaignProgress>() {}, callback);
   }
 
@@ -599,7 +600,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CampaignProgress>> getOutboundCampaignProgressAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignProgress>> callback) throws ApiException {
+  public Future<ApiResponse<CampaignProgress>> getOutboundCampaignProgressAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignProgress>> callback) {
     return pcapiClient.<CampaignProgress>invokeAPIVerboseAsync(request, new TypeReference<CampaignProgress>() {}, callback);
   }
 
@@ -609,7 +610,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CampaignStats> getOutboundCampaignStatsAsync(GetOutboundCampaignStatsRequest request, AsyncApiCallback<CampaignStats> callback) throws ApiException {
+  public Future<CampaignStats> getOutboundCampaignStatsAsync(GetOutboundCampaignStatsRequest request, AsyncApiCallback<CampaignStats> callback) {
     return pcapiClient.<CampaignStats>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CampaignStats>() {}, callback);
   }
 
@@ -619,7 +620,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CampaignStats>> getOutboundCampaignStatsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignStats>> callback) throws ApiException {
+  public Future<ApiResponse<CampaignStats>> getOutboundCampaignStatsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignStats>> callback) {
     return pcapiClient.<CampaignStats>invokeAPIVerboseAsync(request, new TypeReference<CampaignStats>() {}, callback);
   }
 
@@ -629,7 +630,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CampaignRule> getOutboundCampaignruleAsync(GetOutboundCampaignruleRequest request, AsyncApiCallback<CampaignRule> callback) throws ApiException {
+  public Future<CampaignRule> getOutboundCampaignruleAsync(GetOutboundCampaignruleRequest request, AsyncApiCallback<CampaignRule> callback) {
     return pcapiClient.<CampaignRule>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CampaignRule>() {}, callback);
   }
 
@@ -639,7 +640,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CampaignRule>> getOutboundCampaignruleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignRule>> callback) throws ApiException {
+  public Future<ApiResponse<CampaignRule>> getOutboundCampaignruleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignRule>> callback) {
     return pcapiClient.<CampaignRule>invokeAPIVerboseAsync(request, new TypeReference<CampaignRule>() {}, callback);
   }
 
@@ -649,7 +650,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CampaignRuleEntityListing> getOutboundCampaignrulesAsync(GetOutboundCampaignrulesRequest request, AsyncApiCallback<CampaignRuleEntityListing> callback) throws ApiException {
+  public Future<CampaignRuleEntityListing> getOutboundCampaignrulesAsync(GetOutboundCampaignrulesRequest request, AsyncApiCallback<CampaignRuleEntityListing> callback) {
     return pcapiClient.<CampaignRuleEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CampaignRuleEntityListing>() {}, callback);
   }
 
@@ -659,7 +660,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CampaignRuleEntityListing>> getOutboundCampaignrulesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignRuleEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<CampaignRuleEntityListing>> getOutboundCampaignrulesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignRuleEntityListing>> callback) {
     return pcapiClient.<CampaignRuleEntityListing>invokeAPIVerboseAsync(request, new TypeReference<CampaignRuleEntityListing>() {}, callback);
   }
 
@@ -669,7 +670,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CampaignEntityListing> getOutboundCampaignsAsync(GetOutboundCampaignsRequest request, AsyncApiCallback<CampaignEntityListing> callback) throws ApiException {
+  public Future<CampaignEntityListing> getOutboundCampaignsAsync(GetOutboundCampaignsRequest request, AsyncApiCallback<CampaignEntityListing> callback) {
     return pcapiClient.<CampaignEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CampaignEntityListing>() {}, callback);
   }
 
@@ -679,7 +680,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CampaignEntityListing>> getOutboundCampaignsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<CampaignEntityListing>> getOutboundCampaignsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignEntityListing>> callback) {
     return pcapiClient.<CampaignEntityListing>invokeAPIVerboseAsync(request, new TypeReference<CampaignEntityListing>() {}, callback);
   }
 
@@ -689,7 +690,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ContactList> getOutboundContactlistAsync(GetOutboundContactlistRequest request, AsyncApiCallback<ContactList> callback) throws ApiException {
+  public Future<ContactList> getOutboundContactlistAsync(GetOutboundContactlistRequest request, AsyncApiCallback<ContactList> callback) {
     return pcapiClient.<ContactList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ContactList>() {}, callback);
   }
 
@@ -699,7 +700,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ContactList>> getOutboundContactlistAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ContactList>> callback) throws ApiException {
+  public Future<ApiResponse<ContactList>> getOutboundContactlistAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ContactList>> callback) {
     return pcapiClient.<ContactList>invokeAPIVerboseAsync(request, new TypeReference<ContactList>() {}, callback);
   }
 
@@ -709,7 +710,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DialerContact> getOutboundContactlistContactAsync(GetOutboundContactlistContactRequest request, AsyncApiCallback<DialerContact> callback) throws ApiException {
+  public Future<DialerContact> getOutboundContactlistContactAsync(GetOutboundContactlistContactRequest request, AsyncApiCallback<DialerContact> callback) {
     return pcapiClient.<DialerContact>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DialerContact>() {}, callback);
   }
 
@@ -719,7 +720,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DialerContact>> getOutboundContactlistContactAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DialerContact>> callback) throws ApiException {
+  public Future<ApiResponse<DialerContact>> getOutboundContactlistContactAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DialerContact>> callback) {
     return pcapiClient.<DialerContact>invokeAPIVerboseAsync(request, new TypeReference<DialerContact>() {}, callback);
   }
 
@@ -729,7 +730,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ExportUri> getOutboundContactlistExportAsync(GetOutboundContactlistExportRequest request, AsyncApiCallback<ExportUri> callback) throws ApiException {
+  public Future<ExportUri> getOutboundContactlistExportAsync(GetOutboundContactlistExportRequest request, AsyncApiCallback<ExportUri> callback) {
     return pcapiClient.<ExportUri>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExportUri>() {}, callback);
   }
 
@@ -739,7 +740,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ExportUri>> getOutboundContactlistExportAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExportUri>> callback) throws ApiException {
+  public Future<ApiResponse<ExportUri>> getOutboundContactlistExportAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExportUri>> callback) {
     return pcapiClient.<ExportUri>invokeAPIVerboseAsync(request, new TypeReference<ExportUri>() {}, callback);
   }
 
@@ -749,7 +750,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ImportStatus> getOutboundContactlistImportstatusAsync(GetOutboundContactlistImportstatusRequest request, AsyncApiCallback<ImportStatus> callback) throws ApiException {
+  public Future<ImportStatus> getOutboundContactlistImportstatusAsync(GetOutboundContactlistImportstatusRequest request, AsyncApiCallback<ImportStatus> callback) {
     return pcapiClient.<ImportStatus>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ImportStatus>() {}, callback);
   }
 
@@ -759,7 +760,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ImportStatus>> getOutboundContactlistImportstatusAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ImportStatus>> callback) throws ApiException {
+  public Future<ApiResponse<ImportStatus>> getOutboundContactlistImportstatusAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ImportStatus>> callback) {
     return pcapiClient.<ImportStatus>invokeAPIVerboseAsync(request, new TypeReference<ImportStatus>() {}, callback);
   }
 
@@ -769,7 +770,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ContactListEntityListing> getOutboundContactlistsAsync(GetOutboundContactlistsRequest request, AsyncApiCallback<ContactListEntityListing> callback) throws ApiException {
+  public Future<ContactListEntityListing> getOutboundContactlistsAsync(GetOutboundContactlistsRequest request, AsyncApiCallback<ContactListEntityListing> callback) {
     return pcapiClient.<ContactListEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ContactListEntityListing>() {}, callback);
   }
 
@@ -779,7 +780,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ContactListEntityListing>> getOutboundContactlistsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ContactListEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<ContactListEntityListing>> getOutboundContactlistsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ContactListEntityListing>> callback) {
     return pcapiClient.<ContactListEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ContactListEntityListing>() {}, callback);
   }
 
@@ -789,7 +790,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DncList> getOutboundDnclistAsync(GetOutboundDnclistRequest request, AsyncApiCallback<DncList> callback) throws ApiException {
+  public Future<DncList> getOutboundDnclistAsync(GetOutboundDnclistRequest request, AsyncApiCallback<DncList> callback) {
     return pcapiClient.<DncList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DncList>() {}, callback);
   }
 
@@ -799,7 +800,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DncList>> getOutboundDnclistAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DncList>> callback) throws ApiException {
+  public Future<ApiResponse<DncList>> getOutboundDnclistAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DncList>> callback) {
     return pcapiClient.<DncList>invokeAPIVerboseAsync(request, new TypeReference<DncList>() {}, callback);
   }
 
@@ -809,7 +810,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ExportUri> getOutboundDnclistExportAsync(GetOutboundDnclistExportRequest request, AsyncApiCallback<ExportUri> callback) throws ApiException {
+  public Future<ExportUri> getOutboundDnclistExportAsync(GetOutboundDnclistExportRequest request, AsyncApiCallback<ExportUri> callback) {
     return pcapiClient.<ExportUri>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExportUri>() {}, callback);
   }
 
@@ -819,7 +820,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ExportUri>> getOutboundDnclistExportAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExportUri>> callback) throws ApiException {
+  public Future<ApiResponse<ExportUri>> getOutboundDnclistExportAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExportUri>> callback) {
     return pcapiClient.<ExportUri>invokeAPIVerboseAsync(request, new TypeReference<ExportUri>() {}, callback);
   }
 
@@ -829,7 +830,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ImportStatus> getOutboundDnclistImportstatusAsync(GetOutboundDnclistImportstatusRequest request, AsyncApiCallback<ImportStatus> callback) throws ApiException {
+  public Future<ImportStatus> getOutboundDnclistImportstatusAsync(GetOutboundDnclistImportstatusRequest request, AsyncApiCallback<ImportStatus> callback) {
     return pcapiClient.<ImportStatus>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ImportStatus>() {}, callback);
   }
 
@@ -839,7 +840,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ImportStatus>> getOutboundDnclistImportstatusAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ImportStatus>> callback) throws ApiException {
+  public Future<ApiResponse<ImportStatus>> getOutboundDnclistImportstatusAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ImportStatus>> callback) {
     return pcapiClient.<ImportStatus>invokeAPIVerboseAsync(request, new TypeReference<ImportStatus>() {}, callback);
   }
 
@@ -849,7 +850,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DncListEntityListing> getOutboundDnclistsAsync(GetOutboundDnclistsRequest request, AsyncApiCallback<DncListEntityListing> callback) throws ApiException {
+  public Future<DncListEntityListing> getOutboundDnclistsAsync(GetOutboundDnclistsRequest request, AsyncApiCallback<DncListEntityListing> callback) {
     return pcapiClient.<DncListEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DncListEntityListing>() {}, callback);
   }
 
@@ -859,7 +860,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DncListEntityListing>> getOutboundDnclistsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DncListEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<DncListEntityListing>> getOutboundDnclistsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DncListEntityListing>> callback) {
     return pcapiClient.<DncListEntityListing>invokeAPIVerboseAsync(request, new TypeReference<DncListEntityListing>() {}, callback);
   }
 
@@ -869,7 +870,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<RuleSet> getOutboundRulesetAsync(GetOutboundRulesetRequest request, AsyncApiCallback<RuleSet> callback) throws ApiException {
+  public Future<RuleSet> getOutboundRulesetAsync(GetOutboundRulesetRequest request, AsyncApiCallback<RuleSet> callback) {
     return pcapiClient.<RuleSet>invokeAPIAsync(request.withHttpInfo(), new TypeReference<RuleSet>() {}, callback);
   }
 
@@ -879,7 +880,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<RuleSet>> getOutboundRulesetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RuleSet>> callback) throws ApiException {
+  public Future<ApiResponse<RuleSet>> getOutboundRulesetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RuleSet>> callback) {
     return pcapiClient.<RuleSet>invokeAPIVerboseAsync(request, new TypeReference<RuleSet>() {}, callback);
   }
 
@@ -889,7 +890,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<RuleSetEntityListing> getOutboundRulesetsAsync(GetOutboundRulesetsRequest request, AsyncApiCallback<RuleSetEntityListing> callback) throws ApiException {
+  public Future<RuleSetEntityListing> getOutboundRulesetsAsync(GetOutboundRulesetsRequest request, AsyncApiCallback<RuleSetEntityListing> callback) {
     return pcapiClient.<RuleSetEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<RuleSetEntityListing>() {}, callback);
   }
 
@@ -899,7 +900,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<RuleSetEntityListing>> getOutboundRulesetsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RuleSetEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<RuleSetEntityListing>> getOutboundRulesetsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RuleSetEntityListing>> callback) {
     return pcapiClient.<RuleSetEntityListing>invokeAPIVerboseAsync(request, new TypeReference<RuleSetEntityListing>() {}, callback);
   }
 
@@ -909,7 +910,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CampaignSchedule> getOutboundSchedulesCampaignAsync(GetOutboundSchedulesCampaignRequest request, AsyncApiCallback<CampaignSchedule> callback) throws ApiException {
+  public Future<CampaignSchedule> getOutboundSchedulesCampaignAsync(GetOutboundSchedulesCampaignRequest request, AsyncApiCallback<CampaignSchedule> callback) {
     return pcapiClient.<CampaignSchedule>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CampaignSchedule>() {}, callback);
   }
 
@@ -919,7 +920,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CampaignSchedule>> getOutboundSchedulesCampaignAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignSchedule>> callback) throws ApiException {
+  public Future<ApiResponse<CampaignSchedule>> getOutboundSchedulesCampaignAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignSchedule>> callback) {
     return pcapiClient.<CampaignSchedule>invokeAPIVerboseAsync(request, new TypeReference<CampaignSchedule>() {}, callback);
   }
 
@@ -929,7 +930,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<CampaignSchedule>> getOutboundSchedulesCampaignsAsync(GetOutboundSchedulesCampaignsRequest request, AsyncApiCallback<List<CampaignSchedule>> callback) throws ApiException {
+  public Future<List<CampaignSchedule>> getOutboundSchedulesCampaignsAsync(GetOutboundSchedulesCampaignsRequest request, AsyncApiCallback<List<CampaignSchedule>> callback) {
     return pcapiClient.<List<CampaignSchedule>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<CampaignSchedule>>() {}, callback);
   }
 
@@ -939,7 +940,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<CampaignSchedule>>> getOutboundSchedulesCampaignsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<CampaignSchedule>>> callback) throws ApiException {
+  public Future<ApiResponse<List<CampaignSchedule>>> getOutboundSchedulesCampaignsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<CampaignSchedule>>> callback) {
     return pcapiClient.<List<CampaignSchedule>>invokeAPIVerboseAsync(request, new TypeReference<List<CampaignSchedule>>() {}, callback);
   }
 
@@ -949,7 +950,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<SequenceSchedule> getOutboundSchedulesSequenceAsync(GetOutboundSchedulesSequenceRequest request, AsyncApiCallback<SequenceSchedule> callback) throws ApiException {
+  public Future<SequenceSchedule> getOutboundSchedulesSequenceAsync(GetOutboundSchedulesSequenceRequest request, AsyncApiCallback<SequenceSchedule> callback) {
     return pcapiClient.<SequenceSchedule>invokeAPIAsync(request.withHttpInfo(), new TypeReference<SequenceSchedule>() {}, callback);
   }
 
@@ -959,7 +960,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<SequenceSchedule>> getOutboundSchedulesSequenceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SequenceSchedule>> callback) throws ApiException {
+  public Future<ApiResponse<SequenceSchedule>> getOutboundSchedulesSequenceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SequenceSchedule>> callback) {
     return pcapiClient.<SequenceSchedule>invokeAPIVerboseAsync(request, new TypeReference<SequenceSchedule>() {}, callback);
   }
 
@@ -969,7 +970,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<SequenceSchedule>> getOutboundSchedulesSequencesAsync(GetOutboundSchedulesSequencesRequest request, AsyncApiCallback<List<SequenceSchedule>> callback) throws ApiException {
+  public Future<List<SequenceSchedule>> getOutboundSchedulesSequencesAsync(GetOutboundSchedulesSequencesRequest request, AsyncApiCallback<List<SequenceSchedule>> callback) {
     return pcapiClient.<List<SequenceSchedule>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<SequenceSchedule>>() {}, callback);
   }
 
@@ -979,7 +980,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<SequenceSchedule>>> getOutboundSchedulesSequencesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<SequenceSchedule>>> callback) throws ApiException {
+  public Future<ApiResponse<List<SequenceSchedule>>> getOutboundSchedulesSequencesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<SequenceSchedule>>> callback) {
     return pcapiClient.<List<SequenceSchedule>>invokeAPIVerboseAsync(request, new TypeReference<List<SequenceSchedule>>() {}, callback);
   }
 
@@ -989,7 +990,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CampaignSequence> getOutboundSequenceAsync(GetOutboundSequenceRequest request, AsyncApiCallback<CampaignSequence> callback) throws ApiException {
+  public Future<CampaignSequence> getOutboundSequenceAsync(GetOutboundSequenceRequest request, AsyncApiCallback<CampaignSequence> callback) {
     return pcapiClient.<CampaignSequence>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CampaignSequence>() {}, callback);
   }
 
@@ -999,7 +1000,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CampaignSequence>> getOutboundSequenceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignSequence>> callback) throws ApiException {
+  public Future<ApiResponse<CampaignSequence>> getOutboundSequenceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignSequence>> callback) {
     return pcapiClient.<CampaignSequence>invokeAPIVerboseAsync(request, new TypeReference<CampaignSequence>() {}, callback);
   }
 
@@ -1009,7 +1010,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CampaignSequenceEntityListing> getOutboundSequencesAsync(GetOutboundSequencesRequest request, AsyncApiCallback<CampaignSequenceEntityListing> callback) throws ApiException {
+  public Future<CampaignSequenceEntityListing> getOutboundSequencesAsync(GetOutboundSequencesRequest request, AsyncApiCallback<CampaignSequenceEntityListing> callback) {
     return pcapiClient.<CampaignSequenceEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CampaignSequenceEntityListing>() {}, callback);
   }
 
@@ -1019,7 +1020,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CampaignSequenceEntityListing>> getOutboundSequencesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignSequenceEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<CampaignSequenceEntityListing>> getOutboundSequencesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignSequenceEntityListing>> callback) {
     return pcapiClient.<CampaignSequenceEntityListing>invokeAPIVerboseAsync(request, new TypeReference<CampaignSequenceEntityListing>() {}, callback);
   }
 
@@ -1029,7 +1030,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<WrapUpCodeMapping> getOutboundWrapupcodemappingsAsync(GetOutboundWrapupcodemappingsRequest request, AsyncApiCallback<WrapUpCodeMapping> callback) throws ApiException {
+  public Future<WrapUpCodeMapping> getOutboundWrapupcodemappingsAsync(GetOutboundWrapupcodemappingsRequest request, AsyncApiCallback<WrapUpCodeMapping> callback) {
     return pcapiClient.<WrapUpCodeMapping>invokeAPIAsync(request.withHttpInfo(), new TypeReference<WrapUpCodeMapping>() {}, callback);
   }
 
@@ -1039,7 +1040,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<WrapUpCodeMapping>> getOutboundWrapupcodemappingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<WrapUpCodeMapping>> callback) throws ApiException {
+  public Future<ApiResponse<WrapUpCodeMapping>> getOutboundWrapupcodemappingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<WrapUpCodeMapping>> callback) {
     return pcapiClient.<WrapUpCodeMapping>invokeAPIVerboseAsync(request, new TypeReference<WrapUpCodeMapping>() {}, callback);
   }
 
@@ -1049,7 +1050,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<AttemptLimits> postOutboundAttemptlimitsAsync(PostOutboundAttemptlimitsRequest request, AsyncApiCallback<AttemptLimits> callback) throws ApiException {
+  public Future<AttemptLimits> postOutboundAttemptlimitsAsync(PostOutboundAttemptlimitsRequest request, AsyncApiCallback<AttemptLimits> callback) {
     return pcapiClient.<AttemptLimits>invokeAPIAsync(request.withHttpInfo(), new TypeReference<AttemptLimits>() {}, callback);
   }
 
@@ -1059,7 +1060,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<AttemptLimits>> postOutboundAttemptlimitsAsync(ApiRequest<AttemptLimits> request, AsyncApiCallback<ApiResponse<AttemptLimits>> callback) throws ApiException {
+  public Future<ApiResponse<AttemptLimits>> postOutboundAttemptlimitsAsync(ApiRequest<AttemptLimits> request, AsyncApiCallback<ApiResponse<AttemptLimits>> callback) {
     return pcapiClient.<AttemptLimits>invokeAPIVerboseAsync(request, new TypeReference<AttemptLimits>() {}, callback);
   }
 
@@ -1069,7 +1070,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<AuditSearchResult> postOutboundAuditsAsync(PostOutboundAuditsRequest request, AsyncApiCallback<AuditSearchResult> callback) throws ApiException {
+  public Future<AuditSearchResult> postOutboundAuditsAsync(PostOutboundAuditsRequest request, AsyncApiCallback<AuditSearchResult> callback) {
     return pcapiClient.<AuditSearchResult>invokeAPIAsync(request.withHttpInfo(), new TypeReference<AuditSearchResult>() {}, callback);
   }
 
@@ -1079,7 +1080,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<AuditSearchResult>> postOutboundAuditsAsync(ApiRequest<DialerAuditRequest> request, AsyncApiCallback<ApiResponse<AuditSearchResult>> callback) throws ApiException {
+  public Future<ApiResponse<AuditSearchResult>> postOutboundAuditsAsync(ApiRequest<DialerAuditRequest> request, AsyncApiCallback<ApiResponse<AuditSearchResult>> callback) {
     return pcapiClient.<AuditSearchResult>invokeAPIVerboseAsync(request, new TypeReference<AuditSearchResult>() {}, callback);
   }
 
@@ -1089,7 +1090,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CallableTimeSet> postOutboundCallabletimesetsAsync(PostOutboundCallabletimesetsRequest request, AsyncApiCallback<CallableTimeSet> callback) throws ApiException {
+  public Future<CallableTimeSet> postOutboundCallabletimesetsAsync(PostOutboundCallabletimesetsRequest request, AsyncApiCallback<CallableTimeSet> callback) {
     return pcapiClient.<CallableTimeSet>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CallableTimeSet>() {}, callback);
   }
 
@@ -1099,7 +1100,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CallableTimeSet>> postOutboundCallabletimesetsAsync(ApiRequest<CallableTimeSet> request, AsyncApiCallback<ApiResponse<CallableTimeSet>> callback) throws ApiException {
+  public Future<ApiResponse<CallableTimeSet>> postOutboundCallabletimesetsAsync(ApiRequest<CallableTimeSet> request, AsyncApiCallback<ApiResponse<CallableTimeSet>> callback) {
     return pcapiClient.<CallableTimeSet>invokeAPIVerboseAsync(request, new TypeReference<CallableTimeSet>() {}, callback);
   }
 
@@ -1109,7 +1110,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ResponseSet> postOutboundCallanalysisresponsesetsAsync(PostOutboundCallanalysisresponsesetsRequest request, AsyncApiCallback<ResponseSet> callback) throws ApiException {
+  public Future<ResponseSet> postOutboundCallanalysisresponsesetsAsync(PostOutboundCallanalysisresponsesetsRequest request, AsyncApiCallback<ResponseSet> callback) {
     return pcapiClient.<ResponseSet>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ResponseSet>() {}, callback);
   }
 
@@ -1119,7 +1120,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ResponseSet>> postOutboundCallanalysisresponsesetsAsync(ApiRequest<ResponseSet> request, AsyncApiCallback<ApiResponse<ResponseSet>> callback) throws ApiException {
+  public Future<ApiResponse<ResponseSet>> postOutboundCallanalysisresponsesetsAsync(ApiRequest<ResponseSet> request, AsyncApiCallback<ApiResponse<ResponseSet>> callback) {
     return pcapiClient.<ResponseSet>invokeAPIVerboseAsync(request, new TypeReference<ResponseSet>() {}, callback);
   }
 
@@ -1129,7 +1130,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ContactCallbackRequest> postOutboundCampaignCallbackScheduleAsync(PostOutboundCampaignCallbackScheduleRequest request, AsyncApiCallback<ContactCallbackRequest> callback) throws ApiException {
+  public Future<ContactCallbackRequest> postOutboundCampaignCallbackScheduleAsync(PostOutboundCampaignCallbackScheduleRequest request, AsyncApiCallback<ContactCallbackRequest> callback) {
     return pcapiClient.<ContactCallbackRequest>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ContactCallbackRequest>() {}, callback);
   }
 
@@ -1139,7 +1140,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ContactCallbackRequest>> postOutboundCampaignCallbackScheduleAsync(ApiRequest<ContactCallbackRequest> request, AsyncApiCallback<ApiResponse<ContactCallbackRequest>> callback) throws ApiException {
+  public Future<ApiResponse<ContactCallbackRequest>> postOutboundCampaignCallbackScheduleAsync(ApiRequest<ContactCallbackRequest> request, AsyncApiCallback<ApiResponse<ContactCallbackRequest>> callback) {
     return pcapiClient.<ContactCallbackRequest>invokeAPIVerboseAsync(request, new TypeReference<ContactCallbackRequest>() {}, callback);
   }
 
@@ -1149,7 +1150,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CampaignRule> postOutboundCampaignrulesAsync(PostOutboundCampaignrulesRequest request, AsyncApiCallback<CampaignRule> callback) throws ApiException {
+  public Future<CampaignRule> postOutboundCampaignrulesAsync(PostOutboundCampaignrulesRequest request, AsyncApiCallback<CampaignRule> callback) {
     return pcapiClient.<CampaignRule>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CampaignRule>() {}, callback);
   }
 
@@ -1159,7 +1160,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CampaignRule>> postOutboundCampaignrulesAsync(ApiRequest<CampaignRule> request, AsyncApiCallback<ApiResponse<CampaignRule>> callback) throws ApiException {
+  public Future<ApiResponse<CampaignRule>> postOutboundCampaignrulesAsync(ApiRequest<CampaignRule> request, AsyncApiCallback<ApiResponse<CampaignRule>> callback) {
     return pcapiClient.<CampaignRule>invokeAPIVerboseAsync(request, new TypeReference<CampaignRule>() {}, callback);
   }
 
@@ -1169,7 +1170,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Campaign> postOutboundCampaignsAsync(PostOutboundCampaignsRequest request, AsyncApiCallback<Campaign> callback) throws ApiException {
+  public Future<Campaign> postOutboundCampaignsAsync(PostOutboundCampaignsRequest request, AsyncApiCallback<Campaign> callback) {
     return pcapiClient.<Campaign>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Campaign>() {}, callback);
   }
 
@@ -1179,7 +1180,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Campaign>> postOutboundCampaignsAsync(ApiRequest<Campaign> request, AsyncApiCallback<ApiResponse<Campaign>> callback) throws ApiException {
+  public Future<ApiResponse<Campaign>> postOutboundCampaignsAsync(ApiRequest<Campaign> request, AsyncApiCallback<ApiResponse<Campaign>> callback) {
     return pcapiClient.<Campaign>invokeAPIVerboseAsync(request, new TypeReference<Campaign>() {}, callback);
   }
 
@@ -1189,7 +1190,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<CampaignProgress>> postOutboundCampaignsProgressAsync(PostOutboundCampaignsProgressRequest request, AsyncApiCallback<List<CampaignProgress>> callback) throws ApiException {
+  public Future<List<CampaignProgress>> postOutboundCampaignsProgressAsync(PostOutboundCampaignsProgressRequest request, AsyncApiCallback<List<CampaignProgress>> callback) {
     return pcapiClient.<List<CampaignProgress>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<CampaignProgress>>() {}, callback);
   }
 
@@ -1199,7 +1200,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<CampaignProgress>>> postOutboundCampaignsProgressAsync(ApiRequest<List<String>> request, AsyncApiCallback<ApiResponse<List<CampaignProgress>>> callback) throws ApiException {
+  public Future<ApiResponse<List<CampaignProgress>>> postOutboundCampaignsProgressAsync(ApiRequest<List<String>> request, AsyncApiCallback<ApiResponse<List<CampaignProgress>>> callback) {
     return pcapiClient.<List<CampaignProgress>>invokeAPIVerboseAsync(request, new TypeReference<List<CampaignProgress>>() {}, callback);
   }
 
@@ -1209,7 +1210,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<DialerContact>> postOutboundContactlistContactsAsync(PostOutboundContactlistContactsRequest request, AsyncApiCallback<List<DialerContact>> callback) throws ApiException {
+  public Future<List<DialerContact>> postOutboundContactlistContactsAsync(PostOutboundContactlistContactsRequest request, AsyncApiCallback<List<DialerContact>> callback) {
     return pcapiClient.<List<DialerContact>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<DialerContact>>() {}, callback);
   }
 
@@ -1219,7 +1220,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<DialerContact>>> postOutboundContactlistContactsAsync(ApiRequest<List<DialerContact>> request, AsyncApiCallback<ApiResponse<List<DialerContact>>> callback) throws ApiException {
+  public Future<ApiResponse<List<DialerContact>>> postOutboundContactlistContactsAsync(ApiRequest<List<DialerContact>> request, AsyncApiCallback<ApiResponse<List<DialerContact>>> callback) {
     return pcapiClient.<List<DialerContact>>invokeAPIVerboseAsync(request, new TypeReference<List<DialerContact>>() {}, callback);
   }
 
@@ -1229,7 +1230,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UriReference> postOutboundContactlistExportAsync(PostOutboundContactlistExportRequest request, AsyncApiCallback<UriReference> callback) throws ApiException {
+  public Future<UriReference> postOutboundContactlistExportAsync(PostOutboundContactlistExportRequest request, AsyncApiCallback<UriReference> callback) {
     return pcapiClient.<UriReference>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UriReference>() {}, callback);
   }
 
@@ -1239,7 +1240,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UriReference>> postOutboundContactlistExportAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UriReference>> callback) throws ApiException {
+  public Future<ApiResponse<UriReference>> postOutboundContactlistExportAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UriReference>> callback) {
     return pcapiClient.<UriReference>invokeAPIVerboseAsync(request, new TypeReference<UriReference>() {}, callback);
   }
 
@@ -1249,7 +1250,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ContactList> postOutboundContactlistsAsync(PostOutboundContactlistsRequest request, AsyncApiCallback<ContactList> callback) throws ApiException {
+  public Future<ContactList> postOutboundContactlistsAsync(PostOutboundContactlistsRequest request, AsyncApiCallback<ContactList> callback) {
     return pcapiClient.<ContactList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ContactList>() {}, callback);
   }
 
@@ -1259,7 +1260,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ContactList>> postOutboundContactlistsAsync(ApiRequest<ContactList> request, AsyncApiCallback<ApiResponse<ContactList>> callback) throws ApiException {
+  public Future<ApiResponse<ContactList>> postOutboundContactlistsAsync(ApiRequest<ContactList> request, AsyncApiCallback<ApiResponse<ContactList>> callback) {
     return pcapiClient.<ContactList>invokeAPIVerboseAsync(request, new TypeReference<ContactList>() {}, callback);
   }
 
@@ -1269,7 +1270,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> postOutboundConversationDncAsync(PostOutboundConversationDncRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> postOutboundConversationDncAsync(PostOutboundConversationDncRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -1279,7 +1280,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> postOutboundConversationDncAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> postOutboundConversationDncAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -1289,7 +1290,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UriReference> postOutboundDnclistExportAsync(PostOutboundDnclistExportRequest request, AsyncApiCallback<UriReference> callback) throws ApiException {
+  public Future<UriReference> postOutboundDnclistExportAsync(PostOutboundDnclistExportRequest request, AsyncApiCallback<UriReference> callback) {
     return pcapiClient.<UriReference>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UriReference>() {}, callback);
   }
 
@@ -1299,7 +1300,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UriReference>> postOutboundDnclistExportAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UriReference>> callback) throws ApiException {
+  public Future<ApiResponse<UriReference>> postOutboundDnclistExportAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UriReference>> callback) {
     return pcapiClient.<UriReference>invokeAPIVerboseAsync(request, new TypeReference<UriReference>() {}, callback);
   }
 
@@ -1309,7 +1310,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> postOutboundDnclistPhonenumbersAsync(PostOutboundDnclistPhonenumbersRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> postOutboundDnclistPhonenumbersAsync(PostOutboundDnclistPhonenumbersRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -1319,7 +1320,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> postOutboundDnclistPhonenumbersAsync(ApiRequest<List<String>> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> postOutboundDnclistPhonenumbersAsync(ApiRequest<List<String>> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -1329,7 +1330,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DncList> postOutboundDnclistsAsync(PostOutboundDnclistsRequest request, AsyncApiCallback<DncList> callback) throws ApiException {
+  public Future<DncList> postOutboundDnclistsAsync(PostOutboundDnclistsRequest request, AsyncApiCallback<DncList> callback) {
     return pcapiClient.<DncList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DncList>() {}, callback);
   }
 
@@ -1339,7 +1340,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DncList>> postOutboundDnclistsAsync(ApiRequest<DncListCreate> request, AsyncApiCallback<ApiResponse<DncList>> callback) throws ApiException {
+  public Future<ApiResponse<DncList>> postOutboundDnclistsAsync(ApiRequest<DncListCreate> request, AsyncApiCallback<ApiResponse<DncList>> callback) {
     return pcapiClient.<DncList>invokeAPIVerboseAsync(request, new TypeReference<DncList>() {}, callback);
   }
 
@@ -1349,7 +1350,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<RuleSet> postOutboundRulesetsAsync(PostOutboundRulesetsRequest request, AsyncApiCallback<RuleSet> callback) throws ApiException {
+  public Future<RuleSet> postOutboundRulesetsAsync(PostOutboundRulesetsRequest request, AsyncApiCallback<RuleSet> callback) {
     return pcapiClient.<RuleSet>invokeAPIAsync(request.withHttpInfo(), new TypeReference<RuleSet>() {}, callback);
   }
 
@@ -1359,7 +1360,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<RuleSet>> postOutboundRulesetsAsync(ApiRequest<RuleSet> request, AsyncApiCallback<ApiResponse<RuleSet>> callback) throws ApiException {
+  public Future<ApiResponse<RuleSet>> postOutboundRulesetsAsync(ApiRequest<RuleSet> request, AsyncApiCallback<ApiResponse<RuleSet>> callback) {
     return pcapiClient.<RuleSet>invokeAPIVerboseAsync(request, new TypeReference<RuleSet>() {}, callback);
   }
 
@@ -1369,7 +1370,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CampaignSequence> postOutboundSequencesAsync(PostOutboundSequencesRequest request, AsyncApiCallback<CampaignSequence> callback) throws ApiException {
+  public Future<CampaignSequence> postOutboundSequencesAsync(PostOutboundSequencesRequest request, AsyncApiCallback<CampaignSequence> callback) {
     return pcapiClient.<CampaignSequence>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CampaignSequence>() {}, callback);
   }
 
@@ -1379,7 +1380,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CampaignSequence>> postOutboundSequencesAsync(ApiRequest<CampaignSequence> request, AsyncApiCallback<ApiResponse<CampaignSequence>> callback) throws ApiException {
+  public Future<ApiResponse<CampaignSequence>> postOutboundSequencesAsync(ApiRequest<CampaignSequence> request, AsyncApiCallback<ApiResponse<CampaignSequence>> callback) {
     return pcapiClient.<CampaignSequence>invokeAPIVerboseAsync(request, new TypeReference<CampaignSequence>() {}, callback);
   }
 
@@ -1389,7 +1390,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<AttemptLimits> putOutboundAttemptlimitAsync(PutOutboundAttemptlimitRequest request, AsyncApiCallback<AttemptLimits> callback) throws ApiException {
+  public Future<AttemptLimits> putOutboundAttemptlimitAsync(PutOutboundAttemptlimitRequest request, AsyncApiCallback<AttemptLimits> callback) {
     return pcapiClient.<AttemptLimits>invokeAPIAsync(request.withHttpInfo(), new TypeReference<AttemptLimits>() {}, callback);
   }
 
@@ -1399,7 +1400,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<AttemptLimits>> putOutboundAttemptlimitAsync(ApiRequest<AttemptLimits> request, AsyncApiCallback<ApiResponse<AttemptLimits>> callback) throws ApiException {
+  public Future<ApiResponse<AttemptLimits>> putOutboundAttemptlimitAsync(ApiRequest<AttemptLimits> request, AsyncApiCallback<ApiResponse<AttemptLimits>> callback) {
     return pcapiClient.<AttemptLimits>invokeAPIVerboseAsync(request, new TypeReference<AttemptLimits>() {}, callback);
   }
 
@@ -1409,7 +1410,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CallableTimeSet> putOutboundCallabletimesetAsync(PutOutboundCallabletimesetRequest request, AsyncApiCallback<CallableTimeSet> callback) throws ApiException {
+  public Future<CallableTimeSet> putOutboundCallabletimesetAsync(PutOutboundCallabletimesetRequest request, AsyncApiCallback<CallableTimeSet> callback) {
     return pcapiClient.<CallableTimeSet>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CallableTimeSet>() {}, callback);
   }
 
@@ -1419,7 +1420,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CallableTimeSet>> putOutboundCallabletimesetAsync(ApiRequest<CallableTimeSet> request, AsyncApiCallback<ApiResponse<CallableTimeSet>> callback) throws ApiException {
+  public Future<ApiResponse<CallableTimeSet>> putOutboundCallabletimesetAsync(ApiRequest<CallableTimeSet> request, AsyncApiCallback<ApiResponse<CallableTimeSet>> callback) {
     return pcapiClient.<CallableTimeSet>invokeAPIVerboseAsync(request, new TypeReference<CallableTimeSet>() {}, callback);
   }
 
@@ -1429,7 +1430,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ResponseSet> putOutboundCallanalysisresponsesetAsync(PutOutboundCallanalysisresponsesetRequest request, AsyncApiCallback<ResponseSet> callback) throws ApiException {
+  public Future<ResponseSet> putOutboundCallanalysisresponsesetAsync(PutOutboundCallanalysisresponsesetRequest request, AsyncApiCallback<ResponseSet> callback) {
     return pcapiClient.<ResponseSet>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ResponseSet>() {}, callback);
   }
 
@@ -1439,7 +1440,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ResponseSet>> putOutboundCallanalysisresponsesetAsync(ApiRequest<ResponseSet> request, AsyncApiCallback<ApiResponse<ResponseSet>> callback) throws ApiException {
+  public Future<ApiResponse<ResponseSet>> putOutboundCallanalysisresponsesetAsync(ApiRequest<ResponseSet> request, AsyncApiCallback<ApiResponse<ResponseSet>> callback) {
     return pcapiClient.<ResponseSet>invokeAPIVerboseAsync(request, new TypeReference<ResponseSet>() {}, callback);
   }
 
@@ -1449,7 +1450,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Campaign> putOutboundCampaignAsync(PutOutboundCampaignRequest request, AsyncApiCallback<Campaign> callback) throws ApiException {
+  public Future<Campaign> putOutboundCampaignAsync(PutOutboundCampaignRequest request, AsyncApiCallback<Campaign> callback) {
     return pcapiClient.<Campaign>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Campaign>() {}, callback);
   }
 
@@ -1459,7 +1460,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Campaign>> putOutboundCampaignAsync(ApiRequest<Campaign> request, AsyncApiCallback<ApiResponse<Campaign>> callback) throws ApiException {
+  public Future<ApiResponse<Campaign>> putOutboundCampaignAsync(ApiRequest<Campaign> request, AsyncApiCallback<ApiResponse<Campaign>> callback) {
     return pcapiClient.<Campaign>invokeAPIVerboseAsync(request, new TypeReference<Campaign>() {}, callback);
   }
 
@@ -1469,7 +1470,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> putOutboundCampaignAgentAsync(PutOutboundCampaignAgentRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> putOutboundCampaignAgentAsync(PutOutboundCampaignAgentRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -1479,7 +1480,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> putOutboundCampaignAgentAsync(ApiRequest<Agent> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> putOutboundCampaignAgentAsync(ApiRequest<Agent> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -1489,7 +1490,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CampaignRule> putOutboundCampaignruleAsync(PutOutboundCampaignruleRequest request, AsyncApiCallback<CampaignRule> callback) throws ApiException {
+  public Future<CampaignRule> putOutboundCampaignruleAsync(PutOutboundCampaignruleRequest request, AsyncApiCallback<CampaignRule> callback) {
     return pcapiClient.<CampaignRule>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CampaignRule>() {}, callback);
   }
 
@@ -1499,7 +1500,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CampaignRule>> putOutboundCampaignruleAsync(ApiRequest<CampaignRule> request, AsyncApiCallback<ApiResponse<CampaignRule>> callback) throws ApiException {
+  public Future<ApiResponse<CampaignRule>> putOutboundCampaignruleAsync(ApiRequest<CampaignRule> request, AsyncApiCallback<ApiResponse<CampaignRule>> callback) {
     return pcapiClient.<CampaignRule>invokeAPIVerboseAsync(request, new TypeReference<CampaignRule>() {}, callback);
   }
 
@@ -1509,7 +1510,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ContactList> putOutboundContactlistAsync(PutOutboundContactlistRequest request, AsyncApiCallback<ContactList> callback) throws ApiException {
+  public Future<ContactList> putOutboundContactlistAsync(PutOutboundContactlistRequest request, AsyncApiCallback<ContactList> callback) {
     return pcapiClient.<ContactList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ContactList>() {}, callback);
   }
 
@@ -1519,7 +1520,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ContactList>> putOutboundContactlistAsync(ApiRequest<ContactList> request, AsyncApiCallback<ApiResponse<ContactList>> callback) throws ApiException {
+  public Future<ApiResponse<ContactList>> putOutboundContactlistAsync(ApiRequest<ContactList> request, AsyncApiCallback<ApiResponse<ContactList>> callback) {
     return pcapiClient.<ContactList>invokeAPIVerboseAsync(request, new TypeReference<ContactList>() {}, callback);
   }
 
@@ -1529,7 +1530,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DialerContact> putOutboundContactlistContactAsync(PutOutboundContactlistContactRequest request, AsyncApiCallback<DialerContact> callback) throws ApiException {
+  public Future<DialerContact> putOutboundContactlistContactAsync(PutOutboundContactlistContactRequest request, AsyncApiCallback<DialerContact> callback) {
     return pcapiClient.<DialerContact>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DialerContact>() {}, callback);
   }
 
@@ -1539,7 +1540,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DialerContact>> putOutboundContactlistContactAsync(ApiRequest<DialerContact> request, AsyncApiCallback<ApiResponse<DialerContact>> callback) throws ApiException {
+  public Future<ApiResponse<DialerContact>> putOutboundContactlistContactAsync(ApiRequest<DialerContact> request, AsyncApiCallback<ApiResponse<DialerContact>> callback) {
     return pcapiClient.<DialerContact>invokeAPIVerboseAsync(request, new TypeReference<DialerContact>() {}, callback);
   }
 
@@ -1549,7 +1550,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<DncList> putOutboundDnclistAsync(PutOutboundDnclistRequest request, AsyncApiCallback<DncList> callback) throws ApiException {
+  public Future<DncList> putOutboundDnclistAsync(PutOutboundDnclistRequest request, AsyncApiCallback<DncList> callback) {
     return pcapiClient.<DncList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DncList>() {}, callback);
   }
 
@@ -1559,7 +1560,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<DncList>> putOutboundDnclistAsync(ApiRequest<DncList> request, AsyncApiCallback<ApiResponse<DncList>> callback) throws ApiException {
+  public Future<ApiResponse<DncList>> putOutboundDnclistAsync(ApiRequest<DncList> request, AsyncApiCallback<ApiResponse<DncList>> callback) {
     return pcapiClient.<DncList>invokeAPIVerboseAsync(request, new TypeReference<DncList>() {}, callback);
   }
 
@@ -1569,7 +1570,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<RuleSet> putOutboundRulesetAsync(PutOutboundRulesetRequest request, AsyncApiCallback<RuleSet> callback) throws ApiException {
+  public Future<RuleSet> putOutboundRulesetAsync(PutOutboundRulesetRequest request, AsyncApiCallback<RuleSet> callback) {
     return pcapiClient.<RuleSet>invokeAPIAsync(request.withHttpInfo(), new TypeReference<RuleSet>() {}, callback);
   }
 
@@ -1579,7 +1580,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<RuleSet>> putOutboundRulesetAsync(ApiRequest<RuleSet> request, AsyncApiCallback<ApiResponse<RuleSet>> callback) throws ApiException {
+  public Future<ApiResponse<RuleSet>> putOutboundRulesetAsync(ApiRequest<RuleSet> request, AsyncApiCallback<ApiResponse<RuleSet>> callback) {
     return pcapiClient.<RuleSet>invokeAPIVerboseAsync(request, new TypeReference<RuleSet>() {}, callback);
   }
 
@@ -1589,7 +1590,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CampaignSchedule> putOutboundSchedulesCampaignAsync(PutOutboundSchedulesCampaignRequest request, AsyncApiCallback<CampaignSchedule> callback) throws ApiException {
+  public Future<CampaignSchedule> putOutboundSchedulesCampaignAsync(PutOutboundSchedulesCampaignRequest request, AsyncApiCallback<CampaignSchedule> callback) {
     return pcapiClient.<CampaignSchedule>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CampaignSchedule>() {}, callback);
   }
 
@@ -1599,7 +1600,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CampaignSchedule>> putOutboundSchedulesCampaignAsync(ApiRequest<CampaignSchedule> request, AsyncApiCallback<ApiResponse<CampaignSchedule>> callback) throws ApiException {
+  public Future<ApiResponse<CampaignSchedule>> putOutboundSchedulesCampaignAsync(ApiRequest<CampaignSchedule> request, AsyncApiCallback<ApiResponse<CampaignSchedule>> callback) {
     return pcapiClient.<CampaignSchedule>invokeAPIVerboseAsync(request, new TypeReference<CampaignSchedule>() {}, callback);
   }
 
@@ -1609,7 +1610,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<SequenceSchedule> putOutboundSchedulesSequenceAsync(PutOutboundSchedulesSequenceRequest request, AsyncApiCallback<SequenceSchedule> callback) throws ApiException {
+  public Future<SequenceSchedule> putOutboundSchedulesSequenceAsync(PutOutboundSchedulesSequenceRequest request, AsyncApiCallback<SequenceSchedule> callback) {
     return pcapiClient.<SequenceSchedule>invokeAPIAsync(request.withHttpInfo(), new TypeReference<SequenceSchedule>() {}, callback);
   }
 
@@ -1619,7 +1620,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<SequenceSchedule>> putOutboundSchedulesSequenceAsync(ApiRequest<SequenceSchedule> request, AsyncApiCallback<ApiResponse<SequenceSchedule>> callback) throws ApiException {
+  public Future<ApiResponse<SequenceSchedule>> putOutboundSchedulesSequenceAsync(ApiRequest<SequenceSchedule> request, AsyncApiCallback<ApiResponse<SequenceSchedule>> callback) {
     return pcapiClient.<SequenceSchedule>invokeAPIVerboseAsync(request, new TypeReference<SequenceSchedule>() {}, callback);
   }
 
@@ -1629,7 +1630,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CampaignSequence> putOutboundSequenceAsync(PutOutboundSequenceRequest request, AsyncApiCallback<CampaignSequence> callback) throws ApiException {
+  public Future<CampaignSequence> putOutboundSequenceAsync(PutOutboundSequenceRequest request, AsyncApiCallback<CampaignSequence> callback) {
     return pcapiClient.<CampaignSequence>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CampaignSequence>() {}, callback);
   }
 
@@ -1639,7 +1640,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CampaignSequence>> putOutboundSequenceAsync(ApiRequest<CampaignSequence> request, AsyncApiCallback<ApiResponse<CampaignSequence>> callback) throws ApiException {
+  public Future<ApiResponse<CampaignSequence>> putOutboundSequenceAsync(ApiRequest<CampaignSequence> request, AsyncApiCallback<ApiResponse<CampaignSequence>> callback) {
     return pcapiClient.<CampaignSequence>invokeAPIVerboseAsync(request, new TypeReference<CampaignSequence>() {}, callback);
   }
 
@@ -1649,7 +1650,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<WrapUpCodeMapping> putOutboundWrapupcodemappingsAsync(PutOutboundWrapupcodemappingsRequest request, AsyncApiCallback<WrapUpCodeMapping> callback) throws ApiException {
+  public Future<WrapUpCodeMapping> putOutboundWrapupcodemappingsAsync(PutOutboundWrapupcodemappingsRequest request, AsyncApiCallback<WrapUpCodeMapping> callback) {
     return pcapiClient.<WrapUpCodeMapping>invokeAPIAsync(request.withHttpInfo(), new TypeReference<WrapUpCodeMapping>() {}, callback);
   }
 
@@ -1659,7 +1660,7 @@ public class OutboundApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<WrapUpCodeMapping>> putOutboundWrapupcodemappingsAsync(ApiRequest<WrapUpCodeMapping> request, AsyncApiCallback<ApiResponse<WrapUpCodeMapping>> callback) throws ApiException {
+  public Future<ApiResponse<WrapUpCodeMapping>> putOutboundWrapupcodemappingsAsync(ApiRequest<WrapUpCodeMapping> request, AsyncApiCallback<ApiResponse<WrapUpCodeMapping>> callback) {
     return pcapiClient.<WrapUpCodeMapping>invokeAPIVerboseAsync(request, new TypeReference<WrapUpCodeMapping>() {}, callback);
   }
 

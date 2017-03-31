@@ -134,16 +134,16 @@ public class PostTelephonyProvidersEdgeLogsJobsRequest {
         return this;
     }
 
-    public ApiRequest<EdgeLogsJobRequest> withHttpInfo() throws ApiException {
+    public ApiRequest<EdgeLogsJobRequest> withHttpInfo() {
         
         // verify the required parameter 'edgeId' is set
         if (this.edgeId == null) {
-            throw new ApiException(400, "Missing the required parameter 'edgeId' when building request for PostTelephonyProvidersEdgeLogsJobsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'edgeId' when building request for PostTelephonyProvidersEdgeLogsJobsRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostTelephonyProvidersEdgeLogsJobsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostTelephonyProvidersEdgeLogsJobsRequest.");
         }
         
 

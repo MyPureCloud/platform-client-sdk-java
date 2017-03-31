@@ -94,16 +94,16 @@ public class PostRoutingQueueWrapupcodesRequest {
         return this;
     }
 
-    public ApiRequest<List<WrapupCode>> withHttpInfo() throws ApiException {
+    public ApiRequest<List<WrapupCode>> withHttpInfo() {
         
         // verify the required parameter 'queueId' is set
         if (this.queueId == null) {
-            throw new ApiException(400, "Missing the required parameter 'queueId' when building request for PostRoutingQueueWrapupcodesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'queueId' when building request for PostRoutingQueueWrapupcodesRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostRoutingQueueWrapupcodesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostRoutingQueueWrapupcodesRequest.");
         }
         
 

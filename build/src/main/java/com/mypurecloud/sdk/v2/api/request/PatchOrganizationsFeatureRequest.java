@@ -75,16 +75,16 @@ public class PatchOrganizationsFeatureRequest {
         return this;
     }
 
-    public ApiRequest<FeatureState> withHttpInfo() throws ApiException {
+    public ApiRequest<FeatureState> withHttpInfo() {
         
         // verify the required parameter 'featureName' is set
         if (this.featureName == null) {
-            throw new ApiException(400, "Missing the required parameter 'featureName' when building request for PatchOrganizationsFeatureRequest.");
+            throw new IllegalStateException("Missing the required parameter 'featureName' when building request for PatchOrganizationsFeatureRequest.");
         }
         
         // verify the required parameter 'enabled' is set
         if (this.enabled == null) {
-            throw new ApiException(400, "Missing the required parameter 'enabled' when building request for PatchOrganizationsFeatureRequest.");
+            throw new IllegalStateException("Missing the required parameter 'enabled' when building request for PatchOrganizationsFeatureRequest.");
         }
         
 

@@ -114,16 +114,16 @@ public class GetContentmanagementWorkspaceTagvalueRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'workspaceId' is set
         if (this.workspaceId == null) {
-            throw new ApiException(400, "Missing the required parameter 'workspaceId' when building request for GetContentmanagementWorkspaceTagvalueRequest.");
+            throw new IllegalStateException("Missing the required parameter 'workspaceId' when building request for GetContentmanagementWorkspaceTagvalueRequest.");
         }
         
         // verify the required parameter 'tagId' is set
         if (this.tagId == null) {
-            throw new ApiException(400, "Missing the required parameter 'tagId' when building request for GetContentmanagementWorkspaceTagvalueRequest.");
+            throw new IllegalStateException("Missing the required parameter 'tagId' when building request for GetContentmanagementWorkspaceTagvalueRequest.");
         }
         
 

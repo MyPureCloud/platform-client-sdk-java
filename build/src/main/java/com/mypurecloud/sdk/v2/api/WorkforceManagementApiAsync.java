@@ -36,6 +36,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementTimeoffrequest
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitSchedulesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSchedulesRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -60,7 +61,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<UserScheduleAdherence>> getWorkforcemanagementAdherenceAsync(GetWorkforcemanagementAdherenceRequest request, AsyncApiCallback<List<UserScheduleAdherence>> callback) throws ApiException {
+  public Future<List<UserScheduleAdherence>> getWorkforcemanagementAdherenceAsync(GetWorkforcemanagementAdherenceRequest request, AsyncApiCallback<List<UserScheduleAdherence>> callback) {
     return pcapiClient.<List<UserScheduleAdherence>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<UserScheduleAdherence>>() {}, callback);
   }
 
@@ -70,7 +71,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<UserScheduleAdherence>>> getWorkforcemanagementAdherenceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<UserScheduleAdherence>>> callback) throws ApiException {
+  public Future<ApiResponse<List<UserScheduleAdherence>>> getWorkforcemanagementAdherenceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<UserScheduleAdherence>>> callback) {
     return pcapiClient.<List<UserScheduleAdherence>>invokeAPIVerboseAsync(request, new TypeReference<List<UserScheduleAdherence>>() {}, callback);
   }
 
@@ -80,7 +81,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ActivityCodeContainer> getWorkforcemanagementManagementunitActivitycodesAsync(GetWorkforcemanagementManagementunitActivitycodesRequest request, AsyncApiCallback<ActivityCodeContainer> callback) throws ApiException {
+  public Future<ActivityCodeContainer> getWorkforcemanagementManagementunitActivitycodesAsync(GetWorkforcemanagementManagementunitActivitycodesRequest request, AsyncApiCallback<ActivityCodeContainer> callback) {
     return pcapiClient.<ActivityCodeContainer>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ActivityCodeContainer>() {}, callback);
   }
 
@@ -90,7 +91,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ActivityCodeContainer>> getWorkforcemanagementManagementunitActivitycodesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ActivityCodeContainer>> callback) throws ApiException {
+  public Future<ApiResponse<ActivityCodeContainer>> getWorkforcemanagementManagementunitActivitycodesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ActivityCodeContainer>> callback) {
     return pcapiClient.<ActivityCodeContainer>invokeAPIVerboseAsync(request, new TypeReference<ActivityCodeContainer>() {}, callback);
   }
 
@@ -100,7 +101,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<TimeOffRequest> getWorkforcemanagementManagementunitUserTimeoffrequestAsync(GetWorkforcemanagementManagementunitUserTimeoffrequestRequest request, AsyncApiCallback<TimeOffRequest> callback) throws ApiException {
+  public Future<TimeOffRequest> getWorkforcemanagementManagementunitUserTimeoffrequestAsync(GetWorkforcemanagementManagementunitUserTimeoffrequestRequest request, AsyncApiCallback<TimeOffRequest> callback) {
     return pcapiClient.<TimeOffRequest>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TimeOffRequest>() {}, callback);
   }
 
@@ -110,7 +111,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<TimeOffRequest>> getWorkforcemanagementManagementunitUserTimeoffrequestAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TimeOffRequest>> callback) throws ApiException {
+  public Future<ApiResponse<TimeOffRequest>> getWorkforcemanagementManagementunitUserTimeoffrequestAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TimeOffRequest>> callback) {
     return pcapiClient.<TimeOffRequest>invokeAPIVerboseAsync(request, new TypeReference<TimeOffRequest>() {}, callback);
   }
 
@@ -120,7 +121,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<TimeOffRequestList> getWorkforcemanagementManagementunitUserTimeoffrequestsAsync(GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest request, AsyncApiCallback<TimeOffRequestList> callback) throws ApiException {
+  public Future<TimeOffRequestList> getWorkforcemanagementManagementunitUserTimeoffrequestsAsync(GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest request, AsyncApiCallback<TimeOffRequestList> callback) {
     return pcapiClient.<TimeOffRequestList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TimeOffRequestList>() {}, callback);
   }
 
@@ -130,7 +131,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<TimeOffRequestList>> getWorkforcemanagementManagementunitUserTimeoffrequestsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TimeOffRequestList>> callback) throws ApiException {
+  public Future<ApiResponse<TimeOffRequestList>> getWorkforcemanagementManagementunitUserTimeoffrequestsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TimeOffRequestList>> callback) {
     return pcapiClient.<TimeOffRequestList>invokeAPIVerboseAsync(request, new TypeReference<TimeOffRequestList>() {}, callback);
   }
 
@@ -140,7 +141,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<WfmUserEntityListing> getWorkforcemanagementManagementunitUsersAsync(GetWorkforcemanagementManagementunitUsersRequest request, AsyncApiCallback<WfmUserEntityListing> callback) throws ApiException {
+  public Future<WfmUserEntityListing> getWorkforcemanagementManagementunitUsersAsync(GetWorkforcemanagementManagementunitUsersRequest request, AsyncApiCallback<WfmUserEntityListing> callback) {
     return pcapiClient.<WfmUserEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<WfmUserEntityListing>() {}, callback);
   }
 
@@ -150,7 +151,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<WfmUserEntityListing>> getWorkforcemanagementManagementunitUsersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<WfmUserEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<WfmUserEntityListing>> getWorkforcemanagementManagementunitUsersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<WfmUserEntityListing>> callback) {
     return pcapiClient.<WfmUserEntityListing>invokeAPIVerboseAsync(request, new TypeReference<WfmUserEntityListing>() {}, callback);
   }
 
@@ -160,7 +161,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<ManagementUnit>> getWorkforcemanagementManagementunitsAsync(GetWorkforcemanagementManagementunitsRequest request, AsyncApiCallback<List<ManagementUnit>> callback) throws ApiException {
+  public Future<List<ManagementUnit>> getWorkforcemanagementManagementunitsAsync(GetWorkforcemanagementManagementunitsRequest request, AsyncApiCallback<List<ManagementUnit>> callback) {
     return pcapiClient.<List<ManagementUnit>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<ManagementUnit>>() {}, callback);
   }
 
@@ -170,7 +171,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<ManagementUnit>>> getWorkforcemanagementManagementunitsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<ManagementUnit>>> callback) throws ApiException {
+  public Future<ApiResponse<List<ManagementUnit>>> getWorkforcemanagementManagementunitsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<ManagementUnit>>> callback) {
     return pcapiClient.<List<ManagementUnit>>invokeAPIVerboseAsync(request, new TypeReference<List<ManagementUnit>>() {}, callback);
   }
 
@@ -180,7 +181,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<TimeOffRequest> getWorkforcemanagementTimeoffrequestAsync(GetWorkforcemanagementTimeoffrequestRequest request, AsyncApiCallback<TimeOffRequest> callback) throws ApiException {
+  public Future<TimeOffRequest> getWorkforcemanagementTimeoffrequestAsync(GetWorkforcemanagementTimeoffrequestRequest request, AsyncApiCallback<TimeOffRequest> callback) {
     return pcapiClient.<TimeOffRequest>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TimeOffRequest>() {}, callback);
   }
 
@@ -190,7 +191,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<TimeOffRequest>> getWorkforcemanagementTimeoffrequestAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TimeOffRequest>> callback) throws ApiException {
+  public Future<ApiResponse<TimeOffRequest>> getWorkforcemanagementTimeoffrequestAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TimeOffRequest>> callback) {
     return pcapiClient.<TimeOffRequest>invokeAPIVerboseAsync(request, new TypeReference<TimeOffRequest>() {}, callback);
   }
 
@@ -200,7 +201,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<TimeOffRequestList> getWorkforcemanagementTimeoffrequestsAsync(GetWorkforcemanagementTimeoffrequestsRequest request, AsyncApiCallback<TimeOffRequestList> callback) throws ApiException {
+  public Future<TimeOffRequestList> getWorkforcemanagementTimeoffrequestsAsync(GetWorkforcemanagementTimeoffrequestsRequest request, AsyncApiCallback<TimeOffRequestList> callback) {
     return pcapiClient.<TimeOffRequestList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TimeOffRequestList>() {}, callback);
   }
 
@@ -210,7 +211,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<TimeOffRequestList>> getWorkforcemanagementTimeoffrequestsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TimeOffRequestList>> callback) throws ApiException {
+  public Future<ApiResponse<TimeOffRequestList>> getWorkforcemanagementTimeoffrequestsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TimeOffRequestList>> callback) {
     return pcapiClient.<TimeOffRequestList>invokeAPIVerboseAsync(request, new TypeReference<TimeOffRequestList>() {}, callback);
   }
 
@@ -220,7 +221,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> patchWorkforcemanagementTimeoffrequestAsync(PatchWorkforcemanagementTimeoffrequestRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> patchWorkforcemanagementTimeoffrequestAsync(PatchWorkforcemanagementTimeoffrequestRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -230,7 +231,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> patchWorkforcemanagementTimeoffrequestAsync(ApiRequest<TimeOffRequestPatch> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> patchWorkforcemanagementTimeoffrequestAsync(ApiRequest<TimeOffRequestPatch> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -240,7 +241,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UserScheduleContainer> postWorkforcemanagementManagementunitSchedulesSearchAsync(PostWorkforcemanagementManagementunitSchedulesSearchRequest request, AsyncApiCallback<UserScheduleContainer> callback) throws ApiException {
+  public Future<UserScheduleContainer> postWorkforcemanagementManagementunitSchedulesSearchAsync(PostWorkforcemanagementManagementunitSchedulesSearchRequest request, AsyncApiCallback<UserScheduleContainer> callback) {
     return pcapiClient.<UserScheduleContainer>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserScheduleContainer>() {}, callback);
   }
 
@@ -250,7 +251,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UserScheduleContainer>> postWorkforcemanagementManagementunitSchedulesSearchAsync(ApiRequest<UserListScheduleRequestBody> request, AsyncApiCallback<ApiResponse<UserScheduleContainer>> callback) throws ApiException {
+  public Future<ApiResponse<UserScheduleContainer>> postWorkforcemanagementManagementunitSchedulesSearchAsync(ApiRequest<UserListScheduleRequestBody> request, AsyncApiCallback<ApiResponse<UserScheduleContainer>> callback) {
     return pcapiClient.<UserScheduleContainer>invokeAPIVerboseAsync(request, new TypeReference<UserScheduleContainer>() {}, callback);
   }
 
@@ -260,7 +261,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UserScheduleContainer> postWorkforcemanagementSchedulesAsync(PostWorkforcemanagementSchedulesRequest request, AsyncApiCallback<UserScheduleContainer> callback) throws ApiException {
+  public Future<UserScheduleContainer> postWorkforcemanagementSchedulesAsync(PostWorkforcemanagementSchedulesRequest request, AsyncApiCallback<UserScheduleContainer> callback) {
     return pcapiClient.<UserScheduleContainer>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserScheduleContainer>() {}, callback);
   }
 
@@ -270,7 +271,7 @@ public class WorkforceManagementApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UserScheduleContainer>> postWorkforcemanagementSchedulesAsync(ApiRequest<CurrentUserScheduleRequestBody> request, AsyncApiCallback<ApiResponse<UserScheduleContainer>> callback) throws ApiException {
+  public Future<ApiResponse<UserScheduleContainer>> postWorkforcemanagementSchedulesAsync(ApiRequest<CurrentUserScheduleRequestBody> request, AsyncApiCallback<ApiResponse<UserScheduleContainer>> callback) {
     return pcapiClient.<UserScheduleContainer>invokeAPIVerboseAsync(request, new TypeReference<UserScheduleContainer>() {}, callback);
   }
 

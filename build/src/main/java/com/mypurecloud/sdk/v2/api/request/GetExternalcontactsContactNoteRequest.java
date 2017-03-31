@@ -95,16 +95,16 @@ public class GetExternalcontactsContactNoteRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'contactId' is set
         if (this.contactId == null) {
-            throw new ApiException(400, "Missing the required parameter 'contactId' when building request for GetExternalcontactsContactNoteRequest.");
+            throw new IllegalStateException("Missing the required parameter 'contactId' when building request for GetExternalcontactsContactNoteRequest.");
         }
         
         // verify the required parameter 'noteId' is set
         if (this.noteId == null) {
-            throw new ApiException(400, "Missing the required parameter 'noteId' when building request for GetExternalcontactsContactNoteRequest.");
+            throw new IllegalStateException("Missing the required parameter 'noteId' when building request for GetExternalcontactsContactNoteRequest.");
         }
         
 

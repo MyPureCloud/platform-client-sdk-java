@@ -124,21 +124,21 @@ public class PatchConversationsCallParticipantConsultRequest {
         return this;
     }
 
-    public ApiRequest<ConsultTransferUpdate> withHttpInfo() throws ApiException {
+    public ApiRequest<ConsultTransferUpdate> withHttpInfo() {
         
         // verify the required parameter 'callId' is set
         if (this.callId == null) {
-            throw new ApiException(400, "Missing the required parameter 'callId' when building request for PatchConversationsCallParticipantConsultRequest.");
+            throw new IllegalStateException("Missing the required parameter 'callId' when building request for PatchConversationsCallParticipantConsultRequest.");
         }
         
         // verify the required parameter 'participantId' is set
         if (this.participantId == null) {
-            throw new ApiException(400, "Missing the required parameter 'participantId' when building request for PatchConversationsCallParticipantConsultRequest.");
+            throw new IllegalStateException("Missing the required parameter 'participantId' when building request for PatchConversationsCallParticipantConsultRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PatchConversationsCallParticipantConsultRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchConversationsCallParticipantConsultRequest.");
         }
         
 

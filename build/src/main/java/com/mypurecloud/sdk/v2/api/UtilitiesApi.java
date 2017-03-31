@@ -21,6 +21,7 @@ import com.mypurecloud.sdk.v2.api.request.GetDateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTimezonesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCertificateDetailsRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -44,7 +45,7 @@ public class UtilitiesApi {
    * @return ServerDate
    * @throws ApiException if fails to make API call
    */
-  public ServerDate getDate() throws ApiException {
+  public ServerDate getDate() throws IOException, ApiException {
     return getDateWithHttpInfo().getBody();
   }
 
@@ -54,7 +55,7 @@ public class UtilitiesApi {
    * @return ServerDate
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ServerDate> getDateWithHttpInfo() throws ApiException {
+  public ApiResponse<ServerDate> getDateWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -89,7 +90,7 @@ public class UtilitiesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ServerDate getDate(GetDateRequest request) throws ApiException {
+  public ServerDate getDate(GetDateRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ServerDate>() {});
   }
 
@@ -99,7 +100,7 @@ public class UtilitiesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ServerDate> getDate(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ServerDate> getDate(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ServerDate>invokeAPIVerbose(request, new TypeReference<ServerDate>() {});
   }
 
@@ -111,7 +112,7 @@ public class UtilitiesApi {
    * @return TimeZoneEntityListing
    * @throws ApiException if fails to make API call
    */
-  public TimeZoneEntityListing getTimezones(Integer pageSize, Integer pageNumber) throws ApiException {
+  public TimeZoneEntityListing getTimezones(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return getTimezonesWithHttpInfo(pageSize, pageNumber).getBody();
   }
 
@@ -123,7 +124,7 @@ public class UtilitiesApi {
    * @return TimeZoneEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TimeZoneEntityListing> getTimezonesWithHttpInfo(Integer pageSize, Integer pageNumber) throws ApiException {
+  public ApiResponse<TimeZoneEntityListing> getTimezonesWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -160,7 +161,7 @@ public class UtilitiesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public TimeZoneEntityListing getTimezones(GetTimezonesRequest request) throws ApiException {
+  public TimeZoneEntityListing getTimezones(GetTimezonesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TimeZoneEntityListing>() {});
   }
 
@@ -170,7 +171,7 @@ public class UtilitiesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<TimeZoneEntityListing> getTimezones(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<TimeZoneEntityListing> getTimezones(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<TimeZoneEntityListing>invokeAPIVerbose(request, new TypeReference<TimeZoneEntityListing>() {});
   }
 
@@ -181,7 +182,7 @@ public class UtilitiesApi {
    * @return ParsedCertificate
    * @throws ApiException if fails to make API call
    */
-  public ParsedCertificate postCertificateDetails(Certificate body) throws ApiException {
+  public ParsedCertificate postCertificateDetails(Certificate body) throws IOException, ApiException {
     return postCertificateDetailsWithHttpInfo(body).getBody();
   }
 
@@ -192,12 +193,12 @@ public class UtilitiesApi {
    * @return ParsedCertificate
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ParsedCertificate> postCertificateDetailsWithHttpInfo(Certificate body) throws ApiException {
+  public ApiResponse<ParsedCertificate> postCertificateDetailsWithHttpInfo(Certificate body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postCertificateDetails");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postCertificateDetails");
     }
     
     // create path and map variables
@@ -232,7 +233,7 @@ public class UtilitiesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ParsedCertificate postCertificateDetails(PostCertificateDetailsRequest request) throws ApiException {
+  public ParsedCertificate postCertificateDetails(PostCertificateDetailsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ParsedCertificate>() {});
   }
 
@@ -242,7 +243,7 @@ public class UtilitiesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ParsedCertificate> postCertificateDetails(ApiRequest<Certificate> request) throws ApiException {
+  public ApiResponse<ParsedCertificate> postCertificateDetails(ApiRequest<Certificate> request) throws IOException, ApiException {
     return pcapiClient.<ParsedCertificate>invokeAPIVerbose(request, new TypeReference<ParsedCertificate>() {});
   }
 

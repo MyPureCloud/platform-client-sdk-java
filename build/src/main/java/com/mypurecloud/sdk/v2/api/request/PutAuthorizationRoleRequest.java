@@ -79,16 +79,16 @@ public class PutAuthorizationRoleRequest {
         return this;
     }
 
-    public ApiRequest<DomainOrganizationRoleUpdate> withHttpInfo() throws ApiException {
+    public ApiRequest<DomainOrganizationRoleUpdate> withHttpInfo() {
         
         // verify the required parameter 'roleId' is set
         if (this.roleId == null) {
-            throw new ApiException(400, "Missing the required parameter 'roleId' when building request for PutAuthorizationRoleRequest.");
+            throw new IllegalStateException("Missing the required parameter 'roleId' when building request for PutAuthorizationRoleRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutAuthorizationRoleRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutAuthorizationRoleRequest.");
         }
         
 

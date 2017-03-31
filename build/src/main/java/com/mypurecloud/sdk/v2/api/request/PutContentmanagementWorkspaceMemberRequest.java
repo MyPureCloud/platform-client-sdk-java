@@ -114,21 +114,21 @@ public class PutContentmanagementWorkspaceMemberRequest {
         return this;
     }
 
-    public ApiRequest<WorkspaceMember> withHttpInfo() throws ApiException {
+    public ApiRequest<WorkspaceMember> withHttpInfo() {
         
         // verify the required parameter 'workspaceId' is set
         if (this.workspaceId == null) {
-            throw new ApiException(400, "Missing the required parameter 'workspaceId' when building request for PutContentmanagementWorkspaceMemberRequest.");
+            throw new IllegalStateException("Missing the required parameter 'workspaceId' when building request for PutContentmanagementWorkspaceMemberRequest.");
         }
         
         // verify the required parameter 'memberId' is set
         if (this.memberId == null) {
-            throw new ApiException(400, "Missing the required parameter 'memberId' when building request for PutContentmanagementWorkspaceMemberRequest.");
+            throw new IllegalStateException("Missing the required parameter 'memberId' when building request for PutContentmanagementWorkspaceMemberRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutContentmanagementWorkspaceMemberRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutContentmanagementWorkspaceMemberRequest.");
         }
         
 

@@ -120,11 +120,11 @@ public class GetTelephonyProvidersEdgesDidRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'didId' is set
         if (this.didId == null) {
-            throw new ApiException(400, "Missing the required parameter 'didId' when building request for GetTelephonyProvidersEdgesDidRequest.");
+            throw new IllegalStateException("Missing the required parameter 'didId' when building request for GetTelephonyProvidersEdgesDidRequest.");
         }
         
 

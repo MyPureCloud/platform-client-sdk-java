@@ -61,7 +61,7 @@ public class PutOrganizationsMeRequest {
         return this;
     }
 
-    public ApiRequest<Organization> withHttpInfo() throws ApiException {
+    public ApiRequest<Organization> withHttpInfo() {
         
 
         return ApiRequestBuilder.create("PUT", "/api/v2/organizations/me")

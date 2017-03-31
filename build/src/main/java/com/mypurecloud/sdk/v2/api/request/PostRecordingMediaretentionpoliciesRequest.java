@@ -74,11 +74,11 @@ public class PostRecordingMediaretentionpoliciesRequest {
         return this;
     }
 
-    public ApiRequest<PolicyCreate> withHttpInfo() throws ApiException {
+    public ApiRequest<PolicyCreate> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostRecordingMediaretentionpoliciesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostRecordingMediaretentionpoliciesRequest.");
         }
         
 

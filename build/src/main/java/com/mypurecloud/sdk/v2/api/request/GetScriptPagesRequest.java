@@ -60,11 +60,11 @@ public class GetScriptPagesRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'scriptId' is set
         if (this.scriptId == null) {
-            throw new ApiException(400, "Missing the required parameter 'scriptId' when building request for GetScriptPagesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'scriptId' when building request for GetScriptPagesRequest.");
         }
         
 

@@ -7,6 +7,7 @@ import com.mypurecloud.sdk.v2.connector.ApiClientConnectorProvider;
 import com.squareup.okhttp.Dispatcher;
 import com.squareup.okhttp.OkHttpClient;
 
+import java.net.Proxy;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 
@@ -20,6 +21,11 @@ public class OkHttpClientConnectorProvider implements ApiClientConnectorProvider
             client.setConnectTimeout(connectionTimeout, TimeUnit.MILLISECONDS);
             client.setReadTimeout(connectionTimeout, TimeUnit.MILLISECONDS);
             client.setWriteTimeout(connectionTimeout, TimeUnit.MILLISECONDS);
+        }
+
+        Proxy proxy =properties.getProperty(ApiClientConnectorProperty.PROXY, Proxy.class, null);
+        if (proxy != null) {
+            client.setProxy(proxy);
         }
 
         ExecutorService executorService = properties.getProperty(ApiClientConnectorProperty.ASYNC_EXECUTOR_SERVICE, ExecutorService.class, null);

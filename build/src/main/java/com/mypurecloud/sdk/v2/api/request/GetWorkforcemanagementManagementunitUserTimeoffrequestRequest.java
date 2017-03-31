@@ -95,21 +95,21 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'muId' is set
         if (this.muId == null) {
-            throw new ApiException(400, "Missing the required parameter 'muId' when building request for GetWorkforcemanagementManagementunitUserTimeoffrequestRequest.");
+            throw new IllegalStateException("Missing the required parameter 'muId' when building request for GetWorkforcemanagementManagementunitUserTimeoffrequestRequest.");
         }
         
         // verify the required parameter 'userId' is set
         if (this.userId == null) {
-            throw new ApiException(400, "Missing the required parameter 'userId' when building request for GetWorkforcemanagementManagementunitUserTimeoffrequestRequest.");
+            throw new IllegalStateException("Missing the required parameter 'userId' when building request for GetWorkforcemanagementManagementunitUserTimeoffrequestRequest.");
         }
         
         // verify the required parameter 'timeOffRequestId' is set
         if (this.timeOffRequestId == null) {
-            throw new ApiException(400, "Missing the required parameter 'timeOffRequestId' when building request for GetWorkforcemanagementManagementunitUserTimeoffrequestRequest.");
+            throw new IllegalStateException("Missing the required parameter 'timeOffRequestId' when building request for GetWorkforcemanagementManagementunitUserTimeoffrequestRequest.");
         }
         
 

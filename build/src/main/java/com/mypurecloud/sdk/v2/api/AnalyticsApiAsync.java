@@ -56,6 +56,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersObservationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAnalyticsReportingScheduleRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -80,7 +81,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteAnalyticsReportingScheduleAsync(DeleteAnalyticsReportingScheduleRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteAnalyticsReportingScheduleAsync(DeleteAnalyticsReportingScheduleRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -90,7 +91,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteAnalyticsReportingScheduleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteAnalyticsReportingScheduleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -100,7 +101,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<AnalyticsConversation> getAnalyticsConversationDetailsAsync(GetAnalyticsConversationDetailsRequest request, AsyncApiCallback<AnalyticsConversation> callback) throws ApiException {
+  public Future<AnalyticsConversation> getAnalyticsConversationDetailsAsync(GetAnalyticsConversationDetailsRequest request, AsyncApiCallback<AnalyticsConversation> callback) {
     return pcapiClient.<AnalyticsConversation>invokeAPIAsync(request.withHttpInfo(), new TypeReference<AnalyticsConversation>() {}, callback);
   }
 
@@ -110,7 +111,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<AnalyticsConversation>> getAnalyticsConversationDetailsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AnalyticsConversation>> callback) throws ApiException {
+  public Future<ApiResponse<AnalyticsConversation>> getAnalyticsConversationDetailsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AnalyticsConversation>> callback) {
     return pcapiClient.<AnalyticsConversation>invokeAPIVerboseAsync(request, new TypeReference<AnalyticsConversation>() {}, callback);
   }
 
@@ -120,7 +121,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ReportMetaDataEntityListing> getAnalyticsReportingMetadataAsync(GetAnalyticsReportingMetadataRequest request, AsyncApiCallback<ReportMetaDataEntityListing> callback) throws ApiException {
+  public Future<ReportMetaDataEntityListing> getAnalyticsReportingMetadataAsync(GetAnalyticsReportingMetadataRequest request, AsyncApiCallback<ReportMetaDataEntityListing> callback) {
     return pcapiClient.<ReportMetaDataEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ReportMetaDataEntityListing>() {}, callback);
   }
 
@@ -130,7 +131,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ReportMetaDataEntityListing>> getAnalyticsReportingMetadataAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportMetaDataEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<ReportMetaDataEntityListing>> getAnalyticsReportingMetadataAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportMetaDataEntityListing>> callback) {
     return pcapiClient.<ReportMetaDataEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ReportMetaDataEntityListing>() {}, callback);
   }
 
@@ -140,7 +141,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ReportMetaData> getAnalyticsReportingReportIdMetadataAsync(GetAnalyticsReportingReportIdMetadataRequest request, AsyncApiCallback<ReportMetaData> callback) throws ApiException {
+  public Future<ReportMetaData> getAnalyticsReportingReportIdMetadataAsync(GetAnalyticsReportingReportIdMetadataRequest request, AsyncApiCallback<ReportMetaData> callback) {
     return pcapiClient.<ReportMetaData>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ReportMetaData>() {}, callback);
   }
 
@@ -150,7 +151,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ReportMetaData>> getAnalyticsReportingReportIdMetadataAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportMetaData>> callback) throws ApiException {
+  public Future<ApiResponse<ReportMetaData>> getAnalyticsReportingReportIdMetadataAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportMetaData>> callback) {
     return pcapiClient.<ReportMetaData>invokeAPIVerboseAsync(request, new TypeReference<ReportMetaData>() {}, callback);
   }
 
@@ -160,7 +161,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<String>> getAnalyticsReportingReportformatsAsync(GetAnalyticsReportingReportformatsRequest request, AsyncApiCallback<List<String>> callback) throws ApiException {
+  public Future<List<String>> getAnalyticsReportingReportformatsAsync(GetAnalyticsReportingReportformatsRequest request, AsyncApiCallback<List<String>> callback) {
     return pcapiClient.<List<String>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<String>>() {}, callback);
   }
 
@@ -170,7 +171,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<String>>> getAnalyticsReportingReportformatsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<String>>> callback) throws ApiException {
+  public Future<ApiResponse<List<String>>> getAnalyticsReportingReportformatsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<String>>> callback) {
     return pcapiClient.<List<String>>invokeAPIVerboseAsync(request, new TypeReference<List<String>>() {}, callback);
   }
 
@@ -180,7 +181,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ReportSchedule> getAnalyticsReportingScheduleAsync(GetAnalyticsReportingScheduleRequest request, AsyncApiCallback<ReportSchedule> callback) throws ApiException {
+  public Future<ReportSchedule> getAnalyticsReportingScheduleAsync(GetAnalyticsReportingScheduleRequest request, AsyncApiCallback<ReportSchedule> callback) {
     return pcapiClient.<ReportSchedule>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ReportSchedule>() {}, callback);
   }
 
@@ -190,7 +191,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ReportSchedule>> getAnalyticsReportingScheduleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportSchedule>> callback) throws ApiException {
+  public Future<ApiResponse<ReportSchedule>> getAnalyticsReportingScheduleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportSchedule>> callback) {
     return pcapiClient.<ReportSchedule>invokeAPIVerboseAsync(request, new TypeReference<ReportSchedule>() {}, callback);
   }
 
@@ -200,7 +201,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ReportRunEntryEntityDomainListing> getAnalyticsReportingScheduleHistoryAsync(GetAnalyticsReportingScheduleHistoryRequest request, AsyncApiCallback<ReportRunEntryEntityDomainListing> callback) throws ApiException {
+  public Future<ReportRunEntryEntityDomainListing> getAnalyticsReportingScheduleHistoryAsync(GetAnalyticsReportingScheduleHistoryRequest request, AsyncApiCallback<ReportRunEntryEntityDomainListing> callback) {
     return pcapiClient.<ReportRunEntryEntityDomainListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ReportRunEntryEntityDomainListing>() {}, callback);
   }
 
@@ -210,7 +211,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ReportRunEntryEntityDomainListing>> getAnalyticsReportingScheduleHistoryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportRunEntryEntityDomainListing>> callback) throws ApiException {
+  public Future<ApiResponse<ReportRunEntryEntityDomainListing>> getAnalyticsReportingScheduleHistoryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportRunEntryEntityDomainListing>> callback) {
     return pcapiClient.<ReportRunEntryEntityDomainListing>invokeAPIVerboseAsync(request, new TypeReference<ReportRunEntryEntityDomainListing>() {}, callback);
   }
 
@@ -220,7 +221,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ReportRunEntry> getAnalyticsReportingScheduleHistoryLatestAsync(GetAnalyticsReportingScheduleHistoryLatestRequest request, AsyncApiCallback<ReportRunEntry> callback) throws ApiException {
+  public Future<ReportRunEntry> getAnalyticsReportingScheduleHistoryLatestAsync(GetAnalyticsReportingScheduleHistoryLatestRequest request, AsyncApiCallback<ReportRunEntry> callback) {
     return pcapiClient.<ReportRunEntry>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ReportRunEntry>() {}, callback);
   }
 
@@ -230,7 +231,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ReportRunEntry>> getAnalyticsReportingScheduleHistoryLatestAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportRunEntry>> callback) throws ApiException {
+  public Future<ApiResponse<ReportRunEntry>> getAnalyticsReportingScheduleHistoryLatestAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportRunEntry>> callback) {
     return pcapiClient.<ReportRunEntry>invokeAPIVerboseAsync(request, new TypeReference<ReportRunEntry>() {}, callback);
   }
 
@@ -240,7 +241,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ReportRunEntry> getAnalyticsReportingScheduleHistoryRunIdAsync(GetAnalyticsReportingScheduleHistoryRunIdRequest request, AsyncApiCallback<ReportRunEntry> callback) throws ApiException {
+  public Future<ReportRunEntry> getAnalyticsReportingScheduleHistoryRunIdAsync(GetAnalyticsReportingScheduleHistoryRunIdRequest request, AsyncApiCallback<ReportRunEntry> callback) {
     return pcapiClient.<ReportRunEntry>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ReportRunEntry>() {}, callback);
   }
 
@@ -250,7 +251,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ReportRunEntry>> getAnalyticsReportingScheduleHistoryRunIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportRunEntry>> callback) throws ApiException {
+  public Future<ApiResponse<ReportRunEntry>> getAnalyticsReportingScheduleHistoryRunIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportRunEntry>> callback) {
     return pcapiClient.<ReportRunEntry>invokeAPIVerboseAsync(request, new TypeReference<ReportRunEntry>() {}, callback);
   }
 
@@ -260,7 +261,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ReportScheduleEntityListing> getAnalyticsReportingSchedulesAsync(GetAnalyticsReportingSchedulesRequest request, AsyncApiCallback<ReportScheduleEntityListing> callback) throws ApiException {
+  public Future<ReportScheduleEntityListing> getAnalyticsReportingSchedulesAsync(GetAnalyticsReportingSchedulesRequest request, AsyncApiCallback<ReportScheduleEntityListing> callback) {
     return pcapiClient.<ReportScheduleEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ReportScheduleEntityListing>() {}, callback);
   }
 
@@ -270,7 +271,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ReportScheduleEntityListing>> getAnalyticsReportingSchedulesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportScheduleEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<ReportScheduleEntityListing>> getAnalyticsReportingSchedulesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportScheduleEntityListing>> callback) {
     return pcapiClient.<ReportScheduleEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ReportScheduleEntityListing>() {}, callback);
   }
 
@@ -280,7 +281,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<String>> getAnalyticsReportingTimeperiodsAsync(GetAnalyticsReportingTimeperiodsRequest request, AsyncApiCallback<List<String>> callback) throws ApiException {
+  public Future<List<String>> getAnalyticsReportingTimeperiodsAsync(GetAnalyticsReportingTimeperiodsRequest request, AsyncApiCallback<List<String>> callback) {
     return pcapiClient.<List<String>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<String>>() {}, callback);
   }
 
@@ -290,7 +291,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<String>>> getAnalyticsReportingTimeperiodsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<String>>> callback) throws ApiException {
+  public Future<ApiResponse<List<String>>> getAnalyticsReportingTimeperiodsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<String>>> callback) {
     return pcapiClient.<List<String>>invokeAPIVerboseAsync(request, new TypeReference<List<String>>() {}, callback);
   }
 
@@ -300,7 +301,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<PropertyIndexRequest> postAnalyticsConversationDetailsPropertiesAsync(PostAnalyticsConversationDetailsPropertiesRequest request, AsyncApiCallback<PropertyIndexRequest> callback) throws ApiException {
+  public Future<PropertyIndexRequest> postAnalyticsConversationDetailsPropertiesAsync(PostAnalyticsConversationDetailsPropertiesRequest request, AsyncApiCallback<PropertyIndexRequest> callback) {
     return pcapiClient.<PropertyIndexRequest>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PropertyIndexRequest>() {}, callback);
   }
 
@@ -310,7 +311,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<PropertyIndexRequest>> postAnalyticsConversationDetailsPropertiesAsync(ApiRequest<PropertyIndexRequest> request, AsyncApiCallback<ApiResponse<PropertyIndexRequest>> callback) throws ApiException {
+  public Future<ApiResponse<PropertyIndexRequest>> postAnalyticsConversationDetailsPropertiesAsync(ApiRequest<PropertyIndexRequest> request, AsyncApiCallback<ApiResponse<PropertyIndexRequest>> callback) {
     return pcapiClient.<PropertyIndexRequest>invokeAPIVerboseAsync(request, new TypeReference<PropertyIndexRequest>() {}, callback);
   }
 
@@ -320,7 +321,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<AggregateQueryResponse> postAnalyticsConversationsAggregatesQueryAsync(PostAnalyticsConversationsAggregatesQueryRequest request, AsyncApiCallback<AggregateQueryResponse> callback) throws ApiException {
+  public Future<AggregateQueryResponse> postAnalyticsConversationsAggregatesQueryAsync(PostAnalyticsConversationsAggregatesQueryRequest request, AsyncApiCallback<AggregateQueryResponse> callback) {
     return pcapiClient.<AggregateQueryResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {}, callback);
   }
 
@@ -330,7 +331,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<AggregateQueryResponse>> postAnalyticsConversationsAggregatesQueryAsync(ApiRequest<AggregationQuery> request, AsyncApiCallback<ApiResponse<AggregateQueryResponse>> callback) throws ApiException {
+  public Future<ApiResponse<AggregateQueryResponse>> postAnalyticsConversationsAggregatesQueryAsync(ApiRequest<AggregationQuery> request, AsyncApiCallback<ApiResponse<AggregateQueryResponse>> callback) {
     return pcapiClient.<AggregateQueryResponse>invokeAPIVerboseAsync(request, new TypeReference<AggregateQueryResponse>() {}, callback);
   }
 
@@ -340,7 +341,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<AnalyticsConversationQueryResponse> postAnalyticsConversationsDetailsQueryAsync(PostAnalyticsConversationsDetailsQueryRequest request, AsyncApiCallback<AnalyticsConversationQueryResponse> callback) throws ApiException {
+  public Future<AnalyticsConversationQueryResponse> postAnalyticsConversationsDetailsQueryAsync(PostAnalyticsConversationsDetailsQueryRequest request, AsyncApiCallback<AnalyticsConversationQueryResponse> callback) {
     return pcapiClient.<AnalyticsConversationQueryResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<AnalyticsConversationQueryResponse>() {}, callback);
   }
 
@@ -350,7 +351,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<AnalyticsConversationQueryResponse>> postAnalyticsConversationsDetailsQueryAsync(ApiRequest<ConversationQuery> request, AsyncApiCallback<ApiResponse<AnalyticsConversationQueryResponse>> callback) throws ApiException {
+  public Future<ApiResponse<AnalyticsConversationQueryResponse>> postAnalyticsConversationsDetailsQueryAsync(ApiRequest<ConversationQuery> request, AsyncApiCallback<ApiResponse<AnalyticsConversationQueryResponse>> callback) {
     return pcapiClient.<AnalyticsConversationQueryResponse>invokeAPIVerboseAsync(request, new TypeReference<AnalyticsConversationQueryResponse>() {}, callback);
   }
 
@@ -360,7 +361,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<AggregateQueryResponse> postAnalyticsEvaluationsAggregatesQueryAsync(PostAnalyticsEvaluationsAggregatesQueryRequest request, AsyncApiCallback<AggregateQueryResponse> callback) throws ApiException {
+  public Future<AggregateQueryResponse> postAnalyticsEvaluationsAggregatesQueryAsync(PostAnalyticsEvaluationsAggregatesQueryRequest request, AsyncApiCallback<AggregateQueryResponse> callback) {
     return pcapiClient.<AggregateQueryResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {}, callback);
   }
 
@@ -370,7 +371,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<AggregateQueryResponse>> postAnalyticsEvaluationsAggregatesQueryAsync(ApiRequest<AggregationQuery> request, AsyncApiCallback<ApiResponse<AggregateQueryResponse>> callback) throws ApiException {
+  public Future<ApiResponse<AggregateQueryResponse>> postAnalyticsEvaluationsAggregatesQueryAsync(ApiRequest<AggregationQuery> request, AsyncApiCallback<ApiResponse<AggregateQueryResponse>> callback) {
     return pcapiClient.<AggregateQueryResponse>invokeAPIVerboseAsync(request, new TypeReference<AggregateQueryResponse>() {}, callback);
   }
 
@@ -380,7 +381,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<QualifierMappingObservationQueryResponse> postAnalyticsQueuesObservationsQueryAsync(PostAnalyticsQueuesObservationsQueryRequest request, AsyncApiCallback<QualifierMappingObservationQueryResponse> callback) throws ApiException {
+  public Future<QualifierMappingObservationQueryResponse> postAnalyticsQueuesObservationsQueryAsync(PostAnalyticsQueuesObservationsQueryRequest request, AsyncApiCallback<QualifierMappingObservationQueryResponse> callback) {
     return pcapiClient.<QualifierMappingObservationQueryResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<QualifierMappingObservationQueryResponse>() {}, callback);
   }
 
@@ -390,7 +391,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<QualifierMappingObservationQueryResponse>> postAnalyticsQueuesObservationsQueryAsync(ApiRequest<ObservationQuery> request, AsyncApiCallback<ApiResponse<QualifierMappingObservationQueryResponse>> callback) throws ApiException {
+  public Future<ApiResponse<QualifierMappingObservationQueryResponse>> postAnalyticsQueuesObservationsQueryAsync(ApiRequest<ObservationQuery> request, AsyncApiCallback<ApiResponse<QualifierMappingObservationQueryResponse>> callback) {
     return pcapiClient.<QualifierMappingObservationQueryResponse>invokeAPIVerboseAsync(request, new TypeReference<QualifierMappingObservationQueryResponse>() {}, callback);
   }
 
@@ -400,7 +401,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<RunNowResponse> postAnalyticsReportingScheduleRunreportAsync(PostAnalyticsReportingScheduleRunreportRequest request, AsyncApiCallback<RunNowResponse> callback) throws ApiException {
+  public Future<RunNowResponse> postAnalyticsReportingScheduleRunreportAsync(PostAnalyticsReportingScheduleRunreportRequest request, AsyncApiCallback<RunNowResponse> callback) {
     return pcapiClient.<RunNowResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<RunNowResponse>() {}, callback);
   }
 
@@ -410,7 +411,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<RunNowResponse>> postAnalyticsReportingScheduleRunreportAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RunNowResponse>> callback) throws ApiException {
+  public Future<ApiResponse<RunNowResponse>> postAnalyticsReportingScheduleRunreportAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RunNowResponse>> callback) {
     return pcapiClient.<RunNowResponse>invokeAPIVerboseAsync(request, new TypeReference<RunNowResponse>() {}, callback);
   }
 
@@ -420,7 +421,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ReportSchedule> postAnalyticsReportingSchedulesAsync(PostAnalyticsReportingSchedulesRequest request, AsyncApiCallback<ReportSchedule> callback) throws ApiException {
+  public Future<ReportSchedule> postAnalyticsReportingSchedulesAsync(PostAnalyticsReportingSchedulesRequest request, AsyncApiCallback<ReportSchedule> callback) {
     return pcapiClient.<ReportSchedule>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ReportSchedule>() {}, callback);
   }
 
@@ -430,7 +431,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ReportSchedule>> postAnalyticsReportingSchedulesAsync(ApiRequest<ReportSchedule> request, AsyncApiCallback<ApiResponse<ReportSchedule>> callback) throws ApiException {
+  public Future<ApiResponse<ReportSchedule>> postAnalyticsReportingSchedulesAsync(ApiRequest<ReportSchedule> request, AsyncApiCallback<ApiResponse<ReportSchedule>> callback) {
     return pcapiClient.<ReportSchedule>invokeAPIVerboseAsync(request, new TypeReference<ReportSchedule>() {}, callback);
   }
 
@@ -440,7 +441,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<PresenceQueryResponse> postAnalyticsUsersAggregatesQueryAsync(PostAnalyticsUsersAggregatesQueryRequest request, AsyncApiCallback<PresenceQueryResponse> callback) throws ApiException {
+  public Future<PresenceQueryResponse> postAnalyticsUsersAggregatesQueryAsync(PostAnalyticsUsersAggregatesQueryRequest request, AsyncApiCallback<PresenceQueryResponse> callback) {
     return pcapiClient.<PresenceQueryResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PresenceQueryResponse>() {}, callback);
   }
 
@@ -450,7 +451,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<PresenceQueryResponse>> postAnalyticsUsersAggregatesQueryAsync(ApiRequest<AggregationQuery> request, AsyncApiCallback<ApiResponse<PresenceQueryResponse>> callback) throws ApiException {
+  public Future<ApiResponse<PresenceQueryResponse>> postAnalyticsUsersAggregatesQueryAsync(ApiRequest<AggregationQuery> request, AsyncApiCallback<ApiResponse<PresenceQueryResponse>> callback) {
     return pcapiClient.<PresenceQueryResponse>invokeAPIVerboseAsync(request, new TypeReference<PresenceQueryResponse>() {}, callback);
   }
 
@@ -460,7 +461,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<AnalyticsUserDetailsQueryResponse> postAnalyticsUsersDetailsQueryAsync(PostAnalyticsUsersDetailsQueryRequest request, AsyncApiCallback<AnalyticsUserDetailsQueryResponse> callback) throws ApiException {
+  public Future<AnalyticsUserDetailsQueryResponse> postAnalyticsUsersDetailsQueryAsync(PostAnalyticsUsersDetailsQueryRequest request, AsyncApiCallback<AnalyticsUserDetailsQueryResponse> callback) {
     return pcapiClient.<AnalyticsUserDetailsQueryResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<AnalyticsUserDetailsQueryResponse>() {}, callback);
   }
 
@@ -470,7 +471,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<AnalyticsUserDetailsQueryResponse>> postAnalyticsUsersDetailsQueryAsync(ApiRequest<UserDetailsQuery> request, AsyncApiCallback<ApiResponse<AnalyticsUserDetailsQueryResponse>> callback) throws ApiException {
+  public Future<ApiResponse<AnalyticsUserDetailsQueryResponse>> postAnalyticsUsersDetailsQueryAsync(ApiRequest<UserDetailsQuery> request, AsyncApiCallback<ApiResponse<AnalyticsUserDetailsQueryResponse>> callback) {
     return pcapiClient.<AnalyticsUserDetailsQueryResponse>invokeAPIVerboseAsync(request, new TypeReference<AnalyticsUserDetailsQueryResponse>() {}, callback);
   }
 
@@ -480,7 +481,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ObservationQueryResponse> postAnalyticsUsersObservationsQueryAsync(PostAnalyticsUsersObservationsQueryRequest request, AsyncApiCallback<ObservationQueryResponse> callback) throws ApiException {
+  public Future<ObservationQueryResponse> postAnalyticsUsersObservationsQueryAsync(PostAnalyticsUsersObservationsQueryRequest request, AsyncApiCallback<ObservationQueryResponse> callback) {
     return pcapiClient.<ObservationQueryResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ObservationQueryResponse>() {}, callback);
   }
 
@@ -490,7 +491,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ObservationQueryResponse>> postAnalyticsUsersObservationsQueryAsync(ApiRequest<ObservationQuery> request, AsyncApiCallback<ApiResponse<ObservationQueryResponse>> callback) throws ApiException {
+  public Future<ApiResponse<ObservationQueryResponse>> postAnalyticsUsersObservationsQueryAsync(ApiRequest<ObservationQuery> request, AsyncApiCallback<ApiResponse<ObservationQueryResponse>> callback) {
     return pcapiClient.<ObservationQueryResponse>invokeAPIVerboseAsync(request, new TypeReference<ObservationQueryResponse>() {}, callback);
   }
 
@@ -500,7 +501,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ReportSchedule> putAnalyticsReportingScheduleAsync(PutAnalyticsReportingScheduleRequest request, AsyncApiCallback<ReportSchedule> callback) throws ApiException {
+  public Future<ReportSchedule> putAnalyticsReportingScheduleAsync(PutAnalyticsReportingScheduleRequest request, AsyncApiCallback<ReportSchedule> callback) {
     return pcapiClient.<ReportSchedule>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ReportSchedule>() {}, callback);
   }
 
@@ -510,7 +511,7 @@ public class AnalyticsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ReportSchedule>> putAnalyticsReportingScheduleAsync(ApiRequest<ReportSchedule> request, AsyncApiCallback<ApiResponse<ReportSchedule>> callback) throws ApiException {
+  public Future<ApiResponse<ReportSchedule>> putAnalyticsReportingScheduleAsync(ApiRequest<ReportSchedule> request, AsyncApiCallback<ApiResponse<ReportSchedule>> callback) {
     return pcapiClient.<ReportSchedule>invokeAPIVerboseAsync(request, new TypeReference<ReportSchedule>() {}, callback);
   }
 

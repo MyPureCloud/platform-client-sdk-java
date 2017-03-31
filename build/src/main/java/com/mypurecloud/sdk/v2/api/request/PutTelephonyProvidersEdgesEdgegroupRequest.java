@@ -134,16 +134,16 @@ public class PutTelephonyProvidersEdgesEdgegroupRequest {
         return this;
     }
 
-    public ApiRequest<EdgeGroup> withHttpInfo() throws ApiException {
+    public ApiRequest<EdgeGroup> withHttpInfo() {
         
         // verify the required parameter 'edgeGroupId' is set
         if (this.edgeGroupId == null) {
-            throw new ApiException(400, "Missing the required parameter 'edgeGroupId' when building request for PutTelephonyProvidersEdgesEdgegroupRequest.");
+            throw new IllegalStateException("Missing the required parameter 'edgeGroupId' when building request for PutTelephonyProvidersEdgesEdgegroupRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesEdgegroupRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesEdgegroupRequest.");
         }
         
 

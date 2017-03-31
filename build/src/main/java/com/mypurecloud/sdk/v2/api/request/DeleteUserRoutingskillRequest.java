@@ -97,16 +97,16 @@ public class DeleteUserRoutingskillRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'userId' is set
         if (this.userId == null) {
-            throw new ApiException(400, "Missing the required parameter 'userId' when building request for DeleteUserRoutingskillRequest.");
+            throw new IllegalStateException("Missing the required parameter 'userId' when building request for DeleteUserRoutingskillRequest.");
         }
         
         // verify the required parameter 'skillId' is set
         if (this.skillId == null) {
-            throw new ApiException(400, "Missing the required parameter 'skillId' when building request for DeleteUserRoutingskillRequest.");
+            throw new IllegalStateException("Missing the required parameter 'skillId' when building request for DeleteUserRoutingskillRequest.");
         }
         
 

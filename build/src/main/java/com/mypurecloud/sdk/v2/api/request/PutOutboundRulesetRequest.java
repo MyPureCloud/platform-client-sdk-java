@@ -105,16 +105,16 @@ public class PutOutboundRulesetRequest {
         return this;
     }
 
-    public ApiRequest<RuleSet> withHttpInfo() throws ApiException {
+    public ApiRequest<RuleSet> withHttpInfo() {
         
         // verify the required parameter 'ruleSetId' is set
         if (this.ruleSetId == null) {
-            throw new ApiException(400, "Missing the required parameter 'ruleSetId' when building request for PutOutboundRulesetRequest.");
+            throw new IllegalStateException("Missing the required parameter 'ruleSetId' when building request for PutOutboundRulesetRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutOutboundRulesetRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutOutboundRulesetRequest.");
         }
         
 

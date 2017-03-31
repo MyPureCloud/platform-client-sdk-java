@@ -67,11 +67,11 @@ public class DeleteExternalcontactsRelationshipRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'relationshipId' is set
         if (this.relationshipId == null) {
-            throw new ApiException(400, "Missing the required parameter 'relationshipId' when building request for DeleteExternalcontactsRelationshipRequest.");
+            throw new IllegalStateException("Missing the required parameter 'relationshipId' when building request for DeleteExternalcontactsRelationshipRequest.");
         }
         
 

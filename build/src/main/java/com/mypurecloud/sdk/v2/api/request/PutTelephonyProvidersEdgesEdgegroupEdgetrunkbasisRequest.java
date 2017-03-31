@@ -148,21 +148,21 @@ public class PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest {
         return this;
     }
 
-    public ApiRequest<EdgeTrunkBase> withHttpInfo() throws ApiException {
+    public ApiRequest<EdgeTrunkBase> withHttpInfo() {
         
         // verify the required parameter 'edgegroupId' is set
         if (this.edgegroupId == null) {
-            throw new ApiException(400, "Missing the required parameter 'edgegroupId' when building request for PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest.");
+            throw new IllegalStateException("Missing the required parameter 'edgegroupId' when building request for PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest.");
         }
         
         // verify the required parameter 'edgetrunkbaseId' is set
         if (this.edgetrunkbaseId == null) {
-            throw new ApiException(400, "Missing the required parameter 'edgetrunkbaseId' when building request for PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest.");
+            throw new IllegalStateException("Missing the required parameter 'edgetrunkbaseId' when building request for PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest.");
         }
         
 

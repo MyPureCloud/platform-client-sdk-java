@@ -89,16 +89,16 @@ public class PutUserrecordingRequest {
         return this;
     }
 
-    public ApiRequest<UserRecording> withHttpInfo() throws ApiException {
+    public ApiRequest<UserRecording> withHttpInfo() {
         
         // verify the required parameter 'recordingId' is set
         if (this.recordingId == null) {
-            throw new ApiException(400, "Missing the required parameter 'recordingId' when building request for PutUserrecordingRequest.");
+            throw new IllegalStateException("Missing the required parameter 'recordingId' when building request for PutUserrecordingRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutUserrecordingRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutUserrecordingRequest.");
         }
         
 

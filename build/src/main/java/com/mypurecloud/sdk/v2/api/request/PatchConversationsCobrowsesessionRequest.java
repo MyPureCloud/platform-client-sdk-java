@@ -110,16 +110,16 @@ public class PatchConversationsCobrowsesessionRequest {
         return this;
     }
 
-    public ApiRequest<Conversation> withHttpInfo() throws ApiException {
+    public ApiRequest<Conversation> withHttpInfo() {
         
         // verify the required parameter 'cobrowseId' is set
         if (this.cobrowseId == null) {
-            throw new ApiException(400, "Missing the required parameter 'cobrowseId' when building request for PatchConversationsCobrowsesessionRequest.");
+            throw new IllegalStateException("Missing the required parameter 'cobrowseId' when building request for PatchConversationsCobrowsesessionRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PatchConversationsCobrowsesessionRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchConversationsCobrowsesessionRequest.");
         }
         
 

@@ -110,16 +110,16 @@ public class PostConversationsCallRequest {
         return this;
     }
 
-    public ApiRequest<CallCommand> withHttpInfo() throws ApiException {
+    public ApiRequest<CallCommand> withHttpInfo() {
         
         // verify the required parameter 'callId' is set
         if (this.callId == null) {
-            throw new ApiException(400, "Missing the required parameter 'callId' when building request for PostConversationsCallRequest.");
+            throw new IllegalStateException("Missing the required parameter 'callId' when building request for PostConversationsCallRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostConversationsCallRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostConversationsCallRequest.");
         }
         
 

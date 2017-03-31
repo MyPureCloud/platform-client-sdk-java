@@ -91,11 +91,11 @@ public class GetOutboundCallanalysisresponsesetRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'callAnalysisSetId' is set
         if (this.callAnalysisSetId == null) {
-            throw new ApiException(400, "Missing the required parameter 'callAnalysisSetId' when building request for GetOutboundCallanalysisresponsesetRequest.");
+            throw new IllegalStateException("Missing the required parameter 'callAnalysisSetId' when building request for GetOutboundCallanalysisresponsesetRequest.");
         }
         
 

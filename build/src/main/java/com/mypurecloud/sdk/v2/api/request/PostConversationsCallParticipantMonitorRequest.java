@@ -110,16 +110,16 @@ public class PostConversationsCallParticipantMonitorRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'callId' is set
         if (this.callId == null) {
-            throw new ApiException(400, "Missing the required parameter 'callId' when building request for PostConversationsCallParticipantMonitorRequest.");
+            throw new IllegalStateException("Missing the required parameter 'callId' when building request for PostConversationsCallParticipantMonitorRequest.");
         }
         
         // verify the required parameter 'participantId' is set
         if (this.participantId == null) {
-            throw new ApiException(400, "Missing the required parameter 'participantId' when building request for PostConversationsCallParticipantMonitorRequest.");
+            throw new IllegalStateException("Missing the required parameter 'participantId' when building request for PostConversationsCallParticipantMonitorRequest.");
         }
         
 

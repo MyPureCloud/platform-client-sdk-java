@@ -63,11 +63,11 @@ public class PostResponsemanagementResponsesQueryRequest {
         return this;
     }
 
-    public ApiRequest<ResponseQueryRequest> withHttpInfo() throws ApiException {
+    public ApiRequest<ResponseQueryRequest> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostResponsemanagementResponsesQueryRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostResponsemanagementResponsesQueryRequest.");
         }
         
 

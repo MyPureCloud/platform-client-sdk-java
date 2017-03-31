@@ -162,16 +162,16 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'schemaCategory' is set
         if (this.schemaCategory == null) {
-            throw new ApiException(400, "Missing the required parameter 'schemaCategory' when building request for GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest.");
+            throw new IllegalStateException("Missing the required parameter 'schemaCategory' when building request for GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest.");
         }
         
         // verify the required parameter 'schemaType' is set
         if (this.schemaType == null) {
-            throw new ApiException(400, "Missing the required parameter 'schemaType' when building request for GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest.");
+            throw new IllegalStateException("Missing the required parameter 'schemaType' when building request for GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest.");
         }
         
 

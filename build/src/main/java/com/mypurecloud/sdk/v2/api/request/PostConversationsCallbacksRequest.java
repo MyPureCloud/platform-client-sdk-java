@@ -96,11 +96,11 @@ public class PostConversationsCallbacksRequest {
         return this;
     }
 
-    public ApiRequest<CreateCallbackCommand> withHttpInfo() throws ApiException {
+    public ApiRequest<CreateCallbackCommand> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostConversationsCallbacksRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostConversationsCallbacksRequest.");
         }
         
 

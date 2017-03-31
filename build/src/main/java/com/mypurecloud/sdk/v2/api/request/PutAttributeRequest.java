@@ -74,16 +74,16 @@ public class PutAttributeRequest {
         return this;
     }
 
-    public ApiRequest<Attribute> withHttpInfo() throws ApiException {
+    public ApiRequest<Attribute> withHttpInfo() {
         
         // verify the required parameter 'attributeId' is set
         if (this.attributeId == null) {
-            throw new ApiException(400, "Missing the required parameter 'attributeId' when building request for PutAttributeRequest.");
+            throw new IllegalStateException("Missing the required parameter 'attributeId' when building request for PutAttributeRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutAttributeRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutAttributeRequest.");
         }
         
 

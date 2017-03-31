@@ -88,16 +88,16 @@ public class GetQualityCalibrationRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'calibrationId' is set
         if (this.calibrationId == null) {
-            throw new ApiException(400, "Missing the required parameter 'calibrationId' when building request for GetQualityCalibrationRequest.");
+            throw new IllegalStateException("Missing the required parameter 'calibrationId' when building request for GetQualityCalibrationRequest.");
         }
         
         // verify the required parameter 'calibratorId' is set
         if (this.calibratorId == null) {
-            throw new ApiException(400, "Missing the required parameter 'calibratorId' when building request for GetQualityCalibrationRequest.");
+            throw new IllegalStateException("Missing the required parameter 'calibratorId' when building request for GetQualityCalibrationRequest.");
         }
         
 

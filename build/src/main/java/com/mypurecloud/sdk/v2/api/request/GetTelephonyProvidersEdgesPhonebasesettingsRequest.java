@@ -176,7 +176,7 @@ public class GetTelephonyProvidersEdgesPhonebasesettingsRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/telephony/providers/edges/phonebasesettings")

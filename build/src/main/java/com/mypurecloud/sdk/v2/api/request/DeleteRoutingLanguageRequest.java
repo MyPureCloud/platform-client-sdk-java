@@ -60,11 +60,11 @@ public class DeleteRoutingLanguageRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'languageId' is set
         if (this.languageId == null) {
-            throw new ApiException(400, "Missing the required parameter 'languageId' when building request for DeleteRoutingLanguageRequest.");
+            throw new IllegalStateException("Missing the required parameter 'languageId' when building request for DeleteRoutingLanguageRequest.");
         }
         
 

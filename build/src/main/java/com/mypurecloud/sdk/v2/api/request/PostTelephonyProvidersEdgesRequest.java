@@ -120,11 +120,11 @@ public class PostTelephonyProvidersEdgesRequest {
         return this;
     }
 
-    public ApiRequest<Edge> withHttpInfo() throws ApiException {
+    public ApiRequest<Edge> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostTelephonyProvidersEdgesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostTelephonyProvidersEdgesRequest.");
         }
         
 

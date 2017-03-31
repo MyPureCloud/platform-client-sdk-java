@@ -80,11 +80,11 @@ public class GetRoutingQueueRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'queueId' is set
         if (this.queueId == null) {
-            throw new ApiException(400, "Missing the required parameter 'queueId' when building request for GetRoutingQueueRequest.");
+            throw new IllegalStateException("Missing the required parameter 'queueId' when building request for GetRoutingQueueRequest.");
         }
         
 

@@ -120,11 +120,11 @@ public class PostTelephonyProvidersEdgesAddressvalidationRequest {
         return this;
     }
 
-    public ApiRequest<ValidateAddressRequest> withHttpInfo() throws ApiException {
+    public ApiRequest<ValidateAddressRequest> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostTelephonyProvidersEdgesAddressvalidationRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostTelephonyProvidersEdgesAddressvalidationRequest.");
         }
         
 

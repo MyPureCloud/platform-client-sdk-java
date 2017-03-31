@@ -105,16 +105,16 @@ public class PutOutboundCallabletimesetRequest {
         return this;
     }
 
-    public ApiRequest<CallableTimeSet> withHttpInfo() throws ApiException {
+    public ApiRequest<CallableTimeSet> withHttpInfo() {
         
         // verify the required parameter 'callableTimeSetId' is set
         if (this.callableTimeSetId == null) {
-            throw new ApiException(400, "Missing the required parameter 'callableTimeSetId' when building request for PutOutboundCallabletimesetRequest.");
+            throw new IllegalStateException("Missing the required parameter 'callableTimeSetId' when building request for PutOutboundCallabletimesetRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutOutboundCallabletimesetRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutOutboundCallabletimesetRequest.");
         }
         
 

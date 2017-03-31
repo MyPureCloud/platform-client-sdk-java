@@ -74,11 +74,11 @@ public class GetRecordingMediaretentionpolicyRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'policyId' is set
         if (this.policyId == null) {
-            throw new ApiException(400, "Missing the required parameter 'policyId' when building request for GetRecordingMediaretentionpolicyRequest.");
+            throw new IllegalStateException("Missing the required parameter 'policyId' when building request for GetRecordingMediaretentionpolicyRequest.");
         }
         
 

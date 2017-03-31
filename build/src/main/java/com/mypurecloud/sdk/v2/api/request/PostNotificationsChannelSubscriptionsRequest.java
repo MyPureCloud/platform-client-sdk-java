@@ -76,16 +76,16 @@ public class PostNotificationsChannelSubscriptionsRequest {
         return this;
     }
 
-    public ApiRequest<List<ChannelTopic>> withHttpInfo() throws ApiException {
+    public ApiRequest<List<ChannelTopic>> withHttpInfo() {
         
         // verify the required parameter 'channelId' is set
         if (this.channelId == null) {
-            throw new ApiException(400, "Missing the required parameter 'channelId' when building request for PostNotificationsChannelSubscriptionsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'channelId' when building request for PostNotificationsChannelSubscriptionsRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostNotificationsChannelSubscriptionsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostNotificationsChannelSubscriptionsRequest.");
         }
         
 

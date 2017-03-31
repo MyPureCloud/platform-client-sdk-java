@@ -134,16 +134,16 @@ public class PutTelephonyProvidersEdgesExtensionRequest {
         return this;
     }
 
-    public ApiRequest<Extension> withHttpInfo() throws ApiException {
+    public ApiRequest<Extension> withHttpInfo() {
         
         // verify the required parameter 'extensionId' is set
         if (this.extensionId == null) {
-            throw new ApiException(400, "Missing the required parameter 'extensionId' when building request for PutTelephonyProvidersEdgesExtensionRequest.");
+            throw new IllegalStateException("Missing the required parameter 'extensionId' when building request for PutTelephonyProvidersEdgesExtensionRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesExtensionRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesExtensionRequest.");
         }
         
 

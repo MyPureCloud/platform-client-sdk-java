@@ -75,16 +75,16 @@ public class PutFaxDocumentRequest {
         return this;
     }
 
-    public ApiRequest<FaxDocument> withHttpInfo() throws ApiException {
+    public ApiRequest<FaxDocument> withHttpInfo() {
         
         // verify the required parameter 'documentId' is set
         if (this.documentId == null) {
-            throw new ApiException(400, "Missing the required parameter 'documentId' when building request for PutFaxDocumentRequest.");
+            throw new IllegalStateException("Missing the required parameter 'documentId' when building request for PutFaxDocumentRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutFaxDocumentRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutFaxDocumentRequest.");
         }
         
 

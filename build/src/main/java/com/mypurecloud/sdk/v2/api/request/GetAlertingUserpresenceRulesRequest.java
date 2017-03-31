@@ -75,7 +75,7 @@ public class GetAlertingUserpresenceRulesRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/alerting/userpresence/rules")

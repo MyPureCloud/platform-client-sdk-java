@@ -200,11 +200,11 @@ public class GetQualityCalibrationsRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'calibratorId' is set
         if (this.calibratorId == null) {
-            throw new ApiException(400, "Missing the required parameter 'calibratorId' when building request for GetQualityCalibrationsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'calibratorId' when building request for GetQualityCalibrationsRequest.");
         }
         
 

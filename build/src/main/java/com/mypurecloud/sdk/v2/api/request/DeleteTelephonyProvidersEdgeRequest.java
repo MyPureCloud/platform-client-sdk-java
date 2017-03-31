@@ -120,11 +120,11 @@ public class DeleteTelephonyProvidersEdgeRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'edgeId' is set
         if (this.edgeId == null) {
-            throw new ApiException(400, "Missing the required parameter 'edgeId' when building request for DeleteTelephonyProvidersEdgeRequest.");
+            throw new IllegalStateException("Missing the required parameter 'edgeId' when building request for DeleteTelephonyProvidersEdgeRequest.");
         }
         
 

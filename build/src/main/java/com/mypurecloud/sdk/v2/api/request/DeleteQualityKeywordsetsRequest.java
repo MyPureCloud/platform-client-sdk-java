@@ -74,11 +74,11 @@ public class DeleteQualityKeywordsetsRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'ids' is set
         if (this.ids == null) {
-            throw new ApiException(400, "Missing the required parameter 'ids' when building request for DeleteQualityKeywordsetsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'ids' when building request for DeleteQualityKeywordsetsRequest.");
         }
         
 

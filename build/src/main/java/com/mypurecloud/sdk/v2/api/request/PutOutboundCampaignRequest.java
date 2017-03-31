@@ -105,16 +105,16 @@ public class PutOutboundCampaignRequest {
         return this;
     }
 
-    public ApiRequest<Campaign> withHttpInfo() throws ApiException {
+    public ApiRequest<Campaign> withHttpInfo() {
         
         // verify the required parameter 'campaignId' is set
         if (this.campaignId == null) {
-            throw new ApiException(400, "Missing the required parameter 'campaignId' when building request for PutOutboundCampaignRequest.");
+            throw new IllegalStateException("Missing the required parameter 'campaignId' when building request for PutOutboundCampaignRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutOutboundCampaignRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutOutboundCampaignRequest.");
         }
         
 

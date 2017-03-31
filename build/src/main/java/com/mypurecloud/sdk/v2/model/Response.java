@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.ResponseSubstitution;
 import com.mypurecloud.sdk.v2.model.ResponseText;
 import com.mypurecloud.sdk.v2.model.UriReference;
@@ -67,6 +68,7 @@ public class Response  implements Serializable {
   }
   private InteractionTypeEnum interactionType = null;
   private List<ResponseSubstitution> substitutions = new ArrayList<ResponseSubstitution>();
+  private JsonSchemaDocument substitutionsSchema = null;
   private String selfUri = null;
 
   
@@ -220,6 +222,24 @@ public class Response  implements Serializable {
   }
 
 
+  /**
+   * Metadata about the text substitutions in json schema format.
+   **/
+  public Response substitutionsSchema(JsonSchemaDocument substitutionsSchema) {
+    this.substitutionsSchema = substitutionsSchema;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Metadata about the text substitutions in json schema format.")
+  @JsonProperty("substitutionsSchema")
+  public JsonSchemaDocument getSubstitutionsSchema() {
+    return substitutionsSchema;
+  }
+  public void setSubstitutionsSchema(JsonSchemaDocument substitutionsSchema) {
+    this.substitutionsSchema = substitutionsSchema;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -245,12 +265,13 @@ public class Response  implements Serializable {
         Objects.equals(this.dateCreated, response.dateCreated) &&
         Objects.equals(this.interactionType, response.interactionType) &&
         Objects.equals(this.substitutions, response.substitutions) &&
+        Objects.equals(this.substitutionsSchema, response.substitutionsSchema) &&
         Objects.equals(this.selfUri, response.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, version, libraries, texts, createdBy, dateCreated, interactionType, substitutions, selfUri);
+    return Objects.hash(id, name, version, libraries, texts, createdBy, dateCreated, interactionType, substitutions, substitutionsSchema, selfUri);
   }
 
   @Override
@@ -267,6 +288,7 @@ public class Response  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    interactionType: ").append(toIndentedString(interactionType)).append("\n");
     sb.append("    substitutions: ").append(toIndentedString(substitutions)).append("\n");
+    sb.append("    substitutionsSchema: ").append(toIndentedString(substitutionsSchema)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

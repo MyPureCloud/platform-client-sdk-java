@@ -80,11 +80,11 @@ public class PostRoutingSkillsRequest {
         return this;
     }
 
-    public ApiRequest<RoutingSkill> withHttpInfo() throws ApiException {
+    public ApiRequest<RoutingSkill> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostRoutingSkillsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostRoutingSkillsRequest.");
         }
         
 

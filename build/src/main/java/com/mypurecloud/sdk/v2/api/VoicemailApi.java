@@ -46,6 +46,7 @@ import com.mypurecloud.sdk.v2.api.request.PostVoicemailSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PutVoicemailMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PutVoicemailPolicyRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -70,7 +71,7 @@ public class VoicemailApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteVoicemailMessage(String messageId) throws ApiException {
+  public String deleteVoicemailMessage(String messageId) throws IOException, ApiException {
     return deleteVoicemailMessageWithHttpInfo(messageId).getBody();
   }
 
@@ -81,12 +82,12 @@ public class VoicemailApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteVoicemailMessageWithHttpInfo(String messageId) throws ApiException {
+  public ApiResponse<String> deleteVoicemailMessageWithHttpInfo(String messageId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'messageId' is set
     if (messageId == null) {
-      throw new ApiException(400, "Missing the required parameter 'messageId' when calling deleteVoicemailMessage");
+      throw new IllegalArgumentException("Missing the required parameter 'messageId' when calling deleteVoicemailMessage");
     }
     
     // create path and map variables
@@ -122,7 +123,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteVoicemailMessage(DeleteVoicemailMessageRequest request) throws ApiException {
+  public String deleteVoicemailMessage(DeleteVoicemailMessageRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -132,7 +133,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteVoicemailMessage(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteVoicemailMessage(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -142,7 +143,7 @@ public class VoicemailApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteVoicemailMessages() throws ApiException {
+  public String deleteVoicemailMessages() throws IOException, ApiException {
     return deleteVoicemailMessagesWithHttpInfo().getBody();
   }
 
@@ -152,7 +153,7 @@ public class VoicemailApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteVoicemailMessagesWithHttpInfo() throws ApiException {
+  public ApiResponse<String> deleteVoicemailMessagesWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -187,7 +188,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteVoicemailMessages(DeleteVoicemailMessagesRequest request) throws ApiException {
+  public String deleteVoicemailMessages(DeleteVoicemailMessagesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -197,7 +198,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteVoicemailMessages(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteVoicemailMessages(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -208,7 +209,7 @@ public class VoicemailApi {
    * @return VoicemailMailboxInfo
    * @throws ApiException if fails to make API call
    */
-  public VoicemailMailboxInfo getVoicemailGroupMailbox(String groupId) throws ApiException {
+  public VoicemailMailboxInfo getVoicemailGroupMailbox(String groupId) throws IOException, ApiException {
     return getVoicemailGroupMailboxWithHttpInfo(groupId).getBody();
   }
 
@@ -219,12 +220,12 @@ public class VoicemailApi {
    * @return VoicemailMailboxInfo
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailMailboxInfo> getVoicemailGroupMailboxWithHttpInfo(String groupId) throws ApiException {
+  public ApiResponse<VoicemailMailboxInfo> getVoicemailGroupMailboxWithHttpInfo(String groupId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'groupId' is set
     if (groupId == null) {
-      throw new ApiException(400, "Missing the required parameter 'groupId' when calling getVoicemailGroupMailbox");
+      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling getVoicemailGroupMailbox");
     }
     
     // create path and map variables
@@ -260,7 +261,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailMailboxInfo getVoicemailGroupMailbox(GetVoicemailGroupMailboxRequest request) throws ApiException {
+  public VoicemailMailboxInfo getVoicemailGroupMailbox(GetVoicemailGroupMailboxRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailMailboxInfo>() {});
   }
 
@@ -270,7 +271,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailMailboxInfo> getVoicemailGroupMailbox(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<VoicemailMailboxInfo> getVoicemailGroupMailbox(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailMailboxInfo>invokeAPIVerbose(request, new TypeReference<VoicemailMailboxInfo>() {});
   }
 
@@ -283,7 +284,7 @@ public class VoicemailApi {
    * @return VoicemailMessageEntityListing
    * @throws ApiException if fails to make API call
    */
-  public VoicemailMessageEntityListing getVoicemailGroupMessages(String groupId, Integer pageSize, Integer pageNumber) throws ApiException {
+  public VoicemailMessageEntityListing getVoicemailGroupMessages(String groupId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return getVoicemailGroupMessagesWithHttpInfo(groupId, pageSize, pageNumber).getBody();
   }
 
@@ -296,12 +297,12 @@ public class VoicemailApi {
    * @return VoicemailMessageEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailMessageEntityListing> getVoicemailGroupMessagesWithHttpInfo(String groupId, Integer pageSize, Integer pageNumber) throws ApiException {
+  public ApiResponse<VoicemailMessageEntityListing> getVoicemailGroupMessagesWithHttpInfo(String groupId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'groupId' is set
     if (groupId == null) {
-      throw new ApiException(400, "Missing the required parameter 'groupId' when calling getVoicemailGroupMessages");
+      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling getVoicemailGroupMessages");
     }
     
     // create path and map variables
@@ -339,7 +340,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailMessageEntityListing getVoicemailGroupMessages(GetVoicemailGroupMessagesRequest request) throws ApiException {
+  public VoicemailMessageEntityListing getVoicemailGroupMessages(GetVoicemailGroupMessagesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {});
   }
 
@@ -349,7 +350,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailMessageEntityListing> getVoicemailGroupMessages(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<VoicemailMessageEntityListing> getVoicemailGroupMessages(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailMessageEntityListing>invokeAPIVerbose(request, new TypeReference<VoicemailMessageEntityListing>() {});
   }
 
@@ -360,7 +361,7 @@ public class VoicemailApi {
    * @return VoicemailGroupPolicy
    * @throws ApiException if fails to make API call
    */
-  public VoicemailGroupPolicy getVoicemailGroupPolicy(String groupId) throws ApiException {
+  public VoicemailGroupPolicy getVoicemailGroupPolicy(String groupId) throws IOException, ApiException {
     return getVoicemailGroupPolicyWithHttpInfo(groupId).getBody();
   }
 
@@ -371,12 +372,12 @@ public class VoicemailApi {
    * @return VoicemailGroupPolicy
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailGroupPolicy> getVoicemailGroupPolicyWithHttpInfo(String groupId) throws ApiException {
+  public ApiResponse<VoicemailGroupPolicy> getVoicemailGroupPolicyWithHttpInfo(String groupId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'groupId' is set
     if (groupId == null) {
-      throw new ApiException(400, "Missing the required parameter 'groupId' when calling getVoicemailGroupPolicy");
+      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling getVoicemailGroupPolicy");
     }
     
     // create path and map variables
@@ -412,7 +413,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailGroupPolicy getVoicemailGroupPolicy(GetVoicemailGroupPolicyRequest request) throws ApiException {
+  public VoicemailGroupPolicy getVoicemailGroupPolicy(GetVoicemailGroupPolicyRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailGroupPolicy>() {});
   }
 
@@ -422,7 +423,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailGroupPolicy> getVoicemailGroupPolicy(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<VoicemailGroupPolicy> getVoicemailGroupPolicy(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailGroupPolicy>invokeAPIVerbose(request, new TypeReference<VoicemailGroupPolicy>() {});
   }
 
@@ -432,7 +433,7 @@ public class VoicemailApi {
    * @return VoicemailMailboxInfo
    * @throws ApiException if fails to make API call
    */
-  public VoicemailMailboxInfo getVoicemailMailbox() throws ApiException {
+  public VoicemailMailboxInfo getVoicemailMailbox() throws IOException, ApiException {
     return getVoicemailMailboxWithHttpInfo().getBody();
   }
 
@@ -442,7 +443,7 @@ public class VoicemailApi {
    * @return VoicemailMailboxInfo
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailMailboxInfo> getVoicemailMailboxWithHttpInfo() throws ApiException {
+  public ApiResponse<VoicemailMailboxInfo> getVoicemailMailboxWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -477,7 +478,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailMailboxInfo getVoicemailMailbox(GetVoicemailMailboxRequest request) throws ApiException {
+  public VoicemailMailboxInfo getVoicemailMailbox(GetVoicemailMailboxRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailMailboxInfo>() {});
   }
 
@@ -487,7 +488,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailMailboxInfo> getVoicemailMailbox(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<VoicemailMailboxInfo> getVoicemailMailbox(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailMailboxInfo>invokeAPIVerbose(request, new TypeReference<VoicemailMailboxInfo>() {});
   }
 
@@ -497,7 +498,7 @@ public class VoicemailApi {
    * @return VoicemailMailboxInfo
    * @throws ApiException if fails to make API call
    */
-  public VoicemailMailboxInfo getVoicemailMeMailbox() throws ApiException {
+  public VoicemailMailboxInfo getVoicemailMeMailbox() throws IOException, ApiException {
     return getVoicemailMeMailboxWithHttpInfo().getBody();
   }
 
@@ -507,7 +508,7 @@ public class VoicemailApi {
    * @return VoicemailMailboxInfo
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailMailboxInfo> getVoicemailMeMailboxWithHttpInfo() throws ApiException {
+  public ApiResponse<VoicemailMailboxInfo> getVoicemailMeMailboxWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -542,7 +543,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailMailboxInfo getVoicemailMeMailbox(GetVoicemailMeMailboxRequest request) throws ApiException {
+  public VoicemailMailboxInfo getVoicemailMeMailbox(GetVoicemailMeMailboxRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailMailboxInfo>() {});
   }
 
@@ -552,7 +553,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailMailboxInfo> getVoicemailMeMailbox(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<VoicemailMailboxInfo> getVoicemailMeMailbox(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailMailboxInfo>invokeAPIVerbose(request, new TypeReference<VoicemailMailboxInfo>() {});
   }
 
@@ -564,7 +565,7 @@ public class VoicemailApi {
    * @return VoicemailMessageEntityListing
    * @throws ApiException if fails to make API call
    */
-  public VoicemailMessageEntityListing getVoicemailMeMessages(Integer pageSize, Integer pageNumber) throws ApiException {
+  public VoicemailMessageEntityListing getVoicemailMeMessages(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return getVoicemailMeMessagesWithHttpInfo(pageSize, pageNumber).getBody();
   }
 
@@ -576,7 +577,7 @@ public class VoicemailApi {
    * @return VoicemailMessageEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailMessageEntityListing> getVoicemailMeMessagesWithHttpInfo(Integer pageSize, Integer pageNumber) throws ApiException {
+  public ApiResponse<VoicemailMessageEntityListing> getVoicemailMeMessagesWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -613,7 +614,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailMessageEntityListing getVoicemailMeMessages(GetVoicemailMeMessagesRequest request) throws ApiException {
+  public VoicemailMessageEntityListing getVoicemailMeMessages(GetVoicemailMeMessagesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {});
   }
 
@@ -623,7 +624,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailMessageEntityListing> getVoicemailMeMessages(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<VoicemailMessageEntityListing> getVoicemailMeMessages(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailMessageEntityListing>invokeAPIVerbose(request, new TypeReference<VoicemailMessageEntityListing>() {});
   }
 
@@ -633,7 +634,7 @@ public class VoicemailApi {
    * @return VoicemailUserPolicy
    * @throws ApiException if fails to make API call
    */
-  public VoicemailUserPolicy getVoicemailMePolicy() throws ApiException {
+  public VoicemailUserPolicy getVoicemailMePolicy() throws IOException, ApiException {
     return getVoicemailMePolicyWithHttpInfo().getBody();
   }
 
@@ -643,7 +644,7 @@ public class VoicemailApi {
    * @return VoicemailUserPolicy
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailUserPolicy> getVoicemailMePolicyWithHttpInfo() throws ApiException {
+  public ApiResponse<VoicemailUserPolicy> getVoicemailMePolicyWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -678,7 +679,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailUserPolicy getVoicemailMePolicy(GetVoicemailMePolicyRequest request) throws ApiException {
+  public VoicemailUserPolicy getVoicemailMePolicy(GetVoicemailMePolicyRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {});
   }
 
@@ -688,7 +689,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailUserPolicy> getVoicemailMePolicy(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<VoicemailUserPolicy> getVoicemailMePolicy(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailUserPolicy>invokeAPIVerbose(request, new TypeReference<VoicemailUserPolicy>() {});
   }
 
@@ -700,7 +701,7 @@ public class VoicemailApi {
    * @return VoicemailMessage
    * @throws ApiException if fails to make API call
    */
-  public VoicemailMessage getVoicemailMessage(String messageId, List<String> expand) throws ApiException {
+  public VoicemailMessage getVoicemailMessage(String messageId, List<String> expand) throws IOException, ApiException {
     return getVoicemailMessageWithHttpInfo(messageId, expand).getBody();
   }
 
@@ -712,12 +713,12 @@ public class VoicemailApi {
    * @return VoicemailMessage
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailMessage> getVoicemailMessageWithHttpInfo(String messageId, List<String> expand) throws ApiException {
+  public ApiResponse<VoicemailMessage> getVoicemailMessageWithHttpInfo(String messageId, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'messageId' is set
     if (messageId == null) {
-      throw new ApiException(400, "Missing the required parameter 'messageId' when calling getVoicemailMessage");
+      throw new IllegalArgumentException("Missing the required parameter 'messageId' when calling getVoicemailMessage");
     }
     
     // create path and map variables
@@ -754,7 +755,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailMessage getVoicemailMessage(GetVoicemailMessageRequest request) throws ApiException {
+  public VoicemailMessage getVoicemailMessage(GetVoicemailMessageRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailMessage>() {});
   }
 
@@ -764,7 +765,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailMessage> getVoicemailMessage(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<VoicemailMessage> getVoicemailMessage(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailMessage>invokeAPIVerbose(request, new TypeReference<VoicemailMessage>() {});
   }
 
@@ -776,7 +777,7 @@ public class VoicemailApi {
    * @return VoicemailMediaInfo
    * @throws ApiException if fails to make API call
    */
-  public VoicemailMediaInfo getVoicemailMessageMedia(String messageId, String formatId) throws ApiException {
+  public VoicemailMediaInfo getVoicemailMessageMedia(String messageId, String formatId) throws IOException, ApiException {
     return getVoicemailMessageMediaWithHttpInfo(messageId, formatId).getBody();
   }
 
@@ -788,12 +789,12 @@ public class VoicemailApi {
    * @return VoicemailMediaInfo
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailMediaInfo> getVoicemailMessageMediaWithHttpInfo(String messageId, String formatId) throws ApiException {
+  public ApiResponse<VoicemailMediaInfo> getVoicemailMessageMediaWithHttpInfo(String messageId, String formatId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'messageId' is set
     if (messageId == null) {
-      throw new ApiException(400, "Missing the required parameter 'messageId' when calling getVoicemailMessageMedia");
+      throw new IllegalArgumentException("Missing the required parameter 'messageId' when calling getVoicemailMessageMedia");
     }
     
     // create path and map variables
@@ -830,7 +831,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailMediaInfo getVoicemailMessageMedia(GetVoicemailMessageMediaRequest request) throws ApiException {
+  public VoicemailMediaInfo getVoicemailMessageMedia(GetVoicemailMessageMediaRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailMediaInfo>() {});
   }
 
@@ -840,7 +841,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailMediaInfo> getVoicemailMessageMedia(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<VoicemailMediaInfo> getVoicemailMessageMedia(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailMediaInfo>invokeAPIVerbose(request, new TypeReference<VoicemailMediaInfo>() {});
   }
 
@@ -852,7 +853,7 @@ public class VoicemailApi {
    * @return VoicemailMessageEntityListing
    * @throws ApiException if fails to make API call
    */
-  public VoicemailMessageEntityListing getVoicemailMessages(String ids, List<String> expand) throws ApiException {
+  public VoicemailMessageEntityListing getVoicemailMessages(String ids, List<String> expand) throws IOException, ApiException {
     return getVoicemailMessagesWithHttpInfo(ids, expand).getBody();
   }
 
@@ -864,7 +865,7 @@ public class VoicemailApi {
    * @return VoicemailMessageEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailMessageEntityListing> getVoicemailMessagesWithHttpInfo(String ids, List<String> expand) throws ApiException {
+  public ApiResponse<VoicemailMessageEntityListing> getVoicemailMessagesWithHttpInfo(String ids, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -901,7 +902,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailMessageEntityListing getVoicemailMessages(GetVoicemailMessagesRequest request) throws ApiException {
+  public VoicemailMessageEntityListing getVoicemailMessages(GetVoicemailMessagesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {});
   }
 
@@ -911,7 +912,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailMessageEntityListing> getVoicemailMessages(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<VoicemailMessageEntityListing> getVoicemailMessages(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailMessageEntityListing>invokeAPIVerbose(request, new TypeReference<VoicemailMessageEntityListing>() {});
   }
 
@@ -921,7 +922,7 @@ public class VoicemailApi {
    * @return VoicemailOrganizationPolicy
    * @throws ApiException if fails to make API call
    */
-  public VoicemailOrganizationPolicy getVoicemailPolicy() throws ApiException {
+  public VoicemailOrganizationPolicy getVoicemailPolicy() throws IOException, ApiException {
     return getVoicemailPolicyWithHttpInfo().getBody();
   }
 
@@ -931,7 +932,7 @@ public class VoicemailApi {
    * @return VoicemailOrganizationPolicy
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailOrganizationPolicy> getVoicemailPolicyWithHttpInfo() throws ApiException {
+  public ApiResponse<VoicemailOrganizationPolicy> getVoicemailPolicyWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -966,7 +967,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailOrganizationPolicy getVoicemailPolicy(GetVoicemailPolicyRequest request) throws ApiException {
+  public VoicemailOrganizationPolicy getVoicemailPolicy(GetVoicemailPolicyRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailOrganizationPolicy>() {});
   }
 
@@ -976,7 +977,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailOrganizationPolicy> getVoicemailPolicy(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<VoicemailOrganizationPolicy> getVoicemailPolicy(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailOrganizationPolicy>invokeAPIVerbose(request, new TypeReference<VoicemailOrganizationPolicy>() {});
   }
 
@@ -988,7 +989,7 @@ public class VoicemailApi {
    * @return VoicemailsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public VoicemailsSearchResponse getVoicemailSearch(String q64, List<String> expand) throws ApiException {
+  public VoicemailsSearchResponse getVoicemailSearch(String q64, List<String> expand) throws IOException, ApiException {
     return getVoicemailSearchWithHttpInfo(q64, expand).getBody();
   }
 
@@ -1000,12 +1001,12 @@ public class VoicemailApi {
    * @return VoicemailsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailsSearchResponse> getVoicemailSearchWithHttpInfo(String q64, List<String> expand) throws ApiException {
+  public ApiResponse<VoicemailsSearchResponse> getVoicemailSearchWithHttpInfo(String q64, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'q64' is set
     if (q64 == null) {
-      throw new ApiException(400, "Missing the required parameter 'q64' when calling getVoicemailSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'q64' when calling getVoicemailSearch");
     }
     
     // create path and map variables
@@ -1042,7 +1043,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailsSearchResponse getVoicemailSearch(GetVoicemailSearchRequest request) throws ApiException {
+  public VoicemailsSearchResponse getVoicemailSearch(GetVoicemailSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailsSearchResponse>() {});
   }
 
@@ -1052,7 +1053,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailsSearchResponse> getVoicemailSearch(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<VoicemailsSearchResponse> getVoicemailSearch(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailsSearchResponse>invokeAPIVerbose(request, new TypeReference<VoicemailsSearchResponse>() {});
   }
 
@@ -1063,7 +1064,7 @@ public class VoicemailApi {
    * @return VoicemailUserPolicy
    * @throws ApiException if fails to make API call
    */
-  public VoicemailUserPolicy getVoicemailUserpolicy(String userId) throws ApiException {
+  public VoicemailUserPolicy getVoicemailUserpolicy(String userId) throws IOException, ApiException {
     return getVoicemailUserpolicyWithHttpInfo(userId).getBody();
   }
 
@@ -1074,12 +1075,12 @@ public class VoicemailApi {
    * @return VoicemailUserPolicy
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailUserPolicy> getVoicemailUserpolicyWithHttpInfo(String userId) throws ApiException {
+  public ApiResponse<VoicemailUserPolicy> getVoicemailUserpolicyWithHttpInfo(String userId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getVoicemailUserpolicy");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getVoicemailUserpolicy");
     }
     
     // create path and map variables
@@ -1115,7 +1116,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailUserPolicy getVoicemailUserpolicy(GetVoicemailUserpolicyRequest request) throws ApiException {
+  public VoicemailUserPolicy getVoicemailUserpolicy(GetVoicemailUserpolicyRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {});
   }
 
@@ -1125,7 +1126,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailUserPolicy> getVoicemailUserpolicy(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<VoicemailUserPolicy> getVoicemailUserpolicy(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailUserPolicy>invokeAPIVerbose(request, new TypeReference<VoicemailUserPolicy>() {});
   }
 
@@ -1137,7 +1138,7 @@ public class VoicemailApi {
    * @return VoicemailGroupPolicy
    * @throws ApiException if fails to make API call
    */
-  public VoicemailGroupPolicy patchVoicemailGroupPolicy(String groupId, VoicemailGroupPolicy body) throws ApiException {
+  public VoicemailGroupPolicy patchVoicemailGroupPolicy(String groupId, VoicemailGroupPolicy body) throws IOException, ApiException {
     return patchVoicemailGroupPolicyWithHttpInfo(groupId, body).getBody();
   }
 
@@ -1149,17 +1150,17 @@ public class VoicemailApi {
    * @return VoicemailGroupPolicy
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailGroupPolicy> patchVoicemailGroupPolicyWithHttpInfo(String groupId, VoicemailGroupPolicy body) throws ApiException {
+  public ApiResponse<VoicemailGroupPolicy> patchVoicemailGroupPolicyWithHttpInfo(String groupId, VoicemailGroupPolicy body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'groupId' is set
     if (groupId == null) {
-      throw new ApiException(400, "Missing the required parameter 'groupId' when calling patchVoicemailGroupPolicy");
+      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling patchVoicemailGroupPolicy");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchVoicemailGroupPolicy");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchVoicemailGroupPolicy");
     }
     
     // create path and map variables
@@ -1195,7 +1196,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailGroupPolicy patchVoicemailGroupPolicy(PatchVoicemailGroupPolicyRequest request) throws ApiException {
+  public VoicemailGroupPolicy patchVoicemailGroupPolicy(PatchVoicemailGroupPolicyRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailGroupPolicy>() {});
   }
 
@@ -1205,7 +1206,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailGroupPolicy> patchVoicemailGroupPolicy(ApiRequest<VoicemailGroupPolicy> request) throws ApiException {
+  public ApiResponse<VoicemailGroupPolicy> patchVoicemailGroupPolicy(ApiRequest<VoicemailGroupPolicy> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailGroupPolicy>invokeAPIVerbose(request, new TypeReference<VoicemailGroupPolicy>() {});
   }
 
@@ -1216,7 +1217,7 @@ public class VoicemailApi {
    * @return VoicemailUserPolicy
    * @throws ApiException if fails to make API call
    */
-  public VoicemailUserPolicy patchVoicemailMePolicy(VoicemailUserPolicy body) throws ApiException {
+  public VoicemailUserPolicy patchVoicemailMePolicy(VoicemailUserPolicy body) throws IOException, ApiException {
     return patchVoicemailMePolicyWithHttpInfo(body).getBody();
   }
 
@@ -1227,12 +1228,12 @@ public class VoicemailApi {
    * @return VoicemailUserPolicy
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailUserPolicy> patchVoicemailMePolicyWithHttpInfo(VoicemailUserPolicy body) throws ApiException {
+  public ApiResponse<VoicemailUserPolicy> patchVoicemailMePolicyWithHttpInfo(VoicemailUserPolicy body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchVoicemailMePolicy");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchVoicemailMePolicy");
     }
     
     // create path and map variables
@@ -1267,7 +1268,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailUserPolicy patchVoicemailMePolicy(PatchVoicemailMePolicyRequest request) throws ApiException {
+  public VoicemailUserPolicy patchVoicemailMePolicy(PatchVoicemailMePolicyRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {});
   }
 
@@ -1277,7 +1278,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailUserPolicy> patchVoicemailMePolicy(ApiRequest<VoicemailUserPolicy> request) throws ApiException {
+  public ApiResponse<VoicemailUserPolicy> patchVoicemailMePolicy(ApiRequest<VoicemailUserPolicy> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailUserPolicy>invokeAPIVerbose(request, new TypeReference<VoicemailUserPolicy>() {});
   }
 
@@ -1289,7 +1290,7 @@ public class VoicemailApi {
    * @return VoicemailUserPolicy
    * @throws ApiException if fails to make API call
    */
-  public VoicemailUserPolicy patchVoicemailUserpolicy(String userId, VoicemailUserPolicy body) throws ApiException {
+  public VoicemailUserPolicy patchVoicemailUserpolicy(String userId, VoicemailUserPolicy body) throws IOException, ApiException {
     return patchVoicemailUserpolicyWithHttpInfo(userId, body).getBody();
   }
 
@@ -1301,17 +1302,17 @@ public class VoicemailApi {
    * @return VoicemailUserPolicy
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailUserPolicy> patchVoicemailUserpolicyWithHttpInfo(String userId, VoicemailUserPolicy body) throws ApiException {
+  public ApiResponse<VoicemailUserPolicy> patchVoicemailUserpolicyWithHttpInfo(String userId, VoicemailUserPolicy body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling patchVoicemailUserpolicy");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling patchVoicemailUserpolicy");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchVoicemailUserpolicy");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchVoicemailUserpolicy");
     }
     
     // create path and map variables
@@ -1347,7 +1348,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailUserPolicy patchVoicemailUserpolicy(PatchVoicemailUserpolicyRequest request) throws ApiException {
+  public VoicemailUserPolicy patchVoicemailUserpolicy(PatchVoicemailUserpolicyRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {});
   }
 
@@ -1357,7 +1358,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailUserPolicy> patchVoicemailUserpolicy(ApiRequest<VoicemailUserPolicy> request) throws ApiException {
+  public ApiResponse<VoicemailUserPolicy> patchVoicemailUserpolicy(ApiRequest<VoicemailUserPolicy> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailUserPolicy>invokeAPIVerbose(request, new TypeReference<VoicemailUserPolicy>() {});
   }
 
@@ -1368,7 +1369,7 @@ public class VoicemailApi {
    * @return VoicemailMessage
    * @throws ApiException if fails to make API call
    */
-  public VoicemailMessage postVoicemailMessages(CopyVoicemailMessage body) throws ApiException {
+  public VoicemailMessage postVoicemailMessages(CopyVoicemailMessage body) throws IOException, ApiException {
     return postVoicemailMessagesWithHttpInfo(body).getBody();
   }
 
@@ -1379,7 +1380,7 @@ public class VoicemailApi {
    * @return VoicemailMessage
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailMessage> postVoicemailMessagesWithHttpInfo(CopyVoicemailMessage body) throws ApiException {
+  public ApiResponse<VoicemailMessage> postVoicemailMessagesWithHttpInfo(CopyVoicemailMessage body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // create path and map variables
@@ -1414,7 +1415,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailMessage postVoicemailMessages(PostVoicemailMessagesRequest request) throws ApiException {
+  public VoicemailMessage postVoicemailMessages(PostVoicemailMessagesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailMessage>() {});
   }
 
@@ -1424,7 +1425,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailMessage> postVoicemailMessages(ApiRequest<CopyVoicemailMessage> request) throws ApiException {
+  public ApiResponse<VoicemailMessage> postVoicemailMessages(ApiRequest<CopyVoicemailMessage> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailMessage>invokeAPIVerbose(request, new TypeReference<VoicemailMessage>() {});
   }
 
@@ -1435,7 +1436,7 @@ public class VoicemailApi {
    * @return VoicemailsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public VoicemailsSearchResponse postVoicemailSearch(VoicemailSearchRequest body) throws ApiException {
+  public VoicemailsSearchResponse postVoicemailSearch(VoicemailSearchRequest body) throws IOException, ApiException {
     return postVoicemailSearchWithHttpInfo(body).getBody();
   }
 
@@ -1446,12 +1447,12 @@ public class VoicemailApi {
    * @return VoicemailsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailsSearchResponse> postVoicemailSearchWithHttpInfo(VoicemailSearchRequest body) throws ApiException {
+  public ApiResponse<VoicemailsSearchResponse> postVoicemailSearchWithHttpInfo(VoicemailSearchRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postVoicemailSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postVoicemailSearch");
     }
     
     // create path and map variables
@@ -1486,7 +1487,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailsSearchResponse postVoicemailSearch(PostVoicemailSearchRequest request) throws ApiException {
+  public VoicemailsSearchResponse postVoicemailSearch(PostVoicemailSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailsSearchResponse>() {});
   }
 
@@ -1496,7 +1497,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailsSearchResponse> postVoicemailSearch(ApiRequest<VoicemailSearchRequest> request) throws ApiException {
+  public ApiResponse<VoicemailsSearchResponse> postVoicemailSearch(ApiRequest<VoicemailSearchRequest> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailsSearchResponse>invokeAPIVerbose(request, new TypeReference<VoicemailsSearchResponse>() {});
   }
 
@@ -1508,7 +1509,7 @@ public class VoicemailApi {
    * @return VoicemailMessage
    * @throws ApiException if fails to make API call
    */
-  public VoicemailMessage putVoicemailMessage(String messageId, VoicemailMessage body) throws ApiException {
+  public VoicemailMessage putVoicemailMessage(String messageId, VoicemailMessage body) throws IOException, ApiException {
     return putVoicemailMessageWithHttpInfo(messageId, body).getBody();
   }
 
@@ -1520,17 +1521,17 @@ public class VoicemailApi {
    * @return VoicemailMessage
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailMessage> putVoicemailMessageWithHttpInfo(String messageId, VoicemailMessage body) throws ApiException {
+  public ApiResponse<VoicemailMessage> putVoicemailMessageWithHttpInfo(String messageId, VoicemailMessage body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'messageId' is set
     if (messageId == null) {
-      throw new ApiException(400, "Missing the required parameter 'messageId' when calling putVoicemailMessage");
+      throw new IllegalArgumentException("Missing the required parameter 'messageId' when calling putVoicemailMessage");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putVoicemailMessage");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putVoicemailMessage");
     }
     
     // create path and map variables
@@ -1566,7 +1567,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailMessage putVoicemailMessage(PutVoicemailMessageRequest request) throws ApiException {
+  public VoicemailMessage putVoicemailMessage(PutVoicemailMessageRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailMessage>() {});
   }
 
@@ -1576,7 +1577,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailMessage> putVoicemailMessage(ApiRequest<VoicemailMessage> request) throws ApiException {
+  public ApiResponse<VoicemailMessage> putVoicemailMessage(ApiRequest<VoicemailMessage> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailMessage>invokeAPIVerbose(request, new TypeReference<VoicemailMessage>() {});
   }
 
@@ -1587,7 +1588,7 @@ public class VoicemailApi {
    * @return VoicemailOrganizationPolicy
    * @throws ApiException if fails to make API call
    */
-  public VoicemailOrganizationPolicy putVoicemailPolicy(VoicemailOrganizationPolicy body) throws ApiException {
+  public VoicemailOrganizationPolicy putVoicemailPolicy(VoicemailOrganizationPolicy body) throws IOException, ApiException {
     return putVoicemailPolicyWithHttpInfo(body).getBody();
   }
 
@@ -1598,12 +1599,12 @@ public class VoicemailApi {
    * @return VoicemailOrganizationPolicy
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailOrganizationPolicy> putVoicemailPolicyWithHttpInfo(VoicemailOrganizationPolicy body) throws ApiException {
+  public ApiResponse<VoicemailOrganizationPolicy> putVoicemailPolicyWithHttpInfo(VoicemailOrganizationPolicy body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putVoicemailPolicy");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putVoicemailPolicy");
     }
     
     // create path and map variables
@@ -1638,7 +1639,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public VoicemailOrganizationPolicy putVoicemailPolicy(PutVoicemailPolicyRequest request) throws ApiException {
+  public VoicemailOrganizationPolicy putVoicemailPolicy(PutVoicemailPolicyRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailOrganizationPolicy>() {});
   }
 
@@ -1648,7 +1649,7 @@ public class VoicemailApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<VoicemailOrganizationPolicy> putVoicemailPolicy(ApiRequest<VoicemailOrganizationPolicy> request) throws ApiException {
+  public ApiResponse<VoicemailOrganizationPolicy> putVoicemailPolicy(ApiRequest<VoicemailOrganizationPolicy> request) throws IOException, ApiException {
     return pcapiClient.<VoicemailOrganizationPolicy>invokeAPIVerbose(request, new TypeReference<VoicemailOrganizationPolicy>() {});
   }
 

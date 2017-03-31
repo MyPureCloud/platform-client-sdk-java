@@ -67,11 +67,11 @@ public class PostVoicemailSearchRequest {
         return this;
     }
 
-    public ApiRequest<VoicemailSearchRequest> withHttpInfo() throws ApiException {
+    public ApiRequest<VoicemailSearchRequest> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostVoicemailSearchRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostVoicemailSearchRequest.");
         }
         
 

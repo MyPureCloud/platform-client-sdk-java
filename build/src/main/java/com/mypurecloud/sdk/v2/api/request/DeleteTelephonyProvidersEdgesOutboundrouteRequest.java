@@ -120,11 +120,11 @@ public class DeleteTelephonyProvidersEdgesOutboundrouteRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'outboundRouteId' is set
         if (this.outboundRouteId == null) {
-            throw new ApiException(400, "Missing the required parameter 'outboundRouteId' when building request for DeleteTelephonyProvidersEdgesOutboundrouteRequest.");
+            throw new IllegalStateException("Missing the required parameter 'outboundRouteId' when building request for DeleteTelephonyProvidersEdgesOutboundrouteRequest.");
         }
         
 

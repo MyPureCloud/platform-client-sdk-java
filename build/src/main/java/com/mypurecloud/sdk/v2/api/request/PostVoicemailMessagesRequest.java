@@ -67,7 +67,7 @@ public class PostVoicemailMessagesRequest {
         return this;
     }
 
-    public ApiRequest<CopyVoicemailMessage> withHttpInfo() throws ApiException {
+    public ApiRequest<CopyVoicemailMessage> withHttpInfo() {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/voicemail/messages")

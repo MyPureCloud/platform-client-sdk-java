@@ -134,11 +134,11 @@ public class GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'siteId' is set
         if (this.siteId == null) {
-            throw new ApiException(400, "Missing the required parameter 'siteId' when building request for GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'siteId' when building request for GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest.");
         }
         
 

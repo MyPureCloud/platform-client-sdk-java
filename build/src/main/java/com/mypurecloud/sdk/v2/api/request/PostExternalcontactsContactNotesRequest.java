@@ -81,11 +81,11 @@ public class PostExternalcontactsContactNotesRequest {
         return this;
     }
 
-    public ApiRequest<Note> withHttpInfo() throws ApiException {
+    public ApiRequest<Note> withHttpInfo() {
         
         // verify the required parameter 'contactId' is set
         if (this.contactId == null) {
-            throw new ApiException(400, "Missing the required parameter 'contactId' when building request for PostExternalcontactsContactNotesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'contactId' when building request for PostExternalcontactsContactNotesRequest.");
         }
         
 

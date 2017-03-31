@@ -80,11 +80,11 @@ public class PutGroupRequest {
         return this;
     }
 
-    public ApiRequest<GroupUpdate> withHttpInfo() throws ApiException {
+    public ApiRequest<GroupUpdate> withHttpInfo() {
         
         // verify the required parameter 'groupId' is set
         if (this.groupId == null) {
-            throw new ApiException(400, "Missing the required parameter 'groupId' when building request for PutGroupRequest.");
+            throw new IllegalStateException("Missing the required parameter 'groupId' when building request for PutGroupRequest.");
         }
         
 

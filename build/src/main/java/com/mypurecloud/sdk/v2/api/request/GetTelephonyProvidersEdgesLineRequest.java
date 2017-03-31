@@ -120,11 +120,11 @@ public class GetTelephonyProvidersEdgesLineRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'lineId' is set
         if (this.lineId == null) {
-            throw new ApiException(400, "Missing the required parameter 'lineId' when building request for GetTelephonyProvidersEdgesLineRequest.");
+            throw new IllegalStateException("Missing the required parameter 'lineId' when building request for GetTelephonyProvidersEdgesLineRequest.");
         }
         
 

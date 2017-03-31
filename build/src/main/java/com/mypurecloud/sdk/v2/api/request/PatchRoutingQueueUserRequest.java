@@ -108,21 +108,21 @@ public class PatchRoutingQueueUserRequest {
         return this;
     }
 
-    public ApiRequest<QueueMember> withHttpInfo() throws ApiException {
+    public ApiRequest<QueueMember> withHttpInfo() {
         
         // verify the required parameter 'queueId' is set
         if (this.queueId == null) {
-            throw new ApiException(400, "Missing the required parameter 'queueId' when building request for PatchRoutingQueueUserRequest.");
+            throw new IllegalStateException("Missing the required parameter 'queueId' when building request for PatchRoutingQueueUserRequest.");
         }
         
         // verify the required parameter 'memberId' is set
         if (this.memberId == null) {
-            throw new ApiException(400, "Missing the required parameter 'memberId' when building request for PatchRoutingQueueUserRequest.");
+            throw new IllegalStateException("Missing the required parameter 'memberId' when building request for PatchRoutingQueueUserRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PatchRoutingQueueUserRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchRoutingQueueUserRequest.");
         }
         
 

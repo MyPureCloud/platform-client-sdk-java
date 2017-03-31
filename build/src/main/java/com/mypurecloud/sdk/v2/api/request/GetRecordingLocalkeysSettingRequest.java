@@ -74,11 +74,11 @@ public class GetRecordingLocalkeysSettingRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'settingsId' is set
         if (this.settingsId == null) {
-            throw new ApiException(400, "Missing the required parameter 'settingsId' when building request for GetRecordingLocalkeysSettingRequest.");
+            throw new IllegalStateException("Missing the required parameter 'settingsId' when building request for GetRecordingLocalkeysSettingRequest.");
         }
         
 

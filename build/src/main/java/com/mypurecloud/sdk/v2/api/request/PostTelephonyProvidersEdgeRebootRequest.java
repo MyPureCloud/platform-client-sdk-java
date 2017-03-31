@@ -134,11 +134,11 @@ public class PostTelephonyProvidersEdgeRebootRequest {
         return this;
     }
 
-    public ApiRequest<EdgeRebootParameters> withHttpInfo() throws ApiException {
+    public ApiRequest<EdgeRebootParameters> withHttpInfo() {
         
         // verify the required parameter 'edgeId' is set
         if (this.edgeId == null) {
-            throw new ApiException(400, "Missing the required parameter 'edgeId' when building request for PostTelephonyProvidersEdgeRebootRequest.");
+            throw new IllegalStateException("Missing the required parameter 'edgeId' when building request for PostTelephonyProvidersEdgeRebootRequest.");
         }
         
 

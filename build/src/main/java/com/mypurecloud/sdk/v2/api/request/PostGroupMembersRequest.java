@@ -80,16 +80,16 @@ public class PostGroupMembersRequest {
         return this;
     }
 
-    public ApiRequest<GroupMembersUpdate> withHttpInfo() throws ApiException {
+    public ApiRequest<GroupMembersUpdate> withHttpInfo() {
         
         // verify the required parameter 'groupId' is set
         if (this.groupId == null) {
-            throw new ApiException(400, "Missing the required parameter 'groupId' when building request for PostGroupMembersRequest.");
+            throw new IllegalStateException("Missing the required parameter 'groupId' when building request for PostGroupMembersRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostGroupMembersRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostGroupMembersRequest.");
         }
         
 

@@ -114,11 +114,11 @@ public class GetContentmanagementDocumentContentRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'documentId' is set
         if (this.documentId == null) {
-            throw new ApiException(400, "Missing the required parameter 'documentId' when building request for GetContentmanagementDocumentContentRequest.");
+            throw new IllegalStateException("Missing the required parameter 'documentId' when building request for GetContentmanagementDocumentContentRequest.");
         }
         
 

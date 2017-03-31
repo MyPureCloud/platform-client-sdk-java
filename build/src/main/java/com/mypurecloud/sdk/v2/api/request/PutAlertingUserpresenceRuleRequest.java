@@ -103,16 +103,16 @@ public class PutAlertingUserpresenceRuleRequest {
         return this;
     }
 
-    public ApiRequest<UserPresenceRule> withHttpInfo() throws ApiException {
+    public ApiRequest<UserPresenceRule> withHttpInfo() {
         
         // verify the required parameter 'ruleId' is set
         if (this.ruleId == null) {
-            throw new ApiException(400, "Missing the required parameter 'ruleId' when building request for PutAlertingUserpresenceRuleRequest.");
+            throw new IllegalStateException("Missing the required parameter 'ruleId' when building request for PutAlertingUserpresenceRuleRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutAlertingUserpresenceRuleRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutAlertingUserpresenceRuleRequest.");
         }
         
 

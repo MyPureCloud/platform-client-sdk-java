@@ -134,16 +134,16 @@ public class PutTelephonyProvidersEdgesEndpointRequest {
         return this;
     }
 
-    public ApiRequest<Endpoint> withHttpInfo() throws ApiException {
+    public ApiRequest<Endpoint> withHttpInfo() {
         
         // verify the required parameter 'endpointId' is set
         if (this.endpointId == null) {
-            throw new ApiException(400, "Missing the required parameter 'endpointId' when building request for PutTelephonyProvidersEdgesEndpointRequest.");
+            throw new IllegalStateException("Missing the required parameter 'endpointId' when building request for PutTelephonyProvidersEdgesEndpointRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesEndpointRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesEndpointRequest.");
         }
         
 

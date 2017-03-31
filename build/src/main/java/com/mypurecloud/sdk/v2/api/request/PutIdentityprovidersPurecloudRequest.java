@@ -69,11 +69,11 @@ public class PutIdentityprovidersPurecloudRequest {
         return this;
     }
 
-    public ApiRequest<PureCloud> withHttpInfo() throws ApiException {
+    public ApiRequest<PureCloud> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutIdentityprovidersPurecloudRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutIdentityprovidersPurecloudRequest.");
         }
         
 

@@ -1,69 +1,66 @@
 package com.mypurecloud.sdk.v2;
 
+import java.util.Collections;
 import java.util.Map;
-import java.util.List;
 
 
-public class ApiException extends Exception {
-  private int code = 0;
-  private Map<String, String> responseHeaders = null;
-  private String responseBody = null;
+public class ApiException extends Exception implements ApiResponse<Object> {
+    private final int statusCode;
+    private final Map<String, String> headers;
+    private final String body;
 
-  public ApiException() {}
+    public ApiException(int statusCode, String message, Map<String, String> headers, String body) {
+        super(message);
+        this.statusCode = statusCode;
+        this.headers = Collections.unmodifiableMap(headers);
+        this.body = body;
+    }
 
-  public ApiException(Throwable throwable) {
-    super(throwable);
-  }
+    @Override
+    public Exception getException() {
+        return this;
+    }
 
-  public ApiException(String message) {
-    super(message);
-  }
+    @Override
+    public Integer getStatusCode() {
+        return statusCode;
+    }
 
-  public ApiException(String message, Throwable throwable, int code, Map<String, String> responseHeaders, String responseBody) {
-    super(message, throwable);
-    this.code = code;
-    this.responseHeaders = responseHeaders;
-    this.responseBody = responseBody;
-  }
+    @Override
+    public String getStatusReasonPhrase() {
+        return getMessage();
+    }
 
-  public ApiException(String message, int code, Map<String, String> responseHeaders, String responseBody) {
-    this(message, (Throwable) null, code, responseHeaders, responseBody);
-  }
+    @Override
+    public boolean hasRawBody() {
+        return (body != null && !body.isEmpty());
+    }
 
-  public ApiException(String message, Throwable throwable, int code, Map<String, String> responseHeaders) {
-    this(message, throwable, code, responseHeaders, null);
-  }
+    @Override
+    public String getRawBody() {
+        return body;
+    }
 
-  public ApiException(int code, Map<String, String> responseHeaders, String responseBody) {
-    this((String) null, (Throwable) null, code, responseHeaders, responseBody);
-  }
+    @Override
+    public Object getBody() {
+        return null;
+    }
 
-  public ApiException(int code, String message) {
-    super(message);
-    this.code = code;
-  }
+    @Override
+    public Map<String, String> getHeaders() {
+        return headers;
+    }
 
-  public ApiException(int code, String message, Map<String, String> responseHeaders, String responseBody) {
-    this(code, message);
-    this.responseHeaders = responseHeaders;
-    this.responseBody = responseBody;
-  }
+    @Override
+    public String getHeader(String key) {
+        return headers.get(key);
+    }
 
-  public int getCode() {
-    return code;
-  }
+    @Override
+    public String getCorrelationId() {
+        return getHeader("ININ-Correlation-ID");
+    }
 
-  /**
-   * Get the HTTP response headers.
-   */
-  public Map<String, String> getResponseHeaders() {
-    return responseHeaders;
-  }
-
-  /**
-   * Get the HTTP response body.
-   */
-  public String getResponseBody() {
-    return responseBody;
-  }
+    @Override
+    public void close() throws Exception { }
 }

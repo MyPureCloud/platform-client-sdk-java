@@ -55,6 +55,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersObservationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAnalyticsReportingScheduleRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -79,7 +80,7 @@ public class AnalyticsApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteAnalyticsReportingSchedule(String scheduleId) throws ApiException {
+  public String deleteAnalyticsReportingSchedule(String scheduleId) throws IOException, ApiException {
     return deleteAnalyticsReportingScheduleWithHttpInfo(scheduleId).getBody();
   }
 
@@ -90,12 +91,12 @@ public class AnalyticsApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteAnalyticsReportingScheduleWithHttpInfo(String scheduleId) throws ApiException {
+  public ApiResponse<String> deleteAnalyticsReportingScheduleWithHttpInfo(String scheduleId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'scheduleId' is set
     if (scheduleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'scheduleId' when calling deleteAnalyticsReportingSchedule");
+      throw new IllegalArgumentException("Missing the required parameter 'scheduleId' when calling deleteAnalyticsReportingSchedule");
     }
     
     // create path and map variables
@@ -131,7 +132,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteAnalyticsReportingSchedule(DeleteAnalyticsReportingScheduleRequest request) throws ApiException {
+  public String deleteAnalyticsReportingSchedule(DeleteAnalyticsReportingScheduleRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -141,7 +142,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteAnalyticsReportingSchedule(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteAnalyticsReportingSchedule(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 
@@ -152,7 +153,7 @@ public class AnalyticsApi {
    * @return AnalyticsConversation
    * @throws ApiException if fails to make API call
    */
-  public AnalyticsConversation getAnalyticsConversationDetails(String conversationId) throws ApiException {
+  public AnalyticsConversation getAnalyticsConversationDetails(String conversationId) throws IOException, ApiException {
     return getAnalyticsConversationDetailsWithHttpInfo(conversationId).getBody();
   }
 
@@ -163,12 +164,12 @@ public class AnalyticsApi {
    * @return AnalyticsConversation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AnalyticsConversation> getAnalyticsConversationDetailsWithHttpInfo(String conversationId) throws ApiException {
+  public ApiResponse<AnalyticsConversation> getAnalyticsConversationDetailsWithHttpInfo(String conversationId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling getAnalyticsConversationDetails");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling getAnalyticsConversationDetails");
     }
     
     // create path and map variables
@@ -204,7 +205,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public AnalyticsConversation getAnalyticsConversationDetails(GetAnalyticsConversationDetailsRequest request) throws ApiException {
+  public AnalyticsConversation getAnalyticsConversationDetails(GetAnalyticsConversationDetailsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AnalyticsConversation>() {});
   }
 
@@ -214,7 +215,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AnalyticsConversation> getAnalyticsConversationDetails(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<AnalyticsConversation> getAnalyticsConversationDetails(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<AnalyticsConversation>invokeAPIVerbose(request, new TypeReference<AnalyticsConversation>() {});
   }
 
@@ -227,7 +228,7 @@ public class AnalyticsApi {
    * @return ReportMetaDataEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ReportMetaDataEntityListing getAnalyticsReportingMetadata(Integer pageNumber, Integer pageSize, String locale) throws ApiException {
+  public ReportMetaDataEntityListing getAnalyticsReportingMetadata(Integer pageNumber, Integer pageSize, String locale) throws IOException, ApiException {
     return getAnalyticsReportingMetadataWithHttpInfo(pageNumber, pageSize, locale).getBody();
   }
 
@@ -240,7 +241,7 @@ public class AnalyticsApi {
    * @return ReportMetaDataEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReportMetaDataEntityListing> getAnalyticsReportingMetadataWithHttpInfo(Integer pageNumber, Integer pageSize, String locale) throws ApiException {
+  public ApiResponse<ReportMetaDataEntityListing> getAnalyticsReportingMetadataWithHttpInfo(Integer pageNumber, Integer pageSize, String locale) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -278,7 +279,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ReportMetaDataEntityListing getAnalyticsReportingMetadata(GetAnalyticsReportingMetadataRequest request) throws ApiException {
+  public ReportMetaDataEntityListing getAnalyticsReportingMetadata(GetAnalyticsReportingMetadataRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ReportMetaDataEntityListing>() {});
   }
 
@@ -288,7 +289,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReportMetaDataEntityListing> getAnalyticsReportingMetadata(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ReportMetaDataEntityListing> getAnalyticsReportingMetadata(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ReportMetaDataEntityListing>invokeAPIVerbose(request, new TypeReference<ReportMetaDataEntityListing>() {});
   }
 
@@ -300,7 +301,7 @@ public class AnalyticsApi {
    * @return ReportMetaData
    * @throws ApiException if fails to make API call
    */
-  public ReportMetaData getAnalyticsReportingReportIdMetadata(String reportId, String locale) throws ApiException {
+  public ReportMetaData getAnalyticsReportingReportIdMetadata(String reportId, String locale) throws IOException, ApiException {
     return getAnalyticsReportingReportIdMetadataWithHttpInfo(reportId, locale).getBody();
   }
 
@@ -312,12 +313,12 @@ public class AnalyticsApi {
    * @return ReportMetaData
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReportMetaData> getAnalyticsReportingReportIdMetadataWithHttpInfo(String reportId, String locale) throws ApiException {
+  public ApiResponse<ReportMetaData> getAnalyticsReportingReportIdMetadataWithHttpInfo(String reportId, String locale) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'reportId' is set
     if (reportId == null) {
-      throw new ApiException(400, "Missing the required parameter 'reportId' when calling getAnalyticsReportingReportIdMetadata");
+      throw new IllegalArgumentException("Missing the required parameter 'reportId' when calling getAnalyticsReportingReportIdMetadata");
     }
     
     // create path and map variables
@@ -354,7 +355,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ReportMetaData getAnalyticsReportingReportIdMetadata(GetAnalyticsReportingReportIdMetadataRequest request) throws ApiException {
+  public ReportMetaData getAnalyticsReportingReportIdMetadata(GetAnalyticsReportingReportIdMetadataRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ReportMetaData>() {});
   }
 
@@ -364,7 +365,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReportMetaData> getAnalyticsReportingReportIdMetadata(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ReportMetaData> getAnalyticsReportingReportIdMetadata(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ReportMetaData>invokeAPIVerbose(request, new TypeReference<ReportMetaData>() {});
   }
 
@@ -374,7 +375,7 @@ public class AnalyticsApi {
    * @return List<String>
    * @throws ApiException if fails to make API call
    */
-  public List<String> getAnalyticsReportingReportformats() throws ApiException {
+  public List<String> getAnalyticsReportingReportformats() throws IOException, ApiException {
     return getAnalyticsReportingReportformatsWithHttpInfo().getBody();
   }
 
@@ -384,7 +385,7 @@ public class AnalyticsApi {
    * @return List<String>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<String>> getAnalyticsReportingReportformatsWithHttpInfo() throws ApiException {
+  public ApiResponse<List<String>> getAnalyticsReportingReportformatsWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -419,7 +420,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<String> getAnalyticsReportingReportformats(GetAnalyticsReportingReportformatsRequest request) throws ApiException {
+  public List<String> getAnalyticsReportingReportformats(GetAnalyticsReportingReportformatsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<String>>() {});
   }
 
@@ -429,7 +430,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<String>> getAnalyticsReportingReportformats(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<String>> getAnalyticsReportingReportformats(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<String>>invokeAPIVerbose(request, new TypeReference<List<String>>() {});
   }
 
@@ -440,7 +441,7 @@ public class AnalyticsApi {
    * @return ReportSchedule
    * @throws ApiException if fails to make API call
    */
-  public ReportSchedule getAnalyticsReportingSchedule(String scheduleId) throws ApiException {
+  public ReportSchedule getAnalyticsReportingSchedule(String scheduleId) throws IOException, ApiException {
     return getAnalyticsReportingScheduleWithHttpInfo(scheduleId).getBody();
   }
 
@@ -451,12 +452,12 @@ public class AnalyticsApi {
    * @return ReportSchedule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReportSchedule> getAnalyticsReportingScheduleWithHttpInfo(String scheduleId) throws ApiException {
+  public ApiResponse<ReportSchedule> getAnalyticsReportingScheduleWithHttpInfo(String scheduleId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'scheduleId' is set
     if (scheduleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'scheduleId' when calling getAnalyticsReportingSchedule");
+      throw new IllegalArgumentException("Missing the required parameter 'scheduleId' when calling getAnalyticsReportingSchedule");
     }
     
     // create path and map variables
@@ -492,7 +493,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ReportSchedule getAnalyticsReportingSchedule(GetAnalyticsReportingScheduleRequest request) throws ApiException {
+  public ReportSchedule getAnalyticsReportingSchedule(GetAnalyticsReportingScheduleRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ReportSchedule>() {});
   }
 
@@ -502,7 +503,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReportSchedule> getAnalyticsReportingSchedule(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ReportSchedule> getAnalyticsReportingSchedule(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ReportSchedule>invokeAPIVerbose(request, new TypeReference<ReportSchedule>() {});
   }
 
@@ -515,7 +516,7 @@ public class AnalyticsApi {
    * @return ReportRunEntryEntityDomainListing
    * @throws ApiException if fails to make API call
    */
-  public ReportRunEntryEntityDomainListing getAnalyticsReportingScheduleHistory(String scheduleId, Integer pageNumber, Integer pageSize) throws ApiException {
+  public ReportRunEntryEntityDomainListing getAnalyticsReportingScheduleHistory(String scheduleId, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
     return getAnalyticsReportingScheduleHistoryWithHttpInfo(scheduleId, pageNumber, pageSize).getBody();
   }
 
@@ -528,12 +529,12 @@ public class AnalyticsApi {
    * @return ReportRunEntryEntityDomainListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReportRunEntryEntityDomainListing> getAnalyticsReportingScheduleHistoryWithHttpInfo(String scheduleId, Integer pageNumber, Integer pageSize) throws ApiException {
+  public ApiResponse<ReportRunEntryEntityDomainListing> getAnalyticsReportingScheduleHistoryWithHttpInfo(String scheduleId, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'scheduleId' is set
     if (scheduleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'scheduleId' when calling getAnalyticsReportingScheduleHistory");
+      throw new IllegalArgumentException("Missing the required parameter 'scheduleId' when calling getAnalyticsReportingScheduleHistory");
     }
     
     // create path and map variables
@@ -571,7 +572,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ReportRunEntryEntityDomainListing getAnalyticsReportingScheduleHistory(GetAnalyticsReportingScheduleHistoryRequest request) throws ApiException {
+  public ReportRunEntryEntityDomainListing getAnalyticsReportingScheduleHistory(GetAnalyticsReportingScheduleHistoryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ReportRunEntryEntityDomainListing>() {});
   }
 
@@ -581,7 +582,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReportRunEntryEntityDomainListing> getAnalyticsReportingScheduleHistory(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ReportRunEntryEntityDomainListing> getAnalyticsReportingScheduleHistory(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ReportRunEntryEntityDomainListing>invokeAPIVerbose(request, new TypeReference<ReportRunEntryEntityDomainListing>() {});
   }
 
@@ -592,7 +593,7 @@ public class AnalyticsApi {
    * @return ReportRunEntry
    * @throws ApiException if fails to make API call
    */
-  public ReportRunEntry getAnalyticsReportingScheduleHistoryLatest(String scheduleId) throws ApiException {
+  public ReportRunEntry getAnalyticsReportingScheduleHistoryLatest(String scheduleId) throws IOException, ApiException {
     return getAnalyticsReportingScheduleHistoryLatestWithHttpInfo(scheduleId).getBody();
   }
 
@@ -603,12 +604,12 @@ public class AnalyticsApi {
    * @return ReportRunEntry
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReportRunEntry> getAnalyticsReportingScheduleHistoryLatestWithHttpInfo(String scheduleId) throws ApiException {
+  public ApiResponse<ReportRunEntry> getAnalyticsReportingScheduleHistoryLatestWithHttpInfo(String scheduleId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'scheduleId' is set
     if (scheduleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'scheduleId' when calling getAnalyticsReportingScheduleHistoryLatest");
+      throw new IllegalArgumentException("Missing the required parameter 'scheduleId' when calling getAnalyticsReportingScheduleHistoryLatest");
     }
     
     // create path and map variables
@@ -644,7 +645,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ReportRunEntry getAnalyticsReportingScheduleHistoryLatest(GetAnalyticsReportingScheduleHistoryLatestRequest request) throws ApiException {
+  public ReportRunEntry getAnalyticsReportingScheduleHistoryLatest(GetAnalyticsReportingScheduleHistoryLatestRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ReportRunEntry>() {});
   }
 
@@ -654,7 +655,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReportRunEntry> getAnalyticsReportingScheduleHistoryLatest(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ReportRunEntry> getAnalyticsReportingScheduleHistoryLatest(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ReportRunEntry>invokeAPIVerbose(request, new TypeReference<ReportRunEntry>() {});
   }
 
@@ -666,7 +667,7 @@ public class AnalyticsApi {
    * @return ReportRunEntry
    * @throws ApiException if fails to make API call
    */
-  public ReportRunEntry getAnalyticsReportingScheduleHistoryRunId(String runId, String scheduleId) throws ApiException {
+  public ReportRunEntry getAnalyticsReportingScheduleHistoryRunId(String runId, String scheduleId) throws IOException, ApiException {
     return getAnalyticsReportingScheduleHistoryRunIdWithHttpInfo(runId, scheduleId).getBody();
   }
 
@@ -678,17 +679,17 @@ public class AnalyticsApi {
    * @return ReportRunEntry
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReportRunEntry> getAnalyticsReportingScheduleHistoryRunIdWithHttpInfo(String runId, String scheduleId) throws ApiException {
+  public ApiResponse<ReportRunEntry> getAnalyticsReportingScheduleHistoryRunIdWithHttpInfo(String runId, String scheduleId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'runId' is set
     if (runId == null) {
-      throw new ApiException(400, "Missing the required parameter 'runId' when calling getAnalyticsReportingScheduleHistoryRunId");
+      throw new IllegalArgumentException("Missing the required parameter 'runId' when calling getAnalyticsReportingScheduleHistoryRunId");
     }
     
     // verify the required parameter 'scheduleId' is set
     if (scheduleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'scheduleId' when calling getAnalyticsReportingScheduleHistoryRunId");
+      throw new IllegalArgumentException("Missing the required parameter 'scheduleId' when calling getAnalyticsReportingScheduleHistoryRunId");
     }
     
     // create path and map variables
@@ -725,7 +726,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ReportRunEntry getAnalyticsReportingScheduleHistoryRunId(GetAnalyticsReportingScheduleHistoryRunIdRequest request) throws ApiException {
+  public ReportRunEntry getAnalyticsReportingScheduleHistoryRunId(GetAnalyticsReportingScheduleHistoryRunIdRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ReportRunEntry>() {});
   }
 
@@ -735,7 +736,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReportRunEntry> getAnalyticsReportingScheduleHistoryRunId(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ReportRunEntry> getAnalyticsReportingScheduleHistoryRunId(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ReportRunEntry>invokeAPIVerbose(request, new TypeReference<ReportRunEntry>() {});
   }
 
@@ -747,7 +748,7 @@ public class AnalyticsApi {
    * @return ReportScheduleEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ReportScheduleEntityListing getAnalyticsReportingSchedules(Integer pageNumber, Integer pageSize) throws ApiException {
+  public ReportScheduleEntityListing getAnalyticsReportingSchedules(Integer pageNumber, Integer pageSize) throws IOException, ApiException {
     return getAnalyticsReportingSchedulesWithHttpInfo(pageNumber, pageSize).getBody();
   }
 
@@ -759,7 +760,7 @@ public class AnalyticsApi {
    * @return ReportScheduleEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReportScheduleEntityListing> getAnalyticsReportingSchedulesWithHttpInfo(Integer pageNumber, Integer pageSize) throws ApiException {
+  public ApiResponse<ReportScheduleEntityListing> getAnalyticsReportingSchedulesWithHttpInfo(Integer pageNumber, Integer pageSize) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -796,7 +797,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ReportScheduleEntityListing getAnalyticsReportingSchedules(GetAnalyticsReportingSchedulesRequest request) throws ApiException {
+  public ReportScheduleEntityListing getAnalyticsReportingSchedules(GetAnalyticsReportingSchedulesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ReportScheduleEntityListing>() {});
   }
 
@@ -806,7 +807,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReportScheduleEntityListing> getAnalyticsReportingSchedules(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<ReportScheduleEntityListing> getAnalyticsReportingSchedules(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<ReportScheduleEntityListing>invokeAPIVerbose(request, new TypeReference<ReportScheduleEntityListing>() {});
   }
 
@@ -816,7 +817,7 @@ public class AnalyticsApi {
    * @return List<String>
    * @throws ApiException if fails to make API call
    */
-  public List<String> getAnalyticsReportingTimeperiods() throws ApiException {
+  public List<String> getAnalyticsReportingTimeperiods() throws IOException, ApiException {
     return getAnalyticsReportingTimeperiodsWithHttpInfo().getBody();
   }
 
@@ -826,7 +827,7 @@ public class AnalyticsApi {
    * @return List<String>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<String>> getAnalyticsReportingTimeperiodsWithHttpInfo() throws ApiException {
+  public ApiResponse<List<String>> getAnalyticsReportingTimeperiodsWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -861,7 +862,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<String> getAnalyticsReportingTimeperiods(GetAnalyticsReportingTimeperiodsRequest request) throws ApiException {
+  public List<String> getAnalyticsReportingTimeperiods(GetAnalyticsReportingTimeperiodsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<String>>() {});
   }
 
@@ -871,7 +872,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<String>> getAnalyticsReportingTimeperiods(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<String>> getAnalyticsReportingTimeperiods(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<String>>invokeAPIVerbose(request, new TypeReference<List<String>>() {});
   }
 
@@ -883,7 +884,7 @@ public class AnalyticsApi {
    * @return PropertyIndexRequest
    * @throws ApiException if fails to make API call
    */
-  public PropertyIndexRequest postAnalyticsConversationDetailsProperties(String conversationId, PropertyIndexRequest body) throws ApiException {
+  public PropertyIndexRequest postAnalyticsConversationDetailsProperties(String conversationId, PropertyIndexRequest body) throws IOException, ApiException {
     return postAnalyticsConversationDetailsPropertiesWithHttpInfo(conversationId, body).getBody();
   }
 
@@ -895,17 +896,17 @@ public class AnalyticsApi {
    * @return PropertyIndexRequest
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PropertyIndexRequest> postAnalyticsConversationDetailsPropertiesWithHttpInfo(String conversationId, PropertyIndexRequest body) throws ApiException {
+  public ApiResponse<PropertyIndexRequest> postAnalyticsConversationDetailsPropertiesWithHttpInfo(String conversationId, PropertyIndexRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'conversationId' when calling postAnalyticsConversationDetailsProperties");
+      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling postAnalyticsConversationDetailsProperties");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAnalyticsConversationDetailsProperties");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsConversationDetailsProperties");
     }
     
     // create path and map variables
@@ -941,7 +942,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PropertyIndexRequest postAnalyticsConversationDetailsProperties(PostAnalyticsConversationDetailsPropertiesRequest request) throws ApiException {
+  public PropertyIndexRequest postAnalyticsConversationDetailsProperties(PostAnalyticsConversationDetailsPropertiesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PropertyIndexRequest>() {});
   }
 
@@ -951,7 +952,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PropertyIndexRequest> postAnalyticsConversationDetailsProperties(ApiRequest<PropertyIndexRequest> request) throws ApiException {
+  public ApiResponse<PropertyIndexRequest> postAnalyticsConversationDetailsProperties(ApiRequest<PropertyIndexRequest> request) throws IOException, ApiException {
     return pcapiClient.<PropertyIndexRequest>invokeAPIVerbose(request, new TypeReference<PropertyIndexRequest>() {});
   }
 
@@ -962,7 +963,7 @@ public class AnalyticsApi {
    * @return AggregateQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public AggregateQueryResponse postAnalyticsConversationsAggregatesQuery(AggregationQuery body) throws ApiException {
+  public AggregateQueryResponse postAnalyticsConversationsAggregatesQuery(AggregationQuery body) throws IOException, ApiException {
     return postAnalyticsConversationsAggregatesQueryWithHttpInfo(body).getBody();
   }
 
@@ -973,12 +974,12 @@ public class AnalyticsApi {
    * @return AggregateQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AggregateQueryResponse> postAnalyticsConversationsAggregatesQueryWithHttpInfo(AggregationQuery body) throws ApiException {
+  public ApiResponse<AggregateQueryResponse> postAnalyticsConversationsAggregatesQueryWithHttpInfo(AggregationQuery body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAnalyticsConversationsAggregatesQuery");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsConversationsAggregatesQuery");
     }
     
     // create path and map variables
@@ -1013,7 +1014,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public AggregateQueryResponse postAnalyticsConversationsAggregatesQuery(PostAnalyticsConversationsAggregatesQueryRequest request) throws ApiException {
+  public AggregateQueryResponse postAnalyticsConversationsAggregatesQuery(PostAnalyticsConversationsAggregatesQueryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {});
   }
 
@@ -1023,7 +1024,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AggregateQueryResponse> postAnalyticsConversationsAggregatesQuery(ApiRequest<AggregationQuery> request) throws ApiException {
+  public ApiResponse<AggregateQueryResponse> postAnalyticsConversationsAggregatesQuery(ApiRequest<AggregationQuery> request) throws IOException, ApiException {
     return pcapiClient.<AggregateQueryResponse>invokeAPIVerbose(request, new TypeReference<AggregateQueryResponse>() {});
   }
 
@@ -1034,7 +1035,7 @@ public class AnalyticsApi {
    * @return AnalyticsConversationQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(ConversationQuery body) throws ApiException {
+  public AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(ConversationQuery body) throws IOException, ApiException {
     return postAnalyticsConversationsDetailsQueryWithHttpInfo(body).getBody();
   }
 
@@ -1045,12 +1046,12 @@ public class AnalyticsApi {
    * @return AnalyticsConversationQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AnalyticsConversationQueryResponse> postAnalyticsConversationsDetailsQueryWithHttpInfo(ConversationQuery body) throws ApiException {
+  public ApiResponse<AnalyticsConversationQueryResponse> postAnalyticsConversationsDetailsQueryWithHttpInfo(ConversationQuery body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAnalyticsConversationsDetailsQuery");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsConversationsDetailsQuery");
     }
     
     // create path and map variables
@@ -1085,7 +1086,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(PostAnalyticsConversationsDetailsQueryRequest request) throws ApiException {
+  public AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(PostAnalyticsConversationsDetailsQueryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AnalyticsConversationQueryResponse>() {});
   }
 
@@ -1095,7 +1096,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AnalyticsConversationQueryResponse> postAnalyticsConversationsDetailsQuery(ApiRequest<ConversationQuery> request) throws ApiException {
+  public ApiResponse<AnalyticsConversationQueryResponse> postAnalyticsConversationsDetailsQuery(ApiRequest<ConversationQuery> request) throws IOException, ApiException {
     return pcapiClient.<AnalyticsConversationQueryResponse>invokeAPIVerbose(request, new TypeReference<AnalyticsConversationQueryResponse>() {});
   }
 
@@ -1106,7 +1107,7 @@ public class AnalyticsApi {
    * @return AggregateQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public AggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(AggregationQuery body) throws ApiException {
+  public AggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(AggregationQuery body) throws IOException, ApiException {
     return postAnalyticsEvaluationsAggregatesQueryWithHttpInfo(body).getBody();
   }
 
@@ -1117,12 +1118,12 @@ public class AnalyticsApi {
    * @return AggregateQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AggregateQueryResponse> postAnalyticsEvaluationsAggregatesQueryWithHttpInfo(AggregationQuery body) throws ApiException {
+  public ApiResponse<AggregateQueryResponse> postAnalyticsEvaluationsAggregatesQueryWithHttpInfo(AggregationQuery body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAnalyticsEvaluationsAggregatesQuery");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsEvaluationsAggregatesQuery");
     }
     
     // create path and map variables
@@ -1157,7 +1158,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public AggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(PostAnalyticsEvaluationsAggregatesQueryRequest request) throws ApiException {
+  public AggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(PostAnalyticsEvaluationsAggregatesQueryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {});
   }
 
@@ -1167,7 +1168,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AggregateQueryResponse> postAnalyticsEvaluationsAggregatesQuery(ApiRequest<AggregationQuery> request) throws ApiException {
+  public ApiResponse<AggregateQueryResponse> postAnalyticsEvaluationsAggregatesQuery(ApiRequest<AggregationQuery> request) throws IOException, ApiException {
     return pcapiClient.<AggregateQueryResponse>invokeAPIVerbose(request, new TypeReference<AggregateQueryResponse>() {});
   }
 
@@ -1178,7 +1179,7 @@ public class AnalyticsApi {
    * @return QualifierMappingObservationQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public QualifierMappingObservationQueryResponse postAnalyticsQueuesObservationsQuery(ObservationQuery body) throws ApiException {
+  public QualifierMappingObservationQueryResponse postAnalyticsQueuesObservationsQuery(ObservationQuery body) throws IOException, ApiException {
     return postAnalyticsQueuesObservationsQueryWithHttpInfo(body).getBody();
   }
 
@@ -1189,12 +1190,12 @@ public class AnalyticsApi {
    * @return QualifierMappingObservationQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<QualifierMappingObservationQueryResponse> postAnalyticsQueuesObservationsQueryWithHttpInfo(ObservationQuery body) throws ApiException {
+  public ApiResponse<QualifierMappingObservationQueryResponse> postAnalyticsQueuesObservationsQueryWithHttpInfo(ObservationQuery body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAnalyticsQueuesObservationsQuery");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsQueuesObservationsQuery");
     }
     
     // create path and map variables
@@ -1229,7 +1230,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public QualifierMappingObservationQueryResponse postAnalyticsQueuesObservationsQuery(PostAnalyticsQueuesObservationsQueryRequest request) throws ApiException {
+  public QualifierMappingObservationQueryResponse postAnalyticsQueuesObservationsQuery(PostAnalyticsQueuesObservationsQueryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<QualifierMappingObservationQueryResponse>() {});
   }
 
@@ -1239,7 +1240,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<QualifierMappingObservationQueryResponse> postAnalyticsQueuesObservationsQuery(ApiRequest<ObservationQuery> request) throws ApiException {
+  public ApiResponse<QualifierMappingObservationQueryResponse> postAnalyticsQueuesObservationsQuery(ApiRequest<ObservationQuery> request) throws IOException, ApiException {
     return pcapiClient.<QualifierMappingObservationQueryResponse>invokeAPIVerbose(request, new TypeReference<QualifierMappingObservationQueryResponse>() {});
   }
 
@@ -1250,7 +1251,7 @@ public class AnalyticsApi {
    * @return RunNowResponse
    * @throws ApiException if fails to make API call
    */
-  public RunNowResponse postAnalyticsReportingScheduleRunreport(String scheduleId) throws ApiException {
+  public RunNowResponse postAnalyticsReportingScheduleRunreport(String scheduleId) throws IOException, ApiException {
     return postAnalyticsReportingScheduleRunreportWithHttpInfo(scheduleId).getBody();
   }
 
@@ -1261,12 +1262,12 @@ public class AnalyticsApi {
    * @return RunNowResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RunNowResponse> postAnalyticsReportingScheduleRunreportWithHttpInfo(String scheduleId) throws ApiException {
+  public ApiResponse<RunNowResponse> postAnalyticsReportingScheduleRunreportWithHttpInfo(String scheduleId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'scheduleId' is set
     if (scheduleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'scheduleId' when calling postAnalyticsReportingScheduleRunreport");
+      throw new IllegalArgumentException("Missing the required parameter 'scheduleId' when calling postAnalyticsReportingScheduleRunreport");
     }
     
     // create path and map variables
@@ -1302,7 +1303,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public RunNowResponse postAnalyticsReportingScheduleRunreport(PostAnalyticsReportingScheduleRunreportRequest request) throws ApiException {
+  public RunNowResponse postAnalyticsReportingScheduleRunreport(PostAnalyticsReportingScheduleRunreportRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RunNowResponse>() {});
   }
 
@@ -1312,7 +1313,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<RunNowResponse> postAnalyticsReportingScheduleRunreport(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<RunNowResponse> postAnalyticsReportingScheduleRunreport(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<RunNowResponse>invokeAPIVerbose(request, new TypeReference<RunNowResponse>() {});
   }
 
@@ -1323,7 +1324,7 @@ public class AnalyticsApi {
    * @return ReportSchedule
    * @throws ApiException if fails to make API call
    */
-  public ReportSchedule postAnalyticsReportingSchedules(ReportSchedule body) throws ApiException {
+  public ReportSchedule postAnalyticsReportingSchedules(ReportSchedule body) throws IOException, ApiException {
     return postAnalyticsReportingSchedulesWithHttpInfo(body).getBody();
   }
 
@@ -1334,12 +1335,12 @@ public class AnalyticsApi {
    * @return ReportSchedule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReportSchedule> postAnalyticsReportingSchedulesWithHttpInfo(ReportSchedule body) throws ApiException {
+  public ApiResponse<ReportSchedule> postAnalyticsReportingSchedulesWithHttpInfo(ReportSchedule body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAnalyticsReportingSchedules");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsReportingSchedules");
     }
     
     // create path and map variables
@@ -1374,7 +1375,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ReportSchedule postAnalyticsReportingSchedules(PostAnalyticsReportingSchedulesRequest request) throws ApiException {
+  public ReportSchedule postAnalyticsReportingSchedules(PostAnalyticsReportingSchedulesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ReportSchedule>() {});
   }
 
@@ -1384,7 +1385,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReportSchedule> postAnalyticsReportingSchedules(ApiRequest<ReportSchedule> request) throws ApiException {
+  public ApiResponse<ReportSchedule> postAnalyticsReportingSchedules(ApiRequest<ReportSchedule> request) throws IOException, ApiException {
     return pcapiClient.<ReportSchedule>invokeAPIVerbose(request, new TypeReference<ReportSchedule>() {});
   }
 
@@ -1395,7 +1396,7 @@ public class AnalyticsApi {
    * @return PresenceQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public PresenceQueryResponse postAnalyticsUsersAggregatesQuery(AggregationQuery body) throws ApiException {
+  public PresenceQueryResponse postAnalyticsUsersAggregatesQuery(AggregationQuery body) throws IOException, ApiException {
     return postAnalyticsUsersAggregatesQueryWithHttpInfo(body).getBody();
   }
 
@@ -1406,12 +1407,12 @@ public class AnalyticsApi {
    * @return PresenceQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PresenceQueryResponse> postAnalyticsUsersAggregatesQueryWithHttpInfo(AggregationQuery body) throws ApiException {
+  public ApiResponse<PresenceQueryResponse> postAnalyticsUsersAggregatesQueryWithHttpInfo(AggregationQuery body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAnalyticsUsersAggregatesQuery");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsUsersAggregatesQuery");
     }
     
     // create path and map variables
@@ -1446,7 +1447,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PresenceQueryResponse postAnalyticsUsersAggregatesQuery(PostAnalyticsUsersAggregatesQueryRequest request) throws ApiException {
+  public PresenceQueryResponse postAnalyticsUsersAggregatesQuery(PostAnalyticsUsersAggregatesQueryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PresenceQueryResponse>() {});
   }
 
@@ -1456,7 +1457,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PresenceQueryResponse> postAnalyticsUsersAggregatesQuery(ApiRequest<AggregationQuery> request) throws ApiException {
+  public ApiResponse<PresenceQueryResponse> postAnalyticsUsersAggregatesQuery(ApiRequest<AggregationQuery> request) throws IOException, ApiException {
     return pcapiClient.<PresenceQueryResponse>invokeAPIVerbose(request, new TypeReference<PresenceQueryResponse>() {});
   }
 
@@ -1467,7 +1468,7 @@ public class AnalyticsApi {
    * @return AnalyticsUserDetailsQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(UserDetailsQuery body) throws ApiException {
+  public AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(UserDetailsQuery body) throws IOException, ApiException {
     return postAnalyticsUsersDetailsQueryWithHttpInfo(body).getBody();
   }
 
@@ -1478,12 +1479,12 @@ public class AnalyticsApi {
    * @return AnalyticsUserDetailsQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AnalyticsUserDetailsQueryResponse> postAnalyticsUsersDetailsQueryWithHttpInfo(UserDetailsQuery body) throws ApiException {
+  public ApiResponse<AnalyticsUserDetailsQueryResponse> postAnalyticsUsersDetailsQueryWithHttpInfo(UserDetailsQuery body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAnalyticsUsersDetailsQuery");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsUsersDetailsQuery");
     }
     
     // create path and map variables
@@ -1518,7 +1519,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(PostAnalyticsUsersDetailsQueryRequest request) throws ApiException {
+  public AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(PostAnalyticsUsersDetailsQueryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AnalyticsUserDetailsQueryResponse>() {});
   }
 
@@ -1528,7 +1529,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AnalyticsUserDetailsQueryResponse> postAnalyticsUsersDetailsQuery(ApiRequest<UserDetailsQuery> request) throws ApiException {
+  public ApiResponse<AnalyticsUserDetailsQueryResponse> postAnalyticsUsersDetailsQuery(ApiRequest<UserDetailsQuery> request) throws IOException, ApiException {
     return pcapiClient.<AnalyticsUserDetailsQueryResponse>invokeAPIVerbose(request, new TypeReference<AnalyticsUserDetailsQueryResponse>() {});
   }
 
@@ -1539,7 +1540,7 @@ public class AnalyticsApi {
    * @return ObservationQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public ObservationQueryResponse postAnalyticsUsersObservationsQuery(ObservationQuery body) throws ApiException {
+  public ObservationQueryResponse postAnalyticsUsersObservationsQuery(ObservationQuery body) throws IOException, ApiException {
     return postAnalyticsUsersObservationsQueryWithHttpInfo(body).getBody();
   }
 
@@ -1550,12 +1551,12 @@ public class AnalyticsApi {
    * @return ObservationQueryResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ObservationQueryResponse> postAnalyticsUsersObservationsQueryWithHttpInfo(ObservationQuery body) throws ApiException {
+  public ApiResponse<ObservationQueryResponse> postAnalyticsUsersObservationsQueryWithHttpInfo(ObservationQuery body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAnalyticsUsersObservationsQuery");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsUsersObservationsQuery");
     }
     
     // create path and map variables
@@ -1590,7 +1591,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ObservationQueryResponse postAnalyticsUsersObservationsQuery(PostAnalyticsUsersObservationsQueryRequest request) throws ApiException {
+  public ObservationQueryResponse postAnalyticsUsersObservationsQuery(PostAnalyticsUsersObservationsQueryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ObservationQueryResponse>() {});
   }
 
@@ -1600,7 +1601,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ObservationQueryResponse> postAnalyticsUsersObservationsQuery(ApiRequest<ObservationQuery> request) throws ApiException {
+  public ApiResponse<ObservationQueryResponse> postAnalyticsUsersObservationsQuery(ApiRequest<ObservationQuery> request) throws IOException, ApiException {
     return pcapiClient.<ObservationQueryResponse>invokeAPIVerbose(request, new TypeReference<ObservationQueryResponse>() {});
   }
 
@@ -1612,7 +1613,7 @@ public class AnalyticsApi {
    * @return ReportSchedule
    * @throws ApiException if fails to make API call
    */
-  public ReportSchedule putAnalyticsReportingSchedule(String scheduleId, ReportSchedule body) throws ApiException {
+  public ReportSchedule putAnalyticsReportingSchedule(String scheduleId, ReportSchedule body) throws IOException, ApiException {
     return putAnalyticsReportingScheduleWithHttpInfo(scheduleId, body).getBody();
   }
 
@@ -1624,17 +1625,17 @@ public class AnalyticsApi {
    * @return ReportSchedule
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReportSchedule> putAnalyticsReportingScheduleWithHttpInfo(String scheduleId, ReportSchedule body) throws ApiException {
+  public ApiResponse<ReportSchedule> putAnalyticsReportingScheduleWithHttpInfo(String scheduleId, ReportSchedule body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'scheduleId' is set
     if (scheduleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'scheduleId' when calling putAnalyticsReportingSchedule");
+      throw new IllegalArgumentException("Missing the required parameter 'scheduleId' when calling putAnalyticsReportingSchedule");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putAnalyticsReportingSchedule");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAnalyticsReportingSchedule");
     }
     
     // create path and map variables
@@ -1670,7 +1671,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ReportSchedule putAnalyticsReportingSchedule(PutAnalyticsReportingScheduleRequest request) throws ApiException {
+  public ReportSchedule putAnalyticsReportingSchedule(PutAnalyticsReportingScheduleRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ReportSchedule>() {});
   }
 
@@ -1680,7 +1681,7 @@ public class AnalyticsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ReportSchedule> putAnalyticsReportingSchedule(ApiRequest<ReportSchedule> request) throws ApiException {
+  public ApiResponse<ReportSchedule> putAnalyticsReportingSchedule(ApiRequest<ReportSchedule> request) throws IOException, ApiException {
     return pcapiClient.<ReportSchedule>invokeAPIVerbose(request, new TypeReference<ReportSchedule>() {});
   }
 

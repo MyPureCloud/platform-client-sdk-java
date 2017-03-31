@@ -134,16 +134,16 @@ public class PutTelephonyProvidersEdgesPhonebasesettingRequest {
         return this;
     }
 
-    public ApiRequest<PhoneBase> withHttpInfo() throws ApiException {
+    public ApiRequest<PhoneBase> withHttpInfo() {
         
         // verify the required parameter 'phoneBaseId' is set
         if (this.phoneBaseId == null) {
-            throw new ApiException(400, "Missing the required parameter 'phoneBaseId' when building request for PutTelephonyProvidersEdgesPhonebasesettingRequest.");
+            throw new IllegalStateException("Missing the required parameter 'phoneBaseId' when building request for PutTelephonyProvidersEdgesPhonebasesettingRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesPhonebasesettingRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesPhonebasesettingRequest.");
         }
         
 

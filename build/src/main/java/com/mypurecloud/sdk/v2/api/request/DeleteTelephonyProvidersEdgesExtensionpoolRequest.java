@@ -120,11 +120,11 @@ public class DeleteTelephonyProvidersEdgesExtensionpoolRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'extensionPoolId' is set
         if (this.extensionPoolId == null) {
-            throw new ApiException(400, "Missing the required parameter 'extensionPoolId' when building request for DeleteTelephonyProvidersEdgesExtensionpoolRequest.");
+            throw new IllegalStateException("Missing the required parameter 'extensionPoolId' when building request for DeleteTelephonyProvidersEdgesExtensionpoolRequest.");
         }
         
 

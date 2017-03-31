@@ -96,11 +96,11 @@ public class GetConversationsChatRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'chatId' is set
         if (this.chatId == null) {
-            throw new ApiException(400, "Missing the required parameter 'chatId' when building request for GetConversationsChatRequest.");
+            throw new IllegalStateException("Missing the required parameter 'chatId' when building request for GetConversationsChatRequest.");
         }
         
 

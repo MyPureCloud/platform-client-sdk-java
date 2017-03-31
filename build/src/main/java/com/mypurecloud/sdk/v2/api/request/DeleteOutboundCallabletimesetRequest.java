@@ -91,11 +91,11 @@ public class DeleteOutboundCallabletimesetRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'callableTimeSetId' is set
         if (this.callableTimeSetId == null) {
-            throw new ApiException(400, "Missing the required parameter 'callableTimeSetId' when building request for DeleteOutboundCallabletimesetRequest.");
+            throw new IllegalStateException("Missing the required parameter 'callableTimeSetId' when building request for DeleteOutboundCallabletimesetRequest.");
         }
         
 

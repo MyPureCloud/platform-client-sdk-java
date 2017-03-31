@@ -97,16 +97,16 @@ public class PatchUserQueuesRequest {
         return this;
     }
 
-    public ApiRequest<List<UserQueue>> withHttpInfo() throws ApiException {
+    public ApiRequest<List<UserQueue>> withHttpInfo() {
         
         // verify the required parameter 'userId' is set
         if (this.userId == null) {
-            throw new ApiException(400, "Missing the required parameter 'userId' when building request for PatchUserQueuesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'userId' when building request for PatchUserQueuesRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PatchUserQueuesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchUserQueuesRequest.");
         }
         
 

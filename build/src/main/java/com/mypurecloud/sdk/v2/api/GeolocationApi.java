@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserGeolocationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchGeolocationsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserGeolocationRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -43,7 +44,7 @@ public class GeolocationApi {
    * @return GeolocationSettings
    * @throws ApiException if fails to make API call
    */
-  public GeolocationSettings getGeolocationsSettings() throws ApiException {
+  public GeolocationSettings getGeolocationsSettings() throws IOException, ApiException {
     return getGeolocationsSettingsWithHttpInfo().getBody();
   }
 
@@ -53,7 +54,7 @@ public class GeolocationApi {
    * @return GeolocationSettings
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<GeolocationSettings> getGeolocationsSettingsWithHttpInfo() throws ApiException {
+  public ApiResponse<GeolocationSettings> getGeolocationsSettingsWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -88,7 +89,7 @@ public class GeolocationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public GeolocationSettings getGeolocationsSettings(GetGeolocationsSettingsRequest request) throws ApiException {
+  public GeolocationSettings getGeolocationsSettings(GetGeolocationsSettingsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<GeolocationSettings>() {});
   }
 
@@ -98,7 +99,7 @@ public class GeolocationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<GeolocationSettings> getGeolocationsSettings(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<GeolocationSettings> getGeolocationsSettings(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<GeolocationSettings>invokeAPIVerbose(request, new TypeReference<GeolocationSettings>() {});
   }
 
@@ -110,7 +111,7 @@ public class GeolocationApi {
    * @return Geolocation
    * @throws ApiException if fails to make API call
    */
-  public Geolocation getUserGeolocation(String userId, String clientId) throws ApiException {
+  public Geolocation getUserGeolocation(String userId, String clientId) throws IOException, ApiException {
     return getUserGeolocationWithHttpInfo(userId, clientId).getBody();
   }
 
@@ -122,17 +123,17 @@ public class GeolocationApi {
    * @return Geolocation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Geolocation> getUserGeolocationWithHttpInfo(String userId, String clientId) throws ApiException {
+  public ApiResponse<Geolocation> getUserGeolocationWithHttpInfo(String userId, String clientId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getUserGeolocation");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserGeolocation");
     }
     
     // verify the required parameter 'clientId' is set
     if (clientId == null) {
-      throw new ApiException(400, "Missing the required parameter 'clientId' when calling getUserGeolocation");
+      throw new IllegalArgumentException("Missing the required parameter 'clientId' when calling getUserGeolocation");
     }
     
     // create path and map variables
@@ -169,7 +170,7 @@ public class GeolocationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Geolocation getUserGeolocation(GetUserGeolocationRequest request) throws ApiException {
+  public Geolocation getUserGeolocation(GetUserGeolocationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Geolocation>() {});
   }
 
@@ -179,7 +180,7 @@ public class GeolocationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Geolocation> getUserGeolocation(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Geolocation> getUserGeolocation(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Geolocation>invokeAPIVerbose(request, new TypeReference<Geolocation>() {});
   }
 
@@ -190,7 +191,7 @@ public class GeolocationApi {
    * @return GeolocationSettings
    * @throws ApiException if fails to make API call
    */
-  public GeolocationSettings patchGeolocationsSettings(GeolocationSettings body) throws ApiException {
+  public GeolocationSettings patchGeolocationsSettings(GeolocationSettings body) throws IOException, ApiException {
     return patchGeolocationsSettingsWithHttpInfo(body).getBody();
   }
 
@@ -201,12 +202,12 @@ public class GeolocationApi {
    * @return GeolocationSettings
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<GeolocationSettings> patchGeolocationsSettingsWithHttpInfo(GeolocationSettings body) throws ApiException {
+  public ApiResponse<GeolocationSettings> patchGeolocationsSettingsWithHttpInfo(GeolocationSettings body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchGeolocationsSettings");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchGeolocationsSettings");
     }
     
     // create path and map variables
@@ -241,7 +242,7 @@ public class GeolocationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public GeolocationSettings patchGeolocationsSettings(PatchGeolocationsSettingsRequest request) throws ApiException {
+  public GeolocationSettings patchGeolocationsSettings(PatchGeolocationsSettingsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<GeolocationSettings>() {});
   }
 
@@ -251,7 +252,7 @@ public class GeolocationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<GeolocationSettings> patchGeolocationsSettings(ApiRequest<GeolocationSettings> request) throws ApiException {
+  public ApiResponse<GeolocationSettings> patchGeolocationsSettings(ApiRequest<GeolocationSettings> request) throws IOException, ApiException {
     return pcapiClient.<GeolocationSettings>invokeAPIVerbose(request, new TypeReference<GeolocationSettings>() {});
   }
 
@@ -264,7 +265,7 @@ public class GeolocationApi {
    * @return Geolocation
    * @throws ApiException if fails to make API call
    */
-  public Geolocation patchUserGeolocation(String userId, String clientId, Geolocation body) throws ApiException {
+  public Geolocation patchUserGeolocation(String userId, String clientId, Geolocation body) throws IOException, ApiException {
     return patchUserGeolocationWithHttpInfo(userId, clientId, body).getBody();
   }
 
@@ -277,22 +278,22 @@ public class GeolocationApi {
    * @return Geolocation
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Geolocation> patchUserGeolocationWithHttpInfo(String userId, String clientId, Geolocation body) throws ApiException {
+  public ApiResponse<Geolocation> patchUserGeolocationWithHttpInfo(String userId, String clientId, Geolocation body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling patchUserGeolocation");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling patchUserGeolocation");
     }
     
     // verify the required parameter 'clientId' is set
     if (clientId == null) {
-      throw new ApiException(400, "Missing the required parameter 'clientId' when calling patchUserGeolocation");
+      throw new IllegalArgumentException("Missing the required parameter 'clientId' when calling patchUserGeolocation");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchUserGeolocation");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchUserGeolocation");
     }
     
     // create path and map variables
@@ -329,7 +330,7 @@ public class GeolocationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Geolocation patchUserGeolocation(PatchUserGeolocationRequest request) throws ApiException {
+  public Geolocation patchUserGeolocation(PatchUserGeolocationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Geolocation>() {});
   }
 
@@ -339,7 +340,7 @@ public class GeolocationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Geolocation> patchUserGeolocation(ApiRequest<Geolocation> request) throws ApiException {
+  public ApiResponse<Geolocation> patchUserGeolocation(ApiRequest<Geolocation> request) throws IOException, ApiException {
     return pcapiClient.<Geolocation>invokeAPIVerbose(request, new TypeReference<Geolocation>() {});
   }
 

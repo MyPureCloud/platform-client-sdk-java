@@ -62,11 +62,11 @@ public class GetGroupGreetingsDefaultsRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'groupId' is set
         if (this.groupId == null) {
-            throw new ApiException(400, "Missing the required parameter 'groupId' when building request for GetGroupGreetingsDefaultsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'groupId' when building request for GetGroupGreetingsDefaultsRequest.");
         }
         
 

@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostPresencedefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutPresencedefinitionRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -49,7 +50,7 @@ public class PresenceApi {
    * @param presenceId Organization Presence ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deletePresencedefinition(String presenceId) throws ApiException {
+  public void deletePresencedefinition(String presenceId) throws IOException, ApiException {
     deletePresencedefinitionWithHttpInfo(presenceId);
   }
 
@@ -59,12 +60,12 @@ public class PresenceApi {
    * @param presenceId Organization Presence ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deletePresencedefinitionWithHttpInfo(String presenceId) throws ApiException {
+  public ApiResponse<Void> deletePresencedefinitionWithHttpInfo(String presenceId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'presenceId' is set
     if (presenceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'presenceId' when calling deletePresencedefinition");
+      throw new IllegalArgumentException("Missing the required parameter 'presenceId' when calling deletePresencedefinition");
     }
     
     // create path and map variables
@@ -100,7 +101,7 @@ public class PresenceApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deletePresencedefinition(DeletePresencedefinitionRequest request) throws ApiException {
+  public void deletePresencedefinition(DeletePresencedefinitionRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -110,7 +111,7 @@ public class PresenceApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deletePresencedefinition(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deletePresencedefinition(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -122,7 +123,7 @@ public class PresenceApi {
    * @return OrganizationPresence
    * @throws ApiException if fails to make API call
    */
-  public OrganizationPresence getPresencedefinition(String presenceId, String localeCode) throws ApiException {
+  public OrganizationPresence getPresencedefinition(String presenceId, String localeCode) throws IOException, ApiException {
     return getPresencedefinitionWithHttpInfo(presenceId, localeCode).getBody();
   }
 
@@ -134,12 +135,12 @@ public class PresenceApi {
    * @return OrganizationPresence
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrganizationPresence> getPresencedefinitionWithHttpInfo(String presenceId, String localeCode) throws ApiException {
+  public ApiResponse<OrganizationPresence> getPresencedefinitionWithHttpInfo(String presenceId, String localeCode) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'presenceId' is set
     if (presenceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'presenceId' when calling getPresencedefinition");
+      throw new IllegalArgumentException("Missing the required parameter 'presenceId' when calling getPresencedefinition");
     }
     
     // create path and map variables
@@ -176,7 +177,7 @@ public class PresenceApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OrganizationPresence getPresencedefinition(GetPresencedefinitionRequest request) throws ApiException {
+  public OrganizationPresence getPresencedefinition(GetPresencedefinitionRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrganizationPresence>() {});
   }
 
@@ -186,7 +187,7 @@ public class PresenceApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrganizationPresence> getPresencedefinition(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<OrganizationPresence> getPresencedefinition(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<OrganizationPresence>invokeAPIVerbose(request, new TypeReference<OrganizationPresence>() {});
   }
 
@@ -200,7 +201,7 @@ public class PresenceApi {
    * @return OrganizationPresenceEntityListing
    * @throws ApiException if fails to make API call
    */
-  public OrganizationPresenceEntityListing getPresencedefinitions(Integer pageNumber, Integer pageSize, String deleted, String localeCode) throws ApiException {
+  public OrganizationPresenceEntityListing getPresencedefinitions(Integer pageNumber, Integer pageSize, String deleted, String localeCode) throws IOException, ApiException {
     return getPresencedefinitionsWithHttpInfo(pageNumber, pageSize, deleted, localeCode).getBody();
   }
 
@@ -214,7 +215,7 @@ public class PresenceApi {
    * @return OrganizationPresenceEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrganizationPresenceEntityListing> getPresencedefinitionsWithHttpInfo(Integer pageNumber, Integer pageSize, String deleted, String localeCode) throws ApiException {
+  public ApiResponse<OrganizationPresenceEntityListing> getPresencedefinitionsWithHttpInfo(Integer pageNumber, Integer pageSize, String deleted, String localeCode) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -253,7 +254,7 @@ public class PresenceApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OrganizationPresenceEntityListing getPresencedefinitions(GetPresencedefinitionsRequest request) throws ApiException {
+  public OrganizationPresenceEntityListing getPresencedefinitions(GetPresencedefinitionsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrganizationPresenceEntityListing>() {});
   }
 
@@ -263,7 +264,7 @@ public class PresenceApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrganizationPresenceEntityListing> getPresencedefinitions(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<OrganizationPresenceEntityListing> getPresencedefinitions(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<OrganizationPresenceEntityListing>invokeAPIVerbose(request, new TypeReference<OrganizationPresenceEntityListing>() {});
   }
 
@@ -273,7 +274,7 @@ public class PresenceApi {
    * @return List<SystemPresence>
    * @throws ApiException if fails to make API call
    */
-  public List<SystemPresence> getSystempresences() throws ApiException {
+  public List<SystemPresence> getSystempresences() throws IOException, ApiException {
     return getSystempresencesWithHttpInfo().getBody();
   }
 
@@ -283,7 +284,7 @@ public class PresenceApi {
    * @return List<SystemPresence>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<SystemPresence>> getSystempresencesWithHttpInfo() throws ApiException {
+  public ApiResponse<List<SystemPresence>> getSystempresencesWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -318,7 +319,7 @@ public class PresenceApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<SystemPresence> getSystempresences(GetSystempresencesRequest request) throws ApiException {
+  public List<SystemPresence> getSystempresences(GetSystempresencesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<SystemPresence>>() {});
   }
 
@@ -328,7 +329,7 @@ public class PresenceApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<SystemPresence>> getSystempresences(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<SystemPresence>> getSystempresences(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<SystemPresence>>invokeAPIVerbose(request, new TypeReference<List<SystemPresence>>() {});
   }
 
@@ -340,7 +341,7 @@ public class PresenceApi {
    * @return UserPresence
    * @throws ApiException if fails to make API call
    */
-  public UserPresence getUserPresence(String userId, String sourceId) throws ApiException {
+  public UserPresence getUserPresence(String userId, String sourceId) throws IOException, ApiException {
     return getUserPresenceWithHttpInfo(userId, sourceId).getBody();
   }
 
@@ -352,17 +353,17 @@ public class PresenceApi {
    * @return UserPresence
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserPresence> getUserPresenceWithHttpInfo(String userId, String sourceId) throws ApiException {
+  public ApiResponse<UserPresence> getUserPresenceWithHttpInfo(String userId, String sourceId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getUserPresence");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserPresence");
     }
     
     // verify the required parameter 'sourceId' is set
     if (sourceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'sourceId' when calling getUserPresence");
+      throw new IllegalArgumentException("Missing the required parameter 'sourceId' when calling getUserPresence");
     }
     
     // create path and map variables
@@ -399,7 +400,7 @@ public class PresenceApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserPresence getUserPresence(GetUserPresenceRequest request) throws ApiException {
+  public UserPresence getUserPresence(GetUserPresenceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserPresence>() {});
   }
 
@@ -409,7 +410,7 @@ public class PresenceApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserPresence> getUserPresence(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<UserPresence> getUserPresence(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<UserPresence>invokeAPIVerbose(request, new TypeReference<UserPresence>() {});
   }
 
@@ -422,7 +423,7 @@ public class PresenceApi {
    * @return UserPresence
    * @throws ApiException if fails to make API call
    */
-  public UserPresence patchUserPresence(String userId, String sourceId, UserPresence body) throws ApiException {
+  public UserPresence patchUserPresence(String userId, String sourceId, UserPresence body) throws IOException, ApiException {
     return patchUserPresenceWithHttpInfo(userId, sourceId, body).getBody();
   }
 
@@ -435,22 +436,22 @@ public class PresenceApi {
    * @return UserPresence
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserPresence> patchUserPresenceWithHttpInfo(String userId, String sourceId, UserPresence body) throws ApiException {
+  public ApiResponse<UserPresence> patchUserPresenceWithHttpInfo(String userId, String sourceId, UserPresence body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling patchUserPresence");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling patchUserPresence");
     }
     
     // verify the required parameter 'sourceId' is set
     if (sourceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'sourceId' when calling patchUserPresence");
+      throw new IllegalArgumentException("Missing the required parameter 'sourceId' when calling patchUserPresence");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchUserPresence");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchUserPresence");
     }
     
     // create path and map variables
@@ -487,7 +488,7 @@ public class PresenceApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserPresence patchUserPresence(PatchUserPresenceRequest request) throws ApiException {
+  public UserPresence patchUserPresence(PatchUserPresenceRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserPresence>() {});
   }
 
@@ -497,7 +498,7 @@ public class PresenceApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserPresence> patchUserPresence(ApiRequest<UserPresence> request) throws ApiException {
+  public ApiResponse<UserPresence> patchUserPresence(ApiRequest<UserPresence> request) throws IOException, ApiException {
     return pcapiClient.<UserPresence>invokeAPIVerbose(request, new TypeReference<UserPresence>() {});
   }
 
@@ -508,7 +509,7 @@ public class PresenceApi {
    * @return OrganizationPresence
    * @throws ApiException if fails to make API call
    */
-  public OrganizationPresence postPresencedefinitions(OrganizationPresence body) throws ApiException {
+  public OrganizationPresence postPresencedefinitions(OrganizationPresence body) throws IOException, ApiException {
     return postPresencedefinitionsWithHttpInfo(body).getBody();
   }
 
@@ -519,12 +520,12 @@ public class PresenceApi {
    * @return OrganizationPresence
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrganizationPresence> postPresencedefinitionsWithHttpInfo(OrganizationPresence body) throws ApiException {
+  public ApiResponse<OrganizationPresence> postPresencedefinitionsWithHttpInfo(OrganizationPresence body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postPresencedefinitions");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postPresencedefinitions");
     }
     
     // create path and map variables
@@ -559,7 +560,7 @@ public class PresenceApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OrganizationPresence postPresencedefinitions(PostPresencedefinitionsRequest request) throws ApiException {
+  public OrganizationPresence postPresencedefinitions(PostPresencedefinitionsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrganizationPresence>() {});
   }
 
@@ -569,7 +570,7 @@ public class PresenceApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrganizationPresence> postPresencedefinitions(ApiRequest<OrganizationPresence> request) throws ApiException {
+  public ApiResponse<OrganizationPresence> postPresencedefinitions(ApiRequest<OrganizationPresence> request) throws IOException, ApiException {
     return pcapiClient.<OrganizationPresence>invokeAPIVerbose(request, new TypeReference<OrganizationPresence>() {});
   }
 
@@ -581,7 +582,7 @@ public class PresenceApi {
    * @return OrganizationPresence
    * @throws ApiException if fails to make API call
    */
-  public OrganizationPresence putPresencedefinition(String presenceId, OrganizationPresence body) throws ApiException {
+  public OrganizationPresence putPresencedefinition(String presenceId, OrganizationPresence body) throws IOException, ApiException {
     return putPresencedefinitionWithHttpInfo(presenceId, body).getBody();
   }
 
@@ -593,17 +594,17 @@ public class PresenceApi {
    * @return OrganizationPresence
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrganizationPresence> putPresencedefinitionWithHttpInfo(String presenceId, OrganizationPresence body) throws ApiException {
+  public ApiResponse<OrganizationPresence> putPresencedefinitionWithHttpInfo(String presenceId, OrganizationPresence body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'presenceId' is set
     if (presenceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'presenceId' when calling putPresencedefinition");
+      throw new IllegalArgumentException("Missing the required parameter 'presenceId' when calling putPresencedefinition");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putPresencedefinition");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putPresencedefinition");
     }
     
     // create path and map variables
@@ -639,7 +640,7 @@ public class PresenceApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OrganizationPresence putPresencedefinition(PutPresencedefinitionRequest request) throws ApiException {
+  public OrganizationPresence putPresencedefinition(PutPresencedefinitionRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrganizationPresence>() {});
   }
 
@@ -649,7 +650,7 @@ public class PresenceApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrganizationPresence> putPresencedefinition(ApiRequest<OrganizationPresence> request) throws ApiException {
+  public ApiResponse<OrganizationPresence> putPresencedefinition(ApiRequest<OrganizationPresence> request) throws IOException, ApiException {
     return pcapiClient.<OrganizationPresence>invokeAPIVerbose(request, new TypeReference<OrganizationPresence>() {});
   }
 

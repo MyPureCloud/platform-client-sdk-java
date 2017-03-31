@@ -105,16 +105,16 @@ public class PutOutboundContactlistRequest {
         return this;
     }
 
-    public ApiRequest<ContactList> withHttpInfo() throws ApiException {
+    public ApiRequest<ContactList> withHttpInfo() {
         
         // verify the required parameter 'contactListId' is set
         if (this.contactListId == null) {
-            throw new ApiException(400, "Missing the required parameter 'contactListId' when building request for PutOutboundContactlistRequest.");
+            throw new IllegalStateException("Missing the required parameter 'contactListId' when building request for PutOutboundContactlistRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutOutboundContactlistRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutOutboundContactlistRequest.");
         }
         
 

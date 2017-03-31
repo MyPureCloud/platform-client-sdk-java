@@ -161,11 +161,11 @@ public class PostOutboundAuditsRequest {
         return this;
     }
 
-    public ApiRequest<DialerAuditRequest> withHttpInfo() throws ApiException {
+    public ApiRequest<DialerAuditRequest> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostOutboundAuditsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostOutboundAuditsRequest.");
         }
         
 

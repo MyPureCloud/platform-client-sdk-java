@@ -28,6 +28,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLanguagesTranslationsUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingLanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguagesRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -52,7 +53,7 @@ public class LanguagesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteLanguageAsync(DeleteLanguageRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteLanguageAsync(DeleteLanguageRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -62,7 +63,7 @@ public class LanguagesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteLanguageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteLanguageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -72,7 +73,7 @@ public class LanguagesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteRoutingLanguageAsync(DeleteRoutingLanguageRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteRoutingLanguageAsync(DeleteRoutingLanguageRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -82,7 +83,7 @@ public class LanguagesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteRoutingLanguageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteRoutingLanguageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -92,7 +93,7 @@ public class LanguagesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Language> getLanguageAsync(GetLanguageRequest request, AsyncApiCallback<Language> callback) throws ApiException {
+  public Future<Language> getLanguageAsync(GetLanguageRequest request, AsyncApiCallback<Language> callback) {
     return pcapiClient.<Language>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Language>() {}, callback);
   }
 
@@ -102,7 +103,7 @@ public class LanguagesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Language>> getLanguageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Language>> callback) throws ApiException {
+  public Future<ApiResponse<Language>> getLanguageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Language>> callback) {
     return pcapiClient.<Language>invokeAPIVerboseAsync(request, new TypeReference<Language>() {}, callback);
   }
 
@@ -112,7 +113,7 @@ public class LanguagesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<LanguageEntityListing> getLanguagesAsync(GetLanguagesRequest request, AsyncApiCallback<LanguageEntityListing> callback) throws ApiException {
+  public Future<LanguageEntityListing> getLanguagesAsync(GetLanguagesRequest request, AsyncApiCallback<LanguageEntityListing> callback) {
     return pcapiClient.<LanguageEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LanguageEntityListing>() {}, callback);
   }
 
@@ -122,7 +123,7 @@ public class LanguagesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<LanguageEntityListing>> getLanguagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LanguageEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<LanguageEntityListing>> getLanguagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LanguageEntityListing>> callback) {
     return pcapiClient.<LanguageEntityListing>invokeAPIVerboseAsync(request, new TypeReference<LanguageEntityListing>() {}, callback);
   }
 
@@ -132,7 +133,7 @@ public class LanguagesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<AvailableTranslations> getLanguagesTranslationsAsync(GetLanguagesTranslationsRequest request, AsyncApiCallback<AvailableTranslations> callback) throws ApiException {
+  public Future<AvailableTranslations> getLanguagesTranslationsAsync(GetLanguagesTranslationsRequest request, AsyncApiCallback<AvailableTranslations> callback) {
     return pcapiClient.<AvailableTranslations>invokeAPIAsync(request.withHttpInfo(), new TypeReference<AvailableTranslations>() {}, callback);
   }
 
@@ -142,7 +143,7 @@ public class LanguagesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<AvailableTranslations>> getLanguagesTranslationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AvailableTranslations>> callback) throws ApiException {
+  public Future<ApiResponse<AvailableTranslations>> getLanguagesTranslationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AvailableTranslations>> callback) {
     return pcapiClient.<AvailableTranslations>invokeAPIVerboseAsync(request, new TypeReference<AvailableTranslations>() {}, callback);
   }
 
@@ -152,7 +153,7 @@ public class LanguagesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Map<String, Object>> getLanguagesTranslationsBuiltinAsync(GetLanguagesTranslationsBuiltinRequest request, AsyncApiCallback<Map<String, Object>> callback) throws ApiException {
+  public Future<Map<String, Object>> getLanguagesTranslationsBuiltinAsync(GetLanguagesTranslationsBuiltinRequest request, AsyncApiCallback<Map<String, Object>> callback) {
     return pcapiClient.<Map<String, Object>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Map<String, Object>>() {}, callback);
   }
 
@@ -162,7 +163,7 @@ public class LanguagesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Map<String, Object>>> getLanguagesTranslationsBuiltinAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Map<String, Object>>> callback) throws ApiException {
+  public Future<ApiResponse<Map<String, Object>>> getLanguagesTranslationsBuiltinAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Map<String, Object>>> callback) {
     return pcapiClient.<Map<String, Object>>invokeAPIVerboseAsync(request, new TypeReference<Map<String, Object>>() {}, callback);
   }
 
@@ -172,7 +173,7 @@ public class LanguagesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Map<String, Object>> getLanguagesTranslationsOrganizationAsync(GetLanguagesTranslationsOrganizationRequest request, AsyncApiCallback<Map<String, Object>> callback) throws ApiException {
+  public Future<Map<String, Object>> getLanguagesTranslationsOrganizationAsync(GetLanguagesTranslationsOrganizationRequest request, AsyncApiCallback<Map<String, Object>> callback) {
     return pcapiClient.<Map<String, Object>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Map<String, Object>>() {}, callback);
   }
 
@@ -182,7 +183,7 @@ public class LanguagesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Map<String, Object>>> getLanguagesTranslationsOrganizationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Map<String, Object>>> callback) throws ApiException {
+  public Future<ApiResponse<Map<String, Object>>> getLanguagesTranslationsOrganizationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Map<String, Object>>> callback) {
     return pcapiClient.<Map<String, Object>>invokeAPIVerboseAsync(request, new TypeReference<Map<String, Object>>() {}, callback);
   }
 
@@ -192,7 +193,7 @@ public class LanguagesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Map<String, Object>> getLanguagesTranslationsUserAsync(GetLanguagesTranslationsUserRequest request, AsyncApiCallback<Map<String, Object>> callback) throws ApiException {
+  public Future<Map<String, Object>> getLanguagesTranslationsUserAsync(GetLanguagesTranslationsUserRequest request, AsyncApiCallback<Map<String, Object>> callback) {
     return pcapiClient.<Map<String, Object>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Map<String, Object>>() {}, callback);
   }
 
@@ -202,7 +203,7 @@ public class LanguagesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Map<String, Object>>> getLanguagesTranslationsUserAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Map<String, Object>>> callback) throws ApiException {
+  public Future<ApiResponse<Map<String, Object>>> getLanguagesTranslationsUserAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Map<String, Object>>> callback) {
     return pcapiClient.<Map<String, Object>>invokeAPIVerboseAsync(request, new TypeReference<Map<String, Object>>() {}, callback);
   }
 
@@ -212,7 +213,7 @@ public class LanguagesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Language> getRoutingLanguageAsync(GetRoutingLanguageRequest request, AsyncApiCallback<Language> callback) throws ApiException {
+  public Future<Language> getRoutingLanguageAsync(GetRoutingLanguageRequest request, AsyncApiCallback<Language> callback) {
     return pcapiClient.<Language>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Language>() {}, callback);
   }
 
@@ -222,7 +223,7 @@ public class LanguagesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Language>> getRoutingLanguageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Language>> callback) throws ApiException {
+  public Future<ApiResponse<Language>> getRoutingLanguageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Language>> callback) {
     return pcapiClient.<Language>invokeAPIVerboseAsync(request, new TypeReference<Language>() {}, callback);
   }
 
@@ -232,7 +233,7 @@ public class LanguagesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Language> postLanguagesAsync(PostLanguagesRequest request, AsyncApiCallback<Language> callback) throws ApiException {
+  public Future<Language> postLanguagesAsync(PostLanguagesRequest request, AsyncApiCallback<Language> callback) {
     return pcapiClient.<Language>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Language>() {}, callback);
   }
 
@@ -242,7 +243,7 @@ public class LanguagesApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Language>> postLanguagesAsync(ApiRequest<Language> request, AsyncApiCallback<ApiResponse<Language>> callback) throws ApiException {
+  public Future<ApiResponse<Language>> postLanguagesAsync(ApiRequest<Language> request, AsyncApiCallback<ApiResponse<Language>> callback) {
     return pcapiClient.<Language>invokeAPIVerboseAsync(request, new TypeReference<Language>() {}, callback);
   }
 

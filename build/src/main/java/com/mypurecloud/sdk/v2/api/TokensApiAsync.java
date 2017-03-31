@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteTokensMeRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -40,7 +41,7 @@ public class TokensApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteTokensMeAsync(DeleteTokensMeRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteTokensMeAsync(DeleteTokensMeRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -50,7 +51,7 @@ public class TokensApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteTokensMeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteTokensMeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 

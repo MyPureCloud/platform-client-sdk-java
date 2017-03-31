@@ -81,11 +81,11 @@ public class PatchWorkforcemanagementTimeoffrequestRequest {
         return this;
     }
 
-    public ApiRequest<TimeOffRequestPatch> withHttpInfo() throws ApiException {
+    public ApiRequest<TimeOffRequestPatch> withHttpInfo() {
         
         // verify the required parameter 'timeOffRequestId' is set
         if (this.timeOffRequestId == null) {
-            throw new ApiException(400, "Missing the required parameter 'timeOffRequestId' when building request for PatchWorkforcemanagementTimeoffrequestRequest.");
+            throw new IllegalStateException("Missing the required parameter 'timeOffRequestId' when building request for PatchWorkforcemanagementTimeoffrequestRequest.");
         }
         
 

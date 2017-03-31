@@ -44,6 +44,20 @@ public class GetResponsemanagementResponseRequest {
 	    return this;
 	}
 
+	private String expand;
+	public String getExpand() {
+		return this.expand;
+	}
+
+	public void setExpand(String expand) {
+		this.expand = expand;
+	}
+
+	public GetResponsemanagementResponseRequest withExpand(String expand) {
+	    this.setExpand(expand);
+	    return this;
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -63,16 +77,18 @@ public class GetResponsemanagementResponseRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'responseId' is set
         if (this.responseId == null) {
-            throw new ApiException(400, "Missing the required parameter 'responseId' when building request for GetResponsemanagementResponseRequest.");
+            throw new IllegalStateException("Missing the required parameter 'responseId' when building request for GetResponsemanagementResponseRequest.");
         }
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/responsemanagement/responses/{responseId}")
                 .withPathParameter("responseId", responseId)
+        
+                .withQueryParameters("expand", "", expand)
                         .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -98,6 +114,10 @@ public class GetResponsemanagementResponseRequest {
 
 		public Builder withResponseId(String responseId) {
 			request.setResponseId(responseId);
+			return this;
+		}
+		public Builder withExpand(String expand) {
+			request.setExpand(expand);
 			return this;
 		}
 

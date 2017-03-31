@@ -63,6 +63,7 @@ import com.mypurecloud.sdk.v2.api.request.PutQualityConversationEvaluationReques
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityKeywordsetRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -87,7 +88,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Calibration> deleteQualityCalibrationAsync(DeleteQualityCalibrationRequest request, AsyncApiCallback<Calibration> callback) throws ApiException {
+  public Future<Calibration> deleteQualityCalibrationAsync(DeleteQualityCalibrationRequest request, AsyncApiCallback<Calibration> callback) {
     return pcapiClient.<Calibration>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Calibration>() {}, callback);
   }
 
@@ -97,7 +98,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Calibration>> deleteQualityCalibrationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Calibration>> callback) throws ApiException {
+  public Future<ApiResponse<Calibration>> deleteQualityCalibrationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Calibration>> callback) {
     return pcapiClient.<Calibration>invokeAPIVerboseAsync(request, new TypeReference<Calibration>() {}, callback);
   }
 
@@ -107,7 +108,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Evaluation> deleteQualityConversationEvaluationAsync(DeleteQualityConversationEvaluationRequest request, AsyncApiCallback<Evaluation> callback) throws ApiException {
+  public Future<Evaluation> deleteQualityConversationEvaluationAsync(DeleteQualityConversationEvaluationRequest request, AsyncApiCallback<Evaluation> callback) {
     return pcapiClient.<Evaluation>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Evaluation>() {}, callback);
   }
 
@@ -117,7 +118,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Evaluation>> deleteQualityConversationEvaluationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Evaluation>> callback) throws ApiException {
+  public Future<ApiResponse<Evaluation>> deleteQualityConversationEvaluationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Evaluation>> callback) {
     return pcapiClient.<Evaluation>invokeAPIVerboseAsync(request, new TypeReference<Evaluation>() {}, callback);
   }
 
@@ -127,7 +128,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteQualityFormAsync(DeleteQualityFormRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteQualityFormAsync(DeleteQualityFormRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -137,7 +138,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteQualityFormAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteQualityFormAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -147,7 +148,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteQualityKeywordsetAsync(DeleteQualityKeywordsetRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteQualityKeywordsetAsync(DeleteQualityKeywordsetRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -157,7 +158,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteQualityKeywordsetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteQualityKeywordsetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -167,7 +168,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteQualityKeywordsetsAsync(DeleteQualityKeywordsetsRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteQualityKeywordsetsAsync(DeleteQualityKeywordsetsRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -177,7 +178,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteQualityKeywordsetsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteQualityKeywordsetsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -187,7 +188,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<AgentActivityEntityListing> getQualityAgentsActivityAsync(GetQualityAgentsActivityRequest request, AsyncApiCallback<AgentActivityEntityListing> callback) throws ApiException {
+  public Future<AgentActivityEntityListing> getQualityAgentsActivityAsync(GetQualityAgentsActivityRequest request, AsyncApiCallback<AgentActivityEntityListing> callback) {
     return pcapiClient.<AgentActivityEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<AgentActivityEntityListing>() {}, callback);
   }
 
@@ -197,7 +198,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<AgentActivityEntityListing>> getQualityAgentsActivityAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AgentActivityEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<AgentActivityEntityListing>> getQualityAgentsActivityAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AgentActivityEntityListing>> callback) {
     return pcapiClient.<AgentActivityEntityListing>invokeAPIVerboseAsync(request, new TypeReference<AgentActivityEntityListing>() {}, callback);
   }
 
@@ -207,7 +208,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Calibration> getQualityCalibrationAsync(GetQualityCalibrationRequest request, AsyncApiCallback<Calibration> callback) throws ApiException {
+  public Future<Calibration> getQualityCalibrationAsync(GetQualityCalibrationRequest request, AsyncApiCallback<Calibration> callback) {
     return pcapiClient.<Calibration>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Calibration>() {}, callback);
   }
 
@@ -217,7 +218,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Calibration>> getQualityCalibrationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Calibration>> callback) throws ApiException {
+  public Future<ApiResponse<Calibration>> getQualityCalibrationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Calibration>> callback) {
     return pcapiClient.<Calibration>invokeAPIVerboseAsync(request, new TypeReference<Calibration>() {}, callback);
   }
 
@@ -227,7 +228,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CalibrationEntityListing> getQualityCalibrationsAsync(GetQualityCalibrationsRequest request, AsyncApiCallback<CalibrationEntityListing> callback) throws ApiException {
+  public Future<CalibrationEntityListing> getQualityCalibrationsAsync(GetQualityCalibrationsRequest request, AsyncApiCallback<CalibrationEntityListing> callback) {
     return pcapiClient.<CalibrationEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CalibrationEntityListing>() {}, callback);
   }
 
@@ -237,7 +238,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CalibrationEntityListing>> getQualityCalibrationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CalibrationEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<CalibrationEntityListing>> getQualityCalibrationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CalibrationEntityListing>> callback) {
     return pcapiClient.<CalibrationEntityListing>invokeAPIVerboseAsync(request, new TypeReference<CalibrationEntityListing>() {}, callback);
   }
 
@@ -247,7 +248,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<QualityAuditPage> getQualityConversationAuditsAsync(GetQualityConversationAuditsRequest request, AsyncApiCallback<QualityAuditPage> callback) throws ApiException {
+  public Future<QualityAuditPage> getQualityConversationAuditsAsync(GetQualityConversationAuditsRequest request, AsyncApiCallback<QualityAuditPage> callback) {
     return pcapiClient.<QualityAuditPage>invokeAPIAsync(request.withHttpInfo(), new TypeReference<QualityAuditPage>() {}, callback);
   }
 
@@ -257,7 +258,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<QualityAuditPage>> getQualityConversationAuditsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<QualityAuditPage>> callback) throws ApiException {
+  public Future<ApiResponse<QualityAuditPage>> getQualityConversationAuditsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<QualityAuditPage>> callback) {
     return pcapiClient.<QualityAuditPage>invokeAPIVerboseAsync(request, new TypeReference<QualityAuditPage>() {}, callback);
   }
 
@@ -267,7 +268,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Evaluation> getQualityConversationEvaluationAsync(GetQualityConversationEvaluationRequest request, AsyncApiCallback<Evaluation> callback) throws ApiException {
+  public Future<Evaluation> getQualityConversationEvaluationAsync(GetQualityConversationEvaluationRequest request, AsyncApiCallback<Evaluation> callback) {
     return pcapiClient.<Evaluation>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Evaluation>() {}, callback);
   }
 
@@ -277,7 +278,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Evaluation>> getQualityConversationEvaluationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Evaluation>> callback) throws ApiException {
+  public Future<ApiResponse<Evaluation>> getQualityConversationEvaluationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Evaluation>> callback) {
     return pcapiClient.<Evaluation>invokeAPIVerboseAsync(request, new TypeReference<Evaluation>() {}, callback);
   }
 
@@ -287,7 +288,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EvaluationEntityListing> getQualityEvaluationsQueryAsync(GetQualityEvaluationsQueryRequest request, AsyncApiCallback<EvaluationEntityListing> callback) throws ApiException {
+  public Future<EvaluationEntityListing> getQualityEvaluationsQueryAsync(GetQualityEvaluationsQueryRequest request, AsyncApiCallback<EvaluationEntityListing> callback) {
     return pcapiClient.<EvaluationEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EvaluationEntityListing>() {}, callback);
   }
 
@@ -297,7 +298,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EvaluationEntityListing>> getQualityEvaluationsQueryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluationEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<EvaluationEntityListing>> getQualityEvaluationsQueryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluationEntityListing>> callback) {
     return pcapiClient.<EvaluationEntityListing>invokeAPIVerboseAsync(request, new TypeReference<EvaluationEntityListing>() {}, callback);
   }
 
@@ -307,7 +308,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EvaluatorActivityEntityListing> getQualityEvaluatorsActivityAsync(GetQualityEvaluatorsActivityRequest request, AsyncApiCallback<EvaluatorActivityEntityListing> callback) throws ApiException {
+  public Future<EvaluatorActivityEntityListing> getQualityEvaluatorsActivityAsync(GetQualityEvaluatorsActivityRequest request, AsyncApiCallback<EvaluatorActivityEntityListing> callback) {
     return pcapiClient.<EvaluatorActivityEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EvaluatorActivityEntityListing>() {}, callback);
   }
 
@@ -317,7 +318,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EvaluatorActivityEntityListing>> getQualityEvaluatorsActivityAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluatorActivityEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<EvaluatorActivityEntityListing>> getQualityEvaluatorsActivityAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluatorActivityEntityListing>> callback) {
     return pcapiClient.<EvaluatorActivityEntityListing>invokeAPIVerboseAsync(request, new TypeReference<EvaluatorActivityEntityListing>() {}, callback);
   }
 
@@ -327,7 +328,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EvaluationForm> getQualityFormAsync(GetQualityFormRequest request, AsyncApiCallback<EvaluationForm> callback) throws ApiException {
+  public Future<EvaluationForm> getQualityFormAsync(GetQualityFormRequest request, AsyncApiCallback<EvaluationForm> callback) {
     return pcapiClient.<EvaluationForm>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EvaluationForm>() {}, callback);
   }
 
@@ -337,7 +338,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EvaluationForm>> getQualityFormAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluationForm>> callback) throws ApiException {
+  public Future<ApiResponse<EvaluationForm>> getQualityFormAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
     return pcapiClient.<EvaluationForm>invokeAPIVerboseAsync(request, new TypeReference<EvaluationForm>() {}, callback);
   }
 
@@ -347,7 +348,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EvaluationFormEntityListing> getQualityFormVersionsAsync(GetQualityFormVersionsRequest request, AsyncApiCallback<EvaluationFormEntityListing> callback) throws ApiException {
+  public Future<EvaluationFormEntityListing> getQualityFormVersionsAsync(GetQualityFormVersionsRequest request, AsyncApiCallback<EvaluationFormEntityListing> callback) {
     return pcapiClient.<EvaluationFormEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EvaluationFormEntityListing>() {}, callback);
   }
 
@@ -357,7 +358,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EvaluationFormEntityListing>> getQualityFormVersionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<EvaluationFormEntityListing>> getQualityFormVersionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>> callback) {
     return pcapiClient.<EvaluationFormEntityListing>invokeAPIVerboseAsync(request, new TypeReference<EvaluationFormEntityListing>() {}, callback);
   }
 
@@ -367,7 +368,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EvaluationFormEntityListing> getQualityFormsAsync(GetQualityFormsRequest request, AsyncApiCallback<EvaluationFormEntityListing> callback) throws ApiException {
+  public Future<EvaluationFormEntityListing> getQualityFormsAsync(GetQualityFormsRequest request, AsyncApiCallback<EvaluationFormEntityListing> callback) {
     return pcapiClient.<EvaluationFormEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EvaluationFormEntityListing>() {}, callback);
   }
 
@@ -377,7 +378,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EvaluationFormEntityListing>> getQualityFormsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<EvaluationFormEntityListing>> getQualityFormsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>> callback) {
     return pcapiClient.<EvaluationFormEntityListing>invokeAPIVerboseAsync(request, new TypeReference<EvaluationFormEntityListing>() {}, callback);
   }
 
@@ -387,7 +388,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<KeywordSet> getQualityKeywordsetAsync(GetQualityKeywordsetRequest request, AsyncApiCallback<KeywordSet> callback) throws ApiException {
+  public Future<KeywordSet> getQualityKeywordsetAsync(GetQualityKeywordsetRequest request, AsyncApiCallback<KeywordSet> callback) {
     return pcapiClient.<KeywordSet>invokeAPIAsync(request.withHttpInfo(), new TypeReference<KeywordSet>() {}, callback);
   }
 
@@ -397,7 +398,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<KeywordSet>> getQualityKeywordsetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<KeywordSet>> callback) throws ApiException {
+  public Future<ApiResponse<KeywordSet>> getQualityKeywordsetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<KeywordSet>> callback) {
     return pcapiClient.<KeywordSet>invokeAPIVerboseAsync(request, new TypeReference<KeywordSet>() {}, callback);
   }
 
@@ -407,7 +408,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<KeywordSetEntityListing> getQualityKeywordsetsAsync(GetQualityKeywordsetsRequest request, AsyncApiCallback<KeywordSetEntityListing> callback) throws ApiException {
+  public Future<KeywordSetEntityListing> getQualityKeywordsetsAsync(GetQualityKeywordsetsRequest request, AsyncApiCallback<KeywordSetEntityListing> callback) {
     return pcapiClient.<KeywordSetEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<KeywordSetEntityListing>() {}, callback);
   }
 
@@ -417,7 +418,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<KeywordSetEntityListing>> getQualityKeywordsetsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<KeywordSetEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<KeywordSetEntityListing>> getQualityKeywordsetsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<KeywordSetEntityListing>> callback) {
     return pcapiClient.<KeywordSetEntityListing>invokeAPIVerboseAsync(request, new TypeReference<KeywordSetEntityListing>() {}, callback);
   }
 
@@ -427,7 +428,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EvaluationForm> getQualityPublishedformAsync(GetQualityPublishedformRequest request, AsyncApiCallback<EvaluationForm> callback) throws ApiException {
+  public Future<EvaluationForm> getQualityPublishedformAsync(GetQualityPublishedformRequest request, AsyncApiCallback<EvaluationForm> callback) {
     return pcapiClient.<EvaluationForm>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EvaluationForm>() {}, callback);
   }
 
@@ -437,7 +438,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EvaluationForm>> getQualityPublishedformAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluationForm>> callback) throws ApiException {
+  public Future<ApiResponse<EvaluationForm>> getQualityPublishedformAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
     return pcapiClient.<EvaluationForm>invokeAPIVerboseAsync(request, new TypeReference<EvaluationForm>() {}, callback);
   }
 
@@ -447,7 +448,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EvaluationFormEntityListing> getQualityPublishedformsAsync(GetQualityPublishedformsRequest request, AsyncApiCallback<EvaluationFormEntityListing> callback) throws ApiException {
+  public Future<EvaluationFormEntityListing> getQualityPublishedformsAsync(GetQualityPublishedformsRequest request, AsyncApiCallback<EvaluationFormEntityListing> callback) {
     return pcapiClient.<EvaluationFormEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EvaluationFormEntityListing>() {}, callback);
   }
 
@@ -457,7 +458,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EvaluationFormEntityListing>> getQualityPublishedformsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<EvaluationFormEntityListing>> getQualityPublishedformsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>> callback) {
     return pcapiClient.<EvaluationFormEntityListing>invokeAPIVerboseAsync(request, new TypeReference<EvaluationFormEntityListing>() {}, callback);
   }
 
@@ -467,7 +468,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<AggregateQueryResponse> postAnalyticsEvaluationsAggregatesQueryAsync(PostAnalyticsEvaluationsAggregatesQueryRequest request, AsyncApiCallback<AggregateQueryResponse> callback) throws ApiException {
+  public Future<AggregateQueryResponse> postAnalyticsEvaluationsAggregatesQueryAsync(PostAnalyticsEvaluationsAggregatesQueryRequest request, AsyncApiCallback<AggregateQueryResponse> callback) {
     return pcapiClient.<AggregateQueryResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {}, callback);
   }
 
@@ -477,7 +478,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<AggregateQueryResponse>> postAnalyticsEvaluationsAggregatesQueryAsync(ApiRequest<AggregationQuery> request, AsyncApiCallback<ApiResponse<AggregateQueryResponse>> callback) throws ApiException {
+  public Future<ApiResponse<AggregateQueryResponse>> postAnalyticsEvaluationsAggregatesQueryAsync(ApiRequest<AggregationQuery> request, AsyncApiCallback<ApiResponse<AggregateQueryResponse>> callback) {
     return pcapiClient.<AggregateQueryResponse>invokeAPIVerboseAsync(request, new TypeReference<AggregateQueryResponse>() {}, callback);
   }
 
@@ -487,7 +488,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Calibration> postQualityCalibrationsAsync(PostQualityCalibrationsRequest request, AsyncApiCallback<Calibration> callback) throws ApiException {
+  public Future<Calibration> postQualityCalibrationsAsync(PostQualityCalibrationsRequest request, AsyncApiCallback<Calibration> callback) {
     return pcapiClient.<Calibration>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Calibration>() {}, callback);
   }
 
@@ -497,7 +498,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Calibration>> postQualityCalibrationsAsync(ApiRequest<CalibrationCreate> request, AsyncApiCallback<ApiResponse<Calibration>> callback) throws ApiException {
+  public Future<ApiResponse<Calibration>> postQualityCalibrationsAsync(ApiRequest<CalibrationCreate> request, AsyncApiCallback<ApiResponse<Calibration>> callback) {
     return pcapiClient.<Calibration>invokeAPIVerboseAsync(request, new TypeReference<Calibration>() {}, callback);
   }
 
@@ -507,7 +508,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Evaluation> postQualityConversationEvaluationsAsync(PostQualityConversationEvaluationsRequest request, AsyncApiCallback<Evaluation> callback) throws ApiException {
+  public Future<Evaluation> postQualityConversationEvaluationsAsync(PostQualityConversationEvaluationsRequest request, AsyncApiCallback<Evaluation> callback) {
     return pcapiClient.<Evaluation>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Evaluation>() {}, callback);
   }
 
@@ -517,7 +518,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Evaluation>> postQualityConversationEvaluationsAsync(ApiRequest<Evaluation> request, AsyncApiCallback<ApiResponse<Evaluation>> callback) throws ApiException {
+  public Future<ApiResponse<Evaluation>> postQualityConversationEvaluationsAsync(ApiRequest<Evaluation> request, AsyncApiCallback<ApiResponse<Evaluation>> callback) {
     return pcapiClient.<Evaluation>invokeAPIVerboseAsync(request, new TypeReference<Evaluation>() {}, callback);
   }
 
@@ -527,7 +528,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EvaluationScoringSet> postQualityEvaluationsScoringAsync(PostQualityEvaluationsScoringRequest request, AsyncApiCallback<EvaluationScoringSet> callback) throws ApiException {
+  public Future<EvaluationScoringSet> postQualityEvaluationsScoringAsync(PostQualityEvaluationsScoringRequest request, AsyncApiCallback<EvaluationScoringSet> callback) {
     return pcapiClient.<EvaluationScoringSet>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EvaluationScoringSet>() {}, callback);
   }
 
@@ -537,7 +538,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EvaluationScoringSet>> postQualityEvaluationsScoringAsync(ApiRequest<EvaluationFormAndScoringSet> request, AsyncApiCallback<ApiResponse<EvaluationScoringSet>> callback) throws ApiException {
+  public Future<ApiResponse<EvaluationScoringSet>> postQualityEvaluationsScoringAsync(ApiRequest<EvaluationFormAndScoringSet> request, AsyncApiCallback<ApiResponse<EvaluationScoringSet>> callback) {
     return pcapiClient.<EvaluationScoringSet>invokeAPIVerboseAsync(request, new TypeReference<EvaluationScoringSet>() {}, callback);
   }
 
@@ -547,7 +548,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EvaluationForm> postQualityFormsAsync(PostQualityFormsRequest request, AsyncApiCallback<EvaluationForm> callback) throws ApiException {
+  public Future<EvaluationForm> postQualityFormsAsync(PostQualityFormsRequest request, AsyncApiCallback<EvaluationForm> callback) {
     return pcapiClient.<EvaluationForm>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EvaluationForm>() {}, callback);
   }
 
@@ -557,7 +558,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EvaluationForm>> postQualityFormsAsync(ApiRequest<EvaluationForm> request, AsyncApiCallback<ApiResponse<EvaluationForm>> callback) throws ApiException {
+  public Future<ApiResponse<EvaluationForm>> postQualityFormsAsync(ApiRequest<EvaluationForm> request, AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
     return pcapiClient.<EvaluationForm>invokeAPIVerboseAsync(request, new TypeReference<EvaluationForm>() {}, callback);
   }
 
@@ -567,7 +568,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<KeywordSet> postQualityKeywordsetsAsync(PostQualityKeywordsetsRequest request, AsyncApiCallback<KeywordSet> callback) throws ApiException {
+  public Future<KeywordSet> postQualityKeywordsetsAsync(PostQualityKeywordsetsRequest request, AsyncApiCallback<KeywordSet> callback) {
     return pcapiClient.<KeywordSet>invokeAPIAsync(request.withHttpInfo(), new TypeReference<KeywordSet>() {}, callback);
   }
 
@@ -577,7 +578,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<KeywordSet>> postQualityKeywordsetsAsync(ApiRequest<KeywordSet> request, AsyncApiCallback<ApiResponse<KeywordSet>> callback) throws ApiException {
+  public Future<ApiResponse<KeywordSet>> postQualityKeywordsetsAsync(ApiRequest<KeywordSet> request, AsyncApiCallback<ApiResponse<KeywordSet>> callback) {
     return pcapiClient.<KeywordSet>invokeAPIVerboseAsync(request, new TypeReference<KeywordSet>() {}, callback);
   }
 
@@ -587,7 +588,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EvaluationForm> postQualityPublishedformsAsync(PostQualityPublishedformsRequest request, AsyncApiCallback<EvaluationForm> callback) throws ApiException {
+  public Future<EvaluationForm> postQualityPublishedformsAsync(PostQualityPublishedformsRequest request, AsyncApiCallback<EvaluationForm> callback) {
     return pcapiClient.<EvaluationForm>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EvaluationForm>() {}, callback);
   }
 
@@ -597,7 +598,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EvaluationForm>> postQualityPublishedformsAsync(ApiRequest<EvaluationForm> request, AsyncApiCallback<ApiResponse<EvaluationForm>> callback) throws ApiException {
+  public Future<ApiResponse<EvaluationForm>> postQualityPublishedformsAsync(ApiRequest<EvaluationForm> request, AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
     return pcapiClient.<EvaluationForm>invokeAPIVerboseAsync(request, new TypeReference<EvaluationForm>() {}, callback);
   }
 
@@ -607,7 +608,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<KeywordSet> postQualitySpotabilityAsync(PostQualitySpotabilityRequest request, AsyncApiCallback<KeywordSet> callback) throws ApiException {
+  public Future<KeywordSet> postQualitySpotabilityAsync(PostQualitySpotabilityRequest request, AsyncApiCallback<KeywordSet> callback) {
     return pcapiClient.<KeywordSet>invokeAPIAsync(request.withHttpInfo(), new TypeReference<KeywordSet>() {}, callback);
   }
 
@@ -617,7 +618,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<KeywordSet>> postQualitySpotabilityAsync(ApiRequest<KeywordSet> request, AsyncApiCallback<ApiResponse<KeywordSet>> callback) throws ApiException {
+  public Future<ApiResponse<KeywordSet>> postQualitySpotabilityAsync(ApiRequest<KeywordSet> request, AsyncApiCallback<ApiResponse<KeywordSet>> callback) {
     return pcapiClient.<KeywordSet>invokeAPIVerboseAsync(request, new TypeReference<KeywordSet>() {}, callback);
   }
 
@@ -627,7 +628,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Calibration> putQualityCalibrationAsync(PutQualityCalibrationRequest request, AsyncApiCallback<Calibration> callback) throws ApiException {
+  public Future<Calibration> putQualityCalibrationAsync(PutQualityCalibrationRequest request, AsyncApiCallback<Calibration> callback) {
     return pcapiClient.<Calibration>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Calibration>() {}, callback);
   }
 
@@ -637,7 +638,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Calibration>> putQualityCalibrationAsync(ApiRequest<Calibration> request, AsyncApiCallback<ApiResponse<Calibration>> callback) throws ApiException {
+  public Future<ApiResponse<Calibration>> putQualityCalibrationAsync(ApiRequest<Calibration> request, AsyncApiCallback<ApiResponse<Calibration>> callback) {
     return pcapiClient.<Calibration>invokeAPIVerboseAsync(request, new TypeReference<Calibration>() {}, callback);
   }
 
@@ -647,7 +648,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Evaluation> putQualityConversationEvaluationAsync(PutQualityConversationEvaluationRequest request, AsyncApiCallback<Evaluation> callback) throws ApiException {
+  public Future<Evaluation> putQualityConversationEvaluationAsync(PutQualityConversationEvaluationRequest request, AsyncApiCallback<Evaluation> callback) {
     return pcapiClient.<Evaluation>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Evaluation>() {}, callback);
   }
 
@@ -657,7 +658,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Evaluation>> putQualityConversationEvaluationAsync(ApiRequest<Evaluation> request, AsyncApiCallback<ApiResponse<Evaluation>> callback) throws ApiException {
+  public Future<ApiResponse<Evaluation>> putQualityConversationEvaluationAsync(ApiRequest<Evaluation> request, AsyncApiCallback<ApiResponse<Evaluation>> callback) {
     return pcapiClient.<Evaluation>invokeAPIVerboseAsync(request, new TypeReference<Evaluation>() {}, callback);
   }
 
@@ -667,7 +668,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EvaluationForm> putQualityFormAsync(PutQualityFormRequest request, AsyncApiCallback<EvaluationForm> callback) throws ApiException {
+  public Future<EvaluationForm> putQualityFormAsync(PutQualityFormRequest request, AsyncApiCallback<EvaluationForm> callback) {
     return pcapiClient.<EvaluationForm>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EvaluationForm>() {}, callback);
   }
 
@@ -677,7 +678,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EvaluationForm>> putQualityFormAsync(ApiRequest<EvaluationForm> request, AsyncApiCallback<ApiResponse<EvaluationForm>> callback) throws ApiException {
+  public Future<ApiResponse<EvaluationForm>> putQualityFormAsync(ApiRequest<EvaluationForm> request, AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
     return pcapiClient.<EvaluationForm>invokeAPIVerboseAsync(request, new TypeReference<EvaluationForm>() {}, callback);
   }
 
@@ -687,7 +688,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<KeywordSet> putQualityKeywordsetAsync(PutQualityKeywordsetRequest request, AsyncApiCallback<KeywordSet> callback) throws ApiException {
+  public Future<KeywordSet> putQualityKeywordsetAsync(PutQualityKeywordsetRequest request, AsyncApiCallback<KeywordSet> callback) {
     return pcapiClient.<KeywordSet>invokeAPIAsync(request.withHttpInfo(), new TypeReference<KeywordSet>() {}, callback);
   }
 
@@ -697,7 +698,7 @@ public class QualityApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<KeywordSet>> putQualityKeywordsetAsync(ApiRequest<KeywordSet> request, AsyncApiCallback<ApiResponse<KeywordSet>> callback) throws ApiException {
+  public Future<ApiResponse<KeywordSet>> putQualityKeywordsetAsync(ApiRequest<KeywordSet> request, AsyncApiCallback<ApiResponse<KeywordSet>> callback) {
     return pcapiClient.<KeywordSet>invokeAPIVerboseAsync(request, new TypeReference<KeywordSet>() {}, callback);
   }
 

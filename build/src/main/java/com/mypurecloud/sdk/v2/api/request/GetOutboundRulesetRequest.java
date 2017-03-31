@@ -91,11 +91,11 @@ public class GetOutboundRulesetRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'ruleSetId' is set
         if (this.ruleSetId == null) {
-            throw new ApiException(400, "Missing the required parameter 'ruleSetId' when building request for GetOutboundRulesetRequest.");
+            throw new IllegalStateException("Missing the required parameter 'ruleSetId' when building request for GetOutboundRulesetRequest.");
         }
         
 

@@ -176,7 +176,7 @@ public class NotificationHandler extends Object {
         this.webSocketListener = webSocketListener;
     }
 
-    public <T> void addSubscription(NotificationListener<T> listener) throws ApiException {
+    public <T> void addSubscription(NotificationListener<T> listener) throws IOException, ApiException {
         // This condition exists because channels are automatically subscribed to channel.metadata when created
         if (!"channel.metadata".equals(listener.getTopic())) {
             ChannelTopic channelTopic = new ChannelTopic();
@@ -188,7 +188,7 @@ public class NotificationHandler extends Object {
         typeMap.put(listener.getTopic(), listener);
     }
 
-    public void RemoveSubscription(String topic) throws ApiException {
+    public void RemoveSubscription(String topic) throws IOException, ApiException {
         ChannelTopicEntityListing channels = notificationsApi.getNotificationsChannelSubscriptions(this.channel.getId());
         ChannelTopic match = null;
         for (ChannelTopic channelTopic : channels.getEntities()) {
@@ -203,7 +203,7 @@ public class NotificationHandler extends Object {
         typeMap.remove(topic);
     }
 
-    public void RemoveAllSubscriptions() throws ApiException {
+    public void RemoveAllSubscriptions() throws IOException, ApiException {
         notificationsApi.deleteNotificationsChannelSubscriptions(this.channel.getId());
         typeMap.clear();
     }

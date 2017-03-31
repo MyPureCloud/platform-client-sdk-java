@@ -44,6 +44,20 @@ public class PostResponsemanagementResponsesRequest {
 	    return this;
 	}
 
+	private String expand;
+	public String getExpand() {
+		return this.expand;
+	}
+
+	public void setExpand(String expand) {
+		this.expand = expand;
+	}
+
+	public PostResponsemanagementResponsesRequest withExpand(String expand) {
+	    this.setExpand(expand);
+	    return this;
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -63,15 +77,17 @@ public class PostResponsemanagementResponsesRequest {
         return this;
     }
 
-    public ApiRequest<Response> withHttpInfo() throws ApiException {
+    public ApiRequest<Response> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostResponsemanagementResponsesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostResponsemanagementResponsesRequest.");
         }
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/responsemanagement/responses")
+                .withQueryParameters("expand", "", expand)
+        
                 .withBody(body)
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -98,6 +114,10 @@ public class PostResponsemanagementResponsesRequest {
 
 		public Builder withBody(Response body) {
 			request.setBody(body);
+			return this;
+		}
+		public Builder withExpand(String expand) {
+			request.setExpand(expand);
 			return this;
 		}
 

@@ -62,11 +62,11 @@ public class GetNotificationsChannelSubscriptionsRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'channelId' is set
         if (this.channelId == null) {
-            throw new ApiException(400, "Missing the required parameter 'channelId' when building request for GetNotificationsChannelSubscriptionsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'channelId' when building request for GetNotificationsChannelSubscriptionsRequest.");
         }
         
 

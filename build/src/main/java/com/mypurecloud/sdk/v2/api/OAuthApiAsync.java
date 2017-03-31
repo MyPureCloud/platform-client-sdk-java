@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOauthClientSecretRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOauthClientsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOauthClientRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -47,7 +48,7 @@ public class OAuthApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteOauthClientAsync(DeleteOauthClientRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteOauthClientAsync(DeleteOauthClientRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -57,7 +58,7 @@ public class OAuthApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteOauthClientAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteOauthClientAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -67,7 +68,7 @@ public class OAuthApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OAuthClient> getOauthClientAsync(GetOauthClientRequest request, AsyncApiCallback<OAuthClient> callback) throws ApiException {
+  public Future<OAuthClient> getOauthClientAsync(GetOauthClientRequest request, AsyncApiCallback<OAuthClient> callback) {
     return pcapiClient.<OAuthClient>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OAuthClient>() {}, callback);
   }
 
@@ -77,7 +78,7 @@ public class OAuthApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OAuthClient>> getOauthClientAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OAuthClient>> callback) throws ApiException {
+  public Future<ApiResponse<OAuthClient>> getOauthClientAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OAuthClient>> callback) {
     return pcapiClient.<OAuthClient>invokeAPIVerboseAsync(request, new TypeReference<OAuthClient>() {}, callback);
   }
 
@@ -87,7 +88,7 @@ public class OAuthApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OAuthClientEntityListing> getOauthClientsAsync(GetOauthClientsRequest request, AsyncApiCallback<OAuthClientEntityListing> callback) throws ApiException {
+  public Future<OAuthClientEntityListing> getOauthClientsAsync(GetOauthClientsRequest request, AsyncApiCallback<OAuthClientEntityListing> callback) {
     return pcapiClient.<OAuthClientEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OAuthClientEntityListing>() {}, callback);
   }
 
@@ -97,7 +98,7 @@ public class OAuthApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OAuthClientEntityListing>> getOauthClientsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OAuthClientEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<OAuthClientEntityListing>> getOauthClientsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OAuthClientEntityListing>> callback) {
     return pcapiClient.<OAuthClientEntityListing>invokeAPIVerboseAsync(request, new TypeReference<OAuthClientEntityListing>() {}, callback);
   }
 
@@ -107,7 +108,7 @@ public class OAuthApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OAuthClient> postOauthClientSecretAsync(PostOauthClientSecretRequest request, AsyncApiCallback<OAuthClient> callback) throws ApiException {
+  public Future<OAuthClient> postOauthClientSecretAsync(PostOauthClientSecretRequest request, AsyncApiCallback<OAuthClient> callback) {
     return pcapiClient.<OAuthClient>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OAuthClient>() {}, callback);
   }
 
@@ -117,7 +118,7 @@ public class OAuthApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OAuthClient>> postOauthClientSecretAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OAuthClient>> callback) throws ApiException {
+  public Future<ApiResponse<OAuthClient>> postOauthClientSecretAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OAuthClient>> callback) {
     return pcapiClient.<OAuthClient>invokeAPIVerboseAsync(request, new TypeReference<OAuthClient>() {}, callback);
   }
 
@@ -127,7 +128,7 @@ public class OAuthApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OAuthClient> postOauthClientsAsync(PostOauthClientsRequest request, AsyncApiCallback<OAuthClient> callback) throws ApiException {
+  public Future<OAuthClient> postOauthClientsAsync(PostOauthClientsRequest request, AsyncApiCallback<OAuthClient> callback) {
     return pcapiClient.<OAuthClient>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OAuthClient>() {}, callback);
   }
 
@@ -137,7 +138,7 @@ public class OAuthApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OAuthClient>> postOauthClientsAsync(ApiRequest<OAuthClient> request, AsyncApiCallback<ApiResponse<OAuthClient>> callback) throws ApiException {
+  public Future<ApiResponse<OAuthClient>> postOauthClientsAsync(ApiRequest<OAuthClient> request, AsyncApiCallback<ApiResponse<OAuthClient>> callback) {
     return pcapiClient.<OAuthClient>invokeAPIVerboseAsync(request, new TypeReference<OAuthClient>() {}, callback);
   }
 
@@ -147,7 +148,7 @@ public class OAuthApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OAuthClient> putOauthClientAsync(PutOauthClientRequest request, AsyncApiCallback<OAuthClient> callback) throws ApiException {
+  public Future<OAuthClient> putOauthClientAsync(PutOauthClientRequest request, AsyncApiCallback<OAuthClient> callback) {
     return pcapiClient.<OAuthClient>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OAuthClient>() {}, callback);
   }
 
@@ -157,7 +158,7 @@ public class OAuthApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OAuthClient>> putOauthClientAsync(ApiRequest<OAuthClient> request, AsyncApiCallback<ApiResponse<OAuthClient>> callback) throws ApiException {
+  public Future<ApiResponse<OAuthClient>> putOauthClientAsync(ApiRequest<OAuthClient> request, AsyncApiCallback<ApiResponse<OAuthClient>> callback) {
     return pcapiClient.<OAuthClient>invokeAPIVerboseAsync(request, new TypeReference<OAuthClient>() {}, callback);
   }
 

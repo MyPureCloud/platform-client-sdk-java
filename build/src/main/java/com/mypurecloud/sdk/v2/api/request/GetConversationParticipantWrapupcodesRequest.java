@@ -110,16 +110,16 @@ public class GetConversationParticipantWrapupcodesRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'conversationId' is set
         if (this.conversationId == null) {
-            throw new ApiException(400, "Missing the required parameter 'conversationId' when building request for GetConversationParticipantWrapupcodesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetConversationParticipantWrapupcodesRequest.");
         }
         
         // verify the required parameter 'participantId' is set
         if (this.participantId == null) {
-            throw new ApiException(400, "Missing the required parameter 'participantId' when building request for GetConversationParticipantWrapupcodesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'participantId' when building request for GetConversationParticipantWrapupcodesRequest.");
         }
         
 

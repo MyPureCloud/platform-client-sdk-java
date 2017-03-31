@@ -69,11 +69,11 @@ public class PutIdentityprovidersSalesforceRequest {
         return this;
     }
 
-    public ApiRequest<Salesforce> withHttpInfo() throws ApiException {
+    public ApiRequest<Salesforce> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutIdentityprovidersSalesforceRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutIdentityprovidersSalesforceRequest.");
         }
         
 

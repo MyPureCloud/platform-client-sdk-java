@@ -81,11 +81,11 @@ public class PostWorkforcemanagementManagementunitSchedulesSearchRequest {
         return this;
     }
 
-    public ApiRequest<UserListScheduleRequestBody> withHttpInfo() throws ApiException {
+    public ApiRequest<UserListScheduleRequestBody> withHttpInfo() {
         
         // verify the required parameter 'muId' is set
         if (this.muId == null) {
-            throw new ApiException(400, "Missing the required parameter 'muId' when building request for PostWorkforcemanagementManagementunitSchedulesSearchRequest.");
+            throw new IllegalStateException("Missing the required parameter 'muId' when building request for PostWorkforcemanagementManagementunitSchedulesSearchRequest.");
         }
         
 

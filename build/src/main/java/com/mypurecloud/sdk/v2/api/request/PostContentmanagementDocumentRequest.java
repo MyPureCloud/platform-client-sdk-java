@@ -128,16 +128,16 @@ public class PostContentmanagementDocumentRequest {
         return this;
     }
 
-    public ApiRequest<DocumentUpdate> withHttpInfo() throws ApiException {
+    public ApiRequest<DocumentUpdate> withHttpInfo() {
         
         // verify the required parameter 'documentId' is set
         if (this.documentId == null) {
-            throw new ApiException(400, "Missing the required parameter 'documentId' when building request for PostContentmanagementDocumentRequest.");
+            throw new IllegalStateException("Missing the required parameter 'documentId' when building request for PostContentmanagementDocumentRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostContentmanagementDocumentRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostContentmanagementDocumentRequest.");
         }
         
 

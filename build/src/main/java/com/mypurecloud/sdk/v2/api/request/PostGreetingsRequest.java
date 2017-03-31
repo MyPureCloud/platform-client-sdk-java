@@ -62,11 +62,11 @@ public class PostGreetingsRequest {
         return this;
     }
 
-    public ApiRequest<Greeting> withHttpInfo() throws ApiException {
+    public ApiRequest<Greeting> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostGreetingsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostGreetingsRequest.");
         }
         
 

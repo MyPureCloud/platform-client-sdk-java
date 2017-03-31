@@ -136,7 +136,7 @@ public class GetRoutingQueuesRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/routing/queues")

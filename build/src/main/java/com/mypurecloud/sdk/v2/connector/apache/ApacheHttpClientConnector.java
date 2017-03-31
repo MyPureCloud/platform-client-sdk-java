@@ -5,6 +5,7 @@ import com.mypurecloud.sdk.v2.AsyncApiCallback;
 import com.mypurecloud.sdk.v2.connector.ApiClientConnector;
 import com.mypurecloud.sdk.v2.connector.ApiClientConnectorRequest;
 import com.mypurecloud.sdk.v2.connector.ApiClientConnectorResponse;
+import org.apache.http.MethodNotSupportedException;
 import org.apache.http.client.methods.*;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -25,7 +26,7 @@ public class ApacheHttpClientConnector implements ApiClientConnector {
     }
 
     @Override
-    public ApiClientConnectorResponse invoke(ApiClientConnectorRequest request) throws Exception {
+    public ApiClientConnectorResponse invoke(ApiClientConnectorRequest request) throws IOException {
         // Build request object
         HttpUriRequest httpUriRequest;
         String method = request.getMethod();
@@ -34,6 +35,9 @@ public class ApacheHttpClientConnector implements ApiClientConnector {
 
         if ("GET".equals(method)) {
             HttpGet req = new HttpGet(url);
+            httpUriRequest = req;
+        } else if ("HEAD".equals(method)) {
+            HttpHead req = new HttpHead(url);
             httpUriRequest = req;
         } else if ("POST".equals(method)) {
             HttpPost req = new HttpPost(url);
@@ -57,7 +61,7 @@ public class ApacheHttpClientConnector implements ApiClientConnector {
             }
             httpUriRequest = req;
         } else {
-            throw new Exception("Unknown method type " + method);
+            throw new IllegalStateException("Unknown method type " + method);
         }
 
         for (Map.Entry<String, String> entry : request.getHeaders().entrySet()) {

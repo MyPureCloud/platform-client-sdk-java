@@ -81,16 +81,16 @@ public class PutVoicemailMessageRequest {
         return this;
     }
 
-    public ApiRequest<VoicemailMessage> withHttpInfo() throws ApiException {
+    public ApiRequest<VoicemailMessage> withHttpInfo() {
         
         // verify the required parameter 'messageId' is set
         if (this.messageId == null) {
-            throw new ApiException(400, "Missing the required parameter 'messageId' when building request for PutVoicemailMessageRequest.");
+            throw new IllegalStateException("Missing the required parameter 'messageId' when building request for PutVoicemailMessageRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutVoicemailMessageRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutVoicemailMessageRequest.");
         }
         
 

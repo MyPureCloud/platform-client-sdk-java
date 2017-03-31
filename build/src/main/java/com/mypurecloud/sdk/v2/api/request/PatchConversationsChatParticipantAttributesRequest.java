@@ -124,21 +124,21 @@ public class PatchConversationsChatParticipantAttributesRequest {
         return this;
     }
 
-    public ApiRequest<ParticipantAttributes> withHttpInfo() throws ApiException {
+    public ApiRequest<ParticipantAttributes> withHttpInfo() {
         
         // verify the required parameter 'chatId' is set
         if (this.chatId == null) {
-            throw new ApiException(400, "Missing the required parameter 'chatId' when building request for PatchConversationsChatParticipantAttributesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'chatId' when building request for PatchConversationsChatParticipantAttributesRequest.");
         }
         
         // verify the required parameter 'participantId' is set
         if (this.participantId == null) {
-            throw new ApiException(400, "Missing the required parameter 'participantId' when building request for PatchConversationsChatParticipantAttributesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'participantId' when building request for PatchConversationsChatParticipantAttributesRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PatchConversationsChatParticipantAttributesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchConversationsChatParticipantAttributesRequest.");
         }
         
 

@@ -74,11 +74,11 @@ public class PostQualityPublishedformsRequest {
         return this;
     }
 
-    public ApiRequest<EvaluationForm> withHttpInfo() throws ApiException {
+    public ApiRequest<EvaluationForm> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostQualityPublishedformsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostQualityPublishedformsRequest.");
         }
         
 

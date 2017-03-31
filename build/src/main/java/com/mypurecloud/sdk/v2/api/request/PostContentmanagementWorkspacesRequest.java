@@ -86,11 +86,11 @@ public class PostContentmanagementWorkspacesRequest {
         return this;
     }
 
-    public ApiRequest<WorkspaceCreate> withHttpInfo() throws ApiException {
+    public ApiRequest<WorkspaceCreate> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostContentmanagementWorkspacesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostContentmanagementWorkspacesRequest.");
         }
         
 

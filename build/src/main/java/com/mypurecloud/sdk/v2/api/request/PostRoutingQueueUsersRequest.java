@@ -108,16 +108,16 @@ public class PostRoutingQueueUsersRequest {
         return this;
     }
 
-    public ApiRequest<List<QueueMember>> withHttpInfo() throws ApiException {
+    public ApiRequest<List<QueueMember>> withHttpInfo() {
         
         // verify the required parameter 'queueId' is set
         if (this.queueId == null) {
-            throw new ApiException(400, "Missing the required parameter 'queueId' when building request for PostRoutingQueueUsersRequest.");
+            throw new IllegalStateException("Missing the required parameter 'queueId' when building request for PostRoutingQueueUsersRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostRoutingQueueUsersRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostRoutingQueueUsersRequest.");
         }
         
 

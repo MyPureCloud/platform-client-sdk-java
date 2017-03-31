@@ -148,21 +148,21 @@ public class PutTelephonyProvidersEdgesSiteOutboundrouteRequest {
         return this;
     }
 
-    public ApiRequest<OutboundRouteBase> withHttpInfo() throws ApiException {
+    public ApiRequest<OutboundRouteBase> withHttpInfo() {
         
         // verify the required parameter 'siteId' is set
         if (this.siteId == null) {
-            throw new ApiException(400, "Missing the required parameter 'siteId' when building request for PutTelephonyProvidersEdgesSiteOutboundrouteRequest.");
+            throw new IllegalStateException("Missing the required parameter 'siteId' when building request for PutTelephonyProvidersEdgesSiteOutboundrouteRequest.");
         }
         
         // verify the required parameter 'outboundRouteId' is set
         if (this.outboundRouteId == null) {
-            throw new ApiException(400, "Missing the required parameter 'outboundRouteId' when building request for PutTelephonyProvidersEdgesSiteOutboundrouteRequest.");
+            throw new IllegalStateException("Missing the required parameter 'outboundRouteId' when building request for PutTelephonyProvidersEdgesSiteOutboundrouteRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesSiteOutboundrouteRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesSiteOutboundrouteRequest.");
         }
         
 

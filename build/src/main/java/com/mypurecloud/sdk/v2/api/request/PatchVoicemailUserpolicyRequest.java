@@ -81,16 +81,16 @@ public class PatchVoicemailUserpolicyRequest {
         return this;
     }
 
-    public ApiRequest<VoicemailUserPolicy> withHttpInfo() throws ApiException {
+    public ApiRequest<VoicemailUserPolicy> withHttpInfo() {
         
         // verify the required parameter 'userId' is set
         if (this.userId == null) {
-            throw new ApiException(400, "Missing the required parameter 'userId' when building request for PatchVoicemailUserpolicyRequest.");
+            throw new IllegalStateException("Missing the required parameter 'userId' when building request for PatchVoicemailUserpolicyRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PatchVoicemailUserpolicyRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchVoicemailUserpolicyRequest.");
         }
         
 

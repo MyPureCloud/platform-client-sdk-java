@@ -100,16 +100,16 @@ public class PostContentmanagementWorkspaceTagvaluesRequest {
         return this;
     }
 
-    public ApiRequest<TagValue> withHttpInfo() throws ApiException {
+    public ApiRequest<TagValue> withHttpInfo() {
         
         // verify the required parameter 'workspaceId' is set
         if (this.workspaceId == null) {
-            throw new ApiException(400, "Missing the required parameter 'workspaceId' when building request for PostContentmanagementWorkspaceTagvaluesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'workspaceId' when building request for PostContentmanagementWorkspaceTagvaluesRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostContentmanagementWorkspaceTagvaluesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostContentmanagementWorkspaceTagvaluesRequest.");
         }
         
 

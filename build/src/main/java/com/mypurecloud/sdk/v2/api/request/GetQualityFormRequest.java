@@ -74,11 +74,11 @@ public class GetQualityFormRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'formId' is set
         if (this.formId == null) {
-            throw new ApiException(400, "Missing the required parameter 'formId' when building request for GetQualityFormRequest.");
+            throw new IllegalStateException("Missing the required parameter 'formId' when building request for GetQualityFormRequest.");
         }
         
 

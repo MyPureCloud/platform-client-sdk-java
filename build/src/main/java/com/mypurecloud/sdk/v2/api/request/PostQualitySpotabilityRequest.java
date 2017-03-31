@@ -74,7 +74,7 @@ public class PostQualitySpotabilityRequest {
         return this;
     }
 
-    public ApiRequest<KeywordSet> withHttpInfo() throws ApiException {
+    public ApiRequest<KeywordSet> withHttpInfo() {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/quality/spotability")

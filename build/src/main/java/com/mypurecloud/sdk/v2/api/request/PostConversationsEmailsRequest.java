@@ -96,11 +96,11 @@ public class PostConversationsEmailsRequest {
         return this;
     }
 
-    public ApiRequest<CreateEmailRequest> withHttpInfo() throws ApiException {
+    public ApiRequest<CreateEmailRequest> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostConversationsEmailsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostConversationsEmailsRequest.");
         }
         
 

@@ -111,21 +111,21 @@ public class PatchUserGeolocationRequest {
         return this;
     }
 
-    public ApiRequest<Geolocation> withHttpInfo() throws ApiException {
+    public ApiRequest<Geolocation> withHttpInfo() {
         
         // verify the required parameter 'userId' is set
         if (this.userId == null) {
-            throw new ApiException(400, "Missing the required parameter 'userId' when building request for PatchUserGeolocationRequest.");
+            throw new IllegalStateException("Missing the required parameter 'userId' when building request for PatchUserGeolocationRequest.");
         }
         
         // verify the required parameter 'clientId' is set
         if (this.clientId == null) {
-            throw new ApiException(400, "Missing the required parameter 'clientId' when building request for PatchUserGeolocationRequest.");
+            throw new IllegalStateException("Missing the required parameter 'clientId' when building request for PatchUserGeolocationRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PatchUserGeolocationRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchUserGeolocationRequest.");
         }
         
 

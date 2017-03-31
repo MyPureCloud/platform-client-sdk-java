@@ -82,16 +82,16 @@ public class GetArchitectPromptResourceRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'promptId' is set
         if (this.promptId == null) {
-            throw new ApiException(400, "Missing the required parameter 'promptId' when building request for GetArchitectPromptResourceRequest.");
+            throw new IllegalStateException("Missing the required parameter 'promptId' when building request for GetArchitectPromptResourceRequest.");
         }
         
         // verify the required parameter 'languageCode' is set
         if (this.languageCode == null) {
-            throw new ApiException(400, "Missing the required parameter 'languageCode' when building request for GetArchitectPromptResourceRequest.");
+            throw new IllegalStateException("Missing the required parameter 'languageCode' when building request for GetArchitectPromptResourceRequest.");
         }
         
 

@@ -81,11 +81,11 @@ public class PutExternalcontactsRelationshipRequest {
         return this;
     }
 
-    public ApiRequest<Relationship> withHttpInfo() throws ApiException {
+    public ApiRequest<Relationship> withHttpInfo() {
         
         // verify the required parameter 'relationshipId' is set
         if (this.relationshipId == null) {
-            throw new ApiException(400, "Missing the required parameter 'relationshipId' when building request for PutExternalcontactsRelationshipRequest.");
+            throw new IllegalStateException("Missing the required parameter 'relationshipId' when building request for PutExternalcontactsRelationshipRequest.");
         }
         
 

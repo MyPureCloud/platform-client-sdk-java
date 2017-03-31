@@ -103,16 +103,16 @@ public class PutAlertingRoutingstatusRuleRequest {
         return this;
     }
 
-    public ApiRequest<RoutingStatusRule> withHttpInfo() throws ApiException {
+    public ApiRequest<RoutingStatusRule> withHttpInfo() {
         
         // verify the required parameter 'ruleId' is set
         if (this.ruleId == null) {
-            throw new ApiException(400, "Missing the required parameter 'ruleId' when building request for PutAlertingRoutingstatusRuleRequest.");
+            throw new IllegalStateException("Missing the required parameter 'ruleId' when building request for PutAlertingRoutingstatusRuleRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutAlertingRoutingstatusRuleRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutAlertingRoutingstatusRuleRequest.");
         }
         
 

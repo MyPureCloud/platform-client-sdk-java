@@ -67,11 +67,11 @@ public class DeleteVoicemailMessageRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'messageId' is set
         if (this.messageId == null) {
-            throw new ApiException(400, "Missing the required parameter 'messageId' when building request for DeleteVoicemailMessageRequest.");
+            throw new IllegalStateException("Missing the required parameter 'messageId' when building request for DeleteVoicemailMessageRequest.");
         }
         
 

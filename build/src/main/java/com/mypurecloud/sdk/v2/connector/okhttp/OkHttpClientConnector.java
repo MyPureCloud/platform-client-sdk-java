@@ -19,7 +19,7 @@ public class OkHttpClientConnector implements ApiClientConnector {
     }
 
     @Override
-    public ApiClientConnectorResponse invoke(ApiClientConnectorRequest request) throws Exception {
+    public ApiClientConnectorResponse invoke(ApiClientConnectorRequest request) throws IOException {
         Call call = client.newCall(buildRequest(request));
         return new OkHttpResponse(call.execute());
     }
@@ -51,7 +51,7 @@ public class OkHttpClientConnector implements ApiClientConnector {
         return future;
     }
 
-    private Request buildRequest(ApiClientConnectorRequest request) throws Exception {
+    private Request buildRequest(ApiClientConnectorRequest request) throws IOException {
         Request.Builder builder = new Request.Builder()
                 .url(request.getUrl());
 
@@ -66,6 +66,9 @@ public class OkHttpClientConnector implements ApiClientConnector {
         if ("GET".equals(method)) {
             builder = builder.get();
         }
+        else if ("HEAD".equals(method)) {
+            builder = builder.head();
+        }
         else if ("POST".equals(method)) {
             builder = builder.post(createBody(request));
         }
@@ -79,13 +82,13 @@ public class OkHttpClientConnector implements ApiClientConnector {
             builder = builder.patch(createBody(request));
         }
         else {
-            throw new Exception("Unknown method type " + method);
+            throw new IllegalStateException("Unknown method type " + method);
         }
 
         return builder.build();
     }
 
-    private RequestBody createBody(ApiClientConnectorRequest request) throws Exception {
+    private RequestBody createBody(ApiClientConnectorRequest request) throws IOException {
         String contentType = "application/json";
         Map<String, String> headers = request.getHeaders();
         if (headers != null && !headers.isEmpty()) {

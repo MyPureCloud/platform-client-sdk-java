@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLocationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLocationsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLocationsSearchRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -46,7 +47,7 @@ public class LocationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<LocationDefinition> getLocationAsync(GetLocationRequest request, AsyncApiCallback<LocationDefinition> callback) throws ApiException {
+  public Future<LocationDefinition> getLocationAsync(GetLocationRequest request, AsyncApiCallback<LocationDefinition> callback) {
     return pcapiClient.<LocationDefinition>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LocationDefinition>() {}, callback);
   }
 
@@ -56,7 +57,7 @@ public class LocationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<LocationDefinition>> getLocationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LocationDefinition>> callback) throws ApiException {
+  public Future<ApiResponse<LocationDefinition>> getLocationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LocationDefinition>> callback) {
     return pcapiClient.<LocationDefinition>invokeAPIVerboseAsync(request, new TypeReference<LocationDefinition>() {}, callback);
   }
 
@@ -66,7 +67,7 @@ public class LocationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<LocationDefinition>> getLocationsAsync(GetLocationsRequest request, AsyncApiCallback<List<LocationDefinition>> callback) throws ApiException {
+  public Future<List<LocationDefinition>> getLocationsAsync(GetLocationsRequest request, AsyncApiCallback<List<LocationDefinition>> callback) {
     return pcapiClient.<List<LocationDefinition>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<LocationDefinition>>() {}, callback);
   }
 
@@ -76,7 +77,7 @@ public class LocationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<LocationDefinition>>> getLocationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<LocationDefinition>>> callback) throws ApiException {
+  public Future<ApiResponse<List<LocationDefinition>>> getLocationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<LocationDefinition>>> callback) {
     return pcapiClient.<List<LocationDefinition>>invokeAPIVerboseAsync(request, new TypeReference<List<LocationDefinition>>() {}, callback);
   }
 
@@ -86,7 +87,7 @@ public class LocationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<LocationsSearchResponse> getLocationsSearchAsync(GetLocationsSearchRequest request, AsyncApiCallback<LocationsSearchResponse> callback) throws ApiException {
+  public Future<LocationsSearchResponse> getLocationsSearchAsync(GetLocationsSearchRequest request, AsyncApiCallback<LocationsSearchResponse> callback) {
     return pcapiClient.<LocationsSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LocationsSearchResponse>() {}, callback);
   }
 
@@ -96,7 +97,7 @@ public class LocationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<LocationsSearchResponse>> getLocationsSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LocationsSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<LocationsSearchResponse>> getLocationsSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LocationsSearchResponse>> callback) {
     return pcapiClient.<LocationsSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<LocationsSearchResponse>() {}, callback);
   }
 
@@ -106,7 +107,7 @@ public class LocationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<LocationsSearchResponse> postLocationsSearchAsync(PostLocationsSearchRequest request, AsyncApiCallback<LocationsSearchResponse> callback) throws ApiException {
+  public Future<LocationsSearchResponse> postLocationsSearchAsync(PostLocationsSearchRequest request, AsyncApiCallback<LocationsSearchResponse> callback) {
     return pcapiClient.<LocationsSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LocationsSearchResponse>() {}, callback);
   }
 
@@ -116,7 +117,7 @@ public class LocationsApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<LocationsSearchResponse>> postLocationsSearchAsync(ApiRequest<LocationSearchRequest> request, AsyncApiCallback<ApiResponse<LocationsSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<LocationsSearchResponse>> postLocationsSearchAsync(ApiRequest<LocationSearchRequest> request, AsyncApiCallback<ApiResponse<LocationsSearchResponse>> callback) {
     return pcapiClient.<LocationsSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<LocationsSearchResponse>() {}, callback);
   }
 

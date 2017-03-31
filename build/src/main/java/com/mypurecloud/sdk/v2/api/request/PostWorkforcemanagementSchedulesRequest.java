@@ -67,7 +67,7 @@ public class PostWorkforcemanagementSchedulesRequest {
         return this;
     }
 
-    public ApiRequest<CurrentUserScheduleRequestBody> withHttpInfo() throws ApiException {
+    public ApiRequest<CurrentUserScheduleRequestBody> withHttpInfo() {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/schedules")

@@ -124,21 +124,21 @@ public class PostConversationParticipantReplaceRequest {
         return this;
     }
 
-    public ApiRequest<TransferRequest> withHttpInfo() throws ApiException {
+    public ApiRequest<TransferRequest> withHttpInfo() {
         
         // verify the required parameter 'conversationId' is set
         if (this.conversationId == null) {
-            throw new ApiException(400, "Missing the required parameter 'conversationId' when building request for PostConversationParticipantReplaceRequest.");
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PostConversationParticipantReplaceRequest.");
         }
         
         // verify the required parameter 'participantId' is set
         if (this.participantId == null) {
-            throw new ApiException(400, "Missing the required parameter 'participantId' when building request for PostConversationParticipantReplaceRequest.");
+            throw new IllegalStateException("Missing the required parameter 'participantId' when building request for PostConversationParticipantReplaceRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostConversationParticipantReplaceRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostConversationParticipantReplaceRequest.");
         }
         
 

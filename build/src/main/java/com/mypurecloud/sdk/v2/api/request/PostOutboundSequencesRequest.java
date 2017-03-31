@@ -91,11 +91,11 @@ public class PostOutboundSequencesRequest {
         return this;
     }
 
-    public ApiRequest<CampaignSequence> withHttpInfo() throws ApiException {
+    public ApiRequest<CampaignSequence> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostOutboundSequencesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostOutboundSequencesRequest.");
         }
         
 

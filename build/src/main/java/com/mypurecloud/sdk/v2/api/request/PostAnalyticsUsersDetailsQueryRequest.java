@@ -83,11 +83,11 @@ public class PostAnalyticsUsersDetailsQueryRequest {
         return this;
     }
 
-    public ApiRequest<UserDetailsQuery> withHttpInfo() throws ApiException {
+    public ApiRequest<UserDetailsQuery> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostAnalyticsUsersDetailsQueryRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostAnalyticsUsersDetailsQueryRequest.");
         }
         
 

@@ -94,16 +94,16 @@ public class PutRoutingQueueRequest {
         return this;
     }
 
-    public ApiRequest<Queue> withHttpInfo() throws ApiException {
+    public ApiRequest<Queue> withHttpInfo() {
         
         // verify the required parameter 'queueId' is set
         if (this.queueId == null) {
-            throw new ApiException(400, "Missing the required parameter 'queueId' when building request for PutRoutingQueueRequest.");
+            throw new IllegalStateException("Missing the required parameter 'queueId' when building request for PutRoutingQueueRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutRoutingQueueRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutRoutingQueueRequest.");
         }
         
 

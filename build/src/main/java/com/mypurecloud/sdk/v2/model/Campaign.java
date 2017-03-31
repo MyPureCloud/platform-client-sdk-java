@@ -83,6 +83,7 @@ public class Campaign  implements Serializable {
   private Boolean skipPreviewDisabled = null;
   private Long previewTimeOutSeconds = null;
   private ContactSort contactSort = null;
+  private List<ContactSort> contactSorts = new ArrayList<ContactSort>();
   private Integer noAnswerTimeout = null;
   private String callAnalysisLanguage = null;
   private Integer priority = null;
@@ -488,6 +489,24 @@ public class Campaign  implements Serializable {
 
 
   /**
+   * column prioritized information determining the order in which the contacts will be dialed
+   **/
+  public Campaign contactSorts(List<ContactSort> contactSorts) {
+    this.contactSorts = contactSorts;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "column prioritized information determining the order in which the contacts will be dialed")
+  @JsonProperty("contactSorts")
+  public List<ContactSort> getContactSorts() {
+    return contactSorts;
+  }
+  public void setContactSorts(List<ContactSort> contactSorts) {
+    this.contactSorts = contactSorts;
+  }
+
+
+  /**
    * for non-preview campaigns, how long to wait before dispositioning as 'no-answer', default 30 seconds
    **/
   public Campaign noAnswerTimeout(Integer noAnswerTimeout) {
@@ -581,6 +600,7 @@ public class Campaign  implements Serializable {
         Objects.equals(this.skipPreviewDisabled, campaign.skipPreviewDisabled) &&
         Objects.equals(this.previewTimeOutSeconds, campaign.previewTimeOutSeconds) &&
         Objects.equals(this.contactSort, campaign.contactSort) &&
+        Objects.equals(this.contactSorts, campaign.contactSorts) &&
         Objects.equals(this.noAnswerTimeout, campaign.noAnswerTimeout) &&
         Objects.equals(this.callAnalysisLanguage, campaign.callAnalysisLanguage) &&
         Objects.equals(this.priority, campaign.priority) &&
@@ -589,7 +609,7 @@ public class Campaign  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, contactSort, noAnswerTimeout, callAnalysisLanguage, priority, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, selfUri);
   }
 
   @Override
@@ -621,6 +641,7 @@ public class Campaign  implements Serializable {
     sb.append("    skipPreviewDisabled: ").append(toIndentedString(skipPreviewDisabled)).append("\n");
     sb.append("    previewTimeOutSeconds: ").append(toIndentedString(previewTimeOutSeconds)).append("\n");
     sb.append("    contactSort: ").append(toIndentedString(contactSort)).append("\n");
+    sb.append("    contactSorts: ").append(toIndentedString(contactSorts)).append("\n");
     sb.append("    noAnswerTimeout: ").append(toIndentedString(noAnswerTimeout)).append("\n");
     sb.append("    callAnalysisLanguage: ").append(toIndentedString(callAnalysisLanguage)).append("\n");
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");

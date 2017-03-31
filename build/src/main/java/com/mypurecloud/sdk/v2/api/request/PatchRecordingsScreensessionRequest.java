@@ -88,11 +88,11 @@ public class PatchRecordingsScreensessionRequest {
         return this;
     }
 
-    public ApiRequest<ScreenRecordingSessionRequest> withHttpInfo() throws ApiException {
+    public ApiRequest<ScreenRecordingSessionRequest> withHttpInfo() {
         
         // verify the required parameter 'recordingSessionId' is set
         if (this.recordingSessionId == null) {
-            throw new ApiException(400, "Missing the required parameter 'recordingSessionId' when building request for PatchRecordingsScreensessionRequest.");
+            throw new IllegalStateException("Missing the required parameter 'recordingSessionId' when building request for PatchRecordingsScreensessionRequest.");
         }
         
 

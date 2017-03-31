@@ -88,16 +88,16 @@ public class PutRecordingMediaretentionpolicyRequest {
         return this;
     }
 
-    public ApiRequest<Policy> withHttpInfo() throws ApiException {
+    public ApiRequest<Policy> withHttpInfo() {
         
         // verify the required parameter 'policyId' is set
         if (this.policyId == null) {
-            throw new ApiException(400, "Missing the required parameter 'policyId' when building request for PutRecordingMediaretentionpolicyRequest.");
+            throw new IllegalStateException("Missing the required parameter 'policyId' when building request for PutRecordingMediaretentionpolicyRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutRecordingMediaretentionpolicyRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutRecordingMediaretentionpolicyRequest.");
         }
         
 

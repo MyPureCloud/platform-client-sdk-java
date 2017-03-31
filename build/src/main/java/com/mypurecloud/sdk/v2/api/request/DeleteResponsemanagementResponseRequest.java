@@ -63,11 +63,11 @@ public class DeleteResponsemanagementResponseRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'responseId' is set
         if (this.responseId == null) {
-            throw new ApiException(400, "Missing the required parameter 'responseId' when building request for DeleteResponsemanagementResponseRequest.");
+            throw new IllegalStateException("Missing the required parameter 'responseId' when building request for DeleteResponsemanagementResponseRequest.");
         }
         
 

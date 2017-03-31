@@ -190,31 +190,31 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdEx
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'schemaCategory' is set
         if (this.schemaCategory == null) {
-            throw new ApiException(400, "Missing the required parameter 'schemaCategory' when building request for GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest.");
+            throw new IllegalStateException("Missing the required parameter 'schemaCategory' when building request for GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest.");
         }
         
         // verify the required parameter 'schemaType' is set
         if (this.schemaType == null) {
-            throw new ApiException(400, "Missing the required parameter 'schemaType' when building request for GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest.");
+            throw new IllegalStateException("Missing the required parameter 'schemaType' when building request for GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest.");
         }
         
         // verify the required parameter 'schemaId' is set
         if (this.schemaId == null) {
-            throw new ApiException(400, "Missing the required parameter 'schemaId' when building request for GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest.");
+            throw new IllegalStateException("Missing the required parameter 'schemaId' when building request for GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest.");
         }
         
         // verify the required parameter 'extensionType' is set
         if (this.extensionType == null) {
-            throw new ApiException(400, "Missing the required parameter 'extensionType' when building request for GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest.");
+            throw new IllegalStateException("Missing the required parameter 'extensionType' when building request for GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest.");
         }
         
         // verify the required parameter 'metadataId' is set
         if (this.metadataId == null) {
-            throw new ApiException(400, "Missing the required parameter 'metadataId' when building request for GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest.");
+            throw new IllegalStateException("Missing the required parameter 'metadataId' when building request for GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest.");
         }
         
 

@@ -83,11 +83,11 @@ public class GetFieldconfigRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'type' is set
         if (this.type == null) {
-            throw new ApiException(400, "Missing the required parameter 'type' when building request for GetFieldconfigRequest.");
+            throw new IllegalStateException("Missing the required parameter 'type' when building request for GetFieldconfigRequest.");
         }
         
 

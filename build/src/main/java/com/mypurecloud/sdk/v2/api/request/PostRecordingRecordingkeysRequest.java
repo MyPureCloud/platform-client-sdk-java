@@ -60,7 +60,7 @@ public class PostRecordingRecordingkeysRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/recording/recordingkeys")                .withCustomHeaders(customHeaders)

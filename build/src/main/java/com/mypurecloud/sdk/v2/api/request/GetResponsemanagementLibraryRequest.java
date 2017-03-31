@@ -63,11 +63,11 @@ public class GetResponsemanagementLibraryRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'libraryId' is set
         if (this.libraryId == null) {
-            throw new ApiException(400, "Missing the required parameter 'libraryId' when building request for GetResponsemanagementLibraryRequest.");
+            throw new IllegalStateException("Missing the required parameter 'libraryId' when building request for GetResponsemanagementLibraryRequest.");
         }
         
 

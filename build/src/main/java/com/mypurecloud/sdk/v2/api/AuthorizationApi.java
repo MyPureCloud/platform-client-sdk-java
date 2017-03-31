@@ -39,6 +39,7 @@ import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRoleUsersRemoveRequest
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRolesDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserRolesRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -62,7 +63,7 @@ public class AuthorizationApi {
    * @param roleId Role ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteAuthorizationRole(String roleId) throws ApiException {
+  public void deleteAuthorizationRole(String roleId) throws IOException, ApiException {
     deleteAuthorizationRoleWithHttpInfo(roleId);
   }
 
@@ -72,12 +73,12 @@ public class AuthorizationApi {
    * @param roleId Role ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteAuthorizationRoleWithHttpInfo(String roleId) throws ApiException {
+  public ApiResponse<Void> deleteAuthorizationRoleWithHttpInfo(String roleId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'roleId' is set
     if (roleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'roleId' when calling deleteAuthorizationRole");
+      throw new IllegalArgumentException("Missing the required parameter 'roleId' when calling deleteAuthorizationRole");
     }
     
     // create path and map variables
@@ -113,7 +114,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteAuthorizationRole(DeleteAuthorizationRoleRequest request) throws ApiException {
+  public void deleteAuthorizationRole(DeleteAuthorizationRoleRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -123,7 +124,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteAuthorizationRole(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteAuthorizationRole(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -133,7 +134,7 @@ public class AuthorizationApi {
    * @param userId User ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteUserRoles(String userId) throws ApiException {
+  public void deleteUserRoles(String userId) throws IOException, ApiException {
     deleteUserRolesWithHttpInfo(userId);
   }
 
@@ -143,12 +144,12 @@ public class AuthorizationApi {
    * @param userId User ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteUserRolesWithHttpInfo(String userId) throws ApiException {
+  public ApiResponse<Void> deleteUserRolesWithHttpInfo(String userId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling deleteUserRoles");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling deleteUserRoles");
     }
     
     // create path and map variables
@@ -184,7 +185,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteUserRoles(DeleteUserRolesRequest request) throws ApiException {
+  public void deleteUserRoles(DeleteUserRolesRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -194,7 +195,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteUserRoles(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteUserRoles(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -206,7 +207,7 @@ public class AuthorizationApi {
    * @return PermissionCollectionEntityListing
    * @throws ApiException if fails to make API call
    */
-  public PermissionCollectionEntityListing getAuthorizationPermissions(Integer pageSize, Integer pageNumber) throws ApiException {
+  public PermissionCollectionEntityListing getAuthorizationPermissions(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return getAuthorizationPermissionsWithHttpInfo(pageSize, pageNumber).getBody();
   }
 
@@ -218,7 +219,7 @@ public class AuthorizationApi {
    * @return PermissionCollectionEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PermissionCollectionEntityListing> getAuthorizationPermissionsWithHttpInfo(Integer pageSize, Integer pageNumber) throws ApiException {
+  public ApiResponse<PermissionCollectionEntityListing> getAuthorizationPermissionsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -255,7 +256,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public PermissionCollectionEntityListing getAuthorizationPermissions(GetAuthorizationPermissionsRequest request) throws ApiException {
+  public PermissionCollectionEntityListing getAuthorizationPermissions(GetAuthorizationPermissionsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PermissionCollectionEntityListing>() {});
   }
 
@@ -265,7 +266,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<PermissionCollectionEntityListing> getAuthorizationPermissions(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<PermissionCollectionEntityListing> getAuthorizationPermissions(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<PermissionCollectionEntityListing>invokeAPIVerbose(request, new TypeReference<PermissionCollectionEntityListing>() {});
   }
 
@@ -275,7 +276,7 @@ public class AuthorizationApi {
    * @return OrganizationProductEntityListing
    * @throws ApiException if fails to make API call
    */
-  public OrganizationProductEntityListing getAuthorizationProducts() throws ApiException {
+  public OrganizationProductEntityListing getAuthorizationProducts() throws IOException, ApiException {
     return getAuthorizationProductsWithHttpInfo().getBody();
   }
 
@@ -285,7 +286,7 @@ public class AuthorizationApi {
    * @return OrganizationProductEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrganizationProductEntityListing> getAuthorizationProductsWithHttpInfo() throws ApiException {
+  public ApiResponse<OrganizationProductEntityListing> getAuthorizationProductsWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -320,7 +321,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OrganizationProductEntityListing getAuthorizationProducts(GetAuthorizationProductsRequest request) throws ApiException {
+  public OrganizationProductEntityListing getAuthorizationProducts(GetAuthorizationProductsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrganizationProductEntityListing>() {});
   }
 
@@ -330,7 +331,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrganizationProductEntityListing> getAuthorizationProducts(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<OrganizationProductEntityListing> getAuthorizationProducts(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<OrganizationProductEntityListing>invokeAPIVerbose(request, new TypeReference<OrganizationProductEntityListing>() {});
   }
 
@@ -341,7 +342,7 @@ public class AuthorizationApi {
    * @return DomainOrganizationRole
    * @throws ApiException if fails to make API call
    */
-  public DomainOrganizationRole getAuthorizationRole(String roleId) throws ApiException {
+  public DomainOrganizationRole getAuthorizationRole(String roleId) throws IOException, ApiException {
     return getAuthorizationRoleWithHttpInfo(roleId).getBody();
   }
 
@@ -352,12 +353,12 @@ public class AuthorizationApi {
    * @return DomainOrganizationRole
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainOrganizationRole> getAuthorizationRoleWithHttpInfo(String roleId) throws ApiException {
+  public ApiResponse<DomainOrganizationRole> getAuthorizationRoleWithHttpInfo(String roleId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'roleId' is set
     if (roleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'roleId' when calling getAuthorizationRole");
+      throw new IllegalArgumentException("Missing the required parameter 'roleId' when calling getAuthorizationRole");
     }
     
     // create path and map variables
@@ -393,7 +394,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DomainOrganizationRole getAuthorizationRole(GetAuthorizationRoleRequest request) throws ApiException {
+  public DomainOrganizationRole getAuthorizationRole(GetAuthorizationRoleRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainOrganizationRole>() {});
   }
 
@@ -403,7 +404,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainOrganizationRole> getAuthorizationRole(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<DomainOrganizationRole> getAuthorizationRole(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<DomainOrganizationRole>invokeAPIVerbose(request, new TypeReference<DomainOrganizationRole>() {});
   }
 
@@ -415,7 +416,7 @@ public class AuthorizationApi {
    * @return DomainOrgRoleDifference
    * @throws ApiException if fails to make API call
    */
-  public DomainOrgRoleDifference getAuthorizationRoleComparedefaultRightRoleId(String leftRoleId, String rightRoleId) throws ApiException {
+  public DomainOrgRoleDifference getAuthorizationRoleComparedefaultRightRoleId(String leftRoleId, String rightRoleId) throws IOException, ApiException {
     return getAuthorizationRoleComparedefaultRightRoleIdWithHttpInfo(leftRoleId, rightRoleId).getBody();
   }
 
@@ -427,17 +428,17 @@ public class AuthorizationApi {
    * @return DomainOrgRoleDifference
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainOrgRoleDifference> getAuthorizationRoleComparedefaultRightRoleIdWithHttpInfo(String leftRoleId, String rightRoleId) throws ApiException {
+  public ApiResponse<DomainOrgRoleDifference> getAuthorizationRoleComparedefaultRightRoleIdWithHttpInfo(String leftRoleId, String rightRoleId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'leftRoleId' is set
     if (leftRoleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'leftRoleId' when calling getAuthorizationRoleComparedefaultRightRoleId");
+      throw new IllegalArgumentException("Missing the required parameter 'leftRoleId' when calling getAuthorizationRoleComparedefaultRightRoleId");
     }
     
     // verify the required parameter 'rightRoleId' is set
     if (rightRoleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'rightRoleId' when calling getAuthorizationRoleComparedefaultRightRoleId");
+      throw new IllegalArgumentException("Missing the required parameter 'rightRoleId' when calling getAuthorizationRoleComparedefaultRightRoleId");
     }
     
     // create path and map variables
@@ -474,7 +475,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DomainOrgRoleDifference getAuthorizationRoleComparedefaultRightRoleId(GetAuthorizationRoleComparedefaultRightRoleIdRequest request) throws ApiException {
+  public DomainOrgRoleDifference getAuthorizationRoleComparedefaultRightRoleId(GetAuthorizationRoleComparedefaultRightRoleIdRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainOrgRoleDifference>() {});
   }
 
@@ -484,7 +485,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainOrgRoleDifference> getAuthorizationRoleComparedefaultRightRoleId(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<DomainOrgRoleDifference> getAuthorizationRoleComparedefaultRightRoleId(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<DomainOrgRoleDifference>invokeAPIVerbose(request, new TypeReference<DomainOrgRoleDifference>() {});
   }
 
@@ -502,7 +503,7 @@ public class AuthorizationApi {
    * @return OrganizationRoleEntityListing
    * @throws ApiException if fails to make API call
    */
-  public OrganizationRoleEntityListing getAuthorizationRoles(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, List<Object> permission, Boolean userCount) throws ApiException {
+  public OrganizationRoleEntityListing getAuthorizationRoles(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, List<Object> permission, Boolean userCount) throws IOException, ApiException {
     return getAuthorizationRolesWithHttpInfo(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, permission, userCount).getBody();
   }
 
@@ -520,7 +521,7 @@ public class AuthorizationApi {
    * @return OrganizationRoleEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrganizationRoleEntityListing> getAuthorizationRolesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, List<Object> permission, Boolean userCount) throws ApiException {
+  public ApiResponse<OrganizationRoleEntityListing> getAuthorizationRolesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, List<Object> permission, Boolean userCount) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -563,7 +564,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OrganizationRoleEntityListing getAuthorizationRoles(GetAuthorizationRolesRequest request) throws ApiException {
+  public OrganizationRoleEntityListing getAuthorizationRoles(GetAuthorizationRolesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrganizationRoleEntityListing>() {});
   }
 
@@ -573,7 +574,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrganizationRoleEntityListing> getAuthorizationRoles(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<OrganizationRoleEntityListing> getAuthorizationRoles(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<OrganizationRoleEntityListing>invokeAPIVerbose(request, new TypeReference<OrganizationRoleEntityListing>() {});
   }
 
@@ -584,7 +585,7 @@ public class AuthorizationApi {
    * @return UserAuthorization
    * @throws ApiException if fails to make API call
    */
-  public UserAuthorization getUserRoles(String userId) throws ApiException {
+  public UserAuthorization getUserRoles(String userId) throws IOException, ApiException {
     return getUserRolesWithHttpInfo(userId).getBody();
   }
 
@@ -595,12 +596,12 @@ public class AuthorizationApi {
    * @return UserAuthorization
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserAuthorization> getUserRolesWithHttpInfo(String userId) throws ApiException {
+  public ApiResponse<UserAuthorization> getUserRolesWithHttpInfo(String userId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling getUserRoles");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserRoles");
     }
     
     // create path and map variables
@@ -636,7 +637,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserAuthorization getUserRoles(GetUserRolesRequest request) throws ApiException {
+  public UserAuthorization getUserRoles(GetUserRolesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserAuthorization>() {});
   }
 
@@ -646,7 +647,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserAuthorization> getUserRoles(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<UserAuthorization> getUserRoles(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<UserAuthorization>invokeAPIVerbose(request, new TypeReference<UserAuthorization>() {});
   }
 
@@ -658,7 +659,7 @@ public class AuthorizationApi {
    * @return DomainOrganizationRole
    * @throws ApiException if fails to make API call
    */
-  public DomainOrganizationRole patchAuthorizationRole(String roleId, DomainOrganizationRole body) throws ApiException {
+  public DomainOrganizationRole patchAuthorizationRole(String roleId, DomainOrganizationRole body) throws IOException, ApiException {
     return patchAuthorizationRoleWithHttpInfo(roleId, body).getBody();
   }
 
@@ -670,17 +671,17 @@ public class AuthorizationApi {
    * @return DomainOrganizationRole
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainOrganizationRole> patchAuthorizationRoleWithHttpInfo(String roleId, DomainOrganizationRole body) throws ApiException {
+  public ApiResponse<DomainOrganizationRole> patchAuthorizationRoleWithHttpInfo(String roleId, DomainOrganizationRole body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'roleId' is set
     if (roleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'roleId' when calling patchAuthorizationRole");
+      throw new IllegalArgumentException("Missing the required parameter 'roleId' when calling patchAuthorizationRole");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling patchAuthorizationRole");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchAuthorizationRole");
     }
     
     // create path and map variables
@@ -716,7 +717,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DomainOrganizationRole patchAuthorizationRole(PatchAuthorizationRoleRequest request) throws ApiException {
+  public DomainOrganizationRole patchAuthorizationRole(PatchAuthorizationRoleRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainOrganizationRole>() {});
   }
 
@@ -726,7 +727,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainOrganizationRole> patchAuthorizationRole(ApiRequest<DomainOrganizationRole> request) throws ApiException {
+  public ApiResponse<DomainOrganizationRole> patchAuthorizationRole(ApiRequest<DomainOrganizationRole> request) throws IOException, ApiException {
     return pcapiClient.<DomainOrganizationRole>invokeAPIVerbose(request, new TypeReference<DomainOrganizationRole>() {});
   }
 
@@ -739,7 +740,7 @@ public class AuthorizationApi {
    * @return DomainOrgRoleDifference
    * @throws ApiException if fails to make API call
    */
-  public DomainOrgRoleDifference postAuthorizationRoleComparedefaultRightRoleId(String leftRoleId, String rightRoleId, DomainOrganizationRole body) throws ApiException {
+  public DomainOrgRoleDifference postAuthorizationRoleComparedefaultRightRoleId(String leftRoleId, String rightRoleId, DomainOrganizationRole body) throws IOException, ApiException {
     return postAuthorizationRoleComparedefaultRightRoleIdWithHttpInfo(leftRoleId, rightRoleId, body).getBody();
   }
 
@@ -752,22 +753,22 @@ public class AuthorizationApi {
    * @return DomainOrgRoleDifference
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainOrgRoleDifference> postAuthorizationRoleComparedefaultRightRoleIdWithHttpInfo(String leftRoleId, String rightRoleId, DomainOrganizationRole body) throws ApiException {
+  public ApiResponse<DomainOrgRoleDifference> postAuthorizationRoleComparedefaultRightRoleIdWithHttpInfo(String leftRoleId, String rightRoleId, DomainOrganizationRole body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'leftRoleId' is set
     if (leftRoleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'leftRoleId' when calling postAuthorizationRoleComparedefaultRightRoleId");
+      throw new IllegalArgumentException("Missing the required parameter 'leftRoleId' when calling postAuthorizationRoleComparedefaultRightRoleId");
     }
     
     // verify the required parameter 'rightRoleId' is set
     if (rightRoleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'rightRoleId' when calling postAuthorizationRoleComparedefaultRightRoleId");
+      throw new IllegalArgumentException("Missing the required parameter 'rightRoleId' when calling postAuthorizationRoleComparedefaultRightRoleId");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAuthorizationRoleComparedefaultRightRoleId");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAuthorizationRoleComparedefaultRightRoleId");
     }
     
     // create path and map variables
@@ -804,7 +805,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DomainOrgRoleDifference postAuthorizationRoleComparedefaultRightRoleId(PostAuthorizationRoleComparedefaultRightRoleIdRequest request) throws ApiException {
+  public DomainOrgRoleDifference postAuthorizationRoleComparedefaultRightRoleId(PostAuthorizationRoleComparedefaultRightRoleIdRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainOrgRoleDifference>() {});
   }
 
@@ -814,7 +815,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainOrgRoleDifference> postAuthorizationRoleComparedefaultRightRoleId(ApiRequest<DomainOrganizationRole> request) throws ApiException {
+  public ApiResponse<DomainOrgRoleDifference> postAuthorizationRoleComparedefaultRightRoleId(ApiRequest<DomainOrganizationRole> request) throws IOException, ApiException {
     return pcapiClient.<DomainOrgRoleDifference>invokeAPIVerbose(request, new TypeReference<DomainOrgRoleDifference>() {});
   }
 
@@ -825,7 +826,7 @@ public class AuthorizationApi {
    * @return DomainOrganizationRole
    * @throws ApiException if fails to make API call
    */
-  public DomainOrganizationRole postAuthorizationRoles(DomainOrganizationRoleCreate body) throws ApiException {
+  public DomainOrganizationRole postAuthorizationRoles(DomainOrganizationRoleCreate body) throws IOException, ApiException {
     return postAuthorizationRolesWithHttpInfo(body).getBody();
   }
 
@@ -836,12 +837,12 @@ public class AuthorizationApi {
    * @return DomainOrganizationRole
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainOrganizationRole> postAuthorizationRolesWithHttpInfo(DomainOrganizationRoleCreate body) throws ApiException {
+  public ApiResponse<DomainOrganizationRole> postAuthorizationRolesWithHttpInfo(DomainOrganizationRoleCreate body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAuthorizationRoles");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAuthorizationRoles");
     }
     
     // create path and map variables
@@ -876,7 +877,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DomainOrganizationRole postAuthorizationRoles(PostAuthorizationRolesRequest request) throws ApiException {
+  public DomainOrganizationRole postAuthorizationRoles(PostAuthorizationRolesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainOrganizationRole>() {});
   }
 
@@ -886,7 +887,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainOrganizationRole> postAuthorizationRoles(ApiRequest<DomainOrganizationRoleCreate> request) throws ApiException {
+  public ApiResponse<DomainOrganizationRole> postAuthorizationRoles(ApiRequest<DomainOrganizationRoleCreate> request) throws IOException, ApiException {
     return pcapiClient.<DomainOrganizationRole>invokeAPIVerbose(request, new TypeReference<DomainOrganizationRole>() {});
   }
 
@@ -897,7 +898,7 @@ public class AuthorizationApi {
    * @return OrganizationRoleEntityListing
    * @throws ApiException if fails to make API call
    */
-  public OrganizationRoleEntityListing postAuthorizationRolesDefault(Boolean force) throws ApiException {
+  public OrganizationRoleEntityListing postAuthorizationRolesDefault(Boolean force) throws IOException, ApiException {
     return postAuthorizationRolesDefaultWithHttpInfo(force).getBody();
   }
 
@@ -908,7 +909,7 @@ public class AuthorizationApi {
    * @return OrganizationRoleEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrganizationRoleEntityListing> postAuthorizationRolesDefaultWithHttpInfo(Boolean force) throws ApiException {
+  public ApiResponse<OrganizationRoleEntityListing> postAuthorizationRolesDefaultWithHttpInfo(Boolean force) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -944,7 +945,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OrganizationRoleEntityListing postAuthorizationRolesDefault(PostAuthorizationRolesDefaultRequest request) throws ApiException {
+  public OrganizationRoleEntityListing postAuthorizationRolesDefault(PostAuthorizationRolesDefaultRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrganizationRoleEntityListing>() {});
   }
 
@@ -954,7 +955,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrganizationRoleEntityListing> postAuthorizationRolesDefault(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<OrganizationRoleEntityListing> postAuthorizationRolesDefault(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<OrganizationRoleEntityListing>invokeAPIVerbose(request, new TypeReference<OrganizationRoleEntityListing>() {});
   }
 
@@ -966,7 +967,7 @@ public class AuthorizationApi {
    * @return DomainOrganizationRole
    * @throws ApiException if fails to make API call
    */
-  public DomainOrganizationRole putAuthorizationRole(String roleId, DomainOrganizationRoleUpdate body) throws ApiException {
+  public DomainOrganizationRole putAuthorizationRole(String roleId, DomainOrganizationRoleUpdate body) throws IOException, ApiException {
     return putAuthorizationRoleWithHttpInfo(roleId, body).getBody();
   }
 
@@ -978,17 +979,17 @@ public class AuthorizationApi {
    * @return DomainOrganizationRole
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainOrganizationRole> putAuthorizationRoleWithHttpInfo(String roleId, DomainOrganizationRoleUpdate body) throws ApiException {
+  public ApiResponse<DomainOrganizationRole> putAuthorizationRoleWithHttpInfo(String roleId, DomainOrganizationRoleUpdate body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'roleId' is set
     if (roleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'roleId' when calling putAuthorizationRole");
+      throw new IllegalArgumentException("Missing the required parameter 'roleId' when calling putAuthorizationRole");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putAuthorizationRole");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAuthorizationRole");
     }
     
     // create path and map variables
@@ -1024,7 +1025,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public DomainOrganizationRole putAuthorizationRole(PutAuthorizationRoleRequest request) throws ApiException {
+  public DomainOrganizationRole putAuthorizationRole(PutAuthorizationRoleRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainOrganizationRole>() {});
   }
 
@@ -1034,7 +1035,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<DomainOrganizationRole> putAuthorizationRole(ApiRequest<DomainOrganizationRoleUpdate> request) throws ApiException {
+  public ApiResponse<DomainOrganizationRole> putAuthorizationRole(ApiRequest<DomainOrganizationRoleUpdate> request) throws IOException, ApiException {
     return pcapiClient.<DomainOrganizationRole>invokeAPIVerbose(request, new TypeReference<DomainOrganizationRole>() {});
   }
 
@@ -1046,7 +1047,7 @@ public class AuthorizationApi {
    * @return List<String>
    * @throws ApiException if fails to make API call
    */
-  public List<String> putAuthorizationRoleUsersAdd(String roleId, List<String> body) throws ApiException {
+  public List<String> putAuthorizationRoleUsersAdd(String roleId, List<String> body) throws IOException, ApiException {
     return putAuthorizationRoleUsersAddWithHttpInfo(roleId, body).getBody();
   }
 
@@ -1058,17 +1059,17 @@ public class AuthorizationApi {
    * @return List<String>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<String>> putAuthorizationRoleUsersAddWithHttpInfo(String roleId, List<String> body) throws ApiException {
+  public ApiResponse<List<String>> putAuthorizationRoleUsersAddWithHttpInfo(String roleId, List<String> body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'roleId' is set
     if (roleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'roleId' when calling putAuthorizationRoleUsersAdd");
+      throw new IllegalArgumentException("Missing the required parameter 'roleId' when calling putAuthorizationRoleUsersAdd");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putAuthorizationRoleUsersAdd");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAuthorizationRoleUsersAdd");
     }
     
     // create path and map variables
@@ -1104,7 +1105,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<String> putAuthorizationRoleUsersAdd(PutAuthorizationRoleUsersAddRequest request) throws ApiException {
+  public List<String> putAuthorizationRoleUsersAdd(PutAuthorizationRoleUsersAddRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<String>>() {});
   }
 
@@ -1114,7 +1115,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<String>> putAuthorizationRoleUsersAdd(ApiRequest<List<String>> request) throws ApiException {
+  public ApiResponse<List<String>> putAuthorizationRoleUsersAdd(ApiRequest<List<String>> request) throws IOException, ApiException {
     return pcapiClient.<List<String>>invokeAPIVerbose(request, new TypeReference<List<String>>() {});
   }
 
@@ -1126,7 +1127,7 @@ public class AuthorizationApi {
    * @return List<String>
    * @throws ApiException if fails to make API call
    */
-  public List<String> putAuthorizationRoleUsersRemove(String roleId, List<String> body) throws ApiException {
+  public List<String> putAuthorizationRoleUsersRemove(String roleId, List<String> body) throws IOException, ApiException {
     return putAuthorizationRoleUsersRemoveWithHttpInfo(roleId, body).getBody();
   }
 
@@ -1138,17 +1139,17 @@ public class AuthorizationApi {
    * @return List<String>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<String>> putAuthorizationRoleUsersRemoveWithHttpInfo(String roleId, List<String> body) throws ApiException {
+  public ApiResponse<List<String>> putAuthorizationRoleUsersRemoveWithHttpInfo(String roleId, List<String> body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'roleId' is set
     if (roleId == null) {
-      throw new ApiException(400, "Missing the required parameter 'roleId' when calling putAuthorizationRoleUsersRemove");
+      throw new IllegalArgumentException("Missing the required parameter 'roleId' when calling putAuthorizationRoleUsersRemove");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putAuthorizationRoleUsersRemove");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAuthorizationRoleUsersRemove");
     }
     
     // create path and map variables
@@ -1184,7 +1185,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<String> putAuthorizationRoleUsersRemove(PutAuthorizationRoleUsersRemoveRequest request) throws ApiException {
+  public List<String> putAuthorizationRoleUsersRemove(PutAuthorizationRoleUsersRemoveRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<String>>() {});
   }
 
@@ -1194,7 +1195,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<String>> putAuthorizationRoleUsersRemove(ApiRequest<List<String>> request) throws ApiException {
+  public ApiResponse<List<String>> putAuthorizationRoleUsersRemove(ApiRequest<List<String>> request) throws IOException, ApiException {
     return pcapiClient.<List<String>>invokeAPIVerbose(request, new TypeReference<List<String>>() {});
   }
 
@@ -1205,7 +1206,7 @@ public class AuthorizationApi {
    * @return OrganizationRoleEntityListing
    * @throws ApiException if fails to make API call
    */
-  public OrganizationRoleEntityListing putAuthorizationRolesDefault(List<DomainOrganizationRole> body) throws ApiException {
+  public OrganizationRoleEntityListing putAuthorizationRolesDefault(List<DomainOrganizationRole> body) throws IOException, ApiException {
     return putAuthorizationRolesDefaultWithHttpInfo(body).getBody();
   }
 
@@ -1216,12 +1217,12 @@ public class AuthorizationApi {
    * @return OrganizationRoleEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrganizationRoleEntityListing> putAuthorizationRolesDefaultWithHttpInfo(List<DomainOrganizationRole> body) throws ApiException {
+  public ApiResponse<OrganizationRoleEntityListing> putAuthorizationRolesDefaultWithHttpInfo(List<DomainOrganizationRole> body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putAuthorizationRolesDefault");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAuthorizationRolesDefault");
     }
     
     // create path and map variables
@@ -1256,7 +1257,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public OrganizationRoleEntityListing putAuthorizationRolesDefault(PutAuthorizationRolesDefaultRequest request) throws ApiException {
+  public OrganizationRoleEntityListing putAuthorizationRolesDefault(PutAuthorizationRolesDefaultRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrganizationRoleEntityListing>() {});
   }
 
@@ -1266,7 +1267,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OrganizationRoleEntityListing> putAuthorizationRolesDefault(ApiRequest<List<DomainOrganizationRole>> request) throws ApiException {
+  public ApiResponse<OrganizationRoleEntityListing> putAuthorizationRolesDefault(ApiRequest<List<DomainOrganizationRole>> request) throws IOException, ApiException {
     return pcapiClient.<OrganizationRoleEntityListing>invokeAPIVerbose(request, new TypeReference<OrganizationRoleEntityListing>() {});
   }
 
@@ -1278,7 +1279,7 @@ public class AuthorizationApi {
    * @return UserAuthorization
    * @throws ApiException if fails to make API call
    */
-  public UserAuthorization putUserRoles(String userId, List<String> body) throws ApiException {
+  public UserAuthorization putUserRoles(String userId, List<String> body) throws IOException, ApiException {
     return putUserRolesWithHttpInfo(userId, body).getBody();
   }
 
@@ -1290,17 +1291,17 @@ public class AuthorizationApi {
    * @return UserAuthorization
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserAuthorization> putUserRolesWithHttpInfo(String userId, List<String> body) throws ApiException {
+  public ApiResponse<UserAuthorization> putUserRolesWithHttpInfo(String userId, List<String> body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling putUserRoles");
+      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putUserRoles");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putUserRoles");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putUserRoles");
     }
     
     // create path and map variables
@@ -1336,7 +1337,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public UserAuthorization putUserRoles(PutUserRolesRequest request) throws ApiException {
+  public UserAuthorization putUserRoles(PutUserRolesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserAuthorization>() {});
   }
 
@@ -1346,7 +1347,7 @@ public class AuthorizationApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UserAuthorization> putUserRoles(ApiRequest<List<String>> request) throws ApiException {
+  public ApiResponse<UserAuthorization> putUserRoles(ApiRequest<List<String>> request) throws IOException, ApiException {
     return pcapiClient.<UserAuthorization>invokeAPIVerbose(request, new TypeReference<UserAuthorization>() {});
   }
 

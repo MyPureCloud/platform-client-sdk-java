@@ -120,11 +120,11 @@ public class GetTelephonyProvidersEdgesExtensionRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'extensionId' is set
         if (this.extensionId == null) {
-            throw new ApiException(400, "Missing the required parameter 'extensionId' when building request for GetTelephonyProvidersEdgesExtensionRequest.");
+            throw new IllegalStateException("Missing the required parameter 'extensionId' when building request for GetTelephonyProvidersEdgesExtensionRequest.");
         }
         
 

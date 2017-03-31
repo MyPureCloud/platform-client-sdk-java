@@ -80,11 +80,11 @@ public class DeleteRoutingWrapupcodeRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'codeId' is set
         if (this.codeId == null) {
-            throw new ApiException(400, "Missing the required parameter 'codeId' when building request for DeleteRoutingWrapupcodeRequest.");
+            throw new IllegalStateException("Missing the required parameter 'codeId' when building request for DeleteRoutingWrapupcodeRequest.");
         }
         
 

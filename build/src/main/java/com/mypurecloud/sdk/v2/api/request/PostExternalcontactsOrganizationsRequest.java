@@ -67,7 +67,7 @@ public class PostExternalcontactsOrganizationsRequest {
         return this;
     }
 
-    public ApiRequest<ExternalOrganization> withHttpInfo() throws ApiException {
+    public ApiRequest<ExternalOrganization> withHttpInfo() {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/externalcontacts/organizations")

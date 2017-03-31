@@ -134,16 +134,16 @@ public class PutTelephonyProvidersEdgesSiteNumberplansRequest {
         return this;
     }
 
-    public ApiRequest<List<NumberPlan>> withHttpInfo() throws ApiException {
+    public ApiRequest<List<NumberPlan>> withHttpInfo() {
         
         // verify the required parameter 'siteId' is set
         if (this.siteId == null) {
-            throw new ApiException(400, "Missing the required parameter 'siteId' when building request for PutTelephonyProvidersEdgesSiteNumberplansRequest.");
+            throw new IllegalStateException("Missing the required parameter 'siteId' when building request for PutTelephonyProvidersEdgesSiteNumberplansRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesSiteNumberplansRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesSiteNumberplansRequest.");
         }
         
 

@@ -65,6 +65,7 @@ import com.mypurecloud.sdk.v2.api.request.PutRecordingMediaretentionpolicyReques
 import com.mypurecloud.sdk.v2.api.request.PutRecordingRecordingkeysRotationscheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingSettingsRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -89,7 +90,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteConversationRecordingAnnotationAsync(DeleteConversationRecordingAnnotationRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteConversationRecordingAnnotationAsync(DeleteConversationRecordingAnnotationRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -99,7 +100,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteConversationRecordingAnnotationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteConversationRecordingAnnotationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -109,7 +110,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OrphanRecording> deleteOrphanrecordingAsync(DeleteOrphanrecordingRequest request, AsyncApiCallback<OrphanRecording> callback) throws ApiException {
+  public Future<OrphanRecording> deleteOrphanrecordingAsync(DeleteOrphanrecordingRequest request, AsyncApiCallback<OrphanRecording> callback) {
     return pcapiClient.<OrphanRecording>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OrphanRecording>() {}, callback);
   }
 
@@ -119,7 +120,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OrphanRecording>> deleteOrphanrecordingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrphanRecording>> callback) throws ApiException {
+  public Future<ApiResponse<OrphanRecording>> deleteOrphanrecordingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrphanRecording>> callback) {
     return pcapiClient.<OrphanRecording>invokeAPIVerboseAsync(request, new TypeReference<OrphanRecording>() {}, callback);
   }
 
@@ -129,7 +130,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteRecordingMediaretentionpoliciesAsync(DeleteRecordingMediaretentionpoliciesRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteRecordingMediaretentionpoliciesAsync(DeleteRecordingMediaretentionpoliciesRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -139,7 +140,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteRecordingMediaretentionpoliciesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteRecordingMediaretentionpoliciesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -149,7 +150,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteRecordingMediaretentionpolicyAsync(DeleteRecordingMediaretentionpolicyRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteRecordingMediaretentionpolicyAsync(DeleteRecordingMediaretentionpolicyRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -159,7 +160,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteRecordingMediaretentionpolicyAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteRecordingMediaretentionpolicyAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -169,7 +170,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Recording> getConversationRecordingAsync(GetConversationRecordingRequest request, AsyncApiCallback<Recording> callback) throws ApiException {
+  public Future<Recording> getConversationRecordingAsync(GetConversationRecordingRequest request, AsyncApiCallback<Recording> callback) {
     return pcapiClient.<Recording>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Recording>() {}, callback);
   }
 
@@ -179,7 +180,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Recording>> getConversationRecordingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Recording>> callback) throws ApiException {
+  public Future<ApiResponse<Recording>> getConversationRecordingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Recording>> callback) {
     return pcapiClient.<Recording>invokeAPIVerboseAsync(request, new TypeReference<Recording>() {}, callback);
   }
 
@@ -189,7 +190,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Annotation> getConversationRecordingAnnotationAsync(GetConversationRecordingAnnotationRequest request, AsyncApiCallback<Annotation> callback) throws ApiException {
+  public Future<Annotation> getConversationRecordingAnnotationAsync(GetConversationRecordingAnnotationRequest request, AsyncApiCallback<Annotation> callback) {
     return pcapiClient.<Annotation>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Annotation>() {}, callback);
   }
 
@@ -199,7 +200,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Annotation>> getConversationRecordingAnnotationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Annotation>> callback) throws ApiException {
+  public Future<ApiResponse<Annotation>> getConversationRecordingAnnotationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Annotation>> callback) {
     return pcapiClient.<Annotation>invokeAPIVerboseAsync(request, new TypeReference<Annotation>() {}, callback);
   }
 
@@ -209,7 +210,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<Annotation>> getConversationRecordingAnnotationsAsync(GetConversationRecordingAnnotationsRequest request, AsyncApiCallback<List<Annotation>> callback) throws ApiException {
+  public Future<List<Annotation>> getConversationRecordingAnnotationsAsync(GetConversationRecordingAnnotationsRequest request, AsyncApiCallback<List<Annotation>> callback) {
     return pcapiClient.<List<Annotation>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<Annotation>>() {}, callback);
   }
 
@@ -219,7 +220,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<Annotation>>> getConversationRecordingAnnotationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<Annotation>>> callback) throws ApiException {
+  public Future<ApiResponse<List<Annotation>>> getConversationRecordingAnnotationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<Annotation>>> callback) {
     return pcapiClient.<List<Annotation>>invokeAPIVerboseAsync(request, new TypeReference<List<Annotation>>() {}, callback);
   }
 
@@ -229,7 +230,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<Recording>> getConversationRecordingsAsync(GetConversationRecordingsRequest request, AsyncApiCallback<List<Recording>> callback) throws ApiException {
+  public Future<List<Recording>> getConversationRecordingsAsync(GetConversationRecordingsRequest request, AsyncApiCallback<List<Recording>> callback) {
     return pcapiClient.<List<Recording>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<Recording>>() {}, callback);
   }
 
@@ -239,7 +240,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<Recording>>> getConversationRecordingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<Recording>>> callback) throws ApiException {
+  public Future<ApiResponse<List<Recording>>> getConversationRecordingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<Recording>>> callback) {
     return pcapiClient.<List<Recording>>invokeAPIVerboseAsync(request, new TypeReference<List<Recording>>() {}, callback);
   }
 
@@ -249,7 +250,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OrphanRecording> getOrphanrecordingAsync(GetOrphanrecordingRequest request, AsyncApiCallback<OrphanRecording> callback) throws ApiException {
+  public Future<OrphanRecording> getOrphanrecordingAsync(GetOrphanrecordingRequest request, AsyncApiCallback<OrphanRecording> callback) {
     return pcapiClient.<OrphanRecording>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OrphanRecording>() {}, callback);
   }
 
@@ -259,7 +260,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OrphanRecording>> getOrphanrecordingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrphanRecording>> callback) throws ApiException {
+  public Future<ApiResponse<OrphanRecording>> getOrphanrecordingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrphanRecording>> callback) {
     return pcapiClient.<OrphanRecording>invokeAPIVerboseAsync(request, new TypeReference<OrphanRecording>() {}, callback);
   }
 
@@ -269,7 +270,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Recording> getOrphanrecordingMediaAsync(GetOrphanrecordingMediaRequest request, AsyncApiCallback<Recording> callback) throws ApiException {
+  public Future<Recording> getOrphanrecordingMediaAsync(GetOrphanrecordingMediaRequest request, AsyncApiCallback<Recording> callback) {
     return pcapiClient.<Recording>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Recording>() {}, callback);
   }
 
@@ -279,7 +280,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Recording>> getOrphanrecordingMediaAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Recording>> callback) throws ApiException {
+  public Future<ApiResponse<Recording>> getOrphanrecordingMediaAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Recording>> callback) {
     return pcapiClient.<Recording>invokeAPIVerboseAsync(request, new TypeReference<Recording>() {}, callback);
   }
 
@@ -289,7 +290,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OrphanRecordingListing> getOrphanrecordingsAsync(GetOrphanrecordingsRequest request, AsyncApiCallback<OrphanRecordingListing> callback) throws ApiException {
+  public Future<OrphanRecordingListing> getOrphanrecordingsAsync(GetOrphanrecordingsRequest request, AsyncApiCallback<OrphanRecordingListing> callback) {
     return pcapiClient.<OrphanRecordingListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OrphanRecordingListing>() {}, callback);
   }
 
@@ -299,7 +300,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OrphanRecordingListing>> getOrphanrecordingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrphanRecordingListing>> callback) throws ApiException {
+  public Future<ApiResponse<OrphanRecordingListing>> getOrphanrecordingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrphanRecordingListing>> callback) {
     return pcapiClient.<OrphanRecordingListing>invokeAPIVerboseAsync(request, new TypeReference<OrphanRecordingListing>() {}, callback);
   }
 
@@ -309,7 +310,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<LocalEncryptionConfiguration> getRecordingLocalkeysSettingAsync(GetRecordingLocalkeysSettingRequest request, AsyncApiCallback<LocalEncryptionConfiguration> callback) throws ApiException {
+  public Future<LocalEncryptionConfiguration> getRecordingLocalkeysSettingAsync(GetRecordingLocalkeysSettingRequest request, AsyncApiCallback<LocalEncryptionConfiguration> callback) {
     return pcapiClient.<LocalEncryptionConfiguration>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {}, callback);
   }
 
@@ -319,7 +320,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<LocalEncryptionConfiguration>> getRecordingLocalkeysSettingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>> callback) throws ApiException {
+  public Future<ApiResponse<LocalEncryptionConfiguration>> getRecordingLocalkeysSettingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>> callback) {
     return pcapiClient.<LocalEncryptionConfiguration>invokeAPIVerboseAsync(request, new TypeReference<LocalEncryptionConfiguration>() {}, callback);
   }
 
@@ -329,7 +330,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<LocalEncryptionConfigurationListing> getRecordingLocalkeysSettingsAsync(GetRecordingLocalkeysSettingsRequest request, AsyncApiCallback<LocalEncryptionConfigurationListing> callback) throws ApiException {
+  public Future<LocalEncryptionConfigurationListing> getRecordingLocalkeysSettingsAsync(GetRecordingLocalkeysSettingsRequest request, AsyncApiCallback<LocalEncryptionConfigurationListing> callback) {
     return pcapiClient.<LocalEncryptionConfigurationListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LocalEncryptionConfigurationListing>() {}, callback);
   }
 
@@ -339,7 +340,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<LocalEncryptionConfigurationListing>> getRecordingLocalkeysSettingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LocalEncryptionConfigurationListing>> callback) throws ApiException {
+  public Future<ApiResponse<LocalEncryptionConfigurationListing>> getRecordingLocalkeysSettingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LocalEncryptionConfigurationListing>> callback) {
     return pcapiClient.<LocalEncryptionConfigurationListing>invokeAPIVerboseAsync(request, new TypeReference<LocalEncryptionConfigurationListing>() {}, callback);
   }
 
@@ -349,7 +350,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<PolicyEntityListing> getRecordingMediaretentionpoliciesAsync(GetRecordingMediaretentionpoliciesRequest request, AsyncApiCallback<PolicyEntityListing> callback) throws ApiException {
+  public Future<PolicyEntityListing> getRecordingMediaretentionpoliciesAsync(GetRecordingMediaretentionpoliciesRequest request, AsyncApiCallback<PolicyEntityListing> callback) {
     return pcapiClient.<PolicyEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PolicyEntityListing>() {}, callback);
   }
 
@@ -359,7 +360,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<PolicyEntityListing>> getRecordingMediaretentionpoliciesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PolicyEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<PolicyEntityListing>> getRecordingMediaretentionpoliciesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PolicyEntityListing>> callback) {
     return pcapiClient.<PolicyEntityListing>invokeAPIVerboseAsync(request, new TypeReference<PolicyEntityListing>() {}, callback);
   }
 
@@ -369,7 +370,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Policy> getRecordingMediaretentionpolicyAsync(GetRecordingMediaretentionpolicyRequest request, AsyncApiCallback<Policy> callback) throws ApiException {
+  public Future<Policy> getRecordingMediaretentionpolicyAsync(GetRecordingMediaretentionpolicyRequest request, AsyncApiCallback<Policy> callback) {
     return pcapiClient.<Policy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Policy>() {}, callback);
   }
 
@@ -379,7 +380,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Policy>> getRecordingMediaretentionpolicyAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Policy>> callback) throws ApiException {
+  public Future<ApiResponse<Policy>> getRecordingMediaretentionpolicyAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Policy>> callback) {
     return pcapiClient.<Policy>invokeAPIVerboseAsync(request, new TypeReference<Policy>() {}, callback);
   }
 
@@ -389,7 +390,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EncryptionKeyEntityListing> getRecordingRecordingkeysAsync(GetRecordingRecordingkeysRequest request, AsyncApiCallback<EncryptionKeyEntityListing> callback) throws ApiException {
+  public Future<EncryptionKeyEntityListing> getRecordingRecordingkeysAsync(GetRecordingRecordingkeysRequest request, AsyncApiCallback<EncryptionKeyEntityListing> callback) {
     return pcapiClient.<EncryptionKeyEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EncryptionKeyEntityListing>() {}, callback);
   }
 
@@ -399,7 +400,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EncryptionKeyEntityListing>> getRecordingRecordingkeysAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EncryptionKeyEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<EncryptionKeyEntityListing>> getRecordingRecordingkeysAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EncryptionKeyEntityListing>> callback) {
     return pcapiClient.<EncryptionKeyEntityListing>invokeAPIVerboseAsync(request, new TypeReference<EncryptionKeyEntityListing>() {}, callback);
   }
 
@@ -409,7 +410,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<KeyRotationSchedule> getRecordingRecordingkeysRotationscheduleAsync(GetRecordingRecordingkeysRotationscheduleRequest request, AsyncApiCallback<KeyRotationSchedule> callback) throws ApiException {
+  public Future<KeyRotationSchedule> getRecordingRecordingkeysRotationscheduleAsync(GetRecordingRecordingkeysRotationscheduleRequest request, AsyncApiCallback<KeyRotationSchedule> callback) {
     return pcapiClient.<KeyRotationSchedule>invokeAPIAsync(request.withHttpInfo(), new TypeReference<KeyRotationSchedule>() {}, callback);
   }
 
@@ -419,7 +420,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<KeyRotationSchedule>> getRecordingRecordingkeysRotationscheduleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<KeyRotationSchedule>> callback) throws ApiException {
+  public Future<ApiResponse<KeyRotationSchedule>> getRecordingRecordingkeysRotationscheduleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<KeyRotationSchedule>> callback) {
     return pcapiClient.<KeyRotationSchedule>invokeAPIVerboseAsync(request, new TypeReference<KeyRotationSchedule>() {}, callback);
   }
 
@@ -429,7 +430,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<RecordingSettings> getRecordingSettingsAsync(GetRecordingSettingsRequest request, AsyncApiCallback<RecordingSettings> callback) throws ApiException {
+  public Future<RecordingSettings> getRecordingSettingsAsync(GetRecordingSettingsRequest request, AsyncApiCallback<RecordingSettings> callback) {
     return pcapiClient.<RecordingSettings>invokeAPIAsync(request.withHttpInfo(), new TypeReference<RecordingSettings>() {}, callback);
   }
 
@@ -439,7 +440,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<RecordingSettings>> getRecordingSettingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RecordingSettings>> callback) throws ApiException {
+  public Future<ApiResponse<RecordingSettings>> getRecordingSettingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RecordingSettings>> callback) {
     return pcapiClient.<RecordingSettings>invokeAPIVerboseAsync(request, new TypeReference<RecordingSettings>() {}, callback);
   }
 
@@ -449,7 +450,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ScreenRecordingSessionListing> getRecordingsScreensessionsAsync(GetRecordingsScreensessionsRequest request, AsyncApiCallback<ScreenRecordingSessionListing> callback) throws ApiException {
+  public Future<ScreenRecordingSessionListing> getRecordingsScreensessionsAsync(GetRecordingsScreensessionsRequest request, AsyncApiCallback<ScreenRecordingSessionListing> callback) {
     return pcapiClient.<ScreenRecordingSessionListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ScreenRecordingSessionListing>() {}, callback);
   }
 
@@ -459,7 +460,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ScreenRecordingSessionListing>> getRecordingsScreensessionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ScreenRecordingSessionListing>> callback) throws ApiException {
+  public Future<ApiResponse<ScreenRecordingSessionListing>> getRecordingsScreensessionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ScreenRecordingSessionListing>> callback) {
     return pcapiClient.<ScreenRecordingSessionListing>invokeAPIVerboseAsync(request, new TypeReference<ScreenRecordingSessionListing>() {}, callback);
   }
 
@@ -469,7 +470,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Policy> patchRecordingMediaretentionpolicyAsync(PatchRecordingMediaretentionpolicyRequest request, AsyncApiCallback<Policy> callback) throws ApiException {
+  public Future<Policy> patchRecordingMediaretentionpolicyAsync(PatchRecordingMediaretentionpolicyRequest request, AsyncApiCallback<Policy> callback) {
     return pcapiClient.<Policy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Policy>() {}, callback);
   }
 
@@ -479,7 +480,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Policy>> patchRecordingMediaretentionpolicyAsync(ApiRequest<Policy> request, AsyncApiCallback<ApiResponse<Policy>> callback) throws ApiException {
+  public Future<ApiResponse<Policy>> patchRecordingMediaretentionpolicyAsync(ApiRequest<Policy> request, AsyncApiCallback<ApiResponse<Policy>> callback) {
     return pcapiClient.<Policy>invokeAPIVerboseAsync(request, new TypeReference<Policy>() {}, callback);
   }
 
@@ -489,7 +490,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> patchRecordingsScreensessionAsync(PatchRecordingsScreensessionRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> patchRecordingsScreensessionAsync(PatchRecordingsScreensessionRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -499,7 +500,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> patchRecordingsScreensessionAsync(ApiRequest<ScreenRecordingSessionRequest> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> patchRecordingsScreensessionAsync(ApiRequest<ScreenRecordingSessionRequest> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -509,7 +510,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Annotation> postConversationRecordingAnnotationsAsync(PostConversationRecordingAnnotationsRequest request, AsyncApiCallback<Annotation> callback) throws ApiException {
+  public Future<Annotation> postConversationRecordingAnnotationsAsync(PostConversationRecordingAnnotationsRequest request, AsyncApiCallback<Annotation> callback) {
     return pcapiClient.<Annotation>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Annotation>() {}, callback);
   }
 
@@ -519,7 +520,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Annotation>> postConversationRecordingAnnotationsAsync(ApiRequest<Annotation> request, AsyncApiCallback<ApiResponse<Annotation>> callback) throws ApiException {
+  public Future<ApiResponse<Annotation>> postConversationRecordingAnnotationsAsync(ApiRequest<Annotation> request, AsyncApiCallback<ApiResponse<Annotation>> callback) {
     return pcapiClient.<Annotation>invokeAPIVerboseAsync(request, new TypeReference<Annotation>() {}, callback);
   }
 
@@ -529,7 +530,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EncryptionKey> postRecordingLocalkeysAsync(PostRecordingLocalkeysRequest request, AsyncApiCallback<EncryptionKey> callback) throws ApiException {
+  public Future<EncryptionKey> postRecordingLocalkeysAsync(PostRecordingLocalkeysRequest request, AsyncApiCallback<EncryptionKey> callback) {
     return pcapiClient.<EncryptionKey>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EncryptionKey>() {}, callback);
   }
 
@@ -539,7 +540,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EncryptionKey>> postRecordingLocalkeysAsync(ApiRequest<LocalEncryptionKeyRequest> request, AsyncApiCallback<ApiResponse<EncryptionKey>> callback) throws ApiException {
+  public Future<ApiResponse<EncryptionKey>> postRecordingLocalkeysAsync(ApiRequest<LocalEncryptionKeyRequest> request, AsyncApiCallback<ApiResponse<EncryptionKey>> callback) {
     return pcapiClient.<EncryptionKey>invokeAPIVerboseAsync(request, new TypeReference<EncryptionKey>() {}, callback);
   }
 
@@ -549,7 +550,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<LocalEncryptionConfiguration> postRecordingLocalkeysSettingsAsync(PostRecordingLocalkeysSettingsRequest request, AsyncApiCallback<LocalEncryptionConfiguration> callback) throws ApiException {
+  public Future<LocalEncryptionConfiguration> postRecordingLocalkeysSettingsAsync(PostRecordingLocalkeysSettingsRequest request, AsyncApiCallback<LocalEncryptionConfiguration> callback) {
     return pcapiClient.<LocalEncryptionConfiguration>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {}, callback);
   }
 
@@ -559,7 +560,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<LocalEncryptionConfiguration>> postRecordingLocalkeysSettingsAsync(ApiRequest<LocalEncryptionConfiguration> request, AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>> callback) throws ApiException {
+  public Future<ApiResponse<LocalEncryptionConfiguration>> postRecordingLocalkeysSettingsAsync(ApiRequest<LocalEncryptionConfiguration> request, AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>> callback) {
     return pcapiClient.<LocalEncryptionConfiguration>invokeAPIVerboseAsync(request, new TypeReference<LocalEncryptionConfiguration>() {}, callback);
   }
 
@@ -569,7 +570,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Policy> postRecordingMediaretentionpoliciesAsync(PostRecordingMediaretentionpoliciesRequest request, AsyncApiCallback<Policy> callback) throws ApiException {
+  public Future<Policy> postRecordingMediaretentionpoliciesAsync(PostRecordingMediaretentionpoliciesRequest request, AsyncApiCallback<Policy> callback) {
     return pcapiClient.<Policy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Policy>() {}, callback);
   }
 
@@ -579,7 +580,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Policy>> postRecordingMediaretentionpoliciesAsync(ApiRequest<PolicyCreate> request, AsyncApiCallback<ApiResponse<Policy>> callback) throws ApiException {
+  public Future<ApiResponse<Policy>> postRecordingMediaretentionpoliciesAsync(ApiRequest<PolicyCreate> request, AsyncApiCallback<ApiResponse<Policy>> callback) {
     return pcapiClient.<Policy>invokeAPIVerboseAsync(request, new TypeReference<Policy>() {}, callback);
   }
 
@@ -589,7 +590,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<EncryptionKey> postRecordingRecordingkeysAsync(PostRecordingRecordingkeysRequest request, AsyncApiCallback<EncryptionKey> callback) throws ApiException {
+  public Future<EncryptionKey> postRecordingRecordingkeysAsync(PostRecordingRecordingkeysRequest request, AsyncApiCallback<EncryptionKey> callback) {
     return pcapiClient.<EncryptionKey>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EncryptionKey>() {}, callback);
   }
 
@@ -599,7 +600,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<EncryptionKey>> postRecordingRecordingkeysAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EncryptionKey>> callback) throws ApiException {
+  public Future<ApiResponse<EncryptionKey>> postRecordingRecordingkeysAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EncryptionKey>> callback) {
     return pcapiClient.<EncryptionKey>invokeAPIVerboseAsync(request, new TypeReference<EncryptionKey>() {}, callback);
   }
 
@@ -609,7 +610,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Recording> putConversationRecordingAsync(PutConversationRecordingRequest request, AsyncApiCallback<Recording> callback) throws ApiException {
+  public Future<Recording> putConversationRecordingAsync(PutConversationRecordingRequest request, AsyncApiCallback<Recording> callback) {
     return pcapiClient.<Recording>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Recording>() {}, callback);
   }
 
@@ -619,7 +620,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Recording>> putConversationRecordingAsync(ApiRequest<Recording> request, AsyncApiCallback<ApiResponse<Recording>> callback) throws ApiException {
+  public Future<ApiResponse<Recording>> putConversationRecordingAsync(ApiRequest<Recording> request, AsyncApiCallback<ApiResponse<Recording>> callback) {
     return pcapiClient.<Recording>invokeAPIVerboseAsync(request, new TypeReference<Recording>() {}, callback);
   }
 
@@ -629,7 +630,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Annotation> putConversationRecordingAnnotationAsync(PutConversationRecordingAnnotationRequest request, AsyncApiCallback<Annotation> callback) throws ApiException {
+  public Future<Annotation> putConversationRecordingAnnotationAsync(PutConversationRecordingAnnotationRequest request, AsyncApiCallback<Annotation> callback) {
     return pcapiClient.<Annotation>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Annotation>() {}, callback);
   }
 
@@ -639,7 +640,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Annotation>> putConversationRecordingAnnotationAsync(ApiRequest<Annotation> request, AsyncApiCallback<ApiResponse<Annotation>> callback) throws ApiException {
+  public Future<ApiResponse<Annotation>> putConversationRecordingAnnotationAsync(ApiRequest<Annotation> request, AsyncApiCallback<ApiResponse<Annotation>> callback) {
     return pcapiClient.<Annotation>invokeAPIVerboseAsync(request, new TypeReference<Annotation>() {}, callback);
   }
 
@@ -649,7 +650,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Recording> putOrphanrecordingAsync(PutOrphanrecordingRequest request, AsyncApiCallback<Recording> callback) throws ApiException {
+  public Future<Recording> putOrphanrecordingAsync(PutOrphanrecordingRequest request, AsyncApiCallback<Recording> callback) {
     return pcapiClient.<Recording>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Recording>() {}, callback);
   }
 
@@ -659,7 +660,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Recording>> putOrphanrecordingAsync(ApiRequest<OrphanUpdateRequest> request, AsyncApiCallback<ApiResponse<Recording>> callback) throws ApiException {
+  public Future<ApiResponse<Recording>> putOrphanrecordingAsync(ApiRequest<OrphanUpdateRequest> request, AsyncApiCallback<ApiResponse<Recording>> callback) {
     return pcapiClient.<Recording>invokeAPIVerboseAsync(request, new TypeReference<Recording>() {}, callback);
   }
 
@@ -669,7 +670,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<LocalEncryptionConfiguration> putRecordingLocalkeysSettingAsync(PutRecordingLocalkeysSettingRequest request, AsyncApiCallback<LocalEncryptionConfiguration> callback) throws ApiException {
+  public Future<LocalEncryptionConfiguration> putRecordingLocalkeysSettingAsync(PutRecordingLocalkeysSettingRequest request, AsyncApiCallback<LocalEncryptionConfiguration> callback) {
     return pcapiClient.<LocalEncryptionConfiguration>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {}, callback);
   }
 
@@ -679,7 +680,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<LocalEncryptionConfiguration>> putRecordingLocalkeysSettingAsync(ApiRequest<LocalEncryptionConfiguration> request, AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>> callback) throws ApiException {
+  public Future<ApiResponse<LocalEncryptionConfiguration>> putRecordingLocalkeysSettingAsync(ApiRequest<LocalEncryptionConfiguration> request, AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>> callback) {
     return pcapiClient.<LocalEncryptionConfiguration>invokeAPIVerboseAsync(request, new TypeReference<LocalEncryptionConfiguration>() {}, callback);
   }
 
@@ -689,7 +690,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Policy> putRecordingMediaretentionpolicyAsync(PutRecordingMediaretentionpolicyRequest request, AsyncApiCallback<Policy> callback) throws ApiException {
+  public Future<Policy> putRecordingMediaretentionpolicyAsync(PutRecordingMediaretentionpolicyRequest request, AsyncApiCallback<Policy> callback) {
     return pcapiClient.<Policy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Policy>() {}, callback);
   }
 
@@ -699,7 +700,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Policy>> putRecordingMediaretentionpolicyAsync(ApiRequest<Policy> request, AsyncApiCallback<ApiResponse<Policy>> callback) throws ApiException {
+  public Future<ApiResponse<Policy>> putRecordingMediaretentionpolicyAsync(ApiRequest<Policy> request, AsyncApiCallback<ApiResponse<Policy>> callback) {
     return pcapiClient.<Policy>invokeAPIVerboseAsync(request, new TypeReference<Policy>() {}, callback);
   }
 
@@ -709,7 +710,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<KeyRotationSchedule> putRecordingRecordingkeysRotationscheduleAsync(PutRecordingRecordingkeysRotationscheduleRequest request, AsyncApiCallback<KeyRotationSchedule> callback) throws ApiException {
+  public Future<KeyRotationSchedule> putRecordingRecordingkeysRotationscheduleAsync(PutRecordingRecordingkeysRotationscheduleRequest request, AsyncApiCallback<KeyRotationSchedule> callback) {
     return pcapiClient.<KeyRotationSchedule>invokeAPIAsync(request.withHttpInfo(), new TypeReference<KeyRotationSchedule>() {}, callback);
   }
 
@@ -719,7 +720,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<KeyRotationSchedule>> putRecordingRecordingkeysRotationscheduleAsync(ApiRequest<KeyRotationSchedule> request, AsyncApiCallback<ApiResponse<KeyRotationSchedule>> callback) throws ApiException {
+  public Future<ApiResponse<KeyRotationSchedule>> putRecordingRecordingkeysRotationscheduleAsync(ApiRequest<KeyRotationSchedule> request, AsyncApiCallback<ApiResponse<KeyRotationSchedule>> callback) {
     return pcapiClient.<KeyRotationSchedule>invokeAPIVerboseAsync(request, new TypeReference<KeyRotationSchedule>() {}, callback);
   }
 
@@ -729,7 +730,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<RecordingSettings> putRecordingSettingsAsync(PutRecordingSettingsRequest request, AsyncApiCallback<RecordingSettings> callback) throws ApiException {
+  public Future<RecordingSettings> putRecordingSettingsAsync(PutRecordingSettingsRequest request, AsyncApiCallback<RecordingSettings> callback) {
     return pcapiClient.<RecordingSettings>invokeAPIAsync(request.withHttpInfo(), new TypeReference<RecordingSettings>() {}, callback);
   }
 
@@ -739,7 +740,7 @@ public class RecordingApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<RecordingSettings>> putRecordingSettingsAsync(ApiRequest<RecordingSettings> request, AsyncApiCallback<ApiResponse<RecordingSettings>> callback) throws ApiException {
+  public Future<ApiResponse<RecordingSettings>> putRecordingSettingsAsync(ApiRequest<RecordingSettings> request, AsyncApiCallback<ApiResponse<RecordingSettings>> callback) {
     return pcapiClient.<RecordingSettings>invokeAPIVerboseAsync(request, new TypeReference<RecordingSettings>() {}, callback);
   }
 

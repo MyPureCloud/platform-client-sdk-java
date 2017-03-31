@@ -228,7 +228,7 @@ try {
 
 # **getResponsemanagementResponse**
 
-> [Response](Response.html) getResponsemanagementResponse(responseId)
+> [Response](Response.html) getResponsemanagementResponse(responseId, expand)
 
 Get details about an existing response.
 
@@ -254,8 +254,9 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ResponseManagementApi apiInstance = new ResponseManagementApi();
 String responseId = "responseId_example"; // String | Response ID
+String expand = "expand_example"; // String | Expand instructions for the return value.
 try {
-    Response result = apiInstance.getResponsemanagementResponse(responseId);
+    Response result = apiInstance.getResponsemanagementResponse(responseId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ResponseManagementApi#getResponsemanagementResponse");
@@ -269,6 +270,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **responseId** | **String**| Response ID | |
+| **expand** | **String**| Expand instructions for the return value. | [optional] [enum: substitutionsSchema] |
 {: class="table table-striped"}
 
 ### Return type
@@ -279,7 +281,7 @@ try {
 
 # **getResponsemanagementResponses**
 
-> [ResponseEntityListing](ResponseEntityListing.html) getResponsemanagementResponses(libraryId, pageNumber, pageSize)
+> [ResponseEntityListing](ResponseEntityListing.html) getResponsemanagementResponses(libraryId, pageNumber, pageSize, expand)
 
 Gets a list of existing responses.
 
@@ -307,8 +309,9 @@ ResponseManagementApi apiInstance = new ResponseManagementApi();
 String libraryId = "libraryId_example"; // String | Library ID
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
+String expand = "expand_example"; // String | Expand instructions for the return value.
 try {
-    ResponseEntityListing result = apiInstance.getResponsemanagementResponses(libraryId, pageNumber, pageSize);
+    ResponseEntityListing result = apiInstance.getResponsemanagementResponses(libraryId, pageNumber, pageSize, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ResponseManagementApi#getResponsemanagementResponses");
@@ -324,6 +327,7 @@ try {
 | **libraryId** | **String**| Library ID | |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **expand** | **String**| Expand instructions for the return value. | [optional] [enum: substitutionsSchema] |
 {: class="table table-striped"}
 
 ### Return type
@@ -385,7 +389,7 @@ try {
 
 # **postResponsemanagementResponses**
 
-> [Response](Response.html) postResponsemanagementResponses(body)
+> [Response](Response.html) postResponsemanagementResponses(body, expand)
 
 Create a response.
 
@@ -411,8 +415,9 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ResponseManagementApi apiInstance = new ResponseManagementApi();
 Response body = new Response(); // Response | Response
+String expand = "expand_example"; // String | Expand instructions for the return value.
 try {
-    Response result = apiInstance.postResponsemanagementResponses(body);
+    Response result = apiInstance.postResponsemanagementResponses(body, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ResponseManagementApi#postResponsemanagementResponses");
@@ -426,6 +431,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**Response**](Response.html)| Response | |
+| **expand** | **String**| Expand instructions for the return value. | [optional] [enum: substitutionsSchema] |
 {: class="table table-striped"}
 
 ### Return type
@@ -540,7 +546,7 @@ try {
 
 # **putResponsemanagementResponse**
 
-> [Response](Response.html) putResponsemanagementResponse(responseId, body)
+> [Response](Response.html) putResponsemanagementResponse(responseId, body, expand)
 
 Update an existing response.
 
@@ -567,8 +573,9 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 ResponseManagementApi apiInstance = new ResponseManagementApi();
 String responseId = "responseId_example"; // String | Response ID
 Response body = new Response(); // Response | Response
+String expand = "expand_example"; // String | Expand instructions for the return value.
 try {
-    Response result = apiInstance.putResponsemanagementResponse(responseId, body);
+    Response result = apiInstance.putResponsemanagementResponse(responseId, body, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ResponseManagementApi#putResponsemanagementResponse");
@@ -583,6 +590,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **responseId** | **String**| Response ID | |
 | **body** | [**Response**](Response.html)| Response | |
+| **expand** | **String**| Expand instructions for the return value. | [optional] [enum: substitutionsSchema] |
 {: class="table table-striped"}
 
 ### Return type

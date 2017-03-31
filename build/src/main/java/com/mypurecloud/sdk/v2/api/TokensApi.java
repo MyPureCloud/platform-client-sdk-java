@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteTokensMeRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -38,7 +39,7 @@ public class TokensApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public String deleteTokensMe() throws ApiException {
+  public String deleteTokensMe() throws IOException, ApiException {
     return deleteTokensMeWithHttpInfo().getBody();
   }
 
@@ -48,7 +49,7 @@ public class TokensApi {
    * @return String
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTokensMeWithHttpInfo() throws ApiException {
+  public ApiResponse<String> deleteTokensMeWithHttpInfo() throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -83,7 +84,7 @@ public class TokensApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public String deleteTokensMe(DeleteTokensMeRequest request) throws ApiException {
+  public String deleteTokensMe(DeleteTokensMeRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
   }
 
@@ -93,7 +94,7 @@ public class TokensApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<String> deleteTokensMe(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<String> deleteTokensMe(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
   }
 

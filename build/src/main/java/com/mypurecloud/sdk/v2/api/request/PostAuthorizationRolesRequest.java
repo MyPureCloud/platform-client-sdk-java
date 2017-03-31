@@ -65,11 +65,11 @@ public class PostAuthorizationRolesRequest {
         return this;
     }
 
-    public ApiRequest<DomainOrganizationRoleCreate> withHttpInfo() throws ApiException {
+    public ApiRequest<DomainOrganizationRoleCreate> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostAuthorizationRolesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostAuthorizationRolesRequest.");
         }
         
 

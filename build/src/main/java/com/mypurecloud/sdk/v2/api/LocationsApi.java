@@ -21,6 +21,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLocationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLocationsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLocationsSearchRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -45,7 +46,7 @@ public class LocationsApi {
    * @return LocationDefinition
    * @throws ApiException if fails to make API call
    */
-  public LocationDefinition getLocation(String locationId) throws ApiException {
+  public LocationDefinition getLocation(String locationId) throws IOException, ApiException {
     return getLocationWithHttpInfo(locationId).getBody();
   }
 
@@ -56,12 +57,12 @@ public class LocationsApi {
    * @return LocationDefinition
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LocationDefinition> getLocationWithHttpInfo(String locationId) throws ApiException {
+  public ApiResponse<LocationDefinition> getLocationWithHttpInfo(String locationId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'locationId' is set
     if (locationId == null) {
-      throw new ApiException(400, "Missing the required parameter 'locationId' when calling getLocation");
+      throw new IllegalArgumentException("Missing the required parameter 'locationId' when calling getLocation");
     }
     
     // create path and map variables
@@ -97,7 +98,7 @@ public class LocationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public LocationDefinition getLocation(GetLocationRequest request) throws ApiException {
+  public LocationDefinition getLocation(GetLocationRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LocationDefinition>() {});
   }
 
@@ -107,7 +108,7 @@ public class LocationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LocationDefinition> getLocation(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<LocationDefinition> getLocation(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<LocationDefinition>invokeAPIVerbose(request, new TypeReference<LocationDefinition>() {});
   }
 
@@ -120,7 +121,7 @@ public class LocationsApi {
    * @return List<LocationDefinition>
    * @throws ApiException if fails to make API call
    */
-  public List<LocationDefinition> getLocations(Integer pageSize, Integer pageNumber, String sortOrder) throws ApiException {
+  public List<LocationDefinition> getLocations(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
     return getLocationsWithHttpInfo(pageSize, pageNumber, sortOrder).getBody();
   }
 
@@ -133,7 +134,7 @@ public class LocationsApi {
    * @return List<LocationDefinition>
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<LocationDefinition>> getLocationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder) throws ApiException {
+  public ApiResponse<List<LocationDefinition>> getLocationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -171,7 +172,7 @@ public class LocationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public List<LocationDefinition> getLocations(GetLocationsRequest request) throws ApiException {
+  public List<LocationDefinition> getLocations(GetLocationsRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<LocationDefinition>>() {});
   }
 
@@ -181,7 +182,7 @@ public class LocationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<List<LocationDefinition>> getLocations(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<List<LocationDefinition>> getLocations(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<List<LocationDefinition>>invokeAPIVerbose(request, new TypeReference<List<LocationDefinition>>() {});
   }
 
@@ -193,7 +194,7 @@ public class LocationsApi {
    * @return LocationsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public LocationsSearchResponse getLocationsSearch(String q64, List<String> expand) throws ApiException {
+  public LocationsSearchResponse getLocationsSearch(String q64, List<String> expand) throws IOException, ApiException {
     return getLocationsSearchWithHttpInfo(q64, expand).getBody();
   }
 
@@ -205,12 +206,12 @@ public class LocationsApi {
    * @return LocationsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LocationsSearchResponse> getLocationsSearchWithHttpInfo(String q64, List<String> expand) throws ApiException {
+  public ApiResponse<LocationsSearchResponse> getLocationsSearchWithHttpInfo(String q64, List<String> expand) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'q64' is set
     if (q64 == null) {
-      throw new ApiException(400, "Missing the required parameter 'q64' when calling getLocationsSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'q64' when calling getLocationsSearch");
     }
     
     // create path and map variables
@@ -247,7 +248,7 @@ public class LocationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public LocationsSearchResponse getLocationsSearch(GetLocationsSearchRequest request) throws ApiException {
+  public LocationsSearchResponse getLocationsSearch(GetLocationsSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LocationsSearchResponse>() {});
   }
 
@@ -257,7 +258,7 @@ public class LocationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LocationsSearchResponse> getLocationsSearch(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<LocationsSearchResponse> getLocationsSearch(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<LocationsSearchResponse>invokeAPIVerbose(request, new TypeReference<LocationsSearchResponse>() {});
   }
 
@@ -268,7 +269,7 @@ public class LocationsApi {
    * @return LocationsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public LocationsSearchResponse postLocationsSearch(LocationSearchRequest body) throws ApiException {
+  public LocationsSearchResponse postLocationsSearch(LocationSearchRequest body) throws IOException, ApiException {
     return postLocationsSearchWithHttpInfo(body).getBody();
   }
 
@@ -279,12 +280,12 @@ public class LocationsApi {
    * @return LocationsSearchResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LocationsSearchResponse> postLocationsSearchWithHttpInfo(LocationSearchRequest body) throws ApiException {
+  public ApiResponse<LocationsSearchResponse> postLocationsSearchWithHttpInfo(LocationSearchRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postLocationsSearch");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postLocationsSearch");
     }
     
     // create path and map variables
@@ -319,7 +320,7 @@ public class LocationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public LocationsSearchResponse postLocationsSearch(PostLocationsSearchRequest request) throws ApiException {
+  public LocationsSearchResponse postLocationsSearch(PostLocationsSearchRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LocationsSearchResponse>() {});
   }
 
@@ -329,7 +330,7 @@ public class LocationsApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<LocationsSearchResponse> postLocationsSearch(ApiRequest<LocationSearchRequest> request) throws ApiException {
+  public ApiResponse<LocationsSearchResponse> postLocationsSearch(ApiRequest<LocationSearchRequest> request) throws IOException, ApiException {
     return pcapiClient.<LocationsSearchResponse>invokeAPIVerbose(request, new TypeReference<LocationsSearchResponse>() {});
   }
 

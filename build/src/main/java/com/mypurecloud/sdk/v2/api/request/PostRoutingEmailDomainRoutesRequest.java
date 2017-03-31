@@ -94,16 +94,16 @@ public class PostRoutingEmailDomainRoutesRequest {
         return this;
     }
 
-    public ApiRequest<InboundRoute> withHttpInfo() throws ApiException {
+    public ApiRequest<InboundRoute> withHttpInfo() {
         
         // verify the required parameter 'domainName' is set
         if (this.domainName == null) {
-            throw new ApiException(400, "Missing the required parameter 'domainName' when building request for PostRoutingEmailDomainRoutesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'domainName' when building request for PostRoutingEmailDomainRoutesRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostRoutingEmailDomainRoutesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostRoutingEmailDomainRoutesRequest.");
         }
         
 

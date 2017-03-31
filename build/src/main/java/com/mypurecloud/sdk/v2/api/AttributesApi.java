@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAttributesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAttributeRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -46,7 +47,7 @@ public class AttributesApi {
    * @param attributeId Attribute ID (required)
    * @throws ApiException if fails to make API call
    */
-  public void deleteAttribute(String attributeId) throws ApiException {
+  public void deleteAttribute(String attributeId) throws IOException, ApiException {
     deleteAttributeWithHttpInfo(attributeId);
   }
 
@@ -56,12 +57,12 @@ public class AttributesApi {
    * @param attributeId Attribute ID (required)
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteAttributeWithHttpInfo(String attributeId) throws ApiException {
+  public ApiResponse<Void> deleteAttributeWithHttpInfo(String attributeId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'attributeId' is set
     if (attributeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'attributeId' when calling deleteAttribute");
+      throw new IllegalArgumentException("Missing the required parameter 'attributeId' when calling deleteAttribute");
     }
     
     // create path and map variables
@@ -97,7 +98,7 @@ public class AttributesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public void deleteAttribute(DeleteAttributeRequest request) throws ApiException {
+  public void deleteAttribute(DeleteAttributeRequest request) throws IOException, ApiException {
     pcapiClient.invokeAPI(request.withHttpInfo(), null);
   }
 
@@ -107,7 +108,7 @@ public class AttributesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> deleteAttribute(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Void> deleteAttribute(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Void>invokeAPIVerbose(request, null);
   }
 
@@ -118,7 +119,7 @@ public class AttributesApi {
    * @return Attribute
    * @throws ApiException if fails to make API call
    */
-  public Attribute getAttribute(String attributeId) throws ApiException {
+  public Attribute getAttribute(String attributeId) throws IOException, ApiException {
     return getAttributeWithHttpInfo(attributeId).getBody();
   }
 
@@ -129,12 +130,12 @@ public class AttributesApi {
    * @return Attribute
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Attribute> getAttributeWithHttpInfo(String attributeId) throws ApiException {
+  public ApiResponse<Attribute> getAttributeWithHttpInfo(String attributeId) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // verify the required parameter 'attributeId' is set
     if (attributeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'attributeId' when calling getAttribute");
+      throw new IllegalArgumentException("Missing the required parameter 'attributeId' when calling getAttribute");
     }
     
     // create path and map variables
@@ -170,7 +171,7 @@ public class AttributesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Attribute getAttribute(GetAttributeRequest request) throws ApiException {
+  public Attribute getAttribute(GetAttributeRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Attribute>() {});
   }
 
@@ -180,7 +181,7 @@ public class AttributesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Attribute> getAttribute(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<Attribute> getAttribute(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<Attribute>invokeAPIVerbose(request, new TypeReference<Attribute>() {});
   }
 
@@ -192,7 +193,7 @@ public class AttributesApi {
    * @return AttributeEntityListing
    * @throws ApiException if fails to make API call
    */
-  public AttributeEntityListing getAttributes(Integer pageNumber, Integer pageSize) throws ApiException {
+  public AttributeEntityListing getAttributes(Integer pageNumber, Integer pageSize) throws IOException, ApiException {
     return getAttributesWithHttpInfo(pageNumber, pageSize).getBody();
   }
 
@@ -204,7 +205,7 @@ public class AttributesApi {
    * @return AttributeEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AttributeEntityListing> getAttributesWithHttpInfo(Integer pageNumber, Integer pageSize) throws ApiException {
+  public ApiResponse<AttributeEntityListing> getAttributesWithHttpInfo(Integer pageNumber, Integer pageSize) throws IOException, ApiException {
     Object pclocalVarPostBody = null;
     
     // create path and map variables
@@ -241,7 +242,7 @@ public class AttributesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public AttributeEntityListing getAttributes(GetAttributesRequest request) throws ApiException {
+  public AttributeEntityListing getAttributes(GetAttributesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AttributeEntityListing>() {});
   }
 
@@ -251,7 +252,7 @@ public class AttributesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AttributeEntityListing> getAttributes(ApiRequest<Void> request) throws ApiException {
+  public ApiResponse<AttributeEntityListing> getAttributes(ApiRequest<Void> request) throws IOException, ApiException {
     return pcapiClient.<AttributeEntityListing>invokeAPIVerbose(request, new TypeReference<AttributeEntityListing>() {});
   }
 
@@ -262,7 +263,7 @@ public class AttributesApi {
    * @return Attribute
    * @throws ApiException if fails to make API call
    */
-  public Attribute postAttributes(Attribute body) throws ApiException {
+  public Attribute postAttributes(Attribute body) throws IOException, ApiException {
     return postAttributesWithHttpInfo(body).getBody();
   }
 
@@ -273,12 +274,12 @@ public class AttributesApi {
    * @return Attribute
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Attribute> postAttributesWithHttpInfo(Attribute body) throws ApiException {
+  public ApiResponse<Attribute> postAttributesWithHttpInfo(Attribute body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAttributes");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAttributes");
     }
     
     // create path and map variables
@@ -313,7 +314,7 @@ public class AttributesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Attribute postAttributes(PostAttributesRequest request) throws ApiException {
+  public Attribute postAttributes(PostAttributesRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Attribute>() {});
   }
 
@@ -323,7 +324,7 @@ public class AttributesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Attribute> postAttributes(ApiRequest<Attribute> request) throws ApiException {
+  public ApiResponse<Attribute> postAttributes(ApiRequest<Attribute> request) throws IOException, ApiException {
     return pcapiClient.<Attribute>invokeAPIVerbose(request, new TypeReference<Attribute>() {});
   }
 
@@ -334,7 +335,7 @@ public class AttributesApi {
    * @return AttributeEntityListing
    * @throws ApiException if fails to make API call
    */
-  public AttributeEntityListing postAttributesQuery(AttributeQueryRequest body) throws ApiException {
+  public AttributeEntityListing postAttributesQuery(AttributeQueryRequest body) throws IOException, ApiException {
     return postAttributesQueryWithHttpInfo(body).getBody();
   }
 
@@ -345,12 +346,12 @@ public class AttributesApi {
    * @return AttributeEntityListing
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AttributeEntityListing> postAttributesQueryWithHttpInfo(AttributeQueryRequest body) throws ApiException {
+  public ApiResponse<AttributeEntityListing> postAttributesQueryWithHttpInfo(AttributeQueryRequest body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling postAttributesQuery");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAttributesQuery");
     }
     
     // create path and map variables
@@ -385,7 +386,7 @@ public class AttributesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public AttributeEntityListing postAttributesQuery(PostAttributesQueryRequest request) throws ApiException {
+  public AttributeEntityListing postAttributesQuery(PostAttributesQueryRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AttributeEntityListing>() {});
   }
 
@@ -395,7 +396,7 @@ public class AttributesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<AttributeEntityListing> postAttributesQuery(ApiRequest<AttributeQueryRequest> request) throws ApiException {
+  public ApiResponse<AttributeEntityListing> postAttributesQuery(ApiRequest<AttributeQueryRequest> request) throws IOException, ApiException {
     return pcapiClient.<AttributeEntityListing>invokeAPIVerbose(request, new TypeReference<AttributeEntityListing>() {});
   }
 
@@ -407,7 +408,7 @@ public class AttributesApi {
    * @return Attribute
    * @throws ApiException if fails to make API call
    */
-  public Attribute putAttribute(String attributeId, Attribute body) throws ApiException {
+  public Attribute putAttribute(String attributeId, Attribute body) throws IOException, ApiException {
     return putAttributeWithHttpInfo(attributeId, body).getBody();
   }
 
@@ -419,17 +420,17 @@ public class AttributesApi {
    * @return Attribute
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Attribute> putAttributeWithHttpInfo(String attributeId, Attribute body) throws ApiException {
+  public ApiResponse<Attribute> putAttributeWithHttpInfo(String attributeId, Attribute body) throws IOException, ApiException {
     Object pclocalVarPostBody = body;
     
     // verify the required parameter 'attributeId' is set
     if (attributeId == null) {
-      throw new ApiException(400, "Missing the required parameter 'attributeId' when calling putAttribute");
+      throw new IllegalArgumentException("Missing the required parameter 'attributeId' when calling putAttribute");
     }
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling putAttribute");
+      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAttribute");
     }
     
     // create path and map variables
@@ -465,7 +466,7 @@ public class AttributesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Attribute putAttribute(PutAttributeRequest request) throws ApiException {
+  public Attribute putAttribute(PutAttributeRequest request) throws IOException, ApiException {
     return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Attribute>() {});
   }
 
@@ -475,7 +476,7 @@ public class AttributesApi {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Attribute> putAttribute(ApiRequest<Attribute> request) throws ApiException {
+  public ApiResponse<Attribute> putAttribute(ApiRequest<Attribute> request) throws IOException, ApiException {
     return pcapiClient.<Attribute>invokeAPIVerbose(request, new TypeReference<Attribute>() {});
   }
 

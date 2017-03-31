@@ -97,16 +97,16 @@ public class GetUserGeolocationRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'userId' is set
         if (this.userId == null) {
-            throw new ApiException(400, "Missing the required parameter 'userId' when building request for GetUserGeolocationRequest.");
+            throw new IllegalStateException("Missing the required parameter 'userId' when building request for GetUserGeolocationRequest.");
         }
         
         // verify the required parameter 'clientId' is set
         if (this.clientId == null) {
-            throw new ApiException(400, "Missing the required parameter 'clientId' when building request for GetUserGeolocationRequest.");
+            throw new IllegalStateException("Missing the required parameter 'clientId' when building request for GetUserGeolocationRequest.");
         }
         
 

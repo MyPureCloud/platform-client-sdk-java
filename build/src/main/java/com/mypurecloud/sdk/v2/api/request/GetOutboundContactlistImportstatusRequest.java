@@ -91,11 +91,11 @@ public class GetOutboundContactlistImportstatusRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'contactListId' is set
         if (this.contactListId == null) {
-            throw new ApiException(400, "Missing the required parameter 'contactListId' when building request for GetOutboundContactlistImportstatusRequest.");
+            throw new IllegalStateException("Missing the required parameter 'contactListId' when building request for GetOutboundContactlistImportstatusRequest.");
         }
         
 

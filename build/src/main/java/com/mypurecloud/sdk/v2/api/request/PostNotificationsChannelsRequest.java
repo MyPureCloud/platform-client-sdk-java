@@ -48,7 +48,7 @@ public class PostNotificationsChannelsRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/notifications/channels")                .withCustomHeaders(customHeaders)

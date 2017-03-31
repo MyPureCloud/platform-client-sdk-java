@@ -120,11 +120,11 @@ public class GetTelephonyProvidersEdgesCertificateauthorityRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'certificateId' is set
         if (this.certificateId == null) {
-            throw new ApiException(400, "Missing the required parameter 'certificateId' when building request for GetTelephonyProvidersEdgesCertificateauthorityRequest.");
+            throw new IllegalStateException("Missing the required parameter 'certificateId' when building request for GetTelephonyProvidersEdgesCertificateauthorityRequest.");
         }
         
 

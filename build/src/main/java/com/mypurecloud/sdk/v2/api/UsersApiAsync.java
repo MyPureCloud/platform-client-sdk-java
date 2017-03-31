@@ -83,6 +83,7 @@ import com.mypurecloud.sdk.v2.api.request.PutUserRoutingstatusRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserStationAssociatedstationStationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserStationDefaultstationStationIdRequest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -107,7 +108,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Empty> deleteUserAsync(DeleteUserRequest request, AsyncApiCallback<Empty> callback) throws ApiException {
+  public Future<Empty> deleteUserAsync(DeleteUserRequest request, AsyncApiCallback<Empty> callback) {
     return pcapiClient.<Empty>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, callback);
   }
 
@@ -117,7 +118,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Empty>> deleteUserAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) throws ApiException {
+  public Future<ApiResponse<Empty>> deleteUserAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
     return pcapiClient.<Empty>invokeAPIVerboseAsync(request, new TypeReference<Empty>() {}, callback);
   }
 
@@ -127,7 +128,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteUserRolesAsync(DeleteUserRolesRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteUserRolesAsync(DeleteUserRolesRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -137,7 +138,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteUserRolesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteUserRolesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -147,7 +148,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<String> deleteUserRoutingskillAsync(DeleteUserRoutingskillRequest request, AsyncApiCallback<String> callback) throws ApiException {
+  public Future<String> deleteUserRoutingskillAsync(DeleteUserRoutingskillRequest request, AsyncApiCallback<String> callback) {
     return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
   }
 
@@ -157,7 +158,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<String>> deleteUserRoutingskillAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) throws ApiException {
+  public Future<ApiResponse<String>> deleteUserRoutingskillAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
     return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
   }
 
@@ -167,7 +168,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteUserStationAssociatedstationAsync(DeleteUserStationAssociatedstationRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteUserStationAssociatedstationAsync(DeleteUserStationAssociatedstationRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -177,7 +178,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteUserStationAssociatedstationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteUserStationAssociatedstationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -187,7 +188,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> deleteUserStationDefaultstationAsync(DeleteUserStationDefaultstationRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> deleteUserStationDefaultstationAsync(DeleteUserStationDefaultstationRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -197,7 +198,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> deleteUserStationDefaultstationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> deleteUserStationDefaultstationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -207,7 +208,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<FieldConfig> getFieldconfigAsync(GetFieldconfigRequest request, AsyncApiCallback<FieldConfig> callback) throws ApiException {
+  public Future<FieldConfig> getFieldconfigAsync(GetFieldconfigRequest request, AsyncApiCallback<FieldConfig> callback) {
     return pcapiClient.<FieldConfig>invokeAPIAsync(request.withHttpInfo(), new TypeReference<FieldConfig>() {}, callback);
   }
 
@@ -217,7 +218,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<FieldConfig>> getFieldconfigAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FieldConfig>> callback) throws ApiException {
+  public Future<ApiResponse<FieldConfig>> getFieldconfigAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FieldConfig>> callback) {
     return pcapiClient.<FieldConfig>invokeAPIVerboseAsync(request, new TypeReference<FieldConfig>() {}, callback);
   }
 
@@ -227,7 +228,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<User> getUserAsync(GetUserRequest request, AsyncApiCallback<User> callback) throws ApiException {
+  public Future<User> getUserAsync(GetUserRequest request, AsyncApiCallback<User> callback) {
     return pcapiClient.<User>invokeAPIAsync(request.withHttpInfo(), new TypeReference<User>() {}, callback);
   }
 
@@ -237,7 +238,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<User>> getUserAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<User>> callback) throws ApiException {
+  public Future<ApiResponse<User>> getUserAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<User>> callback) {
     return pcapiClient.<User>invokeAPIVerboseAsync(request, new TypeReference<User>() {}, callback);
   }
 
@@ -247,7 +248,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Adjacents> getUserAdjacentsAsync(GetUserAdjacentsRequest request, AsyncApiCallback<Adjacents> callback) throws ApiException {
+  public Future<Adjacents> getUserAdjacentsAsync(GetUserAdjacentsRequest request, AsyncApiCallback<Adjacents> callback) {
     return pcapiClient.<Adjacents>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Adjacents>() {}, callback);
   }
 
@@ -257,7 +258,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Adjacents>> getUserAdjacentsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Adjacents>> callback) throws ApiException {
+  public Future<ApiResponse<Adjacents>> getUserAdjacentsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Adjacents>> callback) {
     return pcapiClient.<Adjacents>invokeAPIVerboseAsync(request, new TypeReference<Adjacents>() {}, callback);
   }
 
@@ -267,7 +268,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CallForwarding> getUserCallforwardingAsync(GetUserCallforwardingRequest request, AsyncApiCallback<CallForwarding> callback) throws ApiException {
+  public Future<CallForwarding> getUserCallforwardingAsync(GetUserCallforwardingRequest request, AsyncApiCallback<CallForwarding> callback) {
     return pcapiClient.<CallForwarding>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CallForwarding>() {}, callback);
   }
 
@@ -277,7 +278,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CallForwarding>> getUserCallforwardingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CallForwarding>> callback) throws ApiException {
+  public Future<ApiResponse<CallForwarding>> getUserCallforwardingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CallForwarding>> callback) {
     return pcapiClient.<CallForwarding>invokeAPIVerboseAsync(request, new TypeReference<CallForwarding>() {}, callback);
   }
 
@@ -287,7 +288,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<User>> getUserDirectreportsAsync(GetUserDirectreportsRequest request, AsyncApiCallback<List<User>> callback) throws ApiException {
+  public Future<List<User>> getUserDirectreportsAsync(GetUserDirectreportsRequest request, AsyncApiCallback<List<User>> callback) {
     return pcapiClient.<List<User>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<User>>() {}, callback);
   }
 
@@ -297,7 +298,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<User>>> getUserDirectreportsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<User>>> callback) throws ApiException {
+  public Future<ApiResponse<List<User>>> getUserDirectreportsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<User>>> callback) {
     return pcapiClient.<List<User>>invokeAPIVerboseAsync(request, new TypeReference<List<User>>() {}, callback);
   }
 
@@ -307,7 +308,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UserEntityListing> getUserFavoritesAsync(GetUserFavoritesRequest request, AsyncApiCallback<UserEntityListing> callback) throws ApiException {
+  public Future<UserEntityListing> getUserFavoritesAsync(GetUserFavoritesRequest request, AsyncApiCallback<UserEntityListing> callback) {
     return pcapiClient.<UserEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserEntityListing>() {}, callback);
   }
 
@@ -317,7 +318,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UserEntityListing>> getUserFavoritesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<UserEntityListing>> getUserFavoritesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserEntityListing>> callback) {
     return pcapiClient.<UserEntityListing>invokeAPIVerboseAsync(request, new TypeReference<UserEntityListing>() {}, callback);
   }
 
@@ -327,7 +328,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Geolocation> getUserGeolocationAsync(GetUserGeolocationRequest request, AsyncApiCallback<Geolocation> callback) throws ApiException {
+  public Future<Geolocation> getUserGeolocationAsync(GetUserGeolocationRequest request, AsyncApiCallback<Geolocation> callback) {
     return pcapiClient.<Geolocation>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Geolocation>() {}, callback);
   }
 
@@ -337,7 +338,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Geolocation>> getUserGeolocationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Geolocation>> callback) throws ApiException {
+  public Future<ApiResponse<Geolocation>> getUserGeolocationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Geolocation>> callback) {
     return pcapiClient.<Geolocation>invokeAPIVerboseAsync(request, new TypeReference<Geolocation>() {}, callback);
   }
 
@@ -347,7 +348,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OutOfOffice> getUserOutofofficeAsync(GetUserOutofofficeRequest request, AsyncApiCallback<OutOfOffice> callback) throws ApiException {
+  public Future<OutOfOffice> getUserOutofofficeAsync(GetUserOutofofficeRequest request, AsyncApiCallback<OutOfOffice> callback) {
     return pcapiClient.<OutOfOffice>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OutOfOffice>() {}, callback);
   }
 
@@ -357,7 +358,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OutOfOffice>> getUserOutofofficeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OutOfOffice>> callback) throws ApiException {
+  public Future<ApiResponse<OutOfOffice>> getUserOutofofficeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OutOfOffice>> callback) {
     return pcapiClient.<OutOfOffice>invokeAPIVerboseAsync(request, new TypeReference<OutOfOffice>() {}, callback);
   }
 
@@ -367,7 +368,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<String>> getUserProfileskillsAsync(GetUserProfileskillsRequest request, AsyncApiCallback<List<String>> callback) throws ApiException {
+  public Future<List<String>> getUserProfileskillsAsync(GetUserProfileskillsRequest request, AsyncApiCallback<List<String>> callback) {
     return pcapiClient.<List<String>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<String>>() {}, callback);
   }
 
@@ -377,7 +378,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<String>>> getUserProfileskillsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<String>>> callback) throws ApiException {
+  public Future<ApiResponse<List<String>>> getUserProfileskillsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<String>>> callback) {
     return pcapiClient.<List<String>>invokeAPIVerboseAsync(request, new TypeReference<List<String>>() {}, callback);
   }
 
@@ -387,7 +388,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UserQueueEntityListing> getUserQueuesAsync(GetUserQueuesRequest request, AsyncApiCallback<UserQueueEntityListing> callback) throws ApiException {
+  public Future<UserQueueEntityListing> getUserQueuesAsync(GetUserQueuesRequest request, AsyncApiCallback<UserQueueEntityListing> callback) {
     return pcapiClient.<UserQueueEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserQueueEntityListing>() {}, callback);
   }
 
@@ -397,7 +398,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UserQueueEntityListing>> getUserQueuesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserQueueEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<UserQueueEntityListing>> getUserQueuesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserQueueEntityListing>> callback) {
     return pcapiClient.<UserQueueEntityListing>invokeAPIVerboseAsync(request, new TypeReference<UserQueueEntityListing>() {}, callback);
   }
 
@@ -407,7 +408,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UserAuthorization> getUserRolesAsync(GetUserRolesRequest request, AsyncApiCallback<UserAuthorization> callback) throws ApiException {
+  public Future<UserAuthorization> getUserRolesAsync(GetUserRolesRequest request, AsyncApiCallback<UserAuthorization> callback) {
     return pcapiClient.<UserAuthorization>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserAuthorization>() {}, callback);
   }
 
@@ -417,7 +418,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UserAuthorization>> getUserRolesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserAuthorization>> callback) throws ApiException {
+  public Future<ApiResponse<UserAuthorization>> getUserRolesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserAuthorization>> callback) {
     return pcapiClient.<UserAuthorization>invokeAPIVerboseAsync(request, new TypeReference<UserAuthorization>() {}, callback);
   }
 
@@ -427,7 +428,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UserSkillEntityListing> getUserRoutingskillsAsync(GetUserRoutingskillsRequest request, AsyncApiCallback<UserSkillEntityListing> callback) throws ApiException {
+  public Future<UserSkillEntityListing> getUserRoutingskillsAsync(GetUserRoutingskillsRequest request, AsyncApiCallback<UserSkillEntityListing> callback) {
     return pcapiClient.<UserSkillEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserSkillEntityListing>() {}, callback);
   }
 
@@ -437,7 +438,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UserSkillEntityListing>> getUserRoutingskillsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserSkillEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<UserSkillEntityListing>> getUserRoutingskillsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserSkillEntityListing>> callback) {
     return pcapiClient.<UserSkillEntityListing>invokeAPIVerboseAsync(request, new TypeReference<UserSkillEntityListing>() {}, callback);
   }
 
@@ -447,7 +448,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<RoutingStatus> getUserRoutingstatusAsync(GetUserRoutingstatusRequest request, AsyncApiCallback<RoutingStatus> callback) throws ApiException {
+  public Future<RoutingStatus> getUserRoutingstatusAsync(GetUserRoutingstatusRequest request, AsyncApiCallback<RoutingStatus> callback) {
     return pcapiClient.<RoutingStatus>invokeAPIAsync(request.withHttpInfo(), new TypeReference<RoutingStatus>() {}, callback);
   }
 
@@ -457,7 +458,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<RoutingStatus>> getUserRoutingstatusAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RoutingStatus>> callback) throws ApiException {
+  public Future<ApiResponse<RoutingStatus>> getUserRoutingstatusAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RoutingStatus>> callback) {
     return pcapiClient.<RoutingStatus>invokeAPIVerboseAsync(request, new TypeReference<RoutingStatus>() {}, callback);
   }
 
@@ -467,7 +468,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UserStations> getUserStationAsync(GetUserStationRequest request, AsyncApiCallback<UserStations> callback) throws ApiException {
+  public Future<UserStations> getUserStationAsync(GetUserStationRequest request, AsyncApiCallback<UserStations> callback) {
     return pcapiClient.<UserStations>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserStations>() {}, callback);
   }
 
@@ -477,7 +478,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UserStations>> getUserStationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserStations>> callback) throws ApiException {
+  public Future<ApiResponse<UserStations>> getUserStationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserStations>> callback) {
     return pcapiClient.<UserStations>invokeAPIVerboseAsync(request, new TypeReference<UserStations>() {}, callback);
   }
 
@@ -487,7 +488,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<User>> getUserSuperiorsAsync(GetUserSuperiorsRequest request, AsyncApiCallback<List<User>> callback) throws ApiException {
+  public Future<List<User>> getUserSuperiorsAsync(GetUserSuperiorsRequest request, AsyncApiCallback<List<User>> callback) {
     return pcapiClient.<List<User>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<User>>() {}, callback);
   }
 
@@ -497,7 +498,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<User>>> getUserSuperiorsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<User>>> callback) throws ApiException {
+  public Future<ApiResponse<List<User>>> getUserSuperiorsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<User>>> callback) {
     return pcapiClient.<List<User>>invokeAPIVerboseAsync(request, new TypeReference<List<User>>() {}, callback);
   }
 
@@ -507,7 +508,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UserEntityListing> getUsersAsync(GetUsersRequest request, AsyncApiCallback<UserEntityListing> callback) throws ApiException {
+  public Future<UserEntityListing> getUsersAsync(GetUsersRequest request, AsyncApiCallback<UserEntityListing> callback) {
     return pcapiClient.<UserEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserEntityListing>() {}, callback);
   }
 
@@ -517,7 +518,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UserEntityListing>> getUsersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<UserEntityListing>> getUsersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserEntityListing>> callback) {
     return pcapiClient.<UserEntityListing>invokeAPIVerboseAsync(request, new TypeReference<UserEntityListing>() {}, callback);
   }
 
@@ -527,7 +528,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UserMe> getUsersMeAsync(GetUsersMeRequest request, AsyncApiCallback<UserMe> callback) throws ApiException {
+  public Future<UserMe> getUsersMeAsync(GetUsersMeRequest request, AsyncApiCallback<UserMe> callback) {
     return pcapiClient.<UserMe>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserMe>() {}, callback);
   }
 
@@ -537,7 +538,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UserMe>> getUsersMeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserMe>> callback) throws ApiException {
+  public Future<ApiResponse<UserMe>> getUsersMeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserMe>> callback) {
     return pcapiClient.<UserMe>invokeAPIVerboseAsync(request, new TypeReference<UserMe>() {}, callback);
   }
 
@@ -547,7 +548,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UsersSearchResponse> getUsersSearchAsync(GetUsersSearchRequest request, AsyncApiCallback<UsersSearchResponse> callback) throws ApiException {
+  public Future<UsersSearchResponse> getUsersSearchAsync(GetUsersSearchRequest request, AsyncApiCallback<UsersSearchResponse> callback) {
     return pcapiClient.<UsersSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UsersSearchResponse>() {}, callback);
   }
 
@@ -557,7 +558,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UsersSearchResponse>> getUsersSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UsersSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<UsersSearchResponse>> getUsersSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UsersSearchResponse>> callback) {
     return pcapiClient.<UsersSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<UsersSearchResponse>() {}, callback);
   }
 
@@ -567,7 +568,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<User> patchUserAsync(PatchUserRequest request, AsyncApiCallback<User> callback) throws ApiException {
+  public Future<User> patchUserAsync(PatchUserRequest request, AsyncApiCallback<User> callback) {
     return pcapiClient.<User>invokeAPIAsync(request.withHttpInfo(), new TypeReference<User>() {}, callback);
   }
 
@@ -577,7 +578,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<User>> patchUserAsync(ApiRequest<User> request, AsyncApiCallback<ApiResponse<User>> callback) throws ApiException {
+  public Future<ApiResponse<User>> patchUserAsync(ApiRequest<User> request, AsyncApiCallback<ApiResponse<User>> callback) {
     return pcapiClient.<User>invokeAPIVerboseAsync(request, new TypeReference<User>() {}, callback);
   }
 
@@ -587,7 +588,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CallForwarding> patchUserCallforwardingAsync(PatchUserCallforwardingRequest request, AsyncApiCallback<CallForwarding> callback) throws ApiException {
+  public Future<CallForwarding> patchUserCallforwardingAsync(PatchUserCallforwardingRequest request, AsyncApiCallback<CallForwarding> callback) {
     return pcapiClient.<CallForwarding>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CallForwarding>() {}, callback);
   }
 
@@ -597,7 +598,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CallForwarding>> patchUserCallforwardingAsync(ApiRequest<CallForwarding> request, AsyncApiCallback<ApiResponse<CallForwarding>> callback) throws ApiException {
+  public Future<ApiResponse<CallForwarding>> patchUserCallforwardingAsync(ApiRequest<CallForwarding> request, AsyncApiCallback<ApiResponse<CallForwarding>> callback) {
     return pcapiClient.<CallForwarding>invokeAPIVerboseAsync(request, new TypeReference<CallForwarding>() {}, callback);
   }
 
@@ -607,7 +608,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Geolocation> patchUserGeolocationAsync(PatchUserGeolocationRequest request, AsyncApiCallback<Geolocation> callback) throws ApiException {
+  public Future<Geolocation> patchUserGeolocationAsync(PatchUserGeolocationRequest request, AsyncApiCallback<Geolocation> callback) {
     return pcapiClient.<Geolocation>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Geolocation>() {}, callback);
   }
 
@@ -617,7 +618,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Geolocation>> patchUserGeolocationAsync(ApiRequest<Geolocation> request, AsyncApiCallback<ApiResponse<Geolocation>> callback) throws ApiException {
+  public Future<ApiResponse<Geolocation>> patchUserGeolocationAsync(ApiRequest<Geolocation> request, AsyncApiCallback<ApiResponse<Geolocation>> callback) {
     return pcapiClient.<Geolocation>invokeAPIVerboseAsync(request, new TypeReference<Geolocation>() {}, callback);
   }
 
@@ -627,7 +628,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UserQueue> patchUserQueueAsync(PatchUserQueueRequest request, AsyncApiCallback<UserQueue> callback) throws ApiException {
+  public Future<UserQueue> patchUserQueueAsync(PatchUserQueueRequest request, AsyncApiCallback<UserQueue> callback) {
     return pcapiClient.<UserQueue>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserQueue>() {}, callback);
   }
 
@@ -637,7 +638,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UserQueue>> patchUserQueueAsync(ApiRequest<UserQueue> request, AsyncApiCallback<ApiResponse<UserQueue>> callback) throws ApiException {
+  public Future<ApiResponse<UserQueue>> patchUserQueueAsync(ApiRequest<UserQueue> request, AsyncApiCallback<ApiResponse<UserQueue>> callback) {
     return pcapiClient.<UserQueue>invokeAPIVerboseAsync(request, new TypeReference<UserQueue>() {}, callback);
   }
 
@@ -647,7 +648,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UserQueueEntityListing> patchUserQueuesAsync(PatchUserQueuesRequest request, AsyncApiCallback<UserQueueEntityListing> callback) throws ApiException {
+  public Future<UserQueueEntityListing> patchUserQueuesAsync(PatchUserQueuesRequest request, AsyncApiCallback<UserQueueEntityListing> callback) {
     return pcapiClient.<UserQueueEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserQueueEntityListing>() {}, callback);
   }
 
@@ -657,7 +658,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UserQueueEntityListing>> patchUserQueuesAsync(ApiRequest<List<UserQueue>> request, AsyncApiCallback<ApiResponse<UserQueueEntityListing>> callback) throws ApiException {
+  public Future<ApiResponse<UserQueueEntityListing>> patchUserQueuesAsync(ApiRequest<List<UserQueue>> request, AsyncApiCallback<ApiResponse<UserQueueEntityListing>> callback) {
     return pcapiClient.<UserQueueEntityListing>invokeAPIVerboseAsync(request, new TypeReference<UserQueueEntityListing>() {}, callback);
   }
 
@@ -667,7 +668,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<PresenceQueryResponse> postAnalyticsUsersAggregatesQueryAsync(PostAnalyticsUsersAggregatesQueryRequest request, AsyncApiCallback<PresenceQueryResponse> callback) throws ApiException {
+  public Future<PresenceQueryResponse> postAnalyticsUsersAggregatesQueryAsync(PostAnalyticsUsersAggregatesQueryRequest request, AsyncApiCallback<PresenceQueryResponse> callback) {
     return pcapiClient.<PresenceQueryResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PresenceQueryResponse>() {}, callback);
   }
 
@@ -677,7 +678,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<PresenceQueryResponse>> postAnalyticsUsersAggregatesQueryAsync(ApiRequest<AggregationQuery> request, AsyncApiCallback<ApiResponse<PresenceQueryResponse>> callback) throws ApiException {
+  public Future<ApiResponse<PresenceQueryResponse>> postAnalyticsUsersAggregatesQueryAsync(ApiRequest<AggregationQuery> request, AsyncApiCallback<ApiResponse<PresenceQueryResponse>> callback) {
     return pcapiClient.<PresenceQueryResponse>invokeAPIVerboseAsync(request, new TypeReference<PresenceQueryResponse>() {}, callback);
   }
 
@@ -687,7 +688,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<AnalyticsUserDetailsQueryResponse> postAnalyticsUsersDetailsQueryAsync(PostAnalyticsUsersDetailsQueryRequest request, AsyncApiCallback<AnalyticsUserDetailsQueryResponse> callback) throws ApiException {
+  public Future<AnalyticsUserDetailsQueryResponse> postAnalyticsUsersDetailsQueryAsync(PostAnalyticsUsersDetailsQueryRequest request, AsyncApiCallback<AnalyticsUserDetailsQueryResponse> callback) {
     return pcapiClient.<AnalyticsUserDetailsQueryResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<AnalyticsUserDetailsQueryResponse>() {}, callback);
   }
 
@@ -697,7 +698,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<AnalyticsUserDetailsQueryResponse>> postAnalyticsUsersDetailsQueryAsync(ApiRequest<UserDetailsQuery> request, AsyncApiCallback<ApiResponse<AnalyticsUserDetailsQueryResponse>> callback) throws ApiException {
+  public Future<ApiResponse<AnalyticsUserDetailsQueryResponse>> postAnalyticsUsersDetailsQueryAsync(ApiRequest<UserDetailsQuery> request, AsyncApiCallback<ApiResponse<AnalyticsUserDetailsQueryResponse>> callback) {
     return pcapiClient.<AnalyticsUserDetailsQueryResponse>invokeAPIVerboseAsync(request, new TypeReference<AnalyticsUserDetailsQueryResponse>() {}, callback);
   }
 
@@ -707,7 +708,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ObservationQueryResponse> postAnalyticsUsersObservationsQueryAsync(PostAnalyticsUsersObservationsQueryRequest request, AsyncApiCallback<ObservationQueryResponse> callback) throws ApiException {
+  public Future<ObservationQueryResponse> postAnalyticsUsersObservationsQueryAsync(PostAnalyticsUsersObservationsQueryRequest request, AsyncApiCallback<ObservationQueryResponse> callback) {
     return pcapiClient.<ObservationQueryResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ObservationQueryResponse>() {}, callback);
   }
 
@@ -717,7 +718,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<ObservationQueryResponse>> postAnalyticsUsersObservationsQueryAsync(ApiRequest<ObservationQuery> request, AsyncApiCallback<ApiResponse<ObservationQueryResponse>> callback) throws ApiException {
+  public Future<ApiResponse<ObservationQueryResponse>> postAnalyticsUsersObservationsQueryAsync(ApiRequest<ObservationQuery> request, AsyncApiCallback<ApiResponse<ObservationQueryResponse>> callback) {
     return pcapiClient.<ObservationQueryResponse>invokeAPIVerboseAsync(request, new TypeReference<ObservationQueryResponse>() {}, callback);
   }
 
@@ -727,7 +728,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UserRoutingSkill> postUserRoutingskillsAsync(PostUserRoutingskillsRequest request, AsyncApiCallback<UserRoutingSkill> callback) throws ApiException {
+  public Future<UserRoutingSkill> postUserRoutingskillsAsync(PostUserRoutingskillsRequest request, AsyncApiCallback<UserRoutingSkill> callback) {
     return pcapiClient.<UserRoutingSkill>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserRoutingSkill>() {}, callback);
   }
 
@@ -737,7 +738,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UserRoutingSkill>> postUserRoutingskillsAsync(ApiRequest<UserRoutingSkillPost> request, AsyncApiCallback<ApiResponse<UserRoutingSkill>> callback) throws ApiException {
+  public Future<ApiResponse<UserRoutingSkill>> postUserRoutingskillsAsync(ApiRequest<UserRoutingSkillPost> request, AsyncApiCallback<ApiResponse<UserRoutingSkill>> callback) {
     return pcapiClient.<UserRoutingSkill>invokeAPIVerboseAsync(request, new TypeReference<UserRoutingSkill>() {}, callback);
   }
 
@@ -747,7 +748,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<User> postUsersAsync(PostUsersRequest request, AsyncApiCallback<User> callback) throws ApiException {
+  public Future<User> postUsersAsync(PostUsersRequest request, AsyncApiCallback<User> callback) {
     return pcapiClient.<User>invokeAPIAsync(request.withHttpInfo(), new TypeReference<User>() {}, callback);
   }
 
@@ -757,7 +758,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<User>> postUsersAsync(ApiRequest<CreateUser> request, AsyncApiCallback<ApiResponse<User>> callback) throws ApiException {
+  public Future<ApiResponse<User>> postUsersAsync(ApiRequest<CreateUser> request, AsyncApiCallback<ApiResponse<User>> callback) {
     return pcapiClient.<User>invokeAPIVerboseAsync(request, new TypeReference<User>() {}, callback);
   }
 
@@ -767,7 +768,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UsersSearchResponse> postUsersSearchAsync(PostUsersSearchRequest request, AsyncApiCallback<UsersSearchResponse> callback) throws ApiException {
+  public Future<UsersSearchResponse> postUsersSearchAsync(PostUsersSearchRequest request, AsyncApiCallback<UsersSearchResponse> callback) {
     return pcapiClient.<UsersSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UsersSearchResponse>() {}, callback);
   }
 
@@ -777,7 +778,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UsersSearchResponse>> postUsersSearchAsync(ApiRequest<UserSearchRequest> request, AsyncApiCallback<ApiResponse<UsersSearchResponse>> callback) throws ApiException {
+  public Future<ApiResponse<UsersSearchResponse>> postUsersSearchAsync(ApiRequest<UserSearchRequest> request, AsyncApiCallback<ApiResponse<UsersSearchResponse>> callback) {
     return pcapiClient.<UsersSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<UsersSearchResponse>() {}, callback);
   }
 
@@ -787,7 +788,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<CallForwarding> putUserCallforwardingAsync(PutUserCallforwardingRequest request, AsyncApiCallback<CallForwarding> callback) throws ApiException {
+  public Future<CallForwarding> putUserCallforwardingAsync(PutUserCallforwardingRequest request, AsyncApiCallback<CallForwarding> callback) {
     return pcapiClient.<CallForwarding>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CallForwarding>() {}, callback);
   }
 
@@ -797,7 +798,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<CallForwarding>> putUserCallforwardingAsync(ApiRequest<CallForwarding> request, AsyncApiCallback<ApiResponse<CallForwarding>> callback) throws ApiException {
+  public Future<ApiResponse<CallForwarding>> putUserCallforwardingAsync(ApiRequest<CallForwarding> request, AsyncApiCallback<ApiResponse<CallForwarding>> callback) {
     return pcapiClient.<CallForwarding>invokeAPIVerboseAsync(request, new TypeReference<CallForwarding>() {}, callback);
   }
 
@@ -807,7 +808,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<OutOfOffice> putUserOutofofficeAsync(PutUserOutofofficeRequest request, AsyncApiCallback<OutOfOffice> callback) throws ApiException {
+  public Future<OutOfOffice> putUserOutofofficeAsync(PutUserOutofofficeRequest request, AsyncApiCallback<OutOfOffice> callback) {
     return pcapiClient.<OutOfOffice>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OutOfOffice>() {}, callback);
   }
 
@@ -817,7 +818,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<OutOfOffice>> putUserOutofofficeAsync(ApiRequest<OutOfOffice> request, AsyncApiCallback<ApiResponse<OutOfOffice>> callback) throws ApiException {
+  public Future<ApiResponse<OutOfOffice>> putUserOutofofficeAsync(ApiRequest<OutOfOffice> request, AsyncApiCallback<ApiResponse<OutOfOffice>> callback) {
     return pcapiClient.<OutOfOffice>invokeAPIVerboseAsync(request, new TypeReference<OutOfOffice>() {}, callback);
   }
 
@@ -827,7 +828,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<List<String>> putUserProfileskillsAsync(PutUserProfileskillsRequest request, AsyncApiCallback<List<String>> callback) throws ApiException {
+  public Future<List<String>> putUserProfileskillsAsync(PutUserProfileskillsRequest request, AsyncApiCallback<List<String>> callback) {
     return pcapiClient.<List<String>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<String>>() {}, callback);
   }
 
@@ -837,7 +838,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<List<String>>> putUserProfileskillsAsync(ApiRequest<List<String>> request, AsyncApiCallback<ApiResponse<List<String>>> callback) throws ApiException {
+  public Future<ApiResponse<List<String>>> putUserProfileskillsAsync(ApiRequest<List<String>> request, AsyncApiCallback<ApiResponse<List<String>>> callback) {
     return pcapiClient.<List<String>>invokeAPIVerboseAsync(request, new TypeReference<List<String>>() {}, callback);
   }
 
@@ -847,7 +848,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UserAuthorization> putUserRolesAsync(PutUserRolesRequest request, AsyncApiCallback<UserAuthorization> callback) throws ApiException {
+  public Future<UserAuthorization> putUserRolesAsync(PutUserRolesRequest request, AsyncApiCallback<UserAuthorization> callback) {
     return pcapiClient.<UserAuthorization>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserAuthorization>() {}, callback);
   }
 
@@ -857,7 +858,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UserAuthorization>> putUserRolesAsync(ApiRequest<List<String>> request, AsyncApiCallback<ApiResponse<UserAuthorization>> callback) throws ApiException {
+  public Future<ApiResponse<UserAuthorization>> putUserRolesAsync(ApiRequest<List<String>> request, AsyncApiCallback<ApiResponse<UserAuthorization>> callback) {
     return pcapiClient.<UserAuthorization>invokeAPIVerboseAsync(request, new TypeReference<UserAuthorization>() {}, callback);
   }
 
@@ -867,7 +868,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<UserRoutingSkill> putUserRoutingskillAsync(PutUserRoutingskillRequest request, AsyncApiCallback<UserRoutingSkill> callback) throws ApiException {
+  public Future<UserRoutingSkill> putUserRoutingskillAsync(PutUserRoutingskillRequest request, AsyncApiCallback<UserRoutingSkill> callback) {
     return pcapiClient.<UserRoutingSkill>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserRoutingSkill>() {}, callback);
   }
 
@@ -877,7 +878,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<UserRoutingSkill>> putUserRoutingskillAsync(ApiRequest<UserRoutingSkill> request, AsyncApiCallback<ApiResponse<UserRoutingSkill>> callback) throws ApiException {
+  public Future<ApiResponse<UserRoutingSkill>> putUserRoutingskillAsync(ApiRequest<UserRoutingSkill> request, AsyncApiCallback<ApiResponse<UserRoutingSkill>> callback) {
     return pcapiClient.<UserRoutingSkill>invokeAPIVerboseAsync(request, new TypeReference<UserRoutingSkill>() {}, callback);
   }
 
@@ -887,7 +888,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<RoutingStatus> putUserRoutingstatusAsync(PutUserRoutingstatusRequest request, AsyncApiCallback<RoutingStatus> callback) throws ApiException {
+  public Future<RoutingStatus> putUserRoutingstatusAsync(PutUserRoutingstatusRequest request, AsyncApiCallback<RoutingStatus> callback) {
     return pcapiClient.<RoutingStatus>invokeAPIAsync(request.withHttpInfo(), new TypeReference<RoutingStatus>() {}, callback);
   }
 
@@ -897,7 +898,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<RoutingStatus>> putUserRoutingstatusAsync(ApiRequest<RoutingStatus> request, AsyncApiCallback<ApiResponse<RoutingStatus>> callback) throws ApiException {
+  public Future<ApiResponse<RoutingStatus>> putUserRoutingstatusAsync(ApiRequest<RoutingStatus> request, AsyncApiCallback<ApiResponse<RoutingStatus>> callback) {
     return pcapiClient.<RoutingStatus>invokeAPIVerboseAsync(request, new TypeReference<RoutingStatus>() {}, callback);
   }
 
@@ -907,7 +908,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> putUserStationAssociatedstationStationIdAsync(PutUserStationAssociatedstationStationIdRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> putUserStationAssociatedstationStationIdAsync(PutUserStationAssociatedstationStationIdRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -917,7 +918,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> putUserStationAssociatedstationStationIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> putUserStationAssociatedstationStationIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 
@@ -927,7 +928,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<Void> putUserStationDefaultstationStationIdAsync(PutUserStationDefaultstationStationIdRequest request, AsyncApiCallback<Void> callback) throws ApiException {
+  public Future<Void> putUserStationDefaultstationStationIdAsync(PutUserStationDefaultstationStationIdRequest request, AsyncApiCallback<Void> callback) {
     return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
   }
 
@@ -937,7 +938,7 @@ public class UsersApiAsync {
    * @request The request object
    * @throws ApiException if fails to make API call
    */
-  public Future<ApiResponse<Void>> putUserStationDefaultstationStationIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) throws ApiException {
+  public Future<ApiResponse<Void>> putUserStationDefaultstationStationIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
     return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
   }
 

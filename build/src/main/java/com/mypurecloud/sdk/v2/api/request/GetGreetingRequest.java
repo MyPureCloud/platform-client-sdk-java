@@ -62,11 +62,11 @@ public class GetGreetingRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'greetingId' is set
         if (this.greetingId == null) {
-            throw new ApiException(400, "Missing the required parameter 'greetingId' when building request for GetGreetingRequest.");
+            throw new IllegalStateException("Missing the required parameter 'greetingId' when building request for GetGreetingRequest.");
         }
         
 

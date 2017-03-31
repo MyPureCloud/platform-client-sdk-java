@@ -61,11 +61,11 @@ public class PostCertificateDetailsRequest {
         return this;
     }
 
-    public ApiRequest<Certificate> withHttpInfo() throws ApiException {
+    public ApiRequest<Certificate> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostCertificateDetailsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostCertificateDetailsRequest.");
         }
         
 

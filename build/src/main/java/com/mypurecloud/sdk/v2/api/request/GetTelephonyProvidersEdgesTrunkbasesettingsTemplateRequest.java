@@ -120,11 +120,11 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'trunkMetabaseId' is set
         if (this.trunkMetabaseId == null) {
-            throw new ApiException(400, "Missing the required parameter 'trunkMetabaseId' when building request for GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest.");
+            throw new IllegalStateException("Missing the required parameter 'trunkMetabaseId' when building request for GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest.");
         }
         
 

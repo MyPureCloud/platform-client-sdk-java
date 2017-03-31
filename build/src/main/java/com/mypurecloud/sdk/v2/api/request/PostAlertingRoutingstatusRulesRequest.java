@@ -89,11 +89,11 @@ public class PostAlertingRoutingstatusRulesRequest {
         return this;
     }
 
-    public ApiRequest<RoutingStatusRule> withHttpInfo() throws ApiException {
+    public ApiRequest<RoutingStatusRule> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostAlertingRoutingstatusRulesRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostAlertingRoutingstatusRulesRequest.");
         }
         
 

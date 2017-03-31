@@ -74,11 +74,11 @@ public class PutRecordingRecordingkeysRotationscheduleRequest {
         return this;
     }
 
-    public ApiRequest<KeyRotationSchedule> withHttpInfo() throws ApiException {
+    public ApiRequest<KeyRotationSchedule> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PutRecordingRecordingkeysRotationscheduleRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutRecordingRecordingkeysRotationscheduleRequest.");
         }
         
 

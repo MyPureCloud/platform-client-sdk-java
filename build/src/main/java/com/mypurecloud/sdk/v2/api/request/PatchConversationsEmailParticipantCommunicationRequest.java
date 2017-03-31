@@ -138,26 +138,26 @@ public class PatchConversationsEmailParticipantCommunicationRequest {
         return this;
     }
 
-    public ApiRequest<MediaParticipantRequest> withHttpInfo() throws ApiException {
+    public ApiRequest<MediaParticipantRequest> withHttpInfo() {
         
         // verify the required parameter 'emailId' is set
         if (this.emailId == null) {
-            throw new ApiException(400, "Missing the required parameter 'emailId' when building request for PatchConversationsEmailParticipantCommunicationRequest.");
+            throw new IllegalStateException("Missing the required parameter 'emailId' when building request for PatchConversationsEmailParticipantCommunicationRequest.");
         }
         
         // verify the required parameter 'participantId' is set
         if (this.participantId == null) {
-            throw new ApiException(400, "Missing the required parameter 'participantId' when building request for PatchConversationsEmailParticipantCommunicationRequest.");
+            throw new IllegalStateException("Missing the required parameter 'participantId' when building request for PatchConversationsEmailParticipantCommunicationRequest.");
         }
         
         // verify the required parameter 'communicationId' is set
         if (this.communicationId == null) {
-            throw new ApiException(400, "Missing the required parameter 'communicationId' when building request for PatchConversationsEmailParticipantCommunicationRequest.");
+            throw new IllegalStateException("Missing the required parameter 'communicationId' when building request for PatchConversationsEmailParticipantCommunicationRequest.");
         }
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PatchConversationsEmailParticipantCommunicationRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchConversationsEmailParticipantCommunicationRequest.");
         }
         
 

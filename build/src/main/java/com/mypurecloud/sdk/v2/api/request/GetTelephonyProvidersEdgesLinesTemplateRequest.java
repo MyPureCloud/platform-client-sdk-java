@@ -120,11 +120,11 @@ public class GetTelephonyProvidersEdgesLinesTemplateRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() throws ApiException {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'lineBaseSettingsId' is set
         if (this.lineBaseSettingsId == null) {
-            throw new ApiException(400, "Missing the required parameter 'lineBaseSettingsId' when building request for GetTelephonyProvidersEdgesLinesTemplateRequest.");
+            throw new IllegalStateException("Missing the required parameter 'lineBaseSettingsId' when building request for GetTelephonyProvidersEdgesLinesTemplateRequest.");
         }
         
 

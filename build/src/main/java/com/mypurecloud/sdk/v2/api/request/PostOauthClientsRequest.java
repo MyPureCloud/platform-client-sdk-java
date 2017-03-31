@@ -59,11 +59,11 @@ public class PostOauthClientsRequest {
         return this;
     }
 
-    public ApiRequest<OAuthClient> withHttpInfo() throws ApiException {
+    public ApiRequest<OAuthClient> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
-            throw new ApiException(400, "Missing the required parameter 'body' when building request for PostOauthClientsRequest.");
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostOauthClientsRequest.");
         }
         
 
