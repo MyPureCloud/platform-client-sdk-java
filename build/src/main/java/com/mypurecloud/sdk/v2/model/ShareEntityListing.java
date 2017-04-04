@@ -22,8 +22,8 @@ public class ShareEntityListing  implements Serializable, PagedResource<Share> {
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String firstUri = null;
   private String selfUri = null;
+  private String firstUri = null;
   private String previousUri = null;
   private String nextUri = null;
   private String lastUri = null;
@@ -100,23 +100,6 @@ public class ShareEntityListing  implements Serializable, PagedResource<Share> {
 
   /**
    **/
-  public ShareEntityListing firstUri(String firstUri) {
-    this.firstUri = firstUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("firstUri")
-  public String getFirstUri() {
-    return firstUri;
-  }
-  public void setFirstUri(String firstUri) {
-    this.firstUri = firstUri;
-  }
-
-
-  /**
-   **/
   public ShareEntityListing selfUri(String selfUri) {
     this.selfUri = selfUri;
     return this;
@@ -129,6 +112,23 @@ public class ShareEntityListing  implements Serializable, PagedResource<Share> {
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
+  public ShareEntityListing firstUri(String firstUri) {
+    this.firstUri = firstUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("firstUri")
+  public String getFirstUri() {
+    return firstUri;
+  }
+  public void setFirstUri(String firstUri) {
+    this.firstUri = firstUri;
   }
 
 
@@ -213,8 +213,8 @@ public class ShareEntityListing  implements Serializable, PagedResource<Share> {
         Objects.equals(this.pageSize, shareEntityListing.pageSize) &&
         Objects.equals(this.pageNumber, shareEntityListing.pageNumber) &&
         Objects.equals(this.total, shareEntityListing.total) &&
-        Objects.equals(this.firstUri, shareEntityListing.firstUri) &&
         Objects.equals(this.selfUri, shareEntityListing.selfUri) &&
+        Objects.equals(this.firstUri, shareEntityListing.firstUri) &&
         Objects.equals(this.previousUri, shareEntityListing.previousUri) &&
         Objects.equals(this.nextUri, shareEntityListing.nextUri) &&
         Objects.equals(this.lastUri, shareEntityListing.lastUri) &&
@@ -223,7 +223,7 @@ public class ShareEntityListing  implements Serializable, PagedResource<Share> {
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, previousUri, nextUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, previousUri, nextUri, lastUri, pageCount);
   }
 
   @Override
@@ -235,8 +235,8 @@ public class ShareEntityListing  implements Serializable, PagedResource<Share> {
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
