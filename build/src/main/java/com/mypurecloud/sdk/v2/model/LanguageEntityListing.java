@@ -22,8 +22,8 @@ public class LanguageEntityListing  implements Serializable, PagedResource<Langu
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String selfUri = null;
   private String firstUri = null;
+  private String selfUri = null;
   private String previousUri = null;
   private String nextUri = null;
   private String lastUri = null;
@@ -100,23 +100,6 @@ public class LanguageEntityListing  implements Serializable, PagedResource<Langu
 
   /**
    **/
-  public LanguageEntityListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
   public LanguageEntityListing firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -129,6 +112,23 @@ public class LanguageEntityListing  implements Serializable, PagedResource<Langu
   }
   public void setFirstUri(String firstUri) {
     this.firstUri = firstUri;
+  }
+
+
+  /**
+   **/
+  public LanguageEntityListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
   }
 
 
@@ -213,8 +213,8 @@ public class LanguageEntityListing  implements Serializable, PagedResource<Langu
         Objects.equals(this.pageSize, languageEntityListing.pageSize) &&
         Objects.equals(this.pageNumber, languageEntityListing.pageNumber) &&
         Objects.equals(this.total, languageEntityListing.total) &&
-        Objects.equals(this.selfUri, languageEntityListing.selfUri) &&
         Objects.equals(this.firstUri, languageEntityListing.firstUri) &&
+        Objects.equals(this.selfUri, languageEntityListing.selfUri) &&
         Objects.equals(this.previousUri, languageEntityListing.previousUri) &&
         Objects.equals(this.nextUri, languageEntityListing.nextUri) &&
         Objects.equals(this.lastUri, languageEntityListing.lastUri) &&
@@ -223,7 +223,7 @@ public class LanguageEntityListing  implements Serializable, PagedResource<Langu
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, previousUri, nextUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, previousUri, nextUri, lastUri, pageCount);
   }
 
   @Override
@@ -235,8 +235,8 @@ public class LanguageEntityListing  implements Serializable, PagedResource<Langu
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
