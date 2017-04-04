@@ -123,9 +123,11 @@ public class CampaignNotification  implements Serializable {
   private Integer previewTimeOutSeconds = null;
   private Boolean singleNumberPreview = null;
   private CampaignNotificationContactSort contactSort = null;
+  private List<CampaignNotificationContactSort> contactSorts = new ArrayList<CampaignNotificationContactSort>();
   private Integer noAnswerTimeout = null;
   private String callAnalysisLanguage = null;
   private Integer priority = null;
+  private List<CampaignNotificationUriReference> contactListFilters = new ArrayList<CampaignNotificationUriReference>();
   private Object additionalProperties = null;
 
   
@@ -556,6 +558,23 @@ public class CampaignNotification  implements Serializable {
 
   /**
    **/
+  public CampaignNotification contactSorts(List<CampaignNotificationContactSort> contactSorts) {
+    this.contactSorts = contactSorts;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("contactSorts")
+  public List<CampaignNotificationContactSort> getContactSorts() {
+    return contactSorts;
+  }
+  public void setContactSorts(List<CampaignNotificationContactSort> contactSorts) {
+    this.contactSorts = contactSorts;
+  }
+
+
+  /**
+   **/
   public CampaignNotification noAnswerTimeout(Integer noAnswerTimeout) {
     this.noAnswerTimeout = noAnswerTimeout;
     return this;
@@ -602,6 +621,23 @@ public class CampaignNotification  implements Serializable {
   }
   public void setPriority(Integer priority) {
     this.priority = priority;
+  }
+
+
+  /**
+   **/
+  public CampaignNotification contactListFilters(List<CampaignNotificationUriReference> contactListFilters) {
+    this.contactListFilters = contactListFilters;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("contactListFilters")
+  public List<CampaignNotificationUriReference> getContactListFilters() {
+    return contactListFilters;
+  }
+  public void setContactListFilters(List<CampaignNotificationUriReference> contactListFilters) {
+    this.contactListFilters = contactListFilters;
   }
 
 
@@ -656,15 +692,17 @@ public class CampaignNotification  implements Serializable {
         Objects.equals(this.previewTimeOutSeconds, campaignNotification.previewTimeOutSeconds) &&
         Objects.equals(this.singleNumberPreview, campaignNotification.singleNumberPreview) &&
         Objects.equals(this.contactSort, campaignNotification.contactSort) &&
+        Objects.equals(this.contactSorts, campaignNotification.contactSorts) &&
         Objects.equals(this.noAnswerTimeout, campaignNotification.noAnswerTimeout) &&
         Objects.equals(this.callAnalysisLanguage, campaignNotification.callAnalysisLanguage) &&
         Objects.equals(this.priority, campaignNotification.priority) &&
+        Objects.equals(this.contactListFilters, campaignNotification.contactListFilters) &&
         Objects.equals(this.additionalProperties, campaignNotification.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, callerName, callerAddress, outboundLineCount, errors, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, singleNumberPreview, contactSort, noAnswerTimeout, callAnalysisLanguage, priority, additionalProperties);
+    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, callerName, callerAddress, outboundLineCount, errors, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, singleNumberPreview, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, additionalProperties);
   }
 
   @Override
@@ -697,9 +735,11 @@ public class CampaignNotification  implements Serializable {
     sb.append("    previewTimeOutSeconds: ").append(toIndentedString(previewTimeOutSeconds)).append("\n");
     sb.append("    singleNumberPreview: ").append(toIndentedString(singleNumberPreview)).append("\n");
     sb.append("    contactSort: ").append(toIndentedString(contactSort)).append("\n");
+    sb.append("    contactSorts: ").append(toIndentedString(contactSorts)).append("\n");
     sb.append("    noAnswerTimeout: ").append(toIndentedString(noAnswerTimeout)).append("\n");
     sb.append("    callAnalysisLanguage: ").append(toIndentedString(callAnalysisLanguage)).append("\n");
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+    sb.append("    contactListFilters: ").append(toIndentedString(contactListFilters)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

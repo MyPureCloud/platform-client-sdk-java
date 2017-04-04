@@ -55,6 +55,7 @@ title: AnalyticsQueryPredicate
 | DISCONNECTTYPE | &quot;disconnectType&quot; |
 | ERRORCODE | &quot;errorCode&quot; |
 | CONVERSATIONEND | &quot;conversationEnd&quot; |
+| SEGMENTEND | &quot;segmentEnd&quot; |
 | EXTERNALCONTACTID | &quot;externalContactId&quot; |
 | EXTERNALORGANIZATIONID | &quot;externalOrganizationId&quot; |
 | STATIONID | &quot;stationId&quot; |

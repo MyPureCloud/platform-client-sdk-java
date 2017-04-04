@@ -77,6 +77,7 @@ public class AnalyticsQueryPredicate  implements Serializable {
     DISCONNECTTYPE("disconnectType"),
     ERRORCODE("errorCode"),
     CONVERSATIONEND("conversationEnd"),
+    SEGMENTEND("segmentEnd"),
     EXTERNALCONTACTID("externalContactId"),
     EXTERNALORGANIZATIONID("externalOrganizationId"),
     STATIONID("stationId"),

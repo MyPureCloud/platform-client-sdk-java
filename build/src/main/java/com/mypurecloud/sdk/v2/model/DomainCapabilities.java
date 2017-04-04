@@ -19,6 +19,7 @@ public class DomainCapabilities  implements Serializable {
   private Integer metric = null;
   private Boolean autoMetric = null;
   private Boolean supportsMetric = null;
+  private Boolean pingEnabled = null;
 
   
   /**
@@ -100,6 +101,24 @@ public class DomainCapabilities  implements Serializable {
   }
 
 
+  /**
+   * Set to true to enable this address family on this interface to respond to ping requests.
+   **/
+  public DomainCapabilities pingEnabled(Boolean pingEnabled) {
+    this.pingEnabled = pingEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Set to true to enable this address family on this interface to respond to ping requests.")
+  @JsonProperty("pingEnabled")
+  public Boolean getPingEnabled() {
+    return pingEnabled;
+  }
+  public void setPingEnabled(Boolean pingEnabled) {
+    this.pingEnabled = pingEnabled;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -113,12 +132,13 @@ public class DomainCapabilities  implements Serializable {
         Objects.equals(this.dhcp, domainCapabilities.dhcp) &&
         Objects.equals(this.metric, domainCapabilities.metric) &&
         Objects.equals(this.autoMetric, domainCapabilities.autoMetric) &&
-        Objects.equals(this.supportsMetric, domainCapabilities.supportsMetric);
+        Objects.equals(this.supportsMetric, domainCapabilities.supportsMetric) &&
+        Objects.equals(this.pingEnabled, domainCapabilities.pingEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, dhcp, metric, autoMetric, supportsMetric);
+    return Objects.hash(enabled, dhcp, metric, autoMetric, supportsMetric, pingEnabled);
   }
 
   @Override
@@ -131,6 +151,7 @@ public class DomainCapabilities  implements Serializable {
     sb.append("    metric: ").append(toIndentedString(metric)).append("\n");
     sb.append("    autoMetric: ").append(toIndentedString(autoMetric)).append("\n");
     sb.append("    supportsMetric: ").append(toIndentedString(supportsMetric)).append("\n");
+    sb.append("    pingEnabled: ").append(toIndentedString(pingEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.mypurecloud</groupId>
     <artifactId>platform-client-v2</artifactId>
-    <version>3.0.0</version>
+    <version>3.1.0</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.mypurecloud:platform-client-v2:3.0.0"
+compile "com.mypurecloud:platform-client-v2:3.1.0"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/platform-client-v2-3.0.0.jar
+* target/platform-client-v2-3.1.0.jar
 * target/lib/*.jar
 
 ## Getting Started
@@ -1338,6 +1338,7 @@ Class | Method | HTTP request | Description
  - [FlowVersionEntityListing](docs/FlowVersionEntityListing.md)
  - [GSuite](docs/GSuite.md)
  - [Geolocation](docs/Geolocation.md)
+ - [GeolocationNotification](docs/GeolocationNotification.md)
  - [GeolocationSettings](docs/GeolocationSettings.md)
  - [Greeting](docs/Greeting.md)
  - [GreetingAudioFile](docs/GreetingAudioFile.md)
@@ -1377,6 +1378,23 @@ Class | Method | HTTP request | Description
  - [InteractionStatsAlertContainer](docs/InteractionStatsAlertContainer.md)
  - [InteractionStatsRule](docs/InteractionStatsRule.md)
  - [InteractionStatsRuleContainer](docs/InteractionStatsRuleContainer.md)
+ - [IntradayDataUpdateNotification](docs/IntradayDataUpdateNotification.md)
+ - [IntradayDataUpdateNotificationForecastDataPerInterval](docs/IntradayDataUpdateNotificationForecastDataPerInterval.md)
+ - [IntradayDataUpdateNotificationHistoricalAgentDataPerInterval](docs/IntradayDataUpdateNotificationHistoricalAgentDataPerInterval.md)
+ - [IntradayDataUpdateNotificationHistoricalQueueDataPerInterval](docs/IntradayDataUpdateNotificationHistoricalQueueDataPerInterval.md)
+ - [IntradayDataUpdateNotificationIntradayDataGroup](docs/IntradayDataUpdateNotificationIntradayDataGroup.md)
+ - [IntradayDataUpdateNotificationIntradayDataGroupings](docs/IntradayDataUpdateNotificationIntradayDataGroupings.md)
+ - [IntradayDataUpdateNotificationIntradayForecastData](docs/IntradayDataUpdateNotificationIntradayForecastData.md)
+ - [IntradayDataUpdateNotificationIntradayHistoricalAgentData](docs/IntradayDataUpdateNotificationIntradayHistoricalAgentData.md)
+ - [IntradayDataUpdateNotificationIntradayHistoricalQueueData](docs/IntradayDataUpdateNotificationIntradayHistoricalQueueData.md)
+ - [IntradayDataUpdateNotificationIntradayMetric](docs/IntradayDataUpdateNotificationIntradayMetric.md)
+ - [IntradayDataUpdateNotificationIntradayPerformancePredictionAgentData](docs/IntradayDataUpdateNotificationIntradayPerformancePredictionAgentData.md)
+ - [IntradayDataUpdateNotificationIntradayPerformancePredictionQueueData](docs/IntradayDataUpdateNotificationIntradayPerformancePredictionQueueData.md)
+ - [IntradayDataUpdateNotificationIntradayScheduleData](docs/IntradayDataUpdateNotificationIntradayScheduleData.md)
+ - [IntradayDataUpdateNotificationMetrics](docs/IntradayDataUpdateNotificationMetrics.md)
+ - [IntradayDataUpdateNotificationPerformancePredictionAgentDataPerInterval](docs/IntradayDataUpdateNotificationPerformancePredictionAgentDataPerInterval.md)
+ - [IntradayDataUpdateNotificationPerformancePredictionQueueDataPerInterval](docs/IntradayDataUpdateNotificationPerformancePredictionQueueDataPerInterval.md)
+ - [IntradayDataUpdateNotificationScheduleDataPerInterval](docs/IntradayDataUpdateNotificationScheduleDataPerInterval.md)
  - [JsonNode](docs/JsonNode.md)
  - [JsonNodeSearchResponse](docs/JsonNodeSearchResponse.md)
  - [JsonSchemaDocument](docs/JsonSchemaDocument.md)

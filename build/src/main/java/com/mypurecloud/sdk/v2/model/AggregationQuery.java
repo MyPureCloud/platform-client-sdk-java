@@ -45,6 +45,7 @@ public class AggregationQuery  implements Serializable {
     DISCONNECTTYPE("disconnectType"),
     ERRORCODE("errorCode"),
     CONVERSATIONEND("conversationEnd"),
+    SEGMENTEND("segmentEnd"),
     EXTERNALCONTACTID("externalContactId"),
     EXTERNALORGANIZATIONID("externalOrganizationId"),
     STATIONID("stationId"),

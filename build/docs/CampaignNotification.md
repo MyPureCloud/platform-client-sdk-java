@@ -31,9 +31,11 @@ title: CampaignNotification
 | **previewTimeOutSeconds** | **Integer** |  |  [optional] |
 | **singleNumberPreview** | **Boolean** |  |  [optional] |
 | **contactSort** | [**CampaignNotificationContactSort**](CampaignNotificationContactSort.html) |  |  [optional] |
+| **contactSorts** | [**List&lt;CampaignNotificationContactSort&gt;**](CampaignNotificationContactSort.html) |  |  [optional] |
 | **noAnswerTimeout** | **Integer** |  |  [optional] |
 | **callAnalysisLanguage** | **String** |  |  [optional] |
 | **priority** | **Integer** |  |  [optional] |
+| **contactListFilters** | [**List&lt;CampaignNotificationUriReference&gt;**](CampaignNotificationUriReference.html) |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
 

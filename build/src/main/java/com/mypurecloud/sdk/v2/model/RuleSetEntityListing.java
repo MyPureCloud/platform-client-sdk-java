@@ -22,8 +22,8 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String selfUri = null;
   private String firstUri = null;
+  private String selfUri = null;
   private String previousUri = null;
   private String nextUri = null;
   private String lastUri = null;
@@ -100,23 +100,6 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
 
   /**
    **/
-  public RuleSetEntityListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
   public RuleSetEntityListing firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -129,6 +112,23 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
   }
   public void setFirstUri(String firstUri) {
     this.firstUri = firstUri;
+  }
+
+
+  /**
+   **/
+  public RuleSetEntityListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
   }
 
 
@@ -213,8 +213,8 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
         Objects.equals(this.pageSize, ruleSetEntityListing.pageSize) &&
         Objects.equals(this.pageNumber, ruleSetEntityListing.pageNumber) &&
         Objects.equals(this.total, ruleSetEntityListing.total) &&
-        Objects.equals(this.selfUri, ruleSetEntityListing.selfUri) &&
         Objects.equals(this.firstUri, ruleSetEntityListing.firstUri) &&
+        Objects.equals(this.selfUri, ruleSetEntityListing.selfUri) &&
         Objects.equals(this.previousUri, ruleSetEntityListing.previousUri) &&
         Objects.equals(this.nextUri, ruleSetEntityListing.nextUri) &&
         Objects.equals(this.lastUri, ruleSetEntityListing.lastUri) &&
@@ -223,7 +223,7 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, previousUri, nextUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, previousUri, nextUri, lastUri, pageCount);
   }
 
   @Override
@@ -235,8 +235,8 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
