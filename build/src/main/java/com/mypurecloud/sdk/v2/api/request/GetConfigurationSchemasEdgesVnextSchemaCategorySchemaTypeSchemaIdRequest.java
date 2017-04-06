@@ -84,9 +84,6 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String schemaCategory;
 	public String getSchemaCategory() {
 		return this.schemaCategory;
@@ -217,6 +214,22 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRe
 
 
 		public GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest build() {
+            
+            // verify the required parameter 'schemaCategory' is set
+            if (request.schemaCategory == null) {
+                throw new IllegalStateException("Missing the required parameter 'schemaCategory' when building request for GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest.");
+            }
+            
+            // verify the required parameter 'schemaType' is set
+            if (request.schemaType == null) {
+                throw new IllegalStateException("Missing the required parameter 'schemaType' when building request for GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest.");
+            }
+            
+            // verify the required parameter 'schemaId' is set
+            if (request.schemaId == null) {
+                throw new IllegalStateException("Missing the required parameter 'schemaId' when building request for GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest.");
+            }
+            
 			return request;
 		}
 	}

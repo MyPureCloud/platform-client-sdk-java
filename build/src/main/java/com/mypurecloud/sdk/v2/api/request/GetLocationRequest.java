@@ -24,9 +24,6 @@ import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
 
 public class GetLocationRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String locationId;
 	public String getLocationId() {
 		return this.locationId;
@@ -105,6 +102,12 @@ public class GetLocationRequest {
 
 
 		public GetLocationRequest build() {
+            
+            // verify the required parameter 'locationId' is set
+            if (request.locationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'locationId' when building request for GetLocationRequest.");
+            }
+            
 			return request;
 		}
 	}

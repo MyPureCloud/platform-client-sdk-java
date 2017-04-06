@@ -25,9 +25,6 @@ import com.mypurecloud.sdk.v2.model.FaxDocumentEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
 
 public class GetFaxDocumentRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String documentId;
 	public String getDocumentId() {
 		return this.documentId;
@@ -106,6 +103,12 @@ public class GetFaxDocumentRequest {
 
 
 		public GetFaxDocumentRequest build() {
+            
+            // verify the required parameter 'documentId' is set
+            if (request.documentId == null) {
+                throw new IllegalStateException("Missing the required parameter 'documentId' when building request for GetFaxDocumentRequest.");
+            }
+            
 			return request;
 		}
 	}

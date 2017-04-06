@@ -38,9 +38,6 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class GetConversationRecordingRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -205,6 +202,17 @@ public class GetConversationRecordingRequest {
 
 
 		public GetConversationRecordingRequest build() {
+            
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetConversationRecordingRequest.");
+            }
+            
+            // verify the required parameter 'recordingId' is set
+            if (request.recordingId == null) {
+                throw new IllegalStateException("Missing the required parameter 'recordingId' when building request for GetConversationRecordingRequest.");
+            }
+            
 			return request;
 		}
 	}

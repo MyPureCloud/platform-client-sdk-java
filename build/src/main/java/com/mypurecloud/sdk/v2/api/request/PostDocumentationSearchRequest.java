@@ -34,9 +34,6 @@ import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 public class PostDocumentationSearchRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private DocumentationSearchRequest body;
 	public DocumentationSearchRequest getBody() {
 		return this.body;
@@ -115,6 +112,12 @@ public class PostDocumentationSearchRequest {
 
 
 		public PostDocumentationSearchRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostDocumentationSearchRequest.");
+            }
+            
 			return request;
 		}
 	}

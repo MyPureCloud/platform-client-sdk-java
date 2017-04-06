@@ -26,9 +26,6 @@ import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
 
 public class DeleteGreetingRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String greetingId;
 	public String getGreetingId() {
 		return this.greetingId;
@@ -107,6 +104,12 @@ public class DeleteGreetingRequest {
 
 
 		public DeleteGreetingRequest build() {
+            
+            // verify the required parameter 'greetingId' is set
+            if (request.greetingId == null) {
+                throw new IllegalStateException("Missing the required parameter 'greetingId' when building request for DeleteGreetingRequest.");
+            }
+            
 			return request;
 		}
 	}

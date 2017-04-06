@@ -55,9 +55,6 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class GetOutboundContactlistContactRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String contactListId;
 	public String getContactListId() {
 		return this.contactListId;
@@ -162,6 +159,17 @@ public class GetOutboundContactlistContactRequest {
 
 
 		public GetOutboundContactlistContactRequest build() {
+            
+            // verify the required parameter 'contactListId' is set
+            if (request.contactListId == null) {
+                throw new IllegalStateException("Missing the required parameter 'contactListId' when building request for GetOutboundContactlistContactRequest.");
+            }
+            
+            // verify the required parameter 'contactId' is set
+            if (request.contactId == null) {
+                throw new IllegalStateException("Missing the required parameter 'contactId' when building request for GetOutboundContactlistContactRequest.");
+            }
+            
 			return request;
 		}
 	}

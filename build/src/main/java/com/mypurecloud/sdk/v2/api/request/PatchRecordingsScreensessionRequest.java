@@ -38,9 +38,6 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class PatchRecordingsScreensessionRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String recordingSessionId;
 	public String getRecordingSessionId() {
 		return this.recordingSessionId;
@@ -139,6 +136,12 @@ public class PatchRecordingsScreensessionRequest {
 
 
 		public PatchRecordingsScreensessionRequest build() {
+            
+            // verify the required parameter 'recordingSessionId' is set
+            if (request.recordingSessionId == null) {
+                throw new IllegalStateException("Missing the required parameter 'recordingSessionId' when building request for PatchRecordingsScreensessionRequest.");
+            }
+            
 			return request;
 		}
 	}

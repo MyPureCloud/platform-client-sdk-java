@@ -44,10 +44,11 @@ public class LocationsApi {
    * 
    * @param locationId Location ID (required)
    * @return LocationDefinition
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LocationDefinition getLocation(String locationId) throws IOException, ApiException {
-    return getLocationWithHttpInfo(locationId).getBody();
+    return  getLocation(createGetLocationRequest(locationId));
   }
 
   /**
@@ -55,61 +56,64 @@ public class LocationsApi {
    * 
    * @param locationId Location ID (required)
    * @return LocationDefinition
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LocationDefinition> getLocationWithHttpInfo(String locationId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'locationId' is set
-    if (locationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'locationId' when calling getLocation");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/locations/{locationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "locationId" + "\\}", pcapiClient.escapeString(locationId.toString()));
+  public ApiResponse<LocationDefinition> getLocationWithHttpInfo(String locationId) throws IOException {
+    return getLocation(createGetLocationRequest(locationId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<LocationDefinition>() {});
+  private GetLocationRequest createGetLocationRequest(String locationId) {
+    return GetLocationRequest.builder()
+            .withLocationId(locationId)
+            .build();
   }
 
   /**
    * Get Location by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return LocationDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LocationDefinition getLocation(GetLocationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LocationDefinition>() {});
+    try {
+      ApiResponse<LocationDefinition> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LocationDefinition>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get Location by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LocationDefinition> getLocation(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<LocationDefinition>invokeAPIVerbose(request, new TypeReference<LocationDefinition>() {});
+  public ApiResponse<LocationDefinition> getLocation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LocationDefinition>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LocationDefinition> response = (ApiResponse<LocationDefinition>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LocationDefinition> response = (ApiResponse<LocationDefinition>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -119,10 +123,11 @@ public class LocationsApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Sort order (optional)
    * @return List<LocationDefinition>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<LocationDefinition> getLocations(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
-    return getLocationsWithHttpInfo(pageSize, pageNumber, sortOrder).getBody();
+    return  getLocations(createGetLocationsRequest(pageSize, pageNumber, sortOrder));
   }
 
   /**
@@ -132,58 +137,68 @@ public class LocationsApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Sort order (optional)
    * @return List<LocationDefinition>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<LocationDefinition>> getLocationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/locations".replaceAll("\\{format\\}","json");
+  public ApiResponse<List<LocationDefinition>> getLocationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException {
+    return getLocations(createGetLocationsRequest(pageSize, pageNumber, sortOrder).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetLocationsRequest createGetLocationsRequest(Integer pageSize, Integer pageNumber, String sortOrder) {
+    return GetLocationsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<LocationDefinition>>() {});
+            .withSortOrder(sortOrder)
+            .build();
   }
 
   /**
    * Get a list of all locations.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<LocationDefinition>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<LocationDefinition> getLocations(GetLocationsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<LocationDefinition>>() {});
+    try {
+      ApiResponse<List<LocationDefinition>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<LocationDefinition>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of all locations.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<LocationDefinition>> getLocations(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<LocationDefinition>>invokeAPIVerbose(request, new TypeReference<List<LocationDefinition>>() {});
+  public ApiResponse<List<LocationDefinition>> getLocations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<LocationDefinition>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<LocationDefinition>> response = (ApiResponse<List<LocationDefinition>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<LocationDefinition>> response = (ApiResponse<List<LocationDefinition>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -192,10 +207,11 @@ public class LocationsApi {
    * @param q64 q64 (required)
    * @param expand expand (optional)
    * @return LocationsSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LocationsSearchResponse getLocationsSearch(String q64, List<String> expand) throws IOException, ApiException {
-    return getLocationsSearchWithHttpInfo(q64, expand).getBody();
+    return  getLocationsSearch(createGetLocationsSearchRequest(q64, expand));
   }
 
   /**
@@ -204,62 +220,66 @@ public class LocationsApi {
    * @param q64 q64 (required)
    * @param expand expand (optional)
    * @return LocationsSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LocationsSearchResponse> getLocationsSearchWithHttpInfo(String q64, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'q64' is set
-    if (q64 == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'q64' when calling getLocationsSearch");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/locations/search".replaceAll("\\{format\\}","json");
+  public ApiResponse<LocationsSearchResponse> getLocationsSearchWithHttpInfo(String q64, List<String> expand) throws IOException {
+    return getLocationsSearch(createGetLocationsSearchRequest(q64, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetLocationsSearchRequest createGetLocationsSearchRequest(String q64, List<String> expand) {
+    return GetLocationsSearchRequest.builder()
+            .withQ64(q64)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "q64", q64));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<LocationsSearchResponse>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Search locations using the q64 value returned from a previous search
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return LocationsSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LocationsSearchResponse getLocationsSearch(GetLocationsSearchRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LocationsSearchResponse>() {});
+    try {
+      ApiResponse<LocationsSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LocationsSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Search locations using the q64 value returned from a previous search
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LocationsSearchResponse> getLocationsSearch(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<LocationsSearchResponse>invokeAPIVerbose(request, new TypeReference<LocationsSearchResponse>() {});
+  public ApiResponse<LocationsSearchResponse> getLocationsSearch(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LocationsSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LocationsSearchResponse> response = (ApiResponse<LocationsSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LocationsSearchResponse> response = (ApiResponse<LocationsSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -267,10 +287,11 @@ public class LocationsApi {
    * 
    * @param body Search request options (required)
    * @return LocationsSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LocationsSearchResponse postLocationsSearch(LocationSearchRequest body) throws IOException, ApiException {
-    return postLocationsSearchWithHttpInfo(body).getBody();
+    return  postLocationsSearch(createPostLocationsSearchRequest(body));
   }
 
   /**
@@ -278,60 +299,64 @@ public class LocationsApi {
    * 
    * @param body Search request options (required)
    * @return LocationsSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LocationsSearchResponse> postLocationsSearchWithHttpInfo(LocationSearchRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postLocationsSearch");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/locations/search".replaceAll("\\{format\\}","json");
+  public ApiResponse<LocationsSearchResponse> postLocationsSearchWithHttpInfo(LocationSearchRequest body) throws IOException {
+    return postLocationsSearch(createPostLocationsSearchRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<LocationsSearchResponse>() {});
+  private PostLocationsSearchRequest createPostLocationsSearchRequest(LocationSearchRequest body) {
+    return PostLocationsSearchRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Search locations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return LocationsSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LocationsSearchResponse postLocationsSearch(PostLocationsSearchRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LocationsSearchResponse>() {});
+    try {
+      ApiResponse<LocationsSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LocationsSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Search locations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LocationsSearchResponse> postLocationsSearch(ApiRequest<LocationSearchRequest> request) throws IOException, ApiException {
-    return pcapiClient.<LocationsSearchResponse>invokeAPIVerbose(request, new TypeReference<LocationsSearchResponse>() {});
+  public ApiResponse<LocationsSearchResponse> postLocationsSearch(ApiRequest<LocationSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LocationsSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LocationsSearchResponse> response = (ApiResponse<LocationsSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LocationsSearchResponse> response = (ApiResponse<LocationsSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

@@ -38,9 +38,6 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class GetOrphanrecordingsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -226,6 +223,7 @@ public class GetOrphanrecordingsRequest {
 
 
 		public GetOrphanrecordingsRequest build() {
+            
 			return request;
 		}
 	}

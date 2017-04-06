@@ -38,9 +38,6 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class GetQualityFormsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -226,6 +223,7 @@ public class GetQualityFormsRequest {
 
 
 		public GetQualityFormsRequest build() {
+            
 			return request;
 		}
 	}

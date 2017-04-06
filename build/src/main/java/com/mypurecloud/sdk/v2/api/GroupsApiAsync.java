@@ -1,6 +1,8 @@
 package com.mypurecloud.sdk.v2.api;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.SettableFuture;
 
 import com.mypurecloud.sdk.v2.AsyncApiCallback;
 import com.mypurecloud.sdk.v2.ApiException;
@@ -57,221 +59,856 @@ public class GroupsApiAsync {
   /**
    * Delete group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Void> deleteGroupAsync(DeleteGroupRequest request, AsyncApiCallback<Void> callback) {
-    return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
+    try {
+      SettableFuture<Void> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteGroupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
-    return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
+    try {
+      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Remove members
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Empty> deleteGroupMembersAsync(DeleteGroupMembersRequest request, AsyncApiCallback<Empty> callback) {
-    return pcapiClient.<Empty>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, callback);
+    try {
+      SettableFuture<Empty> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Remove members
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Empty>> deleteGroupMembersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
-    return pcapiClient.<Empty>invokeAPIVerboseAsync(request, new TypeReference<Empty>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Fetch field config for an entity type
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<FieldConfig> getFieldconfigAsync(GetFieldconfigRequest request, AsyncApiCallback<FieldConfig> callback) {
-    return pcapiClient.<FieldConfig>invokeAPIAsync(request.withHttpInfo(), new TypeReference<FieldConfig>() {}, callback);
+    try {
+      SettableFuture<FieldConfig> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FieldConfig>() {}, new AsyncApiCallback<ApiResponse<FieldConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<FieldConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Fetch field config for an entity type
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<FieldConfig>> getFieldconfigAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FieldConfig>> callback) {
-    return pcapiClient.<FieldConfig>invokeAPIVerboseAsync(request, new TypeReference<FieldConfig>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<FieldConfig>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FieldConfig>() {}, new AsyncApiCallback<ApiResponse<FieldConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<FieldConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FieldConfig> response = (ApiResponse<FieldConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FieldConfig> response = (ApiResponse<FieldConfig>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Group> getGroupAsync(GetGroupRequest request, AsyncApiCallback<Group> callback) {
-    return pcapiClient.<Group>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Group>() {}, callback);
+    try {
+      SettableFuture<Group> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Group>() {}, new AsyncApiCallback<ApiResponse<Group>>() {
+        @Override
+        public void onCompleted(ApiResponse<Group> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Group>> getGroupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Group>> callback) {
-    return pcapiClient.<Group>invokeAPIVerboseAsync(request, new TypeReference<Group>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Group>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Group>() {}, new AsyncApiCallback<ApiResponse<Group>>() {
+        @Override
+        public void onCompleted(ApiResponse<Group> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Group> response = (ApiResponse<Group>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Group> response = (ApiResponse<Group>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get group members
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<UserEntityListing> getGroupMembersAsync(GetGroupMembersRequest request, AsyncApiCallback<UserEntityListing> callback) {
-    return pcapiClient.<UserEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<UserEntityListing>() {}, callback);
+    try {
+      SettableFuture<UserEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get group members
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<UserEntityListing>> getGroupMembersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserEntityListing>> callback) {
-    return pcapiClient.<UserEntityListing>invokeAPIVerboseAsync(request, new TypeReference<UserEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<UserEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a group list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<GroupEntityListing> getGroupsAsync(GetGroupsRequest request, AsyncApiCallback<GroupEntityListing> callback) {
-    return pcapiClient.<GroupEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<GroupEntityListing>() {}, callback);
+    try {
+      SettableFuture<GroupEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GroupEntityListing>() {}, new AsyncApiCallback<ApiResponse<GroupEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<GroupEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a group list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<GroupEntityListing>> getGroupsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GroupEntityListing>> callback) {
-    return pcapiClient.<GroupEntityListing>invokeAPIVerboseAsync(request, new TypeReference<GroupEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<GroupEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GroupEntityListing>() {}, new AsyncApiCallback<ApiResponse<GroupEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<GroupEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GroupEntityListing> response = (ApiResponse<GroupEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GroupEntityListing> response = (ApiResponse<GroupEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Search groups using the q64 value returned from a previous search
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<GroupsSearchResponse> getGroupsSearchAsync(GetGroupsSearchRequest request, AsyncApiCallback<GroupsSearchResponse> callback) {
-    return pcapiClient.<GroupsSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<GroupsSearchResponse>() {}, callback);
+    try {
+      SettableFuture<GroupsSearchResponse> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GroupsSearchResponse>() {}, new AsyncApiCallback<ApiResponse<GroupsSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GroupsSearchResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Search groups using the q64 value returned from a previous search
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<GroupsSearchResponse>> getGroupsSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GroupsSearchResponse>> callback) {
-    return pcapiClient.<GroupsSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<GroupsSearchResponse>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<GroupsSearchResponse>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GroupsSearchResponse>() {}, new AsyncApiCallback<ApiResponse<GroupsSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GroupsSearchResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GroupsSearchResponse> response = (ApiResponse<GroupsSearchResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GroupsSearchResponse> response = (ApiResponse<GroupsSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Add members
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Empty> postGroupMembersAsync(PostGroupMembersRequest request, AsyncApiCallback<Empty> callback) {
-    return pcapiClient.<Empty>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, callback);
+    try {
+      SettableFuture<Empty> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Add members
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Empty>> postGroupMembersAsync(ApiRequest<GroupMembersUpdate> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
-    return pcapiClient.<Empty>invokeAPIVerboseAsync(request, new TypeReference<Empty>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Group> postGroupsAsync(PostGroupsRequest request, AsyncApiCallback<Group> callback) {
-    return pcapiClient.<Group>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Group>() {}, callback);
+    try {
+      SettableFuture<Group> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Group>() {}, new AsyncApiCallback<ApiResponse<Group>>() {
+        @Override
+        public void onCompleted(ApiResponse<Group> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Group>> postGroupsAsync(ApiRequest<Group> request, AsyncApiCallback<ApiResponse<Group>> callback) {
-    return pcapiClient.<Group>invokeAPIVerboseAsync(request, new TypeReference<Group>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Group>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Group>() {}, new AsyncApiCallback<ApiResponse<Group>>() {
+        @Override
+        public void onCompleted(ApiResponse<Group> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Group> response = (ApiResponse<Group>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Group> response = (ApiResponse<Group>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Search groups
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<GroupsSearchResponse> postGroupsSearchAsync(PostGroupsSearchRequest request, AsyncApiCallback<GroupsSearchResponse> callback) {
-    return pcapiClient.<GroupsSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<GroupsSearchResponse>() {}, callback);
+    try {
+      SettableFuture<GroupsSearchResponse> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GroupsSearchResponse>() {}, new AsyncApiCallback<ApiResponse<GroupsSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GroupsSearchResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Search groups
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<GroupsSearchResponse>> postGroupsSearchAsync(ApiRequest<GroupSearchRequest> request, AsyncApiCallback<ApiResponse<GroupsSearchResponse>> callback) {
-    return pcapiClient.<GroupsSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<GroupsSearchResponse>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<GroupsSearchResponse>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GroupsSearchResponse>() {}, new AsyncApiCallback<ApiResponse<GroupsSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GroupsSearchResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GroupsSearchResponse> response = (ApiResponse<GroupsSearchResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GroupsSearchResponse> response = (ApiResponse<GroupsSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Group> putGroupAsync(PutGroupRequest request, AsyncApiCallback<Group> callback) {
-    return pcapiClient.<Group>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Group>() {}, callback);
+    try {
+      SettableFuture<Group> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Group>() {}, new AsyncApiCallback<ApiResponse<Group>>() {
+        @Override
+        public void onCompleted(ApiResponse<Group> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Group>> putGroupAsync(ApiRequest<GroupUpdate> request, AsyncApiCallback<ApiResponse<Group>> callback) {
-    return pcapiClient.<Group>invokeAPIVerboseAsync(request, new TypeReference<Group>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Group>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Group>() {}, new AsyncApiCallback<ApiResponse<Group>>() {
+        @Override
+        public void onCompleted(ApiResponse<Group> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Group> response = (ApiResponse<Group>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Group> response = (ApiResponse<Group>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
+
+  private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
+    if (callback != null) {
+      try {
+        callback.onCompleted(result);
+        future.set(result);
+      }
+      catch (Throwable exception) {
+        future.setException(exception);
+      }
+    }
+    else {
+      future.set(result);
+    }
+  }
+
+  private <T> void notifyFailure(SettableFuture<T> future, AsyncApiCallback<T> callback, Throwable exception) {
+    if (callback != null) {
+      try {
+        callback.onFailed(exception);
+        future.setException(exception);
+      }
+      catch (Throwable callbackException) {
+        future.setException(callbackException);
+      }
+    }
+    else {
+      future.setException(exception);
+    }
+  }
 }

@@ -44,71 +44,74 @@ public class OAuthApi {
    * Delete OAuth Client
    * 
    * @param clientId Client ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteOauthClient(String clientId) throws IOException, ApiException {
-    deleteOauthClientWithHttpInfo(clientId);
+     deleteOauthClient(createDeleteOauthClientRequest(clientId));
   }
 
   /**
    * Delete OAuth Client
    * 
    * @param clientId Client ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteOauthClientWithHttpInfo(String clientId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'clientId' is set
-    if (clientId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'clientId' when calling deleteOauthClient");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/oauth/clients/{clientId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "clientId" + "\\}", pcapiClient.escapeString(clientId.toString()));
+  public ApiResponse<Void> deleteOauthClientWithHttpInfo(String clientId) throws IOException {
+    return deleteOauthClient(createDeleteOauthClientRequest(clientId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteOauthClientRequest createDeleteOauthClientRequest(String clientId) {
+    return DeleteOauthClientRequest.builder()
+            .withClientId(clientId)
+            .build();
   }
 
   /**
    * Delete OAuth Client
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteOauthClient(DeleteOauthClientRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete OAuth Client
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteOauthClient(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteOauthClient(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -116,10 +119,11 @@ public class OAuthApi {
    * 
    * @param clientId Client ID (required)
    * @return OAuthClient
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthClient getOauthClient(String clientId) throws IOException, ApiException {
-    return getOauthClientWithHttpInfo(clientId).getBody();
+    return  getOauthClient(createGetOauthClientRequest(clientId));
   }
 
   /**
@@ -127,126 +131,137 @@ public class OAuthApi {
    * 
    * @param clientId Client ID (required)
    * @return OAuthClient
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthClient> getOauthClientWithHttpInfo(String clientId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'clientId' is set
-    if (clientId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'clientId' when calling getOauthClient");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/oauth/clients/{clientId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "clientId" + "\\}", pcapiClient.escapeString(clientId.toString()));
+  public ApiResponse<OAuthClient> getOauthClientWithHttpInfo(String clientId) throws IOException {
+    return getOauthClient(createGetOauthClientRequest(clientId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OAuthClient>() {});
+  private GetOauthClientRequest createGetOauthClientRequest(String clientId) {
+    return GetOauthClientRequest.builder()
+            .withClientId(clientId)
+            .build();
   }
 
   /**
    * Get OAuth Client
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OAuthClient
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthClient getOauthClient(GetOauthClientRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthClient>() {});
+    try {
+      ApiResponse<OAuthClient> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthClient>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get OAuth Client
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthClient> getOauthClient(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<OAuthClient>invokeAPIVerbose(request, new TypeReference<OAuthClient>() {});
+  public ApiResponse<OAuthClient> getOauthClient(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthClient>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthClient> response = (ApiResponse<OAuthClient>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthClient> response = (ApiResponse<OAuthClient>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * The list of OAuth clients
    * 
    * @return OAuthClientEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthClientEntityListing getOauthClients() throws IOException, ApiException {
-    return getOauthClientsWithHttpInfo().getBody();
+    return  getOauthClients(createGetOauthClientsRequest());
   }
 
   /**
    * The list of OAuth clients
    * 
    * @return OAuthClientEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthClientEntityListing> getOauthClientsWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/oauth/clients".replaceAll("\\{format\\}","json");
+  public ApiResponse<OAuthClientEntityListing> getOauthClientsWithHttpInfo() throws IOException {
+    return getOauthClients(createGetOauthClientsRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OAuthClientEntityListing>() {});
+  private GetOauthClientsRequest createGetOauthClientsRequest() {
+    return GetOauthClientsRequest.builder()            .build();
   }
 
   /**
    * The list of OAuth clients
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OAuthClientEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthClientEntityListing getOauthClients(GetOauthClientsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthClientEntityListing>() {});
+    try {
+      ApiResponse<OAuthClientEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthClientEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * The list of OAuth clients
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthClientEntityListing> getOauthClients(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<OAuthClientEntityListing>invokeAPIVerbose(request, new TypeReference<OAuthClientEntityListing>() {});
+  public ApiResponse<OAuthClientEntityListing> getOauthClients(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthClientEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthClientEntityListing> response = (ApiResponse<OAuthClientEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthClientEntityListing> response = (ApiResponse<OAuthClientEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -254,10 +269,11 @@ public class OAuthApi {
    * This operation will set the client secret to a randomly generated cryptographically random value. All clients must be updated with the new secret. This operation should be used with caution.
    * @param clientId Client ID (required)
    * @return OAuthClient
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthClient postOauthClientSecret(String clientId) throws IOException, ApiException {
-    return postOauthClientSecretWithHttpInfo(clientId).getBody();
+    return  postOauthClientSecret(createPostOauthClientSecretRequest(clientId));
   }
 
   /**
@@ -265,61 +281,64 @@ public class OAuthApi {
    * This operation will set the client secret to a randomly generated cryptographically random value. All clients must be updated with the new secret. This operation should be used with caution.
    * @param clientId Client ID (required)
    * @return OAuthClient
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthClient> postOauthClientSecretWithHttpInfo(String clientId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'clientId' is set
-    if (clientId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'clientId' when calling postOauthClientSecret");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/oauth/clients/{clientId}/secret".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "clientId" + "\\}", pcapiClient.escapeString(clientId.toString()));
+  public ApiResponse<OAuthClient> postOauthClientSecretWithHttpInfo(String clientId) throws IOException {
+    return postOauthClientSecret(createPostOauthClientSecretRequest(clientId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OAuthClient>() {});
+  private PostOauthClientSecretRequest createPostOauthClientSecretRequest(String clientId) {
+    return PostOauthClientSecretRequest.builder()
+            .withClientId(clientId)
+            .build();
   }
 
   /**
    * Regenerate Client Secret
    * This operation will set the client secret to a randomly generated cryptographically random value. All clients must be updated with the new secret. This operation should be used with caution.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OAuthClient
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthClient postOauthClientSecret(PostOauthClientSecretRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthClient>() {});
+    try {
+      ApiResponse<OAuthClient> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthClient>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Regenerate Client Secret
    * This operation will set the client secret to a randomly generated cryptographically random value. All clients must be updated with the new secret. This operation should be used with caution.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthClient> postOauthClientSecret(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<OAuthClient>invokeAPIVerbose(request, new TypeReference<OAuthClient>() {});
+  public ApiResponse<OAuthClient> postOauthClientSecret(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthClient>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthClient> response = (ApiResponse<OAuthClient>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthClient> response = (ApiResponse<OAuthClient>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -327,10 +346,11 @@ public class OAuthApi {
    * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is &#39;CODE&#39; which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the &#39;TOKEN&#39; grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the &#39;CLIENT-CREDENTIALS&#39; grant may be used. In this case the client must be granted roles  via the &#39;roleIds&#39; field.
    * @param body Client (required)
    * @return OAuthClient
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthClient postOauthClients(OAuthClient body) throws IOException, ApiException {
-    return postOauthClientsWithHttpInfo(body).getBody();
+    return  postOauthClients(createPostOauthClientsRequest(body));
   }
 
   /**
@@ -338,60 +358,64 @@ public class OAuthApi {
    * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is &#39;CODE&#39; which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the &#39;TOKEN&#39; grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the &#39;CLIENT-CREDENTIALS&#39; grant may be used. In this case the client must be granted roles  via the &#39;roleIds&#39; field.
    * @param body Client (required)
    * @return OAuthClient
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthClient> postOauthClientsWithHttpInfo(OAuthClient body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOauthClients");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/oauth/clients".replaceAll("\\{format\\}","json");
+  public ApiResponse<OAuthClient> postOauthClientsWithHttpInfo(OAuthClient body) throws IOException {
+    return postOauthClients(createPostOauthClientsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OAuthClient>() {});
+  private PostOauthClientsRequest createPostOauthClientsRequest(OAuthClient body) {
+    return PostOauthClientsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create OAuth client
    * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is &#39;CODE&#39; which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the &#39;TOKEN&#39; grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the &#39;CLIENT-CREDENTIALS&#39; grant may be used. In this case the client must be granted roles  via the &#39;roleIds&#39; field.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OAuthClient
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthClient postOauthClients(PostOauthClientsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthClient>() {});
+    try {
+      ApiResponse<OAuthClient> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthClient>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create OAuth client
    * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is &#39;CODE&#39; which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the &#39;TOKEN&#39; grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the &#39;CLIENT-CREDENTIALS&#39; grant may be used. In this case the client must be granted roles  via the &#39;roleIds&#39; field.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthClient> postOauthClients(ApiRequest<OAuthClient> request) throws IOException, ApiException {
-    return pcapiClient.<OAuthClient>invokeAPIVerbose(request, new TypeReference<OAuthClient>() {});
+  public ApiResponse<OAuthClient> postOauthClients(ApiRequest<OAuthClient> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthClient>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthClient> response = (ApiResponse<OAuthClient>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthClient> response = (ApiResponse<OAuthClient>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -400,10 +424,11 @@ public class OAuthApi {
    * @param clientId Client ID (required)
    * @param body Client (required)
    * @return OAuthClient
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthClient putOauthClient(String clientId, OAuthClient body) throws IOException, ApiException {
-    return putOauthClientWithHttpInfo(clientId, body).getBody();
+    return  putOauthClient(createPutOauthClientRequest(clientId, body));
   }
 
   /**
@@ -412,66 +437,66 @@ public class OAuthApi {
    * @param clientId Client ID (required)
    * @param body Client (required)
    * @return OAuthClient
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthClient> putOauthClientWithHttpInfo(String clientId, OAuthClient body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'clientId' is set
-    if (clientId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'clientId' when calling putOauthClient");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOauthClient");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/oauth/clients/{clientId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "clientId" + "\\}", pcapiClient.escapeString(clientId.toString()));
+  public ApiResponse<OAuthClient> putOauthClientWithHttpInfo(String clientId, OAuthClient body) throws IOException {
+    return putOauthClient(createPutOauthClientRequest(clientId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutOauthClientRequest createPutOauthClientRequest(String clientId, OAuthClient body) {
+    return PutOauthClientRequest.builder()
+            .withClientId(clientId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OAuthClient>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update OAuth Client
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OAuthClient
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthClient putOauthClient(PutOauthClientRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthClient>() {});
+    try {
+      ApiResponse<OAuthClient> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthClient>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update OAuth Client
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthClient> putOauthClient(ApiRequest<OAuthClient> request) throws IOException, ApiException {
-    return pcapiClient.<OAuthClient>invokeAPIVerbose(request, new TypeReference<OAuthClient>() {});
+  public ApiResponse<OAuthClient> putOauthClient(ApiRequest<OAuthClient> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthClient>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthClient> response = (ApiResponse<OAuthClient>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthClient> response = (ApiResponse<OAuthClient>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

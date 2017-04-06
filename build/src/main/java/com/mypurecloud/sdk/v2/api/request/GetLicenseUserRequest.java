@@ -27,9 +27,6 @@ import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
 import com.mypurecloud.sdk.v2.model.LicenseUpdateResponse;
 
 public class GetLicenseUserRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -108,6 +105,12 @@ public class GetLicenseUserRequest {
 
 
 		public GetLicenseUserRequest build() {
+            
+            // verify the required parameter 'userId' is set
+            if (request.userId == null) {
+                throw new IllegalStateException("Missing the required parameter 'userId' when building request for GetLicenseUserRequest.");
+            }
+            
 			return request;
 		}
 	}

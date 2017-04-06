@@ -46,71 +46,74 @@ public class FaxApi {
    * Delete a fax document.
    * 
    * @param documentId Document ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteFaxDocument(String documentId) throws IOException, ApiException {
-    deleteFaxDocumentWithHttpInfo(documentId);
+     deleteFaxDocument(createDeleteFaxDocumentRequest(documentId));
   }
 
   /**
    * Delete a fax document.
    * 
    * @param documentId Document ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteFaxDocumentWithHttpInfo(String documentId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'documentId' is set
-    if (documentId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'documentId' when calling deleteFaxDocument");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/fax/documents/{documentId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "documentId" + "\\}", pcapiClient.escapeString(documentId.toString()));
+  public ApiResponse<Void> deleteFaxDocumentWithHttpInfo(String documentId) throws IOException {
+    return deleteFaxDocument(createDeleteFaxDocumentRequest(documentId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteFaxDocumentRequest createDeleteFaxDocumentRequest(String documentId) {
+    return DeleteFaxDocumentRequest.builder()
+            .withDocumentId(documentId)
+            .build();
   }
 
   /**
    * Delete a fax document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteFaxDocument(DeleteFaxDocumentRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete a fax document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteFaxDocument(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteFaxDocument(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -118,10 +121,11 @@ public class FaxApi {
    * 
    * @param documentId Document ID (required)
    * @return FaxDocument
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FaxDocument getFaxDocument(String documentId) throws IOException, ApiException {
-    return getFaxDocumentWithHttpInfo(documentId).getBody();
+    return  getFaxDocument(createGetFaxDocumentRequest(documentId));
   }
 
   /**
@@ -129,61 +133,64 @@ public class FaxApi {
    * 
    * @param documentId Document ID (required)
    * @return FaxDocument
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FaxDocument> getFaxDocumentWithHttpInfo(String documentId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'documentId' is set
-    if (documentId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'documentId' when calling getFaxDocument");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/fax/documents/{documentId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "documentId" + "\\}", pcapiClient.escapeString(documentId.toString()));
+  public ApiResponse<FaxDocument> getFaxDocumentWithHttpInfo(String documentId) throws IOException {
+    return getFaxDocument(createGetFaxDocumentRequest(documentId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<FaxDocument>() {});
+  private GetFaxDocumentRequest createGetFaxDocumentRequest(String documentId) {
+    return GetFaxDocumentRequest.builder()
+            .withDocumentId(documentId)
+            .build();
   }
 
   /**
    * Get a document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return FaxDocument
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FaxDocument getFaxDocument(GetFaxDocumentRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FaxDocument>() {});
+    try {
+      ApiResponse<FaxDocument> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FaxDocument>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FaxDocument> getFaxDocument(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<FaxDocument>invokeAPIVerbose(request, new TypeReference<FaxDocument>() {});
+  public ApiResponse<FaxDocument> getFaxDocument(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FaxDocument>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FaxDocument> response = (ApiResponse<FaxDocument>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FaxDocument> response = (ApiResponse<FaxDocument>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -191,10 +198,11 @@ public class FaxApi {
    * 
    * @param documentId Document ID (required)
    * @return DownloadResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DownloadResponse getFaxDocumentContent(String documentId) throws IOException, ApiException {
-    return getFaxDocumentContentWithHttpInfo(documentId).getBody();
+    return  getFaxDocumentContent(createGetFaxDocumentContentRequest(documentId));
   }
 
   /**
@@ -202,61 +210,64 @@ public class FaxApi {
    * 
    * @param documentId Document ID (required)
    * @return DownloadResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DownloadResponse> getFaxDocumentContentWithHttpInfo(String documentId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'documentId' is set
-    if (documentId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'documentId' when calling getFaxDocumentContent");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/fax/documents/{documentId}/content".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "documentId" + "\\}", pcapiClient.escapeString(documentId.toString()));
+  public ApiResponse<DownloadResponse> getFaxDocumentContentWithHttpInfo(String documentId) throws IOException {
+    return getFaxDocumentContent(createGetFaxDocumentContentRequest(documentId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DownloadResponse>() {});
+  private GetFaxDocumentContentRequest createGetFaxDocumentContentRequest(String documentId) {
+    return GetFaxDocumentContentRequest.builder()
+            .withDocumentId(documentId)
+            .build();
   }
 
   /**
    * Download a fax document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DownloadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DownloadResponse getFaxDocumentContent(GetFaxDocumentContentRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DownloadResponse>() {});
+    try {
+      ApiResponse<DownloadResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DownloadResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Download a fax document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DownloadResponse> getFaxDocumentContent(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DownloadResponse>invokeAPIVerbose(request, new TypeReference<DownloadResponse>() {});
+  public ApiResponse<DownloadResponse> getFaxDocumentContent(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DownloadResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DownloadResponse> response = (ApiResponse<DownloadResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DownloadResponse> response = (ApiResponse<DownloadResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -265,10 +276,11 @@ public class FaxApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return FaxDocumentEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FaxDocumentEntityListing getFaxDocuments(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getFaxDocumentsWithHttpInfo(pageSize, pageNumber).getBody();
+    return  getFaxDocuments(createGetFaxDocumentsRequest(pageSize, pageNumber));
   }
 
   /**
@@ -277,122 +289,139 @@ public class FaxApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return FaxDocumentEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FaxDocumentEntityListing> getFaxDocumentsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/fax/documents".replaceAll("\\{format\\}","json");
+  public ApiResponse<FaxDocumentEntityListing> getFaxDocumentsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getFaxDocuments(createGetFaxDocumentsRequest(pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetFaxDocumentsRequest createGetFaxDocumentsRequest(Integer pageSize, Integer pageNumber) {
+    return GetFaxDocumentsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<FaxDocumentEntityListing>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * Get a list of fax documents.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return FaxDocumentEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FaxDocumentEntityListing getFaxDocuments(GetFaxDocumentsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FaxDocumentEntityListing>() {});
+    try {
+      ApiResponse<FaxDocumentEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FaxDocumentEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of fax documents.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FaxDocumentEntityListing> getFaxDocuments(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<FaxDocumentEntityListing>invokeAPIVerbose(request, new TypeReference<FaxDocumentEntityListing>() {});
+  public ApiResponse<FaxDocumentEntityListing> getFaxDocuments(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FaxDocumentEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FaxDocumentEntityListing> response = (ApiResponse<FaxDocumentEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FaxDocumentEntityListing> response = (ApiResponse<FaxDocumentEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get fax summary
    * 
    * @return FaxSummary
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FaxSummary getFaxSummary() throws IOException, ApiException {
-    return getFaxSummaryWithHttpInfo().getBody();
+    return  getFaxSummary(createGetFaxSummaryRequest());
   }
 
   /**
    * Get fax summary
    * 
    * @return FaxSummary
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FaxSummary> getFaxSummaryWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/fax/summary".replaceAll("\\{format\\}","json");
+  public ApiResponse<FaxSummary> getFaxSummaryWithHttpInfo() throws IOException {
+    return getFaxSummary(createGetFaxSummaryRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<FaxSummary>() {});
+  private GetFaxSummaryRequest createGetFaxSummaryRequest() {
+    return GetFaxSummaryRequest.builder()            .build();
   }
 
   /**
    * Get fax summary
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return FaxSummary
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FaxSummary getFaxSummary(GetFaxSummaryRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FaxSummary>() {});
+    try {
+      ApiResponse<FaxSummary> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FaxSummary>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get fax summary
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FaxSummary> getFaxSummary(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<FaxSummary>invokeAPIVerbose(request, new TypeReference<FaxSummary>() {});
+  public ApiResponse<FaxSummary> getFaxSummary(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FaxSummary>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FaxSummary> response = (ApiResponse<FaxSummary>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FaxSummary> response = (ApiResponse<FaxSummary>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -401,10 +430,11 @@ public class FaxApi {
    * @param documentId Document ID (required)
    * @param body Document (required)
    * @return FaxDocument
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FaxDocument putFaxDocument(String documentId, FaxDocument body) throws IOException, ApiException {
-    return putFaxDocumentWithHttpInfo(documentId, body).getBody();
+    return  putFaxDocument(createPutFaxDocumentRequest(documentId, body));
   }
 
   /**
@@ -413,66 +443,66 @@ public class FaxApi {
    * @param documentId Document ID (required)
    * @param body Document (required)
    * @return FaxDocument
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FaxDocument> putFaxDocumentWithHttpInfo(String documentId, FaxDocument body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'documentId' is set
-    if (documentId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'documentId' when calling putFaxDocument");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putFaxDocument");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/fax/documents/{documentId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "documentId" + "\\}", pcapiClient.escapeString(documentId.toString()));
+  public ApiResponse<FaxDocument> putFaxDocumentWithHttpInfo(String documentId, FaxDocument body) throws IOException {
+    return putFaxDocument(createPutFaxDocumentRequest(documentId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutFaxDocumentRequest createPutFaxDocumentRequest(String documentId, FaxDocument body) {
+    return PutFaxDocumentRequest.builder()
+            .withDocumentId(documentId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<FaxDocument>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a fax document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return FaxDocument
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FaxDocument putFaxDocument(PutFaxDocumentRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FaxDocument>() {});
+    try {
+      ApiResponse<FaxDocument> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FaxDocument>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a fax document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FaxDocument> putFaxDocument(ApiRequest<FaxDocument> request) throws IOException, ApiException {
-    return pcapiClient.<FaxDocument>invokeAPIVerbose(request, new TypeReference<FaxDocument>() {});
+  public ApiResponse<FaxDocument> putFaxDocument(ApiRequest<FaxDocument> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FaxDocument>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FaxDocument> response = (ApiResponse<FaxDocument>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FaxDocument> response = (ApiResponse<FaxDocument>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

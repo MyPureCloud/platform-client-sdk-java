@@ -23,9 +23,6 @@ import com.mypurecloud.sdk.v2.model.GeolocationSettings;
 import com.mypurecloud.sdk.v2.model.Geolocation;
 
 public class PatchGeolocationsSettingsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private GeolocationSettings body;
 	public GeolocationSettings getBody() {
 		return this.body;
@@ -104,6 +101,12 @@ public class PatchGeolocationsSettingsRequest {
 
 
 		public PatchGeolocationsSettingsRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchGeolocationsSettingsRequest.");
+            }
+            
 			return request;
 		}
 	}

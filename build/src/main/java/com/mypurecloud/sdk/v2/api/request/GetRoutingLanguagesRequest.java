@@ -44,9 +44,6 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class GetRoutingLanguagesRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -172,6 +169,7 @@ public class GetRoutingLanguagesRequest {
 
 
 		public GetRoutingLanguagesRequest build() {
+            
 			return request;
 		}
 	}

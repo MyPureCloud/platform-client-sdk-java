@@ -84,9 +84,6 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class DeleteTelephonyProvidersEdgesEdgegroupRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String edgeGroupId;
 	public String getEdgeGroupId() {
 		return this.edgeGroupId;
@@ -165,6 +162,12 @@ public class DeleteTelephonyProvidersEdgesEdgegroupRequest {
 
 
 		public DeleteTelephonyProvidersEdgesEdgegroupRequest build() {
+            
+            // verify the required parameter 'edgeGroupId' is set
+            if (request.edgeGroupId == null) {
+                throw new IllegalStateException("Missing the required parameter 'edgeGroupId' when building request for DeleteTelephonyProvidersEdgesEdgegroupRequest.");
+            }
+            
 			return request;
 		}
 	}

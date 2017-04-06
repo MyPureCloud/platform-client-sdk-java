@@ -38,9 +38,6 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class GetQualityKeywordsetsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -286,6 +283,7 @@ public class GetQualityKeywordsetsRequest {
 
 
 		public GetQualityKeywordsetsRequest build() {
+            
 			return request;
 		}
 	}

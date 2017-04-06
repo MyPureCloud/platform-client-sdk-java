@@ -50,9 +50,6 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class GetContentmanagementQueryRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String queryPhrase;
 	public String getQueryPhrase() {
 		return this.queryPhrase;
@@ -231,6 +228,12 @@ public class GetContentmanagementQueryRequest {
 
 
 		public GetContentmanagementQueryRequest build() {
+            
+            // verify the required parameter 'queryPhrase' is set
+            if (request.queryPhrase == null) {
+                throw new IllegalStateException("Missing the required parameter 'queryPhrase' when building request for GetContentmanagementQueryRequest.");
+            }
+            
 			return request;
 		}
 	}

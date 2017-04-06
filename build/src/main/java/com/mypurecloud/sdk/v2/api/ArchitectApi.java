@@ -103,10 +103,11 @@ public class ArchitectApi {
    * 
    * @param promptId Prompt ID (required)
    * @param allResources Whether or not to delete all the prompt resources (optional)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteArchitectPrompt(String promptId, Boolean allResources) throws IOException, ApiException {
-    deleteArchitectPromptWithHttpInfo(promptId, allResources);
+     deleteArchitectPrompt(createDeleteArchitectPromptRequest(promptId, allResources));
   }
 
   /**
@@ -114,62 +115,65 @@ public class ArchitectApi {
    * 
    * @param promptId Prompt ID (required)
    * @param allResources Whether or not to delete all the prompt resources (optional)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteArchitectPromptWithHttpInfo(String promptId, Boolean allResources) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'promptId' is set
-    if (promptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling deleteArchitectPrompt");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/prompts/{promptId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "promptId" + "\\}", pcapiClient.escapeString(promptId.toString()));
+  public ApiResponse<Void> deleteArchitectPromptWithHttpInfo(String promptId, Boolean allResources) throws IOException {
+    return deleteArchitectPrompt(createDeleteArchitectPromptRequest(promptId, allResources).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private DeleteArchitectPromptRequest createDeleteArchitectPromptRequest(String promptId, Boolean allResources) {
+    return DeleteArchitectPromptRequest.builder()
+            .withPromptId(promptId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "allResources", allResources));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withAllResources(allResources)
+            .build();
   }
 
   /**
    * Delete specified user prompt
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteArchitectPrompt(DeleteArchitectPromptRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete specified user prompt
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteArchitectPrompt(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteArchitectPrompt(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -177,10 +181,11 @@ public class ArchitectApi {
    * 
    * @param promptId Prompt ID (required)
    * @param languageCode Language (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteArchitectPromptResource(String promptId, String languageCode) throws IOException, ApiException {
-    deleteArchitectPromptResourceWithHttpInfo(promptId, languageCode);
+     deleteArchitectPromptResource(createDeleteArchitectPromptResourceRequest(promptId, languageCode));
   }
 
   /**
@@ -188,67 +193,65 @@ public class ArchitectApi {
    * 
    * @param promptId Prompt ID (required)
    * @param languageCode Language (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteArchitectPromptResourceWithHttpInfo(String promptId, String languageCode) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'promptId' is set
-    if (promptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling deleteArchitectPromptResource");
-    }
-    
-    // verify the required parameter 'languageCode' is set
-    if (languageCode == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'languageCode' when calling deleteArchitectPromptResource");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/prompts/{promptId}/resources/{languageCode}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "promptId" + "\\}", pcapiClient.escapeString(promptId.toString()))
-      .replaceAll("\\{" + "languageCode" + "\\}", pcapiClient.escapeString(languageCode.toString()));
+  public ApiResponse<Void> deleteArchitectPromptResourceWithHttpInfo(String promptId, String languageCode) throws IOException {
+    return deleteArchitectPromptResource(createDeleteArchitectPromptResourceRequest(promptId, languageCode).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private DeleteArchitectPromptResourceRequest createDeleteArchitectPromptResourceRequest(String promptId, String languageCode) {
+    return DeleteArchitectPromptResourceRequest.builder()
+            .withPromptId(promptId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withLanguageCode(languageCode)
+            .build();
   }
 
   /**
    * Delete specified user prompt resource
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteArchitectPromptResource(DeleteArchitectPromptResourceRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete specified user prompt resource
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteArchitectPromptResource(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteArchitectPromptResource(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -256,10 +259,11 @@ public class ArchitectApi {
    * Multiple IDs can be specified, in which case all specified prompts will be deleted.
    * @param id List of Prompt IDs (required)
    * @return Operation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Operation deleteArchitectPrompts(List<String> id) throws IOException, ApiException {
-    return deleteArchitectPromptsWithHttpInfo(id).getBody();
+    return  deleteArchitectPrompts(createDeleteArchitectPromptsRequest(id));
   }
 
   /**
@@ -267,61 +271,64 @@ public class ArchitectApi {
    * Multiple IDs can be specified, in which case all specified prompts will be deleted.
    * @param id List of Prompt IDs (required)
    * @return Operation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Operation> deleteArchitectPromptsWithHttpInfo(List<String> id) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'id' is set
-    if (id == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'id' when calling deleteArchitectPrompts");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/prompts".replaceAll("\\{format\\}","json");
+  public ApiResponse<Operation> deleteArchitectPromptsWithHttpInfo(List<String> id) throws IOException {
+    return deleteArchitectPrompts(createDeleteArchitectPromptsRequest(id).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "id", id));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Operation>() {});
+  private DeleteArchitectPromptsRequest createDeleteArchitectPromptsRequest(List<String> id) {
+    return DeleteArchitectPromptsRequest.builder()
+            .withId(id)
+            .build();
   }
 
   /**
    * Batch-delete a list of prompts asynchronously
    * Multiple IDs can be specified, in which case all specified prompts will be deleted.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Operation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Operation deleteArchitectPrompts(DeleteArchitectPromptsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Operation>() {});
+    try {
+      ApiResponse<Operation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Operation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Batch-delete a list of prompts asynchronously
    * Multiple IDs can be specified, in which case all specified prompts will be deleted.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Operation> deleteArchitectPrompts(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Operation>invokeAPIVerbose(request, new TypeReference<Operation>() {});
+  public ApiResponse<Operation> deleteArchitectPrompts(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Operation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -330,10 +337,11 @@ public class ArchitectApi {
    * @param promptId Prompt ID (required)
    * @param languageCode Language (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteArchitectSystempromptResource(String promptId, String languageCode) throws IOException, ApiException {
-    return deleteArchitectSystempromptResourceWithHttpInfo(promptId, languageCode).getBody();
+    return  deleteArchitectSystempromptResource(createDeleteArchitectSystempromptResourceRequest(promptId, languageCode));
   }
 
   /**
@@ -342,138 +350,140 @@ public class ArchitectApi {
    * @param promptId Prompt ID (required)
    * @param languageCode Language (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteArchitectSystempromptResourceWithHttpInfo(String promptId, String languageCode) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'promptId' is set
-    if (promptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling deleteArchitectSystempromptResource");
-    }
-    
-    // verify the required parameter 'languageCode' is set
-    if (languageCode == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'languageCode' when calling deleteArchitectSystempromptResource");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/systemprompts/{promptId}/resources/{languageCode}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "promptId" + "\\}", pcapiClient.escapeString(promptId.toString()))
-      .replaceAll("\\{" + "languageCode" + "\\}", pcapiClient.escapeString(languageCode.toString()));
+  public ApiResponse<String> deleteArchitectSystempromptResourceWithHttpInfo(String promptId, String languageCode) throws IOException {
+    return deleteArchitectSystempromptResource(createDeleteArchitectSystempromptResourceRequest(promptId, languageCode).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private DeleteArchitectSystempromptResourceRequest createDeleteArchitectSystempromptResourceRequest(String promptId, String languageCode) {
+    return DeleteArchitectSystempromptResourceRequest.builder()
+            .withPromptId(promptId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+            .withLanguageCode(languageCode)
+            .build();
   }
 
   /**
    * Delete a system prompt resource override.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteArchitectSystempromptResource(DeleteArchitectSystempromptResourceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete a system prompt resource override.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteArchitectSystempromptResource(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteArchitectSystempromptResource(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete flow
    * 
    * @param flowId Flow ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteFlow(String flowId) throws IOException, ApiException {
-    deleteFlowWithHttpInfo(flowId);
+     deleteFlow(createDeleteFlowRequest(flowId));
   }
 
   /**
    * Delete flow
    * 
    * @param flowId Flow ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteFlowWithHttpInfo(String flowId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'flowId' is set
-    if (flowId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'flowId' when calling deleteFlow");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/flows/{flowId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "flowId" + "\\}", pcapiClient.escapeString(flowId.toString()));
+  public ApiResponse<Void> deleteFlowWithHttpInfo(String flowId) throws IOException {
+    return deleteFlow(createDeleteFlowRequest(flowId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteFlowRequest createDeleteFlowRequest(String flowId) {
+    return DeleteFlowRequest.builder()
+            .withFlowId(flowId)
+            .build();
   }
 
   /**
    * Delete flow
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteFlow(DeleteFlowRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete flow
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteFlow(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteFlow(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -481,10 +491,11 @@ public class ArchitectApi {
    * Multiple IDs can be specified, in which case all specified flows will be deleted.
    * @param id List of Flow IDs (required)
    * @return Operation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Operation deleteFlows(List<String> id) throws IOException, ApiException {
-    return deleteFlowsWithHttpInfo(id).getBody();
+    return  deleteFlows(createDeleteFlowsRequest(id));
   }
 
   /**
@@ -492,61 +503,64 @@ public class ArchitectApi {
    * Multiple IDs can be specified, in which case all specified flows will be deleted.
    * @param id List of Flow IDs (required)
    * @return Operation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Operation> deleteFlowsWithHttpInfo(List<String> id) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'id' is set
-    if (id == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'id' when calling deleteFlows");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/flows".replaceAll("\\{format\\}","json");
+  public ApiResponse<Operation> deleteFlowsWithHttpInfo(List<String> id) throws IOException {
+    return deleteFlows(createDeleteFlowsRequest(id).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "id", id));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Operation>() {});
+  private DeleteFlowsRequest createDeleteFlowsRequest(List<String> id) {
+    return DeleteFlowsRequest.builder()
+            .withId(id)
+            .build();
   }
 
   /**
    * Batch-delete a list of flows asynchronously
    * Multiple IDs can be specified, in which case all specified flows will be deleted.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Operation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Operation deleteFlows(DeleteFlowsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Operation>() {});
+    try {
+      ApiResponse<Operation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Operation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Batch-delete a list of flows asynchronously
    * Multiple IDs can be specified, in which case all specified flows will be deleted.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Operation> deleteFlows(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Operation>invokeAPIVerbose(request, new TypeReference<Operation>() {});
+  public ApiResponse<Operation> deleteFlows(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Operation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -561,10 +575,11 @@ public class ArchitectApi {
    * @param consumedResourceType Types of consumed resources to return, if consumed resources are requested (optional)
    * @param consumingResourceType Types of consuming resources to return, if consuming resources are requested (optional)
    * @return DependencyObjectEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DependencyObjectEntityListing getArchitectDependencytracking(String name, Integer pageNumber, Integer pageSize, List<String> objectType, Boolean consumedResources, Boolean consumingResources, List<String> consumedResourceType, List<String> consumingResourceType) throws IOException, ApiException {
-    return getArchitectDependencytrackingWithHttpInfo(name, pageNumber, pageSize, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType).getBody();
+    return  getArchitectDependencytracking(createGetArchitectDependencytrackingRequest(name, pageNumber, pageSize, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType));
   }
 
   /**
@@ -579,133 +594,151 @@ public class ArchitectApi {
    * @param consumedResourceType Types of consumed resources to return, if consumed resources are requested (optional)
    * @param consumingResourceType Types of consuming resources to return, if consuming resources are requested (optional)
    * @return DependencyObjectEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DependencyObjectEntityListing> getArchitectDependencytrackingWithHttpInfo(String name, Integer pageNumber, Integer pageSize, List<String> objectType, Boolean consumedResources, Boolean consumingResources, List<String> consumedResourceType, List<String> consumingResourceType) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'name' is set
-    if (name == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'name' when calling getArchitectDependencytracking");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/dependencytracking".replaceAll("\\{format\\}","json");
+  public ApiResponse<DependencyObjectEntityListing> getArchitectDependencytrackingWithHttpInfo(String name, Integer pageNumber, Integer pageSize, List<String> objectType, Boolean consumedResources, Boolean consumingResources, List<String> consumedResourceType, List<String> consumingResourceType) throws IOException {
+    return getArchitectDependencytracking(createGetArchitectDependencytrackingRequest(name, pageNumber, pageSize, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetArchitectDependencytrackingRequest createGetArchitectDependencytrackingRequest(String name, Integer pageNumber, Integer pageSize, List<String> objectType, Boolean consumedResources, Boolean consumingResources, List<String> consumedResourceType, List<String> consumingResourceType) {
+    return GetArchitectDependencytrackingRequest.builder()
+            .withName(name)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "objectType", objectType));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "consumedResources", consumedResources));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "consumingResources", consumingResources));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "consumedResourceType", consumedResourceType));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "consumingResourceType", consumingResourceType));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageSize(pageSize)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withObjectType(objectType)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withConsumedResources(consumedResources)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DependencyObjectEntityListing>() {});
+            .withConsumingResources(consumingResources)
+
+            .withConsumedResourceType(consumedResourceType)
+
+            .withConsumingResourceType(consumingResourceType)
+            .build();
   }
 
   /**
    * Get Dependency Tracking objects that have a given display name
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DependencyObjectEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DependencyObjectEntityListing getArchitectDependencytracking(GetArchitectDependencytrackingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DependencyObjectEntityListing>() {});
+    try {
+      ApiResponse<DependencyObjectEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DependencyObjectEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get Dependency Tracking objects that have a given display name
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DependencyObjectEntityListing> getArchitectDependencytracking(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DependencyObjectEntityListing>invokeAPIVerbose(request, new TypeReference<DependencyObjectEntityListing>() {});
+  public ApiResponse<DependencyObjectEntityListing> getArchitectDependencytracking(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DependencyObjectEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DependencyObjectEntityListing> response = (ApiResponse<DependencyObjectEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DependencyObjectEntityListing> response = (ApiResponse<DependencyObjectEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get Dependency Tracking build status for an organization
    * 
    * @return DependencyStatus
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DependencyStatus getArchitectDependencytrackingBuild() throws IOException, ApiException {
-    return getArchitectDependencytrackingBuildWithHttpInfo().getBody();
+    return  getArchitectDependencytrackingBuild(createGetArchitectDependencytrackingBuildRequest());
   }
 
   /**
    * Get Dependency Tracking build status for an organization
    * 
    * @return DependencyStatus
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DependencyStatus> getArchitectDependencytrackingBuildWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/dependencytracking/build".replaceAll("\\{format\\}","json");
+  public ApiResponse<DependencyStatus> getArchitectDependencytrackingBuildWithHttpInfo() throws IOException {
+    return getArchitectDependencytrackingBuild(createGetArchitectDependencytrackingBuildRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DependencyStatus>() {});
+  private GetArchitectDependencytrackingBuildRequest createGetArchitectDependencytrackingBuildRequest() {
+    return GetArchitectDependencytrackingBuildRequest.builder()            .build();
   }
 
   /**
    * Get Dependency Tracking build status for an organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DependencyStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DependencyStatus getArchitectDependencytrackingBuild(GetArchitectDependencytrackingBuildRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DependencyStatus>() {});
+    try {
+      ApiResponse<DependencyStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DependencyStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get Dependency Tracking build status for an organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DependencyStatus> getArchitectDependencytrackingBuild(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DependencyStatus>invokeAPIVerbose(request, new TypeReference<DependencyStatus>() {});
+  public ApiResponse<DependencyStatus> getArchitectDependencytrackingBuild(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DependencyStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DependencyStatus> response = (ApiResponse<DependencyStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DependencyStatus> response = (ApiResponse<DependencyStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -716,10 +749,11 @@ public class ArchitectApi {
    * @param objectType Consuming object type (required)
    * @param resourceType Types of consumed resources to show (optional)
    * @return ConsumedResourcesEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ConsumedResourcesEntityListing getArchitectDependencytrackingConsumedresources(String id, String version, String objectType, List<String> resourceType) throws IOException, ApiException {
-    return getArchitectDependencytrackingConsumedresourcesWithHttpInfo(id, version, objectType, resourceType).getBody();
+    return  getArchitectDependencytrackingConsumedresources(createGetArchitectDependencytrackingConsumedresourcesRequest(id, version, objectType, resourceType));
   }
 
   /**
@@ -730,74 +764,70 @@ public class ArchitectApi {
    * @param objectType Consuming object type (required)
    * @param resourceType Types of consumed resources to show (optional)
    * @return ConsumedResourcesEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ConsumedResourcesEntityListing> getArchitectDependencytrackingConsumedresourcesWithHttpInfo(String id, String version, String objectType, List<String> resourceType) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'id' is set
-    if (id == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'id' when calling getArchitectDependencytrackingConsumedresources");
-    }
-    
-    // verify the required parameter 'version' is set
-    if (version == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'version' when calling getArchitectDependencytrackingConsumedresources");
-    }
-    
-    // verify the required parameter 'objectType' is set
-    if (objectType == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'objectType' when calling getArchitectDependencytrackingConsumedresources");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/dependencytracking/consumedresources".replaceAll("\\{format\\}","json");
+  public ApiResponse<ConsumedResourcesEntityListing> getArchitectDependencytrackingConsumedresourcesWithHttpInfo(String id, String version, String objectType, List<String> resourceType) throws IOException {
+    return getArchitectDependencytrackingConsumedresources(createGetArchitectDependencytrackingConsumedresourcesRequest(id, version, objectType, resourceType).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetArchitectDependencytrackingConsumedresourcesRequest createGetArchitectDependencytrackingConsumedresourcesRequest(String id, String version, String objectType, List<String> resourceType) {
+    return GetArchitectDependencytrackingConsumedresourcesRequest.builder()
+            .withId(id)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "id", id));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "version", version));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "objectType", objectType));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "resourceType", resourceType));
+            .withVersion(version)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withObjectType(objectType)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ConsumedResourcesEntityListing>() {});
+            .withResourceType(resourceType)
+            .build();
   }
 
   /**
    * Get resources that are consumed by a given Dependency Tracking object
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ConsumedResourcesEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ConsumedResourcesEntityListing getArchitectDependencytrackingConsumedresources(GetArchitectDependencytrackingConsumedresourcesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ConsumedResourcesEntityListing>() {});
+    try {
+      ApiResponse<ConsumedResourcesEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConsumedResourcesEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get resources that are consumed by a given Dependency Tracking object
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ConsumedResourcesEntityListing> getArchitectDependencytrackingConsumedresources(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ConsumedResourcesEntityListing>invokeAPIVerbose(request, new TypeReference<ConsumedResourcesEntityListing>() {});
+  public ApiResponse<ConsumedResourcesEntityListing> getArchitectDependencytrackingConsumedresources(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConsumedResourcesEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConsumedResourcesEntityListing> response = (ApiResponse<ConsumedResourcesEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConsumedResourcesEntityListing> response = (ApiResponse<ConsumedResourcesEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -807,10 +837,11 @@ public class ArchitectApi {
    * @param objectType Consumed object type (only versioned object types are valid) (required)
    * @param resourceType Types of consuming resources to show (optional)
    * @return ConsumingResourcesEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ConsumingResourcesEntityListing getArchitectDependencytrackingConsumingresources(String id, String objectType, List<String> resourceType) throws IOException, ApiException {
-    return getArchitectDependencytrackingConsumingresourcesWithHttpInfo(id, objectType, resourceType).getBody();
+    return  getArchitectDependencytrackingConsumingresources(createGetArchitectDependencytrackingConsumingresourcesRequest(id, objectType, resourceType));
   }
 
   /**
@@ -820,68 +851,68 @@ public class ArchitectApi {
    * @param objectType Consumed object type (only versioned object types are valid) (required)
    * @param resourceType Types of consuming resources to show (optional)
    * @return ConsumingResourcesEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ConsumingResourcesEntityListing> getArchitectDependencytrackingConsumingresourcesWithHttpInfo(String id, String objectType, List<String> resourceType) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'id' is set
-    if (id == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'id' when calling getArchitectDependencytrackingConsumingresources");
-    }
-    
-    // verify the required parameter 'objectType' is set
-    if (objectType == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'objectType' when calling getArchitectDependencytrackingConsumingresources");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/dependencytracking/consumingresources".replaceAll("\\{format\\}","json");
+  public ApiResponse<ConsumingResourcesEntityListing> getArchitectDependencytrackingConsumingresourcesWithHttpInfo(String id, String objectType, List<String> resourceType) throws IOException {
+    return getArchitectDependencytrackingConsumingresources(createGetArchitectDependencytrackingConsumingresourcesRequest(id, objectType, resourceType).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetArchitectDependencytrackingConsumingresourcesRequest createGetArchitectDependencytrackingConsumingresourcesRequest(String id, String objectType, List<String> resourceType) {
+    return GetArchitectDependencytrackingConsumingresourcesRequest.builder()
+            .withId(id)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "id", id));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "objectType", objectType));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "resourceType", resourceType));
+            .withObjectType(objectType)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ConsumingResourcesEntityListing>() {});
+            .withResourceType(resourceType)
+            .build();
   }
 
   /**
    * Get resources that consume a given Dependency Tracking object
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ConsumingResourcesEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ConsumingResourcesEntityListing getArchitectDependencytrackingConsumingresources(GetArchitectDependencytrackingConsumingresourcesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ConsumingResourcesEntityListing>() {});
+    try {
+      ApiResponse<ConsumingResourcesEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConsumingResourcesEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get resources that consume a given Dependency Tracking object
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ConsumingResourcesEntityListing> getArchitectDependencytrackingConsumingresources(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ConsumingResourcesEntityListing>invokeAPIVerbose(request, new TypeReference<ConsumingResourcesEntityListing>() {});
+  public ApiResponse<ConsumingResourcesEntityListing> getArchitectDependencytrackingConsumingresources(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConsumingResourcesEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConsumingResourcesEntityListing> response = (ApiResponse<ConsumingResourcesEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConsumingResourcesEntityListing> response = (ApiResponse<ConsumingResourcesEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -895,10 +926,11 @@ public class ArchitectApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @return DependencyObjectEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DependencyObjectEntityListing getArchitectDependencytrackingDeletedresourceconsumers(String name, List<String> objectType, String flowFilter, Boolean consumedResources, List<String> consumedResourceType, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
-    return getArchitectDependencytrackingDeletedresourceconsumersWithHttpInfo(name, objectType, flowFilter, consumedResources, consumedResourceType, pageNumber, pageSize).getBody();
+    return  getArchitectDependencytrackingDeletedresourceconsumers(createGetArchitectDependencytrackingDeletedresourceconsumersRequest(name, objectType, flowFilter, consumedResources, consumedResourceType, pageNumber, pageSize));
   }
 
   /**
@@ -912,62 +944,76 @@ public class ArchitectApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @return DependencyObjectEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DependencyObjectEntityListing> getArchitectDependencytrackingDeletedresourceconsumersWithHttpInfo(String name, List<String> objectType, String flowFilter, Boolean consumedResources, List<String> consumedResourceType, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/dependencytracking/deletedresourceconsumers".replaceAll("\\{format\\}","json");
+  public ApiResponse<DependencyObjectEntityListing> getArchitectDependencytrackingDeletedresourceconsumersWithHttpInfo(String name, List<String> objectType, String flowFilter, Boolean consumedResources, List<String> consumedResourceType, Integer pageNumber, Integer pageSize) throws IOException {
+    return getArchitectDependencytrackingDeletedresourceconsumers(createGetArchitectDependencytrackingDeletedresourceconsumersRequest(name, objectType, flowFilter, consumedResources, consumedResourceType, pageNumber, pageSize).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetArchitectDependencytrackingDeletedresourceconsumersRequest createGetArchitectDependencytrackingDeletedresourceconsumersRequest(String name, List<String> objectType, String flowFilter, Boolean consumedResources, List<String> consumedResourceType, Integer pageNumber, Integer pageSize) {
+    return GetArchitectDependencytrackingDeletedresourceconsumersRequest.builder()
+            .withName(name)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "objectType", objectType));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "flowFilter", flowFilter));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "consumedResources", consumedResources));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "consumedResourceType", consumedResourceType));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
+            .withObjectType(objectType)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withFlowFilter(flowFilter)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withConsumedResources(consumedResources)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withConsumedResourceType(consumedResourceType)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DependencyObjectEntityListing>() {});
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+            .build();
   }
 
   /**
    * Get Dependency Tracking objects that consume deleted resources
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DependencyObjectEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DependencyObjectEntityListing getArchitectDependencytrackingDeletedresourceconsumers(GetArchitectDependencytrackingDeletedresourceconsumersRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DependencyObjectEntityListing>() {});
+    try {
+      ApiResponse<DependencyObjectEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DependencyObjectEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get Dependency Tracking objects that consume deleted resources
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DependencyObjectEntityListing> getArchitectDependencytrackingDeletedresourceconsumers(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DependencyObjectEntityListing>invokeAPIVerbose(request, new TypeReference<DependencyObjectEntityListing>() {});
+  public ApiResponse<DependencyObjectEntityListing> getArchitectDependencytrackingDeletedresourceconsumers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DependencyObjectEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DependencyObjectEntityListing> response = (ApiResponse<DependencyObjectEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DependencyObjectEntityListing> response = (ApiResponse<DependencyObjectEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -981,10 +1027,11 @@ public class ArchitectApi {
    * @param consumedResourceType Types of consumed resources to return, if consumed resources are requested (optional)
    * @param consumingResourceType Types of consuming resources to return, if consuming resources are requested (optional)
    * @return DependencyObject
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DependencyObject getArchitectDependencytrackingObject(String id, String version, String objectType, Boolean consumedResources, Boolean consumingResources, List<String> consumedResourceType, List<String> consumingResourceType) throws IOException, ApiException {
-    return getArchitectDependencytrackingObjectWithHttpInfo(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType).getBody();
+    return  getArchitectDependencytrackingObject(createGetArchitectDependencytrackingObjectRequest(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType));
   }
 
   /**
@@ -998,67 +1045,76 @@ public class ArchitectApi {
    * @param consumedResourceType Types of consumed resources to return, if consumed resources are requested (optional)
    * @param consumingResourceType Types of consuming resources to return, if consuming resources are requested (optional)
    * @return DependencyObject
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DependencyObject> getArchitectDependencytrackingObjectWithHttpInfo(String id, String version, String objectType, Boolean consumedResources, Boolean consumingResources, List<String> consumedResourceType, List<String> consumingResourceType) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'id' is set
-    if (id == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'id' when calling getArchitectDependencytrackingObject");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/dependencytracking/object".replaceAll("\\{format\\}","json");
+  public ApiResponse<DependencyObject> getArchitectDependencytrackingObjectWithHttpInfo(String id, String version, String objectType, Boolean consumedResources, Boolean consumingResources, List<String> consumedResourceType, List<String> consumingResourceType) throws IOException {
+    return getArchitectDependencytrackingObject(createGetArchitectDependencytrackingObjectRequest(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetArchitectDependencytrackingObjectRequest createGetArchitectDependencytrackingObjectRequest(String id, String version, String objectType, Boolean consumedResources, Boolean consumingResources, List<String> consumedResourceType, List<String> consumingResourceType) {
+    return GetArchitectDependencytrackingObjectRequest.builder()
+            .withId(id)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "id", id));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "version", version));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "objectType", objectType));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "consumedResources", consumedResources));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "consumingResources", consumingResources));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "consumedResourceType", consumedResourceType));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "consumingResourceType", consumingResourceType));
+            .withVersion(version)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withObjectType(objectType)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withConsumedResources(consumedResources)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withConsumingResources(consumingResources)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DependencyObject>() {});
+            .withConsumedResourceType(consumedResourceType)
+
+            .withConsumingResourceType(consumingResourceType)
+            .build();
   }
 
   /**
    * Get a Dependency Tracking object
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DependencyObject
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DependencyObject getArchitectDependencytrackingObject(GetArchitectDependencytrackingObjectRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DependencyObject>() {});
+    try {
+      ApiResponse<DependencyObject> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DependencyObject>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a Dependency Tracking object
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DependencyObject> getArchitectDependencytrackingObject(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DependencyObject>invokeAPIVerbose(request, new TypeReference<DependencyObject>() {});
+  public ApiResponse<DependencyObject> getArchitectDependencytrackingObject(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DependencyObject>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DependencyObject> response = (ApiResponse<DependencyObject>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DependencyObject> response = (ApiResponse<DependencyObject>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1066,10 +1122,11 @@ public class ArchitectApi {
    * 
    * @param typeId Type ID (required)
    * @return DependencyType
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DependencyType getArchitectDependencytrackingType(String typeId) throws IOException, ApiException {
-    return getArchitectDependencytrackingTypeWithHttpInfo(typeId).getBody();
+    return  getArchitectDependencytrackingType(createGetArchitectDependencytrackingTypeRequest(typeId));
   }
 
   /**
@@ -1077,61 +1134,64 @@ public class ArchitectApi {
    * 
    * @param typeId Type ID (required)
    * @return DependencyType
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DependencyType> getArchitectDependencytrackingTypeWithHttpInfo(String typeId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'typeId' is set
-    if (typeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'typeId' when calling getArchitectDependencytrackingType");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/dependencytracking/types/{typeId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "typeId" + "\\}", pcapiClient.escapeString(typeId.toString()));
+  public ApiResponse<DependencyType> getArchitectDependencytrackingTypeWithHttpInfo(String typeId) throws IOException {
+    return getArchitectDependencytrackingType(createGetArchitectDependencytrackingTypeRequest(typeId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DependencyType>() {});
+  private GetArchitectDependencytrackingTypeRequest createGetArchitectDependencytrackingTypeRequest(String typeId) {
+    return GetArchitectDependencytrackingTypeRequest.builder()
+            .withTypeId(typeId)
+            .build();
   }
 
   /**
    * Get a Dependency Tracking type.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DependencyType
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DependencyType getArchitectDependencytrackingType(GetArchitectDependencytrackingTypeRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DependencyType>() {});
+    try {
+      ApiResponse<DependencyType> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DependencyType>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a Dependency Tracking type.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DependencyType> getArchitectDependencytrackingType(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DependencyType>invokeAPIVerbose(request, new TypeReference<DependencyType>() {});
+  public ApiResponse<DependencyType> getArchitectDependencytrackingType(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DependencyType>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DependencyType> response = (ApiResponse<DependencyType>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DependencyType> response = (ApiResponse<DependencyType>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1140,10 +1200,11 @@ public class ArchitectApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @return DependencyTypeEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DependencyTypeEntityListing getArchitectDependencytrackingTypes(Integer pageNumber, Integer pageSize) throws IOException, ApiException {
-    return getArchitectDependencytrackingTypesWithHttpInfo(pageNumber, pageSize).getBody();
+    return  getArchitectDependencytrackingTypes(createGetArchitectDependencytrackingTypesRequest(pageNumber, pageSize));
   }
 
   /**
@@ -1152,57 +1213,66 @@ public class ArchitectApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @return DependencyTypeEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DependencyTypeEntityListing> getArchitectDependencytrackingTypesWithHttpInfo(Integer pageNumber, Integer pageSize) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/dependencytracking/types".replaceAll("\\{format\\}","json");
+  public ApiResponse<DependencyTypeEntityListing> getArchitectDependencytrackingTypesWithHttpInfo(Integer pageNumber, Integer pageSize) throws IOException {
+    return getArchitectDependencytrackingTypes(createGetArchitectDependencytrackingTypesRequest(pageNumber, pageSize).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetArchitectDependencytrackingTypesRequest createGetArchitectDependencytrackingTypesRequest(Integer pageNumber, Integer pageSize) {
+    return GetArchitectDependencytrackingTypesRequest.builder()
+            .withPageNumber(pageNumber)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DependencyTypeEntityListing>() {});
+            .withPageSize(pageSize)
+            .build();
   }
 
   /**
    * Get Dependency Tracking types.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DependencyTypeEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DependencyTypeEntityListing getArchitectDependencytrackingTypes(GetArchitectDependencytrackingTypesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DependencyTypeEntityListing>() {});
+    try {
+      ApiResponse<DependencyTypeEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DependencyTypeEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get Dependency Tracking types.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DependencyTypeEntityListing> getArchitectDependencytrackingTypes(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DependencyTypeEntityListing>invokeAPIVerbose(request, new TypeReference<DependencyTypeEntityListing>() {});
+  public ApiResponse<DependencyTypeEntityListing> getArchitectDependencytrackingTypes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DependencyTypeEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DependencyTypeEntityListing> response = (ApiResponse<DependencyTypeEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DependencyTypeEntityListing> response = (ApiResponse<DependencyTypeEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1215,10 +1285,11 @@ public class ArchitectApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @return DependencyObjectEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DependencyObjectEntityListing getArchitectDependencytrackingUpdatedresourceconsumers(String name, List<String> objectType, Boolean consumedResources, List<String> consumedResourceType, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
-    return getArchitectDependencytrackingUpdatedresourceconsumersWithHttpInfo(name, objectType, consumedResources, consumedResourceType, pageNumber, pageSize).getBody();
+    return  getArchitectDependencytrackingUpdatedresourceconsumers(createGetArchitectDependencytrackingUpdatedresourceconsumersRequest(name, objectType, consumedResources, consumedResourceType, pageNumber, pageSize));
   }
 
   /**
@@ -1231,61 +1302,74 @@ public class ArchitectApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @return DependencyObjectEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DependencyObjectEntityListing> getArchitectDependencytrackingUpdatedresourceconsumersWithHttpInfo(String name, List<String> objectType, Boolean consumedResources, List<String> consumedResourceType, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/dependencytracking/updatedresourceconsumers".replaceAll("\\{format\\}","json");
+  public ApiResponse<DependencyObjectEntityListing> getArchitectDependencytrackingUpdatedresourceconsumersWithHttpInfo(String name, List<String> objectType, Boolean consumedResources, List<String> consumedResourceType, Integer pageNumber, Integer pageSize) throws IOException {
+    return getArchitectDependencytrackingUpdatedresourceconsumers(createGetArchitectDependencytrackingUpdatedresourceconsumersRequest(name, objectType, consumedResources, consumedResourceType, pageNumber, pageSize).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetArchitectDependencytrackingUpdatedresourceconsumersRequest createGetArchitectDependencytrackingUpdatedresourceconsumersRequest(String name, List<String> objectType, Boolean consumedResources, List<String> consumedResourceType, Integer pageNumber, Integer pageSize) {
+    return GetArchitectDependencytrackingUpdatedresourceconsumersRequest.builder()
+            .withName(name)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "objectType", objectType));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "consumedResources", consumedResources));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "consumedResourceType", consumedResourceType));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
+            .withObjectType(objectType)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withConsumedResources(consumedResources)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withConsumedResourceType(consumedResourceType)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withPageNumber(pageNumber)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DependencyObjectEntityListing>() {});
+            .withPageSize(pageSize)
+            .build();
   }
 
   /**
    * Get Dependency Tracking objects that depend on updated resources
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DependencyObjectEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DependencyObjectEntityListing getArchitectDependencytrackingUpdatedresourceconsumers(GetArchitectDependencytrackingUpdatedresourceconsumersRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DependencyObjectEntityListing>() {});
+    try {
+      ApiResponse<DependencyObjectEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DependencyObjectEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get Dependency Tracking objects that depend on updated resources
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DependencyObjectEntityListing> getArchitectDependencytrackingUpdatedresourceconsumers(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DependencyObjectEntityListing>invokeAPIVerbose(request, new TypeReference<DependencyObjectEntityListing>() {});
+  public ApiResponse<DependencyObjectEntityListing> getArchitectDependencytrackingUpdatedresourceconsumers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DependencyObjectEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DependencyObjectEntityListing> response = (ApiResponse<DependencyObjectEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DependencyObjectEntityListing> response = (ApiResponse<DependencyObjectEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1293,10 +1377,11 @@ public class ArchitectApi {
    * 
    * @param promptId Prompt ID (required)
    * @return Prompt
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Prompt getArchitectPrompt(String promptId) throws IOException, ApiException {
-    return getArchitectPromptWithHttpInfo(promptId).getBody();
+    return  getArchitectPrompt(createGetArchitectPromptRequest(promptId));
   }
 
   /**
@@ -1304,61 +1389,64 @@ public class ArchitectApi {
    * 
    * @param promptId Prompt ID (required)
    * @return Prompt
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Prompt> getArchitectPromptWithHttpInfo(String promptId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'promptId' is set
-    if (promptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling getArchitectPrompt");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/prompts/{promptId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "promptId" + "\\}", pcapiClient.escapeString(promptId.toString()));
+  public ApiResponse<Prompt> getArchitectPromptWithHttpInfo(String promptId) throws IOException {
+    return getArchitectPrompt(createGetArchitectPromptRequest(promptId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Prompt>() {});
+  private GetArchitectPromptRequest createGetArchitectPromptRequest(String promptId) {
+    return GetArchitectPromptRequest.builder()
+            .withPromptId(promptId)
+            .build();
   }
 
   /**
    * Get specified user prompt
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Prompt
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Prompt getArchitectPrompt(GetArchitectPromptRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Prompt>() {});
+    try {
+      ApiResponse<Prompt> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Prompt>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get specified user prompt
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Prompt> getArchitectPrompt(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Prompt>invokeAPIVerbose(request, new TypeReference<Prompt>() {});
+  public ApiResponse<Prompt> getArchitectPrompt(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Prompt>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Prompt> response = (ApiResponse<Prompt>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Prompt> response = (ApiResponse<Prompt>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1367,10 +1455,11 @@ public class ArchitectApi {
    * @param promptId Prompt ID (required)
    * @param languageCode Language (required)
    * @return PromptAsset
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PromptAsset getArchitectPromptResource(String promptId, String languageCode) throws IOException, ApiException {
-    return getArchitectPromptResourceWithHttpInfo(promptId, languageCode).getBody();
+    return  getArchitectPromptResource(createGetArchitectPromptResourceRequest(promptId, languageCode));
   }
 
   /**
@@ -1379,67 +1468,66 @@ public class ArchitectApi {
    * @param promptId Prompt ID (required)
    * @param languageCode Language (required)
    * @return PromptAsset
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PromptAsset> getArchitectPromptResourceWithHttpInfo(String promptId, String languageCode) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'promptId' is set
-    if (promptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling getArchitectPromptResource");
-    }
-    
-    // verify the required parameter 'languageCode' is set
-    if (languageCode == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'languageCode' when calling getArchitectPromptResource");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/prompts/{promptId}/resources/{languageCode}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "promptId" + "\\}", pcapiClient.escapeString(promptId.toString()))
-      .replaceAll("\\{" + "languageCode" + "\\}", pcapiClient.escapeString(languageCode.toString()));
+  public ApiResponse<PromptAsset> getArchitectPromptResourceWithHttpInfo(String promptId, String languageCode) throws IOException {
+    return getArchitectPromptResource(createGetArchitectPromptResourceRequest(promptId, languageCode).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetArchitectPromptResourceRequest createGetArchitectPromptResourceRequest(String promptId, String languageCode) {
+    return GetArchitectPromptResourceRequest.builder()
+            .withPromptId(promptId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<PromptAsset>() {});
+            .withLanguageCode(languageCode)
+            .build();
   }
 
   /**
    * Get specified user prompt resource
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return PromptAsset
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PromptAsset getArchitectPromptResource(GetArchitectPromptResourceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PromptAsset>() {});
+    try {
+      ApiResponse<PromptAsset> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PromptAsset>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get specified user prompt resource
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PromptAsset> getArchitectPromptResource(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<PromptAsset>invokeAPIVerbose(request, new TypeReference<PromptAsset>() {});
+  public ApiResponse<PromptAsset> getArchitectPromptResource(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PromptAsset>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PromptAsset> response = (ApiResponse<PromptAsset>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PromptAsset> response = (ApiResponse<PromptAsset>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1449,10 +1537,11 @@ public class ArchitectApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @return PromptAssetEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PromptAssetEntityListing getArchitectPromptResources(String promptId, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
-    return getArchitectPromptResourcesWithHttpInfo(promptId, pageNumber, pageSize).getBody();
+    return  getArchitectPromptResources(createGetArchitectPromptResourcesRequest(promptId, pageNumber, pageSize));
   }
 
   /**
@@ -1462,63 +1551,68 @@ public class ArchitectApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @return PromptAssetEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PromptAssetEntityListing> getArchitectPromptResourcesWithHttpInfo(String promptId, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'promptId' is set
-    if (promptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling getArchitectPromptResources");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/prompts/{promptId}/resources".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "promptId" + "\\}", pcapiClient.escapeString(promptId.toString()));
+  public ApiResponse<PromptAssetEntityListing> getArchitectPromptResourcesWithHttpInfo(String promptId, Integer pageNumber, Integer pageSize) throws IOException {
+    return getArchitectPromptResources(createGetArchitectPromptResourcesRequest(promptId, pageNumber, pageSize).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetArchitectPromptResourcesRequest createGetArchitectPromptResourcesRequest(String promptId, Integer pageNumber, Integer pageSize) {
+    return GetArchitectPromptResourcesRequest.builder()
+            .withPromptId(promptId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<PromptAssetEntityListing>() {});
+            .withPageSize(pageSize)
+            .build();
   }
 
   /**
    * Get a pageable list of user prompt resources
    * The returned list is pageable, and query parameters can be used for filtering.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return PromptAssetEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PromptAssetEntityListing getArchitectPromptResources(GetArchitectPromptResourcesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PromptAssetEntityListing>() {});
+    try {
+      ApiResponse<PromptAssetEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PromptAssetEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a pageable list of user prompt resources
    * The returned list is pageable, and query parameters can be used for filtering.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PromptAssetEntityListing> getArchitectPromptResources(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<PromptAssetEntityListing>invokeAPIVerbose(request, new TypeReference<PromptAssetEntityListing>() {});
+  public ApiResponse<PromptAssetEntityListing> getArchitectPromptResources(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PromptAssetEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PromptAssetEntityListing> response = (ApiResponse<PromptAssetEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PromptAssetEntityListing> response = (ApiResponse<PromptAssetEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1530,10 +1624,11 @@ public class ArchitectApi {
    * @param description Description (optional)
    * @param nameOrDescription Name or description (optional)
    * @return PromptEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PromptEntityListing getArchitectPrompts(Integer pageNumber, Integer pageSize, String name, String description, String nameOrDescription) throws IOException, ApiException {
-    return getArchitectPromptsWithHttpInfo(pageNumber, pageSize, name, description, nameOrDescription).getBody();
+    return  getArchitectPrompts(createGetArchitectPromptsRequest(pageNumber, pageSize, name, description, nameOrDescription));
   }
 
   /**
@@ -1545,60 +1640,72 @@ public class ArchitectApi {
    * @param description Description (optional)
    * @param nameOrDescription Name or description (optional)
    * @return PromptEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PromptEntityListing> getArchitectPromptsWithHttpInfo(Integer pageNumber, Integer pageSize, String name, String description, String nameOrDescription) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/prompts".replaceAll("\\{format\\}","json");
+  public ApiResponse<PromptEntityListing> getArchitectPromptsWithHttpInfo(Integer pageNumber, Integer pageSize, String name, String description, String nameOrDescription) throws IOException {
+    return getArchitectPrompts(createGetArchitectPromptsRequest(pageNumber, pageSize, name, description, nameOrDescription).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetArchitectPromptsRequest createGetArchitectPromptsRequest(Integer pageNumber, Integer pageSize, String name, String description, String nameOrDescription) {
+    return GetArchitectPromptsRequest.builder()
+            .withPageNumber(pageNumber)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "description", description));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "nameOrDescription", nameOrDescription));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withName(name)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withDescription(description)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<PromptEntityListing>() {});
+            .withNameOrDescription(nameOrDescription)
+            .build();
   }
 
   /**
    * Get a pageable list of user prompts
    * The returned list is pageable, and query parameters can be used for filtering.  Multiple names can be specified, in which case all matching prompts will be returned, and no other filters will be evaluated.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return PromptEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PromptEntityListing getArchitectPrompts(GetArchitectPromptsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PromptEntityListing>() {});
+    try {
+      ApiResponse<PromptEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PromptEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a pageable list of user prompts
    * The returned list is pageable, and query parameters can be used for filtering.  Multiple names can be specified, in which case all matching prompts will be returned, and no other filters will be evaluated.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PromptEntityListing> getArchitectPrompts(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<PromptEntityListing>invokeAPIVerbose(request, new TypeReference<PromptEntityListing>() {});
+  public ApiResponse<PromptEntityListing> getArchitectPrompts(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PromptEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PromptEntityListing> response = (ApiResponse<PromptEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PromptEntityListing> response = (ApiResponse<PromptEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1606,10 +1713,11 @@ public class ArchitectApi {
    * 
    * @param promptId promptId (required)
    * @return SystemPrompt
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SystemPrompt getArchitectSystemprompt(String promptId) throws IOException, ApiException {
-    return getArchitectSystempromptWithHttpInfo(promptId).getBody();
+    return  getArchitectSystemprompt(createGetArchitectSystempromptRequest(promptId));
   }
 
   /**
@@ -1617,61 +1725,64 @@ public class ArchitectApi {
    * 
    * @param promptId promptId (required)
    * @return SystemPrompt
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SystemPrompt> getArchitectSystempromptWithHttpInfo(String promptId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'promptId' is set
-    if (promptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling getArchitectSystemprompt");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/systemprompts/{promptId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "promptId" + "\\}", pcapiClient.escapeString(promptId.toString()));
+  public ApiResponse<SystemPrompt> getArchitectSystempromptWithHttpInfo(String promptId) throws IOException {
+    return getArchitectSystemprompt(createGetArchitectSystempromptRequest(promptId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<SystemPrompt>() {});
+  private GetArchitectSystempromptRequest createGetArchitectSystempromptRequest(String promptId) {
+    return GetArchitectSystempromptRequest.builder()
+            .withPromptId(promptId)
+            .build();
   }
 
   /**
    * Get a system prompt
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return SystemPrompt
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SystemPrompt getArchitectSystemprompt(GetArchitectSystempromptRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SystemPrompt>() {});
+    try {
+      ApiResponse<SystemPrompt> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SystemPrompt>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a system prompt
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SystemPrompt> getArchitectSystemprompt(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<SystemPrompt>invokeAPIVerbose(request, new TypeReference<SystemPrompt>() {});
+  public ApiResponse<SystemPrompt> getArchitectSystemprompt(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SystemPrompt>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SystemPrompt> response = (ApiResponse<SystemPrompt>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SystemPrompt> response = (ApiResponse<SystemPrompt>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1680,10 +1791,11 @@ public class ArchitectApi {
    * @param promptId Prompt ID (required)
    * @param languageCode Language (required)
    * @return SystemPromptAsset
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SystemPromptAsset getArchitectSystempromptResource(String promptId, String languageCode) throws IOException, ApiException {
-    return getArchitectSystempromptResourceWithHttpInfo(promptId, languageCode).getBody();
+    return  getArchitectSystempromptResource(createGetArchitectSystempromptResourceRequest(promptId, languageCode));
   }
 
   /**
@@ -1692,67 +1804,66 @@ public class ArchitectApi {
    * @param promptId Prompt ID (required)
    * @param languageCode Language (required)
    * @return SystemPromptAsset
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SystemPromptAsset> getArchitectSystempromptResourceWithHttpInfo(String promptId, String languageCode) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'promptId' is set
-    if (promptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling getArchitectSystempromptResource");
-    }
-    
-    // verify the required parameter 'languageCode' is set
-    if (languageCode == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'languageCode' when calling getArchitectSystempromptResource");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/systemprompts/{promptId}/resources/{languageCode}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "promptId" + "\\}", pcapiClient.escapeString(promptId.toString()))
-      .replaceAll("\\{" + "languageCode" + "\\}", pcapiClient.escapeString(languageCode.toString()));
+  public ApiResponse<SystemPromptAsset> getArchitectSystempromptResourceWithHttpInfo(String promptId, String languageCode) throws IOException {
+    return getArchitectSystempromptResource(createGetArchitectSystempromptResourceRequest(promptId, languageCode).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetArchitectSystempromptResourceRequest createGetArchitectSystempromptResourceRequest(String promptId, String languageCode) {
+    return GetArchitectSystempromptResourceRequest.builder()
+            .withPromptId(promptId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<SystemPromptAsset>() {});
+            .withLanguageCode(languageCode)
+            .build();
   }
 
   /**
    * Get a system prompt resource.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return SystemPromptAsset
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SystemPromptAsset getArchitectSystempromptResource(GetArchitectSystempromptResourceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SystemPromptAsset>() {});
+    try {
+      ApiResponse<SystemPromptAsset> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SystemPromptAsset>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a system prompt resource.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SystemPromptAsset> getArchitectSystempromptResource(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<SystemPromptAsset>invokeAPIVerbose(request, new TypeReference<SystemPromptAsset>() {});
+  public ApiResponse<SystemPromptAsset> getArchitectSystempromptResource(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SystemPromptAsset>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SystemPromptAsset> response = (ApiResponse<SystemPromptAsset>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SystemPromptAsset> response = (ApiResponse<SystemPromptAsset>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1764,10 +1875,11 @@ public class ArchitectApi {
    * @param sortBy Sort by (optional, default to id)
    * @param sortOrder Sort order (optional, default to asc)
    * @return SystemPromptAssetEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SystemPromptAssetEntityListing getArchitectSystempromptResources(String promptId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException, ApiException {
-    return getArchitectSystempromptResourcesWithHttpInfo(promptId, pageNumber, pageSize, sortBy, sortOrder).getBody();
+    return  getArchitectSystempromptResources(createGetArchitectSystempromptResourcesRequest(promptId, pageNumber, pageSize, sortBy, sortOrder));
   }
 
   /**
@@ -1779,65 +1891,72 @@ public class ArchitectApi {
    * @param sortBy Sort by (optional, default to id)
    * @param sortOrder Sort order (optional, default to asc)
    * @return SystemPromptAssetEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SystemPromptAssetEntityListing> getArchitectSystempromptResourcesWithHttpInfo(String promptId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'promptId' is set
-    if (promptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling getArchitectSystempromptResources");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/systemprompts/{promptId}/resources".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "promptId" + "\\}", pcapiClient.escapeString(promptId.toString()));
+  public ApiResponse<SystemPromptAssetEntityListing> getArchitectSystempromptResourcesWithHttpInfo(String promptId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException {
+    return getArchitectSystempromptResources(createGetArchitectSystempromptResourcesRequest(promptId, pageNumber, pageSize, sortBy, sortOrder).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetArchitectSystempromptResourcesRequest createGetArchitectSystempromptResourcesRequest(String promptId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) {
+    return GetArchitectSystempromptResourcesRequest.builder()
+            .withPromptId(promptId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageSize(pageSize)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortBy(sortBy)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<SystemPromptAssetEntityListing>() {});
+            .withSortOrder(sortOrder)
+            .build();
   }
 
   /**
    * Get system prompt resources.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return SystemPromptAssetEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SystemPromptAssetEntityListing getArchitectSystempromptResources(GetArchitectSystempromptResourcesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SystemPromptAssetEntityListing>() {});
+    try {
+      ApiResponse<SystemPromptAssetEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SystemPromptAssetEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get system prompt resources.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SystemPromptAssetEntityListing> getArchitectSystempromptResources(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<SystemPromptAssetEntityListing>invokeAPIVerbose(request, new TypeReference<SystemPromptAssetEntityListing>() {});
+  public ApiResponse<SystemPromptAssetEntityListing> getArchitectSystempromptResources(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SystemPromptAssetEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SystemPromptAssetEntityListing> response = (ApiResponse<SystemPromptAssetEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SystemPromptAssetEntityListing> response = (ApiResponse<SystemPromptAssetEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1851,10 +1970,11 @@ public class ArchitectApi {
    * @param description Description (optional)
    * @param nameOrDescription Name or description (optional)
    * @return SystemPromptEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SystemPromptEntityListing getArchitectSystemprompts(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String description, String nameOrDescription) throws IOException, ApiException {
-    return getArchitectSystempromptsWithHttpInfo(pageNumber, pageSize, sortBy, sortOrder, name, description, nameOrDescription).getBody();
+    return  getArchitectSystemprompts(createGetArchitectSystempromptsRequest(pageNumber, pageSize, sortBy, sortOrder, name, description, nameOrDescription));
   }
 
   /**
@@ -1868,62 +1988,76 @@ public class ArchitectApi {
    * @param description Description (optional)
    * @param nameOrDescription Name or description (optional)
    * @return SystemPromptEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SystemPromptEntityListing> getArchitectSystempromptsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String description, String nameOrDescription) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/systemprompts".replaceAll("\\{format\\}","json");
+  public ApiResponse<SystemPromptEntityListing> getArchitectSystempromptsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String description, String nameOrDescription) throws IOException {
+    return getArchitectSystemprompts(createGetArchitectSystempromptsRequest(pageNumber, pageSize, sortBy, sortOrder, name, description, nameOrDescription).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetArchitectSystempromptsRequest createGetArchitectSystempromptsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String description, String nameOrDescription) {
+    return GetArchitectSystempromptsRequest.builder()
+            .withPageNumber(pageNumber)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "description", description));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "nameOrDescription", nameOrDescription));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withSortBy(sortBy)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortOrder(sortOrder)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withName(name)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<SystemPromptEntityListing>() {});
+            .withDescription(description)
+
+            .withNameOrDescription(nameOrDescription)
+            .build();
   }
 
   /**
    * Get System Prompts
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return SystemPromptEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SystemPromptEntityListing getArchitectSystemprompts(GetArchitectSystempromptsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SystemPromptEntityListing>() {});
+    try {
+      ApiResponse<SystemPromptEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SystemPromptEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get System Prompts
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SystemPromptEntityListing> getArchitectSystemprompts(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<SystemPromptEntityListing>invokeAPIVerbose(request, new TypeReference<SystemPromptEntityListing>() {});
+  public ApiResponse<SystemPromptEntityListing> getArchitectSystemprompts(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SystemPromptEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SystemPromptEntityListing> response = (ApiResponse<SystemPromptEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SystemPromptEntityListing> response = (ApiResponse<SystemPromptEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1932,10 +2066,11 @@ public class ArchitectApi {
    * @param flowId Flow ID (required)
    * @param deleted Include deleted flows (optional, default to false)
    * @return Flow
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Flow getFlow(String flowId, Boolean deleted) throws IOException, ApiException {
-    return getFlowWithHttpInfo(flowId, deleted).getBody();
+    return  getFlow(createGetFlowRequest(flowId, deleted));
   }
 
   /**
@@ -1944,62 +2079,66 @@ public class ArchitectApi {
    * @param flowId Flow ID (required)
    * @param deleted Include deleted flows (optional, default to false)
    * @return Flow
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Flow> getFlowWithHttpInfo(String flowId, Boolean deleted) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'flowId' is set
-    if (flowId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'flowId' when calling getFlow");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/flows/{flowId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "flowId" + "\\}", pcapiClient.escapeString(flowId.toString()));
+  public ApiResponse<Flow> getFlowWithHttpInfo(String flowId, Boolean deleted) throws IOException {
+    return getFlow(createGetFlowRequest(flowId, deleted).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetFlowRequest createGetFlowRequest(String flowId, Boolean deleted) {
+    return GetFlowRequest.builder()
+            .withFlowId(flowId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "deleted", deleted));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Flow>() {});
+            .withDeleted(deleted)
+            .build();
   }
 
   /**
    * Get flow
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Flow
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Flow getFlow(GetFlowRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Flow>() {});
+    try {
+      ApiResponse<Flow> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Flow>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get flow
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Flow> getFlow(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Flow>invokeAPIVerbose(request, new TypeReference<Flow>() {});
+  public ApiResponse<Flow> getFlow(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Flow>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2008,10 +2147,11 @@ public class ArchitectApi {
    * @param flowId Flow ID (required)
    * @param deleted Include deleted flows (optional, default to false)
    * @return Object
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Object getFlowLatestconfiguration(String flowId, Boolean deleted) throws IOException, ApiException {
-    return getFlowLatestconfigurationWithHttpInfo(flowId, deleted).getBody();
+    return  getFlowLatestconfiguration(createGetFlowLatestconfigurationRequest(flowId, deleted));
   }
 
   /**
@@ -2020,62 +2160,66 @@ public class ArchitectApi {
    * @param flowId Flow ID (required)
    * @param deleted Include deleted flows (optional, default to false)
    * @return Object
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Object> getFlowLatestconfigurationWithHttpInfo(String flowId, Boolean deleted) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'flowId' is set
-    if (flowId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'flowId' when calling getFlowLatestconfiguration");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/flows/{flowId}/latestconfiguration".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "flowId" + "\\}", pcapiClient.escapeString(flowId.toString()));
+  public ApiResponse<Object> getFlowLatestconfigurationWithHttpInfo(String flowId, Boolean deleted) throws IOException {
+    return getFlowLatestconfiguration(createGetFlowLatestconfigurationRequest(flowId, deleted).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetFlowLatestconfigurationRequest createGetFlowLatestconfigurationRequest(String flowId, Boolean deleted) {
+    return GetFlowLatestconfigurationRequest.builder()
+            .withFlowId(flowId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "deleted", deleted));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Object>() {});
+            .withDeleted(deleted)
+            .build();
   }
 
   /**
    * Get the latest configuration for flow
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Object getFlowLatestconfiguration(GetFlowLatestconfigurationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Object>() {});
+    try {
+      ApiResponse<Object> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Object>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the latest configuration for flow
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Object> getFlowLatestconfiguration(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Object>invokeAPIVerbose(request, new TypeReference<Object>() {});
+  public ApiResponse<Object> getFlowLatestconfiguration(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Object>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2085,10 +2229,11 @@ public class ArchitectApi {
    * @param versionId Version ID (required)
    * @param deleted Include deleted flows (optional)
    * @return FlowVersion
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FlowVersion getFlowVersion(String flowId, String versionId, String deleted) throws IOException, ApiException {
-    return getFlowVersionWithHttpInfo(flowId, versionId, deleted).getBody();
+    return  getFlowVersion(createGetFlowVersionRequest(flowId, versionId, deleted));
   }
 
   /**
@@ -2098,68 +2243,68 @@ public class ArchitectApi {
    * @param versionId Version ID (required)
    * @param deleted Include deleted flows (optional)
    * @return FlowVersion
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FlowVersion> getFlowVersionWithHttpInfo(String flowId, String versionId, String deleted) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'flowId' is set
-    if (flowId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'flowId' when calling getFlowVersion");
-    }
-    
-    // verify the required parameter 'versionId' is set
-    if (versionId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'versionId' when calling getFlowVersion");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/flows/{flowId}/versions/{versionId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "flowId" + "\\}", pcapiClient.escapeString(flowId.toString()))
-      .replaceAll("\\{" + "versionId" + "\\}", pcapiClient.escapeString(versionId.toString()));
+  public ApiResponse<FlowVersion> getFlowVersionWithHttpInfo(String flowId, String versionId, String deleted) throws IOException {
+    return getFlowVersion(createGetFlowVersionRequest(flowId, versionId, deleted).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetFlowVersionRequest createGetFlowVersionRequest(String flowId, String versionId, String deleted) {
+    return GetFlowVersionRequest.builder()
+            .withFlowId(flowId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "deleted", deleted));
+            .withVersionId(versionId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<FlowVersion>() {});
+            .withDeleted(deleted)
+            .build();
   }
 
   /**
    * Get flow version
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return FlowVersion
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FlowVersion getFlowVersion(GetFlowVersionRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FlowVersion>() {});
+    try {
+      ApiResponse<FlowVersion> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowVersion>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get flow version
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FlowVersion> getFlowVersion(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<FlowVersion>invokeAPIVerbose(request, new TypeReference<FlowVersion>() {});
+  public ApiResponse<FlowVersion> getFlowVersion(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowVersion>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowVersion> response = (ApiResponse<FlowVersion>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowVersion> response = (ApiResponse<FlowVersion>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2169,10 +2314,11 @@ public class ArchitectApi {
    * @param versionId Version ID (required)
    * @param deleted Include deleted flows (optional)
    * @return Object
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Object getFlowVersionConfiguration(String flowId, String versionId, String deleted) throws IOException, ApiException {
-    return getFlowVersionConfigurationWithHttpInfo(flowId, versionId, deleted).getBody();
+    return  getFlowVersionConfiguration(createGetFlowVersionConfigurationRequest(flowId, versionId, deleted));
   }
 
   /**
@@ -2182,68 +2328,68 @@ public class ArchitectApi {
    * @param versionId Version ID (required)
    * @param deleted Include deleted flows (optional)
    * @return Object
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Object> getFlowVersionConfigurationWithHttpInfo(String flowId, String versionId, String deleted) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'flowId' is set
-    if (flowId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'flowId' when calling getFlowVersionConfiguration");
-    }
-    
-    // verify the required parameter 'versionId' is set
-    if (versionId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'versionId' when calling getFlowVersionConfiguration");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/flows/{flowId}/versions/{versionId}/configuration".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "flowId" + "\\}", pcapiClient.escapeString(flowId.toString()))
-      .replaceAll("\\{" + "versionId" + "\\}", pcapiClient.escapeString(versionId.toString()));
+  public ApiResponse<Object> getFlowVersionConfigurationWithHttpInfo(String flowId, String versionId, String deleted) throws IOException {
+    return getFlowVersionConfiguration(createGetFlowVersionConfigurationRequest(flowId, versionId, deleted).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetFlowVersionConfigurationRequest createGetFlowVersionConfigurationRequest(String flowId, String versionId, String deleted) {
+    return GetFlowVersionConfigurationRequest.builder()
+            .withFlowId(flowId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "deleted", deleted));
+            .withVersionId(versionId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Object>() {});
+            .withDeleted(deleted)
+            .build();
   }
 
   /**
    * Create flow version configuration
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Object getFlowVersionConfiguration(GetFlowVersionConfigurationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Object>() {});
+    try {
+      ApiResponse<Object> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Object>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create flow version configuration
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Object> getFlowVersionConfiguration(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Object>invokeAPIVerbose(request, new TypeReference<Object>() {});
+  public ApiResponse<Object> getFlowVersionConfiguration(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Object>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2254,10 +2400,11 @@ public class ArchitectApi {
    * @param pageSize Page size (optional, default to 25)
    * @param deleted Include deleted flows (optional)
    * @return FlowVersionEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FlowVersionEntityListing getFlowVersions(String flowId, Integer pageNumber, Integer pageSize, Boolean deleted) throws IOException, ApiException {
-    return getFlowVersionsWithHttpInfo(flowId, pageNumber, pageSize, deleted).getBody();
+    return  getFlowVersions(createGetFlowVersionsRequest(flowId, pageNumber, pageSize, deleted));
   }
 
   /**
@@ -2268,64 +2415,70 @@ public class ArchitectApi {
    * @param pageSize Page size (optional, default to 25)
    * @param deleted Include deleted flows (optional)
    * @return FlowVersionEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FlowVersionEntityListing> getFlowVersionsWithHttpInfo(String flowId, Integer pageNumber, Integer pageSize, Boolean deleted) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'flowId' is set
-    if (flowId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'flowId' when calling getFlowVersions");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/flows/{flowId}/versions".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "flowId" + "\\}", pcapiClient.escapeString(flowId.toString()));
+  public ApiResponse<FlowVersionEntityListing> getFlowVersionsWithHttpInfo(String flowId, Integer pageNumber, Integer pageSize, Boolean deleted) throws IOException {
+    return getFlowVersions(createGetFlowVersionsRequest(flowId, pageNumber, pageSize, deleted).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetFlowVersionsRequest createGetFlowVersionsRequest(String flowId, Integer pageNumber, Integer pageSize, Boolean deleted) {
+    return GetFlowVersionsRequest.builder()
+            .withFlowId(flowId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "deleted", deleted));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageSize(pageSize)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<FlowVersionEntityListing>() {});
+            .withDeleted(deleted)
+            .build();
   }
 
   /**
    * Get flow version list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return FlowVersionEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FlowVersionEntityListing getFlowVersions(GetFlowVersionsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FlowVersionEntityListing>() {});
+    try {
+      ApiResponse<FlowVersionEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowVersionEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get flow version list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FlowVersionEntityListing> getFlowVersions(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<FlowVersionEntityListing>invokeAPIVerbose(request, new TypeReference<FlowVersionEntityListing>() {});
+  public ApiResponse<FlowVersionEntityListing> getFlowVersions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowVersionEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowVersionEntityListing> response = (ApiResponse<FlowVersionEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowVersionEntityListing> response = (ApiResponse<FlowVersionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2347,10 +2500,11 @@ public class ArchitectApi {
    * @param deleted Include deleted (optional, default to false)
    * @param includeSchemas Include variable schemas (optional, default to false)
    * @return FlowEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FlowEntityListing getFlows(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas) throws IOException, ApiException {
-    return getFlowsWithHttpInfo(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas).getBody();
+    return  getFlows(createGetFlowsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas));
   }
 
   /**
@@ -2372,138 +2526,162 @@ public class ArchitectApi {
    * @param deleted Include deleted (optional, default to false)
    * @param includeSchemas Include variable schemas (optional, default to false)
    * @return FlowEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FlowEntityListing> getFlowsWithHttpInfo(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'type' is set
-    if (type == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'type' when calling getFlows");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/flows".replaceAll("\\{format\\}","json");
+  public ApiResponse<FlowEntityListing> getFlowsWithHttpInfo(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas) throws IOException {
+    return getFlows(createGetFlowsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetFlowsRequest createGetFlowsRequest(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas) {
+    return GetFlowsRequest.builder()
+            .withType(type)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "type", type));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "id", id));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "description", description));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "nameOrDescription", nameOrDescription));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "publishVersionId", publishVersionId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "editableBy", editableBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "lockedBy", lockedBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "secure", secure));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "deleted", deleted));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "includeSchemas", includeSchemas));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageSize(pageSize)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortBy(sortBy)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withSortOrder(sortOrder)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<FlowEntityListing>() {});
+            .withId(id)
+
+            .withName(name)
+
+            .withDescription(description)
+
+            .withNameOrDescription(nameOrDescription)
+
+            .withPublishVersionId(publishVersionId)
+
+            .withEditableBy(editableBy)
+
+            .withLockedBy(lockedBy)
+
+            .withSecure(secure)
+
+            .withDeleted(deleted)
+
+            .withIncludeSchemas(includeSchemas)
+            .build();
   }
 
   /**
    * Get a pageable list of flows, filtered by query parameters
    * Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return FlowEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FlowEntityListing getFlows(GetFlowsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FlowEntityListing>() {});
+    try {
+      ApiResponse<FlowEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a pageable list of flows, filtered by query parameters
    * Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FlowEntityListing> getFlows(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<FlowEntityListing>invokeAPIVerbose(request, new TypeReference<FlowEntityListing>() {});
+  public ApiResponse<FlowEntityListing> getFlows(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowEntityListing> response = (ApiResponse<FlowEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowEntityListing> response = (ApiResponse<FlowEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Rebuild Dependency Tracking data for an organization
    * 
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postArchitectDependencytrackingBuild() throws IOException, ApiException {
-    postArchitectDependencytrackingBuildWithHttpInfo();
+     postArchitectDependencytrackingBuild(createPostArchitectDependencytrackingBuildRequest());
   }
 
   /**
    * Rebuild Dependency Tracking data for an organization
    * 
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postArchitectDependencytrackingBuildWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/dependencytracking/build".replaceAll("\\{format\\}","json");
+  public ApiResponse<Void> postArchitectDependencytrackingBuildWithHttpInfo() throws IOException {
+    return postArchitectDependencytrackingBuild(createPostArchitectDependencytrackingBuildRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private PostArchitectDependencytrackingBuildRequest createPostArchitectDependencytrackingBuildRequest() {
+    return PostArchitectDependencytrackingBuildRequest.builder()            .build();
   }
 
   /**
    * Rebuild Dependency Tracking data for an organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postArchitectDependencytrackingBuild(PostArchitectDependencytrackingBuildRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Rebuild Dependency Tracking data for an organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postArchitectDependencytrackingBuild(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> postArchitectDependencytrackingBuild(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2512,10 +2690,11 @@ public class ArchitectApi {
    * @param promptId Prompt ID (required)
    * @param body  (optional)
    * @return PromptAsset
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PromptAsset postArchitectPromptResources(String promptId, PromptAssetCreate body) throws IOException, ApiException {
-    return postArchitectPromptResourcesWithHttpInfo(promptId, body).getBody();
+    return  postArchitectPromptResources(createPostArchitectPromptResourcesRequest(promptId, body));
   }
 
   /**
@@ -2524,61 +2703,66 @@ public class ArchitectApi {
    * @param promptId Prompt ID (required)
    * @param body  (optional)
    * @return PromptAsset
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PromptAsset> postArchitectPromptResourcesWithHttpInfo(String promptId, PromptAssetCreate body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'promptId' is set
-    if (promptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling postArchitectPromptResources");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/prompts/{promptId}/resources".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "promptId" + "\\}", pcapiClient.escapeString(promptId.toString()));
+  public ApiResponse<PromptAsset> postArchitectPromptResourcesWithHttpInfo(String promptId, PromptAssetCreate body) throws IOException {
+    return postArchitectPromptResources(createPostArchitectPromptResourcesRequest(promptId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostArchitectPromptResourcesRequest createPostArchitectPromptResourcesRequest(String promptId, PromptAssetCreate body) {
+    return PostArchitectPromptResourcesRequest.builder()
+            .withPromptId(promptId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<PromptAsset>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a new user prompt resource
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return PromptAsset
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PromptAsset postArchitectPromptResources(PostArchitectPromptResourcesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PromptAsset>() {});
+    try {
+      ApiResponse<PromptAsset> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PromptAsset>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a new user prompt resource
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PromptAsset> postArchitectPromptResources(ApiRequest<PromptAssetCreate> request) throws IOException, ApiException {
-    return pcapiClient.<PromptAsset>invokeAPIVerbose(request, new TypeReference<PromptAsset>() {});
+  public ApiResponse<PromptAsset> postArchitectPromptResources(ApiRequest<PromptAssetCreate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PromptAsset>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PromptAsset> response = (ApiResponse<PromptAsset>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PromptAsset> response = (ApiResponse<PromptAsset>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2586,10 +2770,11 @@ public class ArchitectApi {
    * 
    * @param body  (optional)
    * @return Prompt
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Prompt postArchitectPrompts(Prompt body) throws IOException, ApiException {
-    return postArchitectPromptsWithHttpInfo(body).getBody();
+    return  postArchitectPrompts(createPostArchitectPromptsRequest(body));
   }
 
   /**
@@ -2597,55 +2782,64 @@ public class ArchitectApi {
    * 
    * @param body  (optional)
    * @return Prompt
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Prompt> postArchitectPromptsWithHttpInfo(Prompt body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/prompts".replaceAll("\\{format\\}","json");
+  public ApiResponse<Prompt> postArchitectPromptsWithHttpInfo(Prompt body) throws IOException {
+    return postArchitectPrompts(createPostArchitectPromptsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Prompt>() {});
+  private PostArchitectPromptsRequest createPostArchitectPromptsRequest(Prompt body) {
+    return PostArchitectPromptsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a new user prompt
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Prompt
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Prompt postArchitectPrompts(PostArchitectPromptsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Prompt>() {});
+    try {
+      ApiResponse<Prompt> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Prompt>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a new user prompt
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Prompt> postArchitectPrompts(ApiRequest<Prompt> request) throws IOException, ApiException {
-    return pcapiClient.<Prompt>invokeAPIVerbose(request, new TypeReference<Prompt>() {});
+  public ApiResponse<Prompt> postArchitectPrompts(ApiRequest<Prompt> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Prompt>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Prompt> response = (ApiResponse<Prompt>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Prompt> response = (ApiResponse<Prompt>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2654,10 +2848,11 @@ public class ArchitectApi {
    * @param promptId Prompt ID (required)
    * @param body  (optional)
    * @return SystemPromptAsset
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SystemPromptAsset postArchitectSystempromptResources(String promptId, SystemPromptAsset body) throws IOException, ApiException {
-    return postArchitectSystempromptResourcesWithHttpInfo(promptId, body).getBody();
+    return  postArchitectSystempromptResources(createPostArchitectSystempromptResourcesRequest(promptId, body));
   }
 
   /**
@@ -2666,61 +2861,66 @@ public class ArchitectApi {
    * @param promptId Prompt ID (required)
    * @param body  (optional)
    * @return SystemPromptAsset
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SystemPromptAsset> postArchitectSystempromptResourcesWithHttpInfo(String promptId, SystemPromptAsset body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'promptId' is set
-    if (promptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling postArchitectSystempromptResources");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/systemprompts/{promptId}/resources".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "promptId" + "\\}", pcapiClient.escapeString(promptId.toString()));
+  public ApiResponse<SystemPromptAsset> postArchitectSystempromptResourcesWithHttpInfo(String promptId, SystemPromptAsset body) throws IOException {
+    return postArchitectSystempromptResources(createPostArchitectSystempromptResourcesRequest(promptId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostArchitectSystempromptResourcesRequest createPostArchitectSystempromptResourcesRequest(String promptId, SystemPromptAsset body) {
+    return PostArchitectSystempromptResourcesRequest.builder()
+            .withPromptId(promptId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<SystemPromptAsset>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create system prompt resource override.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return SystemPromptAsset
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SystemPromptAsset postArchitectSystempromptResources(PostArchitectSystempromptResourcesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SystemPromptAsset>() {});
+    try {
+      ApiResponse<SystemPromptAsset> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SystemPromptAsset>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create system prompt resource override.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SystemPromptAsset> postArchitectSystempromptResources(ApiRequest<SystemPromptAsset> request) throws IOException, ApiException {
-    return pcapiClient.<SystemPromptAsset>invokeAPIVerbose(request, new TypeReference<SystemPromptAsset>() {});
+  public ApiResponse<SystemPromptAsset> postArchitectSystempromptResources(ApiRequest<SystemPromptAsset> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SystemPromptAsset>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SystemPromptAsset> response = (ApiResponse<SystemPromptAsset>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SystemPromptAsset> response = (ApiResponse<SystemPromptAsset>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2729,10 +2929,11 @@ public class ArchitectApi {
    * @param flowId Flow ID (required)
    * @param body  (optional)
    * @return FlowVersion
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FlowVersion postFlowVersions(String flowId, Object body) throws IOException, ApiException {
-    return postFlowVersionsWithHttpInfo(flowId, body).getBody();
+    return  postFlowVersions(createPostFlowVersionsRequest(flowId, body));
   }
 
   /**
@@ -2741,61 +2942,66 @@ public class ArchitectApi {
    * @param flowId Flow ID (required)
    * @param body  (optional)
    * @return FlowVersion
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FlowVersion> postFlowVersionsWithHttpInfo(String flowId, Object body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'flowId' is set
-    if (flowId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'flowId' when calling postFlowVersions");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/flows/{flowId}/versions".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "flowId" + "\\}", pcapiClient.escapeString(flowId.toString()));
+  public ApiResponse<FlowVersion> postFlowVersionsWithHttpInfo(String flowId, Object body) throws IOException {
+    return postFlowVersions(createPostFlowVersionsRequest(flowId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostFlowVersionsRequest createPostFlowVersionsRequest(String flowId, Object body) {
+    return PostFlowVersionsRequest.builder()
+            .withFlowId(flowId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<FlowVersion>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create flow version
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return FlowVersion
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FlowVersion postFlowVersions(PostFlowVersionsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FlowVersion>() {});
+    try {
+      ApiResponse<FlowVersion> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowVersion>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create flow version
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FlowVersion> postFlowVersions(ApiRequest<Object> request) throws IOException, ApiException {
-    return pcapiClient.<FlowVersion>invokeAPIVerbose(request, new TypeReference<FlowVersion>() {});
+  public ApiResponse<FlowVersion> postFlowVersions(ApiRequest<Object> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowVersion>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowVersion> response = (ApiResponse<FlowVersion>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowVersion> response = (ApiResponse<FlowVersion>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2803,10 +3009,11 @@ public class ArchitectApi {
    * 
    * @param body  (optional)
    * @return Flow
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Flow postFlows(Flow body) throws IOException, ApiException {
-    return postFlowsWithHttpInfo(body).getBody();
+    return  postFlows(createPostFlowsRequest(body));
   }
 
   /**
@@ -2814,55 +3021,64 @@ public class ArchitectApi {
    * 
    * @param body  (optional)
    * @return Flow
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Flow> postFlowsWithHttpInfo(Flow body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/flows".replaceAll("\\{format\\}","json");
+  public ApiResponse<Flow> postFlowsWithHttpInfo(Flow body) throws IOException {
+    return postFlows(createPostFlowsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Flow>() {});
+  private PostFlowsRequest createPostFlowsRequest(Flow body) {
+    return PostFlowsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create flow
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Flow
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Flow postFlows(PostFlowsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Flow>() {});
+    try {
+      ApiResponse<Flow> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Flow>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create flow
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Flow> postFlows(ApiRequest<Flow> request) throws IOException, ApiException {
-    return pcapiClient.<Flow>invokeAPIVerbose(request, new TypeReference<Flow>() {});
+  public ApiResponse<Flow> postFlows(ApiRequest<Flow> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Flow>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2870,10 +3086,11 @@ public class ArchitectApi {
    * 
    * @param flow Flow ID (required)
    * @return Flow
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Flow postFlowsActionsCheckin(String flow) throws IOException, ApiException {
-    return postFlowsActionsCheckinWithHttpInfo(flow).getBody();
+    return  postFlowsActionsCheckin(createPostFlowsActionsCheckinRequest(flow));
   }
 
   /**
@@ -2881,61 +3098,64 @@ public class ArchitectApi {
    * 
    * @param flow Flow ID (required)
    * @return Flow
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Flow> postFlowsActionsCheckinWithHttpInfo(String flow) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'flow' is set
-    if (flow == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'flow' when calling postFlowsActionsCheckin");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/flows/actions/checkin".replaceAll("\\{format\\}","json");
+  public ApiResponse<Flow> postFlowsActionsCheckinWithHttpInfo(String flow) throws IOException {
+    return postFlowsActionsCheckin(createPostFlowsActionsCheckinRequest(flow).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "flow", flow));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Flow>() {});
+  private PostFlowsActionsCheckinRequest createPostFlowsActionsCheckinRequest(String flow) {
+    return PostFlowsActionsCheckinRequest.builder()
+            .withFlow(flow)
+            .build();
   }
 
   /**
    * Check-in flow
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Flow
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Flow postFlowsActionsCheckin(PostFlowsActionsCheckinRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Flow>() {});
+    try {
+      ApiResponse<Flow> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Flow>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Check-in flow
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Flow> postFlowsActionsCheckin(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Flow>invokeAPIVerbose(request, new TypeReference<Flow>() {});
+  public ApiResponse<Flow> postFlowsActionsCheckin(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Flow>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2943,10 +3163,11 @@ public class ArchitectApi {
    * 
    * @param flow Flow ID (required)
    * @return Flow
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Flow postFlowsActionsCheckout(String flow) throws IOException, ApiException {
-    return postFlowsActionsCheckoutWithHttpInfo(flow).getBody();
+    return  postFlowsActionsCheckout(createPostFlowsActionsCheckoutRequest(flow));
   }
 
   /**
@@ -2954,61 +3175,64 @@ public class ArchitectApi {
    * 
    * @param flow Flow ID (required)
    * @return Flow
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Flow> postFlowsActionsCheckoutWithHttpInfo(String flow) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'flow' is set
-    if (flow == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'flow' when calling postFlowsActionsCheckout");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/flows/actions/checkout".replaceAll("\\{format\\}","json");
+  public ApiResponse<Flow> postFlowsActionsCheckoutWithHttpInfo(String flow) throws IOException {
+    return postFlowsActionsCheckout(createPostFlowsActionsCheckoutRequest(flow).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "flow", flow));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Flow>() {});
+  private PostFlowsActionsCheckoutRequest createPostFlowsActionsCheckoutRequest(String flow) {
+    return PostFlowsActionsCheckoutRequest.builder()
+            .withFlow(flow)
+            .build();
   }
 
   /**
    * Check-out flow
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Flow
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Flow postFlowsActionsCheckout(PostFlowsActionsCheckoutRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Flow>() {});
+    try {
+      ApiResponse<Flow> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Flow>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Check-out flow
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Flow> postFlowsActionsCheckout(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Flow>invokeAPIVerbose(request, new TypeReference<Flow>() {});
+  public ApiResponse<Flow> postFlowsActionsCheckout(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Flow>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3016,10 +3240,11 @@ public class ArchitectApi {
    * 
    * @param flow Flow ID (required)
    * @return Flow
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Flow postFlowsActionsDeactivate(String flow) throws IOException, ApiException {
-    return postFlowsActionsDeactivateWithHttpInfo(flow).getBody();
+    return  postFlowsActionsDeactivate(createPostFlowsActionsDeactivateRequest(flow));
   }
 
   /**
@@ -3027,61 +3252,64 @@ public class ArchitectApi {
    * 
    * @param flow Flow ID (required)
    * @return Flow
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Flow> postFlowsActionsDeactivateWithHttpInfo(String flow) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'flow' is set
-    if (flow == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'flow' when calling postFlowsActionsDeactivate");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/flows/actions/deactivate".replaceAll("\\{format\\}","json");
+  public ApiResponse<Flow> postFlowsActionsDeactivateWithHttpInfo(String flow) throws IOException {
+    return postFlowsActionsDeactivate(createPostFlowsActionsDeactivateRequest(flow).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "flow", flow));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Flow>() {});
+  private PostFlowsActionsDeactivateRequest createPostFlowsActionsDeactivateRequest(String flow) {
+    return PostFlowsActionsDeactivateRequest.builder()
+            .withFlow(flow)
+            .build();
   }
 
   /**
    * Deactivate flow
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Flow
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Flow postFlowsActionsDeactivate(PostFlowsActionsDeactivateRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Flow>() {});
+    try {
+      ApiResponse<Flow> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Flow>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Deactivate flow
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Flow> postFlowsActionsDeactivate(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Flow>invokeAPIVerbose(request, new TypeReference<Flow>() {});
+  public ApiResponse<Flow> postFlowsActionsDeactivate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Flow>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3090,10 +3318,11 @@ public class ArchitectApi {
    * @param flow Flow ID (required)
    * @param version version (optional)
    * @return Operation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Operation postFlowsActionsPublish(String flow, String version) throws IOException, ApiException {
-    return postFlowsActionsPublishWithHttpInfo(flow, version).getBody();
+    return  postFlowsActionsPublish(createPostFlowsActionsPublishRequest(flow, version));
   }
 
   /**
@@ -3102,62 +3331,66 @@ public class ArchitectApi {
    * @param flow Flow ID (required)
    * @param version version (optional)
    * @return Operation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Operation> postFlowsActionsPublishWithHttpInfo(String flow, String version) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'flow' is set
-    if (flow == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'flow' when calling postFlowsActionsPublish");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/flows/actions/publish".replaceAll("\\{format\\}","json");
+  public ApiResponse<Operation> postFlowsActionsPublishWithHttpInfo(String flow, String version) throws IOException {
+    return postFlowsActionsPublish(createPostFlowsActionsPublishRequest(flow, version).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostFlowsActionsPublishRequest createPostFlowsActionsPublishRequest(String flow, String version) {
+    return PostFlowsActionsPublishRequest.builder()
+            .withFlow(flow)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "flow", flow));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "version", version));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Operation>() {});
+            .withVersion(version)
+            .build();
   }
 
   /**
    * Publish flow
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Operation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Operation postFlowsActionsPublish(PostFlowsActionsPublishRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Operation>() {});
+    try {
+      ApiResponse<Operation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Operation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Publish flow
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Operation> postFlowsActionsPublish(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Operation>invokeAPIVerbose(request, new TypeReference<Operation>() {});
+  public ApiResponse<Operation> postFlowsActionsPublish(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Operation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3165,10 +3398,11 @@ public class ArchitectApi {
    * 
    * @param flow Flow ID (required)
    * @return Flow
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Flow postFlowsActionsRevert(String flow) throws IOException, ApiException {
-    return postFlowsActionsRevertWithHttpInfo(flow).getBody();
+    return  postFlowsActionsRevert(createPostFlowsActionsRevertRequest(flow));
   }
 
   /**
@@ -3176,61 +3410,64 @@ public class ArchitectApi {
    * 
    * @param flow Flow ID (required)
    * @return Flow
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Flow> postFlowsActionsRevertWithHttpInfo(String flow) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'flow' is set
-    if (flow == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'flow' when calling postFlowsActionsRevert");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/flows/actions/revert".replaceAll("\\{format\\}","json");
+  public ApiResponse<Flow> postFlowsActionsRevertWithHttpInfo(String flow) throws IOException {
+    return postFlowsActionsRevert(createPostFlowsActionsRevertRequest(flow).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "flow", flow));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Flow>() {});
+  private PostFlowsActionsRevertRequest createPostFlowsActionsRevertRequest(String flow) {
+    return PostFlowsActionsRevertRequest.builder()
+            .withFlow(flow)
+            .build();
   }
 
   /**
    * Revert flow
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Flow
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Flow postFlowsActionsRevert(PostFlowsActionsRevertRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Flow>() {});
+    try {
+      ApiResponse<Flow> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Flow>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Revert flow
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Flow> postFlowsActionsRevert(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Flow>invokeAPIVerbose(request, new TypeReference<Flow>() {});
+  public ApiResponse<Flow> postFlowsActionsRevert(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Flow>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3238,10 +3475,11 @@ public class ArchitectApi {
    * Allows for unlocking a flow in the case where there is no flow configuration available, and thus a check-in will not unlock the flow. The user must have Architect Admin permissions to perform this action.
    * @param flow Flow ID (required)
    * @return Flow
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Flow postFlowsActionsUnlock(String flow) throws IOException, ApiException {
-    return postFlowsActionsUnlockWithHttpInfo(flow).getBody();
+    return  postFlowsActionsUnlock(createPostFlowsActionsUnlockRequest(flow));
   }
 
   /**
@@ -3249,61 +3487,64 @@ public class ArchitectApi {
    * Allows for unlocking a flow in the case where there is no flow configuration available, and thus a check-in will not unlock the flow. The user must have Architect Admin permissions to perform this action.
    * @param flow Flow ID (required)
    * @return Flow
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Flow> postFlowsActionsUnlockWithHttpInfo(String flow) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'flow' is set
-    if (flow == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'flow' when calling postFlowsActionsUnlock");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/flows/actions/unlock".replaceAll("\\{format\\}","json");
+  public ApiResponse<Flow> postFlowsActionsUnlockWithHttpInfo(String flow) throws IOException {
+    return postFlowsActionsUnlock(createPostFlowsActionsUnlockRequest(flow).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "flow", flow));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Flow>() {});
+  private PostFlowsActionsUnlockRequest createPostFlowsActionsUnlockRequest(String flow) {
+    return PostFlowsActionsUnlockRequest.builder()
+            .withFlow(flow)
+            .build();
   }
 
   /**
    * Unlock flow
    * Allows for unlocking a flow in the case where there is no flow configuration available, and thus a check-in will not unlock the flow. The user must have Architect Admin permissions to perform this action.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Flow
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Flow postFlowsActionsUnlock(PostFlowsActionsUnlockRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Flow>() {});
+    try {
+      ApiResponse<Flow> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Flow>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Unlock flow
    * Allows for unlocking a flow in the case where there is no flow configuration available, and thus a check-in will not unlock the flow. The user must have Architect Admin permissions to perform this action.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Flow> postFlowsActionsUnlock(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Flow>invokeAPIVerbose(request, new TypeReference<Flow>() {});
+  public ApiResponse<Flow> postFlowsActionsUnlock(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Flow>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3312,10 +3553,11 @@ public class ArchitectApi {
    * @param promptId Prompt ID (required)
    * @param body  (optional)
    * @return Prompt
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Prompt putArchitectPrompt(String promptId, Prompt body) throws IOException, ApiException {
-    return putArchitectPromptWithHttpInfo(promptId, body).getBody();
+    return  putArchitectPrompt(createPutArchitectPromptRequest(promptId, body));
   }
 
   /**
@@ -3324,61 +3566,66 @@ public class ArchitectApi {
    * @param promptId Prompt ID (required)
    * @param body  (optional)
    * @return Prompt
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Prompt> putArchitectPromptWithHttpInfo(String promptId, Prompt body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'promptId' is set
-    if (promptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling putArchitectPrompt");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/prompts/{promptId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "promptId" + "\\}", pcapiClient.escapeString(promptId.toString()));
+  public ApiResponse<Prompt> putArchitectPromptWithHttpInfo(String promptId, Prompt body) throws IOException {
+    return putArchitectPrompt(createPutArchitectPromptRequest(promptId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutArchitectPromptRequest createPutArchitectPromptRequest(String promptId, Prompt body) {
+    return PutArchitectPromptRequest.builder()
+            .withPromptId(promptId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Prompt>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update specified user prompt
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Prompt
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Prompt putArchitectPrompt(PutArchitectPromptRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Prompt>() {});
+    try {
+      ApiResponse<Prompt> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Prompt>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update specified user prompt
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Prompt> putArchitectPrompt(ApiRequest<Prompt> request) throws IOException, ApiException {
-    return pcapiClient.<Prompt>invokeAPIVerbose(request, new TypeReference<Prompt>() {});
+  public ApiResponse<Prompt> putArchitectPrompt(ApiRequest<Prompt> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Prompt>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Prompt> response = (ApiResponse<Prompt>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Prompt> response = (ApiResponse<Prompt>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3388,10 +3635,11 @@ public class ArchitectApi {
    * @param languageCode Language (required)
    * @param body  (optional)
    * @return PromptAsset
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PromptAsset putArchitectPromptResource(String promptId, String languageCode, PromptAsset body) throws IOException, ApiException {
-    return putArchitectPromptResourceWithHttpInfo(promptId, languageCode, body).getBody();
+    return  putArchitectPromptResource(createPutArchitectPromptResourceRequest(promptId, languageCode, body));
   }
 
   /**
@@ -3401,67 +3649,68 @@ public class ArchitectApi {
    * @param languageCode Language (required)
    * @param body  (optional)
    * @return PromptAsset
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PromptAsset> putArchitectPromptResourceWithHttpInfo(String promptId, String languageCode, PromptAsset body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'promptId' is set
-    if (promptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling putArchitectPromptResource");
-    }
-    
-    // verify the required parameter 'languageCode' is set
-    if (languageCode == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'languageCode' when calling putArchitectPromptResource");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/prompts/{promptId}/resources/{languageCode}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "promptId" + "\\}", pcapiClient.escapeString(promptId.toString()))
-      .replaceAll("\\{" + "languageCode" + "\\}", pcapiClient.escapeString(languageCode.toString()));
+  public ApiResponse<PromptAsset> putArchitectPromptResourceWithHttpInfo(String promptId, String languageCode, PromptAsset body) throws IOException {
+    return putArchitectPromptResource(createPutArchitectPromptResourceRequest(promptId, languageCode, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutArchitectPromptResourceRequest createPutArchitectPromptResourceRequest(String promptId, String languageCode, PromptAsset body) {
+    return PutArchitectPromptResourceRequest.builder()
+            .withPromptId(promptId)
 
+            .withLanguageCode(languageCode)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<PromptAsset>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update specified user prompt resource
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return PromptAsset
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PromptAsset putArchitectPromptResource(PutArchitectPromptResourceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PromptAsset>() {});
+    try {
+      ApiResponse<PromptAsset> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PromptAsset>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update specified user prompt resource
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PromptAsset> putArchitectPromptResource(ApiRequest<PromptAsset> request) throws IOException, ApiException {
-    return pcapiClient.<PromptAsset>invokeAPIVerbose(request, new TypeReference<PromptAsset>() {});
+  public ApiResponse<PromptAsset> putArchitectPromptResource(ApiRequest<PromptAsset> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PromptAsset>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PromptAsset> response = (ApiResponse<PromptAsset>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PromptAsset> response = (ApiResponse<PromptAsset>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3471,10 +3720,11 @@ public class ArchitectApi {
    * @param languageCode Language (required)
    * @param body  (optional)
    * @return SystemPromptAsset
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SystemPromptAsset putArchitectSystempromptResource(String promptId, String languageCode, SystemPromptAsset body) throws IOException, ApiException {
-    return putArchitectSystempromptResourceWithHttpInfo(promptId, languageCode, body).getBody();
+    return  putArchitectSystempromptResource(createPutArchitectSystempromptResourceRequest(promptId, languageCode, body));
   }
 
   /**
@@ -3484,67 +3734,68 @@ public class ArchitectApi {
    * @param languageCode Language (required)
    * @param body  (optional)
    * @return SystemPromptAsset
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SystemPromptAsset> putArchitectSystempromptResourceWithHttpInfo(String promptId, String languageCode, SystemPromptAsset body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'promptId' is set
-    if (promptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'promptId' when calling putArchitectSystempromptResource");
-    }
-    
-    // verify the required parameter 'languageCode' is set
-    if (languageCode == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'languageCode' when calling putArchitectSystempromptResource");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/architect/systemprompts/{promptId}/resources/{languageCode}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "promptId" + "\\}", pcapiClient.escapeString(promptId.toString()))
-      .replaceAll("\\{" + "languageCode" + "\\}", pcapiClient.escapeString(languageCode.toString()));
+  public ApiResponse<SystemPromptAsset> putArchitectSystempromptResourceWithHttpInfo(String promptId, String languageCode, SystemPromptAsset body) throws IOException {
+    return putArchitectSystempromptResource(createPutArchitectSystempromptResourceRequest(promptId, languageCode, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutArchitectSystempromptResourceRequest createPutArchitectSystempromptResourceRequest(String promptId, String languageCode, SystemPromptAsset body) {
+    return PutArchitectSystempromptResourceRequest.builder()
+            .withPromptId(promptId)
 
+            .withLanguageCode(languageCode)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<SystemPromptAsset>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Updates a system prompt resource override.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return SystemPromptAsset
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SystemPromptAsset putArchitectSystempromptResource(PutArchitectSystempromptResourceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SystemPromptAsset>() {});
+    try {
+      ApiResponse<SystemPromptAsset> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SystemPromptAsset>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Updates a system prompt resource override.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SystemPromptAsset> putArchitectSystempromptResource(ApiRequest<SystemPromptAsset> request) throws IOException, ApiException {
-    return pcapiClient.<SystemPromptAsset>invokeAPIVerbose(request, new TypeReference<SystemPromptAsset>() {});
+  public ApiResponse<SystemPromptAsset> putArchitectSystempromptResource(ApiRequest<SystemPromptAsset> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SystemPromptAsset>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SystemPromptAsset> response = (ApiResponse<SystemPromptAsset>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SystemPromptAsset> response = (ApiResponse<SystemPromptAsset>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3553,10 +3804,11 @@ public class ArchitectApi {
    * @param flowId Flow ID (required)
    * @param body  (optional)
    * @return Flow
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Flow putFlow(String flowId, Flow body) throws IOException, ApiException {
-    return putFlowWithHttpInfo(flowId, body).getBody();
+    return  putFlow(createPutFlowRequest(flowId, body));
   }
 
   /**
@@ -3565,61 +3817,66 @@ public class ArchitectApi {
    * @param flowId Flow ID (required)
    * @param body  (optional)
    * @return Flow
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Flow> putFlowWithHttpInfo(String flowId, Flow body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'flowId' is set
-    if (flowId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'flowId' when calling putFlow");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/flows/{flowId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "flowId" + "\\}", pcapiClient.escapeString(flowId.toString()));
+  public ApiResponse<Flow> putFlowWithHttpInfo(String flowId, Flow body) throws IOException {
+    return putFlow(createPutFlowRequest(flowId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutFlowRequest createPutFlowRequest(String flowId, Flow body) {
+    return PutFlowRequest.builder()
+            .withFlowId(flowId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Flow>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update flow
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Flow
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Flow putFlow(PutFlowRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Flow>() {});
+    try {
+      ApiResponse<Flow> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Flow>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update flow
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Flow> putFlow(ApiRequest<Flow> request) throws IOException, ApiException {
-    return pcapiClient.<Flow>invokeAPIVerbose(request, new TypeReference<Flow>() {});
+  public ApiResponse<Flow> putFlow(ApiRequest<Flow> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Flow>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

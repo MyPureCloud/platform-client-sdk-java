@@ -25,9 +25,6 @@ import com.mypurecloud.sdk.v2.model.UserRecordingEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
 
 public class GetUserrecordingsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -133,6 +130,7 @@ public class GetUserrecordingsRequest {
 
 
 		public GetUserrecordingsRequest build() {
+            
 			return request;
 		}
 	}

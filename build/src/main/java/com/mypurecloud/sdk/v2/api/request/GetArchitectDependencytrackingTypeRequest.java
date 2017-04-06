@@ -42,9 +42,6 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetArchitectDependencytrackingTypeRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String typeId;
 	public String getTypeId() {
 		return this.typeId;
@@ -123,6 +120,12 @@ public class GetArchitectDependencytrackingTypeRequest {
 
 
 		public GetArchitectDependencytrackingTypeRequest build() {
+            
+            // verify the required parameter 'typeId' is set
+            if (request.typeId == null) {
+                throw new IllegalStateException("Missing the required parameter 'typeId' when building request for GetArchitectDependencytrackingTypeRequest.");
+            }
+            
 			return request;
 		}
 	}

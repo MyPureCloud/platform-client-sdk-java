@@ -25,9 +25,6 @@ import com.mypurecloud.sdk.v2.model.SystemPresence;
 import com.mypurecloud.sdk.v2.model.UserPresence;
 
 public class PostPresencedefinitionsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private OrganizationPresence body;
 	public OrganizationPresence getBody() {
 		return this.body;
@@ -106,6 +103,12 @@ public class PostPresencedefinitionsRequest {
 
 
 		public PostPresencedefinitionsRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostPresencedefinitionsRequest.");
+            }
+            
 			return request;
 		}
 	}

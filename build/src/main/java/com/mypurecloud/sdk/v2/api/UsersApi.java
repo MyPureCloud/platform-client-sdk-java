@@ -105,10 +105,11 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteUser(String userId) throws IOException, ApiException {
-    return deleteUserWithHttpInfo(userId).getBody();
+    return  deleteUser(createDeleteUserRequest(userId));
   }
 
   /**
@@ -116,132 +117,138 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteUserWithHttpInfo(String userId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling deleteUser");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<Empty> deleteUserWithHttpInfo(String userId) throws IOException {
+    return deleteUser(createDeleteUserRequest(userId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Empty>() {});
+  private DeleteUserRequest createDeleteUserRequest(String userId) {
+    return DeleteUserRequest.builder()
+            .withUserId(userId)
+            .build();
   }
 
   /**
    * Delete user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteUser(DeleteUserRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteUser(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
+  public ApiResponse<Empty> deleteUser(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Removes all the roles from the user.
    * 
    * @param userId User ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteUserRoles(String userId) throws IOException, ApiException {
-    deleteUserRolesWithHttpInfo(userId);
+     deleteUserRoles(createDeleteUserRolesRequest(userId));
   }
 
   /**
    * Removes all the roles from the user.
    * 
    * @param userId User ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteUserRolesWithHttpInfo(String userId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling deleteUserRoles");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/roles".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<Void> deleteUserRolesWithHttpInfo(String userId) throws IOException {
+    return deleteUserRoles(createDeleteUserRolesRequest(userId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteUserRolesRequest createDeleteUserRolesRequest(String userId) {
+    return DeleteUserRolesRequest.builder()
+            .withUserId(userId)
+            .build();
   }
 
   /**
    * Removes all the roles from the user.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteUserRoles(DeleteUserRolesRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Removes all the roles from the user.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteUserRoles(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteUserRoles(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -250,10 +257,11 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param skillId skillId (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteUserRoutingskill(String userId, String skillId) throws IOException, ApiException {
-    return deleteUserRoutingskillWithHttpInfo(userId, skillId).getBody();
+    return  deleteUserRoutingskill(createDeleteUserRoutingskillRequest(userId, skillId));
   }
 
   /**
@@ -262,209 +270,214 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param skillId skillId (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteUserRoutingskillWithHttpInfo(String userId, String skillId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling deleteUserRoutingskill");
-    }
-    
-    // verify the required parameter 'skillId' is set
-    if (skillId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'skillId' when calling deleteUserRoutingskill");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/routingskills/{skillId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()))
-      .replaceAll("\\{" + "skillId" + "\\}", pcapiClient.escapeString(skillId.toString()));
+  public ApiResponse<String> deleteUserRoutingskillWithHttpInfo(String userId, String skillId) throws IOException {
+    return deleteUserRoutingskill(createDeleteUserRoutingskillRequest(userId, skillId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private DeleteUserRoutingskillRequest createDeleteUserRoutingskillRequest(String userId, String skillId) {
+    return DeleteUserRoutingskillRequest.builder()
+            .withUserId(userId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+            .withSkillId(skillId)
+            .build();
   }
 
   /**
    * Remove routing skill from user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteUserRoutingskill(DeleteUserRoutingskillRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Remove routing skill from user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteUserRoutingskill(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteUserRoutingskill(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Clear associated station
    * 
    * @param userId User ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteUserStationAssociatedstation(String userId) throws IOException, ApiException {
-    deleteUserStationAssociatedstationWithHttpInfo(userId);
+     deleteUserStationAssociatedstation(createDeleteUserStationAssociatedstationRequest(userId));
   }
 
   /**
    * Clear associated station
    * 
    * @param userId User ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteUserStationAssociatedstationWithHttpInfo(String userId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling deleteUserStationAssociatedstation");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/station/associatedstation".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<Void> deleteUserStationAssociatedstationWithHttpInfo(String userId) throws IOException {
+    return deleteUserStationAssociatedstation(createDeleteUserStationAssociatedstationRequest(userId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteUserStationAssociatedstationRequest createDeleteUserStationAssociatedstationRequest(String userId) {
+    return DeleteUserStationAssociatedstationRequest.builder()
+            .withUserId(userId)
+            .build();
   }
 
   /**
    * Clear associated station
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteUserStationAssociatedstation(DeleteUserStationAssociatedstationRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Clear associated station
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteUserStationAssociatedstation(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteUserStationAssociatedstation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Clear default station
    * 
    * @param userId User ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteUserStationDefaultstation(String userId) throws IOException, ApiException {
-    deleteUserStationDefaultstationWithHttpInfo(userId);
+     deleteUserStationDefaultstation(createDeleteUserStationDefaultstationRequest(userId));
   }
 
   /**
    * Clear default station
    * 
    * @param userId User ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteUserStationDefaultstationWithHttpInfo(String userId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling deleteUserStationDefaultstation");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/station/defaultstation".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<Void> deleteUserStationDefaultstationWithHttpInfo(String userId) throws IOException {
+    return deleteUserStationDefaultstation(createDeleteUserStationDefaultstationRequest(userId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteUserStationDefaultstationRequest createDeleteUserStationDefaultstationRequest(String userId) {
+    return DeleteUserStationDefaultstationRequest.builder()
+            .withUserId(userId)
+            .build();
   }
 
   /**
    * Clear default station
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteUserStationDefaultstation(DeleteUserStationDefaultstationRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Clear default station
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteUserStationDefaultstation(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteUserStationDefaultstation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -472,10 +485,11 @@ public class UsersApi {
    * 
    * @param type Field type (required)
    * @return FieldConfig
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FieldConfig getFieldconfig(String type) throws IOException, ApiException {
-    return getFieldconfigWithHttpInfo(type).getBody();
+    return  getFieldconfig(createGetFieldconfigRequest(type));
   }
 
   /**
@@ -483,61 +497,64 @@ public class UsersApi {
    * 
    * @param type Field type (required)
    * @return FieldConfig
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FieldConfig> getFieldconfigWithHttpInfo(String type) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'type' is set
-    if (type == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'type' when calling getFieldconfig");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/fieldconfig".replaceAll("\\{format\\}","json");
+  public ApiResponse<FieldConfig> getFieldconfigWithHttpInfo(String type) throws IOException {
+    return getFieldconfig(createGetFieldconfigRequest(type).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "type", type));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<FieldConfig>() {});
+  private GetFieldconfigRequest createGetFieldconfigRequest(String type) {
+    return GetFieldconfigRequest.builder()
+            .withType(type)
+            .build();
   }
 
   /**
    * Fetch field config for an entity type
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return FieldConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FieldConfig getFieldconfig(GetFieldconfigRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FieldConfig>() {});
+    try {
+      ApiResponse<FieldConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FieldConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Fetch field config for an entity type
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FieldConfig> getFieldconfig(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<FieldConfig>invokeAPIVerbose(request, new TypeReference<FieldConfig>() {});
+  public ApiResponse<FieldConfig> getFieldconfig(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FieldConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FieldConfig> response = (ApiResponse<FieldConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FieldConfig> response = (ApiResponse<FieldConfig>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -546,10 +563,11 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return User
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public User getUser(String userId, List<String> expand) throws IOException, ApiException {
-    return getUserWithHttpInfo(userId, expand).getBody();
+    return  getUser(createGetUserRequest(userId, expand));
   }
 
   /**
@@ -558,62 +576,66 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return User
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<User> getUserWithHttpInfo(String userId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUser");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<User> getUserWithHttpInfo(String userId, List<String> expand) throws IOException {
+    return getUser(createGetUserRequest(userId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetUserRequest createGetUserRequest(String userId, List<String> expand) {
+    return GetUserRequest.builder()
+            .withUserId(userId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<User>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get user.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return User
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public User getUser(GetUserRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<User>() {});
+    try {
+      ApiResponse<User> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<User>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get user.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<User> getUser(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<User>invokeAPIVerbose(request, new TypeReference<User>() {});
+  public ApiResponse<User> getUser(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<User>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<User> response = (ApiResponse<User>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<User> response = (ApiResponse<User>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -622,10 +644,11 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return Adjacents
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Adjacents getUserAdjacents(String userId, List<String> expand) throws IOException, ApiException {
-    return getUserAdjacentsWithHttpInfo(userId, expand).getBody();
+    return  getUserAdjacents(createGetUserAdjacentsRequest(userId, expand));
   }
 
   /**
@@ -634,62 +657,66 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return Adjacents
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Adjacents> getUserAdjacentsWithHttpInfo(String userId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserAdjacents");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/adjacents".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<Adjacents> getUserAdjacentsWithHttpInfo(String userId, List<String> expand) throws IOException {
+    return getUserAdjacents(createGetUserAdjacentsRequest(userId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetUserAdjacentsRequest createGetUserAdjacentsRequest(String userId, List<String> expand) {
+    return GetUserAdjacentsRequest.builder()
+            .withUserId(userId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Adjacents>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get adjacents
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Adjacents
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Adjacents getUserAdjacents(GetUserAdjacentsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Adjacents>() {});
+    try {
+      ApiResponse<Adjacents> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Adjacents>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get adjacents
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Adjacents> getUserAdjacents(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Adjacents>invokeAPIVerbose(request, new TypeReference<Adjacents>() {});
+  public ApiResponse<Adjacents> getUserAdjacents(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Adjacents>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Adjacents> response = (ApiResponse<Adjacents>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Adjacents> response = (ApiResponse<Adjacents>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -697,10 +724,11 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @return CallForwarding
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallForwarding getUserCallforwarding(String userId) throws IOException, ApiException {
-    return getUserCallforwardingWithHttpInfo(userId).getBody();
+    return  getUserCallforwarding(createGetUserCallforwardingRequest(userId));
   }
 
   /**
@@ -708,61 +736,64 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @return CallForwarding
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallForwarding> getUserCallforwardingWithHttpInfo(String userId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserCallforwarding");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/callforwarding".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<CallForwarding> getUserCallforwardingWithHttpInfo(String userId) throws IOException {
+    return getUserCallforwarding(createGetUserCallforwardingRequest(userId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CallForwarding>() {});
+  private GetUserCallforwardingRequest createGetUserCallforwardingRequest(String userId) {
+    return GetUserCallforwardingRequest.builder()
+            .withUserId(userId)
+            .build();
   }
 
   /**
    * Get a user&#39;s CallForwarding
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CallForwarding
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallForwarding getUserCallforwarding(GetUserCallforwardingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallForwarding>() {});
+    try {
+      ApiResponse<CallForwarding> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CallForwarding>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a user&#39;s CallForwarding
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallForwarding> getUserCallforwarding(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CallForwarding>invokeAPIVerbose(request, new TypeReference<CallForwarding>() {});
+  public ApiResponse<CallForwarding> getUserCallforwarding(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CallForwarding>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallForwarding> response = (ApiResponse<CallForwarding>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallForwarding> response = (ApiResponse<CallForwarding>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -771,10 +802,11 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return List<User>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<User> getUserDirectreports(String userId, List<String> expand) throws IOException, ApiException {
-    return getUserDirectreportsWithHttpInfo(userId, expand).getBody();
+    return  getUserDirectreports(createGetUserDirectreportsRequest(userId, expand));
   }
 
   /**
@@ -783,62 +815,66 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return List<User>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<User>> getUserDirectreportsWithHttpInfo(String userId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserDirectreports");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/directreports".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<List<User>> getUserDirectreportsWithHttpInfo(String userId, List<String> expand) throws IOException {
+    return getUserDirectreports(createGetUserDirectreportsRequest(userId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetUserDirectreportsRequest createGetUserDirectreportsRequest(String userId, List<String> expand) {
+    return GetUserDirectreportsRequest.builder()
+            .withUserId(userId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<User>>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get direct reports
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<User>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<User> getUserDirectreports(GetUserDirectreportsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<User>>() {});
+    try {
+      ApiResponse<List<User>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<User>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get direct reports
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<User>> getUserDirectreports(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<User>>invokeAPIVerbose(request, new TypeReference<List<User>>() {});
+  public ApiResponse<List<User>> getUserDirectreports(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<User>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<User>> response = (ApiResponse<List<User>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<User>> response = (ApiResponse<List<User>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -850,10 +886,11 @@ public class UsersApi {
    * @param sortOrder Sort order (optional, default to ASC)
    * @param expand Which fields, if any, to expand (optional)
    * @return UserEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserEntityListing getUserFavorites(String userId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException, ApiException {
-    return getUserFavoritesWithHttpInfo(userId, pageSize, pageNumber, sortOrder, expand).getBody();
+    return  getUserFavorites(createGetUserFavoritesRequest(userId, pageSize, pageNumber, sortOrder, expand));
   }
 
   /**
@@ -865,65 +902,72 @@ public class UsersApi {
    * @param sortOrder Sort order (optional, default to ASC)
    * @param expand Which fields, if any, to expand (optional)
    * @return UserEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserEntityListing> getUserFavoritesWithHttpInfo(String userId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserFavorites");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/favorites".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<UserEntityListing> getUserFavoritesWithHttpInfo(String userId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException {
+    return getUserFavorites(createGetUserFavoritesRequest(userId, pageSize, pageNumber, sortOrder, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetUserFavoritesRequest createGetUserFavoritesRequest(String userId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) {
+    return GetUserFavoritesRequest.builder()
+            .withUserId(userId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageNumber(pageNumber)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortOrder(sortOrder)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserEntityListing>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get favorites
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserEntityListing getUserFavorites(GetUserFavoritesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserEntityListing>() {});
+    try {
+      ApiResponse<UserEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get favorites
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserEntityListing> getUserFavorites(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<UserEntityListing>invokeAPIVerbose(request, new TypeReference<UserEntityListing>() {});
+  public ApiResponse<UserEntityListing> getUserFavorites(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -932,10 +976,11 @@ public class UsersApi {
    * @param userId user Id (required)
    * @param clientId client Id (required)
    * @return Geolocation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Geolocation getUserGeolocation(String userId, String clientId) throws IOException, ApiException {
-    return getUserGeolocationWithHttpInfo(userId, clientId).getBody();
+    return  getUserGeolocation(createGetUserGeolocationRequest(userId, clientId));
   }
 
   /**
@@ -944,67 +989,66 @@ public class UsersApi {
    * @param userId user Id (required)
    * @param clientId client Id (required)
    * @return Geolocation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Geolocation> getUserGeolocationWithHttpInfo(String userId, String clientId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserGeolocation");
-    }
-    
-    // verify the required parameter 'clientId' is set
-    if (clientId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'clientId' when calling getUserGeolocation");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/geolocations/{clientId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()))
-      .replaceAll("\\{" + "clientId" + "\\}", pcapiClient.escapeString(clientId.toString()));
+  public ApiResponse<Geolocation> getUserGeolocationWithHttpInfo(String userId, String clientId) throws IOException {
+    return getUserGeolocation(createGetUserGeolocationRequest(userId, clientId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetUserGeolocationRequest createGetUserGeolocationRequest(String userId, String clientId) {
+    return GetUserGeolocationRequest.builder()
+            .withUserId(userId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Geolocation>() {});
+            .withClientId(clientId)
+            .build();
   }
 
   /**
    * Get a user&#39;s Geolocation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Geolocation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Geolocation getUserGeolocation(GetUserGeolocationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Geolocation>() {});
+    try {
+      ApiResponse<Geolocation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Geolocation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a user&#39;s Geolocation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Geolocation> getUserGeolocation(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Geolocation>invokeAPIVerbose(request, new TypeReference<Geolocation>() {});
+  public ApiResponse<Geolocation> getUserGeolocation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Geolocation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Geolocation> response = (ApiResponse<Geolocation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Geolocation> response = (ApiResponse<Geolocation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1012,10 +1056,11 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @return OutOfOffice
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OutOfOffice getUserOutofoffice(String userId) throws IOException, ApiException {
-    return getUserOutofofficeWithHttpInfo(userId).getBody();
+    return  getUserOutofoffice(createGetUserOutofofficeRequest(userId));
   }
 
   /**
@@ -1023,61 +1068,64 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @return OutOfOffice
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutOfOffice> getUserOutofofficeWithHttpInfo(String userId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserOutofoffice");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/outofoffice".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<OutOfOffice> getUserOutofofficeWithHttpInfo(String userId) throws IOException {
+    return getUserOutofoffice(createGetUserOutofofficeRequest(userId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OutOfOffice>() {});
+  private GetUserOutofofficeRequest createGetUserOutofofficeRequest(String userId) {
+    return GetUserOutofofficeRequest.builder()
+            .withUserId(userId)
+            .build();
   }
 
   /**
    * Get a OutOfOffice
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OutOfOffice
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OutOfOffice getUserOutofoffice(GetUserOutofofficeRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OutOfOffice>() {});
+    try {
+      ApiResponse<OutOfOffice> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutOfOffice>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a OutOfOffice
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutOfOffice> getUserOutofoffice(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<OutOfOffice>invokeAPIVerbose(request, new TypeReference<OutOfOffice>() {});
+  public ApiResponse<OutOfOffice> getUserOutofoffice(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutOfOffice>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutOfOffice> response = (ApiResponse<OutOfOffice>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutOfOffice> response = (ApiResponse<OutOfOffice>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1085,10 +1133,11 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @return List<String>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<String> getUserProfileskills(String userId) throws IOException, ApiException {
-    return getUserProfileskillsWithHttpInfo(userId).getBody();
+    return  getUserProfileskills(createGetUserProfileskillsRequest(userId));
   }
 
   /**
@@ -1096,61 +1145,64 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @return List<String>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<String>> getUserProfileskillsWithHttpInfo(String userId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserProfileskills");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/profileskills".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<List<String>> getUserProfileskillsWithHttpInfo(String userId) throws IOException {
+    return getUserProfileskills(createGetUserProfileskillsRequest(userId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<String>>() {});
+  private GetUserProfileskillsRequest createGetUserProfileskillsRequest(String userId) {
+    return GetUserProfileskillsRequest.builder()
+            .withUserId(userId)
+            .build();
   }
 
   /**
    * List profile skills for a user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<String>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<String> getUserProfileskills(GetUserProfileskillsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<String>>() {});
+    try {
+      ApiResponse<List<String>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<String>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * List profile skills for a user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<String>> getUserProfileskills(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<String>>invokeAPIVerbose(request, new TypeReference<List<String>>() {});
+  public ApiResponse<List<String>> getUserProfileskills(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<String>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1161,10 +1213,11 @@ public class UsersApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param joined Is joined to the queue (optional, default to true)
    * @return UserQueueEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserQueueEntityListing getUserQueues(String userId, Integer pageSize, Integer pageNumber, Boolean joined) throws IOException, ApiException {
-    return getUserQueuesWithHttpInfo(userId, pageSize, pageNumber, joined).getBody();
+    return  getUserQueues(createGetUserQueuesRequest(userId, pageSize, pageNumber, joined));
   }
 
   /**
@@ -1175,64 +1228,70 @@ public class UsersApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param joined Is joined to the queue (optional, default to true)
    * @return UserQueueEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserQueueEntityListing> getUserQueuesWithHttpInfo(String userId, Integer pageSize, Integer pageNumber, Boolean joined) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserQueues");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/queues".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<UserQueueEntityListing> getUserQueuesWithHttpInfo(String userId, Integer pageSize, Integer pageNumber, Boolean joined) throws IOException {
+    return getUserQueues(createGetUserQueuesRequest(userId, pageSize, pageNumber, joined).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetUserQueuesRequest createGetUserQueuesRequest(String userId, Integer pageSize, Integer pageNumber, Boolean joined) {
+    return GetUserQueuesRequest.builder()
+            .withUserId(userId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "joined", joined));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageNumber(pageNumber)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserQueueEntityListing>() {});
+            .withJoined(joined)
+            .build();
   }
 
   /**
    * Get queues for user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserQueueEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserQueueEntityListing getUserQueues(GetUserQueuesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserQueueEntityListing>() {});
+    try {
+      ApiResponse<UserQueueEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserQueueEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get queues for user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserQueueEntityListing> getUserQueues(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<UserQueueEntityListing>invokeAPIVerbose(request, new TypeReference<UserQueueEntityListing>() {});
+  public ApiResponse<UserQueueEntityListing> getUserQueues(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserQueueEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserQueueEntityListing> response = (ApiResponse<UserQueueEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserQueueEntityListing> response = (ApiResponse<UserQueueEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1240,10 +1299,11 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @return UserAuthorization
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserAuthorization getUserRoles(String userId) throws IOException, ApiException {
-    return getUserRolesWithHttpInfo(userId).getBody();
+    return  getUserRoles(createGetUserRolesRequest(userId));
   }
 
   /**
@@ -1251,61 +1311,64 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @return UserAuthorization
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserAuthorization> getUserRolesWithHttpInfo(String userId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserRoles");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/roles".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<UserAuthorization> getUserRolesWithHttpInfo(String userId) throws IOException {
+    return getUserRoles(createGetUserRolesRequest(userId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserAuthorization>() {});
+  private GetUserRolesRequest createGetUserRolesRequest(String userId) {
+    return GetUserRolesRequest.builder()
+            .withUserId(userId)
+            .build();
   }
 
   /**
    * Returns a listing of roles and permissions for a user.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserAuthorization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserAuthorization getUserRoles(GetUserRolesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserAuthorization>() {});
+    try {
+      ApiResponse<UserAuthorization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserAuthorization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Returns a listing of roles and permissions for a user.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserAuthorization> getUserRoles(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<UserAuthorization>invokeAPIVerbose(request, new TypeReference<UserAuthorization>() {});
+  public ApiResponse<UserAuthorization> getUserRoles(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserAuthorization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1316,10 +1379,11 @@ public class UsersApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @return UserSkillEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserSkillEntityListing getUserRoutingskills(String userId, Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
-    return getUserRoutingskillsWithHttpInfo(userId, pageSize, pageNumber, sortOrder).getBody();
+    return  getUserRoutingskills(createGetUserRoutingskillsRequest(userId, pageSize, pageNumber, sortOrder));
   }
 
   /**
@@ -1330,64 +1394,70 @@ public class UsersApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @return UserSkillEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserSkillEntityListing> getUserRoutingskillsWithHttpInfo(String userId, Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserRoutingskills");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/routingskills".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<UserSkillEntityListing> getUserRoutingskillsWithHttpInfo(String userId, Integer pageSize, Integer pageNumber, String sortOrder) throws IOException {
+    return getUserRoutingskills(createGetUserRoutingskillsRequest(userId, pageSize, pageNumber, sortOrder).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetUserRoutingskillsRequest createGetUserRoutingskillsRequest(String userId, Integer pageSize, Integer pageNumber, String sortOrder) {
+    return GetUserRoutingskillsRequest.builder()
+            .withUserId(userId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageNumber(pageNumber)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserSkillEntityListing>() {});
+            .withSortOrder(sortOrder)
+            .build();
   }
 
   /**
    * List routing skills for user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserSkillEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserSkillEntityListing getUserRoutingskills(GetUserRoutingskillsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserSkillEntityListing>() {});
+    try {
+      ApiResponse<UserSkillEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserSkillEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * List routing skills for user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserSkillEntityListing> getUserRoutingskills(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<UserSkillEntityListing>invokeAPIVerbose(request, new TypeReference<UserSkillEntityListing>() {});
+  public ApiResponse<UserSkillEntityListing> getUserRoutingskills(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserSkillEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserSkillEntityListing> response = (ApiResponse<UserSkillEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserSkillEntityListing> response = (ApiResponse<UserSkillEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1395,10 +1465,11 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @return RoutingStatus
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RoutingStatus getUserRoutingstatus(String userId) throws IOException, ApiException {
-    return getUserRoutingstatusWithHttpInfo(userId).getBody();
+    return  getUserRoutingstatus(createGetUserRoutingstatusRequest(userId));
   }
 
   /**
@@ -1406,61 +1477,64 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @return RoutingStatus
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoutingStatus> getUserRoutingstatusWithHttpInfo(String userId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserRoutingstatus");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/routingstatus".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<RoutingStatus> getUserRoutingstatusWithHttpInfo(String userId) throws IOException {
+    return getUserRoutingstatus(createGetUserRoutingstatusRequest(userId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<RoutingStatus>() {});
+  private GetUserRoutingstatusRequest createGetUserRoutingstatusRequest(String userId) {
+    return GetUserRoutingstatusRequest.builder()
+            .withUserId(userId)
+            .build();
   }
 
   /**
    * Fetch the routing status of a user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return RoutingStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RoutingStatus getUserRoutingstatus(GetUserRoutingstatusRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RoutingStatus>() {});
+    try {
+      ApiResponse<RoutingStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RoutingStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Fetch the routing status of a user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoutingStatus> getUserRoutingstatus(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<RoutingStatus>invokeAPIVerbose(request, new TypeReference<RoutingStatus>() {});
+  public ApiResponse<RoutingStatus> getUserRoutingstatus(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RoutingStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingStatus> response = (ApiResponse<RoutingStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingStatus> response = (ApiResponse<RoutingStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1468,10 +1542,11 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @return UserStations
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserStations getUserStation(String userId) throws IOException, ApiException {
-    return getUserStationWithHttpInfo(userId).getBody();
+    return  getUserStation(createGetUserStationRequest(userId));
   }
 
   /**
@@ -1479,61 +1554,64 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @return UserStations
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserStations> getUserStationWithHttpInfo(String userId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserStation");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/station".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<UserStations> getUserStationWithHttpInfo(String userId) throws IOException {
+    return getUserStation(createGetUserStationRequest(userId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserStations>() {});
+  private GetUserStationRequest createGetUserStationRequest(String userId) {
+    return GetUserStationRequest.builder()
+            .withUserId(userId)
+            .build();
   }
 
   /**
    * Get station information for user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserStations
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserStations getUserStation(GetUserStationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserStations>() {});
+    try {
+      ApiResponse<UserStations> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserStations>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get station information for user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserStations> getUserStation(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<UserStations>invokeAPIVerbose(request, new TypeReference<UserStations>() {});
+  public ApiResponse<UserStations> getUserStation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserStations>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserStations> response = (ApiResponse<UserStations>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserStations> response = (ApiResponse<UserStations>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1542,10 +1620,11 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return List<User>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<User> getUserSuperiors(String userId, List<String> expand) throws IOException, ApiException {
-    return getUserSuperiorsWithHttpInfo(userId, expand).getBody();
+    return  getUserSuperiors(createGetUserSuperiorsRequest(userId, expand));
   }
 
   /**
@@ -1554,62 +1633,66 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return List<User>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<User>> getUserSuperiorsWithHttpInfo(String userId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserSuperiors");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/superiors".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<List<User>> getUserSuperiorsWithHttpInfo(String userId, List<String> expand) throws IOException {
+    return getUserSuperiors(createGetUserSuperiorsRequest(userId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetUserSuperiorsRequest createGetUserSuperiorsRequest(String userId, List<String> expand) {
+    return GetUserSuperiorsRequest.builder()
+            .withUserId(userId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<User>>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get superiors
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<User>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<User> getUserSuperiors(GetUserSuperiorsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<User>>() {});
+    try {
+      ApiResponse<List<User>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<User>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get superiors
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<User>> getUserSuperiors(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<User>>invokeAPIVerbose(request, new TypeReference<List<User>>() {});
+  public ApiResponse<List<User>> getUserSuperiors(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<User>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<User>> response = (ApiResponse<List<User>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<User>> response = (ApiResponse<List<User>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1621,10 +1704,11 @@ public class UsersApi {
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @param expand Which fields, if any, to expand (optional)
    * @return UserEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserEntityListing getUsers(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder, List<String> expand) throws IOException, ApiException {
-    return getUsersWithHttpInfo(pageSize, pageNumber, id, sortOrder, expand).getBody();
+    return  getUsers(createGetUsersRequest(pageSize, pageNumber, id, sortOrder, expand));
   }
 
   /**
@@ -1636,60 +1720,72 @@ public class UsersApi {
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @param expand Which fields, if any, to expand (optional)
    * @return UserEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserEntityListing> getUsersWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users".replaceAll("\\{format\\}","json");
+  public ApiResponse<UserEntityListing> getUsersWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder, List<String> expand) throws IOException {
+    return getUsers(createGetUsersRequest(pageSize, pageNumber, id, sortOrder, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetUsersRequest createGetUsersRequest(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder, List<String> expand) {
+    return GetUsersRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "id", id));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withId(id)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortOrder(sortOrder)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserEntityListing>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get the list of available users.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserEntityListing getUsers(GetUsersRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserEntityListing>() {});
+    try {
+      ApiResponse<UserEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the list of available users.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserEntityListing> getUsers(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<UserEntityListing>invokeAPIVerbose(request, new TypeReference<UserEntityListing>() {});
+  public ApiResponse<UserEntityListing> getUsers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1697,10 +1793,11 @@ public class UsersApi {
    * This request is not valid when using the Client Credentials OAuth grant.
    * @param expand Which fields, if any, to expand. (optional)
    * @return UserMe
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserMe getUsersMe(List<String> expand) throws IOException, ApiException {
-    return getUsersMeWithHttpInfo(expand).getBody();
+    return  getUsersMe(createGetUsersMeRequest(expand));
   }
 
   /**
@@ -1708,56 +1805,64 @@ public class UsersApi {
    * This request is not valid when using the Client Credentials OAuth grant.
    * @param expand Which fields, if any, to expand. (optional)
    * @return UserMe
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserMe> getUsersMeWithHttpInfo(List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/me".replaceAll("\\{format\\}","json");
+  public ApiResponse<UserMe> getUsersMeWithHttpInfo(List<String> expand) throws IOException {
+    return getUsersMe(createGetUsersMeRequest(expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserMe>() {});
+  private GetUsersMeRequest createGetUsersMeRequest(List<String> expand) {
+    return GetUsersMeRequest.builder()
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get current user details.
    * This request is not valid when using the Client Credentials OAuth grant.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserMe
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserMe getUsersMe(GetUsersMeRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserMe>() {});
+    try {
+      ApiResponse<UserMe> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserMe>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get current user details.
    * This request is not valid when using the Client Credentials OAuth grant.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserMe> getUsersMe(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<UserMe>invokeAPIVerbose(request, new TypeReference<UserMe>() {});
+  public ApiResponse<UserMe> getUsersMe(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserMe>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserMe> response = (ApiResponse<UserMe>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserMe> response = (ApiResponse<UserMe>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1766,10 +1871,11 @@ public class UsersApi {
    * @param q64 q64 (required)
    * @param expand expand (optional)
    * @return UsersSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UsersSearchResponse getUsersSearch(String q64, List<String> expand) throws IOException, ApiException {
-    return getUsersSearchWithHttpInfo(q64, expand).getBody();
+    return  getUsersSearch(createGetUsersSearchRequest(q64, expand));
   }
 
   /**
@@ -1778,62 +1884,66 @@ public class UsersApi {
    * @param q64 q64 (required)
    * @param expand expand (optional)
    * @return UsersSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UsersSearchResponse> getUsersSearchWithHttpInfo(String q64, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'q64' is set
-    if (q64 == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'q64' when calling getUsersSearch");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/search".replaceAll("\\{format\\}","json");
+  public ApiResponse<UsersSearchResponse> getUsersSearchWithHttpInfo(String q64, List<String> expand) throws IOException {
+    return getUsersSearch(createGetUsersSearchRequest(q64, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetUsersSearchRequest createGetUsersSearchRequest(String q64, List<String> expand) {
+    return GetUsersSearchRequest.builder()
+            .withQ64(q64)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "q64", q64));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UsersSearchResponse>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Search users using the q64 value returned from a previous search
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UsersSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UsersSearchResponse getUsersSearch(GetUsersSearchRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UsersSearchResponse>() {});
+    try {
+      ApiResponse<UsersSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UsersSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Search users using the q64 value returned from a previous search
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UsersSearchResponse> getUsersSearch(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<UsersSearchResponse>invokeAPIVerbose(request, new TypeReference<UsersSearchResponse>() {});
+  public ApiResponse<UsersSearchResponse> getUsersSearch(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UsersSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UsersSearchResponse> response = (ApiResponse<UsersSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UsersSearchResponse> response = (ApiResponse<UsersSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1842,10 +1952,11 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param body User (required)
    * @return User
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public User patchUser(String userId, User body) throws IOException, ApiException {
-    return patchUserWithHttpInfo(userId, body).getBody();
+    return  patchUser(createPatchUserRequest(userId, body));
   }
 
   /**
@@ -1854,66 +1965,66 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param body User (required)
    * @return User
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<User> patchUserWithHttpInfo(String userId, User body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling patchUser");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchUser");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<User> patchUserWithHttpInfo(String userId, User body) throws IOException {
+    return patchUser(createPatchUserRequest(userId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchUserRequest createPatchUserRequest(String userId, User body) {
+    return PatchUserRequest.builder()
+            .withUserId(userId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<User>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return User
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public User patchUser(PatchUserRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<User>() {});
+    try {
+      ApiResponse<User> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<User>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<User> patchUser(ApiRequest<User> request) throws IOException, ApiException {
-    return pcapiClient.<User>invokeAPIVerbose(request, new TypeReference<User>() {});
+  public ApiResponse<User> patchUser(ApiRequest<User> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<User>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<User> response = (ApiResponse<User>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<User> response = (ApiResponse<User>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1922,10 +2033,11 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param body Call forwarding (required)
    * @return CallForwarding
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallForwarding patchUserCallforwarding(String userId, CallForwarding body) throws IOException, ApiException {
-    return patchUserCallforwardingWithHttpInfo(userId, body).getBody();
+    return  patchUserCallforwarding(createPatchUserCallforwardingRequest(userId, body));
   }
 
   /**
@@ -1934,66 +2046,66 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param body Call forwarding (required)
    * @return CallForwarding
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallForwarding> patchUserCallforwardingWithHttpInfo(String userId, CallForwarding body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling patchUserCallforwarding");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchUserCallforwarding");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/callforwarding".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<CallForwarding> patchUserCallforwardingWithHttpInfo(String userId, CallForwarding body) throws IOException {
+    return patchUserCallforwarding(createPatchUserCallforwardingRequest(userId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchUserCallforwardingRequest createPatchUserCallforwardingRequest(String userId, CallForwarding body) {
+    return PatchUserCallforwardingRequest.builder()
+            .withUserId(userId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CallForwarding>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Patch a user&#39;s CallForwarding
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CallForwarding
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallForwarding patchUserCallforwarding(PatchUserCallforwardingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallForwarding>() {});
+    try {
+      ApiResponse<CallForwarding> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CallForwarding>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Patch a user&#39;s CallForwarding
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallForwarding> patchUserCallforwarding(ApiRequest<CallForwarding> request) throws IOException, ApiException {
-    return pcapiClient.<CallForwarding>invokeAPIVerbose(request, new TypeReference<CallForwarding>() {});
+  public ApiResponse<CallForwarding> patchUserCallforwarding(ApiRequest<CallForwarding> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CallForwarding>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallForwarding> response = (ApiResponse<CallForwarding>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallForwarding> response = (ApiResponse<CallForwarding>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2003,10 +2115,11 @@ public class UsersApi {
    * @param clientId client Id (required)
    * @param body Geolocation (required)
    * @return Geolocation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Geolocation patchUserGeolocation(String userId, String clientId, Geolocation body) throws IOException, ApiException {
-    return patchUserGeolocationWithHttpInfo(userId, clientId, body).getBody();
+    return  patchUserGeolocation(createPatchUserGeolocationRequest(userId, clientId, body));
   }
 
   /**
@@ -2016,72 +2129,68 @@ public class UsersApi {
    * @param clientId client Id (required)
    * @param body Geolocation (required)
    * @return Geolocation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Geolocation> patchUserGeolocationWithHttpInfo(String userId, String clientId, Geolocation body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling patchUserGeolocation");
-    }
-    
-    // verify the required parameter 'clientId' is set
-    if (clientId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'clientId' when calling patchUserGeolocation");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchUserGeolocation");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/geolocations/{clientId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()))
-      .replaceAll("\\{" + "clientId" + "\\}", pcapiClient.escapeString(clientId.toString()));
+  public ApiResponse<Geolocation> patchUserGeolocationWithHttpInfo(String userId, String clientId, Geolocation body) throws IOException {
+    return patchUserGeolocation(createPatchUserGeolocationRequest(userId, clientId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchUserGeolocationRequest createPatchUserGeolocationRequest(String userId, String clientId, Geolocation body) {
+    return PatchUserGeolocationRequest.builder()
+            .withUserId(userId)
 
+            .withClientId(clientId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Geolocation>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Patch a user&#39;s Geolocation
    * The geolocation object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the client as the user&#39;s primary geolocation source.  Option 2: Provide the &#39;latitude&#39; and &#39;longitude&#39; values.  This will enqueue an asynchronous update of the &#39;city&#39;, &#39;region&#39;, and &#39;country&#39;, generating a notification. A subsequent GET operation will include the new values for &#39;city&#39;, &#39;region&#39; and &#39;country&#39;.  Option 3:  Provide the &#39;city&#39;, &#39;region&#39;, &#39;country&#39; values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Geolocation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Geolocation patchUserGeolocation(PatchUserGeolocationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Geolocation>() {});
+    try {
+      ApiResponse<Geolocation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Geolocation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Patch a user&#39;s Geolocation
    * The geolocation object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the client as the user&#39;s primary geolocation source.  Option 2: Provide the &#39;latitude&#39; and &#39;longitude&#39; values.  This will enqueue an asynchronous update of the &#39;city&#39;, &#39;region&#39;, and &#39;country&#39;, generating a notification. A subsequent GET operation will include the new values for &#39;city&#39;, &#39;region&#39; and &#39;country&#39;.  Option 3:  Provide the &#39;city&#39;, &#39;region&#39;, &#39;country&#39; values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Geolocation> patchUserGeolocation(ApiRequest<Geolocation> request) throws IOException, ApiException {
-    return pcapiClient.<Geolocation>invokeAPIVerbose(request, new TypeReference<Geolocation>() {});
+  public ApiResponse<Geolocation> patchUserGeolocation(ApiRequest<Geolocation> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Geolocation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Geolocation> response = (ApiResponse<Geolocation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Geolocation> response = (ApiResponse<Geolocation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2091,10 +2200,11 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param body Queue Member (required)
    * @return UserQueue
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserQueue patchUserQueue(String queueId, String userId, UserQueue body) throws IOException, ApiException {
-    return patchUserQueueWithHttpInfo(queueId, userId, body).getBody();
+    return  patchUserQueue(createPatchUserQueueRequest(queueId, userId, body));
   }
 
   /**
@@ -2104,72 +2214,68 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param body Queue Member (required)
    * @return UserQueue
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserQueue> patchUserQueueWithHttpInfo(String queueId, String userId, UserQueue body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'queueId' is set
-    if (queueId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'queueId' when calling patchUserQueue");
-    }
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling patchUserQueue");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchUserQueue");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/queues/{queueId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "queueId" + "\\}", pcapiClient.escapeString(queueId.toString()))
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<UserQueue> patchUserQueueWithHttpInfo(String queueId, String userId, UserQueue body) throws IOException {
+    return patchUserQueue(createPatchUserQueueRequest(queueId, userId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchUserQueueRequest createPatchUserQueueRequest(String queueId, String userId, UserQueue body) {
+    return PatchUserQueueRequest.builder()
+            .withQueueId(queueId)
 
+            .withUserId(userId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserQueue>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Join or unjoin a queue for a user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserQueue
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserQueue patchUserQueue(PatchUserQueueRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserQueue>() {});
+    try {
+      ApiResponse<UserQueue> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserQueue>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Join or unjoin a queue for a user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserQueue> patchUserQueue(ApiRequest<UserQueue> request) throws IOException, ApiException {
-    return pcapiClient.<UserQueue>invokeAPIVerbose(request, new TypeReference<UserQueue>() {});
+  public ApiResponse<UserQueue> patchUserQueue(ApiRequest<UserQueue> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserQueue>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserQueue> response = (ApiResponse<UserQueue>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserQueue> response = (ApiResponse<UserQueue>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2178,10 +2284,11 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param body User Queues (required)
    * @return UserQueueEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserQueueEntityListing patchUserQueues(String userId, List<UserQueue> body) throws IOException, ApiException {
-    return patchUserQueuesWithHttpInfo(userId, body).getBody();
+    return  patchUserQueues(createPatchUserQueuesRequest(userId, body));
   }
 
   /**
@@ -2190,66 +2297,66 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param body User Queues (required)
    * @return UserQueueEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserQueueEntityListing> patchUserQueuesWithHttpInfo(String userId, List<UserQueue> body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling patchUserQueues");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchUserQueues");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/queues".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<UserQueueEntityListing> patchUserQueuesWithHttpInfo(String userId, List<UserQueue> body) throws IOException {
+    return patchUserQueues(createPatchUserQueuesRequest(userId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchUserQueuesRequest createPatchUserQueuesRequest(String userId, List<UserQueue> body) {
+    return PatchUserQueuesRequest.builder()
+            .withUserId(userId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserQueueEntityListing>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Join or unjoin a set of queues for a user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserQueueEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserQueueEntityListing patchUserQueues(PatchUserQueuesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserQueueEntityListing>() {});
+    try {
+      ApiResponse<UserQueueEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserQueueEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Join or unjoin a set of queues for a user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserQueueEntityListing> patchUserQueues(ApiRequest<List<UserQueue>> request) throws IOException, ApiException {
-    return pcapiClient.<UserQueueEntityListing>invokeAPIVerbose(request, new TypeReference<UserQueueEntityListing>() {});
+  public ApiResponse<UserQueueEntityListing> patchUserQueues(ApiRequest<List<UserQueue>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserQueueEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserQueueEntityListing> response = (ApiResponse<UserQueueEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserQueueEntityListing> response = (ApiResponse<UserQueueEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2257,10 +2364,11 @@ public class UsersApi {
    * 
    * @param body query (required)
    * @return PresenceQueryResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PresenceQueryResponse postAnalyticsUsersAggregatesQuery(AggregationQuery body) throws IOException, ApiException {
-    return postAnalyticsUsersAggregatesQueryWithHttpInfo(body).getBody();
+    return  postAnalyticsUsersAggregatesQuery(createPostAnalyticsUsersAggregatesQueryRequest(body));
   }
 
   /**
@@ -2268,60 +2376,64 @@ public class UsersApi {
    * 
    * @param body query (required)
    * @return PresenceQueryResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PresenceQueryResponse> postAnalyticsUsersAggregatesQueryWithHttpInfo(AggregationQuery body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsUsersAggregatesQuery");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/analytics/users/aggregates/query".replaceAll("\\{format\\}","json");
+  public ApiResponse<PresenceQueryResponse> postAnalyticsUsersAggregatesQueryWithHttpInfo(AggregationQuery body) throws IOException {
+    return postAnalyticsUsersAggregatesQuery(createPostAnalyticsUsersAggregatesQueryRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<PresenceQueryResponse>() {});
+  private PostAnalyticsUsersAggregatesQueryRequest createPostAnalyticsUsersAggregatesQueryRequest(AggregationQuery body) {
+    return PostAnalyticsUsersAggregatesQueryRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Query for user aggregates
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return PresenceQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PresenceQueryResponse postAnalyticsUsersAggregatesQuery(PostAnalyticsUsersAggregatesQueryRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PresenceQueryResponse>() {});
+    try {
+      ApiResponse<PresenceQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PresenceQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query for user aggregates
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PresenceQueryResponse> postAnalyticsUsersAggregatesQuery(ApiRequest<AggregationQuery> request) throws IOException, ApiException {
-    return pcapiClient.<PresenceQueryResponse>invokeAPIVerbose(request, new TypeReference<PresenceQueryResponse>() {});
+  public ApiResponse<PresenceQueryResponse> postAnalyticsUsersAggregatesQuery(ApiRequest<AggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PresenceQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PresenceQueryResponse> response = (ApiResponse<PresenceQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PresenceQueryResponse> response = (ApiResponse<PresenceQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2329,10 +2441,11 @@ public class UsersApi {
    * 
    * @param body query (required)
    * @return AnalyticsUserDetailsQueryResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(UserDetailsQuery body) throws IOException, ApiException {
-    return postAnalyticsUsersDetailsQueryWithHttpInfo(body).getBody();
+    return  postAnalyticsUsersDetailsQuery(createPostAnalyticsUsersDetailsQueryRequest(body));
   }
 
   /**
@@ -2340,60 +2453,64 @@ public class UsersApi {
    * 
    * @param body query (required)
    * @return AnalyticsUserDetailsQueryResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AnalyticsUserDetailsQueryResponse> postAnalyticsUsersDetailsQueryWithHttpInfo(UserDetailsQuery body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsUsersDetailsQuery");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/analytics/users/details/query".replaceAll("\\{format\\}","json");
+  public ApiResponse<AnalyticsUserDetailsQueryResponse> postAnalyticsUsersDetailsQueryWithHttpInfo(UserDetailsQuery body) throws IOException {
+    return postAnalyticsUsersDetailsQuery(createPostAnalyticsUsersDetailsQueryRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<AnalyticsUserDetailsQueryResponse>() {});
+  private PostAnalyticsUsersDetailsQueryRequest createPostAnalyticsUsersDetailsQueryRequest(UserDetailsQuery body) {
+    return PostAnalyticsUsersDetailsQueryRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Query for user details
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return AnalyticsUserDetailsQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(PostAnalyticsUsersDetailsQueryRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AnalyticsUserDetailsQueryResponse>() {});
+    try {
+      ApiResponse<AnalyticsUserDetailsQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AnalyticsUserDetailsQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query for user details
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AnalyticsUserDetailsQueryResponse> postAnalyticsUsersDetailsQuery(ApiRequest<UserDetailsQuery> request) throws IOException, ApiException {
-    return pcapiClient.<AnalyticsUserDetailsQueryResponse>invokeAPIVerbose(request, new TypeReference<AnalyticsUserDetailsQueryResponse>() {});
+  public ApiResponse<AnalyticsUserDetailsQueryResponse> postAnalyticsUsersDetailsQuery(ApiRequest<UserDetailsQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AnalyticsUserDetailsQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsUserDetailsQueryResponse> response = (ApiResponse<AnalyticsUserDetailsQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsUserDetailsQueryResponse> response = (ApiResponse<AnalyticsUserDetailsQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2401,10 +2518,11 @@ public class UsersApi {
    * 
    * @param body query (required)
    * @return ObservationQueryResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ObservationQueryResponse postAnalyticsUsersObservationsQuery(ObservationQuery body) throws IOException, ApiException {
-    return postAnalyticsUsersObservationsQueryWithHttpInfo(body).getBody();
+    return  postAnalyticsUsersObservationsQuery(createPostAnalyticsUsersObservationsQueryRequest(body));
   }
 
   /**
@@ -2412,60 +2530,64 @@ public class UsersApi {
    * 
    * @param body query (required)
    * @return ObservationQueryResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ObservationQueryResponse> postAnalyticsUsersObservationsQueryWithHttpInfo(ObservationQuery body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsUsersObservationsQuery");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/analytics/users/observations/query".replaceAll("\\{format\\}","json");
+  public ApiResponse<ObservationQueryResponse> postAnalyticsUsersObservationsQueryWithHttpInfo(ObservationQuery body) throws IOException {
+    return postAnalyticsUsersObservationsQuery(createPostAnalyticsUsersObservationsQueryRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ObservationQueryResponse>() {});
+  private PostAnalyticsUsersObservationsQueryRequest createPostAnalyticsUsersObservationsQueryRequest(ObservationQuery body) {
+    return PostAnalyticsUsersObservationsQueryRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Query for user observations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ObservationQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ObservationQueryResponse postAnalyticsUsersObservationsQuery(PostAnalyticsUsersObservationsQueryRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ObservationQueryResponse>() {});
+    try {
+      ApiResponse<ObservationQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ObservationQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query for user observations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ObservationQueryResponse> postAnalyticsUsersObservationsQuery(ApiRequest<ObservationQuery> request) throws IOException, ApiException {
-    return pcapiClient.<ObservationQueryResponse>invokeAPIVerbose(request, new TypeReference<ObservationQueryResponse>() {});
+  public ApiResponse<ObservationQueryResponse> postAnalyticsUsersObservationsQuery(ApiRequest<ObservationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ObservationQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ObservationQueryResponse> response = (ApiResponse<ObservationQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ObservationQueryResponse> response = (ApiResponse<ObservationQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2474,10 +2596,11 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param body Skill (required)
    * @return UserRoutingSkill
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserRoutingSkill postUserRoutingskills(String userId, UserRoutingSkillPost body) throws IOException, ApiException {
-    return postUserRoutingskillsWithHttpInfo(userId, body).getBody();
+    return  postUserRoutingskills(createPostUserRoutingskillsRequest(userId, body));
   }
 
   /**
@@ -2486,66 +2609,66 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param body Skill (required)
    * @return UserRoutingSkill
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserRoutingSkill> postUserRoutingskillsWithHttpInfo(String userId, UserRoutingSkillPost body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling postUserRoutingskills");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postUserRoutingskills");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/routingskills".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<UserRoutingSkill> postUserRoutingskillsWithHttpInfo(String userId, UserRoutingSkillPost body) throws IOException {
+    return postUserRoutingskills(createPostUserRoutingskillsRequest(userId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostUserRoutingskillsRequest createPostUserRoutingskillsRequest(String userId, UserRoutingSkillPost body) {
+    return PostUserRoutingskillsRequest.builder()
+            .withUserId(userId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserRoutingSkill>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Add routing skill to user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserRoutingSkill
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserRoutingSkill postUserRoutingskills(PostUserRoutingskillsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserRoutingSkill>() {});
+    try {
+      ApiResponse<UserRoutingSkill> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserRoutingSkill>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Add routing skill to user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserRoutingSkill> postUserRoutingskills(ApiRequest<UserRoutingSkillPost> request) throws IOException, ApiException {
-    return pcapiClient.<UserRoutingSkill>invokeAPIVerbose(request, new TypeReference<UserRoutingSkill>() {});
+  public ApiResponse<UserRoutingSkill> postUserRoutingskills(ApiRequest<UserRoutingSkillPost> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserRoutingSkill>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserRoutingSkill> response = (ApiResponse<UserRoutingSkill>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserRoutingSkill> response = (ApiResponse<UserRoutingSkill>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2553,10 +2676,11 @@ public class UsersApi {
    * 
    * @param body User (required)
    * @return User
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public User postUsers(CreateUser body) throws IOException, ApiException {
-    return postUsersWithHttpInfo(body).getBody();
+    return  postUsers(createPostUsersRequest(body));
   }
 
   /**
@@ -2564,60 +2688,64 @@ public class UsersApi {
    * 
    * @param body User (required)
    * @return User
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<User> postUsersWithHttpInfo(CreateUser body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postUsers");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users".replaceAll("\\{format\\}","json");
+  public ApiResponse<User> postUsersWithHttpInfo(CreateUser body) throws IOException {
+    return postUsers(createPostUsersRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<User>() {});
+  private PostUsersRequest createPostUsersRequest(CreateUser body) {
+    return PostUsersRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return User
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public User postUsers(PostUsersRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<User>() {});
+    try {
+      ApiResponse<User> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<User>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<User> postUsers(ApiRequest<CreateUser> request) throws IOException, ApiException {
-    return pcapiClient.<User>invokeAPIVerbose(request, new TypeReference<User>() {});
+  public ApiResponse<User> postUsers(ApiRequest<CreateUser> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<User>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<User> response = (ApiResponse<User>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<User> response = (ApiResponse<User>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2625,10 +2753,11 @@ public class UsersApi {
    * 
    * @param body Search request options (required)
    * @return UsersSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UsersSearchResponse postUsersSearch(UserSearchRequest body) throws IOException, ApiException {
-    return postUsersSearchWithHttpInfo(body).getBody();
+    return  postUsersSearch(createPostUsersSearchRequest(body));
   }
 
   /**
@@ -2636,60 +2765,64 @@ public class UsersApi {
    * 
    * @param body Search request options (required)
    * @return UsersSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UsersSearchResponse> postUsersSearchWithHttpInfo(UserSearchRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postUsersSearch");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/search".replaceAll("\\{format\\}","json");
+  public ApiResponse<UsersSearchResponse> postUsersSearchWithHttpInfo(UserSearchRequest body) throws IOException {
+    return postUsersSearch(createPostUsersSearchRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UsersSearchResponse>() {});
+  private PostUsersSearchRequest createPostUsersSearchRequest(UserSearchRequest body) {
+    return PostUsersSearchRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Search users
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UsersSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UsersSearchResponse postUsersSearch(PostUsersSearchRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UsersSearchResponse>() {});
+    try {
+      ApiResponse<UsersSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UsersSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Search users
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UsersSearchResponse> postUsersSearch(ApiRequest<UserSearchRequest> request) throws IOException, ApiException {
-    return pcapiClient.<UsersSearchResponse>invokeAPIVerbose(request, new TypeReference<UsersSearchResponse>() {});
+  public ApiResponse<UsersSearchResponse> postUsersSearch(ApiRequest<UserSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UsersSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UsersSearchResponse> response = (ApiResponse<UsersSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UsersSearchResponse> response = (ApiResponse<UsersSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2698,10 +2831,11 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param body Call forwarding (required)
    * @return CallForwarding
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallForwarding putUserCallforwarding(String userId, CallForwarding body) throws IOException, ApiException {
-    return putUserCallforwardingWithHttpInfo(userId, body).getBody();
+    return  putUserCallforwarding(createPutUserCallforwardingRequest(userId, body));
   }
 
   /**
@@ -2710,66 +2844,66 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param body Call forwarding (required)
    * @return CallForwarding
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallForwarding> putUserCallforwardingWithHttpInfo(String userId, CallForwarding body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putUserCallforwarding");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putUserCallforwarding");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/callforwarding".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<CallForwarding> putUserCallforwardingWithHttpInfo(String userId, CallForwarding body) throws IOException {
+    return putUserCallforwarding(createPutUserCallforwardingRequest(userId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutUserCallforwardingRequest createPutUserCallforwardingRequest(String userId, CallForwarding body) {
+    return PutUserCallforwardingRequest.builder()
+            .withUserId(userId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CallForwarding>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a user&#39;s CallForwarding
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CallForwarding
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallForwarding putUserCallforwarding(PutUserCallforwardingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallForwarding>() {});
+    try {
+      ApiResponse<CallForwarding> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CallForwarding>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a user&#39;s CallForwarding
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallForwarding> putUserCallforwarding(ApiRequest<CallForwarding> request) throws IOException, ApiException {
-    return pcapiClient.<CallForwarding>invokeAPIVerbose(request, new TypeReference<CallForwarding>() {});
+  public ApiResponse<CallForwarding> putUserCallforwarding(ApiRequest<CallForwarding> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CallForwarding>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallForwarding> response = (ApiResponse<CallForwarding>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallForwarding> response = (ApiResponse<CallForwarding>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2778,10 +2912,11 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param body The updated UserPresence (required)
    * @return OutOfOffice
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OutOfOffice putUserOutofoffice(String userId, OutOfOffice body) throws IOException, ApiException {
-    return putUserOutofofficeWithHttpInfo(userId, body).getBody();
+    return  putUserOutofoffice(createPutUserOutofofficeRequest(userId, body));
   }
 
   /**
@@ -2790,66 +2925,66 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param body The updated UserPresence (required)
    * @return OutOfOffice
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutOfOffice> putUserOutofofficeWithHttpInfo(String userId, OutOfOffice body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putUserOutofoffice");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putUserOutofoffice");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/outofoffice".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<OutOfOffice> putUserOutofofficeWithHttpInfo(String userId, OutOfOffice body) throws IOException {
+    return putUserOutofoffice(createPutUserOutofofficeRequest(userId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutUserOutofofficeRequest createPutUserOutofofficeRequest(String userId, OutOfOffice body) {
+    return PutUserOutofofficeRequest.builder()
+            .withUserId(userId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OutOfOffice>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update an OutOfOffice
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OutOfOffice
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OutOfOffice putUserOutofoffice(PutUserOutofofficeRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OutOfOffice>() {});
+    try {
+      ApiResponse<OutOfOffice> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutOfOffice>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update an OutOfOffice
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutOfOffice> putUserOutofoffice(ApiRequest<OutOfOffice> request) throws IOException, ApiException {
-    return pcapiClient.<OutOfOffice>invokeAPIVerbose(request, new TypeReference<OutOfOffice>() {});
+  public ApiResponse<OutOfOffice> putUserOutofoffice(ApiRequest<OutOfOffice> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutOfOffice>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutOfOffice> response = (ApiResponse<OutOfOffice>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutOfOffice> response = (ApiResponse<OutOfOffice>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2858,10 +2993,11 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param body Skills (optional)
    * @return List<String>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<String> putUserProfileskills(String userId, List<String> body) throws IOException, ApiException {
-    return putUserProfileskillsWithHttpInfo(userId, body).getBody();
+    return  putUserProfileskills(createPutUserProfileskillsRequest(userId, body));
   }
 
   /**
@@ -2870,61 +3006,66 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param body Skills (optional)
    * @return List<String>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<String>> putUserProfileskillsWithHttpInfo(String userId, List<String> body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putUserProfileskills");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/profileskills".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<List<String>> putUserProfileskillsWithHttpInfo(String userId, List<String> body) throws IOException {
+    return putUserProfileskills(createPutUserProfileskillsRequest(userId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutUserProfileskillsRequest createPutUserProfileskillsRequest(String userId, List<String> body) {
+    return PutUserProfileskillsRequest.builder()
+            .withUserId(userId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<String>>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update profile skills for a user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<String>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<String> putUserProfileskills(PutUserProfileskillsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<String>>() {});
+    try {
+      ApiResponse<List<String>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<String>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update profile skills for a user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<String>> putUserProfileskills(ApiRequest<List<String>> request) throws IOException, ApiException {
-    return pcapiClient.<List<String>>invokeAPIVerbose(request, new TypeReference<List<String>>() {});
+  public ApiResponse<List<String>> putUserProfileskills(ApiRequest<List<String>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<String>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2933,10 +3074,11 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param body List of roles (required)
    * @return UserAuthorization
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserAuthorization putUserRoles(String userId, List<String> body) throws IOException, ApiException {
-    return putUserRolesWithHttpInfo(userId, body).getBody();
+    return  putUserRoles(createPutUserRolesRequest(userId, body));
   }
 
   /**
@@ -2945,66 +3087,66 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param body List of roles (required)
    * @return UserAuthorization
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserAuthorization> putUserRolesWithHttpInfo(String userId, List<String> body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putUserRoles");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putUserRoles");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/roles".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<UserAuthorization> putUserRolesWithHttpInfo(String userId, List<String> body) throws IOException {
+    return putUserRoles(createPutUserRolesRequest(userId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutUserRolesRequest createPutUserRolesRequest(String userId, List<String> body) {
+    return PutUserRolesRequest.builder()
+            .withUserId(userId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserAuthorization>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Sets the user&#39;s roles
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserAuthorization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserAuthorization putUserRoles(PutUserRolesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserAuthorization>() {});
+    try {
+      ApiResponse<UserAuthorization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserAuthorization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Sets the user&#39;s roles
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserAuthorization> putUserRoles(ApiRequest<List<String>> request) throws IOException, ApiException {
-    return pcapiClient.<UserAuthorization>invokeAPIVerbose(request, new TypeReference<UserAuthorization>() {});
+  public ApiResponse<UserAuthorization> putUserRoles(ApiRequest<List<String>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserAuthorization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3014,10 +3156,11 @@ public class UsersApi {
    * @param skillId skillId (required)
    * @param body Skill (required)
    * @return UserRoutingSkill
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserRoutingSkill putUserRoutingskill(String userId, String skillId, UserRoutingSkill body) throws IOException, ApiException {
-    return putUserRoutingskillWithHttpInfo(userId, skillId, body).getBody();
+    return  putUserRoutingskill(createPutUserRoutingskillRequest(userId, skillId, body));
   }
 
   /**
@@ -3027,72 +3170,68 @@ public class UsersApi {
    * @param skillId skillId (required)
    * @param body Skill (required)
    * @return UserRoutingSkill
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserRoutingSkill> putUserRoutingskillWithHttpInfo(String userId, String skillId, UserRoutingSkill body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putUserRoutingskill");
-    }
-    
-    // verify the required parameter 'skillId' is set
-    if (skillId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'skillId' when calling putUserRoutingskill");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putUserRoutingskill");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/routingskills/{skillId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()))
-      .replaceAll("\\{" + "skillId" + "\\}", pcapiClient.escapeString(skillId.toString()));
+  public ApiResponse<UserRoutingSkill> putUserRoutingskillWithHttpInfo(String userId, String skillId, UserRoutingSkill body) throws IOException {
+    return putUserRoutingskill(createPutUserRoutingskillRequest(userId, skillId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutUserRoutingskillRequest createPutUserRoutingskillRequest(String userId, String skillId, UserRoutingSkill body) {
+    return PutUserRoutingskillRequest.builder()
+            .withUserId(userId)
 
+            .withSkillId(skillId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserRoutingSkill>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update routing skill proficiency or state.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserRoutingSkill
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserRoutingSkill putUserRoutingskill(PutUserRoutingskillRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserRoutingSkill>() {});
+    try {
+      ApiResponse<UserRoutingSkill> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserRoutingSkill>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update routing skill proficiency or state.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserRoutingSkill> putUserRoutingskill(ApiRequest<UserRoutingSkill> request) throws IOException, ApiException {
-    return pcapiClient.<UserRoutingSkill>invokeAPIVerbose(request, new TypeReference<UserRoutingSkill>() {});
+  public ApiResponse<UserRoutingSkill> putUserRoutingskill(ApiRequest<UserRoutingSkill> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserRoutingSkill>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserRoutingSkill> response = (ApiResponse<UserRoutingSkill>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserRoutingSkill> response = (ApiResponse<UserRoutingSkill>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3101,10 +3240,11 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param body Routing Status (required)
    * @return RoutingStatus
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RoutingStatus putUserRoutingstatus(String userId, RoutingStatus body) throws IOException, ApiException {
-    return putUserRoutingstatusWithHttpInfo(userId, body).getBody();
+    return  putUserRoutingstatus(createPutUserRoutingstatusRequest(userId, body));
   }
 
   /**
@@ -3113,66 +3253,66 @@ public class UsersApi {
    * @param userId User ID (required)
    * @param body Routing Status (required)
    * @return RoutingStatus
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoutingStatus> putUserRoutingstatusWithHttpInfo(String userId, RoutingStatus body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putUserRoutingstatus");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putUserRoutingstatus");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/routingstatus".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<RoutingStatus> putUserRoutingstatusWithHttpInfo(String userId, RoutingStatus body) throws IOException {
+    return putUserRoutingstatus(createPutUserRoutingstatusRequest(userId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutUserRoutingstatusRequest createPutUserRoutingstatusRequest(String userId, RoutingStatus body) {
+    return PutUserRoutingstatusRequest.builder()
+            .withUserId(userId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<RoutingStatus>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update the routing status of a user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return RoutingStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RoutingStatus putUserRoutingstatus(PutUserRoutingstatusRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RoutingStatus>() {});
+    try {
+      ApiResponse<RoutingStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RoutingStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update the routing status of a user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoutingStatus> putUserRoutingstatus(ApiRequest<RoutingStatus> request) throws IOException, ApiException {
-    return pcapiClient.<RoutingStatus>invokeAPIVerbose(request, new TypeReference<RoutingStatus>() {});
+  public ApiResponse<RoutingStatus> putUserRoutingstatus(ApiRequest<RoutingStatus> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RoutingStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingStatus> response = (ApiResponse<RoutingStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingStatus> response = (ApiResponse<RoutingStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3180,10 +3320,11 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @param stationId stationId (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void putUserStationAssociatedstationStationId(String userId, String stationId) throws IOException, ApiException {
-    putUserStationAssociatedstationStationIdWithHttpInfo(userId, stationId);
+     putUserStationAssociatedstationStationId(createPutUserStationAssociatedstationStationIdRequest(userId, stationId));
   }
 
   /**
@@ -3191,67 +3332,65 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @param stationId stationId (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> putUserStationAssociatedstationStationIdWithHttpInfo(String userId, String stationId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putUserStationAssociatedstationStationId");
-    }
-    
-    // verify the required parameter 'stationId' is set
-    if (stationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'stationId' when calling putUserStationAssociatedstationStationId");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/station/associatedstation/{stationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()))
-      .replaceAll("\\{" + "stationId" + "\\}", pcapiClient.escapeString(stationId.toString()));
+  public ApiResponse<Void> putUserStationAssociatedstationStationIdWithHttpInfo(String userId, String stationId) throws IOException {
+    return putUserStationAssociatedstationStationId(createPutUserStationAssociatedstationStationIdRequest(userId, stationId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutUserStationAssociatedstationStationIdRequest createPutUserStationAssociatedstationStationIdRequest(String userId, String stationId) {
+    return PutUserStationAssociatedstationStationIdRequest.builder()
+            .withUserId(userId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withStationId(stationId)
+            .build();
   }
 
   /**
    * Set associated station
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void putUserStationAssociatedstationStationId(PutUserStationAssociatedstationStationIdRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Set associated station
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> putUserStationAssociatedstationStationId(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> putUserStationAssociatedstationStationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3259,10 +3398,11 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @param stationId stationId (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void putUserStationDefaultstationStationId(String userId, String stationId) throws IOException, ApiException {
-    putUserStationDefaultstationStationIdWithHttpInfo(userId, stationId);
+     putUserStationDefaultstationStationId(createPutUserStationDefaultstationStationIdRequest(userId, stationId));
   }
 
   /**
@@ -3270,67 +3410,65 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @param stationId stationId (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> putUserStationDefaultstationStationIdWithHttpInfo(String userId, String stationId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putUserStationDefaultstationStationId");
-    }
-    
-    // verify the required parameter 'stationId' is set
-    if (stationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'stationId' when calling putUserStationDefaultstationStationId");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/station/defaultstation/{stationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()))
-      .replaceAll("\\{" + "stationId" + "\\}", pcapiClient.escapeString(stationId.toString()));
+  public ApiResponse<Void> putUserStationDefaultstationStationIdWithHttpInfo(String userId, String stationId) throws IOException {
+    return putUserStationDefaultstationStationId(createPutUserStationDefaultstationStationIdRequest(userId, stationId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutUserStationDefaultstationStationIdRequest createPutUserStationDefaultstationStationIdRequest(String userId, String stationId) {
+    return PutUserStationDefaultstationStationIdRequest.builder()
+            .withUserId(userId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withStationId(stationId)
+            .build();
   }
 
   /**
    * Set default station
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void putUserStationDefaultstationStationId(PutUserStationDefaultstationStationIdRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Set default station
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> putUserStationDefaultstationStationId(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> putUserStationDefaultstationStationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

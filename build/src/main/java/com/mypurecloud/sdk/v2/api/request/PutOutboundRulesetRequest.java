@@ -55,9 +55,6 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PutOutboundRulesetRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String ruleSetId;
 	public String getRuleSetId() {
 		return this.ruleSetId;
@@ -162,6 +159,17 @@ public class PutOutboundRulesetRequest {
 
 
 		public PutOutboundRulesetRequest build() {
+            
+            // verify the required parameter 'ruleSetId' is set
+            if (request.ruleSetId == null) {
+                throw new IllegalStateException("Missing the required parameter 'ruleSetId' when building request for PutOutboundRulesetRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutOutboundRulesetRequest.");
+            }
+            
 			return request;
 		}
 	}

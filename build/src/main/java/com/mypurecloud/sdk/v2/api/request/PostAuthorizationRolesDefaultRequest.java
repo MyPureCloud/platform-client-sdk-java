@@ -29,9 +29,6 @@ import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
 
 public class PostAuthorizationRolesDefaultRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Boolean force;
 	public Boolean getForce() {
 		return this.force;
@@ -97,6 +94,7 @@ public class PostAuthorizationRolesDefaultRequest {
 
 
 		public PostAuthorizationRolesDefaultRequest build() {
+            
 			return request;
 		}
 	}

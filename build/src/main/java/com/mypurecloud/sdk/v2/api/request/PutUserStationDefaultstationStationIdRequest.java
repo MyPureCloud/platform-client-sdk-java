@@ -47,9 +47,6 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class PutUserStationDefaultstationStationIdRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -154,6 +151,17 @@ public class PutUserStationDefaultstationStationIdRequest {
 
 
 		public PutUserStationDefaultstationStationIdRequest build() {
+            
+            // verify the required parameter 'userId' is set
+            if (request.userId == null) {
+                throw new IllegalStateException("Missing the required parameter 'userId' when building request for PutUserStationDefaultstationStationIdRequest.");
+            }
+            
+            // verify the required parameter 'stationId' is set
+            if (request.stationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'stationId' when building request for PutUserStationDefaultstationStationIdRequest.");
+            }
+            
 			return request;
 		}
 	}

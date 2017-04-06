@@ -42,9 +42,6 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetFlowVersionConfigurationRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String flowId;
 	public String getFlowId() {
 		return this.flowId;
@@ -169,6 +166,17 @@ public class GetFlowVersionConfigurationRequest {
 
 
 		public GetFlowVersionConfigurationRequest build() {
+            
+            // verify the required parameter 'flowId' is set
+            if (request.flowId == null) {
+                throw new IllegalStateException("Missing the required parameter 'flowId' when building request for GetFlowVersionConfigurationRequest.");
+            }
+            
+            // verify the required parameter 'versionId' is set
+            if (request.versionId == null) {
+                throw new IllegalStateException("Missing the required parameter 'versionId' when building request for GetFlowVersionConfigurationRequest.");
+            }
+            
 			return request;
 		}
 	}

@@ -24,9 +24,6 @@ import com.mypurecloud.sdk.v2.model.Page;
 import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
 
 public class GetScriptPageRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String scriptId;
 	public String getScriptId() {
 		return this.scriptId;
@@ -131,6 +128,17 @@ public class GetScriptPageRequest {
 
 
 		public GetScriptPageRequest build() {
+            
+            // verify the required parameter 'scriptId' is set
+            if (request.scriptId == null) {
+                throw new IllegalStateException("Missing the required parameter 'scriptId' when building request for GetScriptPageRequest.");
+            }
+            
+            // verify the required parameter 'pageId' is set
+            if (request.pageId == null) {
+                throw new IllegalStateException("Missing the required parameter 'pageId' when building request for GetScriptPageRequest.");
+            }
+            
 			return request;
 		}
 	}

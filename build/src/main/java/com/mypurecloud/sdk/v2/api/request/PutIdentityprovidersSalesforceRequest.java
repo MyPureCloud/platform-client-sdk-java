@@ -33,9 +33,6 @@ import com.mypurecloud.sdk.v2.model.Salesforce;
 import com.mypurecloud.sdk.v2.model.OAuthProvider;
 
 public class PutIdentityprovidersSalesforceRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Salesforce body;
 	public Salesforce getBody() {
 		return this.body;
@@ -114,6 +111,12 @@ public class PutIdentityprovidersSalesforceRequest {
 
 
 		public PutIdentityprovidersSalesforceRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutIdentityprovidersSalesforceRequest.");
+            }
+            
 			return request;
 		}
 	}

@@ -47,9 +47,6 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class DeleteUserRoutingskillRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -154,6 +151,17 @@ public class DeleteUserRoutingskillRequest {
 
 
 		public DeleteUserRoutingskillRequest build() {
+            
+            // verify the required parameter 'userId' is set
+            if (request.userId == null) {
+                throw new IllegalStateException("Missing the required parameter 'userId' when building request for DeleteUserRoutingskillRequest.");
+            }
+            
+            // verify the required parameter 'skillId' is set
+            if (request.skillId == null) {
+                throw new IllegalStateException("Missing the required parameter 'skillId' when building request for DeleteUserRoutingskillRequest.");
+            }
+            
 			return request;
 		}
 	}

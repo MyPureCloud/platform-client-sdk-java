@@ -50,9 +50,6 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class GetContentmanagementSharesRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String entityId;
 	public String getEntityId() {
 		return this.entityId;
@@ -178,6 +175,7 @@ public class GetContentmanagementSharesRequest {
 
 
 		public GetContentmanagementSharesRequest build() {
+            
 			return request;
 		}
 	}

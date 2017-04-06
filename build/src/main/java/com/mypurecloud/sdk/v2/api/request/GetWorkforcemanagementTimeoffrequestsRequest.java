@@ -31,9 +31,6 @@ import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 
 public class GetWorkforcemanagementTimeoffrequestsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Boolean recentlyReviewed;
 	public Boolean getRecentlyReviewed() {
 		return this.recentlyReviewed;
@@ -99,6 +96,7 @@ public class GetWorkforcemanagementTimeoffrequestsRequest {
 
 
 		public GetWorkforcemanagementTimeoffrequestsRequest build() {
+            
 			return request;
 		}
 	}

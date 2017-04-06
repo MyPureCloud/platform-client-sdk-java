@@ -26,9 +26,6 @@ import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
 
 public class PutGreetingRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String greetingId;
 	public String getGreetingId() {
 		return this.greetingId;
@@ -133,6 +130,17 @@ public class PutGreetingRequest {
 
 
 		public PutGreetingRequest build() {
+            
+            // verify the required parameter 'greetingId' is set
+            if (request.greetingId == null) {
+                throw new IllegalStateException("Missing the required parameter 'greetingId' when building request for PutGreetingRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutGreetingRequest.");
+            }
+            
 			return request;
 		}
 	}

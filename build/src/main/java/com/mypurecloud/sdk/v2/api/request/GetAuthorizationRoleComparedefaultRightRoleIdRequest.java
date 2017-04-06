@@ -29,9 +29,6 @@ import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
 
 public class GetAuthorizationRoleComparedefaultRightRoleIdRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String leftRoleId;
 	public String getLeftRoleId() {
 		return this.leftRoleId;
@@ -136,6 +133,17 @@ public class GetAuthorizationRoleComparedefaultRightRoleIdRequest {
 
 
 		public GetAuthorizationRoleComparedefaultRightRoleIdRequest build() {
+            
+            // verify the required parameter 'leftRoleId' is set
+            if (request.leftRoleId == null) {
+                throw new IllegalStateException("Missing the required parameter 'leftRoleId' when building request for GetAuthorizationRoleComparedefaultRightRoleIdRequest.");
+            }
+            
+            // verify the required parameter 'rightRoleId' is set
+            if (request.rightRoleId == null) {
+                throw new IllegalStateException("Missing the required parameter 'rightRoleId' when building request for GetAuthorizationRoleComparedefaultRightRoleIdRequest.");
+            }
+            
 			return request;
 		}
 	}

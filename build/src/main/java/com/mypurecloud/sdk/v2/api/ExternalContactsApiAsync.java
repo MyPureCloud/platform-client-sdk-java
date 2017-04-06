@@ -1,6 +1,8 @@
 package com.mypurecloud.sdk.v2.api;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.SettableFuture;
 
 import com.mypurecloud.sdk.v2.AsyncApiCallback;
 import com.mypurecloud.sdk.v2.ApiException;
@@ -76,581 +78,2206 @@ public class ExternalContactsApiAsync {
   /**
    * Delete an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Void> deleteExternalcontactsContactAsync(DeleteExternalcontactsContactRequest request, AsyncApiCallback<Void> callback) {
-    return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
+    try {
+      SettableFuture<Void> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteExternalcontactsContactAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
-    return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
+    try {
+      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a note for an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Void> deleteExternalcontactsContactNoteAsync(DeleteExternalcontactsContactNoteRequest request, AsyncApiCallback<Void> callback) {
-    return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
+    try {
+      SettableFuture<Void> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a note for an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteExternalcontactsContactNoteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
-    return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
+    try {
+      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Void> deleteExternalcontactsOrganizationAsync(DeleteExternalcontactsOrganizationRequest request, AsyncApiCallback<Void> callback) {
-    return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
+    try {
+      SettableFuture<Void> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteExternalcontactsOrganizationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
-    return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
+    try {
+      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a note for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Void> deleteExternalcontactsOrganizationNoteAsync(DeleteExternalcontactsOrganizationNoteRequest request, AsyncApiCallback<Void> callback) {
-    return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
+    try {
+      SettableFuture<Void> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a note for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteExternalcontactsOrganizationNoteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
-    return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
+    try {
+      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a relationship
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Void> deleteExternalcontactsRelationshipAsync(DeleteExternalcontactsRelationshipRequest request, AsyncApiCallback<Void> callback) {
-    return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
+    try {
+      SettableFuture<Void> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a relationship
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteExternalcontactsRelationshipAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
-    return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
+    try {
+      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Fetch an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ExternalContact> getExternalcontactsContactAsync(GetExternalcontactsContactRequest request, AsyncApiCallback<ExternalContact> callback) {
-    return pcapiClient.<ExternalContact>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExternalContact>() {}, callback);
+    try {
+      SettableFuture<ExternalContact> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalContact>() {}, new AsyncApiCallback<ApiResponse<ExternalContact>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalContact> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Fetch an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ExternalContact>> getExternalcontactsContactAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExternalContact>> callback) {
-    return pcapiClient.<ExternalContact>invokeAPIVerboseAsync(request, new TypeReference<ExternalContact>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ExternalContact>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalContact>() {}, new AsyncApiCallback<ApiResponse<ExternalContact>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalContact> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Fetch a note for an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Note> getExternalcontactsContactNoteAsync(GetExternalcontactsContactNoteRequest request, AsyncApiCallback<Note> callback) {
-    return pcapiClient.<Note>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Note>() {}, callback);
+    try {
+      SettableFuture<Note> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
+        @Override
+        public void onCompleted(ApiResponse<Note> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Fetch a note for an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Note>> getExternalcontactsContactNoteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Note>> callback) {
-    return pcapiClient.<Note>invokeAPIVerboseAsync(request, new TypeReference<Note>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Note>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
+        @Override
+        public void onCompleted(ApiResponse<Note> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * List notes for an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<NoteListing> getExternalcontactsContactNotesAsync(GetExternalcontactsContactNotesRequest request, AsyncApiCallback<NoteListing> callback) {
-    return pcapiClient.<NoteListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<NoteListing>() {}, callback);
+    try {
+      SettableFuture<NoteListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<NoteListing>() {}, new AsyncApiCallback<ApiResponse<NoteListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<NoteListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * List notes for an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<NoteListing>> getExternalcontactsContactNotesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<NoteListing>> callback) {
-    return pcapiClient.<NoteListing>invokeAPIVerboseAsync(request, new TypeReference<NoteListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<NoteListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<NoteListing>() {}, new AsyncApiCallback<ApiResponse<NoteListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<NoteListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<NoteListing> response = (ApiResponse<NoteListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<NoteListing> response = (ApiResponse<NoteListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Search for external contacts
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ContactListing> getExternalcontactsContactsAsync(GetExternalcontactsContactsRequest request, AsyncApiCallback<ContactListing> callback) {
-    return pcapiClient.<ContactListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ContactListing>() {}, callback);
+    try {
+      SettableFuture<ContactListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactListing>() {}, new AsyncApiCallback<ApiResponse<ContactListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Search for external contacts
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ContactListing>> getExternalcontactsContactsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ContactListing>> callback) {
-    return pcapiClient.<ContactListing>invokeAPIVerboseAsync(request, new TypeReference<ContactListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ContactListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContactListing>() {}, new AsyncApiCallback<ApiResponse<ContactListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactListing> response = (ApiResponse<ContactListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactListing> response = (ApiResponse<ContactListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Fetch an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ExternalOrganization> getExternalcontactsOrganizationAsync(GetExternalcontactsOrganizationRequest request, AsyncApiCallback<ExternalOrganization> callback) {
-    return pcapiClient.<ExternalOrganization>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {}, callback);
+    try {
+      SettableFuture<ExternalOrganization> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganization>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalOrganization> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Fetch an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ExternalOrganization>> getExternalcontactsOrganizationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExternalOrganization>> callback) {
-    return pcapiClient.<ExternalOrganization>invokeAPIVerboseAsync(request, new TypeReference<ExternalOrganization>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ExternalOrganization>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalOrganization>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganization>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalOrganization> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Search for external contacts in an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ContactListing> getExternalcontactsOrganizationContactsAsync(GetExternalcontactsOrganizationContactsRequest request, AsyncApiCallback<ContactListing> callback) {
-    return pcapiClient.<ContactListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ContactListing>() {}, callback);
+    try {
+      SettableFuture<ContactListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactListing>() {}, new AsyncApiCallback<ApiResponse<ContactListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Search for external contacts in an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ContactListing>> getExternalcontactsOrganizationContactsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ContactListing>> callback) {
-    return pcapiClient.<ContactListing>invokeAPIVerboseAsync(request, new TypeReference<ContactListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ContactListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContactListing>() {}, new AsyncApiCallback<ApiResponse<ContactListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactListing> response = (ApiResponse<ContactListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactListing> response = (ApiResponse<ContactListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Fetch a note for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Note> getExternalcontactsOrganizationNoteAsync(GetExternalcontactsOrganizationNoteRequest request, AsyncApiCallback<Note> callback) {
-    return pcapiClient.<Note>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Note>() {}, callback);
+    try {
+      SettableFuture<Note> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
+        @Override
+        public void onCompleted(ApiResponse<Note> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Fetch a note for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Note>> getExternalcontactsOrganizationNoteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Note>> callback) {
-    return pcapiClient.<Note>invokeAPIVerboseAsync(request, new TypeReference<Note>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Note>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
+        @Override
+        public void onCompleted(ApiResponse<Note> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * List notes for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<NoteListing> getExternalcontactsOrganizationNotesAsync(GetExternalcontactsOrganizationNotesRequest request, AsyncApiCallback<NoteListing> callback) {
-    return pcapiClient.<NoteListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<NoteListing>() {}, callback);
+    try {
+      SettableFuture<NoteListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<NoteListing>() {}, new AsyncApiCallback<ApiResponse<NoteListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<NoteListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * List notes for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<NoteListing>> getExternalcontactsOrganizationNotesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<NoteListing>> callback) {
-    return pcapiClient.<NoteListing>invokeAPIVerboseAsync(request, new TypeReference<NoteListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<NoteListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<NoteListing>() {}, new AsyncApiCallback<ApiResponse<NoteListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<NoteListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<NoteListing> response = (ApiResponse<NoteListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<NoteListing> response = (ApiResponse<NoteListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Fetch a relationship for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<RelationshipListing> getExternalcontactsOrganizationRelationshipsAsync(GetExternalcontactsOrganizationRelationshipsRequest request, AsyncApiCallback<RelationshipListing> callback) {
-    return pcapiClient.<RelationshipListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<RelationshipListing>() {}, callback);
+    try {
+      SettableFuture<RelationshipListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RelationshipListing>() {}, new AsyncApiCallback<ApiResponse<RelationshipListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<RelationshipListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Fetch a relationship for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<RelationshipListing>> getExternalcontactsOrganizationRelationshipsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RelationshipListing>> callback) {
-    return pcapiClient.<RelationshipListing>invokeAPIVerboseAsync(request, new TypeReference<RelationshipListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<RelationshipListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RelationshipListing>() {}, new AsyncApiCallback<ApiResponse<RelationshipListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<RelationshipListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RelationshipListing> response = (ApiResponse<RelationshipListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RelationshipListing> response = (ApiResponse<RelationshipListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Search for external organizations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ExternalOrganizationListing> getExternalcontactsOrganizationsAsync(GetExternalcontactsOrganizationsRequest request, AsyncApiCallback<ExternalOrganizationListing> callback) {
-    return pcapiClient.<ExternalOrganizationListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExternalOrganizationListing>() {}, callback);
+    try {
+      SettableFuture<ExternalOrganizationListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalOrganizationListing>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganizationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalOrganizationListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Search for external organizations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ExternalOrganizationListing>> getExternalcontactsOrganizationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExternalOrganizationListing>> callback) {
-    return pcapiClient.<ExternalOrganizationListing>invokeAPIVerboseAsync(request, new TypeReference<ExternalOrganizationListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ExternalOrganizationListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalOrganizationListing>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganizationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalOrganizationListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalOrganizationListing> response = (ApiResponse<ExternalOrganizationListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalOrganizationListing> response = (ApiResponse<ExternalOrganizationListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Fetch a relationship
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Relationship> getExternalcontactsRelationshipAsync(GetExternalcontactsRelationshipRequest request, AsyncApiCallback<Relationship> callback) {
-    return pcapiClient.<Relationship>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Relationship>() {}, callback);
+    try {
+      SettableFuture<Relationship> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Relationship>() {}, new AsyncApiCallback<ApiResponse<Relationship>>() {
+        @Override
+        public void onCompleted(ApiResponse<Relationship> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Fetch a relationship
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Relationship>> getExternalcontactsRelationshipAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Relationship>> callback) {
-    return pcapiClient.<Relationship>invokeAPIVerboseAsync(request, new TypeReference<Relationship>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Relationship>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Relationship>() {}, new AsyncApiCallback<ApiResponse<Relationship>>() {
+        @Override
+        public void onCompleted(ApiResponse<Relationship> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Relationship> response = (ApiResponse<Relationship>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Relationship> response = (ApiResponse<Relationship>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Lookup contacts and externalOrganizations based on an attribute
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ReverseWhitepagesLookupResult> getExternalcontactsReversewhitepageslookupAsync(GetExternalcontactsReversewhitepageslookupRequest request, AsyncApiCallback<ReverseWhitepagesLookupResult> callback) {
-    return pcapiClient.<ReverseWhitepagesLookupResult>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ReverseWhitepagesLookupResult>() {}, callback);
+    try {
+      SettableFuture<ReverseWhitepagesLookupResult> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReverseWhitepagesLookupResult>() {}, new AsyncApiCallback<ApiResponse<ReverseWhitepagesLookupResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<ReverseWhitepagesLookupResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Lookup contacts and externalOrganizations based on an attribute
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ReverseWhitepagesLookupResult>> getExternalcontactsReversewhitepageslookupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReverseWhitepagesLookupResult>> callback) {
-    return pcapiClient.<ReverseWhitepagesLookupResult>invokeAPIVerboseAsync(request, new TypeReference<ReverseWhitepagesLookupResult>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ReverseWhitepagesLookupResult>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ReverseWhitepagesLookupResult>() {}, new AsyncApiCallback<ApiResponse<ReverseWhitepagesLookupResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<ReverseWhitepagesLookupResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ReverseWhitepagesLookupResult> response = (ApiResponse<ReverseWhitepagesLookupResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ReverseWhitepagesLookupResult> response = (ApiResponse<ReverseWhitepagesLookupResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Associate an external contact with a conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Void> postExternalcontactsContactAssociateconversationAsync(PostExternalcontactsContactAssociateconversationRequest request, AsyncApiCallback<Void> callback) {
-    return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
+    try {
+      SettableFuture<Void> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Associate an external contact with a conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> postExternalcontactsContactAssociateconversationAsync(ApiRequest<ConversationAssociation> request, AsyncApiCallback<ApiResponse<Void>> callback) {
-    return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
+    try {
+      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a note for an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Note> postExternalcontactsContactNotesAsync(PostExternalcontactsContactNotesRequest request, AsyncApiCallback<Note> callback) {
-    return pcapiClient.<Note>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Note>() {}, callback);
+    try {
+      SettableFuture<Note> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
+        @Override
+        public void onCompleted(ApiResponse<Note> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a note for an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Note>> postExternalcontactsContactNotesAsync(ApiRequest<Note> request, AsyncApiCallback<ApiResponse<Note>> callback) {
-    return pcapiClient.<Note>invokeAPIVerboseAsync(request, new TypeReference<Note>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Note>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
+        @Override
+        public void onCompleted(ApiResponse<Note> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ExternalContact> postExternalcontactsContactsAsync(PostExternalcontactsContactsRequest request, AsyncApiCallback<ExternalContact> callback) {
-    return pcapiClient.<ExternalContact>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExternalContact>() {}, callback);
+    try {
+      SettableFuture<ExternalContact> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalContact>() {}, new AsyncApiCallback<ApiResponse<ExternalContact>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalContact> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ExternalContact>> postExternalcontactsContactsAsync(ApiRequest<ExternalContact> request, AsyncApiCallback<ApiResponse<ExternalContact>> callback) {
-    return pcapiClient.<ExternalContact>invokeAPIVerboseAsync(request, new TypeReference<ExternalContact>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ExternalContact>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalContact>() {}, new AsyncApiCallback<ApiResponse<ExternalContact>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalContact> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a note for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Note> postExternalcontactsOrganizationNotesAsync(PostExternalcontactsOrganizationNotesRequest request, AsyncApiCallback<Note> callback) {
-    return pcapiClient.<Note>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Note>() {}, callback);
+    try {
+      SettableFuture<Note> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
+        @Override
+        public void onCompleted(ApiResponse<Note> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a note for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Note>> postExternalcontactsOrganizationNotesAsync(ApiRequest<Note> request, AsyncApiCallback<ApiResponse<Note>> callback) {
-    return pcapiClient.<Note>invokeAPIVerboseAsync(request, new TypeReference<Note>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Note>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
+        @Override
+        public void onCompleted(ApiResponse<Note> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ExternalOrganization> postExternalcontactsOrganizationsAsync(PostExternalcontactsOrganizationsRequest request, AsyncApiCallback<ExternalOrganization> callback) {
-    return pcapiClient.<ExternalOrganization>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {}, callback);
+    try {
+      SettableFuture<ExternalOrganization> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganization>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalOrganization> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ExternalOrganization>> postExternalcontactsOrganizationsAsync(ApiRequest<ExternalOrganization> request, AsyncApiCallback<ApiResponse<ExternalOrganization>> callback) {
-    return pcapiClient.<ExternalOrganization>invokeAPIVerboseAsync(request, new TypeReference<ExternalOrganization>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ExternalOrganization>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalOrganization>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganization>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalOrganization> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a relationship
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Relationship> postExternalcontactsRelationshipsAsync(PostExternalcontactsRelationshipsRequest request, AsyncApiCallback<Relationship> callback) {
-    return pcapiClient.<Relationship>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Relationship>() {}, callback);
+    try {
+      SettableFuture<Relationship> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Relationship>() {}, new AsyncApiCallback<ApiResponse<Relationship>>() {
+        @Override
+        public void onCompleted(ApiResponse<Relationship> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a relationship
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Relationship>> postExternalcontactsRelationshipsAsync(ApiRequest<Relationship> request, AsyncApiCallback<ApiResponse<Relationship>> callback) {
-    return pcapiClient.<Relationship>invokeAPIVerboseAsync(request, new TypeReference<Relationship>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Relationship>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Relationship>() {}, new AsyncApiCallback<ApiResponse<Relationship>>() {
+        @Override
+        public void onCompleted(ApiResponse<Relationship> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Relationship> response = (ApiResponse<Relationship>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Relationship> response = (ApiResponse<Relationship>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ExternalContact> putExternalcontactsContactAsync(PutExternalcontactsContactRequest request, AsyncApiCallback<ExternalContact> callback) {
-    return pcapiClient.<ExternalContact>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExternalContact>() {}, callback);
+    try {
+      SettableFuture<ExternalContact> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalContact>() {}, new AsyncApiCallback<ApiResponse<ExternalContact>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalContact> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ExternalContact>> putExternalcontactsContactAsync(ApiRequest<ExternalContact> request, AsyncApiCallback<ApiResponse<ExternalContact>> callback) {
-    return pcapiClient.<ExternalContact>invokeAPIVerboseAsync(request, new TypeReference<ExternalContact>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ExternalContact>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalContact>() {}, new AsyncApiCallback<ApiResponse<ExternalContact>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalContact> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a note for an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Note> putExternalcontactsContactNoteAsync(PutExternalcontactsContactNoteRequest request, AsyncApiCallback<Note> callback) {
-    return pcapiClient.<Note>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Note>() {}, callback);
+    try {
+      SettableFuture<Note> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
+        @Override
+        public void onCompleted(ApiResponse<Note> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a note for an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Note>> putExternalcontactsContactNoteAsync(ApiRequest<Note> request, AsyncApiCallback<ApiResponse<Note>> callback) {
-    return pcapiClient.<Note>invokeAPIVerboseAsync(request, new TypeReference<Note>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Note>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
+        @Override
+        public void onCompleted(ApiResponse<Note> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Associate an external contact with a conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Void> putExternalcontactsConversationAsync(PutExternalcontactsConversationRequest request, AsyncApiCallback<Void> callback) {
-    return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
+    try {
+      SettableFuture<Void> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Associate an external contact with a conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> putExternalcontactsConversationAsync(ApiRequest<ConversationAssociation> request, AsyncApiCallback<ApiResponse<Void>> callback) {
-    return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
+    try {
+      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ExternalOrganization> putExternalcontactsOrganizationAsync(PutExternalcontactsOrganizationRequest request, AsyncApiCallback<ExternalOrganization> callback) {
-    return pcapiClient.<ExternalOrganization>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {}, callback);
+    try {
+      SettableFuture<ExternalOrganization> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganization>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalOrganization> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ExternalOrganization>> putExternalcontactsOrganizationAsync(ApiRequest<ExternalOrganization> request, AsyncApiCallback<ApiResponse<ExternalOrganization>> callback) {
-    return pcapiClient.<ExternalOrganization>invokeAPIVerboseAsync(request, new TypeReference<ExternalOrganization>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ExternalOrganization>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalOrganization>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganization>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExternalOrganization> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a note for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Note> putExternalcontactsOrganizationNoteAsync(PutExternalcontactsOrganizationNoteRequest request, AsyncApiCallback<Note> callback) {
-    return pcapiClient.<Note>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Note>() {}, callback);
+    try {
+      SettableFuture<Note> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
+        @Override
+        public void onCompleted(ApiResponse<Note> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a note for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Note>> putExternalcontactsOrganizationNoteAsync(ApiRequest<Note> request, AsyncApiCallback<ApiResponse<Note>> callback) {
-    return pcapiClient.<Note>invokeAPIVerboseAsync(request, new TypeReference<Note>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Note>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
+        @Override
+        public void onCompleted(ApiResponse<Note> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a relationship
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Relationship> putExternalcontactsRelationshipAsync(PutExternalcontactsRelationshipRequest request, AsyncApiCallback<Relationship> callback) {
-    return pcapiClient.<Relationship>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Relationship>() {}, callback);
+    try {
+      SettableFuture<Relationship> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Relationship>() {}, new AsyncApiCallback<ApiResponse<Relationship>>() {
+        @Override
+        public void onCompleted(ApiResponse<Relationship> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a relationship
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Relationship>> putExternalcontactsRelationshipAsync(ApiRequest<Relationship> request, AsyncApiCallback<ApiResponse<Relationship>> callback) {
-    return pcapiClient.<Relationship>invokeAPIVerboseAsync(request, new TypeReference<Relationship>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Relationship>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Relationship>() {}, new AsyncApiCallback<ApiResponse<Relationship>>() {
+        @Override
+        public void onCompleted(ApiResponse<Relationship> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Relationship> response = (ApiResponse<Relationship>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Relationship> response = (ApiResponse<Relationship>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
+
+  private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
+    if (callback != null) {
+      try {
+        callback.onCompleted(result);
+        future.set(result);
+      }
+      catch (Throwable exception) {
+        future.setException(exception);
+      }
+    }
+    else {
+      future.set(result);
+    }
+  }
+
+  private <T> void notifyFailure(SettableFuture<T> future, AsyncApiCallback<T> callback, Throwable exception) {
+    if (callback != null) {
+      try {
+        callback.onFailed(exception);
+        future.setException(exception);
+      }
+      catch (Throwable callbackException) {
+        future.setException(callbackException);
+      }
+    }
+    else {
+      future.setException(exception);
+    }
+  }
 }

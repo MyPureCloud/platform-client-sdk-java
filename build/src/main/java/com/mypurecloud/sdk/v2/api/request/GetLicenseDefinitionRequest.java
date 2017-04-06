@@ -27,9 +27,6 @@ import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
 import com.mypurecloud.sdk.v2.model.LicenseUpdateResponse;
 
 public class GetLicenseDefinitionRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String licenseId;
 	public String getLicenseId() {
 		return this.licenseId;
@@ -108,6 +105,12 @@ public class GetLicenseDefinitionRequest {
 
 
 		public GetLicenseDefinitionRequest build() {
+            
+            // verify the required parameter 'licenseId' is set
+            if (request.licenseId == null) {
+                throw new IllegalStateException("Missing the required parameter 'licenseId' when building request for GetLicenseDefinitionRequest.");
+            }
+            
 			return request;
 		}
 	}

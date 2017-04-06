@@ -47,9 +47,6 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class GetUsersMeRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -115,6 +112,7 @@ public class GetUsersMeRequest {
 
 
 		public GetUsersMeRequest build() {
+            
 			return request;
 		}
 	}

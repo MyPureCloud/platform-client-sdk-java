@@ -30,9 +30,6 @@ import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupUpdate;
 
 public class GetGroupMembersRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String groupId;
 	public String getGroupId() {
 		return this.groupId;
@@ -191,6 +188,12 @@ public class GetGroupMembersRequest {
 
 
 		public GetGroupMembersRequest build() {
+            
+            // verify the required parameter 'groupId' is set
+            if (request.groupId == null) {
+                throw new IllegalStateException("Missing the required parameter 'groupId' when building request for GetGroupMembersRequest.");
+            }
+            
 			return request;
 		}
 	}

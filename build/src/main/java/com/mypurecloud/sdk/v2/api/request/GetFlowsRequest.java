@@ -42,9 +42,6 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetFlowsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String type;
 	public String getType() {
 		return this.type;
@@ -403,6 +400,12 @@ public class GetFlowsRequest {
 
 
 		public GetFlowsRequest build() {
+            
+            // verify the required parameter 'type' is set
+            if (request.type == null) {
+                throw new IllegalStateException("Missing the required parameter 'type' when building request for GetFlowsRequest.");
+            }
+            
 			return request;
 		}
 	}

@@ -42,9 +42,6 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class DeleteFlowsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private List<String> id;
 	public List<String> getId() {
 		return this.id;
@@ -123,6 +120,12 @@ public class DeleteFlowsRequest {
 
 
 		public DeleteFlowsRequest build() {
+            
+            // verify the required parameter 'id' is set
+            if (request.id == null) {
+                throw new IllegalStateException("Missing the required parameter 'id' when building request for DeleteFlowsRequest.");
+            }
+            
 			return request;
 		}
 	}

@@ -46,10 +46,11 @@ public class SuggestApi {
    * @param expand Which fields, if any, to expand (optional)
    * @param profile profile (optional, default to true)
    * @return JsonNodeSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public JsonNodeSearchResponse getSearch(String q64, List<String> expand, Boolean profile) throws IOException, ApiException {
-    return getSearchWithHttpInfo(q64, expand, profile).getBody();
+    return  getSearch(createGetSearchRequest(q64, expand, profile));
   }
 
   /**
@@ -59,63 +60,68 @@ public class SuggestApi {
    * @param expand Which fields, if any, to expand (optional)
    * @param profile profile (optional, default to true)
    * @return JsonNodeSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<JsonNodeSearchResponse> getSearchWithHttpInfo(String q64, List<String> expand, Boolean profile) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'q64' is set
-    if (q64 == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'q64' when calling getSearch");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/search".replaceAll("\\{format\\}","json");
+  public ApiResponse<JsonNodeSearchResponse> getSearchWithHttpInfo(String q64, List<String> expand, Boolean profile) throws IOException {
+    return getSearch(createGetSearchRequest(q64, expand, profile).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetSearchRequest createGetSearchRequest(String q64, List<String> expand, Boolean profile) {
+    return GetSearchRequest.builder()
+            .withQ64(q64)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "q64", q64));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "profile", profile));
+            .withExpand(expand)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<JsonNodeSearchResponse>() {});
+            .withProfile(profile)
+            .build();
   }
 
   /**
    * Search using the q64 value returned from a previous search.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return JsonNodeSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public JsonNodeSearchResponse getSearch(GetSearchRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {});
+    try {
+      ApiResponse<JsonNodeSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Search using the q64 value returned from a previous search.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<JsonNodeSearchResponse> getSearch(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<JsonNodeSearchResponse>invokeAPIVerbose(request, new TypeReference<JsonNodeSearchResponse>() {});
+  public ApiResponse<JsonNodeSearchResponse> getSearch(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JsonNodeSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JsonNodeSearchResponse> response = (ApiResponse<JsonNodeSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JsonNodeSearchResponse> response = (ApiResponse<JsonNodeSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -125,10 +131,11 @@ public class SuggestApi {
    * @param expand Which fields, if any, to expand (optional)
    * @param profile profile (optional, default to true)
    * @return JsonNodeSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public JsonNodeSearchResponse getSearchSuggest(String q64, List<String> expand, Boolean profile) throws IOException, ApiException {
-    return getSearchSuggestWithHttpInfo(q64, expand, profile).getBody();
+    return  getSearchSuggest(createGetSearchSuggestRequest(q64, expand, profile));
   }
 
   /**
@@ -138,63 +145,68 @@ public class SuggestApi {
    * @param expand Which fields, if any, to expand (optional)
    * @param profile profile (optional, default to true)
    * @return JsonNodeSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<JsonNodeSearchResponse> getSearchSuggestWithHttpInfo(String q64, List<String> expand, Boolean profile) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'q64' is set
-    if (q64 == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'q64' when calling getSearchSuggest");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/search/suggest".replaceAll("\\{format\\}","json");
+  public ApiResponse<JsonNodeSearchResponse> getSearchSuggestWithHttpInfo(String q64, List<String> expand, Boolean profile) throws IOException {
+    return getSearchSuggest(createGetSearchSuggestRequest(q64, expand, profile).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetSearchSuggestRequest createGetSearchSuggestRequest(String q64, List<String> expand, Boolean profile) {
+    return GetSearchSuggestRequest.builder()
+            .withQ64(q64)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "q64", q64));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "profile", profile));
+            .withExpand(expand)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<JsonNodeSearchResponse>() {});
+            .withProfile(profile)
+            .build();
   }
 
   /**
    * Suggest resources using the q64 value returned from a previous suggest query.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return JsonNodeSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public JsonNodeSearchResponse getSearchSuggest(GetSearchSuggestRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {});
+    try {
+      ApiResponse<JsonNodeSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Suggest resources using the q64 value returned from a previous suggest query.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<JsonNodeSearchResponse> getSearchSuggest(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<JsonNodeSearchResponse>invokeAPIVerbose(request, new TypeReference<JsonNodeSearchResponse>() {});
+  public ApiResponse<JsonNodeSearchResponse> getSearchSuggest(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JsonNodeSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JsonNodeSearchResponse> response = (ApiResponse<JsonNodeSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JsonNodeSearchResponse> response = (ApiResponse<JsonNodeSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -203,10 +215,11 @@ public class SuggestApi {
    * @param body Search request options (required)
    * @param profile profile (optional, default to true)
    * @return JsonNodeSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public JsonNodeSearchResponse postSearch(SearchRequest body, Boolean profile) throws IOException, ApiException {
-    return postSearchWithHttpInfo(body, profile).getBody();
+    return  postSearch(createPostSearchRequest(body, profile));
   }
 
   /**
@@ -215,61 +228,66 @@ public class SuggestApi {
    * @param body Search request options (required)
    * @param profile profile (optional, default to true)
    * @return JsonNodeSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<JsonNodeSearchResponse> postSearchWithHttpInfo(SearchRequest body, Boolean profile) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postSearch");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/search".replaceAll("\\{format\\}","json");
+  public ApiResponse<JsonNodeSearchResponse> postSearchWithHttpInfo(SearchRequest body, Boolean profile) throws IOException {
+    return postSearch(createPostSearchRequest(body, profile).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostSearchRequest createPostSearchRequest(SearchRequest body, Boolean profile) {
+    return PostSearchRequest.builder()
+            .withBody(body)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "profile", profile));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<JsonNodeSearchResponse>() {});
+            .withProfile(profile)
+            .build();
   }
 
   /**
    * Search resources.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return JsonNodeSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public JsonNodeSearchResponse postSearch(PostSearchRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {});
+    try {
+      ApiResponse<JsonNodeSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Search resources.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<JsonNodeSearchResponse> postSearch(ApiRequest<SearchRequest> request) throws IOException, ApiException {
-    return pcapiClient.<JsonNodeSearchResponse>invokeAPIVerbose(request, new TypeReference<JsonNodeSearchResponse>() {});
+  public ApiResponse<JsonNodeSearchResponse> postSearch(ApiRequest<SearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JsonNodeSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JsonNodeSearchResponse> response = (ApiResponse<JsonNodeSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JsonNodeSearchResponse> response = (ApiResponse<JsonNodeSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -278,10 +296,11 @@ public class SuggestApi {
    * @param body Search request options (required)
    * @param profile profile (optional, default to true)
    * @return JsonNodeSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public JsonNodeSearchResponse postSearchSuggest(SuggestSearchRequest body, Boolean profile) throws IOException, ApiException {
-    return postSearchSuggestWithHttpInfo(body, profile).getBody();
+    return  postSearchSuggest(createPostSearchSuggestRequest(body, profile));
   }
 
   /**
@@ -290,61 +309,66 @@ public class SuggestApi {
    * @param body Search request options (required)
    * @param profile profile (optional, default to true)
    * @return JsonNodeSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<JsonNodeSearchResponse> postSearchSuggestWithHttpInfo(SuggestSearchRequest body, Boolean profile) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postSearchSuggest");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/search/suggest".replaceAll("\\{format\\}","json");
+  public ApiResponse<JsonNodeSearchResponse> postSearchSuggestWithHttpInfo(SuggestSearchRequest body, Boolean profile) throws IOException {
+    return postSearchSuggest(createPostSearchSuggestRequest(body, profile).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostSearchSuggestRequest createPostSearchSuggestRequest(SuggestSearchRequest body, Boolean profile) {
+    return PostSearchSuggestRequest.builder()
+            .withBody(body)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "profile", profile));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<JsonNodeSearchResponse>() {});
+            .withProfile(profile)
+            .build();
   }
 
   /**
    * Suggest resources.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return JsonNodeSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public JsonNodeSearchResponse postSearchSuggest(PostSearchSuggestRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {});
+    try {
+      ApiResponse<JsonNodeSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Suggest resources.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<JsonNodeSearchResponse> postSearchSuggest(ApiRequest<SuggestSearchRequest> request) throws IOException, ApiException {
-    return pcapiClient.<JsonNodeSearchResponse>invokeAPIVerbose(request, new TypeReference<JsonNodeSearchResponse>() {});
+  public ApiResponse<JsonNodeSearchResponse> postSearchSuggest(ApiRequest<SuggestSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JsonNodeSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JsonNodeSearchResponse> response = (ApiResponse<JsonNodeSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JsonNodeSearchResponse> response = (ApiResponse<JsonNodeSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

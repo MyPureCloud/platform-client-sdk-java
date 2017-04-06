@@ -42,10 +42,11 @@ public class StationsApi {
    * 
    * @param stationId Station ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteStationAssociateduser(String stationId) throws IOException, ApiException {
-    return deleteStationAssociateduserWithHttpInfo(stationId).getBody();
+    return  deleteStationAssociateduser(createDeleteStationAssociateduserRequest(stationId));
   }
 
   /**
@@ -53,61 +54,64 @@ public class StationsApi {
    * 
    * @param stationId Station ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteStationAssociateduserWithHttpInfo(String stationId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'stationId' is set
-    if (stationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'stationId' when calling deleteStationAssociateduser");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/stations/{stationId}/associateduser".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "stationId" + "\\}", pcapiClient.escapeString(stationId.toString()));
+  public ApiResponse<String> deleteStationAssociateduserWithHttpInfo(String stationId) throws IOException {
+    return deleteStationAssociateduser(createDeleteStationAssociateduserRequest(stationId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteStationAssociateduserRequest createDeleteStationAssociateduserRequest(String stationId) {
+    return DeleteStationAssociateduserRequest.builder()
+            .withStationId(stationId)
+            .build();
   }
 
   /**
    * Unassigns the user assigned to this station
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteStationAssociateduser(DeleteStationAssociateduserRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Unassigns the user assigned to this station
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteStationAssociateduser(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteStationAssociateduser(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -115,10 +119,11 @@ public class StationsApi {
    * 
    * @param stationId Station ID (required)
    * @return Station
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Station getStation(String stationId) throws IOException, ApiException {
-    return getStationWithHttpInfo(stationId).getBody();
+    return  getStation(createGetStationRequest(stationId));
   }
 
   /**
@@ -126,61 +131,64 @@ public class StationsApi {
    * 
    * @param stationId Station ID (required)
    * @return Station
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Station> getStationWithHttpInfo(String stationId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'stationId' is set
-    if (stationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'stationId' when calling getStation");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/stations/{stationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "stationId" + "\\}", pcapiClient.escapeString(stationId.toString()));
+  public ApiResponse<Station> getStationWithHttpInfo(String stationId) throws IOException {
+    return getStation(createGetStationRequest(stationId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Station>() {});
+  private GetStationRequest createGetStationRequest(String stationId) {
+    return GetStationRequest.builder()
+            .withStationId(stationId)
+            .build();
   }
 
   /**
    * Get station.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Station
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Station getStation(GetStationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Station>() {});
+    try {
+      ApiResponse<Station> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Station>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get station.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Station> getStation(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Station>invokeAPIVerbose(request, new TypeReference<Station>() {});
+  public ApiResponse<Station> getStation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Station>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Station> response = (ApiResponse<Station>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Station> response = (ApiResponse<Station>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -193,10 +201,11 @@ public class StationsApi {
    * @param id Comma separated list of stationIds (optional)
    * @param lineAppearanceId lineAppearanceId (optional)
    * @return StationEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public StationEntityListing getStations(Integer pageSize, Integer pageNumber, String sortBy, String name, String id, String lineAppearanceId) throws IOException, ApiException {
-    return getStationsWithHttpInfo(pageSize, pageNumber, sortBy, name, id, lineAppearanceId).getBody();
+    return  getStations(createGetStationsRequest(pageSize, pageNumber, sortBy, name, id, lineAppearanceId));
   }
 
   /**
@@ -209,61 +218,74 @@ public class StationsApi {
    * @param id Comma separated list of stationIds (optional)
    * @param lineAppearanceId lineAppearanceId (optional)
    * @return StationEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<StationEntityListing> getStationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String name, String id, String lineAppearanceId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/stations".replaceAll("\\{format\\}","json");
+  public ApiResponse<StationEntityListing> getStationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String name, String id, String lineAppearanceId) throws IOException {
+    return getStations(createGetStationsRequest(pageSize, pageNumber, sortBy, name, id, lineAppearanceId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetStationsRequest createGetStationsRequest(Integer pageSize, Integer pageNumber, String sortBy, String name, String id, String lineAppearanceId) {
+    return GetStationsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "id", id));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "lineAppearanceId", lineAppearanceId));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withSortBy(sortBy)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withName(name)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withId(id)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<StationEntityListing>() {});
+            .withLineAppearanceId(lineAppearanceId)
+            .build();
   }
 
   /**
    * Get the list of available stations.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return StationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public StationEntityListing getStations(GetStationsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<StationEntityListing>() {});
+    try {
+      ApiResponse<StationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<StationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the list of available stations.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<StationEntityListing> getStations(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<StationEntityListing>invokeAPIVerbose(request, new TypeReference<StationEntityListing>() {});
+  public ApiResponse<StationEntityListing> getStations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<StationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<StationEntityListing> response = (ApiResponse<StationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<StationEntityListing> response = (ApiResponse<StationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

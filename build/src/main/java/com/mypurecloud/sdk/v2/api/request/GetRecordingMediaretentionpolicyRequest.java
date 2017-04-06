@@ -38,9 +38,6 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class GetRecordingMediaretentionpolicyRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String policyId;
 	public String getPolicyId() {
 		return this.policyId;
@@ -119,6 +116,12 @@ public class GetRecordingMediaretentionpolicyRequest {
 
 
 		public GetRecordingMediaretentionpolicyRequest build() {
+            
+            // verify the required parameter 'policyId' is set
+            if (request.policyId == null) {
+                throw new IllegalStateException("Missing the required parameter 'policyId' when building request for GetRecordingMediaretentionpolicyRequest.");
+            }
+            
 			return request;
 		}
 	}

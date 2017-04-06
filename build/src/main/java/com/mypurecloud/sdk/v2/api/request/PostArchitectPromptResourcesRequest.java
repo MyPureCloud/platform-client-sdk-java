@@ -42,9 +42,6 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class PostArchitectPromptResourcesRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String promptId;
 	public String getPromptId() {
 		return this.promptId;
@@ -143,6 +140,12 @@ public class PostArchitectPromptResourcesRequest {
 
 
 		public PostArchitectPromptResourcesRequest build() {
+            
+            // verify the required parameter 'promptId' is set
+            if (request.promptId == null) {
+                throw new IllegalStateException("Missing the required parameter 'promptId' when building request for PostArchitectPromptResourcesRequest.");
+            }
+            
 			return request;
 		}
 	}

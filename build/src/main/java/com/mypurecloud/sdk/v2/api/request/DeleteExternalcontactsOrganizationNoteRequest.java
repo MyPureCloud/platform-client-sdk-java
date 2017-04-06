@@ -31,9 +31,6 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class DeleteExternalcontactsOrganizationNoteRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String externalOrganizationId;
 	public String getExternalOrganizationId() {
 		return this.externalOrganizationId;
@@ -138,6 +135,17 @@ public class DeleteExternalcontactsOrganizationNoteRequest {
 
 
 		public DeleteExternalcontactsOrganizationNoteRequest build() {
+            
+            // verify the required parameter 'externalOrganizationId' is set
+            if (request.externalOrganizationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'externalOrganizationId' when building request for DeleteExternalcontactsOrganizationNoteRequest.");
+            }
+            
+            // verify the required parameter 'noteId' is set
+            if (request.noteId == null) {
+                throw new IllegalStateException("Missing the required parameter 'noteId' when building request for DeleteExternalcontactsOrganizationNoteRequest.");
+            }
+            
 			return request;
 		}
 	}

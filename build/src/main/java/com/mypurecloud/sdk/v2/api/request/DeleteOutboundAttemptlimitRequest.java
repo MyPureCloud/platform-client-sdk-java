@@ -55,9 +55,6 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class DeleteOutboundAttemptlimitRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String attemptLimitsId;
 	public String getAttemptLimitsId() {
 		return this.attemptLimitsId;
@@ -136,6 +133,12 @@ public class DeleteOutboundAttemptlimitRequest {
 
 
 		public DeleteOutboundAttemptlimitRequest build() {
+            
+            // verify the required parameter 'attemptLimitsId' is set
+            if (request.attemptLimitsId == null) {
+                throw new IllegalStateException("Missing the required parameter 'attemptLimitsId' when building request for DeleteOutboundAttemptlimitRequest.");
+            }
+            
 			return request;
 		}
 	}

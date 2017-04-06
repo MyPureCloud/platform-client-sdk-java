@@ -84,9 +84,6 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class DeleteTelephonyProvidersEdgesOutboundrouteRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String outboundRouteId;
 	public String getOutboundRouteId() {
 		return this.outboundRouteId;
@@ -165,6 +162,12 @@ public class DeleteTelephonyProvidersEdgesOutboundrouteRequest {
 
 
 		public DeleteTelephonyProvidersEdgesOutboundrouteRequest build() {
+            
+            // verify the required parameter 'outboundRouteId' is set
+            if (request.outboundRouteId == null) {
+                throw new IllegalStateException("Missing the required parameter 'outboundRouteId' when building request for DeleteTelephonyProvidersEdgesOutboundrouteRequest.");
+            }
+            
 			return request;
 		}
 	}

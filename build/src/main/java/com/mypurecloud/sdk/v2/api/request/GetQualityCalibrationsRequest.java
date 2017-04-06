@@ -38,9 +38,6 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class GetQualityCalibrationsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String calibratorId;
 	public String getCalibratorId() {
 		return this.calibratorId;
@@ -299,6 +296,12 @@ public class GetQualityCalibrationsRequest {
 
 
 		public GetQualityCalibrationsRequest build() {
+            
+            // verify the required parameter 'calibratorId' is set
+            if (request.calibratorId == null) {
+                throw new IllegalStateException("Missing the required parameter 'calibratorId' when building request for GetQualityCalibrationsRequest.");
+            }
+            
 			return request;
 		}
 	}

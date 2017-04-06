@@ -53,142 +53,148 @@ public class ResponseManagementApi {
    * Delete an existing response library.
    * This will remove any responses associated with the library.
    * @param libraryId Library ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteResponsemanagementLibrary(String libraryId) throws IOException, ApiException {
-    deleteResponsemanagementLibraryWithHttpInfo(libraryId);
+     deleteResponsemanagementLibrary(createDeleteResponsemanagementLibraryRequest(libraryId));
   }
 
   /**
    * Delete an existing response library.
    * This will remove any responses associated with the library.
    * @param libraryId Library ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteResponsemanagementLibraryWithHttpInfo(String libraryId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'libraryId' is set
-    if (libraryId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'libraryId' when calling deleteResponsemanagementLibrary");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/responsemanagement/libraries/{libraryId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "libraryId" + "\\}", pcapiClient.escapeString(libraryId.toString()));
+  public ApiResponse<Void> deleteResponsemanagementLibraryWithHttpInfo(String libraryId) throws IOException {
+    return deleteResponsemanagementLibrary(createDeleteResponsemanagementLibraryRequest(libraryId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteResponsemanagementLibraryRequest createDeleteResponsemanagementLibraryRequest(String libraryId) {
+    return DeleteResponsemanagementLibraryRequest.builder()
+            .withLibraryId(libraryId)
+            .build();
   }
 
   /**
    * Delete an existing response library.
    * This will remove any responses associated with the library.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteResponsemanagementLibrary(DeleteResponsemanagementLibraryRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete an existing response library.
    * This will remove any responses associated with the library.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteResponsemanagementLibrary(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteResponsemanagementLibrary(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete an existing response.
    * This will remove the response from any libraries associated with it.
    * @param responseId Response ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteResponsemanagementResponse(String responseId) throws IOException, ApiException {
-    deleteResponsemanagementResponseWithHttpInfo(responseId);
+     deleteResponsemanagementResponse(createDeleteResponsemanagementResponseRequest(responseId));
   }
 
   /**
    * Delete an existing response.
    * This will remove the response from any libraries associated with it.
    * @param responseId Response ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteResponsemanagementResponseWithHttpInfo(String responseId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'responseId' is set
-    if (responseId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'responseId' when calling deleteResponsemanagementResponse");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/responsemanagement/responses/{responseId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "responseId" + "\\}", pcapiClient.escapeString(responseId.toString()));
+  public ApiResponse<Void> deleteResponsemanagementResponseWithHttpInfo(String responseId) throws IOException {
+    return deleteResponsemanagementResponse(createDeleteResponsemanagementResponseRequest(responseId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteResponsemanagementResponseRequest createDeleteResponsemanagementResponseRequest(String responseId) {
+    return DeleteResponsemanagementResponseRequest.builder()
+            .withResponseId(responseId)
+            .build();
   }
 
   /**
    * Delete an existing response.
    * This will remove the response from any libraries associated with it.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteResponsemanagementResponse(DeleteResponsemanagementResponseRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete an existing response.
    * This will remove the response from any libraries associated with it.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteResponsemanagementResponse(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteResponsemanagementResponse(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -197,10 +203,11 @@ public class ResponseManagementApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @return LibraryEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LibraryEntityListing getResponsemanagementLibraries(Integer pageNumber, Integer pageSize) throws IOException, ApiException {
-    return getResponsemanagementLibrariesWithHttpInfo(pageNumber, pageSize).getBody();
+    return  getResponsemanagementLibraries(createGetResponsemanagementLibrariesRequest(pageNumber, pageSize));
   }
 
   /**
@@ -209,57 +216,66 @@ public class ResponseManagementApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @return LibraryEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LibraryEntityListing> getResponsemanagementLibrariesWithHttpInfo(Integer pageNumber, Integer pageSize) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/responsemanagement/libraries".replaceAll("\\{format\\}","json");
+  public ApiResponse<LibraryEntityListing> getResponsemanagementLibrariesWithHttpInfo(Integer pageNumber, Integer pageSize) throws IOException {
+    return getResponsemanagementLibraries(createGetResponsemanagementLibrariesRequest(pageNumber, pageSize).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetResponsemanagementLibrariesRequest createGetResponsemanagementLibrariesRequest(Integer pageNumber, Integer pageSize) {
+    return GetResponsemanagementLibrariesRequest.builder()
+            .withPageNumber(pageNumber)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<LibraryEntityListing>() {});
+            .withPageSize(pageSize)
+            .build();
   }
 
   /**
    * Gets a list of existing response libraries.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return LibraryEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LibraryEntityListing getResponsemanagementLibraries(GetResponsemanagementLibrariesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LibraryEntityListing>() {});
+    try {
+      ApiResponse<LibraryEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LibraryEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Gets a list of existing response libraries.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LibraryEntityListing> getResponsemanagementLibraries(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<LibraryEntityListing>invokeAPIVerbose(request, new TypeReference<LibraryEntityListing>() {});
+  public ApiResponse<LibraryEntityListing> getResponsemanagementLibraries(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LibraryEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LibraryEntityListing> response = (ApiResponse<LibraryEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LibraryEntityListing> response = (ApiResponse<LibraryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -267,10 +283,11 @@ public class ResponseManagementApi {
    * 
    * @param libraryId Library ID (required)
    * @return Library
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Library getResponsemanagementLibrary(String libraryId) throws IOException, ApiException {
-    return getResponsemanagementLibraryWithHttpInfo(libraryId).getBody();
+    return  getResponsemanagementLibrary(createGetResponsemanagementLibraryRequest(libraryId));
   }
 
   /**
@@ -278,61 +295,64 @@ public class ResponseManagementApi {
    * 
    * @param libraryId Library ID (required)
    * @return Library
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Library> getResponsemanagementLibraryWithHttpInfo(String libraryId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'libraryId' is set
-    if (libraryId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'libraryId' when calling getResponsemanagementLibrary");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/responsemanagement/libraries/{libraryId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "libraryId" + "\\}", pcapiClient.escapeString(libraryId.toString()));
+  public ApiResponse<Library> getResponsemanagementLibraryWithHttpInfo(String libraryId) throws IOException {
+    return getResponsemanagementLibrary(createGetResponsemanagementLibraryRequest(libraryId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Library>() {});
+  private GetResponsemanagementLibraryRequest createGetResponsemanagementLibraryRequest(String libraryId) {
+    return GetResponsemanagementLibraryRequest.builder()
+            .withLibraryId(libraryId)
+            .build();
   }
 
   /**
    * Get details about an existing response library.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Library
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Library getResponsemanagementLibrary(GetResponsemanagementLibraryRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Library>() {});
+    try {
+      ApiResponse<Library> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Library>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get details about an existing response library.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Library> getResponsemanagementLibrary(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Library>invokeAPIVerbose(request, new TypeReference<Library>() {});
+  public ApiResponse<Library> getResponsemanagementLibrary(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Library>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Library> response = (ApiResponse<Library>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Library> response = (ApiResponse<Library>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -341,10 +361,11 @@ public class ResponseManagementApi {
    * @param responseId Response ID (required)
    * @param expand Expand instructions for the return value. (optional)
    * @return Response
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Response getResponsemanagementResponse(String responseId, String expand) throws IOException, ApiException {
-    return getResponsemanagementResponseWithHttpInfo(responseId, expand).getBody();
+    return  getResponsemanagementResponse(createGetResponsemanagementResponseRequest(responseId, expand));
   }
 
   /**
@@ -353,62 +374,66 @@ public class ResponseManagementApi {
    * @param responseId Response ID (required)
    * @param expand Expand instructions for the return value. (optional)
    * @return Response
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Response> getResponsemanagementResponseWithHttpInfo(String responseId, String expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'responseId' is set
-    if (responseId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'responseId' when calling getResponsemanagementResponse");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/responsemanagement/responses/{responseId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "responseId" + "\\}", pcapiClient.escapeString(responseId.toString()));
+  public ApiResponse<Response> getResponsemanagementResponseWithHttpInfo(String responseId, String expand) throws IOException {
+    return getResponsemanagementResponse(createGetResponsemanagementResponseRequest(responseId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetResponsemanagementResponseRequest createGetResponsemanagementResponseRequest(String responseId, String expand) {
+    return GetResponsemanagementResponseRequest.builder()
+            .withResponseId(responseId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Response>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get details about an existing response.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Response
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Response getResponsemanagementResponse(GetResponsemanagementResponseRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Response>() {});
+    try {
+      ApiResponse<Response> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Response>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get details about an existing response.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Response> getResponsemanagementResponse(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Response>invokeAPIVerbose(request, new TypeReference<Response>() {});
+  public ApiResponse<Response> getResponsemanagementResponse(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Response>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Response> response = (ApiResponse<Response>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Response> response = (ApiResponse<Response>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -419,10 +444,11 @@ public class ResponseManagementApi {
    * @param pageSize Page size (optional, default to 25)
    * @param expand Expand instructions for the return value. (optional)
    * @return ResponseEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ResponseEntityListing getResponsemanagementResponses(String libraryId, Integer pageNumber, Integer pageSize, String expand) throws IOException, ApiException {
-    return getResponsemanagementResponsesWithHttpInfo(libraryId, pageNumber, pageSize, expand).getBody();
+    return  getResponsemanagementResponses(createGetResponsemanagementResponsesRequest(libraryId, pageNumber, pageSize, expand));
   }
 
   /**
@@ -433,64 +459,70 @@ public class ResponseManagementApi {
    * @param pageSize Page size (optional, default to 25)
    * @param expand Expand instructions for the return value. (optional)
    * @return ResponseEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ResponseEntityListing> getResponsemanagementResponsesWithHttpInfo(String libraryId, Integer pageNumber, Integer pageSize, String expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'libraryId' is set
-    if (libraryId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'libraryId' when calling getResponsemanagementResponses");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/responsemanagement/responses".replaceAll("\\{format\\}","json");
+  public ApiResponse<ResponseEntityListing> getResponsemanagementResponsesWithHttpInfo(String libraryId, Integer pageNumber, Integer pageSize, String expand) throws IOException {
+    return getResponsemanagementResponses(createGetResponsemanagementResponsesRequest(libraryId, pageNumber, pageSize, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetResponsemanagementResponsesRequest createGetResponsemanagementResponsesRequest(String libraryId, Integer pageNumber, Integer pageSize, String expand) {
+    return GetResponsemanagementResponsesRequest.builder()
+            .withLibraryId(libraryId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "libraryId", libraryId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageSize(pageSize)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ResponseEntityListing>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Gets a list of existing responses.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ResponseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ResponseEntityListing getResponsemanagementResponses(GetResponsemanagementResponsesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ResponseEntityListing>() {});
+    try {
+      ApiResponse<ResponseEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ResponseEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Gets a list of existing responses.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ResponseEntityListing> getResponsemanagementResponses(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ResponseEntityListing>invokeAPIVerbose(request, new TypeReference<ResponseEntityListing>() {});
+  public ApiResponse<ResponseEntityListing> getResponsemanagementResponses(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ResponseEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseEntityListing> response = (ApiResponse<ResponseEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseEntityListing> response = (ApiResponse<ResponseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -498,10 +530,11 @@ public class ResponseManagementApi {
    * 
    * @param body Library (required)
    * @return Library
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Library postResponsemanagementLibraries(Library body) throws IOException, ApiException {
-    return postResponsemanagementLibrariesWithHttpInfo(body).getBody();
+    return  postResponsemanagementLibraries(createPostResponsemanagementLibrariesRequest(body));
   }
 
   /**
@@ -509,60 +542,64 @@ public class ResponseManagementApi {
    * 
    * @param body Library (required)
    * @return Library
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Library> postResponsemanagementLibrariesWithHttpInfo(Library body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postResponsemanagementLibraries");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/responsemanagement/libraries".replaceAll("\\{format\\}","json");
+  public ApiResponse<Library> postResponsemanagementLibrariesWithHttpInfo(Library body) throws IOException {
+    return postResponsemanagementLibraries(createPostResponsemanagementLibrariesRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Library>() {});
+  private PostResponsemanagementLibrariesRequest createPostResponsemanagementLibrariesRequest(Library body) {
+    return PostResponsemanagementLibrariesRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a response library.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Library
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Library postResponsemanagementLibraries(PostResponsemanagementLibrariesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Library>() {});
+    try {
+      ApiResponse<Library> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Library>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a response library.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Library> postResponsemanagementLibraries(ApiRequest<Library> request) throws IOException, ApiException {
-    return pcapiClient.<Library>invokeAPIVerbose(request, new TypeReference<Library>() {});
+  public ApiResponse<Library> postResponsemanagementLibraries(ApiRequest<Library> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Library>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Library> response = (ApiResponse<Library>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Library> response = (ApiResponse<Library>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -571,10 +608,11 @@ public class ResponseManagementApi {
    * @param body Response (required)
    * @param expand Expand instructions for the return value. (optional)
    * @return Response
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Response postResponsemanagementResponses(Response body, String expand) throws IOException, ApiException {
-    return postResponsemanagementResponsesWithHttpInfo(body, expand).getBody();
+    return  postResponsemanagementResponses(createPostResponsemanagementResponsesRequest(body, expand));
   }
 
   /**
@@ -583,61 +621,66 @@ public class ResponseManagementApi {
    * @param body Response (required)
    * @param expand Expand instructions for the return value. (optional)
    * @return Response
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Response> postResponsemanagementResponsesWithHttpInfo(Response body, String expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postResponsemanagementResponses");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/responsemanagement/responses".replaceAll("\\{format\\}","json");
+  public ApiResponse<Response> postResponsemanagementResponsesWithHttpInfo(Response body, String expand) throws IOException {
+    return postResponsemanagementResponses(createPostResponsemanagementResponsesRequest(body, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostResponsemanagementResponsesRequest createPostResponsemanagementResponsesRequest(Response body, String expand) {
+    return PostResponsemanagementResponsesRequest.builder()
+            .withBody(body)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Response>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Create a response.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Response
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Response postResponsemanagementResponses(PostResponsemanagementResponsesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Response>() {});
+    try {
+      ApiResponse<Response> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Response>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a response.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Response> postResponsemanagementResponses(ApiRequest<Response> request) throws IOException, ApiException {
-    return pcapiClient.<Response>invokeAPIVerbose(request, new TypeReference<Response>() {});
+  public ApiResponse<Response> postResponsemanagementResponses(ApiRequest<Response> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Response>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Response> response = (ApiResponse<Response>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Response> response = (ApiResponse<Response>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -645,10 +688,11 @@ public class ResponseManagementApi {
    * 
    * @param body Response (required)
    * @return ResponseQueryResults
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ResponseQueryResults postResponsemanagementResponsesQuery(ResponseQueryRequest body) throws IOException, ApiException {
-    return postResponsemanagementResponsesQueryWithHttpInfo(body).getBody();
+    return  postResponsemanagementResponsesQuery(createPostResponsemanagementResponsesQueryRequest(body));
   }
 
   /**
@@ -656,60 +700,64 @@ public class ResponseManagementApi {
    * 
    * @param body Response (required)
    * @return ResponseQueryResults
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ResponseQueryResults> postResponsemanagementResponsesQueryWithHttpInfo(ResponseQueryRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postResponsemanagementResponsesQuery");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/responsemanagement/responses/query".replaceAll("\\{format\\}","json");
+  public ApiResponse<ResponseQueryResults> postResponsemanagementResponsesQueryWithHttpInfo(ResponseQueryRequest body) throws IOException {
+    return postResponsemanagementResponsesQuery(createPostResponsemanagementResponsesQueryRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ResponseQueryResults>() {});
+  private PostResponsemanagementResponsesQueryRequest createPostResponsemanagementResponsesQueryRequest(ResponseQueryRequest body) {
+    return PostResponsemanagementResponsesQueryRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Query responses
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ResponseQueryResults
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ResponseQueryResults postResponsemanagementResponsesQuery(PostResponsemanagementResponsesQueryRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ResponseQueryResults>() {});
+    try {
+      ApiResponse<ResponseQueryResults> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ResponseQueryResults>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query responses
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ResponseQueryResults> postResponsemanagementResponsesQuery(ApiRequest<ResponseQueryRequest> request) throws IOException, ApiException {
-    return pcapiClient.<ResponseQueryResults>invokeAPIVerbose(request, new TypeReference<ResponseQueryResults>() {});
+  public ApiResponse<ResponseQueryResults> postResponsemanagementResponsesQuery(ApiRequest<ResponseQueryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ResponseQueryResults>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseQueryResults> response = (ApiResponse<ResponseQueryResults>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseQueryResults> response = (ApiResponse<ResponseQueryResults>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -718,10 +766,11 @@ public class ResponseManagementApi {
    * @param libraryId Library ID (required)
    * @param body Library (required)
    * @return Library
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Library putResponsemanagementLibrary(String libraryId, Library body) throws IOException, ApiException {
-    return putResponsemanagementLibraryWithHttpInfo(libraryId, body).getBody();
+    return  putResponsemanagementLibrary(createPutResponsemanagementLibraryRequest(libraryId, body));
   }
 
   /**
@@ -730,66 +779,66 @@ public class ResponseManagementApi {
    * @param libraryId Library ID (required)
    * @param body Library (required)
    * @return Library
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Library> putResponsemanagementLibraryWithHttpInfo(String libraryId, Library body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'libraryId' is set
-    if (libraryId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'libraryId' when calling putResponsemanagementLibrary");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putResponsemanagementLibrary");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/responsemanagement/libraries/{libraryId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "libraryId" + "\\}", pcapiClient.escapeString(libraryId.toString()));
+  public ApiResponse<Library> putResponsemanagementLibraryWithHttpInfo(String libraryId, Library body) throws IOException {
+    return putResponsemanagementLibrary(createPutResponsemanagementLibraryRequest(libraryId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutResponsemanagementLibraryRequest createPutResponsemanagementLibraryRequest(String libraryId, Library body) {
+    return PutResponsemanagementLibraryRequest.builder()
+            .withLibraryId(libraryId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Library>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update an existing response library.
    * Fields that can be updated: name. The most recent version is required for updates.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Library
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Library putResponsemanagementLibrary(PutResponsemanagementLibraryRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Library>() {});
+    try {
+      ApiResponse<Library> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Library>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update an existing response library.
    * Fields that can be updated: name. The most recent version is required for updates.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Library> putResponsemanagementLibrary(ApiRequest<Library> request) throws IOException, ApiException {
-    return pcapiClient.<Library>invokeAPIVerbose(request, new TypeReference<Library>() {});
+  public ApiResponse<Library> putResponsemanagementLibrary(ApiRequest<Library> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Library>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Library> response = (ApiResponse<Library>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Library> response = (ApiResponse<Library>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -799,10 +848,11 @@ public class ResponseManagementApi {
    * @param body Response (required)
    * @param expand Expand instructions for the return value. (optional)
    * @return Response
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Response putResponsemanagementResponse(String responseId, Response body, String expand) throws IOException, ApiException {
-    return putResponsemanagementResponseWithHttpInfo(responseId, body, expand).getBody();
+    return  putResponsemanagementResponse(createPutResponsemanagementResponseRequest(responseId, body, expand));
   }
 
   /**
@@ -812,67 +862,68 @@ public class ResponseManagementApi {
    * @param body Response (required)
    * @param expand Expand instructions for the return value. (optional)
    * @return Response
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Response> putResponsemanagementResponseWithHttpInfo(String responseId, Response body, String expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'responseId' is set
-    if (responseId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'responseId' when calling putResponsemanagementResponse");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putResponsemanagementResponse");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/responsemanagement/responses/{responseId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "responseId" + "\\}", pcapiClient.escapeString(responseId.toString()));
+  public ApiResponse<Response> putResponsemanagementResponseWithHttpInfo(String responseId, Response body, String expand) throws IOException {
+    return putResponsemanagementResponse(createPutResponsemanagementResponseRequest(responseId, body, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutResponsemanagementResponseRequest createPutResponsemanagementResponseRequest(String responseId, Response body, String expand) {
+    return PutResponsemanagementResponseRequest.builder()
+            .withResponseId(responseId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
+            .withBody(body)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Response>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Update an existing response.
    * Fields that can be updated: name, libraries, and texts. The most recent version is required for updates.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Response
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Response putResponsemanagementResponse(PutResponsemanagementResponseRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Response>() {});
+    try {
+      ApiResponse<Response> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Response>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update an existing response.
    * Fields that can be updated: name, libraries, and texts. The most recent version is required for updates.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Response> putResponsemanagementResponse(ApiRequest<Response> request) throws IOException, ApiException {
-    return pcapiClient.<Response>invokeAPIVerbose(request, new TypeReference<Response>() {});
+  public ApiResponse<Response> putResponsemanagementResponse(ApiRequest<Response> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Response>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Response> response = (ApiResponse<Response>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Response> response = (ApiResponse<Response>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

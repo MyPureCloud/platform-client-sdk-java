@@ -34,9 +34,6 @@ import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 public class PostGroupsSearchRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private GroupSearchRequest body;
 	public GroupSearchRequest getBody() {
 		return this.body;
@@ -115,6 +112,12 @@ public class PostGroupsSearchRequest {
 
 
 		public PostGroupsSearchRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostGroupsSearchRequest.");
+            }
+            
 			return request;
 		}
 	}

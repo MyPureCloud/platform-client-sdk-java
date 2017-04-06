@@ -48,71 +48,74 @@ public class PresenceApi {
    * Delete a Presence Definition
    * 
    * @param presenceId Organization Presence ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deletePresencedefinition(String presenceId) throws IOException, ApiException {
-    deletePresencedefinitionWithHttpInfo(presenceId);
+     deletePresencedefinition(createDeletePresencedefinitionRequest(presenceId));
   }
 
   /**
    * Delete a Presence Definition
    * 
    * @param presenceId Organization Presence ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deletePresencedefinitionWithHttpInfo(String presenceId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'presenceId' is set
-    if (presenceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'presenceId' when calling deletePresencedefinition");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/presencedefinitions/{presenceId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "presenceId" + "\\}", pcapiClient.escapeString(presenceId.toString()));
+  public ApiResponse<Void> deletePresencedefinitionWithHttpInfo(String presenceId) throws IOException {
+    return deletePresencedefinition(createDeletePresencedefinitionRequest(presenceId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeletePresencedefinitionRequest createDeletePresencedefinitionRequest(String presenceId) {
+    return DeletePresencedefinitionRequest.builder()
+            .withPresenceId(presenceId)
+            .build();
   }
 
   /**
    * Delete a Presence Definition
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deletePresencedefinition(DeletePresencedefinitionRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete a Presence Definition
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deletePresencedefinition(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deletePresencedefinition(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -121,10 +124,11 @@ public class PresenceApi {
    * @param presenceId Organization Presence ID (required)
    * @param localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)
    * @return OrganizationPresence
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrganizationPresence getPresencedefinition(String presenceId, String localeCode) throws IOException, ApiException {
-    return getPresencedefinitionWithHttpInfo(presenceId, localeCode).getBody();
+    return  getPresencedefinition(createGetPresencedefinitionRequest(presenceId, localeCode));
   }
 
   /**
@@ -133,62 +137,66 @@ public class PresenceApi {
    * @param presenceId Organization Presence ID (required)
    * @param localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)
    * @return OrganizationPresence
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationPresence> getPresencedefinitionWithHttpInfo(String presenceId, String localeCode) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'presenceId' is set
-    if (presenceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'presenceId' when calling getPresencedefinition");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/presencedefinitions/{presenceId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "presenceId" + "\\}", pcapiClient.escapeString(presenceId.toString()));
+  public ApiResponse<OrganizationPresence> getPresencedefinitionWithHttpInfo(String presenceId, String localeCode) throws IOException {
+    return getPresencedefinition(createGetPresencedefinitionRequest(presenceId, localeCode).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetPresencedefinitionRequest createGetPresencedefinitionRequest(String presenceId, String localeCode) {
+    return GetPresencedefinitionRequest.builder()
+            .withPresenceId(presenceId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "localeCode", localeCode));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OrganizationPresence>() {});
+            .withLocaleCode(localeCode)
+            .build();
   }
 
   /**
    * Get a Presence Definition
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OrganizationPresence
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrganizationPresence getPresencedefinition(GetPresencedefinitionRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrganizationPresence>() {});
+    try {
+      ApiResponse<OrganizationPresence> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationPresence>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a Presence Definition
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationPresence> getPresencedefinition(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<OrganizationPresence>invokeAPIVerbose(request, new TypeReference<OrganizationPresence>() {});
+  public ApiResponse<OrganizationPresence> getPresencedefinition(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrganizationPresence>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationPresence> response = (ApiResponse<OrganizationPresence>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationPresence> response = (ApiResponse<OrganizationPresence>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -199,10 +207,11 @@ public class PresenceApi {
    * @param deleted Deleted query can be TRUE, FALSE or ALL (optional, default to false)
    * @param localeCode The locale code to fetch for each presence definition. Use ALL to fetch everything. (optional)
    * @return OrganizationPresenceEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrganizationPresenceEntityListing getPresencedefinitions(Integer pageNumber, Integer pageSize, String deleted, String localeCode) throws IOException, ApiException {
-    return getPresencedefinitionsWithHttpInfo(pageNumber, pageSize, deleted, localeCode).getBody();
+    return  getPresencedefinitions(createGetPresencedefinitionsRequest(pageNumber, pageSize, deleted, localeCode));
   }
 
   /**
@@ -213,124 +222,143 @@ public class PresenceApi {
    * @param deleted Deleted query can be TRUE, FALSE or ALL (optional, default to false)
    * @param localeCode The locale code to fetch for each presence definition. Use ALL to fetch everything. (optional)
    * @return OrganizationPresenceEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationPresenceEntityListing> getPresencedefinitionsWithHttpInfo(Integer pageNumber, Integer pageSize, String deleted, String localeCode) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/presencedefinitions".replaceAll("\\{format\\}","json");
+  public ApiResponse<OrganizationPresenceEntityListing> getPresencedefinitionsWithHttpInfo(Integer pageNumber, Integer pageSize, String deleted, String localeCode) throws IOException {
+    return getPresencedefinitions(createGetPresencedefinitionsRequest(pageNumber, pageSize, deleted, localeCode).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetPresencedefinitionsRequest createGetPresencedefinitionsRequest(Integer pageNumber, Integer pageSize, String deleted, String localeCode) {
+    return GetPresencedefinitionsRequest.builder()
+            .withPageNumber(pageNumber)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "deleted", deleted));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "localeCode", localeCode));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withDeleted(deleted)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OrganizationPresenceEntityListing>() {});
+            .withLocaleCode(localeCode)
+            .build();
   }
 
   /**
    * Get an Organization&#39;s list of Presence Definitions
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OrganizationPresenceEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrganizationPresenceEntityListing getPresencedefinitions(GetPresencedefinitionsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrganizationPresenceEntityListing>() {});
+    try {
+      ApiResponse<OrganizationPresenceEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationPresenceEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get an Organization&#39;s list of Presence Definitions
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationPresenceEntityListing> getPresencedefinitions(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<OrganizationPresenceEntityListing>invokeAPIVerbose(request, new TypeReference<OrganizationPresenceEntityListing>() {});
+  public ApiResponse<OrganizationPresenceEntityListing> getPresencedefinitions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrganizationPresenceEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationPresenceEntityListing> response = (ApiResponse<OrganizationPresenceEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationPresenceEntityListing> response = (ApiResponse<OrganizationPresenceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get the list of SystemPresences
    * 
    * @return List<SystemPresence>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<SystemPresence> getSystempresences() throws IOException, ApiException {
-    return getSystempresencesWithHttpInfo().getBody();
+    return  getSystempresences(createGetSystempresencesRequest());
   }
 
   /**
    * Get the list of SystemPresences
    * 
    * @return List<SystemPresence>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<SystemPresence>> getSystempresencesWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/systempresences".replaceAll("\\{format\\}","json");
+  public ApiResponse<List<SystemPresence>> getSystempresencesWithHttpInfo() throws IOException {
+    return getSystempresences(createGetSystempresencesRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<SystemPresence>>() {});
+  private GetSystempresencesRequest createGetSystempresencesRequest() {
+    return GetSystempresencesRequest.builder()            .build();
   }
 
   /**
    * Get the list of SystemPresences
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<SystemPresence>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<SystemPresence> getSystempresences(GetSystempresencesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<SystemPresence>>() {});
+    try {
+      ApiResponse<List<SystemPresence>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<SystemPresence>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the list of SystemPresences
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<SystemPresence>> getSystempresences(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<SystemPresence>>invokeAPIVerbose(request, new TypeReference<List<SystemPresence>>() {});
+  public ApiResponse<List<SystemPresence>> getSystempresences(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<SystemPresence>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<SystemPresence>> response = (ApiResponse<List<SystemPresence>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<SystemPresence>> response = (ApiResponse<List<SystemPresence>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -339,10 +367,11 @@ public class PresenceApi {
    * @param userId user Id (required)
    * @param sourceId Source (required)
    * @return UserPresence
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserPresence getUserPresence(String userId, String sourceId) throws IOException, ApiException {
-    return getUserPresenceWithHttpInfo(userId, sourceId).getBody();
+    return  getUserPresence(createGetUserPresenceRequest(userId, sourceId));
   }
 
   /**
@@ -351,67 +380,66 @@ public class PresenceApi {
    * @param userId user Id (required)
    * @param sourceId Source (required)
    * @return UserPresence
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserPresence> getUserPresenceWithHttpInfo(String userId, String sourceId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserPresence");
-    }
-    
-    // verify the required parameter 'sourceId' is set
-    if (sourceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'sourceId' when calling getUserPresence");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/presences/{sourceId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()))
-      .replaceAll("\\{" + "sourceId" + "\\}", pcapiClient.escapeString(sourceId.toString()));
+  public ApiResponse<UserPresence> getUserPresenceWithHttpInfo(String userId, String sourceId) throws IOException {
+    return getUserPresence(createGetUserPresenceRequest(userId, sourceId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetUserPresenceRequest createGetUserPresenceRequest(String userId, String sourceId) {
+    return GetUserPresenceRequest.builder()
+            .withUserId(userId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserPresence>() {});
+            .withSourceId(sourceId)
+            .build();
   }
 
   /**
    * Get a user&#39;s Presence
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserPresence
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserPresence getUserPresence(GetUserPresenceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserPresence>() {});
+    try {
+      ApiResponse<UserPresence> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserPresence>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a user&#39;s Presence
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserPresence> getUserPresence(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<UserPresence>invokeAPIVerbose(request, new TypeReference<UserPresence>() {});
+  public ApiResponse<UserPresence> getUserPresence(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserPresence>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPresence> response = (ApiResponse<UserPresence>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPresence> response = (ApiResponse<UserPresence>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -421,10 +449,11 @@ public class PresenceApi {
    * @param sourceId Source (required)
    * @param body User presence (required)
    * @return UserPresence
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserPresence patchUserPresence(String userId, String sourceId, UserPresence body) throws IOException, ApiException {
-    return patchUserPresenceWithHttpInfo(userId, sourceId, body).getBody();
+    return  patchUserPresence(createPatchUserPresenceRequest(userId, sourceId, body));
   }
 
   /**
@@ -434,72 +463,68 @@ public class PresenceApi {
    * @param sourceId Source (required)
    * @param body User presence (required)
    * @return UserPresence
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserPresence> patchUserPresenceWithHttpInfo(String userId, String sourceId, UserPresence body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling patchUserPresence");
-    }
-    
-    // verify the required parameter 'sourceId' is set
-    if (sourceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'sourceId' when calling patchUserPresence");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchUserPresence");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/presences/{sourceId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()))
-      .replaceAll("\\{" + "sourceId" + "\\}", pcapiClient.escapeString(sourceId.toString()));
+  public ApiResponse<UserPresence> patchUserPresenceWithHttpInfo(String userId, String sourceId, UserPresence body) throws IOException {
+    return patchUserPresence(createPatchUserPresenceRequest(userId, sourceId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchUserPresenceRequest createPatchUserPresenceRequest(String userId, String sourceId, UserPresence body) {
+    return PatchUserPresenceRequest.builder()
+            .withUserId(userId)
 
+            .withSourceId(sourceId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserPresence>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Patch a user&#39;s Presence
    * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserPresence
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserPresence patchUserPresence(PatchUserPresenceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserPresence>() {});
+    try {
+      ApiResponse<UserPresence> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserPresence>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Patch a user&#39;s Presence
    * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserPresence> patchUserPresence(ApiRequest<UserPresence> request) throws IOException, ApiException {
-    return pcapiClient.<UserPresence>invokeAPIVerbose(request, new TypeReference<UserPresence>() {});
+  public ApiResponse<UserPresence> patchUserPresence(ApiRequest<UserPresence> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserPresence>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPresence> response = (ApiResponse<UserPresence>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPresence> response = (ApiResponse<UserPresence>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -507,10 +532,11 @@ public class PresenceApi {
    * 
    * @param body The Presence Definition to create (required)
    * @return OrganizationPresence
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrganizationPresence postPresencedefinitions(OrganizationPresence body) throws IOException, ApiException {
-    return postPresencedefinitionsWithHttpInfo(body).getBody();
+    return  postPresencedefinitions(createPostPresencedefinitionsRequest(body));
   }
 
   /**
@@ -518,60 +544,64 @@ public class PresenceApi {
    * 
    * @param body The Presence Definition to create (required)
    * @return OrganizationPresence
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationPresence> postPresencedefinitionsWithHttpInfo(OrganizationPresence body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postPresencedefinitions");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/presencedefinitions".replaceAll("\\{format\\}","json");
+  public ApiResponse<OrganizationPresence> postPresencedefinitionsWithHttpInfo(OrganizationPresence body) throws IOException {
+    return postPresencedefinitions(createPostPresencedefinitionsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OrganizationPresence>() {});
+  private PostPresencedefinitionsRequest createPostPresencedefinitionsRequest(OrganizationPresence body) {
+    return PostPresencedefinitionsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a Presence Definition
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OrganizationPresence
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrganizationPresence postPresencedefinitions(PostPresencedefinitionsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrganizationPresence>() {});
+    try {
+      ApiResponse<OrganizationPresence> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationPresence>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a Presence Definition
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationPresence> postPresencedefinitions(ApiRequest<OrganizationPresence> request) throws IOException, ApiException {
-    return pcapiClient.<OrganizationPresence>invokeAPIVerbose(request, new TypeReference<OrganizationPresence>() {});
+  public ApiResponse<OrganizationPresence> postPresencedefinitions(ApiRequest<OrganizationPresence> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrganizationPresence>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationPresence> response = (ApiResponse<OrganizationPresence>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationPresence> response = (ApiResponse<OrganizationPresence>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -580,10 +610,11 @@ public class PresenceApi {
    * @param presenceId Organization Presence ID (required)
    * @param body The OrganizationPresence to update (required)
    * @return OrganizationPresence
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrganizationPresence putPresencedefinition(String presenceId, OrganizationPresence body) throws IOException, ApiException {
-    return putPresencedefinitionWithHttpInfo(presenceId, body).getBody();
+    return  putPresencedefinition(createPutPresencedefinitionRequest(presenceId, body));
   }
 
   /**
@@ -592,66 +623,66 @@ public class PresenceApi {
    * @param presenceId Organization Presence ID (required)
    * @param body The OrganizationPresence to update (required)
    * @return OrganizationPresence
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationPresence> putPresencedefinitionWithHttpInfo(String presenceId, OrganizationPresence body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'presenceId' is set
-    if (presenceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'presenceId' when calling putPresencedefinition");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putPresencedefinition");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/presencedefinitions/{presenceId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "presenceId" + "\\}", pcapiClient.escapeString(presenceId.toString()));
+  public ApiResponse<OrganizationPresence> putPresencedefinitionWithHttpInfo(String presenceId, OrganizationPresence body) throws IOException {
+    return putPresencedefinition(createPutPresencedefinitionRequest(presenceId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutPresencedefinitionRequest createPutPresencedefinitionRequest(String presenceId, OrganizationPresence body) {
+    return PutPresencedefinitionRequest.builder()
+            .withPresenceId(presenceId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OrganizationPresence>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a Presence Definition
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OrganizationPresence
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrganizationPresence putPresencedefinition(PutPresencedefinitionRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrganizationPresence>() {});
+    try {
+      ApiResponse<OrganizationPresence> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationPresence>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a Presence Definition
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationPresence> putPresencedefinition(ApiRequest<OrganizationPresence> request) throws IOException, ApiException {
-    return pcapiClient.<OrganizationPresence>invokeAPIVerbose(request, new TypeReference<OrganizationPresence>() {});
+  public ApiResponse<OrganizationPresence> putPresencedefinition(ApiRequest<OrganizationPresence> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrganizationPresence>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationPresence> response = (ApiResponse<OrganizationPresence>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationPresence> response = (ApiResponse<OrganizationPresence>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

@@ -1,6 +1,8 @@
 package com.mypurecloud.sdk.v2.api;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.SettableFuture;
 
 import com.mypurecloud.sdk.v2.AsyncApiCallback;
 import com.mypurecloud.sdk.v2.ApiException;
@@ -54,221 +56,856 @@ public class ResponseManagementApiAsync {
   /**
    * Delete an existing response library.
    * This will remove any responses associated with the library.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Void> deleteResponsemanagementLibraryAsync(DeleteResponsemanagementLibraryRequest request, AsyncApiCallback<Void> callback) {
-    return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
+    try {
+      SettableFuture<Void> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete an existing response library.
    * This will remove any responses associated with the library.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteResponsemanagementLibraryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
-    return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
+    try {
+      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete an existing response.
    * This will remove the response from any libraries associated with it.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Void> deleteResponsemanagementResponseAsync(DeleteResponsemanagementResponseRequest request, AsyncApiCallback<Void> callback) {
-    return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
+    try {
+      SettableFuture<Void> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete an existing response.
    * This will remove the response from any libraries associated with it.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteResponsemanagementResponseAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
-    return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
+    try {
+      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets a list of existing response libraries.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<LibraryEntityListing> getResponsemanagementLibrariesAsync(GetResponsemanagementLibrariesRequest request, AsyncApiCallback<LibraryEntityListing> callback) {
-    return pcapiClient.<LibraryEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LibraryEntityListing>() {}, callback);
+    try {
+      SettableFuture<LibraryEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LibraryEntityListing>() {}, new AsyncApiCallback<ApiResponse<LibraryEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LibraryEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets a list of existing response libraries.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<LibraryEntityListing>> getResponsemanagementLibrariesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LibraryEntityListing>> callback) {
-    return pcapiClient.<LibraryEntityListing>invokeAPIVerboseAsync(request, new TypeReference<LibraryEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<LibraryEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LibraryEntityListing>() {}, new AsyncApiCallback<ApiResponse<LibraryEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LibraryEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LibraryEntityListing> response = (ApiResponse<LibraryEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LibraryEntityListing> response = (ApiResponse<LibraryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get details about an existing response library.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Library> getResponsemanagementLibraryAsync(GetResponsemanagementLibraryRequest request, AsyncApiCallback<Library> callback) {
-    return pcapiClient.<Library>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Library>() {}, callback);
+    try {
+      SettableFuture<Library> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Library>() {}, new AsyncApiCallback<ApiResponse<Library>>() {
+        @Override
+        public void onCompleted(ApiResponse<Library> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get details about an existing response library.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Library>> getResponsemanagementLibraryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Library>> callback) {
-    return pcapiClient.<Library>invokeAPIVerboseAsync(request, new TypeReference<Library>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Library>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Library>() {}, new AsyncApiCallback<ApiResponse<Library>>() {
+        @Override
+        public void onCompleted(ApiResponse<Library> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Library> response = (ApiResponse<Library>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Library> response = (ApiResponse<Library>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get details about an existing response.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Response> getResponsemanagementResponseAsync(GetResponsemanagementResponseRequest request, AsyncApiCallback<Response> callback) {
-    return pcapiClient.<Response>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Response>() {}, callback);
+    try {
+      SettableFuture<Response> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Response>() {}, new AsyncApiCallback<ApiResponse<Response>>() {
+        @Override
+        public void onCompleted(ApiResponse<Response> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get details about an existing response.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Response>> getResponsemanagementResponseAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Response>> callback) {
-    return pcapiClient.<Response>invokeAPIVerboseAsync(request, new TypeReference<Response>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Response>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Response>() {}, new AsyncApiCallback<ApiResponse<Response>>() {
+        @Override
+        public void onCompleted(ApiResponse<Response> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Response> response = (ApiResponse<Response>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Response> response = (ApiResponse<Response>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets a list of existing responses.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ResponseEntityListing> getResponsemanagementResponsesAsync(GetResponsemanagementResponsesRequest request, AsyncApiCallback<ResponseEntityListing> callback) {
-    return pcapiClient.<ResponseEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ResponseEntityListing>() {}, callback);
+    try {
+      SettableFuture<ResponseEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ResponseEntityListing>() {}, new AsyncApiCallback<ApiResponse<ResponseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ResponseEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets a list of existing responses.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ResponseEntityListing>> getResponsemanagementResponsesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ResponseEntityListing>> callback) {
-    return pcapiClient.<ResponseEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ResponseEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ResponseEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ResponseEntityListing>() {}, new AsyncApiCallback<ApiResponse<ResponseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ResponseEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ResponseEntityListing> response = (ApiResponse<ResponseEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ResponseEntityListing> response = (ApiResponse<ResponseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a response library.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Library> postResponsemanagementLibrariesAsync(PostResponsemanagementLibrariesRequest request, AsyncApiCallback<Library> callback) {
-    return pcapiClient.<Library>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Library>() {}, callback);
+    try {
+      SettableFuture<Library> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Library>() {}, new AsyncApiCallback<ApiResponse<Library>>() {
+        @Override
+        public void onCompleted(ApiResponse<Library> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a response library.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Library>> postResponsemanagementLibrariesAsync(ApiRequest<Library> request, AsyncApiCallback<ApiResponse<Library>> callback) {
-    return pcapiClient.<Library>invokeAPIVerboseAsync(request, new TypeReference<Library>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Library>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Library>() {}, new AsyncApiCallback<ApiResponse<Library>>() {
+        @Override
+        public void onCompleted(ApiResponse<Library> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Library> response = (ApiResponse<Library>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Library> response = (ApiResponse<Library>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a response.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Response> postResponsemanagementResponsesAsync(PostResponsemanagementResponsesRequest request, AsyncApiCallback<Response> callback) {
-    return pcapiClient.<Response>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Response>() {}, callback);
+    try {
+      SettableFuture<Response> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Response>() {}, new AsyncApiCallback<ApiResponse<Response>>() {
+        @Override
+        public void onCompleted(ApiResponse<Response> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a response.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Response>> postResponsemanagementResponsesAsync(ApiRequest<Response> request, AsyncApiCallback<ApiResponse<Response>> callback) {
-    return pcapiClient.<Response>invokeAPIVerboseAsync(request, new TypeReference<Response>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Response>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Response>() {}, new AsyncApiCallback<ApiResponse<Response>>() {
+        @Override
+        public void onCompleted(ApiResponse<Response> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Response> response = (ApiResponse<Response>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Response> response = (ApiResponse<Response>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Query responses
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ResponseQueryResults> postResponsemanagementResponsesQueryAsync(PostResponsemanagementResponsesQueryRequest request, AsyncApiCallback<ResponseQueryResults> callback) {
-    return pcapiClient.<ResponseQueryResults>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ResponseQueryResults>() {}, callback);
+    try {
+      SettableFuture<ResponseQueryResults> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ResponseQueryResults>() {}, new AsyncApiCallback<ApiResponse<ResponseQueryResults>>() {
+        @Override
+        public void onCompleted(ApiResponse<ResponseQueryResults> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Query responses
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ResponseQueryResults>> postResponsemanagementResponsesQueryAsync(ApiRequest<ResponseQueryRequest> request, AsyncApiCallback<ApiResponse<ResponseQueryResults>> callback) {
-    return pcapiClient.<ResponseQueryResults>invokeAPIVerboseAsync(request, new TypeReference<ResponseQueryResults>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ResponseQueryResults>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ResponseQueryResults>() {}, new AsyncApiCallback<ApiResponse<ResponseQueryResults>>() {
+        @Override
+        public void onCompleted(ApiResponse<ResponseQueryResults> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ResponseQueryResults> response = (ApiResponse<ResponseQueryResults>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ResponseQueryResults> response = (ApiResponse<ResponseQueryResults>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update an existing response library.
    * Fields that can be updated: name. The most recent version is required for updates.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Library> putResponsemanagementLibraryAsync(PutResponsemanagementLibraryRequest request, AsyncApiCallback<Library> callback) {
-    return pcapiClient.<Library>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Library>() {}, callback);
+    try {
+      SettableFuture<Library> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Library>() {}, new AsyncApiCallback<ApiResponse<Library>>() {
+        @Override
+        public void onCompleted(ApiResponse<Library> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update an existing response library.
    * Fields that can be updated: name. The most recent version is required for updates.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Library>> putResponsemanagementLibraryAsync(ApiRequest<Library> request, AsyncApiCallback<ApiResponse<Library>> callback) {
-    return pcapiClient.<Library>invokeAPIVerboseAsync(request, new TypeReference<Library>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Library>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Library>() {}, new AsyncApiCallback<ApiResponse<Library>>() {
+        @Override
+        public void onCompleted(ApiResponse<Library> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Library> response = (ApiResponse<Library>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Library> response = (ApiResponse<Library>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update an existing response.
    * Fields that can be updated: name, libraries, and texts. The most recent version is required for updates.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Response> putResponsemanagementResponseAsync(PutResponsemanagementResponseRequest request, AsyncApiCallback<Response> callback) {
-    return pcapiClient.<Response>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Response>() {}, callback);
+    try {
+      SettableFuture<Response> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Response>() {}, new AsyncApiCallback<ApiResponse<Response>>() {
+        @Override
+        public void onCompleted(ApiResponse<Response> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update an existing response.
    * Fields that can be updated: name, libraries, and texts. The most recent version is required for updates.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Response>> putResponsemanagementResponseAsync(ApiRequest<Response> request, AsyncApiCallback<ApiResponse<Response>> callback) {
-    return pcapiClient.<Response>invokeAPIVerboseAsync(request, new TypeReference<Response>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Response>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Response>() {}, new AsyncApiCallback<ApiResponse<Response>>() {
+        @Override
+        public void onCompleted(ApiResponse<Response> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Response> response = (ApiResponse<Response>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Response> response = (ApiResponse<Response>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
+
+  private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
+    if (callback != null) {
+      try {
+        callback.onCompleted(result);
+        future.set(result);
+      }
+      catch (Throwable exception) {
+        future.setException(exception);
+      }
+    }
+    else {
+      future.set(result);
+    }
+  }
+
+  private <T> void notifyFailure(SettableFuture<T> future, AsyncApiCallback<T> callback, Throwable exception) {
+    if (callback != null) {
+      try {
+        callback.onFailed(exception);
+        future.setException(exception);
+      }
+      catch (Throwable callbackException) {
+        future.setException(callbackException);
+      }
+    }
+    else {
+      future.setException(exception);
+    }
+  }
 }

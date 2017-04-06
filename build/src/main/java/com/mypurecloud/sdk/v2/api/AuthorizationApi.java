@@ -61,142 +61,148 @@ public class AuthorizationApi {
    * Delete an organization role.
    * 
    * @param roleId Role ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteAuthorizationRole(String roleId) throws IOException, ApiException {
-    deleteAuthorizationRoleWithHttpInfo(roleId);
+     deleteAuthorizationRole(createDeleteAuthorizationRoleRequest(roleId));
   }
 
   /**
    * Delete an organization role.
    * 
    * @param roleId Role ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAuthorizationRoleWithHttpInfo(String roleId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'roleId' is set
-    if (roleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'roleId' when calling deleteAuthorizationRole");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/authorization/roles/{roleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "roleId" + "\\}", pcapiClient.escapeString(roleId.toString()));
+  public ApiResponse<Void> deleteAuthorizationRoleWithHttpInfo(String roleId) throws IOException {
+    return deleteAuthorizationRole(createDeleteAuthorizationRoleRequest(roleId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteAuthorizationRoleRequest createDeleteAuthorizationRoleRequest(String roleId) {
+    return DeleteAuthorizationRoleRequest.builder()
+            .withRoleId(roleId)
+            .build();
   }
 
   /**
    * Delete an organization role.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteAuthorizationRole(DeleteAuthorizationRoleRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete an organization role.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAuthorizationRole(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteAuthorizationRole(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Removes all the roles from the user.
    * 
    * @param userId User ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteUserRoles(String userId) throws IOException, ApiException {
-    deleteUserRolesWithHttpInfo(userId);
+     deleteUserRoles(createDeleteUserRolesRequest(userId));
   }
 
   /**
    * Removes all the roles from the user.
    * 
    * @param userId User ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteUserRolesWithHttpInfo(String userId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling deleteUserRoles");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/roles".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<Void> deleteUserRolesWithHttpInfo(String userId) throws IOException {
+    return deleteUserRoles(createDeleteUserRolesRequest(userId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteUserRolesRequest createDeleteUserRolesRequest(String userId) {
+    return DeleteUserRolesRequest.builder()
+            .withUserId(userId)
+            .build();
   }
 
   /**
    * Removes all the roles from the user.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteUserRoles(DeleteUserRolesRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Removes all the roles from the user.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteUserRoles(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteUserRoles(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -205,10 +211,11 @@ public class AuthorizationApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return PermissionCollectionEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PermissionCollectionEntityListing getAuthorizationPermissions(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getAuthorizationPermissionsWithHttpInfo(pageSize, pageNumber).getBody();
+    return  getAuthorizationPermissions(createGetAuthorizationPermissionsRequest(pageSize, pageNumber));
   }
 
   /**
@@ -217,122 +224,139 @@ public class AuthorizationApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return PermissionCollectionEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PermissionCollectionEntityListing> getAuthorizationPermissionsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/authorization/permissions".replaceAll("\\{format\\}","json");
+  public ApiResponse<PermissionCollectionEntityListing> getAuthorizationPermissionsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getAuthorizationPermissions(createGetAuthorizationPermissionsRequest(pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetAuthorizationPermissionsRequest createGetAuthorizationPermissionsRequest(Integer pageSize, Integer pageNumber) {
+    return GetAuthorizationPermissionsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<PermissionCollectionEntityListing>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * Get all permissions.
    * Retrieve a list of all permission defined in the system.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return PermissionCollectionEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PermissionCollectionEntityListing getAuthorizationPermissions(GetAuthorizationPermissionsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PermissionCollectionEntityListing>() {});
+    try {
+      ApiResponse<PermissionCollectionEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PermissionCollectionEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get all permissions.
    * Retrieve a list of all permission defined in the system.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PermissionCollectionEntityListing> getAuthorizationPermissions(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<PermissionCollectionEntityListing>invokeAPIVerbose(request, new TypeReference<PermissionCollectionEntityListing>() {});
+  public ApiResponse<PermissionCollectionEntityListing> getAuthorizationPermissions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PermissionCollectionEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PermissionCollectionEntityListing> response = (ApiResponse<PermissionCollectionEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PermissionCollectionEntityListing> response = (ApiResponse<PermissionCollectionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get the list of enabled products
    * Gets the list of enabled products. Some example product names are: collaborateFree, collaboratePro, communicate, and engage.
    * @return OrganizationProductEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrganizationProductEntityListing getAuthorizationProducts() throws IOException, ApiException {
-    return getAuthorizationProductsWithHttpInfo().getBody();
+    return  getAuthorizationProducts(createGetAuthorizationProductsRequest());
   }
 
   /**
    * Get the list of enabled products
    * Gets the list of enabled products. Some example product names are: collaborateFree, collaboratePro, communicate, and engage.
    * @return OrganizationProductEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationProductEntityListing> getAuthorizationProductsWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/authorization/products".replaceAll("\\{format\\}","json");
+  public ApiResponse<OrganizationProductEntityListing> getAuthorizationProductsWithHttpInfo() throws IOException {
+    return getAuthorizationProducts(createGetAuthorizationProductsRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OrganizationProductEntityListing>() {});
+  private GetAuthorizationProductsRequest createGetAuthorizationProductsRequest() {
+    return GetAuthorizationProductsRequest.builder()            .build();
   }
 
   /**
    * Get the list of enabled products
    * Gets the list of enabled products. Some example product names are: collaborateFree, collaboratePro, communicate, and engage.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OrganizationProductEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrganizationProductEntityListing getAuthorizationProducts(GetAuthorizationProductsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrganizationProductEntityListing>() {});
+    try {
+      ApiResponse<OrganizationProductEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationProductEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the list of enabled products
    * Gets the list of enabled products. Some example product names are: collaborateFree, collaboratePro, communicate, and engage.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationProductEntityListing> getAuthorizationProducts(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<OrganizationProductEntityListing>invokeAPIVerbose(request, new TypeReference<OrganizationProductEntityListing>() {});
+  public ApiResponse<OrganizationProductEntityListing> getAuthorizationProducts(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrganizationProductEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationProductEntityListing> response = (ApiResponse<OrganizationProductEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationProductEntityListing> response = (ApiResponse<OrganizationProductEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -340,10 +364,11 @@ public class AuthorizationApi {
    * Get the organization role specified by its ID.
    * @param roleId Role ID (required)
    * @return DomainOrganizationRole
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainOrganizationRole getAuthorizationRole(String roleId) throws IOException, ApiException {
-    return getAuthorizationRoleWithHttpInfo(roleId).getBody();
+    return  getAuthorizationRole(createGetAuthorizationRoleRequest(roleId));
   }
 
   /**
@@ -351,61 +376,64 @@ public class AuthorizationApi {
    * Get the organization role specified by its ID.
    * @param roleId Role ID (required)
    * @return DomainOrganizationRole
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainOrganizationRole> getAuthorizationRoleWithHttpInfo(String roleId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'roleId' is set
-    if (roleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'roleId' when calling getAuthorizationRole");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/authorization/roles/{roleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "roleId" + "\\}", pcapiClient.escapeString(roleId.toString()));
+  public ApiResponse<DomainOrganizationRole> getAuthorizationRoleWithHttpInfo(String roleId) throws IOException {
+    return getAuthorizationRole(createGetAuthorizationRoleRequest(roleId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DomainOrganizationRole>() {});
+  private GetAuthorizationRoleRequest createGetAuthorizationRoleRequest(String roleId) {
+    return GetAuthorizationRoleRequest.builder()
+            .withRoleId(roleId)
+            .build();
   }
 
   /**
    * Get a single organization role.
    * Get the organization role specified by its ID.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DomainOrganizationRole
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainOrganizationRole getAuthorizationRole(GetAuthorizationRoleRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainOrganizationRole>() {});
+    try {
+      ApiResponse<DomainOrganizationRole> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainOrganizationRole>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a single organization role.
    * Get the organization role specified by its ID.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainOrganizationRole> getAuthorizationRole(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DomainOrganizationRole>invokeAPIVerbose(request, new TypeReference<DomainOrganizationRole>() {});
+  public ApiResponse<DomainOrganizationRole> getAuthorizationRole(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DomainOrganizationRole>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainOrganizationRole> response = (ApiResponse<DomainOrganizationRole>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainOrganizationRole> response = (ApiResponse<DomainOrganizationRole>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -414,10 +442,11 @@ public class AuthorizationApi {
    * @param leftRoleId Left Role ID (required)
    * @param rightRoleId Right Role id (required)
    * @return DomainOrgRoleDifference
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainOrgRoleDifference getAuthorizationRoleComparedefaultRightRoleId(String leftRoleId, String rightRoleId) throws IOException, ApiException {
-    return getAuthorizationRoleComparedefaultRightRoleIdWithHttpInfo(leftRoleId, rightRoleId).getBody();
+    return  getAuthorizationRoleComparedefaultRightRoleId(createGetAuthorizationRoleComparedefaultRightRoleIdRequest(leftRoleId, rightRoleId));
   }
 
   /**
@@ -426,67 +455,66 @@ public class AuthorizationApi {
    * @param leftRoleId Left Role ID (required)
    * @param rightRoleId Right Role id (required)
    * @return DomainOrgRoleDifference
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainOrgRoleDifference> getAuthorizationRoleComparedefaultRightRoleIdWithHttpInfo(String leftRoleId, String rightRoleId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'leftRoleId' is set
-    if (leftRoleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'leftRoleId' when calling getAuthorizationRoleComparedefaultRightRoleId");
-    }
-    
-    // verify the required parameter 'rightRoleId' is set
-    if (rightRoleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'rightRoleId' when calling getAuthorizationRoleComparedefaultRightRoleId");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "leftRoleId" + "\\}", pcapiClient.escapeString(leftRoleId.toString()))
-      .replaceAll("\\{" + "rightRoleId" + "\\}", pcapiClient.escapeString(rightRoleId.toString()));
+  public ApiResponse<DomainOrgRoleDifference> getAuthorizationRoleComparedefaultRightRoleIdWithHttpInfo(String leftRoleId, String rightRoleId) throws IOException {
+    return getAuthorizationRoleComparedefaultRightRoleId(createGetAuthorizationRoleComparedefaultRightRoleIdRequest(leftRoleId, rightRoleId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetAuthorizationRoleComparedefaultRightRoleIdRequest createGetAuthorizationRoleComparedefaultRightRoleIdRequest(String leftRoleId, String rightRoleId) {
+    return GetAuthorizationRoleComparedefaultRightRoleIdRequest.builder()
+            .withLeftRoleId(leftRoleId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DomainOrgRoleDifference>() {});
+            .withRightRoleId(rightRoleId)
+            .build();
   }
 
   /**
    * Get an org role to default role comparison comparison
    * Compares any organization role to a default role id and show differences
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DomainOrgRoleDifference
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainOrgRoleDifference getAuthorizationRoleComparedefaultRightRoleId(GetAuthorizationRoleComparedefaultRightRoleIdRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainOrgRoleDifference>() {});
+    try {
+      ApiResponse<DomainOrgRoleDifference> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainOrgRoleDifference>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get an org role to default role comparison comparison
    * Compares any organization role to a default role id and show differences
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainOrgRoleDifference> getAuthorizationRoleComparedefaultRightRoleId(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DomainOrgRoleDifference>invokeAPIVerbose(request, new TypeReference<DomainOrgRoleDifference>() {});
+  public ApiResponse<DomainOrgRoleDifference> getAuthorizationRoleComparedefaultRightRoleId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DomainOrgRoleDifference>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainOrgRoleDifference> response = (ApiResponse<DomainOrgRoleDifference>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainOrgRoleDifference> response = (ApiResponse<DomainOrgRoleDifference>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -501,10 +529,11 @@ public class AuthorizationApi {
    * @param permission  (optional)
    * @param userCount  (optional, default to true)
    * @return OrganizationRoleEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrganizationRoleEntityListing getAuthorizationRoles(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, List<Object> permission, Boolean userCount) throws IOException, ApiException {
-    return getAuthorizationRolesWithHttpInfo(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, permission, userCount).getBody();
+    return  getAuthorizationRoles(createGetAuthorizationRolesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, permission, userCount));
   }
 
   /**
@@ -519,63 +548,78 @@ public class AuthorizationApi {
    * @param permission  (optional)
    * @param userCount  (optional, default to true)
    * @return OrganizationRoleEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationRoleEntityListing> getAuthorizationRolesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, List<Object> permission, Boolean userCount) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/authorization/roles".replaceAll("\\{format\\}","json");
+  public ApiResponse<OrganizationRoleEntityListing> getAuthorizationRolesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, List<Object> permission, Boolean userCount) throws IOException {
+    return getAuthorizationRoles(createGetAuthorizationRolesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, permission, userCount).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetAuthorizationRolesRequest createGetAuthorizationRolesRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, List<Object> permission, Boolean userCount) {
+    return GetAuthorizationRolesRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "nextPage", nextPage));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "previousPage", previousPage));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "permission", permission));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "userCount", userCount));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withSortBy(sortBy)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withExpand(expand)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withNextPage(nextPage)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OrganizationRoleEntityListing>() {});
+            .withPreviousPage(previousPage)
+
+            .withPermission(permission)
+
+            .withUserCount(userCount)
+            .build();
   }
 
   /**
    * Retrieve a list of all roles defined for the organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OrganizationRoleEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrganizationRoleEntityListing getAuthorizationRoles(GetAuthorizationRolesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrganizationRoleEntityListing>() {});
+    try {
+      ApiResponse<OrganizationRoleEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationRoleEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Retrieve a list of all roles defined for the organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationRoleEntityListing> getAuthorizationRoles(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<OrganizationRoleEntityListing>invokeAPIVerbose(request, new TypeReference<OrganizationRoleEntityListing>() {});
+  public ApiResponse<OrganizationRoleEntityListing> getAuthorizationRoles(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrganizationRoleEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationRoleEntityListing> response = (ApiResponse<OrganizationRoleEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationRoleEntityListing> response = (ApiResponse<OrganizationRoleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -583,10 +627,11 @@ public class AuthorizationApi {
    * 
    * @param userId User ID (required)
    * @return UserAuthorization
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserAuthorization getUserRoles(String userId) throws IOException, ApiException {
-    return getUserRolesWithHttpInfo(userId).getBody();
+    return  getUserRoles(createGetUserRolesRequest(userId));
   }
 
   /**
@@ -594,61 +639,64 @@ public class AuthorizationApi {
    * 
    * @param userId User ID (required)
    * @return UserAuthorization
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserAuthorization> getUserRolesWithHttpInfo(String userId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserRoles");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/roles".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<UserAuthorization> getUserRolesWithHttpInfo(String userId) throws IOException {
+    return getUserRoles(createGetUserRolesRequest(userId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserAuthorization>() {});
+  private GetUserRolesRequest createGetUserRolesRequest(String userId) {
+    return GetUserRolesRequest.builder()
+            .withUserId(userId)
+            .build();
   }
 
   /**
    * Returns a listing of roles and permissions for a user.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserAuthorization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserAuthorization getUserRoles(GetUserRolesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserAuthorization>() {});
+    try {
+      ApiResponse<UserAuthorization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserAuthorization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Returns a listing of roles and permissions for a user.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserAuthorization> getUserRoles(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<UserAuthorization>invokeAPIVerbose(request, new TypeReference<UserAuthorization>() {});
+  public ApiResponse<UserAuthorization> getUserRoles(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserAuthorization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -657,10 +705,11 @@ public class AuthorizationApi {
    * @param roleId Role ID (required)
    * @param body Organization role (required)
    * @return DomainOrganizationRole
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainOrganizationRole patchAuthorizationRole(String roleId, DomainOrganizationRole body) throws IOException, ApiException {
-    return patchAuthorizationRoleWithHttpInfo(roleId, body).getBody();
+    return  patchAuthorizationRole(createPatchAuthorizationRoleRequest(roleId, body));
   }
 
   /**
@@ -669,66 +718,66 @@ public class AuthorizationApi {
    * @param roleId Role ID (required)
    * @param body Organization role (required)
    * @return DomainOrganizationRole
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainOrganizationRole> patchAuthorizationRoleWithHttpInfo(String roleId, DomainOrganizationRole body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'roleId' is set
-    if (roleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'roleId' when calling patchAuthorizationRole");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchAuthorizationRole");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/authorization/roles/{roleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "roleId" + "\\}", pcapiClient.escapeString(roleId.toString()));
+  public ApiResponse<DomainOrganizationRole> patchAuthorizationRoleWithHttpInfo(String roleId, DomainOrganizationRole body) throws IOException {
+    return patchAuthorizationRole(createPatchAuthorizationRoleRequest(roleId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchAuthorizationRoleRequest createPatchAuthorizationRoleRequest(String roleId, DomainOrganizationRole body) {
+    return PatchAuthorizationRoleRequest.builder()
+            .withRoleId(roleId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DomainOrganizationRole>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Patch Organization Role for needsUpdate Field
    * Patch Organization Role for needsUpdate Field
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DomainOrganizationRole
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainOrganizationRole patchAuthorizationRole(PatchAuthorizationRoleRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainOrganizationRole>() {});
+    try {
+      ApiResponse<DomainOrganizationRole> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainOrganizationRole>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Patch Organization Role for needsUpdate Field
    * Patch Organization Role for needsUpdate Field
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainOrganizationRole> patchAuthorizationRole(ApiRequest<DomainOrganizationRole> request) throws IOException, ApiException {
-    return pcapiClient.<DomainOrganizationRole>invokeAPIVerbose(request, new TypeReference<DomainOrganizationRole>() {});
+  public ApiResponse<DomainOrganizationRole> patchAuthorizationRole(ApiRequest<DomainOrganizationRole> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DomainOrganizationRole>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainOrganizationRole> response = (ApiResponse<DomainOrganizationRole>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainOrganizationRole> response = (ApiResponse<DomainOrganizationRole>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -738,10 +787,11 @@ public class AuthorizationApi {
    * @param rightRoleId Right Role id (required)
    * @param body Organization role (required)
    * @return DomainOrgRoleDifference
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainOrgRoleDifference postAuthorizationRoleComparedefaultRightRoleId(String leftRoleId, String rightRoleId, DomainOrganizationRole body) throws IOException, ApiException {
-    return postAuthorizationRoleComparedefaultRightRoleIdWithHttpInfo(leftRoleId, rightRoleId, body).getBody();
+    return  postAuthorizationRoleComparedefaultRightRoleId(createPostAuthorizationRoleComparedefaultRightRoleIdRequest(leftRoleId, rightRoleId, body));
   }
 
   /**
@@ -751,72 +801,68 @@ public class AuthorizationApi {
    * @param rightRoleId Right Role id (required)
    * @param body Organization role (required)
    * @return DomainOrgRoleDifference
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainOrgRoleDifference> postAuthorizationRoleComparedefaultRightRoleIdWithHttpInfo(String leftRoleId, String rightRoleId, DomainOrganizationRole body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'leftRoleId' is set
-    if (leftRoleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'leftRoleId' when calling postAuthorizationRoleComparedefaultRightRoleId");
-    }
-    
-    // verify the required parameter 'rightRoleId' is set
-    if (rightRoleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'rightRoleId' when calling postAuthorizationRoleComparedefaultRightRoleId");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAuthorizationRoleComparedefaultRightRoleId");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "leftRoleId" + "\\}", pcapiClient.escapeString(leftRoleId.toString()))
-      .replaceAll("\\{" + "rightRoleId" + "\\}", pcapiClient.escapeString(rightRoleId.toString()));
+  public ApiResponse<DomainOrgRoleDifference> postAuthorizationRoleComparedefaultRightRoleIdWithHttpInfo(String leftRoleId, String rightRoleId, DomainOrganizationRole body) throws IOException {
+    return postAuthorizationRoleComparedefaultRightRoleId(createPostAuthorizationRoleComparedefaultRightRoleIdRequest(leftRoleId, rightRoleId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostAuthorizationRoleComparedefaultRightRoleIdRequest createPostAuthorizationRoleComparedefaultRightRoleIdRequest(String leftRoleId, String rightRoleId, DomainOrganizationRole body) {
+    return PostAuthorizationRoleComparedefaultRightRoleIdRequest.builder()
+            .withLeftRoleId(leftRoleId)
 
+            .withRightRoleId(rightRoleId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DomainOrgRoleDifference>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Get an unsaved org role to default role comparison
    * Allows users to compare their existing roles in an unsaved state to its default role
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DomainOrgRoleDifference
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainOrgRoleDifference postAuthorizationRoleComparedefaultRightRoleId(PostAuthorizationRoleComparedefaultRightRoleIdRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainOrgRoleDifference>() {});
+    try {
+      ApiResponse<DomainOrgRoleDifference> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainOrgRoleDifference>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get an unsaved org role to default role comparison
    * Allows users to compare their existing roles in an unsaved state to its default role
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainOrgRoleDifference> postAuthorizationRoleComparedefaultRightRoleId(ApiRequest<DomainOrganizationRole> request) throws IOException, ApiException {
-    return pcapiClient.<DomainOrgRoleDifference>invokeAPIVerbose(request, new TypeReference<DomainOrgRoleDifference>() {});
+  public ApiResponse<DomainOrgRoleDifference> postAuthorizationRoleComparedefaultRightRoleId(ApiRequest<DomainOrganizationRole> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DomainOrgRoleDifference>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainOrgRoleDifference> response = (ApiResponse<DomainOrgRoleDifference>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainOrgRoleDifference> response = (ApiResponse<DomainOrgRoleDifference>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -824,10 +870,11 @@ public class AuthorizationApi {
    * 
    * @param body Organization role (required)
    * @return DomainOrganizationRole
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainOrganizationRole postAuthorizationRoles(DomainOrganizationRoleCreate body) throws IOException, ApiException {
-    return postAuthorizationRolesWithHttpInfo(body).getBody();
+    return  postAuthorizationRoles(createPostAuthorizationRolesRequest(body));
   }
 
   /**
@@ -835,60 +882,64 @@ public class AuthorizationApi {
    * 
    * @param body Organization role (required)
    * @return DomainOrganizationRole
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainOrganizationRole> postAuthorizationRolesWithHttpInfo(DomainOrganizationRoleCreate body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAuthorizationRoles");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/authorization/roles".replaceAll("\\{format\\}","json");
+  public ApiResponse<DomainOrganizationRole> postAuthorizationRolesWithHttpInfo(DomainOrganizationRoleCreate body) throws IOException {
+    return postAuthorizationRoles(createPostAuthorizationRolesRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DomainOrganizationRole>() {});
+  private PostAuthorizationRolesRequest createPostAuthorizationRolesRequest(DomainOrganizationRoleCreate body) {
+    return PostAuthorizationRolesRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create an organization role.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DomainOrganizationRole
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainOrganizationRole postAuthorizationRoles(PostAuthorizationRolesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainOrganizationRole>() {});
+    try {
+      ApiResponse<DomainOrganizationRole> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainOrganizationRole>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create an organization role.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainOrganizationRole> postAuthorizationRoles(ApiRequest<DomainOrganizationRoleCreate> request) throws IOException, ApiException {
-    return pcapiClient.<DomainOrganizationRole>invokeAPIVerbose(request, new TypeReference<DomainOrganizationRole>() {});
+  public ApiResponse<DomainOrganizationRole> postAuthorizationRoles(ApiRequest<DomainOrganizationRoleCreate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DomainOrganizationRole>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainOrganizationRole> response = (ApiResponse<DomainOrganizationRole>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainOrganizationRole> response = (ApiResponse<DomainOrganizationRole>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -896,10 +947,11 @@ public class AuthorizationApi {
    * This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force&#x3D;true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force&#x3D;true, you can restore all default roles. Note: This does not have an effect on custom roles.
    * @param force Restore default roles (optional, default to false)
    * @return OrganizationRoleEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrganizationRoleEntityListing postAuthorizationRolesDefault(Boolean force) throws IOException, ApiException {
-    return postAuthorizationRolesDefaultWithHttpInfo(force).getBody();
+    return  postAuthorizationRolesDefault(createPostAuthorizationRolesDefaultRequest(force));
   }
 
   /**
@@ -907,56 +959,64 @@ public class AuthorizationApi {
    * This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force&#x3D;true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force&#x3D;true, you can restore all default roles. Note: This does not have an effect on custom roles.
    * @param force Restore default roles (optional, default to false)
    * @return OrganizationRoleEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationRoleEntityListing> postAuthorizationRolesDefaultWithHttpInfo(Boolean force) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/authorization/roles/default".replaceAll("\\{format\\}","json");
+  public ApiResponse<OrganizationRoleEntityListing> postAuthorizationRolesDefaultWithHttpInfo(Boolean force) throws IOException {
+    return postAuthorizationRolesDefault(createPostAuthorizationRolesDefaultRequest(force).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "force", force));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OrganizationRoleEntityListing>() {});
+  private PostAuthorizationRolesDefaultRequest createPostAuthorizationRolesDefaultRequest(Boolean force) {
+    return PostAuthorizationRolesDefaultRequest.builder()
+            .withForce(force)
+            .build();
   }
 
   /**
    * Restores all default roles
    * This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force&#x3D;true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force&#x3D;true, you can restore all default roles. Note: This does not have an effect on custom roles.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OrganizationRoleEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrganizationRoleEntityListing postAuthorizationRolesDefault(PostAuthorizationRolesDefaultRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrganizationRoleEntityListing>() {});
+    try {
+      ApiResponse<OrganizationRoleEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationRoleEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Restores all default roles
    * This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force&#x3D;true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force&#x3D;true, you can restore all default roles. Note: This does not have an effect on custom roles.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationRoleEntityListing> postAuthorizationRolesDefault(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<OrganizationRoleEntityListing>invokeAPIVerbose(request, new TypeReference<OrganizationRoleEntityListing>() {});
+  public ApiResponse<OrganizationRoleEntityListing> postAuthorizationRolesDefault(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrganizationRoleEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationRoleEntityListing> response = (ApiResponse<OrganizationRoleEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationRoleEntityListing> response = (ApiResponse<OrganizationRoleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -965,10 +1025,11 @@ public class AuthorizationApi {
    * @param roleId Role ID (required)
    * @param body Organization role (required)
    * @return DomainOrganizationRole
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainOrganizationRole putAuthorizationRole(String roleId, DomainOrganizationRoleUpdate body) throws IOException, ApiException {
-    return putAuthorizationRoleWithHttpInfo(roleId, body).getBody();
+    return  putAuthorizationRole(createPutAuthorizationRoleRequest(roleId, body));
   }
 
   /**
@@ -977,66 +1038,66 @@ public class AuthorizationApi {
    * @param roleId Role ID (required)
    * @param body Organization role (required)
    * @return DomainOrganizationRole
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainOrganizationRole> putAuthorizationRoleWithHttpInfo(String roleId, DomainOrganizationRoleUpdate body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'roleId' is set
-    if (roleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'roleId' when calling putAuthorizationRole");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAuthorizationRole");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/authorization/roles/{roleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "roleId" + "\\}", pcapiClient.escapeString(roleId.toString()));
+  public ApiResponse<DomainOrganizationRole> putAuthorizationRoleWithHttpInfo(String roleId, DomainOrganizationRoleUpdate body) throws IOException {
+    return putAuthorizationRole(createPutAuthorizationRoleRequest(roleId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutAuthorizationRoleRequest createPutAuthorizationRoleRequest(String roleId, DomainOrganizationRoleUpdate body) {
+    return PutAuthorizationRoleRequest.builder()
+            .withRoleId(roleId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DomainOrganizationRole>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update an organization role.
    * Update
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DomainOrganizationRole
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainOrganizationRole putAuthorizationRole(PutAuthorizationRoleRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainOrganizationRole>() {});
+    try {
+      ApiResponse<DomainOrganizationRole> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainOrganizationRole>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update an organization role.
    * Update
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainOrganizationRole> putAuthorizationRole(ApiRequest<DomainOrganizationRoleUpdate> request) throws IOException, ApiException {
-    return pcapiClient.<DomainOrganizationRole>invokeAPIVerbose(request, new TypeReference<DomainOrganizationRole>() {});
+  public ApiResponse<DomainOrganizationRole> putAuthorizationRole(ApiRequest<DomainOrganizationRoleUpdate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DomainOrganizationRole>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainOrganizationRole> response = (ApiResponse<DomainOrganizationRole>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainOrganizationRole> response = (ApiResponse<DomainOrganizationRole>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1045,10 +1106,11 @@ public class AuthorizationApi {
    * @param roleId Role ID (required)
    * @param body List of user IDs (required)
    * @return List<String>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<String> putAuthorizationRoleUsersAdd(String roleId, List<String> body) throws IOException, ApiException {
-    return putAuthorizationRoleUsersAddWithHttpInfo(roleId, body).getBody();
+    return  putAuthorizationRoleUsersAdd(createPutAuthorizationRoleUsersAddRequest(roleId, body));
   }
 
   /**
@@ -1057,66 +1119,66 @@ public class AuthorizationApi {
    * @param roleId Role ID (required)
    * @param body List of user IDs (required)
    * @return List<String>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<String>> putAuthorizationRoleUsersAddWithHttpInfo(String roleId, List<String> body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'roleId' is set
-    if (roleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'roleId' when calling putAuthorizationRoleUsersAdd");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAuthorizationRoleUsersAdd");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/authorization/roles/{roleId}/users/add".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "roleId" + "\\}", pcapiClient.escapeString(roleId.toString()));
+  public ApiResponse<List<String>> putAuthorizationRoleUsersAddWithHttpInfo(String roleId, List<String> body) throws IOException {
+    return putAuthorizationRoleUsersAdd(createPutAuthorizationRoleUsersAddRequest(roleId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutAuthorizationRoleUsersAddRequest createPutAuthorizationRoleUsersAddRequest(String roleId, List<String> body) {
+    return PutAuthorizationRoleUsersAddRequest.builder()
+            .withRoleId(roleId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<String>>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Sets the users for the role
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<String>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<String> putAuthorizationRoleUsersAdd(PutAuthorizationRoleUsersAddRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<String>>() {});
+    try {
+      ApiResponse<List<String>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<String>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Sets the users for the role
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<String>> putAuthorizationRoleUsersAdd(ApiRequest<List<String>> request) throws IOException, ApiException {
-    return pcapiClient.<List<String>>invokeAPIVerbose(request, new TypeReference<List<String>>() {});
+  public ApiResponse<List<String>> putAuthorizationRoleUsersAdd(ApiRequest<List<String>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<String>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1125,10 +1187,11 @@ public class AuthorizationApi {
    * @param roleId Role ID (required)
    * @param body List of user IDs (required)
    * @return List<String>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<String> putAuthorizationRoleUsersRemove(String roleId, List<String> body) throws IOException, ApiException {
-    return putAuthorizationRoleUsersRemoveWithHttpInfo(roleId, body).getBody();
+    return  putAuthorizationRoleUsersRemove(createPutAuthorizationRoleUsersRemoveRequest(roleId, body));
   }
 
   /**
@@ -1137,66 +1200,66 @@ public class AuthorizationApi {
    * @param roleId Role ID (required)
    * @param body List of user IDs (required)
    * @return List<String>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<String>> putAuthorizationRoleUsersRemoveWithHttpInfo(String roleId, List<String> body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'roleId' is set
-    if (roleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'roleId' when calling putAuthorizationRoleUsersRemove");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAuthorizationRoleUsersRemove");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/authorization/roles/{roleId}/users/remove".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "roleId" + "\\}", pcapiClient.escapeString(roleId.toString()));
+  public ApiResponse<List<String>> putAuthorizationRoleUsersRemoveWithHttpInfo(String roleId, List<String> body) throws IOException {
+    return putAuthorizationRoleUsersRemove(createPutAuthorizationRoleUsersRemoveRequest(roleId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutAuthorizationRoleUsersRemoveRequest createPutAuthorizationRoleUsersRemoveRequest(String roleId, List<String> body) {
+    return PutAuthorizationRoleUsersRemoveRequest.builder()
+            .withRoleId(roleId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<String>>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Removes the users from the role
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<String>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<String> putAuthorizationRoleUsersRemove(PutAuthorizationRoleUsersRemoveRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<String>>() {});
+    try {
+      ApiResponse<List<String>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<String>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Removes the users from the role
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<String>> putAuthorizationRoleUsersRemove(ApiRequest<List<String>> request) throws IOException, ApiException {
-    return pcapiClient.<List<String>>invokeAPIVerbose(request, new TypeReference<List<String>>() {});
+  public ApiResponse<List<String>> putAuthorizationRoleUsersRemove(ApiRequest<List<String>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<String>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1204,10 +1267,11 @@ public class AuthorizationApi {
    * 
    * @param body Organization roles list (required)
    * @return OrganizationRoleEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrganizationRoleEntityListing putAuthorizationRolesDefault(List<DomainOrganizationRole> body) throws IOException, ApiException {
-    return putAuthorizationRolesDefaultWithHttpInfo(body).getBody();
+    return  putAuthorizationRolesDefault(createPutAuthorizationRolesDefaultRequest(body));
   }
 
   /**
@@ -1215,60 +1279,64 @@ public class AuthorizationApi {
    * 
    * @param body Organization roles list (required)
    * @return OrganizationRoleEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationRoleEntityListing> putAuthorizationRolesDefaultWithHttpInfo(List<DomainOrganizationRole> body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAuthorizationRolesDefault");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/authorization/roles/default".replaceAll("\\{format\\}","json");
+  public ApiResponse<OrganizationRoleEntityListing> putAuthorizationRolesDefaultWithHttpInfo(List<DomainOrganizationRole> body) throws IOException {
+    return putAuthorizationRolesDefault(createPutAuthorizationRolesDefaultRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OrganizationRoleEntityListing>() {});
+  private PutAuthorizationRolesDefaultRequest createPutAuthorizationRolesDefaultRequest(List<DomainOrganizationRole> body) {
+    return PutAuthorizationRolesDefaultRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Restore specified default roles
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OrganizationRoleEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrganizationRoleEntityListing putAuthorizationRolesDefault(PutAuthorizationRolesDefaultRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrganizationRoleEntityListing>() {});
+    try {
+      ApiResponse<OrganizationRoleEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationRoleEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Restore specified default roles
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationRoleEntityListing> putAuthorizationRolesDefault(ApiRequest<List<DomainOrganizationRole>> request) throws IOException, ApiException {
-    return pcapiClient.<OrganizationRoleEntityListing>invokeAPIVerbose(request, new TypeReference<OrganizationRoleEntityListing>() {});
+  public ApiResponse<OrganizationRoleEntityListing> putAuthorizationRolesDefault(ApiRequest<List<DomainOrganizationRole>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrganizationRoleEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationRoleEntityListing> response = (ApiResponse<OrganizationRoleEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationRoleEntityListing> response = (ApiResponse<OrganizationRoleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1277,10 +1345,11 @@ public class AuthorizationApi {
    * @param userId User ID (required)
    * @param body List of roles (required)
    * @return UserAuthorization
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserAuthorization putUserRoles(String userId, List<String> body) throws IOException, ApiException {
-    return putUserRolesWithHttpInfo(userId, body).getBody();
+    return  putUserRoles(createPutUserRolesRequest(userId, body));
   }
 
   /**
@@ -1289,66 +1358,66 @@ public class AuthorizationApi {
    * @param userId User ID (required)
    * @param body List of roles (required)
    * @return UserAuthorization
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserAuthorization> putUserRolesWithHttpInfo(String userId, List<String> body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putUserRoles");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putUserRoles");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/roles".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<UserAuthorization> putUserRolesWithHttpInfo(String userId, List<String> body) throws IOException {
+    return putUserRoles(createPutUserRolesRequest(userId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutUserRolesRequest createPutUserRolesRequest(String userId, List<String> body) {
+    return PutUserRolesRequest.builder()
+            .withUserId(userId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserAuthorization>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Sets the user&#39;s roles
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserAuthorization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserAuthorization putUserRoles(PutUserRolesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserAuthorization>() {});
+    try {
+      ApiResponse<UserAuthorization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserAuthorization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Sets the user&#39;s roles
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserAuthorization> putUserRoles(ApiRequest<List<String>> request) throws IOException, ApiException {
-    return pcapiClient.<UserAuthorization>invokeAPIVerbose(request, new TypeReference<UserAuthorization>() {});
+  public ApiResponse<UserAuthorization> putUserRoles(ApiRequest<List<String>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserAuthorization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

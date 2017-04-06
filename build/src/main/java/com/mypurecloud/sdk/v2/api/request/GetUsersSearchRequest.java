@@ -47,9 +47,6 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class GetUsersSearchRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String q64;
 	public String getQ64() {
 		return this.q64;
@@ -148,6 +145,12 @@ public class GetUsersSearchRequest {
 
 
 		public GetUsersSearchRequest build() {
+            
+            // verify the required parameter 'q64' is set
+            if (request.q64 == null) {
+                throw new IllegalStateException("Missing the required parameter 'q64' when building request for GetUsersSearchRequest.");
+            }
+            
 			return request;
 		}
 	}

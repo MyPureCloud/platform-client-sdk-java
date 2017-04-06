@@ -60,9 +60,6 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class GetConversationsChatParticipantWrapupcodesRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String chatId;
 	public String getChatId() {
 		return this.chatId;
@@ -167,6 +164,17 @@ public class GetConversationsChatParticipantWrapupcodesRequest {
 
 
 		public GetConversationsChatParticipantWrapupcodesRequest build() {
+            
+            // verify the required parameter 'chatId' is set
+            if (request.chatId == null) {
+                throw new IllegalStateException("Missing the required parameter 'chatId' when building request for GetConversationsChatParticipantWrapupcodesRequest.");
+            }
+            
+            // verify the required parameter 'participantId' is set
+            if (request.participantId == null) {
+                throw new IllegalStateException("Missing the required parameter 'participantId' when building request for GetConversationsChatParticipantWrapupcodesRequest.");
+            }
+            
 			return request;
 		}
 	}

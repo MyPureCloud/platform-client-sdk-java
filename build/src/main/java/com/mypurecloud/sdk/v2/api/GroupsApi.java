@@ -56,71 +56,74 @@ public class GroupsApi {
    * Delete group
    * 
    * @param groupId Group ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteGroup(String groupId) throws IOException, ApiException {
-    deleteGroupWithHttpInfo(groupId);
+     deleteGroup(createDeleteGroupRequest(groupId));
   }
 
   /**
    * Delete group
    * 
    * @param groupId Group ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteGroupWithHttpInfo(String groupId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'groupId' is set
-    if (groupId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling deleteGroup");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/groups/{groupId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "groupId" + "\\}", pcapiClient.escapeString(groupId.toString()));
+  public ApiResponse<Void> deleteGroupWithHttpInfo(String groupId) throws IOException {
+    return deleteGroup(createDeleteGroupRequest(groupId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteGroupRequest createDeleteGroupRequest(String groupId) {
+    return DeleteGroupRequest.builder()
+            .withGroupId(groupId)
+            .build();
   }
 
   /**
    * Delete group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteGroup(DeleteGroupRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteGroup(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteGroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -129,10 +132,11 @@ public class GroupsApi {
    * @param groupId Group ID (required)
    * @param ids Comma separated list of userIds to remove (required)
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteGroupMembers(String groupId, String ids) throws IOException, ApiException {
-    return deleteGroupMembersWithHttpInfo(groupId, ids).getBody();
+    return  deleteGroupMembers(createDeleteGroupMembersRequest(groupId, ids));
   }
 
   /**
@@ -141,67 +145,66 @@ public class GroupsApi {
    * @param groupId Group ID (required)
    * @param ids Comma separated list of userIds to remove (required)
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteGroupMembersWithHttpInfo(String groupId, String ids) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'groupId' is set
-    if (groupId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling deleteGroupMembers");
-    }
-    
-    // verify the required parameter 'ids' is set
-    if (ids == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'ids' when calling deleteGroupMembers");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/groups/{groupId}/members".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "groupId" + "\\}", pcapiClient.escapeString(groupId.toString()));
+  public ApiResponse<Empty> deleteGroupMembersWithHttpInfo(String groupId, String ids) throws IOException {
+    return deleteGroupMembers(createDeleteGroupMembersRequest(groupId, ids).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private DeleteGroupMembersRequest createDeleteGroupMembersRequest(String groupId, String ids) {
+    return DeleteGroupMembersRequest.builder()
+            .withGroupId(groupId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "ids", ids));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Empty>() {});
+            .withIds(ids)
+            .build();
   }
 
   /**
    * Remove members
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteGroupMembers(DeleteGroupMembersRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Remove members
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteGroupMembers(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
+  public ApiResponse<Empty> deleteGroupMembers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -209,10 +212,11 @@ public class GroupsApi {
    * 
    * @param type Field type (required)
    * @return FieldConfig
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FieldConfig getFieldconfig(String type) throws IOException, ApiException {
-    return getFieldconfigWithHttpInfo(type).getBody();
+    return  getFieldconfig(createGetFieldconfigRequest(type));
   }
 
   /**
@@ -220,61 +224,64 @@ public class GroupsApi {
    * 
    * @param type Field type (required)
    * @return FieldConfig
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FieldConfig> getFieldconfigWithHttpInfo(String type) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'type' is set
-    if (type == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'type' when calling getFieldconfig");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/fieldconfig".replaceAll("\\{format\\}","json");
+  public ApiResponse<FieldConfig> getFieldconfigWithHttpInfo(String type) throws IOException {
+    return getFieldconfig(createGetFieldconfigRequest(type).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "type", type));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<FieldConfig>() {});
+  private GetFieldconfigRequest createGetFieldconfigRequest(String type) {
+    return GetFieldconfigRequest.builder()
+            .withType(type)
+            .build();
   }
 
   /**
    * Fetch field config for an entity type
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return FieldConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FieldConfig getFieldconfig(GetFieldconfigRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FieldConfig>() {});
+    try {
+      ApiResponse<FieldConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FieldConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Fetch field config for an entity type
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FieldConfig> getFieldconfig(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<FieldConfig>invokeAPIVerbose(request, new TypeReference<FieldConfig>() {});
+  public ApiResponse<FieldConfig> getFieldconfig(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FieldConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FieldConfig> response = (ApiResponse<FieldConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FieldConfig> response = (ApiResponse<FieldConfig>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -282,10 +289,11 @@ public class GroupsApi {
    * 
    * @param groupId Group ID (required)
    * @return Group
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Group getGroup(String groupId) throws IOException, ApiException {
-    return getGroupWithHttpInfo(groupId).getBody();
+    return  getGroup(createGetGroupRequest(groupId));
   }
 
   /**
@@ -293,61 +301,64 @@ public class GroupsApi {
    * 
    * @param groupId Group ID (required)
    * @return Group
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Group> getGroupWithHttpInfo(String groupId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'groupId' is set
-    if (groupId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling getGroup");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/groups/{groupId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "groupId" + "\\}", pcapiClient.escapeString(groupId.toString()));
+  public ApiResponse<Group> getGroupWithHttpInfo(String groupId) throws IOException {
+    return getGroup(createGetGroupRequest(groupId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Group>() {});
+  private GetGroupRequest createGetGroupRequest(String groupId) {
+    return GetGroupRequest.builder()
+            .withGroupId(groupId)
+            .build();
   }
 
   /**
    * Get group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Group
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Group getGroup(GetGroupRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Group>() {});
+    try {
+      ApiResponse<Group> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Group>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Group> getGroup(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Group>invokeAPIVerbose(request, new TypeReference<Group>() {});
+  public ApiResponse<Group> getGroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Group>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Group> response = (ApiResponse<Group>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Group> response = (ApiResponse<Group>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -359,10 +370,11 @@ public class GroupsApi {
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @param expand Which fields, if any, to expand (optional)
    * @return UserEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserEntityListing getGroupMembers(String groupId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException, ApiException {
-    return getGroupMembersWithHttpInfo(groupId, pageSize, pageNumber, sortOrder, expand).getBody();
+    return  getGroupMembers(createGetGroupMembersRequest(groupId, pageSize, pageNumber, sortOrder, expand));
   }
 
   /**
@@ -374,65 +386,72 @@ public class GroupsApi {
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @param expand Which fields, if any, to expand (optional)
    * @return UserEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserEntityListing> getGroupMembersWithHttpInfo(String groupId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'groupId' is set
-    if (groupId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling getGroupMembers");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/groups/{groupId}/members".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "groupId" + "\\}", pcapiClient.escapeString(groupId.toString()));
+  public ApiResponse<UserEntityListing> getGroupMembersWithHttpInfo(String groupId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException {
+    return getGroupMembers(createGetGroupMembersRequest(groupId, pageSize, pageNumber, sortOrder, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetGroupMembersRequest createGetGroupMembersRequest(String groupId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) {
+    return GetGroupMembersRequest.builder()
+            .withGroupId(groupId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageNumber(pageNumber)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortOrder(sortOrder)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserEntityListing>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get group members
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserEntityListing getGroupMembers(GetGroupMembersRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserEntityListing>() {});
+    try {
+      ApiResponse<UserEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get group members
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserEntityListing> getGroupMembers(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<UserEntityListing>invokeAPIVerbose(request, new TypeReference<UserEntityListing>() {});
+  public ApiResponse<UserEntityListing> getGroupMembers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -442,10 +461,11 @@ public class GroupsApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @return GroupEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public GroupEntityListing getGroups(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
-    return getGroupsWithHttpInfo(pageSize, pageNumber, sortOrder).getBody();
+    return  getGroups(createGetGroupsRequest(pageSize, pageNumber, sortOrder));
   }
 
   /**
@@ -455,58 +475,68 @@ public class GroupsApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @return GroupEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GroupEntityListing> getGroupsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/groups".replaceAll("\\{format\\}","json");
+  public ApiResponse<GroupEntityListing> getGroupsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException {
+    return getGroups(createGetGroupsRequest(pageSize, pageNumber, sortOrder).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetGroupsRequest createGetGroupsRequest(Integer pageSize, Integer pageNumber, String sortOrder) {
+    return GetGroupsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<GroupEntityListing>() {});
+            .withSortOrder(sortOrder)
+            .build();
   }
 
   /**
    * Get a group list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return GroupEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public GroupEntityListing getGroups(GetGroupsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<GroupEntityListing>() {});
+    try {
+      ApiResponse<GroupEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GroupEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a group list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GroupEntityListing> getGroups(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<GroupEntityListing>invokeAPIVerbose(request, new TypeReference<GroupEntityListing>() {});
+  public ApiResponse<GroupEntityListing> getGroups(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GroupEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GroupEntityListing> response = (ApiResponse<GroupEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GroupEntityListing> response = (ApiResponse<GroupEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -515,10 +545,11 @@ public class GroupsApi {
    * @param q64 q64 (required)
    * @param expand expand (optional)
    * @return GroupsSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public GroupsSearchResponse getGroupsSearch(String q64, List<String> expand) throws IOException, ApiException {
-    return getGroupsSearchWithHttpInfo(q64, expand).getBody();
+    return  getGroupsSearch(createGetGroupsSearchRequest(q64, expand));
   }
 
   /**
@@ -527,62 +558,66 @@ public class GroupsApi {
    * @param q64 q64 (required)
    * @param expand expand (optional)
    * @return GroupsSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GroupsSearchResponse> getGroupsSearchWithHttpInfo(String q64, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'q64' is set
-    if (q64 == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'q64' when calling getGroupsSearch");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/groups/search".replaceAll("\\{format\\}","json");
+  public ApiResponse<GroupsSearchResponse> getGroupsSearchWithHttpInfo(String q64, List<String> expand) throws IOException {
+    return getGroupsSearch(createGetGroupsSearchRequest(q64, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetGroupsSearchRequest createGetGroupsSearchRequest(String q64, List<String> expand) {
+    return GetGroupsSearchRequest.builder()
+            .withQ64(q64)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "q64", q64));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<GroupsSearchResponse>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Search groups using the q64 value returned from a previous search
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return GroupsSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public GroupsSearchResponse getGroupsSearch(GetGroupsSearchRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<GroupsSearchResponse>() {});
+    try {
+      ApiResponse<GroupsSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GroupsSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Search groups using the q64 value returned from a previous search
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GroupsSearchResponse> getGroupsSearch(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<GroupsSearchResponse>invokeAPIVerbose(request, new TypeReference<GroupsSearchResponse>() {});
+  public ApiResponse<GroupsSearchResponse> getGroupsSearch(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GroupsSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GroupsSearchResponse> response = (ApiResponse<GroupsSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GroupsSearchResponse> response = (ApiResponse<GroupsSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -591,10 +626,11 @@ public class GroupsApi {
    * @param groupId Group ID (required)
    * @param body Add members (required)
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty postGroupMembers(String groupId, GroupMembersUpdate body) throws IOException, ApiException {
-    return postGroupMembersWithHttpInfo(groupId, body).getBody();
+    return  postGroupMembers(createPostGroupMembersRequest(groupId, body));
   }
 
   /**
@@ -603,66 +639,66 @@ public class GroupsApi {
    * @param groupId Group ID (required)
    * @param body Add members (required)
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> postGroupMembersWithHttpInfo(String groupId, GroupMembersUpdate body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'groupId' is set
-    if (groupId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling postGroupMembers");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postGroupMembers");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/groups/{groupId}/members".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "groupId" + "\\}", pcapiClient.escapeString(groupId.toString()));
+  public ApiResponse<Empty> postGroupMembersWithHttpInfo(String groupId, GroupMembersUpdate body) throws IOException {
+    return postGroupMembers(createPostGroupMembersRequest(groupId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostGroupMembersRequest createPostGroupMembersRequest(String groupId, GroupMembersUpdate body) {
+    return PostGroupMembersRequest.builder()
+            .withGroupId(groupId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Empty>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Add members
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty postGroupMembers(PostGroupMembersRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Add members
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> postGroupMembers(ApiRequest<GroupMembersUpdate> request) throws IOException, ApiException {
-    return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
+  public ApiResponse<Empty> postGroupMembers(ApiRequest<GroupMembersUpdate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -670,10 +706,11 @@ public class GroupsApi {
    * 
    * @param body Group (required)
    * @return Group
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Group postGroups(Group body) throws IOException, ApiException {
-    return postGroupsWithHttpInfo(body).getBody();
+    return  postGroups(createPostGroupsRequest(body));
   }
 
   /**
@@ -681,60 +718,64 @@ public class GroupsApi {
    * 
    * @param body Group (required)
    * @return Group
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Group> postGroupsWithHttpInfo(Group body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postGroups");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/groups".replaceAll("\\{format\\}","json");
+  public ApiResponse<Group> postGroupsWithHttpInfo(Group body) throws IOException {
+    return postGroups(createPostGroupsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Group>() {});
+  private PostGroupsRequest createPostGroupsRequest(Group body) {
+    return PostGroupsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Group
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Group postGroups(PostGroupsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Group>() {});
+    try {
+      ApiResponse<Group> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Group>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Group> postGroups(ApiRequest<Group> request) throws IOException, ApiException {
-    return pcapiClient.<Group>invokeAPIVerbose(request, new TypeReference<Group>() {});
+  public ApiResponse<Group> postGroups(ApiRequest<Group> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Group>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Group> response = (ApiResponse<Group>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Group> response = (ApiResponse<Group>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -742,10 +783,11 @@ public class GroupsApi {
    * 
    * @param body Search request options (required)
    * @return GroupsSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public GroupsSearchResponse postGroupsSearch(GroupSearchRequest body) throws IOException, ApiException {
-    return postGroupsSearchWithHttpInfo(body).getBody();
+    return  postGroupsSearch(createPostGroupsSearchRequest(body));
   }
 
   /**
@@ -753,60 +795,64 @@ public class GroupsApi {
    * 
    * @param body Search request options (required)
    * @return GroupsSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GroupsSearchResponse> postGroupsSearchWithHttpInfo(GroupSearchRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postGroupsSearch");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/groups/search".replaceAll("\\{format\\}","json");
+  public ApiResponse<GroupsSearchResponse> postGroupsSearchWithHttpInfo(GroupSearchRequest body) throws IOException {
+    return postGroupsSearch(createPostGroupsSearchRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<GroupsSearchResponse>() {});
+  private PostGroupsSearchRequest createPostGroupsSearchRequest(GroupSearchRequest body) {
+    return PostGroupsSearchRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Search groups
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return GroupsSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public GroupsSearchResponse postGroupsSearch(PostGroupsSearchRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<GroupsSearchResponse>() {});
+    try {
+      ApiResponse<GroupsSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GroupsSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Search groups
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GroupsSearchResponse> postGroupsSearch(ApiRequest<GroupSearchRequest> request) throws IOException, ApiException {
-    return pcapiClient.<GroupsSearchResponse>invokeAPIVerbose(request, new TypeReference<GroupsSearchResponse>() {});
+  public ApiResponse<GroupsSearchResponse> postGroupsSearch(ApiRequest<GroupSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GroupsSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GroupsSearchResponse> response = (ApiResponse<GroupsSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GroupsSearchResponse> response = (ApiResponse<GroupsSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -815,10 +861,11 @@ public class GroupsApi {
    * @param groupId Group ID (required)
    * @param body Group (optional)
    * @return Group
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Group putGroup(String groupId, GroupUpdate body) throws IOException, ApiException {
-    return putGroupWithHttpInfo(groupId, body).getBody();
+    return  putGroup(createPutGroupRequest(groupId, body));
   }
 
   /**
@@ -827,61 +874,66 @@ public class GroupsApi {
    * @param groupId Group ID (required)
    * @param body Group (optional)
    * @return Group
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Group> putGroupWithHttpInfo(String groupId, GroupUpdate body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'groupId' is set
-    if (groupId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling putGroup");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/groups/{groupId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "groupId" + "\\}", pcapiClient.escapeString(groupId.toString()));
+  public ApiResponse<Group> putGroupWithHttpInfo(String groupId, GroupUpdate body) throws IOException {
+    return putGroup(createPutGroupRequest(groupId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutGroupRequest createPutGroupRequest(String groupId, GroupUpdate body) {
+    return PutGroupRequest.builder()
+            .withGroupId(groupId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Group>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Group
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Group putGroup(PutGroupRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Group>() {});
+    try {
+      ApiResponse<Group> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Group>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Group> putGroup(ApiRequest<GroupUpdate> request) throws IOException, ApiException {
-    return pcapiClient.<Group>invokeAPIVerbose(request, new TypeReference<Group>() {});
+  public ApiResponse<Group> putGroup(ApiRequest<GroupUpdate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Group>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Group> response = (ApiResponse<Group>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Group> response = (ApiResponse<Group>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

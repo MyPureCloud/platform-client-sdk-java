@@ -88,568 +88,592 @@ public class AlertingApi {
    * Delete a heart beat alert
    * 
    * @param alertId Alert ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteAlertingHeartbeatAlert(String alertId) throws IOException, ApiException {
-    deleteAlertingHeartbeatAlertWithHttpInfo(alertId);
+     deleteAlertingHeartbeatAlert(createDeleteAlertingHeartbeatAlertRequest(alertId));
   }
 
   /**
    * Delete a heart beat alert
    * 
    * @param alertId Alert ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAlertingHeartbeatAlertWithHttpInfo(String alertId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'alertId' is set
-    if (alertId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'alertId' when calling deleteAlertingHeartbeatAlert");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/heartbeat/alerts/{alertId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "alertId" + "\\}", pcapiClient.escapeString(alertId.toString()));
+  public ApiResponse<Void> deleteAlertingHeartbeatAlertWithHttpInfo(String alertId) throws IOException {
+    return deleteAlertingHeartbeatAlert(createDeleteAlertingHeartbeatAlertRequest(alertId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteAlertingHeartbeatAlertRequest createDeleteAlertingHeartbeatAlertRequest(String alertId) {
+    return DeleteAlertingHeartbeatAlertRequest.builder()
+            .withAlertId(alertId)
+            .build();
   }
 
   /**
    * Delete a heart beat alert
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteAlertingHeartbeatAlert(DeleteAlertingHeartbeatAlertRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete a heart beat alert
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAlertingHeartbeatAlert(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteAlertingHeartbeatAlert(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete a heart beat rule.
    * 
    * @param ruleId Rule ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteAlertingHeartbeatRule(String ruleId) throws IOException, ApiException {
-    deleteAlertingHeartbeatRuleWithHttpInfo(ruleId);
+     deleteAlertingHeartbeatRule(createDeleteAlertingHeartbeatRuleRequest(ruleId));
   }
 
   /**
    * Delete a heart beat rule.
    * 
    * @param ruleId Rule ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAlertingHeartbeatRuleWithHttpInfo(String ruleId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'ruleId' is set
-    if (ruleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling deleteAlertingHeartbeatRule");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/heartbeat/rules/{ruleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "ruleId" + "\\}", pcapiClient.escapeString(ruleId.toString()));
+  public ApiResponse<Void> deleteAlertingHeartbeatRuleWithHttpInfo(String ruleId) throws IOException {
+    return deleteAlertingHeartbeatRule(createDeleteAlertingHeartbeatRuleRequest(ruleId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteAlertingHeartbeatRuleRequest createDeleteAlertingHeartbeatRuleRequest(String ruleId) {
+    return DeleteAlertingHeartbeatRuleRequest.builder()
+            .withRuleId(ruleId)
+            .build();
   }
 
   /**
    * Delete a heart beat rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteAlertingHeartbeatRule(DeleteAlertingHeartbeatRuleRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete a heart beat rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAlertingHeartbeatRule(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteAlertingHeartbeatRule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete an interaction stats alert
    * 
    * @param alertId Alert ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteAlertingInteractionstatsAlert(String alertId) throws IOException, ApiException {
-    deleteAlertingInteractionstatsAlertWithHttpInfo(alertId);
+     deleteAlertingInteractionstatsAlert(createDeleteAlertingInteractionstatsAlertRequest(alertId));
   }
 
   /**
    * Delete an interaction stats alert
    * 
    * @param alertId Alert ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAlertingInteractionstatsAlertWithHttpInfo(String alertId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'alertId' is set
-    if (alertId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'alertId' when calling deleteAlertingInteractionstatsAlert");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/interactionstats/alerts/{alertId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "alertId" + "\\}", pcapiClient.escapeString(alertId.toString()));
+  public ApiResponse<Void> deleteAlertingInteractionstatsAlertWithHttpInfo(String alertId) throws IOException {
+    return deleteAlertingInteractionstatsAlert(createDeleteAlertingInteractionstatsAlertRequest(alertId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteAlertingInteractionstatsAlertRequest createDeleteAlertingInteractionstatsAlertRequest(String alertId) {
+    return DeleteAlertingInteractionstatsAlertRequest.builder()
+            .withAlertId(alertId)
+            .build();
   }
 
   /**
    * Delete an interaction stats alert
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteAlertingInteractionstatsAlert(DeleteAlertingInteractionstatsAlertRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete an interaction stats alert
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAlertingInteractionstatsAlert(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteAlertingInteractionstatsAlert(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete an interaction stats rule.
    * 
    * @param ruleId Rule ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteAlertingInteractionstatsRule(String ruleId) throws IOException, ApiException {
-    deleteAlertingInteractionstatsRuleWithHttpInfo(ruleId);
+     deleteAlertingInteractionstatsRule(createDeleteAlertingInteractionstatsRuleRequest(ruleId));
   }
 
   /**
    * Delete an interaction stats rule.
    * 
    * @param ruleId Rule ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAlertingInteractionstatsRuleWithHttpInfo(String ruleId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'ruleId' is set
-    if (ruleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling deleteAlertingInteractionstatsRule");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/interactionstats/rules/{ruleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "ruleId" + "\\}", pcapiClient.escapeString(ruleId.toString()));
+  public ApiResponse<Void> deleteAlertingInteractionstatsRuleWithHttpInfo(String ruleId) throws IOException {
+    return deleteAlertingInteractionstatsRule(createDeleteAlertingInteractionstatsRuleRequest(ruleId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteAlertingInteractionstatsRuleRequest createDeleteAlertingInteractionstatsRuleRequest(String ruleId) {
+    return DeleteAlertingInteractionstatsRuleRequest.builder()
+            .withRuleId(ruleId)
+            .build();
   }
 
   /**
    * Delete an interaction stats rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteAlertingInteractionstatsRule(DeleteAlertingInteractionstatsRuleRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete an interaction stats rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAlertingInteractionstatsRule(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteAlertingInteractionstatsRule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete a routing status alert
    * 
    * @param alertId Alert ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteAlertingRoutingstatusAlert(String alertId) throws IOException, ApiException {
-    deleteAlertingRoutingstatusAlertWithHttpInfo(alertId);
+     deleteAlertingRoutingstatusAlert(createDeleteAlertingRoutingstatusAlertRequest(alertId));
   }
 
   /**
    * Delete a routing status alert
    * 
    * @param alertId Alert ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAlertingRoutingstatusAlertWithHttpInfo(String alertId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'alertId' is set
-    if (alertId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'alertId' when calling deleteAlertingRoutingstatusAlert");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/routingstatus/alerts/{alertId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "alertId" + "\\}", pcapiClient.escapeString(alertId.toString()));
+  public ApiResponse<Void> deleteAlertingRoutingstatusAlertWithHttpInfo(String alertId) throws IOException {
+    return deleteAlertingRoutingstatusAlert(createDeleteAlertingRoutingstatusAlertRequest(alertId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteAlertingRoutingstatusAlertRequest createDeleteAlertingRoutingstatusAlertRequest(String alertId) {
+    return DeleteAlertingRoutingstatusAlertRequest.builder()
+            .withAlertId(alertId)
+            .build();
   }
 
   /**
    * Delete a routing status alert
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteAlertingRoutingstatusAlert(DeleteAlertingRoutingstatusAlertRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete a routing status alert
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAlertingRoutingstatusAlert(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteAlertingRoutingstatusAlert(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete a routing status rule.
    * 
    * @param ruleId Rule ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteAlertingRoutingstatusRule(String ruleId) throws IOException, ApiException {
-    deleteAlertingRoutingstatusRuleWithHttpInfo(ruleId);
+     deleteAlertingRoutingstatusRule(createDeleteAlertingRoutingstatusRuleRequest(ruleId));
   }
 
   /**
    * Delete a routing status rule.
    * 
    * @param ruleId Rule ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAlertingRoutingstatusRuleWithHttpInfo(String ruleId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'ruleId' is set
-    if (ruleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling deleteAlertingRoutingstatusRule");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/routingstatus/rules/{ruleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "ruleId" + "\\}", pcapiClient.escapeString(ruleId.toString()));
+  public ApiResponse<Void> deleteAlertingRoutingstatusRuleWithHttpInfo(String ruleId) throws IOException {
+    return deleteAlertingRoutingstatusRule(createDeleteAlertingRoutingstatusRuleRequest(ruleId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteAlertingRoutingstatusRuleRequest createDeleteAlertingRoutingstatusRuleRequest(String ruleId) {
+    return DeleteAlertingRoutingstatusRuleRequest.builder()
+            .withRuleId(ruleId)
+            .build();
   }
 
   /**
    * Delete a routing status rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteAlertingRoutingstatusRule(DeleteAlertingRoutingstatusRuleRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete a routing status rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAlertingRoutingstatusRule(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteAlertingRoutingstatusRule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete a user presence alert
    * 
    * @param alertId Alert ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteAlertingUserpresenceAlert(String alertId) throws IOException, ApiException {
-    deleteAlertingUserpresenceAlertWithHttpInfo(alertId);
+     deleteAlertingUserpresenceAlert(createDeleteAlertingUserpresenceAlertRequest(alertId));
   }
 
   /**
    * Delete a user presence alert
    * 
    * @param alertId Alert ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAlertingUserpresenceAlertWithHttpInfo(String alertId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'alertId' is set
-    if (alertId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'alertId' when calling deleteAlertingUserpresenceAlert");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/userpresence/alerts/{alertId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "alertId" + "\\}", pcapiClient.escapeString(alertId.toString()));
+  public ApiResponse<Void> deleteAlertingUserpresenceAlertWithHttpInfo(String alertId) throws IOException {
+    return deleteAlertingUserpresenceAlert(createDeleteAlertingUserpresenceAlertRequest(alertId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteAlertingUserpresenceAlertRequest createDeleteAlertingUserpresenceAlertRequest(String alertId) {
+    return DeleteAlertingUserpresenceAlertRequest.builder()
+            .withAlertId(alertId)
+            .build();
   }
 
   /**
    * Delete a user presence alert
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteAlertingUserpresenceAlert(DeleteAlertingUserpresenceAlertRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete a user presence alert
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAlertingUserpresenceAlert(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteAlertingUserpresenceAlert(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete a user presence rule.
    * 
    * @param ruleId Rule ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteAlertingUserpresenceRule(String ruleId) throws IOException, ApiException {
-    deleteAlertingUserpresenceRuleWithHttpInfo(ruleId);
+     deleteAlertingUserpresenceRule(createDeleteAlertingUserpresenceRuleRequest(ruleId));
   }
 
   /**
    * Delete a user presence rule.
    * 
    * @param ruleId Rule ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAlertingUserpresenceRuleWithHttpInfo(String ruleId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'ruleId' is set
-    if (ruleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling deleteAlertingUserpresenceRule");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/userpresence/rules/{ruleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "ruleId" + "\\}", pcapiClient.escapeString(ruleId.toString()));
+  public ApiResponse<Void> deleteAlertingUserpresenceRuleWithHttpInfo(String ruleId) throws IOException {
+    return deleteAlertingUserpresenceRule(createDeleteAlertingUserpresenceRuleRequest(ruleId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteAlertingUserpresenceRuleRequest createDeleteAlertingUserpresenceRuleRequest(String ruleId) {
+    return DeleteAlertingUserpresenceRuleRequest.builder()
+            .withRuleId(ruleId)
+            .build();
   }
 
   /**
    * Delete a user presence rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteAlertingUserpresenceRule(DeleteAlertingUserpresenceRuleRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete a user presence rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAlertingUserpresenceRule(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteAlertingUserpresenceRule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -658,10 +682,11 @@ public class AlertingApi {
    * @param alertId Alert ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return HeartBeatAlert
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public HeartBeatAlert getAlertingHeartbeatAlert(String alertId, List<String> expand) throws IOException, ApiException {
-    return getAlertingHeartbeatAlertWithHttpInfo(alertId, expand).getBody();
+    return  getAlertingHeartbeatAlert(createGetAlertingHeartbeatAlertRequest(alertId, expand));
   }
 
   /**
@@ -670,62 +695,66 @@ public class AlertingApi {
    * @param alertId Alert ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return HeartBeatAlert
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<HeartBeatAlert> getAlertingHeartbeatAlertWithHttpInfo(String alertId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'alertId' is set
-    if (alertId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'alertId' when calling getAlertingHeartbeatAlert");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/heartbeat/alerts/{alertId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "alertId" + "\\}", pcapiClient.escapeString(alertId.toString()));
+  public ApiResponse<HeartBeatAlert> getAlertingHeartbeatAlertWithHttpInfo(String alertId, List<String> expand) throws IOException {
+    return getAlertingHeartbeatAlert(createGetAlertingHeartbeatAlertRequest(alertId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetAlertingHeartbeatAlertRequest createGetAlertingHeartbeatAlertRequest(String alertId, List<String> expand) {
+    return GetAlertingHeartbeatAlertRequest.builder()
+            .withAlertId(alertId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<HeartBeatAlert>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get a heart beat alert
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return HeartBeatAlert
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public HeartBeatAlert getAlertingHeartbeatAlert(GetAlertingHeartbeatAlertRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<HeartBeatAlert>() {});
+    try {
+      ApiResponse<HeartBeatAlert> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<HeartBeatAlert>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a heart beat alert
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<HeartBeatAlert> getAlertingHeartbeatAlert(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<HeartBeatAlert>invokeAPIVerbose(request, new TypeReference<HeartBeatAlert>() {});
+  public ApiResponse<HeartBeatAlert> getAlertingHeartbeatAlert(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<HeartBeatAlert>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<HeartBeatAlert> response = (ApiResponse<HeartBeatAlert>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<HeartBeatAlert> response = (ApiResponse<HeartBeatAlert>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -733,10 +762,11 @@ public class AlertingApi {
    * 
    * @param expand Which fields, if any, to expand (optional)
    * @return HeartBeatAlertContainer
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public HeartBeatAlertContainer getAlertingHeartbeatAlerts(List<String> expand) throws IOException, ApiException {
-    return getAlertingHeartbeatAlertsWithHttpInfo(expand).getBody();
+    return  getAlertingHeartbeatAlerts(createGetAlertingHeartbeatAlertsRequest(expand));
   }
 
   /**
@@ -744,56 +774,64 @@ public class AlertingApi {
    * 
    * @param expand Which fields, if any, to expand (optional)
    * @return HeartBeatAlertContainer
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<HeartBeatAlertContainer> getAlertingHeartbeatAlertsWithHttpInfo(List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/heartbeat/alerts".replaceAll("\\{format\\}","json");
+  public ApiResponse<HeartBeatAlertContainer> getAlertingHeartbeatAlertsWithHttpInfo(List<String> expand) throws IOException {
+    return getAlertingHeartbeatAlerts(createGetAlertingHeartbeatAlertsRequest(expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<HeartBeatAlertContainer>() {});
+  private GetAlertingHeartbeatAlertsRequest createGetAlertingHeartbeatAlertsRequest(List<String> expand) {
+    return GetAlertingHeartbeatAlertsRequest.builder()
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get heart beat alert list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return HeartBeatAlertContainer
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public HeartBeatAlertContainer getAlertingHeartbeatAlerts(GetAlertingHeartbeatAlertsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<HeartBeatAlertContainer>() {});
+    try {
+      ApiResponse<HeartBeatAlertContainer> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<HeartBeatAlertContainer>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get heart beat alert list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<HeartBeatAlertContainer> getAlertingHeartbeatAlerts(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<HeartBeatAlertContainer>invokeAPIVerbose(request, new TypeReference<HeartBeatAlertContainer>() {});
+  public ApiResponse<HeartBeatAlertContainer> getAlertingHeartbeatAlerts(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<HeartBeatAlertContainer>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<HeartBeatAlertContainer> response = (ApiResponse<HeartBeatAlertContainer>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<HeartBeatAlertContainer> response = (ApiResponse<HeartBeatAlertContainer>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -802,10 +840,11 @@ public class AlertingApi {
    * @param ruleId Rule ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return HeartBeatRule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public HeartBeatRule getAlertingHeartbeatRule(String ruleId, List<String> expand) throws IOException, ApiException {
-    return getAlertingHeartbeatRuleWithHttpInfo(ruleId, expand).getBody();
+    return  getAlertingHeartbeatRule(createGetAlertingHeartbeatRuleRequest(ruleId, expand));
   }
 
   /**
@@ -814,62 +853,66 @@ public class AlertingApi {
    * @param ruleId Rule ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return HeartBeatRule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<HeartBeatRule> getAlertingHeartbeatRuleWithHttpInfo(String ruleId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'ruleId' is set
-    if (ruleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling getAlertingHeartbeatRule");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/heartbeat/rules/{ruleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "ruleId" + "\\}", pcapiClient.escapeString(ruleId.toString()));
+  public ApiResponse<HeartBeatRule> getAlertingHeartbeatRuleWithHttpInfo(String ruleId, List<String> expand) throws IOException {
+    return getAlertingHeartbeatRule(createGetAlertingHeartbeatRuleRequest(ruleId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetAlertingHeartbeatRuleRequest createGetAlertingHeartbeatRuleRequest(String ruleId, List<String> expand) {
+    return GetAlertingHeartbeatRuleRequest.builder()
+            .withRuleId(ruleId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<HeartBeatRule>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get a heart beat rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return HeartBeatRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public HeartBeatRule getAlertingHeartbeatRule(GetAlertingHeartbeatRuleRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<HeartBeatRule>() {});
+    try {
+      ApiResponse<HeartBeatRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<HeartBeatRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a heart beat rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<HeartBeatRule> getAlertingHeartbeatRule(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<HeartBeatRule>invokeAPIVerbose(request, new TypeReference<HeartBeatRule>() {});
+  public ApiResponse<HeartBeatRule> getAlertingHeartbeatRule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<HeartBeatRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<HeartBeatRule> response = (ApiResponse<HeartBeatRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<HeartBeatRule> response = (ApiResponse<HeartBeatRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -877,10 +920,11 @@ public class AlertingApi {
    * 
    * @param expand Which fields, if any, to expand (optional)
    * @return HeartBeatRuleContainer
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public HeartBeatRuleContainer getAlertingHeartbeatRules(List<String> expand) throws IOException, ApiException {
-    return getAlertingHeartbeatRulesWithHttpInfo(expand).getBody();
+    return  getAlertingHeartbeatRules(createGetAlertingHeartbeatRulesRequest(expand));
   }
 
   /**
@@ -888,56 +932,64 @@ public class AlertingApi {
    * 
    * @param expand Which fields, if any, to expand (optional)
    * @return HeartBeatRuleContainer
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<HeartBeatRuleContainer> getAlertingHeartbeatRulesWithHttpInfo(List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/heartbeat/rules".replaceAll("\\{format\\}","json");
+  public ApiResponse<HeartBeatRuleContainer> getAlertingHeartbeatRulesWithHttpInfo(List<String> expand) throws IOException {
+    return getAlertingHeartbeatRules(createGetAlertingHeartbeatRulesRequest(expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<HeartBeatRuleContainer>() {});
+  private GetAlertingHeartbeatRulesRequest createGetAlertingHeartbeatRulesRequest(List<String> expand) {
+    return GetAlertingHeartbeatRulesRequest.builder()
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get a heart beat rule list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return HeartBeatRuleContainer
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public HeartBeatRuleContainer getAlertingHeartbeatRules(GetAlertingHeartbeatRulesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<HeartBeatRuleContainer>() {});
+    try {
+      ApiResponse<HeartBeatRuleContainer> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<HeartBeatRuleContainer>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a heart beat rule list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<HeartBeatRuleContainer> getAlertingHeartbeatRules(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<HeartBeatRuleContainer>invokeAPIVerbose(request, new TypeReference<HeartBeatRuleContainer>() {});
+  public ApiResponse<HeartBeatRuleContainer> getAlertingHeartbeatRules(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<HeartBeatRuleContainer>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<HeartBeatRuleContainer> response = (ApiResponse<HeartBeatRuleContainer>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<HeartBeatRuleContainer> response = (ApiResponse<HeartBeatRuleContainer>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -946,10 +998,11 @@ public class AlertingApi {
    * @param alertId Alert ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsAlert
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public InteractionStatsAlert getAlertingInteractionstatsAlert(String alertId, List<String> expand) throws IOException, ApiException {
-    return getAlertingInteractionstatsAlertWithHttpInfo(alertId, expand).getBody();
+    return  getAlertingInteractionstatsAlert(createGetAlertingInteractionstatsAlertRequest(alertId, expand));
   }
 
   /**
@@ -958,62 +1011,66 @@ public class AlertingApi {
    * @param alertId Alert ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsAlert
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InteractionStatsAlert> getAlertingInteractionstatsAlertWithHttpInfo(String alertId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'alertId' is set
-    if (alertId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'alertId' when calling getAlertingInteractionstatsAlert");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/interactionstats/alerts/{alertId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "alertId" + "\\}", pcapiClient.escapeString(alertId.toString()));
+  public ApiResponse<InteractionStatsAlert> getAlertingInteractionstatsAlertWithHttpInfo(String alertId, List<String> expand) throws IOException {
+    return getAlertingInteractionstatsAlert(createGetAlertingInteractionstatsAlertRequest(alertId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetAlertingInteractionstatsAlertRequest createGetAlertingInteractionstatsAlertRequest(String alertId, List<String> expand) {
+    return GetAlertingInteractionstatsAlertRequest.builder()
+            .withAlertId(alertId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<InteractionStatsAlert>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get an interaction stats alert
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return InteractionStatsAlert
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public InteractionStatsAlert getAlertingInteractionstatsAlert(GetAlertingInteractionstatsAlertRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<InteractionStatsAlert>() {});
+    try {
+      ApiResponse<InteractionStatsAlert> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InteractionStatsAlert>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get an interaction stats alert
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InteractionStatsAlert> getAlertingInteractionstatsAlert(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<InteractionStatsAlert>invokeAPIVerbose(request, new TypeReference<InteractionStatsAlert>() {});
+  public ApiResponse<InteractionStatsAlert> getAlertingInteractionstatsAlert(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InteractionStatsAlert>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InteractionStatsAlert> response = (ApiResponse<InteractionStatsAlert>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InteractionStatsAlert> response = (ApiResponse<InteractionStatsAlert>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1021,10 +1078,11 @@ public class AlertingApi {
    * 
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsAlertContainer
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public InteractionStatsAlertContainer getAlertingInteractionstatsAlerts(List<String> expand) throws IOException, ApiException {
-    return getAlertingInteractionstatsAlertsWithHttpInfo(expand).getBody();
+    return  getAlertingInteractionstatsAlerts(createGetAlertingInteractionstatsAlertsRequest(expand));
   }
 
   /**
@@ -1032,121 +1090,137 @@ public class AlertingApi {
    * 
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsAlertContainer
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InteractionStatsAlertContainer> getAlertingInteractionstatsAlertsWithHttpInfo(List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/interactionstats/alerts".replaceAll("\\{format\\}","json");
+  public ApiResponse<InteractionStatsAlertContainer> getAlertingInteractionstatsAlertsWithHttpInfo(List<String> expand) throws IOException {
+    return getAlertingInteractionstatsAlerts(createGetAlertingInteractionstatsAlertsRequest(expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<InteractionStatsAlertContainer>() {});
+  private GetAlertingInteractionstatsAlertsRequest createGetAlertingInteractionstatsAlertsRequest(List<String> expand) {
+    return GetAlertingInteractionstatsAlertsRequest.builder()
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get interaction stats alert list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return InteractionStatsAlertContainer
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public InteractionStatsAlertContainer getAlertingInteractionstatsAlerts(GetAlertingInteractionstatsAlertsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<InteractionStatsAlertContainer>() {});
+    try {
+      ApiResponse<InteractionStatsAlertContainer> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InteractionStatsAlertContainer>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get interaction stats alert list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InteractionStatsAlertContainer> getAlertingInteractionstatsAlerts(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<InteractionStatsAlertContainer>invokeAPIVerbose(request, new TypeReference<InteractionStatsAlertContainer>() {});
+  public ApiResponse<InteractionStatsAlertContainer> getAlertingInteractionstatsAlerts(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InteractionStatsAlertContainer>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InteractionStatsAlertContainer> response = (ApiResponse<InteractionStatsAlertContainer>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InteractionStatsAlertContainer> response = (ApiResponse<InteractionStatsAlertContainer>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Gets user unread count of interaction stats alerts.
    * 
    * @return UnreadMetric
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UnreadMetric getAlertingInteractionstatsAlertsUnread() throws IOException, ApiException {
-    return getAlertingInteractionstatsAlertsUnreadWithHttpInfo().getBody();
+    return  getAlertingInteractionstatsAlertsUnread(createGetAlertingInteractionstatsAlertsUnreadRequest());
   }
 
   /**
    * Gets user unread count of interaction stats alerts.
    * 
    * @return UnreadMetric
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UnreadMetric> getAlertingInteractionstatsAlertsUnreadWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/interactionstats/alerts/unread".replaceAll("\\{format\\}","json");
+  public ApiResponse<UnreadMetric> getAlertingInteractionstatsAlertsUnreadWithHttpInfo() throws IOException {
+    return getAlertingInteractionstatsAlertsUnread(createGetAlertingInteractionstatsAlertsUnreadRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UnreadMetric>() {});
+  private GetAlertingInteractionstatsAlertsUnreadRequest createGetAlertingInteractionstatsAlertsUnreadRequest() {
+    return GetAlertingInteractionstatsAlertsUnreadRequest.builder()            .build();
   }
 
   /**
    * Gets user unread count of interaction stats alerts.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UnreadMetric
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UnreadMetric getAlertingInteractionstatsAlertsUnread(GetAlertingInteractionstatsAlertsUnreadRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UnreadMetric>() {});
+    try {
+      ApiResponse<UnreadMetric> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UnreadMetric>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Gets user unread count of interaction stats alerts.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UnreadMetric> getAlertingInteractionstatsAlertsUnread(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<UnreadMetric>invokeAPIVerbose(request, new TypeReference<UnreadMetric>() {});
+  public ApiResponse<UnreadMetric> getAlertingInteractionstatsAlertsUnread(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UnreadMetric>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UnreadMetric> response = (ApiResponse<UnreadMetric>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UnreadMetric> response = (ApiResponse<UnreadMetric>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1155,10 +1229,11 @@ public class AlertingApi {
    * @param ruleId Rule ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsRule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public InteractionStatsRule getAlertingInteractionstatsRule(String ruleId, List<String> expand) throws IOException, ApiException {
-    return getAlertingInteractionstatsRuleWithHttpInfo(ruleId, expand).getBody();
+    return  getAlertingInteractionstatsRule(createGetAlertingInteractionstatsRuleRequest(ruleId, expand));
   }
 
   /**
@@ -1167,62 +1242,66 @@ public class AlertingApi {
    * @param ruleId Rule ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsRule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InteractionStatsRule> getAlertingInteractionstatsRuleWithHttpInfo(String ruleId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'ruleId' is set
-    if (ruleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling getAlertingInteractionstatsRule");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/interactionstats/rules/{ruleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "ruleId" + "\\}", pcapiClient.escapeString(ruleId.toString()));
+  public ApiResponse<InteractionStatsRule> getAlertingInteractionstatsRuleWithHttpInfo(String ruleId, List<String> expand) throws IOException {
+    return getAlertingInteractionstatsRule(createGetAlertingInteractionstatsRuleRequest(ruleId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetAlertingInteractionstatsRuleRequest createGetAlertingInteractionstatsRuleRequest(String ruleId, List<String> expand) {
+    return GetAlertingInteractionstatsRuleRequest.builder()
+            .withRuleId(ruleId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<InteractionStatsRule>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get an interaction stats rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return InteractionStatsRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public InteractionStatsRule getAlertingInteractionstatsRule(GetAlertingInteractionstatsRuleRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<InteractionStatsRule>() {});
+    try {
+      ApiResponse<InteractionStatsRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InteractionStatsRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get an interaction stats rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InteractionStatsRule> getAlertingInteractionstatsRule(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<InteractionStatsRule>invokeAPIVerbose(request, new TypeReference<InteractionStatsRule>() {});
+  public ApiResponse<InteractionStatsRule> getAlertingInteractionstatsRule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InteractionStatsRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InteractionStatsRule> response = (ApiResponse<InteractionStatsRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InteractionStatsRule> response = (ApiResponse<InteractionStatsRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1230,10 +1309,11 @@ public class AlertingApi {
    * 
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsRuleContainer
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public InteractionStatsRuleContainer getAlertingInteractionstatsRules(List<String> expand) throws IOException, ApiException {
-    return getAlertingInteractionstatsRulesWithHttpInfo(expand).getBody();
+    return  getAlertingInteractionstatsRules(createGetAlertingInteractionstatsRulesRequest(expand));
   }
 
   /**
@@ -1241,56 +1321,64 @@ public class AlertingApi {
    * 
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsRuleContainer
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InteractionStatsRuleContainer> getAlertingInteractionstatsRulesWithHttpInfo(List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/interactionstats/rules".replaceAll("\\{format\\}","json");
+  public ApiResponse<InteractionStatsRuleContainer> getAlertingInteractionstatsRulesWithHttpInfo(List<String> expand) throws IOException {
+    return getAlertingInteractionstatsRules(createGetAlertingInteractionstatsRulesRequest(expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<InteractionStatsRuleContainer>() {});
+  private GetAlertingInteractionstatsRulesRequest createGetAlertingInteractionstatsRulesRequest(List<String> expand) {
+    return GetAlertingInteractionstatsRulesRequest.builder()
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get an interaction stats rule list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return InteractionStatsRuleContainer
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public InteractionStatsRuleContainer getAlertingInteractionstatsRules(GetAlertingInteractionstatsRulesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<InteractionStatsRuleContainer>() {});
+    try {
+      ApiResponse<InteractionStatsRuleContainer> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InteractionStatsRuleContainer>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get an interaction stats rule list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InteractionStatsRuleContainer> getAlertingInteractionstatsRules(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<InteractionStatsRuleContainer>invokeAPIVerbose(request, new TypeReference<InteractionStatsRuleContainer>() {});
+  public ApiResponse<InteractionStatsRuleContainer> getAlertingInteractionstatsRules(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InteractionStatsRuleContainer>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InteractionStatsRuleContainer> response = (ApiResponse<InteractionStatsRuleContainer>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InteractionStatsRuleContainer> response = (ApiResponse<InteractionStatsRuleContainer>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1299,10 +1387,11 @@ public class AlertingApi {
    * @param alertId Alert ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return RoutingStatusAlert
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RoutingStatusAlert getAlertingRoutingstatusAlert(String alertId, List<String> expand) throws IOException, ApiException {
-    return getAlertingRoutingstatusAlertWithHttpInfo(alertId, expand).getBody();
+    return  getAlertingRoutingstatusAlert(createGetAlertingRoutingstatusAlertRequest(alertId, expand));
   }
 
   /**
@@ -1311,62 +1400,66 @@ public class AlertingApi {
    * @param alertId Alert ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return RoutingStatusAlert
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoutingStatusAlert> getAlertingRoutingstatusAlertWithHttpInfo(String alertId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'alertId' is set
-    if (alertId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'alertId' when calling getAlertingRoutingstatusAlert");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/routingstatus/alerts/{alertId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "alertId" + "\\}", pcapiClient.escapeString(alertId.toString()));
+  public ApiResponse<RoutingStatusAlert> getAlertingRoutingstatusAlertWithHttpInfo(String alertId, List<String> expand) throws IOException {
+    return getAlertingRoutingstatusAlert(createGetAlertingRoutingstatusAlertRequest(alertId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetAlertingRoutingstatusAlertRequest createGetAlertingRoutingstatusAlertRequest(String alertId, List<String> expand) {
+    return GetAlertingRoutingstatusAlertRequest.builder()
+            .withAlertId(alertId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<RoutingStatusAlert>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get a routing status alert
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return RoutingStatusAlert
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RoutingStatusAlert getAlertingRoutingstatusAlert(GetAlertingRoutingstatusAlertRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RoutingStatusAlert>() {});
+    try {
+      ApiResponse<RoutingStatusAlert> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RoutingStatusAlert>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a routing status alert
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoutingStatusAlert> getAlertingRoutingstatusAlert(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<RoutingStatusAlert>invokeAPIVerbose(request, new TypeReference<RoutingStatusAlert>() {});
+  public ApiResponse<RoutingStatusAlert> getAlertingRoutingstatusAlert(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RoutingStatusAlert>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingStatusAlert> response = (ApiResponse<RoutingStatusAlert>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingStatusAlert> response = (ApiResponse<RoutingStatusAlert>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1374,10 +1467,11 @@ public class AlertingApi {
    * 
    * @param expand Which fields, if any, to expand (optional)
    * @return RoutingStatusAlertContainer
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RoutingStatusAlertContainer getAlertingRoutingstatusAlerts(List<String> expand) throws IOException, ApiException {
-    return getAlertingRoutingstatusAlertsWithHttpInfo(expand).getBody();
+    return  getAlertingRoutingstatusAlerts(createGetAlertingRoutingstatusAlertsRequest(expand));
   }
 
   /**
@@ -1385,56 +1479,64 @@ public class AlertingApi {
    * 
    * @param expand Which fields, if any, to expand (optional)
    * @return RoutingStatusAlertContainer
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoutingStatusAlertContainer> getAlertingRoutingstatusAlertsWithHttpInfo(List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/routingstatus/alerts".replaceAll("\\{format\\}","json");
+  public ApiResponse<RoutingStatusAlertContainer> getAlertingRoutingstatusAlertsWithHttpInfo(List<String> expand) throws IOException {
+    return getAlertingRoutingstatusAlerts(createGetAlertingRoutingstatusAlertsRequest(expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<RoutingStatusAlertContainer>() {});
+  private GetAlertingRoutingstatusAlertsRequest createGetAlertingRoutingstatusAlertsRequest(List<String> expand) {
+    return GetAlertingRoutingstatusAlertsRequest.builder()
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get routing status alert list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return RoutingStatusAlertContainer
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RoutingStatusAlertContainer getAlertingRoutingstatusAlerts(GetAlertingRoutingstatusAlertsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RoutingStatusAlertContainer>() {});
+    try {
+      ApiResponse<RoutingStatusAlertContainer> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RoutingStatusAlertContainer>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get routing status alert list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoutingStatusAlertContainer> getAlertingRoutingstatusAlerts(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<RoutingStatusAlertContainer>invokeAPIVerbose(request, new TypeReference<RoutingStatusAlertContainer>() {});
+  public ApiResponse<RoutingStatusAlertContainer> getAlertingRoutingstatusAlerts(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RoutingStatusAlertContainer>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingStatusAlertContainer> response = (ApiResponse<RoutingStatusAlertContainer>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingStatusAlertContainer> response = (ApiResponse<RoutingStatusAlertContainer>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1443,10 +1545,11 @@ public class AlertingApi {
    * @param ruleId Rule ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return RoutingStatusRule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RoutingStatusRule getAlertingRoutingstatusRule(String ruleId, List<String> expand) throws IOException, ApiException {
-    return getAlertingRoutingstatusRuleWithHttpInfo(ruleId, expand).getBody();
+    return  getAlertingRoutingstatusRule(createGetAlertingRoutingstatusRuleRequest(ruleId, expand));
   }
 
   /**
@@ -1455,62 +1558,66 @@ public class AlertingApi {
    * @param ruleId Rule ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return RoutingStatusRule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoutingStatusRule> getAlertingRoutingstatusRuleWithHttpInfo(String ruleId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'ruleId' is set
-    if (ruleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling getAlertingRoutingstatusRule");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/routingstatus/rules/{ruleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "ruleId" + "\\}", pcapiClient.escapeString(ruleId.toString()));
+  public ApiResponse<RoutingStatusRule> getAlertingRoutingstatusRuleWithHttpInfo(String ruleId, List<String> expand) throws IOException {
+    return getAlertingRoutingstatusRule(createGetAlertingRoutingstatusRuleRequest(ruleId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetAlertingRoutingstatusRuleRequest createGetAlertingRoutingstatusRuleRequest(String ruleId, List<String> expand) {
+    return GetAlertingRoutingstatusRuleRequest.builder()
+            .withRuleId(ruleId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<RoutingStatusRule>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get a routing status rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return RoutingStatusRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RoutingStatusRule getAlertingRoutingstatusRule(GetAlertingRoutingstatusRuleRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RoutingStatusRule>() {});
+    try {
+      ApiResponse<RoutingStatusRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RoutingStatusRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a routing status rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoutingStatusRule> getAlertingRoutingstatusRule(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<RoutingStatusRule>invokeAPIVerbose(request, new TypeReference<RoutingStatusRule>() {});
+  public ApiResponse<RoutingStatusRule> getAlertingRoutingstatusRule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RoutingStatusRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingStatusRule> response = (ApiResponse<RoutingStatusRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingStatusRule> response = (ApiResponse<RoutingStatusRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1518,10 +1625,11 @@ public class AlertingApi {
    * 
    * @param expand Which fields, if any, to expand (optional)
    * @return RoutingStatusRuleContainer
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RoutingStatusRuleContainer getAlertingRoutingstatusRules(List<String> expand) throws IOException, ApiException {
-    return getAlertingRoutingstatusRulesWithHttpInfo(expand).getBody();
+    return  getAlertingRoutingstatusRules(createGetAlertingRoutingstatusRulesRequest(expand));
   }
 
   /**
@@ -1529,56 +1637,64 @@ public class AlertingApi {
    * 
    * @param expand Which fields, if any, to expand (optional)
    * @return RoutingStatusRuleContainer
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoutingStatusRuleContainer> getAlertingRoutingstatusRulesWithHttpInfo(List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/routingstatus/rules".replaceAll("\\{format\\}","json");
+  public ApiResponse<RoutingStatusRuleContainer> getAlertingRoutingstatusRulesWithHttpInfo(List<String> expand) throws IOException {
+    return getAlertingRoutingstatusRules(createGetAlertingRoutingstatusRulesRequest(expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<RoutingStatusRuleContainer>() {});
+  private GetAlertingRoutingstatusRulesRequest createGetAlertingRoutingstatusRulesRequest(List<String> expand) {
+    return GetAlertingRoutingstatusRulesRequest.builder()
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get a routing status rule list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return RoutingStatusRuleContainer
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RoutingStatusRuleContainer getAlertingRoutingstatusRules(GetAlertingRoutingstatusRulesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RoutingStatusRuleContainer>() {});
+    try {
+      ApiResponse<RoutingStatusRuleContainer> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RoutingStatusRuleContainer>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a routing status rule list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoutingStatusRuleContainer> getAlertingRoutingstatusRules(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<RoutingStatusRuleContainer>invokeAPIVerbose(request, new TypeReference<RoutingStatusRuleContainer>() {});
+  public ApiResponse<RoutingStatusRuleContainer> getAlertingRoutingstatusRules(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RoutingStatusRuleContainer>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingStatusRuleContainer> response = (ApiResponse<RoutingStatusRuleContainer>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingStatusRuleContainer> response = (ApiResponse<RoutingStatusRuleContainer>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1587,10 +1703,11 @@ public class AlertingApi {
    * @param alertId Alert ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return UserPresenceAlert
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserPresenceAlert getAlertingUserpresenceAlert(String alertId, List<String> expand) throws IOException, ApiException {
-    return getAlertingUserpresenceAlertWithHttpInfo(alertId, expand).getBody();
+    return  getAlertingUserpresenceAlert(createGetAlertingUserpresenceAlertRequest(alertId, expand));
   }
 
   /**
@@ -1599,62 +1716,66 @@ public class AlertingApi {
    * @param alertId Alert ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return UserPresenceAlert
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserPresenceAlert> getAlertingUserpresenceAlertWithHttpInfo(String alertId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'alertId' is set
-    if (alertId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'alertId' when calling getAlertingUserpresenceAlert");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/userpresence/alerts/{alertId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "alertId" + "\\}", pcapiClient.escapeString(alertId.toString()));
+  public ApiResponse<UserPresenceAlert> getAlertingUserpresenceAlertWithHttpInfo(String alertId, List<String> expand) throws IOException {
+    return getAlertingUserpresenceAlert(createGetAlertingUserpresenceAlertRequest(alertId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetAlertingUserpresenceAlertRequest createGetAlertingUserpresenceAlertRequest(String alertId, List<String> expand) {
+    return GetAlertingUserpresenceAlertRequest.builder()
+            .withAlertId(alertId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserPresenceAlert>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get a user presence alert
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserPresenceAlert
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserPresenceAlert getAlertingUserpresenceAlert(GetAlertingUserpresenceAlertRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserPresenceAlert>() {});
+    try {
+      ApiResponse<UserPresenceAlert> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserPresenceAlert>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a user presence alert
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserPresenceAlert> getAlertingUserpresenceAlert(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<UserPresenceAlert>invokeAPIVerbose(request, new TypeReference<UserPresenceAlert>() {});
+  public ApiResponse<UserPresenceAlert> getAlertingUserpresenceAlert(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserPresenceAlert>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPresenceAlert> response = (ApiResponse<UserPresenceAlert>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPresenceAlert> response = (ApiResponse<UserPresenceAlert>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1662,10 +1783,11 @@ public class AlertingApi {
    * 
    * @param expand Which fields, if any, to expand (optional)
    * @return UserPresenceAlertContainer
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserPresenceAlertContainer getAlertingUserpresenceAlerts(List<String> expand) throws IOException, ApiException {
-    return getAlertingUserpresenceAlertsWithHttpInfo(expand).getBody();
+    return  getAlertingUserpresenceAlerts(createGetAlertingUserpresenceAlertsRequest(expand));
   }
 
   /**
@@ -1673,56 +1795,64 @@ public class AlertingApi {
    * 
    * @param expand Which fields, if any, to expand (optional)
    * @return UserPresenceAlertContainer
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserPresenceAlertContainer> getAlertingUserpresenceAlertsWithHttpInfo(List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/userpresence/alerts".replaceAll("\\{format\\}","json");
+  public ApiResponse<UserPresenceAlertContainer> getAlertingUserpresenceAlertsWithHttpInfo(List<String> expand) throws IOException {
+    return getAlertingUserpresenceAlerts(createGetAlertingUserpresenceAlertsRequest(expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserPresenceAlertContainer>() {});
+  private GetAlertingUserpresenceAlertsRequest createGetAlertingUserpresenceAlertsRequest(List<String> expand) {
+    return GetAlertingUserpresenceAlertsRequest.builder()
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get user presence alert list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserPresenceAlertContainer
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserPresenceAlertContainer getAlertingUserpresenceAlerts(GetAlertingUserpresenceAlertsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserPresenceAlertContainer>() {});
+    try {
+      ApiResponse<UserPresenceAlertContainer> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserPresenceAlertContainer>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get user presence alert list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserPresenceAlertContainer> getAlertingUserpresenceAlerts(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<UserPresenceAlertContainer>invokeAPIVerbose(request, new TypeReference<UserPresenceAlertContainer>() {});
+  public ApiResponse<UserPresenceAlertContainer> getAlertingUserpresenceAlerts(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserPresenceAlertContainer>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPresenceAlertContainer> response = (ApiResponse<UserPresenceAlertContainer>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPresenceAlertContainer> response = (ApiResponse<UserPresenceAlertContainer>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1731,10 +1861,11 @@ public class AlertingApi {
    * @param ruleId Rule ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return UserPresenceRule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserPresenceRule getAlertingUserpresenceRule(String ruleId, List<String> expand) throws IOException, ApiException {
-    return getAlertingUserpresenceRuleWithHttpInfo(ruleId, expand).getBody();
+    return  getAlertingUserpresenceRule(createGetAlertingUserpresenceRuleRequest(ruleId, expand));
   }
 
   /**
@@ -1743,62 +1874,66 @@ public class AlertingApi {
    * @param ruleId Rule ID (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return UserPresenceRule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserPresenceRule> getAlertingUserpresenceRuleWithHttpInfo(String ruleId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'ruleId' is set
-    if (ruleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling getAlertingUserpresenceRule");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/userpresence/rules/{ruleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "ruleId" + "\\}", pcapiClient.escapeString(ruleId.toString()));
+  public ApiResponse<UserPresenceRule> getAlertingUserpresenceRuleWithHttpInfo(String ruleId, List<String> expand) throws IOException {
+    return getAlertingUserpresenceRule(createGetAlertingUserpresenceRuleRequest(ruleId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetAlertingUserpresenceRuleRequest createGetAlertingUserpresenceRuleRequest(String ruleId, List<String> expand) {
+    return GetAlertingUserpresenceRuleRequest.builder()
+            .withRuleId(ruleId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserPresenceRule>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get a user presence rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserPresenceRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserPresenceRule getAlertingUserpresenceRule(GetAlertingUserpresenceRuleRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserPresenceRule>() {});
+    try {
+      ApiResponse<UserPresenceRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserPresenceRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a user presence rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserPresenceRule> getAlertingUserpresenceRule(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<UserPresenceRule>invokeAPIVerbose(request, new TypeReference<UserPresenceRule>() {});
+  public ApiResponse<UserPresenceRule> getAlertingUserpresenceRule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserPresenceRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPresenceRule> response = (ApiResponse<UserPresenceRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPresenceRule> response = (ApiResponse<UserPresenceRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1806,10 +1941,11 @@ public class AlertingApi {
    * 
    * @param expand Which fields, if any, to expand (optional)
    * @return UserPresenceRuleContainer
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserPresenceRuleContainer getAlertingUserpresenceRules(List<String> expand) throws IOException, ApiException {
-    return getAlertingUserpresenceRulesWithHttpInfo(expand).getBody();
+    return  getAlertingUserpresenceRules(createGetAlertingUserpresenceRulesRequest(expand));
   }
 
   /**
@@ -1817,56 +1953,64 @@ public class AlertingApi {
    * 
    * @param expand Which fields, if any, to expand (optional)
    * @return UserPresenceRuleContainer
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserPresenceRuleContainer> getAlertingUserpresenceRulesWithHttpInfo(List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/userpresence/rules".replaceAll("\\{format\\}","json");
+  public ApiResponse<UserPresenceRuleContainer> getAlertingUserpresenceRulesWithHttpInfo(List<String> expand) throws IOException {
+    return getAlertingUserpresenceRules(createGetAlertingUserpresenceRulesRequest(expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserPresenceRuleContainer>() {});
+  private GetAlertingUserpresenceRulesRequest createGetAlertingUserpresenceRulesRequest(List<String> expand) {
+    return GetAlertingUserpresenceRulesRequest.builder()
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get a user presence rule list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserPresenceRuleContainer
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserPresenceRuleContainer getAlertingUserpresenceRules(GetAlertingUserpresenceRulesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserPresenceRuleContainer>() {});
+    try {
+      ApiResponse<UserPresenceRuleContainer> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserPresenceRuleContainer>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a user presence rule list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserPresenceRuleContainer> getAlertingUserpresenceRules(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<UserPresenceRuleContainer>invokeAPIVerbose(request, new TypeReference<UserPresenceRuleContainer>() {});
+  public ApiResponse<UserPresenceRuleContainer> getAlertingUserpresenceRules(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserPresenceRuleContainer>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPresenceRuleContainer> response = (ApiResponse<UserPresenceRuleContainer>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPresenceRuleContainer> response = (ApiResponse<UserPresenceRuleContainer>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1875,10 +2019,11 @@ public class AlertingApi {
    * @param body HeartBeatRule (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return HeartBeatRule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public HeartBeatRule postAlertingHeartbeatRules(HeartBeatRule body, List<String> expand) throws IOException, ApiException {
-    return postAlertingHeartbeatRulesWithHttpInfo(body, expand).getBody();
+    return  postAlertingHeartbeatRules(createPostAlertingHeartbeatRulesRequest(body, expand));
   }
 
   /**
@@ -1887,61 +2032,66 @@ public class AlertingApi {
    * @param body HeartBeatRule (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return HeartBeatRule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<HeartBeatRule> postAlertingHeartbeatRulesWithHttpInfo(HeartBeatRule body, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAlertingHeartbeatRules");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/heartbeat/rules".replaceAll("\\{format\\}","json");
+  public ApiResponse<HeartBeatRule> postAlertingHeartbeatRulesWithHttpInfo(HeartBeatRule body, List<String> expand) throws IOException {
+    return postAlertingHeartbeatRules(createPostAlertingHeartbeatRulesRequest(body, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostAlertingHeartbeatRulesRequest createPostAlertingHeartbeatRulesRequest(HeartBeatRule body, List<String> expand) {
+    return PostAlertingHeartbeatRulesRequest.builder()
+            .withBody(body)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<HeartBeatRule>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Create a heart beat rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return HeartBeatRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public HeartBeatRule postAlertingHeartbeatRules(PostAlertingHeartbeatRulesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<HeartBeatRule>() {});
+    try {
+      ApiResponse<HeartBeatRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<HeartBeatRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a heart beat rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<HeartBeatRule> postAlertingHeartbeatRules(ApiRequest<HeartBeatRule> request) throws IOException, ApiException {
-    return pcapiClient.<HeartBeatRule>invokeAPIVerbose(request, new TypeReference<HeartBeatRule>() {});
+  public ApiResponse<HeartBeatRule> postAlertingHeartbeatRules(ApiRequest<HeartBeatRule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<HeartBeatRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<HeartBeatRule> response = (ApiResponse<HeartBeatRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<HeartBeatRule> response = (ApiResponse<HeartBeatRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1950,10 +2100,11 @@ public class AlertingApi {
    * @param body AlertingRule (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsRule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public InteractionStatsRule postAlertingInteractionstatsRules(InteractionStatsRule body, List<String> expand) throws IOException, ApiException {
-    return postAlertingInteractionstatsRulesWithHttpInfo(body, expand).getBody();
+    return  postAlertingInteractionstatsRules(createPostAlertingInteractionstatsRulesRequest(body, expand));
   }
 
   /**
@@ -1962,61 +2113,66 @@ public class AlertingApi {
    * @param body AlertingRule (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsRule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InteractionStatsRule> postAlertingInteractionstatsRulesWithHttpInfo(InteractionStatsRule body, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAlertingInteractionstatsRules");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/interactionstats/rules".replaceAll("\\{format\\}","json");
+  public ApiResponse<InteractionStatsRule> postAlertingInteractionstatsRulesWithHttpInfo(InteractionStatsRule body, List<String> expand) throws IOException {
+    return postAlertingInteractionstatsRules(createPostAlertingInteractionstatsRulesRequest(body, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostAlertingInteractionstatsRulesRequest createPostAlertingInteractionstatsRulesRequest(InteractionStatsRule body, List<String> expand) {
+    return PostAlertingInteractionstatsRulesRequest.builder()
+            .withBody(body)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<InteractionStatsRule>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Create an interaction stats rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return InteractionStatsRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public InteractionStatsRule postAlertingInteractionstatsRules(PostAlertingInteractionstatsRulesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<InteractionStatsRule>() {});
+    try {
+      ApiResponse<InteractionStatsRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InteractionStatsRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create an interaction stats rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InteractionStatsRule> postAlertingInteractionstatsRules(ApiRequest<InteractionStatsRule> request) throws IOException, ApiException {
-    return pcapiClient.<InteractionStatsRule>invokeAPIVerbose(request, new TypeReference<InteractionStatsRule>() {});
+  public ApiResponse<InteractionStatsRule> postAlertingInteractionstatsRules(ApiRequest<InteractionStatsRule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InteractionStatsRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InteractionStatsRule> response = (ApiResponse<InteractionStatsRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InteractionStatsRule> response = (ApiResponse<InteractionStatsRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2025,10 +2181,11 @@ public class AlertingApi {
    * @param body RoutingStatusRule (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return RoutingStatusRule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RoutingStatusRule postAlertingRoutingstatusRules(RoutingStatusRule body, List<String> expand) throws IOException, ApiException {
-    return postAlertingRoutingstatusRulesWithHttpInfo(body, expand).getBody();
+    return  postAlertingRoutingstatusRules(createPostAlertingRoutingstatusRulesRequest(body, expand));
   }
 
   /**
@@ -2037,61 +2194,66 @@ public class AlertingApi {
    * @param body RoutingStatusRule (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return RoutingStatusRule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoutingStatusRule> postAlertingRoutingstatusRulesWithHttpInfo(RoutingStatusRule body, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAlertingRoutingstatusRules");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/routingstatus/rules".replaceAll("\\{format\\}","json");
+  public ApiResponse<RoutingStatusRule> postAlertingRoutingstatusRulesWithHttpInfo(RoutingStatusRule body, List<String> expand) throws IOException {
+    return postAlertingRoutingstatusRules(createPostAlertingRoutingstatusRulesRequest(body, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostAlertingRoutingstatusRulesRequest createPostAlertingRoutingstatusRulesRequest(RoutingStatusRule body, List<String> expand) {
+    return PostAlertingRoutingstatusRulesRequest.builder()
+            .withBody(body)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<RoutingStatusRule>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Create a routing status rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return RoutingStatusRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RoutingStatusRule postAlertingRoutingstatusRules(PostAlertingRoutingstatusRulesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RoutingStatusRule>() {});
+    try {
+      ApiResponse<RoutingStatusRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RoutingStatusRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a routing status rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoutingStatusRule> postAlertingRoutingstatusRules(ApiRequest<RoutingStatusRule> request) throws IOException, ApiException {
-    return pcapiClient.<RoutingStatusRule>invokeAPIVerbose(request, new TypeReference<RoutingStatusRule>() {});
+  public ApiResponse<RoutingStatusRule> postAlertingRoutingstatusRules(ApiRequest<RoutingStatusRule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RoutingStatusRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingStatusRule> response = (ApiResponse<RoutingStatusRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingStatusRule> response = (ApiResponse<RoutingStatusRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2100,10 +2262,11 @@ public class AlertingApi {
    * @param body UserPresenceRule (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return UserPresenceRule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserPresenceRule postAlertingUserpresenceRules(UserPresenceRule body, List<String> expand) throws IOException, ApiException {
-    return postAlertingUserpresenceRulesWithHttpInfo(body, expand).getBody();
+    return  postAlertingUserpresenceRules(createPostAlertingUserpresenceRulesRequest(body, expand));
   }
 
   /**
@@ -2112,61 +2275,66 @@ public class AlertingApi {
    * @param body UserPresenceRule (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return UserPresenceRule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserPresenceRule> postAlertingUserpresenceRulesWithHttpInfo(UserPresenceRule body, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAlertingUserpresenceRules");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/userpresence/rules".replaceAll("\\{format\\}","json");
+  public ApiResponse<UserPresenceRule> postAlertingUserpresenceRulesWithHttpInfo(UserPresenceRule body, List<String> expand) throws IOException {
+    return postAlertingUserpresenceRules(createPostAlertingUserpresenceRulesRequest(body, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostAlertingUserpresenceRulesRequest createPostAlertingUserpresenceRulesRequest(UserPresenceRule body, List<String> expand) {
+    return PostAlertingUserpresenceRulesRequest.builder()
+            .withBody(body)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserPresenceRule>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Create a user presence rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserPresenceRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserPresenceRule postAlertingUserpresenceRules(PostAlertingUserpresenceRulesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserPresenceRule>() {});
+    try {
+      ApiResponse<UserPresenceRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserPresenceRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a user presence rule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserPresenceRule> postAlertingUserpresenceRules(ApiRequest<UserPresenceRule> request) throws IOException, ApiException {
-    return pcapiClient.<UserPresenceRule>invokeAPIVerbose(request, new TypeReference<UserPresenceRule>() {});
+  public ApiResponse<UserPresenceRule> postAlertingUserpresenceRules(ApiRequest<UserPresenceRule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserPresenceRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPresenceRule> response = (ApiResponse<UserPresenceRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPresenceRule> response = (ApiResponse<UserPresenceRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2176,10 +2344,11 @@ public class AlertingApi {
    * @param body HeartBeatRule (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return HeartBeatRule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public HeartBeatRule putAlertingHeartbeatRule(String ruleId, HeartBeatRule body, List<String> expand) throws IOException, ApiException {
-    return putAlertingHeartbeatRuleWithHttpInfo(ruleId, body, expand).getBody();
+    return  putAlertingHeartbeatRule(createPutAlertingHeartbeatRuleRequest(ruleId, body, expand));
   }
 
   /**
@@ -2189,67 +2358,68 @@ public class AlertingApi {
    * @param body HeartBeatRule (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return HeartBeatRule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<HeartBeatRule> putAlertingHeartbeatRuleWithHttpInfo(String ruleId, HeartBeatRule body, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'ruleId' is set
-    if (ruleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling putAlertingHeartbeatRule");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAlertingHeartbeatRule");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/heartbeat/rules/{ruleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "ruleId" + "\\}", pcapiClient.escapeString(ruleId.toString()));
+  public ApiResponse<HeartBeatRule> putAlertingHeartbeatRuleWithHttpInfo(String ruleId, HeartBeatRule body, List<String> expand) throws IOException {
+    return putAlertingHeartbeatRule(createPutAlertingHeartbeatRuleRequest(ruleId, body, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutAlertingHeartbeatRuleRequest createPutAlertingHeartbeatRuleRequest(String ruleId, HeartBeatRule body, List<String> expand) {
+    return PutAlertingHeartbeatRuleRequest.builder()
+            .withRuleId(ruleId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withBody(body)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<HeartBeatRule>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Update a heart beat rule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return HeartBeatRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public HeartBeatRule putAlertingHeartbeatRule(PutAlertingHeartbeatRuleRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<HeartBeatRule>() {});
+    try {
+      ApiResponse<HeartBeatRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<HeartBeatRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a heart beat rule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<HeartBeatRule> putAlertingHeartbeatRule(ApiRequest<HeartBeatRule> request) throws IOException, ApiException {
-    return pcapiClient.<HeartBeatRule>invokeAPIVerbose(request, new TypeReference<HeartBeatRule>() {});
+  public ApiResponse<HeartBeatRule> putAlertingHeartbeatRule(ApiRequest<HeartBeatRule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<HeartBeatRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<HeartBeatRule> response = (ApiResponse<HeartBeatRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<HeartBeatRule> response = (ApiResponse<HeartBeatRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2259,10 +2429,11 @@ public class AlertingApi {
    * @param body InteractionStatsAlert (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return UnreadStatus
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UnreadStatus putAlertingInteractionstatsAlert(String alertId, UnreadStatus body, List<String> expand) throws IOException, ApiException {
-    return putAlertingInteractionstatsAlertWithHttpInfo(alertId, body, expand).getBody();
+    return  putAlertingInteractionstatsAlert(createPutAlertingInteractionstatsAlertRequest(alertId, body, expand));
   }
 
   /**
@@ -2272,67 +2443,68 @@ public class AlertingApi {
    * @param body InteractionStatsAlert (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return UnreadStatus
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UnreadStatus> putAlertingInteractionstatsAlertWithHttpInfo(String alertId, UnreadStatus body, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'alertId' is set
-    if (alertId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'alertId' when calling putAlertingInteractionstatsAlert");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAlertingInteractionstatsAlert");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/interactionstats/alerts/{alertId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "alertId" + "\\}", pcapiClient.escapeString(alertId.toString()));
+  public ApiResponse<UnreadStatus> putAlertingInteractionstatsAlertWithHttpInfo(String alertId, UnreadStatus body, List<String> expand) throws IOException {
+    return putAlertingInteractionstatsAlert(createPutAlertingInteractionstatsAlertRequest(alertId, body, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutAlertingInteractionstatsAlertRequest createPutAlertingInteractionstatsAlertRequest(String alertId, UnreadStatus body, List<String> expand) {
+    return PutAlertingInteractionstatsAlertRequest.builder()
+            .withAlertId(alertId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withBody(body)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UnreadStatus>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Update an interaction stats alert read status
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UnreadStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UnreadStatus putAlertingInteractionstatsAlert(PutAlertingInteractionstatsAlertRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UnreadStatus>() {});
+    try {
+      ApiResponse<UnreadStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UnreadStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update an interaction stats alert read status
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UnreadStatus> putAlertingInteractionstatsAlert(ApiRequest<UnreadStatus> request) throws IOException, ApiException {
-    return pcapiClient.<UnreadStatus>invokeAPIVerbose(request, new TypeReference<UnreadStatus>() {});
+  public ApiResponse<UnreadStatus> putAlertingInteractionstatsAlert(ApiRequest<UnreadStatus> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UnreadStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UnreadStatus> response = (ApiResponse<UnreadStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UnreadStatus> response = (ApiResponse<UnreadStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2342,10 +2514,11 @@ public class AlertingApi {
    * @param body AlertingRule (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsRule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public InteractionStatsRule putAlertingInteractionstatsRule(String ruleId, InteractionStatsRule body, List<String> expand) throws IOException, ApiException {
-    return putAlertingInteractionstatsRuleWithHttpInfo(ruleId, body, expand).getBody();
+    return  putAlertingInteractionstatsRule(createPutAlertingInteractionstatsRuleRequest(ruleId, body, expand));
   }
 
   /**
@@ -2355,67 +2528,68 @@ public class AlertingApi {
    * @param body AlertingRule (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return InteractionStatsRule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InteractionStatsRule> putAlertingInteractionstatsRuleWithHttpInfo(String ruleId, InteractionStatsRule body, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'ruleId' is set
-    if (ruleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling putAlertingInteractionstatsRule");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAlertingInteractionstatsRule");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/interactionstats/rules/{ruleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "ruleId" + "\\}", pcapiClient.escapeString(ruleId.toString()));
+  public ApiResponse<InteractionStatsRule> putAlertingInteractionstatsRuleWithHttpInfo(String ruleId, InteractionStatsRule body, List<String> expand) throws IOException {
+    return putAlertingInteractionstatsRule(createPutAlertingInteractionstatsRuleRequest(ruleId, body, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutAlertingInteractionstatsRuleRequest createPutAlertingInteractionstatsRuleRequest(String ruleId, InteractionStatsRule body, List<String> expand) {
+    return PutAlertingInteractionstatsRuleRequest.builder()
+            .withRuleId(ruleId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withBody(body)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<InteractionStatsRule>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Update an interaction stats rule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return InteractionStatsRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public InteractionStatsRule putAlertingInteractionstatsRule(PutAlertingInteractionstatsRuleRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<InteractionStatsRule>() {});
+    try {
+      ApiResponse<InteractionStatsRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InteractionStatsRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update an interaction stats rule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InteractionStatsRule> putAlertingInteractionstatsRule(ApiRequest<InteractionStatsRule> request) throws IOException, ApiException {
-    return pcapiClient.<InteractionStatsRule>invokeAPIVerbose(request, new TypeReference<InteractionStatsRule>() {});
+  public ApiResponse<InteractionStatsRule> putAlertingInteractionstatsRule(ApiRequest<InteractionStatsRule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InteractionStatsRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InteractionStatsRule> response = (ApiResponse<InteractionStatsRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InteractionStatsRule> response = (ApiResponse<InteractionStatsRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2425,10 +2599,11 @@ public class AlertingApi {
    * @param body RoutingStatusRule (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return RoutingStatusRule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RoutingStatusRule putAlertingRoutingstatusRule(String ruleId, RoutingStatusRule body, List<String> expand) throws IOException, ApiException {
-    return putAlertingRoutingstatusRuleWithHttpInfo(ruleId, body, expand).getBody();
+    return  putAlertingRoutingstatusRule(createPutAlertingRoutingstatusRuleRequest(ruleId, body, expand));
   }
 
   /**
@@ -2438,67 +2613,68 @@ public class AlertingApi {
    * @param body RoutingStatusRule (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return RoutingStatusRule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoutingStatusRule> putAlertingRoutingstatusRuleWithHttpInfo(String ruleId, RoutingStatusRule body, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'ruleId' is set
-    if (ruleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling putAlertingRoutingstatusRule");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAlertingRoutingstatusRule");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/routingstatus/rules/{ruleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "ruleId" + "\\}", pcapiClient.escapeString(ruleId.toString()));
+  public ApiResponse<RoutingStatusRule> putAlertingRoutingstatusRuleWithHttpInfo(String ruleId, RoutingStatusRule body, List<String> expand) throws IOException {
+    return putAlertingRoutingstatusRule(createPutAlertingRoutingstatusRuleRequest(ruleId, body, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutAlertingRoutingstatusRuleRequest createPutAlertingRoutingstatusRuleRequest(String ruleId, RoutingStatusRule body, List<String> expand) {
+    return PutAlertingRoutingstatusRuleRequest.builder()
+            .withRuleId(ruleId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withBody(body)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<RoutingStatusRule>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Update a routing status rule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return RoutingStatusRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RoutingStatusRule putAlertingRoutingstatusRule(PutAlertingRoutingstatusRuleRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RoutingStatusRule>() {});
+    try {
+      ApiResponse<RoutingStatusRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RoutingStatusRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a routing status rule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoutingStatusRule> putAlertingRoutingstatusRule(ApiRequest<RoutingStatusRule> request) throws IOException, ApiException {
-    return pcapiClient.<RoutingStatusRule>invokeAPIVerbose(request, new TypeReference<RoutingStatusRule>() {});
+  public ApiResponse<RoutingStatusRule> putAlertingRoutingstatusRule(ApiRequest<RoutingStatusRule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RoutingStatusRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingStatusRule> response = (ApiResponse<RoutingStatusRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingStatusRule> response = (ApiResponse<RoutingStatusRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2508,10 +2684,11 @@ public class AlertingApi {
    * @param body UserPresenceRule (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return UserPresenceRule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserPresenceRule putAlertingUserpresenceRule(String ruleId, UserPresenceRule body, List<String> expand) throws IOException, ApiException {
-    return putAlertingUserpresenceRuleWithHttpInfo(ruleId, body, expand).getBody();
+    return  putAlertingUserpresenceRule(createPutAlertingUserpresenceRuleRequest(ruleId, body, expand));
   }
 
   /**
@@ -2521,67 +2698,68 @@ public class AlertingApi {
    * @param body UserPresenceRule (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return UserPresenceRule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserPresenceRule> putAlertingUserpresenceRuleWithHttpInfo(String ruleId, UserPresenceRule body, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'ruleId' is set
-    if (ruleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'ruleId' when calling putAlertingUserpresenceRule");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAlertingUserpresenceRule");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/alerting/userpresence/rules/{ruleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "ruleId" + "\\}", pcapiClient.escapeString(ruleId.toString()));
+  public ApiResponse<UserPresenceRule> putAlertingUserpresenceRuleWithHttpInfo(String ruleId, UserPresenceRule body, List<String> expand) throws IOException {
+    return putAlertingUserpresenceRule(createPutAlertingUserpresenceRuleRequest(ruleId, body, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutAlertingUserpresenceRuleRequest createPutAlertingUserpresenceRuleRequest(String ruleId, UserPresenceRule body, List<String> expand) {
+    return PutAlertingUserpresenceRuleRequest.builder()
+            .withRuleId(ruleId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withBody(body)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserPresenceRule>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Update a user presence rule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserPresenceRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserPresenceRule putAlertingUserpresenceRule(PutAlertingUserpresenceRuleRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserPresenceRule>() {});
+    try {
+      ApiResponse<UserPresenceRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserPresenceRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a user presence rule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserPresenceRule> putAlertingUserpresenceRule(ApiRequest<UserPresenceRule> request) throws IOException, ApiException {
-    return pcapiClient.<UserPresenceRule>invokeAPIVerbose(request, new TypeReference<UserPresenceRule>() {});
+  public ApiResponse<UserPresenceRule> putAlertingUserpresenceRule(ApiRequest<UserPresenceRule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserPresenceRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPresenceRule> response = (ApiResponse<UserPresenceRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPresenceRule> response = (ApiResponse<UserPresenceRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

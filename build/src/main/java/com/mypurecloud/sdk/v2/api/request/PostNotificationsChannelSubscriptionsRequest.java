@@ -26,9 +26,6 @@ import com.mypurecloud.sdk.v2.model.ChannelTopic;
 import com.mypurecloud.sdk.v2.model.Channel;
 
 public class PostNotificationsChannelSubscriptionsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String channelId;
 	public String getChannelId() {
 		return this.channelId;
@@ -133,6 +130,17 @@ public class PostNotificationsChannelSubscriptionsRequest {
 
 
 		public PostNotificationsChannelSubscriptionsRequest build() {
+            
+            // verify the required parameter 'channelId' is set
+            if (request.channelId == null) {
+                throw new IllegalStateException("Missing the required parameter 'channelId' when building request for PostNotificationsChannelSubscriptionsRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostNotificationsChannelSubscriptionsRequest.");
+            }
+            
 			return request;
 		}
 	}

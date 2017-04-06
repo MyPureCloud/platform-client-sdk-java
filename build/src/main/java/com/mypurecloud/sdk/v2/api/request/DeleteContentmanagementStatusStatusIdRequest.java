@@ -50,9 +50,6 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class DeleteContentmanagementStatusStatusIdRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String statusId;
 	public String getStatusId() {
 		return this.statusId;
@@ -131,6 +128,12 @@ public class DeleteContentmanagementStatusStatusIdRequest {
 
 
 		public DeleteContentmanagementStatusStatusIdRequest build() {
+            
+            // verify the required parameter 'statusId' is set
+            if (request.statusId == null) {
+                throw new IllegalStateException("Missing the required parameter 'statusId' when building request for DeleteContentmanagementStatusStatusIdRequest.");
+            }
+            
 			return request;
 		}
 	}

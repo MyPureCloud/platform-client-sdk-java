@@ -60,9 +60,6 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class GetConversationsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String communicationType;
 	public String getCommunicationType() {
 		return this.communicationType;
@@ -128,6 +125,7 @@ public class GetConversationsRequest {
 
 
 		public GetConversationsRequest build() {
+            
 			return request;
 		}
 	}

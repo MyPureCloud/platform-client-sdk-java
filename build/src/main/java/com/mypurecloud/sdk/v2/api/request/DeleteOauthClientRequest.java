@@ -23,9 +23,6 @@ import com.mypurecloud.sdk.v2.model.OAuthClient;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
 
 public class DeleteOauthClientRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String clientId;
 	public String getClientId() {
 		return this.clientId;
@@ -104,6 +101,12 @@ public class DeleteOauthClientRequest {
 
 
 		public DeleteOauthClientRequest build() {
+            
+            // verify the required parameter 'clientId' is set
+            if (request.clientId == null) {
+                throw new IllegalStateException("Missing the required parameter 'clientId' when building request for DeleteOauthClientRequest.");
+            }
+            
 			return request;
 		}
 	}

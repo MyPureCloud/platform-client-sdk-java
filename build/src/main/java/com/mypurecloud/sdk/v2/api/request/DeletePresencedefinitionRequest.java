@@ -25,9 +25,6 @@ import com.mypurecloud.sdk.v2.model.SystemPresence;
 import com.mypurecloud.sdk.v2.model.UserPresence;
 
 public class DeletePresencedefinitionRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String presenceId;
 	public String getPresenceId() {
 		return this.presenceId;
@@ -106,6 +103,12 @@ public class DeletePresencedefinitionRequest {
 
 
 		public DeletePresencedefinitionRequest build() {
+            
+            // verify the required parameter 'presenceId' is set
+            if (request.presenceId == null) {
+                throw new IllegalStateException("Missing the required parameter 'presenceId' when building request for DeletePresencedefinitionRequest.");
+            }
+            
 			return request;
 		}
 	}

@@ -50,9 +50,6 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class PostContentmanagementAuditqueryRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private ContentQueryRequest body;
 	public ContentQueryRequest getBody() {
 		return this.body;
@@ -131,6 +128,12 @@ public class PostContentmanagementAuditqueryRequest {
 
 
 		public PostContentmanagementAuditqueryRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostContentmanagementAuditqueryRequest.");
+            }
+            
 			return request;
 		}
 	}

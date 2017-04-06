@@ -75,71 +75,74 @@ public class ExternalContactsApi {
    * Delete an external contact
    * 
    * @param contactId ExternalContact ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteExternalcontactsContact(String contactId) throws IOException, ApiException {
-    deleteExternalcontactsContactWithHttpInfo(contactId);
+     deleteExternalcontactsContact(createDeleteExternalcontactsContactRequest(contactId));
   }
 
   /**
    * Delete an external contact
    * 
    * @param contactId ExternalContact ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteExternalcontactsContactWithHttpInfo(String contactId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'contactId' is set
-    if (contactId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling deleteExternalcontactsContact");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/contacts/{contactId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "contactId" + "\\}", pcapiClient.escapeString(contactId.toString()));
+  public ApiResponse<Void> deleteExternalcontactsContactWithHttpInfo(String contactId) throws IOException {
+    return deleteExternalcontactsContact(createDeleteExternalcontactsContactRequest(contactId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteExternalcontactsContactRequest createDeleteExternalcontactsContactRequest(String contactId) {
+    return DeleteExternalcontactsContactRequest.builder()
+            .withContactId(contactId)
+            .build();
   }
 
   /**
    * Delete an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteExternalcontactsContact(DeleteExternalcontactsContactRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteExternalcontactsContact(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteExternalcontactsContact(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -147,10 +150,11 @@ public class ExternalContactsApi {
    * 
    * @param contactId ExternalContact Id (required)
    * @param noteId Note Id (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteExternalcontactsContactNote(String contactId, String noteId) throws IOException, ApiException {
-    deleteExternalcontactsContactNoteWithHttpInfo(contactId, noteId);
+     deleteExternalcontactsContactNote(createDeleteExternalcontactsContactNoteRequest(contactId, noteId));
   }
 
   /**
@@ -158,138 +162,139 @@ public class ExternalContactsApi {
    * 
    * @param contactId ExternalContact Id (required)
    * @param noteId Note Id (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteExternalcontactsContactNoteWithHttpInfo(String contactId, String noteId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'contactId' is set
-    if (contactId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling deleteExternalcontactsContactNote");
-    }
-    
-    // verify the required parameter 'noteId' is set
-    if (noteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'noteId' when calling deleteExternalcontactsContactNote");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "contactId" + "\\}", pcapiClient.escapeString(contactId.toString()))
-      .replaceAll("\\{" + "noteId" + "\\}", pcapiClient.escapeString(noteId.toString()));
+  public ApiResponse<Void> deleteExternalcontactsContactNoteWithHttpInfo(String contactId, String noteId) throws IOException {
+    return deleteExternalcontactsContactNote(createDeleteExternalcontactsContactNoteRequest(contactId, noteId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private DeleteExternalcontactsContactNoteRequest createDeleteExternalcontactsContactNoteRequest(String contactId, String noteId) {
+    return DeleteExternalcontactsContactNoteRequest.builder()
+            .withContactId(contactId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withNoteId(noteId)
+            .build();
   }
 
   /**
    * Delete a note for an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteExternalcontactsContactNote(DeleteExternalcontactsContactNoteRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete a note for an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteExternalcontactsContactNote(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteExternalcontactsContactNote(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete an external organization
    * 
    * @param externalOrganizationId External Organization ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteExternalcontactsOrganization(String externalOrganizationId) throws IOException, ApiException {
-    deleteExternalcontactsOrganizationWithHttpInfo(externalOrganizationId);
+     deleteExternalcontactsOrganization(createDeleteExternalcontactsOrganizationRequest(externalOrganizationId));
   }
 
   /**
    * Delete an external organization
    * 
    * @param externalOrganizationId External Organization ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteExternalcontactsOrganizationWithHttpInfo(String externalOrganizationId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'externalOrganizationId' is set
-    if (externalOrganizationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'externalOrganizationId' when calling deleteExternalcontactsOrganization");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/organizations/{externalOrganizationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "externalOrganizationId" + "\\}", pcapiClient.escapeString(externalOrganizationId.toString()));
+  public ApiResponse<Void> deleteExternalcontactsOrganizationWithHttpInfo(String externalOrganizationId) throws IOException {
+    return deleteExternalcontactsOrganization(createDeleteExternalcontactsOrganizationRequest(externalOrganizationId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteExternalcontactsOrganizationRequest createDeleteExternalcontactsOrganizationRequest(String externalOrganizationId) {
+    return DeleteExternalcontactsOrganizationRequest.builder()
+            .withExternalOrganizationId(externalOrganizationId)
+            .build();
   }
 
   /**
    * Delete an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteExternalcontactsOrganization(DeleteExternalcontactsOrganizationRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteExternalcontactsOrganization(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteExternalcontactsOrganization(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -297,10 +302,11 @@ public class ExternalContactsApi {
    * 
    * @param externalOrganizationId External Organization Id (required)
    * @param noteId Note Id (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteExternalcontactsOrganizationNote(String externalOrganizationId, String noteId) throws IOException, ApiException {
-    deleteExternalcontactsOrganizationNoteWithHttpInfo(externalOrganizationId, noteId);
+     deleteExternalcontactsOrganizationNote(createDeleteExternalcontactsOrganizationNoteRequest(externalOrganizationId, noteId));
   }
 
   /**
@@ -308,138 +314,139 @@ public class ExternalContactsApi {
    * 
    * @param externalOrganizationId External Organization Id (required)
    * @param noteId Note Id (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteExternalcontactsOrganizationNoteWithHttpInfo(String externalOrganizationId, String noteId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'externalOrganizationId' is set
-    if (externalOrganizationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'externalOrganizationId' when calling deleteExternalcontactsOrganizationNote");
-    }
-    
-    // verify the required parameter 'noteId' is set
-    if (noteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'noteId' when calling deleteExternalcontactsOrganizationNote");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "externalOrganizationId" + "\\}", pcapiClient.escapeString(externalOrganizationId.toString()))
-      .replaceAll("\\{" + "noteId" + "\\}", pcapiClient.escapeString(noteId.toString()));
+  public ApiResponse<Void> deleteExternalcontactsOrganizationNoteWithHttpInfo(String externalOrganizationId, String noteId) throws IOException {
+    return deleteExternalcontactsOrganizationNote(createDeleteExternalcontactsOrganizationNoteRequest(externalOrganizationId, noteId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private DeleteExternalcontactsOrganizationNoteRequest createDeleteExternalcontactsOrganizationNoteRequest(String externalOrganizationId, String noteId) {
+    return DeleteExternalcontactsOrganizationNoteRequest.builder()
+            .withExternalOrganizationId(externalOrganizationId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withNoteId(noteId)
+            .build();
   }
 
   /**
    * Delete a note for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteExternalcontactsOrganizationNote(DeleteExternalcontactsOrganizationNoteRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete a note for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteExternalcontactsOrganizationNote(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteExternalcontactsOrganizationNote(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete a relationship
    * 
    * @param relationshipId Relationship Id (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteExternalcontactsRelationship(String relationshipId) throws IOException, ApiException {
-    deleteExternalcontactsRelationshipWithHttpInfo(relationshipId);
+     deleteExternalcontactsRelationship(createDeleteExternalcontactsRelationshipRequest(relationshipId));
   }
 
   /**
    * Delete a relationship
    * 
    * @param relationshipId Relationship Id (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteExternalcontactsRelationshipWithHttpInfo(String relationshipId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'relationshipId' is set
-    if (relationshipId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'relationshipId' when calling deleteExternalcontactsRelationship");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/relationships/{relationshipId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "relationshipId" + "\\}", pcapiClient.escapeString(relationshipId.toString()));
+  public ApiResponse<Void> deleteExternalcontactsRelationshipWithHttpInfo(String relationshipId) throws IOException {
+    return deleteExternalcontactsRelationship(createDeleteExternalcontactsRelationshipRequest(relationshipId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteExternalcontactsRelationshipRequest createDeleteExternalcontactsRelationshipRequest(String relationshipId) {
+    return DeleteExternalcontactsRelationshipRequest.builder()
+            .withRelationshipId(relationshipId)
+            .build();
   }
 
   /**
    * Delete a relationship
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteExternalcontactsRelationship(DeleteExternalcontactsRelationshipRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete a relationship
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteExternalcontactsRelationship(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteExternalcontactsRelationship(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -448,10 +455,11 @@ public class ExternalContactsApi {
    * @param contactId ExternalContact ID (required)
    * @param expand which fields, if any, to expand (externalOrganization,externalDataSources) (optional)
    * @return ExternalContact
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExternalContact getExternalcontactsContact(String contactId, List<String> expand) throws IOException, ApiException {
-    return getExternalcontactsContactWithHttpInfo(contactId, expand).getBody();
+    return  getExternalcontactsContact(createGetExternalcontactsContactRequest(contactId, expand));
   }
 
   /**
@@ -460,62 +468,66 @@ public class ExternalContactsApi {
    * @param contactId ExternalContact ID (required)
    * @param expand which fields, if any, to expand (externalOrganization,externalDataSources) (optional)
    * @return ExternalContact
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExternalContact> getExternalcontactsContactWithHttpInfo(String contactId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'contactId' is set
-    if (contactId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling getExternalcontactsContact");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/contacts/{contactId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "contactId" + "\\}", pcapiClient.escapeString(contactId.toString()));
+  public ApiResponse<ExternalContact> getExternalcontactsContactWithHttpInfo(String contactId, List<String> expand) throws IOException {
+    return getExternalcontactsContact(createGetExternalcontactsContactRequest(contactId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetExternalcontactsContactRequest createGetExternalcontactsContactRequest(String contactId, List<String> expand) {
+    return GetExternalcontactsContactRequest.builder()
+            .withContactId(contactId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ExternalContact>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Fetch an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ExternalContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExternalContact getExternalcontactsContact(GetExternalcontactsContactRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExternalContact>() {});
+    try {
+      ApiResponse<ExternalContact> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalContact>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Fetch an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExternalContact> getExternalcontactsContact(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ExternalContact>invokeAPIVerbose(request, new TypeReference<ExternalContact>() {});
+  public ApiResponse<ExternalContact> getExternalcontactsContact(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalContact>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -525,10 +537,11 @@ public class ExternalContactsApi {
    * @param noteId Note Id (required)
    * @param expand which fields, if any, to expand (optional)
    * @return Note
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Note getExternalcontactsContactNote(String contactId, String noteId, List<String> expand) throws IOException, ApiException {
-    return getExternalcontactsContactNoteWithHttpInfo(contactId, noteId, expand).getBody();
+    return  getExternalcontactsContactNote(createGetExternalcontactsContactNoteRequest(contactId, noteId, expand));
   }
 
   /**
@@ -538,68 +551,68 @@ public class ExternalContactsApi {
    * @param noteId Note Id (required)
    * @param expand which fields, if any, to expand (optional)
    * @return Note
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Note> getExternalcontactsContactNoteWithHttpInfo(String contactId, String noteId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'contactId' is set
-    if (contactId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling getExternalcontactsContactNote");
-    }
-    
-    // verify the required parameter 'noteId' is set
-    if (noteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'noteId' when calling getExternalcontactsContactNote");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "contactId" + "\\}", pcapiClient.escapeString(contactId.toString()))
-      .replaceAll("\\{" + "noteId" + "\\}", pcapiClient.escapeString(noteId.toString()));
+  public ApiResponse<Note> getExternalcontactsContactNoteWithHttpInfo(String contactId, String noteId, List<String> expand) throws IOException {
+    return getExternalcontactsContactNote(createGetExternalcontactsContactNoteRequest(contactId, noteId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetExternalcontactsContactNoteRequest createGetExternalcontactsContactNoteRequest(String contactId, String noteId, List<String> expand) {
+    return GetExternalcontactsContactNoteRequest.builder()
+            .withContactId(contactId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withNoteId(noteId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Note>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Fetch a note for an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Note
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Note getExternalcontactsContactNote(GetExternalcontactsContactNoteRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Note>() {});
+    try {
+      ApiResponse<Note> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Note>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Fetch a note for an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Note> getExternalcontactsContactNote(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Note>invokeAPIVerbose(request, new TypeReference<Note>() {});
+  public ApiResponse<Note> getExternalcontactsContactNote(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Note>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -611,10 +624,11 @@ public class ExternalContactsApi {
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return NoteListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public NoteListing getExternalcontactsContactNotes(String contactId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException, ApiException {
-    return getExternalcontactsContactNotesWithHttpInfo(contactId, pageSize, pageNumber, sortOrder, expand).getBody();
+    return  getExternalcontactsContactNotes(createGetExternalcontactsContactNotesRequest(contactId, pageSize, pageNumber, sortOrder, expand));
   }
 
   /**
@@ -626,65 +640,72 @@ public class ExternalContactsApi {
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return NoteListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<NoteListing> getExternalcontactsContactNotesWithHttpInfo(String contactId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'contactId' is set
-    if (contactId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling getExternalcontactsContactNotes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/contacts/{contactId}/notes".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "contactId" + "\\}", pcapiClient.escapeString(contactId.toString()));
+  public ApiResponse<NoteListing> getExternalcontactsContactNotesWithHttpInfo(String contactId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException {
+    return getExternalcontactsContactNotes(createGetExternalcontactsContactNotesRequest(contactId, pageSize, pageNumber, sortOrder, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetExternalcontactsContactNotesRequest createGetExternalcontactsContactNotesRequest(String contactId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) {
+    return GetExternalcontactsContactNotesRequest.builder()
+            .withContactId(contactId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageNumber(pageNumber)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortOrder(sortOrder)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<NoteListing>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * List notes for an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return NoteListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public NoteListing getExternalcontactsContactNotes(GetExternalcontactsContactNotesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<NoteListing>() {});
+    try {
+      ApiResponse<NoteListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<NoteListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * List notes for an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<NoteListing> getExternalcontactsContactNotes(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<NoteListing>invokeAPIVerbose(request, new TypeReference<NoteListing>() {});
+  public ApiResponse<NoteListing> getExternalcontactsContactNotes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<NoteListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<NoteListing> response = (ApiResponse<NoteListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<NoteListing> response = (ApiResponse<NoteListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -696,10 +717,11 @@ public class ExternalContactsApi {
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return ContactListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ContactListing getExternalcontactsContacts(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) throws IOException, ApiException {
-    return getExternalcontactsContactsWithHttpInfo(pageSize, pageNumber, q, sortOrder, expand).getBody();
+    return  getExternalcontactsContacts(createGetExternalcontactsContactsRequest(pageSize, pageNumber, q, sortOrder, expand));
   }
 
   /**
@@ -711,60 +733,72 @@ public class ExternalContactsApi {
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return ContactListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactListing> getExternalcontactsContactsWithHttpInfo(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/contacts".replaceAll("\\{format\\}","json");
+  public ApiResponse<ContactListing> getExternalcontactsContactsWithHttpInfo(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) throws IOException {
+    return getExternalcontactsContacts(createGetExternalcontactsContactsRequest(pageSize, pageNumber, q, sortOrder, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetExternalcontactsContactsRequest createGetExternalcontactsContactsRequest(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) {
+    return GetExternalcontactsContactsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "q", q));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withQ(q)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortOrder(sortOrder)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ContactListing>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Search for external contacts
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ContactListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ContactListing getExternalcontactsContacts(GetExternalcontactsContactsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ContactListing>() {});
+    try {
+      ApiResponse<ContactListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Search for external contacts
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactListing> getExternalcontactsContacts(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ContactListing>invokeAPIVerbose(request, new TypeReference<ContactListing>() {});
+  public ApiResponse<ContactListing> getExternalcontactsContacts(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListing> response = (ApiResponse<ContactListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListing> response = (ApiResponse<ContactListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -773,10 +807,11 @@ public class ExternalContactsApi {
    * @param externalOrganizationId External Organization ID (required)
    * @param expand which fields, if any, to expand (externalDataSources) (optional)
    * @return ExternalOrganization
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExternalOrganization getExternalcontactsOrganization(String externalOrganizationId, List<String> expand) throws IOException, ApiException {
-    return getExternalcontactsOrganizationWithHttpInfo(externalOrganizationId, expand).getBody();
+    return  getExternalcontactsOrganization(createGetExternalcontactsOrganizationRequest(externalOrganizationId, expand));
   }
 
   /**
@@ -785,62 +820,66 @@ public class ExternalContactsApi {
    * @param externalOrganizationId External Organization ID (required)
    * @param expand which fields, if any, to expand (externalDataSources) (optional)
    * @return ExternalOrganization
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExternalOrganization> getExternalcontactsOrganizationWithHttpInfo(String externalOrganizationId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'externalOrganizationId' is set
-    if (externalOrganizationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'externalOrganizationId' when calling getExternalcontactsOrganization");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/organizations/{externalOrganizationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "externalOrganizationId" + "\\}", pcapiClient.escapeString(externalOrganizationId.toString()));
+  public ApiResponse<ExternalOrganization> getExternalcontactsOrganizationWithHttpInfo(String externalOrganizationId, List<String> expand) throws IOException {
+    return getExternalcontactsOrganization(createGetExternalcontactsOrganizationRequest(externalOrganizationId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetExternalcontactsOrganizationRequest createGetExternalcontactsOrganizationRequest(String externalOrganizationId, List<String> expand) {
+    return GetExternalcontactsOrganizationRequest.builder()
+            .withExternalOrganizationId(externalOrganizationId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ExternalOrganization>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Fetch an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ExternalOrganization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExternalOrganization getExternalcontactsOrganization(GetExternalcontactsOrganizationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {});
+    try {
+      ApiResponse<ExternalOrganization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Fetch an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExternalOrganization> getExternalcontactsOrganization(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ExternalOrganization>invokeAPIVerbose(request, new TypeReference<ExternalOrganization>() {});
+  public ApiResponse<ExternalOrganization> getExternalcontactsOrganization(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalOrganization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -853,10 +892,11 @@ public class ExternalContactsApi {
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (externalOrganization) (optional)
    * @return ContactListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ContactListing getExternalcontactsOrganizationContacts(String externalOrganizationId, Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) throws IOException, ApiException {
-    return getExternalcontactsOrganizationContactsWithHttpInfo(externalOrganizationId, pageSize, pageNumber, q, sortOrder, expand).getBody();
+    return  getExternalcontactsOrganizationContacts(createGetExternalcontactsOrganizationContactsRequest(externalOrganizationId, pageSize, pageNumber, q, sortOrder, expand));
   }
 
   /**
@@ -869,66 +909,74 @@ public class ExternalContactsApi {
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (externalOrganization) (optional)
    * @return ContactListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactListing> getExternalcontactsOrganizationContactsWithHttpInfo(String externalOrganizationId, Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'externalOrganizationId' is set
-    if (externalOrganizationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'externalOrganizationId' when calling getExternalcontactsOrganizationContacts");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "externalOrganizationId" + "\\}", pcapiClient.escapeString(externalOrganizationId.toString()));
+  public ApiResponse<ContactListing> getExternalcontactsOrganizationContactsWithHttpInfo(String externalOrganizationId, Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) throws IOException {
+    return getExternalcontactsOrganizationContacts(createGetExternalcontactsOrganizationContactsRequest(externalOrganizationId, pageSize, pageNumber, q, sortOrder, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetExternalcontactsOrganizationContactsRequest createGetExternalcontactsOrganizationContactsRequest(String externalOrganizationId, Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand) {
+    return GetExternalcontactsOrganizationContactsRequest.builder()
+            .withExternalOrganizationId(externalOrganizationId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "q", q));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageNumber(pageNumber)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withQ(q)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withSortOrder(sortOrder)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ContactListing>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Search for external contacts in an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ContactListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ContactListing getExternalcontactsOrganizationContacts(GetExternalcontactsOrganizationContactsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ContactListing>() {});
+    try {
+      ApiResponse<ContactListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Search for external contacts in an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactListing> getExternalcontactsOrganizationContacts(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ContactListing>invokeAPIVerbose(request, new TypeReference<ContactListing>() {});
+  public ApiResponse<ContactListing> getExternalcontactsOrganizationContacts(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListing> response = (ApiResponse<ContactListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListing> response = (ApiResponse<ContactListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -938,10 +986,11 @@ public class ExternalContactsApi {
    * @param noteId Note Id (required)
    * @param expand which fields, if any, to expand (optional)
    * @return Note
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Note getExternalcontactsOrganizationNote(String externalOrganizationId, String noteId, List<String> expand) throws IOException, ApiException {
-    return getExternalcontactsOrganizationNoteWithHttpInfo(externalOrganizationId, noteId, expand).getBody();
+    return  getExternalcontactsOrganizationNote(createGetExternalcontactsOrganizationNoteRequest(externalOrganizationId, noteId, expand));
   }
 
   /**
@@ -951,68 +1000,68 @@ public class ExternalContactsApi {
    * @param noteId Note Id (required)
    * @param expand which fields, if any, to expand (optional)
    * @return Note
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Note> getExternalcontactsOrganizationNoteWithHttpInfo(String externalOrganizationId, String noteId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'externalOrganizationId' is set
-    if (externalOrganizationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'externalOrganizationId' when calling getExternalcontactsOrganizationNote");
-    }
-    
-    // verify the required parameter 'noteId' is set
-    if (noteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'noteId' when calling getExternalcontactsOrganizationNote");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "externalOrganizationId" + "\\}", pcapiClient.escapeString(externalOrganizationId.toString()))
-      .replaceAll("\\{" + "noteId" + "\\}", pcapiClient.escapeString(noteId.toString()));
+  public ApiResponse<Note> getExternalcontactsOrganizationNoteWithHttpInfo(String externalOrganizationId, String noteId, List<String> expand) throws IOException {
+    return getExternalcontactsOrganizationNote(createGetExternalcontactsOrganizationNoteRequest(externalOrganizationId, noteId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetExternalcontactsOrganizationNoteRequest createGetExternalcontactsOrganizationNoteRequest(String externalOrganizationId, String noteId, List<String> expand) {
+    return GetExternalcontactsOrganizationNoteRequest.builder()
+            .withExternalOrganizationId(externalOrganizationId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withNoteId(noteId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Note>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Fetch a note for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Note
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Note getExternalcontactsOrganizationNote(GetExternalcontactsOrganizationNoteRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Note>() {});
+    try {
+      ApiResponse<Note> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Note>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Fetch a note for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Note> getExternalcontactsOrganizationNote(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Note>invokeAPIVerbose(request, new TypeReference<Note>() {});
+  public ApiResponse<Note> getExternalcontactsOrganizationNote(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Note>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1024,10 +1073,11 @@ public class ExternalContactsApi {
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return NoteListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public NoteListing getExternalcontactsOrganizationNotes(String externalOrganizationId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException, ApiException {
-    return getExternalcontactsOrganizationNotesWithHttpInfo(externalOrganizationId, pageSize, pageNumber, sortOrder, expand).getBody();
+    return  getExternalcontactsOrganizationNotes(createGetExternalcontactsOrganizationNotesRequest(externalOrganizationId, pageSize, pageNumber, sortOrder, expand));
   }
 
   /**
@@ -1039,65 +1089,72 @@ public class ExternalContactsApi {
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return NoteListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<NoteListing> getExternalcontactsOrganizationNotesWithHttpInfo(String externalOrganizationId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'externalOrganizationId' is set
-    if (externalOrganizationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'externalOrganizationId' when calling getExternalcontactsOrganizationNotes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "externalOrganizationId" + "\\}", pcapiClient.escapeString(externalOrganizationId.toString()));
+  public ApiResponse<NoteListing> getExternalcontactsOrganizationNotesWithHttpInfo(String externalOrganizationId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) throws IOException {
+    return getExternalcontactsOrganizationNotes(createGetExternalcontactsOrganizationNotesRequest(externalOrganizationId, pageSize, pageNumber, sortOrder, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetExternalcontactsOrganizationNotesRequest createGetExternalcontactsOrganizationNotesRequest(String externalOrganizationId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) {
+    return GetExternalcontactsOrganizationNotesRequest.builder()
+            .withExternalOrganizationId(externalOrganizationId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageNumber(pageNumber)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortOrder(sortOrder)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<NoteListing>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * List notes for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return NoteListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public NoteListing getExternalcontactsOrganizationNotes(GetExternalcontactsOrganizationNotesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<NoteListing>() {});
+    try {
+      ApiResponse<NoteListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<NoteListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * List notes for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<NoteListing> getExternalcontactsOrganizationNotes(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<NoteListing>invokeAPIVerbose(request, new TypeReference<NoteListing>() {});
+  public ApiResponse<NoteListing> getExternalcontactsOrganizationNotes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<NoteListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<NoteListing> response = (ApiResponse<NoteListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<NoteListing> response = (ApiResponse<NoteListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1109,10 +1166,11 @@ public class ExternalContactsApi {
    * @param expand which fields, if any, to expand (optional)
    * @param sortOrder Sort order (optional)
    * @return RelationshipListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RelationshipListing getExternalcontactsOrganizationRelationships(String externalOrganizationId, Integer pageSize, Integer pageNumber, String expand, String sortOrder) throws IOException, ApiException {
-    return getExternalcontactsOrganizationRelationshipsWithHttpInfo(externalOrganizationId, pageSize, pageNumber, expand, sortOrder).getBody();
+    return  getExternalcontactsOrganizationRelationships(createGetExternalcontactsOrganizationRelationshipsRequest(externalOrganizationId, pageSize, pageNumber, expand, sortOrder));
   }
 
   /**
@@ -1124,65 +1182,72 @@ public class ExternalContactsApi {
    * @param expand which fields, if any, to expand (optional)
    * @param sortOrder Sort order (optional)
    * @return RelationshipListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RelationshipListing> getExternalcontactsOrganizationRelationshipsWithHttpInfo(String externalOrganizationId, Integer pageSize, Integer pageNumber, String expand, String sortOrder) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'externalOrganizationId' is set
-    if (externalOrganizationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'externalOrganizationId' when calling getExternalcontactsOrganizationRelationships");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "externalOrganizationId" + "\\}", pcapiClient.escapeString(externalOrganizationId.toString()));
+  public ApiResponse<RelationshipListing> getExternalcontactsOrganizationRelationshipsWithHttpInfo(String externalOrganizationId, Integer pageSize, Integer pageNumber, String expand, String sortOrder) throws IOException {
+    return getExternalcontactsOrganizationRelationships(createGetExternalcontactsOrganizationRelationshipsRequest(externalOrganizationId, pageSize, pageNumber, expand, sortOrder).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetExternalcontactsOrganizationRelationshipsRequest createGetExternalcontactsOrganizationRelationshipsRequest(String externalOrganizationId, Integer pageSize, Integer pageNumber, String expand, String sortOrder) {
+    return GetExternalcontactsOrganizationRelationshipsRequest.builder()
+            .withExternalOrganizationId(externalOrganizationId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageNumber(pageNumber)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withExpand(expand)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<RelationshipListing>() {});
+            .withSortOrder(sortOrder)
+            .build();
   }
 
   /**
    * Fetch a relationship for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return RelationshipListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RelationshipListing getExternalcontactsOrganizationRelationships(GetExternalcontactsOrganizationRelationshipsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RelationshipListing>() {});
+    try {
+      ApiResponse<RelationshipListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RelationshipListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Fetch a relationship for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RelationshipListing> getExternalcontactsOrganizationRelationships(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<RelationshipListing>invokeAPIVerbose(request, new TypeReference<RelationshipListing>() {});
+  public ApiResponse<RelationshipListing> getExternalcontactsOrganizationRelationships(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RelationshipListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RelationshipListing> response = (ApiResponse<RelationshipListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RelationshipListing> response = (ApiResponse<RelationshipListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1194,10 +1259,11 @@ public class ExternalContactsApi {
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return ExternalOrganizationListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExternalOrganizationListing getExternalcontactsOrganizations(Integer pageSize, Integer pageNumber, String q, String sortOrder, String expand) throws IOException, ApiException {
-    return getExternalcontactsOrganizationsWithHttpInfo(pageSize, pageNumber, q, sortOrder, expand).getBody();
+    return  getExternalcontactsOrganizations(createGetExternalcontactsOrganizationsRequest(pageSize, pageNumber, q, sortOrder, expand));
   }
 
   /**
@@ -1209,60 +1275,72 @@ public class ExternalContactsApi {
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return ExternalOrganizationListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExternalOrganizationListing> getExternalcontactsOrganizationsWithHttpInfo(Integer pageSize, Integer pageNumber, String q, String sortOrder, String expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/organizations".replaceAll("\\{format\\}","json");
+  public ApiResponse<ExternalOrganizationListing> getExternalcontactsOrganizationsWithHttpInfo(Integer pageSize, Integer pageNumber, String q, String sortOrder, String expand) throws IOException {
+    return getExternalcontactsOrganizations(createGetExternalcontactsOrganizationsRequest(pageSize, pageNumber, q, sortOrder, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetExternalcontactsOrganizationsRequest createGetExternalcontactsOrganizationsRequest(Integer pageSize, Integer pageNumber, String q, String sortOrder, String expand) {
+    return GetExternalcontactsOrganizationsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "q", q));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withQ(q)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortOrder(sortOrder)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ExternalOrganizationListing>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Search for external organizations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ExternalOrganizationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExternalOrganizationListing getExternalcontactsOrganizations(GetExternalcontactsOrganizationsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExternalOrganizationListing>() {});
+    try {
+      ApiResponse<ExternalOrganizationListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalOrganizationListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Search for external organizations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExternalOrganizationListing> getExternalcontactsOrganizations(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ExternalOrganizationListing>invokeAPIVerbose(request, new TypeReference<ExternalOrganizationListing>() {});
+  public ApiResponse<ExternalOrganizationListing> getExternalcontactsOrganizations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalOrganizationListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalOrganizationListing> response = (ApiResponse<ExternalOrganizationListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalOrganizationListing> response = (ApiResponse<ExternalOrganizationListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1271,10 +1349,11 @@ public class ExternalContactsApi {
    * @param relationshipId Relationship Id (required)
    * @param expand which fields, if any, to expand (optional)
    * @return Relationship
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Relationship getExternalcontactsRelationship(String relationshipId, String expand) throws IOException, ApiException {
-    return getExternalcontactsRelationshipWithHttpInfo(relationshipId, expand).getBody();
+    return  getExternalcontactsRelationship(createGetExternalcontactsRelationshipRequest(relationshipId, expand));
   }
 
   /**
@@ -1283,62 +1362,66 @@ public class ExternalContactsApi {
    * @param relationshipId Relationship Id (required)
    * @param expand which fields, if any, to expand (optional)
    * @return Relationship
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Relationship> getExternalcontactsRelationshipWithHttpInfo(String relationshipId, String expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'relationshipId' is set
-    if (relationshipId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'relationshipId' when calling getExternalcontactsRelationship");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/relationships/{relationshipId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "relationshipId" + "\\}", pcapiClient.escapeString(relationshipId.toString()));
+  public ApiResponse<Relationship> getExternalcontactsRelationshipWithHttpInfo(String relationshipId, String expand) throws IOException {
+    return getExternalcontactsRelationship(createGetExternalcontactsRelationshipRequest(relationshipId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetExternalcontactsRelationshipRequest createGetExternalcontactsRelationshipRequest(String relationshipId, String expand) {
+    return GetExternalcontactsRelationshipRequest.builder()
+            .withRelationshipId(relationshipId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Relationship>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Fetch a relationship
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Relationship
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Relationship getExternalcontactsRelationship(GetExternalcontactsRelationshipRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Relationship>() {});
+    try {
+      ApiResponse<Relationship> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Relationship>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Fetch a relationship
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Relationship> getExternalcontactsRelationship(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Relationship>invokeAPIVerbose(request, new TypeReference<Relationship>() {});
+  public ApiResponse<Relationship> getExternalcontactsRelationship(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Relationship>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Relationship> response = (ApiResponse<Relationship>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Relationship> response = (ApiResponse<Relationship>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1347,10 +1430,11 @@ public class ExternalContactsApi {
    * @param lookupVal User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) (required)
    * @param expand which field, if any, to expand (optional)
    * @return ReverseWhitepagesLookupResult
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ReverseWhitepagesLookupResult getExternalcontactsReversewhitepageslookup(String lookupVal, List<String> expand) throws IOException, ApiException {
-    return getExternalcontactsReversewhitepageslookupWithHttpInfo(lookupVal, expand).getBody();
+    return  getExternalcontactsReversewhitepageslookup(createGetExternalcontactsReversewhitepageslookupRequest(lookupVal, expand));
   }
 
   /**
@@ -1359,62 +1443,66 @@ public class ExternalContactsApi {
    * @param lookupVal User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) (required)
    * @param expand which field, if any, to expand (optional)
    * @return ReverseWhitepagesLookupResult
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ReverseWhitepagesLookupResult> getExternalcontactsReversewhitepageslookupWithHttpInfo(String lookupVal, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'lookupVal' is set
-    if (lookupVal == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'lookupVal' when calling getExternalcontactsReversewhitepageslookup");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/reversewhitepageslookup".replaceAll("\\{format\\}","json");
+  public ApiResponse<ReverseWhitepagesLookupResult> getExternalcontactsReversewhitepageslookupWithHttpInfo(String lookupVal, List<String> expand) throws IOException {
+    return getExternalcontactsReversewhitepageslookup(createGetExternalcontactsReversewhitepageslookupRequest(lookupVal, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetExternalcontactsReversewhitepageslookupRequest createGetExternalcontactsReversewhitepageslookupRequest(String lookupVal, List<String> expand) {
+    return GetExternalcontactsReversewhitepageslookupRequest.builder()
+            .withLookupVal(lookupVal)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "lookupVal", lookupVal));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ReverseWhitepagesLookupResult>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Lookup contacts and externalOrganizations based on an attribute
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ReverseWhitepagesLookupResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ReverseWhitepagesLookupResult getExternalcontactsReversewhitepageslookup(GetExternalcontactsReversewhitepageslookupRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ReverseWhitepagesLookupResult>() {});
+    try {
+      ApiResponse<ReverseWhitepagesLookupResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ReverseWhitepagesLookupResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Lookup contacts and externalOrganizations based on an attribute
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ReverseWhitepagesLookupResult> getExternalcontactsReversewhitepageslookup(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ReverseWhitepagesLookupResult>invokeAPIVerbose(request, new TypeReference<ReverseWhitepagesLookupResult>() {});
+  public ApiResponse<ReverseWhitepagesLookupResult> getExternalcontactsReversewhitepageslookup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ReverseWhitepagesLookupResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReverseWhitepagesLookupResult> response = (ApiResponse<ReverseWhitepagesLookupResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReverseWhitepagesLookupResult> response = (ApiResponse<ReverseWhitepagesLookupResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1422,10 +1510,11 @@ public class ExternalContactsApi {
    * 
    * @param contactId ExternalContact ID (required)
    * @param body ConversationAssociation (optional)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postExternalcontactsContactAssociateconversation(String contactId, ConversationAssociation body) throws IOException, ApiException {
-    postExternalcontactsContactAssociateconversationWithHttpInfo(contactId, body);
+     postExternalcontactsContactAssociateconversation(createPostExternalcontactsContactAssociateconversationRequest(contactId, body));
   }
 
   /**
@@ -1433,61 +1522,65 @@ public class ExternalContactsApi {
    * 
    * @param contactId ExternalContact ID (required)
    * @param body ConversationAssociation (optional)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postExternalcontactsContactAssociateconversationWithHttpInfo(String contactId, ConversationAssociation body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'contactId' is set
-    if (contactId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling postExternalcontactsContactAssociateconversation");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/contacts/{contactId}/associateconversation".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "contactId" + "\\}", pcapiClient.escapeString(contactId.toString()));
+  public ApiResponse<Void> postExternalcontactsContactAssociateconversationWithHttpInfo(String contactId, ConversationAssociation body) throws IOException {
+    return postExternalcontactsContactAssociateconversation(createPostExternalcontactsContactAssociateconversationRequest(contactId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostExternalcontactsContactAssociateconversationRequest createPostExternalcontactsContactAssociateconversationRequest(String contactId, ConversationAssociation body) {
+    return PostExternalcontactsContactAssociateconversationRequest.builder()
+            .withContactId(contactId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Associate an external contact with a conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postExternalcontactsContactAssociateconversation(PostExternalcontactsContactAssociateconversationRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Associate an external contact with a conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postExternalcontactsContactAssociateconversation(ApiRequest<ConversationAssociation> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> postExternalcontactsContactAssociateconversation(ApiRequest<ConversationAssociation> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1496,10 +1589,11 @@ public class ExternalContactsApi {
    * @param contactId ExternalContact Id (required)
    * @param body ExternalContact (optional)
    * @return Note
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Note postExternalcontactsContactNotes(String contactId, Note body) throws IOException, ApiException {
-    return postExternalcontactsContactNotesWithHttpInfo(contactId, body).getBody();
+    return  postExternalcontactsContactNotes(createPostExternalcontactsContactNotesRequest(contactId, body));
   }
 
   /**
@@ -1508,61 +1602,66 @@ public class ExternalContactsApi {
    * @param contactId ExternalContact Id (required)
    * @param body ExternalContact (optional)
    * @return Note
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Note> postExternalcontactsContactNotesWithHttpInfo(String contactId, Note body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'contactId' is set
-    if (contactId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling postExternalcontactsContactNotes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/contacts/{contactId}/notes".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "contactId" + "\\}", pcapiClient.escapeString(contactId.toString()));
+  public ApiResponse<Note> postExternalcontactsContactNotesWithHttpInfo(String contactId, Note body) throws IOException {
+    return postExternalcontactsContactNotes(createPostExternalcontactsContactNotesRequest(contactId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostExternalcontactsContactNotesRequest createPostExternalcontactsContactNotesRequest(String contactId, Note body) {
+    return PostExternalcontactsContactNotesRequest.builder()
+            .withContactId(contactId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Note>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a note for an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Note
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Note postExternalcontactsContactNotes(PostExternalcontactsContactNotesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Note>() {});
+    try {
+      ApiResponse<Note> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Note>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a note for an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Note> postExternalcontactsContactNotes(ApiRequest<Note> request) throws IOException, ApiException {
-    return pcapiClient.<Note>invokeAPIVerbose(request, new TypeReference<Note>() {});
+  public ApiResponse<Note> postExternalcontactsContactNotes(ApiRequest<Note> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Note>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1570,10 +1669,11 @@ public class ExternalContactsApi {
    * 
    * @param body ExternalContact (optional)
    * @return ExternalContact
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExternalContact postExternalcontactsContacts(ExternalContact body) throws IOException, ApiException {
-    return postExternalcontactsContactsWithHttpInfo(body).getBody();
+    return  postExternalcontactsContacts(createPostExternalcontactsContactsRequest(body));
   }
 
   /**
@@ -1581,55 +1681,64 @@ public class ExternalContactsApi {
    * 
    * @param body ExternalContact (optional)
    * @return ExternalContact
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExternalContact> postExternalcontactsContactsWithHttpInfo(ExternalContact body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/contacts".replaceAll("\\{format\\}","json");
+  public ApiResponse<ExternalContact> postExternalcontactsContactsWithHttpInfo(ExternalContact body) throws IOException {
+    return postExternalcontactsContacts(createPostExternalcontactsContactsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ExternalContact>() {});
+  private PostExternalcontactsContactsRequest createPostExternalcontactsContactsRequest(ExternalContact body) {
+    return PostExternalcontactsContactsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ExternalContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExternalContact postExternalcontactsContacts(PostExternalcontactsContactsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExternalContact>() {});
+    try {
+      ApiResponse<ExternalContact> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalContact>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExternalContact> postExternalcontactsContacts(ApiRequest<ExternalContact> request) throws IOException, ApiException {
-    return pcapiClient.<ExternalContact>invokeAPIVerbose(request, new TypeReference<ExternalContact>() {});
+  public ApiResponse<ExternalContact> postExternalcontactsContacts(ApiRequest<ExternalContact> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalContact>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1638,10 +1747,11 @@ public class ExternalContactsApi {
    * @param externalOrganizationId External Organization Id (required)
    * @param body ExternalContact (optional)
    * @return Note
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Note postExternalcontactsOrganizationNotes(String externalOrganizationId, Note body) throws IOException, ApiException {
-    return postExternalcontactsOrganizationNotesWithHttpInfo(externalOrganizationId, body).getBody();
+    return  postExternalcontactsOrganizationNotes(createPostExternalcontactsOrganizationNotesRequest(externalOrganizationId, body));
   }
 
   /**
@@ -1650,61 +1760,66 @@ public class ExternalContactsApi {
    * @param externalOrganizationId External Organization Id (required)
    * @param body ExternalContact (optional)
    * @return Note
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Note> postExternalcontactsOrganizationNotesWithHttpInfo(String externalOrganizationId, Note body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'externalOrganizationId' is set
-    if (externalOrganizationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'externalOrganizationId' when calling postExternalcontactsOrganizationNotes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "externalOrganizationId" + "\\}", pcapiClient.escapeString(externalOrganizationId.toString()));
+  public ApiResponse<Note> postExternalcontactsOrganizationNotesWithHttpInfo(String externalOrganizationId, Note body) throws IOException {
+    return postExternalcontactsOrganizationNotes(createPostExternalcontactsOrganizationNotesRequest(externalOrganizationId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostExternalcontactsOrganizationNotesRequest createPostExternalcontactsOrganizationNotesRequest(String externalOrganizationId, Note body) {
+    return PostExternalcontactsOrganizationNotesRequest.builder()
+            .withExternalOrganizationId(externalOrganizationId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Note>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a note for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Note
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Note postExternalcontactsOrganizationNotes(PostExternalcontactsOrganizationNotesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Note>() {});
+    try {
+      ApiResponse<Note> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Note>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a note for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Note> postExternalcontactsOrganizationNotes(ApiRequest<Note> request) throws IOException, ApiException {
-    return pcapiClient.<Note>invokeAPIVerbose(request, new TypeReference<Note>() {});
+  public ApiResponse<Note> postExternalcontactsOrganizationNotes(ApiRequest<Note> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Note>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1712,10 +1827,11 @@ public class ExternalContactsApi {
    * 
    * @param body ExternalOrganization (optional)
    * @return ExternalOrganization
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExternalOrganization postExternalcontactsOrganizations(ExternalOrganization body) throws IOException, ApiException {
-    return postExternalcontactsOrganizationsWithHttpInfo(body).getBody();
+    return  postExternalcontactsOrganizations(createPostExternalcontactsOrganizationsRequest(body));
   }
 
   /**
@@ -1723,55 +1839,64 @@ public class ExternalContactsApi {
    * 
    * @param body ExternalOrganization (optional)
    * @return ExternalOrganization
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExternalOrganization> postExternalcontactsOrganizationsWithHttpInfo(ExternalOrganization body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/organizations".replaceAll("\\{format\\}","json");
+  public ApiResponse<ExternalOrganization> postExternalcontactsOrganizationsWithHttpInfo(ExternalOrganization body) throws IOException {
+    return postExternalcontactsOrganizations(createPostExternalcontactsOrganizationsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ExternalOrganization>() {});
+  private PostExternalcontactsOrganizationsRequest createPostExternalcontactsOrganizationsRequest(ExternalOrganization body) {
+    return PostExternalcontactsOrganizationsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ExternalOrganization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExternalOrganization postExternalcontactsOrganizations(PostExternalcontactsOrganizationsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {});
+    try {
+      ApiResponse<ExternalOrganization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExternalOrganization> postExternalcontactsOrganizations(ApiRequest<ExternalOrganization> request) throws IOException, ApiException {
-    return pcapiClient.<ExternalOrganization>invokeAPIVerbose(request, new TypeReference<ExternalOrganization>() {});
+  public ApiResponse<ExternalOrganization> postExternalcontactsOrganizations(ApiRequest<ExternalOrganization> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalOrganization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1779,10 +1904,11 @@ public class ExternalContactsApi {
    * 
    * @param body Relationship (optional)
    * @return Relationship
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Relationship postExternalcontactsRelationships(Relationship body) throws IOException, ApiException {
-    return postExternalcontactsRelationshipsWithHttpInfo(body).getBody();
+    return  postExternalcontactsRelationships(createPostExternalcontactsRelationshipsRequest(body));
   }
 
   /**
@@ -1790,55 +1916,64 @@ public class ExternalContactsApi {
    * 
    * @param body Relationship (optional)
    * @return Relationship
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Relationship> postExternalcontactsRelationshipsWithHttpInfo(Relationship body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/relationships".replaceAll("\\{format\\}","json");
+  public ApiResponse<Relationship> postExternalcontactsRelationshipsWithHttpInfo(Relationship body) throws IOException {
+    return postExternalcontactsRelationships(createPostExternalcontactsRelationshipsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Relationship>() {});
+  private PostExternalcontactsRelationshipsRequest createPostExternalcontactsRelationshipsRequest(Relationship body) {
+    return PostExternalcontactsRelationshipsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a relationship
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Relationship
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Relationship postExternalcontactsRelationships(PostExternalcontactsRelationshipsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Relationship>() {});
+    try {
+      ApiResponse<Relationship> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Relationship>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a relationship
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Relationship> postExternalcontactsRelationships(ApiRequest<Relationship> request) throws IOException, ApiException {
-    return pcapiClient.<Relationship>invokeAPIVerbose(request, new TypeReference<Relationship>() {});
+  public ApiResponse<Relationship> postExternalcontactsRelationships(ApiRequest<Relationship> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Relationship>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Relationship> response = (ApiResponse<Relationship>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Relationship> response = (ApiResponse<Relationship>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1847,10 +1982,11 @@ public class ExternalContactsApi {
    * @param contactId ExternalContact ID (required)
    * @param body ExternalContact (optional)
    * @return ExternalContact
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExternalContact putExternalcontactsContact(String contactId, ExternalContact body) throws IOException, ApiException {
-    return putExternalcontactsContactWithHttpInfo(contactId, body).getBody();
+    return  putExternalcontactsContact(createPutExternalcontactsContactRequest(contactId, body));
   }
 
   /**
@@ -1859,61 +1995,66 @@ public class ExternalContactsApi {
    * @param contactId ExternalContact ID (required)
    * @param body ExternalContact (optional)
    * @return ExternalContact
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExternalContact> putExternalcontactsContactWithHttpInfo(String contactId, ExternalContact body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'contactId' is set
-    if (contactId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling putExternalcontactsContact");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/contacts/{contactId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "contactId" + "\\}", pcapiClient.escapeString(contactId.toString()));
+  public ApiResponse<ExternalContact> putExternalcontactsContactWithHttpInfo(String contactId, ExternalContact body) throws IOException {
+    return putExternalcontactsContact(createPutExternalcontactsContactRequest(contactId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutExternalcontactsContactRequest createPutExternalcontactsContactRequest(String contactId, ExternalContact body) {
+    return PutExternalcontactsContactRequest.builder()
+            .withContactId(contactId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ExternalContact>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ExternalContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExternalContact putExternalcontactsContact(PutExternalcontactsContactRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExternalContact>() {});
+    try {
+      ApiResponse<ExternalContact> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalContact>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExternalContact> putExternalcontactsContact(ApiRequest<ExternalContact> request) throws IOException, ApiException {
-    return pcapiClient.<ExternalContact>invokeAPIVerbose(request, new TypeReference<ExternalContact>() {});
+  public ApiResponse<ExternalContact> putExternalcontactsContact(ApiRequest<ExternalContact> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalContact>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalContact> response = (ApiResponse<ExternalContact>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1923,10 +2064,11 @@ public class ExternalContactsApi {
    * @param noteId Note Id (required)
    * @param body Note (optional)
    * @return Note
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Note putExternalcontactsContactNote(String contactId, String noteId, Note body) throws IOException, ApiException {
-    return putExternalcontactsContactNoteWithHttpInfo(contactId, noteId, body).getBody();
+    return  putExternalcontactsContactNote(createPutExternalcontactsContactNoteRequest(contactId, noteId, body));
   }
 
   /**
@@ -1936,67 +2078,68 @@ public class ExternalContactsApi {
    * @param noteId Note Id (required)
    * @param body Note (optional)
    * @return Note
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Note> putExternalcontactsContactNoteWithHttpInfo(String contactId, String noteId, Note body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'contactId' is set
-    if (contactId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling putExternalcontactsContactNote");
-    }
-    
-    // verify the required parameter 'noteId' is set
-    if (noteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'noteId' when calling putExternalcontactsContactNote");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "contactId" + "\\}", pcapiClient.escapeString(contactId.toString()))
-      .replaceAll("\\{" + "noteId" + "\\}", pcapiClient.escapeString(noteId.toString()));
+  public ApiResponse<Note> putExternalcontactsContactNoteWithHttpInfo(String contactId, String noteId, Note body) throws IOException {
+    return putExternalcontactsContactNote(createPutExternalcontactsContactNoteRequest(contactId, noteId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutExternalcontactsContactNoteRequest createPutExternalcontactsContactNoteRequest(String contactId, String noteId, Note body) {
+    return PutExternalcontactsContactNoteRequest.builder()
+            .withContactId(contactId)
 
+            .withNoteId(noteId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Note>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a note for an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Note
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Note putExternalcontactsContactNote(PutExternalcontactsContactNoteRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Note>() {});
+    try {
+      ApiResponse<Note> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Note>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a note for an external contact
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Note> putExternalcontactsContactNote(ApiRequest<Note> request) throws IOException, ApiException {
-    return pcapiClient.<Note>invokeAPIVerbose(request, new TypeReference<Note>() {});
+  public ApiResponse<Note> putExternalcontactsContactNote(ApiRequest<Note> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Note>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2004,10 +2147,11 @@ public class ExternalContactsApi {
    * 
    * @param conversationId Conversation ID (required)
    * @param body ConversationAssociation (optional)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void putExternalcontactsConversation(String conversationId, ConversationAssociation body) throws IOException, ApiException {
-    putExternalcontactsConversationWithHttpInfo(conversationId, body);
+     putExternalcontactsConversation(createPutExternalcontactsConversationRequest(conversationId, body));
   }
 
   /**
@@ -2015,61 +2159,65 @@ public class ExternalContactsApi {
    * 
    * @param conversationId Conversation ID (required)
    * @param body ConversationAssociation (optional)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> putExternalcontactsConversationWithHttpInfo(String conversationId, ConversationAssociation body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling putExternalcontactsConversation");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/conversations/{conversationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()));
+  public ApiResponse<Void> putExternalcontactsConversationWithHttpInfo(String conversationId, ConversationAssociation body) throws IOException {
+    return putExternalcontactsConversation(createPutExternalcontactsConversationRequest(conversationId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutExternalcontactsConversationRequest createPutExternalcontactsConversationRequest(String conversationId, ConversationAssociation body) {
+    return PutExternalcontactsConversationRequest.builder()
+            .withConversationId(conversationId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Associate an external contact with a conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void putExternalcontactsConversation(PutExternalcontactsConversationRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Associate an external contact with a conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> putExternalcontactsConversation(ApiRequest<ConversationAssociation> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> putExternalcontactsConversation(ApiRequest<ConversationAssociation> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2078,10 +2226,11 @@ public class ExternalContactsApi {
    * @param externalOrganizationId External Organization ID (required)
    * @param body ExternalOrganization (optional)
    * @return ExternalOrganization
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExternalOrganization putExternalcontactsOrganization(String externalOrganizationId, ExternalOrganization body) throws IOException, ApiException {
-    return putExternalcontactsOrganizationWithHttpInfo(externalOrganizationId, body).getBody();
+    return  putExternalcontactsOrganization(createPutExternalcontactsOrganizationRequest(externalOrganizationId, body));
   }
 
   /**
@@ -2090,61 +2239,66 @@ public class ExternalContactsApi {
    * @param externalOrganizationId External Organization ID (required)
    * @param body ExternalOrganization (optional)
    * @return ExternalOrganization
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExternalOrganization> putExternalcontactsOrganizationWithHttpInfo(String externalOrganizationId, ExternalOrganization body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'externalOrganizationId' is set
-    if (externalOrganizationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'externalOrganizationId' when calling putExternalcontactsOrganization");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/organizations/{externalOrganizationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "externalOrganizationId" + "\\}", pcapiClient.escapeString(externalOrganizationId.toString()));
+  public ApiResponse<ExternalOrganization> putExternalcontactsOrganizationWithHttpInfo(String externalOrganizationId, ExternalOrganization body) throws IOException {
+    return putExternalcontactsOrganization(createPutExternalcontactsOrganizationRequest(externalOrganizationId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutExternalcontactsOrganizationRequest createPutExternalcontactsOrganizationRequest(String externalOrganizationId, ExternalOrganization body) {
+    return PutExternalcontactsOrganizationRequest.builder()
+            .withExternalOrganizationId(externalOrganizationId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ExternalOrganization>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ExternalOrganization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExternalOrganization putExternalcontactsOrganization(PutExternalcontactsOrganizationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {});
+    try {
+      ApiResponse<ExternalOrganization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExternalOrganization> putExternalcontactsOrganization(ApiRequest<ExternalOrganization> request) throws IOException, ApiException {
-    return pcapiClient.<ExternalOrganization>invokeAPIVerbose(request, new TypeReference<ExternalOrganization>() {});
+  public ApiResponse<ExternalOrganization> putExternalcontactsOrganization(ApiRequest<ExternalOrganization> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalOrganization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2154,10 +2308,11 @@ public class ExternalContactsApi {
    * @param noteId Note Id (required)
    * @param body Note (optional)
    * @return Note
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Note putExternalcontactsOrganizationNote(String externalOrganizationId, String noteId, Note body) throws IOException, ApiException {
-    return putExternalcontactsOrganizationNoteWithHttpInfo(externalOrganizationId, noteId, body).getBody();
+    return  putExternalcontactsOrganizationNote(createPutExternalcontactsOrganizationNoteRequest(externalOrganizationId, noteId, body));
   }
 
   /**
@@ -2167,67 +2322,68 @@ public class ExternalContactsApi {
    * @param noteId Note Id (required)
    * @param body Note (optional)
    * @return Note
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Note> putExternalcontactsOrganizationNoteWithHttpInfo(String externalOrganizationId, String noteId, Note body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'externalOrganizationId' is set
-    if (externalOrganizationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'externalOrganizationId' when calling putExternalcontactsOrganizationNote");
-    }
-    
-    // verify the required parameter 'noteId' is set
-    if (noteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'noteId' when calling putExternalcontactsOrganizationNote");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "externalOrganizationId" + "\\}", pcapiClient.escapeString(externalOrganizationId.toString()))
-      .replaceAll("\\{" + "noteId" + "\\}", pcapiClient.escapeString(noteId.toString()));
+  public ApiResponse<Note> putExternalcontactsOrganizationNoteWithHttpInfo(String externalOrganizationId, String noteId, Note body) throws IOException {
+    return putExternalcontactsOrganizationNote(createPutExternalcontactsOrganizationNoteRequest(externalOrganizationId, noteId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutExternalcontactsOrganizationNoteRequest createPutExternalcontactsOrganizationNoteRequest(String externalOrganizationId, String noteId, Note body) {
+    return PutExternalcontactsOrganizationNoteRequest.builder()
+            .withExternalOrganizationId(externalOrganizationId)
 
+            .withNoteId(noteId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Note>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a note for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Note
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Note putExternalcontactsOrganizationNote(PutExternalcontactsOrganizationNoteRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Note>() {});
+    try {
+      ApiResponse<Note> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Note>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a note for an external organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Note> putExternalcontactsOrganizationNote(ApiRequest<Note> request) throws IOException, ApiException {
-    return pcapiClient.<Note>invokeAPIVerbose(request, new TypeReference<Note>() {});
+  public ApiResponse<Note> putExternalcontactsOrganizationNote(ApiRequest<Note> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Note>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2236,10 +2392,11 @@ public class ExternalContactsApi {
    * @param relationshipId Relationship Id (required)
    * @param body Relationship (optional)
    * @return Relationship
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Relationship putExternalcontactsRelationship(String relationshipId, Relationship body) throws IOException, ApiException {
-    return putExternalcontactsRelationshipWithHttpInfo(relationshipId, body).getBody();
+    return  putExternalcontactsRelationship(createPutExternalcontactsRelationshipRequest(relationshipId, body));
   }
 
   /**
@@ -2248,61 +2405,66 @@ public class ExternalContactsApi {
    * @param relationshipId Relationship Id (required)
    * @param body Relationship (optional)
    * @return Relationship
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Relationship> putExternalcontactsRelationshipWithHttpInfo(String relationshipId, Relationship body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'relationshipId' is set
-    if (relationshipId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'relationshipId' when calling putExternalcontactsRelationship");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/externalcontacts/relationships/{relationshipId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "relationshipId" + "\\}", pcapiClient.escapeString(relationshipId.toString()));
+  public ApiResponse<Relationship> putExternalcontactsRelationshipWithHttpInfo(String relationshipId, Relationship body) throws IOException {
+    return putExternalcontactsRelationship(createPutExternalcontactsRelationshipRequest(relationshipId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutExternalcontactsRelationshipRequest createPutExternalcontactsRelationshipRequest(String relationshipId, Relationship body) {
+    return PutExternalcontactsRelationshipRequest.builder()
+            .withRelationshipId(relationshipId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Relationship>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a relationship
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Relationship
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Relationship putExternalcontactsRelationship(PutExternalcontactsRelationshipRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Relationship>() {});
+    try {
+      ApiResponse<Relationship> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Relationship>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a relationship
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Relationship> putExternalcontactsRelationship(ApiRequest<Relationship> request) throws IOException, ApiException {
-    return pcapiClient.<Relationship>invokeAPIVerbose(request, new TypeReference<Relationship>() {});
+  public ApiResponse<Relationship> putExternalcontactsRelationship(ApiRequest<Relationship> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Relationship>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Relationship> response = (ApiResponse<Relationship>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Relationship> response = (ApiResponse<Relationship>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

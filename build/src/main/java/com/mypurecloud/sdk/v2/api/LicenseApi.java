@@ -49,10 +49,11 @@ public class LicenseApi {
    * 
    * @param licenseId ID (required)
    * @return LicenseDefinition
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LicenseDefinition getLicenseDefinition(String licenseId) throws IOException, ApiException {
-    return getLicenseDefinitionWithHttpInfo(licenseId).getBody();
+    return  getLicenseDefinition(createGetLicenseDefinitionRequest(licenseId));
   }
 
   /**
@@ -60,191 +61,210 @@ public class LicenseApi {
    * 
    * @param licenseId ID (required)
    * @return LicenseDefinition
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LicenseDefinition> getLicenseDefinitionWithHttpInfo(String licenseId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'licenseId' is set
-    if (licenseId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'licenseId' when calling getLicenseDefinition");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/license/definitions/{licenseId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "licenseId" + "\\}", pcapiClient.escapeString(licenseId.toString()));
+  public ApiResponse<LicenseDefinition> getLicenseDefinitionWithHttpInfo(String licenseId) throws IOException {
+    return getLicenseDefinition(createGetLicenseDefinitionRequest(licenseId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<LicenseDefinition>() {});
+  private GetLicenseDefinitionRequest createGetLicenseDefinitionRequest(String licenseId) {
+    return GetLicenseDefinitionRequest.builder()
+            .withLicenseId(licenseId)
+            .build();
   }
 
   /**
    * Get PureCloud license definition.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return LicenseDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LicenseDefinition getLicenseDefinition(GetLicenseDefinitionRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LicenseDefinition>() {});
+    try {
+      ApiResponse<LicenseDefinition> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LicenseDefinition>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get PureCloud license definition.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LicenseDefinition> getLicenseDefinition(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<LicenseDefinition>invokeAPIVerbose(request, new TypeReference<LicenseDefinition>() {});
+  public ApiResponse<LicenseDefinition> getLicenseDefinition(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LicenseDefinition>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LicenseDefinition> response = (ApiResponse<LicenseDefinition>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LicenseDefinition> response = (ApiResponse<LicenseDefinition>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get all PureCloud license definitions available for the organization.
    * 
    * @return LicenseDefinitionListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LicenseDefinitionListing getLicenseDefinitions() throws IOException, ApiException {
-    return getLicenseDefinitionsWithHttpInfo().getBody();
+    return  getLicenseDefinitions(createGetLicenseDefinitionsRequest());
   }
 
   /**
    * Get all PureCloud license definitions available for the organization.
    * 
    * @return LicenseDefinitionListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LicenseDefinitionListing> getLicenseDefinitionsWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/license/definitions".replaceAll("\\{format\\}","json");
+  public ApiResponse<LicenseDefinitionListing> getLicenseDefinitionsWithHttpInfo() throws IOException {
+    return getLicenseDefinitions(createGetLicenseDefinitionsRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<LicenseDefinitionListing>() {});
+  private GetLicenseDefinitionsRequest createGetLicenseDefinitionsRequest() {
+    return GetLicenseDefinitionsRequest.builder()            .build();
   }
 
   /**
    * Get all PureCloud license definitions available for the organization.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return LicenseDefinitionListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LicenseDefinitionListing getLicenseDefinitions(GetLicenseDefinitionsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LicenseDefinitionListing>() {});
+    try {
+      ApiResponse<LicenseDefinitionListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LicenseDefinitionListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get all PureCloud license definitions available for the organization.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LicenseDefinitionListing> getLicenseDefinitions(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<LicenseDefinitionListing>invokeAPIVerbose(request, new TypeReference<LicenseDefinitionListing>() {});
+  public ApiResponse<LicenseDefinitionListing> getLicenseDefinitions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LicenseDefinitionListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LicenseDefinitionListing> response = (ApiResponse<LicenseDefinitionListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LicenseDefinitionListing> response = (ApiResponse<LicenseDefinitionListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get license assignments for the organization.
    * 
    * @return LicenseOrganization
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LicenseOrganization getLicenseOrganization() throws IOException, ApiException {
-    return getLicenseOrganizationWithHttpInfo().getBody();
+    return  getLicenseOrganization(createGetLicenseOrganizationRequest());
   }
 
   /**
    * Get license assignments for the organization.
    * 
    * @return LicenseOrganization
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LicenseOrganization> getLicenseOrganizationWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/license/organization".replaceAll("\\{format\\}","json");
+  public ApiResponse<LicenseOrganization> getLicenseOrganizationWithHttpInfo() throws IOException {
+    return getLicenseOrganization(createGetLicenseOrganizationRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<LicenseOrganization>() {});
+  private GetLicenseOrganizationRequest createGetLicenseOrganizationRequest() {
+    return GetLicenseOrganizationRequest.builder()            .build();
   }
 
   /**
    * Get license assignments for the organization.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return LicenseOrganization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LicenseOrganization getLicenseOrganization(GetLicenseOrganizationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LicenseOrganization>() {});
+    try {
+      ApiResponse<LicenseOrganization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LicenseOrganization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get license assignments for the organization.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LicenseOrganization> getLicenseOrganization(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<LicenseOrganization>invokeAPIVerbose(request, new TypeReference<LicenseOrganization>() {});
+  public ApiResponse<LicenseOrganization> getLicenseOrganization(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LicenseOrganization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LicenseOrganization> response = (ApiResponse<LicenseOrganization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LicenseOrganization> response = (ApiResponse<LicenseOrganization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -252,10 +272,11 @@ public class LicenseApi {
    * 
    * @param userId ID (required)
    * @return LicenseUser
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LicenseUser getLicenseUser(String userId) throws IOException, ApiException {
-    return getLicenseUserWithHttpInfo(userId).getBody();
+    return  getLicenseUser(createGetLicenseUserRequest(userId));
   }
 
   /**
@@ -263,61 +284,64 @@ public class LicenseApi {
    * 
    * @param userId ID (required)
    * @return LicenseUser
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LicenseUser> getLicenseUserWithHttpInfo(String userId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getLicenseUser");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/license/users/{userId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<LicenseUser> getLicenseUserWithHttpInfo(String userId) throws IOException {
+    return getLicenseUser(createGetLicenseUserRequest(userId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<LicenseUser>() {});
+  private GetLicenseUserRequest createGetLicenseUserRequest(String userId) {
+    return GetLicenseUserRequest.builder()
+            .withUserId(userId)
+            .build();
   }
 
   /**
    * Get licenses for specified user.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return LicenseUser
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LicenseUser getLicenseUser(GetLicenseUserRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LicenseUser>() {});
+    try {
+      ApiResponse<LicenseUser> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LicenseUser>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get licenses for specified user.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LicenseUser> getLicenseUser(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<LicenseUser>invokeAPIVerbose(request, new TypeReference<LicenseUser>() {});
+  public ApiResponse<LicenseUser> getLicenseUser(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LicenseUser>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LicenseUser> response = (ApiResponse<LicenseUser>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LicenseUser> response = (ApiResponse<LicenseUser>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -325,10 +349,11 @@ public class LicenseApi {
    * 
    * @param body The license assignments to update. (optional)
    * @return LicenseUpdateResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LicenseUpdateResponse postLicenseOrganization(LicenseBatchAssignmentRequest body) throws IOException, ApiException {
-    return postLicenseOrganizationWithHttpInfo(body).getBody();
+    return  postLicenseOrganization(createPostLicenseOrganizationRequest(body));
   }
 
   /**
@@ -336,55 +361,64 @@ public class LicenseApi {
    * 
    * @param body The license assignments to update. (optional)
    * @return LicenseUpdateResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LicenseUpdateResponse> postLicenseOrganizationWithHttpInfo(LicenseBatchAssignmentRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/license/organization".replaceAll("\\{format\\}","json");
+  public ApiResponse<LicenseUpdateResponse> postLicenseOrganizationWithHttpInfo(LicenseBatchAssignmentRequest body) throws IOException {
+    return postLicenseOrganization(createPostLicenseOrganizationRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<LicenseUpdateResponse>() {});
+  private PostLicenseOrganizationRequest createPostLicenseOrganizationRequest(LicenseBatchAssignmentRequest body) {
+    return PostLicenseOrganizationRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update the organization&#39;s license assignments in a batch.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return LicenseUpdateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LicenseUpdateResponse postLicenseOrganization(PostLicenseOrganizationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LicenseUpdateResponse>() {});
+    try {
+      ApiResponse<LicenseUpdateResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LicenseUpdateResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update the organization&#39;s license assignments in a batch.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LicenseUpdateResponse> postLicenseOrganization(ApiRequest<LicenseBatchAssignmentRequest> request) throws IOException, ApiException {
-    return pcapiClient.<LicenseUpdateResponse>invokeAPIVerbose(request, new TypeReference<LicenseUpdateResponse>() {});
+  public ApiResponse<LicenseUpdateResponse> postLicenseOrganization(ApiRequest<LicenseBatchAssignmentRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LicenseUpdateResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LicenseUpdateResponse> response = (ApiResponse<LicenseUpdateResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LicenseUpdateResponse> response = (ApiResponse<LicenseUpdateResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -392,10 +426,11 @@ public class LicenseApi {
    * 
    * @param body The user IDs to fetch. (optional)
    * @return Map<String, Object>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Map<String, Object> postLicenseUsers(List<String> body) throws IOException, ApiException {
-    return postLicenseUsersWithHttpInfo(body).getBody();
+    return  postLicenseUsers(createPostLicenseUsersRequest(body));
   }
 
   /**
@@ -403,55 +438,64 @@ public class LicenseApi {
    * 
    * @param body The user IDs to fetch. (optional)
    * @return Map<String, Object>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Map<String, Object>> postLicenseUsersWithHttpInfo(List<String> body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/license/users".replaceAll("\\{format\\}","json");
+  public ApiResponse<Map<String, Object>> postLicenseUsersWithHttpInfo(List<String> body) throws IOException {
+    return postLicenseUsers(createPostLicenseUsersRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Map<String, Object>>() {});
+  private PostLicenseUsersRequest createPostLicenseUsersRequest(List<String> body) {
+    return PostLicenseUsersRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Fetch user licenses in a batch.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Map<String, Object>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Map<String, Object> postLicenseUsers(PostLicenseUsersRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Map<String, Object>>() {});
+    try {
+      ApiResponse<Map<String, Object>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Map<String, Object>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Fetch user licenses in a batch.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Map<String, Object>> postLicenseUsers(ApiRequest<List<String>> request) throws IOException, ApiException {
-    return pcapiClient.<Map<String, Object>>invokeAPIVerbose(request, new TypeReference<Map<String, Object>>() {});
+  public ApiResponse<Map<String, Object>> postLicenseUsers(ApiRequest<List<String>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Map<String, Object>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Map<String, Object>> response = (ApiResponse<Map<String, Object>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Map<String, Object>> response = (ApiResponse<Map<String, Object>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

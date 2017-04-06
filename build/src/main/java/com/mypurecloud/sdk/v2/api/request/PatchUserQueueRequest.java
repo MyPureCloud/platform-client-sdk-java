@@ -47,9 +47,6 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class PatchUserQueueRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String queueId;
 	public String getQueueId() {
 		return this.queueId;
@@ -180,6 +177,22 @@ public class PatchUserQueueRequest {
 
 
 		public PatchUserQueueRequest build() {
+            
+            // verify the required parameter 'queueId' is set
+            if (request.queueId == null) {
+                throw new IllegalStateException("Missing the required parameter 'queueId' when building request for PatchUserQueueRequest.");
+            }
+            
+            // verify the required parameter 'userId' is set
+            if (request.userId == null) {
+                throw new IllegalStateException("Missing the required parameter 'userId' when building request for PatchUserQueueRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchUserQueueRequest.");
+            }
+            
 			return request;
 		}
 	}

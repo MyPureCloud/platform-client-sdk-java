@@ -23,9 +23,6 @@ import com.mypurecloud.sdk.v2.model.OAuthClient;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
 
 public class PutOauthClientRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String clientId;
 	public String getClientId() {
 		return this.clientId;
@@ -130,6 +127,17 @@ public class PutOauthClientRequest {
 
 
 		public PutOauthClientRequest build() {
+            
+            // verify the required parameter 'clientId' is set
+            if (request.clientId == null) {
+                throw new IllegalStateException("Missing the required parameter 'clientId' when building request for PutOauthClientRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutOauthClientRequest.");
+            }
+            
 			return request;
 		}
 	}

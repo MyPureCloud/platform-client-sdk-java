@@ -38,9 +38,6 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class DeleteRecordingMediaretentionpoliciesRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String ids;
 	public String getIds() {
 		return this.ids;
@@ -119,6 +116,12 @@ public class DeleteRecordingMediaretentionpoliciesRequest {
 
 
 		public DeleteRecordingMediaretentionpoliciesRequest build() {
+            
+            // verify the required parameter 'ids' is set
+            if (request.ids == null) {
+                throw new IllegalStateException("Missing the required parameter 'ids' when building request for DeleteRecordingMediaretentionpoliciesRequest.");
+            }
+            
 			return request;
 		}
 	}

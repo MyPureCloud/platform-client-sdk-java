@@ -104,10 +104,11 @@ public class ContentManagementApi {
    * 
    * @param documentId Document ID (required)
    * @param override Override any lock on the document (optional)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteContentmanagementDocument(String documentId, Boolean override) throws IOException, ApiException {
-    deleteContentmanagementDocumentWithHttpInfo(documentId, override);
+     deleteContentmanagementDocument(createDeleteContentmanagementDocumentRequest(documentId, override));
   }
 
   /**
@@ -115,204 +116,213 @@ public class ContentManagementApi {
    * 
    * @param documentId Document ID (required)
    * @param override Override any lock on the document (optional)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteContentmanagementDocumentWithHttpInfo(String documentId, Boolean override) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'documentId' is set
-    if (documentId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'documentId' when calling deleteContentmanagementDocument");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/documents/{documentId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "documentId" + "\\}", pcapiClient.escapeString(documentId.toString()));
+  public ApiResponse<Void> deleteContentmanagementDocumentWithHttpInfo(String documentId, Boolean override) throws IOException {
+    return deleteContentmanagementDocument(createDeleteContentmanagementDocumentRequest(documentId, override).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private DeleteContentmanagementDocumentRequest createDeleteContentmanagementDocumentRequest(String documentId, Boolean override) {
+    return DeleteContentmanagementDocumentRequest.builder()
+            .withDocumentId(documentId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "override", override));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withOverride(override)
+            .build();
   }
 
   /**
    * Delete a document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteContentmanagementDocument(DeleteContentmanagementDocumentRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete a document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteContentmanagementDocument(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteContentmanagementDocument(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Deletes an existing share.
    * This revokes sharing rights specified in the share record
    * @param shareId Share ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteContentmanagementShare(String shareId) throws IOException, ApiException {
-    deleteContentmanagementShareWithHttpInfo(shareId);
+     deleteContentmanagementShare(createDeleteContentmanagementShareRequest(shareId));
   }
 
   /**
    * Deletes an existing share.
    * This revokes sharing rights specified in the share record
    * @param shareId Share ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteContentmanagementShareWithHttpInfo(String shareId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'shareId' is set
-    if (shareId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'shareId' when calling deleteContentmanagementShare");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/shares/{shareId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "shareId" + "\\}", pcapiClient.escapeString(shareId.toString()));
+  public ApiResponse<Void> deleteContentmanagementShareWithHttpInfo(String shareId) throws IOException {
+    return deleteContentmanagementShare(createDeleteContentmanagementShareRequest(shareId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteContentmanagementShareRequest createDeleteContentmanagementShareRequest(String shareId) {
+    return DeleteContentmanagementShareRequest.builder()
+            .withShareId(shareId)
+            .build();
   }
 
   /**
    * Deletes an existing share.
    * This revokes sharing rights specified in the share record
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteContentmanagementShare(DeleteContentmanagementShareRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Deletes an existing share.
    * This revokes sharing rights specified in the share record
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteContentmanagementShare(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteContentmanagementShare(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Cancel the command for this status
    * 
    * @param statusId Status ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteContentmanagementStatusStatusId(String statusId) throws IOException, ApiException {
-    deleteContentmanagementStatusStatusIdWithHttpInfo(statusId);
+     deleteContentmanagementStatusStatusId(createDeleteContentmanagementStatusStatusIdRequest(statusId));
   }
 
   /**
    * Cancel the command for this status
    * 
    * @param statusId Status ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteContentmanagementStatusStatusIdWithHttpInfo(String statusId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'statusId' is set
-    if (statusId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'statusId' when calling deleteContentmanagementStatusStatusId");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/status/{statusId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "statusId" + "\\}", pcapiClient.escapeString(statusId.toString()));
+  public ApiResponse<Void> deleteContentmanagementStatusStatusIdWithHttpInfo(String statusId) throws IOException {
+    return deleteContentmanagementStatusStatusId(createDeleteContentmanagementStatusStatusIdRequest(statusId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteContentmanagementStatusStatusIdRequest createDeleteContentmanagementStatusStatusIdRequest(String statusId) {
+    return DeleteContentmanagementStatusStatusIdRequest.builder()
+            .withStatusId(statusId)
+            .build();
   }
 
   /**
    * Cancel the command for this status
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteContentmanagementStatusStatusId(DeleteContentmanagementStatusStatusIdRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Cancel the command for this status
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteContentmanagementStatusStatusId(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteContentmanagementStatusStatusId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -320,10 +330,11 @@ public class ContentManagementApi {
    * 
    * @param workspaceId Workspace ID (required)
    * @param moveChildrenToWorkspaceId New location for objects in deleted workspace. (optional)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteContentmanagementWorkspace(String workspaceId, String moveChildrenToWorkspaceId) throws IOException, ApiException {
-    deleteContentmanagementWorkspaceWithHttpInfo(workspaceId, moveChildrenToWorkspaceId);
+     deleteContentmanagementWorkspace(createDeleteContentmanagementWorkspaceRequest(workspaceId, moveChildrenToWorkspaceId));
   }
 
   /**
@@ -331,62 +342,65 @@ public class ContentManagementApi {
    * 
    * @param workspaceId Workspace ID (required)
    * @param moveChildrenToWorkspaceId New location for objects in deleted workspace. (optional)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteContentmanagementWorkspaceWithHttpInfo(String workspaceId, String moveChildrenToWorkspaceId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'workspaceId' is set
-    if (workspaceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling deleteContentmanagementWorkspace");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/workspaces/{workspaceId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "workspaceId" + "\\}", pcapiClient.escapeString(workspaceId.toString()));
+  public ApiResponse<Void> deleteContentmanagementWorkspaceWithHttpInfo(String workspaceId, String moveChildrenToWorkspaceId) throws IOException {
+    return deleteContentmanagementWorkspace(createDeleteContentmanagementWorkspaceRequest(workspaceId, moveChildrenToWorkspaceId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private DeleteContentmanagementWorkspaceRequest createDeleteContentmanagementWorkspaceRequest(String workspaceId, String moveChildrenToWorkspaceId) {
+    return DeleteContentmanagementWorkspaceRequest.builder()
+            .withWorkspaceId(workspaceId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "moveChildrenToWorkspaceId", moveChildrenToWorkspaceId));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withMoveChildrenToWorkspaceId(moveChildrenToWorkspaceId)
+            .build();
   }
 
   /**
    * Delete a workspace
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteContentmanagementWorkspace(DeleteContentmanagementWorkspaceRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete a workspace
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteContentmanagementWorkspace(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteContentmanagementWorkspace(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -394,10 +408,11 @@ public class ContentManagementApi {
    * 
    * @param workspaceId Workspace ID (required)
    * @param memberId Member ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteContentmanagementWorkspaceMember(String workspaceId, String memberId) throws IOException, ApiException {
-    deleteContentmanagementWorkspaceMemberWithHttpInfo(workspaceId, memberId);
+     deleteContentmanagementWorkspaceMember(createDeleteContentmanagementWorkspaceMemberRequest(workspaceId, memberId));
   }
 
   /**
@@ -405,67 +420,65 @@ public class ContentManagementApi {
    * 
    * @param workspaceId Workspace ID (required)
    * @param memberId Member ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteContentmanagementWorkspaceMemberWithHttpInfo(String workspaceId, String memberId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'workspaceId' is set
-    if (workspaceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling deleteContentmanagementWorkspaceMember");
-    }
-    
-    // verify the required parameter 'memberId' is set
-    if (memberId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'memberId' when calling deleteContentmanagementWorkspaceMember");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "workspaceId" + "\\}", pcapiClient.escapeString(workspaceId.toString()))
-      .replaceAll("\\{" + "memberId" + "\\}", pcapiClient.escapeString(memberId.toString()));
+  public ApiResponse<Void> deleteContentmanagementWorkspaceMemberWithHttpInfo(String workspaceId, String memberId) throws IOException {
+    return deleteContentmanagementWorkspaceMember(createDeleteContentmanagementWorkspaceMemberRequest(workspaceId, memberId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private DeleteContentmanagementWorkspaceMemberRequest createDeleteContentmanagementWorkspaceMemberRequest(String workspaceId, String memberId) {
+    return DeleteContentmanagementWorkspaceMemberRequest.builder()
+            .withWorkspaceId(workspaceId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withMemberId(memberId)
+            .build();
   }
 
   /**
    * Delete a member from a workspace
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteContentmanagementWorkspaceMember(DeleteContentmanagementWorkspaceMemberRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete a member from a workspace
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteContentmanagementWorkspaceMember(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteContentmanagementWorkspaceMember(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -473,10 +486,11 @@ public class ContentManagementApi {
    * Delete a tag from a workspace. Will remove this tag from all documents.
    * @param workspaceId Workspace ID (required)
    * @param tagId Tag ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteContentmanagementWorkspaceTagvalue(String workspaceId, String tagId) throws IOException, ApiException {
-    deleteContentmanagementWorkspaceTagvalueWithHttpInfo(workspaceId, tagId);
+     deleteContentmanagementWorkspaceTagvalue(createDeleteContentmanagementWorkspaceTagvalueRequest(workspaceId, tagId));
   }
 
   /**
@@ -484,67 +498,65 @@ public class ContentManagementApi {
    * Delete a tag from a workspace. Will remove this tag from all documents.
    * @param workspaceId Workspace ID (required)
    * @param tagId Tag ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteContentmanagementWorkspaceTagvalueWithHttpInfo(String workspaceId, String tagId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'workspaceId' is set
-    if (workspaceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling deleteContentmanagementWorkspaceTagvalue");
-    }
-    
-    // verify the required parameter 'tagId' is set
-    if (tagId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'tagId' when calling deleteContentmanagementWorkspaceTagvalue");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "workspaceId" + "\\}", pcapiClient.escapeString(workspaceId.toString()))
-      .replaceAll("\\{" + "tagId" + "\\}", pcapiClient.escapeString(tagId.toString()));
+  public ApiResponse<Void> deleteContentmanagementWorkspaceTagvalueWithHttpInfo(String workspaceId, String tagId) throws IOException {
+    return deleteContentmanagementWorkspaceTagvalue(createDeleteContentmanagementWorkspaceTagvalueRequest(workspaceId, tagId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private DeleteContentmanagementWorkspaceTagvalueRequest createDeleteContentmanagementWorkspaceTagvalueRequest(String workspaceId, String tagId) {
+    return DeleteContentmanagementWorkspaceTagvalueRequest.builder()
+            .withWorkspaceId(workspaceId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withTagId(tagId)
+            .build();
   }
 
   /**
    * Delete workspace tag
    * Delete a tag from a workspace. Will remove this tag from all documents.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteContentmanagementWorkspaceTagvalue(DeleteContentmanagementWorkspaceTagvalueRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete workspace tag
    * Delete a tag from a workspace. Will remove this tag from all documents.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteContentmanagementWorkspaceTagvalue(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteContentmanagementWorkspaceTagvalue(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -553,10 +565,11 @@ public class ContentManagementApi {
    * @param documentId Document ID (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return Document
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Document getContentmanagementDocument(String documentId, List<String> expand) throws IOException, ApiException {
-    return getContentmanagementDocumentWithHttpInfo(documentId, expand).getBody();
+    return  getContentmanagementDocument(createGetContentmanagementDocumentRequest(documentId, expand));
   }
 
   /**
@@ -565,62 +578,66 @@ public class ContentManagementApi {
    * @param documentId Document ID (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return Document
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Document> getContentmanagementDocumentWithHttpInfo(String documentId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'documentId' is set
-    if (documentId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'documentId' when calling getContentmanagementDocument");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/documents/{documentId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "documentId" + "\\}", pcapiClient.escapeString(documentId.toString()));
+  public ApiResponse<Document> getContentmanagementDocumentWithHttpInfo(String documentId, List<String> expand) throws IOException {
+    return getContentmanagementDocument(createGetContentmanagementDocumentRequest(documentId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetContentmanagementDocumentRequest createGetContentmanagementDocumentRequest(String documentId, List<String> expand) {
+    return GetContentmanagementDocumentRequest.builder()
+            .withDocumentId(documentId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Document>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get a document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Document
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Document getContentmanagementDocument(GetContentmanagementDocumentRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Document>() {});
+    try {
+      ApiResponse<Document> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Document>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Document> getContentmanagementDocument(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Document>invokeAPIVerbose(request, new TypeReference<Document>() {});
+  public ApiResponse<Document> getContentmanagementDocument(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Document>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Document> response = (ApiResponse<Document>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Document> response = (ApiResponse<Document>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -634,10 +651,11 @@ public class ContentManagementApi {
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to ascending)
    * @return DocumentAuditEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DocumentAuditEntityListing getContentmanagementDocumentAudits(String documentId, Integer pageSize, Integer pageNumber, String transactionFilter, String level, String sortBy, String sortOrder) throws IOException, ApiException {
-    return getContentmanagementDocumentAuditsWithHttpInfo(documentId, pageSize, pageNumber, transactionFilter, level, sortBy, sortOrder).getBody();
+    return  getContentmanagementDocumentAudits(createGetContentmanagementDocumentAuditsRequest(documentId, pageSize, pageNumber, transactionFilter, level, sortBy, sortOrder));
   }
 
   /**
@@ -651,67 +669,76 @@ public class ContentManagementApi {
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to ascending)
    * @return DocumentAuditEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DocumentAuditEntityListing> getContentmanagementDocumentAuditsWithHttpInfo(String documentId, Integer pageSize, Integer pageNumber, String transactionFilter, String level, String sortBy, String sortOrder) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'documentId' is set
-    if (documentId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'documentId' when calling getContentmanagementDocumentAudits");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/documents/{documentId}/audits".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "documentId" + "\\}", pcapiClient.escapeString(documentId.toString()));
+  public ApiResponse<DocumentAuditEntityListing> getContentmanagementDocumentAuditsWithHttpInfo(String documentId, Integer pageSize, Integer pageNumber, String transactionFilter, String level, String sortBy, String sortOrder) throws IOException {
+    return getContentmanagementDocumentAudits(createGetContentmanagementDocumentAuditsRequest(documentId, pageSize, pageNumber, transactionFilter, level, sortBy, sortOrder).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetContentmanagementDocumentAuditsRequest createGetContentmanagementDocumentAuditsRequest(String documentId, Integer pageSize, Integer pageNumber, String transactionFilter, String level, String sortBy, String sortOrder) {
+    return GetContentmanagementDocumentAuditsRequest.builder()
+            .withDocumentId(documentId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "transactionFilter", transactionFilter));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "level", level));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageNumber(pageNumber)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withTransactionFilter(transactionFilter)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withLevel(level)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DocumentAuditEntityListing>() {});
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+            .build();
   }
 
   /**
    * Get a list of audits for a document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DocumentAuditEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DocumentAuditEntityListing getContentmanagementDocumentAudits(GetContentmanagementDocumentAuditsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DocumentAuditEntityListing>() {});
+    try {
+      ApiResponse<DocumentAuditEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DocumentAuditEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of audits for a document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DocumentAuditEntityListing> getContentmanagementDocumentAudits(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DocumentAuditEntityListing>invokeAPIVerbose(request, new TypeReference<DocumentAuditEntityListing>() {});
+  public ApiResponse<DocumentAuditEntityListing> getContentmanagementDocumentAudits(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DocumentAuditEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DocumentAuditEntityListing> response = (ApiResponse<DocumentAuditEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DocumentAuditEntityListing> response = (ApiResponse<DocumentAuditEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -721,10 +748,11 @@ public class ContentManagementApi {
    * @param disposition Request how the content will be downloaded: a file attachment or inline. Default is attachment. (optional)
    * @param contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType&#x3D;audio/wav (optional)
    * @return DownloadResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DownloadResponse getContentmanagementDocumentContent(String documentId, String disposition, String contentType) throws IOException, ApiException {
-    return getContentmanagementDocumentContentWithHttpInfo(documentId, disposition, contentType).getBody();
+    return  getContentmanagementDocumentContent(createGetContentmanagementDocumentContentRequest(documentId, disposition, contentType));
   }
 
   /**
@@ -734,63 +762,68 @@ public class ContentManagementApi {
    * @param disposition Request how the content will be downloaded: a file attachment or inline. Default is attachment. (optional)
    * @param contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType&#x3D;audio/wav (optional)
    * @return DownloadResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DownloadResponse> getContentmanagementDocumentContentWithHttpInfo(String documentId, String disposition, String contentType) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'documentId' is set
-    if (documentId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'documentId' when calling getContentmanagementDocumentContent");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/documents/{documentId}/content".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "documentId" + "\\}", pcapiClient.escapeString(documentId.toString()));
+  public ApiResponse<DownloadResponse> getContentmanagementDocumentContentWithHttpInfo(String documentId, String disposition, String contentType) throws IOException {
+    return getContentmanagementDocumentContent(createGetContentmanagementDocumentContentRequest(documentId, disposition, contentType).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetContentmanagementDocumentContentRequest createGetContentmanagementDocumentContentRequest(String documentId, String disposition, String contentType) {
+    return GetContentmanagementDocumentContentRequest.builder()
+            .withDocumentId(documentId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "disposition", disposition));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "contentType", contentType));
+            .withDisposition(disposition)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DownloadResponse>() {});
+            .withContentType(contentType)
+            .build();
   }
 
   /**
    * Download a document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DownloadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DownloadResponse getContentmanagementDocumentContent(GetContentmanagementDocumentContentRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DownloadResponse>() {});
+    try {
+      ApiResponse<DownloadResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DownloadResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Download a document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DownloadResponse> getContentmanagementDocumentContent(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DownloadResponse>invokeAPIVerbose(request, new TypeReference<DownloadResponse>() {});
+  public ApiResponse<DownloadResponse> getContentmanagementDocumentContent(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DownloadResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DownloadResponse> response = (ApiResponse<DownloadResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DownloadResponse> response = (ApiResponse<DownloadResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -804,10 +837,11 @@ public class ContentManagementApi {
    * @param sortBy name or dateCreated (optional)
    * @param sortOrder ascending or descending (optional, default to ascending)
    * @return DocumentEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DocumentEntityListing getContentmanagementDocuments(String workspaceId, String name, List<String> expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException, ApiException {
-    return getContentmanagementDocumentsWithHttpInfo(workspaceId, name, expand, pageSize, pageNumber, sortBy, sortOrder).getBody();
+    return  getContentmanagementDocuments(createGetContentmanagementDocumentsRequest(workspaceId, name, expand, pageSize, pageNumber, sortBy, sortOrder));
   }
 
   /**
@@ -821,67 +855,76 @@ public class ContentManagementApi {
    * @param sortBy name or dateCreated (optional)
    * @param sortOrder ascending or descending (optional, default to ascending)
    * @return DocumentEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DocumentEntityListing> getContentmanagementDocumentsWithHttpInfo(String workspaceId, String name, List<String> expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'workspaceId' is set
-    if (workspaceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling getContentmanagementDocuments");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/documents".replaceAll("\\{format\\}","json");
+  public ApiResponse<DocumentEntityListing> getContentmanagementDocumentsWithHttpInfo(String workspaceId, String name, List<String> expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException {
+    return getContentmanagementDocuments(createGetContentmanagementDocumentsRequest(workspaceId, name, expand, pageSize, pageNumber, sortBy, sortOrder).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetContentmanagementDocumentsRequest createGetContentmanagementDocumentsRequest(String workspaceId, String name, List<String> expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) {
+    return GetContentmanagementDocumentsRequest.builder()
+            .withWorkspaceId(workspaceId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "workspaceId", workspaceId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
+            .withName(name)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withExpand(expand)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withPageSize(pageSize)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withPageNumber(pageNumber)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DocumentEntityListing>() {});
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+            .build();
   }
 
   /**
    * Get a list of documents.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DocumentEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DocumentEntityListing getContentmanagementDocuments(GetContentmanagementDocumentsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DocumentEntityListing>() {});
+    try {
+      ApiResponse<DocumentEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DocumentEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of documents.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DocumentEntityListing> getContentmanagementDocuments(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DocumentEntityListing>invokeAPIVerbose(request, new TypeReference<DocumentEntityListing>() {});
+  public ApiResponse<DocumentEntityListing> getContentmanagementDocuments(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DocumentEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DocumentEntityListing> response = (ApiResponse<DocumentEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DocumentEntityListing> response = (ApiResponse<DocumentEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -894,10 +937,11 @@ public class ContentManagementApi {
    * @param sortOrder ascending or descending (optional, default to ascending)
    * @param expand Which fields, if any, to expand. (optional)
    * @return QueryResults
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public QueryResults getContentmanagementQuery(String queryPhrase, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, List<String> expand) throws IOException, ApiException {
-    return getContentmanagementQueryWithHttpInfo(queryPhrase, pageSize, pageNumber, sortBy, sortOrder, expand).getBody();
+    return  getContentmanagementQuery(createGetContentmanagementQueryRequest(queryPhrase, pageSize, pageNumber, sortBy, sortOrder, expand));
   }
 
   /**
@@ -910,66 +954,74 @@ public class ContentManagementApi {
    * @param sortOrder ascending or descending (optional, default to ascending)
    * @param expand Which fields, if any, to expand. (optional)
    * @return QueryResults
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueryResults> getContentmanagementQueryWithHttpInfo(String queryPhrase, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'queryPhrase' is set
-    if (queryPhrase == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'queryPhrase' when calling getContentmanagementQuery");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/query".replaceAll("\\{format\\}","json");
+  public ApiResponse<QueryResults> getContentmanagementQueryWithHttpInfo(String queryPhrase, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, List<String> expand) throws IOException {
+    return getContentmanagementQuery(createGetContentmanagementQueryRequest(queryPhrase, pageSize, pageNumber, sortBy, sortOrder, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetContentmanagementQueryRequest createGetContentmanagementQueryRequest(String queryPhrase, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, List<String> expand) {
+    return GetContentmanagementQueryRequest.builder()
+            .withQueryPhrase(queryPhrase)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "queryPhrase", queryPhrase));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageNumber(pageNumber)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortBy(sortBy)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withSortOrder(sortOrder)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<QueryResults>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Query content
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return QueryResults
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public QueryResults getContentmanagementQuery(GetContentmanagementQueryRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<QueryResults>() {});
+    try {
+      ApiResponse<QueryResults> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueryResults>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query content
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueryResults> getContentmanagementQuery(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<QueryResults>invokeAPIVerbose(request, new TypeReference<QueryResults>() {});
+  public ApiResponse<QueryResults> getContentmanagementQuery(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<QueryResults>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryResults> response = (ApiResponse<QueryResults>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryResults> response = (ApiResponse<QueryResults>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -977,10 +1029,11 @@ public class ContentManagementApi {
    * 
    * @param securityProfileId Security Profile Id (required)
    * @return SecurityProfile
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SecurityProfile getContentmanagementSecurityprofile(String securityProfileId) throws IOException, ApiException {
-    return getContentmanagementSecurityprofileWithHttpInfo(securityProfileId).getBody();
+    return  getContentmanagementSecurityprofile(createGetContentmanagementSecurityprofileRequest(securityProfileId));
   }
 
   /**
@@ -988,126 +1041,137 @@ public class ContentManagementApi {
    * 
    * @param securityProfileId Security Profile Id (required)
    * @return SecurityProfile
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SecurityProfile> getContentmanagementSecurityprofileWithHttpInfo(String securityProfileId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'securityProfileId' is set
-    if (securityProfileId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'securityProfileId' when calling getContentmanagementSecurityprofile");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/securityprofiles/{securityProfileId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "securityProfileId" + "\\}", pcapiClient.escapeString(securityProfileId.toString()));
+  public ApiResponse<SecurityProfile> getContentmanagementSecurityprofileWithHttpInfo(String securityProfileId) throws IOException {
+    return getContentmanagementSecurityprofile(createGetContentmanagementSecurityprofileRequest(securityProfileId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<SecurityProfile>() {});
+  private GetContentmanagementSecurityprofileRequest createGetContentmanagementSecurityprofileRequest(String securityProfileId) {
+    return GetContentmanagementSecurityprofileRequest.builder()
+            .withSecurityProfileId(securityProfileId)
+            .build();
   }
 
   /**
    * Get a Security Profile
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return SecurityProfile
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SecurityProfile getContentmanagementSecurityprofile(GetContentmanagementSecurityprofileRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SecurityProfile>() {});
+    try {
+      ApiResponse<SecurityProfile> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SecurityProfile>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a Security Profile
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SecurityProfile> getContentmanagementSecurityprofile(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<SecurityProfile>invokeAPIVerbose(request, new TypeReference<SecurityProfile>() {});
+  public ApiResponse<SecurityProfile> getContentmanagementSecurityprofile(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SecurityProfile>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SecurityProfile> response = (ApiResponse<SecurityProfile>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SecurityProfile> response = (ApiResponse<SecurityProfile>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get a List of Security Profiles
    * 
    * @return SecurityProfileEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SecurityProfileEntityListing getContentmanagementSecurityprofiles() throws IOException, ApiException {
-    return getContentmanagementSecurityprofilesWithHttpInfo().getBody();
+    return  getContentmanagementSecurityprofiles(createGetContentmanagementSecurityprofilesRequest());
   }
 
   /**
    * Get a List of Security Profiles
    * 
    * @return SecurityProfileEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SecurityProfileEntityListing> getContentmanagementSecurityprofilesWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/securityprofiles".replaceAll("\\{format\\}","json");
+  public ApiResponse<SecurityProfileEntityListing> getContentmanagementSecurityprofilesWithHttpInfo() throws IOException {
+    return getContentmanagementSecurityprofiles(createGetContentmanagementSecurityprofilesRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<SecurityProfileEntityListing>() {});
+  private GetContentmanagementSecurityprofilesRequest createGetContentmanagementSecurityprofilesRequest() {
+    return GetContentmanagementSecurityprofilesRequest.builder()            .build();
   }
 
   /**
    * Get a List of Security Profiles
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return SecurityProfileEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SecurityProfileEntityListing getContentmanagementSecurityprofiles(GetContentmanagementSecurityprofilesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SecurityProfileEntityListing>() {});
+    try {
+      ApiResponse<SecurityProfileEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SecurityProfileEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a List of Security Profiles
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SecurityProfileEntityListing> getContentmanagementSecurityprofiles(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<SecurityProfileEntityListing>invokeAPIVerbose(request, new TypeReference<SecurityProfileEntityListing>() {});
+  public ApiResponse<SecurityProfileEntityListing> getContentmanagementSecurityprofiles(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SecurityProfileEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SecurityProfileEntityListing> response = (ApiResponse<SecurityProfileEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SecurityProfileEntityListing> response = (ApiResponse<SecurityProfileEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1116,10 +1180,11 @@ public class ContentManagementApi {
    * @param shareId Share ID (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return Share
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Share getContentmanagementShare(String shareId, List<String> expand) throws IOException, ApiException {
-    return getContentmanagementShareWithHttpInfo(shareId, expand).getBody();
+    return  getContentmanagementShare(createGetContentmanagementShareRequest(shareId, expand));
   }
 
   /**
@@ -1128,62 +1193,66 @@ public class ContentManagementApi {
    * @param shareId Share ID (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return Share
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Share> getContentmanagementShareWithHttpInfo(String shareId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'shareId' is set
-    if (shareId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'shareId' when calling getContentmanagementShare");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/shares/{shareId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "shareId" + "\\}", pcapiClient.escapeString(shareId.toString()));
+  public ApiResponse<Share> getContentmanagementShareWithHttpInfo(String shareId, List<String> expand) throws IOException {
+    return getContentmanagementShare(createGetContentmanagementShareRequest(shareId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetContentmanagementShareRequest createGetContentmanagementShareRequest(String shareId, List<String> expand) {
+    return GetContentmanagementShareRequest.builder()
+            .withShareId(shareId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Share>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Retrieve details about an existing share.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Share
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Share getContentmanagementShare(GetContentmanagementShareRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Share>() {});
+    try {
+      ApiResponse<Share> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Share>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Retrieve details about an existing share.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Share> getContentmanagementShare(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Share>invokeAPIVerbose(request, new TypeReference<Share>() {});
+  public ApiResponse<Share> getContentmanagementShare(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Share>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Share> response = (ApiResponse<Share>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Share> response = (ApiResponse<Share>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1195,10 +1264,11 @@ public class ContentManagementApi {
    * @param contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType&#x3D;audio/wav (optional)
    * @param expand Expand some document fields (optional)
    * @return SharedResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SharedResponse getContentmanagementSharedSharedId(String sharedId, Boolean redirect, String disposition, String contentType, String expand) throws IOException, ApiException {
-    return getContentmanagementSharedSharedIdWithHttpInfo(sharedId, redirect, disposition, contentType, expand).getBody();
+    return  getContentmanagementSharedSharedId(createGetContentmanagementSharedSharedIdRequest(sharedId, redirect, disposition, contentType, expand));
   }
 
   /**
@@ -1210,65 +1280,72 @@ public class ContentManagementApi {
    * @param contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType&#x3D;audio/wav (optional)
    * @param expand Expand some document fields (optional)
    * @return SharedResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SharedResponse> getContentmanagementSharedSharedIdWithHttpInfo(String sharedId, Boolean redirect, String disposition, String contentType, String expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'sharedId' is set
-    if (sharedId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'sharedId' when calling getContentmanagementSharedSharedId");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/shared/{sharedId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "sharedId" + "\\}", pcapiClient.escapeString(sharedId.toString()));
+  public ApiResponse<SharedResponse> getContentmanagementSharedSharedIdWithHttpInfo(String sharedId, Boolean redirect, String disposition, String contentType, String expand) throws IOException {
+    return getContentmanagementSharedSharedId(createGetContentmanagementSharedSharedIdRequest(sharedId, redirect, disposition, contentType, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetContentmanagementSharedSharedIdRequest createGetContentmanagementSharedSharedIdRequest(String sharedId, Boolean redirect, String disposition, String contentType, String expand) {
+    return GetContentmanagementSharedSharedIdRequest.builder()
+            .withSharedId(sharedId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "redirect", redirect));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "disposition", disposition));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "contentType", contentType));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
+            .withRedirect(redirect)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withDisposition(disposition)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withContentType(contentType)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<SharedResponse>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get shared documents. Securely download a shared document.
    * This method requires the download sharing URI obtained in the get document response (downloadSharingUri). Documents may be shared between users in the same workspace. Documents may also be shared between any user by creating a content management share.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return SharedResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SharedResponse getContentmanagementSharedSharedId(GetContentmanagementSharedSharedIdRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SharedResponse>() {});
+    try {
+      ApiResponse<SharedResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SharedResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get shared documents. Securely download a shared document.
    * This method requires the download sharing URI obtained in the get document response (downloadSharingUri). Documents may be shared between users in the same workspace. Documents may also be shared between any user by creating a content management share.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SharedResponse> getContentmanagementSharedSharedId(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<SharedResponse>invokeAPIVerbose(request, new TypeReference<SharedResponse>() {});
+  public ApiResponse<SharedResponse> getContentmanagementSharedSharedId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SharedResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SharedResponse> response = (ApiResponse<SharedResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SharedResponse> response = (ApiResponse<SharedResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1279,10 +1356,11 @@ public class ContentManagementApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return ShareEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ShareEntityListing getContentmanagementShares(String entityId, List<String> expand, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getContentmanagementSharesWithHttpInfo(entityId, expand, pageSize, pageNumber).getBody();
+    return  getContentmanagementShares(createGetContentmanagementSharesRequest(entityId, expand, pageSize, pageNumber));
   }
 
   /**
@@ -1293,59 +1371,70 @@ public class ContentManagementApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return ShareEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ShareEntityListing> getContentmanagementSharesWithHttpInfo(String entityId, List<String> expand, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/shares".replaceAll("\\{format\\}","json");
+  public ApiResponse<ShareEntityListing> getContentmanagementSharesWithHttpInfo(String entityId, List<String> expand, Integer pageSize, Integer pageNumber) throws IOException {
+    return getContentmanagementShares(createGetContentmanagementSharesRequest(entityId, expand, pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetContentmanagementSharesRequest createGetContentmanagementSharesRequest(String entityId, List<String> expand, Integer pageSize, Integer pageNumber) {
+    return GetContentmanagementSharesRequest.builder()
+            .withEntityId(entityId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "entityId", entityId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
+            .withExpand(expand)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageSize(pageSize)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ShareEntityListing>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * Gets a list of shares.  You must specify at least one filter (e.g. entityId).
    * Failing to specify a filter will return 400.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ShareEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ShareEntityListing getContentmanagementShares(GetContentmanagementSharesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ShareEntityListing>() {});
+    try {
+      ApiResponse<ShareEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShareEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Gets a list of shares.  You must specify at least one filter (e.g. entityId).
    * Failing to specify a filter will return 400.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ShareEntityListing> getContentmanagementShares(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ShareEntityListing>invokeAPIVerbose(request, new TypeReference<ShareEntityListing>() {});
+  public ApiResponse<ShareEntityListing> getContentmanagementShares(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShareEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShareEntityListing> response = (ApiResponse<ShareEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShareEntityListing> response = (ApiResponse<ShareEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1354,10 +1443,11 @@ public class ContentManagementApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return CommandStatusEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CommandStatusEntityListing getContentmanagementStatus(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getContentmanagementStatusWithHttpInfo(pageSize, pageNumber).getBody();
+    return  getContentmanagementStatus(createGetContentmanagementStatusRequest(pageSize, pageNumber));
   }
 
   /**
@@ -1366,57 +1456,66 @@ public class ContentManagementApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return CommandStatusEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CommandStatusEntityListing> getContentmanagementStatusWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/status".replaceAll("\\{format\\}","json");
+  public ApiResponse<CommandStatusEntityListing> getContentmanagementStatusWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getContentmanagementStatus(createGetContentmanagementStatusRequest(pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetContentmanagementStatusRequest createGetContentmanagementStatusRequest(Integer pageSize, Integer pageNumber) {
+    return GetContentmanagementStatusRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CommandStatusEntityListing>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * Get a list of statuses for pending operations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CommandStatusEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CommandStatusEntityListing getContentmanagementStatus(GetContentmanagementStatusRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CommandStatusEntityListing>() {});
+    try {
+      ApiResponse<CommandStatusEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CommandStatusEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of statuses for pending operations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CommandStatusEntityListing> getContentmanagementStatus(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CommandStatusEntityListing>invokeAPIVerbose(request, new TypeReference<CommandStatusEntityListing>() {});
+  public ApiResponse<CommandStatusEntityListing> getContentmanagementStatus(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CommandStatusEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CommandStatusEntityListing> response = (ApiResponse<CommandStatusEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CommandStatusEntityListing> response = (ApiResponse<CommandStatusEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1424,10 +1523,11 @@ public class ContentManagementApi {
    * 
    * @param statusId Status ID (required)
    * @return CommandStatus
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CommandStatus getContentmanagementStatusStatusId(String statusId) throws IOException, ApiException {
-    return getContentmanagementStatusStatusIdWithHttpInfo(statusId).getBody();
+    return  getContentmanagementStatusStatusId(createGetContentmanagementStatusStatusIdRequest(statusId));
   }
 
   /**
@@ -1435,126 +1535,137 @@ public class ContentManagementApi {
    * 
    * @param statusId Status ID (required)
    * @return CommandStatus
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CommandStatus> getContentmanagementStatusStatusIdWithHttpInfo(String statusId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'statusId' is set
-    if (statusId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'statusId' when calling getContentmanagementStatusStatusId");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/status/{statusId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "statusId" + "\\}", pcapiClient.escapeString(statusId.toString()));
+  public ApiResponse<CommandStatus> getContentmanagementStatusStatusIdWithHttpInfo(String statusId) throws IOException {
+    return getContentmanagementStatusStatusId(createGetContentmanagementStatusStatusIdRequest(statusId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CommandStatus>() {});
+  private GetContentmanagementStatusStatusIdRequest createGetContentmanagementStatusStatusIdRequest(String statusId) {
+    return GetContentmanagementStatusStatusIdRequest.builder()
+            .withStatusId(statusId)
+            .build();
   }
 
   /**
    * Get a status.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CommandStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CommandStatus getContentmanagementStatusStatusId(GetContentmanagementStatusStatusIdRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CommandStatus>() {});
+    try {
+      ApiResponse<CommandStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CommandStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a status.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CommandStatus> getContentmanagementStatusStatusId(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CommandStatus>invokeAPIVerbose(request, new TypeReference<CommandStatus>() {});
+  public ApiResponse<CommandStatus> getContentmanagementStatusStatusId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CommandStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CommandStatus> response = (ApiResponse<CommandStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CommandStatus> response = (ApiResponse<CommandStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get usage details.
    * 
    * @return Usage
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Usage getContentmanagementUsage() throws IOException, ApiException {
-    return getContentmanagementUsageWithHttpInfo().getBody();
+    return  getContentmanagementUsage(createGetContentmanagementUsageRequest());
   }
 
   /**
    * Get usage details.
    * 
    * @return Usage
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Usage> getContentmanagementUsageWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/usage".replaceAll("\\{format\\}","json");
+  public ApiResponse<Usage> getContentmanagementUsageWithHttpInfo() throws IOException {
+    return getContentmanagementUsage(createGetContentmanagementUsageRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Usage>() {});
+  private GetContentmanagementUsageRequest createGetContentmanagementUsageRequest() {
+    return GetContentmanagementUsageRequest.builder()            .build();
   }
 
   /**
    * Get usage details.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Usage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Usage getContentmanagementUsage(GetContentmanagementUsageRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Usage>() {});
+    try {
+      ApiResponse<Usage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Usage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get usage details.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Usage> getContentmanagementUsage(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Usage>invokeAPIVerbose(request, new TypeReference<Usage>() {});
+  public ApiResponse<Usage> getContentmanagementUsage(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Usage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Usage> response = (ApiResponse<Usage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Usage> response = (ApiResponse<Usage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1563,10 +1674,11 @@ public class ContentManagementApi {
    * @param workspaceId Workspace ID (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return Workspace
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Workspace getContentmanagementWorkspace(String workspaceId, List<String> expand) throws IOException, ApiException {
-    return getContentmanagementWorkspaceWithHttpInfo(workspaceId, expand).getBody();
+    return  getContentmanagementWorkspace(createGetContentmanagementWorkspaceRequest(workspaceId, expand));
   }
 
   /**
@@ -1575,62 +1687,66 @@ public class ContentManagementApi {
    * @param workspaceId Workspace ID (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return Workspace
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Workspace> getContentmanagementWorkspaceWithHttpInfo(String workspaceId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'workspaceId' is set
-    if (workspaceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling getContentmanagementWorkspace");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/workspaces/{workspaceId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "workspaceId" + "\\}", pcapiClient.escapeString(workspaceId.toString()));
+  public ApiResponse<Workspace> getContentmanagementWorkspaceWithHttpInfo(String workspaceId, List<String> expand) throws IOException {
+    return getContentmanagementWorkspace(createGetContentmanagementWorkspaceRequest(workspaceId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetContentmanagementWorkspaceRequest createGetContentmanagementWorkspaceRequest(String workspaceId, List<String> expand) {
+    return GetContentmanagementWorkspaceRequest.builder()
+            .withWorkspaceId(workspaceId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Workspace>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get a workspace.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Workspace
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Workspace getContentmanagementWorkspace(GetContentmanagementWorkspaceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Workspace>() {});
+    try {
+      ApiResponse<Workspace> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Workspace>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a workspace.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Workspace> getContentmanagementWorkspace(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Workspace>invokeAPIVerbose(request, new TypeReference<Workspace>() {});
+  public ApiResponse<Workspace> getContentmanagementWorkspace(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Workspace>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Workspace> response = (ApiResponse<Workspace>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Workspace> response = (ApiResponse<Workspace>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1643,10 +1759,11 @@ public class ContentManagementApi {
    * @param sortBy name or dateCreated (optional)
    * @param sortOrder ascending or descending (optional, default to ascending)
    * @return DocumentEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DocumentEntityListing getContentmanagementWorkspaceDocuments(String workspaceId, List<String> expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException, ApiException {
-    return getContentmanagementWorkspaceDocumentsWithHttpInfo(workspaceId, expand, pageSize, pageNumber, sortBy, sortOrder).getBody();
+    return  getContentmanagementWorkspaceDocuments(createGetContentmanagementWorkspaceDocumentsRequest(workspaceId, expand, pageSize, pageNumber, sortBy, sortOrder));
   }
 
   /**
@@ -1659,66 +1776,74 @@ public class ContentManagementApi {
    * @param sortBy name or dateCreated (optional)
    * @param sortOrder ascending or descending (optional, default to ascending)
    * @return DocumentEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DocumentEntityListing> getContentmanagementWorkspaceDocumentsWithHttpInfo(String workspaceId, List<String> expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'workspaceId' is set
-    if (workspaceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling getContentmanagementWorkspaceDocuments");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/workspaces/{workspaceId}/documents".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "workspaceId" + "\\}", pcapiClient.escapeString(workspaceId.toString()));
+  public ApiResponse<DocumentEntityListing> getContentmanagementWorkspaceDocumentsWithHttpInfo(String workspaceId, List<String> expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException {
+    return getContentmanagementWorkspaceDocuments(createGetContentmanagementWorkspaceDocumentsRequest(workspaceId, expand, pageSize, pageNumber, sortBy, sortOrder).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetContentmanagementWorkspaceDocumentsRequest createGetContentmanagementWorkspaceDocumentsRequest(String workspaceId, List<String> expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) {
+    return GetContentmanagementWorkspaceDocumentsRequest.builder()
+            .withWorkspaceId(workspaceId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
+            .withExpand(expand)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageSize(pageSize)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withPageNumber(pageNumber)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withSortBy(sortBy)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DocumentEntityListing>() {});
+            .withSortOrder(sortOrder)
+            .build();
   }
 
   /**
    * Get a list of documents.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DocumentEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DocumentEntityListing getContentmanagementWorkspaceDocuments(GetContentmanagementWorkspaceDocumentsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DocumentEntityListing>() {});
+    try {
+      ApiResponse<DocumentEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DocumentEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of documents.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DocumentEntityListing> getContentmanagementWorkspaceDocuments(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DocumentEntityListing>invokeAPIVerbose(request, new TypeReference<DocumentEntityListing>() {});
+  public ApiResponse<DocumentEntityListing> getContentmanagementWorkspaceDocuments(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DocumentEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DocumentEntityListing> response = (ApiResponse<DocumentEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DocumentEntityListing> response = (ApiResponse<DocumentEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1728,10 +1853,11 @@ public class ContentManagementApi {
    * @param memberId Member ID (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return WorkspaceMember
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public WorkspaceMember getContentmanagementWorkspaceMember(String workspaceId, String memberId, List<String> expand) throws IOException, ApiException {
-    return getContentmanagementWorkspaceMemberWithHttpInfo(workspaceId, memberId, expand).getBody();
+    return  getContentmanagementWorkspaceMember(createGetContentmanagementWorkspaceMemberRequest(workspaceId, memberId, expand));
   }
 
   /**
@@ -1741,68 +1867,68 @@ public class ContentManagementApi {
    * @param memberId Member ID (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return WorkspaceMember
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkspaceMember> getContentmanagementWorkspaceMemberWithHttpInfo(String workspaceId, String memberId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'workspaceId' is set
-    if (workspaceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling getContentmanagementWorkspaceMember");
-    }
-    
-    // verify the required parameter 'memberId' is set
-    if (memberId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'memberId' when calling getContentmanagementWorkspaceMember");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "workspaceId" + "\\}", pcapiClient.escapeString(workspaceId.toString()))
-      .replaceAll("\\{" + "memberId" + "\\}", pcapiClient.escapeString(memberId.toString()));
+  public ApiResponse<WorkspaceMember> getContentmanagementWorkspaceMemberWithHttpInfo(String workspaceId, String memberId, List<String> expand) throws IOException {
+    return getContentmanagementWorkspaceMember(createGetContentmanagementWorkspaceMemberRequest(workspaceId, memberId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetContentmanagementWorkspaceMemberRequest createGetContentmanagementWorkspaceMemberRequest(String workspaceId, String memberId, List<String> expand) {
+    return GetContentmanagementWorkspaceMemberRequest.builder()
+            .withWorkspaceId(workspaceId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withMemberId(memberId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<WorkspaceMember>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get a workspace member
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return WorkspaceMember
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public WorkspaceMember getContentmanagementWorkspaceMember(GetContentmanagementWorkspaceMemberRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WorkspaceMember>() {});
+    try {
+      ApiResponse<WorkspaceMember> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkspaceMember>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a workspace member
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkspaceMember> getContentmanagementWorkspaceMember(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<WorkspaceMember>invokeAPIVerbose(request, new TypeReference<WorkspaceMember>() {});
+  public ApiResponse<WorkspaceMember> getContentmanagementWorkspaceMember(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkspaceMember>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkspaceMember> response = (ApiResponse<WorkspaceMember>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkspaceMember> response = (ApiResponse<WorkspaceMember>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1813,10 +1939,11 @@ public class ContentManagementApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param expand Which fields, if any, to expand. (optional)
    * @return WorkspaceMemberEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public WorkspaceMemberEntityListing getContentmanagementWorkspaceMembers(String workspaceId, Integer pageSize, Integer pageNumber, List<String> expand) throws IOException, ApiException {
-    return getContentmanagementWorkspaceMembersWithHttpInfo(workspaceId, pageSize, pageNumber, expand).getBody();
+    return  getContentmanagementWorkspaceMembers(createGetContentmanagementWorkspaceMembersRequest(workspaceId, pageSize, pageNumber, expand));
   }
 
   /**
@@ -1827,64 +1954,70 @@ public class ContentManagementApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param expand Which fields, if any, to expand. (optional)
    * @return WorkspaceMemberEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkspaceMemberEntityListing> getContentmanagementWorkspaceMembersWithHttpInfo(String workspaceId, Integer pageSize, Integer pageNumber, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'workspaceId' is set
-    if (workspaceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling getContentmanagementWorkspaceMembers");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/workspaces/{workspaceId}/members".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "workspaceId" + "\\}", pcapiClient.escapeString(workspaceId.toString()));
+  public ApiResponse<WorkspaceMemberEntityListing> getContentmanagementWorkspaceMembersWithHttpInfo(String workspaceId, Integer pageSize, Integer pageNumber, List<String> expand) throws IOException {
+    return getContentmanagementWorkspaceMembers(createGetContentmanagementWorkspaceMembersRequest(workspaceId, pageSize, pageNumber, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetContentmanagementWorkspaceMembersRequest createGetContentmanagementWorkspaceMembersRequest(String workspaceId, Integer pageSize, Integer pageNumber, List<String> expand) {
+    return GetContentmanagementWorkspaceMembersRequest.builder()
+            .withWorkspaceId(workspaceId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageNumber(pageNumber)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<WorkspaceMemberEntityListing>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get a list workspace members
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return WorkspaceMemberEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public WorkspaceMemberEntityListing getContentmanagementWorkspaceMembers(GetContentmanagementWorkspaceMembersRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WorkspaceMemberEntityListing>() {});
+    try {
+      ApiResponse<WorkspaceMemberEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkspaceMemberEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list workspace members
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkspaceMemberEntityListing> getContentmanagementWorkspaceMembers(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<WorkspaceMemberEntityListing>invokeAPIVerbose(request, new TypeReference<WorkspaceMemberEntityListing>() {});
+  public ApiResponse<WorkspaceMemberEntityListing> getContentmanagementWorkspaceMembers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkspaceMemberEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkspaceMemberEntityListing> response = (ApiResponse<WorkspaceMemberEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkspaceMemberEntityListing> response = (ApiResponse<WorkspaceMemberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1894,10 +2027,11 @@ public class ContentManagementApi {
    * @param tagId Tag ID (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return TagValue
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TagValue getContentmanagementWorkspaceTagvalue(String workspaceId, String tagId, List<String> expand) throws IOException, ApiException {
-    return getContentmanagementWorkspaceTagvalueWithHttpInfo(workspaceId, tagId, expand).getBody();
+    return  getContentmanagementWorkspaceTagvalue(createGetContentmanagementWorkspaceTagvalueRequest(workspaceId, tagId, expand));
   }
 
   /**
@@ -1907,68 +2041,68 @@ public class ContentManagementApi {
    * @param tagId Tag ID (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return TagValue
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TagValue> getContentmanagementWorkspaceTagvalueWithHttpInfo(String workspaceId, String tagId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'workspaceId' is set
-    if (workspaceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling getContentmanagementWorkspaceTagvalue");
-    }
-    
-    // verify the required parameter 'tagId' is set
-    if (tagId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'tagId' when calling getContentmanagementWorkspaceTagvalue");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "workspaceId" + "\\}", pcapiClient.escapeString(workspaceId.toString()))
-      .replaceAll("\\{" + "tagId" + "\\}", pcapiClient.escapeString(tagId.toString()));
+  public ApiResponse<TagValue> getContentmanagementWorkspaceTagvalueWithHttpInfo(String workspaceId, String tagId, List<String> expand) throws IOException {
+    return getContentmanagementWorkspaceTagvalue(createGetContentmanagementWorkspaceTagvalueRequest(workspaceId, tagId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetContentmanagementWorkspaceTagvalueRequest createGetContentmanagementWorkspaceTagvalueRequest(String workspaceId, String tagId, List<String> expand) {
+    return GetContentmanagementWorkspaceTagvalueRequest.builder()
+            .withWorkspaceId(workspaceId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withTagId(tagId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<TagValue>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get a workspace tag
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return TagValue
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TagValue getContentmanagementWorkspaceTagvalue(GetContentmanagementWorkspaceTagvalueRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TagValue>() {});
+    try {
+      ApiResponse<TagValue> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TagValue>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a workspace tag
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TagValue> getContentmanagementWorkspaceTagvalue(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<TagValue>invokeAPIVerbose(request, new TypeReference<TagValue>() {});
+  public ApiResponse<TagValue> getContentmanagementWorkspaceTagvalue(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TagValue>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TagValue> response = (ApiResponse<TagValue>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TagValue> response = (ApiResponse<TagValue>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1980,10 +2114,11 @@ public class ContentManagementApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param expand Which fields, if any, to expand. (optional)
    * @return TagValueEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TagValueEntityListing getContentmanagementWorkspaceTagvalues(String workspaceId, String value, Integer pageSize, Integer pageNumber, List<String> expand) throws IOException, ApiException {
-    return getContentmanagementWorkspaceTagvaluesWithHttpInfo(workspaceId, value, pageSize, pageNumber, expand).getBody();
+    return  getContentmanagementWorkspaceTagvalues(createGetContentmanagementWorkspaceTagvaluesRequest(workspaceId, value, pageSize, pageNumber, expand));
   }
 
   /**
@@ -1995,65 +2130,72 @@ public class ContentManagementApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param expand Which fields, if any, to expand. (optional)
    * @return TagValueEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TagValueEntityListing> getContentmanagementWorkspaceTagvaluesWithHttpInfo(String workspaceId, String value, Integer pageSize, Integer pageNumber, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'workspaceId' is set
-    if (workspaceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling getContentmanagementWorkspaceTagvalues");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "workspaceId" + "\\}", pcapiClient.escapeString(workspaceId.toString()));
+  public ApiResponse<TagValueEntityListing> getContentmanagementWorkspaceTagvaluesWithHttpInfo(String workspaceId, String value, Integer pageSize, Integer pageNumber, List<String> expand) throws IOException {
+    return getContentmanagementWorkspaceTagvalues(createGetContentmanagementWorkspaceTagvaluesRequest(workspaceId, value, pageSize, pageNumber, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetContentmanagementWorkspaceTagvaluesRequest createGetContentmanagementWorkspaceTagvaluesRequest(String workspaceId, String value, Integer pageSize, Integer pageNumber, List<String> expand) {
+    return GetContentmanagementWorkspaceTagvaluesRequest.builder()
+            .withWorkspaceId(workspaceId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "value", value));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withValue(value)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageSize(pageSize)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withPageNumber(pageNumber)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<TagValueEntityListing>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get a list of workspace tags
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return TagValueEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TagValueEntityListing getContentmanagementWorkspaceTagvalues(GetContentmanagementWorkspaceTagvaluesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TagValueEntityListing>() {});
+    try {
+      ApiResponse<TagValueEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TagValueEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of workspace tags
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TagValueEntityListing> getContentmanagementWorkspaceTagvalues(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<TagValueEntityListing>invokeAPIVerbose(request, new TypeReference<TagValueEntityListing>() {});
+  public ApiResponse<TagValueEntityListing> getContentmanagementWorkspaceTagvalues(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TagValueEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TagValueEntityListing> response = (ApiResponse<TagValueEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TagValueEntityListing> response = (ApiResponse<TagValueEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2064,10 +2206,11 @@ public class ContentManagementApi {
    * @param access Requested access level. (optional)
    * @param expand Which fields, if any, to expand. (optional)
    * @return WorkspaceEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public WorkspaceEntityListing getContentmanagementWorkspaces(Integer pageSize, Integer pageNumber, List<String> access, List<String> expand) throws IOException, ApiException {
-    return getContentmanagementWorkspacesWithHttpInfo(pageSize, pageNumber, access, expand).getBody();
+    return  getContentmanagementWorkspaces(createGetContentmanagementWorkspacesRequest(pageSize, pageNumber, access, expand));
   }
 
   /**
@@ -2078,59 +2221,70 @@ public class ContentManagementApi {
    * @param access Requested access level. (optional)
    * @param expand Which fields, if any, to expand. (optional)
    * @return WorkspaceEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkspaceEntityListing> getContentmanagementWorkspacesWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> access, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/workspaces".replaceAll("\\{format\\}","json");
+  public ApiResponse<WorkspaceEntityListing> getContentmanagementWorkspacesWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> access, List<String> expand) throws IOException {
+    return getContentmanagementWorkspaces(createGetContentmanagementWorkspacesRequest(pageSize, pageNumber, access, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetContentmanagementWorkspacesRequest createGetContentmanagementWorkspacesRequest(Integer pageSize, Integer pageNumber, List<String> access, List<String> expand) {
+    return GetContentmanagementWorkspacesRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "access", access));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withAccess(access)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<WorkspaceEntityListing>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get a list of workspaces.
    * Specifying &#39;content&#39; access will return all workspaces the user has document access to, while &#39;admin&#39; access will return all group workspaces the user has administrative rights to.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return WorkspaceEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public WorkspaceEntityListing getContentmanagementWorkspaces(GetContentmanagementWorkspacesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WorkspaceEntityListing>() {});
+    try {
+      ApiResponse<WorkspaceEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkspaceEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of workspaces.
    * Specifying &#39;content&#39; access will return all workspaces the user has document access to, while &#39;admin&#39; access will return all group workspaces the user has administrative rights to.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkspaceEntityListing> getContentmanagementWorkspaces(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<WorkspaceEntityListing>invokeAPIVerbose(request, new TypeReference<WorkspaceEntityListing>() {});
+  public ApiResponse<WorkspaceEntityListing> getContentmanagementWorkspaces(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkspaceEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkspaceEntityListing> response = (ApiResponse<WorkspaceEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkspaceEntityListing> response = (ApiResponse<WorkspaceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2138,10 +2292,11 @@ public class ContentManagementApi {
    * 
    * @param body Allows for a filtered query returning facet information (required)
    * @return QueryResults
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public QueryResults postContentmanagementAuditquery(ContentQueryRequest body) throws IOException, ApiException {
-    return postContentmanagementAuditqueryWithHttpInfo(body).getBody();
+    return  postContentmanagementAuditquery(createPostContentmanagementAuditqueryRequest(body));
   }
 
   /**
@@ -2149,60 +2304,64 @@ public class ContentManagementApi {
    * 
    * @param body Allows for a filtered query returning facet information (required)
    * @return QueryResults
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueryResults> postContentmanagementAuditqueryWithHttpInfo(ContentQueryRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postContentmanagementAuditquery");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/auditquery".replaceAll("\\{format\\}","json");
+  public ApiResponse<QueryResults> postContentmanagementAuditqueryWithHttpInfo(ContentQueryRequest body) throws IOException {
+    return postContentmanagementAuditquery(createPostContentmanagementAuditqueryRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<QueryResults>() {});
+  private PostContentmanagementAuditqueryRequest createPostContentmanagementAuditqueryRequest(ContentQueryRequest body) {
+    return PostContentmanagementAuditqueryRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Query audits
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return QueryResults
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public QueryResults postContentmanagementAuditquery(PostContentmanagementAuditqueryRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<QueryResults>() {});
+    try {
+      ApiResponse<QueryResults> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueryResults>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query audits
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueryResults> postContentmanagementAuditquery(ApiRequest<ContentQueryRequest> request) throws IOException, ApiException {
-    return pcapiClient.<QueryResults>invokeAPIVerbose(request, new TypeReference<QueryResults>() {});
+  public ApiResponse<QueryResults> postContentmanagementAuditquery(ApiRequest<ContentQueryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<QueryResults>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryResults> response = (ApiResponse<QueryResults>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryResults> response = (ApiResponse<QueryResults>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2213,10 +2372,11 @@ public class ContentManagementApi {
    * @param expand Expand some document fields (optional)
    * @param override Override any lock on the document (optional)
    * @return Document
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Document postContentmanagementDocument(String documentId, DocumentUpdate body, String expand, Boolean override) throws IOException, ApiException {
-    return postContentmanagementDocumentWithHttpInfo(documentId, body, expand, override).getBody();
+    return  postContentmanagementDocument(createPostContentmanagementDocumentRequest(documentId, body, expand, override));
   }
 
   /**
@@ -2227,68 +2387,70 @@ public class ContentManagementApi {
    * @param expand Expand some document fields (optional)
    * @param override Override any lock on the document (optional)
    * @return Document
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Document> postContentmanagementDocumentWithHttpInfo(String documentId, DocumentUpdate body, String expand, Boolean override) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'documentId' is set
-    if (documentId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'documentId' when calling postContentmanagementDocument");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postContentmanagementDocument");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/documents/{documentId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "documentId" + "\\}", pcapiClient.escapeString(documentId.toString()));
+  public ApiResponse<Document> postContentmanagementDocumentWithHttpInfo(String documentId, DocumentUpdate body, String expand, Boolean override) throws IOException {
+    return postContentmanagementDocument(createPostContentmanagementDocumentRequest(documentId, body, expand, override).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostContentmanagementDocumentRequest createPostContentmanagementDocumentRequest(String documentId, DocumentUpdate body, String expand, Boolean override) {
+    return PostContentmanagementDocumentRequest.builder()
+            .withDocumentId(documentId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "override", override));
+            .withBody(body)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withExpand(expand)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Document>() {});
+            .withOverride(override)
+            .build();
   }
 
   /**
    * Update a document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Document
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Document postContentmanagementDocument(PostContentmanagementDocumentRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Document>() {});
+    try {
+      ApiResponse<Document> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Document>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Document> postContentmanagementDocument(ApiRequest<DocumentUpdate> request) throws IOException, ApiException {
-    return pcapiClient.<Document>invokeAPIVerbose(request, new TypeReference<Document>() {});
+  public ApiResponse<Document> postContentmanagementDocument(ApiRequest<DocumentUpdate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Document>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Document> response = (ApiResponse<Document>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Document> response = (ApiResponse<Document>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2298,10 +2460,11 @@ public class ContentManagementApi {
    * @param body Replace Request (required)
    * @param override Override any lock on the document (optional)
    * @return ReplaceResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ReplaceResponse postContentmanagementDocumentContent(String documentId, ReplaceRequest body, Boolean override) throws IOException, ApiException {
-    return postContentmanagementDocumentContentWithHttpInfo(documentId, body, override).getBody();
+    return  postContentmanagementDocumentContent(createPostContentmanagementDocumentContentRequest(documentId, body, override));
   }
 
   /**
@@ -2311,67 +2474,68 @@ public class ContentManagementApi {
    * @param body Replace Request (required)
    * @param override Override any lock on the document (optional)
    * @return ReplaceResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ReplaceResponse> postContentmanagementDocumentContentWithHttpInfo(String documentId, ReplaceRequest body, Boolean override) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'documentId' is set
-    if (documentId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'documentId' when calling postContentmanagementDocumentContent");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postContentmanagementDocumentContent");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/documents/{documentId}/content".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "documentId" + "\\}", pcapiClient.escapeString(documentId.toString()));
+  public ApiResponse<ReplaceResponse> postContentmanagementDocumentContentWithHttpInfo(String documentId, ReplaceRequest body, Boolean override) throws IOException {
+    return postContentmanagementDocumentContent(createPostContentmanagementDocumentContentRequest(documentId, body, override).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostContentmanagementDocumentContentRequest createPostContentmanagementDocumentContentRequest(String documentId, ReplaceRequest body, Boolean override) {
+    return PostContentmanagementDocumentContentRequest.builder()
+            .withDocumentId(documentId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "override", override));
+            .withBody(body)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ReplaceResponse>() {});
+            .withOverride(override)
+            .build();
   }
 
   /**
    * Replace the contents of a document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ReplaceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ReplaceResponse postContentmanagementDocumentContent(PostContentmanagementDocumentContentRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ReplaceResponse>() {});
+    try {
+      ApiResponse<ReplaceResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ReplaceResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Replace the contents of a document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ReplaceResponse> postContentmanagementDocumentContent(ApiRequest<ReplaceRequest> request) throws IOException, ApiException {
-    return pcapiClient.<ReplaceResponse>invokeAPIVerbose(request, new TypeReference<ReplaceResponse>() {});
+  public ApiResponse<ReplaceResponse> postContentmanagementDocumentContent(ApiRequest<ReplaceRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ReplaceResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReplaceResponse> response = (ApiResponse<ReplaceResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReplaceResponse> response = (ApiResponse<ReplaceResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2382,10 +2546,11 @@ public class ContentManagementApi {
    * @param moveSource Move a document to a new workspace. Provide a document ID as the move source. (optional)
    * @param override Override any lock on the source document (optional)
    * @return Document
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Document postContentmanagementDocuments(DocumentUpload body, String copySource, String moveSource, Boolean override) throws IOException, ApiException {
-    return postContentmanagementDocumentsWithHttpInfo(body, copySource, moveSource, override).getBody();
+    return  postContentmanagementDocuments(createPostContentmanagementDocumentsRequest(body, copySource, moveSource, override));
   }
 
   /**
@@ -2396,63 +2561,70 @@ public class ContentManagementApi {
    * @param moveSource Move a document to a new workspace. Provide a document ID as the move source. (optional)
    * @param override Override any lock on the source document (optional)
    * @return Document
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Document> postContentmanagementDocumentsWithHttpInfo(DocumentUpload body, String copySource, String moveSource, Boolean override) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postContentmanagementDocuments");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/documents".replaceAll("\\{format\\}","json");
+  public ApiResponse<Document> postContentmanagementDocumentsWithHttpInfo(DocumentUpload body, String copySource, String moveSource, Boolean override) throws IOException {
+    return postContentmanagementDocuments(createPostContentmanagementDocumentsRequest(body, copySource, moveSource, override).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostContentmanagementDocumentsRequest createPostContentmanagementDocumentsRequest(DocumentUpload body, String copySource, String moveSource, Boolean override) {
+    return PostContentmanagementDocumentsRequest.builder()
+            .withBody(body)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "copySource", copySource));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "moveSource", moveSource));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "override", override));
+            .withCopySource(copySource)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withMoveSource(moveSource)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Document>() {});
+            .withOverride(override)
+            .build();
   }
 
   /**
    * Add a document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Document
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Document postContentmanagementDocuments(PostContentmanagementDocumentsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Document>() {});
+    try {
+      ApiResponse<Document> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Document>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Add a document.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Document> postContentmanagementDocuments(ApiRequest<DocumentUpload> request) throws IOException, ApiException {
-    return pcapiClient.<Document>invokeAPIVerbose(request, new TypeReference<Document>() {});
+  public ApiResponse<Document> postContentmanagementDocuments(ApiRequest<DocumentUpload> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Document>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Document> response = (ApiResponse<Document>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Document> response = (ApiResponse<Document>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2461,10 +2633,11 @@ public class ContentManagementApi {
    * @param body Allows for a filtered query returning facet information (required)
    * @param expand Expand some document fields (optional)
    * @return QueryResults
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public QueryResults postContentmanagementQuery(QueryRequest body, String expand) throws IOException, ApiException {
-    return postContentmanagementQueryWithHttpInfo(body, expand).getBody();
+    return  postContentmanagementQuery(createPostContentmanagementQueryRequest(body, expand));
   }
 
   /**
@@ -2473,61 +2646,66 @@ public class ContentManagementApi {
    * @param body Allows for a filtered query returning facet information (required)
    * @param expand Expand some document fields (optional)
    * @return QueryResults
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueryResults> postContentmanagementQueryWithHttpInfo(QueryRequest body, String expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postContentmanagementQuery");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/query".replaceAll("\\{format\\}","json");
+  public ApiResponse<QueryResults> postContentmanagementQueryWithHttpInfo(QueryRequest body, String expand) throws IOException {
+    return postContentmanagementQuery(createPostContentmanagementQueryRequest(body, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostContentmanagementQueryRequest createPostContentmanagementQueryRequest(QueryRequest body, String expand) {
+    return PostContentmanagementQueryRequest.builder()
+            .withBody(body)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<QueryResults>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Query content
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return QueryResults
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public QueryResults postContentmanagementQuery(PostContentmanagementQueryRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<QueryResults>() {});
+    try {
+      ApiResponse<QueryResults> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueryResults>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query content
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueryResults> postContentmanagementQuery(ApiRequest<QueryRequest> request) throws IOException, ApiException {
-    return pcapiClient.<QueryResults>invokeAPIVerbose(request, new TypeReference<QueryResults>() {});
+  public ApiResponse<QueryResults> postContentmanagementQuery(ApiRequest<QueryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<QueryResults>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryResults> response = (ApiResponse<QueryResults>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryResults> response = (ApiResponse<QueryResults>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2535,10 +2713,11 @@ public class ContentManagementApi {
    * 
    * @param body CreateShareRequest - entity id and type and a single member or list of members are required (required)
    * @return CreateShareResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CreateShareResponse postContentmanagementShares(CreateShareRequest body) throws IOException, ApiException {
-    return postContentmanagementSharesWithHttpInfo(body).getBody();
+    return  postContentmanagementShares(createPostContentmanagementSharesRequest(body));
   }
 
   /**
@@ -2546,60 +2725,64 @@ public class ContentManagementApi {
    * 
    * @param body CreateShareRequest - entity id and type and a single member or list of members are required (required)
    * @return CreateShareResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CreateShareResponse> postContentmanagementSharesWithHttpInfo(CreateShareRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postContentmanagementShares");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/shares".replaceAll("\\{format\\}","json");
+  public ApiResponse<CreateShareResponse> postContentmanagementSharesWithHttpInfo(CreateShareRequest body) throws IOException {
+    return postContentmanagementShares(createPostContentmanagementSharesRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CreateShareResponse>() {});
+  private PostContentmanagementSharesRequest createPostContentmanagementSharesRequest(CreateShareRequest body) {
+    return PostContentmanagementSharesRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Creates a new share or updates an existing share if the entity has already been shared
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CreateShareResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CreateShareResponse postContentmanagementShares(PostContentmanagementSharesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CreateShareResponse>() {});
+    try {
+      ApiResponse<CreateShareResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CreateShareResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Creates a new share or updates an existing share if the entity has already been shared
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CreateShareResponse> postContentmanagementShares(ApiRequest<CreateShareRequest> request) throws IOException, ApiException {
-    return pcapiClient.<CreateShareResponse>invokeAPIVerbose(request, new TypeReference<CreateShareResponse>() {});
+  public ApiResponse<CreateShareResponse> postContentmanagementShares(ApiRequest<CreateShareRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CreateShareResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CreateShareResponse> response = (ApiResponse<CreateShareResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CreateShareResponse> response = (ApiResponse<CreateShareResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2608,10 +2791,11 @@ public class ContentManagementApi {
    * @param workspaceId Workspace ID (required)
    * @param body tag (required)
    * @return TagValue
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TagValue postContentmanagementWorkspaceTagvalues(String workspaceId, TagValue body) throws IOException, ApiException {
-    return postContentmanagementWorkspaceTagvaluesWithHttpInfo(workspaceId, body).getBody();
+    return  postContentmanagementWorkspaceTagvalues(createPostContentmanagementWorkspaceTagvaluesRequest(workspaceId, body));
   }
 
   /**
@@ -2620,66 +2804,66 @@ public class ContentManagementApi {
    * @param workspaceId Workspace ID (required)
    * @param body tag (required)
    * @return TagValue
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TagValue> postContentmanagementWorkspaceTagvaluesWithHttpInfo(String workspaceId, TagValue body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'workspaceId' is set
-    if (workspaceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling postContentmanagementWorkspaceTagvalues");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postContentmanagementWorkspaceTagvalues");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "workspaceId" + "\\}", pcapiClient.escapeString(workspaceId.toString()));
+  public ApiResponse<TagValue> postContentmanagementWorkspaceTagvaluesWithHttpInfo(String workspaceId, TagValue body) throws IOException {
+    return postContentmanagementWorkspaceTagvalues(createPostContentmanagementWorkspaceTagvaluesRequest(workspaceId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostContentmanagementWorkspaceTagvaluesRequest createPostContentmanagementWorkspaceTagvaluesRequest(String workspaceId, TagValue body) {
+    return PostContentmanagementWorkspaceTagvaluesRequest.builder()
+            .withWorkspaceId(workspaceId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<TagValue>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a workspace tag
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return TagValue
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TagValue postContentmanagementWorkspaceTagvalues(PostContentmanagementWorkspaceTagvaluesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TagValue>() {});
+    try {
+      ApiResponse<TagValue> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TagValue>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a workspace tag
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TagValue> postContentmanagementWorkspaceTagvalues(ApiRequest<TagValue> request) throws IOException, ApiException {
-    return pcapiClient.<TagValue>invokeAPIVerbose(request, new TypeReference<TagValue>() {});
+  public ApiResponse<TagValue> postContentmanagementWorkspaceTagvalues(ApiRequest<TagValue> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TagValue>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TagValue> response = (ApiResponse<TagValue>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TagValue> response = (ApiResponse<TagValue>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2689,10 +2873,11 @@ public class ContentManagementApi {
    * @param body query (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return TagValueEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TagValueEntityListing postContentmanagementWorkspaceTagvaluesQuery(String workspaceId, TagQueryRequest body, List<String> expand) throws IOException, ApiException {
-    return postContentmanagementWorkspaceTagvaluesQueryWithHttpInfo(workspaceId, body, expand).getBody();
+    return  postContentmanagementWorkspaceTagvaluesQuery(createPostContentmanagementWorkspaceTagvaluesQueryRequest(workspaceId, body, expand));
   }
 
   /**
@@ -2702,67 +2887,68 @@ public class ContentManagementApi {
    * @param body query (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return TagValueEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TagValueEntityListing> postContentmanagementWorkspaceTagvaluesQueryWithHttpInfo(String workspaceId, TagQueryRequest body, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'workspaceId' is set
-    if (workspaceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling postContentmanagementWorkspaceTagvaluesQuery");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postContentmanagementWorkspaceTagvaluesQuery");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "workspaceId" + "\\}", pcapiClient.escapeString(workspaceId.toString()));
+  public ApiResponse<TagValueEntityListing> postContentmanagementWorkspaceTagvaluesQueryWithHttpInfo(String workspaceId, TagQueryRequest body, List<String> expand) throws IOException {
+    return postContentmanagementWorkspaceTagvaluesQuery(createPostContentmanagementWorkspaceTagvaluesQueryRequest(workspaceId, body, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostContentmanagementWorkspaceTagvaluesQueryRequest createPostContentmanagementWorkspaceTagvaluesQueryRequest(String workspaceId, TagQueryRequest body, List<String> expand) {
+    return PostContentmanagementWorkspaceTagvaluesQueryRequest.builder()
+            .withWorkspaceId(workspaceId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withBody(body)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<TagValueEntityListing>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Perform a prefix query on tags in the workspace
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return TagValueEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TagValueEntityListing postContentmanagementWorkspaceTagvaluesQuery(PostContentmanagementWorkspaceTagvaluesQueryRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TagValueEntityListing>() {});
+    try {
+      ApiResponse<TagValueEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TagValueEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Perform a prefix query on tags in the workspace
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TagValueEntityListing> postContentmanagementWorkspaceTagvaluesQuery(ApiRequest<TagQueryRequest> request) throws IOException, ApiException {
-    return pcapiClient.<TagValueEntityListing>invokeAPIVerbose(request, new TypeReference<TagValueEntityListing>() {});
+  public ApiResponse<TagValueEntityListing> postContentmanagementWorkspaceTagvaluesQuery(ApiRequest<TagQueryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TagValueEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TagValueEntityListing> response = (ApiResponse<TagValueEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TagValueEntityListing> response = (ApiResponse<TagValueEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2770,10 +2956,11 @@ public class ContentManagementApi {
    * 
    * @param body Workspace (required)
    * @return Workspace
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Workspace postContentmanagementWorkspaces(WorkspaceCreate body) throws IOException, ApiException {
-    return postContentmanagementWorkspacesWithHttpInfo(body).getBody();
+    return  postContentmanagementWorkspaces(createPostContentmanagementWorkspacesRequest(body));
   }
 
   /**
@@ -2781,60 +2968,64 @@ public class ContentManagementApi {
    * 
    * @param body Workspace (required)
    * @return Workspace
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Workspace> postContentmanagementWorkspacesWithHttpInfo(WorkspaceCreate body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postContentmanagementWorkspaces");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/workspaces".replaceAll("\\{format\\}","json");
+  public ApiResponse<Workspace> postContentmanagementWorkspacesWithHttpInfo(WorkspaceCreate body) throws IOException {
+    return postContentmanagementWorkspaces(createPostContentmanagementWorkspacesRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Workspace>() {});
+  private PostContentmanagementWorkspacesRequest createPostContentmanagementWorkspacesRequest(WorkspaceCreate body) {
+    return PostContentmanagementWorkspacesRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a group workspace
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Workspace
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Workspace postContentmanagementWorkspaces(PostContentmanagementWorkspacesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Workspace>() {});
+    try {
+      ApiResponse<Workspace> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Workspace>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a group workspace
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Workspace> postContentmanagementWorkspaces(ApiRequest<WorkspaceCreate> request) throws IOException, ApiException {
-    return pcapiClient.<Workspace>invokeAPIVerbose(request, new TypeReference<Workspace>() {});
+  public ApiResponse<Workspace> postContentmanagementWorkspaces(ApiRequest<WorkspaceCreate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Workspace>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Workspace> response = (ApiResponse<Workspace>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Workspace> response = (ApiResponse<Workspace>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2843,10 +3034,11 @@ public class ContentManagementApi {
    * @param workspaceId Workspace ID (required)
    * @param body Workspace (required)
    * @return Workspace
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Workspace putContentmanagementWorkspace(String workspaceId, Workspace body) throws IOException, ApiException {
-    return putContentmanagementWorkspaceWithHttpInfo(workspaceId, body).getBody();
+    return  putContentmanagementWorkspace(createPutContentmanagementWorkspaceRequest(workspaceId, body));
   }
 
   /**
@@ -2855,66 +3047,66 @@ public class ContentManagementApi {
    * @param workspaceId Workspace ID (required)
    * @param body Workspace (required)
    * @return Workspace
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Workspace> putContentmanagementWorkspaceWithHttpInfo(String workspaceId, Workspace body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'workspaceId' is set
-    if (workspaceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling putContentmanagementWorkspace");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putContentmanagementWorkspace");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/workspaces/{workspaceId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "workspaceId" + "\\}", pcapiClient.escapeString(workspaceId.toString()));
+  public ApiResponse<Workspace> putContentmanagementWorkspaceWithHttpInfo(String workspaceId, Workspace body) throws IOException {
+    return putContentmanagementWorkspace(createPutContentmanagementWorkspaceRequest(workspaceId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutContentmanagementWorkspaceRequest createPutContentmanagementWorkspaceRequest(String workspaceId, Workspace body) {
+    return PutContentmanagementWorkspaceRequest.builder()
+            .withWorkspaceId(workspaceId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Workspace>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a workspace
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Workspace
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Workspace putContentmanagementWorkspace(PutContentmanagementWorkspaceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Workspace>() {});
+    try {
+      ApiResponse<Workspace> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Workspace>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a workspace
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Workspace> putContentmanagementWorkspace(ApiRequest<Workspace> request) throws IOException, ApiException {
-    return pcapiClient.<Workspace>invokeAPIVerbose(request, new TypeReference<Workspace>() {});
+  public ApiResponse<Workspace> putContentmanagementWorkspace(ApiRequest<Workspace> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Workspace>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Workspace> response = (ApiResponse<Workspace>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Workspace> response = (ApiResponse<Workspace>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2924,10 +3116,11 @@ public class ContentManagementApi {
    * @param memberId Member ID (required)
    * @param body Workspace Member (required)
    * @return WorkspaceMember
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public WorkspaceMember putContentmanagementWorkspaceMember(String workspaceId, String memberId, WorkspaceMember body) throws IOException, ApiException {
-    return putContentmanagementWorkspaceMemberWithHttpInfo(workspaceId, memberId, body).getBody();
+    return  putContentmanagementWorkspaceMember(createPutContentmanagementWorkspaceMemberRequest(workspaceId, memberId, body));
   }
 
   /**
@@ -2937,72 +3130,68 @@ public class ContentManagementApi {
    * @param memberId Member ID (required)
    * @param body Workspace Member (required)
    * @return WorkspaceMember
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkspaceMember> putContentmanagementWorkspaceMemberWithHttpInfo(String workspaceId, String memberId, WorkspaceMember body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'workspaceId' is set
-    if (workspaceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling putContentmanagementWorkspaceMember");
-    }
-    
-    // verify the required parameter 'memberId' is set
-    if (memberId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'memberId' when calling putContentmanagementWorkspaceMember");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putContentmanagementWorkspaceMember");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "workspaceId" + "\\}", pcapiClient.escapeString(workspaceId.toString()))
-      .replaceAll("\\{" + "memberId" + "\\}", pcapiClient.escapeString(memberId.toString()));
+  public ApiResponse<WorkspaceMember> putContentmanagementWorkspaceMemberWithHttpInfo(String workspaceId, String memberId, WorkspaceMember body) throws IOException {
+    return putContentmanagementWorkspaceMember(createPutContentmanagementWorkspaceMemberRequest(workspaceId, memberId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutContentmanagementWorkspaceMemberRequest createPutContentmanagementWorkspaceMemberRequest(String workspaceId, String memberId, WorkspaceMember body) {
+    return PutContentmanagementWorkspaceMemberRequest.builder()
+            .withWorkspaceId(workspaceId)
 
+            .withMemberId(memberId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<WorkspaceMember>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Add a member to a workspace
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return WorkspaceMember
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public WorkspaceMember putContentmanagementWorkspaceMember(PutContentmanagementWorkspaceMemberRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WorkspaceMember>() {});
+    try {
+      ApiResponse<WorkspaceMember> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkspaceMember>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Add a member to a workspace
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkspaceMember> putContentmanagementWorkspaceMember(ApiRequest<WorkspaceMember> request) throws IOException, ApiException {
-    return pcapiClient.<WorkspaceMember>invokeAPIVerbose(request, new TypeReference<WorkspaceMember>() {});
+  public ApiResponse<WorkspaceMember> putContentmanagementWorkspaceMember(ApiRequest<WorkspaceMember> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkspaceMember>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkspaceMember> response = (ApiResponse<WorkspaceMember>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkspaceMember> response = (ApiResponse<WorkspaceMember>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3012,10 +3201,11 @@ public class ContentManagementApi {
    * @param tagId Tag ID (required)
    * @param body Workspace (required)
    * @return TagValue
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TagValue putContentmanagementWorkspaceTagvalue(String workspaceId, String tagId, TagValue body) throws IOException, ApiException {
-    return putContentmanagementWorkspaceTagvalueWithHttpInfo(workspaceId, tagId, body).getBody();
+    return  putContentmanagementWorkspaceTagvalue(createPutContentmanagementWorkspaceTagvalueRequest(workspaceId, tagId, body));
   }
 
   /**
@@ -3025,72 +3215,68 @@ public class ContentManagementApi {
    * @param tagId Tag ID (required)
    * @param body Workspace (required)
    * @return TagValue
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TagValue> putContentmanagementWorkspaceTagvalueWithHttpInfo(String workspaceId, String tagId, TagValue body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'workspaceId' is set
-    if (workspaceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'workspaceId' when calling putContentmanagementWorkspaceTagvalue");
-    }
-    
-    // verify the required parameter 'tagId' is set
-    if (tagId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'tagId' when calling putContentmanagementWorkspaceTagvalue");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putContentmanagementWorkspaceTagvalue");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "workspaceId" + "\\}", pcapiClient.escapeString(workspaceId.toString()))
-      .replaceAll("\\{" + "tagId" + "\\}", pcapiClient.escapeString(tagId.toString()));
+  public ApiResponse<TagValue> putContentmanagementWorkspaceTagvalueWithHttpInfo(String workspaceId, String tagId, TagValue body) throws IOException {
+    return putContentmanagementWorkspaceTagvalue(createPutContentmanagementWorkspaceTagvalueRequest(workspaceId, tagId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutContentmanagementWorkspaceTagvalueRequest createPutContentmanagementWorkspaceTagvalueRequest(String workspaceId, String tagId, TagValue body) {
+    return PutContentmanagementWorkspaceTagvalueRequest.builder()
+            .withWorkspaceId(workspaceId)
 
+            .withTagId(tagId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<TagValue>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a workspace tag. Will update all documents with the new tag value.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return TagValue
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TagValue putContentmanagementWorkspaceTagvalue(PutContentmanagementWorkspaceTagvalueRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TagValue>() {});
+    try {
+      ApiResponse<TagValue> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TagValue>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a workspace tag. Will update all documents with the new tag value.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TagValue> putContentmanagementWorkspaceTagvalue(ApiRequest<TagValue> request) throws IOException, ApiException {
-    return pcapiClient.<TagValue>invokeAPIVerbose(request, new TypeReference<TagValue>() {});
+  public ApiResponse<TagValue> putContentmanagementWorkspaceTagvalue(ApiRequest<TagValue> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TagValue>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TagValue> response = (ApiResponse<TagValue>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TagValue> response = (ApiResponse<TagValue>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

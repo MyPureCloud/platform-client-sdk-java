@@ -25,9 +25,6 @@ import com.mypurecloud.sdk.v2.model.UserRecordingEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
 
 public class PutUserrecordingRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String recordingId;
 	public String getRecordingId() {
 		return this.recordingId;
@@ -152,6 +149,17 @@ public class PutUserrecordingRequest {
 
 
 		public PutUserrecordingRequest build() {
+            
+            // verify the required parameter 'recordingId' is set
+            if (request.recordingId == null) {
+                throw new IllegalStateException("Missing the required parameter 'recordingId' when building request for PutUserrecordingRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutUserrecordingRequest.");
+            }
+            
 			return request;
 		}
 	}

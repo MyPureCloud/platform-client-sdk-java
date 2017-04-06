@@ -55,9 +55,6 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PutOutboundCallabletimesetRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String callableTimeSetId;
 	public String getCallableTimeSetId() {
 		return this.callableTimeSetId;
@@ -162,6 +159,17 @@ public class PutOutboundCallabletimesetRequest {
 
 
 		public PutOutboundCallabletimesetRequest build() {
+            
+            // verify the required parameter 'callableTimeSetId' is set
+            if (request.callableTimeSetId == null) {
+                throw new IllegalStateException("Missing the required parameter 'callableTimeSetId' when building request for PutOutboundCallabletimesetRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutOutboundCallabletimesetRequest.");
+            }
+            
 			return request;
 		}
 	}

@@ -84,9 +84,6 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesCertificateauthorityRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String certificateId;
 	public String getCertificateId() {
 		return this.certificateId;
@@ -165,6 +162,12 @@ public class GetTelephonyProvidersEdgesCertificateauthorityRequest {
 
 
 		public GetTelephonyProvidersEdgesCertificateauthorityRequest build() {
+            
+            // verify the required parameter 'certificateId' is set
+            if (request.certificateId == null) {
+                throw new IllegalStateException("Missing the required parameter 'certificateId' when building request for GetTelephonyProvidersEdgesCertificateauthorityRequest.");
+            }
+            
 			return request;
 		}
 	}

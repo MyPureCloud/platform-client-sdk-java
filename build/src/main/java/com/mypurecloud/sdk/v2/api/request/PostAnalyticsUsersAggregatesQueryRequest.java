@@ -47,9 +47,6 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class PostAnalyticsUsersAggregatesQueryRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private AggregationQuery body;
 	public AggregationQuery getBody() {
 		return this.body;
@@ -128,6 +125,12 @@ public class PostAnalyticsUsersAggregatesQueryRequest {
 
 
 		public PostAnalyticsUsersAggregatesQueryRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostAnalyticsUsersAggregatesQueryRequest.");
+            }
+            
 			return request;
 		}
 	}

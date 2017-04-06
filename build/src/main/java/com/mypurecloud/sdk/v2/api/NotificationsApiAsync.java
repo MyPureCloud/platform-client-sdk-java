@@ -1,6 +1,8 @@
 package com.mypurecloud.sdk.v2.api;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.SettableFuture;
 
 import com.mypurecloud.sdk.v2.AsyncApiCallback;
 import com.mypurecloud.sdk.v2.ApiException;
@@ -49,141 +51,556 @@ public class NotificationsApiAsync {
   /**
    * Remove all subscriptions
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Void> deleteNotificationsChannelSubscriptionsAsync(DeleteNotificationsChannelSubscriptionsRequest request, AsyncApiCallback<Void> callback) {
-    return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
+    try {
+      SettableFuture<Void> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Remove all subscriptions
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteNotificationsChannelSubscriptionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
-    return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
+    try {
+      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get available notification topics.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<AvailableTopicEntityListing> getNotificationsAvailabletopicsAsync(GetNotificationsAvailabletopicsRequest request, AsyncApiCallback<AvailableTopicEntityListing> callback) {
-    return pcapiClient.<AvailableTopicEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<AvailableTopicEntityListing>() {}, callback);
+    try {
+      SettableFuture<AvailableTopicEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AvailableTopicEntityListing>() {}, new AsyncApiCallback<ApiResponse<AvailableTopicEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AvailableTopicEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get available notification topics.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<AvailableTopicEntityListing>> getNotificationsAvailabletopicsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AvailableTopicEntityListing>> callback) {
-    return pcapiClient.<AvailableTopicEntityListing>invokeAPIVerboseAsync(request, new TypeReference<AvailableTopicEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<AvailableTopicEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AvailableTopicEntityListing>() {}, new AsyncApiCallback<ApiResponse<AvailableTopicEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AvailableTopicEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AvailableTopicEntityListing> response = (ApiResponse<AvailableTopicEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AvailableTopicEntityListing> response = (ApiResponse<AvailableTopicEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * The list of all subscriptions for this channel
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ChannelTopicEntityListing> getNotificationsChannelSubscriptionsAsync(GetNotificationsChannelSubscriptionsRequest request, AsyncApiCallback<ChannelTopicEntityListing> callback) {
-    return pcapiClient.<ChannelTopicEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {}, callback);
+    try {
+      SettableFuture<ChannelTopicEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {}, new AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChannelTopicEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * The list of all subscriptions for this channel
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ChannelTopicEntityListing>> getNotificationsChannelSubscriptionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>> callback) {
-    return pcapiClient.<ChannelTopicEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ChannelTopicEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ChannelTopicEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ChannelTopicEntityListing>() {}, new AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChannelTopicEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChannelTopicEntityListing> response = (ApiResponse<ChannelTopicEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChannelTopicEntityListing> response = (ApiResponse<ChannelTopicEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * The list of existing channels
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ChannelEntityListing> getNotificationsChannelsAsync(GetNotificationsChannelsRequest request, AsyncApiCallback<ChannelEntityListing> callback) {
-    return pcapiClient.<ChannelEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ChannelEntityListing>() {}, callback);
+    try {
+      SettableFuture<ChannelEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ChannelEntityListing>() {}, new AsyncApiCallback<ApiResponse<ChannelEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChannelEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * The list of existing channels
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ChannelEntityListing>> getNotificationsChannelsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ChannelEntityListing>> callback) {
-    return pcapiClient.<ChannelEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ChannelEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ChannelEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ChannelEntityListing>() {}, new AsyncApiCallback<ApiResponse<ChannelEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChannelEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChannelEntityListing> response = (ApiResponse<ChannelEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChannelEntityListing> response = (ApiResponse<ChannelEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Add a list of subscriptions to the existing list of subscriptions
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ChannelTopicEntityListing> postNotificationsChannelSubscriptionsAsync(PostNotificationsChannelSubscriptionsRequest request, AsyncApiCallback<ChannelTopicEntityListing> callback) {
-    return pcapiClient.<ChannelTopicEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {}, callback);
+    try {
+      SettableFuture<ChannelTopicEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {}, new AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChannelTopicEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Add a list of subscriptions to the existing list of subscriptions
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ChannelTopicEntityListing>> postNotificationsChannelSubscriptionsAsync(ApiRequest<List<ChannelTopic>> request, AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>> callback) {
-    return pcapiClient.<ChannelTopicEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ChannelTopicEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ChannelTopicEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ChannelTopicEntityListing>() {}, new AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChannelTopicEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChannelTopicEntityListing> response = (ApiResponse<ChannelTopicEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChannelTopicEntityListing> response = (ApiResponse<ChannelTopicEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a new channel
    * There is a limit of 10 channels. Creating an 11th channel will remove the channel with oldest last used date.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Channel> postNotificationsChannelsAsync(PostNotificationsChannelsRequest request, AsyncApiCallback<Channel> callback) {
-    return pcapiClient.<Channel>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Channel>() {}, callback);
+    try {
+      SettableFuture<Channel> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Channel>() {}, new AsyncApiCallback<ApiResponse<Channel>>() {
+        @Override
+        public void onCompleted(ApiResponse<Channel> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a new channel
    * There is a limit of 10 channels. Creating an 11th channel will remove the channel with oldest last used date.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Channel>> postNotificationsChannelsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Channel>> callback) {
-    return pcapiClient.<Channel>invokeAPIVerboseAsync(request, new TypeReference<Channel>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Channel>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Channel>() {}, new AsyncApiCallback<ApiResponse<Channel>>() {
+        @Override
+        public void onCompleted(ApiResponse<Channel> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Channel> response = (ApiResponse<Channel>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Channel> response = (ApiResponse<Channel>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Replace the current list of subscriptions with a new list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ChannelTopicEntityListing> putNotificationsChannelSubscriptionsAsync(PutNotificationsChannelSubscriptionsRequest request, AsyncApiCallback<ChannelTopicEntityListing> callback) {
-    return pcapiClient.<ChannelTopicEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {}, callback);
+    try {
+      SettableFuture<ChannelTopicEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {}, new AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChannelTopicEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Replace the current list of subscriptions with a new list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ChannelTopicEntityListing>> putNotificationsChannelSubscriptionsAsync(ApiRequest<List<ChannelTopic>> request, AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>> callback) {
-    return pcapiClient.<ChannelTopicEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ChannelTopicEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ChannelTopicEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ChannelTopicEntityListing>() {}, new AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChannelTopicEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChannelTopicEntityListing> response = (ApiResponse<ChannelTopicEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChannelTopicEntityListing> response = (ApiResponse<ChannelTopicEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
+
+  private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
+    if (callback != null) {
+      try {
+        callback.onCompleted(result);
+        future.set(result);
+      }
+      catch (Throwable exception) {
+        future.setException(exception);
+      }
+    }
+    else {
+      future.set(result);
+    }
+  }
+
+  private <T> void notifyFailure(SettableFuture<T> future, AsyncApiCallback<T> callback, Throwable exception) {
+    if (callback != null) {
+      try {
+        callback.onFailed(exception);
+        future.setException(exception);
+      }
+      catch (Throwable callbackException) {
+        future.setException(callbackException);
+      }
+    }
+    else {
+      future.setException(exception);
+    }
+  }
 }

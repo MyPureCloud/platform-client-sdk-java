@@ -40,9 +40,6 @@ import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.ObservationQueryResponse;
 
 public class GetAnalyticsReportingReportIdMetadataRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String reportId;
 	public String getReportId() {
 		return this.reportId;
@@ -141,6 +138,12 @@ public class GetAnalyticsReportingReportIdMetadataRequest {
 
 
 		public GetAnalyticsReportingReportIdMetadataRequest build() {
+            
+            // verify the required parameter 'reportId' is set
+            if (request.reportId == null) {
+                throw new IllegalStateException("Missing the required parameter 'reportId' when building request for GetAnalyticsReportingReportIdMetadataRequest.");
+            }
+            
 			return request;
 		}
 	}

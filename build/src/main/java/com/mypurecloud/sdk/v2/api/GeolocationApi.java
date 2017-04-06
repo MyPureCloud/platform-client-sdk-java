@@ -42,65 +42,73 @@ public class GeolocationApi {
    * Get a organization&#39;s GeolocationSettings
    * 
    * @return GeolocationSettings
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public GeolocationSettings getGeolocationsSettings() throws IOException, ApiException {
-    return getGeolocationsSettingsWithHttpInfo().getBody();
+    return  getGeolocationsSettings(createGetGeolocationsSettingsRequest());
   }
 
   /**
    * Get a organization&#39;s GeolocationSettings
    * 
    * @return GeolocationSettings
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GeolocationSettings> getGeolocationsSettingsWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/geolocations/settings".replaceAll("\\{format\\}","json");
+  public ApiResponse<GeolocationSettings> getGeolocationsSettingsWithHttpInfo() throws IOException {
+    return getGeolocationsSettings(createGetGeolocationsSettingsRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<GeolocationSettings>() {});
+  private GetGeolocationsSettingsRequest createGetGeolocationsSettingsRequest() {
+    return GetGeolocationsSettingsRequest.builder()            .build();
   }
 
   /**
    * Get a organization&#39;s GeolocationSettings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return GeolocationSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public GeolocationSettings getGeolocationsSettings(GetGeolocationsSettingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<GeolocationSettings>() {});
+    try {
+      ApiResponse<GeolocationSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GeolocationSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a organization&#39;s GeolocationSettings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GeolocationSettings> getGeolocationsSettings(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<GeolocationSettings>invokeAPIVerbose(request, new TypeReference<GeolocationSettings>() {});
+  public ApiResponse<GeolocationSettings> getGeolocationsSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GeolocationSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GeolocationSettings> response = (ApiResponse<GeolocationSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GeolocationSettings> response = (ApiResponse<GeolocationSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -109,10 +117,11 @@ public class GeolocationApi {
    * @param userId user Id (required)
    * @param clientId client Id (required)
    * @return Geolocation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Geolocation getUserGeolocation(String userId, String clientId) throws IOException, ApiException {
-    return getUserGeolocationWithHttpInfo(userId, clientId).getBody();
+    return  getUserGeolocation(createGetUserGeolocationRequest(userId, clientId));
   }
 
   /**
@@ -121,67 +130,66 @@ public class GeolocationApi {
    * @param userId user Id (required)
    * @param clientId client Id (required)
    * @return Geolocation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Geolocation> getUserGeolocationWithHttpInfo(String userId, String clientId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserGeolocation");
-    }
-    
-    // verify the required parameter 'clientId' is set
-    if (clientId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'clientId' when calling getUserGeolocation");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/geolocations/{clientId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()))
-      .replaceAll("\\{" + "clientId" + "\\}", pcapiClient.escapeString(clientId.toString()));
+  public ApiResponse<Geolocation> getUserGeolocationWithHttpInfo(String userId, String clientId) throws IOException {
+    return getUserGeolocation(createGetUserGeolocationRequest(userId, clientId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetUserGeolocationRequest createGetUserGeolocationRequest(String userId, String clientId) {
+    return GetUserGeolocationRequest.builder()
+            .withUserId(userId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Geolocation>() {});
+            .withClientId(clientId)
+            .build();
   }
 
   /**
    * Get a user&#39;s Geolocation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Geolocation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Geolocation getUserGeolocation(GetUserGeolocationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Geolocation>() {});
+    try {
+      ApiResponse<Geolocation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Geolocation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a user&#39;s Geolocation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Geolocation> getUserGeolocation(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Geolocation>invokeAPIVerbose(request, new TypeReference<Geolocation>() {});
+  public ApiResponse<Geolocation> getUserGeolocation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Geolocation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Geolocation> response = (ApiResponse<Geolocation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Geolocation> response = (ApiResponse<Geolocation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -189,10 +197,11 @@ public class GeolocationApi {
    * 
    * @param body Geolocation settings (required)
    * @return GeolocationSettings
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public GeolocationSettings patchGeolocationsSettings(GeolocationSettings body) throws IOException, ApiException {
-    return patchGeolocationsSettingsWithHttpInfo(body).getBody();
+    return  patchGeolocationsSettings(createPatchGeolocationsSettingsRequest(body));
   }
 
   /**
@@ -200,60 +209,64 @@ public class GeolocationApi {
    * 
    * @param body Geolocation settings (required)
    * @return GeolocationSettings
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GeolocationSettings> patchGeolocationsSettingsWithHttpInfo(GeolocationSettings body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchGeolocationsSettings");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/geolocations/settings".replaceAll("\\{format\\}","json");
+  public ApiResponse<GeolocationSettings> patchGeolocationsSettingsWithHttpInfo(GeolocationSettings body) throws IOException {
+    return patchGeolocationsSettings(createPatchGeolocationsSettingsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<GeolocationSettings>() {});
+  private PatchGeolocationsSettingsRequest createPatchGeolocationsSettingsRequest(GeolocationSettings body) {
+    return PatchGeolocationsSettingsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Patch a organization&#39;s GeolocationSettings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return GeolocationSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public GeolocationSettings patchGeolocationsSettings(PatchGeolocationsSettingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<GeolocationSettings>() {});
+    try {
+      ApiResponse<GeolocationSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GeolocationSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Patch a organization&#39;s GeolocationSettings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GeolocationSettings> patchGeolocationsSettings(ApiRequest<GeolocationSettings> request) throws IOException, ApiException {
-    return pcapiClient.<GeolocationSettings>invokeAPIVerbose(request, new TypeReference<GeolocationSettings>() {});
+  public ApiResponse<GeolocationSettings> patchGeolocationsSettings(ApiRequest<GeolocationSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GeolocationSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GeolocationSettings> response = (ApiResponse<GeolocationSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GeolocationSettings> response = (ApiResponse<GeolocationSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -263,10 +276,11 @@ public class GeolocationApi {
    * @param clientId client Id (required)
    * @param body Geolocation (required)
    * @return Geolocation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Geolocation patchUserGeolocation(String userId, String clientId, Geolocation body) throws IOException, ApiException {
-    return patchUserGeolocationWithHttpInfo(userId, clientId, body).getBody();
+    return  patchUserGeolocation(createPatchUserGeolocationRequest(userId, clientId, body));
   }
 
   /**
@@ -276,72 +290,68 @@ public class GeolocationApi {
    * @param clientId client Id (required)
    * @param body Geolocation (required)
    * @return Geolocation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Geolocation> patchUserGeolocationWithHttpInfo(String userId, String clientId, Geolocation body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling patchUserGeolocation");
-    }
-    
-    // verify the required parameter 'clientId' is set
-    if (clientId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'clientId' when calling patchUserGeolocation");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchUserGeolocation");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/geolocations/{clientId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()))
-      .replaceAll("\\{" + "clientId" + "\\}", pcapiClient.escapeString(clientId.toString()));
+  public ApiResponse<Geolocation> patchUserGeolocationWithHttpInfo(String userId, String clientId, Geolocation body) throws IOException {
+    return patchUserGeolocation(createPatchUserGeolocationRequest(userId, clientId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchUserGeolocationRequest createPatchUserGeolocationRequest(String userId, String clientId, Geolocation body) {
+    return PatchUserGeolocationRequest.builder()
+            .withUserId(userId)
 
+            .withClientId(clientId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Geolocation>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Patch a user&#39;s Geolocation
    * The geolocation object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the client as the user&#39;s primary geolocation source.  Option 2: Provide the &#39;latitude&#39; and &#39;longitude&#39; values.  This will enqueue an asynchronous update of the &#39;city&#39;, &#39;region&#39;, and &#39;country&#39;, generating a notification. A subsequent GET operation will include the new values for &#39;city&#39;, &#39;region&#39; and &#39;country&#39;.  Option 3:  Provide the &#39;city&#39;, &#39;region&#39;, &#39;country&#39; values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Geolocation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Geolocation patchUserGeolocation(PatchUserGeolocationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Geolocation>() {});
+    try {
+      ApiResponse<Geolocation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Geolocation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Patch a user&#39;s Geolocation
    * The geolocation object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the client as the user&#39;s primary geolocation source.  Option 2: Provide the &#39;latitude&#39; and &#39;longitude&#39; values.  This will enqueue an asynchronous update of the &#39;city&#39;, &#39;region&#39;, and &#39;country&#39;, generating a notification. A subsequent GET operation will include the new values for &#39;city&#39;, &#39;region&#39; and &#39;country&#39;.  Option 3:  Provide the &#39;city&#39;, &#39;region&#39;, &#39;country&#39; values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Geolocation> patchUserGeolocation(ApiRequest<Geolocation> request) throws IOException, ApiException {
-    return pcapiClient.<Geolocation>invokeAPIVerbose(request, new TypeReference<Geolocation>() {});
+  public ApiResponse<Geolocation> patchUserGeolocation(ApiRequest<Geolocation> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Geolocation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Geolocation> response = (ApiResponse<Geolocation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Geolocation> response = (ApiResponse<Geolocation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

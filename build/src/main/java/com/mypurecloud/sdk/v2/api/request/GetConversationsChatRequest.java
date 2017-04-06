@@ -60,9 +60,6 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class GetConversationsChatRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String chatId;
 	public String getChatId() {
 		return this.chatId;
@@ -141,6 +138,12 @@ public class GetConversationsChatRequest {
 
 
 		public GetConversationsChatRequest build() {
+            
+            // verify the required parameter 'chatId' is set
+            if (request.chatId == null) {
+                throw new IllegalStateException("Missing the required parameter 'chatId' when building request for GetConversationsChatRequest.");
+            }
+            
 			return request;
 		}
 	}

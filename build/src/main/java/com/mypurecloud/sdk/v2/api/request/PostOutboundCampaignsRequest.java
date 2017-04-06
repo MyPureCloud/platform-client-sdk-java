@@ -55,9 +55,6 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PostOutboundCampaignsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Campaign body;
 	public Campaign getBody() {
 		return this.body;
@@ -136,6 +133,12 @@ public class PostOutboundCampaignsRequest {
 
 
 		public PostOutboundCampaignsRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostOutboundCampaignsRequest.");
+            }
+            
 			return request;
 		}
 	}

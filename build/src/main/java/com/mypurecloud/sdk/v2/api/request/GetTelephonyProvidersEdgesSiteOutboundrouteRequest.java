@@ -84,9 +84,6 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesSiteOutboundrouteRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String siteId;
 	public String getSiteId() {
 		return this.siteId;
@@ -191,6 +188,17 @@ public class GetTelephonyProvidersEdgesSiteOutboundrouteRequest {
 
 
 		public GetTelephonyProvidersEdgesSiteOutboundrouteRequest build() {
+            
+            // verify the required parameter 'siteId' is set
+            if (request.siteId == null) {
+                throw new IllegalStateException("Missing the required parameter 'siteId' when building request for GetTelephonyProvidersEdgesSiteOutboundrouteRequest.");
+            }
+            
+            // verify the required parameter 'outboundRouteId' is set
+            if (request.outboundRouteId == null) {
+                throw new IllegalStateException("Missing the required parameter 'outboundRouteId' when building request for GetTelephonyProvidersEdgesSiteOutboundrouteRequest.");
+            }
+            
 			return request;
 		}
 	}

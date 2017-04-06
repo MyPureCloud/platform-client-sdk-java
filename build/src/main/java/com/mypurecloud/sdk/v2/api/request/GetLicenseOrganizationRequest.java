@@ -27,9 +27,6 @@ import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
 import com.mypurecloud.sdk.v2.model.LicenseUpdateResponse;
 
 public class GetLicenseOrganizationRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -75,6 +72,7 @@ public class GetLicenseOrganizationRequest {
 
 
 		public GetLicenseOrganizationRequest build() {
+            
 			return request;
 		}
 	}

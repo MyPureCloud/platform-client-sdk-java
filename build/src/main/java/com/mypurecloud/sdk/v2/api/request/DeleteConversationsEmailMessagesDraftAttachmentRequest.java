@@ -60,9 +60,6 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class DeleteConversationsEmailMessagesDraftAttachmentRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String emailId;
 	public String getEmailId() {
 		return this.emailId;
@@ -167,6 +164,17 @@ public class DeleteConversationsEmailMessagesDraftAttachmentRequest {
 
 
 		public DeleteConversationsEmailMessagesDraftAttachmentRequest build() {
+            
+            // verify the required parameter 'emailId' is set
+            if (request.emailId == null) {
+                throw new IllegalStateException("Missing the required parameter 'emailId' when building request for DeleteConversationsEmailMessagesDraftAttachmentRequest.");
+            }
+            
+            // verify the required parameter 'attachmentId' is set
+            if (request.attachmentId == null) {
+                throw new IllegalStateException("Missing the required parameter 'attachmentId' when building request for DeleteConversationsEmailMessagesDraftAttachmentRequest.");
+            }
+            
 			return request;
 		}
 	}

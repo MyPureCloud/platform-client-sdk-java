@@ -26,9 +26,6 @@ import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
 
 public class GetGreetingsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -114,6 +111,7 @@ public class GetGreetingsRequest {
 
 
 		public GetGreetingsRequest build() {
+            
 			return request;
 		}
 	}

@@ -42,9 +42,6 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class PostArchitectPromptsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Prompt body;
 	public Prompt getBody() {
 		return this.body;
@@ -110,6 +107,7 @@ public class PostArchitectPromptsRequest {
 
 
 		public PostArchitectPromptsRequest build() {
+            
 			return request;
 		}
 	}

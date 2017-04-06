@@ -27,9 +27,6 @@ import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
 
 public class DeleteResponsemanagementLibraryRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String libraryId;
 	public String getLibraryId() {
 		return this.libraryId;
@@ -108,6 +105,12 @@ public class DeleteResponsemanagementLibraryRequest {
 
 
 		public DeleteResponsemanagementLibraryRequest build() {
+            
+            // verify the required parameter 'libraryId' is set
+            if (request.libraryId == null) {
+                throw new IllegalStateException("Missing the required parameter 'libraryId' when building request for DeleteResponsemanagementLibraryRequest.");
+            }
+            
 			return request;
 		}
 	}

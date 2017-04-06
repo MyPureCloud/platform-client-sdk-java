@@ -33,9 +33,6 @@ import com.mypurecloud.sdk.v2.model.Salesforce;
 import com.mypurecloud.sdk.v2.model.OAuthProvider;
 
 public class PutIdentityprovidersPingRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private PingIdentity body;
 	public PingIdentity getBody() {
 		return this.body;
@@ -114,6 +111,12 @@ public class PutIdentityprovidersPingRequest {
 
 
 		public PutIdentityprovidersPingRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutIdentityprovidersPingRequest.");
+            }
+            
 			return request;
 		}
 	}

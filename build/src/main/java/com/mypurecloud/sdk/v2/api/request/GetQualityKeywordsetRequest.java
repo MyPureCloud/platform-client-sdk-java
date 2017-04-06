@@ -38,9 +38,6 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class GetQualityKeywordsetRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String keywordSetId;
 	public String getKeywordSetId() {
 		return this.keywordSetId;
@@ -119,6 +116,12 @@ public class GetQualityKeywordsetRequest {
 
 
 		public GetQualityKeywordsetRequest build() {
+            
+            // verify the required parameter 'keywordSetId' is set
+            if (request.keywordSetId == null) {
+                throw new IllegalStateException("Missing the required parameter 'keywordSetId' when building request for GetQualityKeywordsetRequest.");
+            }
+            
 			return request;
 		}
 	}

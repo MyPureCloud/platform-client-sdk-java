@@ -47,9 +47,6 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class GetUserRoutingskillsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -188,6 +185,12 @@ public class GetUserRoutingskillsRequest {
 
 
 		public GetUserRoutingskillsRequest build() {
+            
+            // verify the required parameter 'userId' is set
+            if (request.userId == null) {
+                throw new IllegalStateException("Missing the required parameter 'userId' when building request for GetUserRoutingskillsRequest.");
+            }
+            
 			return request;
 		}
 	}

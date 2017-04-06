@@ -31,9 +31,6 @@ import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 public class DeleteVoicemailMessageRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String messageId;
 	public String getMessageId() {
 		return this.messageId;
@@ -112,6 +109,12 @@ public class DeleteVoicemailMessageRequest {
 
 
 		public DeleteVoicemailMessageRequest build() {
+            
+            // verify the required parameter 'messageId' is set
+            if (request.messageId == null) {
+                throw new IllegalStateException("Missing the required parameter 'messageId' when building request for DeleteVoicemailMessageRequest.");
+            }
+            
 			return request;
 		}
 	}

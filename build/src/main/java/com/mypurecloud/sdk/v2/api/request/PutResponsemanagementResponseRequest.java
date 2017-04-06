@@ -27,9 +27,6 @@ import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
 
 public class PutResponsemanagementResponseRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String responseId;
 	public String getResponseId() {
 		return this.responseId;
@@ -154,6 +151,17 @@ public class PutResponsemanagementResponseRequest {
 
 
 		public PutResponsemanagementResponseRequest build() {
+            
+            // verify the required parameter 'responseId' is set
+            if (request.responseId == null) {
+                throw new IllegalStateException("Missing the required parameter 'responseId' when building request for PutResponsemanagementResponseRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutResponsemanagementResponseRequest.");
+            }
+            
 			return request;
 		}
 	}

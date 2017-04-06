@@ -31,9 +31,6 @@ import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 
 public class GetWorkforcemanagementManagementunitsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String selector;
 	public String getSelector() {
 		return this.selector;
@@ -139,6 +136,7 @@ public class GetWorkforcemanagementManagementunitsRequest {
 
 
 		public GetWorkforcemanagementManagementunitsRequest build() {
+            
 			return request;
 		}
 	}

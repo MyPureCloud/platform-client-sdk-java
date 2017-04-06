@@ -39,9 +39,6 @@ import com.mypurecloud.sdk.v2.model.UserPresenceRuleContainer;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 public class GetAlertingInteractionstatsAlertsUnreadRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -87,6 +84,7 @@ public class GetAlertingInteractionstatsAlertsUnreadRequest {
 
 
 		public GetAlertingInteractionstatsAlertsUnreadRequest build() {
+            
 			return request;
 		}
 	}

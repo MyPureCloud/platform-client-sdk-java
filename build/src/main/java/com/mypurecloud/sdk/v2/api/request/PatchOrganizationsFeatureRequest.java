@@ -25,9 +25,6 @@ import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
 import com.mypurecloud.sdk.v2.model.FeatureState;
 
 public class PatchOrganizationsFeatureRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String featureName;
 	public String getFeatureName() {
 		return this.featureName;
@@ -132,6 +129,17 @@ public class PatchOrganizationsFeatureRequest {
 
 
 		public PatchOrganizationsFeatureRequest build() {
+            
+            // verify the required parameter 'featureName' is set
+            if (request.featureName == null) {
+                throw new IllegalStateException("Missing the required parameter 'featureName' when building request for PatchOrganizationsFeatureRequest.");
+            }
+            
+            // verify the required parameter 'enabled' is set
+            if (request.enabled == null) {
+                throw new IllegalStateException("Missing the required parameter 'enabled' when building request for PatchOrganizationsFeatureRequest.");
+            }
+            
 			return request;
 		}
 	}

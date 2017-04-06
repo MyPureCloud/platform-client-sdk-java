@@ -50,9 +50,6 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class GetContentmanagementWorkspaceMemberRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String workspaceId;
 	public String getWorkspaceId() {
 		return this.workspaceId;
@@ -177,6 +174,17 @@ public class GetContentmanagementWorkspaceMemberRequest {
 
 
 		public GetContentmanagementWorkspaceMemberRequest build() {
+            
+            // verify the required parameter 'workspaceId' is set
+            if (request.workspaceId == null) {
+                throw new IllegalStateException("Missing the required parameter 'workspaceId' when building request for GetContentmanagementWorkspaceMemberRequest.");
+            }
+            
+            // verify the required parameter 'memberId' is set
+            if (request.memberId == null) {
+                throw new IllegalStateException("Missing the required parameter 'memberId' when building request for GetContentmanagementWorkspaceMemberRequest.");
+            }
+            
 			return request;
 		}
 	}

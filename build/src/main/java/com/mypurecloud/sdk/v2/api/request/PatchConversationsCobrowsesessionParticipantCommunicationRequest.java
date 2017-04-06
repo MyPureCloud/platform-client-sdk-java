@@ -60,9 +60,6 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PatchConversationsCobrowsesessionParticipantCommunicationRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String cobrowseId;
 	public String getCobrowseId() {
 		return this.cobrowseId;
@@ -219,6 +216,27 @@ public class PatchConversationsCobrowsesessionParticipantCommunicationRequest {
 
 
 		public PatchConversationsCobrowsesessionParticipantCommunicationRequest build() {
+            
+            // verify the required parameter 'cobrowseId' is set
+            if (request.cobrowseId == null) {
+                throw new IllegalStateException("Missing the required parameter 'cobrowseId' when building request for PatchConversationsCobrowsesessionParticipantCommunicationRequest.");
+            }
+            
+            // verify the required parameter 'participantId' is set
+            if (request.participantId == null) {
+                throw new IllegalStateException("Missing the required parameter 'participantId' when building request for PatchConversationsCobrowsesessionParticipantCommunicationRequest.");
+            }
+            
+            // verify the required parameter 'communicationId' is set
+            if (request.communicationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'communicationId' when building request for PatchConversationsCobrowsesessionParticipantCommunicationRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchConversationsCobrowsesessionParticipantCommunicationRequest.");
+            }
+            
 			return request;
 		}
 	}

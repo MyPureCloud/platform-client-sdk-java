@@ -31,9 +31,6 @@ import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 public class GetVoicemailUserpolicyRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -112,6 +109,12 @@ public class GetVoicemailUserpolicyRequest {
 
 
 		public GetVoicemailUserpolicyRequest build() {
+            
+            // verify the required parameter 'userId' is set
+            if (request.userId == null) {
+                throw new IllegalStateException("Missing the required parameter 'userId' when building request for GetVoicemailUserpolicyRequest.");
+            }
+            
 			return request;
 		}
 	}

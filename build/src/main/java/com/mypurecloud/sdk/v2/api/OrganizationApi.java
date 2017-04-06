@@ -45,10 +45,11 @@ public class OrganizationApi {
    * 
    * @param type Field type (required)
    * @return FieldConfig
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FieldConfig getFieldconfig(String type) throws IOException, ApiException {
-    return getFieldconfigWithHttpInfo(type).getBody();
+    return  getFieldconfig(createGetFieldconfigRequest(type));
   }
 
   /**
@@ -56,126 +57,137 @@ public class OrganizationApi {
    * 
    * @param type Field type (required)
    * @return FieldConfig
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FieldConfig> getFieldconfigWithHttpInfo(String type) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'type' is set
-    if (type == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'type' when calling getFieldconfig");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/fieldconfig".replaceAll("\\{format\\}","json");
+  public ApiResponse<FieldConfig> getFieldconfigWithHttpInfo(String type) throws IOException {
+    return getFieldconfig(createGetFieldconfigRequest(type).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "type", type));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<FieldConfig>() {});
+  private GetFieldconfigRequest createGetFieldconfigRequest(String type) {
+    return GetFieldconfigRequest.builder()
+            .withType(type)
+            .build();
   }
 
   /**
    * Fetch field config for an entity type
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return FieldConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FieldConfig getFieldconfig(GetFieldconfigRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FieldConfig>() {});
+    try {
+      ApiResponse<FieldConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FieldConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Fetch field config for an entity type
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FieldConfig> getFieldconfig(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<FieldConfig>invokeAPIVerbose(request, new TypeReference<FieldConfig>() {});
+  public ApiResponse<FieldConfig> getFieldconfig(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FieldConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FieldConfig> response = (ApiResponse<FieldConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FieldConfig> response = (ApiResponse<FieldConfig>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get organization.
    * 
    * @return Organization
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Organization getOrganizationsMe() throws IOException, ApiException {
-    return getOrganizationsMeWithHttpInfo().getBody();
+    return  getOrganizationsMe(createGetOrganizationsMeRequest());
   }
 
   /**
    * Get organization.
    * 
    * @return Organization
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Organization> getOrganizationsMeWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/organizations/me".replaceAll("\\{format\\}","json");
+  public ApiResponse<Organization> getOrganizationsMeWithHttpInfo() throws IOException {
+    return getOrganizationsMe(createGetOrganizationsMeRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Organization>() {});
+  private GetOrganizationsMeRequest createGetOrganizationsMeRequest() {
+    return GetOrganizationsMeRequest.builder()            .build();
   }
 
   /**
    * Get organization.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Organization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Organization getOrganizationsMe(GetOrganizationsMeRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Organization>() {});
+    try {
+      ApiResponse<Organization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Organization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get organization.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Organization> getOrganizationsMe(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Organization>invokeAPIVerbose(request, new TypeReference<Organization>() {});
+  public ApiResponse<Organization> getOrganizationsMe(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Organization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Organization> response = (ApiResponse<Organization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Organization> response = (ApiResponse<Organization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -184,10 +196,11 @@ public class OrganizationApi {
    * @param featureName Organization feature (required)
    * @param enabled New state of feature (required)
    * @return OrganizationFeatures
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrganizationFeatures patchOrganizationsFeature(String featureName, FeatureState enabled) throws IOException, ApiException {
-    return patchOrganizationsFeatureWithHttpInfo(featureName, enabled).getBody();
+    return  patchOrganizationsFeature(createPatchOrganizationsFeatureRequest(featureName, enabled));
   }
 
   /**
@@ -196,66 +209,66 @@ public class OrganizationApi {
    * @param featureName Organization feature (required)
    * @param enabled New state of feature (required)
    * @return OrganizationFeatures
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationFeatures> patchOrganizationsFeatureWithHttpInfo(String featureName, FeatureState enabled) throws IOException, ApiException {
-    Object pclocalVarPostBody = enabled;
-    
-    // verify the required parameter 'featureName' is set
-    if (featureName == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'featureName' when calling patchOrganizationsFeature");
-    }
-    
-    // verify the required parameter 'enabled' is set
-    if (enabled == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'enabled' when calling patchOrganizationsFeature");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/organizations/features/{featureName}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "featureName" + "\\}", pcapiClient.escapeString(featureName.toString()));
+  public ApiResponse<OrganizationFeatures> patchOrganizationsFeatureWithHttpInfo(String featureName, FeatureState enabled) throws IOException {
+    return patchOrganizationsFeature(createPatchOrganizationsFeatureRequest(featureName, enabled).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchOrganizationsFeatureRequest createPatchOrganizationsFeatureRequest(String featureName, FeatureState enabled) {
+    return PatchOrganizationsFeatureRequest.builder()
+            .withFeatureName(featureName)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OrganizationFeatures>() {});
+            .withEnabled(enabled)
+            .build();
   }
 
   /**
    * Update organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OrganizationFeatures
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrganizationFeatures patchOrganizationsFeature(PatchOrganizationsFeatureRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrganizationFeatures>() {});
+    try {
+      ApiResponse<OrganizationFeatures> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrganizationFeatures>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationFeatures> patchOrganizationsFeature(ApiRequest<FeatureState> request) throws IOException, ApiException {
-    return pcapiClient.<OrganizationFeatures>invokeAPIVerbose(request, new TypeReference<OrganizationFeatures>() {});
+  public ApiResponse<OrganizationFeatures> patchOrganizationsFeature(ApiRequest<FeatureState> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrganizationFeatures>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationFeatures> response = (ApiResponse<OrganizationFeatures>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrganizationFeatures> response = (ApiResponse<OrganizationFeatures>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -263,10 +276,11 @@ public class OrganizationApi {
    * 
    * @param body Organization (optional)
    * @return Organization
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Organization putOrganizationsMe(Organization body) throws IOException, ApiException {
-    return putOrganizationsMeWithHttpInfo(body).getBody();
+    return  putOrganizationsMe(createPutOrganizationsMeRequest(body));
   }
 
   /**
@@ -274,55 +288,64 @@ public class OrganizationApi {
    * 
    * @param body Organization (optional)
    * @return Organization
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Organization> putOrganizationsMeWithHttpInfo(Organization body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/organizations/me".replaceAll("\\{format\\}","json");
+  public ApiResponse<Organization> putOrganizationsMeWithHttpInfo(Organization body) throws IOException {
+    return putOrganizationsMe(createPutOrganizationsMeRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Organization>() {});
+  private PutOrganizationsMeRequest createPutOrganizationsMeRequest(Organization body) {
+    return PutOrganizationsMeRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update organization.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Organization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Organization putOrganizationsMe(PutOrganizationsMeRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Organization>() {});
+    try {
+      ApiResponse<Organization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Organization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update organization.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Organization> putOrganizationsMe(ApiRequest<Organization> request) throws IOException, ApiException {
-    return pcapiClient.<Organization>invokeAPIVerbose(request, new TypeReference<Organization>() {});
+  public ApiResponse<Organization> putOrganizationsMe(ApiRequest<Organization> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Organization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Organization> response = (ApiResponse<Organization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Organization> response = (ApiResponse<Organization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

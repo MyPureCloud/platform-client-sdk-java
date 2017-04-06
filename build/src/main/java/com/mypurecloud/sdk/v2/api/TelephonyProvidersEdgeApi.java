@@ -219,10 +219,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param edgeId Edge ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdge(String edgeId) throws IOException, ApiException {
-    return deleteTelephonyProvidersEdgeWithHttpInfo(edgeId).getBody();
+    return  deleteTelephonyProvidersEdge(createDeleteTelephonyProvidersEdgeRequest(edgeId));
   }
 
   /**
@@ -230,61 +231,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param edgeId Edge ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgeWithHttpInfo(String edgeId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling deleteTelephonyProvidersEdge");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()));
+  public ApiResponse<String> deleteTelephonyProvidersEdgeWithHttpInfo(String edgeId) throws IOException {
+    return deleteTelephonyProvidersEdge(createDeleteTelephonyProvidersEdgeRequest(edgeId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteTelephonyProvidersEdgeRequest createDeleteTelephonyProvidersEdgeRequest(String edgeId) {
+    return DeleteTelephonyProvidersEdgeRequest.builder()
+            .withEdgeId(edgeId)
+            .build();
   }
 
   /**
    * Delete a edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdge(DeleteTelephonyProvidersEdgeRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete a edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdge(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteTelephonyProvidersEdge(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -292,10 +296,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param edgeId Edge ID (required)
    * @param interfaceId Interface ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteTelephonyProvidersEdgeLogicalinterface(String edgeId, String interfaceId) throws IOException, ApiException {
-    deleteTelephonyProvidersEdgeLogicalinterfaceWithHttpInfo(edgeId, interfaceId);
+     deleteTelephonyProvidersEdgeLogicalinterface(createDeleteTelephonyProvidersEdgeLogicalinterfaceRequest(edgeId, interfaceId));
   }
 
   /**
@@ -303,67 +308,65 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param edgeId Edge ID (required)
    * @param interfaceId Interface ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteTelephonyProvidersEdgeLogicalinterfaceWithHttpInfo(String edgeId, String interfaceId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling deleteTelephonyProvidersEdgeLogicalinterface");
-    }
-    
-    // verify the required parameter 'interfaceId' is set
-    if (interfaceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'interfaceId' when calling deleteTelephonyProvidersEdgeLogicalinterface");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()))
-      .replaceAll("\\{" + "interfaceId" + "\\}", pcapiClient.escapeString(interfaceId.toString()));
+  public ApiResponse<Void> deleteTelephonyProvidersEdgeLogicalinterfaceWithHttpInfo(String edgeId, String interfaceId) throws IOException {
+    return deleteTelephonyProvidersEdgeLogicalinterface(createDeleteTelephonyProvidersEdgeLogicalinterfaceRequest(edgeId, interfaceId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private DeleteTelephonyProvidersEdgeLogicalinterfaceRequest createDeleteTelephonyProvidersEdgeLogicalinterfaceRequest(String edgeId, String interfaceId) {
+    return DeleteTelephonyProvidersEdgeLogicalinterfaceRequest.builder()
+            .withEdgeId(edgeId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withInterfaceId(interfaceId)
+            .build();
   }
 
   /**
    * Delete an edge logical interface
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteTelephonyProvidersEdgeLogicalinterface(DeleteTelephonyProvidersEdgeLogicalinterfaceRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete an edge logical interface
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteTelephonyProvidersEdgeLogicalinterface(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteTelephonyProvidersEdgeLogicalinterface(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -371,10 +374,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param edgeId Edge ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgeSoftwareupdate(String edgeId) throws IOException, ApiException {
-    return deleteTelephonyProvidersEdgeSoftwareupdateWithHttpInfo(edgeId).getBody();
+    return  deleteTelephonyProvidersEdgeSoftwareupdate(createDeleteTelephonyProvidersEdgeSoftwareupdateRequest(edgeId));
   }
 
   /**
@@ -382,61 +386,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param edgeId Edge ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgeSoftwareupdateWithHttpInfo(String edgeId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling deleteTelephonyProvidersEdgeSoftwareupdate");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/softwareupdate".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()));
+  public ApiResponse<String> deleteTelephonyProvidersEdgeSoftwareupdateWithHttpInfo(String edgeId) throws IOException {
+    return deleteTelephonyProvidersEdgeSoftwareupdate(createDeleteTelephonyProvidersEdgeSoftwareupdateRequest(edgeId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteTelephonyProvidersEdgeSoftwareupdateRequest createDeleteTelephonyProvidersEdgeSoftwareupdateRequest(String edgeId) {
+    return DeleteTelephonyProvidersEdgeSoftwareupdateRequest.builder()
+            .withEdgeId(edgeId)
+            .build();
   }
 
   /**
    * Cancels any in-progress update for this edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgeSoftwareupdate(DeleteTelephonyProvidersEdgeSoftwareupdateRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Cancels any in-progress update for this edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgeSoftwareupdate(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteTelephonyProvidersEdgeSoftwareupdate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -444,10 +451,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param certificateId Certificate ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesCertificateauthority(String certificateId) throws IOException, ApiException {
-    return deleteTelephonyProvidersEdgesCertificateauthorityWithHttpInfo(certificateId).getBody();
+    return  deleteTelephonyProvidersEdgesCertificateauthority(createDeleteTelephonyProvidersEdgesCertificateauthorityRequest(certificateId));
   }
 
   /**
@@ -455,61 +463,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param certificateId Certificate ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesCertificateauthorityWithHttpInfo(String certificateId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'certificateId' is set
-    if (certificateId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'certificateId' when calling deleteTelephonyProvidersEdgesCertificateauthority");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/certificateauthorities/{certificateId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "certificateId" + "\\}", pcapiClient.escapeString(certificateId.toString()));
+  public ApiResponse<String> deleteTelephonyProvidersEdgesCertificateauthorityWithHttpInfo(String certificateId) throws IOException {
+    return deleteTelephonyProvidersEdgesCertificateauthority(createDeleteTelephonyProvidersEdgesCertificateauthorityRequest(certificateId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteTelephonyProvidersEdgesCertificateauthorityRequest createDeleteTelephonyProvidersEdgesCertificateauthorityRequest(String certificateId) {
+    return DeleteTelephonyProvidersEdgesCertificateauthorityRequest.builder()
+            .withCertificateId(certificateId)
+            .build();
   }
 
   /**
    * Delete a certificate authority.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesCertificateauthority(DeleteTelephonyProvidersEdgesCertificateauthorityRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete a certificate authority.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesCertificateauthority(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteTelephonyProvidersEdgesCertificateauthority(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -517,10 +528,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param didPoolId DID pool ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesDidpool(String didPoolId) throws IOException, ApiException {
-    return deleteTelephonyProvidersEdgesDidpoolWithHttpInfo(didPoolId).getBody();
+    return  deleteTelephonyProvidersEdgesDidpool(createDeleteTelephonyProvidersEdgesDidpoolRequest(didPoolId));
   }
 
   /**
@@ -528,61 +540,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param didPoolId DID pool ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesDidpoolWithHttpInfo(String didPoolId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'didPoolId' is set
-    if (didPoolId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'didPoolId' when calling deleteTelephonyProvidersEdgesDidpool");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/didpools/{didPoolId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "didPoolId" + "\\}", pcapiClient.escapeString(didPoolId.toString()));
+  public ApiResponse<String> deleteTelephonyProvidersEdgesDidpoolWithHttpInfo(String didPoolId) throws IOException {
+    return deleteTelephonyProvidersEdgesDidpool(createDeleteTelephonyProvidersEdgesDidpoolRequest(didPoolId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteTelephonyProvidersEdgesDidpoolRequest createDeleteTelephonyProvidersEdgesDidpoolRequest(String didPoolId) {
+    return DeleteTelephonyProvidersEdgesDidpoolRequest.builder()
+            .withDidPoolId(didPoolId)
+            .build();
   }
 
   /**
    * Delete a DID Pool by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesDidpool(DeleteTelephonyProvidersEdgesDidpoolRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete a DID Pool by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesDidpool(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteTelephonyProvidersEdgesDidpool(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -590,10 +605,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param edgeGroupId Edge group ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesEdgegroup(String edgeGroupId) throws IOException, ApiException {
-    return deleteTelephonyProvidersEdgesEdgegroupWithHttpInfo(edgeGroupId).getBody();
+    return  deleteTelephonyProvidersEdgesEdgegroup(createDeleteTelephonyProvidersEdgesEdgegroupRequest(edgeGroupId));
   }
 
   /**
@@ -601,61 +617,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param edgeGroupId Edge group ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesEdgegroupWithHttpInfo(String edgeGroupId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'edgeGroupId' is set
-    if (edgeGroupId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeGroupId' when calling deleteTelephonyProvidersEdgesEdgegroup");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeGroupId" + "\\}", pcapiClient.escapeString(edgeGroupId.toString()));
+  public ApiResponse<String> deleteTelephonyProvidersEdgesEdgegroupWithHttpInfo(String edgeGroupId) throws IOException {
+    return deleteTelephonyProvidersEdgesEdgegroup(createDeleteTelephonyProvidersEdgesEdgegroupRequest(edgeGroupId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteTelephonyProvidersEdgesEdgegroupRequest createDeleteTelephonyProvidersEdgesEdgegroupRequest(String edgeGroupId) {
+    return DeleteTelephonyProvidersEdgesEdgegroupRequest.builder()
+            .withEdgeGroupId(edgeGroupId)
+            .build();
   }
 
   /**
    * Delete an edge group.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesEdgegroup(DeleteTelephonyProvidersEdgesEdgegroupRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete an edge group.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesEdgegroup(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteTelephonyProvidersEdgesEdgegroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -663,10 +682,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param endpointId Endpoint ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesEndpoint(String endpointId) throws IOException, ApiException {
-    return deleteTelephonyProvidersEdgesEndpointWithHttpInfo(endpointId).getBody();
+    return  deleteTelephonyProvidersEdgesEndpoint(createDeleteTelephonyProvidersEdgesEndpointRequest(endpointId));
   }
 
   /**
@@ -674,61 +694,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param endpointId Endpoint ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesEndpointWithHttpInfo(String endpointId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'endpointId' is set
-    if (endpointId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'endpointId' when calling deleteTelephonyProvidersEdgesEndpoint");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/endpoints/{endpointId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "endpointId" + "\\}", pcapiClient.escapeString(endpointId.toString()));
+  public ApiResponse<String> deleteTelephonyProvidersEdgesEndpointWithHttpInfo(String endpointId) throws IOException {
+    return deleteTelephonyProvidersEdgesEndpoint(createDeleteTelephonyProvidersEdgesEndpointRequest(endpointId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteTelephonyProvidersEdgesEndpointRequest createDeleteTelephonyProvidersEdgesEndpointRequest(String endpointId) {
+    return DeleteTelephonyProvidersEdgesEndpointRequest.builder()
+            .withEndpointId(endpointId)
+            .build();
   }
 
   /**
    * Delete endpoint
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesEndpoint(DeleteTelephonyProvidersEdgesEndpointRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete endpoint
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesEndpoint(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteTelephonyProvidersEdgesEndpoint(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -736,10 +759,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param extensionPoolId Extension pool ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesExtensionpool(String extensionPoolId) throws IOException, ApiException {
-    return deleteTelephonyProvidersEdgesExtensionpoolWithHttpInfo(extensionPoolId).getBody();
+    return  deleteTelephonyProvidersEdgesExtensionpool(createDeleteTelephonyProvidersEdgesExtensionpoolRequest(extensionPoolId));
   }
 
   /**
@@ -747,61 +771,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param extensionPoolId Extension pool ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesExtensionpoolWithHttpInfo(String extensionPoolId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'extensionPoolId' is set
-    if (extensionPoolId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'extensionPoolId' when calling deleteTelephonyProvidersEdgesExtensionpool");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "extensionPoolId" + "\\}", pcapiClient.escapeString(extensionPoolId.toString()));
+  public ApiResponse<String> deleteTelephonyProvidersEdgesExtensionpoolWithHttpInfo(String extensionPoolId) throws IOException {
+    return deleteTelephonyProvidersEdgesExtensionpool(createDeleteTelephonyProvidersEdgesExtensionpoolRequest(extensionPoolId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteTelephonyProvidersEdgesExtensionpoolRequest createDeleteTelephonyProvidersEdgesExtensionpoolRequest(String extensionPoolId) {
+    return DeleteTelephonyProvidersEdgesExtensionpoolRequest.builder()
+            .withExtensionPoolId(extensionPoolId)
+            .build();
   }
 
   /**
    * Delete an extension pool by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesExtensionpool(DeleteTelephonyProvidersEdgesExtensionpoolRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete an extension pool by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesExtensionpool(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteTelephonyProvidersEdgesExtensionpool(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -809,10 +836,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param outboundRouteId Outbound route ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesOutboundroute(String outboundRouteId) throws IOException, ApiException {
-    return deleteTelephonyProvidersEdgesOutboundrouteWithHttpInfo(outboundRouteId).getBody();
+    return  deleteTelephonyProvidersEdgesOutboundroute(createDeleteTelephonyProvidersEdgesOutboundrouteRequest(outboundRouteId));
   }
 
   /**
@@ -820,61 +848,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param outboundRouteId Outbound route ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesOutboundrouteWithHttpInfo(String outboundRouteId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'outboundRouteId' is set
-    if (outboundRouteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'outboundRouteId' when calling deleteTelephonyProvidersEdgesOutboundroute");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "outboundRouteId" + "\\}", pcapiClient.escapeString(outboundRouteId.toString()));
+  public ApiResponse<String> deleteTelephonyProvidersEdgesOutboundrouteWithHttpInfo(String outboundRouteId) throws IOException {
+    return deleteTelephonyProvidersEdgesOutboundroute(createDeleteTelephonyProvidersEdgesOutboundrouteRequest(outboundRouteId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteTelephonyProvidersEdgesOutboundrouteRequest createDeleteTelephonyProvidersEdgesOutboundrouteRequest(String outboundRouteId) {
+    return DeleteTelephonyProvidersEdgesOutboundrouteRequest.builder()
+            .withOutboundRouteId(outboundRouteId)
+            .build();
   }
 
   /**
    * Delete Outbound Route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesOutboundroute(DeleteTelephonyProvidersEdgesOutboundrouteRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete Outbound Route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesOutboundroute(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteTelephonyProvidersEdgesOutboundroute(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -882,10 +913,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param phoneId Phone ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesPhone(String phoneId) throws IOException, ApiException {
-    return deleteTelephonyProvidersEdgesPhoneWithHttpInfo(phoneId).getBody();
+    return  deleteTelephonyProvidersEdgesPhone(createDeleteTelephonyProvidersEdgesPhoneRequest(phoneId));
   }
 
   /**
@@ -893,61 +925,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param phoneId Phone ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesPhoneWithHttpInfo(String phoneId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'phoneId' is set
-    if (phoneId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'phoneId' when calling deleteTelephonyProvidersEdgesPhone");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/phones/{phoneId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "phoneId" + "\\}", pcapiClient.escapeString(phoneId.toString()));
+  public ApiResponse<String> deleteTelephonyProvidersEdgesPhoneWithHttpInfo(String phoneId) throws IOException {
+    return deleteTelephonyProvidersEdgesPhone(createDeleteTelephonyProvidersEdgesPhoneRequest(phoneId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteTelephonyProvidersEdgesPhoneRequest createDeleteTelephonyProvidersEdgesPhoneRequest(String phoneId) {
+    return DeleteTelephonyProvidersEdgesPhoneRequest.builder()
+            .withPhoneId(phoneId)
+            .build();
   }
 
   /**
    * Delete a Phone by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesPhone(DeleteTelephonyProvidersEdgesPhoneRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete a Phone by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesPhone(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteTelephonyProvidersEdgesPhone(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -955,10 +990,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param phoneBaseId Phone base ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesPhonebasesetting(String phoneBaseId) throws IOException, ApiException {
-    return deleteTelephonyProvidersEdgesPhonebasesettingWithHttpInfo(phoneBaseId).getBody();
+    return  deleteTelephonyProvidersEdgesPhonebasesetting(createDeleteTelephonyProvidersEdgesPhonebasesettingRequest(phoneBaseId));
   }
 
   /**
@@ -966,61 +1002,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param phoneBaseId Phone base ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesPhonebasesettingWithHttpInfo(String phoneBaseId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'phoneBaseId' is set
-    if (phoneBaseId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'phoneBaseId' when calling deleteTelephonyProvidersEdgesPhonebasesetting");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "phoneBaseId" + "\\}", pcapiClient.escapeString(phoneBaseId.toString()));
+  public ApiResponse<String> deleteTelephonyProvidersEdgesPhonebasesettingWithHttpInfo(String phoneBaseId) throws IOException {
+    return deleteTelephonyProvidersEdgesPhonebasesetting(createDeleteTelephonyProvidersEdgesPhonebasesettingRequest(phoneBaseId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteTelephonyProvidersEdgesPhonebasesettingRequest createDeleteTelephonyProvidersEdgesPhonebasesettingRequest(String phoneBaseId) {
+    return DeleteTelephonyProvidersEdgesPhonebasesettingRequest.builder()
+            .withPhoneBaseId(phoneBaseId)
+            .build();
   }
 
   /**
    * Delete a Phone Base Settings by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesPhonebasesetting(DeleteTelephonyProvidersEdgesPhonebasesettingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete a Phone Base Settings by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesPhonebasesetting(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteTelephonyProvidersEdgesPhonebasesetting(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1028,10 +1067,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param siteId Site ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesSite(String siteId) throws IOException, ApiException {
-    return deleteTelephonyProvidersEdgesSiteWithHttpInfo(siteId).getBody();
+    return  deleteTelephonyProvidersEdgesSite(createDeleteTelephonyProvidersEdgesSiteRequest(siteId));
   }
 
   /**
@@ -1039,61 +1079,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param siteId Site ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesSiteWithHttpInfo(String siteId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'siteId' is set
-    if (siteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling deleteTelephonyProvidersEdgesSite");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/sites/{siteId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "siteId" + "\\}", pcapiClient.escapeString(siteId.toString()));
+  public ApiResponse<String> deleteTelephonyProvidersEdgesSiteWithHttpInfo(String siteId) throws IOException {
+    return deleteTelephonyProvidersEdgesSite(createDeleteTelephonyProvidersEdgesSiteRequest(siteId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteTelephonyProvidersEdgesSiteRequest createDeleteTelephonyProvidersEdgesSiteRequest(String siteId) {
+    return DeleteTelephonyProvidersEdgesSiteRequest.builder()
+            .withSiteId(siteId)
+            .build();
   }
 
   /**
    * Delete a Site by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesSite(DeleteTelephonyProvidersEdgesSiteRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete a Site by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesSite(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteTelephonyProvidersEdgesSite(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1102,10 +1145,11 @@ public class TelephonyProvidersEdgeApi {
    * @param siteId Site ID (required)
    * @param outboundRouteId Outbound route ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesSiteOutboundroute(String siteId, String outboundRouteId) throws IOException, ApiException {
-    return deleteTelephonyProvidersEdgesSiteOutboundrouteWithHttpInfo(siteId, outboundRouteId).getBody();
+    return  deleteTelephonyProvidersEdgesSiteOutboundroute(createDeleteTelephonyProvidersEdgesSiteOutboundrouteRequest(siteId, outboundRouteId));
   }
 
   /**
@@ -1114,67 +1158,66 @@ public class TelephonyProvidersEdgeApi {
    * @param siteId Site ID (required)
    * @param outboundRouteId Outbound route ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesSiteOutboundrouteWithHttpInfo(String siteId, String outboundRouteId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'siteId' is set
-    if (siteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling deleteTelephonyProvidersEdgesSiteOutboundroute");
-    }
-    
-    // verify the required parameter 'outboundRouteId' is set
-    if (outboundRouteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'outboundRouteId' when calling deleteTelephonyProvidersEdgesSiteOutboundroute");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "siteId" + "\\}", pcapiClient.escapeString(siteId.toString()))
-      .replaceAll("\\{" + "outboundRouteId" + "\\}", pcapiClient.escapeString(outboundRouteId.toString()));
+  public ApiResponse<String> deleteTelephonyProvidersEdgesSiteOutboundrouteWithHttpInfo(String siteId, String outboundRouteId) throws IOException {
+    return deleteTelephonyProvidersEdgesSiteOutboundroute(createDeleteTelephonyProvidersEdgesSiteOutboundrouteRequest(siteId, outboundRouteId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private DeleteTelephonyProvidersEdgesSiteOutboundrouteRequest createDeleteTelephonyProvidersEdgesSiteOutboundrouteRequest(String siteId, String outboundRouteId) {
+    return DeleteTelephonyProvidersEdgesSiteOutboundrouteRequest.builder()
+            .withSiteId(siteId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+            .withOutboundRouteId(outboundRouteId)
+            .build();
   }
 
   /**
    * Delete Outbound Route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesSiteOutboundroute(DeleteTelephonyProvidersEdgesSiteOutboundrouteRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete Outbound Route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesSiteOutboundroute(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteTelephonyProvidersEdgesSiteOutboundroute(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1182,10 +1225,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param trunkBaseSettingsId Trunk Base ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesTrunkbasesetting(String trunkBaseSettingsId) throws IOException, ApiException {
-    return deleteTelephonyProvidersEdgesTrunkbasesettingWithHttpInfo(trunkBaseSettingsId).getBody();
+    return  deleteTelephonyProvidersEdgesTrunkbasesetting(createDeleteTelephonyProvidersEdgesTrunkbasesettingRequest(trunkBaseSettingsId));
   }
 
   /**
@@ -1193,61 +1237,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param trunkBaseSettingsId Trunk Base ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesTrunkbasesettingWithHttpInfo(String trunkBaseSettingsId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'trunkBaseSettingsId' is set
-    if (trunkBaseSettingsId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'trunkBaseSettingsId' when calling deleteTelephonyProvidersEdgesTrunkbasesetting");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "trunkBaseSettingsId" + "\\}", pcapiClient.escapeString(trunkBaseSettingsId.toString()));
+  public ApiResponse<String> deleteTelephonyProvidersEdgesTrunkbasesettingWithHttpInfo(String trunkBaseSettingsId) throws IOException {
+    return deleteTelephonyProvidersEdgesTrunkbasesetting(createDeleteTelephonyProvidersEdgesTrunkbasesettingRequest(trunkBaseSettingsId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteTelephonyProvidersEdgesTrunkbasesettingRequest createDeleteTelephonyProvidersEdgesTrunkbasesettingRequest(String trunkBaseSettingsId) {
+    return DeleteTelephonyProvidersEdgesTrunkbasesettingRequest.builder()
+            .withTrunkBaseSettingsId(trunkBaseSettingsId)
+            .build();
   }
 
   /**
    * Delete a Trunk Base Settings object by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteTelephonyProvidersEdgesTrunkbasesetting(DeleteTelephonyProvidersEdgesTrunkbasesettingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete a Trunk Base Settings object by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesTrunkbasesetting(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteTelephonyProvidersEdgesTrunkbasesetting(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1256,10 +1303,11 @@ public class TelephonyProvidersEdgeApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return SchemaCategoryEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SchemaCategoryEntityListing getConfigurationSchemasEdgesVnext(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getConfigurationSchemasEdgesVnextWithHttpInfo(pageSize, pageNumber).getBody();
+    return  getConfigurationSchemasEdgesVnext(createGetConfigurationSchemasEdgesVnextRequest(pageSize, pageNumber));
   }
 
   /**
@@ -1268,57 +1316,66 @@ public class TelephonyProvidersEdgeApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return SchemaCategoryEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SchemaCategoryEntityListing> getConfigurationSchemasEdgesVnextWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/configuration/schemas/edges/vnext".replaceAll("\\{format\\}","json");
+  public ApiResponse<SchemaCategoryEntityListing> getConfigurationSchemasEdgesVnextWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getConfigurationSchemasEdgesVnext(createGetConfigurationSchemasEdgesVnextRequest(pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConfigurationSchemasEdgesVnextRequest createGetConfigurationSchemasEdgesVnextRequest(Integer pageSize, Integer pageNumber) {
+    return GetConfigurationSchemasEdgesVnextRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<SchemaCategoryEntityListing>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * Lists available schema categories (Deprecated)
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return SchemaCategoryEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SchemaCategoryEntityListing getConfigurationSchemasEdgesVnext(GetConfigurationSchemasEdgesVnextRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SchemaCategoryEntityListing>() {});
+    try {
+      ApiResponse<SchemaCategoryEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SchemaCategoryEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Lists available schema categories (Deprecated)
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SchemaCategoryEntityListing> getConfigurationSchemasEdgesVnext(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<SchemaCategoryEntityListing>invokeAPIVerbose(request, new TypeReference<SchemaCategoryEntityListing>() {});
+  public ApiResponse<SchemaCategoryEntityListing> getConfigurationSchemasEdgesVnext(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SchemaCategoryEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchemaCategoryEntityListing> response = (ApiResponse<SchemaCategoryEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchemaCategoryEntityListing> response = (ApiResponse<SchemaCategoryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1328,10 +1385,11 @@ public class TelephonyProvidersEdgeApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return SchemaReferenceEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SchemaReferenceEntityListing getConfigurationSchemasEdgesVnextSchemaCategory(String schemaCategory, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getConfigurationSchemasEdgesVnextSchemaCategoryWithHttpInfo(schemaCategory, pageSize, pageNumber).getBody();
+    return  getConfigurationSchemasEdgesVnextSchemaCategory(createGetConfigurationSchemasEdgesVnextSchemaCategoryRequest(schemaCategory, pageSize, pageNumber));
   }
 
   /**
@@ -1341,63 +1399,68 @@ public class TelephonyProvidersEdgeApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return SchemaReferenceEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategoryWithHttpInfo(String schemaCategory, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'schemaCategory' is set
-    if (schemaCategory == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'schemaCategory' when calling getConfigurationSchemasEdgesVnextSchemaCategory");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "schemaCategory" + "\\}", pcapiClient.escapeString(schemaCategory.toString()));
+  public ApiResponse<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategoryWithHttpInfo(String schemaCategory, Integer pageSize, Integer pageNumber) throws IOException {
+    return getConfigurationSchemasEdgesVnextSchemaCategory(createGetConfigurationSchemasEdgesVnextSchemaCategoryRequest(schemaCategory, pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConfigurationSchemasEdgesVnextSchemaCategoryRequest createGetConfigurationSchemasEdgesVnextSchemaCategoryRequest(String schemaCategory, Integer pageSize, Integer pageNumber) {
+    return GetConfigurationSchemasEdgesVnextSchemaCategoryRequest.builder()
+            .withSchemaCategory(schemaCategory)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<SchemaReferenceEntityListing>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * List schemas of a specific category (Deprecated)
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return SchemaReferenceEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SchemaReferenceEntityListing getConfigurationSchemasEdgesVnextSchemaCategory(GetConfigurationSchemasEdgesVnextSchemaCategoryRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SchemaReferenceEntityListing>() {});
+    try {
+      ApiResponse<SchemaReferenceEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SchemaReferenceEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * List schemas of a specific category (Deprecated)
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategory(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<SchemaReferenceEntityListing>invokeAPIVerbose(request, new TypeReference<SchemaReferenceEntityListing>() {});
+  public ApiResponse<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategory(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SchemaReferenceEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchemaReferenceEntityListing> response = (ApiResponse<SchemaReferenceEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchemaReferenceEntityListing> response = (ApiResponse<SchemaReferenceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1408,10 +1471,11 @@ public class TelephonyProvidersEdgeApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return SchemaReferenceEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SchemaReferenceEntityListing getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(String schemaCategory, String schemaType, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeWithHttpInfo(schemaCategory, schemaType, pageSize, pageNumber).getBody();
+    return  getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(createGetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest(schemaCategory, schemaType, pageSize, pageNumber));
   }
 
   /**
@@ -1422,69 +1486,70 @@ public class TelephonyProvidersEdgeApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return SchemaReferenceEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeWithHttpInfo(String schemaCategory, String schemaType, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'schemaCategory' is set
-    if (schemaCategory == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'schemaCategory' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaType");
-    }
-    
-    // verify the required parameter 'schemaType' is set
-    if (schemaType == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'schemaType' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaType");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "schemaCategory" + "\\}", pcapiClient.escapeString(schemaCategory.toString()))
-      .replaceAll("\\{" + "schemaType" + "\\}", pcapiClient.escapeString(schemaType.toString()));
+  public ApiResponse<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeWithHttpInfo(String schemaCategory, String schemaType, Integer pageSize, Integer pageNumber) throws IOException {
+    return getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(createGetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest(schemaCategory, schemaType, pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest createGetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest(String schemaCategory, String schemaType, Integer pageSize, Integer pageNumber) {
+    return GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest.builder()
+            .withSchemaCategory(schemaCategory)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
+            .withSchemaType(schemaType)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageSize(pageSize)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<SchemaReferenceEntityListing>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * List schemas of a specific category (Deprecated)
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return SchemaReferenceEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SchemaReferenceEntityListing getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SchemaReferenceEntityListing>() {});
+    try {
+      ApiResponse<SchemaReferenceEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SchemaReferenceEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * List schemas of a specific category (Deprecated)
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<SchemaReferenceEntityListing>invokeAPIVerbose(request, new TypeReference<SchemaReferenceEntityListing>() {});
+  public ApiResponse<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SchemaReferenceEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchemaReferenceEntityListing> response = (ApiResponse<SchemaReferenceEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchemaReferenceEntityListing> response = (ApiResponse<SchemaReferenceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1494,10 +1559,11 @@ public class TelephonyProvidersEdgeApi {
    * @param schemaType Schema type (required)
    * @param schemaId Schema ID (required)
    * @return Organization
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Organization getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(String schemaCategory, String schemaType, String schemaId) throws IOException, ApiException {
-    return getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdWithHttpInfo(schemaCategory, schemaType, schemaId).getBody();
+    return  getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(createGetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest(schemaCategory, schemaType, schemaId));
   }
 
   /**
@@ -1507,73 +1573,68 @@ public class TelephonyProvidersEdgeApi {
    * @param schemaType Schema type (required)
    * @param schemaId Schema ID (required)
    * @return Organization
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdWithHttpInfo(String schemaCategory, String schemaType, String schemaId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'schemaCategory' is set
-    if (schemaCategory == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'schemaCategory' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId");
-    }
-    
-    // verify the required parameter 'schemaType' is set
-    if (schemaType == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'schemaType' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId");
-    }
-    
-    // verify the required parameter 'schemaId' is set
-    if (schemaId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'schemaId' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "schemaCategory" + "\\}", pcapiClient.escapeString(schemaCategory.toString()))
-      .replaceAll("\\{" + "schemaType" + "\\}", pcapiClient.escapeString(schemaType.toString()))
-      .replaceAll("\\{" + "schemaId" + "\\}", pcapiClient.escapeString(schemaId.toString()));
+  public ApiResponse<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdWithHttpInfo(String schemaCategory, String schemaType, String schemaId) throws IOException {
+    return getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(createGetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest(schemaCategory, schemaType, schemaId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest createGetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest(String schemaCategory, String schemaType, String schemaId) {
+    return GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest.builder()
+            .withSchemaCategory(schemaCategory)
 
+            .withSchemaType(schemaType)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Organization>() {});
+            .withSchemaId(schemaId)
+            .build();
   }
 
   /**
    * Get a json schema (Deprecated)
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Organization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Organization getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Organization>() {});
+    try {
+      ApiResponse<Organization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Organization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a json schema (Deprecated)
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Organization>invokeAPIVerbose(request, new TypeReference<Organization>() {});
+  public ApiResponse<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Organization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Organization> response = (ApiResponse<Organization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Organization> response = (ApiResponse<Organization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1586,10 +1647,11 @@ public class TelephonyProvidersEdgeApi {
    * @param metadataId Metadata ID (required)
    * @param type Type (optional)
    * @return Organization
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Organization getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(String schemaCategory, String schemaType, String schemaId, String extensionType, String metadataId, String type) throws IOException, ApiException {
-    return getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdWithHttpInfo(schemaCategory, schemaType, schemaId, extensionType, metadataId, type).getBody();
+    return  getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(createGetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest(schemaCategory, schemaType, schemaId, extensionType, metadataId, type));
   }
 
   /**
@@ -1602,86 +1664,74 @@ public class TelephonyProvidersEdgeApi {
    * @param metadataId Metadata ID (required)
    * @param type Type (optional)
    * @return Organization
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdWithHttpInfo(String schemaCategory, String schemaType, String schemaId, String extensionType, String metadataId, String type) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'schemaCategory' is set
-    if (schemaCategory == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'schemaCategory' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId");
-    }
-    
-    // verify the required parameter 'schemaType' is set
-    if (schemaType == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'schemaType' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId");
-    }
-    
-    // verify the required parameter 'schemaId' is set
-    if (schemaId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'schemaId' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId");
-    }
-    
-    // verify the required parameter 'extensionType' is set
-    if (extensionType == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'extensionType' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId");
-    }
-    
-    // verify the required parameter 'metadataId' is set
-    if (metadataId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'metadataId' when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}/{extensionType}/{metadataId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "schemaCategory" + "\\}", pcapiClient.escapeString(schemaCategory.toString()))
-      .replaceAll("\\{" + "schemaType" + "\\}", pcapiClient.escapeString(schemaType.toString()))
-      .replaceAll("\\{" + "schemaId" + "\\}", pcapiClient.escapeString(schemaId.toString()))
-      .replaceAll("\\{" + "extensionType" + "\\}", pcapiClient.escapeString(extensionType.toString()))
-      .replaceAll("\\{" + "metadataId" + "\\}", pcapiClient.escapeString(metadataId.toString()));
+  public ApiResponse<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdWithHttpInfo(String schemaCategory, String schemaType, String schemaId, String extensionType, String metadataId, String type) throws IOException {
+    return getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(createGetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest(schemaCategory, schemaType, schemaId, extensionType, metadataId, type).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest createGetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest(String schemaCategory, String schemaType, String schemaId, String extensionType, String metadataId, String type) {
+    return GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest.builder()
+            .withSchemaCategory(schemaCategory)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "type", type));
+            .withSchemaType(schemaType)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withSchemaId(schemaId)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withExtensionType(extensionType)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withMetadataId(metadataId)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Organization>() {});
+            .withType(type)
+            .build();
   }
 
   /**
    * Get metadata for a schema (Deprecated)
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Organization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Organization getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Organization>() {});
+    try {
+      ApiResponse<Organization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Organization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get metadata for a schema (Deprecated)
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Organization>invokeAPIVerbose(request, new TypeReference<Organization>() {});
+  public ApiResponse<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Organization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Organization> response = (ApiResponse<Organization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Organization> response = (ApiResponse<Organization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1690,10 +1740,11 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param expand Fields to expand in the response, comma-separated (optional)
    * @return Edge
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Edge getTelephonyProvidersEdge(String edgeId, List<String> expand) throws IOException, ApiException {
-    return getTelephonyProvidersEdgeWithHttpInfo(edgeId, expand).getBody();
+    return  getTelephonyProvidersEdge(createGetTelephonyProvidersEdgeRequest(edgeId, expand));
   }
 
   /**
@@ -1702,62 +1753,66 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param expand Fields to expand in the response, comma-separated (optional)
    * @return Edge
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Edge> getTelephonyProvidersEdgeWithHttpInfo(String edgeId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdge");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()));
+  public ApiResponse<Edge> getTelephonyProvidersEdgeWithHttpInfo(String edgeId, List<String> expand) throws IOException {
+    return getTelephonyProvidersEdge(createGetTelephonyProvidersEdgeRequest(edgeId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgeRequest createGetTelephonyProvidersEdgeRequest(String edgeId, List<String> expand) {
+    return GetTelephonyProvidersEdgeRequest.builder()
+            .withEdgeId(edgeId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Edge>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Edge
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Edge getTelephonyProvidersEdge(GetTelephonyProvidersEdgeRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Edge>() {});
+    try {
+      ApiResponse<Edge> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Edge>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Edge> getTelephonyProvidersEdge(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Edge>invokeAPIVerbose(request, new TypeReference<Edge>() {});
+  public ApiResponse<Edge> getTelephonyProvidersEdge(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Edge>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Edge> response = (ApiResponse<Edge>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Edge> response = (ApiResponse<Edge>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1766,10 +1821,11 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param lineId Line ID (required)
    * @return EdgeLine
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeLine getTelephonyProvidersEdgeLine(String edgeId, String lineId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgeLineWithHttpInfo(edgeId, lineId).getBody();
+    return  getTelephonyProvidersEdgeLine(createGetTelephonyProvidersEdgeLineRequest(edgeId, lineId));
   }
 
   /**
@@ -1778,67 +1834,66 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param lineId Line ID (required)
    * @return EdgeLine
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeLine> getTelephonyProvidersEdgeLineWithHttpInfo(String edgeId, String lineId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeLine");
-    }
-    
-    // verify the required parameter 'lineId' is set
-    if (lineId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'lineId' when calling getTelephonyProvidersEdgeLine");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()))
-      .replaceAll("\\{" + "lineId" + "\\}", pcapiClient.escapeString(lineId.toString()));
+  public ApiResponse<EdgeLine> getTelephonyProvidersEdgeLineWithHttpInfo(String edgeId, String lineId) throws IOException {
+    return getTelephonyProvidersEdgeLine(createGetTelephonyProvidersEdgeLineRequest(edgeId, lineId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgeLineRequest createGetTelephonyProvidersEdgeLineRequest(String edgeId, String lineId) {
+    return GetTelephonyProvidersEdgeLineRequest.builder()
+            .withEdgeId(edgeId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EdgeLine>() {});
+            .withLineId(lineId)
+            .build();
   }
 
   /**
    * Get line
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EdgeLine
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeLine getTelephonyProvidersEdgeLine(GetTelephonyProvidersEdgeLineRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeLine>() {});
+    try {
+      ApiResponse<EdgeLine> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeLine>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get line
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeLine> getTelephonyProvidersEdgeLine(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EdgeLine>invokeAPIVerbose(request, new TypeReference<EdgeLine>() {});
+  public ApiResponse<EdgeLine> getTelephonyProvidersEdgeLine(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeLine>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeLine> response = (ApiResponse<EdgeLine>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeLine> response = (ApiResponse<EdgeLine>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1848,10 +1903,11 @@ public class TelephonyProvidersEdgeApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return EdgeLineEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeLineEntityListing getTelephonyProvidersEdgeLines(String edgeId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getTelephonyProvidersEdgeLinesWithHttpInfo(edgeId, pageSize, pageNumber).getBody();
+    return  getTelephonyProvidersEdgeLines(createGetTelephonyProvidersEdgeLinesRequest(edgeId, pageSize, pageNumber));
   }
 
   /**
@@ -1861,63 +1917,68 @@ public class TelephonyProvidersEdgeApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return EdgeLineEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeLineEntityListing> getTelephonyProvidersEdgeLinesWithHttpInfo(String edgeId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeLines");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/lines".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()));
+  public ApiResponse<EdgeLineEntityListing> getTelephonyProvidersEdgeLinesWithHttpInfo(String edgeId, Integer pageSize, Integer pageNumber) throws IOException {
+    return getTelephonyProvidersEdgeLines(createGetTelephonyProvidersEdgeLinesRequest(edgeId, pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgeLinesRequest createGetTelephonyProvidersEdgeLinesRequest(String edgeId, Integer pageSize, Integer pageNumber) {
+    return GetTelephonyProvidersEdgeLinesRequest.builder()
+            .withEdgeId(edgeId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EdgeLineEntityListing>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * Get the list of lines.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EdgeLineEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeLineEntityListing getTelephonyProvidersEdgeLines(GetTelephonyProvidersEdgeLinesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeLineEntityListing>() {});
+    try {
+      ApiResponse<EdgeLineEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeLineEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the list of lines.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeLineEntityListing> getTelephonyProvidersEdgeLines(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EdgeLineEntityListing>invokeAPIVerbose(request, new TypeReference<EdgeLineEntityListing>() {});
+  public ApiResponse<EdgeLineEntityListing> getTelephonyProvidersEdgeLines(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeLineEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeLineEntityListing> response = (ApiResponse<EdgeLineEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeLineEntityListing> response = (ApiResponse<EdgeLineEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1927,10 +1988,11 @@ public class TelephonyProvidersEdgeApi {
    * @param interfaceId Interface ID (required)
    * @param expand Field to expand in the response (optional)
    * @return DomainLogicalInterface
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainLogicalInterface getTelephonyProvidersEdgeLogicalinterface(String edgeId, String interfaceId, List<String> expand) throws IOException, ApiException {
-    return getTelephonyProvidersEdgeLogicalinterfaceWithHttpInfo(edgeId, interfaceId, expand).getBody();
+    return  getTelephonyProvidersEdgeLogicalinterface(createGetTelephonyProvidersEdgeLogicalinterfaceRequest(edgeId, interfaceId, expand));
   }
 
   /**
@@ -1940,68 +2002,68 @@ public class TelephonyProvidersEdgeApi {
    * @param interfaceId Interface ID (required)
    * @param expand Field to expand in the response (optional)
    * @return DomainLogicalInterface
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainLogicalInterface> getTelephonyProvidersEdgeLogicalinterfaceWithHttpInfo(String edgeId, String interfaceId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeLogicalinterface");
-    }
-    
-    // verify the required parameter 'interfaceId' is set
-    if (interfaceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'interfaceId' when calling getTelephonyProvidersEdgeLogicalinterface");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()))
-      .replaceAll("\\{" + "interfaceId" + "\\}", pcapiClient.escapeString(interfaceId.toString()));
+  public ApiResponse<DomainLogicalInterface> getTelephonyProvidersEdgeLogicalinterfaceWithHttpInfo(String edgeId, String interfaceId, List<String> expand) throws IOException {
+    return getTelephonyProvidersEdgeLogicalinterface(createGetTelephonyProvidersEdgeLogicalinterfaceRequest(edgeId, interfaceId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgeLogicalinterfaceRequest createGetTelephonyProvidersEdgeLogicalinterfaceRequest(String edgeId, String interfaceId, List<String> expand) {
+    return GetTelephonyProvidersEdgeLogicalinterfaceRequest.builder()
+            .withEdgeId(edgeId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withInterfaceId(interfaceId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DomainLogicalInterface>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get an edge logical interface
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DomainLogicalInterface
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainLogicalInterface getTelephonyProvidersEdgeLogicalinterface(GetTelephonyProvidersEdgeLogicalinterfaceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainLogicalInterface>() {});
+    try {
+      ApiResponse<DomainLogicalInterface> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainLogicalInterface>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get an edge logical interface
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainLogicalInterface> getTelephonyProvidersEdgeLogicalinterface(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DomainLogicalInterface>invokeAPIVerbose(request, new TypeReference<DomainLogicalInterface>() {});
+  public ApiResponse<DomainLogicalInterface> getTelephonyProvidersEdgeLogicalinterface(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DomainLogicalInterface>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainLogicalInterface> response = (ApiResponse<DomainLogicalInterface>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainLogicalInterface> response = (ApiResponse<DomainLogicalInterface>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2010,10 +2072,11 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param expand Field to expand in the response (optional)
    * @return LogicalInterfaceEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LogicalInterfaceEntityListing getTelephonyProvidersEdgeLogicalinterfaces(String edgeId, List<String> expand) throws IOException, ApiException {
-    return getTelephonyProvidersEdgeLogicalinterfacesWithHttpInfo(edgeId, expand).getBody();
+    return  getTelephonyProvidersEdgeLogicalinterfaces(createGetTelephonyProvidersEdgeLogicalinterfacesRequest(edgeId, expand));
   }
 
   /**
@@ -2022,62 +2085,66 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param expand Field to expand in the response (optional)
    * @return LogicalInterfaceEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LogicalInterfaceEntityListing> getTelephonyProvidersEdgeLogicalinterfacesWithHttpInfo(String edgeId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeLogicalinterfaces");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()));
+  public ApiResponse<LogicalInterfaceEntityListing> getTelephonyProvidersEdgeLogicalinterfacesWithHttpInfo(String edgeId, List<String> expand) throws IOException {
+    return getTelephonyProvidersEdgeLogicalinterfaces(createGetTelephonyProvidersEdgeLogicalinterfacesRequest(edgeId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgeLogicalinterfacesRequest createGetTelephonyProvidersEdgeLogicalinterfacesRequest(String edgeId, List<String> expand) {
+    return GetTelephonyProvidersEdgeLogicalinterfacesRequest.builder()
+            .withEdgeId(edgeId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<LogicalInterfaceEntityListing>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get edge logical interfaces.
    * Retrieve a list of all configured logical interfaces from a specific edge.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return LogicalInterfaceEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LogicalInterfaceEntityListing getTelephonyProvidersEdgeLogicalinterfaces(GetTelephonyProvidersEdgeLogicalinterfacesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LogicalInterfaceEntityListing>() {});
+    try {
+      ApiResponse<LogicalInterfaceEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LogicalInterfaceEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get edge logical interfaces.
    * Retrieve a list of all configured logical interfaces from a specific edge.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LogicalInterfaceEntityListing> getTelephonyProvidersEdgeLogicalinterfaces(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<LogicalInterfaceEntityListing>invokeAPIVerbose(request, new TypeReference<LogicalInterfaceEntityListing>() {});
+  public ApiResponse<LogicalInterfaceEntityListing> getTelephonyProvidersEdgeLogicalinterfaces(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LogicalInterfaceEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LogicalInterfaceEntityListing> response = (ApiResponse<LogicalInterfaceEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LogicalInterfaceEntityListing> response = (ApiResponse<LogicalInterfaceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2086,10 +2153,11 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param jobId Job ID (required)
    * @return EdgeLogsJob
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeLogsJob getTelephonyProvidersEdgeLogsJob(String edgeId, String jobId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgeLogsJobWithHttpInfo(edgeId, jobId).getBody();
+    return  getTelephonyProvidersEdgeLogsJob(createGetTelephonyProvidersEdgeLogsJobRequest(edgeId, jobId));
   }
 
   /**
@@ -2098,67 +2166,66 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param jobId Job ID (required)
    * @return EdgeLogsJob
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeLogsJob> getTelephonyProvidersEdgeLogsJobWithHttpInfo(String edgeId, String jobId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeLogsJob");
-    }
-    
-    // verify the required parameter 'jobId' is set
-    if (jobId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'jobId' when calling getTelephonyProvidersEdgeLogsJob");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()))
-      .replaceAll("\\{" + "jobId" + "\\}", pcapiClient.escapeString(jobId.toString()));
+  public ApiResponse<EdgeLogsJob> getTelephonyProvidersEdgeLogsJobWithHttpInfo(String edgeId, String jobId) throws IOException {
+    return getTelephonyProvidersEdgeLogsJob(createGetTelephonyProvidersEdgeLogsJobRequest(edgeId, jobId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgeLogsJobRequest createGetTelephonyProvidersEdgeLogsJobRequest(String edgeId, String jobId) {
+    return GetTelephonyProvidersEdgeLogsJobRequest.builder()
+            .withEdgeId(edgeId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EdgeLogsJob>() {});
+            .withJobId(jobId)
+            .build();
   }
 
   /**
    * Get an Edge logs job.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EdgeLogsJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeLogsJob getTelephonyProvidersEdgeLogsJob(GetTelephonyProvidersEdgeLogsJobRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeLogsJob>() {});
+    try {
+      ApiResponse<EdgeLogsJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeLogsJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get an Edge logs job.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeLogsJob> getTelephonyProvidersEdgeLogsJob(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EdgeLogsJob>invokeAPIVerbose(request, new TypeReference<EdgeLogsJob>() {});
+  public ApiResponse<EdgeLogsJob> getTelephonyProvidersEdgeLogsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeLogsJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeLogsJob> response = (ApiResponse<EdgeLogsJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeLogsJob> response = (ApiResponse<EdgeLogsJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2167,10 +2234,11 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param interfaceId Interface ID (required)
    * @return DomainPhysicalInterface
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainPhysicalInterface getTelephonyProvidersEdgePhysicalinterface(String edgeId, String interfaceId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgePhysicalinterfaceWithHttpInfo(edgeId, interfaceId).getBody();
+    return  getTelephonyProvidersEdgePhysicalinterface(createGetTelephonyProvidersEdgePhysicalinterfaceRequest(edgeId, interfaceId));
   }
 
   /**
@@ -2179,67 +2247,66 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param interfaceId Interface ID (required)
    * @return DomainPhysicalInterface
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainPhysicalInterface> getTelephonyProvidersEdgePhysicalinterfaceWithHttpInfo(String edgeId, String interfaceId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgePhysicalinterface");
-    }
-    
-    // verify the required parameter 'interfaceId' is set
-    if (interfaceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'interfaceId' when calling getTelephonyProvidersEdgePhysicalinterface");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces/{interfaceId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()))
-      .replaceAll("\\{" + "interfaceId" + "\\}", pcapiClient.escapeString(interfaceId.toString()));
+  public ApiResponse<DomainPhysicalInterface> getTelephonyProvidersEdgePhysicalinterfaceWithHttpInfo(String edgeId, String interfaceId) throws IOException {
+    return getTelephonyProvidersEdgePhysicalinterface(createGetTelephonyProvidersEdgePhysicalinterfaceRequest(edgeId, interfaceId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgePhysicalinterfaceRequest createGetTelephonyProvidersEdgePhysicalinterfaceRequest(String edgeId, String interfaceId) {
+    return GetTelephonyProvidersEdgePhysicalinterfaceRequest.builder()
+            .withEdgeId(edgeId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DomainPhysicalInterface>() {});
+            .withInterfaceId(interfaceId)
+            .build();
   }
 
   /**
    * Get edge physical interface.
    * Retrieve a physical interface from a specific edge.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DomainPhysicalInterface
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainPhysicalInterface getTelephonyProvidersEdgePhysicalinterface(GetTelephonyProvidersEdgePhysicalinterfaceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainPhysicalInterface>() {});
+    try {
+      ApiResponse<DomainPhysicalInterface> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainPhysicalInterface>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get edge physical interface.
    * Retrieve a physical interface from a specific edge.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainPhysicalInterface> getTelephonyProvidersEdgePhysicalinterface(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DomainPhysicalInterface>invokeAPIVerbose(request, new TypeReference<DomainPhysicalInterface>() {});
+  public ApiResponse<DomainPhysicalInterface> getTelephonyProvidersEdgePhysicalinterface(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DomainPhysicalInterface>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainPhysicalInterface> response = (ApiResponse<DomainPhysicalInterface>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainPhysicalInterface> response = (ApiResponse<DomainPhysicalInterface>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2247,10 +2314,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param edgeId Edge ID (required)
    * @return PhysicalInterfaceEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PhysicalInterfaceEntityListing getTelephonyProvidersEdgePhysicalinterfaces(String edgeId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgePhysicalinterfacesWithHttpInfo(edgeId).getBody();
+    return  getTelephonyProvidersEdgePhysicalinterfaces(createGetTelephonyProvidersEdgePhysicalinterfacesRequest(edgeId));
   }
 
   /**
@@ -2258,61 +2326,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param edgeId Edge ID (required)
    * @return PhysicalInterfaceEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PhysicalInterfaceEntityListing> getTelephonyProvidersEdgePhysicalinterfacesWithHttpInfo(String edgeId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgePhysicalinterfaces");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()));
+  public ApiResponse<PhysicalInterfaceEntityListing> getTelephonyProvidersEdgePhysicalinterfacesWithHttpInfo(String edgeId) throws IOException {
+    return getTelephonyProvidersEdgePhysicalinterfaces(createGetTelephonyProvidersEdgePhysicalinterfacesRequest(edgeId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<PhysicalInterfaceEntityListing>() {});
+  private GetTelephonyProvidersEdgePhysicalinterfacesRequest createGetTelephonyProvidersEdgePhysicalinterfacesRequest(String edgeId) {
+    return GetTelephonyProvidersEdgePhysicalinterfacesRequest.builder()
+            .withEdgeId(edgeId)
+            .build();
   }
 
   /**
    * Retrieve a list of all configured physical interfaces from a specific edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return PhysicalInterfaceEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PhysicalInterfaceEntityListing getTelephonyProvidersEdgePhysicalinterfaces(GetTelephonyProvidersEdgePhysicalinterfacesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PhysicalInterfaceEntityListing>() {});
+    try {
+      ApiResponse<PhysicalInterfaceEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PhysicalInterfaceEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Retrieve a list of all configured physical interfaces from a specific edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PhysicalInterfaceEntityListing> getTelephonyProvidersEdgePhysicalinterfaces(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<PhysicalInterfaceEntityListing>invokeAPIVerbose(request, new TypeReference<PhysicalInterfaceEntityListing>() {});
+  public ApiResponse<PhysicalInterfaceEntityListing> getTelephonyProvidersEdgePhysicalinterfaces(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PhysicalInterfaceEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PhysicalInterfaceEntityListing> response = (ApiResponse<PhysicalInterfaceEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PhysicalInterfaceEntityListing> response = (ApiResponse<PhysicalInterfaceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2320,10 +2391,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param edgeId Edge ID (required)
    * @return VmPairingInfo
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VmPairingInfo getTelephonyProvidersEdgeSetuppackage(String edgeId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgeSetuppackageWithHttpInfo(edgeId).getBody();
+    return  getTelephonyProvidersEdgeSetuppackage(createGetTelephonyProvidersEdgeSetuppackageRequest(edgeId));
   }
 
   /**
@@ -2331,61 +2403,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param edgeId Edge ID (required)
    * @return VmPairingInfo
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VmPairingInfo> getTelephonyProvidersEdgeSetuppackageWithHttpInfo(String edgeId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeSetuppackage");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/setuppackage".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()));
+  public ApiResponse<VmPairingInfo> getTelephonyProvidersEdgeSetuppackageWithHttpInfo(String edgeId) throws IOException {
+    return getTelephonyProvidersEdgeSetuppackage(createGetTelephonyProvidersEdgeSetuppackageRequest(edgeId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VmPairingInfo>() {});
+  private GetTelephonyProvidersEdgeSetuppackageRequest createGetTelephonyProvidersEdgeSetuppackageRequest(String edgeId) {
+    return GetTelephonyProvidersEdgeSetuppackageRequest.builder()
+            .withEdgeId(edgeId)
+            .build();
   }
 
   /**
    * Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VmPairingInfo
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VmPairingInfo getTelephonyProvidersEdgeSetuppackage(GetTelephonyProvidersEdgeSetuppackageRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VmPairingInfo>() {});
+    try {
+      ApiResponse<VmPairingInfo> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VmPairingInfo>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VmPairingInfo> getTelephonyProvidersEdgeSetuppackage(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<VmPairingInfo>invokeAPIVerbose(request, new TypeReference<VmPairingInfo>() {});
+  public ApiResponse<VmPairingInfo> getTelephonyProvidersEdgeSetuppackage(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VmPairingInfo>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VmPairingInfo> response = (ApiResponse<VmPairingInfo>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VmPairingInfo> response = (ApiResponse<VmPairingInfo>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2393,10 +2468,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param edgeId Edge ID (required)
    * @return DomainEdgeSoftwareUpdateDto
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainEdgeSoftwareUpdateDto getTelephonyProvidersEdgeSoftwareupdate(String edgeId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgeSoftwareupdateWithHttpInfo(edgeId).getBody();
+    return  getTelephonyProvidersEdgeSoftwareupdate(createGetTelephonyProvidersEdgeSoftwareupdateRequest(edgeId));
   }
 
   /**
@@ -2404,61 +2480,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param edgeId Edge ID (required)
    * @return DomainEdgeSoftwareUpdateDto
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainEdgeSoftwareUpdateDto> getTelephonyProvidersEdgeSoftwareupdateWithHttpInfo(String edgeId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeSoftwareupdate");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/softwareupdate".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()));
+  public ApiResponse<DomainEdgeSoftwareUpdateDto> getTelephonyProvidersEdgeSoftwareupdateWithHttpInfo(String edgeId) throws IOException {
+    return getTelephonyProvidersEdgeSoftwareupdate(createGetTelephonyProvidersEdgeSoftwareupdateRequest(edgeId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DomainEdgeSoftwareUpdateDto>() {});
+  private GetTelephonyProvidersEdgeSoftwareupdateRequest createGetTelephonyProvidersEdgeSoftwareupdateRequest(String edgeId) {
+    return GetTelephonyProvidersEdgeSoftwareupdateRequest.builder()
+            .withEdgeId(edgeId)
+            .build();
   }
 
   /**
    * Gets software update status information about any edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DomainEdgeSoftwareUpdateDto
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainEdgeSoftwareUpdateDto getTelephonyProvidersEdgeSoftwareupdate(GetTelephonyProvidersEdgeSoftwareupdateRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainEdgeSoftwareUpdateDto>() {});
+    try {
+      ApiResponse<DomainEdgeSoftwareUpdateDto> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainEdgeSoftwareUpdateDto>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Gets software update status information about any edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainEdgeSoftwareUpdateDto> getTelephonyProvidersEdgeSoftwareupdate(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DomainEdgeSoftwareUpdateDto>invokeAPIVerbose(request, new TypeReference<DomainEdgeSoftwareUpdateDto>() {});
+  public ApiResponse<DomainEdgeSoftwareUpdateDto> getTelephonyProvidersEdgeSoftwareupdate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DomainEdgeSoftwareUpdateDto>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainEdgeSoftwareUpdateDto> response = (ApiResponse<DomainEdgeSoftwareUpdateDto>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainEdgeSoftwareUpdateDto> response = (ApiResponse<DomainEdgeSoftwareUpdateDto>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2466,10 +2545,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param edgeId Edge ID (required)
    * @return DomainEdgeSoftwareVersionDtoEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainEdgeSoftwareVersionDtoEntityListing getTelephonyProvidersEdgeSoftwareversions(String edgeId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgeSoftwareversionsWithHttpInfo(edgeId).getBody();
+    return  getTelephonyProvidersEdgeSoftwareversions(createGetTelephonyProvidersEdgeSoftwareversionsRequest(edgeId));
   }
 
   /**
@@ -2477,61 +2557,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param edgeId Edge ID (required)
    * @return DomainEdgeSoftwareVersionDtoEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing> getTelephonyProvidersEdgeSoftwareversionsWithHttpInfo(String edgeId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeSoftwareversions");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/softwareversions".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()));
+  public ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing> getTelephonyProvidersEdgeSoftwareversionsWithHttpInfo(String edgeId) throws IOException {
+    return getTelephonyProvidersEdgeSoftwareversions(createGetTelephonyProvidersEdgeSoftwareversionsRequest(edgeId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DomainEdgeSoftwareVersionDtoEntityListing>() {});
+  private GetTelephonyProvidersEdgeSoftwareversionsRequest createGetTelephonyProvidersEdgeSoftwareversionsRequest(String edgeId) {
+    return GetTelephonyProvidersEdgeSoftwareversionsRequest.builder()
+            .withEdgeId(edgeId)
+            .build();
   }
 
   /**
    * Gets all the available software versions for this edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DomainEdgeSoftwareVersionDtoEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainEdgeSoftwareVersionDtoEntityListing getTelephonyProvidersEdgeSoftwareversions(GetTelephonyProvidersEdgeSoftwareversionsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainEdgeSoftwareVersionDtoEntityListing>() {});
+    try {
+      ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainEdgeSoftwareVersionDtoEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Gets all the available software versions for this edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing> getTelephonyProvidersEdgeSoftwareversions(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DomainEdgeSoftwareVersionDtoEntityListing>invokeAPIVerbose(request, new TypeReference<DomainEdgeSoftwareVersionDtoEntityListing>() {});
+  public ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing> getTelephonyProvidersEdgeSoftwareversions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DomainEdgeSoftwareVersionDtoEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing> response = (ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing> response = (ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2545,10 +2628,11 @@ public class TelephonyProvidersEdgeApi {
    * @param sortBy Sort by (optional, default to name)
    * @param managed Filter by managed (optional)
    * @return EdgeEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeEntityListing getTelephonyProvidersEdges(Integer pageSize, Integer pageNumber, String name, String siteId, String edgeGroupId, String sortBy, Boolean managed) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesWithHttpInfo(pageSize, pageNumber, name, siteId, edgeGroupId, sortBy, managed).getBody();
+    return  getTelephonyProvidersEdges(createGetTelephonyProvidersEdgesRequest(pageSize, pageNumber, name, siteId, edgeGroupId, sortBy, managed));
   }
 
   /**
@@ -2562,192 +2646,222 @@ public class TelephonyProvidersEdgeApi {
    * @param sortBy Sort by (optional, default to name)
    * @param managed Filter by managed (optional)
    * @return EdgeEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeEntityListing> getTelephonyProvidersEdgesWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String siteId, String edgeGroupId, String sortBy, Boolean managed) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges".replaceAll("\\{format\\}","json");
+  public ApiResponse<EdgeEntityListing> getTelephonyProvidersEdgesWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String siteId, String edgeGroupId, String sortBy, Boolean managed) throws IOException {
+    return getTelephonyProvidersEdges(createGetTelephonyProvidersEdgesRequest(pageSize, pageNumber, name, siteId, edgeGroupId, sortBy, managed).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesRequest createGetTelephonyProvidersEdgesRequest(Integer pageSize, Integer pageNumber, String name, String siteId, String edgeGroupId, String sortBy, Boolean managed) {
+    return GetTelephonyProvidersEdgesRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "site.id", siteId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "edgeGroup.id", edgeGroupId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "managed", managed));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withName(name)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSiteId(siteId)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withEdgeGroupId(edgeGroupId)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EdgeEntityListing>() {});
+            .withSortBy(sortBy)
+
+            .withManaged(managed)
+            .build();
   }
 
   /**
    * Get the list of edges.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EdgeEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeEntityListing getTelephonyProvidersEdges(GetTelephonyProvidersEdgesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeEntityListing>() {});
+    try {
+      ApiResponse<EdgeEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the list of edges.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeEntityListing> getTelephonyProvidersEdges(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EdgeEntityListing>invokeAPIVerbose(request, new TypeReference<EdgeEntityListing>() {});
+  public ApiResponse<EdgeEntityListing> getTelephonyProvidersEdges(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeEntityListing> response = (ApiResponse<EdgeEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeEntityListing> response = (ApiResponse<EdgeEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get the list of available languages.
    * 
    * @return AvailableLanguageList
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AvailableLanguageList getTelephonyProvidersEdgesAvailablelanguages() throws IOException, ApiException {
-    return getTelephonyProvidersEdgesAvailablelanguagesWithHttpInfo().getBody();
+    return  getTelephonyProvidersEdgesAvailablelanguages(createGetTelephonyProvidersEdgesAvailablelanguagesRequest());
   }
 
   /**
    * Get the list of available languages.
    * 
    * @return AvailableLanguageList
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AvailableLanguageList> getTelephonyProvidersEdgesAvailablelanguagesWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/availablelanguages".replaceAll("\\{format\\}","json");
+  public ApiResponse<AvailableLanguageList> getTelephonyProvidersEdgesAvailablelanguagesWithHttpInfo() throws IOException {
+    return getTelephonyProvidersEdgesAvailablelanguages(createGetTelephonyProvidersEdgesAvailablelanguagesRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<AvailableLanguageList>() {});
+  private GetTelephonyProvidersEdgesAvailablelanguagesRequest createGetTelephonyProvidersEdgesAvailablelanguagesRequest() {
+    return GetTelephonyProvidersEdgesAvailablelanguagesRequest.builder()            .build();
   }
 
   /**
    * Get the list of available languages.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return AvailableLanguageList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AvailableLanguageList getTelephonyProvidersEdgesAvailablelanguages(GetTelephonyProvidersEdgesAvailablelanguagesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AvailableLanguageList>() {});
+    try {
+      ApiResponse<AvailableLanguageList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AvailableLanguageList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the list of available languages.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AvailableLanguageList> getTelephonyProvidersEdgesAvailablelanguages(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<AvailableLanguageList>invokeAPIVerbose(request, new TypeReference<AvailableLanguageList>() {});
+  public ApiResponse<AvailableLanguageList> getTelephonyProvidersEdgesAvailablelanguages(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AvailableLanguageList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AvailableLanguageList> response = (ApiResponse<AvailableLanguageList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AvailableLanguageList> response = (ApiResponse<AvailableLanguageList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get the list of certificate authorities.
    * 
    * @return CertificateAuthorityEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CertificateAuthorityEntityListing getTelephonyProvidersEdgesCertificateauthorities() throws IOException, ApiException {
-    return getTelephonyProvidersEdgesCertificateauthoritiesWithHttpInfo().getBody();
+    return  getTelephonyProvidersEdgesCertificateauthorities(createGetTelephonyProvidersEdgesCertificateauthoritiesRequest());
   }
 
   /**
    * Get the list of certificate authorities.
    * 
    * @return CertificateAuthorityEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CertificateAuthorityEntityListing> getTelephonyProvidersEdgesCertificateauthoritiesWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/certificateauthorities".replaceAll("\\{format\\}","json");
+  public ApiResponse<CertificateAuthorityEntityListing> getTelephonyProvidersEdgesCertificateauthoritiesWithHttpInfo() throws IOException {
+    return getTelephonyProvidersEdgesCertificateauthorities(createGetTelephonyProvidersEdgesCertificateauthoritiesRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CertificateAuthorityEntityListing>() {});
+  private GetTelephonyProvidersEdgesCertificateauthoritiesRequest createGetTelephonyProvidersEdgesCertificateauthoritiesRequest() {
+    return GetTelephonyProvidersEdgesCertificateauthoritiesRequest.builder()            .build();
   }
 
   /**
    * Get the list of certificate authorities.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CertificateAuthorityEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CertificateAuthorityEntityListing getTelephonyProvidersEdgesCertificateauthorities(GetTelephonyProvidersEdgesCertificateauthoritiesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CertificateAuthorityEntityListing>() {});
+    try {
+      ApiResponse<CertificateAuthorityEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CertificateAuthorityEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the list of certificate authorities.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CertificateAuthorityEntityListing> getTelephonyProvidersEdgesCertificateauthorities(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CertificateAuthorityEntityListing>invokeAPIVerbose(request, new TypeReference<CertificateAuthorityEntityListing>() {});
+  public ApiResponse<CertificateAuthorityEntityListing> getTelephonyProvidersEdgesCertificateauthorities(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CertificateAuthorityEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CertificateAuthorityEntityListing> response = (ApiResponse<CertificateAuthorityEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CertificateAuthorityEntityListing> response = (ApiResponse<CertificateAuthorityEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2755,10 +2869,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param certificateId Certificate ID (required)
    * @return DomainCertificateAuthority
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainCertificateAuthority getTelephonyProvidersEdgesCertificateauthority(String certificateId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesCertificateauthorityWithHttpInfo(certificateId).getBody();
+    return  getTelephonyProvidersEdgesCertificateauthority(createGetTelephonyProvidersEdgesCertificateauthorityRequest(certificateId));
   }
 
   /**
@@ -2766,61 +2881,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param certificateId Certificate ID (required)
    * @return DomainCertificateAuthority
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainCertificateAuthority> getTelephonyProvidersEdgesCertificateauthorityWithHttpInfo(String certificateId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'certificateId' is set
-    if (certificateId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'certificateId' when calling getTelephonyProvidersEdgesCertificateauthority");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/certificateauthorities/{certificateId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "certificateId" + "\\}", pcapiClient.escapeString(certificateId.toString()));
+  public ApiResponse<DomainCertificateAuthority> getTelephonyProvidersEdgesCertificateauthorityWithHttpInfo(String certificateId) throws IOException {
+    return getTelephonyProvidersEdgesCertificateauthority(createGetTelephonyProvidersEdgesCertificateauthorityRequest(certificateId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DomainCertificateAuthority>() {});
+  private GetTelephonyProvidersEdgesCertificateauthorityRequest createGetTelephonyProvidersEdgesCertificateauthorityRequest(String certificateId) {
+    return GetTelephonyProvidersEdgesCertificateauthorityRequest.builder()
+            .withCertificateId(certificateId)
+            .build();
   }
 
   /**
    * Get a certificate authority.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DomainCertificateAuthority
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainCertificateAuthority getTelephonyProvidersEdgesCertificateauthority(GetTelephonyProvidersEdgesCertificateauthorityRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainCertificateAuthority>() {});
+    try {
+      ApiResponse<DomainCertificateAuthority> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainCertificateAuthority>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a certificate authority.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainCertificateAuthority> getTelephonyProvidersEdgesCertificateauthority(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DomainCertificateAuthority>invokeAPIVerbose(request, new TypeReference<DomainCertificateAuthority>() {});
+  public ApiResponse<DomainCertificateAuthority> getTelephonyProvidersEdgesCertificateauthority(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DomainCertificateAuthority>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainCertificateAuthority> response = (ApiResponse<DomainCertificateAuthority>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainCertificateAuthority> response = (ApiResponse<DomainCertificateAuthority>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2828,10 +2946,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param didId DID ID (required)
    * @return DID
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DID getTelephonyProvidersEdgesDid(String didId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesDidWithHttpInfo(didId).getBody();
+    return  getTelephonyProvidersEdgesDid(createGetTelephonyProvidersEdgesDidRequest(didId));
   }
 
   /**
@@ -2839,61 +2958,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param didId DID ID (required)
    * @return DID
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DID> getTelephonyProvidersEdgesDidWithHttpInfo(String didId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'didId' is set
-    if (didId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'didId' when calling getTelephonyProvidersEdgesDid");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/dids/{didId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "didId" + "\\}", pcapiClient.escapeString(didId.toString()));
+  public ApiResponse<DID> getTelephonyProvidersEdgesDidWithHttpInfo(String didId) throws IOException {
+    return getTelephonyProvidersEdgesDid(createGetTelephonyProvidersEdgesDidRequest(didId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DID>() {});
+  private GetTelephonyProvidersEdgesDidRequest createGetTelephonyProvidersEdgesDidRequest(String didId) {
+    return GetTelephonyProvidersEdgesDidRequest.builder()
+            .withDidId(didId)
+            .build();
   }
 
   /**
    * Get a DID by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DID
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DID getTelephonyProvidersEdgesDid(GetTelephonyProvidersEdgesDidRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DID>() {});
+    try {
+      ApiResponse<DID> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DID>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a DID by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DID> getTelephonyProvidersEdgesDid(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DID>invokeAPIVerbose(request, new TypeReference<DID>() {});
+  public ApiResponse<DID> getTelephonyProvidersEdgesDid(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DID>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DID> response = (ApiResponse<DID>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DID> response = (ApiResponse<DID>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2901,10 +3023,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param didPoolId DID pool ID (required)
    * @return DIDPool
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DIDPool getTelephonyProvidersEdgesDidpool(String didPoolId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesDidpoolWithHttpInfo(didPoolId).getBody();
+    return  getTelephonyProvidersEdgesDidpool(createGetTelephonyProvidersEdgesDidpoolRequest(didPoolId));
   }
 
   /**
@@ -2912,61 +3035,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param didPoolId DID pool ID (required)
    * @return DIDPool
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DIDPool> getTelephonyProvidersEdgesDidpoolWithHttpInfo(String didPoolId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'didPoolId' is set
-    if (didPoolId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'didPoolId' when calling getTelephonyProvidersEdgesDidpool");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/didpools/{didPoolId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "didPoolId" + "\\}", pcapiClient.escapeString(didPoolId.toString()));
+  public ApiResponse<DIDPool> getTelephonyProvidersEdgesDidpoolWithHttpInfo(String didPoolId) throws IOException {
+    return getTelephonyProvidersEdgesDidpool(createGetTelephonyProvidersEdgesDidpoolRequest(didPoolId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DIDPool>() {});
+  private GetTelephonyProvidersEdgesDidpoolRequest createGetTelephonyProvidersEdgesDidpoolRequest(String didPoolId) {
+    return GetTelephonyProvidersEdgesDidpoolRequest.builder()
+            .withDidPoolId(didPoolId)
+            .build();
   }
 
   /**
    * Get a DID Pool by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DIDPool
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DIDPool getTelephonyProvidersEdgesDidpool(GetTelephonyProvidersEdgesDidpoolRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DIDPool>() {});
+    try {
+      ApiResponse<DIDPool> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DIDPool>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a DID Pool by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DIDPool> getTelephonyProvidersEdgesDidpool(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DIDPool>invokeAPIVerbose(request, new TypeReference<DIDPool>() {});
+  public ApiResponse<DIDPool> getTelephonyProvidersEdgesDidpool(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DIDPool>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DIDPool> response = (ApiResponse<DIDPool>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DIDPool> response = (ApiResponse<DIDPool>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2976,10 +3102,11 @@ public class TelephonyProvidersEdgeApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to number)
    * @return DIDPoolEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DIDPoolEntityListing getTelephonyProvidersEdgesDidpools(Integer pageSize, Integer pageNumber, String sortBy) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesDidpoolsWithHttpInfo(pageSize, pageNumber, sortBy).getBody();
+    return  getTelephonyProvidersEdgesDidpools(createGetTelephonyProvidersEdgesDidpoolsRequest(pageSize, pageNumber, sortBy));
   }
 
   /**
@@ -2989,58 +3116,68 @@ public class TelephonyProvidersEdgeApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to number)
    * @return DIDPoolEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DIDPoolEntityListing> getTelephonyProvidersEdgesDidpoolsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/didpools".replaceAll("\\{format\\}","json");
+  public ApiResponse<DIDPoolEntityListing> getTelephonyProvidersEdgesDidpoolsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy) throws IOException {
+    return getTelephonyProvidersEdgesDidpools(createGetTelephonyProvidersEdgesDidpoolsRequest(pageSize, pageNumber, sortBy).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesDidpoolsRequest createGetTelephonyProvidersEdgesDidpoolsRequest(Integer pageSize, Integer pageNumber, String sortBy) {
+    return GetTelephonyProvidersEdgesDidpoolsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DIDPoolEntityListing>() {});
+            .withSortBy(sortBy)
+            .build();
   }
 
   /**
    * Get a listing of DID Pools
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DIDPoolEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DIDPoolEntityListing getTelephonyProvidersEdgesDidpools(GetTelephonyProvidersEdgesDidpoolsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DIDPoolEntityListing>() {});
+    try {
+      ApiResponse<DIDPoolEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DIDPoolEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a listing of DID Pools
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DIDPoolEntityListing> getTelephonyProvidersEdgesDidpools(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DIDPoolEntityListing>invokeAPIVerbose(request, new TypeReference<DIDPoolEntityListing>() {});
+  public ApiResponse<DIDPoolEntityListing> getTelephonyProvidersEdgesDidpools(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DIDPoolEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DIDPoolEntityListing> response = (ApiResponse<DIDPoolEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DIDPoolEntityListing> response = (ApiResponse<DIDPoolEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3052,10 +3189,11 @@ public class TelephonyProvidersEdgeApi {
    * @param sortOrder Sort order (optional, default to ASC)
    * @param phoneNumber Filter by phoneNumber (optional)
    * @return DIDEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DIDEntityListing getTelephonyProvidersEdgesDids(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesDidsWithHttpInfo(pageSize, pageNumber, sortBy, sortOrder, phoneNumber).getBody();
+    return  getTelephonyProvidersEdgesDids(createGetTelephonyProvidersEdgesDidsRequest(pageSize, pageNumber, sortBy, sortOrder, phoneNumber));
   }
 
   /**
@@ -3067,60 +3205,72 @@ public class TelephonyProvidersEdgeApi {
    * @param sortOrder Sort order (optional, default to ASC)
    * @param phoneNumber Filter by phoneNumber (optional)
    * @return DIDEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DIDEntityListing> getTelephonyProvidersEdgesDidsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/dids".replaceAll("\\{format\\}","json");
+  public ApiResponse<DIDEntityListing> getTelephonyProvidersEdgesDidsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber) throws IOException {
+    return getTelephonyProvidersEdgesDids(createGetTelephonyProvidersEdgesDidsRequest(pageSize, pageNumber, sortBy, sortOrder, phoneNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesDidsRequest createGetTelephonyProvidersEdgesDidsRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber) {
+    return GetTelephonyProvidersEdgesDidsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "phoneNumber", phoneNumber));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withSortBy(sortBy)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortOrder(sortOrder)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DIDEntityListing>() {});
+            .withPhoneNumber(phoneNumber)
+            .build();
   }
 
   /**
    * Get a listing of DIDs
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DIDEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DIDEntityListing getTelephonyProvidersEdgesDids(GetTelephonyProvidersEdgesDidsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DIDEntityListing>() {});
+    try {
+      ApiResponse<DIDEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DIDEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a listing of DIDs
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DIDEntityListing> getTelephonyProvidersEdgesDids(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DIDEntityListing>invokeAPIVerbose(request, new TypeReference<DIDEntityListing>() {});
+  public ApiResponse<DIDEntityListing> getTelephonyProvidersEdgesDids(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DIDEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DIDEntityListing> response = (ApiResponse<DIDEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DIDEntityListing> response = (ApiResponse<DIDEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3129,10 +3279,11 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeGroupId Edge group ID (required)
    * @param expand Fields to expand in the response (optional)
    * @return EdgeGroup
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeGroup getTelephonyProvidersEdgesEdgegroup(String edgeGroupId, List<String> expand) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesEdgegroupWithHttpInfo(edgeGroupId, expand).getBody();
+    return  getTelephonyProvidersEdgesEdgegroup(createGetTelephonyProvidersEdgesEdgegroupRequest(edgeGroupId, expand));
   }
 
   /**
@@ -3141,62 +3292,66 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeGroupId Edge group ID (required)
    * @param expand Fields to expand in the response (optional)
    * @return EdgeGroup
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeGroup> getTelephonyProvidersEdgesEdgegroupWithHttpInfo(String edgeGroupId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'edgeGroupId' is set
-    if (edgeGroupId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeGroupId' when calling getTelephonyProvidersEdgesEdgegroup");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeGroupId" + "\\}", pcapiClient.escapeString(edgeGroupId.toString()));
+  public ApiResponse<EdgeGroup> getTelephonyProvidersEdgesEdgegroupWithHttpInfo(String edgeGroupId, List<String> expand) throws IOException {
+    return getTelephonyProvidersEdgesEdgegroup(createGetTelephonyProvidersEdgesEdgegroupRequest(edgeGroupId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesEdgegroupRequest createGetTelephonyProvidersEdgesEdgegroupRequest(String edgeGroupId, List<String> expand) {
+    return GetTelephonyProvidersEdgesEdgegroupRequest.builder()
+            .withEdgeGroupId(edgeGroupId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EdgeGroup>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get edge group.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EdgeGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeGroup getTelephonyProvidersEdgesEdgegroup(GetTelephonyProvidersEdgesEdgegroupRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeGroup>() {});
+    try {
+      ApiResponse<EdgeGroup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeGroup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get edge group.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeGroup> getTelephonyProvidersEdgesEdgegroup(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EdgeGroup>invokeAPIVerbose(request, new TypeReference<EdgeGroup>() {});
+  public ApiResponse<EdgeGroup> getTelephonyProvidersEdgesEdgegroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeGroup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeGroup> response = (ApiResponse<EdgeGroup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeGroup> response = (ApiResponse<EdgeGroup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3205,10 +3360,11 @@ public class TelephonyProvidersEdgeApi {
    * @param edgegroupId Edge Group ID (required)
    * @param edgetrunkbaseId Edge Trunk Base ID (required)
    * @return EdgeTrunkBase
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeTrunkBase getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(String edgegroupId, String edgetrunkbaseId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesEdgegroupEdgetrunkbasisWithHttpInfo(edgegroupId, edgetrunkbaseId).getBody();
+    return  getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(createGetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest(edgegroupId, edgetrunkbaseId));
   }
 
   /**
@@ -3217,67 +3373,66 @@ public class TelephonyProvidersEdgeApi {
    * @param edgegroupId Edge Group ID (required)
    * @param edgetrunkbaseId Edge Trunk Base ID (required)
    * @return EdgeTrunkBase
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeTrunkBase> getTelephonyProvidersEdgesEdgegroupEdgetrunkbasisWithHttpInfo(String edgegroupId, String edgetrunkbaseId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'edgegroupId' is set
-    if (edgegroupId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgegroupId' when calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis");
-    }
-    
-    // verify the required parameter 'edgetrunkbaseId' is set
-    if (edgetrunkbaseId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgetrunkbaseId' when calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgegroupId" + "\\}", pcapiClient.escapeString(edgegroupId.toString()))
-      .replaceAll("\\{" + "edgetrunkbaseId" + "\\}", pcapiClient.escapeString(edgetrunkbaseId.toString()));
+  public ApiResponse<EdgeTrunkBase> getTelephonyProvidersEdgesEdgegroupEdgetrunkbasisWithHttpInfo(String edgegroupId, String edgetrunkbaseId) throws IOException {
+    return getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(createGetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest(edgegroupId, edgetrunkbaseId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest createGetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest(String edgegroupId, String edgetrunkbaseId) {
+    return GetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest.builder()
+            .withEdgegroupId(edgegroupId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EdgeTrunkBase>() {});
+            .withEdgetrunkbaseId(edgetrunkbaseId)
+            .build();
   }
 
   /**
    * Gets the edge trunk base associated with the edge group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EdgeTrunkBase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeTrunkBase getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(GetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeTrunkBase>() {});
+    try {
+      ApiResponse<EdgeTrunkBase> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeTrunkBase>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Gets the edge trunk base associated with the edge group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeTrunkBase> getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EdgeTrunkBase>invokeAPIVerbose(request, new TypeReference<EdgeTrunkBase>() {});
+  public ApiResponse<EdgeTrunkBase> getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeTrunkBase>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeTrunkBase> response = (ApiResponse<EdgeTrunkBase>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeTrunkBase> response = (ApiResponse<EdgeTrunkBase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3289,10 +3444,11 @@ public class TelephonyProvidersEdgeApi {
    * @param sortBy Sort by (optional, default to name)
    * @param managed Filter by managed (optional)
    * @return EdgeGroupEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeGroupEntityListing getTelephonyProvidersEdgesEdgegroups(Integer pageSize, Integer pageNumber, String name, String sortBy, Boolean managed) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesEdgegroupsWithHttpInfo(pageSize, pageNumber, name, sortBy, managed).getBody();
+    return  getTelephonyProvidersEdgesEdgegroups(createGetTelephonyProvidersEdgesEdgegroupsRequest(pageSize, pageNumber, name, sortBy, managed));
   }
 
   /**
@@ -3304,125 +3460,145 @@ public class TelephonyProvidersEdgeApi {
    * @param sortBy Sort by (optional, default to name)
    * @param managed Filter by managed (optional)
    * @return EdgeGroupEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeGroupEntityListing> getTelephonyProvidersEdgesEdgegroupsWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String sortBy, Boolean managed) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/edgegroups".replaceAll("\\{format\\}","json");
+  public ApiResponse<EdgeGroupEntityListing> getTelephonyProvidersEdgesEdgegroupsWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String sortBy, Boolean managed) throws IOException {
+    return getTelephonyProvidersEdgesEdgegroups(createGetTelephonyProvidersEdgesEdgegroupsRequest(pageSize, pageNumber, name, sortBy, managed).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesEdgegroupsRequest createGetTelephonyProvidersEdgesEdgegroupsRequest(Integer pageSize, Integer pageNumber, String name, String sortBy, Boolean managed) {
+    return GetTelephonyProvidersEdgesEdgegroupsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "managed", managed));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withName(name)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortBy(sortBy)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EdgeGroupEntityListing>() {});
+            .withManaged(managed)
+            .build();
   }
 
   /**
    * Get the list of edge groups.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EdgeGroupEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeGroupEntityListing getTelephonyProvidersEdgesEdgegroups(GetTelephonyProvidersEdgesEdgegroupsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeGroupEntityListing>() {});
+    try {
+      ApiResponse<EdgeGroupEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeGroupEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the list of edge groups.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeGroupEntityListing> getTelephonyProvidersEdgesEdgegroups(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EdgeGroupEntityListing>invokeAPIVerbose(request, new TypeReference<EdgeGroupEntityListing>() {});
+  public ApiResponse<EdgeGroupEntityListing> getTelephonyProvidersEdgesEdgegroups(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeGroupEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeGroupEntityListing> response = (ApiResponse<EdgeGroupEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeGroupEntityListing> response = (ApiResponse<EdgeGroupEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get the edge version report.
    * The report will not have consistent data about the edge version(s) until all edges have been reset.
    * @return EdgeVersionReport
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeVersionReport getTelephonyProvidersEdgesEdgeversionreport() throws IOException, ApiException {
-    return getTelephonyProvidersEdgesEdgeversionreportWithHttpInfo().getBody();
+    return  getTelephonyProvidersEdgesEdgeversionreport(createGetTelephonyProvidersEdgesEdgeversionreportRequest());
   }
 
   /**
    * Get the edge version report.
    * The report will not have consistent data about the edge version(s) until all edges have been reset.
    * @return EdgeVersionReport
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeVersionReport> getTelephonyProvidersEdgesEdgeversionreportWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/edgeversionreport".replaceAll("\\{format\\}","json");
+  public ApiResponse<EdgeVersionReport> getTelephonyProvidersEdgesEdgeversionreportWithHttpInfo() throws IOException {
+    return getTelephonyProvidersEdgesEdgeversionreport(createGetTelephonyProvidersEdgesEdgeversionreportRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EdgeVersionReport>() {});
+  private GetTelephonyProvidersEdgesEdgeversionreportRequest createGetTelephonyProvidersEdgesEdgeversionreportRequest() {
+    return GetTelephonyProvidersEdgesEdgeversionreportRequest.builder()            .build();
   }
 
   /**
    * Get the edge version report.
    * The report will not have consistent data about the edge version(s) until all edges have been reset.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EdgeVersionReport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeVersionReport getTelephonyProvidersEdgesEdgeversionreport(GetTelephonyProvidersEdgesEdgeversionreportRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeVersionReport>() {});
+    try {
+      ApiResponse<EdgeVersionReport> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeVersionReport>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the edge version report.
    * The report will not have consistent data about the edge version(s) until all edges have been reset.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeVersionReport> getTelephonyProvidersEdgesEdgeversionreport(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EdgeVersionReport>invokeAPIVerbose(request, new TypeReference<EdgeVersionReport>() {});
+  public ApiResponse<EdgeVersionReport> getTelephonyProvidersEdgesEdgeversionreport(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeVersionReport>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeVersionReport> response = (ApiResponse<EdgeVersionReport>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeVersionReport> response = (ApiResponse<EdgeVersionReport>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3430,10 +3606,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param endpointId Endpoint ID (required)
    * @return Endpoint
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Endpoint getTelephonyProvidersEdgesEndpoint(String endpointId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesEndpointWithHttpInfo(endpointId).getBody();
+    return  getTelephonyProvidersEdgesEndpoint(createGetTelephonyProvidersEdgesEndpointRequest(endpointId));
   }
 
   /**
@@ -3441,61 +3618,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param endpointId Endpoint ID (required)
    * @return Endpoint
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Endpoint> getTelephonyProvidersEdgesEndpointWithHttpInfo(String endpointId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'endpointId' is set
-    if (endpointId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'endpointId' when calling getTelephonyProvidersEdgesEndpoint");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/endpoints/{endpointId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "endpointId" + "\\}", pcapiClient.escapeString(endpointId.toString()));
+  public ApiResponse<Endpoint> getTelephonyProvidersEdgesEndpointWithHttpInfo(String endpointId) throws IOException {
+    return getTelephonyProvidersEdgesEndpoint(createGetTelephonyProvidersEdgesEndpointRequest(endpointId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Endpoint>() {});
+  private GetTelephonyProvidersEdgesEndpointRequest createGetTelephonyProvidersEdgesEndpointRequest(String endpointId) {
+    return GetTelephonyProvidersEdgesEndpointRequest.builder()
+            .withEndpointId(endpointId)
+            .build();
   }
 
   /**
    * Get endpoint
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Endpoint
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Endpoint getTelephonyProvidersEdgesEndpoint(GetTelephonyProvidersEdgesEndpointRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Endpoint>() {});
+    try {
+      ApiResponse<Endpoint> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Endpoint>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get endpoint
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Endpoint> getTelephonyProvidersEdgesEndpoint(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Endpoint>invokeAPIVerbose(request, new TypeReference<Endpoint>() {});
+  public ApiResponse<Endpoint> getTelephonyProvidersEdgesEndpoint(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Endpoint>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Endpoint> response = (ApiResponse<Endpoint>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Endpoint> response = (ApiResponse<Endpoint>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3506,10 +3686,11 @@ public class TelephonyProvidersEdgeApi {
    * @param name Name (optional)
    * @param sortBy Sort by (optional, default to name)
    * @return EndpointEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EndpointEntityListing getTelephonyProvidersEdgesEndpoints(Integer pageSize, Integer pageNumber, String name, String sortBy) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesEndpointsWithHttpInfo(pageSize, pageNumber, name, sortBy).getBody();
+    return  getTelephonyProvidersEdgesEndpoints(createGetTelephonyProvidersEdgesEndpointsRequest(pageSize, pageNumber, name, sortBy));
   }
 
   /**
@@ -3520,59 +3701,70 @@ public class TelephonyProvidersEdgeApi {
    * @param name Name (optional)
    * @param sortBy Sort by (optional, default to name)
    * @return EndpointEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EndpointEntityListing> getTelephonyProvidersEdgesEndpointsWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String sortBy) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/endpoints".replaceAll("\\{format\\}","json");
+  public ApiResponse<EndpointEntityListing> getTelephonyProvidersEdgesEndpointsWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String sortBy) throws IOException {
+    return getTelephonyProvidersEdgesEndpoints(createGetTelephonyProvidersEdgesEndpointsRequest(pageSize, pageNumber, name, sortBy).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesEndpointsRequest createGetTelephonyProvidersEdgesEndpointsRequest(Integer pageSize, Integer pageNumber, String name, String sortBy) {
+    return GetTelephonyProvidersEdgesEndpointsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withName(name)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EndpointEntityListing>() {});
+            .withSortBy(sortBy)
+            .build();
   }
 
   /**
    * Get endpoints
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EndpointEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EndpointEntityListing getTelephonyProvidersEdgesEndpoints(GetTelephonyProvidersEdgesEndpointsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EndpointEntityListing>() {});
+    try {
+      ApiResponse<EndpointEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EndpointEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get endpoints
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EndpointEntityListing> getTelephonyProvidersEdgesEndpoints(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EndpointEntityListing>invokeAPIVerbose(request, new TypeReference<EndpointEntityListing>() {});
+  public ApiResponse<EndpointEntityListing> getTelephonyProvidersEdgesEndpoints(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EndpointEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EndpointEntityListing> response = (ApiResponse<EndpointEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EndpointEntityListing> response = (ApiResponse<EndpointEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3580,10 +3772,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param extensionId Extension ID (required)
    * @return Extension
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Extension getTelephonyProvidersEdgesExtension(String extensionId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesExtensionWithHttpInfo(extensionId).getBody();
+    return  getTelephonyProvidersEdgesExtension(createGetTelephonyProvidersEdgesExtensionRequest(extensionId));
   }
 
   /**
@@ -3591,61 +3784,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param extensionId Extension ID (required)
    * @return Extension
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Extension> getTelephonyProvidersEdgesExtensionWithHttpInfo(String extensionId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'extensionId' is set
-    if (extensionId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'extensionId' when calling getTelephonyProvidersEdgesExtension");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/extensions/{extensionId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "extensionId" + "\\}", pcapiClient.escapeString(extensionId.toString()));
+  public ApiResponse<Extension> getTelephonyProvidersEdgesExtensionWithHttpInfo(String extensionId) throws IOException {
+    return getTelephonyProvidersEdgesExtension(createGetTelephonyProvidersEdgesExtensionRequest(extensionId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Extension>() {});
+  private GetTelephonyProvidersEdgesExtensionRequest createGetTelephonyProvidersEdgesExtensionRequest(String extensionId) {
+    return GetTelephonyProvidersEdgesExtensionRequest.builder()
+            .withExtensionId(extensionId)
+            .build();
   }
 
   /**
    * Get an extension by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Extension
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Extension getTelephonyProvidersEdgesExtension(GetTelephonyProvidersEdgesExtensionRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Extension>() {});
+    try {
+      ApiResponse<Extension> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Extension>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get an extension by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Extension> getTelephonyProvidersEdgesExtension(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Extension>invokeAPIVerbose(request, new TypeReference<Extension>() {});
+  public ApiResponse<Extension> getTelephonyProvidersEdgesExtension(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Extension>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Extension> response = (ApiResponse<Extension>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Extension> response = (ApiResponse<Extension>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3653,10 +3849,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param extensionPoolId Extension pool ID (required)
    * @return ExtensionPool
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExtensionPool getTelephonyProvidersEdgesExtensionpool(String extensionPoolId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesExtensionpoolWithHttpInfo(extensionPoolId).getBody();
+    return  getTelephonyProvidersEdgesExtensionpool(createGetTelephonyProvidersEdgesExtensionpoolRequest(extensionPoolId));
   }
 
   /**
@@ -3664,61 +3861,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param extensionPoolId Extension pool ID (required)
    * @return ExtensionPool
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExtensionPool> getTelephonyProvidersEdgesExtensionpoolWithHttpInfo(String extensionPoolId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'extensionPoolId' is set
-    if (extensionPoolId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'extensionPoolId' when calling getTelephonyProvidersEdgesExtensionpool");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "extensionPoolId" + "\\}", pcapiClient.escapeString(extensionPoolId.toString()));
+  public ApiResponse<ExtensionPool> getTelephonyProvidersEdgesExtensionpoolWithHttpInfo(String extensionPoolId) throws IOException {
+    return getTelephonyProvidersEdgesExtensionpool(createGetTelephonyProvidersEdgesExtensionpoolRequest(extensionPoolId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ExtensionPool>() {});
+  private GetTelephonyProvidersEdgesExtensionpoolRequest createGetTelephonyProvidersEdgesExtensionpoolRequest(String extensionPoolId) {
+    return GetTelephonyProvidersEdgesExtensionpoolRequest.builder()
+            .withExtensionPoolId(extensionPoolId)
+            .build();
   }
 
   /**
    * Get an extension pool by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ExtensionPool
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExtensionPool getTelephonyProvidersEdgesExtensionpool(GetTelephonyProvidersEdgesExtensionpoolRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExtensionPool>() {});
+    try {
+      ApiResponse<ExtensionPool> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExtensionPool>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get an extension pool by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExtensionPool> getTelephonyProvidersEdgesExtensionpool(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ExtensionPool>invokeAPIVerbose(request, new TypeReference<ExtensionPool>() {});
+  public ApiResponse<ExtensionPool> getTelephonyProvidersEdgesExtensionpool(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExtensionPool>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExtensionPool> response = (ApiResponse<ExtensionPool>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExtensionPool> response = (ApiResponse<ExtensionPool>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3729,10 +3929,11 @@ public class TelephonyProvidersEdgeApi {
    * @param sortBy Sort by (optional, default to startNumber)
    * @param number Number (optional)
    * @return ExtensionPoolEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExtensionPoolEntityListing getTelephonyProvidersEdgesExtensionpools(Integer pageSize, Integer pageNumber, String sortBy, String number) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesExtensionpoolsWithHttpInfo(pageSize, pageNumber, sortBy, number).getBody();
+    return  getTelephonyProvidersEdgesExtensionpools(createGetTelephonyProvidersEdgesExtensionpoolsRequest(pageSize, pageNumber, sortBy, number));
   }
 
   /**
@@ -3743,59 +3944,70 @@ public class TelephonyProvidersEdgeApi {
    * @param sortBy Sort by (optional, default to startNumber)
    * @param number Number (optional)
    * @return ExtensionPoolEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExtensionPoolEntityListing> getTelephonyProvidersEdgesExtensionpoolsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String number) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/extensionpools".replaceAll("\\{format\\}","json");
+  public ApiResponse<ExtensionPoolEntityListing> getTelephonyProvidersEdgesExtensionpoolsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String number) throws IOException {
+    return getTelephonyProvidersEdgesExtensionpools(createGetTelephonyProvidersEdgesExtensionpoolsRequest(pageSize, pageNumber, sortBy, number).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesExtensionpoolsRequest createGetTelephonyProvidersEdgesExtensionpoolsRequest(Integer pageSize, Integer pageNumber, String sortBy, String number) {
+    return GetTelephonyProvidersEdgesExtensionpoolsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "number", number));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withSortBy(sortBy)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ExtensionPoolEntityListing>() {});
+            .withNumber(number)
+            .build();
   }
 
   /**
    * Get a listing of extension pools
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ExtensionPoolEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExtensionPoolEntityListing getTelephonyProvidersEdgesExtensionpools(GetTelephonyProvidersEdgesExtensionpoolsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExtensionPoolEntityListing>() {});
+    try {
+      ApiResponse<ExtensionPoolEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExtensionPoolEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a listing of extension pools
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExtensionPoolEntityListing> getTelephonyProvidersEdgesExtensionpools(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ExtensionPoolEntityListing>invokeAPIVerbose(request, new TypeReference<ExtensionPoolEntityListing>() {});
+  public ApiResponse<ExtensionPoolEntityListing> getTelephonyProvidersEdgesExtensionpools(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExtensionPoolEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExtensionPoolEntityListing> response = (ApiResponse<ExtensionPoolEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExtensionPoolEntityListing> response = (ApiResponse<ExtensionPoolEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3807,10 +4019,11 @@ public class TelephonyProvidersEdgeApi {
    * @param sortOrder Sort order (optional, default to ASC)
    * @param number Filter by number (optional)
    * @return ExtensionEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExtensionEntityListing getTelephonyProvidersEdgesExtensions(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String number) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesExtensionsWithHttpInfo(pageSize, pageNumber, sortBy, sortOrder, number).getBody();
+    return  getTelephonyProvidersEdgesExtensions(createGetTelephonyProvidersEdgesExtensionsRequest(pageSize, pageNumber, sortBy, sortOrder, number));
   }
 
   /**
@@ -3822,60 +4035,72 @@ public class TelephonyProvidersEdgeApi {
    * @param sortOrder Sort order (optional, default to ASC)
    * @param number Filter by number (optional)
    * @return ExtensionEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExtensionEntityListing> getTelephonyProvidersEdgesExtensionsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String number) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/extensions".replaceAll("\\{format\\}","json");
+  public ApiResponse<ExtensionEntityListing> getTelephonyProvidersEdgesExtensionsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String number) throws IOException {
+    return getTelephonyProvidersEdgesExtensions(createGetTelephonyProvidersEdgesExtensionsRequest(pageSize, pageNumber, sortBy, sortOrder, number).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesExtensionsRequest createGetTelephonyProvidersEdgesExtensionsRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String number) {
+    return GetTelephonyProvidersEdgesExtensionsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "number", number));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withSortBy(sortBy)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortOrder(sortOrder)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ExtensionEntityListing>() {});
+            .withNumber(number)
+            .build();
   }
 
   /**
    * Get a listing of extensions
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ExtensionEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExtensionEntityListing getTelephonyProvidersEdgesExtensions(GetTelephonyProvidersEdgesExtensionsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExtensionEntityListing>() {});
+    try {
+      ApiResponse<ExtensionEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExtensionEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a listing of extensions
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExtensionEntityListing> getTelephonyProvidersEdgesExtensions(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ExtensionEntityListing>invokeAPIVerbose(request, new TypeReference<ExtensionEntityListing>() {});
+  public ApiResponse<ExtensionEntityListing> getTelephonyProvidersEdgesExtensions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExtensionEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExtensionEntityListing> response = (ApiResponse<ExtensionEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExtensionEntityListing> response = (ApiResponse<ExtensionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3883,10 +4108,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param lineId Line ID (required)
    * @return Line
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Line getTelephonyProvidersEdgesLine(String lineId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesLineWithHttpInfo(lineId).getBody();
+    return  getTelephonyProvidersEdgesLine(createGetTelephonyProvidersEdgesLineRequest(lineId));
   }
 
   /**
@@ -3894,61 +4120,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param lineId Line ID (required)
    * @return Line
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Line> getTelephonyProvidersEdgesLineWithHttpInfo(String lineId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'lineId' is set
-    if (lineId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'lineId' when calling getTelephonyProvidersEdgesLine");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/lines/{lineId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "lineId" + "\\}", pcapiClient.escapeString(lineId.toString()));
+  public ApiResponse<Line> getTelephonyProvidersEdgesLineWithHttpInfo(String lineId) throws IOException {
+    return getTelephonyProvidersEdgesLine(createGetTelephonyProvidersEdgesLineRequest(lineId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Line>() {});
+  private GetTelephonyProvidersEdgesLineRequest createGetTelephonyProvidersEdgesLineRequest(String lineId) {
+    return GetTelephonyProvidersEdgesLineRequest.builder()
+            .withLineId(lineId)
+            .build();
   }
 
   /**
    * Get a Line by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Line
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Line getTelephonyProvidersEdgesLine(GetTelephonyProvidersEdgesLineRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Line>() {});
+    try {
+      ApiResponse<Line> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Line>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a Line by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Line> getTelephonyProvidersEdgesLine(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Line>invokeAPIVerbose(request, new TypeReference<Line>() {});
+  public ApiResponse<Line> getTelephonyProvidersEdgesLine(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Line>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Line> response = (ApiResponse<Line>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Line> response = (ApiResponse<Line>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3956,10 +4185,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param lineBaseId Line base ID (required)
    * @return LineBase
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LineBase getTelephonyProvidersEdgesLinebasesetting(String lineBaseId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesLinebasesettingWithHttpInfo(lineBaseId).getBody();
+    return  getTelephonyProvidersEdgesLinebasesetting(createGetTelephonyProvidersEdgesLinebasesettingRequest(lineBaseId));
   }
 
   /**
@@ -3967,61 +4197,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param lineBaseId Line base ID (required)
    * @return LineBase
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LineBase> getTelephonyProvidersEdgesLinebasesettingWithHttpInfo(String lineBaseId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'lineBaseId' is set
-    if (lineBaseId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'lineBaseId' when calling getTelephonyProvidersEdgesLinebasesetting");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/linebasesettings/{lineBaseId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "lineBaseId" + "\\}", pcapiClient.escapeString(lineBaseId.toString()));
+  public ApiResponse<LineBase> getTelephonyProvidersEdgesLinebasesettingWithHttpInfo(String lineBaseId) throws IOException {
+    return getTelephonyProvidersEdgesLinebasesetting(createGetTelephonyProvidersEdgesLinebasesettingRequest(lineBaseId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<LineBase>() {});
+  private GetTelephonyProvidersEdgesLinebasesettingRequest createGetTelephonyProvidersEdgesLinebasesettingRequest(String lineBaseId) {
+    return GetTelephonyProvidersEdgesLinebasesettingRequest.builder()
+            .withLineBaseId(lineBaseId)
+            .build();
   }
 
   /**
    * Get a line base settings object by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return LineBase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LineBase getTelephonyProvidersEdgesLinebasesetting(GetTelephonyProvidersEdgesLinebasesettingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LineBase>() {});
+    try {
+      ApiResponse<LineBase> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LineBase>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a line base settings object by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LineBase> getTelephonyProvidersEdgesLinebasesetting(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<LineBase>invokeAPIVerbose(request, new TypeReference<LineBase>() {});
+  public ApiResponse<LineBase> getTelephonyProvidersEdgesLinebasesetting(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LineBase>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LineBase> response = (ApiResponse<LineBase>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LineBase> response = (ApiResponse<LineBase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4032,10 +4265,11 @@ public class TelephonyProvidersEdgeApi {
    * @param sortBy Value by which to sort (optional, default to name)
    * @param sortOrder Sort order (optional, default to ASC)
    * @return LineBaseEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LineBaseEntityListing getTelephonyProvidersEdgesLinebasesettings(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesLinebasesettingsWithHttpInfo(pageNumber, pageSize, sortBy, sortOrder).getBody();
+    return  getTelephonyProvidersEdgesLinebasesettings(createGetTelephonyProvidersEdgesLinebasesettingsRequest(pageNumber, pageSize, sortBy, sortOrder));
   }
 
   /**
@@ -4046,59 +4280,70 @@ public class TelephonyProvidersEdgeApi {
    * @param sortBy Value by which to sort (optional, default to name)
    * @param sortOrder Sort order (optional, default to ASC)
    * @return LineBaseEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LineBaseEntityListing> getTelephonyProvidersEdgesLinebasesettingsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/linebasesettings".replaceAll("\\{format\\}","json");
+  public ApiResponse<LineBaseEntityListing> getTelephonyProvidersEdgesLinebasesettingsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException {
+    return getTelephonyProvidersEdgesLinebasesettings(createGetTelephonyProvidersEdgesLinebasesettingsRequest(pageNumber, pageSize, sortBy, sortOrder).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesLinebasesettingsRequest createGetTelephonyProvidersEdgesLinebasesettingsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) {
+    return GetTelephonyProvidersEdgesLinebasesettingsRequest.builder()
+            .withPageNumber(pageNumber)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withSortBy(sortBy)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<LineBaseEntityListing>() {});
+            .withSortOrder(sortOrder)
+            .build();
   }
 
   /**
    * Get a listing of line base settings objects
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return LineBaseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LineBaseEntityListing getTelephonyProvidersEdgesLinebasesettings(GetTelephonyProvidersEdgesLinebasesettingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LineBaseEntityListing>() {});
+    try {
+      ApiResponse<LineBaseEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LineBaseEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a listing of line base settings objects
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LineBaseEntityListing> getTelephonyProvidersEdgesLinebasesettings(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<LineBaseEntityListing>invokeAPIVerbose(request, new TypeReference<LineBaseEntityListing>() {});
+  public ApiResponse<LineBaseEntityListing> getTelephonyProvidersEdgesLinebasesettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LineBaseEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LineBaseEntityListing> response = (ApiResponse<LineBaseEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LineBaseEntityListing> response = (ApiResponse<LineBaseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4110,10 +4355,11 @@ public class TelephonyProvidersEdgeApi {
    * @param sortBy Value by which to sort (optional, default to name)
    * @param expand Fields to expand in the response, comma-separated (optional)
    * @return LineEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LineEntityListing getTelephonyProvidersEdgesLines(Integer pageSize, Integer pageNumber, String name, String sortBy, List<String> expand) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesLinesWithHttpInfo(pageSize, pageNumber, name, sortBy, expand).getBody();
+    return  getTelephonyProvidersEdgesLines(createGetTelephonyProvidersEdgesLinesRequest(pageSize, pageNumber, name, sortBy, expand));
   }
 
   /**
@@ -4125,60 +4371,72 @@ public class TelephonyProvidersEdgeApi {
    * @param sortBy Value by which to sort (optional, default to name)
    * @param expand Fields to expand in the response, comma-separated (optional)
    * @return LineEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LineEntityListing> getTelephonyProvidersEdgesLinesWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String sortBy, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/lines".replaceAll("\\{format\\}","json");
+  public ApiResponse<LineEntityListing> getTelephonyProvidersEdgesLinesWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String sortBy, List<String> expand) throws IOException {
+    return getTelephonyProvidersEdgesLines(createGetTelephonyProvidersEdgesLinesRequest(pageSize, pageNumber, name, sortBy, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesLinesRequest createGetTelephonyProvidersEdgesLinesRequest(Integer pageSize, Integer pageNumber, String name, String sortBy, List<String> expand) {
+    return GetTelephonyProvidersEdgesLinesRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withName(name)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortBy(sortBy)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<LineEntityListing>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get a list of Lines
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return LineEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LineEntityListing getTelephonyProvidersEdgesLines(GetTelephonyProvidersEdgesLinesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LineEntityListing>() {});
+    try {
+      ApiResponse<LineEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LineEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of Lines
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LineEntityListing> getTelephonyProvidersEdgesLines(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<LineEntityListing>invokeAPIVerbose(request, new TypeReference<LineEntityListing>() {});
+  public ApiResponse<LineEntityListing> getTelephonyProvidersEdgesLines(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LineEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LineEntityListing> response = (ApiResponse<LineEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LineEntityListing> response = (ApiResponse<LineEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4186,10 +4444,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param lineBaseSettingsId The id of a Line Base Settings object upon which to base this Line (required)
    * @return Line
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Line getTelephonyProvidersEdgesLinesTemplate(String lineBaseSettingsId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesLinesTemplateWithHttpInfo(lineBaseSettingsId).getBody();
+    return  getTelephonyProvidersEdgesLinesTemplate(createGetTelephonyProvidersEdgesLinesTemplateRequest(lineBaseSettingsId));
   }
 
   /**
@@ -4197,61 +4456,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param lineBaseSettingsId The id of a Line Base Settings object upon which to base this Line (required)
    * @return Line
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Line> getTelephonyProvidersEdgesLinesTemplateWithHttpInfo(String lineBaseSettingsId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'lineBaseSettingsId' is set
-    if (lineBaseSettingsId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'lineBaseSettingsId' when calling getTelephonyProvidersEdgesLinesTemplate");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/lines/template".replaceAll("\\{format\\}","json");
+  public ApiResponse<Line> getTelephonyProvidersEdgesLinesTemplateWithHttpInfo(String lineBaseSettingsId) throws IOException {
+    return getTelephonyProvidersEdgesLinesTemplate(createGetTelephonyProvidersEdgesLinesTemplateRequest(lineBaseSettingsId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "lineBaseSettingsId", lineBaseSettingsId));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Line>() {});
+  private GetTelephonyProvidersEdgesLinesTemplateRequest createGetTelephonyProvidersEdgesLinesTemplateRequest(String lineBaseSettingsId) {
+    return GetTelephonyProvidersEdgesLinesTemplateRequest.builder()
+            .withLineBaseSettingsId(lineBaseSettingsId)
+            .build();
   }
 
   /**
    * Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Line
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Line getTelephonyProvidersEdgesLinesTemplate(GetTelephonyProvidersEdgesLinesTemplateRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Line>() {});
+    try {
+      ApiResponse<Line> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Line>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Line> getTelephonyProvidersEdgesLinesTemplate(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Line>invokeAPIVerbose(request, new TypeReference<Line>() {});
+  public ApiResponse<Line> getTelephonyProvidersEdgesLinesTemplate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Line>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Line> response = (ApiResponse<Line>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Line> response = (ApiResponse<Line>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4260,10 +4522,11 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeIds Comma separated list of Edge Id&#39;s (required)
    * @param expand Field to expand in the response (optional)
    * @return LogicalInterfaceEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LogicalInterfaceEntityListing getTelephonyProvidersEdgesLogicalinterfaces(String edgeIds, List<String> expand) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesLogicalinterfacesWithHttpInfo(edgeIds, expand).getBody();
+    return  getTelephonyProvidersEdgesLogicalinterfaces(createGetTelephonyProvidersEdgesLogicalinterfacesRequest(edgeIds, expand));
   }
 
   /**
@@ -4272,62 +4535,66 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeIds Comma separated list of Edge Id&#39;s (required)
    * @param expand Field to expand in the response (optional)
    * @return LogicalInterfaceEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LogicalInterfaceEntityListing> getTelephonyProvidersEdgesLogicalinterfacesWithHttpInfo(String edgeIds, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'edgeIds' is set
-    if (edgeIds == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeIds' when calling getTelephonyProvidersEdgesLogicalinterfaces");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/logicalinterfaces".replaceAll("\\{format\\}","json");
+  public ApiResponse<LogicalInterfaceEntityListing> getTelephonyProvidersEdgesLogicalinterfacesWithHttpInfo(String edgeIds, List<String> expand) throws IOException {
+    return getTelephonyProvidersEdgesLogicalinterfaces(createGetTelephonyProvidersEdgesLogicalinterfacesRequest(edgeIds, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesLogicalinterfacesRequest createGetTelephonyProvidersEdgesLogicalinterfacesRequest(String edgeIds, List<String> expand) {
+    return GetTelephonyProvidersEdgesLogicalinterfacesRequest.builder()
+            .withEdgeIds(edgeIds)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "edgeIds", edgeIds));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<LogicalInterfaceEntityListing>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get edge logical interfaces.
    * Retrieve the configured logical interfaces for a list edges. Only 100 edges can be requested at a time.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return LogicalInterfaceEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LogicalInterfaceEntityListing getTelephonyProvidersEdgesLogicalinterfaces(GetTelephonyProvidersEdgesLogicalinterfacesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LogicalInterfaceEntityListing>() {});
+    try {
+      ApiResponse<LogicalInterfaceEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LogicalInterfaceEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get edge logical interfaces.
    * Retrieve the configured logical interfaces for a list edges. Only 100 edges can be requested at a time.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LogicalInterfaceEntityListing> getTelephonyProvidersEdgesLogicalinterfaces(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<LogicalInterfaceEntityListing>invokeAPIVerbose(request, new TypeReference<LogicalInterfaceEntityListing>() {});
+  public ApiResponse<LogicalInterfaceEntityListing> getTelephonyProvidersEdgesLogicalinterfaces(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LogicalInterfaceEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LogicalInterfaceEntityListing> response = (ApiResponse<LogicalInterfaceEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LogicalInterfaceEntityListing> response = (ApiResponse<LogicalInterfaceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4335,10 +4602,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param outboundRouteId Outbound route ID (required)
    * @return OutboundRoute
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OutboundRoute getTelephonyProvidersEdgesOutboundroute(String outboundRouteId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesOutboundrouteWithHttpInfo(outboundRouteId).getBody();
+    return  getTelephonyProvidersEdgesOutboundroute(createGetTelephonyProvidersEdgesOutboundrouteRequest(outboundRouteId));
   }
 
   /**
@@ -4346,61 +4614,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param outboundRouteId Outbound route ID (required)
    * @return OutboundRoute
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundRoute> getTelephonyProvidersEdgesOutboundrouteWithHttpInfo(String outboundRouteId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'outboundRouteId' is set
-    if (outboundRouteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'outboundRouteId' when calling getTelephonyProvidersEdgesOutboundroute");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "outboundRouteId" + "\\}", pcapiClient.escapeString(outboundRouteId.toString()));
+  public ApiResponse<OutboundRoute> getTelephonyProvidersEdgesOutboundrouteWithHttpInfo(String outboundRouteId) throws IOException {
+    return getTelephonyProvidersEdgesOutboundroute(createGetTelephonyProvidersEdgesOutboundrouteRequest(outboundRouteId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OutboundRoute>() {});
+  private GetTelephonyProvidersEdgesOutboundrouteRequest createGetTelephonyProvidersEdgesOutboundrouteRequest(String outboundRouteId) {
+    return GetTelephonyProvidersEdgesOutboundrouteRequest.builder()
+            .withOutboundRouteId(outboundRouteId)
+            .build();
   }
 
   /**
    * Get outbound route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OutboundRoute
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OutboundRoute getTelephonyProvidersEdgesOutboundroute(GetTelephonyProvidersEdgesOutboundrouteRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OutboundRoute>() {});
+    try {
+      ApiResponse<OutboundRoute> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutboundRoute>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get outbound route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundRoute> getTelephonyProvidersEdgesOutboundroute(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<OutboundRoute>invokeAPIVerbose(request, new TypeReference<OutboundRoute>() {});
+  public ApiResponse<OutboundRoute> getTelephonyProvidersEdgesOutboundroute(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutboundRoute>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundRoute> response = (ApiResponse<OutboundRoute>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundRoute> response = (ApiResponse<OutboundRoute>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4412,10 +4683,11 @@ public class TelephonyProvidersEdgeApi {
    * @param siteId Filter by site.id (optional)
    * @param sortBy Sort by (optional, default to name)
    * @return OutboundRouteEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OutboundRouteEntityListing getTelephonyProvidersEdgesOutboundroutes(Integer pageSize, Integer pageNumber, String name, String siteId, String sortBy) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesOutboundroutesWithHttpInfo(pageSize, pageNumber, name, siteId, sortBy).getBody();
+    return  getTelephonyProvidersEdgesOutboundroutes(createGetTelephonyProvidersEdgesOutboundroutesRequest(pageSize, pageNumber, name, siteId, sortBy));
   }
 
   /**
@@ -4427,60 +4699,72 @@ public class TelephonyProvidersEdgeApi {
    * @param siteId Filter by site.id (optional)
    * @param sortBy Sort by (optional, default to name)
    * @return OutboundRouteEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundRouteEntityListing> getTelephonyProvidersEdgesOutboundroutesWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String siteId, String sortBy) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/outboundroutes".replaceAll("\\{format\\}","json");
+  public ApiResponse<OutboundRouteEntityListing> getTelephonyProvidersEdgesOutboundroutesWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String siteId, String sortBy) throws IOException {
+    return getTelephonyProvidersEdgesOutboundroutes(createGetTelephonyProvidersEdgesOutboundroutesRequest(pageSize, pageNumber, name, siteId, sortBy).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesOutboundroutesRequest createGetTelephonyProvidersEdgesOutboundroutesRequest(Integer pageSize, Integer pageNumber, String name, String siteId, String sortBy) {
+    return GetTelephonyProvidersEdgesOutboundroutesRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "site.id", siteId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withName(name)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSiteId(siteId)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OutboundRouteEntityListing>() {});
+            .withSortBy(sortBy)
+            .build();
   }
 
   /**
    * Get outbound routes
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OutboundRouteEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OutboundRouteEntityListing getTelephonyProvidersEdgesOutboundroutes(GetTelephonyProvidersEdgesOutboundroutesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OutboundRouteEntityListing>() {});
+    try {
+      ApiResponse<OutboundRouteEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutboundRouteEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get outbound routes
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundRouteEntityListing> getTelephonyProvidersEdgesOutboundroutes(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<OutboundRouteEntityListing>invokeAPIVerbose(request, new TypeReference<OutboundRouteEntityListing>() {});
+  public ApiResponse<OutboundRouteEntityListing> getTelephonyProvidersEdgesOutboundroutes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutboundRouteEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundRouteEntityListing> response = (ApiResponse<OutboundRouteEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundRouteEntityListing> response = (ApiResponse<OutboundRouteEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4488,10 +4772,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param phoneId Phone ID (required)
    * @return Phone
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Phone getTelephonyProvidersEdgesPhone(String phoneId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesPhoneWithHttpInfo(phoneId).getBody();
+    return  getTelephonyProvidersEdgesPhone(createGetTelephonyProvidersEdgesPhoneRequest(phoneId));
   }
 
   /**
@@ -4499,61 +4784,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param phoneId Phone ID (required)
    * @return Phone
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Phone> getTelephonyProvidersEdgesPhoneWithHttpInfo(String phoneId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'phoneId' is set
-    if (phoneId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'phoneId' when calling getTelephonyProvidersEdgesPhone");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/phones/{phoneId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "phoneId" + "\\}", pcapiClient.escapeString(phoneId.toString()));
+  public ApiResponse<Phone> getTelephonyProvidersEdgesPhoneWithHttpInfo(String phoneId) throws IOException {
+    return getTelephonyProvidersEdgesPhone(createGetTelephonyProvidersEdgesPhoneRequest(phoneId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Phone>() {});
+  private GetTelephonyProvidersEdgesPhoneRequest createGetTelephonyProvidersEdgesPhoneRequest(String phoneId) {
+    return GetTelephonyProvidersEdgesPhoneRequest.builder()
+            .withPhoneId(phoneId)
+            .build();
   }
 
   /**
    * Get a Phone by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Phone
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Phone getTelephonyProvidersEdgesPhone(GetTelephonyProvidersEdgesPhoneRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Phone>() {});
+    try {
+      ApiResponse<Phone> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Phone>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a Phone by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Phone> getTelephonyProvidersEdgesPhone(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Phone>invokeAPIVerbose(request, new TypeReference<Phone>() {});
+  public ApiResponse<Phone> getTelephonyProvidersEdgesPhone(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Phone>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Phone> response = (ApiResponse<Phone>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Phone> response = (ApiResponse<Phone>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4561,10 +4849,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param phoneBaseId Phone base ID (required)
    * @return PhoneBase
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PhoneBase getTelephonyProvidersEdgesPhonebasesetting(String phoneBaseId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesPhonebasesettingWithHttpInfo(phoneBaseId).getBody();
+    return  getTelephonyProvidersEdgesPhonebasesetting(createGetTelephonyProvidersEdgesPhonebasesettingRequest(phoneBaseId));
   }
 
   /**
@@ -4572,61 +4861,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param phoneBaseId Phone base ID (required)
    * @return PhoneBase
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PhoneBase> getTelephonyProvidersEdgesPhonebasesettingWithHttpInfo(String phoneBaseId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'phoneBaseId' is set
-    if (phoneBaseId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'phoneBaseId' when calling getTelephonyProvidersEdgesPhonebasesetting");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "phoneBaseId" + "\\}", pcapiClient.escapeString(phoneBaseId.toString()));
+  public ApiResponse<PhoneBase> getTelephonyProvidersEdgesPhonebasesettingWithHttpInfo(String phoneBaseId) throws IOException {
+    return getTelephonyProvidersEdgesPhonebasesetting(createGetTelephonyProvidersEdgesPhonebasesettingRequest(phoneBaseId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<PhoneBase>() {});
+  private GetTelephonyProvidersEdgesPhonebasesettingRequest createGetTelephonyProvidersEdgesPhonebasesettingRequest(String phoneBaseId) {
+    return GetTelephonyProvidersEdgesPhonebasesettingRequest.builder()
+            .withPhoneBaseId(phoneBaseId)
+            .build();
   }
 
   /**
    * Get a Phone Base Settings object by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return PhoneBase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PhoneBase getTelephonyProvidersEdgesPhonebasesetting(GetTelephonyProvidersEdgesPhonebasesettingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PhoneBase>() {});
+    try {
+      ApiResponse<PhoneBase> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PhoneBase>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a Phone Base Settings object by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PhoneBase> getTelephonyProvidersEdgesPhonebasesetting(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<PhoneBase>invokeAPIVerbose(request, new TypeReference<PhoneBase>() {});
+  public ApiResponse<PhoneBase> getTelephonyProvidersEdgesPhonebasesetting(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PhoneBase>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PhoneBase> response = (ApiResponse<PhoneBase>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PhoneBase> response = (ApiResponse<PhoneBase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4638,10 +4930,11 @@ public class TelephonyProvidersEdgeApi {
    * @param sortOrder Sort order (optional, default to ASC)
    * @param name Name (optional)
    * @return PhoneBaseEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PhoneBaseEntityListing getTelephonyProvidersEdgesPhonebasesettings(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesPhonebasesettingsWithHttpInfo(pageSize, pageNumber, sortBy, sortOrder, name).getBody();
+    return  getTelephonyProvidersEdgesPhonebasesettings(createGetTelephonyProvidersEdgesPhonebasesettingsRequest(pageSize, pageNumber, sortBy, sortOrder, name));
   }
 
   /**
@@ -4653,60 +4946,72 @@ public class TelephonyProvidersEdgeApi {
    * @param sortOrder Sort order (optional, default to ASC)
    * @param name Name (optional)
    * @return PhoneBaseEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PhoneBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettingsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/phonebasesettings".replaceAll("\\{format\\}","json");
+  public ApiResponse<PhoneBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettingsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name) throws IOException {
+    return getTelephonyProvidersEdgesPhonebasesettings(createGetTelephonyProvidersEdgesPhonebasesettingsRequest(pageSize, pageNumber, sortBy, sortOrder, name).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesPhonebasesettingsRequest createGetTelephonyProvidersEdgesPhonebasesettingsRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name) {
+    return GetTelephonyProvidersEdgesPhonebasesettingsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withSortBy(sortBy)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortOrder(sortOrder)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<PhoneBaseEntityListing>() {});
+            .withName(name)
+            .build();
   }
 
   /**
    * Get a list of Phone Base Settings objects
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return PhoneBaseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PhoneBaseEntityListing getTelephonyProvidersEdgesPhonebasesettings(GetTelephonyProvidersEdgesPhonebasesettingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PhoneBaseEntityListing>() {});
+    try {
+      ApiResponse<PhoneBaseEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PhoneBaseEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of Phone Base Settings objects
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PhoneBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettings(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<PhoneBaseEntityListing>invokeAPIVerbose(request, new TypeReference<PhoneBaseEntityListing>() {});
+  public ApiResponse<PhoneBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PhoneBaseEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PhoneBaseEntityListing> response = (ApiResponse<PhoneBaseEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PhoneBaseEntityListing> response = (ApiResponse<PhoneBaseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4715,10 +5020,11 @@ public class TelephonyProvidersEdgeApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return PhoneMetaBaseEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PhoneMetaBaseEntityListing getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesWithHttpInfo(pageSize, pageNumber).getBody();
+    return  getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(createGetTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesRequest(pageSize, pageNumber));
   }
 
   /**
@@ -4727,57 +5033,66 @@ public class TelephonyProvidersEdgeApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return PhoneMetaBaseEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PhoneMetaBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/phonebasesettings/availablemetabases".replaceAll("\\{format\\}","json");
+  public ApiResponse<PhoneMetaBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(createGetTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesRequest(pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesRequest createGetTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesRequest(Integer pageSize, Integer pageNumber) {
+    return GetTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<PhoneMetaBaseEntityListing>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * Get a list of available makes and models to create a new Phone Base Settings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return PhoneMetaBaseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PhoneMetaBaseEntityListing getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(GetTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PhoneMetaBaseEntityListing>() {});
+    try {
+      ApiResponse<PhoneMetaBaseEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PhoneMetaBaseEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of available makes and models to create a new Phone Base Settings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PhoneMetaBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<PhoneMetaBaseEntityListing>invokeAPIVerbose(request, new TypeReference<PhoneMetaBaseEntityListing>() {});
+  public ApiResponse<PhoneMetaBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PhoneMetaBaseEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PhoneMetaBaseEntityListing> response = (ApiResponse<PhoneMetaBaseEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PhoneMetaBaseEntityListing> response = (ApiResponse<PhoneMetaBaseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4785,10 +5100,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param phoneMetabaseId The id of a metabase object upon which to base this Phone Base Settings (required)
    * @return PhoneBase
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PhoneBase getTelephonyProvidersEdgesPhonebasesettingsTemplate(String phoneMetabaseId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesPhonebasesettingsTemplateWithHttpInfo(phoneMetabaseId).getBody();
+    return  getTelephonyProvidersEdgesPhonebasesettingsTemplate(createGetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest(phoneMetabaseId));
   }
 
   /**
@@ -4796,61 +5112,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param phoneMetabaseId The id of a metabase object upon which to base this Phone Base Settings (required)
    * @return PhoneBase
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PhoneBase> getTelephonyProvidersEdgesPhonebasesettingsTemplateWithHttpInfo(String phoneMetabaseId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'phoneMetabaseId' is set
-    if (phoneMetabaseId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'phoneMetabaseId' when calling getTelephonyProvidersEdgesPhonebasesettingsTemplate");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/phonebasesettings/template".replaceAll("\\{format\\}","json");
+  public ApiResponse<PhoneBase> getTelephonyProvidersEdgesPhonebasesettingsTemplateWithHttpInfo(String phoneMetabaseId) throws IOException {
+    return getTelephonyProvidersEdgesPhonebasesettingsTemplate(createGetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest(phoneMetabaseId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "phoneMetabaseId", phoneMetabaseId));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<PhoneBase>() {});
+  private GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest createGetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest(String phoneMetabaseId) {
+    return GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest.builder()
+            .withPhoneMetabaseId(phoneMetabaseId)
+            .build();
   }
 
   /**
    * Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return PhoneBase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PhoneBase getTelephonyProvidersEdgesPhonebasesettingsTemplate(GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PhoneBase>() {});
+    try {
+      ApiResponse<PhoneBase> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PhoneBase>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PhoneBase> getTelephonyProvidersEdgesPhonebasesettingsTemplate(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<PhoneBase>invokeAPIVerbose(request, new TypeReference<PhoneBase>() {});
+  public ApiResponse<PhoneBase> getTelephonyProvidersEdgesPhonebasesettingsTemplate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PhoneBase>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PhoneBase> response = (ApiResponse<PhoneBase>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PhoneBase> response = (ApiResponse<PhoneBase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4871,10 +5190,11 @@ public class TelephonyProvidersEdgeApi {
    * @param expand Fields to expand in the response, comma-separated (optional)
    * @param fields Fields and properties to get, comma-separated (optional)
    * @return PhoneEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PhoneEntityListing getTelephonyProvidersEdgesPhones(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String siteId, String webRtcUserId, String phoneBaseSettingsId, String linesLoggedInUserId, String linesDefaultForUserId, String phoneHardwareId, String linesId, String linesName, List<String> expand, List<String> fields) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesPhonesWithHttpInfo(pageNumber, pageSize, sortBy, sortOrder, siteId, webRtcUserId, phoneBaseSettingsId, linesLoggedInUserId, linesDefaultForUserId, phoneHardwareId, linesId, linesName, expand, fields).getBody();
+    return  getTelephonyProvidersEdgesPhones(createGetTelephonyProvidersEdgesPhonesRequest(pageNumber, pageSize, sortBy, sortOrder, siteId, webRtcUserId, phoneBaseSettingsId, linesLoggedInUserId, linesDefaultForUserId, phoneHardwareId, linesId, linesName, expand, fields));
   }
 
   /**
@@ -4895,69 +5215,90 @@ public class TelephonyProvidersEdgeApi {
    * @param expand Fields to expand in the response, comma-separated (optional)
    * @param fields Fields and properties to get, comma-separated (optional)
    * @return PhoneEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PhoneEntityListing> getTelephonyProvidersEdgesPhonesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String siteId, String webRtcUserId, String phoneBaseSettingsId, String linesLoggedInUserId, String linesDefaultForUserId, String phoneHardwareId, String linesId, String linesName, List<String> expand, List<String> fields) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/phones".replaceAll("\\{format\\}","json");
+  public ApiResponse<PhoneEntityListing> getTelephonyProvidersEdgesPhonesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String siteId, String webRtcUserId, String phoneBaseSettingsId, String linesLoggedInUserId, String linesDefaultForUserId, String phoneHardwareId, String linesId, String linesName, List<String> expand, List<String> fields) throws IOException {
+    return getTelephonyProvidersEdgesPhones(createGetTelephonyProvidersEdgesPhonesRequest(pageNumber, pageSize, sortBy, sortOrder, siteId, webRtcUserId, phoneBaseSettingsId, linesLoggedInUserId, linesDefaultForUserId, phoneHardwareId, linesId, linesName, expand, fields).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesPhonesRequest createGetTelephonyProvidersEdgesPhonesRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String siteId, String webRtcUserId, String phoneBaseSettingsId, String linesLoggedInUserId, String linesDefaultForUserId, String phoneHardwareId, String linesId, String linesName, List<String> expand, List<String> fields) {
+    return GetTelephonyProvidersEdgesPhonesRequest.builder()
+            .withPageNumber(pageNumber)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "site.id", siteId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "webRtcUser.id", webRtcUserId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "phoneBaseSettings.id", phoneBaseSettingsId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "lines.loggedInUser.id", linesLoggedInUserId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "lines.defaultForUser.id", linesDefaultForUserId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "phone_hardwareId", phoneHardwareId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "lines.id", linesId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "lines.name", linesName));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "fields", fields));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withSortBy(sortBy)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortOrder(sortOrder)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withSiteId(siteId)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<PhoneEntityListing>() {});
+            .withWebRtcUserId(webRtcUserId)
+
+            .withPhoneBaseSettingsId(phoneBaseSettingsId)
+
+            .withLinesLoggedInUserId(linesLoggedInUserId)
+
+            .withLinesDefaultForUserId(linesDefaultForUserId)
+
+            .withPhoneHardwareId(phoneHardwareId)
+
+            .withLinesId(linesId)
+
+            .withLinesName(linesName)
+
+            .withExpand(expand)
+
+            .withFields(fields)
+            .build();
   }
 
   /**
    * Get a list of Phone Instances
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return PhoneEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PhoneEntityListing getTelephonyProvidersEdgesPhones(GetTelephonyProvidersEdgesPhonesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PhoneEntityListing>() {});
+    try {
+      ApiResponse<PhoneEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PhoneEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of Phone Instances
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PhoneEntityListing> getTelephonyProvidersEdgesPhones(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<PhoneEntityListing>invokeAPIVerbose(request, new TypeReference<PhoneEntityListing>() {});
+  public ApiResponse<PhoneEntityListing> getTelephonyProvidersEdgesPhones(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PhoneEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PhoneEntityListing> response = (ApiResponse<PhoneEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PhoneEntityListing> response = (ApiResponse<PhoneEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4965,10 +5306,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param phoneBaseSettingsId The id of a Phone Base Settings object upon which to base this Phone (required)
    * @return Phone
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Phone getTelephonyProvidersEdgesPhonesTemplate(String phoneBaseSettingsId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesPhonesTemplateWithHttpInfo(phoneBaseSettingsId).getBody();
+    return  getTelephonyProvidersEdgesPhonesTemplate(createGetTelephonyProvidersEdgesPhonesTemplateRequest(phoneBaseSettingsId));
   }
 
   /**
@@ -4976,61 +5318,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param phoneBaseSettingsId The id of a Phone Base Settings object upon which to base this Phone (required)
    * @return Phone
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Phone> getTelephonyProvidersEdgesPhonesTemplateWithHttpInfo(String phoneBaseSettingsId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'phoneBaseSettingsId' is set
-    if (phoneBaseSettingsId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'phoneBaseSettingsId' when calling getTelephonyProvidersEdgesPhonesTemplate");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/phones/template".replaceAll("\\{format\\}","json");
+  public ApiResponse<Phone> getTelephonyProvidersEdgesPhonesTemplateWithHttpInfo(String phoneBaseSettingsId) throws IOException {
+    return getTelephonyProvidersEdgesPhonesTemplate(createGetTelephonyProvidersEdgesPhonesTemplateRequest(phoneBaseSettingsId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "phoneBaseSettingsId", phoneBaseSettingsId));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Phone>() {});
+  private GetTelephonyProvidersEdgesPhonesTemplateRequest createGetTelephonyProvidersEdgesPhonesTemplateRequest(String phoneBaseSettingsId) {
+    return GetTelephonyProvidersEdgesPhonesTemplateRequest.builder()
+            .withPhoneBaseSettingsId(phoneBaseSettingsId)
+            .build();
   }
 
   /**
    * Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Phone
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Phone getTelephonyProvidersEdgesPhonesTemplate(GetTelephonyProvidersEdgesPhonesTemplateRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Phone>() {});
+    try {
+      ApiResponse<Phone> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Phone>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Phone> getTelephonyProvidersEdgesPhonesTemplate(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Phone>invokeAPIVerbose(request, new TypeReference<Phone>() {});
+  public ApiResponse<Phone> getTelephonyProvidersEdgesPhonesTemplate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Phone>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Phone> response = (ApiResponse<Phone>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Phone> response = (ApiResponse<Phone>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5038,10 +5383,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param siteId Site ID (required)
    * @return Site
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Site getTelephonyProvidersEdgesSite(String siteId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesSiteWithHttpInfo(siteId).getBody();
+    return  getTelephonyProvidersEdgesSite(createGetTelephonyProvidersEdgesSiteRequest(siteId));
   }
 
   /**
@@ -5049,61 +5395,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param siteId Site ID (required)
    * @return Site
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Site> getTelephonyProvidersEdgesSiteWithHttpInfo(String siteId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'siteId' is set
-    if (siteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling getTelephonyProvidersEdgesSite");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/sites/{siteId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "siteId" + "\\}", pcapiClient.escapeString(siteId.toString()));
+  public ApiResponse<Site> getTelephonyProvidersEdgesSiteWithHttpInfo(String siteId) throws IOException {
+    return getTelephonyProvidersEdgesSite(createGetTelephonyProvidersEdgesSiteRequest(siteId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Site>() {});
+  private GetTelephonyProvidersEdgesSiteRequest createGetTelephonyProvidersEdgesSiteRequest(String siteId) {
+    return GetTelephonyProvidersEdgesSiteRequest.builder()
+            .withSiteId(siteId)
+            .build();
   }
 
   /**
    * Get a Site by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Site
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Site getTelephonyProvidersEdgesSite(GetTelephonyProvidersEdgesSiteRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Site>() {});
+    try {
+      ApiResponse<Site> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Site>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a Site by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Site> getTelephonyProvidersEdgesSite(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Site>invokeAPIVerbose(request, new TypeReference<Site>() {});
+  public ApiResponse<Site> getTelephonyProvidersEdgesSite(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Site>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Site> response = (ApiResponse<Site>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Site> response = (ApiResponse<Site>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5112,10 +5461,11 @@ public class TelephonyProvidersEdgeApi {
    * @param siteId Site ID (required)
    * @param numberPlanId Number Plan ID (required)
    * @return NumberPlan
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public NumberPlan getTelephonyProvidersEdgesSiteNumberplan(String siteId, String numberPlanId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesSiteNumberplanWithHttpInfo(siteId, numberPlanId).getBody();
+    return  getTelephonyProvidersEdgesSiteNumberplan(createGetTelephonyProvidersEdgesSiteNumberplanRequest(siteId, numberPlanId));
   }
 
   /**
@@ -5124,67 +5474,66 @@ public class TelephonyProvidersEdgeApi {
    * @param siteId Site ID (required)
    * @param numberPlanId Number Plan ID (required)
    * @return NumberPlan
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<NumberPlan> getTelephonyProvidersEdgesSiteNumberplanWithHttpInfo(String siteId, String numberPlanId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'siteId' is set
-    if (siteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling getTelephonyProvidersEdgesSiteNumberplan");
-    }
-    
-    // verify the required parameter 'numberPlanId' is set
-    if (numberPlanId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'numberPlanId' when calling getTelephonyProvidersEdgesSiteNumberplan");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/sites/{siteId}/numberplans/{numberPlanId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "siteId" + "\\}", pcapiClient.escapeString(siteId.toString()))
-      .replaceAll("\\{" + "numberPlanId" + "\\}", pcapiClient.escapeString(numberPlanId.toString()));
+  public ApiResponse<NumberPlan> getTelephonyProvidersEdgesSiteNumberplanWithHttpInfo(String siteId, String numberPlanId) throws IOException {
+    return getTelephonyProvidersEdgesSiteNumberplan(createGetTelephonyProvidersEdgesSiteNumberplanRequest(siteId, numberPlanId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesSiteNumberplanRequest createGetTelephonyProvidersEdgesSiteNumberplanRequest(String siteId, String numberPlanId) {
+    return GetTelephonyProvidersEdgesSiteNumberplanRequest.builder()
+            .withSiteId(siteId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<NumberPlan>() {});
+            .withNumberPlanId(numberPlanId)
+            .build();
   }
 
   /**
    * Get a Number Plan by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return NumberPlan
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public NumberPlan getTelephonyProvidersEdgesSiteNumberplan(GetTelephonyProvidersEdgesSiteNumberplanRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<NumberPlan>() {});
+    try {
+      ApiResponse<NumberPlan> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<NumberPlan>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a Number Plan by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<NumberPlan> getTelephonyProvidersEdgesSiteNumberplan(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<NumberPlan>invokeAPIVerbose(request, new TypeReference<NumberPlan>() {});
+  public ApiResponse<NumberPlan> getTelephonyProvidersEdgesSiteNumberplan(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<NumberPlan>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<NumberPlan> response = (ApiResponse<NumberPlan>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<NumberPlan> response = (ApiResponse<NumberPlan>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5192,10 +5541,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param siteId Site ID (required)
    * @return List<NumberPlan>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<NumberPlan> getTelephonyProvidersEdgesSiteNumberplans(String siteId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesSiteNumberplansWithHttpInfo(siteId).getBody();
+    return  getTelephonyProvidersEdgesSiteNumberplans(createGetTelephonyProvidersEdgesSiteNumberplansRequest(siteId));
   }
 
   /**
@@ -5203,61 +5553,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param siteId Site ID (required)
    * @return List<NumberPlan>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<NumberPlan>> getTelephonyProvidersEdgesSiteNumberplansWithHttpInfo(String siteId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'siteId' is set
-    if (siteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling getTelephonyProvidersEdgesSiteNumberplans");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/sites/{siteId}/numberplans".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "siteId" + "\\}", pcapiClient.escapeString(siteId.toString()));
+  public ApiResponse<List<NumberPlan>> getTelephonyProvidersEdgesSiteNumberplansWithHttpInfo(String siteId) throws IOException {
+    return getTelephonyProvidersEdgesSiteNumberplans(createGetTelephonyProvidersEdgesSiteNumberplansRequest(siteId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<NumberPlan>>() {});
+  private GetTelephonyProvidersEdgesSiteNumberplansRequest createGetTelephonyProvidersEdgesSiteNumberplansRequest(String siteId) {
+    return GetTelephonyProvidersEdgesSiteNumberplansRequest.builder()
+            .withSiteId(siteId)
+            .build();
   }
 
   /**
    * Get the list of Number Plans for this Site.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<NumberPlan>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<NumberPlan> getTelephonyProvidersEdgesSiteNumberplans(GetTelephonyProvidersEdgesSiteNumberplansRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<NumberPlan>>() {});
+    try {
+      ApiResponse<List<NumberPlan>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<NumberPlan>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the list of Number Plans for this Site.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<NumberPlan>> getTelephonyProvidersEdgesSiteNumberplans(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<NumberPlan>>invokeAPIVerbose(request, new TypeReference<List<NumberPlan>>() {});
+  public ApiResponse<List<NumberPlan>> getTelephonyProvidersEdgesSiteNumberplans(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<NumberPlan>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<NumberPlan>> response = (ApiResponse<List<NumberPlan>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<NumberPlan>> response = (ApiResponse<List<NumberPlan>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5266,10 +5619,11 @@ public class TelephonyProvidersEdgeApi {
    * @param siteId Site ID (required)
    * @param classification Classification (optional)
    * @return List<String>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<String> getTelephonyProvidersEdgesSiteNumberplansClassifications(String siteId, String classification) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesSiteNumberplansClassificationsWithHttpInfo(siteId, classification).getBody();
+    return  getTelephonyProvidersEdgesSiteNumberplansClassifications(createGetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest(siteId, classification));
   }
 
   /**
@@ -5278,62 +5632,66 @@ public class TelephonyProvidersEdgeApi {
    * @param siteId Site ID (required)
    * @param classification Classification (optional)
    * @return List<String>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<String>> getTelephonyProvidersEdgesSiteNumberplansClassificationsWithHttpInfo(String siteId, String classification) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'siteId' is set
-    if (siteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling getTelephonyProvidersEdgesSiteNumberplansClassifications");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/sites/{siteId}/numberplans/classifications".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "siteId" + "\\}", pcapiClient.escapeString(siteId.toString()));
+  public ApiResponse<List<String>> getTelephonyProvidersEdgesSiteNumberplansClassificationsWithHttpInfo(String siteId, String classification) throws IOException {
+    return getTelephonyProvidersEdgesSiteNumberplansClassifications(createGetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest(siteId, classification).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest createGetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest(String siteId, String classification) {
+    return GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest.builder()
+            .withSiteId(siteId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "classification", classification));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<String>>() {});
+            .withClassification(classification)
+            .build();
   }
 
   /**
    * Get a list of Classifications for this Site
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<String>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<String> getTelephonyProvidersEdgesSiteNumberplansClassifications(GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<String>>() {});
+    try {
+      ApiResponse<List<String>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<String>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of Classifications for this Site
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<String>> getTelephonyProvidersEdgesSiteNumberplansClassifications(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<String>>invokeAPIVerbose(request, new TypeReference<List<String>>() {});
+  public ApiResponse<List<String>> getTelephonyProvidersEdgesSiteNumberplansClassifications(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<String>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5342,10 +5700,11 @@ public class TelephonyProvidersEdgeApi {
    * @param siteId Site ID (required)
    * @param outboundRouteId Outbound route ID (required)
    * @return OutboundRouteBase
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OutboundRouteBase getTelephonyProvidersEdgesSiteOutboundroute(String siteId, String outboundRouteId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesSiteOutboundrouteWithHttpInfo(siteId, outboundRouteId).getBody();
+    return  getTelephonyProvidersEdgesSiteOutboundroute(createGetTelephonyProvidersEdgesSiteOutboundrouteRequest(siteId, outboundRouteId));
   }
 
   /**
@@ -5354,67 +5713,66 @@ public class TelephonyProvidersEdgeApi {
    * @param siteId Site ID (required)
    * @param outboundRouteId Outbound route ID (required)
    * @return OutboundRouteBase
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundRouteBase> getTelephonyProvidersEdgesSiteOutboundrouteWithHttpInfo(String siteId, String outboundRouteId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'siteId' is set
-    if (siteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling getTelephonyProvidersEdgesSiteOutboundroute");
-    }
-    
-    // verify the required parameter 'outboundRouteId' is set
-    if (outboundRouteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'outboundRouteId' when calling getTelephonyProvidersEdgesSiteOutboundroute");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "siteId" + "\\}", pcapiClient.escapeString(siteId.toString()))
-      .replaceAll("\\{" + "outboundRouteId" + "\\}", pcapiClient.escapeString(outboundRouteId.toString()));
+  public ApiResponse<OutboundRouteBase> getTelephonyProvidersEdgesSiteOutboundrouteWithHttpInfo(String siteId, String outboundRouteId) throws IOException {
+    return getTelephonyProvidersEdgesSiteOutboundroute(createGetTelephonyProvidersEdgesSiteOutboundrouteRequest(siteId, outboundRouteId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesSiteOutboundrouteRequest createGetTelephonyProvidersEdgesSiteOutboundrouteRequest(String siteId, String outboundRouteId) {
+    return GetTelephonyProvidersEdgesSiteOutboundrouteRequest.builder()
+            .withSiteId(siteId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OutboundRouteBase>() {});
+            .withOutboundRouteId(outboundRouteId)
+            .build();
   }
 
   /**
    * Get an outbound route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OutboundRouteBase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OutboundRouteBase getTelephonyProvidersEdgesSiteOutboundroute(GetTelephonyProvidersEdgesSiteOutboundrouteRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OutboundRouteBase>() {});
+    try {
+      ApiResponse<OutboundRouteBase> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutboundRouteBase>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get an outbound route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundRouteBase> getTelephonyProvidersEdgesSiteOutboundroute(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<OutboundRouteBase>invokeAPIVerbose(request, new TypeReference<OutboundRouteBase>() {});
+  public ApiResponse<OutboundRouteBase> getTelephonyProvidersEdgesSiteOutboundroute(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutboundRouteBase>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundRouteBase> response = (ApiResponse<OutboundRouteBase>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundRouteBase> response = (ApiResponse<OutboundRouteBase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5426,10 +5784,11 @@ public class TelephonyProvidersEdgeApi {
    * @param name Name (optional)
    * @param sortBy Sort by (optional, default to name)
    * @return OutboundRouteBaseEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OutboundRouteBaseEntityListing getTelephonyProvidersEdgesSiteOutboundroutes(String siteId, Integer pageSize, Integer pageNumber, String name, String sortBy) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesSiteOutboundroutesWithHttpInfo(siteId, pageSize, pageNumber, name, sortBy).getBody();
+    return  getTelephonyProvidersEdgesSiteOutboundroutes(createGetTelephonyProvidersEdgesSiteOutboundroutesRequest(siteId, pageSize, pageNumber, name, sortBy));
   }
 
   /**
@@ -5441,65 +5800,72 @@ public class TelephonyProvidersEdgeApi {
    * @param name Name (optional)
    * @param sortBy Sort by (optional, default to name)
    * @return OutboundRouteBaseEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundRouteBaseEntityListing> getTelephonyProvidersEdgesSiteOutboundroutesWithHttpInfo(String siteId, Integer pageSize, Integer pageNumber, String name, String sortBy) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'siteId' is set
-    if (siteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling getTelephonyProvidersEdgesSiteOutboundroutes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "siteId" + "\\}", pcapiClient.escapeString(siteId.toString()));
+  public ApiResponse<OutboundRouteBaseEntityListing> getTelephonyProvidersEdgesSiteOutboundroutesWithHttpInfo(String siteId, Integer pageSize, Integer pageNumber, String name, String sortBy) throws IOException {
+    return getTelephonyProvidersEdgesSiteOutboundroutes(createGetTelephonyProvidersEdgesSiteOutboundroutesRequest(siteId, pageSize, pageNumber, name, sortBy).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesSiteOutboundroutesRequest createGetTelephonyProvidersEdgesSiteOutboundroutesRequest(String siteId, Integer pageSize, Integer pageNumber, String name, String sortBy) {
+    return GetTelephonyProvidersEdgesSiteOutboundroutesRequest.builder()
+            .withSiteId(siteId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageNumber(pageNumber)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withName(name)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OutboundRouteBaseEntityListing>() {});
+            .withSortBy(sortBy)
+            .build();
   }
 
   /**
    * Get outbound routes
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OutboundRouteBaseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OutboundRouteBaseEntityListing getTelephonyProvidersEdgesSiteOutboundroutes(GetTelephonyProvidersEdgesSiteOutboundroutesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OutboundRouteBaseEntityListing>() {});
+    try {
+      ApiResponse<OutboundRouteBaseEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutboundRouteBaseEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get outbound routes
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundRouteBaseEntityListing> getTelephonyProvidersEdgesSiteOutboundroutes(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<OutboundRouteBaseEntityListing>invokeAPIVerbose(request, new TypeReference<OutboundRouteBaseEntityListing>() {});
+  public ApiResponse<OutboundRouteBaseEntityListing> getTelephonyProvidersEdgesSiteOutboundroutes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutboundRouteBaseEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundRouteBaseEntityListing> response = (ApiResponse<OutboundRouteBaseEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundRouteBaseEntityListing> response = (ApiResponse<OutboundRouteBaseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5513,10 +5879,11 @@ public class TelephonyProvidersEdgeApi {
    * @param locationId Location Id (optional)
    * @param managed Filter by managed (optional)
    * @return SiteEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SiteEntityListing getTelephonyProvidersEdgesSites(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String locationId, Boolean managed) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesSitesWithHttpInfo(pageSize, pageNumber, sortBy, sortOrder, name, locationId, managed).getBody();
+    return  getTelephonyProvidersEdgesSites(createGetTelephonyProvidersEdgesSitesRequest(pageSize, pageNumber, sortBy, sortOrder, name, locationId, managed));
   }
 
   /**
@@ -5530,62 +5897,76 @@ public class TelephonyProvidersEdgeApi {
    * @param locationId Location Id (optional)
    * @param managed Filter by managed (optional)
    * @return SiteEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SiteEntityListing> getTelephonyProvidersEdgesSitesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String locationId, Boolean managed) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/sites".replaceAll("\\{format\\}","json");
+  public ApiResponse<SiteEntityListing> getTelephonyProvidersEdgesSitesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String locationId, Boolean managed) throws IOException {
+    return getTelephonyProvidersEdgesSites(createGetTelephonyProvidersEdgesSitesRequest(pageSize, pageNumber, sortBy, sortOrder, name, locationId, managed).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesSitesRequest createGetTelephonyProvidersEdgesSitesRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String locationId, Boolean managed) {
+    return GetTelephonyProvidersEdgesSitesRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "location.id", locationId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "managed", managed));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withSortBy(sortBy)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortOrder(sortOrder)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withName(name)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<SiteEntityListing>() {});
+            .withLocationId(locationId)
+
+            .withManaged(managed)
+            .build();
   }
 
   /**
    * Get the list of Sites.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return SiteEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SiteEntityListing getTelephonyProvidersEdgesSites(GetTelephonyProvidersEdgesSitesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SiteEntityListing>() {});
+    try {
+      ApiResponse<SiteEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SiteEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the list of Sites.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SiteEntityListing> getTelephonyProvidersEdgesSites(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<SiteEntityListing>invokeAPIVerbose(request, new TypeReference<SiteEntityListing>() {});
+  public ApiResponse<SiteEntityListing> getTelephonyProvidersEdgesSites(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SiteEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SiteEntityListing> response = (ApiResponse<SiteEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SiteEntityListing> response = (ApiResponse<SiteEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5594,10 +5975,11 @@ public class TelephonyProvidersEdgeApi {
    * @param pageSize Page size (optional, default to 1000)
    * @param pageNumber Page number (optional, default to 1)
    * @return TimeZoneEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TimeZoneEntityListing getTelephonyProvidersEdgesTimezones(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesTimezonesWithHttpInfo(pageSize, pageNumber).getBody();
+    return  getTelephonyProvidersEdgesTimezones(createGetTelephonyProvidersEdgesTimezonesRequest(pageSize, pageNumber));
   }
 
   /**
@@ -5606,57 +5988,66 @@ public class TelephonyProvidersEdgeApi {
    * @param pageSize Page size (optional, default to 1000)
    * @param pageNumber Page number (optional, default to 1)
    * @return TimeZoneEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeZoneEntityListing> getTelephonyProvidersEdgesTimezonesWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/timezones".replaceAll("\\{format\\}","json");
+  public ApiResponse<TimeZoneEntityListing> getTelephonyProvidersEdgesTimezonesWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getTelephonyProvidersEdgesTimezones(createGetTelephonyProvidersEdgesTimezonesRequest(pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesTimezonesRequest createGetTelephonyProvidersEdgesTimezonesRequest(Integer pageSize, Integer pageNumber) {
+    return GetTelephonyProvidersEdgesTimezonesRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<TimeZoneEntityListing>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * Get a list of Edge-compatible time zones
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return TimeZoneEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TimeZoneEntityListing getTelephonyProvidersEdgesTimezones(GetTelephonyProvidersEdgesTimezonesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TimeZoneEntityListing>() {});
+    try {
+      ApiResponse<TimeZoneEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeZoneEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of Edge-compatible time zones
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeZoneEntityListing> getTelephonyProvidersEdgesTimezones(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<TimeZoneEntityListing>invokeAPIVerbose(request, new TypeReference<TimeZoneEntityListing>() {});
+  public ApiResponse<TimeZoneEntityListing> getTelephonyProvidersEdgesTimezones(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeZoneEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeZoneEntityListing> response = (ApiResponse<TimeZoneEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeZoneEntityListing> response = (ApiResponse<TimeZoneEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5664,10 +6055,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param trunkId Trunk ID (required)
    * @return Trunk
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Trunk getTelephonyProvidersEdgesTrunk(String trunkId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesTrunkWithHttpInfo(trunkId).getBody();
+    return  getTelephonyProvidersEdgesTrunk(createGetTelephonyProvidersEdgesTrunkRequest(trunkId));
   }
 
   /**
@@ -5675,61 +6067,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param trunkId Trunk ID (required)
    * @return Trunk
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Trunk> getTelephonyProvidersEdgesTrunkWithHttpInfo(String trunkId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'trunkId' is set
-    if (trunkId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'trunkId' when calling getTelephonyProvidersEdgesTrunk");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/trunks/{trunkId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "trunkId" + "\\}", pcapiClient.escapeString(trunkId.toString()));
+  public ApiResponse<Trunk> getTelephonyProvidersEdgesTrunkWithHttpInfo(String trunkId) throws IOException {
+    return getTelephonyProvidersEdgesTrunk(createGetTelephonyProvidersEdgesTrunkRequest(trunkId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Trunk>() {});
+  private GetTelephonyProvidersEdgesTrunkRequest createGetTelephonyProvidersEdgesTrunkRequest(String trunkId) {
+    return GetTelephonyProvidersEdgesTrunkRequest.builder()
+            .withTrunkId(trunkId)
+            .build();
   }
 
   /**
    * Get a Trunk by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Trunk
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Trunk getTelephonyProvidersEdgesTrunk(GetTelephonyProvidersEdgesTrunkRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Trunk>() {});
+    try {
+      ApiResponse<Trunk> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Trunk>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a Trunk by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Trunk> getTelephonyProvidersEdgesTrunk(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Trunk>invokeAPIVerbose(request, new TypeReference<Trunk>() {});
+  public ApiResponse<Trunk> getTelephonyProvidersEdgesTrunk(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Trunk>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Trunk> response = (ApiResponse<Trunk>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Trunk> response = (ApiResponse<Trunk>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5738,10 +6133,11 @@ public class TelephonyProvidersEdgeApi {
    * @param trunkBaseSettingsId Trunk Base ID (required)
    * @param ignoreHidden Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. (optional)
    * @return TrunkBase
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TrunkBase getTelephonyProvidersEdgesTrunkbasesetting(String trunkBaseSettingsId, Boolean ignoreHidden) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesTrunkbasesettingWithHttpInfo(trunkBaseSettingsId, ignoreHidden).getBody();
+    return  getTelephonyProvidersEdgesTrunkbasesetting(createGetTelephonyProvidersEdgesTrunkbasesettingRequest(trunkBaseSettingsId, ignoreHidden));
   }
 
   /**
@@ -5750,62 +6146,66 @@ public class TelephonyProvidersEdgeApi {
    * @param trunkBaseSettingsId Trunk Base ID (required)
    * @param ignoreHidden Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. (optional)
    * @return TrunkBase
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TrunkBase> getTelephonyProvidersEdgesTrunkbasesettingWithHttpInfo(String trunkBaseSettingsId, Boolean ignoreHidden) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'trunkBaseSettingsId' is set
-    if (trunkBaseSettingsId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'trunkBaseSettingsId' when calling getTelephonyProvidersEdgesTrunkbasesetting");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "trunkBaseSettingsId" + "\\}", pcapiClient.escapeString(trunkBaseSettingsId.toString()));
+  public ApiResponse<TrunkBase> getTelephonyProvidersEdgesTrunkbasesettingWithHttpInfo(String trunkBaseSettingsId, Boolean ignoreHidden) throws IOException {
+    return getTelephonyProvidersEdgesTrunkbasesetting(createGetTelephonyProvidersEdgesTrunkbasesettingRequest(trunkBaseSettingsId, ignoreHidden).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesTrunkbasesettingRequest createGetTelephonyProvidersEdgesTrunkbasesettingRequest(String trunkBaseSettingsId, Boolean ignoreHidden) {
+    return GetTelephonyProvidersEdgesTrunkbasesettingRequest.builder()
+            .withTrunkBaseSettingsId(trunkBaseSettingsId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "ignoreHidden", ignoreHidden));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<TrunkBase>() {});
+            .withIgnoreHidden(ignoreHidden)
+            .build();
   }
 
   /**
    * Get a Trunk Base Settings object by ID
    * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return TrunkBase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TrunkBase getTelephonyProvidersEdgesTrunkbasesetting(GetTelephonyProvidersEdgesTrunkbasesettingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TrunkBase>() {});
+    try {
+      ApiResponse<TrunkBase> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrunkBase>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a Trunk Base Settings object by ID
    * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TrunkBase> getTelephonyProvidersEdgesTrunkbasesetting(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<TrunkBase>invokeAPIVerbose(request, new TypeReference<TrunkBase>() {});
+  public ApiResponse<TrunkBase> getTelephonyProvidersEdgesTrunkbasesetting(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrunkBase>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkBase> response = (ApiResponse<TrunkBase>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkBase> response = (ApiResponse<TrunkBase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5821,10 +6221,11 @@ public class TelephonyProvidersEdgeApi {
    * @param expand Fields to expand in the response, comma-separated (optional)
    * @param name Name of the TrunkBase to filter by (optional)
    * @return TrunkBaseEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TrunkBaseEntityListing getTelephonyProvidersEdgesTrunkbasesettings(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, Boolean recordingEnabled, Boolean ignoreHidden, Boolean managed, List<String> expand, String name) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesTrunkbasesettingsWithHttpInfo(pageNumber, pageSize, sortBy, sortOrder, recordingEnabled, ignoreHidden, managed, expand, name).getBody();
+    return  getTelephonyProvidersEdgesTrunkbasesettings(createGetTelephonyProvidersEdgesTrunkbasesettingsRequest(pageNumber, pageSize, sortBy, sortOrder, recordingEnabled, ignoreHidden, managed, expand, name));
   }
 
   /**
@@ -5840,64 +6241,80 @@ public class TelephonyProvidersEdgeApi {
    * @param expand Fields to expand in the response, comma-separated (optional)
    * @param name Name of the TrunkBase to filter by (optional)
    * @return TrunkBaseEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TrunkBaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, Boolean recordingEnabled, Boolean ignoreHidden, Boolean managed, List<String> expand, String name) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/trunkbasesettings".replaceAll("\\{format\\}","json");
+  public ApiResponse<TrunkBaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, Boolean recordingEnabled, Boolean ignoreHidden, Boolean managed, List<String> expand, String name) throws IOException {
+    return getTelephonyProvidersEdgesTrunkbasesettings(createGetTelephonyProvidersEdgesTrunkbasesettingsRequest(pageNumber, pageSize, sortBy, sortOrder, recordingEnabled, ignoreHidden, managed, expand, name).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesTrunkbasesettingsRequest createGetTelephonyProvidersEdgesTrunkbasesettingsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, Boolean recordingEnabled, Boolean ignoreHidden, Boolean managed, List<String> expand, String name) {
+    return GetTelephonyProvidersEdgesTrunkbasesettingsRequest.builder()
+            .withPageNumber(pageNumber)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "recordingEnabled", recordingEnabled));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "ignoreHidden", ignoreHidden));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "managed", managed));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withSortBy(sortBy)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortOrder(sortOrder)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withRecordingEnabled(recordingEnabled)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<TrunkBaseEntityListing>() {});
+            .withIgnoreHidden(ignoreHidden)
+
+            .withManaged(managed)
+
+            .withExpand(expand)
+
+            .withName(name)
+            .build();
   }
 
   /**
    * Get Trunk Base Settings listing
    * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return TrunkBaseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TrunkBaseEntityListing getTelephonyProvidersEdgesTrunkbasesettings(GetTelephonyProvidersEdgesTrunkbasesettingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TrunkBaseEntityListing>() {});
+    try {
+      ApiResponse<TrunkBaseEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrunkBaseEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get Trunk Base Settings listing
    * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TrunkBaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettings(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<TrunkBaseEntityListing>invokeAPIVerbose(request, new TypeReference<TrunkBaseEntityListing>() {});
+  public ApiResponse<TrunkBaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrunkBaseEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkBaseEntityListing> response = (ApiResponse<TrunkBaseEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkBaseEntityListing> response = (ApiResponse<TrunkBaseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5907,10 +6324,11 @@ public class TelephonyProvidersEdgeApi {
    * @param pageSize  (optional, default to 25)
    * @param pageNumber  (optional, default to 1)
    * @return TrunkMetabaseEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TrunkMetabaseEntityListing getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(String type, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesWithHttpInfo(type, pageSize, pageNumber).getBody();
+    return  getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(createGetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest(type, pageSize, pageNumber));
   }
 
   /**
@@ -5920,58 +6338,68 @@ public class TelephonyProvidersEdgeApi {
    * @param pageSize  (optional, default to 25)
    * @param pageNumber  (optional, default to 1)
    * @return TrunkMetabaseEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TrunkMetabaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesWithHttpInfo(String type, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases".replaceAll("\\{format\\}","json");
+  public ApiResponse<TrunkMetabaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesWithHttpInfo(String type, Integer pageSize, Integer pageNumber) throws IOException {
+    return getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(createGetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest(type, pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest createGetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest(String type, Integer pageSize, Integer pageNumber) {
+    return GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest.builder()
+            .withType(type)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "type", type));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<TrunkMetabaseEntityListing>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * Get a list of available makes and models to create a new Trunk Base Settings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return TrunkMetabaseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TrunkMetabaseEntityListing getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TrunkMetabaseEntityListing>() {});
+    try {
+      ApiResponse<TrunkMetabaseEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrunkMetabaseEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of available makes and models to create a new Trunk Base Settings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TrunkMetabaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<TrunkMetabaseEntityListing>invokeAPIVerbose(request, new TypeReference<TrunkMetabaseEntityListing>() {});
+  public ApiResponse<TrunkMetabaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrunkMetabaseEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkMetabaseEntityListing> response = (ApiResponse<TrunkMetabaseEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkMetabaseEntityListing> response = (ApiResponse<TrunkMetabaseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5979,10 +6407,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param trunkMetabaseId The id of a metabase object upon which to base this Trunk Base Settings (required)
    * @return TrunkBase
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TrunkBase getTelephonyProvidersEdgesTrunkbasesettingsTemplate(String trunkMetabaseId) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesTrunkbasesettingsTemplateWithHttpInfo(trunkMetabaseId).getBody();
+    return  getTelephonyProvidersEdgesTrunkbasesettingsTemplate(createGetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest(trunkMetabaseId));
   }
 
   /**
@@ -5990,61 +6419,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param trunkMetabaseId The id of a metabase object upon which to base this Trunk Base Settings (required)
    * @return TrunkBase
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TrunkBase> getTelephonyProvidersEdgesTrunkbasesettingsTemplateWithHttpInfo(String trunkMetabaseId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'trunkMetabaseId' is set
-    if (trunkMetabaseId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'trunkMetabaseId' when calling getTelephonyProvidersEdgesTrunkbasesettingsTemplate");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/trunkbasesettings/template".replaceAll("\\{format\\}","json");
+  public ApiResponse<TrunkBase> getTelephonyProvidersEdgesTrunkbasesettingsTemplateWithHttpInfo(String trunkMetabaseId) throws IOException {
+    return getTelephonyProvidersEdgesTrunkbasesettingsTemplate(createGetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest(trunkMetabaseId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "trunkMetabaseId", trunkMetabaseId));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<TrunkBase>() {});
+  private GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest createGetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest(String trunkMetabaseId) {
+    return GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest.builder()
+            .withTrunkMetabaseId(trunkMetabaseId)
+            .build();
   }
 
   /**
    * Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return TrunkBase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TrunkBase getTelephonyProvidersEdgesTrunkbasesettingsTemplate(GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TrunkBase>() {});
+    try {
+      ApiResponse<TrunkBase> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrunkBase>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TrunkBase> getTelephonyProvidersEdgesTrunkbasesettingsTemplate(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<TrunkBase>invokeAPIVerbose(request, new TypeReference<TrunkBase>() {});
+  public ApiResponse<TrunkBase> getTelephonyProvidersEdgesTrunkbasesettingsTemplate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrunkBase>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkBase> response = (ApiResponse<TrunkBase>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkBase> response = (ApiResponse<TrunkBase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -6058,10 +6490,11 @@ public class TelephonyProvidersEdgeApi {
    * @param trunkBaseId Filter by Trunk Base Ids (optional)
    * @param trunkType Filter by a Trunk type (optional)
    * @return TrunkEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TrunkEntityListing getTelephonyProvidersEdgesTrunks(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String edgeId, String trunkBaseId, String trunkType) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesTrunksWithHttpInfo(pageNumber, pageSize, sortBy, sortOrder, edgeId, trunkBaseId, trunkType).getBody();
+    return  getTelephonyProvidersEdgesTrunks(createGetTelephonyProvidersEdgesTrunksRequest(pageNumber, pageSize, sortBy, sortOrder, edgeId, trunkBaseId, trunkType));
   }
 
   /**
@@ -6075,62 +6508,76 @@ public class TelephonyProvidersEdgeApi {
    * @param trunkBaseId Filter by Trunk Base Ids (optional)
    * @param trunkType Filter by a Trunk type (optional)
    * @return TrunkEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TrunkEntityListing> getTelephonyProvidersEdgesTrunksWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String edgeId, String trunkBaseId, String trunkType) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/trunks".replaceAll("\\{format\\}","json");
+  public ApiResponse<TrunkEntityListing> getTelephonyProvidersEdgesTrunksWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String edgeId, String trunkBaseId, String trunkType) throws IOException {
+    return getTelephonyProvidersEdgesTrunks(createGetTelephonyProvidersEdgesTrunksRequest(pageNumber, pageSize, sortBy, sortOrder, edgeId, trunkBaseId, trunkType).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTelephonyProvidersEdgesTrunksRequest createGetTelephonyProvidersEdgesTrunksRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String edgeId, String trunkBaseId, String trunkType) {
+    return GetTelephonyProvidersEdgesTrunksRequest.builder()
+            .withPageNumber(pageNumber)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "edge.id", edgeId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "trunkBase.id", trunkBaseId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "trunkType", trunkType));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withSortBy(sortBy)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortOrder(sortOrder)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withEdgeId(edgeId)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<TrunkEntityListing>() {});
+            .withTrunkBaseId(trunkBaseId)
+
+            .withTrunkType(trunkType)
+            .build();
   }
 
   /**
    * Get the list of available trunks.
    * Trunks are created by assigning trunk base settings to an Edge or Edge Group.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return TrunkEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TrunkEntityListing getTelephonyProvidersEdgesTrunks(GetTelephonyProvidersEdgesTrunksRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TrunkEntityListing>() {});
+    try {
+      ApiResponse<TrunkEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrunkEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the list of available trunks.
    * Trunks are created by assigning trunk base settings to an Edge or Edge Group.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TrunkEntityListing> getTelephonyProvidersEdgesTrunks(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<TrunkEntityListing>invokeAPIVerbose(request, new TypeReference<TrunkEntityListing>() {});
+  public ApiResponse<TrunkEntityListing> getTelephonyProvidersEdgesTrunks(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrunkEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkEntityListing> response = (ApiResponse<TrunkEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkEntityListing> response = (ApiResponse<TrunkEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -6138,10 +6585,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param trunkType The type of this trunk base. (optional)
    * @return TrunkRecordingEnabledCount
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TrunkRecordingEnabledCount getTelephonyProvidersEdgesTrunkswithrecording(String trunkType) throws IOException, ApiException {
-    return getTelephonyProvidersEdgesTrunkswithrecordingWithHttpInfo(trunkType).getBody();
+    return  getTelephonyProvidersEdgesTrunkswithrecording(createGetTelephonyProvidersEdgesTrunkswithrecordingRequest(trunkType));
   }
 
   /**
@@ -6149,56 +6597,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param trunkType The type of this trunk base. (optional)
    * @return TrunkRecordingEnabledCount
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TrunkRecordingEnabledCount> getTelephonyProvidersEdgesTrunkswithrecordingWithHttpInfo(String trunkType) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/trunkswithrecording".replaceAll("\\{format\\}","json");
+  public ApiResponse<TrunkRecordingEnabledCount> getTelephonyProvidersEdgesTrunkswithrecordingWithHttpInfo(String trunkType) throws IOException {
+    return getTelephonyProvidersEdgesTrunkswithrecording(createGetTelephonyProvidersEdgesTrunkswithrecordingRequest(trunkType).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "trunkType", trunkType));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<TrunkRecordingEnabledCount>() {});
+  private GetTelephonyProvidersEdgesTrunkswithrecordingRequest createGetTelephonyProvidersEdgesTrunkswithrecordingRequest(String trunkType) {
+    return GetTelephonyProvidersEdgesTrunkswithrecordingRequest.builder()
+            .withTrunkType(trunkType)
+            .build();
   }
 
   /**
    * Get Counts of trunks that have recording disabled or enabled
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return TrunkRecordingEnabledCount
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TrunkRecordingEnabledCount getTelephonyProvidersEdgesTrunkswithrecording(GetTelephonyProvidersEdgesTrunkswithrecordingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TrunkRecordingEnabledCount>() {});
+    try {
+      ApiResponse<TrunkRecordingEnabledCount> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrunkRecordingEnabledCount>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get Counts of trunks that have recording disabled or enabled
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TrunkRecordingEnabledCount> getTelephonyProvidersEdgesTrunkswithrecording(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<TrunkRecordingEnabledCount>invokeAPIVerbose(request, new TypeReference<TrunkRecordingEnabledCount>() {});
+  public ApiResponse<TrunkRecordingEnabledCount> getTelephonyProvidersEdgesTrunkswithrecording(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrunkRecordingEnabledCount>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkRecordingEnabledCount> response = (ApiResponse<TrunkRecordingEnabledCount>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkRecordingEnabledCount> response = (ApiResponse<TrunkRecordingEnabledCount>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -6207,10 +6663,11 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param body Logical interface (required)
    * @return DomainLogicalInterface
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainLogicalInterface postTelephonyProvidersEdgeLogicalinterfaces(String edgeId, DomainLogicalInterface body) throws IOException, ApiException {
-    return postTelephonyProvidersEdgeLogicalinterfacesWithHttpInfo(edgeId, body).getBody();
+    return  postTelephonyProvidersEdgeLogicalinterfaces(createPostTelephonyProvidersEdgeLogicalinterfacesRequest(edgeId, body));
   }
 
   /**
@@ -6219,66 +6676,66 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param body Logical interface (required)
    * @return DomainLogicalInterface
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainLogicalInterface> postTelephonyProvidersEdgeLogicalinterfacesWithHttpInfo(String edgeId, DomainLogicalInterface body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeLogicalinterfaces");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgeLogicalinterfaces");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()));
+  public ApiResponse<DomainLogicalInterface> postTelephonyProvidersEdgeLogicalinterfacesWithHttpInfo(String edgeId, DomainLogicalInterface body) throws IOException {
+    return postTelephonyProvidersEdgeLogicalinterfaces(createPostTelephonyProvidersEdgeLogicalinterfacesRequest(edgeId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostTelephonyProvidersEdgeLogicalinterfacesRequest createPostTelephonyProvidersEdgeLogicalinterfacesRequest(String edgeId, DomainLogicalInterface body) {
+    return PostTelephonyProvidersEdgeLogicalinterfacesRequest.builder()
+            .withEdgeId(edgeId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DomainLogicalInterface>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create an edge logical interface.
    * Create
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DomainLogicalInterface
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainLogicalInterface postTelephonyProvidersEdgeLogicalinterfaces(PostTelephonyProvidersEdgeLogicalinterfacesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainLogicalInterface>() {});
+    try {
+      ApiResponse<DomainLogicalInterface> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainLogicalInterface>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create an edge logical interface.
    * Create
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainLogicalInterface> postTelephonyProvidersEdgeLogicalinterfaces(ApiRequest<DomainLogicalInterface> request) throws IOException, ApiException {
-    return pcapiClient.<DomainLogicalInterface>invokeAPIVerbose(request, new TypeReference<DomainLogicalInterface>() {});
+  public ApiResponse<DomainLogicalInterface> postTelephonyProvidersEdgeLogicalinterfaces(ApiRequest<DomainLogicalInterface> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DomainLogicalInterface>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainLogicalInterface> response = (ApiResponse<DomainLogicalInterface>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainLogicalInterface> response = (ApiResponse<DomainLogicalInterface>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -6287,10 +6744,11 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param jobId Job ID (required)
    * @param body Log upload request (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postTelephonyProvidersEdgeLogsJobUpload(String edgeId, String jobId, EdgeLogsJobUploadRequest body) throws IOException, ApiException {
-    postTelephonyProvidersEdgeLogsJobUploadWithHttpInfo(edgeId, jobId, body);
+     postTelephonyProvidersEdgeLogsJobUpload(createPostTelephonyProvidersEdgeLogsJobUploadRequest(edgeId, jobId, body));
   }
 
   /**
@@ -6299,72 +6757,67 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param jobId Job ID (required)
    * @param body Log upload request (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postTelephonyProvidersEdgeLogsJobUploadWithHttpInfo(String edgeId, String jobId, EdgeLogsJobUploadRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeLogsJobUpload");
-    }
-    
-    // verify the required parameter 'jobId' is set
-    if (jobId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'jobId' when calling postTelephonyProvidersEdgeLogsJobUpload");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgeLogsJobUpload");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()))
-      .replaceAll("\\{" + "jobId" + "\\}", pcapiClient.escapeString(jobId.toString()));
+  public ApiResponse<Void> postTelephonyProvidersEdgeLogsJobUploadWithHttpInfo(String edgeId, String jobId, EdgeLogsJobUploadRequest body) throws IOException {
+    return postTelephonyProvidersEdgeLogsJobUpload(createPostTelephonyProvidersEdgeLogsJobUploadRequest(edgeId, jobId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostTelephonyProvidersEdgeLogsJobUploadRequest createPostTelephonyProvidersEdgeLogsJobUploadRequest(String edgeId, String jobId, EdgeLogsJobUploadRequest body) {
+    return PostTelephonyProvidersEdgeLogsJobUploadRequest.builder()
+            .withEdgeId(edgeId)
 
+            .withJobId(jobId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Request that the specified fileIds be uploaded from the Edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postTelephonyProvidersEdgeLogsJobUpload(PostTelephonyProvidersEdgeLogsJobUploadRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Request that the specified fileIds be uploaded from the Edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postTelephonyProvidersEdgeLogsJobUpload(ApiRequest<EdgeLogsJobUploadRequest> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> postTelephonyProvidersEdgeLogsJobUpload(ApiRequest<EdgeLogsJobUploadRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -6373,10 +6826,11 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param body EdgeLogsJobRequest (required)
    * @return EdgeLogsJobResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeLogsJobResponse postTelephonyProvidersEdgeLogsJobs(String edgeId, EdgeLogsJobRequest body) throws IOException, ApiException {
-    return postTelephonyProvidersEdgeLogsJobsWithHttpInfo(edgeId, body).getBody();
+    return  postTelephonyProvidersEdgeLogsJobs(createPostTelephonyProvidersEdgeLogsJobsRequest(edgeId, body));
   }
 
   /**
@@ -6385,66 +6839,66 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param body EdgeLogsJobRequest (required)
    * @return EdgeLogsJobResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeLogsJobResponse> postTelephonyProvidersEdgeLogsJobsWithHttpInfo(String edgeId, EdgeLogsJobRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeLogsJobs");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgeLogsJobs");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/logs/jobs".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()));
+  public ApiResponse<EdgeLogsJobResponse> postTelephonyProvidersEdgeLogsJobsWithHttpInfo(String edgeId, EdgeLogsJobRequest body) throws IOException {
+    return postTelephonyProvidersEdgeLogsJobs(createPostTelephonyProvidersEdgeLogsJobsRequest(edgeId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostTelephonyProvidersEdgeLogsJobsRequest createPostTelephonyProvidersEdgeLogsJobsRequest(String edgeId, EdgeLogsJobRequest body) {
+    return PostTelephonyProvidersEdgeLogsJobsRequest.builder()
+            .withEdgeId(edgeId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EdgeLogsJobResponse>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a job to upload a list of Edge logs.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EdgeLogsJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeLogsJobResponse postTelephonyProvidersEdgeLogsJobs(PostTelephonyProvidersEdgeLogsJobsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeLogsJobResponse>() {});
+    try {
+      ApiResponse<EdgeLogsJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeLogsJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a job to upload a list of Edge logs.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeLogsJobResponse> postTelephonyProvidersEdgeLogsJobs(ApiRequest<EdgeLogsJobRequest> request) throws IOException, ApiException {
-    return pcapiClient.<EdgeLogsJobResponse>invokeAPIVerbose(request, new TypeReference<EdgeLogsJobResponse>() {});
+  public ApiResponse<EdgeLogsJobResponse> postTelephonyProvidersEdgeLogsJobs(ApiRequest<EdgeLogsJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeLogsJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeLogsJobResponse> response = (ApiResponse<EdgeLogsJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeLogsJobResponse> response = (ApiResponse<EdgeLogsJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -6453,10 +6907,11 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param body Parameters for the edge reboot (optional)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String postTelephonyProvidersEdgeReboot(String edgeId, EdgeRebootParameters body) throws IOException, ApiException {
-    return postTelephonyProvidersEdgeRebootWithHttpInfo(edgeId, body).getBody();
+    return  postTelephonyProvidersEdgeReboot(createPostTelephonyProvidersEdgeRebootRequest(edgeId, body));
   }
 
   /**
@@ -6465,61 +6920,66 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param body Parameters for the edge reboot (optional)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> postTelephonyProvidersEdgeRebootWithHttpInfo(String edgeId, EdgeRebootParameters body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeReboot");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/reboot".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()));
+  public ApiResponse<String> postTelephonyProvidersEdgeRebootWithHttpInfo(String edgeId, EdgeRebootParameters body) throws IOException {
+    return postTelephonyProvidersEdgeReboot(createPostTelephonyProvidersEdgeRebootRequest(edgeId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostTelephonyProvidersEdgeRebootRequest createPostTelephonyProvidersEdgeRebootRequest(String edgeId, EdgeRebootParameters body) {
+    return PostTelephonyProvidersEdgeRebootRequest.builder()
+            .withEdgeId(edgeId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Reboot an Edge
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String postTelephonyProvidersEdgeReboot(PostTelephonyProvidersEdgeRebootRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Reboot an Edge
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> postTelephonyProvidersEdgeReboot(ApiRequest<EdgeRebootParameters> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> postTelephonyProvidersEdgeReboot(ApiRequest<EdgeRebootParameters> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -6528,10 +6988,11 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param body Software update request (required)
    * @return DomainEdgeSoftwareUpdateDto
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainEdgeSoftwareUpdateDto postTelephonyProvidersEdgeSoftwareupdate(String edgeId, DomainEdgeSoftwareUpdateDto body) throws IOException, ApiException {
-    return postTelephonyProvidersEdgeSoftwareupdateWithHttpInfo(edgeId, body).getBody();
+    return  postTelephonyProvidersEdgeSoftwareupdate(createPostTelephonyProvidersEdgeSoftwareupdateRequest(edgeId, body));
   }
 
   /**
@@ -6540,66 +7001,66 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param body Software update request (required)
    * @return DomainEdgeSoftwareUpdateDto
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainEdgeSoftwareUpdateDto> postTelephonyProvidersEdgeSoftwareupdateWithHttpInfo(String edgeId, DomainEdgeSoftwareUpdateDto body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeSoftwareupdate");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgeSoftwareupdate");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/softwareupdate".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()));
+  public ApiResponse<DomainEdgeSoftwareUpdateDto> postTelephonyProvidersEdgeSoftwareupdateWithHttpInfo(String edgeId, DomainEdgeSoftwareUpdateDto body) throws IOException {
+    return postTelephonyProvidersEdgeSoftwareupdate(createPostTelephonyProvidersEdgeSoftwareupdateRequest(edgeId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostTelephonyProvidersEdgeSoftwareupdateRequest createPostTelephonyProvidersEdgeSoftwareupdateRequest(String edgeId, DomainEdgeSoftwareUpdateDto body) {
+    return PostTelephonyProvidersEdgeSoftwareupdateRequest.builder()
+            .withEdgeId(edgeId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DomainEdgeSoftwareUpdateDto>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Starts a software update for this edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DomainEdgeSoftwareUpdateDto
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainEdgeSoftwareUpdateDto postTelephonyProvidersEdgeSoftwareupdate(PostTelephonyProvidersEdgeSoftwareupdateRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainEdgeSoftwareUpdateDto>() {});
+    try {
+      ApiResponse<DomainEdgeSoftwareUpdateDto> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainEdgeSoftwareUpdateDto>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Starts a software update for this edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainEdgeSoftwareUpdateDto> postTelephonyProvidersEdgeSoftwareupdate(ApiRequest<DomainEdgeSoftwareUpdateDto> request) throws IOException, ApiException {
-    return pcapiClient.<DomainEdgeSoftwareUpdateDto>invokeAPIVerbose(request, new TypeReference<DomainEdgeSoftwareUpdateDto>() {});
+  public ApiResponse<DomainEdgeSoftwareUpdateDto> postTelephonyProvidersEdgeSoftwareupdate(ApiRequest<DomainEdgeSoftwareUpdateDto> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DomainEdgeSoftwareUpdateDto>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainEdgeSoftwareUpdateDto> response = (ApiResponse<DomainEdgeSoftwareUpdateDto>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainEdgeSoftwareUpdateDto> response = (ApiResponse<DomainEdgeSoftwareUpdateDto>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -6608,10 +7069,11 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param body Edge Service State (optional)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String postTelephonyProvidersEdgeStatuscode(String edgeId, EdgeServiceStateRequest body) throws IOException, ApiException {
-    return postTelephonyProvidersEdgeStatuscodeWithHttpInfo(edgeId, body).getBody();
+    return  postTelephonyProvidersEdgeStatuscode(createPostTelephonyProvidersEdgeStatuscodeRequest(edgeId, body));
   }
 
   /**
@@ -6620,61 +7082,66 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param body Edge Service State (optional)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> postTelephonyProvidersEdgeStatuscodeWithHttpInfo(String edgeId, EdgeServiceStateRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeStatuscode");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/statuscode".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()));
+  public ApiResponse<String> postTelephonyProvidersEdgeStatuscodeWithHttpInfo(String edgeId, EdgeServiceStateRequest body) throws IOException {
+    return postTelephonyProvidersEdgeStatuscode(createPostTelephonyProvidersEdgeStatuscodeRequest(edgeId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostTelephonyProvidersEdgeStatuscodeRequest createPostTelephonyProvidersEdgeStatuscodeRequest(String edgeId, EdgeServiceStateRequest body) {
+    return PostTelephonyProvidersEdgeStatuscodeRequest.builder()
+            .withEdgeId(edgeId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Take an Edge in or out of service
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String postTelephonyProvidersEdgeStatuscode(PostTelephonyProvidersEdgeStatuscodeRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Take an Edge in or out of service
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> postTelephonyProvidersEdgeStatuscode(ApiRequest<EdgeServiceStateRequest> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> postTelephonyProvidersEdgeStatuscode(ApiRequest<EdgeServiceStateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -6682,10 +7149,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param edgeId Edge Id (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String postTelephonyProvidersEdgeUnpair(String edgeId) throws IOException, ApiException {
-    return postTelephonyProvidersEdgeUnpairWithHttpInfo(edgeId).getBody();
+    return  postTelephonyProvidersEdgeUnpair(createPostTelephonyProvidersEdgeUnpairRequest(edgeId));
   }
 
   /**
@@ -6693,61 +7161,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param edgeId Edge Id (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> postTelephonyProvidersEdgeUnpairWithHttpInfo(String edgeId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling postTelephonyProvidersEdgeUnpair");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/unpair".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()));
+  public ApiResponse<String> postTelephonyProvidersEdgeUnpairWithHttpInfo(String edgeId) throws IOException {
+    return postTelephonyProvidersEdgeUnpair(createPostTelephonyProvidersEdgeUnpairRequest(edgeId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private PostTelephonyProvidersEdgeUnpairRequest createPostTelephonyProvidersEdgeUnpairRequest(String edgeId) {
+    return PostTelephonyProvidersEdgeUnpairRequest.builder()
+            .withEdgeId(edgeId)
+            .build();
   }
 
   /**
    * Unpair an Edge
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String postTelephonyProvidersEdgeUnpair(PostTelephonyProvidersEdgeUnpairRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Unpair an Edge
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> postTelephonyProvidersEdgeUnpair(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> postTelephonyProvidersEdgeUnpair(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -6755,10 +7226,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body Edge (required)
    * @return Edge
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Edge postTelephonyProvidersEdges(Edge body) throws IOException, ApiException {
-    return postTelephonyProvidersEdgesWithHttpInfo(body).getBody();
+    return  postTelephonyProvidersEdges(createPostTelephonyProvidersEdgesRequest(body));
   }
 
   /**
@@ -6766,60 +7238,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body Edge (required)
    * @return Edge
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Edge> postTelephonyProvidersEdgesWithHttpInfo(Edge body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdges");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges".replaceAll("\\{format\\}","json");
+  public ApiResponse<Edge> postTelephonyProvidersEdgesWithHttpInfo(Edge body) throws IOException {
+    return postTelephonyProvidersEdges(createPostTelephonyProvidersEdgesRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Edge>() {});
+  private PostTelephonyProvidersEdgesRequest createPostTelephonyProvidersEdgesRequest(Edge body) {
+    return PostTelephonyProvidersEdgesRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create an edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Edge
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Edge postTelephonyProvidersEdges(PostTelephonyProvidersEdgesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Edge>() {});
+    try {
+      ApiResponse<Edge> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Edge>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create an edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Edge> postTelephonyProvidersEdges(ApiRequest<Edge> request) throws IOException, ApiException {
-    return pcapiClient.<Edge>invokeAPIVerbose(request, new TypeReference<Edge>() {});
+  public ApiResponse<Edge> postTelephonyProvidersEdges(ApiRequest<Edge> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Edge>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Edge> response = (ApiResponse<Edge>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Edge> response = (ApiResponse<Edge>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -6827,10 +7303,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body Address (required)
    * @return ValidateAddressResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ValidateAddressResponse postTelephonyProvidersEdgesAddressvalidation(ValidateAddressRequest body) throws IOException, ApiException {
-    return postTelephonyProvidersEdgesAddressvalidationWithHttpInfo(body).getBody();
+    return  postTelephonyProvidersEdgesAddressvalidation(createPostTelephonyProvidersEdgesAddressvalidationRequest(body));
   }
 
   /**
@@ -6838,60 +7315,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body Address (required)
    * @return ValidateAddressResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ValidateAddressResponse> postTelephonyProvidersEdgesAddressvalidationWithHttpInfo(ValidateAddressRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesAddressvalidation");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/addressvalidation".replaceAll("\\{format\\}","json");
+  public ApiResponse<ValidateAddressResponse> postTelephonyProvidersEdgesAddressvalidationWithHttpInfo(ValidateAddressRequest body) throws IOException {
+    return postTelephonyProvidersEdgesAddressvalidation(createPostTelephonyProvidersEdgesAddressvalidationRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ValidateAddressResponse>() {});
+  private PostTelephonyProvidersEdgesAddressvalidationRequest createPostTelephonyProvidersEdgesAddressvalidationRequest(ValidateAddressRequest body) {
+    return PostTelephonyProvidersEdgesAddressvalidationRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Validates a street address
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ValidateAddressResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ValidateAddressResponse postTelephonyProvidersEdgesAddressvalidation(PostTelephonyProvidersEdgesAddressvalidationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ValidateAddressResponse>() {});
+    try {
+      ApiResponse<ValidateAddressResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ValidateAddressResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Validates a street address
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ValidateAddressResponse> postTelephonyProvidersEdgesAddressvalidation(ApiRequest<ValidateAddressRequest> request) throws IOException, ApiException {
-    return pcapiClient.<ValidateAddressResponse>invokeAPIVerbose(request, new TypeReference<ValidateAddressResponse>() {});
+  public ApiResponse<ValidateAddressResponse> postTelephonyProvidersEdgesAddressvalidation(ApiRequest<ValidateAddressRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ValidateAddressResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ValidateAddressResponse> response = (ApiResponse<ValidateAddressResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ValidateAddressResponse> response = (ApiResponse<ValidateAddressResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -6899,10 +7380,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body CertificateAuthority (required)
    * @return DomainCertificateAuthority
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainCertificateAuthority postTelephonyProvidersEdgesCertificateauthorities(DomainCertificateAuthority body) throws IOException, ApiException {
-    return postTelephonyProvidersEdgesCertificateauthoritiesWithHttpInfo(body).getBody();
+    return  postTelephonyProvidersEdgesCertificateauthorities(createPostTelephonyProvidersEdgesCertificateauthoritiesRequest(body));
   }
 
   /**
@@ -6910,60 +7392,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body CertificateAuthority (required)
    * @return DomainCertificateAuthority
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainCertificateAuthority> postTelephonyProvidersEdgesCertificateauthoritiesWithHttpInfo(DomainCertificateAuthority body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesCertificateauthorities");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/certificateauthorities".replaceAll("\\{format\\}","json");
+  public ApiResponse<DomainCertificateAuthority> postTelephonyProvidersEdgesCertificateauthoritiesWithHttpInfo(DomainCertificateAuthority body) throws IOException {
+    return postTelephonyProvidersEdgesCertificateauthorities(createPostTelephonyProvidersEdgesCertificateauthoritiesRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DomainCertificateAuthority>() {});
+  private PostTelephonyProvidersEdgesCertificateauthoritiesRequest createPostTelephonyProvidersEdgesCertificateauthoritiesRequest(DomainCertificateAuthority body) {
+    return PostTelephonyProvidersEdgesCertificateauthoritiesRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a certificate authority.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DomainCertificateAuthority
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainCertificateAuthority postTelephonyProvidersEdgesCertificateauthorities(PostTelephonyProvidersEdgesCertificateauthoritiesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainCertificateAuthority>() {});
+    try {
+      ApiResponse<DomainCertificateAuthority> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainCertificateAuthority>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a certificate authority.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainCertificateAuthority> postTelephonyProvidersEdgesCertificateauthorities(ApiRequest<DomainCertificateAuthority> request) throws IOException, ApiException {
-    return pcapiClient.<DomainCertificateAuthority>invokeAPIVerbose(request, new TypeReference<DomainCertificateAuthority>() {});
+  public ApiResponse<DomainCertificateAuthority> postTelephonyProvidersEdgesCertificateauthorities(ApiRequest<DomainCertificateAuthority> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DomainCertificateAuthority>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainCertificateAuthority> response = (ApiResponse<DomainCertificateAuthority>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainCertificateAuthority> response = (ApiResponse<DomainCertificateAuthority>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -6971,10 +7457,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body DID pool (required)
    * @return DIDPool
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DIDPool postTelephonyProvidersEdgesDidpools(DIDPool body) throws IOException, ApiException {
-    return postTelephonyProvidersEdgesDidpoolsWithHttpInfo(body).getBody();
+    return  postTelephonyProvidersEdgesDidpools(createPostTelephonyProvidersEdgesDidpoolsRequest(body));
   }
 
   /**
@@ -6982,60 +7469,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body DID pool (required)
    * @return DIDPool
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DIDPool> postTelephonyProvidersEdgesDidpoolsWithHttpInfo(DIDPool body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesDidpools");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/didpools".replaceAll("\\{format\\}","json");
+  public ApiResponse<DIDPool> postTelephonyProvidersEdgesDidpoolsWithHttpInfo(DIDPool body) throws IOException {
+    return postTelephonyProvidersEdgesDidpools(createPostTelephonyProvidersEdgesDidpoolsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DIDPool>() {});
+  private PostTelephonyProvidersEdgesDidpoolsRequest createPostTelephonyProvidersEdgesDidpoolsRequest(DIDPool body) {
+    return PostTelephonyProvidersEdgesDidpoolsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a new DID pool
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DIDPool
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DIDPool postTelephonyProvidersEdgesDidpools(PostTelephonyProvidersEdgesDidpoolsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DIDPool>() {});
+    try {
+      ApiResponse<DIDPool> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DIDPool>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a new DID pool
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DIDPool> postTelephonyProvidersEdgesDidpools(ApiRequest<DIDPool> request) throws IOException, ApiException {
-    return pcapiClient.<DIDPool>invokeAPIVerbose(request, new TypeReference<DIDPool>() {});
+  public ApiResponse<DIDPool> postTelephonyProvidersEdgesDidpools(ApiRequest<DIDPool> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DIDPool>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DIDPool> response = (ApiResponse<DIDPool>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DIDPool> response = (ApiResponse<DIDPool>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -7043,10 +7534,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body EdgeGroup (required)
    * @return EdgeGroup
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeGroup postTelephonyProvidersEdgesEdgegroups(EdgeGroup body) throws IOException, ApiException {
-    return postTelephonyProvidersEdgesEdgegroupsWithHttpInfo(body).getBody();
+    return  postTelephonyProvidersEdgesEdgegroups(createPostTelephonyProvidersEdgesEdgegroupsRequest(body));
   }
 
   /**
@@ -7054,60 +7546,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body EdgeGroup (required)
    * @return EdgeGroup
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeGroup> postTelephonyProvidersEdgesEdgegroupsWithHttpInfo(EdgeGroup body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesEdgegroups");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/edgegroups".replaceAll("\\{format\\}","json");
+  public ApiResponse<EdgeGroup> postTelephonyProvidersEdgesEdgegroupsWithHttpInfo(EdgeGroup body) throws IOException {
+    return postTelephonyProvidersEdgesEdgegroups(createPostTelephonyProvidersEdgesEdgegroupsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EdgeGroup>() {});
+  private PostTelephonyProvidersEdgesEdgegroupsRequest createPostTelephonyProvidersEdgesEdgegroupsRequest(EdgeGroup body) {
+    return PostTelephonyProvidersEdgesEdgegroupsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create an edge group.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EdgeGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeGroup postTelephonyProvidersEdgesEdgegroups(PostTelephonyProvidersEdgesEdgegroupsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeGroup>() {});
+    try {
+      ApiResponse<EdgeGroup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeGroup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create an edge group.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeGroup> postTelephonyProvidersEdgesEdgegroups(ApiRequest<EdgeGroup> request) throws IOException, ApiException {
-    return pcapiClient.<EdgeGroup>invokeAPIVerbose(request, new TypeReference<EdgeGroup>() {});
+  public ApiResponse<EdgeGroup> postTelephonyProvidersEdgesEdgegroups(ApiRequest<EdgeGroup> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeGroup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeGroup> response = (ApiResponse<EdgeGroup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeGroup> response = (ApiResponse<EdgeGroup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -7115,10 +7611,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body EndpointTemplate (required)
    * @return Endpoint
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Endpoint postTelephonyProvidersEdgesEndpoints(Endpoint body) throws IOException, ApiException {
-    return postTelephonyProvidersEdgesEndpointsWithHttpInfo(body).getBody();
+    return  postTelephonyProvidersEdgesEndpoints(createPostTelephonyProvidersEdgesEndpointsRequest(body));
   }
 
   /**
@@ -7126,60 +7623,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body EndpointTemplate (required)
    * @return Endpoint
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Endpoint> postTelephonyProvidersEdgesEndpointsWithHttpInfo(Endpoint body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesEndpoints");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/endpoints".replaceAll("\\{format\\}","json");
+  public ApiResponse<Endpoint> postTelephonyProvidersEdgesEndpointsWithHttpInfo(Endpoint body) throws IOException {
+    return postTelephonyProvidersEdgesEndpoints(createPostTelephonyProvidersEdgesEndpointsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Endpoint>() {});
+  private PostTelephonyProvidersEdgesEndpointsRequest createPostTelephonyProvidersEdgesEndpointsRequest(Endpoint body) {
+    return PostTelephonyProvidersEdgesEndpointsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create endpoint
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Endpoint
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Endpoint postTelephonyProvidersEdgesEndpoints(PostTelephonyProvidersEdgesEndpointsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Endpoint>() {});
+    try {
+      ApiResponse<Endpoint> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Endpoint>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create endpoint
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Endpoint> postTelephonyProvidersEdgesEndpoints(ApiRequest<Endpoint> request) throws IOException, ApiException {
-    return pcapiClient.<Endpoint>invokeAPIVerbose(request, new TypeReference<Endpoint>() {});
+  public ApiResponse<Endpoint> postTelephonyProvidersEdgesEndpoints(ApiRequest<Endpoint> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Endpoint>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Endpoint> response = (ApiResponse<Endpoint>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Endpoint> response = (ApiResponse<Endpoint>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -7187,10 +7688,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body ExtensionPool (required)
    * @return ExtensionPool
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExtensionPool postTelephonyProvidersEdgesExtensionpools(ExtensionPool body) throws IOException, ApiException {
-    return postTelephonyProvidersEdgesExtensionpoolsWithHttpInfo(body).getBody();
+    return  postTelephonyProvidersEdgesExtensionpools(createPostTelephonyProvidersEdgesExtensionpoolsRequest(body));
   }
 
   /**
@@ -7198,60 +7700,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body ExtensionPool (required)
    * @return ExtensionPool
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExtensionPool> postTelephonyProvidersEdgesExtensionpoolsWithHttpInfo(ExtensionPool body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesExtensionpools");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/extensionpools".replaceAll("\\{format\\}","json");
+  public ApiResponse<ExtensionPool> postTelephonyProvidersEdgesExtensionpoolsWithHttpInfo(ExtensionPool body) throws IOException {
+    return postTelephonyProvidersEdgesExtensionpools(createPostTelephonyProvidersEdgesExtensionpoolsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ExtensionPool>() {});
+  private PostTelephonyProvidersEdgesExtensionpoolsRequest createPostTelephonyProvidersEdgesExtensionpoolsRequest(ExtensionPool body) {
+    return PostTelephonyProvidersEdgesExtensionpoolsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a new extension pool
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ExtensionPool
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExtensionPool postTelephonyProvidersEdgesExtensionpools(PostTelephonyProvidersEdgesExtensionpoolsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExtensionPool>() {});
+    try {
+      ApiResponse<ExtensionPool> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExtensionPool>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a new extension pool
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExtensionPool> postTelephonyProvidersEdgesExtensionpools(ApiRequest<ExtensionPool> request) throws IOException, ApiException {
-    return pcapiClient.<ExtensionPool>invokeAPIVerbose(request, new TypeReference<ExtensionPool>() {});
+  public ApiResponse<ExtensionPool> postTelephonyProvidersEdgesExtensionpools(ApiRequest<ExtensionPool> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExtensionPool>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExtensionPool> response = (ApiResponse<ExtensionPool>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExtensionPool> response = (ApiResponse<ExtensionPool>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -7259,10 +7765,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body OutboundRoute (required)
    * @return OutboundRoute
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OutboundRoute postTelephonyProvidersEdgesOutboundroutes(OutboundRoute body) throws IOException, ApiException {
-    return postTelephonyProvidersEdgesOutboundroutesWithHttpInfo(body).getBody();
+    return  postTelephonyProvidersEdgesOutboundroutes(createPostTelephonyProvidersEdgesOutboundroutesRequest(body));
   }
 
   /**
@@ -7270,131 +7777,138 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body OutboundRoute (required)
    * @return OutboundRoute
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundRoute> postTelephonyProvidersEdgesOutboundroutesWithHttpInfo(OutboundRoute body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesOutboundroutes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/outboundroutes".replaceAll("\\{format\\}","json");
+  public ApiResponse<OutboundRoute> postTelephonyProvidersEdgesOutboundroutesWithHttpInfo(OutboundRoute body) throws IOException {
+    return postTelephonyProvidersEdgesOutboundroutes(createPostTelephonyProvidersEdgesOutboundroutesRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OutboundRoute>() {});
+  private PostTelephonyProvidersEdgesOutboundroutesRequest createPostTelephonyProvidersEdgesOutboundroutesRequest(OutboundRoute body) {
+    return PostTelephonyProvidersEdgesOutboundroutesRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create outbound rule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OutboundRoute
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OutboundRoute postTelephonyProvidersEdgesOutboundroutes(PostTelephonyProvidersEdgesOutboundroutesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OutboundRoute>() {});
+    try {
+      ApiResponse<OutboundRoute> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutboundRoute>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create outbound rule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundRoute> postTelephonyProvidersEdgesOutboundroutes(ApiRequest<OutboundRoute> request) throws IOException, ApiException {
-    return pcapiClient.<OutboundRoute>invokeAPIVerbose(request, new TypeReference<OutboundRoute>() {});
+  public ApiResponse<OutboundRoute> postTelephonyProvidersEdgesOutboundroutes(ApiRequest<OutboundRoute> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutboundRoute>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundRoute> response = (ApiResponse<OutboundRoute>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundRoute> response = (ApiResponse<OutboundRoute>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Reboot a Phone
    * 
    * @param phoneId Phone Id (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postTelephonyProvidersEdgesPhoneReboot(String phoneId) throws IOException, ApiException {
-    postTelephonyProvidersEdgesPhoneRebootWithHttpInfo(phoneId);
+     postTelephonyProvidersEdgesPhoneReboot(createPostTelephonyProvidersEdgesPhoneRebootRequest(phoneId));
   }
 
   /**
    * Reboot a Phone
    * 
    * @param phoneId Phone Id (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postTelephonyProvidersEdgesPhoneRebootWithHttpInfo(String phoneId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'phoneId' is set
-    if (phoneId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'phoneId' when calling postTelephonyProvidersEdgesPhoneReboot");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/phones/{phoneId}/reboot".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "phoneId" + "\\}", pcapiClient.escapeString(phoneId.toString()));
+  public ApiResponse<Void> postTelephonyProvidersEdgesPhoneRebootWithHttpInfo(String phoneId) throws IOException {
+    return postTelephonyProvidersEdgesPhoneReboot(createPostTelephonyProvidersEdgesPhoneRebootRequest(phoneId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private PostTelephonyProvidersEdgesPhoneRebootRequest createPostTelephonyProvidersEdgesPhoneRebootRequest(String phoneId) {
+    return PostTelephonyProvidersEdgesPhoneRebootRequest.builder()
+            .withPhoneId(phoneId)
+            .build();
   }
 
   /**
    * Reboot a Phone
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postTelephonyProvidersEdgesPhoneReboot(PostTelephonyProvidersEdgesPhoneRebootRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Reboot a Phone
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postTelephonyProvidersEdgesPhoneReboot(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> postTelephonyProvidersEdgesPhoneReboot(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -7402,10 +7916,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body Phone base settings (required)
    * @return PhoneBase
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PhoneBase postTelephonyProvidersEdgesPhonebasesettings(PhoneBase body) throws IOException, ApiException {
-    return postTelephonyProvidersEdgesPhonebasesettingsWithHttpInfo(body).getBody();
+    return  postTelephonyProvidersEdgesPhonebasesettings(createPostTelephonyProvidersEdgesPhonebasesettingsRequest(body));
   }
 
   /**
@@ -7413,60 +7928,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body Phone base settings (required)
    * @return PhoneBase
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PhoneBase> postTelephonyProvidersEdgesPhonebasesettingsWithHttpInfo(PhoneBase body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesPhonebasesettings");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/phonebasesettings".replaceAll("\\{format\\}","json");
+  public ApiResponse<PhoneBase> postTelephonyProvidersEdgesPhonebasesettingsWithHttpInfo(PhoneBase body) throws IOException {
+    return postTelephonyProvidersEdgesPhonebasesettings(createPostTelephonyProvidersEdgesPhonebasesettingsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<PhoneBase>() {});
+  private PostTelephonyProvidersEdgesPhonebasesettingsRequest createPostTelephonyProvidersEdgesPhonebasesettingsRequest(PhoneBase body) {
+    return PostTelephonyProvidersEdgesPhonebasesettingsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a new Phone Base Settings object
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return PhoneBase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PhoneBase postTelephonyProvidersEdgesPhonebasesettings(PostTelephonyProvidersEdgesPhonebasesettingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PhoneBase>() {});
+    try {
+      ApiResponse<PhoneBase> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PhoneBase>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a new Phone Base Settings object
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PhoneBase> postTelephonyProvidersEdgesPhonebasesettings(ApiRequest<PhoneBase> request) throws IOException, ApiException {
-    return pcapiClient.<PhoneBase>invokeAPIVerbose(request, new TypeReference<PhoneBase>() {});
+  public ApiResponse<PhoneBase> postTelephonyProvidersEdgesPhonebasesettings(ApiRequest<PhoneBase> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PhoneBase>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PhoneBase> response = (ApiResponse<PhoneBase>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PhoneBase> response = (ApiResponse<PhoneBase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -7474,10 +7993,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body Phone (required)
    * @return Phone
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Phone postTelephonyProvidersEdgesPhones(Phone body) throws IOException, ApiException {
-    return postTelephonyProvidersEdgesPhonesWithHttpInfo(body).getBody();
+    return  postTelephonyProvidersEdgesPhones(createPostTelephonyProvidersEdgesPhonesRequest(body));
   }
 
   /**
@@ -7485,130 +8005,138 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body Phone (required)
    * @return Phone
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Phone> postTelephonyProvidersEdgesPhonesWithHttpInfo(Phone body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesPhones");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/phones".replaceAll("\\{format\\}","json");
+  public ApiResponse<Phone> postTelephonyProvidersEdgesPhonesWithHttpInfo(Phone body) throws IOException {
+    return postTelephonyProvidersEdgesPhones(createPostTelephonyProvidersEdgesPhonesRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Phone>() {});
+  private PostTelephonyProvidersEdgesPhonesRequest createPostTelephonyProvidersEdgesPhonesRequest(Phone body) {
+    return PostTelephonyProvidersEdgesPhonesRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a new Phone
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Phone
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Phone postTelephonyProvidersEdgesPhones(PostTelephonyProvidersEdgesPhonesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Phone>() {});
+    try {
+      ApiResponse<Phone> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Phone>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a new Phone
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Phone> postTelephonyProvidersEdgesPhones(ApiRequest<Phone> request) throws IOException, ApiException {
-    return pcapiClient.<Phone>invokeAPIVerbose(request, new TypeReference<Phone>() {});
+  public ApiResponse<Phone> postTelephonyProvidersEdgesPhones(ApiRequest<Phone> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Phone>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Phone> response = (ApiResponse<Phone>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Phone> response = (ApiResponse<Phone>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Reboot Multiple Phones
    * 
    * @param body Phones (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postTelephonyProvidersEdgesPhonesReboot(PhonesReboot body) throws IOException, ApiException {
-    postTelephonyProvidersEdgesPhonesRebootWithHttpInfo(body);
+     postTelephonyProvidersEdgesPhonesReboot(createPostTelephonyProvidersEdgesPhonesRebootRequest(body));
   }
 
   /**
    * Reboot Multiple Phones
    * 
    * @param body Phones (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postTelephonyProvidersEdgesPhonesRebootWithHttpInfo(PhonesReboot body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesPhonesReboot");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/phones/reboot".replaceAll("\\{format\\}","json");
+  public ApiResponse<Void> postTelephonyProvidersEdgesPhonesRebootWithHttpInfo(PhonesReboot body) throws IOException {
+    return postTelephonyProvidersEdgesPhonesReboot(createPostTelephonyProvidersEdgesPhonesRebootRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private PostTelephonyProvidersEdgesPhonesRebootRequest createPostTelephonyProvidersEdgesPhonesRebootRequest(PhonesReboot body) {
+    return PostTelephonyProvidersEdgesPhonesRebootRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Reboot Multiple Phones
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postTelephonyProvidersEdgesPhonesReboot(PostTelephonyProvidersEdgesPhonesRebootRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Reboot Multiple Phones
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postTelephonyProvidersEdgesPhonesReboot(ApiRequest<PhonesReboot> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> postTelephonyProvidersEdgesPhonesReboot(ApiRequest<PhonesReboot> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -7617,10 +8145,11 @@ public class TelephonyProvidersEdgeApi {
    * @param siteId Site ID (required)
    * @param body OutboundRoute (required)
    * @return OutboundRouteBase
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OutboundRouteBase postTelephonyProvidersEdgesSiteOutboundroutes(String siteId, OutboundRouteBase body) throws IOException, ApiException {
-    return postTelephonyProvidersEdgesSiteOutboundroutesWithHttpInfo(siteId, body).getBody();
+    return  postTelephonyProvidersEdgesSiteOutboundroutes(createPostTelephonyProvidersEdgesSiteOutboundroutesRequest(siteId, body));
   }
 
   /**
@@ -7629,137 +8158,140 @@ public class TelephonyProvidersEdgeApi {
    * @param siteId Site ID (required)
    * @param body OutboundRoute (required)
    * @return OutboundRouteBase
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundRouteBase> postTelephonyProvidersEdgesSiteOutboundroutesWithHttpInfo(String siteId, OutboundRouteBase body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'siteId' is set
-    if (siteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling postTelephonyProvidersEdgesSiteOutboundroutes");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesSiteOutboundroutes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "siteId" + "\\}", pcapiClient.escapeString(siteId.toString()));
+  public ApiResponse<OutboundRouteBase> postTelephonyProvidersEdgesSiteOutboundroutesWithHttpInfo(String siteId, OutboundRouteBase body) throws IOException {
+    return postTelephonyProvidersEdgesSiteOutboundroutes(createPostTelephonyProvidersEdgesSiteOutboundroutesRequest(siteId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostTelephonyProvidersEdgesSiteOutboundroutesRequest createPostTelephonyProvidersEdgesSiteOutboundroutesRequest(String siteId, OutboundRouteBase body) {
+    return PostTelephonyProvidersEdgesSiteOutboundroutesRequest.builder()
+            .withSiteId(siteId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OutboundRouteBase>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create outbound route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OutboundRouteBase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OutboundRouteBase postTelephonyProvidersEdgesSiteOutboundroutes(PostTelephonyProvidersEdgesSiteOutboundroutesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OutboundRouteBase>() {});
+    try {
+      ApiResponse<OutboundRouteBase> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutboundRouteBase>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create outbound route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundRouteBase> postTelephonyProvidersEdgesSiteOutboundroutes(ApiRequest<OutboundRouteBase> request) throws IOException, ApiException {
-    return pcapiClient.<OutboundRouteBase>invokeAPIVerbose(request, new TypeReference<OutboundRouteBase>() {});
+  public ApiResponse<OutboundRouteBase> postTelephonyProvidersEdgesSiteOutboundroutes(ApiRequest<OutboundRouteBase> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutboundRouteBase>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundRouteBase> response = (ApiResponse<OutboundRouteBase>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundRouteBase> response = (ApiResponse<OutboundRouteBase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Triggers the rebalance operation.
    * 
    * @param siteId Site ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postTelephonyProvidersEdgesSiteRebalance(String siteId) throws IOException, ApiException {
-    postTelephonyProvidersEdgesSiteRebalanceWithHttpInfo(siteId);
+     postTelephonyProvidersEdgesSiteRebalance(createPostTelephonyProvidersEdgesSiteRebalanceRequest(siteId));
   }
 
   /**
    * Triggers the rebalance operation.
    * 
    * @param siteId Site ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postTelephonyProvidersEdgesSiteRebalanceWithHttpInfo(String siteId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'siteId' is set
-    if (siteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling postTelephonyProvidersEdgesSiteRebalance");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/sites/{siteId}/rebalance".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "siteId" + "\\}", pcapiClient.escapeString(siteId.toString()));
+  public ApiResponse<Void> postTelephonyProvidersEdgesSiteRebalanceWithHttpInfo(String siteId) throws IOException {
+    return postTelephonyProvidersEdgesSiteRebalance(createPostTelephonyProvidersEdgesSiteRebalanceRequest(siteId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private PostTelephonyProvidersEdgesSiteRebalanceRequest createPostTelephonyProvidersEdgesSiteRebalanceRequest(String siteId) {
+    return PostTelephonyProvidersEdgesSiteRebalanceRequest.builder()
+            .withSiteId(siteId)
+            .build();
   }
 
   /**
    * Triggers the rebalance operation.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postTelephonyProvidersEdgesSiteRebalance(PostTelephonyProvidersEdgesSiteRebalanceRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Triggers the rebalance operation.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postTelephonyProvidersEdgesSiteRebalance(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> postTelephonyProvidersEdgesSiteRebalance(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -7767,10 +8299,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body Site (required)
    * @return Site
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Site postTelephonyProvidersEdgesSites(Site body) throws IOException, ApiException {
-    return postTelephonyProvidersEdgesSitesWithHttpInfo(body).getBody();
+    return  postTelephonyProvidersEdgesSites(createPostTelephonyProvidersEdgesSitesRequest(body));
   }
 
   /**
@@ -7778,60 +8311,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body Site (required)
    * @return Site
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Site> postTelephonyProvidersEdgesSitesWithHttpInfo(Site body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesSites");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/sites".replaceAll("\\{format\\}","json");
+  public ApiResponse<Site> postTelephonyProvidersEdgesSitesWithHttpInfo(Site body) throws IOException {
+    return postTelephonyProvidersEdgesSites(createPostTelephonyProvidersEdgesSitesRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Site>() {});
+  private PostTelephonyProvidersEdgesSitesRequest createPostTelephonyProvidersEdgesSitesRequest(Site body) {
+    return PostTelephonyProvidersEdgesSitesRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a Site.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Site
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Site postTelephonyProvidersEdgesSites(PostTelephonyProvidersEdgesSitesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Site>() {});
+    try {
+      ApiResponse<Site> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Site>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a Site.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Site> postTelephonyProvidersEdgesSites(ApiRequest<Site> request) throws IOException, ApiException {
-    return pcapiClient.<Site>invokeAPIVerbose(request, new TypeReference<Site>() {});
+  public ApiResponse<Site> postTelephonyProvidersEdgesSites(ApiRequest<Site> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Site>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Site> response = (ApiResponse<Site>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Site> response = (ApiResponse<Site>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -7839,10 +8376,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body Trunk base settings (required)
    * @return TrunkBase
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TrunkBase postTelephonyProvidersEdgesTrunkbasesettings(TrunkBase body) throws IOException, ApiException {
-    return postTelephonyProvidersEdgesTrunkbasesettingsWithHttpInfo(body).getBody();
+    return  postTelephonyProvidersEdgesTrunkbasesettings(createPostTelephonyProvidersEdgesTrunkbasesettingsRequest(body));
   }
 
   /**
@@ -7850,60 +8388,64 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param body Trunk base settings (required)
    * @return TrunkBase
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TrunkBase> postTelephonyProvidersEdgesTrunkbasesettingsWithHttpInfo(TrunkBase body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postTelephonyProvidersEdgesTrunkbasesettings");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/trunkbasesettings".replaceAll("\\{format\\}","json");
+  public ApiResponse<TrunkBase> postTelephonyProvidersEdgesTrunkbasesettingsWithHttpInfo(TrunkBase body) throws IOException {
+    return postTelephonyProvidersEdgesTrunkbasesettings(createPostTelephonyProvidersEdgesTrunkbasesettingsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<TrunkBase>() {});
+  private PostTelephonyProvidersEdgesTrunkbasesettingsRequest createPostTelephonyProvidersEdgesTrunkbasesettingsRequest(TrunkBase body) {
+    return PostTelephonyProvidersEdgesTrunkbasesettingsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a Trunk Base Settings object
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return TrunkBase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TrunkBase postTelephonyProvidersEdgesTrunkbasesettings(PostTelephonyProvidersEdgesTrunkbasesettingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TrunkBase>() {});
+    try {
+      ApiResponse<TrunkBase> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrunkBase>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a Trunk Base Settings object
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TrunkBase> postTelephonyProvidersEdgesTrunkbasesettings(ApiRequest<TrunkBase> request) throws IOException, ApiException {
-    return pcapiClient.<TrunkBase>invokeAPIVerbose(request, new TypeReference<TrunkBase>() {});
+  public ApiResponse<TrunkBase> postTelephonyProvidersEdgesTrunkbasesettings(ApiRequest<TrunkBase> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrunkBase>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkBase> response = (ApiResponse<TrunkBase>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkBase> response = (ApiResponse<TrunkBase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -7912,10 +8454,11 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param body Edge (required)
    * @return Edge
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Edge putTelephonyProvidersEdge(String edgeId, Edge body) throws IOException, ApiException {
-    return putTelephonyProvidersEdgeWithHttpInfo(edgeId, body).getBody();
+    return  putTelephonyProvidersEdge(createPutTelephonyProvidersEdgeRequest(edgeId, body));
   }
 
   /**
@@ -7924,66 +8467,66 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeId Edge ID (required)
    * @param body Edge (required)
    * @return Edge
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Edge> putTelephonyProvidersEdgeWithHttpInfo(String edgeId, Edge body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling putTelephonyProvidersEdge");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdge");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()));
+  public ApiResponse<Edge> putTelephonyProvidersEdgeWithHttpInfo(String edgeId, Edge body) throws IOException {
+    return putTelephonyProvidersEdge(createPutTelephonyProvidersEdgeRequest(edgeId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutTelephonyProvidersEdgeRequest createPutTelephonyProvidersEdgeRequest(String edgeId, Edge body) {
+    return PutTelephonyProvidersEdgeRequest.builder()
+            .withEdgeId(edgeId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Edge>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Edge
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Edge putTelephonyProvidersEdge(PutTelephonyProvidersEdgeRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Edge>() {});
+    try {
+      ApiResponse<Edge> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Edge>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Edge> putTelephonyProvidersEdge(ApiRequest<Edge> request) throws IOException, ApiException {
-    return pcapiClient.<Edge>invokeAPIVerbose(request, new TypeReference<Edge>() {});
+  public ApiResponse<Edge> putTelephonyProvidersEdge(ApiRequest<Edge> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Edge>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Edge> response = (ApiResponse<Edge>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Edge> response = (ApiResponse<Edge>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -7993,10 +8536,11 @@ public class TelephonyProvidersEdgeApi {
    * @param lineId Line ID (required)
    * @param body Line (required)
    * @return EdgeLine
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeLine putTelephonyProvidersEdgeLine(String edgeId, String lineId, EdgeLine body) throws IOException, ApiException {
-    return putTelephonyProvidersEdgeLineWithHttpInfo(edgeId, lineId, body).getBody();
+    return  putTelephonyProvidersEdgeLine(createPutTelephonyProvidersEdgeLineRequest(edgeId, lineId, body));
   }
 
   /**
@@ -8006,72 +8550,68 @@ public class TelephonyProvidersEdgeApi {
    * @param lineId Line ID (required)
    * @param body Line (required)
    * @return EdgeLine
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeLine> putTelephonyProvidersEdgeLineWithHttpInfo(String edgeId, String lineId, EdgeLine body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling putTelephonyProvidersEdgeLine");
-    }
-    
-    // verify the required parameter 'lineId' is set
-    if (lineId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'lineId' when calling putTelephonyProvidersEdgeLine");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgeLine");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()))
-      .replaceAll("\\{" + "lineId" + "\\}", pcapiClient.escapeString(lineId.toString()));
+  public ApiResponse<EdgeLine> putTelephonyProvidersEdgeLineWithHttpInfo(String edgeId, String lineId, EdgeLine body) throws IOException {
+    return putTelephonyProvidersEdgeLine(createPutTelephonyProvidersEdgeLineRequest(edgeId, lineId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutTelephonyProvidersEdgeLineRequest createPutTelephonyProvidersEdgeLineRequest(String edgeId, String lineId, EdgeLine body) {
+    return PutTelephonyProvidersEdgeLineRequest.builder()
+            .withEdgeId(edgeId)
 
+            .withLineId(lineId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EdgeLine>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a line.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EdgeLine
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeLine putTelephonyProvidersEdgeLine(PutTelephonyProvidersEdgeLineRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeLine>() {});
+    try {
+      ApiResponse<EdgeLine> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeLine>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a line.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeLine> putTelephonyProvidersEdgeLine(ApiRequest<EdgeLine> request) throws IOException, ApiException {
-    return pcapiClient.<EdgeLine>invokeAPIVerbose(request, new TypeReference<EdgeLine>() {});
+  public ApiResponse<EdgeLine> putTelephonyProvidersEdgeLine(ApiRequest<EdgeLine> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeLine>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeLine> response = (ApiResponse<EdgeLine>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeLine> response = (ApiResponse<EdgeLine>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -8081,10 +8621,11 @@ public class TelephonyProvidersEdgeApi {
    * @param interfaceId Interface ID (required)
    * @param body Logical interface (required)
    * @return DomainLogicalInterface
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainLogicalInterface putTelephonyProvidersEdgeLogicalinterface(String edgeId, String interfaceId, DomainLogicalInterface body) throws IOException, ApiException {
-    return putTelephonyProvidersEdgeLogicalinterfaceWithHttpInfo(edgeId, interfaceId, body).getBody();
+    return  putTelephonyProvidersEdgeLogicalinterface(createPutTelephonyProvidersEdgeLogicalinterfaceRequest(edgeId, interfaceId, body));
   }
 
   /**
@@ -8094,72 +8635,68 @@ public class TelephonyProvidersEdgeApi {
    * @param interfaceId Interface ID (required)
    * @param body Logical interface (required)
    * @return DomainLogicalInterface
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainLogicalInterface> putTelephonyProvidersEdgeLogicalinterfaceWithHttpInfo(String edgeId, String interfaceId, DomainLogicalInterface body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'edgeId' is set
-    if (edgeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeId' when calling putTelephonyProvidersEdgeLogicalinterface");
-    }
-    
-    // verify the required parameter 'interfaceId' is set
-    if (interfaceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'interfaceId' when calling putTelephonyProvidersEdgeLogicalinterface");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgeLogicalinterface");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeId" + "\\}", pcapiClient.escapeString(edgeId.toString()))
-      .replaceAll("\\{" + "interfaceId" + "\\}", pcapiClient.escapeString(interfaceId.toString()));
+  public ApiResponse<DomainLogicalInterface> putTelephonyProvidersEdgeLogicalinterfaceWithHttpInfo(String edgeId, String interfaceId, DomainLogicalInterface body) throws IOException {
+    return putTelephonyProvidersEdgeLogicalinterface(createPutTelephonyProvidersEdgeLogicalinterfaceRequest(edgeId, interfaceId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutTelephonyProvidersEdgeLogicalinterfaceRequest createPutTelephonyProvidersEdgeLogicalinterfaceRequest(String edgeId, String interfaceId, DomainLogicalInterface body) {
+    return PutTelephonyProvidersEdgeLogicalinterfaceRequest.builder()
+            .withEdgeId(edgeId)
 
+            .withInterfaceId(interfaceId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DomainLogicalInterface>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update an edge logical interface.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DomainLogicalInterface
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainLogicalInterface putTelephonyProvidersEdgeLogicalinterface(PutTelephonyProvidersEdgeLogicalinterfaceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainLogicalInterface>() {});
+    try {
+      ApiResponse<DomainLogicalInterface> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainLogicalInterface>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update an edge logical interface.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainLogicalInterface> putTelephonyProvidersEdgeLogicalinterface(ApiRequest<DomainLogicalInterface> request) throws IOException, ApiException {
-    return pcapiClient.<DomainLogicalInterface>invokeAPIVerbose(request, new TypeReference<DomainLogicalInterface>() {});
+  public ApiResponse<DomainLogicalInterface> putTelephonyProvidersEdgeLogicalinterface(ApiRequest<DomainLogicalInterface> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DomainLogicalInterface>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainLogicalInterface> response = (ApiResponse<DomainLogicalInterface>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainLogicalInterface> response = (ApiResponse<DomainLogicalInterface>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -8168,10 +8705,11 @@ public class TelephonyProvidersEdgeApi {
    * @param certificateId Certificate ID (required)
    * @param body Certificate authority (required)
    * @return DomainCertificateAuthority
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainCertificateAuthority putTelephonyProvidersEdgesCertificateauthority(String certificateId, DomainCertificateAuthority body) throws IOException, ApiException {
-    return putTelephonyProvidersEdgesCertificateauthorityWithHttpInfo(certificateId, body).getBody();
+    return  putTelephonyProvidersEdgesCertificateauthority(createPutTelephonyProvidersEdgesCertificateauthorityRequest(certificateId, body));
   }
 
   /**
@@ -8180,66 +8718,66 @@ public class TelephonyProvidersEdgeApi {
    * @param certificateId Certificate ID (required)
    * @param body Certificate authority (required)
    * @return DomainCertificateAuthority
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainCertificateAuthority> putTelephonyProvidersEdgesCertificateauthorityWithHttpInfo(String certificateId, DomainCertificateAuthority body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'certificateId' is set
-    if (certificateId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'certificateId' when calling putTelephonyProvidersEdgesCertificateauthority");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesCertificateauthority");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/certificateauthorities/{certificateId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "certificateId" + "\\}", pcapiClient.escapeString(certificateId.toString()));
+  public ApiResponse<DomainCertificateAuthority> putTelephonyProvidersEdgesCertificateauthorityWithHttpInfo(String certificateId, DomainCertificateAuthority body) throws IOException {
+    return putTelephonyProvidersEdgesCertificateauthority(createPutTelephonyProvidersEdgesCertificateauthorityRequest(certificateId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutTelephonyProvidersEdgesCertificateauthorityRequest createPutTelephonyProvidersEdgesCertificateauthorityRequest(String certificateId, DomainCertificateAuthority body) {
+    return PutTelephonyProvidersEdgesCertificateauthorityRequest.builder()
+            .withCertificateId(certificateId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DomainCertificateAuthority>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a certificate authority.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DomainCertificateAuthority
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainCertificateAuthority putTelephonyProvidersEdgesCertificateauthority(PutTelephonyProvidersEdgesCertificateauthorityRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainCertificateAuthority>() {});
+    try {
+      ApiResponse<DomainCertificateAuthority> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainCertificateAuthority>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a certificate authority.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainCertificateAuthority> putTelephonyProvidersEdgesCertificateauthority(ApiRequest<DomainCertificateAuthority> request) throws IOException, ApiException {
-    return pcapiClient.<DomainCertificateAuthority>invokeAPIVerbose(request, new TypeReference<DomainCertificateAuthority>() {});
+  public ApiResponse<DomainCertificateAuthority> putTelephonyProvidersEdgesCertificateauthority(ApiRequest<DomainCertificateAuthority> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DomainCertificateAuthority>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainCertificateAuthority> response = (ApiResponse<DomainCertificateAuthority>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainCertificateAuthority> response = (ApiResponse<DomainCertificateAuthority>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -8248,10 +8786,11 @@ public class TelephonyProvidersEdgeApi {
    * @param didId DID ID (required)
    * @param body DID (required)
    * @return DID
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DID putTelephonyProvidersEdgesDid(String didId, DID body) throws IOException, ApiException {
-    return putTelephonyProvidersEdgesDidWithHttpInfo(didId, body).getBody();
+    return  putTelephonyProvidersEdgesDid(createPutTelephonyProvidersEdgesDidRequest(didId, body));
   }
 
   /**
@@ -8260,66 +8799,66 @@ public class TelephonyProvidersEdgeApi {
    * @param didId DID ID (required)
    * @param body DID (required)
    * @return DID
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DID> putTelephonyProvidersEdgesDidWithHttpInfo(String didId, DID body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'didId' is set
-    if (didId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'didId' when calling putTelephonyProvidersEdgesDid");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesDid");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/dids/{didId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "didId" + "\\}", pcapiClient.escapeString(didId.toString()));
+  public ApiResponse<DID> putTelephonyProvidersEdgesDidWithHttpInfo(String didId, DID body) throws IOException {
+    return putTelephonyProvidersEdgesDid(createPutTelephonyProvidersEdgesDidRequest(didId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutTelephonyProvidersEdgesDidRequest createPutTelephonyProvidersEdgesDidRequest(String didId, DID body) {
+    return PutTelephonyProvidersEdgesDidRequest.builder()
+            .withDidId(didId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DID>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a DID by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DID
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DID putTelephonyProvidersEdgesDid(PutTelephonyProvidersEdgesDidRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DID>() {});
+    try {
+      ApiResponse<DID> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DID>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a DID by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DID> putTelephonyProvidersEdgesDid(ApiRequest<DID> request) throws IOException, ApiException {
-    return pcapiClient.<DID>invokeAPIVerbose(request, new TypeReference<DID>() {});
+  public ApiResponse<DID> putTelephonyProvidersEdgesDid(ApiRequest<DID> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DID>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DID> response = (ApiResponse<DID>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DID> response = (ApiResponse<DID>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -8328,10 +8867,11 @@ public class TelephonyProvidersEdgeApi {
    * @param didPoolId DID pool ID (required)
    * @param body DID pool (required)
    * @return DIDPool
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DIDPool putTelephonyProvidersEdgesDidpool(String didPoolId, DIDPool body) throws IOException, ApiException {
-    return putTelephonyProvidersEdgesDidpoolWithHttpInfo(didPoolId, body).getBody();
+    return  putTelephonyProvidersEdgesDidpool(createPutTelephonyProvidersEdgesDidpoolRequest(didPoolId, body));
   }
 
   /**
@@ -8340,66 +8880,66 @@ public class TelephonyProvidersEdgeApi {
    * @param didPoolId DID pool ID (required)
    * @param body DID pool (required)
    * @return DIDPool
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DIDPool> putTelephonyProvidersEdgesDidpoolWithHttpInfo(String didPoolId, DIDPool body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'didPoolId' is set
-    if (didPoolId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'didPoolId' when calling putTelephonyProvidersEdgesDidpool");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesDidpool");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/didpools/{didPoolId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "didPoolId" + "\\}", pcapiClient.escapeString(didPoolId.toString()));
+  public ApiResponse<DIDPool> putTelephonyProvidersEdgesDidpoolWithHttpInfo(String didPoolId, DIDPool body) throws IOException {
+    return putTelephonyProvidersEdgesDidpool(createPutTelephonyProvidersEdgesDidpoolRequest(didPoolId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutTelephonyProvidersEdgesDidpoolRequest createPutTelephonyProvidersEdgesDidpoolRequest(String didPoolId, DIDPool body) {
+    return PutTelephonyProvidersEdgesDidpoolRequest.builder()
+            .withDidPoolId(didPoolId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DIDPool>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a DID Pool by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DIDPool
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DIDPool putTelephonyProvidersEdgesDidpool(PutTelephonyProvidersEdgesDidpoolRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DIDPool>() {});
+    try {
+      ApiResponse<DIDPool> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DIDPool>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a DID Pool by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DIDPool> putTelephonyProvidersEdgesDidpool(ApiRequest<DIDPool> request) throws IOException, ApiException {
-    return pcapiClient.<DIDPool>invokeAPIVerbose(request, new TypeReference<DIDPool>() {});
+  public ApiResponse<DIDPool> putTelephonyProvidersEdgesDidpool(ApiRequest<DIDPool> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DIDPool>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DIDPool> response = (ApiResponse<DIDPool>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DIDPool> response = (ApiResponse<DIDPool>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -8408,10 +8948,11 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeGroupId Edge group ID (required)
    * @param body EdgeGroup (required)
    * @return EdgeGroup
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeGroup putTelephonyProvidersEdgesEdgegroup(String edgeGroupId, EdgeGroup body) throws IOException, ApiException {
-    return putTelephonyProvidersEdgesEdgegroupWithHttpInfo(edgeGroupId, body).getBody();
+    return  putTelephonyProvidersEdgesEdgegroup(createPutTelephonyProvidersEdgesEdgegroupRequest(edgeGroupId, body));
   }
 
   /**
@@ -8420,66 +8961,66 @@ public class TelephonyProvidersEdgeApi {
    * @param edgeGroupId Edge group ID (required)
    * @param body EdgeGroup (required)
    * @return EdgeGroup
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeGroup> putTelephonyProvidersEdgesEdgegroupWithHttpInfo(String edgeGroupId, EdgeGroup body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'edgeGroupId' is set
-    if (edgeGroupId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgeGroupId' when calling putTelephonyProvidersEdgesEdgegroup");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesEdgegroup");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgeGroupId" + "\\}", pcapiClient.escapeString(edgeGroupId.toString()));
+  public ApiResponse<EdgeGroup> putTelephonyProvidersEdgesEdgegroupWithHttpInfo(String edgeGroupId, EdgeGroup body) throws IOException {
+    return putTelephonyProvidersEdgesEdgegroup(createPutTelephonyProvidersEdgesEdgegroupRequest(edgeGroupId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutTelephonyProvidersEdgesEdgegroupRequest createPutTelephonyProvidersEdgesEdgegroupRequest(String edgeGroupId, EdgeGroup body) {
+    return PutTelephonyProvidersEdgesEdgegroupRequest.builder()
+            .withEdgeGroupId(edgeGroupId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EdgeGroup>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update an edge group.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EdgeGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeGroup putTelephonyProvidersEdgesEdgegroup(PutTelephonyProvidersEdgesEdgegroupRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeGroup>() {});
+    try {
+      ApiResponse<EdgeGroup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeGroup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update an edge group.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeGroup> putTelephonyProvidersEdgesEdgegroup(ApiRequest<EdgeGroup> request) throws IOException, ApiException {
-    return pcapiClient.<EdgeGroup>invokeAPIVerbose(request, new TypeReference<EdgeGroup>() {});
+  public ApiResponse<EdgeGroup> putTelephonyProvidersEdgesEdgegroup(ApiRequest<EdgeGroup> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeGroup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeGroup> response = (ApiResponse<EdgeGroup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeGroup> response = (ApiResponse<EdgeGroup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -8489,10 +9030,11 @@ public class TelephonyProvidersEdgeApi {
    * @param edgetrunkbaseId Edge Trunk Base ID (required)
    * @param body EdgeTrunkBase (required)
    * @return EdgeTrunkBase
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeTrunkBase putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(String edgegroupId, String edgetrunkbaseId, EdgeTrunkBase body) throws IOException, ApiException {
-    return putTelephonyProvidersEdgesEdgegroupEdgetrunkbasisWithHttpInfo(edgegroupId, edgetrunkbaseId, body).getBody();
+    return  putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(createPutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest(edgegroupId, edgetrunkbaseId, body));
   }
 
   /**
@@ -8502,72 +9044,68 @@ public class TelephonyProvidersEdgeApi {
    * @param edgetrunkbaseId Edge Trunk Base ID (required)
    * @param body EdgeTrunkBase (required)
    * @return EdgeTrunkBase
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeTrunkBase> putTelephonyProvidersEdgesEdgegroupEdgetrunkbasisWithHttpInfo(String edgegroupId, String edgetrunkbaseId, EdgeTrunkBase body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'edgegroupId' is set
-    if (edgegroupId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgegroupId' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis");
-    }
-    
-    // verify the required parameter 'edgetrunkbaseId' is set
-    if (edgetrunkbaseId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'edgetrunkbaseId' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "edgegroupId" + "\\}", pcapiClient.escapeString(edgegroupId.toString()))
-      .replaceAll("\\{" + "edgetrunkbaseId" + "\\}", pcapiClient.escapeString(edgetrunkbaseId.toString()));
+  public ApiResponse<EdgeTrunkBase> putTelephonyProvidersEdgesEdgegroupEdgetrunkbasisWithHttpInfo(String edgegroupId, String edgetrunkbaseId, EdgeTrunkBase body) throws IOException {
+    return putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(createPutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest(edgegroupId, edgetrunkbaseId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest createPutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest(String edgegroupId, String edgetrunkbaseId, EdgeTrunkBase body) {
+    return PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest.builder()
+            .withEdgegroupId(edgegroupId)
 
+            .withEdgetrunkbaseId(edgetrunkbaseId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EdgeTrunkBase>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update the edge trunk base associated with the edge group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EdgeTrunkBase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EdgeTrunkBase putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EdgeTrunkBase>() {});
+    try {
+      ApiResponse<EdgeTrunkBase> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeTrunkBase>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update the edge trunk base associated with the edge group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeTrunkBase> putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(ApiRequest<EdgeTrunkBase> request) throws IOException, ApiException {
-    return pcapiClient.<EdgeTrunkBase>invokeAPIVerbose(request, new TypeReference<EdgeTrunkBase>() {});
+  public ApiResponse<EdgeTrunkBase> putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(ApiRequest<EdgeTrunkBase> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeTrunkBase>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeTrunkBase> response = (ApiResponse<EdgeTrunkBase>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeTrunkBase> response = (ApiResponse<EdgeTrunkBase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -8576,10 +9114,11 @@ public class TelephonyProvidersEdgeApi {
    * @param endpointId Endpoint ID (required)
    * @param body EndpointTemplate (required)
    * @return Endpoint
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Endpoint putTelephonyProvidersEdgesEndpoint(String endpointId, Endpoint body) throws IOException, ApiException {
-    return putTelephonyProvidersEdgesEndpointWithHttpInfo(endpointId, body).getBody();
+    return  putTelephonyProvidersEdgesEndpoint(createPutTelephonyProvidersEdgesEndpointRequest(endpointId, body));
   }
 
   /**
@@ -8588,66 +9127,66 @@ public class TelephonyProvidersEdgeApi {
    * @param endpointId Endpoint ID (required)
    * @param body EndpointTemplate (required)
    * @return Endpoint
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Endpoint> putTelephonyProvidersEdgesEndpointWithHttpInfo(String endpointId, Endpoint body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'endpointId' is set
-    if (endpointId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'endpointId' when calling putTelephonyProvidersEdgesEndpoint");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesEndpoint");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/endpoints/{endpointId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "endpointId" + "\\}", pcapiClient.escapeString(endpointId.toString()));
+  public ApiResponse<Endpoint> putTelephonyProvidersEdgesEndpointWithHttpInfo(String endpointId, Endpoint body) throws IOException {
+    return putTelephonyProvidersEdgesEndpoint(createPutTelephonyProvidersEdgesEndpointRequest(endpointId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutTelephonyProvidersEdgesEndpointRequest createPutTelephonyProvidersEdgesEndpointRequest(String endpointId, Endpoint body) {
+    return PutTelephonyProvidersEdgesEndpointRequest.builder()
+            .withEndpointId(endpointId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Endpoint>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update endpoint
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Endpoint
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Endpoint putTelephonyProvidersEdgesEndpoint(PutTelephonyProvidersEdgesEndpointRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Endpoint>() {});
+    try {
+      ApiResponse<Endpoint> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Endpoint>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update endpoint
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Endpoint> putTelephonyProvidersEdgesEndpoint(ApiRequest<Endpoint> request) throws IOException, ApiException {
-    return pcapiClient.<Endpoint>invokeAPIVerbose(request, new TypeReference<Endpoint>() {});
+  public ApiResponse<Endpoint> putTelephonyProvidersEdgesEndpoint(ApiRequest<Endpoint> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Endpoint>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Endpoint> response = (ApiResponse<Endpoint>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Endpoint> response = (ApiResponse<Endpoint>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -8656,10 +9195,11 @@ public class TelephonyProvidersEdgeApi {
    * @param extensionId Extension ID (required)
    * @param body Extension (required)
    * @return Extension
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Extension putTelephonyProvidersEdgesExtension(String extensionId, Extension body) throws IOException, ApiException {
-    return putTelephonyProvidersEdgesExtensionWithHttpInfo(extensionId, body).getBody();
+    return  putTelephonyProvidersEdgesExtension(createPutTelephonyProvidersEdgesExtensionRequest(extensionId, body));
   }
 
   /**
@@ -8668,66 +9208,66 @@ public class TelephonyProvidersEdgeApi {
    * @param extensionId Extension ID (required)
    * @param body Extension (required)
    * @return Extension
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Extension> putTelephonyProvidersEdgesExtensionWithHttpInfo(String extensionId, Extension body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'extensionId' is set
-    if (extensionId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'extensionId' when calling putTelephonyProvidersEdgesExtension");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesExtension");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/extensions/{extensionId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "extensionId" + "\\}", pcapiClient.escapeString(extensionId.toString()));
+  public ApiResponse<Extension> putTelephonyProvidersEdgesExtensionWithHttpInfo(String extensionId, Extension body) throws IOException {
+    return putTelephonyProvidersEdgesExtension(createPutTelephonyProvidersEdgesExtensionRequest(extensionId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutTelephonyProvidersEdgesExtensionRequest createPutTelephonyProvidersEdgesExtensionRequest(String extensionId, Extension body) {
+    return PutTelephonyProvidersEdgesExtensionRequest.builder()
+            .withExtensionId(extensionId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Extension>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update an extension by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Extension
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Extension putTelephonyProvidersEdgesExtension(PutTelephonyProvidersEdgesExtensionRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Extension>() {});
+    try {
+      ApiResponse<Extension> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Extension>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update an extension by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Extension> putTelephonyProvidersEdgesExtension(ApiRequest<Extension> request) throws IOException, ApiException {
-    return pcapiClient.<Extension>invokeAPIVerbose(request, new TypeReference<Extension>() {});
+  public ApiResponse<Extension> putTelephonyProvidersEdgesExtension(ApiRequest<Extension> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Extension>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Extension> response = (ApiResponse<Extension>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Extension> response = (ApiResponse<Extension>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -8736,10 +9276,11 @@ public class TelephonyProvidersEdgeApi {
    * @param extensionPoolId Extension pool ID (required)
    * @param body ExtensionPool (required)
    * @return ExtensionPool
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExtensionPool putTelephonyProvidersEdgesExtensionpool(String extensionPoolId, ExtensionPool body) throws IOException, ApiException {
-    return putTelephonyProvidersEdgesExtensionpoolWithHttpInfo(extensionPoolId, body).getBody();
+    return  putTelephonyProvidersEdgesExtensionpool(createPutTelephonyProvidersEdgesExtensionpoolRequest(extensionPoolId, body));
   }
 
   /**
@@ -8748,66 +9289,66 @@ public class TelephonyProvidersEdgeApi {
    * @param extensionPoolId Extension pool ID (required)
    * @param body ExtensionPool (required)
    * @return ExtensionPool
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExtensionPool> putTelephonyProvidersEdgesExtensionpoolWithHttpInfo(String extensionPoolId, ExtensionPool body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'extensionPoolId' is set
-    if (extensionPoolId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'extensionPoolId' when calling putTelephonyProvidersEdgesExtensionpool");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesExtensionpool");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "extensionPoolId" + "\\}", pcapiClient.escapeString(extensionPoolId.toString()));
+  public ApiResponse<ExtensionPool> putTelephonyProvidersEdgesExtensionpoolWithHttpInfo(String extensionPoolId, ExtensionPool body) throws IOException {
+    return putTelephonyProvidersEdgesExtensionpool(createPutTelephonyProvidersEdgesExtensionpoolRequest(extensionPoolId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutTelephonyProvidersEdgesExtensionpoolRequest createPutTelephonyProvidersEdgesExtensionpoolRequest(String extensionPoolId, ExtensionPool body) {
+    return PutTelephonyProvidersEdgesExtensionpoolRequest.builder()
+            .withExtensionPoolId(extensionPoolId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ExtensionPool>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update an extension pool by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ExtensionPool
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExtensionPool putTelephonyProvidersEdgesExtensionpool(PutTelephonyProvidersEdgesExtensionpoolRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExtensionPool>() {});
+    try {
+      ApiResponse<ExtensionPool> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExtensionPool>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update an extension pool by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExtensionPool> putTelephonyProvidersEdgesExtensionpool(ApiRequest<ExtensionPool> request) throws IOException, ApiException {
-    return pcapiClient.<ExtensionPool>invokeAPIVerbose(request, new TypeReference<ExtensionPool>() {});
+  public ApiResponse<ExtensionPool> putTelephonyProvidersEdgesExtensionpool(ApiRequest<ExtensionPool> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExtensionPool>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExtensionPool> response = (ApiResponse<ExtensionPool>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExtensionPool> response = (ApiResponse<ExtensionPool>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -8816,10 +9357,11 @@ public class TelephonyProvidersEdgeApi {
    * @param outboundRouteId Outbound route ID (required)
    * @param body OutboundRoute (required)
    * @return OutboundRoute
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OutboundRoute putTelephonyProvidersEdgesOutboundroute(String outboundRouteId, OutboundRoute body) throws IOException, ApiException {
-    return putTelephonyProvidersEdgesOutboundrouteWithHttpInfo(outboundRouteId, body).getBody();
+    return  putTelephonyProvidersEdgesOutboundroute(createPutTelephonyProvidersEdgesOutboundrouteRequest(outboundRouteId, body));
   }
 
   /**
@@ -8828,66 +9370,66 @@ public class TelephonyProvidersEdgeApi {
    * @param outboundRouteId Outbound route ID (required)
    * @param body OutboundRoute (required)
    * @return OutboundRoute
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundRoute> putTelephonyProvidersEdgesOutboundrouteWithHttpInfo(String outboundRouteId, OutboundRoute body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'outboundRouteId' is set
-    if (outboundRouteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'outboundRouteId' when calling putTelephonyProvidersEdgesOutboundroute");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesOutboundroute");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "outboundRouteId" + "\\}", pcapiClient.escapeString(outboundRouteId.toString()));
+  public ApiResponse<OutboundRoute> putTelephonyProvidersEdgesOutboundrouteWithHttpInfo(String outboundRouteId, OutboundRoute body) throws IOException {
+    return putTelephonyProvidersEdgesOutboundroute(createPutTelephonyProvidersEdgesOutboundrouteRequest(outboundRouteId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutTelephonyProvidersEdgesOutboundrouteRequest createPutTelephonyProvidersEdgesOutboundrouteRequest(String outboundRouteId, OutboundRoute body) {
+    return PutTelephonyProvidersEdgesOutboundrouteRequest.builder()
+            .withOutboundRouteId(outboundRouteId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OutboundRoute>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update outbound route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OutboundRoute
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OutboundRoute putTelephonyProvidersEdgesOutboundroute(PutTelephonyProvidersEdgesOutboundrouteRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OutboundRoute>() {});
+    try {
+      ApiResponse<OutboundRoute> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutboundRoute>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update outbound route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundRoute> putTelephonyProvidersEdgesOutboundroute(ApiRequest<OutboundRoute> request) throws IOException, ApiException {
-    return pcapiClient.<OutboundRoute>invokeAPIVerbose(request, new TypeReference<OutboundRoute>() {});
+  public ApiResponse<OutboundRoute> putTelephonyProvidersEdgesOutboundroute(ApiRequest<OutboundRoute> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutboundRoute>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundRoute> response = (ApiResponse<OutboundRoute>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundRoute> response = (ApiResponse<OutboundRoute>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -8896,10 +9438,11 @@ public class TelephonyProvidersEdgeApi {
    * @param phoneId Phone ID (required)
    * @param body Phone (required)
    * @return Phone
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Phone putTelephonyProvidersEdgesPhone(String phoneId, Phone body) throws IOException, ApiException {
-    return putTelephonyProvidersEdgesPhoneWithHttpInfo(phoneId, body).getBody();
+    return  putTelephonyProvidersEdgesPhone(createPutTelephonyProvidersEdgesPhoneRequest(phoneId, body));
   }
 
   /**
@@ -8908,66 +9451,66 @@ public class TelephonyProvidersEdgeApi {
    * @param phoneId Phone ID (required)
    * @param body Phone (required)
    * @return Phone
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Phone> putTelephonyProvidersEdgesPhoneWithHttpInfo(String phoneId, Phone body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'phoneId' is set
-    if (phoneId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'phoneId' when calling putTelephonyProvidersEdgesPhone");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesPhone");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/phones/{phoneId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "phoneId" + "\\}", pcapiClient.escapeString(phoneId.toString()));
+  public ApiResponse<Phone> putTelephonyProvidersEdgesPhoneWithHttpInfo(String phoneId, Phone body) throws IOException {
+    return putTelephonyProvidersEdgesPhone(createPutTelephonyProvidersEdgesPhoneRequest(phoneId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutTelephonyProvidersEdgesPhoneRequest createPutTelephonyProvidersEdgesPhoneRequest(String phoneId, Phone body) {
+    return PutTelephonyProvidersEdgesPhoneRequest.builder()
+            .withPhoneId(phoneId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Phone>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a Phone by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Phone
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Phone putTelephonyProvidersEdgesPhone(PutTelephonyProvidersEdgesPhoneRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Phone>() {});
+    try {
+      ApiResponse<Phone> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Phone>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a Phone by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Phone> putTelephonyProvidersEdgesPhone(ApiRequest<Phone> request) throws IOException, ApiException {
-    return pcapiClient.<Phone>invokeAPIVerbose(request, new TypeReference<Phone>() {});
+  public ApiResponse<Phone> putTelephonyProvidersEdgesPhone(ApiRequest<Phone> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Phone>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Phone> response = (ApiResponse<Phone>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Phone> response = (ApiResponse<Phone>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -8976,10 +9519,11 @@ public class TelephonyProvidersEdgeApi {
    * @param phoneBaseId Phone base ID (required)
    * @param body Phone base settings (required)
    * @return PhoneBase
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PhoneBase putTelephonyProvidersEdgesPhonebasesetting(String phoneBaseId, PhoneBase body) throws IOException, ApiException {
-    return putTelephonyProvidersEdgesPhonebasesettingWithHttpInfo(phoneBaseId, body).getBody();
+    return  putTelephonyProvidersEdgesPhonebasesetting(createPutTelephonyProvidersEdgesPhonebasesettingRequest(phoneBaseId, body));
   }
 
   /**
@@ -8988,66 +9532,66 @@ public class TelephonyProvidersEdgeApi {
    * @param phoneBaseId Phone base ID (required)
    * @param body Phone base settings (required)
    * @return PhoneBase
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PhoneBase> putTelephonyProvidersEdgesPhonebasesettingWithHttpInfo(String phoneBaseId, PhoneBase body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'phoneBaseId' is set
-    if (phoneBaseId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'phoneBaseId' when calling putTelephonyProvidersEdgesPhonebasesetting");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesPhonebasesetting");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "phoneBaseId" + "\\}", pcapiClient.escapeString(phoneBaseId.toString()));
+  public ApiResponse<PhoneBase> putTelephonyProvidersEdgesPhonebasesettingWithHttpInfo(String phoneBaseId, PhoneBase body) throws IOException {
+    return putTelephonyProvidersEdgesPhonebasesetting(createPutTelephonyProvidersEdgesPhonebasesettingRequest(phoneBaseId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutTelephonyProvidersEdgesPhonebasesettingRequest createPutTelephonyProvidersEdgesPhonebasesettingRequest(String phoneBaseId, PhoneBase body) {
+    return PutTelephonyProvidersEdgesPhonebasesettingRequest.builder()
+            .withPhoneBaseId(phoneBaseId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<PhoneBase>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a Phone Base Settings by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return PhoneBase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PhoneBase putTelephonyProvidersEdgesPhonebasesetting(PutTelephonyProvidersEdgesPhonebasesettingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PhoneBase>() {});
+    try {
+      ApiResponse<PhoneBase> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PhoneBase>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a Phone Base Settings by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PhoneBase> putTelephonyProvidersEdgesPhonebasesetting(ApiRequest<PhoneBase> request) throws IOException, ApiException {
-    return pcapiClient.<PhoneBase>invokeAPIVerbose(request, new TypeReference<PhoneBase>() {});
+  public ApiResponse<PhoneBase> putTelephonyProvidersEdgesPhonebasesetting(ApiRequest<PhoneBase> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PhoneBase>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PhoneBase> response = (ApiResponse<PhoneBase>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PhoneBase> response = (ApiResponse<PhoneBase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -9056,10 +9600,11 @@ public class TelephonyProvidersEdgeApi {
    * @param siteId Site ID (required)
    * @param body Site (required)
    * @return Site
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Site putTelephonyProvidersEdgesSite(String siteId, Site body) throws IOException, ApiException {
-    return putTelephonyProvidersEdgesSiteWithHttpInfo(siteId, body).getBody();
+    return  putTelephonyProvidersEdgesSite(createPutTelephonyProvidersEdgesSiteRequest(siteId, body));
   }
 
   /**
@@ -9068,66 +9613,66 @@ public class TelephonyProvidersEdgeApi {
    * @param siteId Site ID (required)
    * @param body Site (required)
    * @return Site
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Site> putTelephonyProvidersEdgesSiteWithHttpInfo(String siteId, Site body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'siteId' is set
-    if (siteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling putTelephonyProvidersEdgesSite");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesSite");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/sites/{siteId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "siteId" + "\\}", pcapiClient.escapeString(siteId.toString()));
+  public ApiResponse<Site> putTelephonyProvidersEdgesSiteWithHttpInfo(String siteId, Site body) throws IOException {
+    return putTelephonyProvidersEdgesSite(createPutTelephonyProvidersEdgesSiteRequest(siteId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutTelephonyProvidersEdgesSiteRequest createPutTelephonyProvidersEdgesSiteRequest(String siteId, Site body) {
+    return PutTelephonyProvidersEdgesSiteRequest.builder()
+            .withSiteId(siteId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Site>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a Site by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Site
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Site putTelephonyProvidersEdgesSite(PutTelephonyProvidersEdgesSiteRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Site>() {});
+    try {
+      ApiResponse<Site> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Site>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a Site by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Site> putTelephonyProvidersEdgesSite(ApiRequest<Site> request) throws IOException, ApiException {
-    return pcapiClient.<Site>invokeAPIVerbose(request, new TypeReference<Site>() {});
+  public ApiResponse<Site> putTelephonyProvidersEdgesSite(ApiRequest<Site> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Site>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Site> response = (ApiResponse<Site>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Site> response = (ApiResponse<Site>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -9136,10 +9681,11 @@ public class TelephonyProvidersEdgeApi {
    * @param siteId Site ID (required)
    * @param body List of number plans (required)
    * @return List<NumberPlan>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<NumberPlan> putTelephonyProvidersEdgesSiteNumberplans(String siteId, List<NumberPlan> body) throws IOException, ApiException {
-    return putTelephonyProvidersEdgesSiteNumberplansWithHttpInfo(siteId, body).getBody();
+    return  putTelephonyProvidersEdgesSiteNumberplans(createPutTelephonyProvidersEdgesSiteNumberplansRequest(siteId, body));
   }
 
   /**
@@ -9148,66 +9694,66 @@ public class TelephonyProvidersEdgeApi {
    * @param siteId Site ID (required)
    * @param body List of number plans (required)
    * @return List<NumberPlan>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<NumberPlan>> putTelephonyProvidersEdgesSiteNumberplansWithHttpInfo(String siteId, List<NumberPlan> body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'siteId' is set
-    if (siteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling putTelephonyProvidersEdgesSiteNumberplans");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesSiteNumberplans");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/sites/{siteId}/numberplans".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "siteId" + "\\}", pcapiClient.escapeString(siteId.toString()));
+  public ApiResponse<List<NumberPlan>> putTelephonyProvidersEdgesSiteNumberplansWithHttpInfo(String siteId, List<NumberPlan> body) throws IOException {
+    return putTelephonyProvidersEdgesSiteNumberplans(createPutTelephonyProvidersEdgesSiteNumberplansRequest(siteId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutTelephonyProvidersEdgesSiteNumberplansRequest createPutTelephonyProvidersEdgesSiteNumberplansRequest(String siteId, List<NumberPlan> body) {
+    return PutTelephonyProvidersEdgesSiteNumberplansRequest.builder()
+            .withSiteId(siteId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<NumberPlan>>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update the list of Number Plans.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<NumberPlan>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<NumberPlan> putTelephonyProvidersEdgesSiteNumberplans(PutTelephonyProvidersEdgesSiteNumberplansRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<NumberPlan>>() {});
+    try {
+      ApiResponse<List<NumberPlan>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<NumberPlan>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update the list of Number Plans.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<NumberPlan>> putTelephonyProvidersEdgesSiteNumberplans(ApiRequest<List<NumberPlan>> request) throws IOException, ApiException {
-    return pcapiClient.<List<NumberPlan>>invokeAPIVerbose(request, new TypeReference<List<NumberPlan>>() {});
+  public ApiResponse<List<NumberPlan>> putTelephonyProvidersEdgesSiteNumberplans(ApiRequest<List<NumberPlan>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<NumberPlan>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<NumberPlan>> response = (ApiResponse<List<NumberPlan>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<NumberPlan>> response = (ApiResponse<List<NumberPlan>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -9217,10 +9763,11 @@ public class TelephonyProvidersEdgeApi {
    * @param outboundRouteId Outbound route ID (required)
    * @param body OutboundRoute (required)
    * @return OutboundRouteBase
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OutboundRouteBase putTelephonyProvidersEdgesSiteOutboundroute(String siteId, String outboundRouteId, OutboundRouteBase body) throws IOException, ApiException {
-    return putTelephonyProvidersEdgesSiteOutboundrouteWithHttpInfo(siteId, outboundRouteId, body).getBody();
+    return  putTelephonyProvidersEdgesSiteOutboundroute(createPutTelephonyProvidersEdgesSiteOutboundrouteRequest(siteId, outboundRouteId, body));
   }
 
   /**
@@ -9230,72 +9777,68 @@ public class TelephonyProvidersEdgeApi {
    * @param outboundRouteId Outbound route ID (required)
    * @param body OutboundRoute (required)
    * @return OutboundRouteBase
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundRouteBase> putTelephonyProvidersEdgesSiteOutboundrouteWithHttpInfo(String siteId, String outboundRouteId, OutboundRouteBase body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'siteId' is set
-    if (siteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'siteId' when calling putTelephonyProvidersEdgesSiteOutboundroute");
-    }
-    
-    // verify the required parameter 'outboundRouteId' is set
-    if (outboundRouteId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'outboundRouteId' when calling putTelephonyProvidersEdgesSiteOutboundroute");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesSiteOutboundroute");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "siteId" + "\\}", pcapiClient.escapeString(siteId.toString()))
-      .replaceAll("\\{" + "outboundRouteId" + "\\}", pcapiClient.escapeString(outboundRouteId.toString()));
+  public ApiResponse<OutboundRouteBase> putTelephonyProvidersEdgesSiteOutboundrouteWithHttpInfo(String siteId, String outboundRouteId, OutboundRouteBase body) throws IOException {
+    return putTelephonyProvidersEdgesSiteOutboundroute(createPutTelephonyProvidersEdgesSiteOutboundrouteRequest(siteId, outboundRouteId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutTelephonyProvidersEdgesSiteOutboundrouteRequest createPutTelephonyProvidersEdgesSiteOutboundrouteRequest(String siteId, String outboundRouteId, OutboundRouteBase body) {
+    return PutTelephonyProvidersEdgesSiteOutboundrouteRequest.builder()
+            .withSiteId(siteId)
 
+            .withOutboundRouteId(outboundRouteId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OutboundRouteBase>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update outbound route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OutboundRouteBase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OutboundRouteBase putTelephonyProvidersEdgesSiteOutboundroute(PutTelephonyProvidersEdgesSiteOutboundrouteRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OutboundRouteBase>() {});
+    try {
+      ApiResponse<OutboundRouteBase> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutboundRouteBase>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update outbound route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundRouteBase> putTelephonyProvidersEdgesSiteOutboundroute(ApiRequest<OutboundRouteBase> request) throws IOException, ApiException {
-    return pcapiClient.<OutboundRouteBase>invokeAPIVerbose(request, new TypeReference<OutboundRouteBase>() {});
+  public ApiResponse<OutboundRouteBase> putTelephonyProvidersEdgesSiteOutboundroute(ApiRequest<OutboundRouteBase> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutboundRouteBase>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundRouteBase> response = (ApiResponse<OutboundRouteBase>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundRouteBase> response = (ApiResponse<OutboundRouteBase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -9304,10 +9847,11 @@ public class TelephonyProvidersEdgeApi {
    * @param trunkBaseSettingsId Trunk Base ID (required)
    * @param body Trunk base settings (required)
    * @return TrunkBase
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TrunkBase putTelephonyProvidersEdgesTrunkbasesetting(String trunkBaseSettingsId, TrunkBase body) throws IOException, ApiException {
-    return putTelephonyProvidersEdgesTrunkbasesettingWithHttpInfo(trunkBaseSettingsId, body).getBody();
+    return  putTelephonyProvidersEdgesTrunkbasesetting(createPutTelephonyProvidersEdgesTrunkbasesettingRequest(trunkBaseSettingsId, body));
   }
 
   /**
@@ -9316,66 +9860,66 @@ public class TelephonyProvidersEdgeApi {
    * @param trunkBaseSettingsId Trunk Base ID (required)
    * @param body Trunk base settings (required)
    * @return TrunkBase
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TrunkBase> putTelephonyProvidersEdgesTrunkbasesettingWithHttpInfo(String trunkBaseSettingsId, TrunkBase body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'trunkBaseSettingsId' is set
-    if (trunkBaseSettingsId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'trunkBaseSettingsId' when calling putTelephonyProvidersEdgesTrunkbasesetting");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putTelephonyProvidersEdgesTrunkbasesetting");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "trunkBaseSettingsId" + "\\}", pcapiClient.escapeString(trunkBaseSettingsId.toString()));
+  public ApiResponse<TrunkBase> putTelephonyProvidersEdgesTrunkbasesettingWithHttpInfo(String trunkBaseSettingsId, TrunkBase body) throws IOException {
+    return putTelephonyProvidersEdgesTrunkbasesetting(createPutTelephonyProvidersEdgesTrunkbasesettingRequest(trunkBaseSettingsId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutTelephonyProvidersEdgesTrunkbasesettingRequest createPutTelephonyProvidersEdgesTrunkbasesettingRequest(String trunkBaseSettingsId, TrunkBase body) {
+    return PutTelephonyProvidersEdgesTrunkbasesettingRequest.builder()
+            .withTrunkBaseSettingsId(trunkBaseSettingsId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<TrunkBase>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a Trunk Base Settings object by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return TrunkBase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TrunkBase putTelephonyProvidersEdgesTrunkbasesetting(PutTelephonyProvidersEdgesTrunkbasesettingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TrunkBase>() {});
+    try {
+      ApiResponse<TrunkBase> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrunkBase>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a Trunk Base Settings object by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TrunkBase> putTelephonyProvidersEdgesTrunkbasesetting(ApiRequest<TrunkBase> request) throws IOException, ApiException {
-    return pcapiClient.<TrunkBase>invokeAPIVerbose(request, new TypeReference<TrunkBase>() {});
+  public ApiResponse<TrunkBase> putTelephonyProvidersEdgesTrunkbasesetting(ApiRequest<TrunkBase> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrunkBase>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkBase> response = (ApiResponse<TrunkBase>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkBase> response = (ApiResponse<TrunkBase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

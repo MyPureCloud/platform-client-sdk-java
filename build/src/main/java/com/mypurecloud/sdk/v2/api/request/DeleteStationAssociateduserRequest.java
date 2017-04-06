@@ -23,9 +23,6 @@ import com.mypurecloud.sdk.v2.model.Station;
 import com.mypurecloud.sdk.v2.model.StationEntityListing;
 
 public class DeleteStationAssociateduserRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String stationId;
 	public String getStationId() {
 		return this.stationId;
@@ -104,6 +101,12 @@ public class DeleteStationAssociateduserRequest {
 
 
 		public DeleteStationAssociateduserRequest build() {
+            
+            // verify the required parameter 'stationId' is set
+            if (request.stationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'stationId' when building request for DeleteStationAssociateduserRequest.");
+            }
+            
 			return request;
 		}
 	}

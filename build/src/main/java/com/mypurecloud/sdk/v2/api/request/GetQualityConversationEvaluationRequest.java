@@ -38,9 +38,6 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class GetQualityConversationEvaluationRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -165,6 +162,17 @@ public class GetQualityConversationEvaluationRequest {
 
 
 		public GetQualityConversationEvaluationRequest build() {
+            
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetQualityConversationEvaluationRequest.");
+            }
+            
+            // verify the required parameter 'evaluationId' is set
+            if (request.evaluationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'evaluationId' when building request for GetQualityConversationEvaluationRequest.");
+            }
+            
 			return request;
 		}
 	}

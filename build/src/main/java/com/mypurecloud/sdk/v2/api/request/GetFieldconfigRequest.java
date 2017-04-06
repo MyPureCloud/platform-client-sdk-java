@@ -47,9 +47,6 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class GetFieldconfigRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String type;
 	public String getType() {
 		return this.type;
@@ -128,6 +125,12 @@ public class GetFieldconfigRequest {
 
 
 		public GetFieldconfigRequest build() {
+            
+            // verify the required parameter 'type' is set
+            if (request.type == null) {
+                throw new IllegalStateException("Missing the required parameter 'type' when building request for GetFieldconfigRequest.");
+            }
+            
 			return request;
 		}
 	}

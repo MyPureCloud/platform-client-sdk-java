@@ -31,9 +31,6 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class GetExternalcontactsOrganizationContactsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String externalOrganizationId;
 	public String getExternalOrganizationId() {
 		return this.externalOrganizationId;
@@ -212,6 +209,12 @@ public class GetExternalcontactsOrganizationContactsRequest {
 
 
 		public GetExternalcontactsOrganizationContactsRequest build() {
+            
+            // verify the required parameter 'externalOrganizationId' is set
+            if (request.externalOrganizationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'externalOrganizationId' when building request for GetExternalcontactsOrganizationContactsRequest.");
+            }
+            
 			return request;
 		}
 	}

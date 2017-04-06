@@ -154,10 +154,11 @@ public class ConversationsApi {
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param addCommunicationCode addCommunicationCode (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteConversationParticipantCode(String conversationId, String participantId, String addCommunicationCode) throws IOException, ApiException {
-    deleteConversationParticipantCodeWithHttpInfo(conversationId, participantId, addCommunicationCode);
+     deleteConversationParticipantCode(createDeleteConversationParticipantCodeRequest(conversationId, participantId, addCommunicationCode));
   }
 
   /**
@@ -166,73 +167,67 @@ public class ConversationsApi {
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param addCommunicationCode addCommunicationCode (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteConversationParticipantCodeWithHttpInfo(String conversationId, String participantId, String addCommunicationCode) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling deleteConversationParticipantCode");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling deleteConversationParticipantCode");
-    }
-    
-    // verify the required parameter 'addCommunicationCode' is set
-    if (addCommunicationCode == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'addCommunicationCode' when calling deleteConversationParticipantCode");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()))
-      .replaceAll("\\{" + "addCommunicationCode" + "\\}", pcapiClient.escapeString(addCommunicationCode.toString()));
+  public ApiResponse<Void> deleteConversationParticipantCodeWithHttpInfo(String conversationId, String participantId, String addCommunicationCode) throws IOException {
+    return deleteConversationParticipantCode(createDeleteConversationParticipantCodeRequest(conversationId, participantId, addCommunicationCode).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private DeleteConversationParticipantCodeRequest createDeleteConversationParticipantCodeRequest(String conversationId, String participantId, String addCommunicationCode) {
+    return DeleteConversationParticipantCodeRequest.builder()
+            .withConversationId(conversationId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withAddCommunicationCode(addCommunicationCode)
+            .build();
   }
 
   /**
    * Delete a code used to add a communication to this participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteConversationParticipantCode(DeleteConversationParticipantCodeRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete a code used to add a communication to this participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteConversationParticipantCode(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteConversationParticipantCode(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -241,10 +236,11 @@ public class ConversationsApi {
    * @param callId callId (required)
    * @param participantId participantId (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteConversationsCallParticipantConsult(String callId, String participantId) throws IOException, ApiException {
-    return deleteConversationsCallParticipantConsultWithHttpInfo(callId, participantId).getBody();
+    return  deleteConversationsCallParticipantConsult(createDeleteConversationsCallParticipantConsultRequest(callId, participantId));
   }
 
   /**
@@ -253,67 +249,66 @@ public class ConversationsApi {
    * @param callId callId (required)
    * @param participantId participantId (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteConversationsCallParticipantConsultWithHttpInfo(String callId, String participantId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'callId' is set
-    if (callId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling deleteConversationsCallParticipantConsult");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling deleteConversationsCallParticipantConsult");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/calls/{callId}/participants/{participantId}/consult".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callId" + "\\}", pcapiClient.escapeString(callId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<String> deleteConversationsCallParticipantConsultWithHttpInfo(String callId, String participantId) throws IOException {
+    return deleteConversationsCallParticipantConsult(createDeleteConversationsCallParticipantConsultRequest(callId, participantId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private DeleteConversationsCallParticipantConsultRequest createDeleteConversationsCallParticipantConsultRequest(String callId, String participantId) {
+    return DeleteConversationsCallParticipantConsultRequest.builder()
+            .withCallId(callId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+            .withParticipantId(participantId)
+            .build();
   }
 
   /**
    * Cancel the transfer
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteConversationsCallParticipantConsult(DeleteConversationsCallParticipantConsultRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Cancel the transfer
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteConversationsCallParticipantConsult(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteConversationsCallParticipantConsult(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -322,10 +317,11 @@ public class ConversationsApi {
    * @param emailId emailId (required)
    * @param attachmentId attachmentId (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteConversationsEmailMessagesDraftAttachment(String emailId, String attachmentId) throws IOException, ApiException {
-    return deleteConversationsEmailMessagesDraftAttachmentWithHttpInfo(emailId, attachmentId).getBody();
+    return  deleteConversationsEmailMessagesDraftAttachment(createDeleteConversationsEmailMessagesDraftAttachmentRequest(emailId, attachmentId));
   }
 
   /**
@@ -334,67 +330,66 @@ public class ConversationsApi {
    * @param emailId emailId (required)
    * @param attachmentId attachmentId (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteConversationsEmailMessagesDraftAttachmentWithHttpInfo(String emailId, String attachmentId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'emailId' is set
-    if (emailId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling deleteConversationsEmailMessagesDraftAttachment");
-    }
-    
-    // verify the required parameter 'attachmentId' is set
-    if (attachmentId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'attachmentId' when calling deleteConversationsEmailMessagesDraftAttachment");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/emails/{emailId}/messages/draft/attachments/{attachmentId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "emailId" + "\\}", pcapiClient.escapeString(emailId.toString()))
-      .replaceAll("\\{" + "attachmentId" + "\\}", pcapiClient.escapeString(attachmentId.toString()));
+  public ApiResponse<String> deleteConversationsEmailMessagesDraftAttachmentWithHttpInfo(String emailId, String attachmentId) throws IOException {
+    return deleteConversationsEmailMessagesDraftAttachment(createDeleteConversationsEmailMessagesDraftAttachmentRequest(emailId, attachmentId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private DeleteConversationsEmailMessagesDraftAttachmentRequest createDeleteConversationsEmailMessagesDraftAttachmentRequest(String emailId, String attachmentId) {
+    return DeleteConversationsEmailMessagesDraftAttachmentRequest.builder()
+            .withEmailId(emailId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+            .withAttachmentId(attachmentId)
+            .build();
   }
 
   /**
    * Delete attachment from draft
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteConversationsEmailMessagesDraftAttachment(DeleteConversationsEmailMessagesDraftAttachmentRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete attachment from draft
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteConversationsEmailMessagesDraftAttachment(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteConversationsEmailMessagesDraftAttachment(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -402,10 +397,11 @@ public class ConversationsApi {
    * 
    * @param conversationId conversationId (required)
    * @return AnalyticsConversation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AnalyticsConversation getAnalyticsConversationDetails(String conversationId) throws IOException, ApiException {
-    return getAnalyticsConversationDetailsWithHttpInfo(conversationId).getBody();
+    return  getAnalyticsConversationDetails(createGetAnalyticsConversationDetailsRequest(conversationId));
   }
 
   /**
@@ -413,61 +409,64 @@ public class ConversationsApi {
    * 
    * @param conversationId conversationId (required)
    * @return AnalyticsConversation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AnalyticsConversation> getAnalyticsConversationDetailsWithHttpInfo(String conversationId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling getAnalyticsConversationDetails");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/analytics/conversations/{conversationId}/details".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()));
+  public ApiResponse<AnalyticsConversation> getAnalyticsConversationDetailsWithHttpInfo(String conversationId) throws IOException {
+    return getAnalyticsConversationDetails(createGetAnalyticsConversationDetailsRequest(conversationId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<AnalyticsConversation>() {});
+  private GetAnalyticsConversationDetailsRequest createGetAnalyticsConversationDetailsRequest(String conversationId) {
+    return GetAnalyticsConversationDetailsRequest.builder()
+            .withConversationId(conversationId)
+            .build();
   }
 
   /**
    * Get a conversation by id
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return AnalyticsConversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AnalyticsConversation getAnalyticsConversationDetails(GetAnalyticsConversationDetailsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AnalyticsConversation>() {});
+    try {
+      ApiResponse<AnalyticsConversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AnalyticsConversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a conversation by id
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AnalyticsConversation> getAnalyticsConversationDetails(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<AnalyticsConversation>invokeAPIVerbose(request, new TypeReference<AnalyticsConversation>() {});
+  public ApiResponse<AnalyticsConversation> getAnalyticsConversationDetails(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AnalyticsConversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsConversation> response = (ApiResponse<AnalyticsConversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsConversation> response = (ApiResponse<AnalyticsConversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -475,10 +474,11 @@ public class ConversationsApi {
    * 
    * @param conversationId conversation ID (required)
    * @return Conversation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Conversation getConversation(String conversationId) throws IOException, ApiException {
-    return getConversationWithHttpInfo(conversationId).getBody();
+    return  getConversation(createGetConversationRequest(conversationId));
   }
 
   /**
@@ -486,61 +486,64 @@ public class ConversationsApi {
    * 
    * @param conversationId conversation ID (required)
    * @return Conversation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Conversation> getConversationWithHttpInfo(String conversationId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling getConversation");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/{conversationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()));
+  public ApiResponse<Conversation> getConversationWithHttpInfo(String conversationId) throws IOException {
+    return getConversation(createGetConversationRequest(conversationId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Conversation>() {});
+  private GetConversationRequest createGetConversationRequest(String conversationId) {
+    return GetConversationRequest.builder()
+            .withConversationId(conversationId)
+            .build();
   }
 
   /**
    * Get conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Conversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Conversation getConversation(GetConversationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Conversation>() {});
+    try {
+      ApiResponse<Conversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Conversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Conversation> getConversation(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Conversation>invokeAPIVerbose(request, new TypeReference<Conversation>() {});
+  public ApiResponse<Conversation> getConversation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Conversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -550,10 +553,11 @@ public class ConversationsApi {
    * @param participantId participant ID (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
    * @return WrapupCode
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public WrapupCode getConversationParticipantWrapup(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
-    return getConversationParticipantWrapupWithHttpInfo(conversationId, participantId, provisional).getBody();
+    return  getConversationParticipantWrapup(createGetConversationParticipantWrapupRequest(conversationId, participantId, provisional));
   }
 
   /**
@@ -563,68 +567,68 @@ public class ConversationsApi {
    * @param participantId participant ID (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
    * @return WrapupCode
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WrapupCode> getConversationParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling getConversationParticipantWrapup");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationParticipantWrapup");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/{conversationId}/participants/{participantId}/wrapup".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<WrapupCode> getConversationParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws IOException {
+    return getConversationParticipantWrapup(createGetConversationParticipantWrapupRequest(conversationId, participantId, provisional).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConversationParticipantWrapupRequest createGetConversationParticipantWrapupRequest(String conversationId, String participantId, Boolean provisional) {
+    return GetConversationParticipantWrapupRequest.builder()
+            .withConversationId(conversationId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "provisional", provisional));
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<WrapupCode>() {});
+            .withProvisional(provisional)
+            .build();
   }
 
   /**
    * Get the wrap-up for this conversation participant. 
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return WrapupCode
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public WrapupCode getConversationParticipantWrapup(GetConversationParticipantWrapupRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WrapupCode>() {});
+    try {
+      ApiResponse<WrapupCode> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WrapupCode>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the wrap-up for this conversation participant. 
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WrapupCode> getConversationParticipantWrapup(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<WrapupCode>invokeAPIVerbose(request, new TypeReference<WrapupCode>() {});
+  public ApiResponse<WrapupCode> getConversationParticipantWrapup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WrapupCode>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WrapupCode> response = (ApiResponse<WrapupCode>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WrapupCode> response = (ApiResponse<WrapupCode>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -633,10 +637,11 @@ public class ConversationsApi {
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @return List<WrapupCode>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<WrapupCode> getConversationParticipantWrapupcodes(String conversationId, String participantId) throws IOException, ApiException {
-    return getConversationParticipantWrapupcodesWithHttpInfo(conversationId, participantId).getBody();
+    return  getConversationParticipantWrapupcodes(createGetConversationParticipantWrapupcodesRequest(conversationId, participantId));
   }
 
   /**
@@ -645,67 +650,66 @@ public class ConversationsApi {
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @return List<WrapupCode>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<WrapupCode>> getConversationParticipantWrapupcodesWithHttpInfo(String conversationId, String participantId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling getConversationParticipantWrapupcodes");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationParticipantWrapupcodes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<List<WrapupCode>> getConversationParticipantWrapupcodesWithHttpInfo(String conversationId, String participantId) throws IOException {
+    return getConversationParticipantWrapupcodes(createGetConversationParticipantWrapupcodesRequest(conversationId, participantId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConversationParticipantWrapupcodesRequest createGetConversationParticipantWrapupcodesRequest(String conversationId, String participantId) {
+    return GetConversationParticipantWrapupcodesRequest.builder()
+            .withConversationId(conversationId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<WrapupCode>>() {});
+            .withParticipantId(participantId)
+            .build();
   }
 
   /**
    * Get list of wrapup codes for this conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<WrapupCode>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<WrapupCode> getConversationParticipantWrapupcodes(GetConversationParticipantWrapupcodesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {});
+    try {
+      ApiResponse<List<WrapupCode>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get list of wrapup codes for this conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<WrapupCode>> getConversationParticipantWrapupcodes(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<WrapupCode>>invokeAPIVerbose(request, new TypeReference<List<WrapupCode>>() {});
+  public ApiResponse<List<WrapupCode>> getConversationParticipantWrapupcodes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<WrapupCode>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<WrapupCode>> response = (ApiResponse<List<WrapupCode>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<WrapupCode>> response = (ApiResponse<List<WrapupCode>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -713,10 +717,11 @@ public class ConversationsApi {
    * 
    * @param communicationType Call or Chat communication filtering (optional)
    * @return ConversationEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ConversationEntityListing getConversations(String communicationType) throws IOException, ApiException {
-    return getConversationsWithHttpInfo(communicationType).getBody();
+    return  getConversations(createGetConversationsRequest(communicationType));
   }
 
   /**
@@ -724,56 +729,64 @@ public class ConversationsApi {
    * 
    * @param communicationType Call or Chat communication filtering (optional)
    * @return ConversationEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ConversationEntityListing> getConversationsWithHttpInfo(String communicationType) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations".replaceAll("\\{format\\}","json");
+  public ApiResponse<ConversationEntityListing> getConversationsWithHttpInfo(String communicationType) throws IOException {
+    return getConversations(createGetConversationsRequest(communicationType).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "communicationType", communicationType));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ConversationEntityListing>() {});
+  private GetConversationsRequest createGetConversationsRequest(String communicationType) {
+    return GetConversationsRequest.builder()
+            .withCommunicationType(communicationType)
+            .build();
   }
 
   /**
    * Get conversations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ConversationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ConversationEntityListing getConversations(GetConversationsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ConversationEntityListing>() {});
+    try {
+      ApiResponse<ConversationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConversationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get conversations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ConversationEntityListing> getConversations(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ConversationEntityListing>invokeAPIVerbose(request, new TypeReference<ConversationEntityListing>() {});
+  public ApiResponse<ConversationEntityListing> getConversations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConversationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationEntityListing> response = (ApiResponse<ConversationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationEntityListing> response = (ApiResponse<ConversationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -781,10 +794,11 @@ public class ConversationsApi {
    * 
    * @param callId callId (required)
    * @return CallConversation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallConversation getConversationsCall(String callId) throws IOException, ApiException {
-    return getConversationsCallWithHttpInfo(callId).getBody();
+    return  getConversationsCall(createGetConversationsCallRequest(callId));
   }
 
   /**
@@ -792,61 +806,64 @@ public class ConversationsApi {
    * 
    * @param callId callId (required)
    * @return CallConversation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallConversation> getConversationsCallWithHttpInfo(String callId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'callId' is set
-    if (callId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling getConversationsCall");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/calls/{callId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callId" + "\\}", pcapiClient.escapeString(callId.toString()));
+  public ApiResponse<CallConversation> getConversationsCallWithHttpInfo(String callId) throws IOException {
+    return getConversationsCall(createGetConversationsCallRequest(callId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CallConversation>() {});
+  private GetConversationsCallRequest createGetConversationsCallRequest(String callId) {
+    return GetConversationsCallRequest.builder()
+            .withCallId(callId)
+            .build();
   }
 
   /**
    * Get call conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CallConversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallConversation getConversationsCall(GetConversationsCallRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallConversation>() {});
+    try {
+      ApiResponse<CallConversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CallConversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get call conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallConversation> getConversationsCall(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CallConversation>invokeAPIVerbose(request, new TypeReference<CallConversation>() {});
+  public ApiResponse<CallConversation> getConversationsCall(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CallConversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallConversation> response = (ApiResponse<CallConversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallConversation> response = (ApiResponse<CallConversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -856,10 +873,11 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
    * @return Wrapup
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Wrapup getConversationsCallParticipantWrapup(String callId, String participantId, Boolean provisional) throws IOException, ApiException {
-    return getConversationsCallParticipantWrapupWithHttpInfo(callId, participantId, provisional).getBody();
+    return  getConversationsCallParticipantWrapup(createGetConversationsCallParticipantWrapupRequest(callId, participantId, provisional));
   }
 
   /**
@@ -869,68 +887,68 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
    * @return Wrapup
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsCallParticipantWrapupWithHttpInfo(String callId, String participantId, Boolean provisional) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'callId' is set
-    if (callId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling getConversationsCallParticipantWrapup");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationsCallParticipantWrapup");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/calls/{callId}/participants/{participantId}/wrapup".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callId" + "\\}", pcapiClient.escapeString(callId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Wrapup> getConversationsCallParticipantWrapupWithHttpInfo(String callId, String participantId, Boolean provisional) throws IOException {
+    return getConversationsCallParticipantWrapup(createGetConversationsCallParticipantWrapupRequest(callId, participantId, provisional).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConversationsCallParticipantWrapupRequest createGetConversationsCallParticipantWrapupRequest(String callId, String participantId, Boolean provisional) {
+    return GetConversationsCallParticipantWrapupRequest.builder()
+            .withCallId(callId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "provisional", provisional));
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Wrapup>() {});
+            .withProvisional(provisional)
+            .build();
   }
 
   /**
    * Get the wrap-up for this conversation participant. 
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Wrapup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Wrapup getConversationsCallParticipantWrapup(GetConversationsCallParticipantWrapupRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Wrapup>() {});
+    try {
+      ApiResponse<Wrapup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Wrapup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the wrap-up for this conversation participant. 
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsCallParticipantWrapup(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Wrapup>invokeAPIVerbose(request, new TypeReference<Wrapup>() {});
+  public ApiResponse<Wrapup> getConversationsCallParticipantWrapup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Wrapup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -939,10 +957,11 @@ public class ConversationsApi {
    * @param callId callId (required)
    * @param participantId participantId (required)
    * @return List<WrapupCode>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<WrapupCode> getConversationsCallParticipantWrapupcodes(String callId, String participantId) throws IOException, ApiException {
-    return getConversationsCallParticipantWrapupcodesWithHttpInfo(callId, participantId).getBody();
+    return  getConversationsCallParticipantWrapupcodes(createGetConversationsCallParticipantWrapupcodesRequest(callId, participantId));
   }
 
   /**
@@ -951,67 +970,66 @@ public class ConversationsApi {
    * @param callId callId (required)
    * @param participantId participantId (required)
    * @return List<WrapupCode>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<WrapupCode>> getConversationsCallParticipantWrapupcodesWithHttpInfo(String callId, String participantId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'callId' is set
-    if (callId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling getConversationsCallParticipantWrapupcodes");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationsCallParticipantWrapupcodes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/calls/{callId}/participants/{participantId}/wrapupcodes".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callId" + "\\}", pcapiClient.escapeString(callId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<List<WrapupCode>> getConversationsCallParticipantWrapupcodesWithHttpInfo(String callId, String participantId) throws IOException {
+    return getConversationsCallParticipantWrapupcodes(createGetConversationsCallParticipantWrapupcodesRequest(callId, participantId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConversationsCallParticipantWrapupcodesRequest createGetConversationsCallParticipantWrapupcodesRequest(String callId, String participantId) {
+    return GetConversationsCallParticipantWrapupcodesRequest.builder()
+            .withCallId(callId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<WrapupCode>>() {});
+            .withParticipantId(participantId)
+            .build();
   }
 
   /**
    * Get list of wrapup codes for this conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<WrapupCode>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<WrapupCode> getConversationsCallParticipantWrapupcodes(GetConversationsCallParticipantWrapupcodesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {});
+    try {
+      ApiResponse<List<WrapupCode>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get list of wrapup codes for this conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<WrapupCode>> getConversationsCallParticipantWrapupcodes(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<WrapupCode>>invokeAPIVerbose(request, new TypeReference<List<WrapupCode>>() {});
+  public ApiResponse<List<WrapupCode>> getConversationsCallParticipantWrapupcodes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<WrapupCode>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<WrapupCode>> response = (ApiResponse<List<WrapupCode>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<WrapupCode>> response = (ApiResponse<List<WrapupCode>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1019,10 +1037,11 @@ public class ConversationsApi {
    * 
    * @param callbackId callbackId (required)
    * @return CallbackConversation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallbackConversation getConversationsCallback(String callbackId) throws IOException, ApiException {
-    return getConversationsCallbackWithHttpInfo(callbackId).getBody();
+    return  getConversationsCallback(createGetConversationsCallbackRequest(callbackId));
   }
 
   /**
@@ -1030,61 +1049,64 @@ public class ConversationsApi {
    * 
    * @param callbackId callbackId (required)
    * @return CallbackConversation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallbackConversation> getConversationsCallbackWithHttpInfo(String callbackId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'callbackId' is set
-    if (callbackId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callbackId' when calling getConversationsCallback");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/callbacks/{callbackId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callbackId" + "\\}", pcapiClient.escapeString(callbackId.toString()));
+  public ApiResponse<CallbackConversation> getConversationsCallbackWithHttpInfo(String callbackId) throws IOException {
+    return getConversationsCallback(createGetConversationsCallbackRequest(callbackId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CallbackConversation>() {});
+  private GetConversationsCallbackRequest createGetConversationsCallbackRequest(String callbackId) {
+    return GetConversationsCallbackRequest.builder()
+            .withCallbackId(callbackId)
+            .build();
   }
 
   /**
    * Get callback conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CallbackConversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallbackConversation getConversationsCallback(GetConversationsCallbackRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallbackConversation>() {});
+    try {
+      ApiResponse<CallbackConversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CallbackConversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get callback conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallbackConversation> getConversationsCallback(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CallbackConversation>invokeAPIVerbose(request, new TypeReference<CallbackConversation>() {});
+  public ApiResponse<CallbackConversation> getConversationsCallback(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CallbackConversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallbackConversation> response = (ApiResponse<CallbackConversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallbackConversation> response = (ApiResponse<CallbackConversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1094,10 +1116,11 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
    * @return Wrapup
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Wrapup getConversationsCallbackParticipantWrapup(String callbackId, String participantId, Boolean provisional) throws IOException, ApiException {
-    return getConversationsCallbackParticipantWrapupWithHttpInfo(callbackId, participantId, provisional).getBody();
+    return  getConversationsCallbackParticipantWrapup(createGetConversationsCallbackParticipantWrapupRequest(callbackId, participantId, provisional));
   }
 
   /**
@@ -1107,68 +1130,68 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
    * @return Wrapup
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsCallbackParticipantWrapupWithHttpInfo(String callbackId, String participantId, Boolean provisional) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'callbackId' is set
-    if (callbackId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callbackId' when calling getConversationsCallbackParticipantWrapup");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationsCallbackParticipantWrapup");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/wrapup".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callbackId" + "\\}", pcapiClient.escapeString(callbackId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Wrapup> getConversationsCallbackParticipantWrapupWithHttpInfo(String callbackId, String participantId, Boolean provisional) throws IOException {
+    return getConversationsCallbackParticipantWrapup(createGetConversationsCallbackParticipantWrapupRequest(callbackId, participantId, provisional).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConversationsCallbackParticipantWrapupRequest createGetConversationsCallbackParticipantWrapupRequest(String callbackId, String participantId, Boolean provisional) {
+    return GetConversationsCallbackParticipantWrapupRequest.builder()
+            .withCallbackId(callbackId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "provisional", provisional));
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Wrapup>() {});
+            .withProvisional(provisional)
+            .build();
   }
 
   /**
    * Get the wrap-up for this conversation participant. 
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Wrapup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Wrapup getConversationsCallbackParticipantWrapup(GetConversationsCallbackParticipantWrapupRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Wrapup>() {});
+    try {
+      ApiResponse<Wrapup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Wrapup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the wrap-up for this conversation participant. 
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsCallbackParticipantWrapup(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Wrapup>invokeAPIVerbose(request, new TypeReference<Wrapup>() {});
+  public ApiResponse<Wrapup> getConversationsCallbackParticipantWrapup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Wrapup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1177,10 +1200,11 @@ public class ConversationsApi {
    * @param callbackId callbackId (required)
    * @param participantId participantId (required)
    * @return List<WrapupCode>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<WrapupCode> getConversationsCallbackParticipantWrapupcodes(String callbackId, String participantId) throws IOException, ApiException {
-    return getConversationsCallbackParticipantWrapupcodesWithHttpInfo(callbackId, participantId).getBody();
+    return  getConversationsCallbackParticipantWrapupcodes(createGetConversationsCallbackParticipantWrapupcodesRequest(callbackId, participantId));
   }
 
   /**
@@ -1189,197 +1213,212 @@ public class ConversationsApi {
    * @param callbackId callbackId (required)
    * @param participantId participantId (required)
    * @return List<WrapupCode>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<WrapupCode>> getConversationsCallbackParticipantWrapupcodesWithHttpInfo(String callbackId, String participantId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'callbackId' is set
-    if (callbackId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callbackId' when calling getConversationsCallbackParticipantWrapupcodes");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationsCallbackParticipantWrapupcodes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/wrapupcodes".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callbackId" + "\\}", pcapiClient.escapeString(callbackId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<List<WrapupCode>> getConversationsCallbackParticipantWrapupcodesWithHttpInfo(String callbackId, String participantId) throws IOException {
+    return getConversationsCallbackParticipantWrapupcodes(createGetConversationsCallbackParticipantWrapupcodesRequest(callbackId, participantId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConversationsCallbackParticipantWrapupcodesRequest createGetConversationsCallbackParticipantWrapupcodesRequest(String callbackId, String participantId) {
+    return GetConversationsCallbackParticipantWrapupcodesRequest.builder()
+            .withCallbackId(callbackId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<WrapupCode>>() {});
+            .withParticipantId(participantId)
+            .build();
   }
 
   /**
    * Get list of wrapup codes for this conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<WrapupCode>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<WrapupCode> getConversationsCallbackParticipantWrapupcodes(GetConversationsCallbackParticipantWrapupcodesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {});
+    try {
+      ApiResponse<List<WrapupCode>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get list of wrapup codes for this conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<WrapupCode>> getConversationsCallbackParticipantWrapupcodes(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<WrapupCode>>invokeAPIVerbose(request, new TypeReference<List<WrapupCode>>() {});
+  public ApiResponse<List<WrapupCode>> getConversationsCallbackParticipantWrapupcodes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<WrapupCode>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<WrapupCode>> response = (ApiResponse<List<WrapupCode>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<WrapupCode>> response = (ApiResponse<List<WrapupCode>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get callback conversations
    * 
    * @return CallbackConversationEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallbackConversationEntityListing getConversationsCallbacks() throws IOException, ApiException {
-    return getConversationsCallbacksWithHttpInfo().getBody();
+    return  getConversationsCallbacks(createGetConversationsCallbacksRequest());
   }
 
   /**
    * Get callback conversations
    * 
    * @return CallbackConversationEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallbackConversationEntityListing> getConversationsCallbacksWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/callbacks".replaceAll("\\{format\\}","json");
+  public ApiResponse<CallbackConversationEntityListing> getConversationsCallbacksWithHttpInfo() throws IOException {
+    return getConversationsCallbacks(createGetConversationsCallbacksRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CallbackConversationEntityListing>() {});
+  private GetConversationsCallbacksRequest createGetConversationsCallbacksRequest() {
+    return GetConversationsCallbacksRequest.builder()            .build();
   }
 
   /**
    * Get callback conversations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CallbackConversationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallbackConversationEntityListing getConversationsCallbacks(GetConversationsCallbacksRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallbackConversationEntityListing>() {});
+    try {
+      ApiResponse<CallbackConversationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CallbackConversationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get callback conversations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallbackConversationEntityListing> getConversationsCallbacks(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CallbackConversationEntityListing>invokeAPIVerbose(request, new TypeReference<CallbackConversationEntityListing>() {});
+  public ApiResponse<CallbackConversationEntityListing> getConversationsCallbacks(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CallbackConversationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallbackConversationEntityListing> response = (ApiResponse<CallbackConversationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallbackConversationEntityListing> response = (ApiResponse<CallbackConversationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get recent conversations
    * 
    * @return CallConversationEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallConversationEntityListing getConversationsCalls() throws IOException, ApiException {
-    return getConversationsCallsWithHttpInfo().getBody();
+    return  getConversationsCalls(createGetConversationsCallsRequest());
   }
 
   /**
    * Get recent conversations
    * 
    * @return CallConversationEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallConversationEntityListing> getConversationsCallsWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/calls".replaceAll("\\{format\\}","json");
+  public ApiResponse<CallConversationEntityListing> getConversationsCallsWithHttpInfo() throws IOException {
+    return getConversationsCalls(createGetConversationsCallsRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CallConversationEntityListing>() {});
+  private GetConversationsCallsRequest createGetConversationsCallsRequest() {
+    return GetConversationsCallsRequest.builder()            .build();
   }
 
   /**
    * Get recent conversations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CallConversationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallConversationEntityListing getConversationsCalls(GetConversationsCallsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallConversationEntityListing>() {});
+    try {
+      ApiResponse<CallConversationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CallConversationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get recent conversations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallConversationEntityListing> getConversationsCalls(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CallConversationEntityListing>invokeAPIVerbose(request, new TypeReference<CallConversationEntityListing>() {});
+  public ApiResponse<CallConversationEntityListing> getConversationsCalls(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CallConversationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallConversationEntityListing> response = (ApiResponse<CallConversationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallConversationEntityListing> response = (ApiResponse<CallConversationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1389,10 +1428,11 @@ public class ConversationsApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; (optional)
    * @return CallConversationEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallConversationEntityListing getConversationsCallsHistory(Integer pageSize, Integer pageNumber, String interval) throws IOException, ApiException {
-    return getConversationsCallsHistoryWithHttpInfo(pageSize, pageNumber, interval).getBody();
+    return  getConversationsCallsHistory(createGetConversationsCallsHistoryRequest(pageSize, pageNumber, interval));
   }
 
   /**
@@ -1402,123 +1442,141 @@ public class ConversationsApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; (optional)
    * @return CallConversationEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallConversationEntityListing> getConversationsCallsHistoryWithHttpInfo(Integer pageSize, Integer pageNumber, String interval) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/calls/history".replaceAll("\\{format\\}","json");
+  public ApiResponse<CallConversationEntityListing> getConversationsCallsHistoryWithHttpInfo(Integer pageSize, Integer pageNumber, String interval) throws IOException {
+    return getConversationsCallsHistory(createGetConversationsCallsHistoryRequest(pageSize, pageNumber, interval).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConversationsCallsHistoryRequest createGetConversationsCallsHistoryRequest(Integer pageSize, Integer pageNumber, String interval) {
+    return GetConversationsCallsHistoryRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "interval", interval));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CallConversationEntityListing>() {});
+            .withInterval(interval)
+            .build();
   }
 
   /**
    * Get call history
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CallConversationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallConversationEntityListing getConversationsCallsHistory(GetConversationsCallsHistoryRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallConversationEntityListing>() {});
+    try {
+      ApiResponse<CallConversationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CallConversationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get call history
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallConversationEntityListing> getConversationsCallsHistory(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CallConversationEntityListing>invokeAPIVerbose(request, new TypeReference<CallConversationEntityListing>() {});
+  public ApiResponse<CallConversationEntityListing> getConversationsCallsHistory(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CallConversationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallConversationEntityListing> response = (ApiResponse<CallConversationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallConversationEntityListing> response = (ApiResponse<CallConversationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get the maximum number of participants that this user can have on a conference
    * 
    * @return MaxParticipants
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public MaxParticipants getConversationsCallsMaximumconferenceparties() throws IOException, ApiException {
-    return getConversationsCallsMaximumconferencepartiesWithHttpInfo().getBody();
+    return  getConversationsCallsMaximumconferenceparties(createGetConversationsCallsMaximumconferencepartiesRequest());
   }
 
   /**
    * Get the maximum number of participants that this user can have on a conference
    * 
    * @return MaxParticipants
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<MaxParticipants> getConversationsCallsMaximumconferencepartiesWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/calls/maximumconferenceparties".replaceAll("\\{format\\}","json");
+  public ApiResponse<MaxParticipants> getConversationsCallsMaximumconferencepartiesWithHttpInfo() throws IOException {
+    return getConversationsCallsMaximumconferenceparties(createGetConversationsCallsMaximumconferencepartiesRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<MaxParticipants>() {});
+  private GetConversationsCallsMaximumconferencepartiesRequest createGetConversationsCallsMaximumconferencepartiesRequest() {
+    return GetConversationsCallsMaximumconferencepartiesRequest.builder()            .build();
   }
 
   /**
    * Get the maximum number of participants that this user can have on a conference
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return MaxParticipants
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public MaxParticipants getConversationsCallsMaximumconferenceparties(GetConversationsCallsMaximumconferencepartiesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<MaxParticipants>() {});
+    try {
+      ApiResponse<MaxParticipants> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MaxParticipants>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the maximum number of participants that this user can have on a conference
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<MaxParticipants> getConversationsCallsMaximumconferenceparties(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<MaxParticipants>invokeAPIVerbose(request, new TypeReference<MaxParticipants>() {});
+  public ApiResponse<MaxParticipants> getConversationsCallsMaximumconferenceparties(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MaxParticipants>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MaxParticipants> response = (ApiResponse<MaxParticipants>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MaxParticipants> response = (ApiResponse<MaxParticipants>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1526,10 +1584,11 @@ public class ConversationsApi {
    * 
    * @param chatId chatId (required)
    * @return ChatConversation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ChatConversation getConversationsChat(String chatId) throws IOException, ApiException {
-    return getConversationsChatWithHttpInfo(chatId).getBody();
+    return  getConversationsChat(createGetConversationsChatRequest(chatId));
   }
 
   /**
@@ -1537,61 +1596,64 @@ public class ConversationsApi {
    * 
    * @param chatId chatId (required)
    * @return ChatConversation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChatConversation> getConversationsChatWithHttpInfo(String chatId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'chatId' is set
-    if (chatId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'chatId' when calling getConversationsChat");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/chats/{chatId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "chatId" + "\\}", pcapiClient.escapeString(chatId.toString()));
+  public ApiResponse<ChatConversation> getConversationsChatWithHttpInfo(String chatId) throws IOException {
+    return getConversationsChat(createGetConversationsChatRequest(chatId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ChatConversation>() {});
+  private GetConversationsChatRequest createGetConversationsChatRequest(String chatId) {
+    return GetConversationsChatRequest.builder()
+            .withChatId(chatId)
+            .build();
   }
 
   /**
    * Get chat conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ChatConversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ChatConversation getConversationsChat(GetConversationsChatRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ChatConversation>() {});
+    try {
+      ApiResponse<ChatConversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ChatConversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get chat conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChatConversation> getConversationsChat(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ChatConversation>invokeAPIVerbose(request, new TypeReference<ChatConversation>() {});
+  public ApiResponse<ChatConversation> getConversationsChat(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ChatConversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatConversation> response = (ApiResponse<ChatConversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatConversation> response = (ApiResponse<ChatConversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1601,10 +1663,11 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
    * @return Wrapup
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Wrapup getConversationsChatParticipantWrapup(String chatId, String participantId, Boolean provisional) throws IOException, ApiException {
-    return getConversationsChatParticipantWrapupWithHttpInfo(chatId, participantId, provisional).getBody();
+    return  getConversationsChatParticipantWrapup(createGetConversationsChatParticipantWrapupRequest(chatId, participantId, provisional));
   }
 
   /**
@@ -1614,68 +1677,68 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
    * @return Wrapup
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsChatParticipantWrapupWithHttpInfo(String chatId, String participantId, Boolean provisional) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'chatId' is set
-    if (chatId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'chatId' when calling getConversationsChatParticipantWrapup");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationsChatParticipantWrapup");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/chats/{chatId}/participants/{participantId}/wrapup".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "chatId" + "\\}", pcapiClient.escapeString(chatId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Wrapup> getConversationsChatParticipantWrapupWithHttpInfo(String chatId, String participantId, Boolean provisional) throws IOException {
+    return getConversationsChatParticipantWrapup(createGetConversationsChatParticipantWrapupRequest(chatId, participantId, provisional).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConversationsChatParticipantWrapupRequest createGetConversationsChatParticipantWrapupRequest(String chatId, String participantId, Boolean provisional) {
+    return GetConversationsChatParticipantWrapupRequest.builder()
+            .withChatId(chatId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "provisional", provisional));
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Wrapup>() {});
+            .withProvisional(provisional)
+            .build();
   }
 
   /**
    * Get the wrap-up for this conversation participant. 
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Wrapup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Wrapup getConversationsChatParticipantWrapup(GetConversationsChatParticipantWrapupRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Wrapup>() {});
+    try {
+      ApiResponse<Wrapup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Wrapup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the wrap-up for this conversation participant. 
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsChatParticipantWrapup(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Wrapup>invokeAPIVerbose(request, new TypeReference<Wrapup>() {});
+  public ApiResponse<Wrapup> getConversationsChatParticipantWrapup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Wrapup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1684,10 +1747,11 @@ public class ConversationsApi {
    * @param chatId chatId (required)
    * @param participantId participantId (required)
    * @return List<WrapupCode>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<WrapupCode> getConversationsChatParticipantWrapupcodes(String chatId, String participantId) throws IOException, ApiException {
-    return getConversationsChatParticipantWrapupcodesWithHttpInfo(chatId, participantId).getBody();
+    return  getConversationsChatParticipantWrapupcodes(createGetConversationsChatParticipantWrapupcodesRequest(chatId, participantId));
   }
 
   /**
@@ -1696,132 +1760,139 @@ public class ConversationsApi {
    * @param chatId chatId (required)
    * @param participantId participantId (required)
    * @return List<WrapupCode>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<WrapupCode>> getConversationsChatParticipantWrapupcodesWithHttpInfo(String chatId, String participantId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'chatId' is set
-    if (chatId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'chatId' when calling getConversationsChatParticipantWrapupcodes");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationsChatParticipantWrapupcodes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/chats/{chatId}/participants/{participantId}/wrapupcodes".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "chatId" + "\\}", pcapiClient.escapeString(chatId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<List<WrapupCode>> getConversationsChatParticipantWrapupcodesWithHttpInfo(String chatId, String participantId) throws IOException {
+    return getConversationsChatParticipantWrapupcodes(createGetConversationsChatParticipantWrapupcodesRequest(chatId, participantId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConversationsChatParticipantWrapupcodesRequest createGetConversationsChatParticipantWrapupcodesRequest(String chatId, String participantId) {
+    return GetConversationsChatParticipantWrapupcodesRequest.builder()
+            .withChatId(chatId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<WrapupCode>>() {});
+            .withParticipantId(participantId)
+            .build();
   }
 
   /**
    * Get list of wrapup codes for this conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<WrapupCode>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<WrapupCode> getConversationsChatParticipantWrapupcodes(GetConversationsChatParticipantWrapupcodesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {});
+    try {
+      ApiResponse<List<WrapupCode>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get list of wrapup codes for this conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<WrapupCode>> getConversationsChatParticipantWrapupcodes(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<WrapupCode>>invokeAPIVerbose(request, new TypeReference<List<WrapupCode>>() {});
+  public ApiResponse<List<WrapupCode>> getConversationsChatParticipantWrapupcodes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<WrapupCode>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<WrapupCode>> response = (ApiResponse<List<WrapupCode>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<WrapupCode>> response = (ApiResponse<List<WrapupCode>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get recent chat conversations
    * 
    * @return ChatConversationEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ChatConversationEntityListing getConversationsChats() throws IOException, ApiException {
-    return getConversationsChatsWithHttpInfo().getBody();
+    return  getConversationsChats(createGetConversationsChatsRequest());
   }
 
   /**
    * Get recent chat conversations
    * 
    * @return ChatConversationEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChatConversationEntityListing> getConversationsChatsWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/chats".replaceAll("\\{format\\}","json");
+  public ApiResponse<ChatConversationEntityListing> getConversationsChatsWithHttpInfo() throws IOException {
+    return getConversationsChats(createGetConversationsChatsRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ChatConversationEntityListing>() {});
+  private GetConversationsChatsRequest createGetConversationsChatsRequest() {
+    return GetConversationsChatsRequest.builder()            .build();
   }
 
   /**
    * Get recent chat conversations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ChatConversationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ChatConversationEntityListing getConversationsChats(GetConversationsChatsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ChatConversationEntityListing>() {});
+    try {
+      ApiResponse<ChatConversationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ChatConversationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get recent chat conversations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChatConversationEntityListing> getConversationsChats(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ChatConversationEntityListing>invokeAPIVerbose(request, new TypeReference<ChatConversationEntityListing>() {});
+  public ApiResponse<ChatConversationEntityListing> getConversationsChats(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ChatConversationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatConversationEntityListing> response = (ApiResponse<ChatConversationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatConversationEntityListing> response = (ApiResponse<ChatConversationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1829,10 +1900,11 @@ public class ConversationsApi {
    * 
    * @param cobrowseId cobrowseId (required)
    * @return CobrowseConversation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CobrowseConversation getConversationsCobrowsesession(String cobrowseId) throws IOException, ApiException {
-    return getConversationsCobrowsesessionWithHttpInfo(cobrowseId).getBody();
+    return  getConversationsCobrowsesession(createGetConversationsCobrowsesessionRequest(cobrowseId));
   }
 
   /**
@@ -1840,61 +1912,64 @@ public class ConversationsApi {
    * 
    * @param cobrowseId cobrowseId (required)
    * @return CobrowseConversation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CobrowseConversation> getConversationsCobrowsesessionWithHttpInfo(String cobrowseId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'cobrowseId' is set
-    if (cobrowseId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'cobrowseId' when calling getConversationsCobrowsesession");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/cobrowsesessions/{cobrowseId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "cobrowseId" + "\\}", pcapiClient.escapeString(cobrowseId.toString()));
+  public ApiResponse<CobrowseConversation> getConversationsCobrowsesessionWithHttpInfo(String cobrowseId) throws IOException {
+    return getConversationsCobrowsesession(createGetConversationsCobrowsesessionRequest(cobrowseId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CobrowseConversation>() {});
+  private GetConversationsCobrowsesessionRequest createGetConversationsCobrowsesessionRequest(String cobrowseId) {
+    return GetConversationsCobrowsesessionRequest.builder()
+            .withCobrowseId(cobrowseId)
+            .build();
   }
 
   /**
    * Get cobrowse conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CobrowseConversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CobrowseConversation getConversationsCobrowsesession(GetConversationsCobrowsesessionRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CobrowseConversation>() {});
+    try {
+      ApiResponse<CobrowseConversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CobrowseConversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get cobrowse conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CobrowseConversation> getConversationsCobrowsesession(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CobrowseConversation>invokeAPIVerbose(request, new TypeReference<CobrowseConversation>() {});
+  public ApiResponse<CobrowseConversation> getConversationsCobrowsesession(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CobrowseConversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CobrowseConversation> response = (ApiResponse<CobrowseConversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CobrowseConversation> response = (ApiResponse<CobrowseConversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1904,10 +1979,11 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
    * @return Wrapup
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Wrapup getConversationsCobrowsesessionParticipantWrapup(String cobrowseId, String participantId, Boolean provisional) throws IOException, ApiException {
-    return getConversationsCobrowsesessionParticipantWrapupWithHttpInfo(cobrowseId, participantId, provisional).getBody();
+    return  getConversationsCobrowsesessionParticipantWrapup(createGetConversationsCobrowsesessionParticipantWrapupRequest(cobrowseId, participantId, provisional));
   }
 
   /**
@@ -1917,68 +1993,68 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
    * @return Wrapup
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsCobrowsesessionParticipantWrapupWithHttpInfo(String cobrowseId, String participantId, Boolean provisional) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'cobrowseId' is set
-    if (cobrowseId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'cobrowseId' when calling getConversationsCobrowsesessionParticipantWrapup");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationsCobrowsesessionParticipantWrapup");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/wrapup".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "cobrowseId" + "\\}", pcapiClient.escapeString(cobrowseId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Wrapup> getConversationsCobrowsesessionParticipantWrapupWithHttpInfo(String cobrowseId, String participantId, Boolean provisional) throws IOException {
+    return getConversationsCobrowsesessionParticipantWrapup(createGetConversationsCobrowsesessionParticipantWrapupRequest(cobrowseId, participantId, provisional).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConversationsCobrowsesessionParticipantWrapupRequest createGetConversationsCobrowsesessionParticipantWrapupRequest(String cobrowseId, String participantId, Boolean provisional) {
+    return GetConversationsCobrowsesessionParticipantWrapupRequest.builder()
+            .withCobrowseId(cobrowseId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "provisional", provisional));
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Wrapup>() {});
+            .withProvisional(provisional)
+            .build();
   }
 
   /**
    * Get the wrap-up for this conversation participant. 
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Wrapup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Wrapup getConversationsCobrowsesessionParticipantWrapup(GetConversationsCobrowsesessionParticipantWrapupRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Wrapup>() {});
+    try {
+      ApiResponse<Wrapup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Wrapup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the wrap-up for this conversation participant. 
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsCobrowsesessionParticipantWrapup(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Wrapup>invokeAPIVerbose(request, new TypeReference<Wrapup>() {});
+  public ApiResponse<Wrapup> getConversationsCobrowsesessionParticipantWrapup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Wrapup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1987,10 +2063,11 @@ public class ConversationsApi {
    * @param cobrowseId cobrowseId (required)
    * @param participantId participantId (required)
    * @return List<WrapupCode>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<WrapupCode> getConversationsCobrowsesessionParticipantWrapupcodes(String cobrowseId, String participantId) throws IOException, ApiException {
-    return getConversationsCobrowsesessionParticipantWrapupcodesWithHttpInfo(cobrowseId, participantId).getBody();
+    return  getConversationsCobrowsesessionParticipantWrapupcodes(createGetConversationsCobrowsesessionParticipantWrapupcodesRequest(cobrowseId, participantId));
   }
 
   /**
@@ -1999,132 +2076,139 @@ public class ConversationsApi {
    * @param cobrowseId cobrowseId (required)
    * @param participantId participantId (required)
    * @return List<WrapupCode>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<WrapupCode>> getConversationsCobrowsesessionParticipantWrapupcodesWithHttpInfo(String cobrowseId, String participantId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'cobrowseId' is set
-    if (cobrowseId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'cobrowseId' when calling getConversationsCobrowsesessionParticipantWrapupcodes");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationsCobrowsesessionParticipantWrapupcodes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/wrapupcodes".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "cobrowseId" + "\\}", pcapiClient.escapeString(cobrowseId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<List<WrapupCode>> getConversationsCobrowsesessionParticipantWrapupcodesWithHttpInfo(String cobrowseId, String participantId) throws IOException {
+    return getConversationsCobrowsesessionParticipantWrapupcodes(createGetConversationsCobrowsesessionParticipantWrapupcodesRequest(cobrowseId, participantId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConversationsCobrowsesessionParticipantWrapupcodesRequest createGetConversationsCobrowsesessionParticipantWrapupcodesRequest(String cobrowseId, String participantId) {
+    return GetConversationsCobrowsesessionParticipantWrapupcodesRequest.builder()
+            .withCobrowseId(cobrowseId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<WrapupCode>>() {});
+            .withParticipantId(participantId)
+            .build();
   }
 
   /**
    * Get list of wrapup codes for this conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<WrapupCode>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<WrapupCode> getConversationsCobrowsesessionParticipantWrapupcodes(GetConversationsCobrowsesessionParticipantWrapupcodesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {});
+    try {
+      ApiResponse<List<WrapupCode>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get list of wrapup codes for this conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<WrapupCode>> getConversationsCobrowsesessionParticipantWrapupcodes(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<WrapupCode>>invokeAPIVerbose(request, new TypeReference<List<WrapupCode>>() {});
+  public ApiResponse<List<WrapupCode>> getConversationsCobrowsesessionParticipantWrapupcodes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<WrapupCode>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<WrapupCode>> response = (ApiResponse<List<WrapupCode>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<WrapupCode>> response = (ApiResponse<List<WrapupCode>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get recent cobrowse conversations
    * 
    * @return CobrowseConversationEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CobrowseConversationEntityListing getConversationsCobrowsesessions() throws IOException, ApiException {
-    return getConversationsCobrowsesessionsWithHttpInfo().getBody();
+    return  getConversationsCobrowsesessions(createGetConversationsCobrowsesessionsRequest());
   }
 
   /**
    * Get recent cobrowse conversations
    * 
    * @return CobrowseConversationEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CobrowseConversationEntityListing> getConversationsCobrowsesessionsWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/cobrowsesessions".replaceAll("\\{format\\}","json");
+  public ApiResponse<CobrowseConversationEntityListing> getConversationsCobrowsesessionsWithHttpInfo() throws IOException {
+    return getConversationsCobrowsesessions(createGetConversationsCobrowsesessionsRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CobrowseConversationEntityListing>() {});
+  private GetConversationsCobrowsesessionsRequest createGetConversationsCobrowsesessionsRequest() {
+    return GetConversationsCobrowsesessionsRequest.builder()            .build();
   }
 
   /**
    * Get recent cobrowse conversations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CobrowseConversationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CobrowseConversationEntityListing getConversationsCobrowsesessions(GetConversationsCobrowsesessionsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CobrowseConversationEntityListing>() {});
+    try {
+      ApiResponse<CobrowseConversationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CobrowseConversationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get recent cobrowse conversations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CobrowseConversationEntityListing> getConversationsCobrowsesessions(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CobrowseConversationEntityListing>invokeAPIVerbose(request, new TypeReference<CobrowseConversationEntityListing>() {});
+  public ApiResponse<CobrowseConversationEntityListing> getConversationsCobrowsesessions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CobrowseConversationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CobrowseConversationEntityListing> response = (ApiResponse<CobrowseConversationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CobrowseConversationEntityListing> response = (ApiResponse<CobrowseConversationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2132,10 +2216,11 @@ public class ConversationsApi {
    * 
    * @param emailId emailId (required)
    * @return EmailConversation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EmailConversation getConversationsEmail(String emailId) throws IOException, ApiException {
-    return getConversationsEmailWithHttpInfo(emailId).getBody();
+    return  getConversationsEmail(createGetConversationsEmailRequest(emailId));
   }
 
   /**
@@ -2143,61 +2228,64 @@ public class ConversationsApi {
    * 
    * @param emailId emailId (required)
    * @return EmailConversation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailConversation> getConversationsEmailWithHttpInfo(String emailId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'emailId' is set
-    if (emailId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling getConversationsEmail");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/emails/{emailId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "emailId" + "\\}", pcapiClient.escapeString(emailId.toString()));
+  public ApiResponse<EmailConversation> getConversationsEmailWithHttpInfo(String emailId) throws IOException {
+    return getConversationsEmail(createGetConversationsEmailRequest(emailId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EmailConversation>() {});
+  private GetConversationsEmailRequest createGetConversationsEmailRequest(String emailId) {
+    return GetConversationsEmailRequest.builder()
+            .withEmailId(emailId)
+            .build();
   }
 
   /**
    * Get email conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EmailConversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EmailConversation getConversationsEmail(GetConversationsEmailRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EmailConversation>() {});
+    try {
+      ApiResponse<EmailConversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailConversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get email conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailConversation> getConversationsEmail(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EmailConversation>invokeAPIVerbose(request, new TypeReference<EmailConversation>() {});
+  public ApiResponse<EmailConversation> getConversationsEmail(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmailConversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailConversation> response = (ApiResponse<EmailConversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailConversation> response = (ApiResponse<EmailConversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2206,10 +2294,11 @@ public class ConversationsApi {
    * @param emailId emailId (required)
    * @param messageId messageId (required)
    * @return EmailMessage
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EmailMessage getConversationsEmailMessage(String emailId, String messageId) throws IOException, ApiException {
-    return getConversationsEmailMessageWithHttpInfo(emailId, messageId).getBody();
+    return  getConversationsEmailMessage(createGetConversationsEmailMessageRequest(emailId, messageId));
   }
 
   /**
@@ -2218,67 +2307,66 @@ public class ConversationsApi {
    * @param emailId emailId (required)
    * @param messageId messageId (required)
    * @return EmailMessage
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailMessage> getConversationsEmailMessageWithHttpInfo(String emailId, String messageId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'emailId' is set
-    if (emailId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling getConversationsEmailMessage");
-    }
-    
-    // verify the required parameter 'messageId' is set
-    if (messageId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'messageId' when calling getConversationsEmailMessage");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/emails/{emailId}/messages/{messageId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "emailId" + "\\}", pcapiClient.escapeString(emailId.toString()))
-      .replaceAll("\\{" + "messageId" + "\\}", pcapiClient.escapeString(messageId.toString()));
+  public ApiResponse<EmailMessage> getConversationsEmailMessageWithHttpInfo(String emailId, String messageId) throws IOException {
+    return getConversationsEmailMessage(createGetConversationsEmailMessageRequest(emailId, messageId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConversationsEmailMessageRequest createGetConversationsEmailMessageRequest(String emailId, String messageId) {
+    return GetConversationsEmailMessageRequest.builder()
+            .withEmailId(emailId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EmailMessage>() {});
+            .withMessageId(messageId)
+            .build();
   }
 
   /**
    * Get conversation message
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EmailMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EmailMessage getConversationsEmailMessage(GetConversationsEmailMessageRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EmailMessage>() {});
+    try {
+      ApiResponse<EmailMessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailMessage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get conversation message
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailMessage> getConversationsEmailMessage(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EmailMessage>invokeAPIVerbose(request, new TypeReference<EmailMessage>() {});
+  public ApiResponse<EmailMessage> getConversationsEmailMessage(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmailMessage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailMessage> response = (ApiResponse<EmailMessage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailMessage> response = (ApiResponse<EmailMessage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2286,10 +2374,11 @@ public class ConversationsApi {
    * 
    * @param emailId emailId (required)
    * @return EmailMessageListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EmailMessageListing getConversationsEmailMessages(String emailId) throws IOException, ApiException {
-    return getConversationsEmailMessagesWithHttpInfo(emailId).getBody();
+    return  getConversationsEmailMessages(createGetConversationsEmailMessagesRequest(emailId));
   }
 
   /**
@@ -2297,61 +2386,64 @@ public class ConversationsApi {
    * 
    * @param emailId emailId (required)
    * @return EmailMessageListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailMessageListing> getConversationsEmailMessagesWithHttpInfo(String emailId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'emailId' is set
-    if (emailId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling getConversationsEmailMessages");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/emails/{emailId}/messages".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "emailId" + "\\}", pcapiClient.escapeString(emailId.toString()));
+  public ApiResponse<EmailMessageListing> getConversationsEmailMessagesWithHttpInfo(String emailId) throws IOException {
+    return getConversationsEmailMessages(createGetConversationsEmailMessagesRequest(emailId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EmailMessageListing>() {});
+  private GetConversationsEmailMessagesRequest createGetConversationsEmailMessagesRequest(String emailId) {
+    return GetConversationsEmailMessagesRequest.builder()
+            .withEmailId(emailId)
+            .build();
   }
 
   /**
    * Get conversation messages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EmailMessageListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EmailMessageListing getConversationsEmailMessages(GetConversationsEmailMessagesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EmailMessageListing>() {});
+    try {
+      ApiResponse<EmailMessageListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailMessageListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get conversation messages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailMessageListing> getConversationsEmailMessages(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EmailMessageListing>invokeAPIVerbose(request, new TypeReference<EmailMessageListing>() {});
+  public ApiResponse<EmailMessageListing> getConversationsEmailMessages(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmailMessageListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailMessageListing> response = (ApiResponse<EmailMessageListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailMessageListing> response = (ApiResponse<EmailMessageListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2359,10 +2451,11 @@ public class ConversationsApi {
    * 
    * @param emailId emailId (required)
    * @return EmailMessage
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EmailMessage getConversationsEmailMessagesDraft(String emailId) throws IOException, ApiException {
-    return getConversationsEmailMessagesDraftWithHttpInfo(emailId).getBody();
+    return  getConversationsEmailMessagesDraft(createGetConversationsEmailMessagesDraftRequest(emailId));
   }
 
   /**
@@ -2370,61 +2463,64 @@ public class ConversationsApi {
    * 
    * @param emailId emailId (required)
    * @return EmailMessage
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailMessage> getConversationsEmailMessagesDraftWithHttpInfo(String emailId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'emailId' is set
-    if (emailId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling getConversationsEmailMessagesDraft");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/emails/{emailId}/messages/draft".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "emailId" + "\\}", pcapiClient.escapeString(emailId.toString()));
+  public ApiResponse<EmailMessage> getConversationsEmailMessagesDraftWithHttpInfo(String emailId) throws IOException {
+    return getConversationsEmailMessagesDraft(createGetConversationsEmailMessagesDraftRequest(emailId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EmailMessage>() {});
+  private GetConversationsEmailMessagesDraftRequest createGetConversationsEmailMessagesDraftRequest(String emailId) {
+    return GetConversationsEmailMessagesDraftRequest.builder()
+            .withEmailId(emailId)
+            .build();
   }
 
   /**
    * Get conversation draft reply
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EmailMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EmailMessage getConversationsEmailMessagesDraft(GetConversationsEmailMessagesDraftRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EmailMessage>() {});
+    try {
+      ApiResponse<EmailMessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailMessage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get conversation draft reply
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailMessage> getConversationsEmailMessagesDraft(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EmailMessage>invokeAPIVerbose(request, new TypeReference<EmailMessage>() {});
+  public ApiResponse<EmailMessage> getConversationsEmailMessagesDraft(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmailMessage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailMessage> response = (ApiResponse<EmailMessage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailMessage> response = (ApiResponse<EmailMessage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2434,10 +2530,11 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
    * @return Wrapup
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Wrapup getConversationsEmailParticipantWrapup(String emailId, String participantId, Boolean provisional) throws IOException, ApiException {
-    return getConversationsEmailParticipantWrapupWithHttpInfo(emailId, participantId, provisional).getBody();
+    return  getConversationsEmailParticipantWrapup(createGetConversationsEmailParticipantWrapupRequest(emailId, participantId, provisional));
   }
 
   /**
@@ -2447,68 +2544,68 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
    * @return Wrapup
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsEmailParticipantWrapupWithHttpInfo(String emailId, String participantId, Boolean provisional) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'emailId' is set
-    if (emailId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling getConversationsEmailParticipantWrapup");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationsEmailParticipantWrapup");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/emails/{emailId}/participants/{participantId}/wrapup".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "emailId" + "\\}", pcapiClient.escapeString(emailId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Wrapup> getConversationsEmailParticipantWrapupWithHttpInfo(String emailId, String participantId, Boolean provisional) throws IOException {
+    return getConversationsEmailParticipantWrapup(createGetConversationsEmailParticipantWrapupRequest(emailId, participantId, provisional).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConversationsEmailParticipantWrapupRequest createGetConversationsEmailParticipantWrapupRequest(String emailId, String participantId, Boolean provisional) {
+    return GetConversationsEmailParticipantWrapupRequest.builder()
+            .withEmailId(emailId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "provisional", provisional));
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Wrapup>() {});
+            .withProvisional(provisional)
+            .build();
   }
 
   /**
    * Get the wrap-up for this conversation participant. 
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Wrapup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Wrapup getConversationsEmailParticipantWrapup(GetConversationsEmailParticipantWrapupRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Wrapup>() {});
+    try {
+      ApiResponse<Wrapup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Wrapup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the wrap-up for this conversation participant. 
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsEmailParticipantWrapup(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Wrapup>invokeAPIVerbose(request, new TypeReference<Wrapup>() {});
+  public ApiResponse<Wrapup> getConversationsEmailParticipantWrapup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Wrapup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2517,10 +2614,11 @@ public class ConversationsApi {
    * @param emailId emailId (required)
    * @param participantId participantId (required)
    * @return List<WrapupCode>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<WrapupCode> getConversationsEmailParticipantWrapupcodes(String emailId, String participantId) throws IOException, ApiException {
-    return getConversationsEmailParticipantWrapupcodesWithHttpInfo(emailId, participantId).getBody();
+    return  getConversationsEmailParticipantWrapupcodes(createGetConversationsEmailParticipantWrapupcodesRequest(emailId, participantId));
   }
 
   /**
@@ -2529,132 +2627,139 @@ public class ConversationsApi {
    * @param emailId emailId (required)
    * @param participantId participantId (required)
    * @return List<WrapupCode>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<WrapupCode>> getConversationsEmailParticipantWrapupcodesWithHttpInfo(String emailId, String participantId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'emailId' is set
-    if (emailId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling getConversationsEmailParticipantWrapupcodes");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling getConversationsEmailParticipantWrapupcodes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/emails/{emailId}/participants/{participantId}/wrapupcodes".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "emailId" + "\\}", pcapiClient.escapeString(emailId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<List<WrapupCode>> getConversationsEmailParticipantWrapupcodesWithHttpInfo(String emailId, String participantId) throws IOException {
+    return getConversationsEmailParticipantWrapupcodes(createGetConversationsEmailParticipantWrapupcodesRequest(emailId, participantId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConversationsEmailParticipantWrapupcodesRequest createGetConversationsEmailParticipantWrapupcodesRequest(String emailId, String participantId) {
+    return GetConversationsEmailParticipantWrapupcodesRequest.builder()
+            .withEmailId(emailId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<WrapupCode>>() {});
+            .withParticipantId(participantId)
+            .build();
   }
 
   /**
    * Get list of wrapup codes for this conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<WrapupCode>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<WrapupCode> getConversationsEmailParticipantWrapupcodes(GetConversationsEmailParticipantWrapupcodesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {});
+    try {
+      ApiResponse<List<WrapupCode>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get list of wrapup codes for this conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<WrapupCode>> getConversationsEmailParticipantWrapupcodes(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<WrapupCode>>invokeAPIVerbose(request, new TypeReference<List<WrapupCode>>() {});
+  public ApiResponse<List<WrapupCode>> getConversationsEmailParticipantWrapupcodes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<WrapupCode>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<WrapupCode>> response = (ApiResponse<List<WrapupCode>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<WrapupCode>> response = (ApiResponse<List<WrapupCode>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get recent email conversations
    * 
    * @return EmailConversationEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EmailConversationEntityListing getConversationsEmails() throws IOException, ApiException {
-    return getConversationsEmailsWithHttpInfo().getBody();
+    return  getConversationsEmails(createGetConversationsEmailsRequest());
   }
 
   /**
    * Get recent email conversations
    * 
    * @return EmailConversationEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailConversationEntityListing> getConversationsEmailsWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/emails".replaceAll("\\{format\\}","json");
+  public ApiResponse<EmailConversationEntityListing> getConversationsEmailsWithHttpInfo() throws IOException {
+    return getConversationsEmails(createGetConversationsEmailsRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EmailConversationEntityListing>() {});
+  private GetConversationsEmailsRequest createGetConversationsEmailsRequest() {
+    return GetConversationsEmailsRequest.builder()            .build();
   }
 
   /**
    * Get recent email conversations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EmailConversationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EmailConversationEntityListing getConversationsEmails(GetConversationsEmailsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EmailConversationEntityListing>() {});
+    try {
+      ApiResponse<EmailConversationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailConversationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get recent email conversations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailConversationEntityListing> getConversationsEmails(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EmailConversationEntityListing>invokeAPIVerbose(request, new TypeReference<EmailConversationEntityListing>() {});
+  public ApiResponse<EmailConversationEntityListing> getConversationsEmails(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmailConversationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailConversationEntityListing> response = (ApiResponse<EmailConversationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailConversationEntityListing> response = (ApiResponse<EmailConversationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2663,10 +2768,11 @@ public class ConversationsApi {
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Update request (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationParticipant(String conversationId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
-    patchConversationParticipantWithHttpInfo(conversationId, participantId, body);
+     patchConversationParticipant(createPatchConversationParticipantRequest(conversationId, participantId, body));
   }
 
   /**
@@ -2675,72 +2781,67 @@ public class ConversationsApi {
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Update request (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationParticipantWithHttpInfo(String conversationId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling patchConversationParticipant");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationParticipant");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationParticipant");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/{conversationId}/participants/{participantId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Void> patchConversationParticipantWithHttpInfo(String conversationId, String participantId, MediaParticipantRequest body) throws IOException {
+    return patchConversationParticipant(createPatchConversationParticipantRequest(conversationId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationParticipantRequest createPatchConversationParticipantRequest(String conversationId, String participantId, MediaParticipantRequest body) {
+    return PatchConversationParticipantRequest.builder()
+            .withConversationId(conversationId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a participant.
    * Update conversation participant.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationParticipant(PatchConversationParticipantRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Update a participant.
    * Update conversation participant.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> patchConversationParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2749,10 +2850,11 @@ public class ConversationsApi {
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Participant attributes (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationParticipantAttributes(String conversationId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
-    patchConversationParticipantAttributesWithHttpInfo(conversationId, participantId, body);
+     patchConversationParticipantAttributes(createPatchConversationParticipantAttributesRequest(conversationId, participantId, body));
   }
 
   /**
@@ -2761,72 +2863,67 @@ public class ConversationsApi {
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Participant attributes (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationParticipantAttributesWithHttpInfo(String conversationId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling patchConversationParticipantAttributes");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationParticipantAttributes");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationParticipantAttributes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/{conversationId}/participants/{participantId}/attributes".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Void> patchConversationParticipantAttributesWithHttpInfo(String conversationId, String participantId, ParticipantAttributes body) throws IOException {
+    return patchConversationParticipantAttributes(createPatchConversationParticipantAttributesRequest(conversationId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationParticipantAttributesRequest createPatchConversationParticipantAttributesRequest(String conversationId, String participantId, ParticipantAttributes body) {
+    return PatchConversationParticipantAttributesRequest.builder()
+            .withConversationId(conversationId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update the attributes on a conversation participant.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationParticipantAttributes(PatchConversationParticipantAttributesRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Update the attributes on a conversation participant.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> patchConversationParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2835,10 +2932,11 @@ public class ConversationsApi {
    * @param callId callId (required)
    * @param body Conversation (required)
    * @return Conversation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Conversation patchConversationsCall(String callId, Conversation body) throws IOException, ApiException {
-    return patchConversationsCallWithHttpInfo(callId, body).getBody();
+    return  patchConversationsCall(createPatchConversationsCallRequest(callId, body));
   }
 
   /**
@@ -2847,66 +2945,66 @@ public class ConversationsApi {
    * @param callId callId (required)
    * @param body Conversation (required)
    * @return Conversation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Conversation> patchConversationsCallWithHttpInfo(String callId, Conversation body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'callId' is set
-    if (callId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling patchConversationsCall");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCall");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/calls/{callId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callId" + "\\}", pcapiClient.escapeString(callId.toString()));
+  public ApiResponse<Conversation> patchConversationsCallWithHttpInfo(String callId, Conversation body) throws IOException {
+    return patchConversationsCall(createPatchConversationsCallRequest(callId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsCallRequest createPatchConversationsCallRequest(String callId, Conversation body) {
+    return PatchConversationsCallRequest.builder()
+            .withCallId(callId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Conversation>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Conversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Conversation patchConversationsCall(PatchConversationsCallRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Conversation>() {});
+    try {
+      ApiResponse<Conversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Conversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Conversation> patchConversationsCall(ApiRequest<Conversation> request) throws IOException, ApiException {
-    return pcapiClient.<Conversation>invokeAPIVerbose(request, new TypeReference<Conversation>() {});
+  public ApiResponse<Conversation> patchConversationsCall(ApiRequest<Conversation> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Conversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2915,10 +3013,11 @@ public class ConversationsApi {
    * @param callId callId (required)
    * @param participantId participantId (required)
    * @param body Participant request (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationsCallParticipant(String callId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
-    patchConversationsCallParticipantWithHttpInfo(callId, participantId, body);
+     patchConversationsCallParticipant(createPatchConversationsCallParticipantRequest(callId, participantId, body));
   }
 
   /**
@@ -2927,72 +3026,67 @@ public class ConversationsApi {
    * @param callId callId (required)
    * @param participantId participantId (required)
    * @param body Participant request (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsCallParticipantWithHttpInfo(String callId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'callId' is set
-    if (callId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling patchConversationsCallParticipant");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsCallParticipant");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCallParticipant");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/calls/{callId}/participants/{participantId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callId" + "\\}", pcapiClient.escapeString(callId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Void> patchConversationsCallParticipantWithHttpInfo(String callId, String participantId, MediaParticipantRequest body) throws IOException {
+    return patchConversationsCallParticipant(createPatchConversationsCallParticipantRequest(callId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsCallParticipantRequest createPatchConversationsCallParticipantRequest(String callId, String participantId, MediaParticipantRequest body) {
+    return PatchConversationsCallParticipantRequest.builder()
+            .withCallId(callId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationsCallParticipant(PatchConversationsCallParticipantRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Update conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsCallParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> patchConversationsCallParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3001,10 +3095,11 @@ public class ConversationsApi {
    * @param callId callId (required)
    * @param participantId participantId (required)
    * @param body Participant attributes (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationsCallParticipantAttributes(String callId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
-    patchConversationsCallParticipantAttributesWithHttpInfo(callId, participantId, body);
+     patchConversationsCallParticipantAttributes(createPatchConversationsCallParticipantAttributesRequest(callId, participantId, body));
   }
 
   /**
@@ -3013,72 +3108,67 @@ public class ConversationsApi {
    * @param callId callId (required)
    * @param participantId participantId (required)
    * @param body Participant attributes (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsCallParticipantAttributesWithHttpInfo(String callId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'callId' is set
-    if (callId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling patchConversationsCallParticipantAttributes");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsCallParticipantAttributes");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCallParticipantAttributes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/calls/{callId}/participants/{participantId}/attributes".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callId" + "\\}", pcapiClient.escapeString(callId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Void> patchConversationsCallParticipantAttributesWithHttpInfo(String callId, String participantId, ParticipantAttributes body) throws IOException {
+    return patchConversationsCallParticipantAttributes(createPatchConversationsCallParticipantAttributesRequest(callId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsCallParticipantAttributesRequest createPatchConversationsCallParticipantAttributesRequest(String callId, String participantId, ParticipantAttributes body) {
+    return PatchConversationsCallParticipantAttributesRequest.builder()
+            .withCallId(callId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update the attributes on a conversation participant.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationsCallParticipantAttributes(PatchConversationsCallParticipantAttributesRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Update the attributes on a conversation participant.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsCallParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> patchConversationsCallParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3089,10 +3179,11 @@ public class ConversationsApi {
    * @param communicationId communicationId (required)
    * @param body Participant (required)
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty patchConversationsCallParticipantCommunication(String callId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
-    return patchConversationsCallParticipantCommunicationWithHttpInfo(callId, participantId, communicationId, body).getBody();
+    return  patchConversationsCallParticipantCommunication(createPatchConversationsCallParticipantCommunicationRequest(callId, participantId, communicationId, body));
   }
 
   /**
@@ -3103,78 +3194,70 @@ public class ConversationsApi {
    * @param communicationId communicationId (required)
    * @param body Participant (required)
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> patchConversationsCallParticipantCommunicationWithHttpInfo(String callId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'callId' is set
-    if (callId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling patchConversationsCallParticipantCommunication");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsCallParticipantCommunication");
-    }
-    
-    // verify the required parameter 'communicationId' is set
-    if (communicationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'communicationId' when calling patchConversationsCallParticipantCommunication");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCallParticipantCommunication");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/calls/{callId}/participants/{participantId}/communications/{communicationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callId" + "\\}", pcapiClient.escapeString(callId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()))
-      .replaceAll("\\{" + "communicationId" + "\\}", pcapiClient.escapeString(communicationId.toString()));
+  public ApiResponse<Empty> patchConversationsCallParticipantCommunicationWithHttpInfo(String callId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException {
+    return patchConversationsCallParticipantCommunication(createPatchConversationsCallParticipantCommunicationRequest(callId, participantId, communicationId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsCallParticipantCommunicationRequest createPatchConversationsCallParticipantCommunicationRequest(String callId, String participantId, String communicationId, MediaParticipantRequest body) {
+    return PatchConversationsCallParticipantCommunicationRequest.builder()
+            .withCallId(callId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withCommunicationId(communicationId)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Empty>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update conversation participant&#39;s communication by disconnecting it.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty patchConversationsCallParticipantCommunication(PatchConversationsCallParticipantCommunicationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update conversation participant&#39;s communication by disconnecting it.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> patchConversationsCallParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
-    return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
+  public ApiResponse<Empty> patchConversationsCallParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3184,10 +3267,11 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param body new speak to (required)
    * @return ConsultTransferResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ConsultTransferResponse patchConversationsCallParticipantConsult(String callId, String participantId, ConsultTransferUpdate body) throws IOException, ApiException {
-    return patchConversationsCallParticipantConsultWithHttpInfo(callId, participantId, body).getBody();
+    return  patchConversationsCallParticipantConsult(createPatchConversationsCallParticipantConsultRequest(callId, participantId, body));
   }
 
   /**
@@ -3197,72 +3281,68 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param body new speak to (required)
    * @return ConsultTransferResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ConsultTransferResponse> patchConversationsCallParticipantConsultWithHttpInfo(String callId, String participantId, ConsultTransferUpdate body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'callId' is set
-    if (callId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling patchConversationsCallParticipantConsult");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsCallParticipantConsult");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCallParticipantConsult");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/calls/{callId}/participants/{participantId}/consult".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callId" + "\\}", pcapiClient.escapeString(callId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<ConsultTransferResponse> patchConversationsCallParticipantConsultWithHttpInfo(String callId, String participantId, ConsultTransferUpdate body) throws IOException {
+    return patchConversationsCallParticipantConsult(createPatchConversationsCallParticipantConsultRequest(callId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsCallParticipantConsultRequest createPatchConversationsCallParticipantConsultRequest(String callId, String participantId, ConsultTransferUpdate body) {
+    return PatchConversationsCallParticipantConsultRequest.builder()
+            .withCallId(callId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ConsultTransferResponse>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Change who can speak
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ConsultTransferResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ConsultTransferResponse patchConversationsCallParticipantConsult(PatchConversationsCallParticipantConsultRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ConsultTransferResponse>() {});
+    try {
+      ApiResponse<ConsultTransferResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConsultTransferResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Change who can speak
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ConsultTransferResponse> patchConversationsCallParticipantConsult(ApiRequest<ConsultTransferUpdate> request) throws IOException, ApiException {
-    return pcapiClient.<ConsultTransferResponse>invokeAPIVerbose(request, new TypeReference<ConsultTransferResponse>() {});
+  public ApiResponse<ConsultTransferResponse> patchConversationsCallParticipantConsult(ApiRequest<ConsultTransferUpdate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConsultTransferResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3271,10 +3351,11 @@ public class ConversationsApi {
    * @param callbackId callbackId (required)
    * @param body Conversation (required)
    * @return Conversation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Conversation patchConversationsCallback(String callbackId, Conversation body) throws IOException, ApiException {
-    return patchConversationsCallbackWithHttpInfo(callbackId, body).getBody();
+    return  patchConversationsCallback(createPatchConversationsCallbackRequest(callbackId, body));
   }
 
   /**
@@ -3283,66 +3364,66 @@ public class ConversationsApi {
    * @param callbackId callbackId (required)
    * @param body Conversation (required)
    * @return Conversation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Conversation> patchConversationsCallbackWithHttpInfo(String callbackId, Conversation body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'callbackId' is set
-    if (callbackId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callbackId' when calling patchConversationsCallback");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCallback");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/callbacks/{callbackId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callbackId" + "\\}", pcapiClient.escapeString(callbackId.toString()));
+  public ApiResponse<Conversation> patchConversationsCallbackWithHttpInfo(String callbackId, Conversation body) throws IOException {
+    return patchConversationsCallback(createPatchConversationsCallbackRequest(callbackId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsCallbackRequest createPatchConversationsCallbackRequest(String callbackId, Conversation body) {
+    return PatchConversationsCallbackRequest.builder()
+            .withCallbackId(callbackId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Conversation>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a conversation by disconnecting all of the participants
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Conversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Conversation patchConversationsCallback(PatchConversationsCallbackRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Conversation>() {});
+    try {
+      ApiResponse<Conversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Conversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a conversation by disconnecting all of the participants
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Conversation> patchConversationsCallback(ApiRequest<Conversation> request) throws IOException, ApiException {
-    return pcapiClient.<Conversation>invokeAPIVerbose(request, new TypeReference<Conversation>() {});
+  public ApiResponse<Conversation> patchConversationsCallback(ApiRequest<Conversation> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Conversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3351,10 +3432,11 @@ public class ConversationsApi {
    * @param callbackId callbackId (required)
    * @param participantId participantId (required)
    * @param body Participant (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationsCallbackParticipant(String callbackId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
-    patchConversationsCallbackParticipantWithHttpInfo(callbackId, participantId, body);
+     patchConversationsCallbackParticipant(createPatchConversationsCallbackParticipantRequest(callbackId, participantId, body));
   }
 
   /**
@@ -3363,72 +3445,67 @@ public class ConversationsApi {
    * @param callbackId callbackId (required)
    * @param participantId participantId (required)
    * @param body Participant (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsCallbackParticipantWithHttpInfo(String callbackId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'callbackId' is set
-    if (callbackId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callbackId' when calling patchConversationsCallbackParticipant");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsCallbackParticipant");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCallbackParticipant");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/callbacks/{callbackId}/participants/{participantId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callbackId" + "\\}", pcapiClient.escapeString(callbackId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Void> patchConversationsCallbackParticipantWithHttpInfo(String callbackId, String participantId, MediaParticipantRequest body) throws IOException {
+    return patchConversationsCallbackParticipant(createPatchConversationsCallbackParticipantRequest(callbackId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsCallbackParticipantRequest createPatchConversationsCallbackParticipantRequest(String callbackId, String participantId, MediaParticipantRequest body) {
+    return PatchConversationsCallbackParticipantRequest.builder()
+            .withCallbackId(callbackId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationsCallbackParticipant(PatchConversationsCallbackParticipantRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Update conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsCallbackParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> patchConversationsCallbackParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3437,10 +3514,11 @@ public class ConversationsApi {
    * @param callbackId callbackId (required)
    * @param participantId participantId (required)
    * @param body Attributes (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationsCallbackParticipantAttributes(String callbackId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
-    patchConversationsCallbackParticipantAttributesWithHttpInfo(callbackId, participantId, body);
+     patchConversationsCallbackParticipantAttributes(createPatchConversationsCallbackParticipantAttributesRequest(callbackId, participantId, body));
   }
 
   /**
@@ -3449,72 +3527,67 @@ public class ConversationsApi {
    * @param callbackId callbackId (required)
    * @param participantId participantId (required)
    * @param body Attributes (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsCallbackParticipantAttributesWithHttpInfo(String callbackId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'callbackId' is set
-    if (callbackId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callbackId' when calling patchConversationsCallbackParticipantAttributes");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsCallbackParticipantAttributes");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCallbackParticipantAttributes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/attributes".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callbackId" + "\\}", pcapiClient.escapeString(callbackId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Void> patchConversationsCallbackParticipantAttributesWithHttpInfo(String callbackId, String participantId, ParticipantAttributes body) throws IOException {
+    return patchConversationsCallbackParticipantAttributes(createPatchConversationsCallbackParticipantAttributesRequest(callbackId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsCallbackParticipantAttributesRequest createPatchConversationsCallbackParticipantAttributesRequest(String callbackId, String participantId, ParticipantAttributes body) {
+    return PatchConversationsCallbackParticipantAttributesRequest.builder()
+            .withCallbackId(callbackId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update the attributes on a conversation participant.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationsCallbackParticipantAttributes(PatchConversationsCallbackParticipantAttributesRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Update the attributes on a conversation participant.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsCallbackParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> patchConversationsCallbackParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3525,10 +3598,11 @@ public class ConversationsApi {
    * @param communicationId communicationId (required)
    * @param body Participant (required)
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty patchConversationsCallbackParticipantCommunication(String callbackId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
-    return patchConversationsCallbackParticipantCommunicationWithHttpInfo(callbackId, participantId, communicationId, body).getBody();
+    return  patchConversationsCallbackParticipantCommunication(createPatchConversationsCallbackParticipantCommunicationRequest(callbackId, participantId, communicationId, body));
   }
 
   /**
@@ -3539,78 +3613,70 @@ public class ConversationsApi {
    * @param communicationId communicationId (required)
    * @param body Participant (required)
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> patchConversationsCallbackParticipantCommunicationWithHttpInfo(String callbackId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'callbackId' is set
-    if (callbackId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callbackId' when calling patchConversationsCallbackParticipantCommunication");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsCallbackParticipantCommunication");
-    }
-    
-    // verify the required parameter 'communicationId' is set
-    if (communicationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'communicationId' when calling patchConversationsCallbackParticipantCommunication");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCallbackParticipantCommunication");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/communications/{communicationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callbackId" + "\\}", pcapiClient.escapeString(callbackId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()))
-      .replaceAll("\\{" + "communicationId" + "\\}", pcapiClient.escapeString(communicationId.toString()));
+  public ApiResponse<Empty> patchConversationsCallbackParticipantCommunicationWithHttpInfo(String callbackId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException {
+    return patchConversationsCallbackParticipantCommunication(createPatchConversationsCallbackParticipantCommunicationRequest(callbackId, participantId, communicationId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsCallbackParticipantCommunicationRequest createPatchConversationsCallbackParticipantCommunicationRequest(String callbackId, String participantId, String communicationId, MediaParticipantRequest body) {
+    return PatchConversationsCallbackParticipantCommunicationRequest.builder()
+            .withCallbackId(callbackId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withCommunicationId(communicationId)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Empty>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update conversation participant&#39;s communication by disconnecting it.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty patchConversationsCallbackParticipantCommunication(PatchConversationsCallbackParticipantCommunicationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update conversation participant&#39;s communication by disconnecting it.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> patchConversationsCallbackParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
-    return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
+  public ApiResponse<Empty> patchConversationsCallbackParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3619,10 +3685,11 @@ public class ConversationsApi {
    * @param chatId chatId (required)
    * @param body Conversation (required)
    * @return Conversation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Conversation patchConversationsChat(String chatId, Conversation body) throws IOException, ApiException {
-    return patchConversationsChatWithHttpInfo(chatId, body).getBody();
+    return  patchConversationsChat(createPatchConversationsChatRequest(chatId, body));
   }
 
   /**
@@ -3631,66 +3698,66 @@ public class ConversationsApi {
    * @param chatId chatId (required)
    * @param body Conversation (required)
    * @return Conversation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Conversation> patchConversationsChatWithHttpInfo(String chatId, Conversation body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'chatId' is set
-    if (chatId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'chatId' when calling patchConversationsChat");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsChat");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/chats/{chatId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "chatId" + "\\}", pcapiClient.escapeString(chatId.toString()));
+  public ApiResponse<Conversation> patchConversationsChatWithHttpInfo(String chatId, Conversation body) throws IOException {
+    return patchConversationsChat(createPatchConversationsChatRequest(chatId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsChatRequest createPatchConversationsChatRequest(String chatId, Conversation body) {
+    return PatchConversationsChatRequest.builder()
+            .withChatId(chatId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Conversation>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a conversation by disconnecting all of the participants
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Conversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Conversation patchConversationsChat(PatchConversationsChatRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Conversation>() {});
+    try {
+      ApiResponse<Conversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Conversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a conversation by disconnecting all of the participants
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Conversation> patchConversationsChat(ApiRequest<Conversation> request) throws IOException, ApiException {
-    return pcapiClient.<Conversation>invokeAPIVerbose(request, new TypeReference<Conversation>() {});
+  public ApiResponse<Conversation> patchConversationsChat(ApiRequest<Conversation> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Conversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3699,10 +3766,11 @@ public class ConversationsApi {
    * @param chatId chatId (required)
    * @param participantId participantId (required)
    * @param body Update request (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationsChatParticipant(String chatId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
-    patchConversationsChatParticipantWithHttpInfo(chatId, participantId, body);
+     patchConversationsChatParticipant(createPatchConversationsChatParticipantRequest(chatId, participantId, body));
   }
 
   /**
@@ -3711,72 +3779,67 @@ public class ConversationsApi {
    * @param chatId chatId (required)
    * @param participantId participantId (required)
    * @param body Update request (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsChatParticipantWithHttpInfo(String chatId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'chatId' is set
-    if (chatId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'chatId' when calling patchConversationsChatParticipant");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsChatParticipant");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsChatParticipant");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/chats/{chatId}/participants/{participantId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "chatId" + "\\}", pcapiClient.escapeString(chatId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Void> patchConversationsChatParticipantWithHttpInfo(String chatId, String participantId, MediaParticipantRequest body) throws IOException {
+    return patchConversationsChatParticipant(createPatchConversationsChatParticipantRequest(chatId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsChatParticipantRequest createPatchConversationsChatParticipantRequest(String chatId, String participantId, MediaParticipantRequest body) {
+    return PatchConversationsChatParticipantRequest.builder()
+            .withChatId(chatId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationsChatParticipant(PatchConversationsChatParticipantRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Update conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsChatParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> patchConversationsChatParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3785,10 +3848,11 @@ public class ConversationsApi {
    * @param chatId chatId (required)
    * @param participantId participantId (required)
    * @param body Participant attributes (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationsChatParticipantAttributes(String chatId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
-    patchConversationsChatParticipantAttributesWithHttpInfo(chatId, participantId, body);
+     patchConversationsChatParticipantAttributes(createPatchConversationsChatParticipantAttributesRequest(chatId, participantId, body));
   }
 
   /**
@@ -3797,72 +3861,67 @@ public class ConversationsApi {
    * @param chatId chatId (required)
    * @param participantId participantId (required)
    * @param body Participant attributes (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsChatParticipantAttributesWithHttpInfo(String chatId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'chatId' is set
-    if (chatId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'chatId' when calling patchConversationsChatParticipantAttributes");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsChatParticipantAttributes");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsChatParticipantAttributes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/chats/{chatId}/participants/{participantId}/attributes".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "chatId" + "\\}", pcapiClient.escapeString(chatId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Void> patchConversationsChatParticipantAttributesWithHttpInfo(String chatId, String participantId, ParticipantAttributes body) throws IOException {
+    return patchConversationsChatParticipantAttributes(createPatchConversationsChatParticipantAttributesRequest(chatId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsChatParticipantAttributesRequest createPatchConversationsChatParticipantAttributesRequest(String chatId, String participantId, ParticipantAttributes body) {
+    return PatchConversationsChatParticipantAttributesRequest.builder()
+            .withChatId(chatId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update the attributes on a conversation participant.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationsChatParticipantAttributes(PatchConversationsChatParticipantAttributesRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Update the attributes on a conversation participant.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsChatParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> patchConversationsChatParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3873,10 +3932,11 @@ public class ConversationsApi {
    * @param communicationId communicationId (required)
    * @param body Participant (required)
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty patchConversationsChatParticipantCommunication(String chatId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
-    return patchConversationsChatParticipantCommunicationWithHttpInfo(chatId, participantId, communicationId, body).getBody();
+    return  patchConversationsChatParticipantCommunication(createPatchConversationsChatParticipantCommunicationRequest(chatId, participantId, communicationId, body));
   }
 
   /**
@@ -3887,78 +3947,70 @@ public class ConversationsApi {
    * @param communicationId communicationId (required)
    * @param body Participant (required)
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> patchConversationsChatParticipantCommunicationWithHttpInfo(String chatId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'chatId' is set
-    if (chatId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'chatId' when calling patchConversationsChatParticipantCommunication");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsChatParticipantCommunication");
-    }
-    
-    // verify the required parameter 'communicationId' is set
-    if (communicationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'communicationId' when calling patchConversationsChatParticipantCommunication");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsChatParticipantCommunication");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/chats/{chatId}/participants/{participantId}/communications/{communicationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "chatId" + "\\}", pcapiClient.escapeString(chatId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()))
-      .replaceAll("\\{" + "communicationId" + "\\}", pcapiClient.escapeString(communicationId.toString()));
+  public ApiResponse<Empty> patchConversationsChatParticipantCommunicationWithHttpInfo(String chatId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException {
+    return patchConversationsChatParticipantCommunication(createPatchConversationsChatParticipantCommunicationRequest(chatId, participantId, communicationId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsChatParticipantCommunicationRequest createPatchConversationsChatParticipantCommunicationRequest(String chatId, String participantId, String communicationId, MediaParticipantRequest body) {
+    return PatchConversationsChatParticipantCommunicationRequest.builder()
+            .withChatId(chatId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withCommunicationId(communicationId)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Empty>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update conversation participant&#39;s communication by disconnecting it.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty patchConversationsChatParticipantCommunication(PatchConversationsChatParticipantCommunicationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update conversation participant&#39;s communication by disconnecting it.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> patchConversationsChatParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
-    return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
+  public ApiResponse<Empty> patchConversationsChatParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3967,10 +4019,11 @@ public class ConversationsApi {
    * @param cobrowseId cobrowseId (required)
    * @param body Conversation (required)
    * @return Conversation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Conversation patchConversationsCobrowsesession(String cobrowseId, Conversation body) throws IOException, ApiException {
-    return patchConversationsCobrowsesessionWithHttpInfo(cobrowseId, body).getBody();
+    return  patchConversationsCobrowsesession(createPatchConversationsCobrowsesessionRequest(cobrowseId, body));
   }
 
   /**
@@ -3979,66 +4032,66 @@ public class ConversationsApi {
    * @param cobrowseId cobrowseId (required)
    * @param body Conversation (required)
    * @return Conversation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Conversation> patchConversationsCobrowsesessionWithHttpInfo(String cobrowseId, Conversation body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'cobrowseId' is set
-    if (cobrowseId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'cobrowseId' when calling patchConversationsCobrowsesession");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCobrowsesession");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/cobrowsesessions/{cobrowseId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "cobrowseId" + "\\}", pcapiClient.escapeString(cobrowseId.toString()));
+  public ApiResponse<Conversation> patchConversationsCobrowsesessionWithHttpInfo(String cobrowseId, Conversation body) throws IOException {
+    return patchConversationsCobrowsesession(createPatchConversationsCobrowsesessionRequest(cobrowseId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsCobrowsesessionRequest createPatchConversationsCobrowsesessionRequest(String cobrowseId, Conversation body) {
+    return PatchConversationsCobrowsesessionRequest.builder()
+            .withCobrowseId(cobrowseId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Conversation>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a conversation by disconnecting all of the participants
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Conversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Conversation patchConversationsCobrowsesession(PatchConversationsCobrowsesessionRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Conversation>() {});
+    try {
+      ApiResponse<Conversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Conversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a conversation by disconnecting all of the participants
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Conversation> patchConversationsCobrowsesession(ApiRequest<Conversation> request) throws IOException, ApiException {
-    return pcapiClient.<Conversation>invokeAPIVerbose(request, new TypeReference<Conversation>() {});
+  public ApiResponse<Conversation> patchConversationsCobrowsesession(ApiRequest<Conversation> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Conversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4047,10 +4100,11 @@ public class ConversationsApi {
    * @param cobrowseId cobrowseId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationsCobrowsesessionParticipant(String cobrowseId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
-    patchConversationsCobrowsesessionParticipantWithHttpInfo(cobrowseId, participantId, body);
+     patchConversationsCobrowsesessionParticipant(createPatchConversationsCobrowsesessionParticipantRequest(cobrowseId, participantId, body));
   }
 
   /**
@@ -4059,67 +4113,67 @@ public class ConversationsApi {
    * @param cobrowseId cobrowseId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsCobrowsesessionParticipantWithHttpInfo(String cobrowseId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'cobrowseId' is set
-    if (cobrowseId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'cobrowseId' when calling patchConversationsCobrowsesessionParticipant");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsCobrowsesessionParticipant");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "cobrowseId" + "\\}", pcapiClient.escapeString(cobrowseId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Void> patchConversationsCobrowsesessionParticipantWithHttpInfo(String cobrowseId, String participantId, MediaParticipantRequest body) throws IOException {
+    return patchConversationsCobrowsesessionParticipant(createPatchConversationsCobrowsesessionParticipantRequest(cobrowseId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsCobrowsesessionParticipantRequest createPatchConversationsCobrowsesessionParticipantRequest(String cobrowseId, String participantId, MediaParticipantRequest body) {
+    return PatchConversationsCobrowsesessionParticipantRequest.builder()
+            .withCobrowseId(cobrowseId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationsCobrowsesessionParticipant(PatchConversationsCobrowsesessionParticipantRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Update conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsCobrowsesessionParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> patchConversationsCobrowsesessionParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4128,10 +4182,11 @@ public class ConversationsApi {
    * @param cobrowseId cobrowseId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationsCobrowsesessionParticipantAttributes(String cobrowseId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
-    patchConversationsCobrowsesessionParticipantAttributesWithHttpInfo(cobrowseId, participantId, body);
+     patchConversationsCobrowsesessionParticipantAttributes(createPatchConversationsCobrowsesessionParticipantAttributesRequest(cobrowseId, participantId, body));
   }
 
   /**
@@ -4140,67 +4195,67 @@ public class ConversationsApi {
    * @param cobrowseId cobrowseId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsCobrowsesessionParticipantAttributesWithHttpInfo(String cobrowseId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'cobrowseId' is set
-    if (cobrowseId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'cobrowseId' when calling patchConversationsCobrowsesessionParticipantAttributes");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsCobrowsesessionParticipantAttributes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/attributes".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "cobrowseId" + "\\}", pcapiClient.escapeString(cobrowseId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Void> patchConversationsCobrowsesessionParticipantAttributesWithHttpInfo(String cobrowseId, String participantId, ParticipantAttributes body) throws IOException {
+    return patchConversationsCobrowsesessionParticipantAttributes(createPatchConversationsCobrowsesessionParticipantAttributesRequest(cobrowseId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsCobrowsesessionParticipantAttributesRequest createPatchConversationsCobrowsesessionParticipantAttributesRequest(String cobrowseId, String participantId, ParticipantAttributes body) {
+    return PatchConversationsCobrowsesessionParticipantAttributesRequest.builder()
+            .withCobrowseId(cobrowseId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update the attributes on a conversation participant.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationsCobrowsesessionParticipantAttributes(PatchConversationsCobrowsesessionParticipantAttributesRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Update the attributes on a conversation participant.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsCobrowsesessionParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> patchConversationsCobrowsesessionParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4211,10 +4266,11 @@ public class ConversationsApi {
    * @param communicationId communicationId (required)
    * @param body Participant (required)
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty patchConversationsCobrowsesessionParticipantCommunication(String cobrowseId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
-    return patchConversationsCobrowsesessionParticipantCommunicationWithHttpInfo(cobrowseId, participantId, communicationId, body).getBody();
+    return  patchConversationsCobrowsesessionParticipantCommunication(createPatchConversationsCobrowsesessionParticipantCommunicationRequest(cobrowseId, participantId, communicationId, body));
   }
 
   /**
@@ -4225,78 +4281,70 @@ public class ConversationsApi {
    * @param communicationId communicationId (required)
    * @param body Participant (required)
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> patchConversationsCobrowsesessionParticipantCommunicationWithHttpInfo(String cobrowseId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'cobrowseId' is set
-    if (cobrowseId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'cobrowseId' when calling patchConversationsCobrowsesessionParticipantCommunication");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsCobrowsesessionParticipantCommunication");
-    }
-    
-    // verify the required parameter 'communicationId' is set
-    if (communicationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'communicationId' when calling patchConversationsCobrowsesessionParticipantCommunication");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsCobrowsesessionParticipantCommunication");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/communications/{communicationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "cobrowseId" + "\\}", pcapiClient.escapeString(cobrowseId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()))
-      .replaceAll("\\{" + "communicationId" + "\\}", pcapiClient.escapeString(communicationId.toString()));
+  public ApiResponse<Empty> patchConversationsCobrowsesessionParticipantCommunicationWithHttpInfo(String cobrowseId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException {
+    return patchConversationsCobrowsesessionParticipantCommunication(createPatchConversationsCobrowsesessionParticipantCommunicationRequest(cobrowseId, participantId, communicationId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsCobrowsesessionParticipantCommunicationRequest createPatchConversationsCobrowsesessionParticipantCommunicationRequest(String cobrowseId, String participantId, String communicationId, MediaParticipantRequest body) {
+    return PatchConversationsCobrowsesessionParticipantCommunicationRequest.builder()
+            .withCobrowseId(cobrowseId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withCommunicationId(communicationId)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Empty>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update conversation participant&#39;s communication by disconnecting it.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty patchConversationsCobrowsesessionParticipantCommunication(PatchConversationsCobrowsesessionParticipantCommunicationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update conversation participant&#39;s communication by disconnecting it.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> patchConversationsCobrowsesessionParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
-    return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
+  public ApiResponse<Empty> patchConversationsCobrowsesessionParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4305,10 +4353,11 @@ public class ConversationsApi {
    * @param emailId emailId (required)
    * @param body Conversation (required)
    * @return Conversation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Conversation patchConversationsEmail(String emailId, Conversation body) throws IOException, ApiException {
-    return patchConversationsEmailWithHttpInfo(emailId, body).getBody();
+    return  patchConversationsEmail(createPatchConversationsEmailRequest(emailId, body));
   }
 
   /**
@@ -4317,66 +4366,66 @@ public class ConversationsApi {
    * @param emailId emailId (required)
    * @param body Conversation (required)
    * @return Conversation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Conversation> patchConversationsEmailWithHttpInfo(String emailId, Conversation body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'emailId' is set
-    if (emailId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling patchConversationsEmail");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsEmail");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/emails/{emailId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "emailId" + "\\}", pcapiClient.escapeString(emailId.toString()));
+  public ApiResponse<Conversation> patchConversationsEmailWithHttpInfo(String emailId, Conversation body) throws IOException {
+    return patchConversationsEmail(createPatchConversationsEmailRequest(emailId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsEmailRequest createPatchConversationsEmailRequest(String emailId, Conversation body) {
+    return PatchConversationsEmailRequest.builder()
+            .withEmailId(emailId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Conversation>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a conversation by disconnecting all of the participants
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Conversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Conversation patchConversationsEmail(PatchConversationsEmailRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Conversation>() {});
+    try {
+      ApiResponse<Conversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Conversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a conversation by disconnecting all of the participants
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Conversation> patchConversationsEmail(ApiRequest<Conversation> request) throws IOException, ApiException {
-    return pcapiClient.<Conversation>invokeAPIVerbose(request, new TypeReference<Conversation>() {});
+  public ApiResponse<Conversation> patchConversationsEmail(ApiRequest<Conversation> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Conversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4385,10 +4434,11 @@ public class ConversationsApi {
    * @param emailId emailId (required)
    * @param participantId participantId (required)
    * @param body Update request (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationsEmailParticipant(String emailId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
-    patchConversationsEmailParticipantWithHttpInfo(emailId, participantId, body);
+     patchConversationsEmailParticipant(createPatchConversationsEmailParticipantRequest(emailId, participantId, body));
   }
 
   /**
@@ -4397,72 +4447,67 @@ public class ConversationsApi {
    * @param emailId emailId (required)
    * @param participantId participantId (required)
    * @param body Update request (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsEmailParticipantWithHttpInfo(String emailId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'emailId' is set
-    if (emailId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling patchConversationsEmailParticipant");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsEmailParticipant");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsEmailParticipant");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/emails/{emailId}/participants/{participantId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "emailId" + "\\}", pcapiClient.escapeString(emailId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Void> patchConversationsEmailParticipantWithHttpInfo(String emailId, String participantId, MediaParticipantRequest body) throws IOException {
+    return patchConversationsEmailParticipant(createPatchConversationsEmailParticipantRequest(emailId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsEmailParticipantRequest createPatchConversationsEmailParticipantRequest(String emailId, String participantId, MediaParticipantRequest body) {
+    return PatchConversationsEmailParticipantRequest.builder()
+            .withEmailId(emailId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationsEmailParticipant(PatchConversationsEmailParticipantRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Update conversation participant
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsEmailParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> patchConversationsEmailParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4471,10 +4516,11 @@ public class ConversationsApi {
    * @param emailId emailId (required)
    * @param participantId participantId (required)
    * @param body Participant attributes (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationsEmailParticipantAttributes(String emailId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
-    patchConversationsEmailParticipantAttributesWithHttpInfo(emailId, participantId, body);
+     patchConversationsEmailParticipantAttributes(createPatchConversationsEmailParticipantAttributesRequest(emailId, participantId, body));
   }
 
   /**
@@ -4483,72 +4529,67 @@ public class ConversationsApi {
    * @param emailId emailId (required)
    * @param participantId participantId (required)
    * @param body Participant attributes (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsEmailParticipantAttributesWithHttpInfo(String emailId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'emailId' is set
-    if (emailId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling patchConversationsEmailParticipantAttributes");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsEmailParticipantAttributes");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsEmailParticipantAttributes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/emails/{emailId}/participants/{participantId}/attributes".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "emailId" + "\\}", pcapiClient.escapeString(emailId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Void> patchConversationsEmailParticipantAttributesWithHttpInfo(String emailId, String participantId, ParticipantAttributes body) throws IOException {
+    return patchConversationsEmailParticipantAttributes(createPatchConversationsEmailParticipantAttributesRequest(emailId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsEmailParticipantAttributesRequest createPatchConversationsEmailParticipantAttributesRequest(String emailId, String participantId, ParticipantAttributes body) {
+    return PatchConversationsEmailParticipantAttributesRequest.builder()
+            .withEmailId(emailId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update the attributes on a conversation participant.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchConversationsEmailParticipantAttributes(PatchConversationsEmailParticipantAttributesRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Update the attributes on a conversation participant.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchConversationsEmailParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> patchConversationsEmailParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4559,10 +4600,11 @@ public class ConversationsApi {
    * @param communicationId communicationId (required)
    * @param body Participant (required)
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty patchConversationsEmailParticipantCommunication(String emailId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
-    return patchConversationsEmailParticipantCommunicationWithHttpInfo(emailId, participantId, communicationId, body).getBody();
+    return  patchConversationsEmailParticipantCommunication(createPatchConversationsEmailParticipantCommunicationRequest(emailId, participantId, communicationId, body));
   }
 
   /**
@@ -4573,78 +4615,70 @@ public class ConversationsApi {
    * @param communicationId communicationId (required)
    * @param body Participant (required)
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> patchConversationsEmailParticipantCommunicationWithHttpInfo(String emailId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'emailId' is set
-    if (emailId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling patchConversationsEmailParticipantCommunication");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling patchConversationsEmailParticipantCommunication");
-    }
-    
-    // verify the required parameter 'communicationId' is set
-    if (communicationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'communicationId' when calling patchConversationsEmailParticipantCommunication");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchConversationsEmailParticipantCommunication");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/emails/{emailId}/participants/{participantId}/communications/{communicationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "emailId" + "\\}", pcapiClient.escapeString(emailId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()))
-      .replaceAll("\\{" + "communicationId" + "\\}", pcapiClient.escapeString(communicationId.toString()));
+  public ApiResponse<Empty> patchConversationsEmailParticipantCommunicationWithHttpInfo(String emailId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException {
+    return patchConversationsEmailParticipantCommunication(createPatchConversationsEmailParticipantCommunicationRequest(emailId, participantId, communicationId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchConversationsEmailParticipantCommunicationRequest createPatchConversationsEmailParticipantCommunicationRequest(String emailId, String participantId, String communicationId, MediaParticipantRequest body) {
+    return PatchConversationsEmailParticipantCommunicationRequest.builder()
+            .withEmailId(emailId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withCommunicationId(communicationId)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Empty>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update conversation participant&#39;s communication by disconnecting it.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty patchConversationsEmailParticipantCommunication(PatchConversationsEmailParticipantCommunicationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update conversation participant&#39;s communication by disconnecting it.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> patchConversationsEmailParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws IOException, ApiException {
-    return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
+  public ApiResponse<Empty> patchConversationsEmailParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4653,10 +4687,11 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param body request (required)
    * @return PropertyIndexRequest
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PropertyIndexRequest postAnalyticsConversationDetailsProperties(String conversationId, PropertyIndexRequest body) throws IOException, ApiException {
-    return postAnalyticsConversationDetailsPropertiesWithHttpInfo(conversationId, body).getBody();
+    return  postAnalyticsConversationDetailsProperties(createPostAnalyticsConversationDetailsPropertiesRequest(conversationId, body));
   }
 
   /**
@@ -4665,66 +4700,66 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param body request (required)
    * @return PropertyIndexRequest
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PropertyIndexRequest> postAnalyticsConversationDetailsPropertiesWithHttpInfo(String conversationId, PropertyIndexRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling postAnalyticsConversationDetailsProperties");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsConversationDetailsProperties");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/analytics/conversations/{conversationId}/details/properties".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()));
+  public ApiResponse<PropertyIndexRequest> postAnalyticsConversationDetailsPropertiesWithHttpInfo(String conversationId, PropertyIndexRequest body) throws IOException {
+    return postAnalyticsConversationDetailsProperties(createPostAnalyticsConversationDetailsPropertiesRequest(conversationId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostAnalyticsConversationDetailsPropertiesRequest createPostAnalyticsConversationDetailsPropertiesRequest(String conversationId, PropertyIndexRequest body) {
+    return PostAnalyticsConversationDetailsPropertiesRequest.builder()
+            .withConversationId(conversationId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<PropertyIndexRequest>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Index conversation properties
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return PropertyIndexRequest
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PropertyIndexRequest postAnalyticsConversationDetailsProperties(PostAnalyticsConversationDetailsPropertiesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PropertyIndexRequest>() {});
+    try {
+      ApiResponse<PropertyIndexRequest> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PropertyIndexRequest>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Index conversation properties
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PropertyIndexRequest> postAnalyticsConversationDetailsProperties(ApiRequest<PropertyIndexRequest> request) throws IOException, ApiException {
-    return pcapiClient.<PropertyIndexRequest>invokeAPIVerbose(request, new TypeReference<PropertyIndexRequest>() {});
+  public ApiResponse<PropertyIndexRequest> postAnalyticsConversationDetailsProperties(ApiRequest<PropertyIndexRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PropertyIndexRequest>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PropertyIndexRequest> response = (ApiResponse<PropertyIndexRequest>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PropertyIndexRequest> response = (ApiResponse<PropertyIndexRequest>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4732,10 +4767,11 @@ public class ConversationsApi {
    * 
    * @param body query (required)
    * @return AggregateQueryResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AggregateQueryResponse postAnalyticsConversationsAggregatesQuery(AggregationQuery body) throws IOException, ApiException {
-    return postAnalyticsConversationsAggregatesQueryWithHttpInfo(body).getBody();
+    return  postAnalyticsConversationsAggregatesQuery(createPostAnalyticsConversationsAggregatesQueryRequest(body));
   }
 
   /**
@@ -4743,60 +4779,64 @@ public class ConversationsApi {
    * 
    * @param body query (required)
    * @return AggregateQueryResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AggregateQueryResponse> postAnalyticsConversationsAggregatesQueryWithHttpInfo(AggregationQuery body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsConversationsAggregatesQuery");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/analytics/conversations/aggregates/query".replaceAll("\\{format\\}","json");
+  public ApiResponse<AggregateQueryResponse> postAnalyticsConversationsAggregatesQueryWithHttpInfo(AggregationQuery body) throws IOException {
+    return postAnalyticsConversationsAggregatesQuery(createPostAnalyticsConversationsAggregatesQueryRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<AggregateQueryResponse>() {});
+  private PostAnalyticsConversationsAggregatesQueryRequest createPostAnalyticsConversationsAggregatesQueryRequest(AggregationQuery body) {
+    return PostAnalyticsConversationsAggregatesQueryRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Query for conversation aggregates
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return AggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AggregateQueryResponse postAnalyticsConversationsAggregatesQuery(PostAnalyticsConversationsAggregatesQueryRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {});
+    try {
+      ApiResponse<AggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query for conversation aggregates
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AggregateQueryResponse> postAnalyticsConversationsAggregatesQuery(ApiRequest<AggregationQuery> request) throws IOException, ApiException {
-    return pcapiClient.<AggregateQueryResponse>invokeAPIVerbose(request, new TypeReference<AggregateQueryResponse>() {});
+  public ApiResponse<AggregateQueryResponse> postAnalyticsConversationsAggregatesQuery(ApiRequest<AggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AggregateQueryResponse> response = (ApiResponse<AggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AggregateQueryResponse> response = (ApiResponse<AggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4804,10 +4844,11 @@ public class ConversationsApi {
    * 
    * @param body query (required)
    * @return AnalyticsConversationQueryResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(ConversationQuery body) throws IOException, ApiException {
-    return postAnalyticsConversationsDetailsQueryWithHttpInfo(body).getBody();
+    return  postAnalyticsConversationsDetailsQuery(createPostAnalyticsConversationsDetailsQueryRequest(body));
   }
 
   /**
@@ -4815,60 +4856,64 @@ public class ConversationsApi {
    * 
    * @param body query (required)
    * @return AnalyticsConversationQueryResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AnalyticsConversationQueryResponse> postAnalyticsConversationsDetailsQueryWithHttpInfo(ConversationQuery body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsConversationsDetailsQuery");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/analytics/conversations/details/query".replaceAll("\\{format\\}","json");
+  public ApiResponse<AnalyticsConversationQueryResponse> postAnalyticsConversationsDetailsQueryWithHttpInfo(ConversationQuery body) throws IOException {
+    return postAnalyticsConversationsDetailsQuery(createPostAnalyticsConversationsDetailsQueryRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<AnalyticsConversationQueryResponse>() {});
+  private PostAnalyticsConversationsDetailsQueryRequest createPostAnalyticsConversationsDetailsQueryRequest(ConversationQuery body) {
+    return PostAnalyticsConversationsDetailsQueryRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Query for conversation details
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return AnalyticsConversationQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(PostAnalyticsConversationsDetailsQueryRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AnalyticsConversationQueryResponse>() {});
+    try {
+      ApiResponse<AnalyticsConversationQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AnalyticsConversationQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query for conversation details
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AnalyticsConversationQueryResponse> postAnalyticsConversationsDetailsQuery(ApiRequest<ConversationQuery> request) throws IOException, ApiException {
-    return pcapiClient.<AnalyticsConversationQueryResponse>invokeAPIVerbose(request, new TypeReference<AnalyticsConversationQueryResponse>() {});
+  public ApiResponse<AnalyticsConversationQueryResponse> postAnalyticsConversationsDetailsQuery(ApiRequest<ConversationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AnalyticsConversationQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsConversationQueryResponse> response = (ApiResponse<AnalyticsConversationQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsConversationQueryResponse> response = (ApiResponse<AnalyticsConversationQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4877,10 +4922,11 @@ public class ConversationsApi {
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body  (optional)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postConversationParticipantCallbacks(String conversationId, String participantId, CreateCallbackCommand body) throws IOException, ApiException {
-    postConversationParticipantCallbacksWithHttpInfo(conversationId, participantId, body);
+     postConversationParticipantCallbacks(createPostConversationParticipantCallbacksRequest(conversationId, participantId, body));
   }
 
   /**
@@ -4889,67 +4935,67 @@ public class ConversationsApi {
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body  (optional)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationParticipantCallbacksWithHttpInfo(String conversationId, String participantId, CreateCallbackCommand body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling postConversationParticipantCallbacks");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling postConversationParticipantCallbacks");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/{conversationId}/participants/{participantId}/callbacks".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Void> postConversationParticipantCallbacksWithHttpInfo(String conversationId, String participantId, CreateCallbackCommand body) throws IOException {
+    return postConversationParticipantCallbacks(createPostConversationParticipantCallbacksRequest(conversationId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostConversationParticipantCallbacksRequest createPostConversationParticipantCallbacksRequest(String conversationId, String participantId, CreateCallbackCommand body) {
+    return PostConversationParticipantCallbacksRequest.builder()
+            .withConversationId(conversationId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a new callback for the specified participant on the conversation.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postConversationParticipantCallbacks(PostConversationParticipantCallbacksRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Create a new callback for the specified participant on the conversation.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationParticipantCallbacks(ApiRequest<CreateCallbackCommand> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> postConversationParticipantCallbacks(ApiRequest<CreateCallbackCommand> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4958,10 +5004,11 @@ public class ConversationsApi {
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Transfer request (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postConversationParticipantReplace(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
-    postConversationParticipantReplaceWithHttpInfo(conversationId, participantId, body);
+     postConversationParticipantReplace(createPostConversationParticipantReplaceRequest(conversationId, participantId, body));
   }
 
   /**
@@ -4970,72 +5017,67 @@ public class ConversationsApi {
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param body Transfer request (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling postConversationParticipantReplace");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling postConversationParticipantReplace");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationParticipantReplace");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/{conversationId}/participants/{participantId}/replace".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Void> postConversationParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException {
+    return postConversationParticipantReplace(createPostConversationParticipantReplaceRequest(conversationId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostConversationParticipantReplaceRequest createPostConversationParticipantReplaceRequest(String conversationId, String participantId, TransferRequest body) {
+    return PostConversationParticipantReplaceRequest.builder()
+            .withConversationId(conversationId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Replace this participant with the specified user and/or address
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postConversationParticipantReplace(PostConversationParticipantReplaceRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Replace this participant with the specified user and/or address
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationParticipantReplace(ApiRequest<TransferRequest> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> postConversationParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5044,10 +5086,11 @@ public class ConversationsApi {
    * @param callId callId (required)
    * @param body Conversation (required)
    * @return Conversation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Conversation postConversationsCall(String callId, CallCommand body) throws IOException, ApiException {
-    return postConversationsCallWithHttpInfo(callId, body).getBody();
+    return  postConversationsCall(createPostConversationsCallRequest(callId, body));
   }
 
   /**
@@ -5056,66 +5099,66 @@ public class ConversationsApi {
    * @param callId callId (required)
    * @param body Conversation (required)
    * @return Conversation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Conversation> postConversationsCallWithHttpInfo(String callId, CallCommand body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'callId' is set
-    if (callId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling postConversationsCall");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsCall");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/calls/{callId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callId" + "\\}", pcapiClient.escapeString(callId.toString()));
+  public ApiResponse<Conversation> postConversationsCallWithHttpInfo(String callId, CallCommand body) throws IOException {
+    return postConversationsCall(createPostConversationsCallRequest(callId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostConversationsCallRequest createPostConversationsCallRequest(String callId, CallCommand body) {
+    return PostConversationsCallRequest.builder()
+            .withCallId(callId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Conversation>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Add a new call to a conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Conversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Conversation postConversationsCall(PostConversationsCallRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Conversation>() {});
+    try {
+      ApiResponse<Conversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Conversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Add a new call to a conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Conversation> postConversationsCall(ApiRequest<CallCommand> request) throws IOException, ApiException {
-    return pcapiClient.<Conversation>invokeAPIVerbose(request, new TypeReference<Conversation>() {});
+  public ApiResponse<Conversation> postConversationsCall(ApiRequest<CallCommand> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Conversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5125,10 +5168,11 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param body Destination address &amp; initial speak to (required)
    * @return ConsultTransferResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ConsultTransferResponse postConversationsCallParticipantConsult(String callId, String participantId, ConsultTransfer body) throws IOException, ApiException {
-    return postConversationsCallParticipantConsultWithHttpInfo(callId, participantId, body).getBody();
+    return  postConversationsCallParticipantConsult(createPostConversationsCallParticipantConsultRequest(callId, participantId, body));
   }
 
   /**
@@ -5138,72 +5182,68 @@ public class ConversationsApi {
    * @param participantId participantId (required)
    * @param body Destination address &amp; initial speak to (required)
    * @return ConsultTransferResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsultWithHttpInfo(String callId, String participantId, ConsultTransfer body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'callId' is set
-    if (callId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling postConversationsCallParticipantConsult");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling postConversationsCallParticipantConsult");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsCallParticipantConsult");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/calls/{callId}/participants/{participantId}/consult".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callId" + "\\}", pcapiClient.escapeString(callId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsultWithHttpInfo(String callId, String participantId, ConsultTransfer body) throws IOException {
+    return postConversationsCallParticipantConsult(createPostConversationsCallParticipantConsultRequest(callId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostConversationsCallParticipantConsultRequest createPostConversationsCallParticipantConsultRequest(String callId, String participantId, ConsultTransfer body) {
+    return PostConversationsCallParticipantConsultRequest.builder()
+            .withCallId(callId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ConsultTransferResponse>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Initiate and update consult transfer
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ConsultTransferResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ConsultTransferResponse postConversationsCallParticipantConsult(PostConversationsCallParticipantConsultRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ConsultTransferResponse>() {});
+    try {
+      ApiResponse<ConsultTransferResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConsultTransferResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Initiate and update consult transfer
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsult(ApiRequest<ConsultTransfer> request) throws IOException, ApiException {
-    return pcapiClient.<ConsultTransferResponse>invokeAPIVerbose(request, new TypeReference<ConsultTransferResponse>() {});
+  public ApiResponse<ConsultTransferResponse> postConversationsCallParticipantConsult(ApiRequest<ConsultTransfer> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConsultTransferResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConsultTransferResponse> response = (ApiResponse<ConsultTransferResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5211,10 +5251,11 @@ public class ConversationsApi {
    * 
    * @param callId callId (required)
    * @param participantId participantId (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postConversationsCallParticipantMonitor(String callId, String participantId) throws IOException, ApiException {
-    postConversationsCallParticipantMonitorWithHttpInfo(callId, participantId);
+     postConversationsCallParticipantMonitor(createPostConversationsCallParticipantMonitorRequest(callId, participantId));
   }
 
   /**
@@ -5222,67 +5263,65 @@ public class ConversationsApi {
    * 
    * @param callId callId (required)
    * @param participantId participantId (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsCallParticipantMonitorWithHttpInfo(String callId, String participantId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'callId' is set
-    if (callId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling postConversationsCallParticipantMonitor");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling postConversationsCallParticipantMonitor");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/calls/{callId}/participants/{participantId}/monitor".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callId" + "\\}", pcapiClient.escapeString(callId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Void> postConversationsCallParticipantMonitorWithHttpInfo(String callId, String participantId) throws IOException {
+    return postConversationsCallParticipantMonitor(createPostConversationsCallParticipantMonitorRequest(callId, participantId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostConversationsCallParticipantMonitorRequest createPostConversationsCallParticipantMonitorRequest(String callId, String participantId) {
+    return PostConversationsCallParticipantMonitorRequest.builder()
+            .withCallId(callId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withParticipantId(participantId)
+            .build();
   }
 
   /**
    * Listen in on the conversation from the point of view of a given participant.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postConversationsCallParticipantMonitor(PostConversationsCallParticipantMonitorRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Listen in on the conversation from the point of view of a given participant.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsCallParticipantMonitor(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> postConversationsCallParticipantMonitor(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5291,10 +5330,11 @@ public class ConversationsApi {
    * @param callId callId (required)
    * @param participantId participantId (required)
    * @param body Transfer request (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postConversationsCallParticipantReplace(String callId, String participantId, TransferRequest body) throws IOException, ApiException {
-    postConversationsCallParticipantReplaceWithHttpInfo(callId, participantId, body);
+     postConversationsCallParticipantReplace(createPostConversationsCallParticipantReplaceRequest(callId, participantId, body));
   }
 
   /**
@@ -5303,72 +5343,67 @@ public class ConversationsApi {
    * @param callId callId (required)
    * @param participantId participantId (required)
    * @param body Transfer request (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsCallParticipantReplaceWithHttpInfo(String callId, String participantId, TransferRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'callId' is set
-    if (callId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling postConversationsCallParticipantReplace");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling postConversationsCallParticipantReplace");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsCallParticipantReplace");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/calls/{callId}/participants/{participantId}/replace".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callId" + "\\}", pcapiClient.escapeString(callId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Void> postConversationsCallParticipantReplaceWithHttpInfo(String callId, String participantId, TransferRequest body) throws IOException {
+    return postConversationsCallParticipantReplace(createPostConversationsCallParticipantReplaceRequest(callId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostConversationsCallParticipantReplaceRequest createPostConversationsCallParticipantReplaceRequest(String callId, String participantId, TransferRequest body) {
+    return PostConversationsCallParticipantReplaceRequest.builder()
+            .withCallId(callId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Replace this participant with the specified user and/or address
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postConversationsCallParticipantReplace(PostConversationsCallParticipantReplaceRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Replace this participant with the specified user and/or address
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsCallParticipantReplace(ApiRequest<TransferRequest> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> postConversationsCallParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5377,10 +5412,11 @@ public class ConversationsApi {
    * @param callId callId (required)
    * @param body Conversation (required)
    * @return Conversation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Conversation postConversationsCallParticipants(String callId, Conversation body) throws IOException, ApiException {
-    return postConversationsCallParticipantsWithHttpInfo(callId, body).getBody();
+    return  postConversationsCallParticipants(createPostConversationsCallParticipantsRequest(callId, body));
   }
 
   /**
@@ -5389,66 +5425,66 @@ public class ConversationsApi {
    * @param callId callId (required)
    * @param body Conversation (required)
    * @return Conversation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Conversation> postConversationsCallParticipantsWithHttpInfo(String callId, Conversation body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'callId' is set
-    if (callId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callId' when calling postConversationsCallParticipants");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsCallParticipants");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/calls/{callId}/participants".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callId" + "\\}", pcapiClient.escapeString(callId.toString()));
+  public ApiResponse<Conversation> postConversationsCallParticipantsWithHttpInfo(String callId, Conversation body) throws IOException {
+    return postConversationsCallParticipants(createPostConversationsCallParticipantsRequest(callId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostConversationsCallParticipantsRequest createPostConversationsCallParticipantsRequest(String callId, Conversation body) {
+    return PostConversationsCallParticipantsRequest.builder()
+            .withCallId(callId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Conversation>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Add participants to a conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Conversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Conversation postConversationsCallParticipants(PostConversationsCallParticipantsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Conversation>() {});
+    try {
+      ApiResponse<Conversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Conversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Add participants to a conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Conversation> postConversationsCallParticipants(ApiRequest<Conversation> request) throws IOException, ApiException {
-    return pcapiClient.<Conversation>invokeAPIVerbose(request, new TypeReference<Conversation>() {});
+  public ApiResponse<Conversation> postConversationsCallParticipants(ApiRequest<Conversation> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Conversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5457,10 +5493,11 @@ public class ConversationsApi {
    * @param callbackId callbackId (required)
    * @param participantId participantId (required)
    * @param body Transfer request (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postConversationsCallbackParticipantReplace(String callbackId, String participantId, TransferRequest body) throws IOException, ApiException {
-    postConversationsCallbackParticipantReplaceWithHttpInfo(callbackId, participantId, body);
+     postConversationsCallbackParticipantReplace(createPostConversationsCallbackParticipantReplaceRequest(callbackId, participantId, body));
   }
 
   /**
@@ -5469,72 +5506,67 @@ public class ConversationsApi {
    * @param callbackId callbackId (required)
    * @param participantId participantId (required)
    * @param body Transfer request (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsCallbackParticipantReplaceWithHttpInfo(String callbackId, String participantId, TransferRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'callbackId' is set
-    if (callbackId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callbackId' when calling postConversationsCallbackParticipantReplace");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling postConversationsCallbackParticipantReplace");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsCallbackParticipantReplace");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/replace".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callbackId" + "\\}", pcapiClient.escapeString(callbackId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Void> postConversationsCallbackParticipantReplaceWithHttpInfo(String callbackId, String participantId, TransferRequest body) throws IOException {
+    return postConversationsCallbackParticipantReplace(createPostConversationsCallbackParticipantReplaceRequest(callbackId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostConversationsCallbackParticipantReplaceRequest createPostConversationsCallbackParticipantReplaceRequest(String callbackId, String participantId, TransferRequest body) {
+    return PostConversationsCallbackParticipantReplaceRequest.builder()
+            .withCallbackId(callbackId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Replace this participant with the specified user and/or address
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postConversationsCallbackParticipantReplace(PostConversationsCallbackParticipantReplaceRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Replace this participant with the specified user and/or address
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsCallbackParticipantReplace(ApiRequest<TransferRequest> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> postConversationsCallbackParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5542,10 +5574,11 @@ public class ConversationsApi {
    * 
    * @param body Callback (required)
    * @return CreateCallbackResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CreateCallbackResponse postConversationsCallbacks(CreateCallbackCommand body) throws IOException, ApiException {
-    return postConversationsCallbacksWithHttpInfo(body).getBody();
+    return  postConversationsCallbacks(createPostConversationsCallbacksRequest(body));
   }
 
   /**
@@ -5553,60 +5586,64 @@ public class ConversationsApi {
    * 
    * @param body Callback (required)
    * @return CreateCallbackResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CreateCallbackResponse> postConversationsCallbacksWithHttpInfo(CreateCallbackCommand body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsCallbacks");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/callbacks".replaceAll("\\{format\\}","json");
+  public ApiResponse<CreateCallbackResponse> postConversationsCallbacksWithHttpInfo(CreateCallbackCommand body) throws IOException {
+    return postConversationsCallbacks(createPostConversationsCallbacksRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CreateCallbackResponse>() {});
+  private PostConversationsCallbacksRequest createPostConversationsCallbacksRequest(CreateCallbackCommand body) {
+    return PostConversationsCallbacksRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a Callback
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CreateCallbackResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CreateCallbackResponse postConversationsCallbacks(PostConversationsCallbacksRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CreateCallbackResponse>() {});
+    try {
+      ApiResponse<CreateCallbackResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CreateCallbackResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a Callback
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CreateCallbackResponse> postConversationsCallbacks(ApiRequest<CreateCallbackCommand> request) throws IOException, ApiException {
-    return pcapiClient.<CreateCallbackResponse>invokeAPIVerbose(request, new TypeReference<CreateCallbackResponse>() {});
+  public ApiResponse<CreateCallbackResponse> postConversationsCallbacks(ApiRequest<CreateCallbackCommand> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CreateCallbackResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CreateCallbackResponse> response = (ApiResponse<CreateCallbackResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CreateCallbackResponse> response = (ApiResponse<CreateCallbackResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5614,10 +5651,11 @@ public class ConversationsApi {
    * 
    * @param body Call request (required)
    * @return CreateCallResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CreateCallResponse postConversationsCalls(CreateCallRequest body) throws IOException, ApiException {
-    return postConversationsCallsWithHttpInfo(body).getBody();
+    return  postConversationsCalls(createPostConversationsCallsRequest(body));
   }
 
   /**
@@ -5625,60 +5663,64 @@ public class ConversationsApi {
    * 
    * @param body Call request (required)
    * @return CreateCallResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CreateCallResponse> postConversationsCallsWithHttpInfo(CreateCallRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsCalls");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/calls".replaceAll("\\{format\\}","json");
+  public ApiResponse<CreateCallResponse> postConversationsCallsWithHttpInfo(CreateCallRequest body) throws IOException {
+    return postConversationsCalls(createPostConversationsCallsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CreateCallResponse>() {});
+  private PostConversationsCallsRequest createPostConversationsCallsRequest(CreateCallRequest body) {
+    return PostConversationsCallsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a call conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CreateCallResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CreateCallResponse postConversationsCalls(PostConversationsCallsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CreateCallResponse>() {});
+    try {
+      ApiResponse<CreateCallResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CreateCallResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a call conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CreateCallResponse> postConversationsCalls(ApiRequest<CreateCallRequest> request) throws IOException, ApiException {
-    return pcapiClient.<CreateCallResponse>invokeAPIVerbose(request, new TypeReference<CreateCallResponse>() {});
+  public ApiResponse<CreateCallResponse> postConversationsCalls(ApiRequest<CreateCallRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CreateCallResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CreateCallResponse> response = (ApiResponse<CreateCallResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CreateCallResponse> response = (ApiResponse<CreateCallResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5687,10 +5729,11 @@ public class ConversationsApi {
    * @param chatId chatId (required)
    * @param participantId participantId (required)
    * @param body Transfer request (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postConversationsChatParticipantReplace(String chatId, String participantId, TransferRequest body) throws IOException, ApiException {
-    postConversationsChatParticipantReplaceWithHttpInfo(chatId, participantId, body);
+     postConversationsChatParticipantReplace(createPostConversationsChatParticipantReplaceRequest(chatId, participantId, body));
   }
 
   /**
@@ -5699,72 +5742,67 @@ public class ConversationsApi {
    * @param chatId chatId (required)
    * @param participantId participantId (required)
    * @param body Transfer request (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsChatParticipantReplaceWithHttpInfo(String chatId, String participantId, TransferRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'chatId' is set
-    if (chatId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'chatId' when calling postConversationsChatParticipantReplace");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling postConversationsChatParticipantReplace");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsChatParticipantReplace");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/chats/{chatId}/participants/{participantId}/replace".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "chatId" + "\\}", pcapiClient.escapeString(chatId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Void> postConversationsChatParticipantReplaceWithHttpInfo(String chatId, String participantId, TransferRequest body) throws IOException {
+    return postConversationsChatParticipantReplace(createPostConversationsChatParticipantReplaceRequest(chatId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostConversationsChatParticipantReplaceRequest createPostConversationsChatParticipantReplaceRequest(String chatId, String participantId, TransferRequest body) {
+    return PostConversationsChatParticipantReplaceRequest.builder()
+            .withChatId(chatId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Replace this participant with the specified user and/or address
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postConversationsChatParticipantReplace(PostConversationsChatParticipantReplaceRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Replace this participant with the specified user and/or address
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsChatParticipantReplace(ApiRequest<TransferRequest> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> postConversationsChatParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5772,10 +5810,11 @@ public class ConversationsApi {
    * 
    * @param body Create web chat request (required)
    * @return ChatConversation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ChatConversation postConversationsChats(CreateWebChatRequest body) throws IOException, ApiException {
-    return postConversationsChatsWithHttpInfo(body).getBody();
+    return  postConversationsChats(createPostConversationsChatsRequest(body));
   }
 
   /**
@@ -5783,60 +5822,64 @@ public class ConversationsApi {
    * 
    * @param body Create web chat request (required)
    * @return ChatConversation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChatConversation> postConversationsChatsWithHttpInfo(CreateWebChatRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsChats");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/chats".replaceAll("\\{format\\}","json");
+  public ApiResponse<ChatConversation> postConversationsChatsWithHttpInfo(CreateWebChatRequest body) throws IOException {
+    return postConversationsChats(createPostConversationsChatsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ChatConversation>() {});
+  private PostConversationsChatsRequest createPostConversationsChatsRequest(CreateWebChatRequest body) {
+    return PostConversationsChatsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a web chat conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ChatConversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ChatConversation postConversationsChats(PostConversationsChatsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ChatConversation>() {});
+    try {
+      ApiResponse<ChatConversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ChatConversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a web chat conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChatConversation> postConversationsChats(ApiRequest<CreateWebChatRequest> request) throws IOException, ApiException {
-    return pcapiClient.<ChatConversation>invokeAPIVerbose(request, new TypeReference<ChatConversation>() {});
+  public ApiResponse<ChatConversation> postConversationsChats(ApiRequest<CreateWebChatRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ChatConversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatConversation> response = (ApiResponse<ChatConversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatConversation> response = (ApiResponse<ChatConversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5845,10 +5888,11 @@ public class ConversationsApi {
    * @param cobrowseId cobrowseId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postConversationsCobrowsesessionParticipantReplace(String cobrowseId, String participantId, TransferRequest body) throws IOException, ApiException {
-    postConversationsCobrowsesessionParticipantReplaceWithHttpInfo(cobrowseId, participantId, body);
+     postConversationsCobrowsesessionParticipantReplace(createPostConversationsCobrowsesessionParticipantReplaceRequest(cobrowseId, participantId, body));
   }
 
   /**
@@ -5857,67 +5901,67 @@ public class ConversationsApi {
    * @param cobrowseId cobrowseId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsCobrowsesessionParticipantReplaceWithHttpInfo(String cobrowseId, String participantId, TransferRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'cobrowseId' is set
-    if (cobrowseId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'cobrowseId' when calling postConversationsCobrowsesessionParticipantReplace");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling postConversationsCobrowsesessionParticipantReplace");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/replace".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "cobrowseId" + "\\}", pcapiClient.escapeString(cobrowseId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Void> postConversationsCobrowsesessionParticipantReplaceWithHttpInfo(String cobrowseId, String participantId, TransferRequest body) throws IOException {
+    return postConversationsCobrowsesessionParticipantReplace(createPostConversationsCobrowsesessionParticipantReplaceRequest(cobrowseId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostConversationsCobrowsesessionParticipantReplaceRequest createPostConversationsCobrowsesessionParticipantReplaceRequest(String cobrowseId, String participantId, TransferRequest body) {
+    return PostConversationsCobrowsesessionParticipantReplaceRequest.builder()
+            .withCobrowseId(cobrowseId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Replace this participant with the specified user and/or address
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postConversationsCobrowsesessionParticipantReplace(PostConversationsCobrowsesessionParticipantReplaceRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Replace this participant with the specified user and/or address
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsCobrowsesessionParticipantReplace(ApiRequest<TransferRequest> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> postConversationsCobrowsesessionParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5926,10 +5970,11 @@ public class ConversationsApi {
    * @param emailId emailId (required)
    * @param body Reply (required)
    * @return EmailMessage
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EmailMessage postConversationsEmailMessages(String emailId, EmailMessage body) throws IOException, ApiException {
-    return postConversationsEmailMessagesWithHttpInfo(emailId, body).getBody();
+    return  postConversationsEmailMessages(createPostConversationsEmailMessagesRequest(emailId, body));
   }
 
   /**
@@ -5938,66 +5983,66 @@ public class ConversationsApi {
    * @param emailId emailId (required)
    * @param body Reply (required)
    * @return EmailMessage
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailMessage> postConversationsEmailMessagesWithHttpInfo(String emailId, EmailMessage body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'emailId' is set
-    if (emailId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling postConversationsEmailMessages");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsEmailMessages");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/emails/{emailId}/messages".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "emailId" + "\\}", pcapiClient.escapeString(emailId.toString()));
+  public ApiResponse<EmailMessage> postConversationsEmailMessagesWithHttpInfo(String emailId, EmailMessage body) throws IOException {
+    return postConversationsEmailMessages(createPostConversationsEmailMessagesRequest(emailId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostConversationsEmailMessagesRequest createPostConversationsEmailMessagesRequest(String emailId, EmailMessage body) {
+    return PostConversationsEmailMessagesRequest.builder()
+            .withEmailId(emailId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EmailMessage>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Send an email reply
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EmailMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EmailMessage postConversationsEmailMessages(PostConversationsEmailMessagesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EmailMessage>() {});
+    try {
+      ApiResponse<EmailMessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailMessage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Send an email reply
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailMessage> postConversationsEmailMessages(ApiRequest<EmailMessage> request) throws IOException, ApiException {
-    return pcapiClient.<EmailMessage>invokeAPIVerbose(request, new TypeReference<EmailMessage>() {});
+  public ApiResponse<EmailMessage> postConversationsEmailMessages(ApiRequest<EmailMessage> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmailMessage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailMessage> response = (ApiResponse<EmailMessage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailMessage> response = (ApiResponse<EmailMessage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -6006,10 +6051,11 @@ public class ConversationsApi {
    * @param emailId emailId (required)
    * @param participantId participantId (required)
    * @param body Transfer request (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postConversationsEmailParticipantReplace(String emailId, String participantId, TransferRequest body) throws IOException, ApiException {
-    postConversationsEmailParticipantReplaceWithHttpInfo(emailId, participantId, body);
+     postConversationsEmailParticipantReplace(createPostConversationsEmailParticipantReplaceRequest(emailId, participantId, body));
   }
 
   /**
@@ -6018,72 +6064,67 @@ public class ConversationsApi {
    * @param emailId emailId (required)
    * @param participantId participantId (required)
    * @param body Transfer request (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsEmailParticipantReplaceWithHttpInfo(String emailId, String participantId, TransferRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'emailId' is set
-    if (emailId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling postConversationsEmailParticipantReplace");
-    }
-    
-    // verify the required parameter 'participantId' is set
-    if (participantId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'participantId' when calling postConversationsEmailParticipantReplace");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsEmailParticipantReplace");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/emails/{emailId}/participants/{participantId}/replace".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "emailId" + "\\}", pcapiClient.escapeString(emailId.toString()))
-      .replaceAll("\\{" + "participantId" + "\\}", pcapiClient.escapeString(participantId.toString()));
+  public ApiResponse<Void> postConversationsEmailParticipantReplaceWithHttpInfo(String emailId, String participantId, TransferRequest body) throws IOException {
+    return postConversationsEmailParticipantReplace(createPostConversationsEmailParticipantReplaceRequest(emailId, participantId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostConversationsEmailParticipantReplaceRequest createPostConversationsEmailParticipantReplaceRequest(String emailId, String participantId, TransferRequest body) {
+    return PostConversationsEmailParticipantReplaceRequest.builder()
+            .withEmailId(emailId)
 
+            .withParticipantId(participantId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Replace this participant with the specified user and/or address
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postConversationsEmailParticipantReplace(PostConversationsEmailParticipantReplaceRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Replace this participant with the specified user and/or address
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationsEmailParticipantReplace(ApiRequest<TransferRequest> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> postConversationsEmailParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -6091,10 +6132,11 @@ public class ConversationsApi {
    * 
    * @param body Create email request (required)
    * @return EmailConversation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EmailConversation postConversationsEmails(CreateEmailRequest body) throws IOException, ApiException {
-    return postConversationsEmailsWithHttpInfo(body).getBody();
+    return  postConversationsEmails(createPostConversationsEmailsRequest(body));
   }
 
   /**
@@ -6102,60 +6144,64 @@ public class ConversationsApi {
    * 
    * @param body Create email request (required)
    * @return EmailConversation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailConversation> postConversationsEmailsWithHttpInfo(CreateEmailRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsEmails");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/emails".replaceAll("\\{format\\}","json");
+  public ApiResponse<EmailConversation> postConversationsEmailsWithHttpInfo(CreateEmailRequest body) throws IOException {
+    return postConversationsEmails(createPostConversationsEmailsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EmailConversation>() {});
+  private PostConversationsEmailsRequest createPostConversationsEmailsRequest(CreateEmailRequest body) {
+    return PostConversationsEmailsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create an email conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EmailConversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EmailConversation postConversationsEmails(PostConversationsEmailsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EmailConversation>() {});
+    try {
+      ApiResponse<EmailConversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailConversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create an email conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailConversation> postConversationsEmails(ApiRequest<CreateEmailRequest> request) throws IOException, ApiException {
-    return pcapiClient.<EmailConversation>invokeAPIVerbose(request, new TypeReference<EmailConversation>() {});
+  public ApiResponse<EmailConversation> postConversationsEmails(ApiRequest<CreateEmailRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmailConversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailConversation> response = (ApiResponse<EmailConversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailConversation> response = (ApiResponse<EmailConversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -6163,10 +6209,11 @@ public class ConversationsApi {
    * 
    * @param body Fax (required)
    * @return FaxSendResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FaxSendResponse postConversationsFaxes(FaxSendRequest body) throws IOException, ApiException {
-    return postConversationsFaxesWithHttpInfo(body).getBody();
+    return  postConversationsFaxes(createPostConversationsFaxesRequest(body));
   }
 
   /**
@@ -6174,60 +6221,64 @@ public class ConversationsApi {
    * 
    * @param body Fax (required)
    * @return FaxSendResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FaxSendResponse> postConversationsFaxesWithHttpInfo(FaxSendRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationsFaxes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/faxes".replaceAll("\\{format\\}","json");
+  public ApiResponse<FaxSendResponse> postConversationsFaxesWithHttpInfo(FaxSendRequest body) throws IOException {
+    return postConversationsFaxes(createPostConversationsFaxesRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<FaxSendResponse>() {});
+  private PostConversationsFaxesRequest createPostConversationsFaxesRequest(FaxSendRequest body) {
+    return PostConversationsFaxesRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create Fax Conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return FaxSendResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FaxSendResponse postConversationsFaxes(PostConversationsFaxesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FaxSendResponse>() {});
+    try {
+      ApiResponse<FaxSendResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FaxSendResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create Fax Conversation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FaxSendResponse> postConversationsFaxes(ApiRequest<FaxSendRequest> request) throws IOException, ApiException {
-    return pcapiClient.<FaxSendResponse>invokeAPIVerbose(request, new TypeReference<FaxSendResponse>() {});
+  public ApiResponse<FaxSendResponse> postConversationsFaxes(ApiRequest<FaxSendRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FaxSendResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FaxSendResponse> response = (ApiResponse<FaxSendResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FaxSendResponse> response = (ApiResponse<FaxSendResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -6236,10 +6287,11 @@ public class ConversationsApi {
    * @param emailId emailId (required)
    * @param body Draft (required)
    * @return EmailMessage
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EmailMessage putConversationsEmailMessagesDraft(String emailId, EmailMessage body) throws IOException, ApiException {
-    return putConversationsEmailMessagesDraftWithHttpInfo(emailId, body).getBody();
+    return  putConversationsEmailMessagesDraft(createPutConversationsEmailMessagesDraftRequest(emailId, body));
   }
 
   /**
@@ -6248,66 +6300,66 @@ public class ConversationsApi {
    * @param emailId emailId (required)
    * @param body Draft (required)
    * @return EmailMessage
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailMessage> putConversationsEmailMessagesDraftWithHttpInfo(String emailId, EmailMessage body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'emailId' is set
-    if (emailId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'emailId' when calling putConversationsEmailMessagesDraft");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putConversationsEmailMessagesDraft");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/emails/{emailId}/messages/draft".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "emailId" + "\\}", pcapiClient.escapeString(emailId.toString()));
+  public ApiResponse<EmailMessage> putConversationsEmailMessagesDraftWithHttpInfo(String emailId, EmailMessage body) throws IOException {
+    return putConversationsEmailMessagesDraft(createPutConversationsEmailMessagesDraftRequest(emailId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutConversationsEmailMessagesDraftRequest createPutConversationsEmailMessagesDraftRequest(String emailId, EmailMessage body) {
+    return PutConversationsEmailMessagesDraftRequest.builder()
+            .withEmailId(emailId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EmailMessage>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update conversation draft reply
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EmailMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EmailMessage putConversationsEmailMessagesDraft(PutConversationsEmailMessagesDraftRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EmailMessage>() {});
+    try {
+      ApiResponse<EmailMessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailMessage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update conversation draft reply
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EmailMessage> putConversationsEmailMessagesDraft(ApiRequest<EmailMessage> request) throws IOException, ApiException {
-    return pcapiClient.<EmailMessage>invokeAPIVerbose(request, new TypeReference<EmailMessage>() {});
+  public ApiResponse<EmailMessage> putConversationsEmailMessagesDraft(ApiRequest<EmailMessage> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmailMessage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailMessage> response = (ApiResponse<EmailMessage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailMessage> response = (ApiResponse<EmailMessage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

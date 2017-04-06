@@ -46,71 +46,74 @@ public class UserRecordingsApi {
    * Delete a user recording.
    * 
    * @param recordingId User Recording ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteUserrecording(String recordingId) throws IOException, ApiException {
-    deleteUserrecordingWithHttpInfo(recordingId);
+     deleteUserrecording(createDeleteUserrecordingRequest(recordingId));
   }
 
   /**
    * Delete a user recording.
    * 
    * @param recordingId User Recording ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteUserrecordingWithHttpInfo(String recordingId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'recordingId' is set
-    if (recordingId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'recordingId' when calling deleteUserrecording");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/userrecordings/{recordingId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "recordingId" + "\\}", pcapiClient.escapeString(recordingId.toString()));
+  public ApiResponse<Void> deleteUserrecordingWithHttpInfo(String recordingId) throws IOException {
+    return deleteUserrecording(createDeleteUserrecordingRequest(recordingId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteUserrecordingRequest createDeleteUserrecordingRequest(String recordingId) {
+    return DeleteUserrecordingRequest.builder()
+            .withRecordingId(recordingId)
+            .build();
   }
 
   /**
    * Delete a user recording.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteUserrecording(DeleteUserrecordingRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete a user recording.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteUserrecording(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteUserrecording(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -119,10 +122,11 @@ public class UserRecordingsApi {
    * @param recordingId User Recording ID (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return UserRecording
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserRecording getUserrecording(String recordingId, List<String> expand) throws IOException, ApiException {
-    return getUserrecordingWithHttpInfo(recordingId, expand).getBody();
+    return  getUserrecording(createGetUserrecordingRequest(recordingId, expand));
   }
 
   /**
@@ -131,62 +135,66 @@ public class UserRecordingsApi {
    * @param recordingId User Recording ID (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return UserRecording
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserRecording> getUserrecordingWithHttpInfo(String recordingId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'recordingId' is set
-    if (recordingId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'recordingId' when calling getUserrecording");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/userrecordings/{recordingId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "recordingId" + "\\}", pcapiClient.escapeString(recordingId.toString()));
+  public ApiResponse<UserRecording> getUserrecordingWithHttpInfo(String recordingId, List<String> expand) throws IOException {
+    return getUserrecording(createGetUserrecordingRequest(recordingId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetUserrecordingRequest createGetUserrecordingRequest(String recordingId, List<String> expand) {
+    return GetUserrecordingRequest.builder()
+            .withRecordingId(recordingId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserRecording>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get a user recording.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserRecording
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserRecording getUserrecording(GetUserrecordingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserRecording>() {});
+    try {
+      ApiResponse<UserRecording> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserRecording>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a user recording.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserRecording> getUserrecording(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<UserRecording>invokeAPIVerbose(request, new TypeReference<UserRecording>() {});
+  public ApiResponse<UserRecording> getUserrecording(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserRecording>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserRecording> response = (ApiResponse<UserRecording>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserRecording> response = (ApiResponse<UserRecording>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -195,10 +203,11 @@ public class UserRecordingsApi {
    * @param recordingId User Recording ID (required)
    * @param formatId The desired media format. (optional, default to WEBM)
    * @return DownloadResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DownloadResponse getUserrecordingMedia(String recordingId, String formatId) throws IOException, ApiException {
-    return getUserrecordingMediaWithHttpInfo(recordingId, formatId).getBody();
+    return  getUserrecordingMedia(createGetUserrecordingMediaRequest(recordingId, formatId));
   }
 
   /**
@@ -207,62 +216,66 @@ public class UserRecordingsApi {
    * @param recordingId User Recording ID (required)
    * @param formatId The desired media format. (optional, default to WEBM)
    * @return DownloadResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DownloadResponse> getUserrecordingMediaWithHttpInfo(String recordingId, String formatId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'recordingId' is set
-    if (recordingId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'recordingId' when calling getUserrecordingMedia");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/userrecordings/{recordingId}/media".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "recordingId" + "\\}", pcapiClient.escapeString(recordingId.toString()));
+  public ApiResponse<DownloadResponse> getUserrecordingMediaWithHttpInfo(String recordingId, String formatId) throws IOException {
+    return getUserrecordingMedia(createGetUserrecordingMediaRequest(recordingId, formatId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetUserrecordingMediaRequest createGetUserrecordingMediaRequest(String recordingId, String formatId) {
+    return GetUserrecordingMediaRequest.builder()
+            .withRecordingId(recordingId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "formatId", formatId));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DownloadResponse>() {});
+            .withFormatId(formatId)
+            .build();
   }
 
   /**
    * Download a user recording.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DownloadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DownloadResponse getUserrecordingMedia(GetUserrecordingMediaRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DownloadResponse>() {});
+    try {
+      ApiResponse<DownloadResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DownloadResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Download a user recording.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DownloadResponse> getUserrecordingMedia(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DownloadResponse>invokeAPIVerbose(request, new TypeReference<DownloadResponse>() {});
+  public ApiResponse<DownloadResponse> getUserrecordingMedia(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DownloadResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DownloadResponse> response = (ApiResponse<DownloadResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DownloadResponse> response = (ApiResponse<DownloadResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -272,10 +285,11 @@ public class UserRecordingsApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param expand Which fields, if any, to expand. (optional)
    * @return UserRecordingEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserRecordingEntityListing getUserrecordings(Integer pageSize, Integer pageNumber, List<String> expand) throws IOException, ApiException {
-    return getUserrecordingsWithHttpInfo(pageSize, pageNumber, expand).getBody();
+    return  getUserrecordings(createGetUserrecordingsRequest(pageSize, pageNumber, expand));
   }
 
   /**
@@ -285,123 +299,141 @@ public class UserRecordingsApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param expand Which fields, if any, to expand. (optional)
    * @return UserRecordingEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserRecordingEntityListing> getUserrecordingsWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/userrecordings".replaceAll("\\{format\\}","json");
+  public ApiResponse<UserRecordingEntityListing> getUserrecordingsWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> expand) throws IOException {
+    return getUserrecordings(createGetUserrecordingsRequest(pageSize, pageNumber, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetUserrecordingsRequest createGetUserrecordingsRequest(Integer pageSize, Integer pageNumber, List<String> expand) {
+    return GetUserrecordingsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserRecordingEntityListing>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get a list of user recordings.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserRecordingEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserRecordingEntityListing getUserrecordings(GetUserrecordingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserRecordingEntityListing>() {});
+    try {
+      ApiResponse<UserRecordingEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserRecordingEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of user recordings.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserRecordingEntityListing> getUserrecordings(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<UserRecordingEntityListing>invokeAPIVerbose(request, new TypeReference<UserRecordingEntityListing>() {});
+  public ApiResponse<UserRecordingEntityListing> getUserrecordings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserRecordingEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserRecordingEntityListing> response = (ApiResponse<UserRecordingEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserRecordingEntityListing> response = (ApiResponse<UserRecordingEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get user recording summary
    * 
    * @return FaxSummary
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FaxSummary getUserrecordingsSummary() throws IOException, ApiException {
-    return getUserrecordingsSummaryWithHttpInfo().getBody();
+    return  getUserrecordingsSummary(createGetUserrecordingsSummaryRequest());
   }
 
   /**
    * Get user recording summary
    * 
    * @return FaxSummary
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FaxSummary> getUserrecordingsSummaryWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/userrecordings/summary".replaceAll("\\{format\\}","json");
+  public ApiResponse<FaxSummary> getUserrecordingsSummaryWithHttpInfo() throws IOException {
+    return getUserrecordingsSummary(createGetUserrecordingsSummaryRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<FaxSummary>() {});
+  private GetUserrecordingsSummaryRequest createGetUserrecordingsSummaryRequest() {
+    return GetUserrecordingsSummaryRequest.builder()            .build();
   }
 
   /**
    * Get user recording summary
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return FaxSummary
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public FaxSummary getUserrecordingsSummary(GetUserrecordingsSummaryRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<FaxSummary>() {});
+    try {
+      ApiResponse<FaxSummary> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FaxSummary>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get user recording summary
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FaxSummary> getUserrecordingsSummary(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<FaxSummary>invokeAPIVerbose(request, new TypeReference<FaxSummary>() {});
+  public ApiResponse<FaxSummary> getUserrecordingsSummary(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FaxSummary>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FaxSummary> response = (ApiResponse<FaxSummary>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FaxSummary> response = (ApiResponse<FaxSummary>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -411,10 +443,11 @@ public class UserRecordingsApi {
    * @param body UserRecording (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return UserRecording
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserRecording putUserrecording(String recordingId, UserRecording body, List<String> expand) throws IOException, ApiException {
-    return putUserrecordingWithHttpInfo(recordingId, body, expand).getBody();
+    return  putUserrecording(createPutUserrecordingRequest(recordingId, body, expand));
   }
 
   /**
@@ -424,67 +457,68 @@ public class UserRecordingsApi {
    * @param body UserRecording (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return UserRecording
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserRecording> putUserrecordingWithHttpInfo(String recordingId, UserRecording body, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'recordingId' is set
-    if (recordingId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'recordingId' when calling putUserrecording");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putUserrecording");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/userrecordings/{recordingId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "recordingId" + "\\}", pcapiClient.escapeString(recordingId.toString()));
+  public ApiResponse<UserRecording> putUserrecordingWithHttpInfo(String recordingId, UserRecording body, List<String> expand) throws IOException {
+    return putUserrecording(createPutUserrecordingRequest(recordingId, body, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutUserrecordingRequest createPutUserrecordingRequest(String recordingId, UserRecording body, List<String> expand) {
+    return PutUserrecordingRequest.builder()
+            .withRecordingId(recordingId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
+            .withBody(body)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserRecording>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Update a user recording.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserRecording
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserRecording putUserrecording(PutUserrecordingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserRecording>() {});
+    try {
+      ApiResponse<UserRecording> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserRecording>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a user recording.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserRecording> putUserrecording(ApiRequest<UserRecording> request) throws IOException, ApiException {
-    return pcapiClient.<UserRecording>invokeAPIVerbose(request, new TypeReference<UserRecording>() {});
+  public ApiResponse<UserRecording> putUserrecording(ApiRequest<UserRecording> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserRecording>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserRecording> response = (ApiResponse<UserRecording>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserRecording> response = (ApiResponse<UserRecording>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

@@ -60,9 +60,6 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PatchConversationsEmailParticipantCommunicationRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String emailId;
 	public String getEmailId() {
 		return this.emailId;
@@ -219,6 +216,27 @@ public class PatchConversationsEmailParticipantCommunicationRequest {
 
 
 		public PatchConversationsEmailParticipantCommunicationRequest build() {
+            
+            // verify the required parameter 'emailId' is set
+            if (request.emailId == null) {
+                throw new IllegalStateException("Missing the required parameter 'emailId' when building request for PatchConversationsEmailParticipantCommunicationRequest.");
+            }
+            
+            // verify the required parameter 'participantId' is set
+            if (request.participantId == null) {
+                throw new IllegalStateException("Missing the required parameter 'participantId' when building request for PatchConversationsEmailParticipantCommunicationRequest.");
+            }
+            
+            // verify the required parameter 'communicationId' is set
+            if (request.communicationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'communicationId' when building request for PatchConversationsEmailParticipantCommunicationRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchConversationsEmailParticipantCommunicationRequest.");
+            }
+            
 			return request;
 		}
 	}

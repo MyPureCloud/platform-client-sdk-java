@@ -29,9 +29,6 @@ import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
 
 public class GetAuthorizationRolesRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -237,6 +234,7 @@ public class GetAuthorizationRolesRequest {
 
 
 		public GetAuthorizationRolesRequest build() {
+            
 			return request;
 		}
 	}

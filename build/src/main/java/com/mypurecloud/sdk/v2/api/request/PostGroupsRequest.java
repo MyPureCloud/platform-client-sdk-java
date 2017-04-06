@@ -30,9 +30,6 @@ import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupUpdate;
 
 public class PostGroupsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Group body;
 	public Group getBody() {
 		return this.body;
@@ -111,6 +108,12 @@ public class PostGroupsRequest {
 
 
 		public PostGroupsRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostGroupsRequest.");
+            }
+            
 			return request;
 		}
 	}

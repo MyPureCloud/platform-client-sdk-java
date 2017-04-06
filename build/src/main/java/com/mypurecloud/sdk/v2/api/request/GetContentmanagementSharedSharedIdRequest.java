@@ -50,9 +50,6 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class GetContentmanagementSharedSharedIdRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String sharedId;
 	public String getSharedId() {
 		return this.sharedId;
@@ -211,6 +208,12 @@ public class GetContentmanagementSharedSharedIdRequest {
 
 
 		public GetContentmanagementSharedSharedIdRequest build() {
+            
+            // verify the required parameter 'sharedId' is set
+            if (request.sharedId == null) {
+                throw new IllegalStateException("Missing the required parameter 'sharedId' when building request for GetContentmanagementSharedSharedIdRequest.");
+            }
+            
 			return request;
 		}
 	}

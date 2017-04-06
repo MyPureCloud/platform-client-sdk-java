@@ -55,9 +55,6 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PutOutboundCallanalysisresponsesetRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String callAnalysisSetId;
 	public String getCallAnalysisSetId() {
 		return this.callAnalysisSetId;
@@ -162,6 +159,17 @@ public class PutOutboundCallanalysisresponsesetRequest {
 
 
 		public PutOutboundCallanalysisresponsesetRequest build() {
+            
+            // verify the required parameter 'callAnalysisSetId' is set
+            if (request.callAnalysisSetId == null) {
+                throw new IllegalStateException("Missing the required parameter 'callAnalysisSetId' when building request for PutOutboundCallanalysisresponsesetRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutOutboundCallanalysisresponsesetRequest.");
+            }
+            
 			return request;
 		}
 	}

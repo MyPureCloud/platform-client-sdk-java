@@ -55,9 +55,6 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class DeleteOutboundCallanalysisresponsesetRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String callAnalysisSetId;
 	public String getCallAnalysisSetId() {
 		return this.callAnalysisSetId;
@@ -136,6 +133,12 @@ public class DeleteOutboundCallanalysisresponsesetRequest {
 
 
 		public DeleteOutboundCallanalysisresponsesetRequest build() {
+            
+            // verify the required parameter 'callAnalysisSetId' is set
+            if (request.callAnalysisSetId == null) {
+                throw new IllegalStateException("Missing the required parameter 'callAnalysisSetId' when building request for DeleteOutboundCallanalysisresponsesetRequest.");
+            }
+            
 			return request;
 		}
 	}

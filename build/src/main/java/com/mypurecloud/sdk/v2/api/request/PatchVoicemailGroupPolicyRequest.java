@@ -31,9 +31,6 @@ import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 public class PatchVoicemailGroupPolicyRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String groupId;
 	public String getGroupId() {
 		return this.groupId;
@@ -138,6 +135,17 @@ public class PatchVoicemailGroupPolicyRequest {
 
 
 		public PatchVoicemailGroupPolicyRequest build() {
+            
+            // verify the required parameter 'groupId' is set
+            if (request.groupId == null) {
+                throw new IllegalStateException("Missing the required parameter 'groupId' when building request for PatchVoicemailGroupPolicyRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchVoicemailGroupPolicyRequest.");
+            }
+            
 			return request;
 		}
 	}

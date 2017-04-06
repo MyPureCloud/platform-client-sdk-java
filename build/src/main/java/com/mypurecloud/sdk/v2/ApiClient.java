@@ -557,130 +557,13 @@ public class ApiClient implements AutoCloseable {
         }
     }
 
-    /**
-     * Invoke API by sending HTTP request with the given options.
-     *
-     * @param path         The sub-path of the HTTP URL
-     * @param method       The request method, one of "GET", "POST", "PUT", and "DELETE"
-     * @param queryParams  The query parameters
-     * @param body         The request body object - if it is not binary, otherwise null
-     * @param headerParams The header parameters
-     * @param formParams   The form parameters
-     * @param accept       The request's Accept header
-     * @param contentType  The request's Content-Type header
-     * @param authNames    The authentications to apply
-     * @return The response body in type of string
-     */
-    public <T> ApiResponse<T> invokeAPIVerbose(String path, String method, List<Pair> queryParams, Object body, Map<String, String> headerParams, Map<String, Object> formParams, String accept, String contentType, String[] authNames, TypeReference<T> returnType) throws ApiException, IOException {
-        return invokeAPIVerbose(new ApiRequestWrapper<>(path, method, queryParams, body, headerParams, formParams, accept, contentType, authNames), returnType);
+    public <T> ApiResponse<T> invoke(ApiRequest<?> request, TypeReference<T> returnType) throws ApiException, IOException {
+        return getAPIResponse(request, returnType);
     }
 
-    public <T> ApiResponse<T> invokeAPIVerbose(ApiRequest<?> request, TypeReference<T> returnType) throws ApiException, IOException {
-        try {
-            return getAPIResponse(request, returnType);
-        }
-        catch (ApiException exception) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<T> response = (ApiResponse<T>)exception;
-            return response;
-        }
-        catch (Throwable exception) {
-            if (shouldThrowErrors) {
-                if (exception instanceof IOException) {
-                    throw (IOException) exception;
-                }
-                throw new IOException("Failed to complete HTTP request.", exception);
-            }
-            return new ApiExceptionResponse<>(exception);
-        }
-    }
-
-    public <T> Future<ApiResponse<T>> invokeAPIVerboseAsync(ApiRequest<?> request, TypeReference<T> returnType, AsyncApiCallback<ApiResponse<T>> callback) {
+    public <T> Future<ApiResponse<T>> invokeAsync(ApiRequest<?> request, TypeReference<T> returnType, AsyncApiCallback<ApiResponse<T>> callback) {
         SettableFuture<ApiResponse<T>> future = SettableFuture.create();
-        getAPIResponseAsync(request, returnType, new AsyncApiCallback<ApiResponse<T>>() {
-            @Override
-            public void onCompleted(ApiResponse<T> response) {
-                notifySuccess(future, callback, response);
-            }
-
-            @Override
-            public void onFailed(Throwable exception) {
-                if (exception instanceof ApiException) {
-                    @SuppressWarnings("unchecked")
-                    ApiResponse<T> response = (ApiResponse<T>)exception;
-                    notifySuccess(future, callback, response);
-                }
-                else if (shouldThrowErrors) {
-                    notifyFailure(future, callback, exception);
-                }
-                else {
-                    notifySuccess(future, callback, new ApiExceptionResponse<>(exception));
-
-                }
-            }
-        });
-        return future;
-    }
-
-    /**
-     * Invoke API by sending HTTP request with the given options.
-     *
-     * @param path         The sub-path of the HTTP URL
-     * @param method       The request method, one of "GET", "POST", "PUT", and "DELETE"
-     * @param queryParams  The query parameters
-     * @param body         The request body object - if it is not binary, otherwise null
-     * @param headerParams The header parameters
-     * @param formParams   The form parameters
-     * @param accept       The request's Accept header
-     * @param contentType  The request's Content-Type header
-     * @param authNames    The authentications to apply
-     * @return The response body in type of string
-     */
-    public <T> T invokeAPI(String path, String method, List<Pair> queryParams, Object body, Map<String, String> headerParams, Map<String, Object> formParams, String accept, String contentType, String[] authNames, TypeReference<T> returnType) throws ApiException, IOException {
-        T response = null;
-        try {
-            response = invokeAPIVerbose(path, method, queryParams, body, headerParams, formParams, accept, contentType, authNames, returnType).getBody();
-            return response;
-        } catch (ApiException e) {
-            if (shouldThrowErrors)
-                throw e;
-            else
-                return response;
-        }
-    }
-
-    /**
-     * Invoke API by sending HTTP request with the given options.
-     *
-     * @param request The request object
-     * @return The response body in type of string
-     */
-    public <T> T invokeAPI(ApiRequest<?> request, TypeReference<T> returnType) throws ApiException, IOException {
-        T response = null;
-        try {
-            response = invokeAPIVerbose(request, returnType).getBody();
-            return response;
-        } catch (ApiException e) {
-            if (shouldThrowErrors)
-                throw e;
-            else
-                return response;
-        }
-    }
-
-    public <T> Future<T> invokeAPIAsync(ApiRequest<?> request, TypeReference<T> returnType, AsyncApiCallback<T> callback) {
-        SettableFuture<T> future = SettableFuture.create();
-        invokeAPIVerboseAsync(request, returnType, new AsyncApiCallback<ApiResponse<T>>() {
-            @Override
-            public void onCompleted(ApiResponse<T> response) {
-                notifySuccess(future, callback, response.getBody());
-            }
-
-            @Override
-            public void onFailed(Throwable exception) {
-                notifyFailure(future, callback, exception);
-            }
-        });
+        getAPIResponseAsync(request, returnType, callback);
         return future;
     }
 
@@ -998,62 +881,6 @@ public class ApiClient implements AutoCloseable {
         @Override
         public String getCorrelationId() {
             return headers.get("ININ-Correlation-ID");
-        }
-
-        @Override
-        public void close() throws Exception { }
-    }
-
-    private static class ApiExceptionResponse<T> implements ApiResponse<T> {
-        private final Exception exception;
-
-        public ApiExceptionResponse(Throwable exception) {
-            this.exception = (exception instanceof Exception) ? (Exception)exception : new RuntimeException(exception);
-        }
-
-        @Override
-        public Exception getException() {
-            return exception;
-        }
-
-        @Override
-        public Integer getStatusCode() {
-            return 500;
-        }
-
-        @Override
-        public String getStatusReasonPhrase() {
-            return exception.getMessage();
-        }
-
-        @Override
-        public boolean hasRawBody() {
-            return false;
-        }
-
-        @Override
-        public String getRawBody() {
-            return "";
-        }
-
-        @Override
-        public T getBody() {
-            return null;
-        }
-
-        @Override
-        public Map<String, String> getHeaders() {
-            return Collections.emptyMap();
-        }
-
-        @Override
-        public String getHeader(String key) {
-            return "";
-        }
-
-        @Override
-        public String getCorrelationId() {
-            return "";
         }
 
         @Override

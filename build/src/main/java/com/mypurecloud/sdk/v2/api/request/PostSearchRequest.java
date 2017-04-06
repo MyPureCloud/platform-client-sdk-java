@@ -24,9 +24,6 @@ import com.mypurecloud.sdk.v2.model.SearchRequest;
 import com.mypurecloud.sdk.v2.model.SuggestSearchRequest;
 
 public class PostSearchRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private SearchRequest body;
 	public SearchRequest getBody() {
 		return this.body;
@@ -125,6 +122,12 @@ public class PostSearchRequest {
 
 
 		public PostSearchRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostSearchRequest.");
+            }
+            
 			return request;
 		}
 	}

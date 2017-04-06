@@ -45,71 +45,74 @@ public class AttributesApi {
    * Delete an existing Attribute.
    * This will remove attribute.
    * @param attributeId Attribute ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteAttribute(String attributeId) throws IOException, ApiException {
-    deleteAttributeWithHttpInfo(attributeId);
+     deleteAttribute(createDeleteAttributeRequest(attributeId));
   }
 
   /**
    * Delete an existing Attribute.
    * This will remove attribute.
    * @param attributeId Attribute ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAttributeWithHttpInfo(String attributeId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'attributeId' is set
-    if (attributeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'attributeId' when calling deleteAttribute");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/attributes/{attributeId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "attributeId" + "\\}", pcapiClient.escapeString(attributeId.toString()));
+  public ApiResponse<Void> deleteAttributeWithHttpInfo(String attributeId) throws IOException {
+    return deleteAttribute(createDeleteAttributeRequest(attributeId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteAttributeRequest createDeleteAttributeRequest(String attributeId) {
+    return DeleteAttributeRequest.builder()
+            .withAttributeId(attributeId)
+            .build();
   }
 
   /**
    * Delete an existing Attribute.
    * This will remove attribute.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteAttribute(DeleteAttributeRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete an existing Attribute.
    * This will remove attribute.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAttribute(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteAttribute(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -117,10 +120,11 @@ public class AttributesApi {
    * 
    * @param attributeId Attribute ID (required)
    * @return Attribute
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Attribute getAttribute(String attributeId) throws IOException, ApiException {
-    return getAttributeWithHttpInfo(attributeId).getBody();
+    return  getAttribute(createGetAttributeRequest(attributeId));
   }
 
   /**
@@ -128,61 +132,64 @@ public class AttributesApi {
    * 
    * @param attributeId Attribute ID (required)
    * @return Attribute
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Attribute> getAttributeWithHttpInfo(String attributeId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'attributeId' is set
-    if (attributeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'attributeId' when calling getAttribute");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/attributes/{attributeId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "attributeId" + "\\}", pcapiClient.escapeString(attributeId.toString()));
+  public ApiResponse<Attribute> getAttributeWithHttpInfo(String attributeId) throws IOException {
+    return getAttribute(createGetAttributeRequest(attributeId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Attribute>() {});
+  private GetAttributeRequest createGetAttributeRequest(String attributeId) {
+    return GetAttributeRequest.builder()
+            .withAttributeId(attributeId)
+            .build();
   }
 
   /**
    * Get details about an existing attribute.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Attribute
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Attribute getAttribute(GetAttributeRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Attribute>() {});
+    try {
+      ApiResponse<Attribute> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Attribute>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get details about an existing attribute.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Attribute> getAttribute(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Attribute>invokeAPIVerbose(request, new TypeReference<Attribute>() {});
+  public ApiResponse<Attribute> getAttribute(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Attribute>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Attribute> response = (ApiResponse<Attribute>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Attribute> response = (ApiResponse<Attribute>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -191,10 +198,11 @@ public class AttributesApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @return AttributeEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AttributeEntityListing getAttributes(Integer pageNumber, Integer pageSize) throws IOException, ApiException {
-    return getAttributesWithHttpInfo(pageNumber, pageSize).getBody();
+    return  getAttributes(createGetAttributesRequest(pageNumber, pageSize));
   }
 
   /**
@@ -203,57 +211,66 @@ public class AttributesApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @return AttributeEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AttributeEntityListing> getAttributesWithHttpInfo(Integer pageNumber, Integer pageSize) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/attributes".replaceAll("\\{format\\}","json");
+  public ApiResponse<AttributeEntityListing> getAttributesWithHttpInfo(Integer pageNumber, Integer pageSize) throws IOException {
+    return getAttributes(createGetAttributesRequest(pageNumber, pageSize).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetAttributesRequest createGetAttributesRequest(Integer pageNumber, Integer pageSize) {
+    return GetAttributesRequest.builder()
+            .withPageNumber(pageNumber)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<AttributeEntityListing>() {});
+            .withPageSize(pageSize)
+            .build();
   }
 
   /**
    * Gets a list of existing attributes.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return AttributeEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AttributeEntityListing getAttributes(GetAttributesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AttributeEntityListing>() {});
+    try {
+      ApiResponse<AttributeEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AttributeEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Gets a list of existing attributes.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AttributeEntityListing> getAttributes(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<AttributeEntityListing>invokeAPIVerbose(request, new TypeReference<AttributeEntityListing>() {});
+  public ApiResponse<AttributeEntityListing> getAttributes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AttributeEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AttributeEntityListing> response = (ApiResponse<AttributeEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AttributeEntityListing> response = (ApiResponse<AttributeEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -261,10 +278,11 @@ public class AttributesApi {
    * 
    * @param body Attribute (required)
    * @return Attribute
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Attribute postAttributes(Attribute body) throws IOException, ApiException {
-    return postAttributesWithHttpInfo(body).getBody();
+    return  postAttributes(createPostAttributesRequest(body));
   }
 
   /**
@@ -272,60 +290,64 @@ public class AttributesApi {
    * 
    * @param body Attribute (required)
    * @return Attribute
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Attribute> postAttributesWithHttpInfo(Attribute body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAttributes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/attributes".replaceAll("\\{format\\}","json");
+  public ApiResponse<Attribute> postAttributesWithHttpInfo(Attribute body) throws IOException {
+    return postAttributes(createPostAttributesRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Attribute>() {});
+  private PostAttributesRequest createPostAttributesRequest(Attribute body) {
+    return PostAttributesRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create an attribute.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Attribute
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Attribute postAttributes(PostAttributesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Attribute>() {});
+    try {
+      ApiResponse<Attribute> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Attribute>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create an attribute.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Attribute> postAttributes(ApiRequest<Attribute> request) throws IOException, ApiException {
-    return pcapiClient.<Attribute>invokeAPIVerbose(request, new TypeReference<Attribute>() {});
+  public ApiResponse<Attribute> postAttributes(ApiRequest<Attribute> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Attribute>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Attribute> response = (ApiResponse<Attribute>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Attribute> response = (ApiResponse<Attribute>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -333,10 +355,11 @@ public class AttributesApi {
    * 
    * @param body query (required)
    * @return AttributeEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AttributeEntityListing postAttributesQuery(AttributeQueryRequest body) throws IOException, ApiException {
-    return postAttributesQueryWithHttpInfo(body).getBody();
+    return  postAttributesQuery(createPostAttributesQueryRequest(body));
   }
 
   /**
@@ -344,60 +367,64 @@ public class AttributesApi {
    * 
    * @param body query (required)
    * @return AttributeEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AttributeEntityListing> postAttributesQueryWithHttpInfo(AttributeQueryRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAttributesQuery");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/attributes/query".replaceAll("\\{format\\}","json");
+  public ApiResponse<AttributeEntityListing> postAttributesQueryWithHttpInfo(AttributeQueryRequest body) throws IOException {
+    return postAttributesQuery(createPostAttributesQueryRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<AttributeEntityListing>() {});
+  private PostAttributesQueryRequest createPostAttributesQueryRequest(AttributeQueryRequest body) {
+    return PostAttributesQueryRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Query attributes
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return AttributeEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AttributeEntityListing postAttributesQuery(PostAttributesQueryRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AttributeEntityListing>() {});
+    try {
+      ApiResponse<AttributeEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AttributeEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query attributes
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AttributeEntityListing> postAttributesQuery(ApiRequest<AttributeQueryRequest> request) throws IOException, ApiException {
-    return pcapiClient.<AttributeEntityListing>invokeAPIVerbose(request, new TypeReference<AttributeEntityListing>() {});
+  public ApiResponse<AttributeEntityListing> postAttributesQuery(ApiRequest<AttributeQueryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AttributeEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AttributeEntityListing> response = (ApiResponse<AttributeEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AttributeEntityListing> response = (ApiResponse<AttributeEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -406,10 +433,11 @@ public class AttributesApi {
    * @param attributeId Attribute ID (required)
    * @param body Attribute (required)
    * @return Attribute
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Attribute putAttribute(String attributeId, Attribute body) throws IOException, ApiException {
-    return putAttributeWithHttpInfo(attributeId, body).getBody();
+    return  putAttribute(createPutAttributeRequest(attributeId, body));
   }
 
   /**
@@ -418,66 +446,66 @@ public class AttributesApi {
    * @param attributeId Attribute ID (required)
    * @param body Attribute (required)
    * @return Attribute
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Attribute> putAttributeWithHttpInfo(String attributeId, Attribute body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'attributeId' is set
-    if (attributeId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'attributeId' when calling putAttribute");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putAttribute");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/attributes/{attributeId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "attributeId" + "\\}", pcapiClient.escapeString(attributeId.toString()));
+  public ApiResponse<Attribute> putAttributeWithHttpInfo(String attributeId, Attribute body) throws IOException {
+    return putAttribute(createPutAttributeRequest(attributeId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutAttributeRequest createPutAttributeRequest(String attributeId, Attribute body) {
+    return PutAttributeRequest.builder()
+            .withAttributeId(attributeId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Attribute>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update an existing attribute.
    * Fields that can be updated: name, description. The most recent version is required for updates.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Attribute
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Attribute putAttribute(PutAttributeRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Attribute>() {});
+    try {
+      ApiResponse<Attribute> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Attribute>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update an existing attribute.
    * Fields that can be updated: name, description. The most recent version is required for updates.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Attribute> putAttribute(ApiRequest<Attribute> request) throws IOException, ApiException {
-    return pcapiClient.<Attribute>invokeAPIVerbose(request, new TypeReference<Attribute>() {});
+  public ApiResponse<Attribute> putAttribute(ApiRequest<Attribute> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Attribute>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Attribute> response = (ApiResponse<Attribute>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Attribute> response = (ApiResponse<Attribute>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

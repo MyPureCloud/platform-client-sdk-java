@@ -147,10 +147,11 @@ public class OutboundApi {
    * 
    * @param attemptLimitsId Attempt limits ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundAttemptlimit(String attemptLimitsId) throws IOException, ApiException {
-    return deleteOutboundAttemptlimitWithHttpInfo(attemptLimitsId).getBody();
+    return  deleteOutboundAttemptlimit(createDeleteOutboundAttemptlimitRequest(attemptLimitsId));
   }
 
   /**
@@ -158,61 +159,64 @@ public class OutboundApi {
    * 
    * @param attemptLimitsId Attempt limits ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundAttemptlimitWithHttpInfo(String attemptLimitsId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'attemptLimitsId' is set
-    if (attemptLimitsId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'attemptLimitsId' when calling deleteOutboundAttemptlimit");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/attemptlimits/{attemptLimitsId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "attemptLimitsId" + "\\}", pcapiClient.escapeString(attemptLimitsId.toString()));
+  public ApiResponse<String> deleteOutboundAttemptlimitWithHttpInfo(String attemptLimitsId) throws IOException {
+    return deleteOutboundAttemptlimit(createDeleteOutboundAttemptlimitRequest(attemptLimitsId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteOutboundAttemptlimitRequest createDeleteOutboundAttemptlimitRequest(String attemptLimitsId) {
+    return DeleteOutboundAttemptlimitRequest.builder()
+            .withAttemptLimitsId(attemptLimitsId)
+            .build();
   }
 
   /**
    * Delete attempt limits
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundAttemptlimit(DeleteOutboundAttemptlimitRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete attempt limits
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundAttemptlimit(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteOutboundAttemptlimit(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -220,10 +224,11 @@ public class OutboundApi {
    * 
    * @param callableTimeSetId Callable Time Set ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundCallabletimeset(String callableTimeSetId) throws IOException, ApiException {
-    return deleteOutboundCallabletimesetWithHttpInfo(callableTimeSetId).getBody();
+    return  deleteOutboundCallabletimeset(createDeleteOutboundCallabletimesetRequest(callableTimeSetId));
   }
 
   /**
@@ -231,61 +236,64 @@ public class OutboundApi {
    * 
    * @param callableTimeSetId Callable Time Set ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundCallabletimesetWithHttpInfo(String callableTimeSetId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'callableTimeSetId' is set
-    if (callableTimeSetId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callableTimeSetId' when calling deleteOutboundCallabletimeset");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/callabletimesets/{callableTimeSetId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callableTimeSetId" + "\\}", pcapiClient.escapeString(callableTimeSetId.toString()));
+  public ApiResponse<String> deleteOutboundCallabletimesetWithHttpInfo(String callableTimeSetId) throws IOException {
+    return deleteOutboundCallabletimeset(createDeleteOutboundCallabletimesetRequest(callableTimeSetId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteOutboundCallabletimesetRequest createDeleteOutboundCallabletimesetRequest(String callableTimeSetId) {
+    return DeleteOutboundCallabletimesetRequest.builder()
+            .withCallableTimeSetId(callableTimeSetId)
+            .build();
   }
 
   /**
    * Delete callable time set
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundCallabletimeset(DeleteOutboundCallabletimesetRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete callable time set
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundCallabletimeset(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteOutboundCallabletimeset(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -293,10 +301,11 @@ public class OutboundApi {
    * 
    * @param callAnalysisSetId Call Analysis Response Set ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundCallanalysisresponseset(String callAnalysisSetId) throws IOException, ApiException {
-    return deleteOutboundCallanalysisresponsesetWithHttpInfo(callAnalysisSetId).getBody();
+    return  deleteOutboundCallanalysisresponseset(createDeleteOutboundCallanalysisresponsesetRequest(callAnalysisSetId));
   }
 
   /**
@@ -304,61 +313,64 @@ public class OutboundApi {
    * 
    * @param callAnalysisSetId Call Analysis Response Set ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundCallanalysisresponsesetWithHttpInfo(String callAnalysisSetId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'callAnalysisSetId' is set
-    if (callAnalysisSetId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callAnalysisSetId' when calling deleteOutboundCallanalysisresponseset");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callAnalysisSetId" + "\\}", pcapiClient.escapeString(callAnalysisSetId.toString()));
+  public ApiResponse<String> deleteOutboundCallanalysisresponsesetWithHttpInfo(String callAnalysisSetId) throws IOException {
+    return deleteOutboundCallanalysisresponseset(createDeleteOutboundCallanalysisresponsesetRequest(callAnalysisSetId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteOutboundCallanalysisresponsesetRequest createDeleteOutboundCallanalysisresponsesetRequest(String callAnalysisSetId) {
+    return DeleteOutboundCallanalysisresponsesetRequest.builder()
+            .withCallAnalysisSetId(callAnalysisSetId)
+            .build();
   }
 
   /**
    * Delete a dialer call analysis response set.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundCallanalysisresponseset(DeleteOutboundCallanalysisresponsesetRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete a dialer call analysis response set.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundCallanalysisresponseset(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteOutboundCallanalysisresponseset(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -366,10 +378,11 @@ public class OutboundApi {
    * 
    * @param campaignId Campaign ID (required)
    * @return Campaign
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Campaign deleteOutboundCampaign(String campaignId) throws IOException, ApiException {
-    return deleteOutboundCampaignWithHttpInfo(campaignId).getBody();
+    return  deleteOutboundCampaign(createDeleteOutboundCampaignRequest(campaignId));
   }
 
   /**
@@ -377,132 +390,138 @@ public class OutboundApi {
    * 
    * @param campaignId Campaign ID (required)
    * @return Campaign
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Campaign> deleteOutboundCampaignWithHttpInfo(String campaignId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'campaignId' is set
-    if (campaignId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling deleteOutboundCampaign");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/campaigns/{campaignId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "campaignId" + "\\}", pcapiClient.escapeString(campaignId.toString()));
+  public ApiResponse<Campaign> deleteOutboundCampaignWithHttpInfo(String campaignId) throws IOException {
+    return deleteOutboundCampaign(createDeleteOutboundCampaignRequest(campaignId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Campaign>() {});
+  private DeleteOutboundCampaignRequest createDeleteOutboundCampaignRequest(String campaignId) {
+    return DeleteOutboundCampaignRequest.builder()
+            .withCampaignId(campaignId)
+            .build();
   }
 
   /**
    * Delete a campaign.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Campaign
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Campaign deleteOutboundCampaign(DeleteOutboundCampaignRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Campaign>() {});
+    try {
+      ApiResponse<Campaign> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Campaign>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete a campaign.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Campaign> deleteOutboundCampaign(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Campaign>invokeAPIVerbose(request, new TypeReference<Campaign>() {});
+  public ApiResponse<Campaign> deleteOutboundCampaign(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Campaign>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Campaign> response = (ApiResponse<Campaign>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Campaign> response = (ApiResponse<Campaign>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Reset campaign progress and recycle the campaign
    * 
    * @param campaignId Campaign ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteOutboundCampaignProgress(String campaignId) throws IOException, ApiException {
-    deleteOutboundCampaignProgressWithHttpInfo(campaignId);
+     deleteOutboundCampaignProgress(createDeleteOutboundCampaignProgressRequest(campaignId));
   }
 
   /**
    * Reset campaign progress and recycle the campaign
    * 
    * @param campaignId Campaign ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteOutboundCampaignProgressWithHttpInfo(String campaignId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'campaignId' is set
-    if (campaignId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling deleteOutboundCampaignProgress");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/campaigns/{campaignId}/progress".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "campaignId" + "\\}", pcapiClient.escapeString(campaignId.toString()));
+  public ApiResponse<Void> deleteOutboundCampaignProgressWithHttpInfo(String campaignId) throws IOException {
+    return deleteOutboundCampaignProgress(createDeleteOutboundCampaignProgressRequest(campaignId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteOutboundCampaignProgressRequest createDeleteOutboundCampaignProgressRequest(String campaignId) {
+    return DeleteOutboundCampaignProgressRequest.builder()
+            .withCampaignId(campaignId)
+            .build();
   }
 
   /**
    * Reset campaign progress and recycle the campaign
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteOutboundCampaignProgress(DeleteOutboundCampaignProgressRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Reset campaign progress and recycle the campaign
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteOutboundCampaignProgress(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteOutboundCampaignProgress(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -510,10 +529,11 @@ public class OutboundApi {
    * 
    * @param campaignRuleId Campaign Rule ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundCampaignrule(String campaignRuleId) throws IOException, ApiException {
-    return deleteOutboundCampaignruleWithHttpInfo(campaignRuleId).getBody();
+    return  deleteOutboundCampaignrule(createDeleteOutboundCampaignruleRequest(campaignRuleId));
   }
 
   /**
@@ -521,61 +541,64 @@ public class OutboundApi {
    * 
    * @param campaignRuleId Campaign Rule ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundCampaignruleWithHttpInfo(String campaignRuleId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'campaignRuleId' is set
-    if (campaignRuleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'campaignRuleId' when calling deleteOutboundCampaignrule");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/campaignrules/{campaignRuleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "campaignRuleId" + "\\}", pcapiClient.escapeString(campaignRuleId.toString()));
+  public ApiResponse<String> deleteOutboundCampaignruleWithHttpInfo(String campaignRuleId) throws IOException {
+    return deleteOutboundCampaignrule(createDeleteOutboundCampaignruleRequest(campaignRuleId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteOutboundCampaignruleRequest createDeleteOutboundCampaignruleRequest(String campaignRuleId) {
+    return DeleteOutboundCampaignruleRequest.builder()
+            .withCampaignRuleId(campaignRuleId)
+            .build();
   }
 
   /**
    * Delete Campaign Rule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundCampaignrule(DeleteOutboundCampaignruleRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete Campaign Rule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundCampaignrule(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteOutboundCampaignrule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -583,10 +606,11 @@ public class OutboundApi {
    * 
    * @param contactListId ContactList ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundContactlist(String contactListId) throws IOException, ApiException {
-    return deleteOutboundContactlistWithHttpInfo(contactListId).getBody();
+    return  deleteOutboundContactlist(createDeleteOutboundContactlistRequest(contactListId));
   }
 
   /**
@@ -594,61 +618,64 @@ public class OutboundApi {
    * 
    * @param contactListId ContactList ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundContactlistWithHttpInfo(String contactListId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'contactListId' is set
-    if (contactListId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactListId' when calling deleteOutboundContactlist");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/contactlists/{contactListId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "contactListId" + "\\}", pcapiClient.escapeString(contactListId.toString()));
+  public ApiResponse<String> deleteOutboundContactlistWithHttpInfo(String contactListId) throws IOException {
+    return deleteOutboundContactlist(createDeleteOutboundContactlistRequest(contactListId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteOutboundContactlistRequest createDeleteOutboundContactlistRequest(String contactListId) {
+    return DeleteOutboundContactlistRequest.builder()
+            .withContactListId(contactListId)
+            .build();
   }
 
   /**
    * Delete a contact list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundContactlist(DeleteOutboundContactlistRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete a contact list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundContactlist(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteOutboundContactlist(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -657,10 +684,11 @@ public class OutboundApi {
    * @param contactListId Contact List ID (required)
    * @param contactId Contact ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundContactlistContact(String contactListId, String contactId) throws IOException, ApiException {
-    return deleteOutboundContactlistContactWithHttpInfo(contactListId, contactId).getBody();
+    return  deleteOutboundContactlistContact(createDeleteOutboundContactlistContactRequest(contactListId, contactId));
   }
 
   /**
@@ -669,67 +697,66 @@ public class OutboundApi {
    * @param contactListId Contact List ID (required)
    * @param contactId Contact ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundContactlistContactWithHttpInfo(String contactListId, String contactId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'contactListId' is set
-    if (contactListId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactListId' when calling deleteOutboundContactlistContact");
-    }
-    
-    // verify the required parameter 'contactId' is set
-    if (contactId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling deleteOutboundContactlistContact");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "contactListId" + "\\}", pcapiClient.escapeString(contactListId.toString()))
-      .replaceAll("\\{" + "contactId" + "\\}", pcapiClient.escapeString(contactId.toString()));
+  public ApiResponse<String> deleteOutboundContactlistContactWithHttpInfo(String contactListId, String contactId) throws IOException {
+    return deleteOutboundContactlistContact(createDeleteOutboundContactlistContactRequest(contactListId, contactId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private DeleteOutboundContactlistContactRequest createDeleteOutboundContactlistContactRequest(String contactListId, String contactId) {
+    return DeleteOutboundContactlistContactRequest.builder()
+            .withContactListId(contactListId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+            .withContactId(contactId)
+            .build();
   }
 
   /**
    * Delete a contact.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundContactlistContact(DeleteOutboundContactlistContactRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete a contact.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundContactlistContact(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteOutboundContactlistContact(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -737,10 +764,11 @@ public class OutboundApi {
    * 
    * @param dncListId DncList ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundDnclist(String dncListId) throws IOException, ApiException {
-    return deleteOutboundDnclistWithHttpInfo(dncListId).getBody();
+    return  deleteOutboundDnclist(createDeleteOutboundDnclistRequest(dncListId));
   }
 
   /**
@@ -748,61 +776,64 @@ public class OutboundApi {
    * 
    * @param dncListId DncList ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundDnclistWithHttpInfo(String dncListId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'dncListId' is set
-    if (dncListId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'dncListId' when calling deleteOutboundDnclist");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/dnclists/{dncListId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "dncListId" + "\\}", pcapiClient.escapeString(dncListId.toString()));
+  public ApiResponse<String> deleteOutboundDnclistWithHttpInfo(String dncListId) throws IOException {
+    return deleteOutboundDnclist(createDeleteOutboundDnclistRequest(dncListId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteOutboundDnclistRequest createDeleteOutboundDnclistRequest(String dncListId) {
+    return DeleteOutboundDnclistRequest.builder()
+            .withDncListId(dncListId)
+            .build();
   }
 
   /**
    * Delete dialer DNC list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundDnclist(DeleteOutboundDnclistRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete dialer DNC list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundDnclist(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteOutboundDnclist(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -810,10 +841,11 @@ public class OutboundApi {
    * 
    * @param ruleSetId Rule Set ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundRuleset(String ruleSetId) throws IOException, ApiException {
-    return deleteOutboundRulesetWithHttpInfo(ruleSetId).getBody();
+    return  deleteOutboundRuleset(createDeleteOutboundRulesetRequest(ruleSetId));
   }
 
   /**
@@ -821,61 +853,64 @@ public class OutboundApi {
    * 
    * @param ruleSetId Rule Set ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundRulesetWithHttpInfo(String ruleSetId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'ruleSetId' is set
-    if (ruleSetId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'ruleSetId' when calling deleteOutboundRuleset");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/rulesets/{ruleSetId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "ruleSetId" + "\\}", pcapiClient.escapeString(ruleSetId.toString()));
+  public ApiResponse<String> deleteOutboundRulesetWithHttpInfo(String ruleSetId) throws IOException {
+    return deleteOutboundRuleset(createDeleteOutboundRulesetRequest(ruleSetId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteOutboundRulesetRequest createDeleteOutboundRulesetRequest(String ruleSetId) {
+    return DeleteOutboundRulesetRequest.builder()
+            .withRuleSetId(ruleSetId)
+            .build();
   }
 
   /**
    * Delete a Rule set.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundRuleset(DeleteOutboundRulesetRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete a Rule set.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundRuleset(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteOutboundRuleset(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -883,10 +918,11 @@ public class OutboundApi {
    * 
    * @param campaignId Campaign ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundSchedulesCampaign(String campaignId) throws IOException, ApiException {
-    return deleteOutboundSchedulesCampaignWithHttpInfo(campaignId).getBody();
+    return  deleteOutboundSchedulesCampaign(createDeleteOutboundSchedulesCampaignRequest(campaignId));
   }
 
   /**
@@ -894,61 +930,64 @@ public class OutboundApi {
    * 
    * @param campaignId Campaign ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundSchedulesCampaignWithHttpInfo(String campaignId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'campaignId' is set
-    if (campaignId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling deleteOutboundSchedulesCampaign");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/schedules/campaigns/{campaignId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "campaignId" + "\\}", pcapiClient.escapeString(campaignId.toString()));
+  public ApiResponse<String> deleteOutboundSchedulesCampaignWithHttpInfo(String campaignId) throws IOException {
+    return deleteOutboundSchedulesCampaign(createDeleteOutboundSchedulesCampaignRequest(campaignId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteOutboundSchedulesCampaignRequest createDeleteOutboundSchedulesCampaignRequest(String campaignId) {
+    return DeleteOutboundSchedulesCampaignRequest.builder()
+            .withCampaignId(campaignId)
+            .build();
   }
 
   /**
    * Delete a dialer campaign schedule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundSchedulesCampaign(DeleteOutboundSchedulesCampaignRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete a dialer campaign schedule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundSchedulesCampaign(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteOutboundSchedulesCampaign(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -956,10 +995,11 @@ public class OutboundApi {
    * 
    * @param sequenceId Sequence ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundSchedulesSequence(String sequenceId) throws IOException, ApiException {
-    return deleteOutboundSchedulesSequenceWithHttpInfo(sequenceId).getBody();
+    return  deleteOutboundSchedulesSequence(createDeleteOutboundSchedulesSequenceRequest(sequenceId));
   }
 
   /**
@@ -967,61 +1007,64 @@ public class OutboundApi {
    * 
    * @param sequenceId Sequence ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundSchedulesSequenceWithHttpInfo(String sequenceId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'sequenceId' is set
-    if (sequenceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'sequenceId' when calling deleteOutboundSchedulesSequence");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/schedules/sequences/{sequenceId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "sequenceId" + "\\}", pcapiClient.escapeString(sequenceId.toString()));
+  public ApiResponse<String> deleteOutboundSchedulesSequenceWithHttpInfo(String sequenceId) throws IOException {
+    return deleteOutboundSchedulesSequence(createDeleteOutboundSchedulesSequenceRequest(sequenceId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteOutboundSchedulesSequenceRequest createDeleteOutboundSchedulesSequenceRequest(String sequenceId) {
+    return DeleteOutboundSchedulesSequenceRequest.builder()
+            .withSequenceId(sequenceId)
+            .build();
   }
 
   /**
    * Delete a dialer sequence schedule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundSchedulesSequence(DeleteOutboundSchedulesSequenceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete a dialer sequence schedule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundSchedulesSequence(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteOutboundSchedulesSequence(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1029,10 +1072,11 @@ public class OutboundApi {
    * 
    * @param sequenceId Campaign Sequence ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundSequence(String sequenceId) throws IOException, ApiException {
-    return deleteOutboundSequenceWithHttpInfo(sequenceId).getBody();
+    return  deleteOutboundSequence(createDeleteOutboundSequenceRequest(sequenceId));
   }
 
   /**
@@ -1040,61 +1084,64 @@ public class OutboundApi {
    * 
    * @param sequenceId Campaign Sequence ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundSequenceWithHttpInfo(String sequenceId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'sequenceId' is set
-    if (sequenceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'sequenceId' when calling deleteOutboundSequence");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/sequences/{sequenceId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "sequenceId" + "\\}", pcapiClient.escapeString(sequenceId.toString()));
+  public ApiResponse<String> deleteOutboundSequenceWithHttpInfo(String sequenceId) throws IOException {
+    return deleteOutboundSequence(createDeleteOutboundSequenceRequest(sequenceId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteOutboundSequenceRequest createDeleteOutboundSequenceRequest(String sequenceId) {
+    return DeleteOutboundSequenceRequest.builder()
+            .withSequenceId(sequenceId)
+            .build();
   }
 
   /**
    * Delete a dialer campaign sequence.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteOutboundSequence(DeleteOutboundSequenceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete a dialer campaign sequence.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundSequence(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteOutboundSequence(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1102,10 +1149,11 @@ public class OutboundApi {
    * 
    * @param attemptLimitsId Attempt limits ID (required)
    * @return AttemptLimits
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AttemptLimits getOutboundAttemptlimit(String attemptLimitsId) throws IOException, ApiException {
-    return getOutboundAttemptlimitWithHttpInfo(attemptLimitsId).getBody();
+    return  getOutboundAttemptlimit(createGetOutboundAttemptlimitRequest(attemptLimitsId));
   }
 
   /**
@@ -1113,61 +1161,64 @@ public class OutboundApi {
    * 
    * @param attemptLimitsId Attempt limits ID (required)
    * @return AttemptLimits
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AttemptLimits> getOutboundAttemptlimitWithHttpInfo(String attemptLimitsId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'attemptLimitsId' is set
-    if (attemptLimitsId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'attemptLimitsId' when calling getOutboundAttemptlimit");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/attemptlimits/{attemptLimitsId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "attemptLimitsId" + "\\}", pcapiClient.escapeString(attemptLimitsId.toString()));
+  public ApiResponse<AttemptLimits> getOutboundAttemptlimitWithHttpInfo(String attemptLimitsId) throws IOException {
+    return getOutboundAttemptlimit(createGetOutboundAttemptlimitRequest(attemptLimitsId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<AttemptLimits>() {});
+  private GetOutboundAttemptlimitRequest createGetOutboundAttemptlimitRequest(String attemptLimitsId) {
+    return GetOutboundAttemptlimitRequest.builder()
+            .withAttemptLimitsId(attemptLimitsId)
+            .build();
   }
 
   /**
    * Get attempt limits
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return AttemptLimits
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AttemptLimits getOutboundAttemptlimit(GetOutboundAttemptlimitRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AttemptLimits>() {});
+    try {
+      ApiResponse<AttemptLimits> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AttemptLimits>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get attempt limits
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AttemptLimits> getOutboundAttemptlimit(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<AttemptLimits>invokeAPIVerbose(request, new TypeReference<AttemptLimits>() {});
+  public ApiResponse<AttemptLimits> getOutboundAttemptlimit(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AttemptLimits>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AttemptLimits> response = (ApiResponse<AttemptLimits>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AttemptLimits> response = (ApiResponse<AttemptLimits>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1180,10 +1231,11 @@ public class OutboundApi {
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return AttemptLimitsEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AttemptLimitsEntityListing getOutboundAttemptlimits(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    return getOutboundAttemptlimitsWithHttpInfo(pageSize, pageNumber, filterType, name, sortBy, sortOrder).getBody();
+    return  getOutboundAttemptlimits(createGetOutboundAttemptlimitsRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder));
   }
 
   /**
@@ -1196,61 +1248,74 @@ public class OutboundApi {
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return AttemptLimitsEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AttemptLimitsEntityListing> getOutboundAttemptlimitsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/attemptlimits".replaceAll("\\{format\\}","json");
+  public ApiResponse<AttemptLimitsEntityListing> getOutboundAttemptlimitsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException {
+    return getOutboundAttemptlimits(createGetOutboundAttemptlimitsRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetOutboundAttemptlimitsRequest createGetOutboundAttemptlimitsRequest(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) {
+    return GetOutboundAttemptlimitsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "filterType", filterType));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withFilterType(filterType)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withName(name)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withSortBy(sortBy)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<AttemptLimitsEntityListing>() {});
+            .withSortOrder(sortOrder)
+            .build();
   }
 
   /**
    * Query attempt limits list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return AttemptLimitsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AttemptLimitsEntityListing getOutboundAttemptlimits(GetOutboundAttemptlimitsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AttemptLimitsEntityListing>() {});
+    try {
+      ApiResponse<AttemptLimitsEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AttemptLimitsEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query attempt limits list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AttemptLimitsEntityListing> getOutboundAttemptlimits(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<AttemptLimitsEntityListing>invokeAPIVerbose(request, new TypeReference<AttemptLimitsEntityListing>() {});
+  public ApiResponse<AttemptLimitsEntityListing> getOutboundAttemptlimits(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AttemptLimitsEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AttemptLimitsEntityListing> response = (ApiResponse<AttemptLimitsEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AttemptLimitsEntityListing> response = (ApiResponse<AttemptLimitsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1258,10 +1323,11 @@ public class OutboundApi {
    * 
    * @param callableTimeSetId Callable Time Set ID (required)
    * @return CallableTimeSet
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallableTimeSet getOutboundCallabletimeset(String callableTimeSetId) throws IOException, ApiException {
-    return getOutboundCallabletimesetWithHttpInfo(callableTimeSetId).getBody();
+    return  getOutboundCallabletimeset(createGetOutboundCallabletimesetRequest(callableTimeSetId));
   }
 
   /**
@@ -1269,61 +1335,64 @@ public class OutboundApi {
    * 
    * @param callableTimeSetId Callable Time Set ID (required)
    * @return CallableTimeSet
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallableTimeSet> getOutboundCallabletimesetWithHttpInfo(String callableTimeSetId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'callableTimeSetId' is set
-    if (callableTimeSetId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callableTimeSetId' when calling getOutboundCallabletimeset");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/callabletimesets/{callableTimeSetId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callableTimeSetId" + "\\}", pcapiClient.escapeString(callableTimeSetId.toString()));
+  public ApiResponse<CallableTimeSet> getOutboundCallabletimesetWithHttpInfo(String callableTimeSetId) throws IOException {
+    return getOutboundCallabletimeset(createGetOutboundCallabletimesetRequest(callableTimeSetId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CallableTimeSet>() {});
+  private GetOutboundCallabletimesetRequest createGetOutboundCallabletimesetRequest(String callableTimeSetId) {
+    return GetOutboundCallabletimesetRequest.builder()
+            .withCallableTimeSetId(callableTimeSetId)
+            .build();
   }
 
   /**
    * Get callable time set
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CallableTimeSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallableTimeSet getOutboundCallabletimeset(GetOutboundCallabletimesetRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallableTimeSet>() {});
+    try {
+      ApiResponse<CallableTimeSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CallableTimeSet>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get callable time set
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallableTimeSet> getOutboundCallabletimeset(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CallableTimeSet>invokeAPIVerbose(request, new TypeReference<CallableTimeSet>() {});
+  public ApiResponse<CallableTimeSet> getOutboundCallabletimeset(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CallableTimeSet>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallableTimeSet> response = (ApiResponse<CallableTimeSet>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallableTimeSet> response = (ApiResponse<CallableTimeSet>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1336,10 +1405,11 @@ public class OutboundApi {
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return CallableTimeSetEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallableTimeSetEntityListing getOutboundCallabletimesets(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    return getOutboundCallabletimesetsWithHttpInfo(pageSize, pageNumber, filterType, name, sortBy, sortOrder).getBody();
+    return  getOutboundCallabletimesets(createGetOutboundCallabletimesetsRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder));
   }
 
   /**
@@ -1352,61 +1422,74 @@ public class OutboundApi {
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return CallableTimeSetEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallableTimeSetEntityListing> getOutboundCallabletimesetsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/callabletimesets".replaceAll("\\{format\\}","json");
+  public ApiResponse<CallableTimeSetEntityListing> getOutboundCallabletimesetsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException {
+    return getOutboundCallabletimesets(createGetOutboundCallabletimesetsRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetOutboundCallabletimesetsRequest createGetOutboundCallabletimesetsRequest(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) {
+    return GetOutboundCallabletimesetsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "filterType", filterType));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withFilterType(filterType)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withName(name)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withSortBy(sortBy)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CallableTimeSetEntityListing>() {});
+            .withSortOrder(sortOrder)
+            .build();
   }
 
   /**
    * Query callable time set list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CallableTimeSetEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallableTimeSetEntityListing getOutboundCallabletimesets(GetOutboundCallabletimesetsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallableTimeSetEntityListing>() {});
+    try {
+      ApiResponse<CallableTimeSetEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CallableTimeSetEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query callable time set list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallableTimeSetEntityListing> getOutboundCallabletimesets(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CallableTimeSetEntityListing>invokeAPIVerbose(request, new TypeReference<CallableTimeSetEntityListing>() {});
+  public ApiResponse<CallableTimeSetEntityListing> getOutboundCallabletimesets(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CallableTimeSetEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallableTimeSetEntityListing> response = (ApiResponse<CallableTimeSetEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallableTimeSetEntityListing> response = (ApiResponse<CallableTimeSetEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1414,10 +1497,11 @@ public class OutboundApi {
    * 
    * @param callAnalysisSetId Call Analysis Response Set ID (required)
    * @return ResponseSet
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ResponseSet getOutboundCallanalysisresponseset(String callAnalysisSetId) throws IOException, ApiException {
-    return getOutboundCallanalysisresponsesetWithHttpInfo(callAnalysisSetId).getBody();
+    return  getOutboundCallanalysisresponseset(createGetOutboundCallanalysisresponsesetRequest(callAnalysisSetId));
   }
 
   /**
@@ -1425,61 +1509,64 @@ public class OutboundApi {
    * 
    * @param callAnalysisSetId Call Analysis Response Set ID (required)
    * @return ResponseSet
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ResponseSet> getOutboundCallanalysisresponsesetWithHttpInfo(String callAnalysisSetId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'callAnalysisSetId' is set
-    if (callAnalysisSetId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callAnalysisSetId' when calling getOutboundCallanalysisresponseset");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callAnalysisSetId" + "\\}", pcapiClient.escapeString(callAnalysisSetId.toString()));
+  public ApiResponse<ResponseSet> getOutboundCallanalysisresponsesetWithHttpInfo(String callAnalysisSetId) throws IOException {
+    return getOutboundCallanalysisresponseset(createGetOutboundCallanalysisresponsesetRequest(callAnalysisSetId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ResponseSet>() {});
+  private GetOutboundCallanalysisresponsesetRequest createGetOutboundCallanalysisresponsesetRequest(String callAnalysisSetId) {
+    return GetOutboundCallanalysisresponsesetRequest.builder()
+            .withCallAnalysisSetId(callAnalysisSetId)
+            .build();
   }
 
   /**
    * Get a dialer call analysis response set.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ResponseSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ResponseSet getOutboundCallanalysisresponseset(GetOutboundCallanalysisresponsesetRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ResponseSet>() {});
+    try {
+      ApiResponse<ResponseSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ResponseSet>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a dialer call analysis response set.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ResponseSet> getOutboundCallanalysisresponseset(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ResponseSet>invokeAPIVerbose(request, new TypeReference<ResponseSet>() {});
+  public ApiResponse<ResponseSet> getOutboundCallanalysisresponseset(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ResponseSet>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseSet> response = (ApiResponse<ResponseSet>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseSet> response = (ApiResponse<ResponseSet>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1492,10 +1579,11 @@ public class OutboundApi {
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return ResponseSetEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ResponseSetEntityListing getOutboundCallanalysisresponsesets(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    return getOutboundCallanalysisresponsesetsWithHttpInfo(pageSize, pageNumber, filterType, name, sortBy, sortOrder).getBody();
+    return  getOutboundCallanalysisresponsesets(createGetOutboundCallanalysisresponsesetsRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder));
   }
 
   /**
@@ -1508,61 +1596,74 @@ public class OutboundApi {
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return ResponseSetEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ResponseSetEntityListing> getOutboundCallanalysisresponsesetsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/callanalysisresponsesets".replaceAll("\\{format\\}","json");
+  public ApiResponse<ResponseSetEntityListing> getOutboundCallanalysisresponsesetsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException {
+    return getOutboundCallanalysisresponsesets(createGetOutboundCallanalysisresponsesetsRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetOutboundCallanalysisresponsesetsRequest createGetOutboundCallanalysisresponsesetsRequest(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) {
+    return GetOutboundCallanalysisresponsesetsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "filterType", filterType));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withFilterType(filterType)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withName(name)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withSortBy(sortBy)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ResponseSetEntityListing>() {});
+            .withSortOrder(sortOrder)
+            .build();
   }
 
   /**
    * Query a list of dialer call analysis response sets.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ResponseSetEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ResponseSetEntityListing getOutboundCallanalysisresponsesets(GetOutboundCallanalysisresponsesetsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ResponseSetEntityListing>() {});
+    try {
+      ApiResponse<ResponseSetEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ResponseSetEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query a list of dialer call analysis response sets.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ResponseSetEntityListing> getOutboundCallanalysisresponsesets(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ResponseSetEntityListing>invokeAPIVerbose(request, new TypeReference<ResponseSetEntityListing>() {});
+  public ApiResponse<ResponseSetEntityListing> getOutboundCallanalysisresponsesets(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ResponseSetEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseSetEntityListing> response = (ApiResponse<ResponseSetEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseSetEntityListing> response = (ApiResponse<ResponseSetEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1570,10 +1671,11 @@ public class OutboundApi {
    * 
    * @param campaignId Campaign ID (required)
    * @return Campaign
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Campaign getOutboundCampaign(String campaignId) throws IOException, ApiException {
-    return getOutboundCampaignWithHttpInfo(campaignId).getBody();
+    return  getOutboundCampaign(createGetOutboundCampaignRequest(campaignId));
   }
 
   /**
@@ -1581,61 +1683,64 @@ public class OutboundApi {
    * 
    * @param campaignId Campaign ID (required)
    * @return Campaign
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Campaign> getOutboundCampaignWithHttpInfo(String campaignId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'campaignId' is set
-    if (campaignId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling getOutboundCampaign");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/campaigns/{campaignId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "campaignId" + "\\}", pcapiClient.escapeString(campaignId.toString()));
+  public ApiResponse<Campaign> getOutboundCampaignWithHttpInfo(String campaignId) throws IOException {
+    return getOutboundCampaign(createGetOutboundCampaignRequest(campaignId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Campaign>() {});
+  private GetOutboundCampaignRequest createGetOutboundCampaignRequest(String campaignId) {
+    return GetOutboundCampaignRequest.builder()
+            .withCampaignId(campaignId)
+            .build();
   }
 
   /**
    * Get dialer campaign.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Campaign
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Campaign getOutboundCampaign(GetOutboundCampaignRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Campaign>() {});
+    try {
+      ApiResponse<Campaign> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Campaign>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get dialer campaign.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Campaign> getOutboundCampaign(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Campaign>invokeAPIVerbose(request, new TypeReference<Campaign>() {});
+  public ApiResponse<Campaign> getOutboundCampaign(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Campaign>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Campaign> response = (ApiResponse<Campaign>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Campaign> response = (ApiResponse<Campaign>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1643,10 +1748,11 @@ public class OutboundApi {
    * 
    * @param campaignId Campaign ID (required)
    * @return CampaignDiagnostics
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignDiagnostics getOutboundCampaignDiagnostics(String campaignId) throws IOException, ApiException {
-    return getOutboundCampaignDiagnosticsWithHttpInfo(campaignId).getBody();
+    return  getOutboundCampaignDiagnostics(createGetOutboundCampaignDiagnosticsRequest(campaignId));
   }
 
   /**
@@ -1654,61 +1760,64 @@ public class OutboundApi {
    * 
    * @param campaignId Campaign ID (required)
    * @return CampaignDiagnostics
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignDiagnostics> getOutboundCampaignDiagnosticsWithHttpInfo(String campaignId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'campaignId' is set
-    if (campaignId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling getOutboundCampaignDiagnostics");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/campaigns/{campaignId}/diagnostics".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "campaignId" + "\\}", pcapiClient.escapeString(campaignId.toString()));
+  public ApiResponse<CampaignDiagnostics> getOutboundCampaignDiagnosticsWithHttpInfo(String campaignId) throws IOException {
+    return getOutboundCampaignDiagnostics(createGetOutboundCampaignDiagnosticsRequest(campaignId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CampaignDiagnostics>() {});
+  private GetOutboundCampaignDiagnosticsRequest createGetOutboundCampaignDiagnosticsRequest(String campaignId) {
+    return GetOutboundCampaignDiagnosticsRequest.builder()
+            .withCampaignId(campaignId)
+            .build();
   }
 
   /**
    * Get campaign diagnostics
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CampaignDiagnostics
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignDiagnostics getOutboundCampaignDiagnostics(GetOutboundCampaignDiagnosticsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignDiagnostics>() {});
+    try {
+      ApiResponse<CampaignDiagnostics> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignDiagnostics>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get campaign diagnostics
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignDiagnostics> getOutboundCampaignDiagnostics(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CampaignDiagnostics>invokeAPIVerbose(request, new TypeReference<CampaignDiagnostics>() {});
+  public ApiResponse<CampaignDiagnostics> getOutboundCampaignDiagnostics(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignDiagnostics>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignDiagnostics> response = (ApiResponse<CampaignDiagnostics>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignDiagnostics> response = (ApiResponse<CampaignDiagnostics>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1716,10 +1825,11 @@ public class OutboundApi {
    * 
    * @param campaignId Campaign ID (required)
    * @return CampaignInteractions
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignInteractions getOutboundCampaignInteractions(String campaignId) throws IOException, ApiException {
-    return getOutboundCampaignInteractionsWithHttpInfo(campaignId).getBody();
+    return  getOutboundCampaignInteractions(createGetOutboundCampaignInteractionsRequest(campaignId));
   }
 
   /**
@@ -1727,61 +1837,64 @@ public class OutboundApi {
    * 
    * @param campaignId Campaign ID (required)
    * @return CampaignInteractions
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignInteractions> getOutboundCampaignInteractionsWithHttpInfo(String campaignId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'campaignId' is set
-    if (campaignId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling getOutboundCampaignInteractions");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/campaigns/{campaignId}/interactions".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "campaignId" + "\\}", pcapiClient.escapeString(campaignId.toString()));
+  public ApiResponse<CampaignInteractions> getOutboundCampaignInteractionsWithHttpInfo(String campaignId) throws IOException {
+    return getOutboundCampaignInteractions(createGetOutboundCampaignInteractionsRequest(campaignId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CampaignInteractions>() {});
+  private GetOutboundCampaignInteractionsRequest createGetOutboundCampaignInteractionsRequest(String campaignId) {
+    return GetOutboundCampaignInteractionsRequest.builder()
+            .withCampaignId(campaignId)
+            .build();
   }
 
   /**
    * Get dialer campaign interactions.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CampaignInteractions
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignInteractions getOutboundCampaignInteractions(GetOutboundCampaignInteractionsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignInteractions>() {});
+    try {
+      ApiResponse<CampaignInteractions> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignInteractions>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get dialer campaign interactions.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignInteractions> getOutboundCampaignInteractions(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CampaignInteractions>invokeAPIVerbose(request, new TypeReference<CampaignInteractions>() {});
+  public ApiResponse<CampaignInteractions> getOutboundCampaignInteractions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignInteractions>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignInteractions> response = (ApiResponse<CampaignInteractions>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignInteractions> response = (ApiResponse<CampaignInteractions>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1789,10 +1902,11 @@ public class OutboundApi {
    * 
    * @param campaignId Campaign ID (required)
    * @return CampaignProgress
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignProgress getOutboundCampaignProgress(String campaignId) throws IOException, ApiException {
-    return getOutboundCampaignProgressWithHttpInfo(campaignId).getBody();
+    return  getOutboundCampaignProgress(createGetOutboundCampaignProgressRequest(campaignId));
   }
 
   /**
@@ -1800,61 +1914,64 @@ public class OutboundApi {
    * 
    * @param campaignId Campaign ID (required)
    * @return CampaignProgress
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignProgress> getOutboundCampaignProgressWithHttpInfo(String campaignId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'campaignId' is set
-    if (campaignId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling getOutboundCampaignProgress");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/campaigns/{campaignId}/progress".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "campaignId" + "\\}", pcapiClient.escapeString(campaignId.toString()));
+  public ApiResponse<CampaignProgress> getOutboundCampaignProgressWithHttpInfo(String campaignId) throws IOException {
+    return getOutboundCampaignProgress(createGetOutboundCampaignProgressRequest(campaignId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CampaignProgress>() {});
+  private GetOutboundCampaignProgressRequest createGetOutboundCampaignProgressRequest(String campaignId) {
+    return GetOutboundCampaignProgressRequest.builder()
+            .withCampaignId(campaignId)
+            .build();
   }
 
   /**
    * Get campaign progress
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CampaignProgress
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignProgress getOutboundCampaignProgress(GetOutboundCampaignProgressRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignProgress>() {});
+    try {
+      ApiResponse<CampaignProgress> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignProgress>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get campaign progress
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignProgress> getOutboundCampaignProgress(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CampaignProgress>invokeAPIVerbose(request, new TypeReference<CampaignProgress>() {});
+  public ApiResponse<CampaignProgress> getOutboundCampaignProgress(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignProgress>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignProgress> response = (ApiResponse<CampaignProgress>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignProgress> response = (ApiResponse<CampaignProgress>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1862,10 +1979,11 @@ public class OutboundApi {
    * 
    * @param campaignId Campaign ID (required)
    * @return CampaignStats
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignStats getOutboundCampaignStats(String campaignId) throws IOException, ApiException {
-    return getOutboundCampaignStatsWithHttpInfo(campaignId).getBody();
+    return  getOutboundCampaignStats(createGetOutboundCampaignStatsRequest(campaignId));
   }
 
   /**
@@ -1873,61 +1991,64 @@ public class OutboundApi {
    * 
    * @param campaignId Campaign ID (required)
    * @return CampaignStats
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignStats> getOutboundCampaignStatsWithHttpInfo(String campaignId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'campaignId' is set
-    if (campaignId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling getOutboundCampaignStats");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/campaigns/{campaignId}/stats".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "campaignId" + "\\}", pcapiClient.escapeString(campaignId.toString()));
+  public ApiResponse<CampaignStats> getOutboundCampaignStatsWithHttpInfo(String campaignId) throws IOException {
+    return getOutboundCampaignStats(createGetOutboundCampaignStatsRequest(campaignId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CampaignStats>() {});
+  private GetOutboundCampaignStatsRequest createGetOutboundCampaignStatsRequest(String campaignId) {
+    return GetOutboundCampaignStatsRequest.builder()
+            .withCampaignId(campaignId)
+            .build();
   }
 
   /**
    * Get statistics about a Dialer Campaign
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CampaignStats
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignStats getOutboundCampaignStats(GetOutboundCampaignStatsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignStats>() {});
+    try {
+      ApiResponse<CampaignStats> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignStats>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get statistics about a Dialer Campaign
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignStats> getOutboundCampaignStats(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CampaignStats>invokeAPIVerbose(request, new TypeReference<CampaignStats>() {});
+  public ApiResponse<CampaignStats> getOutboundCampaignStats(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignStats>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignStats> response = (ApiResponse<CampaignStats>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignStats> response = (ApiResponse<CampaignStats>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1935,10 +2056,11 @@ public class OutboundApi {
    * 
    * @param campaignRuleId Campaign Rule ID (required)
    * @return CampaignRule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignRule getOutboundCampaignrule(String campaignRuleId) throws IOException, ApiException {
-    return getOutboundCampaignruleWithHttpInfo(campaignRuleId).getBody();
+    return  getOutboundCampaignrule(createGetOutboundCampaignruleRequest(campaignRuleId));
   }
 
   /**
@@ -1946,61 +2068,64 @@ public class OutboundApi {
    * 
    * @param campaignRuleId Campaign Rule ID (required)
    * @return CampaignRule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignRule> getOutboundCampaignruleWithHttpInfo(String campaignRuleId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'campaignRuleId' is set
-    if (campaignRuleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'campaignRuleId' when calling getOutboundCampaignrule");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/campaignrules/{campaignRuleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "campaignRuleId" + "\\}", pcapiClient.escapeString(campaignRuleId.toString()));
+  public ApiResponse<CampaignRule> getOutboundCampaignruleWithHttpInfo(String campaignRuleId) throws IOException {
+    return getOutboundCampaignrule(createGetOutboundCampaignruleRequest(campaignRuleId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CampaignRule>() {});
+  private GetOutboundCampaignruleRequest createGetOutboundCampaignruleRequest(String campaignRuleId) {
+    return GetOutboundCampaignruleRequest.builder()
+            .withCampaignRuleId(campaignRuleId)
+            .build();
   }
 
   /**
    * Get Campaign Rule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CampaignRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignRule getOutboundCampaignrule(GetOutboundCampaignruleRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignRule>() {});
+    try {
+      ApiResponse<CampaignRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get Campaign Rule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignRule> getOutboundCampaignrule(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CampaignRule>invokeAPIVerbose(request, new TypeReference<CampaignRule>() {});
+  public ApiResponse<CampaignRule> getOutboundCampaignrule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignRule> response = (ApiResponse<CampaignRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignRule> response = (ApiResponse<CampaignRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2013,10 +2138,11 @@ public class OutboundApi {
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return CampaignRuleEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignRuleEntityListing getOutboundCampaignrules(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    return getOutboundCampaignrulesWithHttpInfo(pageSize, pageNumber, filterType, name, sortBy, sortOrder).getBody();
+    return  getOutboundCampaignrules(createGetOutboundCampaignrulesRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder));
   }
 
   /**
@@ -2029,61 +2155,74 @@ public class OutboundApi {
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return CampaignRuleEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignRuleEntityListing> getOutboundCampaignrulesWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/campaignrules".replaceAll("\\{format\\}","json");
+  public ApiResponse<CampaignRuleEntityListing> getOutboundCampaignrulesWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException {
+    return getOutboundCampaignrules(createGetOutboundCampaignrulesRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetOutboundCampaignrulesRequest createGetOutboundCampaignrulesRequest(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) {
+    return GetOutboundCampaignrulesRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "filterType", filterType));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withFilterType(filterType)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withName(name)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withSortBy(sortBy)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CampaignRuleEntityListing>() {});
+            .withSortOrder(sortOrder)
+            .build();
   }
 
   /**
    * Query Campaign Rule list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CampaignRuleEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignRuleEntityListing getOutboundCampaignrules(GetOutboundCampaignrulesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignRuleEntityListing>() {});
+    try {
+      ApiResponse<CampaignRuleEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignRuleEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query Campaign Rule list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignRuleEntityListing> getOutboundCampaignrules(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CampaignRuleEntityListing>invokeAPIVerbose(request, new TypeReference<CampaignRuleEntityListing>() {});
+  public ApiResponse<CampaignRuleEntityListing> getOutboundCampaignrules(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignRuleEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignRuleEntityListing> response = (ApiResponse<CampaignRuleEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignRuleEntityListing> response = (ApiResponse<CampaignRuleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2101,10 +2240,11 @@ public class OutboundApi {
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return CampaignEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignEntityListing getOutboundCampaigns(Integer pageSize, Integer pageNumber, String filterType, String name, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, String sortBy, String sortOrder) throws IOException, ApiException {
-    return getOutboundCampaignsWithHttpInfo(pageSize, pageNumber, filterType, name, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, sortBy, sortOrder).getBody();
+    return  getOutboundCampaigns(createGetOutboundCampaignsRequest(pageSize, pageNumber, filterType, name, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, sortBy, sortOrder));
   }
 
   /**
@@ -2122,66 +2262,84 @@ public class OutboundApi {
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return CampaignEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignEntityListing> getOutboundCampaignsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, String sortBy, String sortOrder) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/campaigns".replaceAll("\\{format\\}","json");
+  public ApiResponse<CampaignEntityListing> getOutboundCampaignsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, String sortBy, String sortOrder) throws IOException {
+    return getOutboundCampaigns(createGetOutboundCampaignsRequest(pageSize, pageNumber, filterType, name, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, sortBy, sortOrder).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetOutboundCampaignsRequest createGetOutboundCampaignsRequest(Integer pageSize, Integer pageNumber, String filterType, String name, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, String sortBy, String sortOrder) {
+    return GetOutboundCampaignsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "filterType", filterType));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "contactListId", contactListId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "dncListId", dncListId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "distributionQueueId", distributionQueueId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "edgeGroupId", edgeGroupId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "callAnalysisResponseSetId", callAnalysisResponseSetId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withFilterType(filterType)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withName(name)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withContactListId(contactListId)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CampaignEntityListing>() {});
+            .withDncListId(dncListId)
+
+            .withDistributionQueueId(distributionQueueId)
+
+            .withEdgeGroupId(edgeGroupId)
+
+            .withCallAnalysisResponseSetId(callAnalysisResponseSetId)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+            .build();
   }
 
   /**
    * Query a list of dialer campaigns.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CampaignEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignEntityListing getOutboundCampaigns(GetOutboundCampaignsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignEntityListing>() {});
+    try {
+      ApiResponse<CampaignEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query a list of dialer campaigns.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignEntityListing> getOutboundCampaigns(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CampaignEntityListing>invokeAPIVerbose(request, new TypeReference<CampaignEntityListing>() {});
+  public ApiResponse<CampaignEntityListing> getOutboundCampaigns(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignEntityListing> response = (ApiResponse<CampaignEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignEntityListing> response = (ApiResponse<CampaignEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2191,10 +2349,11 @@ public class OutboundApi {
    * @param includeImportStatus Import status (optional, default to false)
    * @param includeSize Include size (optional, default to false)
    * @return ContactList
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ContactList getOutboundContactlist(String contactListId, Boolean includeImportStatus, Boolean includeSize) throws IOException, ApiException {
-    return getOutboundContactlistWithHttpInfo(contactListId, includeImportStatus, includeSize).getBody();
+    return  getOutboundContactlist(createGetOutboundContactlistRequest(contactListId, includeImportStatus, includeSize));
   }
 
   /**
@@ -2204,63 +2363,68 @@ public class OutboundApi {
    * @param includeImportStatus Import status (optional, default to false)
    * @param includeSize Include size (optional, default to false)
    * @return ContactList
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactList> getOutboundContactlistWithHttpInfo(String contactListId, Boolean includeImportStatus, Boolean includeSize) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'contactListId' is set
-    if (contactListId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactListId' when calling getOutboundContactlist");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/contactlists/{contactListId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "contactListId" + "\\}", pcapiClient.escapeString(contactListId.toString()));
+  public ApiResponse<ContactList> getOutboundContactlistWithHttpInfo(String contactListId, Boolean includeImportStatus, Boolean includeSize) throws IOException {
+    return getOutboundContactlist(createGetOutboundContactlistRequest(contactListId, includeImportStatus, includeSize).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetOutboundContactlistRequest createGetOutboundContactlistRequest(String contactListId, Boolean includeImportStatus, Boolean includeSize) {
+    return GetOutboundContactlistRequest.builder()
+            .withContactListId(contactListId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "includeImportStatus", includeImportStatus));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "includeSize", includeSize));
+            .withIncludeImportStatus(includeImportStatus)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ContactList>() {});
+            .withIncludeSize(includeSize)
+            .build();
   }
 
   /**
    * Get a dialer contact list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ContactList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ContactList getOutboundContactlist(GetOutboundContactlistRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ContactList>() {});
+    try {
+      ApiResponse<ContactList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a dialer contact list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactList> getOutboundContactlist(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ContactList>invokeAPIVerbose(request, new TypeReference<ContactList>() {});
+  public ApiResponse<ContactList> getOutboundContactlist(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactList> response = (ApiResponse<ContactList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactList> response = (ApiResponse<ContactList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2269,10 +2433,11 @@ public class OutboundApi {
    * @param contactListId Contact List ID (required)
    * @param contactId Contact ID (required)
    * @return DialerContact
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DialerContact getOutboundContactlistContact(String contactListId, String contactId) throws IOException, ApiException {
-    return getOutboundContactlistContactWithHttpInfo(contactListId, contactId).getBody();
+    return  getOutboundContactlistContact(createGetOutboundContactlistContactRequest(contactListId, contactId));
   }
 
   /**
@@ -2281,67 +2446,66 @@ public class OutboundApi {
    * @param contactListId Contact List ID (required)
    * @param contactId Contact ID (required)
    * @return DialerContact
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DialerContact> getOutboundContactlistContactWithHttpInfo(String contactListId, String contactId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'contactListId' is set
-    if (contactListId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactListId' when calling getOutboundContactlistContact");
-    }
-    
-    // verify the required parameter 'contactId' is set
-    if (contactId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling getOutboundContactlistContact");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "contactListId" + "\\}", pcapiClient.escapeString(contactListId.toString()))
-      .replaceAll("\\{" + "contactId" + "\\}", pcapiClient.escapeString(contactId.toString()));
+  public ApiResponse<DialerContact> getOutboundContactlistContactWithHttpInfo(String contactListId, String contactId) throws IOException {
+    return getOutboundContactlistContact(createGetOutboundContactlistContactRequest(contactListId, contactId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetOutboundContactlistContactRequest createGetOutboundContactlistContactRequest(String contactListId, String contactId) {
+    return GetOutboundContactlistContactRequest.builder()
+            .withContactListId(contactListId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DialerContact>() {});
+            .withContactId(contactId)
+            .build();
   }
 
   /**
    * Get a contact.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DialerContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DialerContact getOutboundContactlistContact(GetOutboundContactlistContactRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DialerContact>() {});
+    try {
+      ApiResponse<DialerContact> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DialerContact>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a contact.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DialerContact> getOutboundContactlistContact(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DialerContact>invokeAPIVerbose(request, new TypeReference<DialerContact>() {});
+  public ApiResponse<DialerContact> getOutboundContactlistContact(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DialerContact>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DialerContact> response = (ApiResponse<DialerContact>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DialerContact> response = (ApiResponse<DialerContact>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2350,10 +2514,11 @@ public class OutboundApi {
    * @param contactListId ContactList ID (required)
    * @param download Redirect to download uri (optional, default to false)
    * @return ExportUri
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExportUri getOutboundContactlistExport(String contactListId, String download) throws IOException, ApiException {
-    return getOutboundContactlistExportWithHttpInfo(contactListId, download).getBody();
+    return  getOutboundContactlistExport(createGetOutboundContactlistExportRequest(contactListId, download));
   }
 
   /**
@@ -2362,62 +2527,66 @@ public class OutboundApi {
    * @param contactListId ContactList ID (required)
    * @param download Redirect to download uri (optional, default to false)
    * @return ExportUri
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExportUri> getOutboundContactlistExportWithHttpInfo(String contactListId, String download) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'contactListId' is set
-    if (contactListId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactListId' when calling getOutboundContactlistExport");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/contactlists/{contactListId}/export".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "contactListId" + "\\}", pcapiClient.escapeString(contactListId.toString()));
+  public ApiResponse<ExportUri> getOutboundContactlistExportWithHttpInfo(String contactListId, String download) throws IOException {
+    return getOutboundContactlistExport(createGetOutboundContactlistExportRequest(contactListId, download).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetOutboundContactlistExportRequest createGetOutboundContactlistExportRequest(String contactListId, String download) {
+    return GetOutboundContactlistExportRequest.builder()
+            .withContactListId(contactListId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "download", download));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ExportUri>() {});
+            .withDownload(download)
+            .build();
   }
 
   /**
    * Get the URI of a contact list export.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ExportUri
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExportUri getOutboundContactlistExport(GetOutboundContactlistExportRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExportUri>() {});
+    try {
+      ApiResponse<ExportUri> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExportUri>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the URI of a contact list export.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExportUri> getOutboundContactlistExport(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ExportUri>invokeAPIVerbose(request, new TypeReference<ExportUri>() {});
+  public ApiResponse<ExportUri> getOutboundContactlistExport(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExportUri>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExportUri> response = (ApiResponse<ExportUri>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExportUri> response = (ApiResponse<ExportUri>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2425,10 +2594,11 @@ public class OutboundApi {
    * 
    * @param contactListId ContactList ID (required)
    * @return ImportStatus
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ImportStatus getOutboundContactlistImportstatus(String contactListId) throws IOException, ApiException {
-    return getOutboundContactlistImportstatusWithHttpInfo(contactListId).getBody();
+    return  getOutboundContactlistImportstatus(createGetOutboundContactlistImportstatusRequest(contactListId));
   }
 
   /**
@@ -2436,61 +2606,64 @@ public class OutboundApi {
    * 
    * @param contactListId ContactList ID (required)
    * @return ImportStatus
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ImportStatus> getOutboundContactlistImportstatusWithHttpInfo(String contactListId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'contactListId' is set
-    if (contactListId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactListId' when calling getOutboundContactlistImportstatus");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/contactlists/{contactListId}/importstatus".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "contactListId" + "\\}", pcapiClient.escapeString(contactListId.toString()));
+  public ApiResponse<ImportStatus> getOutboundContactlistImportstatusWithHttpInfo(String contactListId) throws IOException {
+    return getOutboundContactlistImportstatus(createGetOutboundContactlistImportstatusRequest(contactListId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ImportStatus>() {});
+  private GetOutboundContactlistImportstatusRequest createGetOutboundContactlistImportstatusRequest(String contactListId) {
+    return GetOutboundContactlistImportstatusRequest.builder()
+            .withContactListId(contactListId)
+            .build();
   }
 
   /**
    * Get dialer contactList import status.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ImportStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ImportStatus getOutboundContactlistImportstatus(GetOutboundContactlistImportstatusRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ImportStatus>() {});
+    try {
+      ApiResponse<ImportStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ImportStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get dialer contactList import status.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ImportStatus> getOutboundContactlistImportstatus(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ImportStatus>invokeAPIVerbose(request, new TypeReference<ImportStatus>() {});
+  public ApiResponse<ImportStatus> getOutboundContactlistImportstatus(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ImportStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportStatus> response = (ApiResponse<ImportStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportStatus> response = (ApiResponse<ImportStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2505,10 +2678,11 @@ public class OutboundApi {
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return ContactListEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ContactListEntityListing getOutboundContactlists(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    return getOutboundContactlistsWithHttpInfo(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, sortBy, sortOrder).getBody();
+    return  getOutboundContactlists(createGetOutboundContactlistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, sortBy, sortOrder));
   }
 
   /**
@@ -2523,63 +2697,78 @@ public class OutboundApi {
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return ContactListEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactListEntityListing> getOutboundContactlistsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/contactlists".replaceAll("\\{format\\}","json");
+  public ApiResponse<ContactListEntityListing> getOutboundContactlistsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException {
+    return getOutboundContactlists(createGetOutboundContactlistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, sortBy, sortOrder).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetOutboundContactlistsRequest createGetOutboundContactlistsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) {
+    return GetOutboundContactlistsRequest.builder()
+            .withIncludeImportStatus(includeImportStatus)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "includeImportStatus", includeImportStatus));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "includeSize", includeSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "filterType", filterType));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
+            .withIncludeSize(includeSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageSize(pageSize)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withPageNumber(pageNumber)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withFilterType(filterType)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ContactListEntityListing>() {});
+            .withName(name)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+            .build();
   }
 
   /**
    * Query a list of contact lists.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ContactListEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ContactListEntityListing getOutboundContactlists(GetOutboundContactlistsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ContactListEntityListing>() {});
+    try {
+      ApiResponse<ContactListEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactListEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query a list of contact lists.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactListEntityListing> getOutboundContactlists(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ContactListEntityListing>invokeAPIVerbose(request, new TypeReference<ContactListEntityListing>() {});
+  public ApiResponse<ContactListEntityListing> getOutboundContactlists(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactListEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListEntityListing> response = (ApiResponse<ContactListEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListEntityListing> response = (ApiResponse<ContactListEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2589,10 +2778,11 @@ public class OutboundApi {
    * @param includeImportStatus Import status (optional, default to false)
    * @param includeSize Include size (optional, default to false)
    * @return DncList
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DncList getOutboundDnclist(String dncListId, Boolean includeImportStatus, Boolean includeSize) throws IOException, ApiException {
-    return getOutboundDnclistWithHttpInfo(dncListId, includeImportStatus, includeSize).getBody();
+    return  getOutboundDnclist(createGetOutboundDnclistRequest(dncListId, includeImportStatus, includeSize));
   }
 
   /**
@@ -2602,63 +2792,68 @@ public class OutboundApi {
    * @param includeImportStatus Import status (optional, default to false)
    * @param includeSize Include size (optional, default to false)
    * @return DncList
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DncList> getOutboundDnclistWithHttpInfo(String dncListId, Boolean includeImportStatus, Boolean includeSize) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'dncListId' is set
-    if (dncListId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'dncListId' when calling getOutboundDnclist");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/dnclists/{dncListId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "dncListId" + "\\}", pcapiClient.escapeString(dncListId.toString()));
+  public ApiResponse<DncList> getOutboundDnclistWithHttpInfo(String dncListId, Boolean includeImportStatus, Boolean includeSize) throws IOException {
+    return getOutboundDnclist(createGetOutboundDnclistRequest(dncListId, includeImportStatus, includeSize).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetOutboundDnclistRequest createGetOutboundDnclistRequest(String dncListId, Boolean includeImportStatus, Boolean includeSize) {
+    return GetOutboundDnclistRequest.builder()
+            .withDncListId(dncListId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "includeImportStatus", includeImportStatus));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "includeSize", includeSize));
+            .withIncludeImportStatus(includeImportStatus)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DncList>() {});
+            .withIncludeSize(includeSize)
+            .build();
   }
 
   /**
    * Get dialer DNC list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DncList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DncList getOutboundDnclist(GetOutboundDnclistRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DncList>() {});
+    try {
+      ApiResponse<DncList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DncList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get dialer DNC list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DncList> getOutboundDnclist(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DncList>invokeAPIVerbose(request, new TypeReference<DncList>() {});
+  public ApiResponse<DncList> getOutboundDnclist(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DncList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DncList> response = (ApiResponse<DncList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DncList> response = (ApiResponse<DncList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2667,10 +2862,11 @@ public class OutboundApi {
    * @param dncListId DncList ID (required)
    * @param download Redirect to download uri (optional, default to false)
    * @return ExportUri
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExportUri getOutboundDnclistExport(String dncListId, String download) throws IOException, ApiException {
-    return getOutboundDnclistExportWithHttpInfo(dncListId, download).getBody();
+    return  getOutboundDnclistExport(createGetOutboundDnclistExportRequest(dncListId, download));
   }
 
   /**
@@ -2679,62 +2875,66 @@ public class OutboundApi {
    * @param dncListId DncList ID (required)
    * @param download Redirect to download uri (optional, default to false)
    * @return ExportUri
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExportUri> getOutboundDnclistExportWithHttpInfo(String dncListId, String download) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'dncListId' is set
-    if (dncListId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'dncListId' when calling getOutboundDnclistExport");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/dnclists/{dncListId}/export".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "dncListId" + "\\}", pcapiClient.escapeString(dncListId.toString()));
+  public ApiResponse<ExportUri> getOutboundDnclistExportWithHttpInfo(String dncListId, String download) throws IOException {
+    return getOutboundDnclistExport(createGetOutboundDnclistExportRequest(dncListId, download).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetOutboundDnclistExportRequest createGetOutboundDnclistExportRequest(String dncListId, String download) {
+    return GetOutboundDnclistExportRequest.builder()
+            .withDncListId(dncListId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "download", download));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ExportUri>() {});
+            .withDownload(download)
+            .build();
   }
 
   /**
    * Get the URI of a DNC list export.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ExportUri
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ExportUri getOutboundDnclistExport(GetOutboundDnclistExportRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ExportUri>() {});
+    try {
+      ApiResponse<ExportUri> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExportUri>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the URI of a DNC list export.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExportUri> getOutboundDnclistExport(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ExportUri>invokeAPIVerbose(request, new TypeReference<ExportUri>() {});
+  public ApiResponse<ExportUri> getOutboundDnclistExport(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExportUri>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExportUri> response = (ApiResponse<ExportUri>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExportUri> response = (ApiResponse<ExportUri>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2742,10 +2942,11 @@ public class OutboundApi {
    * 
    * @param dncListId DncList ID (required)
    * @return ImportStatus
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ImportStatus getOutboundDnclistImportstatus(String dncListId) throws IOException, ApiException {
-    return getOutboundDnclistImportstatusWithHttpInfo(dncListId).getBody();
+    return  getOutboundDnclistImportstatus(createGetOutboundDnclistImportstatusRequest(dncListId));
   }
 
   /**
@@ -2753,61 +2954,64 @@ public class OutboundApi {
    * 
    * @param dncListId DncList ID (required)
    * @return ImportStatus
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ImportStatus> getOutboundDnclistImportstatusWithHttpInfo(String dncListId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'dncListId' is set
-    if (dncListId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'dncListId' when calling getOutboundDnclistImportstatus");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/dnclists/{dncListId}/importstatus".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "dncListId" + "\\}", pcapiClient.escapeString(dncListId.toString()));
+  public ApiResponse<ImportStatus> getOutboundDnclistImportstatusWithHttpInfo(String dncListId) throws IOException {
+    return getOutboundDnclistImportstatus(createGetOutboundDnclistImportstatusRequest(dncListId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ImportStatus>() {});
+  private GetOutboundDnclistImportstatusRequest createGetOutboundDnclistImportstatusRequest(String dncListId) {
+    return GetOutboundDnclistImportstatusRequest.builder()
+            .withDncListId(dncListId)
+            .build();
   }
 
   /**
    * Get dialer dncList import status.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ImportStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ImportStatus getOutboundDnclistImportstatus(GetOutboundDnclistImportstatusRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ImportStatus>() {});
+    try {
+      ApiResponse<ImportStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ImportStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get dialer dncList import status.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ImportStatus> getOutboundDnclistImportstatus(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ImportStatus>invokeAPIVerbose(request, new TypeReference<ImportStatus>() {});
+  public ApiResponse<ImportStatus> getOutboundDnclistImportstatus(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ImportStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportStatus> response = (ApiResponse<ImportStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportStatus> response = (ApiResponse<ImportStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2822,10 +3026,11 @@ public class OutboundApi {
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional)
    * @return DncListEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DncListEntityListing getOutboundDnclists(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    return getOutboundDnclistsWithHttpInfo(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, sortBy, sortOrder).getBody();
+    return  getOutboundDnclists(createGetOutboundDnclistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, sortBy, sortOrder));
   }
 
   /**
@@ -2840,63 +3045,78 @@ public class OutboundApi {
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional)
    * @return DncListEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DncListEntityListing> getOutboundDnclistsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/dnclists".replaceAll("\\{format\\}","json");
+  public ApiResponse<DncListEntityListing> getOutboundDnclistsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException {
+    return getOutboundDnclists(createGetOutboundDnclistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, sortBy, sortOrder).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetOutboundDnclistsRequest createGetOutboundDnclistsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) {
+    return GetOutboundDnclistsRequest.builder()
+            .withIncludeImportStatus(includeImportStatus)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "includeImportStatus", includeImportStatus));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "includeSize", includeSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "filterType", filterType));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
+            .withIncludeSize(includeSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageSize(pageSize)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withPageNumber(pageNumber)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withFilterType(filterType)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DncListEntityListing>() {});
+            .withName(name)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+            .build();
   }
 
   /**
    * Query dialer DNC lists
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DncListEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DncListEntityListing getOutboundDnclists(GetOutboundDnclistsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DncListEntityListing>() {});
+    try {
+      ApiResponse<DncListEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DncListEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query dialer DNC lists
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DncListEntityListing> getOutboundDnclists(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DncListEntityListing>invokeAPIVerbose(request, new TypeReference<DncListEntityListing>() {});
+  public ApiResponse<DncListEntityListing> getOutboundDnclists(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DncListEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DncListEntityListing> response = (ApiResponse<DncListEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DncListEntityListing> response = (ApiResponse<DncListEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2904,10 +3124,11 @@ public class OutboundApi {
    * 
    * @param ruleSetId Rule Set ID (required)
    * @return RuleSet
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RuleSet getOutboundRuleset(String ruleSetId) throws IOException, ApiException {
-    return getOutboundRulesetWithHttpInfo(ruleSetId).getBody();
+    return  getOutboundRuleset(createGetOutboundRulesetRequest(ruleSetId));
   }
 
   /**
@@ -2915,61 +3136,64 @@ public class OutboundApi {
    * 
    * @param ruleSetId Rule Set ID (required)
    * @return RuleSet
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RuleSet> getOutboundRulesetWithHttpInfo(String ruleSetId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'ruleSetId' is set
-    if (ruleSetId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'ruleSetId' when calling getOutboundRuleset");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/rulesets/{ruleSetId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "ruleSetId" + "\\}", pcapiClient.escapeString(ruleSetId.toString()));
+  public ApiResponse<RuleSet> getOutboundRulesetWithHttpInfo(String ruleSetId) throws IOException {
+    return getOutboundRuleset(createGetOutboundRulesetRequest(ruleSetId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<RuleSet>() {});
+  private GetOutboundRulesetRequest createGetOutboundRulesetRequest(String ruleSetId) {
+    return GetOutboundRulesetRequest.builder()
+            .withRuleSetId(ruleSetId)
+            .build();
   }
 
   /**
    * Get a Rule Set by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return RuleSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RuleSet getOutboundRuleset(GetOutboundRulesetRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RuleSet>() {});
+    try {
+      ApiResponse<RuleSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RuleSet>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a Rule Set by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RuleSet> getOutboundRuleset(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<RuleSet>invokeAPIVerbose(request, new TypeReference<RuleSet>() {});
+  public ApiResponse<RuleSet> getOutboundRuleset(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RuleSet>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RuleSet> response = (ApiResponse<RuleSet>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RuleSet> response = (ApiResponse<RuleSet>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2982,10 +3206,11 @@ public class OutboundApi {
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return RuleSetEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RuleSetEntityListing getOutboundRulesets(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    return getOutboundRulesetsWithHttpInfo(pageSize, pageNumber, filterType, name, sortBy, sortOrder).getBody();
+    return  getOutboundRulesets(createGetOutboundRulesetsRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder));
   }
 
   /**
@@ -2998,61 +3223,74 @@ public class OutboundApi {
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return RuleSetEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RuleSetEntityListing> getOutboundRulesetsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/rulesets".replaceAll("\\{format\\}","json");
+  public ApiResponse<RuleSetEntityListing> getOutboundRulesetsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException {
+    return getOutboundRulesets(createGetOutboundRulesetsRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetOutboundRulesetsRequest createGetOutboundRulesetsRequest(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) {
+    return GetOutboundRulesetsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "filterType", filterType));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withFilterType(filterType)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withName(name)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withSortBy(sortBy)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<RuleSetEntityListing>() {});
+            .withSortOrder(sortOrder)
+            .build();
   }
 
   /**
    * Query a list of Rule Sets.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return RuleSetEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RuleSetEntityListing getOutboundRulesets(GetOutboundRulesetsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RuleSetEntityListing>() {});
+    try {
+      ApiResponse<RuleSetEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RuleSetEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query a list of Rule Sets.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RuleSetEntityListing> getOutboundRulesets(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<RuleSetEntityListing>invokeAPIVerbose(request, new TypeReference<RuleSetEntityListing>() {});
+  public ApiResponse<RuleSetEntityListing> getOutboundRulesets(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RuleSetEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RuleSetEntityListing> response = (ApiResponse<RuleSetEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RuleSetEntityListing> response = (ApiResponse<RuleSetEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3060,10 +3298,11 @@ public class OutboundApi {
    * 
    * @param campaignId Campaign ID (required)
    * @return CampaignSchedule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignSchedule getOutboundSchedulesCampaign(String campaignId) throws IOException, ApiException {
-    return getOutboundSchedulesCampaignWithHttpInfo(campaignId).getBody();
+    return  getOutboundSchedulesCampaign(createGetOutboundSchedulesCampaignRequest(campaignId));
   }
 
   /**
@@ -3071,126 +3310,137 @@ public class OutboundApi {
    * 
    * @param campaignId Campaign ID (required)
    * @return CampaignSchedule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignSchedule> getOutboundSchedulesCampaignWithHttpInfo(String campaignId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'campaignId' is set
-    if (campaignId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling getOutboundSchedulesCampaign");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/schedules/campaigns/{campaignId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "campaignId" + "\\}", pcapiClient.escapeString(campaignId.toString()));
+  public ApiResponse<CampaignSchedule> getOutboundSchedulesCampaignWithHttpInfo(String campaignId) throws IOException {
+    return getOutboundSchedulesCampaign(createGetOutboundSchedulesCampaignRequest(campaignId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CampaignSchedule>() {});
+  private GetOutboundSchedulesCampaignRequest createGetOutboundSchedulesCampaignRequest(String campaignId) {
+    return GetOutboundSchedulesCampaignRequest.builder()
+            .withCampaignId(campaignId)
+            .build();
   }
 
   /**
    * Get a dialer campaign schedule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CampaignSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignSchedule getOutboundSchedulesCampaign(GetOutboundSchedulesCampaignRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignSchedule>() {});
+    try {
+      ApiResponse<CampaignSchedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignSchedule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a dialer campaign schedule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignSchedule> getOutboundSchedulesCampaign(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CampaignSchedule>invokeAPIVerbose(request, new TypeReference<CampaignSchedule>() {});
+  public ApiResponse<CampaignSchedule> getOutboundSchedulesCampaign(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignSchedule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignSchedule> response = (ApiResponse<CampaignSchedule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignSchedule> response = (ApiResponse<CampaignSchedule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Query for a list of dialer campaign schedules.
    * 
    * @return List<CampaignSchedule>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<CampaignSchedule> getOutboundSchedulesCampaigns() throws IOException, ApiException {
-    return getOutboundSchedulesCampaignsWithHttpInfo().getBody();
+    return  getOutboundSchedulesCampaigns(createGetOutboundSchedulesCampaignsRequest());
   }
 
   /**
    * Query for a list of dialer campaign schedules.
    * 
    * @return List<CampaignSchedule>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<CampaignSchedule>> getOutboundSchedulesCampaignsWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/schedules/campaigns".replaceAll("\\{format\\}","json");
+  public ApiResponse<List<CampaignSchedule>> getOutboundSchedulesCampaignsWithHttpInfo() throws IOException {
+    return getOutboundSchedulesCampaigns(createGetOutboundSchedulesCampaignsRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<CampaignSchedule>>() {});
+  private GetOutboundSchedulesCampaignsRequest createGetOutboundSchedulesCampaignsRequest() {
+    return GetOutboundSchedulesCampaignsRequest.builder()            .build();
   }
 
   /**
    * Query for a list of dialer campaign schedules.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<CampaignSchedule>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<CampaignSchedule> getOutboundSchedulesCampaigns(GetOutboundSchedulesCampaignsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<CampaignSchedule>>() {});
+    try {
+      ApiResponse<List<CampaignSchedule>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<CampaignSchedule>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query for a list of dialer campaign schedules.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<CampaignSchedule>> getOutboundSchedulesCampaigns(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<CampaignSchedule>>invokeAPIVerbose(request, new TypeReference<List<CampaignSchedule>>() {});
+  public ApiResponse<List<CampaignSchedule>> getOutboundSchedulesCampaigns(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<CampaignSchedule>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<CampaignSchedule>> response = (ApiResponse<List<CampaignSchedule>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<CampaignSchedule>> response = (ApiResponse<List<CampaignSchedule>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3198,10 +3448,11 @@ public class OutboundApi {
    * 
    * @param sequenceId Sequence ID (required)
    * @return SequenceSchedule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SequenceSchedule getOutboundSchedulesSequence(String sequenceId) throws IOException, ApiException {
-    return getOutboundSchedulesSequenceWithHttpInfo(sequenceId).getBody();
+    return  getOutboundSchedulesSequence(createGetOutboundSchedulesSequenceRequest(sequenceId));
   }
 
   /**
@@ -3209,126 +3460,137 @@ public class OutboundApi {
    * 
    * @param sequenceId Sequence ID (required)
    * @return SequenceSchedule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SequenceSchedule> getOutboundSchedulesSequenceWithHttpInfo(String sequenceId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'sequenceId' is set
-    if (sequenceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'sequenceId' when calling getOutboundSchedulesSequence");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/schedules/sequences/{sequenceId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "sequenceId" + "\\}", pcapiClient.escapeString(sequenceId.toString()));
+  public ApiResponse<SequenceSchedule> getOutboundSchedulesSequenceWithHttpInfo(String sequenceId) throws IOException {
+    return getOutboundSchedulesSequence(createGetOutboundSchedulesSequenceRequest(sequenceId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<SequenceSchedule>() {});
+  private GetOutboundSchedulesSequenceRequest createGetOutboundSchedulesSequenceRequest(String sequenceId) {
+    return GetOutboundSchedulesSequenceRequest.builder()
+            .withSequenceId(sequenceId)
+            .build();
   }
 
   /**
    * Get a dialer sequence schedule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return SequenceSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SequenceSchedule getOutboundSchedulesSequence(GetOutboundSchedulesSequenceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SequenceSchedule>() {});
+    try {
+      ApiResponse<SequenceSchedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SequenceSchedule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a dialer sequence schedule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SequenceSchedule> getOutboundSchedulesSequence(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<SequenceSchedule>invokeAPIVerbose(request, new TypeReference<SequenceSchedule>() {});
+  public ApiResponse<SequenceSchedule> getOutboundSchedulesSequence(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SequenceSchedule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SequenceSchedule> response = (ApiResponse<SequenceSchedule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SequenceSchedule> response = (ApiResponse<SequenceSchedule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Query for a list of dialer sequence schedules.
    * 
    * @return List<SequenceSchedule>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<SequenceSchedule> getOutboundSchedulesSequences() throws IOException, ApiException {
-    return getOutboundSchedulesSequencesWithHttpInfo().getBody();
+    return  getOutboundSchedulesSequences(createGetOutboundSchedulesSequencesRequest());
   }
 
   /**
    * Query for a list of dialer sequence schedules.
    * 
    * @return List<SequenceSchedule>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<SequenceSchedule>> getOutboundSchedulesSequencesWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/schedules/sequences".replaceAll("\\{format\\}","json");
+  public ApiResponse<List<SequenceSchedule>> getOutboundSchedulesSequencesWithHttpInfo() throws IOException {
+    return getOutboundSchedulesSequences(createGetOutboundSchedulesSequencesRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<SequenceSchedule>>() {});
+  private GetOutboundSchedulesSequencesRequest createGetOutboundSchedulesSequencesRequest() {
+    return GetOutboundSchedulesSequencesRequest.builder()            .build();
   }
 
   /**
    * Query for a list of dialer sequence schedules.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<SequenceSchedule>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<SequenceSchedule> getOutboundSchedulesSequences(GetOutboundSchedulesSequencesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<SequenceSchedule>>() {});
+    try {
+      ApiResponse<List<SequenceSchedule>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<SequenceSchedule>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query for a list of dialer sequence schedules.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<SequenceSchedule>> getOutboundSchedulesSequences(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<SequenceSchedule>>invokeAPIVerbose(request, new TypeReference<List<SequenceSchedule>>() {});
+  public ApiResponse<List<SequenceSchedule>> getOutboundSchedulesSequences(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<SequenceSchedule>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<SequenceSchedule>> response = (ApiResponse<List<SequenceSchedule>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<SequenceSchedule>> response = (ApiResponse<List<SequenceSchedule>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3336,10 +3598,11 @@ public class OutboundApi {
    * 
    * @param sequenceId Campaign Sequence ID (required)
    * @return CampaignSequence
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignSequence getOutboundSequence(String sequenceId) throws IOException, ApiException {
-    return getOutboundSequenceWithHttpInfo(sequenceId).getBody();
+    return  getOutboundSequence(createGetOutboundSequenceRequest(sequenceId));
   }
 
   /**
@@ -3347,61 +3610,64 @@ public class OutboundApi {
    * 
    * @param sequenceId Campaign Sequence ID (required)
    * @return CampaignSequence
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignSequence> getOutboundSequenceWithHttpInfo(String sequenceId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'sequenceId' is set
-    if (sequenceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'sequenceId' when calling getOutboundSequence");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/sequences/{sequenceId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "sequenceId" + "\\}", pcapiClient.escapeString(sequenceId.toString()));
+  public ApiResponse<CampaignSequence> getOutboundSequenceWithHttpInfo(String sequenceId) throws IOException {
+    return getOutboundSequence(createGetOutboundSequenceRequest(sequenceId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CampaignSequence>() {});
+  private GetOutboundSequenceRequest createGetOutboundSequenceRequest(String sequenceId) {
+    return GetOutboundSequenceRequest.builder()
+            .withSequenceId(sequenceId)
+            .build();
   }
 
   /**
    * Get a dialer campaign sequence.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CampaignSequence
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignSequence getOutboundSequence(GetOutboundSequenceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignSequence>() {});
+    try {
+      ApiResponse<CampaignSequence> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignSequence>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a dialer campaign sequence.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignSequence> getOutboundSequence(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CampaignSequence>invokeAPIVerbose(request, new TypeReference<CampaignSequence>() {});
+  public ApiResponse<CampaignSequence> getOutboundSequence(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignSequence>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignSequence> response = (ApiResponse<CampaignSequence>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignSequence> response = (ApiResponse<CampaignSequence>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3414,10 +3680,11 @@ public class OutboundApi {
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return CampaignSequenceEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignSequenceEntityListing getOutboundSequences(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    return getOutboundSequencesWithHttpInfo(pageSize, pageNumber, filterType, name, sortBy, sortOrder).getBody();
+    return  getOutboundSequences(createGetOutboundSequencesRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder));
   }
 
   /**
@@ -3430,126 +3697,147 @@ public class OutboundApi {
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return CampaignSequenceEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignSequenceEntityListing> getOutboundSequencesWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/sequences".replaceAll("\\{format\\}","json");
+  public ApiResponse<CampaignSequenceEntityListing> getOutboundSequencesWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException {
+    return getOutboundSequences(createGetOutboundSequencesRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetOutboundSequencesRequest createGetOutboundSequencesRequest(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) {
+    return GetOutboundSequencesRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "filterType", filterType));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withFilterType(filterType)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withName(name)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withSortBy(sortBy)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CampaignSequenceEntityListing>() {});
+            .withSortOrder(sortOrder)
+            .build();
   }
 
   /**
    * Query a list of dialer campaign sequences.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CampaignSequenceEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignSequenceEntityListing getOutboundSequences(GetOutboundSequencesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignSequenceEntityListing>() {});
+    try {
+      ApiResponse<CampaignSequenceEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignSequenceEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query a list of dialer campaign sequences.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignSequenceEntityListing> getOutboundSequences(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CampaignSequenceEntityListing>invokeAPIVerbose(request, new TypeReference<CampaignSequenceEntityListing>() {});
+  public ApiResponse<CampaignSequenceEntityListing> getOutboundSequences(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignSequenceEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignSequenceEntityListing> response = (ApiResponse<CampaignSequenceEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignSequenceEntityListing> response = (ApiResponse<CampaignSequenceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get the Dialer wrap up code mapping.
    * 
    * @return WrapUpCodeMapping
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public WrapUpCodeMapping getOutboundWrapupcodemappings() throws IOException, ApiException {
-    return getOutboundWrapupcodemappingsWithHttpInfo().getBody();
+    return  getOutboundWrapupcodemappings(createGetOutboundWrapupcodemappingsRequest());
   }
 
   /**
    * Get the Dialer wrap up code mapping.
    * 
    * @return WrapUpCodeMapping
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WrapUpCodeMapping> getOutboundWrapupcodemappingsWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/wrapupcodemappings".replaceAll("\\{format\\}","json");
+  public ApiResponse<WrapUpCodeMapping> getOutboundWrapupcodemappingsWithHttpInfo() throws IOException {
+    return getOutboundWrapupcodemappings(createGetOutboundWrapupcodemappingsRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<WrapUpCodeMapping>() {});
+  private GetOutboundWrapupcodemappingsRequest createGetOutboundWrapupcodemappingsRequest() {
+    return GetOutboundWrapupcodemappingsRequest.builder()            .build();
   }
 
   /**
    * Get the Dialer wrap up code mapping.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return WrapUpCodeMapping
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public WrapUpCodeMapping getOutboundWrapupcodemappings(GetOutboundWrapupcodemappingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WrapUpCodeMapping>() {});
+    try {
+      ApiResponse<WrapUpCodeMapping> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WrapUpCodeMapping>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the Dialer wrap up code mapping.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WrapUpCodeMapping> getOutboundWrapupcodemappings(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<WrapUpCodeMapping>invokeAPIVerbose(request, new TypeReference<WrapUpCodeMapping>() {});
+  public ApiResponse<WrapUpCodeMapping> getOutboundWrapupcodemappings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WrapUpCodeMapping>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WrapUpCodeMapping> response = (ApiResponse<WrapUpCodeMapping>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WrapUpCodeMapping> response = (ApiResponse<WrapUpCodeMapping>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3557,10 +3845,11 @@ public class OutboundApi {
    * 
    * @param body AttemptLimits (required)
    * @return AttemptLimits
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AttemptLimits postOutboundAttemptlimits(AttemptLimits body) throws IOException, ApiException {
-    return postOutboundAttemptlimitsWithHttpInfo(body).getBody();
+    return  postOutboundAttemptlimits(createPostOutboundAttemptlimitsRequest(body));
   }
 
   /**
@@ -3568,60 +3857,64 @@ public class OutboundApi {
    * 
    * @param body AttemptLimits (required)
    * @return AttemptLimits
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AttemptLimits> postOutboundAttemptlimitsWithHttpInfo(AttemptLimits body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundAttemptlimits");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/attemptlimits".replaceAll("\\{format\\}","json");
+  public ApiResponse<AttemptLimits> postOutboundAttemptlimitsWithHttpInfo(AttemptLimits body) throws IOException {
+    return postOutboundAttemptlimits(createPostOutboundAttemptlimitsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<AttemptLimits>() {});
+  private PostOutboundAttemptlimitsRequest createPostOutboundAttemptlimitsRequest(AttemptLimits body) {
+    return PostOutboundAttemptlimitsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create attempt limits
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return AttemptLimits
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AttemptLimits postOutboundAttemptlimits(PostOutboundAttemptlimitsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AttemptLimits>() {});
+    try {
+      ApiResponse<AttemptLimits> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AttemptLimits>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create attempt limits
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AttemptLimits> postOutboundAttemptlimits(ApiRequest<AttemptLimits> request) throws IOException, ApiException {
-    return pcapiClient.<AttemptLimits>invokeAPIVerbose(request, new TypeReference<AttemptLimits>() {});
+  public ApiResponse<AttemptLimits> postOutboundAttemptlimits(ApiRequest<AttemptLimits> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AttemptLimits>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AttemptLimits> response = (ApiResponse<AttemptLimits>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AttemptLimits> response = (ApiResponse<AttemptLimits>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3634,10 +3927,11 @@ public class OutboundApi {
    * @param sortOrder Sort order (optional, default to ascending)
    * @param facetsOnly Facets only (optional, default to false)
    * @return AuditSearchResult
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AuditSearchResult postOutboundAudits(DialerAuditRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, Boolean facetsOnly) throws IOException, ApiException {
-    return postOutboundAuditsWithHttpInfo(body, pageSize, pageNumber, sortBy, sortOrder, facetsOnly).getBody();
+    return  postOutboundAudits(createPostOutboundAuditsRequest(body, pageSize, pageNumber, sortBy, sortOrder, facetsOnly));
   }
 
   /**
@@ -3650,65 +3944,74 @@ public class OutboundApi {
    * @param sortOrder Sort order (optional, default to ascending)
    * @param facetsOnly Facets only (optional, default to false)
    * @return AuditSearchResult
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AuditSearchResult> postOutboundAuditsWithHttpInfo(DialerAuditRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, Boolean facetsOnly) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundAudits");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/audits".replaceAll("\\{format\\}","json");
+  public ApiResponse<AuditSearchResult> postOutboundAuditsWithHttpInfo(DialerAuditRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, Boolean facetsOnly) throws IOException {
+    return postOutboundAudits(createPostOutboundAuditsRequest(body, pageSize, pageNumber, sortBy, sortOrder, facetsOnly).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostOutboundAuditsRequest createPostOutboundAuditsRequest(DialerAuditRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, Boolean facetsOnly) {
+    return PostOutboundAuditsRequest.builder()
+            .withBody(body)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "facetsOnly", facetsOnly));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageNumber(pageNumber)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortBy(sortBy)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withSortOrder(sortOrder)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<AuditSearchResult>() {});
+            .withFacetsOnly(facetsOnly)
+            .build();
   }
 
   /**
    * Retrieves audits for dialer.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return AuditSearchResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AuditSearchResult postOutboundAudits(PostOutboundAuditsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AuditSearchResult>() {});
+    try {
+      ApiResponse<AuditSearchResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuditSearchResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Retrieves audits for dialer.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AuditSearchResult> postOutboundAudits(ApiRequest<DialerAuditRequest> request) throws IOException, ApiException {
-    return pcapiClient.<AuditSearchResult>invokeAPIVerbose(request, new TypeReference<AuditSearchResult>() {});
+  public ApiResponse<AuditSearchResult> postOutboundAudits(ApiRequest<DialerAuditRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AuditSearchResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuditSearchResult> response = (ApiResponse<AuditSearchResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuditSearchResult> response = (ApiResponse<AuditSearchResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3716,10 +4019,11 @@ public class OutboundApi {
    * 
    * @param body DialerCallableTimeSet (required)
    * @return CallableTimeSet
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallableTimeSet postOutboundCallabletimesets(CallableTimeSet body) throws IOException, ApiException {
-    return postOutboundCallabletimesetsWithHttpInfo(body).getBody();
+    return  postOutboundCallabletimesets(createPostOutboundCallabletimesetsRequest(body));
   }
 
   /**
@@ -3727,60 +4031,64 @@ public class OutboundApi {
    * 
    * @param body DialerCallableTimeSet (required)
    * @return CallableTimeSet
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallableTimeSet> postOutboundCallabletimesetsWithHttpInfo(CallableTimeSet body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundCallabletimesets");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/callabletimesets".replaceAll("\\{format\\}","json");
+  public ApiResponse<CallableTimeSet> postOutboundCallabletimesetsWithHttpInfo(CallableTimeSet body) throws IOException {
+    return postOutboundCallabletimesets(createPostOutboundCallabletimesetsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CallableTimeSet>() {});
+  private PostOutboundCallabletimesetsRequest createPostOutboundCallabletimesetsRequest(CallableTimeSet body) {
+    return PostOutboundCallabletimesetsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create callable time set
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CallableTimeSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallableTimeSet postOutboundCallabletimesets(PostOutboundCallabletimesetsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallableTimeSet>() {});
+    try {
+      ApiResponse<CallableTimeSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CallableTimeSet>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create callable time set
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallableTimeSet> postOutboundCallabletimesets(ApiRequest<CallableTimeSet> request) throws IOException, ApiException {
-    return pcapiClient.<CallableTimeSet>invokeAPIVerbose(request, new TypeReference<CallableTimeSet>() {});
+  public ApiResponse<CallableTimeSet> postOutboundCallabletimesets(ApiRequest<CallableTimeSet> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CallableTimeSet>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallableTimeSet> response = (ApiResponse<CallableTimeSet>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallableTimeSet> response = (ApiResponse<CallableTimeSet>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3788,10 +4096,11 @@ public class OutboundApi {
    * 
    * @param body ResponseSet (required)
    * @return ResponseSet
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ResponseSet postOutboundCallanalysisresponsesets(ResponseSet body) throws IOException, ApiException {
-    return postOutboundCallanalysisresponsesetsWithHttpInfo(body).getBody();
+    return  postOutboundCallanalysisresponsesets(createPostOutboundCallanalysisresponsesetsRequest(body));
   }
 
   /**
@@ -3799,60 +4108,64 @@ public class OutboundApi {
    * 
    * @param body ResponseSet (required)
    * @return ResponseSet
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ResponseSet> postOutboundCallanalysisresponsesetsWithHttpInfo(ResponseSet body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundCallanalysisresponsesets");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/callanalysisresponsesets".replaceAll("\\{format\\}","json");
+  public ApiResponse<ResponseSet> postOutboundCallanalysisresponsesetsWithHttpInfo(ResponseSet body) throws IOException {
+    return postOutboundCallanalysisresponsesets(createPostOutboundCallanalysisresponsesetsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ResponseSet>() {});
+  private PostOutboundCallanalysisresponsesetsRequest createPostOutboundCallanalysisresponsesetsRequest(ResponseSet body) {
+    return PostOutboundCallanalysisresponsesetsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a dialer call analysis response set.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ResponseSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ResponseSet postOutboundCallanalysisresponsesets(PostOutboundCallanalysisresponsesetsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ResponseSet>() {});
+    try {
+      ApiResponse<ResponseSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ResponseSet>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a dialer call analysis response set.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ResponseSet> postOutboundCallanalysisresponsesets(ApiRequest<ResponseSet> request) throws IOException, ApiException {
-    return pcapiClient.<ResponseSet>invokeAPIVerbose(request, new TypeReference<ResponseSet>() {});
+  public ApiResponse<ResponseSet> postOutboundCallanalysisresponsesets(ApiRequest<ResponseSet> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ResponseSet>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseSet> response = (ApiResponse<ResponseSet>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseSet> response = (ApiResponse<ResponseSet>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3861,10 +4174,11 @@ public class OutboundApi {
    * @param campaignId Campaign ID (required)
    * @param body ContactCallbackRequest (required)
    * @return ContactCallbackRequest
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ContactCallbackRequest postOutboundCampaignCallbackSchedule(String campaignId, ContactCallbackRequest body) throws IOException, ApiException {
-    return postOutboundCampaignCallbackScheduleWithHttpInfo(campaignId, body).getBody();
+    return  postOutboundCampaignCallbackSchedule(createPostOutboundCampaignCallbackScheduleRequest(campaignId, body));
   }
 
   /**
@@ -3873,66 +4187,66 @@ public class OutboundApi {
    * @param campaignId Campaign ID (required)
    * @param body ContactCallbackRequest (required)
    * @return ContactCallbackRequest
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactCallbackRequest> postOutboundCampaignCallbackScheduleWithHttpInfo(String campaignId, ContactCallbackRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'campaignId' is set
-    if (campaignId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling postOutboundCampaignCallbackSchedule");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundCampaignCallbackSchedule");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/campaigns/{campaignId}/callback/schedule".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "campaignId" + "\\}", pcapiClient.escapeString(campaignId.toString()));
+  public ApiResponse<ContactCallbackRequest> postOutboundCampaignCallbackScheduleWithHttpInfo(String campaignId, ContactCallbackRequest body) throws IOException {
+    return postOutboundCampaignCallbackSchedule(createPostOutboundCampaignCallbackScheduleRequest(campaignId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostOutboundCampaignCallbackScheduleRequest createPostOutboundCampaignCallbackScheduleRequest(String campaignId, ContactCallbackRequest body) {
+    return PostOutboundCampaignCallbackScheduleRequest.builder()
+            .withCampaignId(campaignId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ContactCallbackRequest>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Schedule a Callback for a Dialer Campaign (Deprecated)
    * This endpoint is deprecated and may have unexpected results. Please use \&quot;/conversations/{conversationId}/participants/{participantId}/callbacks instead.\&quot;
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ContactCallbackRequest
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ContactCallbackRequest postOutboundCampaignCallbackSchedule(PostOutboundCampaignCallbackScheduleRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ContactCallbackRequest>() {});
+    try {
+      ApiResponse<ContactCallbackRequest> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactCallbackRequest>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Schedule a Callback for a Dialer Campaign (Deprecated)
    * This endpoint is deprecated and may have unexpected results. Please use \&quot;/conversations/{conversationId}/participants/{participantId}/callbacks instead.\&quot;
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactCallbackRequest> postOutboundCampaignCallbackSchedule(ApiRequest<ContactCallbackRequest> request) throws IOException, ApiException {
-    return pcapiClient.<ContactCallbackRequest>invokeAPIVerbose(request, new TypeReference<ContactCallbackRequest>() {});
+  public ApiResponse<ContactCallbackRequest> postOutboundCampaignCallbackSchedule(ApiRequest<ContactCallbackRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactCallbackRequest>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactCallbackRequest> response = (ApiResponse<ContactCallbackRequest>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactCallbackRequest> response = (ApiResponse<ContactCallbackRequest>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -3940,10 +4254,11 @@ public class OutboundApi {
    * 
    * @param body CampaignRule (required)
    * @return CampaignRule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignRule postOutboundCampaignrules(CampaignRule body) throws IOException, ApiException {
-    return postOutboundCampaignrulesWithHttpInfo(body).getBody();
+    return  postOutboundCampaignrules(createPostOutboundCampaignrulesRequest(body));
   }
 
   /**
@@ -3951,60 +4266,64 @@ public class OutboundApi {
    * 
    * @param body CampaignRule (required)
    * @return CampaignRule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignRule> postOutboundCampaignrulesWithHttpInfo(CampaignRule body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundCampaignrules");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/campaignrules".replaceAll("\\{format\\}","json");
+  public ApiResponse<CampaignRule> postOutboundCampaignrulesWithHttpInfo(CampaignRule body) throws IOException {
+    return postOutboundCampaignrules(createPostOutboundCampaignrulesRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CampaignRule>() {});
+  private PostOutboundCampaignrulesRequest createPostOutboundCampaignrulesRequest(CampaignRule body) {
+    return PostOutboundCampaignrulesRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create Campaign Rule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CampaignRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignRule postOutboundCampaignrules(PostOutboundCampaignrulesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignRule>() {});
+    try {
+      ApiResponse<CampaignRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create Campaign Rule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignRule> postOutboundCampaignrules(ApiRequest<CampaignRule> request) throws IOException, ApiException {
-    return pcapiClient.<CampaignRule>invokeAPIVerbose(request, new TypeReference<CampaignRule>() {});
+  public ApiResponse<CampaignRule> postOutboundCampaignrules(ApiRequest<CampaignRule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignRule> response = (ApiResponse<CampaignRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignRule> response = (ApiResponse<CampaignRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4012,10 +4331,11 @@ public class OutboundApi {
    * 
    * @param body Campaign (required)
    * @return Campaign
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Campaign postOutboundCampaigns(Campaign body) throws IOException, ApiException {
-    return postOutboundCampaignsWithHttpInfo(body).getBody();
+    return  postOutboundCampaigns(createPostOutboundCampaignsRequest(body));
   }
 
   /**
@@ -4023,60 +4343,64 @@ public class OutboundApi {
    * 
    * @param body Campaign (required)
    * @return Campaign
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Campaign> postOutboundCampaignsWithHttpInfo(Campaign body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundCampaigns");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/campaigns".replaceAll("\\{format\\}","json");
+  public ApiResponse<Campaign> postOutboundCampaignsWithHttpInfo(Campaign body) throws IOException {
+    return postOutboundCampaigns(createPostOutboundCampaignsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Campaign>() {});
+  private PostOutboundCampaignsRequest createPostOutboundCampaignsRequest(Campaign body) {
+    return PostOutboundCampaignsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a campaign.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Campaign
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Campaign postOutboundCampaigns(PostOutboundCampaignsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Campaign>() {});
+    try {
+      ApiResponse<Campaign> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Campaign>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a campaign.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Campaign> postOutboundCampaigns(ApiRequest<Campaign> request) throws IOException, ApiException {
-    return pcapiClient.<Campaign>invokeAPIVerbose(request, new TypeReference<Campaign>() {});
+  public ApiResponse<Campaign> postOutboundCampaigns(ApiRequest<Campaign> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Campaign>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Campaign> response = (ApiResponse<Campaign>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Campaign> response = (ApiResponse<Campaign>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4084,10 +4408,11 @@ public class OutboundApi {
    * 
    * @param body Campaign IDs (required)
    * @return List<CampaignProgress>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<CampaignProgress> postOutboundCampaignsProgress(List<String> body) throws IOException, ApiException {
-    return postOutboundCampaignsProgressWithHttpInfo(body).getBody();
+    return  postOutboundCampaignsProgress(createPostOutboundCampaignsProgressRequest(body));
   }
 
   /**
@@ -4095,60 +4420,64 @@ public class OutboundApi {
    * 
    * @param body Campaign IDs (required)
    * @return List<CampaignProgress>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<CampaignProgress>> postOutboundCampaignsProgressWithHttpInfo(List<String> body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundCampaignsProgress");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/campaigns/progress".replaceAll("\\{format\\}","json");
+  public ApiResponse<List<CampaignProgress>> postOutboundCampaignsProgressWithHttpInfo(List<String> body) throws IOException {
+    return postOutboundCampaignsProgress(createPostOutboundCampaignsProgressRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<CampaignProgress>>() {});
+  private PostOutboundCampaignsProgressRequest createPostOutboundCampaignsProgressRequest(List<String> body) {
+    return PostOutboundCampaignsProgressRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Get progress for a list of campaigns
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<CampaignProgress>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<CampaignProgress> postOutboundCampaignsProgress(PostOutboundCampaignsProgressRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<CampaignProgress>>() {});
+    try {
+      ApiResponse<List<CampaignProgress>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<CampaignProgress>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get progress for a list of campaigns
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<CampaignProgress>> postOutboundCampaignsProgress(ApiRequest<List<String>> request) throws IOException, ApiException {
-    return pcapiClient.<List<CampaignProgress>>invokeAPIVerbose(request, new TypeReference<List<CampaignProgress>>() {});
+  public ApiResponse<List<CampaignProgress>> postOutboundCampaignsProgress(ApiRequest<List<String>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<CampaignProgress>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<CampaignProgress>> response = (ApiResponse<List<CampaignProgress>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<CampaignProgress>> response = (ApiResponse<List<CampaignProgress>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4159,10 +4488,11 @@ public class OutboundApi {
    * @param priority Contact priority.  True means the contact(s) will go to the beginning of the list, false means at the end. (optional)
    * @param clearSystemData Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t. (optional)
    * @return List<DialerContact>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<DialerContact> postOutboundContactlistContacts(String contactListId, List<DialerContact> body, Boolean priority, Boolean clearSystemData) throws IOException, ApiException {
-    return postOutboundContactlistContactsWithHttpInfo(contactListId, body, priority, clearSystemData).getBody();
+    return  postOutboundContactlistContacts(createPostOutboundContactlistContactsRequest(contactListId, body, priority, clearSystemData));
   }
 
   /**
@@ -4173,68 +4503,70 @@ public class OutboundApi {
    * @param priority Contact priority.  True means the contact(s) will go to the beginning of the list, false means at the end. (optional)
    * @param clearSystemData Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t. (optional)
    * @return List<DialerContact>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<DialerContact>> postOutboundContactlistContactsWithHttpInfo(String contactListId, List<DialerContact> body, Boolean priority, Boolean clearSystemData) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'contactListId' is set
-    if (contactListId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactListId' when calling postOutboundContactlistContacts");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundContactlistContacts");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/contactlists/{contactListId}/contacts".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "contactListId" + "\\}", pcapiClient.escapeString(contactListId.toString()));
+  public ApiResponse<List<DialerContact>> postOutboundContactlistContactsWithHttpInfo(String contactListId, List<DialerContact> body, Boolean priority, Boolean clearSystemData) throws IOException {
+    return postOutboundContactlistContacts(createPostOutboundContactlistContactsRequest(contactListId, body, priority, clearSystemData).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostOutboundContactlistContactsRequest createPostOutboundContactlistContactsRequest(String contactListId, List<DialerContact> body, Boolean priority, Boolean clearSystemData) {
+    return PostOutboundContactlistContactsRequest.builder()
+            .withContactListId(contactListId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "priority", priority));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "clearSystemData", clearSystemData));
+            .withBody(body)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPriority(priority)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<DialerContact>>() {});
+            .withClearSystemData(clearSystemData)
+            .build();
   }
 
   /**
    * Add contacts to a contact list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<DialerContact>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<DialerContact> postOutboundContactlistContacts(PostOutboundContactlistContactsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<DialerContact>>() {});
+    try {
+      ApiResponse<List<DialerContact>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<DialerContact>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Add contacts to a contact list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<DialerContact>> postOutboundContactlistContacts(ApiRequest<List<DialerContact>> request) throws IOException, ApiException {
-    return pcapiClient.<List<DialerContact>>invokeAPIVerbose(request, new TypeReference<List<DialerContact>>() {});
+  public ApiResponse<List<DialerContact>> postOutboundContactlistContacts(ApiRequest<List<DialerContact>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<DialerContact>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<DialerContact>> response = (ApiResponse<List<DialerContact>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<DialerContact>> response = (ApiResponse<List<DialerContact>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4242,10 +4574,11 @@ public class OutboundApi {
    * Returns 200 if received OK.
    * @param contactListId ContactList ID (required)
    * @return UriReference
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UriReference postOutboundContactlistExport(String contactListId) throws IOException, ApiException {
-    return postOutboundContactlistExportWithHttpInfo(contactListId).getBody();
+    return  postOutboundContactlistExport(createPostOutboundContactlistExportRequest(contactListId));
   }
 
   /**
@@ -4253,61 +4586,64 @@ public class OutboundApi {
    * Returns 200 if received OK.
    * @param contactListId ContactList ID (required)
    * @return UriReference
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UriReference> postOutboundContactlistExportWithHttpInfo(String contactListId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'contactListId' is set
-    if (contactListId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactListId' when calling postOutboundContactlistExport");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/contactlists/{contactListId}/export".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "contactListId" + "\\}", pcapiClient.escapeString(contactListId.toString()));
+  public ApiResponse<UriReference> postOutboundContactlistExportWithHttpInfo(String contactListId) throws IOException {
+    return postOutboundContactlistExport(createPostOutboundContactlistExportRequest(contactListId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UriReference>() {});
+  private PostOutboundContactlistExportRequest createPostOutboundContactlistExportRequest(String contactListId) {
+    return PostOutboundContactlistExportRequest.builder()
+            .withContactListId(contactListId)
+            .build();
   }
 
   /**
    * Initiate the export of a contact list.
    * Returns 200 if received OK.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UriReference
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UriReference postOutboundContactlistExport(PostOutboundContactlistExportRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UriReference>() {});
+    try {
+      ApiResponse<UriReference> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UriReference>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Initiate the export of a contact list.
    * Returns 200 if received OK.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UriReference> postOutboundContactlistExport(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<UriReference>invokeAPIVerbose(request, new TypeReference<UriReference>() {});
+  public ApiResponse<UriReference> postOutboundContactlistExport(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UriReference>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UriReference> response = (ApiResponse<UriReference>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UriReference> response = (ApiResponse<UriReference>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4315,10 +4651,11 @@ public class OutboundApi {
    * 
    * @param body ContactList (required)
    * @return ContactList
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ContactList postOutboundContactlists(ContactList body) throws IOException, ApiException {
-    return postOutboundContactlistsWithHttpInfo(body).getBody();
+    return  postOutboundContactlists(createPostOutboundContactlistsRequest(body));
   }
 
   /**
@@ -4326,131 +4663,138 @@ public class OutboundApi {
    * 
    * @param body ContactList (required)
    * @return ContactList
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactList> postOutboundContactlistsWithHttpInfo(ContactList body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundContactlists");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/contactlists".replaceAll("\\{format\\}","json");
+  public ApiResponse<ContactList> postOutboundContactlistsWithHttpInfo(ContactList body) throws IOException {
+    return postOutboundContactlists(createPostOutboundContactlistsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ContactList>() {});
+  private PostOutboundContactlistsRequest createPostOutboundContactlistsRequest(ContactList body) {
+    return PostOutboundContactlistsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a contact List.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ContactList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ContactList postOutboundContactlists(PostOutboundContactlistsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ContactList>() {});
+    try {
+      ApiResponse<ContactList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a contact List.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactList> postOutboundContactlists(ApiRequest<ContactList> request) throws IOException, ApiException {
-    return pcapiClient.<ContactList>invokeAPIVerbose(request, new TypeReference<ContactList>() {});
+  public ApiResponse<ContactList> postOutboundContactlists(ApiRequest<ContactList> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactList> response = (ApiResponse<ContactList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactList> response = (ApiResponse<ContactList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Add phone numbers to a Dialer DNC list.
    * 
    * @param conversationId Conversation ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postOutboundConversationDnc(String conversationId) throws IOException, ApiException {
-    postOutboundConversationDncWithHttpInfo(conversationId);
+     postOutboundConversationDnc(createPostOutboundConversationDncRequest(conversationId));
   }
 
   /**
    * Add phone numbers to a Dialer DNC list.
    * 
    * @param conversationId Conversation ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postOutboundConversationDncWithHttpInfo(String conversationId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling postOutboundConversationDnc");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/conversations/{conversationId}/dnc".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()));
+  public ApiResponse<Void> postOutboundConversationDncWithHttpInfo(String conversationId) throws IOException {
+    return postOutboundConversationDnc(createPostOutboundConversationDncRequest(conversationId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private PostOutboundConversationDncRequest createPostOutboundConversationDncRequest(String conversationId) {
+    return PostOutboundConversationDncRequest.builder()
+            .withConversationId(conversationId)
+            .build();
   }
 
   /**
    * Add phone numbers to a Dialer DNC list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postOutboundConversationDnc(PostOutboundConversationDncRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Add phone numbers to a Dialer DNC list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postOutboundConversationDnc(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> postOutboundConversationDnc(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4458,10 +4802,11 @@ public class OutboundApi {
    * Returns 200 if received OK.
    * @param dncListId DncList ID (required)
    * @return UriReference
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UriReference postOutboundDnclistExport(String dncListId) throws IOException, ApiException {
-    return postOutboundDnclistExportWithHttpInfo(dncListId).getBody();
+    return  postOutboundDnclistExport(createPostOutboundDnclistExportRequest(dncListId));
   }
 
   /**
@@ -4469,61 +4814,64 @@ public class OutboundApi {
    * Returns 200 if received OK.
    * @param dncListId DncList ID (required)
    * @return UriReference
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UriReference> postOutboundDnclistExportWithHttpInfo(String dncListId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'dncListId' is set
-    if (dncListId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'dncListId' when calling postOutboundDnclistExport");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/dnclists/{dncListId}/export".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "dncListId" + "\\}", pcapiClient.escapeString(dncListId.toString()));
+  public ApiResponse<UriReference> postOutboundDnclistExportWithHttpInfo(String dncListId) throws IOException {
+    return postOutboundDnclistExport(createPostOutboundDnclistExportRequest(dncListId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UriReference>() {});
+  private PostOutboundDnclistExportRequest createPostOutboundDnclistExportRequest(String dncListId) {
+    return PostOutboundDnclistExportRequest.builder()
+            .withDncListId(dncListId)
+            .build();
   }
 
   /**
    * Initiate the export of a dnc list.
    * Returns 200 if received OK.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UriReference
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UriReference postOutboundDnclistExport(PostOutboundDnclistExportRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UriReference>() {});
+    try {
+      ApiResponse<UriReference> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UriReference>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Initiate the export of a dnc list.
    * Returns 200 if received OK.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UriReference> postOutboundDnclistExport(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<UriReference>invokeAPIVerbose(request, new TypeReference<UriReference>() {});
+  public ApiResponse<UriReference> postOutboundDnclistExport(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UriReference>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UriReference> response = (ApiResponse<UriReference>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UriReference> response = (ApiResponse<UriReference>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4531,10 +4879,11 @@ public class OutboundApi {
    * Only Internal DNC lists may be appended to
    * @param dncListId DncList ID (required)
    * @param body DNC Phone Numbers (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postOutboundDnclistPhonenumbers(String dncListId, List<String> body) throws IOException, ApiException {
-    postOutboundDnclistPhonenumbersWithHttpInfo(dncListId, body);
+     postOutboundDnclistPhonenumbers(createPostOutboundDnclistPhonenumbersRequest(dncListId, body));
   }
 
   /**
@@ -4542,66 +4891,65 @@ public class OutboundApi {
    * Only Internal DNC lists may be appended to
    * @param dncListId DncList ID (required)
    * @param body DNC Phone Numbers (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postOutboundDnclistPhonenumbersWithHttpInfo(String dncListId, List<String> body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'dncListId' is set
-    if (dncListId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'dncListId' when calling postOutboundDnclistPhonenumbers");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundDnclistPhonenumbers");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/dnclists/{dncListId}/phonenumbers".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "dncListId" + "\\}", pcapiClient.escapeString(dncListId.toString()));
+  public ApiResponse<Void> postOutboundDnclistPhonenumbersWithHttpInfo(String dncListId, List<String> body) throws IOException {
+    return postOutboundDnclistPhonenumbers(createPostOutboundDnclistPhonenumbersRequest(dncListId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostOutboundDnclistPhonenumbersRequest createPostOutboundDnclistPhonenumbersRequest(String dncListId, List<String> body) {
+    return PostOutboundDnclistPhonenumbersRequest.builder()
+            .withDncListId(dncListId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Add phone numbers to a Dialer DNC list.
    * Only Internal DNC lists may be appended to
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void postOutboundDnclistPhonenumbers(PostOutboundDnclistPhonenumbersRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Add phone numbers to a Dialer DNC list.
    * Only Internal DNC lists may be appended to
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postOutboundDnclistPhonenumbers(ApiRequest<List<String>> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> postOutboundDnclistPhonenumbers(ApiRequest<List<String>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4609,10 +4957,11 @@ public class OutboundApi {
    * 
    * @param body DncList (required)
    * @return DncList
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DncList postOutboundDnclists(DncListCreate body) throws IOException, ApiException {
-    return postOutboundDnclistsWithHttpInfo(body).getBody();
+    return  postOutboundDnclists(createPostOutboundDnclistsRequest(body));
   }
 
   /**
@@ -4620,60 +4969,64 @@ public class OutboundApi {
    * 
    * @param body DncList (required)
    * @return DncList
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DncList> postOutboundDnclistsWithHttpInfo(DncListCreate body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundDnclists");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/dnclists".replaceAll("\\{format\\}","json");
+  public ApiResponse<DncList> postOutboundDnclistsWithHttpInfo(DncListCreate body) throws IOException {
+    return postOutboundDnclists(createPostOutboundDnclistsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DncList>() {});
+  private PostOutboundDnclistsRequest createPostOutboundDnclistsRequest(DncListCreate body) {
+    return PostOutboundDnclistsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create dialer DNC list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DncList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DncList postOutboundDnclists(PostOutboundDnclistsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DncList>() {});
+    try {
+      ApiResponse<DncList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DncList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create dialer DNC list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DncList> postOutboundDnclists(ApiRequest<DncListCreate> request) throws IOException, ApiException {
-    return pcapiClient.<DncList>invokeAPIVerbose(request, new TypeReference<DncList>() {});
+  public ApiResponse<DncList> postOutboundDnclists(ApiRequest<DncListCreate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DncList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DncList> response = (ApiResponse<DncList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DncList> response = (ApiResponse<DncList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4681,10 +5034,11 @@ public class OutboundApi {
    * 
    * @param body RuleSet (required)
    * @return RuleSet
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RuleSet postOutboundRulesets(RuleSet body) throws IOException, ApiException {
-    return postOutboundRulesetsWithHttpInfo(body).getBody();
+    return  postOutboundRulesets(createPostOutboundRulesetsRequest(body));
   }
 
   /**
@@ -4692,60 +5046,64 @@ public class OutboundApi {
    * 
    * @param body RuleSet (required)
    * @return RuleSet
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RuleSet> postOutboundRulesetsWithHttpInfo(RuleSet body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundRulesets");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/rulesets".replaceAll("\\{format\\}","json");
+  public ApiResponse<RuleSet> postOutboundRulesetsWithHttpInfo(RuleSet body) throws IOException {
+    return postOutboundRulesets(createPostOutboundRulesetsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<RuleSet>() {});
+  private PostOutboundRulesetsRequest createPostOutboundRulesetsRequest(RuleSet body) {
+    return PostOutboundRulesetsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a Dialer Call Analysis Response Set.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return RuleSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RuleSet postOutboundRulesets(PostOutboundRulesetsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RuleSet>() {});
+    try {
+      ApiResponse<RuleSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RuleSet>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a Dialer Call Analysis Response Set.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RuleSet> postOutboundRulesets(ApiRequest<RuleSet> request) throws IOException, ApiException {
-    return pcapiClient.<RuleSet>invokeAPIVerbose(request, new TypeReference<RuleSet>() {});
+  public ApiResponse<RuleSet> postOutboundRulesets(ApiRequest<RuleSet> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RuleSet>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RuleSet> response = (ApiResponse<RuleSet>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RuleSet> response = (ApiResponse<RuleSet>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4753,10 +5111,11 @@ public class OutboundApi {
    * 
    * @param body Organization (required)
    * @return CampaignSequence
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignSequence postOutboundSequences(CampaignSequence body) throws IOException, ApiException {
-    return postOutboundSequencesWithHttpInfo(body).getBody();
+    return  postOutboundSequences(createPostOutboundSequencesRequest(body));
   }
 
   /**
@@ -4764,60 +5123,64 @@ public class OutboundApi {
    * 
    * @param body Organization (required)
    * @return CampaignSequence
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignSequence> postOutboundSequencesWithHttpInfo(CampaignSequence body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postOutboundSequences");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/sequences".replaceAll("\\{format\\}","json");
+  public ApiResponse<CampaignSequence> postOutboundSequencesWithHttpInfo(CampaignSequence body) throws IOException {
+    return postOutboundSequences(createPostOutboundSequencesRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CampaignSequence>() {});
+  private PostOutboundSequencesRequest createPostOutboundSequencesRequest(CampaignSequence body) {
+    return PostOutboundSequencesRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a new campaign sequence.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CampaignSequence
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignSequence postOutboundSequences(PostOutboundSequencesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignSequence>() {});
+    try {
+      ApiResponse<CampaignSequence> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignSequence>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a new campaign sequence.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignSequence> postOutboundSequences(ApiRequest<CampaignSequence> request) throws IOException, ApiException {
-    return pcapiClient.<CampaignSequence>invokeAPIVerbose(request, new TypeReference<CampaignSequence>() {});
+  public ApiResponse<CampaignSequence> postOutboundSequences(ApiRequest<CampaignSequence> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignSequence>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignSequence> response = (ApiResponse<CampaignSequence>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignSequence> response = (ApiResponse<CampaignSequence>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4826,10 +5189,11 @@ public class OutboundApi {
    * @param attemptLimitsId Attempt limits ID (required)
    * @param body AttemptLimits (required)
    * @return AttemptLimits
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AttemptLimits putOutboundAttemptlimit(String attemptLimitsId, AttemptLimits body) throws IOException, ApiException {
-    return putOutboundAttemptlimitWithHttpInfo(attemptLimitsId, body).getBody();
+    return  putOutboundAttemptlimit(createPutOutboundAttemptlimitRequest(attemptLimitsId, body));
   }
 
   /**
@@ -4838,66 +5202,66 @@ public class OutboundApi {
    * @param attemptLimitsId Attempt limits ID (required)
    * @param body AttemptLimits (required)
    * @return AttemptLimits
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AttemptLimits> putOutboundAttemptlimitWithHttpInfo(String attemptLimitsId, AttemptLimits body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'attemptLimitsId' is set
-    if (attemptLimitsId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'attemptLimitsId' when calling putOutboundAttemptlimit");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundAttemptlimit");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/attemptlimits/{attemptLimitsId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "attemptLimitsId" + "\\}", pcapiClient.escapeString(attemptLimitsId.toString()));
+  public ApiResponse<AttemptLimits> putOutboundAttemptlimitWithHttpInfo(String attemptLimitsId, AttemptLimits body) throws IOException {
+    return putOutboundAttemptlimit(createPutOutboundAttemptlimitRequest(attemptLimitsId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutOutboundAttemptlimitRequest createPutOutboundAttemptlimitRequest(String attemptLimitsId, AttemptLimits body) {
+    return PutOutboundAttemptlimitRequest.builder()
+            .withAttemptLimitsId(attemptLimitsId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<AttemptLimits>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update attempt limits
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return AttemptLimits
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AttemptLimits putOutboundAttemptlimit(PutOutboundAttemptlimitRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AttemptLimits>() {});
+    try {
+      ApiResponse<AttemptLimits> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AttemptLimits>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update attempt limits
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AttemptLimits> putOutboundAttemptlimit(ApiRequest<AttemptLimits> request) throws IOException, ApiException {
-    return pcapiClient.<AttemptLimits>invokeAPIVerbose(request, new TypeReference<AttemptLimits>() {});
+  public ApiResponse<AttemptLimits> putOutboundAttemptlimit(ApiRequest<AttemptLimits> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AttemptLimits>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AttemptLimits> response = (ApiResponse<AttemptLimits>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AttemptLimits> response = (ApiResponse<AttemptLimits>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4906,10 +5270,11 @@ public class OutboundApi {
    * @param callableTimeSetId Callable Time Set ID (required)
    * @param body DialerCallableTimeSet (required)
    * @return CallableTimeSet
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallableTimeSet putOutboundCallabletimeset(String callableTimeSetId, CallableTimeSet body) throws IOException, ApiException {
-    return putOutboundCallabletimesetWithHttpInfo(callableTimeSetId, body).getBody();
+    return  putOutboundCallabletimeset(createPutOutboundCallabletimesetRequest(callableTimeSetId, body));
   }
 
   /**
@@ -4918,66 +5283,66 @@ public class OutboundApi {
    * @param callableTimeSetId Callable Time Set ID (required)
    * @param body DialerCallableTimeSet (required)
    * @return CallableTimeSet
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallableTimeSet> putOutboundCallabletimesetWithHttpInfo(String callableTimeSetId, CallableTimeSet body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'callableTimeSetId' is set
-    if (callableTimeSetId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callableTimeSetId' when calling putOutboundCallabletimeset");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundCallabletimeset");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/callabletimesets/{callableTimeSetId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callableTimeSetId" + "\\}", pcapiClient.escapeString(callableTimeSetId.toString()));
+  public ApiResponse<CallableTimeSet> putOutboundCallabletimesetWithHttpInfo(String callableTimeSetId, CallableTimeSet body) throws IOException {
+    return putOutboundCallabletimeset(createPutOutboundCallabletimesetRequest(callableTimeSetId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutOutboundCallabletimesetRequest createPutOutboundCallabletimesetRequest(String callableTimeSetId, CallableTimeSet body) {
+    return PutOutboundCallabletimesetRequest.builder()
+            .withCallableTimeSetId(callableTimeSetId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CallableTimeSet>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update callable time set
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CallableTimeSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CallableTimeSet putOutboundCallabletimeset(PutOutboundCallabletimesetRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CallableTimeSet>() {});
+    try {
+      ApiResponse<CallableTimeSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CallableTimeSet>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update callable time set
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallableTimeSet> putOutboundCallabletimeset(ApiRequest<CallableTimeSet> request) throws IOException, ApiException {
-    return pcapiClient.<CallableTimeSet>invokeAPIVerbose(request, new TypeReference<CallableTimeSet>() {});
+  public ApiResponse<CallableTimeSet> putOutboundCallabletimeset(ApiRequest<CallableTimeSet> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CallableTimeSet>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallableTimeSet> response = (ApiResponse<CallableTimeSet>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CallableTimeSet> response = (ApiResponse<CallableTimeSet>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -4986,10 +5351,11 @@ public class OutboundApi {
    * @param callAnalysisSetId Call Analysis Response Set ID (required)
    * @param body ResponseSet (required)
    * @return ResponseSet
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ResponseSet putOutboundCallanalysisresponseset(String callAnalysisSetId, ResponseSet body) throws IOException, ApiException {
-    return putOutboundCallanalysisresponsesetWithHttpInfo(callAnalysisSetId, body).getBody();
+    return  putOutboundCallanalysisresponseset(createPutOutboundCallanalysisresponsesetRequest(callAnalysisSetId, body));
   }
 
   /**
@@ -4998,66 +5364,66 @@ public class OutboundApi {
    * @param callAnalysisSetId Call Analysis Response Set ID (required)
    * @param body ResponseSet (required)
    * @return ResponseSet
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ResponseSet> putOutboundCallanalysisresponsesetWithHttpInfo(String callAnalysisSetId, ResponseSet body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'callAnalysisSetId' is set
-    if (callAnalysisSetId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'callAnalysisSetId' when calling putOutboundCallanalysisresponseset");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundCallanalysisresponseset");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "callAnalysisSetId" + "\\}", pcapiClient.escapeString(callAnalysisSetId.toString()));
+  public ApiResponse<ResponseSet> putOutboundCallanalysisresponsesetWithHttpInfo(String callAnalysisSetId, ResponseSet body) throws IOException {
+    return putOutboundCallanalysisresponseset(createPutOutboundCallanalysisresponsesetRequest(callAnalysisSetId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutOutboundCallanalysisresponsesetRequest createPutOutboundCallanalysisresponsesetRequest(String callAnalysisSetId, ResponseSet body) {
+    return PutOutboundCallanalysisresponsesetRequest.builder()
+            .withCallAnalysisSetId(callAnalysisSetId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ResponseSet>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a dialer call analysis response set.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ResponseSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ResponseSet putOutboundCallanalysisresponseset(PutOutboundCallanalysisresponsesetRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ResponseSet>() {});
+    try {
+      ApiResponse<ResponseSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ResponseSet>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a dialer call analysis response set.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ResponseSet> putOutboundCallanalysisresponseset(ApiRequest<ResponseSet> request) throws IOException, ApiException {
-    return pcapiClient.<ResponseSet>invokeAPIVerbose(request, new TypeReference<ResponseSet>() {});
+  public ApiResponse<ResponseSet> putOutboundCallanalysisresponseset(ApiRequest<ResponseSet> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ResponseSet>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseSet> response = (ApiResponse<ResponseSet>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseSet> response = (ApiResponse<ResponseSet>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5066,10 +5432,11 @@ public class OutboundApi {
    * @param campaignId Campaign ID (required)
    * @param body Campaign (required)
    * @return Campaign
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Campaign putOutboundCampaign(String campaignId, Campaign body) throws IOException, ApiException {
-    return putOutboundCampaignWithHttpInfo(campaignId, body).getBody();
+    return  putOutboundCampaign(createPutOutboundCampaignRequest(campaignId, body));
   }
 
   /**
@@ -5078,66 +5445,66 @@ public class OutboundApi {
    * @param campaignId Campaign ID (required)
    * @param body Campaign (required)
    * @return Campaign
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Campaign> putOutboundCampaignWithHttpInfo(String campaignId, Campaign body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'campaignId' is set
-    if (campaignId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling putOutboundCampaign");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundCampaign");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/campaigns/{campaignId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "campaignId" + "\\}", pcapiClient.escapeString(campaignId.toString()));
+  public ApiResponse<Campaign> putOutboundCampaignWithHttpInfo(String campaignId, Campaign body) throws IOException {
+    return putOutboundCampaign(createPutOutboundCampaignRequest(campaignId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutOutboundCampaignRequest createPutOutboundCampaignRequest(String campaignId, Campaign body) {
+    return PutOutboundCampaignRequest.builder()
+            .withCampaignId(campaignId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Campaign>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a campaign.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Campaign
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Campaign putOutboundCampaign(PutOutboundCampaignRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Campaign>() {});
+    try {
+      ApiResponse<Campaign> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Campaign>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a campaign.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Campaign> putOutboundCampaign(ApiRequest<Campaign> request) throws IOException, ApiException {
-    return pcapiClient.<Campaign>invokeAPIVerbose(request, new TypeReference<Campaign>() {});
+  public ApiResponse<Campaign> putOutboundCampaign(ApiRequest<Campaign> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Campaign>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Campaign> response = (ApiResponse<Campaign>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Campaign> response = (ApiResponse<Campaign>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5147,10 +5514,11 @@ public class OutboundApi {
    * @param userId Agent&#39;s user ID (required)
    * @param body agent (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String putOutboundCampaignAgent(String campaignId, String userId, Agent body) throws IOException, ApiException {
-    return putOutboundCampaignAgentWithHttpInfo(campaignId, userId, body).getBody();
+    return  putOutboundCampaignAgent(createPutOutboundCampaignAgentRequest(campaignId, userId, body));
   }
 
   /**
@@ -5160,72 +5528,68 @@ public class OutboundApi {
    * @param userId Agent&#39;s user ID (required)
    * @param body agent (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> putOutboundCampaignAgentWithHttpInfo(String campaignId, String userId, Agent body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'campaignId' is set
-    if (campaignId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling putOutboundCampaignAgent");
-    }
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putOutboundCampaignAgent");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundCampaignAgent");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/campaigns/{campaignId}/agents/{userId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "campaignId" + "\\}", pcapiClient.escapeString(campaignId.toString()))
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<String> putOutboundCampaignAgentWithHttpInfo(String campaignId, String userId, Agent body) throws IOException {
+    return putOutboundCampaignAgent(createPutOutboundCampaignAgentRequest(campaignId, userId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutOutboundCampaignAgentRequest createPutOutboundCampaignAgentRequest(String campaignId, String userId, Agent body) {
+    return PutOutboundCampaignAgentRequest.builder()
+            .withCampaignId(campaignId)
 
+            .withUserId(userId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Send notification that an agent&#39;s state changed 
    * New agent state.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String putOutboundCampaignAgent(PutOutboundCampaignAgentRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Send notification that an agent&#39;s state changed 
    * New agent state.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> putOutboundCampaignAgent(ApiRequest<Agent> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> putOutboundCampaignAgent(ApiRequest<Agent> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5234,10 +5598,11 @@ public class OutboundApi {
    * @param campaignRuleId Campaign Rule ID (required)
    * @param body CampaignRule (required)
    * @return CampaignRule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignRule putOutboundCampaignrule(String campaignRuleId, CampaignRule body) throws IOException, ApiException {
-    return putOutboundCampaignruleWithHttpInfo(campaignRuleId, body).getBody();
+    return  putOutboundCampaignrule(createPutOutboundCampaignruleRequest(campaignRuleId, body));
   }
 
   /**
@@ -5246,66 +5611,66 @@ public class OutboundApi {
    * @param campaignRuleId Campaign Rule ID (required)
    * @param body CampaignRule (required)
    * @return CampaignRule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignRule> putOutboundCampaignruleWithHttpInfo(String campaignRuleId, CampaignRule body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'campaignRuleId' is set
-    if (campaignRuleId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'campaignRuleId' when calling putOutboundCampaignrule");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundCampaignrule");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/campaignrules/{campaignRuleId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "campaignRuleId" + "\\}", pcapiClient.escapeString(campaignRuleId.toString()));
+  public ApiResponse<CampaignRule> putOutboundCampaignruleWithHttpInfo(String campaignRuleId, CampaignRule body) throws IOException {
+    return putOutboundCampaignrule(createPutOutboundCampaignruleRequest(campaignRuleId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutOutboundCampaignruleRequest createPutOutboundCampaignruleRequest(String campaignRuleId, CampaignRule body) {
+    return PutOutboundCampaignruleRequest.builder()
+            .withCampaignRuleId(campaignRuleId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CampaignRule>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update Campaign Rule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CampaignRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignRule putOutboundCampaignrule(PutOutboundCampaignruleRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignRule>() {});
+    try {
+      ApiResponse<CampaignRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update Campaign Rule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignRule> putOutboundCampaignrule(ApiRequest<CampaignRule> request) throws IOException, ApiException {
-    return pcapiClient.<CampaignRule>invokeAPIVerbose(request, new TypeReference<CampaignRule>() {});
+  public ApiResponse<CampaignRule> putOutboundCampaignrule(ApiRequest<CampaignRule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignRule> response = (ApiResponse<CampaignRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignRule> response = (ApiResponse<CampaignRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5314,10 +5679,11 @@ public class OutboundApi {
    * @param contactListId ContactList ID (required)
    * @param body ContactList (required)
    * @return ContactList
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ContactList putOutboundContactlist(String contactListId, ContactList body) throws IOException, ApiException {
-    return putOutboundContactlistWithHttpInfo(contactListId, body).getBody();
+    return  putOutboundContactlist(createPutOutboundContactlistRequest(contactListId, body));
   }
 
   /**
@@ -5326,66 +5692,66 @@ public class OutboundApi {
    * @param contactListId ContactList ID (required)
    * @param body ContactList (required)
    * @return ContactList
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactList> putOutboundContactlistWithHttpInfo(String contactListId, ContactList body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'contactListId' is set
-    if (contactListId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactListId' when calling putOutboundContactlist");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundContactlist");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/contactlists/{contactListId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "contactListId" + "\\}", pcapiClient.escapeString(contactListId.toString()));
+  public ApiResponse<ContactList> putOutboundContactlistWithHttpInfo(String contactListId, ContactList body) throws IOException {
+    return putOutboundContactlist(createPutOutboundContactlistRequest(contactListId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutOutboundContactlistRequest createPutOutboundContactlistRequest(String contactListId, ContactList body) {
+    return PutOutboundContactlistRequest.builder()
+            .withContactListId(contactListId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ContactList>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a contact list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ContactList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ContactList putOutboundContactlist(PutOutboundContactlistRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ContactList>() {});
+    try {
+      ApiResponse<ContactList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a contact list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactList> putOutboundContactlist(ApiRequest<ContactList> request) throws IOException, ApiException {
-    return pcapiClient.<ContactList>invokeAPIVerbose(request, new TypeReference<ContactList>() {});
+  public ApiResponse<ContactList> putOutboundContactlist(ApiRequest<ContactList> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactList> response = (ApiResponse<ContactList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactList> response = (ApiResponse<ContactList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5395,10 +5761,11 @@ public class OutboundApi {
    * @param contactId Contact ID (required)
    * @param body Contact (required)
    * @return DialerContact
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DialerContact putOutboundContactlistContact(String contactListId, String contactId, DialerContact body) throws IOException, ApiException {
-    return putOutboundContactlistContactWithHttpInfo(contactListId, contactId, body).getBody();
+    return  putOutboundContactlistContact(createPutOutboundContactlistContactRequest(contactListId, contactId, body));
   }
 
   /**
@@ -5408,72 +5775,68 @@ public class OutboundApi {
    * @param contactId Contact ID (required)
    * @param body Contact (required)
    * @return DialerContact
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DialerContact> putOutboundContactlistContactWithHttpInfo(String contactListId, String contactId, DialerContact body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'contactListId' is set
-    if (contactListId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactListId' when calling putOutboundContactlistContact");
-    }
-    
-    // verify the required parameter 'contactId' is set
-    if (contactId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'contactId' when calling putOutboundContactlistContact");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundContactlistContact");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "contactListId" + "\\}", pcapiClient.escapeString(contactListId.toString()))
-      .replaceAll("\\{" + "contactId" + "\\}", pcapiClient.escapeString(contactId.toString()));
+  public ApiResponse<DialerContact> putOutboundContactlistContactWithHttpInfo(String contactListId, String contactId, DialerContact body) throws IOException {
+    return putOutboundContactlistContact(createPutOutboundContactlistContactRequest(contactListId, contactId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutOutboundContactlistContactRequest createPutOutboundContactlistContactRequest(String contactListId, String contactId, DialerContact body) {
+    return PutOutboundContactlistContactRequest.builder()
+            .withContactListId(contactListId)
 
+            .withContactId(contactId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DialerContact>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a contact.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DialerContact
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DialerContact putOutboundContactlistContact(PutOutboundContactlistContactRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DialerContact>() {});
+    try {
+      ApiResponse<DialerContact> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DialerContact>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a contact.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DialerContact> putOutboundContactlistContact(ApiRequest<DialerContact> request) throws IOException, ApiException {
-    return pcapiClient.<DialerContact>invokeAPIVerbose(request, new TypeReference<DialerContact>() {});
+  public ApiResponse<DialerContact> putOutboundContactlistContact(ApiRequest<DialerContact> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DialerContact>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DialerContact> response = (ApiResponse<DialerContact>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DialerContact> response = (ApiResponse<DialerContact>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5482,10 +5845,11 @@ public class OutboundApi {
    * @param dncListId DncList ID (required)
    * @param body DncList (required)
    * @return DncList
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DncList putOutboundDnclist(String dncListId, DncList body) throws IOException, ApiException {
-    return putOutboundDnclistWithHttpInfo(dncListId, body).getBody();
+    return  putOutboundDnclist(createPutOutboundDnclistRequest(dncListId, body));
   }
 
   /**
@@ -5494,66 +5858,66 @@ public class OutboundApi {
    * @param dncListId DncList ID (required)
    * @param body DncList (required)
    * @return DncList
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DncList> putOutboundDnclistWithHttpInfo(String dncListId, DncList body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'dncListId' is set
-    if (dncListId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'dncListId' when calling putOutboundDnclist");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundDnclist");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/dnclists/{dncListId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "dncListId" + "\\}", pcapiClient.escapeString(dncListId.toString()));
+  public ApiResponse<DncList> putOutboundDnclistWithHttpInfo(String dncListId, DncList body) throws IOException {
+    return putOutboundDnclist(createPutOutboundDnclistRequest(dncListId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutOutboundDnclistRequest createPutOutboundDnclistRequest(String dncListId, DncList body) {
+    return PutOutboundDnclistRequest.builder()
+            .withDncListId(dncListId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DncList>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update dialer DNC list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DncList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DncList putOutboundDnclist(PutOutboundDnclistRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DncList>() {});
+    try {
+      ApiResponse<DncList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DncList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update dialer DNC list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DncList> putOutboundDnclist(ApiRequest<DncList> request) throws IOException, ApiException {
-    return pcapiClient.<DncList>invokeAPIVerbose(request, new TypeReference<DncList>() {});
+  public ApiResponse<DncList> putOutboundDnclist(ApiRequest<DncList> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DncList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DncList> response = (ApiResponse<DncList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DncList> response = (ApiResponse<DncList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5562,10 +5926,11 @@ public class OutboundApi {
    * @param ruleSetId Rule Set ID (required)
    * @param body RuleSet (required)
    * @return RuleSet
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RuleSet putOutboundRuleset(String ruleSetId, RuleSet body) throws IOException, ApiException {
-    return putOutboundRulesetWithHttpInfo(ruleSetId, body).getBody();
+    return  putOutboundRuleset(createPutOutboundRulesetRequest(ruleSetId, body));
   }
 
   /**
@@ -5574,66 +5939,66 @@ public class OutboundApi {
    * @param ruleSetId Rule Set ID (required)
    * @param body RuleSet (required)
    * @return RuleSet
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RuleSet> putOutboundRulesetWithHttpInfo(String ruleSetId, RuleSet body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'ruleSetId' is set
-    if (ruleSetId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'ruleSetId' when calling putOutboundRuleset");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundRuleset");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/rulesets/{ruleSetId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "ruleSetId" + "\\}", pcapiClient.escapeString(ruleSetId.toString()));
+  public ApiResponse<RuleSet> putOutboundRulesetWithHttpInfo(String ruleSetId, RuleSet body) throws IOException {
+    return putOutboundRuleset(createPutOutboundRulesetRequest(ruleSetId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutOutboundRulesetRequest createPutOutboundRulesetRequest(String ruleSetId, RuleSet body) {
+    return PutOutboundRulesetRequest.builder()
+            .withRuleSetId(ruleSetId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<RuleSet>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a RuleSet.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return RuleSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RuleSet putOutboundRuleset(PutOutboundRulesetRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RuleSet>() {});
+    try {
+      ApiResponse<RuleSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RuleSet>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a RuleSet.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RuleSet> putOutboundRuleset(ApiRequest<RuleSet> request) throws IOException, ApiException {
-    return pcapiClient.<RuleSet>invokeAPIVerbose(request, new TypeReference<RuleSet>() {});
+  public ApiResponse<RuleSet> putOutboundRuleset(ApiRequest<RuleSet> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RuleSet>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RuleSet> response = (ApiResponse<RuleSet>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RuleSet> response = (ApiResponse<RuleSet>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5642,10 +6007,11 @@ public class OutboundApi {
    * @param campaignId Campaign ID (required)
    * @param body CampaignSchedule (required)
    * @return CampaignSchedule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignSchedule putOutboundSchedulesCampaign(String campaignId, CampaignSchedule body) throws IOException, ApiException {
-    return putOutboundSchedulesCampaignWithHttpInfo(campaignId, body).getBody();
+    return  putOutboundSchedulesCampaign(createPutOutboundSchedulesCampaignRequest(campaignId, body));
   }
 
   /**
@@ -5654,66 +6020,66 @@ public class OutboundApi {
    * @param campaignId Campaign ID (required)
    * @param body CampaignSchedule (required)
    * @return CampaignSchedule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignSchedule> putOutboundSchedulesCampaignWithHttpInfo(String campaignId, CampaignSchedule body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'campaignId' is set
-    if (campaignId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'campaignId' when calling putOutboundSchedulesCampaign");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundSchedulesCampaign");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/schedules/campaigns/{campaignId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "campaignId" + "\\}", pcapiClient.escapeString(campaignId.toString()));
+  public ApiResponse<CampaignSchedule> putOutboundSchedulesCampaignWithHttpInfo(String campaignId, CampaignSchedule body) throws IOException {
+    return putOutboundSchedulesCampaign(createPutOutboundSchedulesCampaignRequest(campaignId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutOutboundSchedulesCampaignRequest createPutOutboundSchedulesCampaignRequest(String campaignId, CampaignSchedule body) {
+    return PutOutboundSchedulesCampaignRequest.builder()
+            .withCampaignId(campaignId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CampaignSchedule>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a new campaign schedule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CampaignSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignSchedule putOutboundSchedulesCampaign(PutOutboundSchedulesCampaignRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignSchedule>() {});
+    try {
+      ApiResponse<CampaignSchedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignSchedule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a new campaign schedule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignSchedule> putOutboundSchedulesCampaign(ApiRequest<CampaignSchedule> request) throws IOException, ApiException {
-    return pcapiClient.<CampaignSchedule>invokeAPIVerbose(request, new TypeReference<CampaignSchedule>() {});
+  public ApiResponse<CampaignSchedule> putOutboundSchedulesCampaign(ApiRequest<CampaignSchedule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignSchedule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignSchedule> response = (ApiResponse<CampaignSchedule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignSchedule> response = (ApiResponse<CampaignSchedule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5722,10 +6088,11 @@ public class OutboundApi {
    * @param sequenceId Sequence ID (required)
    * @param body SequenceSchedule (required)
    * @return SequenceSchedule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SequenceSchedule putOutboundSchedulesSequence(String sequenceId, SequenceSchedule body) throws IOException, ApiException {
-    return putOutboundSchedulesSequenceWithHttpInfo(sequenceId, body).getBody();
+    return  putOutboundSchedulesSequence(createPutOutboundSchedulesSequenceRequest(sequenceId, body));
   }
 
   /**
@@ -5734,66 +6101,66 @@ public class OutboundApi {
    * @param sequenceId Sequence ID (required)
    * @param body SequenceSchedule (required)
    * @return SequenceSchedule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SequenceSchedule> putOutboundSchedulesSequenceWithHttpInfo(String sequenceId, SequenceSchedule body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'sequenceId' is set
-    if (sequenceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'sequenceId' when calling putOutboundSchedulesSequence");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundSchedulesSequence");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/schedules/sequences/{sequenceId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "sequenceId" + "\\}", pcapiClient.escapeString(sequenceId.toString()));
+  public ApiResponse<SequenceSchedule> putOutboundSchedulesSequenceWithHttpInfo(String sequenceId, SequenceSchedule body) throws IOException {
+    return putOutboundSchedulesSequence(createPutOutboundSchedulesSequenceRequest(sequenceId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutOutboundSchedulesSequenceRequest createPutOutboundSchedulesSequenceRequest(String sequenceId, SequenceSchedule body) {
+    return PutOutboundSchedulesSequenceRequest.builder()
+            .withSequenceId(sequenceId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<SequenceSchedule>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a new sequence schedule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return SequenceSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public SequenceSchedule putOutboundSchedulesSequence(PutOutboundSchedulesSequenceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<SequenceSchedule>() {});
+    try {
+      ApiResponse<SequenceSchedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SequenceSchedule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a new sequence schedule.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SequenceSchedule> putOutboundSchedulesSequence(ApiRequest<SequenceSchedule> request) throws IOException, ApiException {
-    return pcapiClient.<SequenceSchedule>invokeAPIVerbose(request, new TypeReference<SequenceSchedule>() {});
+  public ApiResponse<SequenceSchedule> putOutboundSchedulesSequence(ApiRequest<SequenceSchedule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SequenceSchedule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SequenceSchedule> response = (ApiResponse<SequenceSchedule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SequenceSchedule> response = (ApiResponse<SequenceSchedule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5802,10 +6169,11 @@ public class OutboundApi {
    * @param sequenceId Campaign Sequence ID (required)
    * @param body Organization (required)
    * @return CampaignSequence
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignSequence putOutboundSequence(String sequenceId, CampaignSequence body) throws IOException, ApiException {
-    return putOutboundSequenceWithHttpInfo(sequenceId, body).getBody();
+    return  putOutboundSequence(createPutOutboundSequenceRequest(sequenceId, body));
   }
 
   /**
@@ -5814,66 +6182,66 @@ public class OutboundApi {
    * @param sequenceId Campaign Sequence ID (required)
    * @param body Organization (required)
    * @return CampaignSequence
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignSequence> putOutboundSequenceWithHttpInfo(String sequenceId, CampaignSequence body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'sequenceId' is set
-    if (sequenceId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'sequenceId' when calling putOutboundSequence");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundSequence");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/sequences/{sequenceId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "sequenceId" + "\\}", pcapiClient.escapeString(sequenceId.toString()));
+  public ApiResponse<CampaignSequence> putOutboundSequenceWithHttpInfo(String sequenceId, CampaignSequence body) throws IOException {
+    return putOutboundSequence(createPutOutboundSequenceRequest(sequenceId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutOutboundSequenceRequest createPutOutboundSequenceRequest(String sequenceId, CampaignSequence body) {
+    return PutOutboundSequenceRequest.builder()
+            .withSequenceId(sequenceId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CampaignSequence>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a new campaign sequence.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CampaignSequence
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CampaignSequence putOutboundSequence(PutOutboundSequenceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CampaignSequence>() {});
+    try {
+      ApiResponse<CampaignSequence> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignSequence>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a new campaign sequence.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignSequence> putOutboundSequence(ApiRequest<CampaignSequence> request) throws IOException, ApiException {
-    return pcapiClient.<CampaignSequence>invokeAPIVerbose(request, new TypeReference<CampaignSequence>() {});
+  public ApiResponse<CampaignSequence> putOutboundSequence(ApiRequest<CampaignSequence> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignSequence>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignSequence> response = (ApiResponse<CampaignSequence>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignSequence> response = (ApiResponse<CampaignSequence>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -5881,10 +6249,11 @@ public class OutboundApi {
    * 
    * @param body wrapUpCodeMapping (required)
    * @return WrapUpCodeMapping
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public WrapUpCodeMapping putOutboundWrapupcodemappings(WrapUpCodeMapping body) throws IOException, ApiException {
-    return putOutboundWrapupcodemappingsWithHttpInfo(body).getBody();
+    return  putOutboundWrapupcodemappings(createPutOutboundWrapupcodemappingsRequest(body));
   }
 
   /**
@@ -5892,60 +6261,64 @@ public class OutboundApi {
    * 
    * @param body wrapUpCodeMapping (required)
    * @return WrapUpCodeMapping
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WrapUpCodeMapping> putOutboundWrapupcodemappingsWithHttpInfo(WrapUpCodeMapping body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putOutboundWrapupcodemappings");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/outbound/wrapupcodemappings".replaceAll("\\{format\\}","json");
+  public ApiResponse<WrapUpCodeMapping> putOutboundWrapupcodemappingsWithHttpInfo(WrapUpCodeMapping body) throws IOException {
+    return putOutboundWrapupcodemappings(createPutOutboundWrapupcodemappingsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<WrapUpCodeMapping>() {});
+  private PutOutboundWrapupcodemappingsRequest createPutOutboundWrapupcodemappingsRequest(WrapUpCodeMapping body) {
+    return PutOutboundWrapupcodemappingsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update the Dialer wrap up code mapping.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return WrapUpCodeMapping
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public WrapUpCodeMapping putOutboundWrapupcodemappings(PutOutboundWrapupcodemappingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WrapUpCodeMapping>() {});
+    try {
+      ApiResponse<WrapUpCodeMapping> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WrapUpCodeMapping>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update the Dialer wrap up code mapping.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WrapUpCodeMapping> putOutboundWrapupcodemappings(ApiRequest<WrapUpCodeMapping> request) throws IOException, ApiException {
-    return pcapiClient.<WrapUpCodeMapping>invokeAPIVerbose(request, new TypeReference<WrapUpCodeMapping>() {});
+  public ApiResponse<WrapUpCodeMapping> putOutboundWrapupcodemappings(ApiRequest<WrapUpCodeMapping> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WrapUpCodeMapping>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WrapUpCodeMapping> response = (ApiResponse<WrapUpCodeMapping>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WrapUpCodeMapping> response = (ApiResponse<WrapUpCodeMapping>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

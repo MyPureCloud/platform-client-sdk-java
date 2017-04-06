@@ -38,9 +38,6 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class GetRecordingSettingsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Boolean createDefault;
 	public Boolean getCreateDefault() {
 		return this.createDefault;
@@ -106,6 +103,7 @@ public class GetRecordingSettingsRequest {
 
 
 		public GetRecordingSettingsRequest build() {
+            
 			return request;
 		}
 	}

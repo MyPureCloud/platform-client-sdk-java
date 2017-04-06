@@ -1,6 +1,8 @@
 package com.mypurecloud.sdk.v2.api;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.SettableFuture;
 
 import com.mypurecloud.sdk.v2.AsyncApiCallback;
 import com.mypurecloud.sdk.v2.ApiException;
@@ -219,2381 +221,8956 @@ public class TelephonyProvidersEdgeApiAsync {
   /**
    * Delete a edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<String> deleteTelephonyProvidersEdgeAsync(DeleteTelephonyProvidersEdgeRequest request, AsyncApiCallback<String> callback) {
-    return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<String> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<String>> deleteTelephonyProvidersEdgeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
-    return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete an edge logical interface
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Void> deleteTelephonyProvidersEdgeLogicalinterfaceAsync(DeleteTelephonyProvidersEdgeLogicalinterfaceRequest request, AsyncApiCallback<Void> callback) {
-    return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
+    try {
+      SettableFuture<Void> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete an edge logical interface
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteTelephonyProvidersEdgeLogicalinterfaceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
-    return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
+    try {
+      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Cancels any in-progress update for this edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<String> deleteTelephonyProvidersEdgeSoftwareupdateAsync(DeleteTelephonyProvidersEdgeSoftwareupdateRequest request, AsyncApiCallback<String> callback) {
-    return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<String> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Cancels any in-progress update for this edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<String>> deleteTelephonyProvidersEdgeSoftwareupdateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
-    return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a certificate authority.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<String> deleteTelephonyProvidersEdgesCertificateauthorityAsync(DeleteTelephonyProvidersEdgesCertificateauthorityRequest request, AsyncApiCallback<String> callback) {
-    return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<String> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a certificate authority.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesCertificateauthorityAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
-    return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a DID Pool by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<String> deleteTelephonyProvidersEdgesDidpoolAsync(DeleteTelephonyProvidersEdgesDidpoolRequest request, AsyncApiCallback<String> callback) {
-    return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<String> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a DID Pool by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesDidpoolAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
-    return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete an edge group.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<String> deleteTelephonyProvidersEdgesEdgegroupAsync(DeleteTelephonyProvidersEdgesEdgegroupRequest request, AsyncApiCallback<String> callback) {
-    return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<String> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete an edge group.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesEdgegroupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
-    return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete endpoint
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<String> deleteTelephonyProvidersEdgesEndpointAsync(DeleteTelephonyProvidersEdgesEndpointRequest request, AsyncApiCallback<String> callback) {
-    return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<String> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete endpoint
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesEndpointAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
-    return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete an extension pool by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<String> deleteTelephonyProvidersEdgesExtensionpoolAsync(DeleteTelephonyProvidersEdgesExtensionpoolRequest request, AsyncApiCallback<String> callback) {
-    return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<String> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete an extension pool by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesExtensionpoolAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
-    return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete Outbound Route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<String> deleteTelephonyProvidersEdgesOutboundrouteAsync(DeleteTelephonyProvidersEdgesOutboundrouteRequest request, AsyncApiCallback<String> callback) {
-    return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<String> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete Outbound Route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesOutboundrouteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
-    return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a Phone by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<String> deleteTelephonyProvidersEdgesPhoneAsync(DeleteTelephonyProvidersEdgesPhoneRequest request, AsyncApiCallback<String> callback) {
-    return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<String> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a Phone by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesPhoneAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
-    return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a Phone Base Settings by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<String> deleteTelephonyProvidersEdgesPhonebasesettingAsync(DeleteTelephonyProvidersEdgesPhonebasesettingRequest request, AsyncApiCallback<String> callback) {
-    return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<String> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a Phone Base Settings by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesPhonebasesettingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
-    return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a Site by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<String> deleteTelephonyProvidersEdgesSiteAsync(DeleteTelephonyProvidersEdgesSiteRequest request, AsyncApiCallback<String> callback) {
-    return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<String> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a Site by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesSiteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
-    return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete Outbound Route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<String> deleteTelephonyProvidersEdgesSiteOutboundrouteAsync(DeleteTelephonyProvidersEdgesSiteOutboundrouteRequest request, AsyncApiCallback<String> callback) {
-    return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<String> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete Outbound Route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesSiteOutboundrouteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
-    return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a Trunk Base Settings object by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<String> deleteTelephonyProvidersEdgesTrunkbasesettingAsync(DeleteTelephonyProvidersEdgesTrunkbasesettingRequest request, AsyncApiCallback<String> callback) {
-    return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<String> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a Trunk Base Settings object by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesTrunkbasesettingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
-    return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Lists available schema categories (Deprecated)
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<SchemaCategoryEntityListing> getConfigurationSchemasEdgesVnextAsync(GetConfigurationSchemasEdgesVnextRequest request, AsyncApiCallback<SchemaCategoryEntityListing> callback) {
-    return pcapiClient.<SchemaCategoryEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<SchemaCategoryEntityListing>() {}, callback);
+    try {
+      SettableFuture<SchemaCategoryEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SchemaCategoryEntityListing>() {}, new AsyncApiCallback<ApiResponse<SchemaCategoryEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SchemaCategoryEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Lists available schema categories (Deprecated)
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<SchemaCategoryEntityListing>> getConfigurationSchemasEdgesVnextAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SchemaCategoryEntityListing>> callback) {
-    return pcapiClient.<SchemaCategoryEntityListing>invokeAPIVerboseAsync(request, new TypeReference<SchemaCategoryEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<SchemaCategoryEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SchemaCategoryEntityListing>() {}, new AsyncApiCallback<ApiResponse<SchemaCategoryEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SchemaCategoryEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SchemaCategoryEntityListing> response = (ApiResponse<SchemaCategoryEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SchemaCategoryEntityListing> response = (ApiResponse<SchemaCategoryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * List schemas of a specific category (Deprecated)
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategoryAsync(GetConfigurationSchemasEdgesVnextSchemaCategoryRequest request, AsyncApiCallback<SchemaReferenceEntityListing> callback) {
-    return pcapiClient.<SchemaReferenceEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<SchemaReferenceEntityListing>() {}, callback);
+    try {
+      SettableFuture<SchemaReferenceEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SchemaReferenceEntityListing>() {}, new AsyncApiCallback<ApiResponse<SchemaReferenceEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SchemaReferenceEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * List schemas of a specific category (Deprecated)
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<SchemaReferenceEntityListing>> getConfigurationSchemasEdgesVnextSchemaCategoryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SchemaReferenceEntityListing>> callback) {
-    return pcapiClient.<SchemaReferenceEntityListing>invokeAPIVerboseAsync(request, new TypeReference<SchemaReferenceEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<SchemaReferenceEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SchemaReferenceEntityListing>() {}, new AsyncApiCallback<ApiResponse<SchemaReferenceEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SchemaReferenceEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SchemaReferenceEntityListing> response = (ApiResponse<SchemaReferenceEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SchemaReferenceEntityListing> response = (ApiResponse<SchemaReferenceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * List schemas of a specific category (Deprecated)
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<SchemaReferenceEntityListing> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeAsync(GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest request, AsyncApiCallback<SchemaReferenceEntityListing> callback) {
-    return pcapiClient.<SchemaReferenceEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<SchemaReferenceEntityListing>() {}, callback);
+    try {
+      SettableFuture<SchemaReferenceEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SchemaReferenceEntityListing>() {}, new AsyncApiCallback<ApiResponse<SchemaReferenceEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SchemaReferenceEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * List schemas of a specific category (Deprecated)
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<SchemaReferenceEntityListing>> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SchemaReferenceEntityListing>> callback) {
-    return pcapiClient.<SchemaReferenceEntityListing>invokeAPIVerboseAsync(request, new TypeReference<SchemaReferenceEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<SchemaReferenceEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SchemaReferenceEntityListing>() {}, new AsyncApiCallback<ApiResponse<SchemaReferenceEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SchemaReferenceEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SchemaReferenceEntityListing> response = (ApiResponse<SchemaReferenceEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SchemaReferenceEntityListing> response = (ApiResponse<SchemaReferenceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a json schema (Deprecated)
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdAsync(GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest request, AsyncApiCallback<Organization> callback) {
-    return pcapiClient.<Organization>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Organization>() {}, callback);
+    try {
+      SettableFuture<Organization> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Organization>() {}, new AsyncApiCallback<ApiResponse<Organization>>() {
+        @Override
+        public void onCompleted(ApiResponse<Organization> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a json schema (Deprecated)
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Organization>> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Organization>> callback) {
-    return pcapiClient.<Organization>invokeAPIVerboseAsync(request, new TypeReference<Organization>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Organization>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Organization>() {}, new AsyncApiCallback<ApiResponse<Organization>>() {
+        @Override
+        public void onCompleted(ApiResponse<Organization> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Organization> response = (ApiResponse<Organization>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Organization> response = (ApiResponse<Organization>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get metadata for a schema (Deprecated)
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Organization> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdAsync(GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest request, AsyncApiCallback<Organization> callback) {
-    return pcapiClient.<Organization>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Organization>() {}, callback);
+    try {
+      SettableFuture<Organization> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Organization>() {}, new AsyncApiCallback<ApiResponse<Organization>>() {
+        @Override
+        public void onCompleted(ApiResponse<Organization> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get metadata for a schema (Deprecated)
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Organization>> getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Organization>> callback) {
-    return pcapiClient.<Organization>invokeAPIVerboseAsync(request, new TypeReference<Organization>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Organization>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Organization>() {}, new AsyncApiCallback<ApiResponse<Organization>>() {
+        @Override
+        public void onCompleted(ApiResponse<Organization> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Organization> response = (ApiResponse<Organization>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Organization> response = (ApiResponse<Organization>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Edge> getTelephonyProvidersEdgeAsync(GetTelephonyProvidersEdgeRequest request, AsyncApiCallback<Edge> callback) {
-    return pcapiClient.<Edge>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Edge>() {}, callback);
+    try {
+      SettableFuture<Edge> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Edge>() {}, new AsyncApiCallback<ApiResponse<Edge>>() {
+        @Override
+        public void onCompleted(ApiResponse<Edge> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Edge>> getTelephonyProvidersEdgeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Edge>> callback) {
-    return pcapiClient.<Edge>invokeAPIVerboseAsync(request, new TypeReference<Edge>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Edge>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Edge>() {}, new AsyncApiCallback<ApiResponse<Edge>>() {
+        @Override
+        public void onCompleted(ApiResponse<Edge> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Edge> response = (ApiResponse<Edge>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Edge> response = (ApiResponse<Edge>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get line
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<EdgeLine> getTelephonyProvidersEdgeLineAsync(GetTelephonyProvidersEdgeLineRequest request, AsyncApiCallback<EdgeLine> callback) {
-    return pcapiClient.<EdgeLine>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeLine>() {}, callback);
+    try {
+      SettableFuture<EdgeLine> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeLine>() {}, new AsyncApiCallback<ApiResponse<EdgeLine>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeLine> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get line
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<EdgeLine>> getTelephonyProvidersEdgeLineAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeLine>> callback) {
-    return pcapiClient.<EdgeLine>invokeAPIVerboseAsync(request, new TypeReference<EdgeLine>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<EdgeLine>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeLine>() {}, new AsyncApiCallback<ApiResponse<EdgeLine>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeLine> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeLine> response = (ApiResponse<EdgeLine>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeLine> response = (ApiResponse<EdgeLine>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of lines.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<EdgeLineEntityListing> getTelephonyProvidersEdgeLinesAsync(GetTelephonyProvidersEdgeLinesRequest request, AsyncApiCallback<EdgeLineEntityListing> callback) {
-    return pcapiClient.<EdgeLineEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeLineEntityListing>() {}, callback);
+    try {
+      SettableFuture<EdgeLineEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeLineEntityListing>() {}, new AsyncApiCallback<ApiResponse<EdgeLineEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeLineEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of lines.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<EdgeLineEntityListing>> getTelephonyProvidersEdgeLinesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeLineEntityListing>> callback) {
-    return pcapiClient.<EdgeLineEntityListing>invokeAPIVerboseAsync(request, new TypeReference<EdgeLineEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<EdgeLineEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeLineEntityListing>() {}, new AsyncApiCallback<ApiResponse<EdgeLineEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeLineEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeLineEntityListing> response = (ApiResponse<EdgeLineEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeLineEntityListing> response = (ApiResponse<EdgeLineEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get an edge logical interface
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DomainLogicalInterface> getTelephonyProvidersEdgeLogicalinterfaceAsync(GetTelephonyProvidersEdgeLogicalinterfaceRequest request, AsyncApiCallback<DomainLogicalInterface> callback) {
-    return pcapiClient.<DomainLogicalInterface>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainLogicalInterface>() {}, callback);
+    try {
+      SettableFuture<DomainLogicalInterface> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainLogicalInterface>() {}, new AsyncApiCallback<ApiResponse<DomainLogicalInterface>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainLogicalInterface> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get an edge logical interface
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DomainLogicalInterface>> getTelephonyProvidersEdgeLogicalinterfaceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainLogicalInterface>> callback) {
-    return pcapiClient.<DomainLogicalInterface>invokeAPIVerboseAsync(request, new TypeReference<DomainLogicalInterface>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DomainLogicalInterface>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DomainLogicalInterface>() {}, new AsyncApiCallback<ApiResponse<DomainLogicalInterface>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainLogicalInterface> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainLogicalInterface> response = (ApiResponse<DomainLogicalInterface>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainLogicalInterface> response = (ApiResponse<DomainLogicalInterface>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get edge logical interfaces.
    * Retrieve a list of all configured logical interfaces from a specific edge.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<LogicalInterfaceEntityListing> getTelephonyProvidersEdgeLogicalinterfacesAsync(GetTelephonyProvidersEdgeLogicalinterfacesRequest request, AsyncApiCallback<LogicalInterfaceEntityListing> callback) {
-    return pcapiClient.<LogicalInterfaceEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LogicalInterfaceEntityListing>() {}, callback);
+    try {
+      SettableFuture<LogicalInterfaceEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LogicalInterfaceEntityListing>() {}, new AsyncApiCallback<ApiResponse<LogicalInterfaceEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LogicalInterfaceEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get edge logical interfaces.
    * Retrieve a list of all configured logical interfaces from a specific edge.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<LogicalInterfaceEntityListing>> getTelephonyProvidersEdgeLogicalinterfacesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LogicalInterfaceEntityListing>> callback) {
-    return pcapiClient.<LogicalInterfaceEntityListing>invokeAPIVerboseAsync(request, new TypeReference<LogicalInterfaceEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<LogicalInterfaceEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LogicalInterfaceEntityListing>() {}, new AsyncApiCallback<ApiResponse<LogicalInterfaceEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LogicalInterfaceEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LogicalInterfaceEntityListing> response = (ApiResponse<LogicalInterfaceEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LogicalInterfaceEntityListing> response = (ApiResponse<LogicalInterfaceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get an Edge logs job.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<EdgeLogsJob> getTelephonyProvidersEdgeLogsJobAsync(GetTelephonyProvidersEdgeLogsJobRequest request, AsyncApiCallback<EdgeLogsJob> callback) {
-    return pcapiClient.<EdgeLogsJob>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeLogsJob>() {}, callback);
+    try {
+      SettableFuture<EdgeLogsJob> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeLogsJob>() {}, new AsyncApiCallback<ApiResponse<EdgeLogsJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeLogsJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get an Edge logs job.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<EdgeLogsJob>> getTelephonyProvidersEdgeLogsJobAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeLogsJob>> callback) {
-    return pcapiClient.<EdgeLogsJob>invokeAPIVerboseAsync(request, new TypeReference<EdgeLogsJob>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<EdgeLogsJob>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeLogsJob>() {}, new AsyncApiCallback<ApiResponse<EdgeLogsJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeLogsJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeLogsJob> response = (ApiResponse<EdgeLogsJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeLogsJob> response = (ApiResponse<EdgeLogsJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get edge physical interface.
    * Retrieve a physical interface from a specific edge.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DomainPhysicalInterface> getTelephonyProvidersEdgePhysicalinterfaceAsync(GetTelephonyProvidersEdgePhysicalinterfaceRequest request, AsyncApiCallback<DomainPhysicalInterface> callback) {
-    return pcapiClient.<DomainPhysicalInterface>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainPhysicalInterface>() {}, callback);
+    try {
+      SettableFuture<DomainPhysicalInterface> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainPhysicalInterface>() {}, new AsyncApiCallback<ApiResponse<DomainPhysicalInterface>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainPhysicalInterface> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get edge physical interface.
    * Retrieve a physical interface from a specific edge.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DomainPhysicalInterface>> getTelephonyProvidersEdgePhysicalinterfaceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainPhysicalInterface>> callback) {
-    return pcapiClient.<DomainPhysicalInterface>invokeAPIVerboseAsync(request, new TypeReference<DomainPhysicalInterface>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DomainPhysicalInterface>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DomainPhysicalInterface>() {}, new AsyncApiCallback<ApiResponse<DomainPhysicalInterface>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainPhysicalInterface> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainPhysicalInterface> response = (ApiResponse<DomainPhysicalInterface>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainPhysicalInterface> response = (ApiResponse<DomainPhysicalInterface>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Retrieve a list of all configured physical interfaces from a specific edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<PhysicalInterfaceEntityListing> getTelephonyProvidersEdgePhysicalinterfacesAsync(GetTelephonyProvidersEdgePhysicalinterfacesRequest request, AsyncApiCallback<PhysicalInterfaceEntityListing> callback) {
-    return pcapiClient.<PhysicalInterfaceEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PhysicalInterfaceEntityListing>() {}, callback);
+    try {
+      SettableFuture<PhysicalInterfaceEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PhysicalInterfaceEntityListing>() {}, new AsyncApiCallback<ApiResponse<PhysicalInterfaceEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PhysicalInterfaceEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Retrieve a list of all configured physical interfaces from a specific edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<PhysicalInterfaceEntityListing>> getTelephonyProvidersEdgePhysicalinterfacesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PhysicalInterfaceEntityListing>> callback) {
-    return pcapiClient.<PhysicalInterfaceEntityListing>invokeAPIVerboseAsync(request, new TypeReference<PhysicalInterfaceEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<PhysicalInterfaceEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PhysicalInterfaceEntityListing>() {}, new AsyncApiCallback<ApiResponse<PhysicalInterfaceEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PhysicalInterfaceEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PhysicalInterfaceEntityListing> response = (ApiResponse<PhysicalInterfaceEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PhysicalInterfaceEntityListing> response = (ApiResponse<PhysicalInterfaceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VmPairingInfo> getTelephonyProvidersEdgeSetuppackageAsync(GetTelephonyProvidersEdgeSetuppackageRequest request, AsyncApiCallback<VmPairingInfo> callback) {
-    return pcapiClient.<VmPairingInfo>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VmPairingInfo>() {}, callback);
+    try {
+      SettableFuture<VmPairingInfo> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VmPairingInfo>() {}, new AsyncApiCallback<ApiResponse<VmPairingInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<VmPairingInfo> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VmPairingInfo>> getTelephonyProvidersEdgeSetuppackageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VmPairingInfo>> callback) {
-    return pcapiClient.<VmPairingInfo>invokeAPIVerboseAsync(request, new TypeReference<VmPairingInfo>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VmPairingInfo>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VmPairingInfo>() {}, new AsyncApiCallback<ApiResponse<VmPairingInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<VmPairingInfo> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VmPairingInfo> response = (ApiResponse<VmPairingInfo>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VmPairingInfo> response = (ApiResponse<VmPairingInfo>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets software update status information about any edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DomainEdgeSoftwareUpdateDto> getTelephonyProvidersEdgeSoftwareupdateAsync(GetTelephonyProvidersEdgeSoftwareupdateRequest request, AsyncApiCallback<DomainEdgeSoftwareUpdateDto> callback) {
-    return pcapiClient.<DomainEdgeSoftwareUpdateDto>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainEdgeSoftwareUpdateDto>() {}, callback);
+    try {
+      SettableFuture<DomainEdgeSoftwareUpdateDto> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainEdgeSoftwareUpdateDto>() {}, new AsyncApiCallback<ApiResponse<DomainEdgeSoftwareUpdateDto>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainEdgeSoftwareUpdateDto> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets software update status information about any edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DomainEdgeSoftwareUpdateDto>> getTelephonyProvidersEdgeSoftwareupdateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainEdgeSoftwareUpdateDto>> callback) {
-    return pcapiClient.<DomainEdgeSoftwareUpdateDto>invokeAPIVerboseAsync(request, new TypeReference<DomainEdgeSoftwareUpdateDto>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DomainEdgeSoftwareUpdateDto>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DomainEdgeSoftwareUpdateDto>() {}, new AsyncApiCallback<ApiResponse<DomainEdgeSoftwareUpdateDto>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainEdgeSoftwareUpdateDto> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainEdgeSoftwareUpdateDto> response = (ApiResponse<DomainEdgeSoftwareUpdateDto>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainEdgeSoftwareUpdateDto> response = (ApiResponse<DomainEdgeSoftwareUpdateDto>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets all the available software versions for this edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DomainEdgeSoftwareVersionDtoEntityListing> getTelephonyProvidersEdgeSoftwareversionsAsync(GetTelephonyProvidersEdgeSoftwareversionsRequest request, AsyncApiCallback<DomainEdgeSoftwareVersionDtoEntityListing> callback) {
-    return pcapiClient.<DomainEdgeSoftwareVersionDtoEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainEdgeSoftwareVersionDtoEntityListing>() {}, callback);
+    try {
+      SettableFuture<DomainEdgeSoftwareVersionDtoEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainEdgeSoftwareVersionDtoEntityListing>() {}, new AsyncApiCallback<ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets all the available software versions for this edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing>> getTelephonyProvidersEdgeSoftwareversionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing>> callback) {
-    return pcapiClient.<DomainEdgeSoftwareVersionDtoEntityListing>invokeAPIVerboseAsync(request, new TypeReference<DomainEdgeSoftwareVersionDtoEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DomainEdgeSoftwareVersionDtoEntityListing>() {}, new AsyncApiCallback<ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing> response = (ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing> response = (ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of edges.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<EdgeEntityListing> getTelephonyProvidersEdgesAsync(GetTelephonyProvidersEdgesRequest request, AsyncApiCallback<EdgeEntityListing> callback) {
-    return pcapiClient.<EdgeEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeEntityListing>() {}, callback);
+    try {
+      SettableFuture<EdgeEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeEntityListing>() {}, new AsyncApiCallback<ApiResponse<EdgeEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of edges.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<EdgeEntityListing>> getTelephonyProvidersEdgesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeEntityListing>> callback) {
-    return pcapiClient.<EdgeEntityListing>invokeAPIVerboseAsync(request, new TypeReference<EdgeEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<EdgeEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeEntityListing>() {}, new AsyncApiCallback<ApiResponse<EdgeEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeEntityListing> response = (ApiResponse<EdgeEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeEntityListing> response = (ApiResponse<EdgeEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of available languages.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<AvailableLanguageList> getTelephonyProvidersEdgesAvailablelanguagesAsync(GetTelephonyProvidersEdgesAvailablelanguagesRequest request, AsyncApiCallback<AvailableLanguageList> callback) {
-    return pcapiClient.<AvailableLanguageList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<AvailableLanguageList>() {}, callback);
+    try {
+      SettableFuture<AvailableLanguageList> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AvailableLanguageList>() {}, new AsyncApiCallback<ApiResponse<AvailableLanguageList>>() {
+        @Override
+        public void onCompleted(ApiResponse<AvailableLanguageList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of available languages.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<AvailableLanguageList>> getTelephonyProvidersEdgesAvailablelanguagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AvailableLanguageList>> callback) {
-    return pcapiClient.<AvailableLanguageList>invokeAPIVerboseAsync(request, new TypeReference<AvailableLanguageList>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<AvailableLanguageList>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AvailableLanguageList>() {}, new AsyncApiCallback<ApiResponse<AvailableLanguageList>>() {
+        @Override
+        public void onCompleted(ApiResponse<AvailableLanguageList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AvailableLanguageList> response = (ApiResponse<AvailableLanguageList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AvailableLanguageList> response = (ApiResponse<AvailableLanguageList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of certificate authorities.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<CertificateAuthorityEntityListing> getTelephonyProvidersEdgesCertificateauthoritiesAsync(GetTelephonyProvidersEdgesCertificateauthoritiesRequest request, AsyncApiCallback<CertificateAuthorityEntityListing> callback) {
-    return pcapiClient.<CertificateAuthorityEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<CertificateAuthorityEntityListing>() {}, callback);
+    try {
+      SettableFuture<CertificateAuthorityEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CertificateAuthorityEntityListing>() {}, new AsyncApiCallback<ApiResponse<CertificateAuthorityEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CertificateAuthorityEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of certificate authorities.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<CertificateAuthorityEntityListing>> getTelephonyProvidersEdgesCertificateauthoritiesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CertificateAuthorityEntityListing>> callback) {
-    return pcapiClient.<CertificateAuthorityEntityListing>invokeAPIVerboseAsync(request, new TypeReference<CertificateAuthorityEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<CertificateAuthorityEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CertificateAuthorityEntityListing>() {}, new AsyncApiCallback<ApiResponse<CertificateAuthorityEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CertificateAuthorityEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CertificateAuthorityEntityListing> response = (ApiResponse<CertificateAuthorityEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CertificateAuthorityEntityListing> response = (ApiResponse<CertificateAuthorityEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a certificate authority.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DomainCertificateAuthority> getTelephonyProvidersEdgesCertificateauthorityAsync(GetTelephonyProvidersEdgesCertificateauthorityRequest request, AsyncApiCallback<DomainCertificateAuthority> callback) {
-    return pcapiClient.<DomainCertificateAuthority>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainCertificateAuthority>() {}, callback);
+    try {
+      SettableFuture<DomainCertificateAuthority> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainCertificateAuthority>() {}, new AsyncApiCallback<ApiResponse<DomainCertificateAuthority>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainCertificateAuthority> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a certificate authority.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DomainCertificateAuthority>> getTelephonyProvidersEdgesCertificateauthorityAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainCertificateAuthority>> callback) {
-    return pcapiClient.<DomainCertificateAuthority>invokeAPIVerboseAsync(request, new TypeReference<DomainCertificateAuthority>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DomainCertificateAuthority>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DomainCertificateAuthority>() {}, new AsyncApiCallback<ApiResponse<DomainCertificateAuthority>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainCertificateAuthority> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainCertificateAuthority> response = (ApiResponse<DomainCertificateAuthority>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainCertificateAuthority> response = (ApiResponse<DomainCertificateAuthority>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a DID by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DID> getTelephonyProvidersEdgesDidAsync(GetTelephonyProvidersEdgesDidRequest request, AsyncApiCallback<DID> callback) {
-    return pcapiClient.<DID>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DID>() {}, callback);
+    try {
+      SettableFuture<DID> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DID>() {}, new AsyncApiCallback<ApiResponse<DID>>() {
+        @Override
+        public void onCompleted(ApiResponse<DID> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a DID by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DID>> getTelephonyProvidersEdgesDidAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DID>> callback) {
-    return pcapiClient.<DID>invokeAPIVerboseAsync(request, new TypeReference<DID>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DID>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DID>() {}, new AsyncApiCallback<ApiResponse<DID>>() {
+        @Override
+        public void onCompleted(ApiResponse<DID> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DID> response = (ApiResponse<DID>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DID> response = (ApiResponse<DID>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a DID Pool by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DIDPool> getTelephonyProvidersEdgesDidpoolAsync(GetTelephonyProvidersEdgesDidpoolRequest request, AsyncApiCallback<DIDPool> callback) {
-    return pcapiClient.<DIDPool>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DIDPool>() {}, callback);
+    try {
+      SettableFuture<DIDPool> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DIDPool>() {}, new AsyncApiCallback<ApiResponse<DIDPool>>() {
+        @Override
+        public void onCompleted(ApiResponse<DIDPool> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a DID Pool by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DIDPool>> getTelephonyProvidersEdgesDidpoolAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DIDPool>> callback) {
-    return pcapiClient.<DIDPool>invokeAPIVerboseAsync(request, new TypeReference<DIDPool>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DIDPool>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DIDPool>() {}, new AsyncApiCallback<ApiResponse<DIDPool>>() {
+        @Override
+        public void onCompleted(ApiResponse<DIDPool> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DIDPool> response = (ApiResponse<DIDPool>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DIDPool> response = (ApiResponse<DIDPool>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a listing of DID Pools
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DIDPoolEntityListing> getTelephonyProvidersEdgesDidpoolsAsync(GetTelephonyProvidersEdgesDidpoolsRequest request, AsyncApiCallback<DIDPoolEntityListing> callback) {
-    return pcapiClient.<DIDPoolEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DIDPoolEntityListing>() {}, callback);
+    try {
+      SettableFuture<DIDPoolEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DIDPoolEntityListing>() {}, new AsyncApiCallback<ApiResponse<DIDPoolEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DIDPoolEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a listing of DID Pools
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DIDPoolEntityListing>> getTelephonyProvidersEdgesDidpoolsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DIDPoolEntityListing>> callback) {
-    return pcapiClient.<DIDPoolEntityListing>invokeAPIVerboseAsync(request, new TypeReference<DIDPoolEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DIDPoolEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DIDPoolEntityListing>() {}, new AsyncApiCallback<ApiResponse<DIDPoolEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DIDPoolEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DIDPoolEntityListing> response = (ApiResponse<DIDPoolEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DIDPoolEntityListing> response = (ApiResponse<DIDPoolEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a listing of DIDs
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DIDEntityListing> getTelephonyProvidersEdgesDidsAsync(GetTelephonyProvidersEdgesDidsRequest request, AsyncApiCallback<DIDEntityListing> callback) {
-    return pcapiClient.<DIDEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DIDEntityListing>() {}, callback);
+    try {
+      SettableFuture<DIDEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DIDEntityListing>() {}, new AsyncApiCallback<ApiResponse<DIDEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DIDEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a listing of DIDs
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DIDEntityListing>> getTelephonyProvidersEdgesDidsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DIDEntityListing>> callback) {
-    return pcapiClient.<DIDEntityListing>invokeAPIVerboseAsync(request, new TypeReference<DIDEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DIDEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DIDEntityListing>() {}, new AsyncApiCallback<ApiResponse<DIDEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DIDEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DIDEntityListing> response = (ApiResponse<DIDEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DIDEntityListing> response = (ApiResponse<DIDEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get edge group.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<EdgeGroup> getTelephonyProvidersEdgesEdgegroupAsync(GetTelephonyProvidersEdgesEdgegroupRequest request, AsyncApiCallback<EdgeGroup> callback) {
-    return pcapiClient.<EdgeGroup>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeGroup>() {}, callback);
+    try {
+      SettableFuture<EdgeGroup> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeGroup>() {}, new AsyncApiCallback<ApiResponse<EdgeGroup>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeGroup> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get edge group.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<EdgeGroup>> getTelephonyProvidersEdgesEdgegroupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeGroup>> callback) {
-    return pcapiClient.<EdgeGroup>invokeAPIVerboseAsync(request, new TypeReference<EdgeGroup>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<EdgeGroup>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeGroup>() {}, new AsyncApiCallback<ApiResponse<EdgeGroup>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeGroup> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeGroup> response = (ApiResponse<EdgeGroup>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeGroup> response = (ApiResponse<EdgeGroup>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets the edge trunk base associated with the edge group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<EdgeTrunkBase> getTelephonyProvidersEdgesEdgegroupEdgetrunkbasisAsync(GetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest request, AsyncApiCallback<EdgeTrunkBase> callback) {
-    return pcapiClient.<EdgeTrunkBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeTrunkBase>() {}, callback);
+    try {
+      SettableFuture<EdgeTrunkBase> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeTrunkBase>() {}, new AsyncApiCallback<ApiResponse<EdgeTrunkBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeTrunkBase> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets the edge trunk base associated with the edge group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<EdgeTrunkBase>> getTelephonyProvidersEdgesEdgegroupEdgetrunkbasisAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeTrunkBase>> callback) {
-    return pcapiClient.<EdgeTrunkBase>invokeAPIVerboseAsync(request, new TypeReference<EdgeTrunkBase>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<EdgeTrunkBase>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeTrunkBase>() {}, new AsyncApiCallback<ApiResponse<EdgeTrunkBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeTrunkBase> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeTrunkBase> response = (ApiResponse<EdgeTrunkBase>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeTrunkBase> response = (ApiResponse<EdgeTrunkBase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of edge groups.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<EdgeGroupEntityListing> getTelephonyProvidersEdgesEdgegroupsAsync(GetTelephonyProvidersEdgesEdgegroupsRequest request, AsyncApiCallback<EdgeGroupEntityListing> callback) {
-    return pcapiClient.<EdgeGroupEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeGroupEntityListing>() {}, callback);
+    try {
+      SettableFuture<EdgeGroupEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeGroupEntityListing>() {}, new AsyncApiCallback<ApiResponse<EdgeGroupEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeGroupEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of edge groups.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<EdgeGroupEntityListing>> getTelephonyProvidersEdgesEdgegroupsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeGroupEntityListing>> callback) {
-    return pcapiClient.<EdgeGroupEntityListing>invokeAPIVerboseAsync(request, new TypeReference<EdgeGroupEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<EdgeGroupEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeGroupEntityListing>() {}, new AsyncApiCallback<ApiResponse<EdgeGroupEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeGroupEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeGroupEntityListing> response = (ApiResponse<EdgeGroupEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeGroupEntityListing> response = (ApiResponse<EdgeGroupEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the edge version report.
    * The report will not have consistent data about the edge version(s) until all edges have been reset.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<EdgeVersionReport> getTelephonyProvidersEdgesEdgeversionreportAsync(GetTelephonyProvidersEdgesEdgeversionreportRequest request, AsyncApiCallback<EdgeVersionReport> callback) {
-    return pcapiClient.<EdgeVersionReport>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeVersionReport>() {}, callback);
+    try {
+      SettableFuture<EdgeVersionReport> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeVersionReport>() {}, new AsyncApiCallback<ApiResponse<EdgeVersionReport>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeVersionReport> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the edge version report.
    * The report will not have consistent data about the edge version(s) until all edges have been reset.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<EdgeVersionReport>> getTelephonyProvidersEdgesEdgeversionreportAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EdgeVersionReport>> callback) {
-    return pcapiClient.<EdgeVersionReport>invokeAPIVerboseAsync(request, new TypeReference<EdgeVersionReport>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<EdgeVersionReport>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeVersionReport>() {}, new AsyncApiCallback<ApiResponse<EdgeVersionReport>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeVersionReport> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeVersionReport> response = (ApiResponse<EdgeVersionReport>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeVersionReport> response = (ApiResponse<EdgeVersionReport>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get endpoint
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Endpoint> getTelephonyProvidersEdgesEndpointAsync(GetTelephonyProvidersEdgesEndpointRequest request, AsyncApiCallback<Endpoint> callback) {
-    return pcapiClient.<Endpoint>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Endpoint>() {}, callback);
+    try {
+      SettableFuture<Endpoint> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Endpoint>() {}, new AsyncApiCallback<ApiResponse<Endpoint>>() {
+        @Override
+        public void onCompleted(ApiResponse<Endpoint> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get endpoint
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Endpoint>> getTelephonyProvidersEdgesEndpointAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Endpoint>> callback) {
-    return pcapiClient.<Endpoint>invokeAPIVerboseAsync(request, new TypeReference<Endpoint>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Endpoint>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Endpoint>() {}, new AsyncApiCallback<ApiResponse<Endpoint>>() {
+        @Override
+        public void onCompleted(ApiResponse<Endpoint> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Endpoint> response = (ApiResponse<Endpoint>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Endpoint> response = (ApiResponse<Endpoint>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get endpoints
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<EndpointEntityListing> getTelephonyProvidersEdgesEndpointsAsync(GetTelephonyProvidersEdgesEndpointsRequest request, AsyncApiCallback<EndpointEntityListing> callback) {
-    return pcapiClient.<EndpointEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EndpointEntityListing>() {}, callback);
+    try {
+      SettableFuture<EndpointEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EndpointEntityListing>() {}, new AsyncApiCallback<ApiResponse<EndpointEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EndpointEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get endpoints
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<EndpointEntityListing>> getTelephonyProvidersEdgesEndpointsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EndpointEntityListing>> callback) {
-    return pcapiClient.<EndpointEntityListing>invokeAPIVerboseAsync(request, new TypeReference<EndpointEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<EndpointEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EndpointEntityListing>() {}, new AsyncApiCallback<ApiResponse<EndpointEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EndpointEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EndpointEntityListing> response = (ApiResponse<EndpointEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EndpointEntityListing> response = (ApiResponse<EndpointEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get an extension by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Extension> getTelephonyProvidersEdgesExtensionAsync(GetTelephonyProvidersEdgesExtensionRequest request, AsyncApiCallback<Extension> callback) {
-    return pcapiClient.<Extension>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Extension>() {}, callback);
+    try {
+      SettableFuture<Extension> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Extension>() {}, new AsyncApiCallback<ApiResponse<Extension>>() {
+        @Override
+        public void onCompleted(ApiResponse<Extension> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get an extension by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Extension>> getTelephonyProvidersEdgesExtensionAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Extension>> callback) {
-    return pcapiClient.<Extension>invokeAPIVerboseAsync(request, new TypeReference<Extension>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Extension>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Extension>() {}, new AsyncApiCallback<ApiResponse<Extension>>() {
+        @Override
+        public void onCompleted(ApiResponse<Extension> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Extension> response = (ApiResponse<Extension>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Extension> response = (ApiResponse<Extension>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get an extension pool by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ExtensionPool> getTelephonyProvidersEdgesExtensionpoolAsync(GetTelephonyProvidersEdgesExtensionpoolRequest request, AsyncApiCallback<ExtensionPool> callback) {
-    return pcapiClient.<ExtensionPool>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExtensionPool>() {}, callback);
+    try {
+      SettableFuture<ExtensionPool> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExtensionPool>() {}, new AsyncApiCallback<ApiResponse<ExtensionPool>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExtensionPool> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get an extension pool by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ExtensionPool>> getTelephonyProvidersEdgesExtensionpoolAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExtensionPool>> callback) {
-    return pcapiClient.<ExtensionPool>invokeAPIVerboseAsync(request, new TypeReference<ExtensionPool>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ExtensionPool>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExtensionPool>() {}, new AsyncApiCallback<ApiResponse<ExtensionPool>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExtensionPool> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExtensionPool> response = (ApiResponse<ExtensionPool>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExtensionPool> response = (ApiResponse<ExtensionPool>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a listing of extension pools
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ExtensionPoolEntityListing> getTelephonyProvidersEdgesExtensionpoolsAsync(GetTelephonyProvidersEdgesExtensionpoolsRequest request, AsyncApiCallback<ExtensionPoolEntityListing> callback) {
-    return pcapiClient.<ExtensionPoolEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExtensionPoolEntityListing>() {}, callback);
+    try {
+      SettableFuture<ExtensionPoolEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExtensionPoolEntityListing>() {}, new AsyncApiCallback<ApiResponse<ExtensionPoolEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExtensionPoolEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a listing of extension pools
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ExtensionPoolEntityListing>> getTelephonyProvidersEdgesExtensionpoolsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExtensionPoolEntityListing>> callback) {
-    return pcapiClient.<ExtensionPoolEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ExtensionPoolEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ExtensionPoolEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExtensionPoolEntityListing>() {}, new AsyncApiCallback<ApiResponse<ExtensionPoolEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExtensionPoolEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExtensionPoolEntityListing> response = (ApiResponse<ExtensionPoolEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExtensionPoolEntityListing> response = (ApiResponse<ExtensionPoolEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a listing of extensions
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ExtensionEntityListing> getTelephonyProvidersEdgesExtensionsAsync(GetTelephonyProvidersEdgesExtensionsRequest request, AsyncApiCallback<ExtensionEntityListing> callback) {
-    return pcapiClient.<ExtensionEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExtensionEntityListing>() {}, callback);
+    try {
+      SettableFuture<ExtensionEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExtensionEntityListing>() {}, new AsyncApiCallback<ApiResponse<ExtensionEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExtensionEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a listing of extensions
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ExtensionEntityListing>> getTelephonyProvidersEdgesExtensionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExtensionEntityListing>> callback) {
-    return pcapiClient.<ExtensionEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ExtensionEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ExtensionEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExtensionEntityListing>() {}, new AsyncApiCallback<ApiResponse<ExtensionEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExtensionEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExtensionEntityListing> response = (ApiResponse<ExtensionEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExtensionEntityListing> response = (ApiResponse<ExtensionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Line by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Line> getTelephonyProvidersEdgesLineAsync(GetTelephonyProvidersEdgesLineRequest request, AsyncApiCallback<Line> callback) {
-    return pcapiClient.<Line>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Line>() {}, callback);
+    try {
+      SettableFuture<Line> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Line>() {}, new AsyncApiCallback<ApiResponse<Line>>() {
+        @Override
+        public void onCompleted(ApiResponse<Line> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Line by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Line>> getTelephonyProvidersEdgesLineAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Line>> callback) {
-    return pcapiClient.<Line>invokeAPIVerboseAsync(request, new TypeReference<Line>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Line>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Line>() {}, new AsyncApiCallback<ApiResponse<Line>>() {
+        @Override
+        public void onCompleted(ApiResponse<Line> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Line> response = (ApiResponse<Line>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Line> response = (ApiResponse<Line>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a line base settings object by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<LineBase> getTelephonyProvidersEdgesLinebasesettingAsync(GetTelephonyProvidersEdgesLinebasesettingRequest request, AsyncApiCallback<LineBase> callback) {
-    return pcapiClient.<LineBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LineBase>() {}, callback);
+    try {
+      SettableFuture<LineBase> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LineBase>() {}, new AsyncApiCallback<ApiResponse<LineBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<LineBase> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a line base settings object by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<LineBase>> getTelephonyProvidersEdgesLinebasesettingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LineBase>> callback) {
-    return pcapiClient.<LineBase>invokeAPIVerboseAsync(request, new TypeReference<LineBase>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<LineBase>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LineBase>() {}, new AsyncApiCallback<ApiResponse<LineBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<LineBase> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LineBase> response = (ApiResponse<LineBase>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LineBase> response = (ApiResponse<LineBase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a listing of line base settings objects
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<LineBaseEntityListing> getTelephonyProvidersEdgesLinebasesettingsAsync(GetTelephonyProvidersEdgesLinebasesettingsRequest request, AsyncApiCallback<LineBaseEntityListing> callback) {
-    return pcapiClient.<LineBaseEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LineBaseEntityListing>() {}, callback);
+    try {
+      SettableFuture<LineBaseEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LineBaseEntityListing>() {}, new AsyncApiCallback<ApiResponse<LineBaseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LineBaseEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a listing of line base settings objects
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<LineBaseEntityListing>> getTelephonyProvidersEdgesLinebasesettingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LineBaseEntityListing>> callback) {
-    return pcapiClient.<LineBaseEntityListing>invokeAPIVerboseAsync(request, new TypeReference<LineBaseEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<LineBaseEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LineBaseEntityListing>() {}, new AsyncApiCallback<ApiResponse<LineBaseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LineBaseEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LineBaseEntityListing> response = (ApiResponse<LineBaseEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LineBaseEntityListing> response = (ApiResponse<LineBaseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a list of Lines
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<LineEntityListing> getTelephonyProvidersEdgesLinesAsync(GetTelephonyProvidersEdgesLinesRequest request, AsyncApiCallback<LineEntityListing> callback) {
-    return pcapiClient.<LineEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LineEntityListing>() {}, callback);
+    try {
+      SettableFuture<LineEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LineEntityListing>() {}, new AsyncApiCallback<ApiResponse<LineEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LineEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a list of Lines
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<LineEntityListing>> getTelephonyProvidersEdgesLinesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LineEntityListing>> callback) {
-    return pcapiClient.<LineEntityListing>invokeAPIVerboseAsync(request, new TypeReference<LineEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<LineEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LineEntityListing>() {}, new AsyncApiCallback<ApiResponse<LineEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LineEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LineEntityListing> response = (ApiResponse<LineEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LineEntityListing> response = (ApiResponse<LineEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Line> getTelephonyProvidersEdgesLinesTemplateAsync(GetTelephonyProvidersEdgesLinesTemplateRequest request, AsyncApiCallback<Line> callback) {
-    return pcapiClient.<Line>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Line>() {}, callback);
+    try {
+      SettableFuture<Line> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Line>() {}, new AsyncApiCallback<ApiResponse<Line>>() {
+        @Override
+        public void onCompleted(ApiResponse<Line> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Line>> getTelephonyProvidersEdgesLinesTemplateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Line>> callback) {
-    return pcapiClient.<Line>invokeAPIVerboseAsync(request, new TypeReference<Line>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Line>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Line>() {}, new AsyncApiCallback<ApiResponse<Line>>() {
+        @Override
+        public void onCompleted(ApiResponse<Line> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Line> response = (ApiResponse<Line>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Line> response = (ApiResponse<Line>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get edge logical interfaces.
    * Retrieve the configured logical interfaces for a list edges. Only 100 edges can be requested at a time.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<LogicalInterfaceEntityListing> getTelephonyProvidersEdgesLogicalinterfacesAsync(GetTelephonyProvidersEdgesLogicalinterfacesRequest request, AsyncApiCallback<LogicalInterfaceEntityListing> callback) {
-    return pcapiClient.<LogicalInterfaceEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LogicalInterfaceEntityListing>() {}, callback);
+    try {
+      SettableFuture<LogicalInterfaceEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LogicalInterfaceEntityListing>() {}, new AsyncApiCallback<ApiResponse<LogicalInterfaceEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LogicalInterfaceEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get edge logical interfaces.
    * Retrieve the configured logical interfaces for a list edges. Only 100 edges can be requested at a time.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<LogicalInterfaceEntityListing>> getTelephonyProvidersEdgesLogicalinterfacesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LogicalInterfaceEntityListing>> callback) {
-    return pcapiClient.<LogicalInterfaceEntityListing>invokeAPIVerboseAsync(request, new TypeReference<LogicalInterfaceEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<LogicalInterfaceEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LogicalInterfaceEntityListing>() {}, new AsyncApiCallback<ApiResponse<LogicalInterfaceEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LogicalInterfaceEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LogicalInterfaceEntityListing> response = (ApiResponse<LogicalInterfaceEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LogicalInterfaceEntityListing> response = (ApiResponse<LogicalInterfaceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get outbound route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<OutboundRoute> getTelephonyProvidersEdgesOutboundrouteAsync(GetTelephonyProvidersEdgesOutboundrouteRequest request, AsyncApiCallback<OutboundRoute> callback) {
-    return pcapiClient.<OutboundRoute>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OutboundRoute>() {}, callback);
+    try {
+      SettableFuture<OutboundRoute> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OutboundRoute>() {}, new AsyncApiCallback<ApiResponse<OutboundRoute>>() {
+        @Override
+        public void onCompleted(ApiResponse<OutboundRoute> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get outbound route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<OutboundRoute>> getTelephonyProvidersEdgesOutboundrouteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OutboundRoute>> callback) {
-    return pcapiClient.<OutboundRoute>invokeAPIVerboseAsync(request, new TypeReference<OutboundRoute>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<OutboundRoute>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OutboundRoute>() {}, new AsyncApiCallback<ApiResponse<OutboundRoute>>() {
+        @Override
+        public void onCompleted(ApiResponse<OutboundRoute> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OutboundRoute> response = (ApiResponse<OutboundRoute>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OutboundRoute> response = (ApiResponse<OutboundRoute>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get outbound routes
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<OutboundRouteEntityListing> getTelephonyProvidersEdgesOutboundroutesAsync(GetTelephonyProvidersEdgesOutboundroutesRequest request, AsyncApiCallback<OutboundRouteEntityListing> callback) {
-    return pcapiClient.<OutboundRouteEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OutboundRouteEntityListing>() {}, callback);
+    try {
+      SettableFuture<OutboundRouteEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OutboundRouteEntityListing>() {}, new AsyncApiCallback<ApiResponse<OutboundRouteEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<OutboundRouteEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get outbound routes
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<OutboundRouteEntityListing>> getTelephonyProvidersEdgesOutboundroutesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OutboundRouteEntityListing>> callback) {
-    return pcapiClient.<OutboundRouteEntityListing>invokeAPIVerboseAsync(request, new TypeReference<OutboundRouteEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<OutboundRouteEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OutboundRouteEntityListing>() {}, new AsyncApiCallback<ApiResponse<OutboundRouteEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<OutboundRouteEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OutboundRouteEntityListing> response = (ApiResponse<OutboundRouteEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OutboundRouteEntityListing> response = (ApiResponse<OutboundRouteEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Phone by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Phone> getTelephonyProvidersEdgesPhoneAsync(GetTelephonyProvidersEdgesPhoneRequest request, AsyncApiCallback<Phone> callback) {
-    return pcapiClient.<Phone>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Phone>() {}, callback);
+    try {
+      SettableFuture<Phone> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Phone>() {}, new AsyncApiCallback<ApiResponse<Phone>>() {
+        @Override
+        public void onCompleted(ApiResponse<Phone> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Phone by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Phone>> getTelephonyProvidersEdgesPhoneAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Phone>> callback) {
-    return pcapiClient.<Phone>invokeAPIVerboseAsync(request, new TypeReference<Phone>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Phone>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Phone>() {}, new AsyncApiCallback<ApiResponse<Phone>>() {
+        @Override
+        public void onCompleted(ApiResponse<Phone> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Phone> response = (ApiResponse<Phone>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Phone> response = (ApiResponse<Phone>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Phone Base Settings object by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<PhoneBase> getTelephonyProvidersEdgesPhonebasesettingAsync(GetTelephonyProvidersEdgesPhonebasesettingRequest request, AsyncApiCallback<PhoneBase> callback) {
-    return pcapiClient.<PhoneBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PhoneBase>() {}, callback);
+    try {
+      SettableFuture<PhoneBase> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PhoneBase>() {}, new AsyncApiCallback<ApiResponse<PhoneBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<PhoneBase> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Phone Base Settings object by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<PhoneBase>> getTelephonyProvidersEdgesPhonebasesettingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PhoneBase>> callback) {
-    return pcapiClient.<PhoneBase>invokeAPIVerboseAsync(request, new TypeReference<PhoneBase>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<PhoneBase>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PhoneBase>() {}, new AsyncApiCallback<ApiResponse<PhoneBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<PhoneBase> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PhoneBase> response = (ApiResponse<PhoneBase>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PhoneBase> response = (ApiResponse<PhoneBase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a list of Phone Base Settings objects
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<PhoneBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettingsAsync(GetTelephonyProvidersEdgesPhonebasesettingsRequest request, AsyncApiCallback<PhoneBaseEntityListing> callback) {
-    return pcapiClient.<PhoneBaseEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PhoneBaseEntityListing>() {}, callback);
+    try {
+      SettableFuture<PhoneBaseEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PhoneBaseEntityListing>() {}, new AsyncApiCallback<ApiResponse<PhoneBaseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PhoneBaseEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a list of Phone Base Settings objects
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<PhoneBaseEntityListing>> getTelephonyProvidersEdgesPhonebasesettingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PhoneBaseEntityListing>> callback) {
-    return pcapiClient.<PhoneBaseEntityListing>invokeAPIVerboseAsync(request, new TypeReference<PhoneBaseEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<PhoneBaseEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PhoneBaseEntityListing>() {}, new AsyncApiCallback<ApiResponse<PhoneBaseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PhoneBaseEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PhoneBaseEntityListing> response = (ApiResponse<PhoneBaseEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PhoneBaseEntityListing> response = (ApiResponse<PhoneBaseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a list of available makes and models to create a new Phone Base Settings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<PhoneMetaBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesAsync(GetTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesRequest request, AsyncApiCallback<PhoneMetaBaseEntityListing> callback) {
-    return pcapiClient.<PhoneMetaBaseEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PhoneMetaBaseEntityListing>() {}, callback);
+    try {
+      SettableFuture<PhoneMetaBaseEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PhoneMetaBaseEntityListing>() {}, new AsyncApiCallback<ApiResponse<PhoneMetaBaseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PhoneMetaBaseEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a list of available makes and models to create a new Phone Base Settings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<PhoneMetaBaseEntityListing>> getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PhoneMetaBaseEntityListing>> callback) {
-    return pcapiClient.<PhoneMetaBaseEntityListing>invokeAPIVerboseAsync(request, new TypeReference<PhoneMetaBaseEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<PhoneMetaBaseEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PhoneMetaBaseEntityListing>() {}, new AsyncApiCallback<ApiResponse<PhoneMetaBaseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PhoneMetaBaseEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PhoneMetaBaseEntityListing> response = (ApiResponse<PhoneMetaBaseEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PhoneMetaBaseEntityListing> response = (ApiResponse<PhoneMetaBaseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<PhoneBase> getTelephonyProvidersEdgesPhonebasesettingsTemplateAsync(GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest request, AsyncApiCallback<PhoneBase> callback) {
-    return pcapiClient.<PhoneBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PhoneBase>() {}, callback);
+    try {
+      SettableFuture<PhoneBase> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PhoneBase>() {}, new AsyncApiCallback<ApiResponse<PhoneBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<PhoneBase> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<PhoneBase>> getTelephonyProvidersEdgesPhonebasesettingsTemplateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PhoneBase>> callback) {
-    return pcapiClient.<PhoneBase>invokeAPIVerboseAsync(request, new TypeReference<PhoneBase>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<PhoneBase>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PhoneBase>() {}, new AsyncApiCallback<ApiResponse<PhoneBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<PhoneBase> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PhoneBase> response = (ApiResponse<PhoneBase>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PhoneBase> response = (ApiResponse<PhoneBase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a list of Phone Instances
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<PhoneEntityListing> getTelephonyProvidersEdgesPhonesAsync(GetTelephonyProvidersEdgesPhonesRequest request, AsyncApiCallback<PhoneEntityListing> callback) {
-    return pcapiClient.<PhoneEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PhoneEntityListing>() {}, callback);
+    try {
+      SettableFuture<PhoneEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PhoneEntityListing>() {}, new AsyncApiCallback<ApiResponse<PhoneEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PhoneEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a list of Phone Instances
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<PhoneEntityListing>> getTelephonyProvidersEdgesPhonesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PhoneEntityListing>> callback) {
-    return pcapiClient.<PhoneEntityListing>invokeAPIVerboseAsync(request, new TypeReference<PhoneEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<PhoneEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PhoneEntityListing>() {}, new AsyncApiCallback<ApiResponse<PhoneEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PhoneEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PhoneEntityListing> response = (ApiResponse<PhoneEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PhoneEntityListing> response = (ApiResponse<PhoneEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Phone> getTelephonyProvidersEdgesPhonesTemplateAsync(GetTelephonyProvidersEdgesPhonesTemplateRequest request, AsyncApiCallback<Phone> callback) {
-    return pcapiClient.<Phone>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Phone>() {}, callback);
+    try {
+      SettableFuture<Phone> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Phone>() {}, new AsyncApiCallback<ApiResponse<Phone>>() {
+        @Override
+        public void onCompleted(ApiResponse<Phone> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Phone>> getTelephonyProvidersEdgesPhonesTemplateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Phone>> callback) {
-    return pcapiClient.<Phone>invokeAPIVerboseAsync(request, new TypeReference<Phone>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Phone>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Phone>() {}, new AsyncApiCallback<ApiResponse<Phone>>() {
+        @Override
+        public void onCompleted(ApiResponse<Phone> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Phone> response = (ApiResponse<Phone>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Phone> response = (ApiResponse<Phone>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Site by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Site> getTelephonyProvidersEdgesSiteAsync(GetTelephonyProvidersEdgesSiteRequest request, AsyncApiCallback<Site> callback) {
-    return pcapiClient.<Site>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Site>() {}, callback);
+    try {
+      SettableFuture<Site> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Site>() {}, new AsyncApiCallback<ApiResponse<Site>>() {
+        @Override
+        public void onCompleted(ApiResponse<Site> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Site by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Site>> getTelephonyProvidersEdgesSiteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Site>> callback) {
-    return pcapiClient.<Site>invokeAPIVerboseAsync(request, new TypeReference<Site>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Site>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Site>() {}, new AsyncApiCallback<ApiResponse<Site>>() {
+        @Override
+        public void onCompleted(ApiResponse<Site> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Site> response = (ApiResponse<Site>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Site> response = (ApiResponse<Site>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Number Plan by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<NumberPlan> getTelephonyProvidersEdgesSiteNumberplanAsync(GetTelephonyProvidersEdgesSiteNumberplanRequest request, AsyncApiCallback<NumberPlan> callback) {
-    return pcapiClient.<NumberPlan>invokeAPIAsync(request.withHttpInfo(), new TypeReference<NumberPlan>() {}, callback);
+    try {
+      SettableFuture<NumberPlan> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<NumberPlan>() {}, new AsyncApiCallback<ApiResponse<NumberPlan>>() {
+        @Override
+        public void onCompleted(ApiResponse<NumberPlan> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Number Plan by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<NumberPlan>> getTelephonyProvidersEdgesSiteNumberplanAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<NumberPlan>> callback) {
-    return pcapiClient.<NumberPlan>invokeAPIVerboseAsync(request, new TypeReference<NumberPlan>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<NumberPlan>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<NumberPlan>() {}, new AsyncApiCallback<ApiResponse<NumberPlan>>() {
+        @Override
+        public void onCompleted(ApiResponse<NumberPlan> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<NumberPlan> response = (ApiResponse<NumberPlan>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<NumberPlan> response = (ApiResponse<NumberPlan>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of Number Plans for this Site.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<List<NumberPlan>> getTelephonyProvidersEdgesSiteNumberplansAsync(GetTelephonyProvidersEdgesSiteNumberplansRequest request, AsyncApiCallback<List<NumberPlan>> callback) {
-    return pcapiClient.<List<NumberPlan>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<NumberPlan>>() {}, callback);
+    try {
+      SettableFuture<List<NumberPlan>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<NumberPlan>>() {}, new AsyncApiCallback<ApiResponse<List<NumberPlan>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<NumberPlan>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of Number Plans for this Site.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<List<NumberPlan>>> getTelephonyProvidersEdgesSiteNumberplansAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<NumberPlan>>> callback) {
-    return pcapiClient.<List<NumberPlan>>invokeAPIVerboseAsync(request, new TypeReference<List<NumberPlan>>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<List<NumberPlan>>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<NumberPlan>>() {}, new AsyncApiCallback<ApiResponse<List<NumberPlan>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<NumberPlan>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<NumberPlan>> response = (ApiResponse<List<NumberPlan>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<NumberPlan>> response = (ApiResponse<List<NumberPlan>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a list of Classifications for this Site
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<List<String>> getTelephonyProvidersEdgesSiteNumberplansClassificationsAsync(GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest request, AsyncApiCallback<List<String>> callback) {
-    return pcapiClient.<List<String>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<String>>() {}, callback);
+    try {
+      SettableFuture<List<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<String>>() {}, new AsyncApiCallback<ApiResponse<List<String>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<String>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a list of Classifications for this Site
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<List<String>>> getTelephonyProvidersEdgesSiteNumberplansClassificationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<String>>> callback) {
-    return pcapiClient.<List<String>>invokeAPIVerboseAsync(request, new TypeReference<List<String>>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<List<String>>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<String>>() {}, new AsyncApiCallback<ApiResponse<List<String>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<String>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get an outbound route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<OutboundRouteBase> getTelephonyProvidersEdgesSiteOutboundrouteAsync(GetTelephonyProvidersEdgesSiteOutboundrouteRequest request, AsyncApiCallback<OutboundRouteBase> callback) {
-    return pcapiClient.<OutboundRouteBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OutboundRouteBase>() {}, callback);
+    try {
+      SettableFuture<OutboundRouteBase> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OutboundRouteBase>() {}, new AsyncApiCallback<ApiResponse<OutboundRouteBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<OutboundRouteBase> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get an outbound route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<OutboundRouteBase>> getTelephonyProvidersEdgesSiteOutboundrouteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OutboundRouteBase>> callback) {
-    return pcapiClient.<OutboundRouteBase>invokeAPIVerboseAsync(request, new TypeReference<OutboundRouteBase>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<OutboundRouteBase>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OutboundRouteBase>() {}, new AsyncApiCallback<ApiResponse<OutboundRouteBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<OutboundRouteBase> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OutboundRouteBase> response = (ApiResponse<OutboundRouteBase>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OutboundRouteBase> response = (ApiResponse<OutboundRouteBase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get outbound routes
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<OutboundRouteBaseEntityListing> getTelephonyProvidersEdgesSiteOutboundroutesAsync(GetTelephonyProvidersEdgesSiteOutboundroutesRequest request, AsyncApiCallback<OutboundRouteBaseEntityListing> callback) {
-    return pcapiClient.<OutboundRouteBaseEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OutboundRouteBaseEntityListing>() {}, callback);
+    try {
+      SettableFuture<OutboundRouteBaseEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OutboundRouteBaseEntityListing>() {}, new AsyncApiCallback<ApiResponse<OutboundRouteBaseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<OutboundRouteBaseEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get outbound routes
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<OutboundRouteBaseEntityListing>> getTelephonyProvidersEdgesSiteOutboundroutesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OutboundRouteBaseEntityListing>> callback) {
-    return pcapiClient.<OutboundRouteBaseEntityListing>invokeAPIVerboseAsync(request, new TypeReference<OutboundRouteBaseEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<OutboundRouteBaseEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OutboundRouteBaseEntityListing>() {}, new AsyncApiCallback<ApiResponse<OutboundRouteBaseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<OutboundRouteBaseEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OutboundRouteBaseEntityListing> response = (ApiResponse<OutboundRouteBaseEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OutboundRouteBaseEntityListing> response = (ApiResponse<OutboundRouteBaseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of Sites.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<SiteEntityListing> getTelephonyProvidersEdgesSitesAsync(GetTelephonyProvidersEdgesSitesRequest request, AsyncApiCallback<SiteEntityListing> callback) {
-    return pcapiClient.<SiteEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<SiteEntityListing>() {}, callback);
+    try {
+      SettableFuture<SiteEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SiteEntityListing>() {}, new AsyncApiCallback<ApiResponse<SiteEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SiteEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of Sites.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<SiteEntityListing>> getTelephonyProvidersEdgesSitesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SiteEntityListing>> callback) {
-    return pcapiClient.<SiteEntityListing>invokeAPIVerboseAsync(request, new TypeReference<SiteEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<SiteEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SiteEntityListing>() {}, new AsyncApiCallback<ApiResponse<SiteEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SiteEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SiteEntityListing> response = (ApiResponse<SiteEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SiteEntityListing> response = (ApiResponse<SiteEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a list of Edge-compatible time zones
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<TimeZoneEntityListing> getTelephonyProvidersEdgesTimezonesAsync(GetTelephonyProvidersEdgesTimezonesRequest request, AsyncApiCallback<TimeZoneEntityListing> callback) {
-    return pcapiClient.<TimeZoneEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TimeZoneEntityListing>() {}, callback);
+    try {
+      SettableFuture<TimeZoneEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TimeZoneEntityListing>() {}, new AsyncApiCallback<ApiResponse<TimeZoneEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TimeZoneEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a list of Edge-compatible time zones
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<TimeZoneEntityListing>> getTelephonyProvidersEdgesTimezonesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TimeZoneEntityListing>> callback) {
-    return pcapiClient.<TimeZoneEntityListing>invokeAPIVerboseAsync(request, new TypeReference<TimeZoneEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<TimeZoneEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TimeZoneEntityListing>() {}, new AsyncApiCallback<ApiResponse<TimeZoneEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TimeZoneEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TimeZoneEntityListing> response = (ApiResponse<TimeZoneEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TimeZoneEntityListing> response = (ApiResponse<TimeZoneEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Trunk by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Trunk> getTelephonyProvidersEdgesTrunkAsync(GetTelephonyProvidersEdgesTrunkRequest request, AsyncApiCallback<Trunk> callback) {
-    return pcapiClient.<Trunk>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Trunk>() {}, callback);
+    try {
+      SettableFuture<Trunk> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Trunk>() {}, new AsyncApiCallback<ApiResponse<Trunk>>() {
+        @Override
+        public void onCompleted(ApiResponse<Trunk> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Trunk by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Trunk>> getTelephonyProvidersEdgesTrunkAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Trunk>> callback) {
-    return pcapiClient.<Trunk>invokeAPIVerboseAsync(request, new TypeReference<Trunk>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Trunk>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Trunk>() {}, new AsyncApiCallback<ApiResponse<Trunk>>() {
+        @Override
+        public void onCompleted(ApiResponse<Trunk> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Trunk> response = (ApiResponse<Trunk>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Trunk> response = (ApiResponse<Trunk>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Trunk Base Settings object by ID
    * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<TrunkBase> getTelephonyProvidersEdgesTrunkbasesettingAsync(GetTelephonyProvidersEdgesTrunkbasesettingRequest request, AsyncApiCallback<TrunkBase> callback) {
-    return pcapiClient.<TrunkBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TrunkBase>() {}, callback);
+    try {
+      SettableFuture<TrunkBase> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrunkBase>() {}, new AsyncApiCallback<ApiResponse<TrunkBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkBase> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Trunk Base Settings object by ID
    * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<TrunkBase>> getTelephonyProvidersEdgesTrunkbasesettingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TrunkBase>> callback) {
-    return pcapiClient.<TrunkBase>invokeAPIVerboseAsync(request, new TypeReference<TrunkBase>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<TrunkBase>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrunkBase>() {}, new AsyncApiCallback<ApiResponse<TrunkBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkBase> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkBase> response = (ApiResponse<TrunkBase>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkBase> response = (ApiResponse<TrunkBase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get Trunk Base Settings listing
    * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<TrunkBaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsAsync(GetTelephonyProvidersEdgesTrunkbasesettingsRequest request, AsyncApiCallback<TrunkBaseEntityListing> callback) {
-    return pcapiClient.<TrunkBaseEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TrunkBaseEntityListing>() {}, callback);
+    try {
+      SettableFuture<TrunkBaseEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrunkBaseEntityListing>() {}, new AsyncApiCallback<ApiResponse<TrunkBaseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkBaseEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get Trunk Base Settings listing
    * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<TrunkBaseEntityListing>> getTelephonyProvidersEdgesTrunkbasesettingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TrunkBaseEntityListing>> callback) {
-    return pcapiClient.<TrunkBaseEntityListing>invokeAPIVerboseAsync(request, new TypeReference<TrunkBaseEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<TrunkBaseEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrunkBaseEntityListing>() {}, new AsyncApiCallback<ApiResponse<TrunkBaseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkBaseEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkBaseEntityListing> response = (ApiResponse<TrunkBaseEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkBaseEntityListing> response = (ApiResponse<TrunkBaseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a list of available makes and models to create a new Trunk Base Settings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<TrunkMetabaseEntityListing> getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesAsync(GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest request, AsyncApiCallback<TrunkMetabaseEntityListing> callback) {
-    return pcapiClient.<TrunkMetabaseEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TrunkMetabaseEntityListing>() {}, callback);
+    try {
+      SettableFuture<TrunkMetabaseEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrunkMetabaseEntityListing>() {}, new AsyncApiCallback<ApiResponse<TrunkMetabaseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkMetabaseEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a list of available makes and models to create a new Trunk Base Settings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<TrunkMetabaseEntityListing>> getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TrunkMetabaseEntityListing>> callback) {
-    return pcapiClient.<TrunkMetabaseEntityListing>invokeAPIVerboseAsync(request, new TypeReference<TrunkMetabaseEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<TrunkMetabaseEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrunkMetabaseEntityListing>() {}, new AsyncApiCallback<ApiResponse<TrunkMetabaseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkMetabaseEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkMetabaseEntityListing> response = (ApiResponse<TrunkMetabaseEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkMetabaseEntityListing> response = (ApiResponse<TrunkMetabaseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<TrunkBase> getTelephonyProvidersEdgesTrunkbasesettingsTemplateAsync(GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest request, AsyncApiCallback<TrunkBase> callback) {
-    return pcapiClient.<TrunkBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TrunkBase>() {}, callback);
+    try {
+      SettableFuture<TrunkBase> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrunkBase>() {}, new AsyncApiCallback<ApiResponse<TrunkBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkBase> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<TrunkBase>> getTelephonyProvidersEdgesTrunkbasesettingsTemplateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TrunkBase>> callback) {
-    return pcapiClient.<TrunkBase>invokeAPIVerboseAsync(request, new TypeReference<TrunkBase>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<TrunkBase>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrunkBase>() {}, new AsyncApiCallback<ApiResponse<TrunkBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkBase> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkBase> response = (ApiResponse<TrunkBase>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkBase> response = (ApiResponse<TrunkBase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of available trunks.
    * Trunks are created by assigning trunk base settings to an Edge or Edge Group.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<TrunkEntityListing> getTelephonyProvidersEdgesTrunksAsync(GetTelephonyProvidersEdgesTrunksRequest request, AsyncApiCallback<TrunkEntityListing> callback) {
-    return pcapiClient.<TrunkEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TrunkEntityListing>() {}, callback);
+    try {
+      SettableFuture<TrunkEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrunkEntityListing>() {}, new AsyncApiCallback<ApiResponse<TrunkEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of available trunks.
    * Trunks are created by assigning trunk base settings to an Edge or Edge Group.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<TrunkEntityListing>> getTelephonyProvidersEdgesTrunksAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TrunkEntityListing>> callback) {
-    return pcapiClient.<TrunkEntityListing>invokeAPIVerboseAsync(request, new TypeReference<TrunkEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<TrunkEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrunkEntityListing>() {}, new AsyncApiCallback<ApiResponse<TrunkEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkEntityListing> response = (ApiResponse<TrunkEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkEntityListing> response = (ApiResponse<TrunkEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get Counts of trunks that have recording disabled or enabled
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<TrunkRecordingEnabledCount> getTelephonyProvidersEdgesTrunkswithrecordingAsync(GetTelephonyProvidersEdgesTrunkswithrecordingRequest request, AsyncApiCallback<TrunkRecordingEnabledCount> callback) {
-    return pcapiClient.<TrunkRecordingEnabledCount>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TrunkRecordingEnabledCount>() {}, callback);
+    try {
+      SettableFuture<TrunkRecordingEnabledCount> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrunkRecordingEnabledCount>() {}, new AsyncApiCallback<ApiResponse<TrunkRecordingEnabledCount>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkRecordingEnabledCount> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get Counts of trunks that have recording disabled or enabled
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<TrunkRecordingEnabledCount>> getTelephonyProvidersEdgesTrunkswithrecordingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TrunkRecordingEnabledCount>> callback) {
-    return pcapiClient.<TrunkRecordingEnabledCount>invokeAPIVerboseAsync(request, new TypeReference<TrunkRecordingEnabledCount>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<TrunkRecordingEnabledCount>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrunkRecordingEnabledCount>() {}, new AsyncApiCallback<ApiResponse<TrunkRecordingEnabledCount>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkRecordingEnabledCount> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkRecordingEnabledCount> response = (ApiResponse<TrunkRecordingEnabledCount>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkRecordingEnabledCount> response = (ApiResponse<TrunkRecordingEnabledCount>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create an edge logical interface.
    * Create
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DomainLogicalInterface> postTelephonyProvidersEdgeLogicalinterfacesAsync(PostTelephonyProvidersEdgeLogicalinterfacesRequest request, AsyncApiCallback<DomainLogicalInterface> callback) {
-    return pcapiClient.<DomainLogicalInterface>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainLogicalInterface>() {}, callback);
+    try {
+      SettableFuture<DomainLogicalInterface> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainLogicalInterface>() {}, new AsyncApiCallback<ApiResponse<DomainLogicalInterface>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainLogicalInterface> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create an edge logical interface.
    * Create
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DomainLogicalInterface>> postTelephonyProvidersEdgeLogicalinterfacesAsync(ApiRequest<DomainLogicalInterface> request, AsyncApiCallback<ApiResponse<DomainLogicalInterface>> callback) {
-    return pcapiClient.<DomainLogicalInterface>invokeAPIVerboseAsync(request, new TypeReference<DomainLogicalInterface>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DomainLogicalInterface>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DomainLogicalInterface>() {}, new AsyncApiCallback<ApiResponse<DomainLogicalInterface>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainLogicalInterface> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainLogicalInterface> response = (ApiResponse<DomainLogicalInterface>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainLogicalInterface> response = (ApiResponse<DomainLogicalInterface>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Request that the specified fileIds be uploaded from the Edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Void> postTelephonyProvidersEdgeLogsJobUploadAsync(PostTelephonyProvidersEdgeLogsJobUploadRequest request, AsyncApiCallback<Void> callback) {
-    return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
+    try {
+      SettableFuture<Void> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Request that the specified fileIds be uploaded from the Edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> postTelephonyProvidersEdgeLogsJobUploadAsync(ApiRequest<EdgeLogsJobUploadRequest> request, AsyncApiCallback<ApiResponse<Void>> callback) {
-    return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
+    try {
+      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a job to upload a list of Edge logs.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<EdgeLogsJobResponse> postTelephonyProvidersEdgeLogsJobsAsync(PostTelephonyProvidersEdgeLogsJobsRequest request, AsyncApiCallback<EdgeLogsJobResponse> callback) {
-    return pcapiClient.<EdgeLogsJobResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeLogsJobResponse>() {}, callback);
+    try {
+      SettableFuture<EdgeLogsJobResponse> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeLogsJobResponse>() {}, new AsyncApiCallback<ApiResponse<EdgeLogsJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeLogsJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a job to upload a list of Edge logs.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<EdgeLogsJobResponse>> postTelephonyProvidersEdgeLogsJobsAsync(ApiRequest<EdgeLogsJobRequest> request, AsyncApiCallback<ApiResponse<EdgeLogsJobResponse>> callback) {
-    return pcapiClient.<EdgeLogsJobResponse>invokeAPIVerboseAsync(request, new TypeReference<EdgeLogsJobResponse>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<EdgeLogsJobResponse>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeLogsJobResponse>() {}, new AsyncApiCallback<ApiResponse<EdgeLogsJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeLogsJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeLogsJobResponse> response = (ApiResponse<EdgeLogsJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeLogsJobResponse> response = (ApiResponse<EdgeLogsJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Reboot an Edge
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<String> postTelephonyProvidersEdgeRebootAsync(PostTelephonyProvidersEdgeRebootRequest request, AsyncApiCallback<String> callback) {
-    return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<String> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Reboot an Edge
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<String>> postTelephonyProvidersEdgeRebootAsync(ApiRequest<EdgeRebootParameters> request, AsyncApiCallback<ApiResponse<String>> callback) {
-    return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Starts a software update for this edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DomainEdgeSoftwareUpdateDto> postTelephonyProvidersEdgeSoftwareupdateAsync(PostTelephonyProvidersEdgeSoftwareupdateRequest request, AsyncApiCallback<DomainEdgeSoftwareUpdateDto> callback) {
-    return pcapiClient.<DomainEdgeSoftwareUpdateDto>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainEdgeSoftwareUpdateDto>() {}, callback);
+    try {
+      SettableFuture<DomainEdgeSoftwareUpdateDto> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainEdgeSoftwareUpdateDto>() {}, new AsyncApiCallback<ApiResponse<DomainEdgeSoftwareUpdateDto>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainEdgeSoftwareUpdateDto> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Starts a software update for this edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DomainEdgeSoftwareUpdateDto>> postTelephonyProvidersEdgeSoftwareupdateAsync(ApiRequest<DomainEdgeSoftwareUpdateDto> request, AsyncApiCallback<ApiResponse<DomainEdgeSoftwareUpdateDto>> callback) {
-    return pcapiClient.<DomainEdgeSoftwareUpdateDto>invokeAPIVerboseAsync(request, new TypeReference<DomainEdgeSoftwareUpdateDto>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DomainEdgeSoftwareUpdateDto>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DomainEdgeSoftwareUpdateDto>() {}, new AsyncApiCallback<ApiResponse<DomainEdgeSoftwareUpdateDto>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainEdgeSoftwareUpdateDto> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainEdgeSoftwareUpdateDto> response = (ApiResponse<DomainEdgeSoftwareUpdateDto>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainEdgeSoftwareUpdateDto> response = (ApiResponse<DomainEdgeSoftwareUpdateDto>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Take an Edge in or out of service
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<String> postTelephonyProvidersEdgeStatuscodeAsync(PostTelephonyProvidersEdgeStatuscodeRequest request, AsyncApiCallback<String> callback) {
-    return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<String> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Take an Edge in or out of service
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<String>> postTelephonyProvidersEdgeStatuscodeAsync(ApiRequest<EdgeServiceStateRequest> request, AsyncApiCallback<ApiResponse<String>> callback) {
-    return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Unpair an Edge
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<String> postTelephonyProvidersEdgeUnpairAsync(PostTelephonyProvidersEdgeUnpairRequest request, AsyncApiCallback<String> callback) {
-    return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<String> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Unpair an Edge
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<String>> postTelephonyProvidersEdgeUnpairAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
-    return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create an edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Edge> postTelephonyProvidersEdgesAsync(PostTelephonyProvidersEdgesRequest request, AsyncApiCallback<Edge> callback) {
-    return pcapiClient.<Edge>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Edge>() {}, callback);
+    try {
+      SettableFuture<Edge> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Edge>() {}, new AsyncApiCallback<ApiResponse<Edge>>() {
+        @Override
+        public void onCompleted(ApiResponse<Edge> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create an edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Edge>> postTelephonyProvidersEdgesAsync(ApiRequest<Edge> request, AsyncApiCallback<ApiResponse<Edge>> callback) {
-    return pcapiClient.<Edge>invokeAPIVerboseAsync(request, new TypeReference<Edge>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Edge>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Edge>() {}, new AsyncApiCallback<ApiResponse<Edge>>() {
+        @Override
+        public void onCompleted(ApiResponse<Edge> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Edge> response = (ApiResponse<Edge>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Edge> response = (ApiResponse<Edge>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Validates a street address
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ValidateAddressResponse> postTelephonyProvidersEdgesAddressvalidationAsync(PostTelephonyProvidersEdgesAddressvalidationRequest request, AsyncApiCallback<ValidateAddressResponse> callback) {
-    return pcapiClient.<ValidateAddressResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ValidateAddressResponse>() {}, callback);
+    try {
+      SettableFuture<ValidateAddressResponse> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ValidateAddressResponse>() {}, new AsyncApiCallback<ApiResponse<ValidateAddressResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ValidateAddressResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Validates a street address
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ValidateAddressResponse>> postTelephonyProvidersEdgesAddressvalidationAsync(ApiRequest<ValidateAddressRequest> request, AsyncApiCallback<ApiResponse<ValidateAddressResponse>> callback) {
-    return pcapiClient.<ValidateAddressResponse>invokeAPIVerboseAsync(request, new TypeReference<ValidateAddressResponse>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ValidateAddressResponse>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ValidateAddressResponse>() {}, new AsyncApiCallback<ApiResponse<ValidateAddressResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ValidateAddressResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ValidateAddressResponse> response = (ApiResponse<ValidateAddressResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ValidateAddressResponse> response = (ApiResponse<ValidateAddressResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a certificate authority.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DomainCertificateAuthority> postTelephonyProvidersEdgesCertificateauthoritiesAsync(PostTelephonyProvidersEdgesCertificateauthoritiesRequest request, AsyncApiCallback<DomainCertificateAuthority> callback) {
-    return pcapiClient.<DomainCertificateAuthority>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainCertificateAuthority>() {}, callback);
+    try {
+      SettableFuture<DomainCertificateAuthority> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainCertificateAuthority>() {}, new AsyncApiCallback<ApiResponse<DomainCertificateAuthority>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainCertificateAuthority> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a certificate authority.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DomainCertificateAuthority>> postTelephonyProvidersEdgesCertificateauthoritiesAsync(ApiRequest<DomainCertificateAuthority> request, AsyncApiCallback<ApiResponse<DomainCertificateAuthority>> callback) {
-    return pcapiClient.<DomainCertificateAuthority>invokeAPIVerboseAsync(request, new TypeReference<DomainCertificateAuthority>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DomainCertificateAuthority>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DomainCertificateAuthority>() {}, new AsyncApiCallback<ApiResponse<DomainCertificateAuthority>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainCertificateAuthority> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainCertificateAuthority> response = (ApiResponse<DomainCertificateAuthority>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainCertificateAuthority> response = (ApiResponse<DomainCertificateAuthority>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a new DID pool
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DIDPool> postTelephonyProvidersEdgesDidpoolsAsync(PostTelephonyProvidersEdgesDidpoolsRequest request, AsyncApiCallback<DIDPool> callback) {
-    return pcapiClient.<DIDPool>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DIDPool>() {}, callback);
+    try {
+      SettableFuture<DIDPool> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DIDPool>() {}, new AsyncApiCallback<ApiResponse<DIDPool>>() {
+        @Override
+        public void onCompleted(ApiResponse<DIDPool> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a new DID pool
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DIDPool>> postTelephonyProvidersEdgesDidpoolsAsync(ApiRequest<DIDPool> request, AsyncApiCallback<ApiResponse<DIDPool>> callback) {
-    return pcapiClient.<DIDPool>invokeAPIVerboseAsync(request, new TypeReference<DIDPool>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DIDPool>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DIDPool>() {}, new AsyncApiCallback<ApiResponse<DIDPool>>() {
+        @Override
+        public void onCompleted(ApiResponse<DIDPool> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DIDPool> response = (ApiResponse<DIDPool>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DIDPool> response = (ApiResponse<DIDPool>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create an edge group.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<EdgeGroup> postTelephonyProvidersEdgesEdgegroupsAsync(PostTelephonyProvidersEdgesEdgegroupsRequest request, AsyncApiCallback<EdgeGroup> callback) {
-    return pcapiClient.<EdgeGroup>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeGroup>() {}, callback);
+    try {
+      SettableFuture<EdgeGroup> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeGroup>() {}, new AsyncApiCallback<ApiResponse<EdgeGroup>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeGroup> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create an edge group.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<EdgeGroup>> postTelephonyProvidersEdgesEdgegroupsAsync(ApiRequest<EdgeGroup> request, AsyncApiCallback<ApiResponse<EdgeGroup>> callback) {
-    return pcapiClient.<EdgeGroup>invokeAPIVerboseAsync(request, new TypeReference<EdgeGroup>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<EdgeGroup>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeGroup>() {}, new AsyncApiCallback<ApiResponse<EdgeGroup>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeGroup> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeGroup> response = (ApiResponse<EdgeGroup>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeGroup> response = (ApiResponse<EdgeGroup>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create endpoint
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Endpoint> postTelephonyProvidersEdgesEndpointsAsync(PostTelephonyProvidersEdgesEndpointsRequest request, AsyncApiCallback<Endpoint> callback) {
-    return pcapiClient.<Endpoint>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Endpoint>() {}, callback);
+    try {
+      SettableFuture<Endpoint> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Endpoint>() {}, new AsyncApiCallback<ApiResponse<Endpoint>>() {
+        @Override
+        public void onCompleted(ApiResponse<Endpoint> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create endpoint
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Endpoint>> postTelephonyProvidersEdgesEndpointsAsync(ApiRequest<Endpoint> request, AsyncApiCallback<ApiResponse<Endpoint>> callback) {
-    return pcapiClient.<Endpoint>invokeAPIVerboseAsync(request, new TypeReference<Endpoint>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Endpoint>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Endpoint>() {}, new AsyncApiCallback<ApiResponse<Endpoint>>() {
+        @Override
+        public void onCompleted(ApiResponse<Endpoint> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Endpoint> response = (ApiResponse<Endpoint>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Endpoint> response = (ApiResponse<Endpoint>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a new extension pool
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ExtensionPool> postTelephonyProvidersEdgesExtensionpoolsAsync(PostTelephonyProvidersEdgesExtensionpoolsRequest request, AsyncApiCallback<ExtensionPool> callback) {
-    return pcapiClient.<ExtensionPool>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExtensionPool>() {}, callback);
+    try {
+      SettableFuture<ExtensionPool> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExtensionPool>() {}, new AsyncApiCallback<ApiResponse<ExtensionPool>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExtensionPool> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a new extension pool
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ExtensionPool>> postTelephonyProvidersEdgesExtensionpoolsAsync(ApiRequest<ExtensionPool> request, AsyncApiCallback<ApiResponse<ExtensionPool>> callback) {
-    return pcapiClient.<ExtensionPool>invokeAPIVerboseAsync(request, new TypeReference<ExtensionPool>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ExtensionPool>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExtensionPool>() {}, new AsyncApiCallback<ApiResponse<ExtensionPool>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExtensionPool> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExtensionPool> response = (ApiResponse<ExtensionPool>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExtensionPool> response = (ApiResponse<ExtensionPool>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create outbound rule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<OutboundRoute> postTelephonyProvidersEdgesOutboundroutesAsync(PostTelephonyProvidersEdgesOutboundroutesRequest request, AsyncApiCallback<OutboundRoute> callback) {
-    return pcapiClient.<OutboundRoute>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OutboundRoute>() {}, callback);
+    try {
+      SettableFuture<OutboundRoute> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OutboundRoute>() {}, new AsyncApiCallback<ApiResponse<OutboundRoute>>() {
+        @Override
+        public void onCompleted(ApiResponse<OutboundRoute> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create outbound rule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<OutboundRoute>> postTelephonyProvidersEdgesOutboundroutesAsync(ApiRequest<OutboundRoute> request, AsyncApiCallback<ApiResponse<OutboundRoute>> callback) {
-    return pcapiClient.<OutboundRoute>invokeAPIVerboseAsync(request, new TypeReference<OutboundRoute>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<OutboundRoute>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OutboundRoute>() {}, new AsyncApiCallback<ApiResponse<OutboundRoute>>() {
+        @Override
+        public void onCompleted(ApiResponse<OutboundRoute> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OutboundRoute> response = (ApiResponse<OutboundRoute>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OutboundRoute> response = (ApiResponse<OutboundRoute>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Reboot a Phone
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Void> postTelephonyProvidersEdgesPhoneRebootAsync(PostTelephonyProvidersEdgesPhoneRebootRequest request, AsyncApiCallback<Void> callback) {
-    return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
+    try {
+      SettableFuture<Void> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Reboot a Phone
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> postTelephonyProvidersEdgesPhoneRebootAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
-    return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
+    try {
+      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a new Phone Base Settings object
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<PhoneBase> postTelephonyProvidersEdgesPhonebasesettingsAsync(PostTelephonyProvidersEdgesPhonebasesettingsRequest request, AsyncApiCallback<PhoneBase> callback) {
-    return pcapiClient.<PhoneBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PhoneBase>() {}, callback);
+    try {
+      SettableFuture<PhoneBase> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PhoneBase>() {}, new AsyncApiCallback<ApiResponse<PhoneBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<PhoneBase> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a new Phone Base Settings object
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<PhoneBase>> postTelephonyProvidersEdgesPhonebasesettingsAsync(ApiRequest<PhoneBase> request, AsyncApiCallback<ApiResponse<PhoneBase>> callback) {
-    return pcapiClient.<PhoneBase>invokeAPIVerboseAsync(request, new TypeReference<PhoneBase>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<PhoneBase>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PhoneBase>() {}, new AsyncApiCallback<ApiResponse<PhoneBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<PhoneBase> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PhoneBase> response = (ApiResponse<PhoneBase>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PhoneBase> response = (ApiResponse<PhoneBase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a new Phone
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Phone> postTelephonyProvidersEdgesPhonesAsync(PostTelephonyProvidersEdgesPhonesRequest request, AsyncApiCallback<Phone> callback) {
-    return pcapiClient.<Phone>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Phone>() {}, callback);
+    try {
+      SettableFuture<Phone> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Phone>() {}, new AsyncApiCallback<ApiResponse<Phone>>() {
+        @Override
+        public void onCompleted(ApiResponse<Phone> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a new Phone
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Phone>> postTelephonyProvidersEdgesPhonesAsync(ApiRequest<Phone> request, AsyncApiCallback<ApiResponse<Phone>> callback) {
-    return pcapiClient.<Phone>invokeAPIVerboseAsync(request, new TypeReference<Phone>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Phone>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Phone>() {}, new AsyncApiCallback<ApiResponse<Phone>>() {
+        @Override
+        public void onCompleted(ApiResponse<Phone> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Phone> response = (ApiResponse<Phone>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Phone> response = (ApiResponse<Phone>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Reboot Multiple Phones
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Void> postTelephonyProvidersEdgesPhonesRebootAsync(PostTelephonyProvidersEdgesPhonesRebootRequest request, AsyncApiCallback<Void> callback) {
-    return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
+    try {
+      SettableFuture<Void> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Reboot Multiple Phones
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> postTelephonyProvidersEdgesPhonesRebootAsync(ApiRequest<PhonesReboot> request, AsyncApiCallback<ApiResponse<Void>> callback) {
-    return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
+    try {
+      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create outbound route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<OutboundRouteBase> postTelephonyProvidersEdgesSiteOutboundroutesAsync(PostTelephonyProvidersEdgesSiteOutboundroutesRequest request, AsyncApiCallback<OutboundRouteBase> callback) {
-    return pcapiClient.<OutboundRouteBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OutboundRouteBase>() {}, callback);
+    try {
+      SettableFuture<OutboundRouteBase> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OutboundRouteBase>() {}, new AsyncApiCallback<ApiResponse<OutboundRouteBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<OutboundRouteBase> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create outbound route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<OutboundRouteBase>> postTelephonyProvidersEdgesSiteOutboundroutesAsync(ApiRequest<OutboundRouteBase> request, AsyncApiCallback<ApiResponse<OutboundRouteBase>> callback) {
-    return pcapiClient.<OutboundRouteBase>invokeAPIVerboseAsync(request, new TypeReference<OutboundRouteBase>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<OutboundRouteBase>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OutboundRouteBase>() {}, new AsyncApiCallback<ApiResponse<OutboundRouteBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<OutboundRouteBase> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OutboundRouteBase> response = (ApiResponse<OutboundRouteBase>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OutboundRouteBase> response = (ApiResponse<OutboundRouteBase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Triggers the rebalance operation.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Void> postTelephonyProvidersEdgesSiteRebalanceAsync(PostTelephonyProvidersEdgesSiteRebalanceRequest request, AsyncApiCallback<Void> callback) {
-    return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
+    try {
+      SettableFuture<Void> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Triggers the rebalance operation.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> postTelephonyProvidersEdgesSiteRebalanceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
-    return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
+    try {
+      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a Site.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Site> postTelephonyProvidersEdgesSitesAsync(PostTelephonyProvidersEdgesSitesRequest request, AsyncApiCallback<Site> callback) {
-    return pcapiClient.<Site>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Site>() {}, callback);
+    try {
+      SettableFuture<Site> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Site>() {}, new AsyncApiCallback<ApiResponse<Site>>() {
+        @Override
+        public void onCompleted(ApiResponse<Site> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a Site.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Site>> postTelephonyProvidersEdgesSitesAsync(ApiRequest<Site> request, AsyncApiCallback<ApiResponse<Site>> callback) {
-    return pcapiClient.<Site>invokeAPIVerboseAsync(request, new TypeReference<Site>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Site>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Site>() {}, new AsyncApiCallback<ApiResponse<Site>>() {
+        @Override
+        public void onCompleted(ApiResponse<Site> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Site> response = (ApiResponse<Site>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Site> response = (ApiResponse<Site>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a Trunk Base Settings object
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<TrunkBase> postTelephonyProvidersEdgesTrunkbasesettingsAsync(PostTelephonyProvidersEdgesTrunkbasesettingsRequest request, AsyncApiCallback<TrunkBase> callback) {
-    return pcapiClient.<TrunkBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TrunkBase>() {}, callback);
+    try {
+      SettableFuture<TrunkBase> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrunkBase>() {}, new AsyncApiCallback<ApiResponse<TrunkBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkBase> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a Trunk Base Settings object
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<TrunkBase>> postTelephonyProvidersEdgesTrunkbasesettingsAsync(ApiRequest<TrunkBase> request, AsyncApiCallback<ApiResponse<TrunkBase>> callback) {
-    return pcapiClient.<TrunkBase>invokeAPIVerboseAsync(request, new TypeReference<TrunkBase>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<TrunkBase>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrunkBase>() {}, new AsyncApiCallback<ApiResponse<TrunkBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkBase> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkBase> response = (ApiResponse<TrunkBase>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkBase> response = (ApiResponse<TrunkBase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Edge> putTelephonyProvidersEdgeAsync(PutTelephonyProvidersEdgeRequest request, AsyncApiCallback<Edge> callback) {
-    return pcapiClient.<Edge>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Edge>() {}, callback);
+    try {
+      SettableFuture<Edge> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Edge>() {}, new AsyncApiCallback<ApiResponse<Edge>>() {
+        @Override
+        public void onCompleted(ApiResponse<Edge> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a edge.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Edge>> putTelephonyProvidersEdgeAsync(ApiRequest<Edge> request, AsyncApiCallback<ApiResponse<Edge>> callback) {
-    return pcapiClient.<Edge>invokeAPIVerboseAsync(request, new TypeReference<Edge>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Edge>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Edge>() {}, new AsyncApiCallback<ApiResponse<Edge>>() {
+        @Override
+        public void onCompleted(ApiResponse<Edge> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Edge> response = (ApiResponse<Edge>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Edge> response = (ApiResponse<Edge>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a line.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<EdgeLine> putTelephonyProvidersEdgeLineAsync(PutTelephonyProvidersEdgeLineRequest request, AsyncApiCallback<EdgeLine> callback) {
-    return pcapiClient.<EdgeLine>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeLine>() {}, callback);
+    try {
+      SettableFuture<EdgeLine> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeLine>() {}, new AsyncApiCallback<ApiResponse<EdgeLine>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeLine> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a line.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<EdgeLine>> putTelephonyProvidersEdgeLineAsync(ApiRequest<EdgeLine> request, AsyncApiCallback<ApiResponse<EdgeLine>> callback) {
-    return pcapiClient.<EdgeLine>invokeAPIVerboseAsync(request, new TypeReference<EdgeLine>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<EdgeLine>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeLine>() {}, new AsyncApiCallback<ApiResponse<EdgeLine>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeLine> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeLine> response = (ApiResponse<EdgeLine>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeLine> response = (ApiResponse<EdgeLine>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update an edge logical interface.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DomainLogicalInterface> putTelephonyProvidersEdgeLogicalinterfaceAsync(PutTelephonyProvidersEdgeLogicalinterfaceRequest request, AsyncApiCallback<DomainLogicalInterface> callback) {
-    return pcapiClient.<DomainLogicalInterface>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainLogicalInterface>() {}, callback);
+    try {
+      SettableFuture<DomainLogicalInterface> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainLogicalInterface>() {}, new AsyncApiCallback<ApiResponse<DomainLogicalInterface>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainLogicalInterface> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update an edge logical interface.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DomainLogicalInterface>> putTelephonyProvidersEdgeLogicalinterfaceAsync(ApiRequest<DomainLogicalInterface> request, AsyncApiCallback<ApiResponse<DomainLogicalInterface>> callback) {
-    return pcapiClient.<DomainLogicalInterface>invokeAPIVerboseAsync(request, new TypeReference<DomainLogicalInterface>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DomainLogicalInterface>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DomainLogicalInterface>() {}, new AsyncApiCallback<ApiResponse<DomainLogicalInterface>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainLogicalInterface> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainLogicalInterface> response = (ApiResponse<DomainLogicalInterface>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainLogicalInterface> response = (ApiResponse<DomainLogicalInterface>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a certificate authority.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DomainCertificateAuthority> putTelephonyProvidersEdgesCertificateauthorityAsync(PutTelephonyProvidersEdgesCertificateauthorityRequest request, AsyncApiCallback<DomainCertificateAuthority> callback) {
-    return pcapiClient.<DomainCertificateAuthority>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainCertificateAuthority>() {}, callback);
+    try {
+      SettableFuture<DomainCertificateAuthority> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainCertificateAuthority>() {}, new AsyncApiCallback<ApiResponse<DomainCertificateAuthority>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainCertificateAuthority> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a certificate authority.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DomainCertificateAuthority>> putTelephonyProvidersEdgesCertificateauthorityAsync(ApiRequest<DomainCertificateAuthority> request, AsyncApiCallback<ApiResponse<DomainCertificateAuthority>> callback) {
-    return pcapiClient.<DomainCertificateAuthority>invokeAPIVerboseAsync(request, new TypeReference<DomainCertificateAuthority>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DomainCertificateAuthority>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DomainCertificateAuthority>() {}, new AsyncApiCallback<ApiResponse<DomainCertificateAuthority>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainCertificateAuthority> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainCertificateAuthority> response = (ApiResponse<DomainCertificateAuthority>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainCertificateAuthority> response = (ApiResponse<DomainCertificateAuthority>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a DID by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DID> putTelephonyProvidersEdgesDidAsync(PutTelephonyProvidersEdgesDidRequest request, AsyncApiCallback<DID> callback) {
-    return pcapiClient.<DID>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DID>() {}, callback);
+    try {
+      SettableFuture<DID> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DID>() {}, new AsyncApiCallback<ApiResponse<DID>>() {
+        @Override
+        public void onCompleted(ApiResponse<DID> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a DID by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DID>> putTelephonyProvidersEdgesDidAsync(ApiRequest<DID> request, AsyncApiCallback<ApiResponse<DID>> callback) {
-    return pcapiClient.<DID>invokeAPIVerboseAsync(request, new TypeReference<DID>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DID>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DID>() {}, new AsyncApiCallback<ApiResponse<DID>>() {
+        @Override
+        public void onCompleted(ApiResponse<DID> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DID> response = (ApiResponse<DID>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DID> response = (ApiResponse<DID>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a DID Pool by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DIDPool> putTelephonyProvidersEdgesDidpoolAsync(PutTelephonyProvidersEdgesDidpoolRequest request, AsyncApiCallback<DIDPool> callback) {
-    return pcapiClient.<DIDPool>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DIDPool>() {}, callback);
+    try {
+      SettableFuture<DIDPool> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DIDPool>() {}, new AsyncApiCallback<ApiResponse<DIDPool>>() {
+        @Override
+        public void onCompleted(ApiResponse<DIDPool> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a DID Pool by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DIDPool>> putTelephonyProvidersEdgesDidpoolAsync(ApiRequest<DIDPool> request, AsyncApiCallback<ApiResponse<DIDPool>> callback) {
-    return pcapiClient.<DIDPool>invokeAPIVerboseAsync(request, new TypeReference<DIDPool>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DIDPool>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DIDPool>() {}, new AsyncApiCallback<ApiResponse<DIDPool>>() {
+        @Override
+        public void onCompleted(ApiResponse<DIDPool> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DIDPool> response = (ApiResponse<DIDPool>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DIDPool> response = (ApiResponse<DIDPool>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update an edge group.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<EdgeGroup> putTelephonyProvidersEdgesEdgegroupAsync(PutTelephonyProvidersEdgesEdgegroupRequest request, AsyncApiCallback<EdgeGroup> callback) {
-    return pcapiClient.<EdgeGroup>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeGroup>() {}, callback);
+    try {
+      SettableFuture<EdgeGroup> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeGroup>() {}, new AsyncApiCallback<ApiResponse<EdgeGroup>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeGroup> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update an edge group.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<EdgeGroup>> putTelephonyProvidersEdgesEdgegroupAsync(ApiRequest<EdgeGroup> request, AsyncApiCallback<ApiResponse<EdgeGroup>> callback) {
-    return pcapiClient.<EdgeGroup>invokeAPIVerboseAsync(request, new TypeReference<EdgeGroup>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<EdgeGroup>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeGroup>() {}, new AsyncApiCallback<ApiResponse<EdgeGroup>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeGroup> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeGroup> response = (ApiResponse<EdgeGroup>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeGroup> response = (ApiResponse<EdgeGroup>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update the edge trunk base associated with the edge group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<EdgeTrunkBase> putTelephonyProvidersEdgesEdgegroupEdgetrunkbasisAsync(PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest request, AsyncApiCallback<EdgeTrunkBase> callback) {
-    return pcapiClient.<EdgeTrunkBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EdgeTrunkBase>() {}, callback);
+    try {
+      SettableFuture<EdgeTrunkBase> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeTrunkBase>() {}, new AsyncApiCallback<ApiResponse<EdgeTrunkBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeTrunkBase> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update the edge trunk base associated with the edge group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<EdgeTrunkBase>> putTelephonyProvidersEdgesEdgegroupEdgetrunkbasisAsync(ApiRequest<EdgeTrunkBase> request, AsyncApiCallback<ApiResponse<EdgeTrunkBase>> callback) {
-    return pcapiClient.<EdgeTrunkBase>invokeAPIVerboseAsync(request, new TypeReference<EdgeTrunkBase>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<EdgeTrunkBase>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeTrunkBase>() {}, new AsyncApiCallback<ApiResponse<EdgeTrunkBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeTrunkBase> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeTrunkBase> response = (ApiResponse<EdgeTrunkBase>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeTrunkBase> response = (ApiResponse<EdgeTrunkBase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update endpoint
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Endpoint> putTelephonyProvidersEdgesEndpointAsync(PutTelephonyProvidersEdgesEndpointRequest request, AsyncApiCallback<Endpoint> callback) {
-    return pcapiClient.<Endpoint>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Endpoint>() {}, callback);
+    try {
+      SettableFuture<Endpoint> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Endpoint>() {}, new AsyncApiCallback<ApiResponse<Endpoint>>() {
+        @Override
+        public void onCompleted(ApiResponse<Endpoint> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update endpoint
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Endpoint>> putTelephonyProvidersEdgesEndpointAsync(ApiRequest<Endpoint> request, AsyncApiCallback<ApiResponse<Endpoint>> callback) {
-    return pcapiClient.<Endpoint>invokeAPIVerboseAsync(request, new TypeReference<Endpoint>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Endpoint>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Endpoint>() {}, new AsyncApiCallback<ApiResponse<Endpoint>>() {
+        @Override
+        public void onCompleted(ApiResponse<Endpoint> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Endpoint> response = (ApiResponse<Endpoint>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Endpoint> response = (ApiResponse<Endpoint>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update an extension by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Extension> putTelephonyProvidersEdgesExtensionAsync(PutTelephonyProvidersEdgesExtensionRequest request, AsyncApiCallback<Extension> callback) {
-    return pcapiClient.<Extension>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Extension>() {}, callback);
+    try {
+      SettableFuture<Extension> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Extension>() {}, new AsyncApiCallback<ApiResponse<Extension>>() {
+        @Override
+        public void onCompleted(ApiResponse<Extension> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update an extension by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Extension>> putTelephonyProvidersEdgesExtensionAsync(ApiRequest<Extension> request, AsyncApiCallback<ApiResponse<Extension>> callback) {
-    return pcapiClient.<Extension>invokeAPIVerboseAsync(request, new TypeReference<Extension>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Extension>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Extension>() {}, new AsyncApiCallback<ApiResponse<Extension>>() {
+        @Override
+        public void onCompleted(ApiResponse<Extension> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Extension> response = (ApiResponse<Extension>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Extension> response = (ApiResponse<Extension>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update an extension pool by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ExtensionPool> putTelephonyProvidersEdgesExtensionpoolAsync(PutTelephonyProvidersEdgesExtensionpoolRequest request, AsyncApiCallback<ExtensionPool> callback) {
-    return pcapiClient.<ExtensionPool>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ExtensionPool>() {}, callback);
+    try {
+      SettableFuture<ExtensionPool> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExtensionPool>() {}, new AsyncApiCallback<ApiResponse<ExtensionPool>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExtensionPool> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update an extension pool by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ExtensionPool>> putTelephonyProvidersEdgesExtensionpoolAsync(ApiRequest<ExtensionPool> request, AsyncApiCallback<ApiResponse<ExtensionPool>> callback) {
-    return pcapiClient.<ExtensionPool>invokeAPIVerboseAsync(request, new TypeReference<ExtensionPool>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ExtensionPool>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExtensionPool>() {}, new AsyncApiCallback<ApiResponse<ExtensionPool>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExtensionPool> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExtensionPool> response = (ApiResponse<ExtensionPool>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExtensionPool> response = (ApiResponse<ExtensionPool>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update outbound route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<OutboundRoute> putTelephonyProvidersEdgesOutboundrouteAsync(PutTelephonyProvidersEdgesOutboundrouteRequest request, AsyncApiCallback<OutboundRoute> callback) {
-    return pcapiClient.<OutboundRoute>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OutboundRoute>() {}, callback);
+    try {
+      SettableFuture<OutboundRoute> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OutboundRoute>() {}, new AsyncApiCallback<ApiResponse<OutboundRoute>>() {
+        @Override
+        public void onCompleted(ApiResponse<OutboundRoute> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update outbound route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<OutboundRoute>> putTelephonyProvidersEdgesOutboundrouteAsync(ApiRequest<OutboundRoute> request, AsyncApiCallback<ApiResponse<OutboundRoute>> callback) {
-    return pcapiClient.<OutboundRoute>invokeAPIVerboseAsync(request, new TypeReference<OutboundRoute>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<OutboundRoute>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OutboundRoute>() {}, new AsyncApiCallback<ApiResponse<OutboundRoute>>() {
+        @Override
+        public void onCompleted(ApiResponse<OutboundRoute> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OutboundRoute> response = (ApiResponse<OutboundRoute>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OutboundRoute> response = (ApiResponse<OutboundRoute>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a Phone by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Phone> putTelephonyProvidersEdgesPhoneAsync(PutTelephonyProvidersEdgesPhoneRequest request, AsyncApiCallback<Phone> callback) {
-    return pcapiClient.<Phone>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Phone>() {}, callback);
+    try {
+      SettableFuture<Phone> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Phone>() {}, new AsyncApiCallback<ApiResponse<Phone>>() {
+        @Override
+        public void onCompleted(ApiResponse<Phone> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a Phone by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Phone>> putTelephonyProvidersEdgesPhoneAsync(ApiRequest<Phone> request, AsyncApiCallback<ApiResponse<Phone>> callback) {
-    return pcapiClient.<Phone>invokeAPIVerboseAsync(request, new TypeReference<Phone>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Phone>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Phone>() {}, new AsyncApiCallback<ApiResponse<Phone>>() {
+        @Override
+        public void onCompleted(ApiResponse<Phone> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Phone> response = (ApiResponse<Phone>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Phone> response = (ApiResponse<Phone>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a Phone Base Settings by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<PhoneBase> putTelephonyProvidersEdgesPhonebasesettingAsync(PutTelephonyProvidersEdgesPhonebasesettingRequest request, AsyncApiCallback<PhoneBase> callback) {
-    return pcapiClient.<PhoneBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PhoneBase>() {}, callback);
+    try {
+      SettableFuture<PhoneBase> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PhoneBase>() {}, new AsyncApiCallback<ApiResponse<PhoneBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<PhoneBase> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a Phone Base Settings by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<PhoneBase>> putTelephonyProvidersEdgesPhonebasesettingAsync(ApiRequest<PhoneBase> request, AsyncApiCallback<ApiResponse<PhoneBase>> callback) {
-    return pcapiClient.<PhoneBase>invokeAPIVerboseAsync(request, new TypeReference<PhoneBase>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<PhoneBase>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PhoneBase>() {}, new AsyncApiCallback<ApiResponse<PhoneBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<PhoneBase> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PhoneBase> response = (ApiResponse<PhoneBase>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PhoneBase> response = (ApiResponse<PhoneBase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a Site by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Site> putTelephonyProvidersEdgesSiteAsync(PutTelephonyProvidersEdgesSiteRequest request, AsyncApiCallback<Site> callback) {
-    return pcapiClient.<Site>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Site>() {}, callback);
+    try {
+      SettableFuture<Site> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Site>() {}, new AsyncApiCallback<ApiResponse<Site>>() {
+        @Override
+        public void onCompleted(ApiResponse<Site> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a Site by ID.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Site>> putTelephonyProvidersEdgesSiteAsync(ApiRequest<Site> request, AsyncApiCallback<ApiResponse<Site>> callback) {
-    return pcapiClient.<Site>invokeAPIVerboseAsync(request, new TypeReference<Site>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Site>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Site>() {}, new AsyncApiCallback<ApiResponse<Site>>() {
+        @Override
+        public void onCompleted(ApiResponse<Site> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Site> response = (ApiResponse<Site>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Site> response = (ApiResponse<Site>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update the list of Number Plans.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<List<NumberPlan>> putTelephonyProvidersEdgesSiteNumberplansAsync(PutTelephonyProvidersEdgesSiteNumberplansRequest request, AsyncApiCallback<List<NumberPlan>> callback) {
-    return pcapiClient.<List<NumberPlan>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<NumberPlan>>() {}, callback);
+    try {
+      SettableFuture<List<NumberPlan>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<NumberPlan>>() {}, new AsyncApiCallback<ApiResponse<List<NumberPlan>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<NumberPlan>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update the list of Number Plans.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<List<NumberPlan>>> putTelephonyProvidersEdgesSiteNumberplansAsync(ApiRequest<List<NumberPlan>> request, AsyncApiCallback<ApiResponse<List<NumberPlan>>> callback) {
-    return pcapiClient.<List<NumberPlan>>invokeAPIVerboseAsync(request, new TypeReference<List<NumberPlan>>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<List<NumberPlan>>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<NumberPlan>>() {}, new AsyncApiCallback<ApiResponse<List<NumberPlan>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<NumberPlan>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<NumberPlan>> response = (ApiResponse<List<NumberPlan>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<NumberPlan>> response = (ApiResponse<List<NumberPlan>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update outbound route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<OutboundRouteBase> putTelephonyProvidersEdgesSiteOutboundrouteAsync(PutTelephonyProvidersEdgesSiteOutboundrouteRequest request, AsyncApiCallback<OutboundRouteBase> callback) {
-    return pcapiClient.<OutboundRouteBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OutboundRouteBase>() {}, callback);
+    try {
+      SettableFuture<OutboundRouteBase> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OutboundRouteBase>() {}, new AsyncApiCallback<ApiResponse<OutboundRouteBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<OutboundRouteBase> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update outbound route
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<OutboundRouteBase>> putTelephonyProvidersEdgesSiteOutboundrouteAsync(ApiRequest<OutboundRouteBase> request, AsyncApiCallback<ApiResponse<OutboundRouteBase>> callback) {
-    return pcapiClient.<OutboundRouteBase>invokeAPIVerboseAsync(request, new TypeReference<OutboundRouteBase>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<OutboundRouteBase>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OutboundRouteBase>() {}, new AsyncApiCallback<ApiResponse<OutboundRouteBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<OutboundRouteBase> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OutboundRouteBase> response = (ApiResponse<OutboundRouteBase>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OutboundRouteBase> response = (ApiResponse<OutboundRouteBase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a Trunk Base Settings object by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<TrunkBase> putTelephonyProvidersEdgesTrunkbasesettingAsync(PutTelephonyProvidersEdgesTrunkbasesettingRequest request, AsyncApiCallback<TrunkBase> callback) {
-    return pcapiClient.<TrunkBase>invokeAPIAsync(request.withHttpInfo(), new TypeReference<TrunkBase>() {}, callback);
+    try {
+      SettableFuture<TrunkBase> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrunkBase>() {}, new AsyncApiCallback<ApiResponse<TrunkBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkBase> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a Trunk Base Settings object by ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<TrunkBase>> putTelephonyProvidersEdgesTrunkbasesettingAsync(ApiRequest<TrunkBase> request, AsyncApiCallback<ApiResponse<TrunkBase>> callback) {
-    return pcapiClient.<TrunkBase>invokeAPIVerboseAsync(request, new TypeReference<TrunkBase>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<TrunkBase>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrunkBase>() {}, new AsyncApiCallback<ApiResponse<TrunkBase>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkBase> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkBase> response = (ApiResponse<TrunkBase>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkBase> response = (ApiResponse<TrunkBase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
+
+  private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
+    if (callback != null) {
+      try {
+        callback.onCompleted(result);
+        future.set(result);
+      }
+      catch (Throwable exception) {
+        future.setException(exception);
+      }
+    }
+    else {
+      future.set(result);
+    }
+  }
+
+  private <T> void notifyFailure(SettableFuture<T> future, AsyncApiCallback<T> callback, Throwable exception) {
+    if (callback != null) {
+      try {
+        callback.onFailed(exception);
+        future.setException(exception);
+      }
+      catch (Throwable callbackException) {
+        future.setException(callbackException);
+      }
+    }
+    else {
+      future.setException(exception);
+    }
+  }
 }

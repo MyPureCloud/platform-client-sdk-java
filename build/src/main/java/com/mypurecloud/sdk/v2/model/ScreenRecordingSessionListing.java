@@ -22,8 +22,8 @@ public class ScreenRecordingSessionListing  implements Serializable, PagedResour
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String firstUri = null;
   private String selfUri = null;
+  private String firstUri = null;
   private String previousUri = null;
   private String nextUri = null;
   private String lastUri = null;
@@ -100,23 +100,6 @@ public class ScreenRecordingSessionListing  implements Serializable, PagedResour
 
   /**
    **/
-  public ScreenRecordingSessionListing firstUri(String firstUri) {
-    this.firstUri = firstUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("firstUri")
-  public String getFirstUri() {
-    return firstUri;
-  }
-  public void setFirstUri(String firstUri) {
-    this.firstUri = firstUri;
-  }
-
-
-  /**
-   **/
   public ScreenRecordingSessionListing selfUri(String selfUri) {
     this.selfUri = selfUri;
     return this;
@@ -129,6 +112,23 @@ public class ScreenRecordingSessionListing  implements Serializable, PagedResour
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
+  public ScreenRecordingSessionListing firstUri(String firstUri) {
+    this.firstUri = firstUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("firstUri")
+  public String getFirstUri() {
+    return firstUri;
+  }
+  public void setFirstUri(String firstUri) {
+    this.firstUri = firstUri;
   }
 
 
@@ -213,8 +213,8 @@ public class ScreenRecordingSessionListing  implements Serializable, PagedResour
         Objects.equals(this.pageSize, screenRecordingSessionListing.pageSize) &&
         Objects.equals(this.pageNumber, screenRecordingSessionListing.pageNumber) &&
         Objects.equals(this.total, screenRecordingSessionListing.total) &&
-        Objects.equals(this.firstUri, screenRecordingSessionListing.firstUri) &&
         Objects.equals(this.selfUri, screenRecordingSessionListing.selfUri) &&
+        Objects.equals(this.firstUri, screenRecordingSessionListing.firstUri) &&
         Objects.equals(this.previousUri, screenRecordingSessionListing.previousUri) &&
         Objects.equals(this.nextUri, screenRecordingSessionListing.nextUri) &&
         Objects.equals(this.lastUri, screenRecordingSessionListing.lastUri) &&
@@ -223,7 +223,7 @@ public class ScreenRecordingSessionListing  implements Serializable, PagedResour
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, previousUri, nextUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, previousUri, nextUri, lastUri, pageCount);
   }
 
   @Override
@@ -235,8 +235,8 @@ public class ScreenRecordingSessionListing  implements Serializable, PagedResour
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");

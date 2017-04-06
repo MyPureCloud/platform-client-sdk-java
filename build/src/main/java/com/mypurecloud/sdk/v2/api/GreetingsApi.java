@@ -57,71 +57,74 @@ public class GreetingsApi {
    * Deletes a Greeting with the given GreetingId
    * 
    * @param greetingId Greeting ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteGreeting(String greetingId) throws IOException, ApiException {
-    deleteGreetingWithHttpInfo(greetingId);
+     deleteGreeting(createDeleteGreetingRequest(greetingId));
   }
 
   /**
    * Deletes a Greeting with the given GreetingId
    * 
    * @param greetingId Greeting ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteGreetingWithHttpInfo(String greetingId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'greetingId' is set
-    if (greetingId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'greetingId' when calling deleteGreeting");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/greetings/{greetingId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "greetingId" + "\\}", pcapiClient.escapeString(greetingId.toString()));
+  public ApiResponse<Void> deleteGreetingWithHttpInfo(String greetingId) throws IOException {
+    return deleteGreeting(createDeleteGreetingRequest(greetingId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteGreetingRequest createDeleteGreetingRequest(String greetingId) {
+    return DeleteGreetingRequest.builder()
+            .withGreetingId(greetingId)
+            .build();
   }
 
   /**
    * Deletes a Greeting with the given GreetingId
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteGreeting(DeleteGreetingRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Deletes a Greeting with the given GreetingId
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteGreeting(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteGreeting(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -129,10 +132,11 @@ public class GreetingsApi {
    * 
    * @param greetingId Greeting ID (required)
    * @return Greeting
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Greeting getGreeting(String greetingId) throws IOException, ApiException {
-    return getGreetingWithHttpInfo(greetingId).getBody();
+    return  getGreeting(createGetGreetingRequest(greetingId));
   }
 
   /**
@@ -140,61 +144,64 @@ public class GreetingsApi {
    * 
    * @param greetingId Greeting ID (required)
    * @return Greeting
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Greeting> getGreetingWithHttpInfo(String greetingId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'greetingId' is set
-    if (greetingId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'greetingId' when calling getGreeting");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/greetings/{greetingId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "greetingId" + "\\}", pcapiClient.escapeString(greetingId.toString()));
+  public ApiResponse<Greeting> getGreetingWithHttpInfo(String greetingId) throws IOException {
+    return getGreeting(createGetGreetingRequest(greetingId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Greeting>() {});
+  private GetGreetingRequest createGetGreetingRequest(String greetingId) {
+    return GetGreetingRequest.builder()
+            .withGreetingId(greetingId)
+            .build();
   }
 
   /**
    * Get a Greeting with the given GreetingId
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Greeting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Greeting getGreeting(GetGreetingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Greeting>() {});
+    try {
+      ApiResponse<Greeting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Greeting>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a Greeting with the given GreetingId
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Greeting> getGreeting(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Greeting>invokeAPIVerbose(request, new TypeReference<Greeting>() {});
+  public ApiResponse<Greeting> getGreeting(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Greeting>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Greeting> response = (ApiResponse<Greeting>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Greeting> response = (ApiResponse<Greeting>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -203,10 +210,11 @@ public class GreetingsApi {
    * @param greetingId Greeting ID (required)
    * @param formatId The desired media format. (optional, default to WAV)
    * @return GreetingMediaInfo
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public GreetingMediaInfo getGreetingMedia(String greetingId, String formatId) throws IOException, ApiException {
-    return getGreetingMediaWithHttpInfo(greetingId, formatId).getBody();
+    return  getGreetingMedia(createGetGreetingMediaRequest(greetingId, formatId));
   }
 
   /**
@@ -215,62 +223,66 @@ public class GreetingsApi {
    * @param greetingId Greeting ID (required)
    * @param formatId The desired media format. (optional, default to WAV)
    * @return GreetingMediaInfo
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GreetingMediaInfo> getGreetingMediaWithHttpInfo(String greetingId, String formatId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'greetingId' is set
-    if (greetingId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'greetingId' when calling getGreetingMedia");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/greetings/{greetingId}/media".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "greetingId" + "\\}", pcapiClient.escapeString(greetingId.toString()));
+  public ApiResponse<GreetingMediaInfo> getGreetingMediaWithHttpInfo(String greetingId, String formatId) throws IOException {
+    return getGreetingMedia(createGetGreetingMediaRequest(greetingId, formatId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetGreetingMediaRequest createGetGreetingMediaRequest(String greetingId, String formatId) {
+    return GetGreetingMediaRequest.builder()
+            .withGreetingId(greetingId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "formatId", formatId));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<GreetingMediaInfo>() {});
+            .withFormatId(formatId)
+            .build();
   }
 
   /**
    * Get media playback URI for this greeting
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return GreetingMediaInfo
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public GreetingMediaInfo getGreetingMedia(GetGreetingMediaRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<GreetingMediaInfo>() {});
+    try {
+      ApiResponse<GreetingMediaInfo> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GreetingMediaInfo>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get media playback URI for this greeting
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GreetingMediaInfo> getGreetingMedia(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<GreetingMediaInfo>invokeAPIVerbose(request, new TypeReference<GreetingMediaInfo>() {});
+  public ApiResponse<GreetingMediaInfo> getGreetingMedia(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GreetingMediaInfo>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GreetingMediaInfo> response = (ApiResponse<GreetingMediaInfo>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GreetingMediaInfo> response = (ApiResponse<GreetingMediaInfo>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -279,10 +291,11 @@ public class GreetingsApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return DomainEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainEntityListing getGreetings(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getGreetingsWithHttpInfo(pageSize, pageNumber).getBody();
+    return  getGreetings(createGetGreetingsRequest(pageSize, pageNumber));
   }
 
   /**
@@ -291,122 +304,139 @@ public class GreetingsApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return DomainEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainEntityListing> getGreetingsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/greetings".replaceAll("\\{format\\}","json");
+  public ApiResponse<DomainEntityListing> getGreetingsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getGreetings(createGetGreetingsRequest(pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetGreetingsRequest createGetGreetingsRequest(Integer pageSize, Integer pageNumber) {
+    return GetGreetingsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DomainEntityListing>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * Gets an Organization&#39;s Greetings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DomainEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainEntityListing getGreetings(GetGreetingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainEntityListing>() {});
+    try {
+      ApiResponse<DomainEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Gets an Organization&#39;s Greetings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainEntityListing> getGreetings(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DomainEntityListing>invokeAPIVerbose(request, new TypeReference<DomainEntityListing>() {});
+  public ApiResponse<DomainEntityListing> getGreetings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DomainEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainEntityListing> response = (ApiResponse<DomainEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainEntityListing> response = (ApiResponse<DomainEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get an Organization&#39;s DefaultGreetingList
    * 
    * @return DefaultGreetingList
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DefaultGreetingList getGreetingsDefaults() throws IOException, ApiException {
-    return getGreetingsDefaultsWithHttpInfo().getBody();
+    return  getGreetingsDefaults(createGetGreetingsDefaultsRequest());
   }
 
   /**
    * Get an Organization&#39;s DefaultGreetingList
    * 
    * @return DefaultGreetingList
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DefaultGreetingList> getGreetingsDefaultsWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/greetings/defaults".replaceAll("\\{format\\}","json");
+  public ApiResponse<DefaultGreetingList> getGreetingsDefaultsWithHttpInfo() throws IOException {
+    return getGreetingsDefaults(createGetGreetingsDefaultsRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DefaultGreetingList>() {});
+  private GetGreetingsDefaultsRequest createGetGreetingsDefaultsRequest() {
+    return GetGreetingsDefaultsRequest.builder()            .build();
   }
 
   /**
    * Get an Organization&#39;s DefaultGreetingList
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DefaultGreetingList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DefaultGreetingList getGreetingsDefaults(GetGreetingsDefaultsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {});
+    try {
+      ApiResponse<DefaultGreetingList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get an Organization&#39;s DefaultGreetingList
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DefaultGreetingList> getGreetingsDefaults(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DefaultGreetingList>invokeAPIVerbose(request, new TypeReference<DefaultGreetingList>() {});
+  public ApiResponse<DefaultGreetingList> getGreetingsDefaults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DefaultGreetingList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -416,10 +446,11 @@ public class GreetingsApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return GreetingListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public GreetingListing getGroupGreetings(String groupId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getGroupGreetingsWithHttpInfo(groupId, pageSize, pageNumber).getBody();
+    return  getGroupGreetings(createGetGroupGreetingsRequest(groupId, pageSize, pageNumber));
   }
 
   /**
@@ -429,63 +460,68 @@ public class GreetingsApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return GreetingListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GreetingListing> getGroupGreetingsWithHttpInfo(String groupId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'groupId' is set
-    if (groupId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling getGroupGreetings");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/groups/{groupId}/greetings".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "groupId" + "\\}", pcapiClient.escapeString(groupId.toString()));
+  public ApiResponse<GreetingListing> getGroupGreetingsWithHttpInfo(String groupId, Integer pageSize, Integer pageNumber) throws IOException {
+    return getGroupGreetings(createGetGroupGreetingsRequest(groupId, pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetGroupGreetingsRequest createGetGroupGreetingsRequest(String groupId, Integer pageSize, Integer pageNumber) {
+    return GetGroupGreetingsRequest.builder()
+            .withGroupId(groupId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<GreetingListing>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * Get a list of the Group&#39;s Greetings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return GreetingListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public GreetingListing getGroupGreetings(GetGroupGreetingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<GreetingListing>() {});
+    try {
+      ApiResponse<GreetingListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GreetingListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of the Group&#39;s Greetings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GreetingListing> getGroupGreetings(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<GreetingListing>invokeAPIVerbose(request, new TypeReference<GreetingListing>() {});
+  public ApiResponse<GreetingListing> getGroupGreetings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GreetingListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GreetingListing> response = (ApiResponse<GreetingListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GreetingListing> response = (ApiResponse<GreetingListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -493,10 +529,11 @@ public class GreetingsApi {
    * 
    * @param groupId Group ID (required)
    * @return DefaultGreetingList
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DefaultGreetingList getGroupGreetingsDefaults(String groupId) throws IOException, ApiException {
-    return getGroupGreetingsDefaultsWithHttpInfo(groupId).getBody();
+    return  getGroupGreetingsDefaults(createGetGroupGreetingsDefaultsRequest(groupId));
   }
 
   /**
@@ -504,61 +541,64 @@ public class GreetingsApi {
    * 
    * @param groupId Group ID (required)
    * @return DefaultGreetingList
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DefaultGreetingList> getGroupGreetingsDefaultsWithHttpInfo(String groupId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'groupId' is set
-    if (groupId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling getGroupGreetingsDefaults");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/groups/{groupId}/greetings/defaults".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "groupId" + "\\}", pcapiClient.escapeString(groupId.toString()));
+  public ApiResponse<DefaultGreetingList> getGroupGreetingsDefaultsWithHttpInfo(String groupId) throws IOException {
+    return getGroupGreetingsDefaults(createGetGroupGreetingsDefaultsRequest(groupId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DefaultGreetingList>() {});
+  private GetGroupGreetingsDefaultsRequest createGetGroupGreetingsDefaultsRequest(String groupId) {
+    return GetGroupGreetingsDefaultsRequest.builder()
+            .withGroupId(groupId)
+            .build();
   }
 
   /**
    * Grabs the list of Default Greetings given a Group&#39;s ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DefaultGreetingList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DefaultGreetingList getGroupGreetingsDefaults(GetGroupGreetingsDefaultsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {});
+    try {
+      ApiResponse<DefaultGreetingList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Grabs the list of Default Greetings given a Group&#39;s ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DefaultGreetingList> getGroupGreetingsDefaults(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DefaultGreetingList>invokeAPIVerbose(request, new TypeReference<DefaultGreetingList>() {});
+  public ApiResponse<DefaultGreetingList> getGroupGreetingsDefaults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DefaultGreetingList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -568,10 +608,11 @@ public class GreetingsApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return DomainEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainEntityListing getUserGreetings(String userId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getUserGreetingsWithHttpInfo(userId, pageSize, pageNumber).getBody();
+    return  getUserGreetings(createGetUserGreetingsRequest(userId, pageSize, pageNumber));
   }
 
   /**
@@ -581,63 +622,68 @@ public class GreetingsApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return DomainEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainEntityListing> getUserGreetingsWithHttpInfo(String userId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserGreetings");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/greetings".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<DomainEntityListing> getUserGreetingsWithHttpInfo(String userId, Integer pageSize, Integer pageNumber) throws IOException {
+    return getUserGreetings(createGetUserGreetingsRequest(userId, pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetUserGreetingsRequest createGetUserGreetingsRequest(String userId, Integer pageSize, Integer pageNumber) {
+    return GetUserGreetingsRequest.builder()
+            .withUserId(userId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DomainEntityListing>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * Get a list of the User&#39;s Greetings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DomainEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DomainEntityListing getUserGreetings(GetUserGreetingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DomainEntityListing>() {});
+    try {
+      ApiResponse<DomainEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of the User&#39;s Greetings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainEntityListing> getUserGreetings(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DomainEntityListing>invokeAPIVerbose(request, new TypeReference<DomainEntityListing>() {});
+  public ApiResponse<DomainEntityListing> getUserGreetings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DomainEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainEntityListing> response = (ApiResponse<DomainEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DomainEntityListing> response = (ApiResponse<DomainEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -645,10 +691,11 @@ public class GreetingsApi {
    * 
    * @param userId User ID (required)
    * @return DefaultGreetingList
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DefaultGreetingList getUserGreetingsDefaults(String userId) throws IOException, ApiException {
-    return getUserGreetingsDefaultsWithHttpInfo(userId).getBody();
+    return  getUserGreetingsDefaults(createGetUserGreetingsDefaultsRequest(userId));
   }
 
   /**
@@ -656,61 +703,64 @@ public class GreetingsApi {
    * 
    * @param userId User ID (required)
    * @return DefaultGreetingList
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DefaultGreetingList> getUserGreetingsDefaultsWithHttpInfo(String userId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getUserGreetingsDefaults");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/greetings/defaults".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<DefaultGreetingList> getUserGreetingsDefaultsWithHttpInfo(String userId) throws IOException {
+    return getUserGreetingsDefaults(createGetUserGreetingsDefaultsRequest(userId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DefaultGreetingList>() {});
+  private GetUserGreetingsDefaultsRequest createGetUserGreetingsDefaultsRequest(String userId) {
+    return GetUserGreetingsDefaultsRequest.builder()
+            .withUserId(userId)
+            .build();
   }
 
   /**
    * Grabs the list of Default Greetings given a User&#39;s ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DefaultGreetingList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DefaultGreetingList getUserGreetingsDefaults(GetUserGreetingsDefaultsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {});
+    try {
+      ApiResponse<DefaultGreetingList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Grabs the list of Default Greetings given a User&#39;s ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DefaultGreetingList> getUserGreetingsDefaults(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<DefaultGreetingList>invokeAPIVerbose(request, new TypeReference<DefaultGreetingList>() {});
+  public ApiResponse<DefaultGreetingList> getUserGreetingsDefaults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DefaultGreetingList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -718,10 +768,11 @@ public class GreetingsApi {
    * 
    * @param body The Greeting to create (required)
    * @return DefaultGreetingList
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DefaultGreetingList postGreetings(Greeting body) throws IOException, ApiException {
-    return postGreetingsWithHttpInfo(body).getBody();
+    return  postGreetings(createPostGreetingsRequest(body));
   }
 
   /**
@@ -729,60 +780,64 @@ public class GreetingsApi {
    * 
    * @param body The Greeting to create (required)
    * @return DefaultGreetingList
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DefaultGreetingList> postGreetingsWithHttpInfo(Greeting body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postGreetings");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/greetings".replaceAll("\\{format\\}","json");
+  public ApiResponse<DefaultGreetingList> postGreetingsWithHttpInfo(Greeting body) throws IOException {
+    return postGreetings(createPostGreetingsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DefaultGreetingList>() {});
+  private PostGreetingsRequest createPostGreetingsRequest(Greeting body) {
+    return PostGreetingsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create a Greeting for an Organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DefaultGreetingList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DefaultGreetingList postGreetings(PostGreetingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {});
+    try {
+      ApiResponse<DefaultGreetingList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a Greeting for an Organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DefaultGreetingList> postGreetings(ApiRequest<Greeting> request) throws IOException, ApiException {
-    return pcapiClient.<DefaultGreetingList>invokeAPIVerbose(request, new TypeReference<DefaultGreetingList>() {});
+  public ApiResponse<DefaultGreetingList> postGreetings(ApiRequest<Greeting> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DefaultGreetingList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -791,10 +846,11 @@ public class GreetingsApi {
    * @param groupId Group ID (required)
    * @param body The Greeting to create (required)
    * @return Greeting
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Greeting postGroupGreetings(String groupId, Greeting body) throws IOException, ApiException {
-    return postGroupGreetingsWithHttpInfo(groupId, body).getBody();
+    return  postGroupGreetings(createPostGroupGreetingsRequest(groupId, body));
   }
 
   /**
@@ -803,66 +859,66 @@ public class GreetingsApi {
    * @param groupId Group ID (required)
    * @param body The Greeting to create (required)
    * @return Greeting
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Greeting> postGroupGreetingsWithHttpInfo(String groupId, Greeting body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'groupId' is set
-    if (groupId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling postGroupGreetings");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postGroupGreetings");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/groups/{groupId}/greetings".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "groupId" + "\\}", pcapiClient.escapeString(groupId.toString()));
+  public ApiResponse<Greeting> postGroupGreetingsWithHttpInfo(String groupId, Greeting body) throws IOException {
+    return postGroupGreetings(createPostGroupGreetingsRequest(groupId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostGroupGreetingsRequest createPostGroupGreetingsRequest(String groupId, Greeting body) {
+    return PostGroupGreetingsRequest.builder()
+            .withGroupId(groupId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Greeting>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Creates a Greeting for a Group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Greeting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Greeting postGroupGreetings(PostGroupGreetingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Greeting>() {});
+    try {
+      ApiResponse<Greeting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Greeting>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Creates a Greeting for a Group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Greeting> postGroupGreetings(ApiRequest<Greeting> request) throws IOException, ApiException {
-    return pcapiClient.<Greeting>invokeAPIVerbose(request, new TypeReference<Greeting>() {});
+  public ApiResponse<Greeting> postGroupGreetings(ApiRequest<Greeting> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Greeting>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Greeting> response = (ApiResponse<Greeting>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Greeting> response = (ApiResponse<Greeting>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -871,10 +927,11 @@ public class GreetingsApi {
    * @param userId User ID (required)
    * @param body The Greeting to create (required)
    * @return Greeting
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Greeting postUserGreetings(String userId, Greeting body) throws IOException, ApiException {
-    return postUserGreetingsWithHttpInfo(userId, body).getBody();
+    return  postUserGreetings(createPostUserGreetingsRequest(userId, body));
   }
 
   /**
@@ -883,66 +940,66 @@ public class GreetingsApi {
    * @param userId User ID (required)
    * @param body The Greeting to create (required)
    * @return Greeting
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Greeting> postUserGreetingsWithHttpInfo(String userId, Greeting body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling postUserGreetings");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postUserGreetings");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/greetings".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<Greeting> postUserGreetingsWithHttpInfo(String userId, Greeting body) throws IOException {
+    return postUserGreetings(createPostUserGreetingsRequest(userId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostUserGreetingsRequest createPostUserGreetingsRequest(String userId, Greeting body) {
+    return PostUserGreetingsRequest.builder()
+            .withUserId(userId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Greeting>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Creates a Greeting for a User
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Greeting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Greeting postUserGreetings(PostUserGreetingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Greeting>() {});
+    try {
+      ApiResponse<Greeting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Greeting>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Creates a Greeting for a User
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Greeting> postUserGreetings(ApiRequest<Greeting> request) throws IOException, ApiException {
-    return pcapiClient.<Greeting>invokeAPIVerbose(request, new TypeReference<Greeting>() {});
+  public ApiResponse<Greeting> postUserGreetings(ApiRequest<Greeting> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Greeting>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Greeting> response = (ApiResponse<Greeting>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Greeting> response = (ApiResponse<Greeting>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -951,10 +1008,11 @@ public class GreetingsApi {
    * @param greetingId Greeting ID (required)
    * @param body The updated Greeting (required)
    * @return Greeting
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Greeting putGreeting(String greetingId, Greeting body) throws IOException, ApiException {
-    return putGreetingWithHttpInfo(greetingId, body).getBody();
+    return  putGreeting(createPutGreetingRequest(greetingId, body));
   }
 
   /**
@@ -963,66 +1021,66 @@ public class GreetingsApi {
    * @param greetingId Greeting ID (required)
    * @param body The updated Greeting (required)
    * @return Greeting
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Greeting> putGreetingWithHttpInfo(String greetingId, Greeting body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'greetingId' is set
-    if (greetingId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'greetingId' when calling putGreeting");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putGreeting");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/greetings/{greetingId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "greetingId" + "\\}", pcapiClient.escapeString(greetingId.toString()));
+  public ApiResponse<Greeting> putGreetingWithHttpInfo(String greetingId, Greeting body) throws IOException {
+    return putGreeting(createPutGreetingRequest(greetingId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutGreetingRequest createPutGreetingRequest(String greetingId, Greeting body) {
+    return PutGreetingRequest.builder()
+            .withGreetingId(greetingId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Greeting>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Updates the Greeting with the given GreetingId
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Greeting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Greeting putGreeting(PutGreetingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Greeting>() {});
+    try {
+      ApiResponse<Greeting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Greeting>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Updates the Greeting with the given GreetingId
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Greeting> putGreeting(ApiRequest<Greeting> request) throws IOException, ApiException {
-    return pcapiClient.<Greeting>invokeAPIVerbose(request, new TypeReference<Greeting>() {});
+  public ApiResponse<Greeting> putGreeting(ApiRequest<Greeting> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Greeting>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Greeting> response = (ApiResponse<Greeting>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Greeting> response = (ApiResponse<Greeting>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1030,10 +1088,11 @@ public class GreetingsApi {
    * 
    * @param body The updated defaultGreetingList (required)
    * @return DefaultGreetingList
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DefaultGreetingList putGreetingsDefaults(DefaultGreetingList body) throws IOException, ApiException {
-    return putGreetingsDefaultsWithHttpInfo(body).getBody();
+    return  putGreetingsDefaults(createPutGreetingsDefaultsRequest(body));
   }
 
   /**
@@ -1041,60 +1100,64 @@ public class GreetingsApi {
    * 
    * @param body The updated defaultGreetingList (required)
    * @return DefaultGreetingList
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DefaultGreetingList> putGreetingsDefaultsWithHttpInfo(DefaultGreetingList body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putGreetingsDefaults");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/greetings/defaults".replaceAll("\\{format\\}","json");
+  public ApiResponse<DefaultGreetingList> putGreetingsDefaultsWithHttpInfo(DefaultGreetingList body) throws IOException {
+    return putGreetingsDefaults(createPutGreetingsDefaultsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DefaultGreetingList>() {});
+  private PutGreetingsDefaultsRequest createPutGreetingsDefaultsRequest(DefaultGreetingList body) {
+    return PutGreetingsDefaultsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update an Organization&#39;s DefaultGreetingList
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DefaultGreetingList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DefaultGreetingList putGreetingsDefaults(PutGreetingsDefaultsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {});
+    try {
+      ApiResponse<DefaultGreetingList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update an Organization&#39;s DefaultGreetingList
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DefaultGreetingList> putGreetingsDefaults(ApiRequest<DefaultGreetingList> request) throws IOException, ApiException {
-    return pcapiClient.<DefaultGreetingList>invokeAPIVerbose(request, new TypeReference<DefaultGreetingList>() {});
+  public ApiResponse<DefaultGreetingList> putGreetingsDefaults(ApiRequest<DefaultGreetingList> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DefaultGreetingList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1103,10 +1166,11 @@ public class GreetingsApi {
    * @param groupId Group ID (required)
    * @param body The updated defaultGreetingList (required)
    * @return DefaultGreetingList
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DefaultGreetingList putGroupGreetingsDefaults(String groupId, DefaultGreetingList body) throws IOException, ApiException {
-    return putGroupGreetingsDefaultsWithHttpInfo(groupId, body).getBody();
+    return  putGroupGreetingsDefaults(createPutGroupGreetingsDefaultsRequest(groupId, body));
   }
 
   /**
@@ -1115,66 +1179,66 @@ public class GreetingsApi {
    * @param groupId Group ID (required)
    * @param body The updated defaultGreetingList (required)
    * @return DefaultGreetingList
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DefaultGreetingList> putGroupGreetingsDefaultsWithHttpInfo(String groupId, DefaultGreetingList body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'groupId' is set
-    if (groupId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling putGroupGreetingsDefaults");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putGroupGreetingsDefaults");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/groups/{groupId}/greetings/defaults".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "groupId" + "\\}", pcapiClient.escapeString(groupId.toString()));
+  public ApiResponse<DefaultGreetingList> putGroupGreetingsDefaultsWithHttpInfo(String groupId, DefaultGreetingList body) throws IOException {
+    return putGroupGreetingsDefaults(createPutGroupGreetingsDefaultsRequest(groupId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutGroupGreetingsDefaultsRequest createPutGroupGreetingsDefaultsRequest(String groupId, DefaultGreetingList body) {
+    return PutGroupGreetingsDefaultsRequest.builder()
+            .withGroupId(groupId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DefaultGreetingList>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Updates the DefaultGreetingList of the specified Group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DefaultGreetingList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DefaultGreetingList putGroupGreetingsDefaults(PutGroupGreetingsDefaultsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {});
+    try {
+      ApiResponse<DefaultGreetingList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Updates the DefaultGreetingList of the specified Group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DefaultGreetingList> putGroupGreetingsDefaults(ApiRequest<DefaultGreetingList> request) throws IOException, ApiException {
-    return pcapiClient.<DefaultGreetingList>invokeAPIVerbose(request, new TypeReference<DefaultGreetingList>() {});
+  public ApiResponse<DefaultGreetingList> putGroupGreetingsDefaults(ApiRequest<DefaultGreetingList> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DefaultGreetingList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1183,10 +1247,11 @@ public class GreetingsApi {
    * @param userId User ID (required)
    * @param body The updated defaultGreetingList (required)
    * @return DefaultGreetingList
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DefaultGreetingList putUserGreetingsDefaults(String userId, DefaultGreetingList body) throws IOException, ApiException {
-    return putUserGreetingsDefaultsWithHttpInfo(userId, body).getBody();
+    return  putUserGreetingsDefaults(createPutUserGreetingsDefaultsRequest(userId, body));
   }
 
   /**
@@ -1195,66 +1260,66 @@ public class GreetingsApi {
    * @param userId User ID (required)
    * @param body The updated defaultGreetingList (required)
    * @return DefaultGreetingList
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DefaultGreetingList> putUserGreetingsDefaultsWithHttpInfo(String userId, DefaultGreetingList body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling putUserGreetingsDefaults");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putUserGreetingsDefaults");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/users/{userId}/greetings/defaults".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<DefaultGreetingList> putUserGreetingsDefaultsWithHttpInfo(String userId, DefaultGreetingList body) throws IOException {
+    return putUserGreetingsDefaults(createPutUserGreetingsDefaultsRequest(userId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutUserGreetingsDefaultsRequest createPutUserGreetingsDefaultsRequest(String userId, DefaultGreetingList body) {
+    return PutUserGreetingsDefaultsRequest.builder()
+            .withUserId(userId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<DefaultGreetingList>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Updates the DefaultGreetingList of the specified User
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return DefaultGreetingList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public DefaultGreetingList putUserGreetingsDefaults(PutUserGreetingsDefaultsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {});
+    try {
+      ApiResponse<DefaultGreetingList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Updates the DefaultGreetingList of the specified User
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DefaultGreetingList> putUserGreetingsDefaults(ApiRequest<DefaultGreetingList> request) throws IOException, ApiException {
-    return pcapiClient.<DefaultGreetingList>invokeAPIVerbose(request, new TypeReference<DefaultGreetingList>() {});
+  public ApiResponse<DefaultGreetingList> putUserGreetingsDefaults(ApiRequest<DefaultGreetingList> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DefaultGreetingList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

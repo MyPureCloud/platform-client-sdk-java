@@ -86,10 +86,11 @@ public class QualityApi {
    * @param calibrationId Calibration ID (required)
    * @param calibratorId calibratorId (required)
    * @return Calibration
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Calibration deleteQualityCalibration(String calibrationId, String calibratorId) throws IOException, ApiException {
-    return deleteQualityCalibrationWithHttpInfo(calibrationId, calibratorId).getBody();
+    return  deleteQualityCalibration(createDeleteQualityCalibrationRequest(calibrationId, calibratorId));
   }
 
   /**
@@ -98,67 +99,66 @@ public class QualityApi {
    * @param calibrationId Calibration ID (required)
    * @param calibratorId calibratorId (required)
    * @return Calibration
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Calibration> deleteQualityCalibrationWithHttpInfo(String calibrationId, String calibratorId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'calibrationId' is set
-    if (calibrationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'calibrationId' when calling deleteQualityCalibration");
-    }
-    
-    // verify the required parameter 'calibratorId' is set
-    if (calibratorId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'calibratorId' when calling deleteQualityCalibration");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/calibrations/{calibrationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "calibrationId" + "\\}", pcapiClient.escapeString(calibrationId.toString()));
+  public ApiResponse<Calibration> deleteQualityCalibrationWithHttpInfo(String calibrationId, String calibratorId) throws IOException {
+    return deleteQualityCalibration(createDeleteQualityCalibrationRequest(calibrationId, calibratorId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private DeleteQualityCalibrationRequest createDeleteQualityCalibrationRequest(String calibrationId, String calibratorId) {
+    return DeleteQualityCalibrationRequest.builder()
+            .withCalibrationId(calibrationId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "calibratorId", calibratorId));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Calibration>() {});
+            .withCalibratorId(calibratorId)
+            .build();
   }
 
   /**
    * Delete a calibration by id.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Calibration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Calibration deleteQualityCalibration(DeleteQualityCalibrationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Calibration>() {});
+    try {
+      ApiResponse<Calibration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Calibration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete a calibration by id.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Calibration> deleteQualityCalibration(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Calibration>invokeAPIVerbose(request, new TypeReference<Calibration>() {});
+  public ApiResponse<Calibration> deleteQualityCalibration(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Calibration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Calibration> response = (ApiResponse<Calibration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Calibration> response = (ApiResponse<Calibration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -168,10 +168,11 @@ public class QualityApi {
    * @param evaluationId evaluationId (required)
    * @param expand evaluatorId (optional)
    * @return Evaluation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Evaluation deleteQualityConversationEvaluation(String conversationId, String evaluationId, String expand) throws IOException, ApiException {
-    return deleteQualityConversationEvaluationWithHttpInfo(conversationId, evaluationId, expand).getBody();
+    return  deleteQualityConversationEvaluation(createDeleteQualityConversationEvaluationRequest(conversationId, evaluationId, expand));
   }
 
   /**
@@ -181,68 +182,68 @@ public class QualityApi {
    * @param evaluationId evaluationId (required)
    * @param expand evaluatorId (optional)
    * @return Evaluation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Evaluation> deleteQualityConversationEvaluationWithHttpInfo(String conversationId, String evaluationId, String expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling deleteQualityConversationEvaluation");
-    }
-    
-    // verify the required parameter 'evaluationId' is set
-    if (evaluationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'evaluationId' when calling deleteQualityConversationEvaluation");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()))
-      .replaceAll("\\{" + "evaluationId" + "\\}", pcapiClient.escapeString(evaluationId.toString()));
+  public ApiResponse<Evaluation> deleteQualityConversationEvaluationWithHttpInfo(String conversationId, String evaluationId, String expand) throws IOException {
+    return deleteQualityConversationEvaluation(createDeleteQualityConversationEvaluationRequest(conversationId, evaluationId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private DeleteQualityConversationEvaluationRequest createDeleteQualityConversationEvaluationRequest(String conversationId, String evaluationId, String expand) {
+    return DeleteQualityConversationEvaluationRequest.builder()
+            .withConversationId(conversationId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
+            .withEvaluationId(evaluationId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Evaluation>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Delete an evaluation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Evaluation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Evaluation deleteQualityConversationEvaluation(DeleteQualityConversationEvaluationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Evaluation>() {});
+    try {
+      ApiResponse<Evaluation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Evaluation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete an evaluation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Evaluation> deleteQualityConversationEvaluation(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Evaluation>invokeAPIVerbose(request, new TypeReference<Evaluation>() {});
+  public ApiResponse<Evaluation> deleteQualityConversationEvaluation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Evaluation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -250,10 +251,11 @@ public class QualityApi {
    * 
    * @param formId Form ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteQualityForm(String formId) throws IOException, ApiException {
-    return deleteQualityFormWithHttpInfo(formId).getBody();
+    return  deleteQualityForm(createDeleteQualityFormRequest(formId));
   }
 
   /**
@@ -261,132 +263,138 @@ public class QualityApi {
    * 
    * @param formId Form ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteQualityFormWithHttpInfo(String formId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'formId' is set
-    if (formId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'formId' when calling deleteQualityForm");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/forms/{formId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "formId" + "\\}", pcapiClient.escapeString(formId.toString()));
+  public ApiResponse<String> deleteQualityFormWithHttpInfo(String formId) throws IOException {
+    return deleteQualityForm(createDeleteQualityFormRequest(formId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteQualityFormRequest createDeleteQualityFormRequest(String formId) {
+    return DeleteQualityFormRequest.builder()
+            .withFormId(formId)
+            .build();
   }
 
   /**
    * Delete an evaluation form.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteQualityForm(DeleteQualityFormRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete an evaluation form.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteQualityForm(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteQualityForm(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete a keywordSet by id.
    * 
    * @param keywordSetId KeywordSet ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteQualityKeywordset(String keywordSetId) throws IOException, ApiException {
-    deleteQualityKeywordsetWithHttpInfo(keywordSetId);
+     deleteQualityKeywordset(createDeleteQualityKeywordsetRequest(keywordSetId));
   }
 
   /**
    * Delete a keywordSet by id.
    * 
    * @param keywordSetId KeywordSet ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteQualityKeywordsetWithHttpInfo(String keywordSetId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'keywordSetId' is set
-    if (keywordSetId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'keywordSetId' when calling deleteQualityKeywordset");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/keywordsets/{keywordSetId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "keywordSetId" + "\\}", pcapiClient.escapeString(keywordSetId.toString()));
+  public ApiResponse<Void> deleteQualityKeywordsetWithHttpInfo(String keywordSetId) throws IOException {
+    return deleteQualityKeywordset(createDeleteQualityKeywordsetRequest(keywordSetId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteQualityKeywordsetRequest createDeleteQualityKeywordsetRequest(String keywordSetId) {
+    return DeleteQualityKeywordsetRequest.builder()
+            .withKeywordSetId(keywordSetId)
+            .build();
   }
 
   /**
    * Delete a keywordSet by id.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteQualityKeywordset(DeleteQualityKeywordsetRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete a keywordSet by id.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteQualityKeywordset(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteQualityKeywordset(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -394,10 +402,11 @@ public class QualityApi {
    * Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
    * @param ids A comma-delimited list of valid KeywordSet ids (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteQualityKeywordsets(String ids) throws IOException, ApiException {
-    return deleteQualityKeywordsetsWithHttpInfo(ids).getBody();
+    return  deleteQualityKeywordsets(createDeleteQualityKeywordsetsRequest(ids));
   }
 
   /**
@@ -405,61 +414,64 @@ public class QualityApi {
    * Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
    * @param ids A comma-delimited list of valid KeywordSet ids (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteQualityKeywordsetsWithHttpInfo(String ids) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'ids' is set
-    if (ids == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'ids' when calling deleteQualityKeywordsets");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/keywordsets".replaceAll("\\{format\\}","json");
+  public ApiResponse<String> deleteQualityKeywordsetsWithHttpInfo(String ids) throws IOException {
+    return deleteQualityKeywordsets(createDeleteQualityKeywordsetsRequest(ids).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "ids", ids));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteQualityKeywordsetsRequest createDeleteQualityKeywordsetsRequest(String ids) {
+    return DeleteQualityKeywordsetsRequest.builder()
+            .withIds(ids)
+            .build();
   }
 
   /**
    * Delete keyword sets
    * Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteQualityKeywordsets(DeleteQualityKeywordsetsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete keyword sets
    * Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteQualityKeywordsets(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteQualityKeywordsets(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -478,10 +490,11 @@ public class QualityApi {
    * @param name name (optional)
    * @param group group id (optional)
    * @return AgentActivityEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AgentActivityEntityListing getQualityAgentsActivity(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<Object> agentUserId, String evaluatorUserId, String name, String group) throws IOException, ApiException {
-    return getQualityAgentsActivityWithHttpInfo(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group).getBody();
+    return  getQualityAgentsActivity(createGetQualityAgentsActivityRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group));
   }
 
   /**
@@ -500,67 +513,86 @@ public class QualityApi {
    * @param name name (optional)
    * @param group group id (optional)
    * @return AgentActivityEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AgentActivityEntityListing> getQualityAgentsActivityWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<Object> agentUserId, String evaluatorUserId, String name, String group) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/agents/activity".replaceAll("\\{format\\}","json");
+  public ApiResponse<AgentActivityEntityListing> getQualityAgentsActivityWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<Object> agentUserId, String evaluatorUserId, String name, String group) throws IOException {
+    return getQualityAgentsActivity(createGetQualityAgentsActivityRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetQualityAgentsActivityRequest createGetQualityAgentsActivityRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<Object> agentUserId, String evaluatorUserId, String name, String group) {
+    return GetQualityAgentsActivityRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "nextPage", nextPage));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "previousPage", previousPage));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "startTime", startTime));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "endTime", endTime));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "agentUserId", agentUserId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "evaluatorUserId", evaluatorUserId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "group", group));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withSortBy(sortBy)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withExpand(expand)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withNextPage(nextPage)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<AgentActivityEntityListing>() {});
+            .withPreviousPage(previousPage)
+
+            .withStartTime(startTime)
+
+            .withEndTime(endTime)
+
+            .withAgentUserId(agentUserId)
+
+            .withEvaluatorUserId(evaluatorUserId)
+
+            .withName(name)
+
+            .withGroup(group)
+            .build();
   }
 
   /**
    * Gets a list of Agent Activities
    * Including the number of evaluations and average evaluation score
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return AgentActivityEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AgentActivityEntityListing getQualityAgentsActivity(GetQualityAgentsActivityRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AgentActivityEntityListing>() {});
+    try {
+      ApiResponse<AgentActivityEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentActivityEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Gets a list of Agent Activities
    * Including the number of evaluations and average evaluation score
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AgentActivityEntityListing> getQualityAgentsActivity(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<AgentActivityEntityListing>invokeAPIVerbose(request, new TypeReference<AgentActivityEntityListing>() {});
+  public ApiResponse<AgentActivityEntityListing> getQualityAgentsActivity(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentActivityEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentActivityEntityListing> response = (ApiResponse<AgentActivityEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentActivityEntityListing> response = (ApiResponse<AgentActivityEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -569,10 +601,11 @@ public class QualityApi {
    * @param calibrationId Calibration ID (required)
    * @param calibratorId calibratorId (required)
    * @return Calibration
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Calibration getQualityCalibration(String calibrationId, String calibratorId) throws IOException, ApiException {
-    return getQualityCalibrationWithHttpInfo(calibrationId, calibratorId).getBody();
+    return  getQualityCalibration(createGetQualityCalibrationRequest(calibrationId, calibratorId));
   }
 
   /**
@@ -581,67 +614,66 @@ public class QualityApi {
    * @param calibrationId Calibration ID (required)
    * @param calibratorId calibratorId (required)
    * @return Calibration
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Calibration> getQualityCalibrationWithHttpInfo(String calibrationId, String calibratorId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'calibrationId' is set
-    if (calibrationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'calibrationId' when calling getQualityCalibration");
-    }
-    
-    // verify the required parameter 'calibratorId' is set
-    if (calibratorId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'calibratorId' when calling getQualityCalibration");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/calibrations/{calibrationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "calibrationId" + "\\}", pcapiClient.escapeString(calibrationId.toString()));
+  public ApiResponse<Calibration> getQualityCalibrationWithHttpInfo(String calibrationId, String calibratorId) throws IOException {
+    return getQualityCalibration(createGetQualityCalibrationRequest(calibrationId, calibratorId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetQualityCalibrationRequest createGetQualityCalibrationRequest(String calibrationId, String calibratorId) {
+    return GetQualityCalibrationRequest.builder()
+            .withCalibrationId(calibrationId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "calibratorId", calibratorId));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Calibration>() {});
+            .withCalibratorId(calibratorId)
+            .build();
   }
 
   /**
    * Get a calibration by id.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Calibration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Calibration getQualityCalibration(GetQualityCalibrationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Calibration>() {});
+    try {
+      ApiResponse<Calibration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Calibration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a calibration by id.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Calibration> getQualityCalibration(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Calibration>invokeAPIVerbose(request, new TypeReference<Calibration>() {});
+  public ApiResponse<Calibration> getQualityCalibration(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Calibration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Calibration> response = (ApiResponse<Calibration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Calibration> response = (ApiResponse<Calibration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -658,10 +690,11 @@ public class QualityApi {
    * @param startTime Beginning of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ (optional)
    * @param endTime end of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ (optional)
    * @return CalibrationEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CalibrationEntityListing getQualityCalibrations(String calibratorId, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, Date startTime, Date endTime) throws IOException, ApiException {
-    return getQualityCalibrationsWithHttpInfo(calibratorId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, startTime, endTime).getBody();
+    return  getQualityCalibrations(createGetQualityCalibrationsRequest(calibratorId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, startTime, endTime));
   }
 
   /**
@@ -678,70 +711,82 @@ public class QualityApi {
    * @param startTime Beginning of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ (optional)
    * @param endTime end of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ (optional)
    * @return CalibrationEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CalibrationEntityListing> getQualityCalibrationsWithHttpInfo(String calibratorId, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, Date startTime, Date endTime) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'calibratorId' is set
-    if (calibratorId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'calibratorId' when calling getQualityCalibrations");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/calibrations".replaceAll("\\{format\\}","json");
+  public ApiResponse<CalibrationEntityListing> getQualityCalibrationsWithHttpInfo(String calibratorId, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, Date startTime, Date endTime) throws IOException {
+    return getQualityCalibrations(createGetQualityCalibrationsRequest(calibratorId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, startTime, endTime).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetQualityCalibrationsRequest createGetQualityCalibrationsRequest(String calibratorId, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, Date startTime, Date endTime) {
+    return GetQualityCalibrationsRequest.builder()
+            .withCalibratorId(calibratorId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "nextPage", nextPage));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "previousPage", previousPage));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "conversationId", conversationId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "startTime", startTime));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "endTime", endTime));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "calibratorId", calibratorId));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageNumber(pageNumber)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortBy(sortBy)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withExpand(expand)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CalibrationEntityListing>() {});
+            .withNextPage(nextPage)
+
+            .withPreviousPage(previousPage)
+
+            .withConversationId(conversationId)
+
+            .withStartTime(startTime)
+
+            .withEndTime(endTime)
+            .build();
   }
 
   /**
    * Get the list of calibrations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CalibrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CalibrationEntityListing getQualityCalibrations(GetQualityCalibrationsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CalibrationEntityListing>() {});
+    try {
+      ApiResponse<CalibrationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CalibrationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the list of calibrations
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CalibrationEntityListing> getQualityCalibrations(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CalibrationEntityListing>invokeAPIVerbose(request, new TypeReference<CalibrationEntityListing>() {});
+  public ApiResponse<CalibrationEntityListing> getQualityCalibrations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CalibrationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CalibrationEntityListing> response = (ApiResponse<CalibrationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CalibrationEntityListing> response = (ApiResponse<CalibrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -757,10 +802,11 @@ public class QualityApi {
    * @param recordingId id of the recording (optional)
    * @param entityType entity type options: Recording, Calibration, Evaluation, Annotation (optional, default to RECORDING)
    * @return QualityAuditPage
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public QualityAuditPage getQualityConversationAudits(String conversationId, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String recordingId, String entityType) throws IOException, ApiException {
-    return getQualityConversationAuditsWithHttpInfo(conversationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, recordingId, entityType).getBody();
+    return  getQualityConversationAudits(createGetQualityConversationAuditsRequest(conversationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, recordingId, entityType));
   }
 
   /**
@@ -776,69 +822,80 @@ public class QualityApi {
    * @param recordingId id of the recording (optional)
    * @param entityType entity type options: Recording, Calibration, Evaluation, Annotation (optional, default to RECORDING)
    * @return QualityAuditPage
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QualityAuditPage> getQualityConversationAuditsWithHttpInfo(String conversationId, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String recordingId, String entityType) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling getQualityConversationAudits");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/conversations/{conversationId}/audits".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()));
+  public ApiResponse<QualityAuditPage> getQualityConversationAuditsWithHttpInfo(String conversationId, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String recordingId, String entityType) throws IOException {
+    return getQualityConversationAudits(createGetQualityConversationAuditsRequest(conversationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, recordingId, entityType).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetQualityConversationAuditsRequest createGetQualityConversationAuditsRequest(String conversationId, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String recordingId, String entityType) {
+    return GetQualityConversationAuditsRequest.builder()
+            .withConversationId(conversationId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "nextPage", nextPage));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "previousPage", previousPage));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "recordingId", recordingId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "entityType", entityType));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withPageNumber(pageNumber)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withSortBy(sortBy)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withExpand(expand)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<QualityAuditPage>() {});
+            .withNextPage(nextPage)
+
+            .withPreviousPage(previousPage)
+
+            .withRecordingId(recordingId)
+
+            .withEntityType(entityType)
+            .build();
   }
 
   /**
    * Get audits for conversation or recording
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return QualityAuditPage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public QualityAuditPage getQualityConversationAudits(GetQualityConversationAuditsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<QualityAuditPage>() {});
+    try {
+      ApiResponse<QualityAuditPage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QualityAuditPage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get audits for conversation or recording
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QualityAuditPage> getQualityConversationAudits(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<QualityAuditPage>invokeAPIVerbose(request, new TypeReference<QualityAuditPage>() {});
+  public ApiResponse<QualityAuditPage> getQualityConversationAudits(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<QualityAuditPage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<QualityAuditPage> response = (ApiResponse<QualityAuditPage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<QualityAuditPage> response = (ApiResponse<QualityAuditPage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -848,10 +905,11 @@ public class QualityApi {
    * @param evaluationId evaluationId (required)
    * @param expand agent, evaluator, evaluationForm (optional)
    * @return Evaluation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Evaluation getQualityConversationEvaluation(String conversationId, String evaluationId, String expand) throws IOException, ApiException {
-    return getQualityConversationEvaluationWithHttpInfo(conversationId, evaluationId, expand).getBody();
+    return  getQualityConversationEvaluation(createGetQualityConversationEvaluationRequest(conversationId, evaluationId, expand));
   }
 
   /**
@@ -861,68 +919,68 @@ public class QualityApi {
    * @param evaluationId evaluationId (required)
    * @param expand agent, evaluator, evaluationForm (optional)
    * @return Evaluation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Evaluation> getQualityConversationEvaluationWithHttpInfo(String conversationId, String evaluationId, String expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling getQualityConversationEvaluation");
-    }
-    
-    // verify the required parameter 'evaluationId' is set
-    if (evaluationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'evaluationId' when calling getQualityConversationEvaluation");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()))
-      .replaceAll("\\{" + "evaluationId" + "\\}", pcapiClient.escapeString(evaluationId.toString()));
+  public ApiResponse<Evaluation> getQualityConversationEvaluationWithHttpInfo(String conversationId, String evaluationId, String expand) throws IOException {
+    return getQualityConversationEvaluation(createGetQualityConversationEvaluationRequest(conversationId, evaluationId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetQualityConversationEvaluationRequest createGetQualityConversationEvaluationRequest(String conversationId, String evaluationId, String expand) {
+    return GetQualityConversationEvaluationRequest.builder()
+            .withConversationId(conversationId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
+            .withEvaluationId(evaluationId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Evaluation>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get an evaluation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Evaluation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Evaluation getQualityConversationEvaluation(GetQualityConversationEvaluationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Evaluation>() {});
+    try {
+      ApiResponse<Evaluation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Evaluation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get an evaluation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Evaluation> getQualityConversationEvaluation(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Evaluation>invokeAPIVerbose(request, new TypeReference<Evaluation>() {});
+  public ApiResponse<Evaluation> getQualityConversationEvaluation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Evaluation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -946,10 +1004,11 @@ public class QualityApi {
    * @param expandAnswerTotalScores get the total scores for evaluations (optional)
    * @param maximum maximum (optional)
    * @return EvaluationEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluationEntityListing getQualityEvaluationsQuery(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String queueId, String startTime, String endTime, List<Object> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum) throws IOException, ApiException {
-    return getQualityEvaluationsQueryWithHttpInfo(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum).getBody();
+    return  getQualityEvaluationsQuery(createGetQualityEvaluationsQueryRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum));
   }
 
   /**
@@ -973,72 +1032,96 @@ public class QualityApi {
    * @param expandAnswerTotalScores get the total scores for evaluations (optional)
    * @param maximum maximum (optional)
    * @return EvaluationEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationEntityListing> getQualityEvaluationsQueryWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String queueId, String startTime, String endTime, List<Object> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/evaluations/query".replaceAll("\\{format\\}","json");
+  public ApiResponse<EvaluationEntityListing> getQualityEvaluationsQueryWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String queueId, String startTime, String endTime, List<Object> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum) throws IOException {
+    return getQualityEvaluationsQuery(createGetQualityEvaluationsQueryRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetQualityEvaluationsQueryRequest createGetQualityEvaluationsQueryRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String queueId, String startTime, String endTime, List<Object> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum) {
+    return GetQualityEvaluationsQueryRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "nextPage", nextPage));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "previousPage", previousPage));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "conversationId", conversationId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "agentUserId", agentUserId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "evaluatorUserId", evaluatorUserId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "queueId", queueId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "startTime", startTime));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "endTime", endTime));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "evaluationState", evaluationState));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "isReleased", isReleased));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "agentHasRead", agentHasRead));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expandAnswerTotalScores", expandAnswerTotalScores));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "maximum", maximum));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withSortBy(sortBy)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withExpand(expand)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withNextPage(nextPage)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EvaluationEntityListing>() {});
+            .withPreviousPage(previousPage)
+
+            .withConversationId(conversationId)
+
+            .withAgentUserId(agentUserId)
+
+            .withEvaluatorUserId(evaluatorUserId)
+
+            .withQueueId(queueId)
+
+            .withStartTime(startTime)
+
+            .withEndTime(endTime)
+
+            .withEvaluationState(evaluationState)
+
+            .withIsReleased(isReleased)
+
+            .withAgentHasRead(agentHasRead)
+
+            .withExpandAnswerTotalScores(expandAnswerTotalScores)
+
+            .withMaximum(maximum)
+            .build();
   }
 
   /**
    * Queries Evaluations and returns a paged list
    * Query params must include one of conversationId, evaluatorUserId, or agentUserId
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EvaluationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluationEntityListing getQualityEvaluationsQuery(GetQualityEvaluationsQueryRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EvaluationEntityListing>() {});
+    try {
+      ApiResponse<EvaluationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Queries Evaluations and returns a paged list
    * Query params must include one of conversationId, evaluatorUserId, or agentUserId
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationEntityListing> getQualityEvaluationsQuery(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EvaluationEntityListing>invokeAPIVerbose(request, new TypeReference<EvaluationEntityListing>() {});
+  public ApiResponse<EvaluationEntityListing> getQualityEvaluationsQuery(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationEntityListing> response = (ApiResponse<EvaluationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationEntityListing> response = (ApiResponse<EvaluationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1056,10 +1139,11 @@ public class QualityApi {
    * @param permission permission strings (optional)
    * @param group group id (optional)
    * @return EvaluatorActivityEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluatorActivityEntityListing getQualityEvaluatorsActivity(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Date startTime, Date endTime, String name, List<Object> permission, String group) throws IOException, ApiException {
-    return getQualityEvaluatorsActivityWithHttpInfo(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, name, permission, group).getBody();
+    return  getQualityEvaluatorsActivity(createGetQualityEvaluatorsActivityRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, name, permission, group));
   }
 
   /**
@@ -1077,66 +1161,84 @@ public class QualityApi {
    * @param permission permission strings (optional)
    * @param group group id (optional)
    * @return EvaluatorActivityEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluatorActivityEntityListing> getQualityEvaluatorsActivityWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Date startTime, Date endTime, String name, List<Object> permission, String group) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/evaluators/activity".replaceAll("\\{format\\}","json");
+  public ApiResponse<EvaluatorActivityEntityListing> getQualityEvaluatorsActivityWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Date startTime, Date endTime, String name, List<Object> permission, String group) throws IOException {
+    return getQualityEvaluatorsActivity(createGetQualityEvaluatorsActivityRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, name, permission, group).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetQualityEvaluatorsActivityRequest createGetQualityEvaluatorsActivityRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Date startTime, Date endTime, String name, List<Object> permission, String group) {
+    return GetQualityEvaluatorsActivityRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "nextPage", nextPage));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "previousPage", previousPage));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "startTime", startTime));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "endTime", endTime));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "permission", permission));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "group", group));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withSortBy(sortBy)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withExpand(expand)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withNextPage(nextPage)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EvaluatorActivityEntityListing>() {});
+            .withPreviousPage(previousPage)
+
+            .withStartTime(startTime)
+
+            .withEndTime(endTime)
+
+            .withName(name)
+
+            .withPermission(permission)
+
+            .withGroup(group)
+            .build();
   }
 
   /**
    * Get an evaluator activity
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EvaluatorActivityEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluatorActivityEntityListing getQualityEvaluatorsActivity(GetQualityEvaluatorsActivityRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EvaluatorActivityEntityListing>() {});
+    try {
+      ApiResponse<EvaluatorActivityEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluatorActivityEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get an evaluator activity
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluatorActivityEntityListing> getQualityEvaluatorsActivity(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EvaluatorActivityEntityListing>invokeAPIVerbose(request, new TypeReference<EvaluatorActivityEntityListing>() {});
+  public ApiResponse<EvaluatorActivityEntityListing> getQualityEvaluatorsActivity(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluatorActivityEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluatorActivityEntityListing> response = (ApiResponse<EvaluatorActivityEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluatorActivityEntityListing> response = (ApiResponse<EvaluatorActivityEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1144,10 +1246,11 @@ public class QualityApi {
    * 
    * @param formId Form ID (required)
    * @return EvaluationForm
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluationForm getQualityForm(String formId) throws IOException, ApiException {
-    return getQualityFormWithHttpInfo(formId).getBody();
+    return  getQualityForm(createGetQualityFormRequest(formId));
   }
 
   /**
@@ -1155,61 +1258,64 @@ public class QualityApi {
    * 
    * @param formId Form ID (required)
    * @return EvaluationForm
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationForm> getQualityFormWithHttpInfo(String formId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'formId' is set
-    if (formId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'formId' when calling getQualityForm");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/forms/{formId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "formId" + "\\}", pcapiClient.escapeString(formId.toString()));
+  public ApiResponse<EvaluationForm> getQualityFormWithHttpInfo(String formId) throws IOException {
+    return getQualityForm(createGetQualityFormRequest(formId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EvaluationForm>() {});
+  private GetQualityFormRequest createGetQualityFormRequest(String formId) {
+    return GetQualityFormRequest.builder()
+            .withFormId(formId)
+            .build();
   }
 
   /**
    * Get an evaluation form
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EvaluationForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluationForm getQualityForm(GetQualityFormRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EvaluationForm>() {});
+    try {
+      ApiResponse<EvaluationForm> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationForm>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get an evaluation form
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationForm> getQualityForm(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EvaluationForm>invokeAPIVerbose(request, new TypeReference<EvaluationForm>() {});
+  public ApiResponse<EvaluationForm> getQualityForm(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationForm>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1219,10 +1325,11 @@ public class QualityApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return EvaluationFormEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluationFormEntityListing getQualityFormVersions(String formId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getQualityFormVersionsWithHttpInfo(formId, pageSize, pageNumber).getBody();
+    return  getQualityFormVersions(createGetQualityFormVersionsRequest(formId, pageSize, pageNumber));
   }
 
   /**
@@ -1232,63 +1339,68 @@ public class QualityApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return EvaluationFormEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationFormEntityListing> getQualityFormVersionsWithHttpInfo(String formId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'formId' is set
-    if (formId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'formId' when calling getQualityFormVersions");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/forms/{formId}/versions".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "formId" + "\\}", pcapiClient.escapeString(formId.toString()));
+  public ApiResponse<EvaluationFormEntityListing> getQualityFormVersionsWithHttpInfo(String formId, Integer pageSize, Integer pageNumber) throws IOException {
+    return getQualityFormVersions(createGetQualityFormVersionsRequest(formId, pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetQualityFormVersionsRequest createGetQualityFormVersionsRequest(String formId, Integer pageSize, Integer pageNumber) {
+    return GetQualityFormVersionsRequest.builder()
+            .withFormId(formId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EvaluationFormEntityListing>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * Gets all the revisions for a specific evaluation.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EvaluationFormEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluationFormEntityListing getQualityFormVersions(GetQualityFormVersionsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EvaluationFormEntityListing>() {});
+    try {
+      ApiResponse<EvaluationFormEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationFormEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Gets all the revisions for a specific evaluation.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationFormEntityListing> getQualityFormVersions(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EvaluationFormEntityListing>invokeAPIVerbose(request, new TypeReference<EvaluationFormEntityListing>() {});
+  public ApiResponse<EvaluationFormEntityListing> getQualityFormVersions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationFormEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationFormEntityListing> response = (ApiResponse<EvaluationFormEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationFormEntityListing> response = (ApiResponse<EvaluationFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1302,10 +1414,11 @@ public class QualityApi {
    * @param expand Expand (optional)
    * @param name Name (optional)
    * @return EvaluationFormEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluationFormEntityListing getQualityForms(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name) throws IOException, ApiException {
-    return getQualityFormsWithHttpInfo(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name).getBody();
+    return  getQualityForms(createGetQualityFormsRequest(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name));
   }
 
   /**
@@ -1319,62 +1432,76 @@ public class QualityApi {
    * @param expand Expand (optional)
    * @param name Name (optional)
    * @return EvaluationFormEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationFormEntityListing> getQualityFormsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/forms".replaceAll("\\{format\\}","json");
+  public ApiResponse<EvaluationFormEntityListing> getQualityFormsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name) throws IOException {
+    return getQualityForms(createGetQualityFormsRequest(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetQualityFormsRequest createGetQualityFormsRequest(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name) {
+    return GetQualityFormsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "nextPage", nextPage));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "previousPage", previousPage));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withSortBy(sortBy)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withNextPage(nextPage)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withPreviousPage(previousPage)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EvaluationFormEntityListing>() {});
+            .withExpand(expand)
+
+            .withName(name)
+            .build();
   }
 
   /**
    * Get the list of evaluation forms
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EvaluationFormEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluationFormEntityListing getQualityForms(GetQualityFormsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EvaluationFormEntityListing>() {});
+    try {
+      ApiResponse<EvaluationFormEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationFormEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the list of evaluation forms
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationFormEntityListing> getQualityForms(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EvaluationFormEntityListing>invokeAPIVerbose(request, new TypeReference<EvaluationFormEntityListing>() {});
+  public ApiResponse<EvaluationFormEntityListing> getQualityForms(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationFormEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationFormEntityListing> response = (ApiResponse<EvaluationFormEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationFormEntityListing> response = (ApiResponse<EvaluationFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1382,10 +1509,11 @@ public class QualityApi {
    * 
    * @param keywordSetId KeywordSet ID (required)
    * @return KeywordSet
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public KeywordSet getQualityKeywordset(String keywordSetId) throws IOException, ApiException {
-    return getQualityKeywordsetWithHttpInfo(keywordSetId).getBody();
+    return  getQualityKeywordset(createGetQualityKeywordsetRequest(keywordSetId));
   }
 
   /**
@@ -1393,61 +1521,64 @@ public class QualityApi {
    * 
    * @param keywordSetId KeywordSet ID (required)
    * @return KeywordSet
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KeywordSet> getQualityKeywordsetWithHttpInfo(String keywordSetId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'keywordSetId' is set
-    if (keywordSetId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'keywordSetId' when calling getQualityKeywordset");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/keywordsets/{keywordSetId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "keywordSetId" + "\\}", pcapiClient.escapeString(keywordSetId.toString()));
+  public ApiResponse<KeywordSet> getQualityKeywordsetWithHttpInfo(String keywordSetId) throws IOException {
+    return getQualityKeywordset(createGetQualityKeywordsetRequest(keywordSetId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<KeywordSet>() {});
+  private GetQualityKeywordsetRequest createGetQualityKeywordsetRequest(String keywordSetId) {
+    return GetQualityKeywordsetRequest.builder()
+            .withKeywordSetId(keywordSetId)
+            .build();
   }
 
   /**
    * Get a keywordSet by id.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return KeywordSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public KeywordSet getQualityKeywordset(GetQualityKeywordsetRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<KeywordSet>() {});
+    try {
+      ApiResponse<KeywordSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KeywordSet>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a keywordSet by id.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KeywordSet> getQualityKeywordset(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<KeywordSet>invokeAPIVerbose(request, new TypeReference<KeywordSet>() {});
+  public ApiResponse<KeywordSet> getQualityKeywordset(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KeywordSet>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1464,10 +1595,11 @@ public class QualityApi {
    * @param agentId the agent id - used for filtering results in searches. (optional)
    * @param operator If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters. (optional)
    * @return KeywordSetEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public KeywordSetEntityListing getQualityKeywordsets(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, String queueId, String agentId, String operator) throws IOException, ApiException {
-    return getQualityKeywordsetsWithHttpInfo(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, queueId, agentId, operator).getBody();
+    return  getQualityKeywordsets(createGetQualityKeywordsetsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, queueId, agentId, operator));
   }
 
   /**
@@ -1484,65 +1616,82 @@ public class QualityApi {
    * @param agentId the agent id - used for filtering results in searches. (optional)
    * @param operator If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters. (optional)
    * @return KeywordSetEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KeywordSetEntityListing> getQualityKeywordsetsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, String queueId, String agentId, String operator) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/keywordsets".replaceAll("\\{format\\}","json");
+  public ApiResponse<KeywordSetEntityListing> getQualityKeywordsetsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, String queueId, String agentId, String operator) throws IOException {
+    return getQualityKeywordsets(createGetQualityKeywordsetsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, queueId, agentId, operator).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetQualityKeywordsetsRequest createGetQualityKeywordsetsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, String queueId, String agentId, String operator) {
+    return GetQualityKeywordsetsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "nextPage", nextPage));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "previousPage", previousPage));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "queueId", queueId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "agentId", agentId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "operator", operator));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withSortBy(sortBy)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withExpand(expand)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withNextPage(nextPage)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<KeywordSetEntityListing>() {});
+            .withPreviousPage(previousPage)
+
+            .withName(name)
+
+            .withQueueId(queueId)
+
+            .withAgentId(agentId)
+
+            .withOperator(operator)
+            .build();
   }
 
   /**
    * Get the list of keyword sets
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return KeywordSetEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public KeywordSetEntityListing getQualityKeywordsets(GetQualityKeywordsetsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<KeywordSetEntityListing>() {});
+    try {
+      ApiResponse<KeywordSetEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KeywordSetEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the list of keyword sets
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KeywordSetEntityListing> getQualityKeywordsets(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<KeywordSetEntityListing>invokeAPIVerbose(request, new TypeReference<KeywordSetEntityListing>() {});
+  public ApiResponse<KeywordSetEntityListing> getQualityKeywordsets(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KeywordSetEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KeywordSetEntityListing> response = (ApiResponse<KeywordSetEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KeywordSetEntityListing> response = (ApiResponse<KeywordSetEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1550,10 +1699,11 @@ public class QualityApi {
    * 
    * @param formId Form ID (required)
    * @return EvaluationForm
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluationForm getQualityPublishedform(String formId) throws IOException, ApiException {
-    return getQualityPublishedformWithHttpInfo(formId).getBody();
+    return  getQualityPublishedform(createGetQualityPublishedformRequest(formId));
   }
 
   /**
@@ -1561,61 +1711,64 @@ public class QualityApi {
    * 
    * @param formId Form ID (required)
    * @return EvaluationForm
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationForm> getQualityPublishedformWithHttpInfo(String formId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'formId' is set
-    if (formId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'formId' when calling getQualityPublishedform");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/publishedforms/{formId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "formId" + "\\}", pcapiClient.escapeString(formId.toString()));
+  public ApiResponse<EvaluationForm> getQualityPublishedformWithHttpInfo(String formId) throws IOException {
+    return getQualityPublishedform(createGetQualityPublishedformRequest(formId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EvaluationForm>() {});
+  private GetQualityPublishedformRequest createGetQualityPublishedformRequest(String formId) {
+    return GetQualityPublishedformRequest.builder()
+            .withFormId(formId)
+            .build();
   }
 
   /**
    * Get the published evaluation forms.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EvaluationForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluationForm getQualityPublishedform(GetQualityPublishedformRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EvaluationForm>() {});
+    try {
+      ApiResponse<EvaluationForm> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationForm>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the published evaluation forms.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationForm> getQualityPublishedform(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EvaluationForm>invokeAPIVerbose(request, new TypeReference<EvaluationForm>() {});
+  public ApiResponse<EvaluationForm> getQualityPublishedform(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationForm>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1625,10 +1778,11 @@ public class QualityApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param name Name (optional)
    * @return EvaluationFormEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluationFormEntityListing getQualityPublishedforms(Integer pageSize, Integer pageNumber, String name) throws IOException, ApiException {
-    return getQualityPublishedformsWithHttpInfo(pageSize, pageNumber, name).getBody();
+    return  getQualityPublishedforms(createGetQualityPublishedformsRequest(pageSize, pageNumber, name));
   }
 
   /**
@@ -1638,58 +1792,68 @@ public class QualityApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param name Name (optional)
    * @return EvaluationFormEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationFormEntityListing> getQualityPublishedformsWithHttpInfo(Integer pageSize, Integer pageNumber, String name) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/publishedforms".replaceAll("\\{format\\}","json");
+  public ApiResponse<EvaluationFormEntityListing> getQualityPublishedformsWithHttpInfo(Integer pageSize, Integer pageNumber, String name) throws IOException {
+    return getQualityPublishedforms(createGetQualityPublishedformsRequest(pageSize, pageNumber, name).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetQualityPublishedformsRequest createGetQualityPublishedformsRequest(Integer pageSize, Integer pageNumber, String name) {
+    return GetQualityPublishedformsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EvaluationFormEntityListing>() {});
+            .withName(name)
+            .build();
   }
 
   /**
    * Get the published evaluation forms.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EvaluationFormEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluationFormEntityListing getQualityPublishedforms(GetQualityPublishedformsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EvaluationFormEntityListing>() {});
+    try {
+      ApiResponse<EvaluationFormEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationFormEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the published evaluation forms.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationFormEntityListing> getQualityPublishedforms(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EvaluationFormEntityListing>invokeAPIVerbose(request, new TypeReference<EvaluationFormEntityListing>() {});
+  public ApiResponse<EvaluationFormEntityListing> getQualityPublishedforms(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationFormEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationFormEntityListing> response = (ApiResponse<EvaluationFormEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationFormEntityListing> response = (ApiResponse<EvaluationFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1697,10 +1861,11 @@ public class QualityApi {
    * 
    * @param body query (required)
    * @return AggregateQueryResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(AggregationQuery body) throws IOException, ApiException {
-    return postAnalyticsEvaluationsAggregatesQueryWithHttpInfo(body).getBody();
+    return  postAnalyticsEvaluationsAggregatesQuery(createPostAnalyticsEvaluationsAggregatesQueryRequest(body));
   }
 
   /**
@@ -1708,60 +1873,64 @@ public class QualityApi {
    * 
    * @param body query (required)
    * @return AggregateQueryResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AggregateQueryResponse> postAnalyticsEvaluationsAggregatesQueryWithHttpInfo(AggregationQuery body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postAnalyticsEvaluationsAggregatesQuery");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/analytics/evaluations/aggregates/query".replaceAll("\\{format\\}","json");
+  public ApiResponse<AggregateQueryResponse> postAnalyticsEvaluationsAggregatesQueryWithHttpInfo(AggregationQuery body) throws IOException {
+    return postAnalyticsEvaluationsAggregatesQuery(createPostAnalyticsEvaluationsAggregatesQueryRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<AggregateQueryResponse>() {});
+  private PostAnalyticsEvaluationsAggregatesQueryRequest createPostAnalyticsEvaluationsAggregatesQueryRequest(AggregationQuery body) {
+    return PostAnalyticsEvaluationsAggregatesQueryRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Query for evaluation aggregates
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return AggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(PostAnalyticsEvaluationsAggregatesQueryRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {});
+    try {
+      ApiResponse<AggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Query for evaluation aggregates
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AggregateQueryResponse> postAnalyticsEvaluationsAggregatesQuery(ApiRequest<AggregationQuery> request) throws IOException, ApiException {
-    return pcapiClient.<AggregateQueryResponse>invokeAPIVerbose(request, new TypeReference<AggregateQueryResponse>() {});
+  public ApiResponse<AggregateQueryResponse> postAnalyticsEvaluationsAggregatesQuery(ApiRequest<AggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AggregateQueryResponse> response = (ApiResponse<AggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AggregateQueryResponse> response = (ApiResponse<AggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1770,10 +1939,11 @@ public class QualityApi {
    * @param body calibration (required)
    * @param expand calibratorId (optional)
    * @return Calibration
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Calibration postQualityCalibrations(CalibrationCreate body, String expand) throws IOException, ApiException {
-    return postQualityCalibrationsWithHttpInfo(body, expand).getBody();
+    return  postQualityCalibrations(createPostQualityCalibrationsRequest(body, expand));
   }
 
   /**
@@ -1782,61 +1952,66 @@ public class QualityApi {
    * @param body calibration (required)
    * @param expand calibratorId (optional)
    * @return Calibration
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Calibration> postQualityCalibrationsWithHttpInfo(CalibrationCreate body, String expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postQualityCalibrations");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/calibrations".replaceAll("\\{format\\}","json");
+  public ApiResponse<Calibration> postQualityCalibrationsWithHttpInfo(CalibrationCreate body, String expand) throws IOException {
+    return postQualityCalibrations(createPostQualityCalibrationsRequest(body, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostQualityCalibrationsRequest createPostQualityCalibrationsRequest(CalibrationCreate body, String expand) {
+    return PostQualityCalibrationsRequest.builder()
+            .withBody(body)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Calibration>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Create a calibration
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Calibration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Calibration postQualityCalibrations(PostQualityCalibrationsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Calibration>() {});
+    try {
+      ApiResponse<Calibration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Calibration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a calibration
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Calibration> postQualityCalibrations(ApiRequest<CalibrationCreate> request) throws IOException, ApiException {
-    return pcapiClient.<Calibration>invokeAPIVerbose(request, new TypeReference<Calibration>() {});
+  public ApiResponse<Calibration> postQualityCalibrations(ApiRequest<CalibrationCreate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Calibration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Calibration> response = (ApiResponse<Calibration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Calibration> response = (ApiResponse<Calibration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1846,10 +2021,11 @@ public class QualityApi {
    * @param body evaluation (required)
    * @param expand evaluatorId (optional)
    * @return Evaluation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Evaluation postQualityConversationEvaluations(String conversationId, Evaluation body, String expand) throws IOException, ApiException {
-    return postQualityConversationEvaluationsWithHttpInfo(conversationId, body, expand).getBody();
+    return  postQualityConversationEvaluations(createPostQualityConversationEvaluationsRequest(conversationId, body, expand));
   }
 
   /**
@@ -1859,67 +2035,68 @@ public class QualityApi {
    * @param body evaluation (required)
    * @param expand evaluatorId (optional)
    * @return Evaluation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Evaluation> postQualityConversationEvaluationsWithHttpInfo(String conversationId, Evaluation body, String expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling postQualityConversationEvaluations");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postQualityConversationEvaluations");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/conversations/{conversationId}/evaluations".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()));
+  public ApiResponse<Evaluation> postQualityConversationEvaluationsWithHttpInfo(String conversationId, Evaluation body, String expand) throws IOException {
+    return postQualityConversationEvaluations(createPostQualityConversationEvaluationsRequest(conversationId, body, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostQualityConversationEvaluationsRequest createPostQualityConversationEvaluationsRequest(String conversationId, Evaluation body, String expand) {
+    return PostQualityConversationEvaluationsRequest.builder()
+            .withConversationId(conversationId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
+            .withBody(body)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Evaluation>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Create an evaluation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Evaluation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Evaluation postQualityConversationEvaluations(PostQualityConversationEvaluationsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Evaluation>() {});
+    try {
+      ApiResponse<Evaluation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Evaluation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create an evaluation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Evaluation> postQualityConversationEvaluations(ApiRequest<Evaluation> request) throws IOException, ApiException {
-    return pcapiClient.<Evaluation>invokeAPIVerbose(request, new TypeReference<Evaluation>() {});
+  public ApiResponse<Evaluation> postQualityConversationEvaluations(ApiRequest<Evaluation> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Evaluation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1927,10 +2104,11 @@ public class QualityApi {
    * 
    * @param body evaluationAndScoringSet (required)
    * @return EvaluationScoringSet
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluationScoringSet postQualityEvaluationsScoring(EvaluationFormAndScoringSet body) throws IOException, ApiException {
-    return postQualityEvaluationsScoringWithHttpInfo(body).getBody();
+    return  postQualityEvaluationsScoring(createPostQualityEvaluationsScoringRequest(body));
   }
 
   /**
@@ -1938,60 +2116,64 @@ public class QualityApi {
    * 
    * @param body evaluationAndScoringSet (required)
    * @return EvaluationScoringSet
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationScoringSet> postQualityEvaluationsScoringWithHttpInfo(EvaluationFormAndScoringSet body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postQualityEvaluationsScoring");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/evaluations/scoring".replaceAll("\\{format\\}","json");
+  public ApiResponse<EvaluationScoringSet> postQualityEvaluationsScoringWithHttpInfo(EvaluationFormAndScoringSet body) throws IOException {
+    return postQualityEvaluationsScoring(createPostQualityEvaluationsScoringRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EvaluationScoringSet>() {});
+  private PostQualityEvaluationsScoringRequest createPostQualityEvaluationsScoringRequest(EvaluationFormAndScoringSet body) {
+    return PostQualityEvaluationsScoringRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Score evaluation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EvaluationScoringSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluationScoringSet postQualityEvaluationsScoring(PostQualityEvaluationsScoringRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EvaluationScoringSet>() {});
+    try {
+      ApiResponse<EvaluationScoringSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationScoringSet>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Score evaluation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationScoringSet> postQualityEvaluationsScoring(ApiRequest<EvaluationFormAndScoringSet> request) throws IOException, ApiException {
-    return pcapiClient.<EvaluationScoringSet>invokeAPIVerbose(request, new TypeReference<EvaluationScoringSet>() {});
+  public ApiResponse<EvaluationScoringSet> postQualityEvaluationsScoring(ApiRequest<EvaluationFormAndScoringSet> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationScoringSet>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationScoringSet> response = (ApiResponse<EvaluationScoringSet>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationScoringSet> response = (ApiResponse<EvaluationScoringSet>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1999,10 +2181,11 @@ public class QualityApi {
    * 
    * @param body Evaluation form (required)
    * @return EvaluationForm
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluationForm postQualityForms(EvaluationForm body) throws IOException, ApiException {
-    return postQualityFormsWithHttpInfo(body).getBody();
+    return  postQualityForms(createPostQualityFormsRequest(body));
   }
 
   /**
@@ -2010,60 +2193,64 @@ public class QualityApi {
    * 
    * @param body Evaluation form (required)
    * @return EvaluationForm
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationForm> postQualityFormsWithHttpInfo(EvaluationForm body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postQualityForms");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/forms".replaceAll("\\{format\\}","json");
+  public ApiResponse<EvaluationForm> postQualityFormsWithHttpInfo(EvaluationForm body) throws IOException {
+    return postQualityForms(createPostQualityFormsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EvaluationForm>() {});
+  private PostQualityFormsRequest createPostQualityFormsRequest(EvaluationForm body) {
+    return PostQualityFormsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create an evaluation form.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EvaluationForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluationForm postQualityForms(PostQualityFormsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EvaluationForm>() {});
+    try {
+      ApiResponse<EvaluationForm> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationForm>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create an evaluation form.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationForm> postQualityForms(ApiRequest<EvaluationForm> request) throws IOException, ApiException {
-    return pcapiClient.<EvaluationForm>invokeAPIVerbose(request, new TypeReference<EvaluationForm>() {});
+  public ApiResponse<EvaluationForm> postQualityForms(ApiRequest<EvaluationForm> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationForm>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2072,10 +2259,11 @@ public class QualityApi {
    * @param body keywordSet (required)
    * @param expand queueId (optional)
    * @return KeywordSet
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public KeywordSet postQualityKeywordsets(KeywordSet body, String expand) throws IOException, ApiException {
-    return postQualityKeywordsetsWithHttpInfo(body, expand).getBody();
+    return  postQualityKeywordsets(createPostQualityKeywordsetsRequest(body, expand));
   }
 
   /**
@@ -2084,61 +2272,66 @@ public class QualityApi {
    * @param body keywordSet (required)
    * @param expand queueId (optional)
    * @return KeywordSet
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KeywordSet> postQualityKeywordsetsWithHttpInfo(KeywordSet body, String expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postQualityKeywordsets");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/keywordsets".replaceAll("\\{format\\}","json");
+  public ApiResponse<KeywordSet> postQualityKeywordsetsWithHttpInfo(KeywordSet body, String expand) throws IOException {
+    return postQualityKeywordsets(createPostQualityKeywordsetsRequest(body, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostQualityKeywordsetsRequest createPostQualityKeywordsetsRequest(KeywordSet body, String expand) {
+    return PostQualityKeywordsetsRequest.builder()
+            .withBody(body)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<KeywordSet>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Create a Keyword Set
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return KeywordSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public KeywordSet postQualityKeywordsets(PostQualityKeywordsetsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<KeywordSet>() {});
+    try {
+      ApiResponse<KeywordSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KeywordSet>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a Keyword Set
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KeywordSet> postQualityKeywordsets(ApiRequest<KeywordSet> request) throws IOException, ApiException {
-    return pcapiClient.<KeywordSet>invokeAPIVerbose(request, new TypeReference<KeywordSet>() {});
+  public ApiResponse<KeywordSet> postQualityKeywordsets(ApiRequest<KeywordSet> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KeywordSet>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2146,10 +2339,11 @@ public class QualityApi {
    * 
    * @param body Evaluation form (required)
    * @return EvaluationForm
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluationForm postQualityPublishedforms(EvaluationForm body) throws IOException, ApiException {
-    return postQualityPublishedformsWithHttpInfo(body).getBody();
+    return  postQualityPublishedforms(createPostQualityPublishedformsRequest(body));
   }
 
   /**
@@ -2157,60 +2351,64 @@ public class QualityApi {
    * 
    * @param body Evaluation form (required)
    * @return EvaluationForm
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationForm> postQualityPublishedformsWithHttpInfo(EvaluationForm body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postQualityPublishedforms");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/publishedforms".replaceAll("\\{format\\}","json");
+  public ApiResponse<EvaluationForm> postQualityPublishedformsWithHttpInfo(EvaluationForm body) throws IOException {
+    return postQualityPublishedforms(createPostQualityPublishedformsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EvaluationForm>() {});
+  private PostQualityPublishedformsRequest createPostQualityPublishedformsRequest(EvaluationForm body) {
+    return PostQualityPublishedformsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Publish an evaluation form.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EvaluationForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluationForm postQualityPublishedforms(PostQualityPublishedformsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EvaluationForm>() {});
+    try {
+      ApiResponse<EvaluationForm> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationForm>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Publish an evaluation form.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationForm> postQualityPublishedforms(ApiRequest<EvaluationForm> request) throws IOException, ApiException {
-    return pcapiClient.<EvaluationForm>invokeAPIVerbose(request, new TypeReference<EvaluationForm>() {});
+  public ApiResponse<EvaluationForm> postQualityPublishedforms(ApiRequest<EvaluationForm> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationForm>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2218,10 +2416,11 @@ public class QualityApi {
    * 
    * @param body Keyword Set (optional)
    * @return KeywordSet
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public KeywordSet postQualitySpotability(KeywordSet body) throws IOException, ApiException {
-    return postQualitySpotabilityWithHttpInfo(body).getBody();
+    return  postQualitySpotability(createPostQualitySpotabilityRequest(body));
   }
 
   /**
@@ -2229,55 +2428,64 @@ public class QualityApi {
    * 
    * @param body Keyword Set (optional)
    * @return KeywordSet
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KeywordSet> postQualitySpotabilityWithHttpInfo(KeywordSet body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/spotability".replaceAll("\\{format\\}","json");
+  public ApiResponse<KeywordSet> postQualitySpotabilityWithHttpInfo(KeywordSet body) throws IOException {
+    return postQualitySpotability(createPostQualitySpotabilityRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<KeywordSet>() {});
+  private PostQualitySpotabilityRequest createPostQualitySpotabilityRequest(KeywordSet body) {
+    return PostQualitySpotabilityRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Retrieve the spotability statistic
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return KeywordSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public KeywordSet postQualitySpotability(PostQualitySpotabilityRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<KeywordSet>() {});
+    try {
+      ApiResponse<KeywordSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KeywordSet>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Retrieve the spotability statistic
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KeywordSet> postQualitySpotability(ApiRequest<KeywordSet> request) throws IOException, ApiException {
-    return pcapiClient.<KeywordSet>invokeAPIVerbose(request, new TypeReference<KeywordSet>() {});
+  public ApiResponse<KeywordSet> postQualitySpotability(ApiRequest<KeywordSet> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KeywordSet>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2286,10 +2494,11 @@ public class QualityApi {
    * @param calibrationId Calibration ID (required)
    * @param body Calibration (required)
    * @return Calibration
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Calibration putQualityCalibration(String calibrationId, Calibration body) throws IOException, ApiException {
-    return putQualityCalibrationWithHttpInfo(calibrationId, body).getBody();
+    return  putQualityCalibration(createPutQualityCalibrationRequest(calibrationId, body));
   }
 
   /**
@@ -2298,66 +2507,66 @@ public class QualityApi {
    * @param calibrationId Calibration ID (required)
    * @param body Calibration (required)
    * @return Calibration
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Calibration> putQualityCalibrationWithHttpInfo(String calibrationId, Calibration body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'calibrationId' is set
-    if (calibrationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'calibrationId' when calling putQualityCalibration");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putQualityCalibration");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/calibrations/{calibrationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "calibrationId" + "\\}", pcapiClient.escapeString(calibrationId.toString()));
+  public ApiResponse<Calibration> putQualityCalibrationWithHttpInfo(String calibrationId, Calibration body) throws IOException {
+    return putQualityCalibration(createPutQualityCalibrationRequest(calibrationId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutQualityCalibrationRequest createPutQualityCalibrationRequest(String calibrationId, Calibration body) {
+    return PutQualityCalibrationRequest.builder()
+            .withCalibrationId(calibrationId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Calibration>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Calibration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Calibration putQualityCalibration(PutQualityCalibrationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Calibration>() {});
+    try {
+      ApiResponse<Calibration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Calibration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Calibration> putQualityCalibration(ApiRequest<Calibration> request) throws IOException, ApiException {
-    return pcapiClient.<Calibration>invokeAPIVerbose(request, new TypeReference<Calibration>() {});
+  public ApiResponse<Calibration> putQualityCalibration(ApiRequest<Calibration> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Calibration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Calibration> response = (ApiResponse<Calibration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Calibration> response = (ApiResponse<Calibration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2368,10 +2577,11 @@ public class QualityApi {
    * @param body evaluation (required)
    * @param expand evaluatorId (optional)
    * @return Evaluation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Evaluation putQualityConversationEvaluation(String conversationId, String evaluationId, Evaluation body, String expand) throws IOException, ApiException {
-    return putQualityConversationEvaluationWithHttpInfo(conversationId, evaluationId, body, expand).getBody();
+    return  putQualityConversationEvaluation(createPutQualityConversationEvaluationRequest(conversationId, evaluationId, body, expand));
   }
 
   /**
@@ -2382,73 +2592,70 @@ public class QualityApi {
    * @param body evaluation (required)
    * @param expand evaluatorId (optional)
    * @return Evaluation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Evaluation> putQualityConversationEvaluationWithHttpInfo(String conversationId, String evaluationId, Evaluation body, String expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling putQualityConversationEvaluation");
-    }
-    
-    // verify the required parameter 'evaluationId' is set
-    if (evaluationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'evaluationId' when calling putQualityConversationEvaluation");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putQualityConversationEvaluation");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()))
-      .replaceAll("\\{" + "evaluationId" + "\\}", pcapiClient.escapeString(evaluationId.toString()));
+  public ApiResponse<Evaluation> putQualityConversationEvaluationWithHttpInfo(String conversationId, String evaluationId, Evaluation body, String expand) throws IOException {
+    return putQualityConversationEvaluation(createPutQualityConversationEvaluationRequest(conversationId, evaluationId, body, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutQualityConversationEvaluationRequest createPutQualityConversationEvaluationRequest(String conversationId, String evaluationId, Evaluation body, String expand) {
+    return PutQualityConversationEvaluationRequest.builder()
+            .withConversationId(conversationId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
+            .withEvaluationId(evaluationId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withBody(body)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Evaluation>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Update an evaluation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Evaluation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Evaluation putQualityConversationEvaluation(PutQualityConversationEvaluationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Evaluation>() {});
+    try {
+      ApiResponse<Evaluation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Evaluation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update an evaluation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Evaluation> putQualityConversationEvaluation(ApiRequest<Evaluation> request) throws IOException, ApiException {
-    return pcapiClient.<Evaluation>invokeAPIVerbose(request, new TypeReference<Evaluation>() {});
+  public ApiResponse<Evaluation> putQualityConversationEvaluation(ApiRequest<Evaluation> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Evaluation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2457,10 +2664,11 @@ public class QualityApi {
    * @param formId Form ID (required)
    * @param body Evaluation form (required)
    * @return EvaluationForm
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluationForm putQualityForm(String formId, EvaluationForm body) throws IOException, ApiException {
-    return putQualityFormWithHttpInfo(formId, body).getBody();
+    return  putQualityForm(createPutQualityFormRequest(formId, body));
   }
 
   /**
@@ -2469,66 +2677,66 @@ public class QualityApi {
    * @param formId Form ID (required)
    * @param body Evaluation form (required)
    * @return EvaluationForm
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationForm> putQualityFormWithHttpInfo(String formId, EvaluationForm body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'formId' is set
-    if (formId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'formId' when calling putQualityForm");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putQualityForm");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/forms/{formId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "formId" + "\\}", pcapiClient.escapeString(formId.toString()));
+  public ApiResponse<EvaluationForm> putQualityFormWithHttpInfo(String formId, EvaluationForm body) throws IOException {
+    return putQualityForm(createPutQualityFormRequest(formId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutQualityFormRequest createPutQualityFormRequest(String formId, EvaluationForm body) {
+    return PutQualityFormRequest.builder()
+            .withFormId(formId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EvaluationForm>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update an evaluation form.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EvaluationForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EvaluationForm putQualityForm(PutQualityFormRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EvaluationForm>() {});
+    try {
+      ApiResponse<EvaluationForm> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationForm>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update an evaluation form.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationForm> putQualityForm(ApiRequest<EvaluationForm> request) throws IOException, ApiException {
-    return pcapiClient.<EvaluationForm>invokeAPIVerbose(request, new TypeReference<EvaluationForm>() {});
+  public ApiResponse<EvaluationForm> putQualityForm(ApiRequest<EvaluationForm> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationForm>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2537,10 +2745,11 @@ public class QualityApi {
    * @param keywordSetId KeywordSet ID (required)
    * @param body keywordSet (required)
    * @return KeywordSet
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public KeywordSet putQualityKeywordset(String keywordSetId, KeywordSet body) throws IOException, ApiException {
-    return putQualityKeywordsetWithHttpInfo(keywordSetId, body).getBody();
+    return  putQualityKeywordset(createPutQualityKeywordsetRequest(keywordSetId, body));
   }
 
   /**
@@ -2549,66 +2758,66 @@ public class QualityApi {
    * @param keywordSetId KeywordSet ID (required)
    * @param body keywordSet (required)
    * @return KeywordSet
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KeywordSet> putQualityKeywordsetWithHttpInfo(String keywordSetId, KeywordSet body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'keywordSetId' is set
-    if (keywordSetId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'keywordSetId' when calling putQualityKeywordset");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putQualityKeywordset");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/quality/keywordsets/{keywordSetId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "keywordSetId" + "\\}", pcapiClient.escapeString(keywordSetId.toString()));
+  public ApiResponse<KeywordSet> putQualityKeywordsetWithHttpInfo(String keywordSetId, KeywordSet body) throws IOException {
+    return putQualityKeywordset(createPutQualityKeywordsetRequest(keywordSetId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutQualityKeywordsetRequest createPutQualityKeywordsetRequest(String keywordSetId, KeywordSet body) {
+    return PutQualityKeywordsetRequest.builder()
+            .withKeywordSetId(keywordSetId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<KeywordSet>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a keywordSet to the specified keywordSet via PUT.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return KeywordSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public KeywordSet putQualityKeywordset(PutQualityKeywordsetRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<KeywordSet>() {});
+    try {
+      ApiResponse<KeywordSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KeywordSet>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a keywordSet to the specified keywordSet via PUT.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KeywordSet> putQualityKeywordset(ApiRequest<KeywordSet> request) throws IOException, ApiException {
-    return pcapiClient.<KeywordSet>invokeAPIVerbose(request, new TypeReference<KeywordSet>() {});
+  public ApiResponse<KeywordSet> putQualityKeywordset(ApiRequest<KeywordSet> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KeywordSet>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

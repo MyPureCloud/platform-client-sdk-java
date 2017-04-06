@@ -38,9 +38,6 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class DeleteQualityFormRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String formId;
 	public String getFormId() {
 		return this.formId;
@@ -119,6 +116,12 @@ public class DeleteQualityFormRequest {
 
 
 		public DeleteQualityFormRequest build() {
+            
+            // verify the required parameter 'formId' is set
+            if (request.formId == null) {
+                throw new IllegalStateException("Missing the required parameter 'formId' when building request for DeleteQualityFormRequest.");
+            }
+            
 			return request;
 		}
 	}

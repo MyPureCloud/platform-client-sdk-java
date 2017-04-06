@@ -40,9 +40,6 @@ import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.ObservationQueryResponse;
 
 public class PostAnalyticsReportingSchedulesRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private ReportSchedule body;
 	public ReportSchedule getBody() {
 		return this.body;
@@ -121,6 +118,12 @@ public class PostAnalyticsReportingSchedulesRequest {
 
 
 		public PostAnalyticsReportingSchedulesRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostAnalyticsReportingSchedulesRequest.");
+            }
+            
 			return request;
 		}
 	}

@@ -38,9 +38,6 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class GetOrphanrecordingRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String orphanId;
 	public String getOrphanId() {
 		return this.orphanId;
@@ -119,6 +116,12 @@ public class GetOrphanrecordingRequest {
 
 
 		public GetOrphanrecordingRequest build() {
+            
+            // verify the required parameter 'orphanId' is set
+            if (request.orphanId == null) {
+                throw new IllegalStateException("Missing the required parameter 'orphanId' when building request for GetOrphanrecordingRequest.");
+            }
+            
 			return request;
 		}
 	}

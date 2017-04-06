@@ -39,9 +39,6 @@ import com.mypurecloud.sdk.v2.model.UserPresenceRuleContainer;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 public class GetAlertingRoutingstatusAlertRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String alertId;
 	public String getAlertId() {
 		return this.alertId;
@@ -140,6 +137,12 @@ public class GetAlertingRoutingstatusAlertRequest {
 
 
 		public GetAlertingRoutingstatusAlertRequest build() {
+            
+            // verify the required parameter 'alertId' is set
+            if (request.alertId == null) {
+                throw new IllegalStateException("Missing the required parameter 'alertId' when building request for GetAlertingRoutingstatusAlertRequest.");
+            }
+            
 			return request;
 		}
 	}

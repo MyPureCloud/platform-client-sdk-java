@@ -1,6 +1,8 @@
 package com.mypurecloud.sdk.v2.api;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.SettableFuture;
 
 import com.mypurecloud.sdk.v2.AsyncApiCallback;
 import com.mypurecloud.sdk.v2.ApiException;
@@ -87,661 +89,2506 @@ public class RecordingApiAsync {
   /**
    * Delete annotation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Void> deleteConversationRecordingAnnotationAsync(DeleteConversationRecordingAnnotationRequest request, AsyncApiCallback<Void> callback) {
-    return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
+    try {
+      SettableFuture<Void> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete annotation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteConversationRecordingAnnotationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
-    return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
+    try {
+      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Deletes a single orphan recording
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<OrphanRecording> deleteOrphanrecordingAsync(DeleteOrphanrecordingRequest request, AsyncApiCallback<OrphanRecording> callback) {
-    return pcapiClient.<OrphanRecording>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OrphanRecording>() {}, callback);
+    try {
+      SettableFuture<OrphanRecording> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrphanRecording>() {}, new AsyncApiCallback<ApiResponse<OrphanRecording>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrphanRecording> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Deletes a single orphan recording
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<OrphanRecording>> deleteOrphanrecordingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrphanRecording>> callback) {
-    return pcapiClient.<OrphanRecording>invokeAPIVerboseAsync(request, new TypeReference<OrphanRecording>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<OrphanRecording>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OrphanRecording>() {}, new AsyncApiCallback<ApiResponse<OrphanRecording>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrphanRecording> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrphanRecording> response = (ApiResponse<OrphanRecording>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrphanRecording> response = (ApiResponse<OrphanRecording>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete media retention policies
    * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<String> deleteRecordingMediaretentionpoliciesAsync(DeleteRecordingMediaretentionpoliciesRequest request, AsyncApiCallback<String> callback) {
-    return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<String> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete media retention policies
    * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<String>> deleteRecordingMediaretentionpoliciesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
-    return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a media retention policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<String> deleteRecordingMediaretentionpolicyAsync(DeleteRecordingMediaretentionpolicyRequest request, AsyncApiCallback<String> callback) {
-    return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<String> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a media retention policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<String>> deleteRecordingMediaretentionpolicyAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
-    return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets a specific recording.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Recording> getConversationRecordingAsync(GetConversationRecordingRequest request, AsyncApiCallback<Recording> callback) {
-    return pcapiClient.<Recording>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Recording>() {}, callback);
+    try {
+      SettableFuture<Recording> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Recording>() {}, new AsyncApiCallback<ApiResponse<Recording>>() {
+        @Override
+        public void onCompleted(ApiResponse<Recording> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets a specific recording.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Recording>> getConversationRecordingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Recording>> callback) {
-    return pcapiClient.<Recording>invokeAPIVerboseAsync(request, new TypeReference<Recording>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Recording>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Recording>() {}, new AsyncApiCallback<ApiResponse<Recording>>() {
+        @Override
+        public void onCompleted(ApiResponse<Recording> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get annotation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Annotation> getConversationRecordingAnnotationAsync(GetConversationRecordingAnnotationRequest request, AsyncApiCallback<Annotation> callback) {
-    return pcapiClient.<Annotation>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Annotation>() {}, callback);
+    try {
+      SettableFuture<Annotation> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Annotation>() {}, new AsyncApiCallback<ApiResponse<Annotation>>() {
+        @Override
+        public void onCompleted(ApiResponse<Annotation> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get annotation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Annotation>> getConversationRecordingAnnotationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Annotation>> callback) {
-    return pcapiClient.<Annotation>invokeAPIVerboseAsync(request, new TypeReference<Annotation>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Annotation>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Annotation>() {}, new AsyncApiCallback<ApiResponse<Annotation>>() {
+        @Override
+        public void onCompleted(ApiResponse<Annotation> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Annotation> response = (ApiResponse<Annotation>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Annotation> response = (ApiResponse<Annotation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get annotations for recording
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<List<Annotation>> getConversationRecordingAnnotationsAsync(GetConversationRecordingAnnotationsRequest request, AsyncApiCallback<List<Annotation>> callback) {
-    return pcapiClient.<List<Annotation>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<Annotation>>() {}, callback);
+    try {
+      SettableFuture<List<Annotation>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<Annotation>>() {}, new AsyncApiCallback<ApiResponse<List<Annotation>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<Annotation>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get annotations for recording
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<List<Annotation>>> getConversationRecordingAnnotationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<Annotation>>> callback) {
-    return pcapiClient.<List<Annotation>>invokeAPIVerboseAsync(request, new TypeReference<List<Annotation>>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<List<Annotation>>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<Annotation>>() {}, new AsyncApiCallback<ApiResponse<List<Annotation>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<Annotation>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<Annotation>> response = (ApiResponse<List<Annotation>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<Annotation>> response = (ApiResponse<List<Annotation>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get all of a Conversation&#39;s Recordings.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<List<Recording>> getConversationRecordingsAsync(GetConversationRecordingsRequest request, AsyncApiCallback<List<Recording>> callback) {
-    return pcapiClient.<List<Recording>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<Recording>>() {}, callback);
+    try {
+      SettableFuture<List<Recording>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<Recording>>() {}, new AsyncApiCallback<ApiResponse<List<Recording>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<Recording>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get all of a Conversation&#39;s Recordings.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<List<Recording>>> getConversationRecordingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<Recording>>> callback) {
-    return pcapiClient.<List<Recording>>invokeAPIVerboseAsync(request, new TypeReference<List<Recording>>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<List<Recording>>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<Recording>>() {}, new AsyncApiCallback<ApiResponse<List<Recording>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<Recording>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<Recording>> response = (ApiResponse<List<Recording>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<Recording>> response = (ApiResponse<List<Recording>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets a single orphan recording
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<OrphanRecording> getOrphanrecordingAsync(GetOrphanrecordingRequest request, AsyncApiCallback<OrphanRecording> callback) {
-    return pcapiClient.<OrphanRecording>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OrphanRecording>() {}, callback);
+    try {
+      SettableFuture<OrphanRecording> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrphanRecording>() {}, new AsyncApiCallback<ApiResponse<OrphanRecording>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrphanRecording> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets a single orphan recording
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<OrphanRecording>> getOrphanrecordingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrphanRecording>> callback) {
-    return pcapiClient.<OrphanRecording>invokeAPIVerboseAsync(request, new TypeReference<OrphanRecording>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<OrphanRecording>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OrphanRecording>() {}, new AsyncApiCallback<ApiResponse<OrphanRecording>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrphanRecording> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrphanRecording> response = (ApiResponse<OrphanRecording>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrphanRecording> response = (ApiResponse<OrphanRecording>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets the media of a single orphan recording
    * A 202 response means the orphaned media is currently transcoding and will be available shortly.A 200 response denotes the transcoded orphan media is available now and is contained in the response body.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Recording> getOrphanrecordingMediaAsync(GetOrphanrecordingMediaRequest request, AsyncApiCallback<Recording> callback) {
-    return pcapiClient.<Recording>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Recording>() {}, callback);
+    try {
+      SettableFuture<Recording> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Recording>() {}, new AsyncApiCallback<ApiResponse<Recording>>() {
+        @Override
+        public void onCompleted(ApiResponse<Recording> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets the media of a single orphan recording
    * A 202 response means the orphaned media is currently transcoding and will be available shortly.A 200 response denotes the transcoded orphan media is available now and is contained in the response body.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Recording>> getOrphanrecordingMediaAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Recording>> callback) {
-    return pcapiClient.<Recording>invokeAPIVerboseAsync(request, new TypeReference<Recording>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Recording>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Recording>() {}, new AsyncApiCallback<ApiResponse<Recording>>() {
+        @Override
+        public void onCompleted(ApiResponse<Recording> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets all orphan recordings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<OrphanRecordingListing> getOrphanrecordingsAsync(GetOrphanrecordingsRequest request, AsyncApiCallback<OrphanRecordingListing> callback) {
-    return pcapiClient.<OrphanRecordingListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<OrphanRecordingListing>() {}, callback);
+    try {
+      SettableFuture<OrphanRecordingListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrphanRecordingListing>() {}, new AsyncApiCallback<ApiResponse<OrphanRecordingListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrphanRecordingListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets all orphan recordings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<OrphanRecordingListing>> getOrphanrecordingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrphanRecordingListing>> callback) {
-    return pcapiClient.<OrphanRecordingListing>invokeAPIVerboseAsync(request, new TypeReference<OrphanRecordingListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<OrphanRecordingListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OrphanRecordingListing>() {}, new AsyncApiCallback<ApiResponse<OrphanRecordingListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrphanRecordingListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrphanRecordingListing> response = (ApiResponse<OrphanRecordingListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrphanRecordingListing> response = (ApiResponse<OrphanRecordingListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the local encryption settings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<LocalEncryptionConfiguration> getRecordingLocalkeysSettingAsync(GetRecordingLocalkeysSettingRequest request, AsyncApiCallback<LocalEncryptionConfiguration> callback) {
-    return pcapiClient.<LocalEncryptionConfiguration>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {}, callback);
+    try {
+      SettableFuture<LocalEncryptionConfiguration> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<LocalEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the local encryption settings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<LocalEncryptionConfiguration>> getRecordingLocalkeysSettingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>> callback) {
-    return pcapiClient.<LocalEncryptionConfiguration>invokeAPIVerboseAsync(request, new TypeReference<LocalEncryptionConfiguration>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<LocalEncryptionConfiguration>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LocalEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<LocalEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LocalEncryptionConfiguration> response = (ApiResponse<LocalEncryptionConfiguration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LocalEncryptionConfiguration> response = (ApiResponse<LocalEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * gets a list local key settings data
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<LocalEncryptionConfigurationListing> getRecordingLocalkeysSettingsAsync(GetRecordingLocalkeysSettingsRequest request, AsyncApiCallback<LocalEncryptionConfigurationListing> callback) {
-    return pcapiClient.<LocalEncryptionConfigurationListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LocalEncryptionConfigurationListing>() {}, callback);
+    try {
+      SettableFuture<LocalEncryptionConfigurationListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LocalEncryptionConfigurationListing>() {}, new AsyncApiCallback<ApiResponse<LocalEncryptionConfigurationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LocalEncryptionConfigurationListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * gets a list local key settings data
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<LocalEncryptionConfigurationListing>> getRecordingLocalkeysSettingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LocalEncryptionConfigurationListing>> callback) {
-    return pcapiClient.<LocalEncryptionConfigurationListing>invokeAPIVerboseAsync(request, new TypeReference<LocalEncryptionConfigurationListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<LocalEncryptionConfigurationListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LocalEncryptionConfigurationListing>() {}, new AsyncApiCallback<ApiResponse<LocalEncryptionConfigurationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LocalEncryptionConfigurationListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LocalEncryptionConfigurationListing> response = (ApiResponse<LocalEncryptionConfigurationListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LocalEncryptionConfigurationListing> response = (ApiResponse<LocalEncryptionConfigurationListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets media retention policy list with query options to filter on name and enabled.
    * for a less verbose response, add summary&#x3D;true to this endpoint
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<PolicyEntityListing> getRecordingMediaretentionpoliciesAsync(GetRecordingMediaretentionpoliciesRequest request, AsyncApiCallback<PolicyEntityListing> callback) {
-    return pcapiClient.<PolicyEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<PolicyEntityListing>() {}, callback);
+    try {
+      SettableFuture<PolicyEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PolicyEntityListing>() {}, new AsyncApiCallback<ApiResponse<PolicyEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PolicyEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets media retention policy list with query options to filter on name and enabled.
    * for a less verbose response, add summary&#x3D;true to this endpoint
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<PolicyEntityListing>> getRecordingMediaretentionpoliciesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PolicyEntityListing>> callback) {
-    return pcapiClient.<PolicyEntityListing>invokeAPIVerboseAsync(request, new TypeReference<PolicyEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<PolicyEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PolicyEntityListing>() {}, new AsyncApiCallback<ApiResponse<PolicyEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PolicyEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PolicyEntityListing> response = (ApiResponse<PolicyEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PolicyEntityListing> response = (ApiResponse<PolicyEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a media retention policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Policy> getRecordingMediaretentionpolicyAsync(GetRecordingMediaretentionpolicyRequest request, AsyncApiCallback<Policy> callback) {
-    return pcapiClient.<Policy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Policy>() {}, callback);
+    try {
+      SettableFuture<Policy> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Policy>() {}, new AsyncApiCallback<ApiResponse<Policy>>() {
+        @Override
+        public void onCompleted(ApiResponse<Policy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a media retention policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Policy>> getRecordingMediaretentionpolicyAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Policy>> callback) {
-    return pcapiClient.<Policy>invokeAPIVerboseAsync(request, new TypeReference<Policy>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Policy>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Policy>() {}, new AsyncApiCallback<ApiResponse<Policy>>() {
+        @Override
+        public void onCompleted(ApiResponse<Policy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Policy> response = (ApiResponse<Policy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Policy> response = (ApiResponse<Policy>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get encryption key list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<EncryptionKeyEntityListing> getRecordingRecordingkeysAsync(GetRecordingRecordingkeysRequest request, AsyncApiCallback<EncryptionKeyEntityListing> callback) {
-    return pcapiClient.<EncryptionKeyEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EncryptionKeyEntityListing>() {}, callback);
+    try {
+      SettableFuture<EncryptionKeyEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EncryptionKeyEntityListing>() {}, new AsyncApiCallback<ApiResponse<EncryptionKeyEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EncryptionKeyEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get encryption key list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<EncryptionKeyEntityListing>> getRecordingRecordingkeysAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EncryptionKeyEntityListing>> callback) {
-    return pcapiClient.<EncryptionKeyEntityListing>invokeAPIVerboseAsync(request, new TypeReference<EncryptionKeyEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<EncryptionKeyEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EncryptionKeyEntityListing>() {}, new AsyncApiCallback<ApiResponse<EncryptionKeyEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EncryptionKeyEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EncryptionKeyEntityListing> response = (ApiResponse<EncryptionKeyEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EncryptionKeyEntityListing> response = (ApiResponse<EncryptionKeyEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get key rotation schedule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<KeyRotationSchedule> getRecordingRecordingkeysRotationscheduleAsync(GetRecordingRecordingkeysRotationscheduleRequest request, AsyncApiCallback<KeyRotationSchedule> callback) {
-    return pcapiClient.<KeyRotationSchedule>invokeAPIAsync(request.withHttpInfo(), new TypeReference<KeyRotationSchedule>() {}, callback);
+    try {
+      SettableFuture<KeyRotationSchedule> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KeyRotationSchedule>() {}, new AsyncApiCallback<ApiResponse<KeyRotationSchedule>>() {
+        @Override
+        public void onCompleted(ApiResponse<KeyRotationSchedule> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get key rotation schedule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<KeyRotationSchedule>> getRecordingRecordingkeysRotationscheduleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<KeyRotationSchedule>> callback) {
-    return pcapiClient.<KeyRotationSchedule>invokeAPIVerboseAsync(request, new TypeReference<KeyRotationSchedule>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<KeyRotationSchedule>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<KeyRotationSchedule>() {}, new AsyncApiCallback<ApiResponse<KeyRotationSchedule>>() {
+        @Override
+        public void onCompleted(ApiResponse<KeyRotationSchedule> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KeyRotationSchedule> response = (ApiResponse<KeyRotationSchedule>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KeyRotationSchedule> response = (ApiResponse<KeyRotationSchedule>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the Recording Settings for the Organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<RecordingSettings> getRecordingSettingsAsync(GetRecordingSettingsRequest request, AsyncApiCallback<RecordingSettings> callback) {
-    return pcapiClient.<RecordingSettings>invokeAPIAsync(request.withHttpInfo(), new TypeReference<RecordingSettings>() {}, callback);
+    try {
+      SettableFuture<RecordingSettings> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RecordingSettings>() {}, new AsyncApiCallback<ApiResponse<RecordingSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the Recording Settings for the Organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<RecordingSettings>> getRecordingSettingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RecordingSettings>> callback) {
-    return pcapiClient.<RecordingSettings>invokeAPIVerboseAsync(request, new TypeReference<RecordingSettings>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<RecordingSettings>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RecordingSettings>() {}, new AsyncApiCallback<ApiResponse<RecordingSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingSettings> response = (ApiResponse<RecordingSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingSettings> response = (ApiResponse<RecordingSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Retrieves a paged listing of screen recording sessions
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ScreenRecordingSessionListing> getRecordingsScreensessionsAsync(GetRecordingsScreensessionsRequest request, AsyncApiCallback<ScreenRecordingSessionListing> callback) {
-    return pcapiClient.<ScreenRecordingSessionListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ScreenRecordingSessionListing>() {}, callback);
+    try {
+      SettableFuture<ScreenRecordingSessionListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScreenRecordingSessionListing>() {}, new AsyncApiCallback<ApiResponse<ScreenRecordingSessionListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScreenRecordingSessionListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Retrieves a paged listing of screen recording sessions
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ScreenRecordingSessionListing>> getRecordingsScreensessionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ScreenRecordingSessionListing>> callback) {
-    return pcapiClient.<ScreenRecordingSessionListing>invokeAPIVerboseAsync(request, new TypeReference<ScreenRecordingSessionListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ScreenRecordingSessionListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScreenRecordingSessionListing>() {}, new AsyncApiCallback<ApiResponse<ScreenRecordingSessionListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScreenRecordingSessionListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScreenRecordingSessionListing> response = (ApiResponse<ScreenRecordingSessionListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScreenRecordingSessionListing> response = (ApiResponse<ScreenRecordingSessionListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Patch a media retention policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Policy> patchRecordingMediaretentionpolicyAsync(PatchRecordingMediaretentionpolicyRequest request, AsyncApiCallback<Policy> callback) {
-    return pcapiClient.<Policy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Policy>() {}, callback);
+    try {
+      SettableFuture<Policy> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Policy>() {}, new AsyncApiCallback<ApiResponse<Policy>>() {
+        @Override
+        public void onCompleted(ApiResponse<Policy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Patch a media retention policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Policy>> patchRecordingMediaretentionpolicyAsync(ApiRequest<Policy> request, AsyncApiCallback<ApiResponse<Policy>> callback) {
-    return pcapiClient.<Policy>invokeAPIVerboseAsync(request, new TypeReference<Policy>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Policy>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Policy>() {}, new AsyncApiCallback<ApiResponse<Policy>>() {
+        @Override
+        public void onCompleted(ApiResponse<Policy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Policy> response = (ApiResponse<Policy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Policy> response = (ApiResponse<Policy>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a screen recording session
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Void> patchRecordingsScreensessionAsync(PatchRecordingsScreensessionRequest request, AsyncApiCallback<Void> callback) {
-    return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
+    try {
+      SettableFuture<Void> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a screen recording session
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> patchRecordingsScreensessionAsync(ApiRequest<ScreenRecordingSessionRequest> request, AsyncApiCallback<ApiResponse<Void>> callback) {
-    return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
+    try {
+      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create annotation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Annotation> postConversationRecordingAnnotationsAsync(PostConversationRecordingAnnotationsRequest request, AsyncApiCallback<Annotation> callback) {
-    return pcapiClient.<Annotation>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Annotation>() {}, callback);
+    try {
+      SettableFuture<Annotation> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Annotation>() {}, new AsyncApiCallback<ApiResponse<Annotation>>() {
+        @Override
+        public void onCompleted(ApiResponse<Annotation> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create annotation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Annotation>> postConversationRecordingAnnotationsAsync(ApiRequest<Annotation> request, AsyncApiCallback<ApiResponse<Annotation>> callback) {
-    return pcapiClient.<Annotation>invokeAPIVerboseAsync(request, new TypeReference<Annotation>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Annotation>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Annotation>() {}, new AsyncApiCallback<ApiResponse<Annotation>>() {
+        @Override
+        public void onCompleted(ApiResponse<Annotation> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Annotation> response = (ApiResponse<Annotation>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Annotation> response = (ApiResponse<Annotation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * create a local recording key
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<EncryptionKey> postRecordingLocalkeysAsync(PostRecordingLocalkeysRequest request, AsyncApiCallback<EncryptionKey> callback) {
-    return pcapiClient.<EncryptionKey>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EncryptionKey>() {}, callback);
+    try {
+      SettableFuture<EncryptionKey> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EncryptionKey>() {}, new AsyncApiCallback<ApiResponse<EncryptionKey>>() {
+        @Override
+        public void onCompleted(ApiResponse<EncryptionKey> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * create a local recording key
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<EncryptionKey>> postRecordingLocalkeysAsync(ApiRequest<LocalEncryptionKeyRequest> request, AsyncApiCallback<ApiResponse<EncryptionKey>> callback) {
-    return pcapiClient.<EncryptionKey>invokeAPIVerboseAsync(request, new TypeReference<EncryptionKey>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<EncryptionKey>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EncryptionKey>() {}, new AsyncApiCallback<ApiResponse<EncryptionKey>>() {
+        @Override
+        public void onCompleted(ApiResponse<EncryptionKey> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EncryptionKey> response = (ApiResponse<EncryptionKey>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EncryptionKey> response = (ApiResponse<EncryptionKey>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * create settings for local key creation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<LocalEncryptionConfiguration> postRecordingLocalkeysSettingsAsync(PostRecordingLocalkeysSettingsRequest request, AsyncApiCallback<LocalEncryptionConfiguration> callback) {
-    return pcapiClient.<LocalEncryptionConfiguration>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {}, callback);
+    try {
+      SettableFuture<LocalEncryptionConfiguration> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<LocalEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * create settings for local key creation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<LocalEncryptionConfiguration>> postRecordingLocalkeysSettingsAsync(ApiRequest<LocalEncryptionConfiguration> request, AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>> callback) {
-    return pcapiClient.<LocalEncryptionConfiguration>invokeAPIVerboseAsync(request, new TypeReference<LocalEncryptionConfiguration>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<LocalEncryptionConfiguration>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LocalEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<LocalEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LocalEncryptionConfiguration> response = (ApiResponse<LocalEncryptionConfiguration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LocalEncryptionConfiguration> response = (ApiResponse<LocalEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create media retention policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Policy> postRecordingMediaretentionpoliciesAsync(PostRecordingMediaretentionpoliciesRequest request, AsyncApiCallback<Policy> callback) {
-    return pcapiClient.<Policy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Policy>() {}, callback);
+    try {
+      SettableFuture<Policy> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Policy>() {}, new AsyncApiCallback<ApiResponse<Policy>>() {
+        @Override
+        public void onCompleted(ApiResponse<Policy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create media retention policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Policy>> postRecordingMediaretentionpoliciesAsync(ApiRequest<PolicyCreate> request, AsyncApiCallback<ApiResponse<Policy>> callback) {
-    return pcapiClient.<Policy>invokeAPIVerboseAsync(request, new TypeReference<Policy>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Policy>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Policy>() {}, new AsyncApiCallback<ApiResponse<Policy>>() {
+        @Override
+        public void onCompleted(ApiResponse<Policy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Policy> response = (ApiResponse<Policy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Policy> response = (ApiResponse<Policy>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create encryption key
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<EncryptionKey> postRecordingRecordingkeysAsync(PostRecordingRecordingkeysRequest request, AsyncApiCallback<EncryptionKey> callback) {
-    return pcapiClient.<EncryptionKey>invokeAPIAsync(request.withHttpInfo(), new TypeReference<EncryptionKey>() {}, callback);
+    try {
+      SettableFuture<EncryptionKey> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EncryptionKey>() {}, new AsyncApiCallback<ApiResponse<EncryptionKey>>() {
+        @Override
+        public void onCompleted(ApiResponse<EncryptionKey> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create encryption key
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<EncryptionKey>> postRecordingRecordingkeysAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EncryptionKey>> callback) {
-    return pcapiClient.<EncryptionKey>invokeAPIVerboseAsync(request, new TypeReference<EncryptionKey>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<EncryptionKey>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EncryptionKey>() {}, new AsyncApiCallback<ApiResponse<EncryptionKey>>() {
+        @Override
+        public void onCompleted(ApiResponse<EncryptionKey> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EncryptionKey> response = (ApiResponse<EncryptionKey>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EncryptionKey> response = (ApiResponse<EncryptionKey>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Updates the retention records on a recording.
    * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Recording> putConversationRecordingAsync(PutConversationRecordingRequest request, AsyncApiCallback<Recording> callback) {
-    return pcapiClient.<Recording>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Recording>() {}, callback);
+    try {
+      SettableFuture<Recording> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Recording>() {}, new AsyncApiCallback<ApiResponse<Recording>>() {
+        @Override
+        public void onCompleted(ApiResponse<Recording> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Updates the retention records on a recording.
    * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Recording>> putConversationRecordingAsync(ApiRequest<Recording> request, AsyncApiCallback<ApiResponse<Recording>> callback) {
-    return pcapiClient.<Recording>invokeAPIVerboseAsync(request, new TypeReference<Recording>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Recording>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Recording>() {}, new AsyncApiCallback<ApiResponse<Recording>>() {
+        @Override
+        public void onCompleted(ApiResponse<Recording> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update annotation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Annotation> putConversationRecordingAnnotationAsync(PutConversationRecordingAnnotationRequest request, AsyncApiCallback<Annotation> callback) {
-    return pcapiClient.<Annotation>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Annotation>() {}, callback);
+    try {
+      SettableFuture<Annotation> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Annotation>() {}, new AsyncApiCallback<ApiResponse<Annotation>>() {
+        @Override
+        public void onCompleted(ApiResponse<Annotation> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update annotation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Annotation>> putConversationRecordingAnnotationAsync(ApiRequest<Annotation> request, AsyncApiCallback<ApiResponse<Annotation>> callback) {
-    return pcapiClient.<Annotation>invokeAPIVerboseAsync(request, new TypeReference<Annotation>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Annotation>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Annotation>() {}, new AsyncApiCallback<ApiResponse<Annotation>>() {
+        @Override
+        public void onCompleted(ApiResponse<Annotation> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Annotation> response = (ApiResponse<Annotation>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Annotation> response = (ApiResponse<Annotation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Updates an orphan recording to a regular recording with retention values
    * If this operation is successful the orphan will no longer exist. It will be replaced by the resulting recording in the response. This replacement recording is accessible by the normal Recording api.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Recording> putOrphanrecordingAsync(PutOrphanrecordingRequest request, AsyncApiCallback<Recording> callback) {
-    return pcapiClient.<Recording>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Recording>() {}, callback);
+    try {
+      SettableFuture<Recording> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Recording>() {}, new AsyncApiCallback<ApiResponse<Recording>>() {
+        @Override
+        public void onCompleted(ApiResponse<Recording> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Updates an orphan recording to a regular recording with retention values
    * If this operation is successful the orphan will no longer exist. It will be replaced by the resulting recording in the response. This replacement recording is accessible by the normal Recording api.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Recording>> putOrphanrecordingAsync(ApiRequest<OrphanUpdateRequest> request, AsyncApiCallback<ApiResponse<Recording>> callback) {
-    return pcapiClient.<Recording>invokeAPIVerboseAsync(request, new TypeReference<Recording>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Recording>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Recording>() {}, new AsyncApiCallback<ApiResponse<Recording>>() {
+        @Override
+        public void onCompleted(ApiResponse<Recording> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update the local encryption settings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<LocalEncryptionConfiguration> putRecordingLocalkeysSettingAsync(PutRecordingLocalkeysSettingRequest request, AsyncApiCallback<LocalEncryptionConfiguration> callback) {
-    return pcapiClient.<LocalEncryptionConfiguration>invokeAPIAsync(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {}, callback);
+    try {
+      SettableFuture<LocalEncryptionConfiguration> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<LocalEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update the local encryption settings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<LocalEncryptionConfiguration>> putRecordingLocalkeysSettingAsync(ApiRequest<LocalEncryptionConfiguration> request, AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>> callback) {
-    return pcapiClient.<LocalEncryptionConfiguration>invokeAPIVerboseAsync(request, new TypeReference<LocalEncryptionConfiguration>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<LocalEncryptionConfiguration>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LocalEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<LocalEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LocalEncryptionConfiguration> response = (ApiResponse<LocalEncryptionConfiguration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LocalEncryptionConfiguration> response = (ApiResponse<LocalEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a media retention policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Policy> putRecordingMediaretentionpolicyAsync(PutRecordingMediaretentionpolicyRequest request, AsyncApiCallback<Policy> callback) {
-    return pcapiClient.<Policy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Policy>() {}, callback);
+    try {
+      SettableFuture<Policy> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Policy>() {}, new AsyncApiCallback<ApiResponse<Policy>>() {
+        @Override
+        public void onCompleted(ApiResponse<Policy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a media retention policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Policy>> putRecordingMediaretentionpolicyAsync(ApiRequest<Policy> request, AsyncApiCallback<ApiResponse<Policy>> callback) {
-    return pcapiClient.<Policy>invokeAPIVerboseAsync(request, new TypeReference<Policy>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Policy>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Policy>() {}, new AsyncApiCallback<ApiResponse<Policy>>() {
+        @Override
+        public void onCompleted(ApiResponse<Policy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Policy> response = (ApiResponse<Policy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Policy> response = (ApiResponse<Policy>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update key rotation schedule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<KeyRotationSchedule> putRecordingRecordingkeysRotationscheduleAsync(PutRecordingRecordingkeysRotationscheduleRequest request, AsyncApiCallback<KeyRotationSchedule> callback) {
-    return pcapiClient.<KeyRotationSchedule>invokeAPIAsync(request.withHttpInfo(), new TypeReference<KeyRotationSchedule>() {}, callback);
+    try {
+      SettableFuture<KeyRotationSchedule> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KeyRotationSchedule>() {}, new AsyncApiCallback<ApiResponse<KeyRotationSchedule>>() {
+        @Override
+        public void onCompleted(ApiResponse<KeyRotationSchedule> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update key rotation schedule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<KeyRotationSchedule>> putRecordingRecordingkeysRotationscheduleAsync(ApiRequest<KeyRotationSchedule> request, AsyncApiCallback<ApiResponse<KeyRotationSchedule>> callback) {
-    return pcapiClient.<KeyRotationSchedule>invokeAPIVerboseAsync(request, new TypeReference<KeyRotationSchedule>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<KeyRotationSchedule>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<KeyRotationSchedule>() {}, new AsyncApiCallback<ApiResponse<KeyRotationSchedule>>() {
+        @Override
+        public void onCompleted(ApiResponse<KeyRotationSchedule> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KeyRotationSchedule> response = (ApiResponse<KeyRotationSchedule>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KeyRotationSchedule> response = (ApiResponse<KeyRotationSchedule>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update the Recording Settings for the Organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<RecordingSettings> putRecordingSettingsAsync(PutRecordingSettingsRequest request, AsyncApiCallback<RecordingSettings> callback) {
-    return pcapiClient.<RecordingSettings>invokeAPIAsync(request.withHttpInfo(), new TypeReference<RecordingSettings>() {}, callback);
+    try {
+      SettableFuture<RecordingSettings> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RecordingSettings>() {}, new AsyncApiCallback<ApiResponse<RecordingSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update the Recording Settings for the Organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<RecordingSettings>> putRecordingSettingsAsync(ApiRequest<RecordingSettings> request, AsyncApiCallback<ApiResponse<RecordingSettings>> callback) {
-    return pcapiClient.<RecordingSettings>invokeAPIVerboseAsync(request, new TypeReference<RecordingSettings>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<RecordingSettings>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RecordingSettings>() {}, new AsyncApiCallback<ApiResponse<RecordingSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingSettings> response = (ApiResponse<RecordingSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingSettings> response = (ApiResponse<RecordingSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
+
+  private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
+    if (callback != null) {
+      try {
+        callback.onCompleted(result);
+        future.set(result);
+      }
+      catch (Throwable exception) {
+        future.setException(exception);
+      }
+    }
+    else {
+      future.set(result);
+    }
+  }
+
+  private <T> void notifyFailure(SettableFuture<T> future, AsyncApiCallback<T> callback, Throwable exception) {
+    if (callback != null) {
+      try {
+        callback.onFailed(exception);
+        future.setException(exception);
+      }
+      catch (Throwable callbackException) {
+        future.setException(callbackException);
+      }
+    }
+    else {
+      future.setException(exception);
+    }
+  }
 }

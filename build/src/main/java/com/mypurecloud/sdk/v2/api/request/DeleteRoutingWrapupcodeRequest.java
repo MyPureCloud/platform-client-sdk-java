@@ -44,9 +44,6 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class DeleteRoutingWrapupcodeRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String codeId;
 	public String getCodeId() {
 		return this.codeId;
@@ -125,6 +122,12 @@ public class DeleteRoutingWrapupcodeRequest {
 
 
 		public DeleteRoutingWrapupcodeRequest build() {
+            
+            // verify the required parameter 'codeId' is set
+            if (request.codeId == null) {
+                throw new IllegalStateException("Missing the required parameter 'codeId' when building request for DeleteRoutingWrapupcodeRequest.");
+            }
+            
 			return request;
 		}
 	}

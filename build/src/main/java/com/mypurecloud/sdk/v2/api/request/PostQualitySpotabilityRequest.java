@@ -38,9 +38,6 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class PostQualitySpotabilityRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private KeywordSet body;
 	public KeywordSet getBody() {
 		return this.body;
@@ -106,6 +103,7 @@ public class PostQualitySpotabilityRequest {
 
 
 		public PostQualitySpotabilityRequest build() {
+            
 			return request;
 		}
 	}

@@ -38,9 +38,6 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class PostAnalyticsEvaluationsAggregatesQueryRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private AggregationQuery body;
 	public AggregationQuery getBody() {
 		return this.body;
@@ -119,6 +116,12 @@ public class PostAnalyticsEvaluationsAggregatesQueryRequest {
 
 
 		public PostAnalyticsEvaluationsAggregatesQueryRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostAnalyticsEvaluationsAggregatesQueryRequest.");
+            }
+            
 			return request;
 		}
 	}

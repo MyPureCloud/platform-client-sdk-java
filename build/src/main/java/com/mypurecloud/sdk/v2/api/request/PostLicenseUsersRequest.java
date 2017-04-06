@@ -27,9 +27,6 @@ import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
 import com.mypurecloud.sdk.v2.model.LicenseUpdateResponse;
 
 public class PostLicenseUsersRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private List<String> body;
 	public List<String> getBody() {
 		return this.body;
@@ -95,6 +92,7 @@ public class PostLicenseUsersRequest {
 
 
 		public PostLicenseUsersRequest build() {
+            
 			return request;
 		}
 	}

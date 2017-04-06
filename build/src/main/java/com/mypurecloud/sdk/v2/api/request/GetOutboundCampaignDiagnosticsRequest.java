@@ -55,9 +55,6 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class GetOutboundCampaignDiagnosticsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String campaignId;
 	public String getCampaignId() {
 		return this.campaignId;
@@ -136,6 +133,12 @@ public class GetOutboundCampaignDiagnosticsRequest {
 
 
 		public GetOutboundCampaignDiagnosticsRequest build() {
+            
+            // verify the required parameter 'campaignId' is set
+            if (request.campaignId == null) {
+                throw new IllegalStateException("Missing the required parameter 'campaignId' when building request for GetOutboundCampaignDiagnosticsRequest.");
+            }
+            
 			return request;
 		}
 	}

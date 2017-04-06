@@ -84,9 +84,6 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PostTelephonyProvidersEdgesRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Edge body;
 	public Edge getBody() {
 		return this.body;
@@ -165,6 +162,12 @@ public class PostTelephonyProvidersEdgesRequest {
 
 
 		public PostTelephonyProvidersEdgesRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostTelephonyProvidersEdgesRequest.");
+            }
+            
 			return request;
 		}
 	}

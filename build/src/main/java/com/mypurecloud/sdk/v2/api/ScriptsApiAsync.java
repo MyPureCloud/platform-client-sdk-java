@@ -1,6 +1,8 @@
 package com.mypurecloud.sdk.v2.api;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.SettableFuture;
 
 import com.mypurecloud.sdk.v2.AsyncApiCallback;
 import com.mypurecloud.sdk.v2.ApiException;
@@ -49,181 +51,706 @@ public class ScriptsApiAsync {
   /**
    * Get a script
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Script> getScriptAsync(GetScriptRequest request, AsyncApiCallback<Script> callback) {
-    return pcapiClient.<Script>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Script>() {}, callback);
+    try {
+      SettableFuture<Script> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Script>() {}, new AsyncApiCallback<ApiResponse<Script>>() {
+        @Override
+        public void onCompleted(ApiResponse<Script> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a script
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Script>> getScriptAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Script>> callback) {
-    return pcapiClient.<Script>invokeAPIVerboseAsync(request, new TypeReference<Script>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Script>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Script>() {}, new AsyncApiCallback<ApiResponse<Script>>() {
+        @Override
+        public void onCompleted(ApiResponse<Script> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Script> response = (ApiResponse<Script>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Script> response = (ApiResponse<Script>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a page
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Page> getScriptPageAsync(GetScriptPageRequest request, AsyncApiCallback<Page> callback) {
-    return pcapiClient.<Page>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Page>() {}, callback);
+    try {
+      SettableFuture<Page> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Page>() {}, new AsyncApiCallback<ApiResponse<Page>>() {
+        @Override
+        public void onCompleted(ApiResponse<Page> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a page
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Page>> getScriptPageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Page>> callback) {
-    return pcapiClient.<Page>invokeAPIVerboseAsync(request, new TypeReference<Page>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Page>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Page>() {}, new AsyncApiCallback<ApiResponse<Page>>() {
+        @Override
+        public void onCompleted(ApiResponse<Page> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Page> response = (ApiResponse<Page>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Page> response = (ApiResponse<Page>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of pages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<List<Page>> getScriptPagesAsync(GetScriptPagesRequest request, AsyncApiCallback<List<Page>> callback) {
-    return pcapiClient.<List<Page>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<Page>>() {}, callback);
+    try {
+      SettableFuture<List<Page>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<Page>>() {}, new AsyncApiCallback<ApiResponse<List<Page>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<Page>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of pages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<List<Page>>> getScriptPagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<Page>>> callback) {
-    return pcapiClient.<List<Page>>invokeAPIVerboseAsync(request, new TypeReference<List<Page>>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<List<Page>>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<Page>>() {}, new AsyncApiCallback<ApiResponse<List<Page>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<Page>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<Page>> response = (ApiResponse<List<Page>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<Page>> response = (ApiResponse<List<Page>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of scripts
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ScriptEntityListing> getScriptsAsync(GetScriptsRequest request, AsyncApiCallback<ScriptEntityListing> callback) {
-    return pcapiClient.<ScriptEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ScriptEntityListing>() {}, callback);
+    try {
+      SettableFuture<ScriptEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScriptEntityListing>() {}, new AsyncApiCallback<ApiResponse<ScriptEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScriptEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of scripts
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ScriptEntityListing>> getScriptsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ScriptEntityListing>> callback) {
-    return pcapiClient.<ScriptEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ScriptEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ScriptEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScriptEntityListing>() {}, new AsyncApiCallback<ApiResponse<ScriptEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScriptEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScriptEntityListing> response = (ApiResponse<ScriptEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScriptEntityListing> response = (ApiResponse<ScriptEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the published scripts.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ScriptEntityListing> getScriptsPublishedAsync(GetScriptsPublishedRequest request, AsyncApiCallback<ScriptEntityListing> callback) {
-    return pcapiClient.<ScriptEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<ScriptEntityListing>() {}, callback);
+    try {
+      SettableFuture<ScriptEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScriptEntityListing>() {}, new AsyncApiCallback<ApiResponse<ScriptEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScriptEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the published scripts.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ScriptEntityListing>> getScriptsPublishedAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ScriptEntityListing>> callback) {
-    return pcapiClient.<ScriptEntityListing>invokeAPIVerboseAsync(request, new TypeReference<ScriptEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<ScriptEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScriptEntityListing>() {}, new AsyncApiCallback<ApiResponse<ScriptEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScriptEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScriptEntityListing> response = (ApiResponse<ScriptEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScriptEntityListing> response = (ApiResponse<ScriptEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the published script.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Script> getScriptsPublishedScriptIdAsync(GetScriptsPublishedScriptIdRequest request, AsyncApiCallback<Script> callback) {
-    return pcapiClient.<Script>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Script>() {}, callback);
+    try {
+      SettableFuture<Script> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Script>() {}, new AsyncApiCallback<ApiResponse<Script>>() {
+        @Override
+        public void onCompleted(ApiResponse<Script> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the published script.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Script>> getScriptsPublishedScriptIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Script>> callback) {
-    return pcapiClient.<Script>invokeAPIVerboseAsync(request, new TypeReference<Script>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Script>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Script>() {}, new AsyncApiCallback<ApiResponse<Script>>() {
+        @Override
+        public void onCompleted(ApiResponse<Script> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Script> response = (ApiResponse<Script>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Script> response = (ApiResponse<Script>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the published page.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Page> getScriptsPublishedScriptIdPageAsync(GetScriptsPublishedScriptIdPageRequest request, AsyncApiCallback<Page> callback) {
-    return pcapiClient.<Page>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Page>() {}, callback);
+    try {
+      SettableFuture<Page> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Page>() {}, new AsyncApiCallback<ApiResponse<Page>>() {
+        @Override
+        public void onCompleted(ApiResponse<Page> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the published page.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Page>> getScriptsPublishedScriptIdPageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Page>> callback) {
-    return pcapiClient.<Page>invokeAPIVerboseAsync(request, new TypeReference<Page>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Page>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Page>() {}, new AsyncApiCallback<ApiResponse<Page>>() {
+        @Override
+        public void onCompleted(ApiResponse<Page> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Page> response = (ApiResponse<Page>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Page> response = (ApiResponse<Page>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of published pages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<List<Page>> getScriptsPublishedScriptIdPagesAsync(GetScriptsPublishedScriptIdPagesRequest request, AsyncApiCallback<List<Page>> callback) {
-    return pcapiClient.<List<Page>>invokeAPIAsync(request.withHttpInfo(), new TypeReference<List<Page>>() {}, callback);
+    try {
+      SettableFuture<List<Page>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<Page>>() {}, new AsyncApiCallback<ApiResponse<List<Page>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<Page>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the list of published pages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<List<Page>>> getScriptsPublishedScriptIdPagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<Page>>> callback) {
-    return pcapiClient.<List<Page>>invokeAPIVerboseAsync(request, new TypeReference<List<Page>>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<List<Page>>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<Page>>() {}, new AsyncApiCallback<ApiResponse<List<Page>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<Page>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<Page>> response = (ApiResponse<List<Page>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<Page>> response = (ApiResponse<List<Page>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the published variables
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Object> getScriptsPublishedScriptIdVariablesAsync(GetScriptsPublishedScriptIdVariablesRequest request, AsyncApiCallback<Object> callback) {
-    return pcapiClient.<Object>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Object>() {}, callback);
+    try {
+      SettableFuture<Object> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Object>() {}, new AsyncApiCallback<ApiResponse<Object>>() {
+        @Override
+        public void onCompleted(ApiResponse<Object> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the published variables
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Object>> getScriptsPublishedScriptIdVariablesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Object>> callback) {
-    return pcapiClient.<Object>invokeAPIVerboseAsync(request, new TypeReference<Object>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Object>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Object>() {}, new AsyncApiCallback<ApiResponse<Object>>() {
+        @Override
+        public void onCompleted(ApiResponse<Object> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
+
+  private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
+    if (callback != null) {
+      try {
+        callback.onCompleted(result);
+        future.set(result);
+      }
+      catch (Throwable exception) {
+        future.setException(exception);
+      }
+    }
+    else {
+      future.set(result);
+    }
+  }
+
+  private <T> void notifyFailure(SettableFuture<T> future, AsyncApiCallback<T> callback, Throwable exception) {
+    if (callback != null) {
+      try {
+        callback.onFailed(exception);
+        future.setException(exception);
+      }
+      catch (Throwable callbackException) {
+        future.setException(callbackException);
+      }
+    }
+    else {
+      future.setException(exception);
+    }
+  }
 }

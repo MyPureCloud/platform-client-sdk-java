@@ -88,10 +88,11 @@ public class RecordingApi {
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
    * @param annotationId Annotation ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteConversationRecordingAnnotation(String conversationId, String recordingId, String annotationId) throws IOException, ApiException {
-    deleteConversationRecordingAnnotationWithHttpInfo(conversationId, recordingId, annotationId);
+     deleteConversationRecordingAnnotation(createDeleteConversationRecordingAnnotationRequest(conversationId, recordingId, annotationId));
   }
 
   /**
@@ -100,73 +101,67 @@ public class RecordingApi {
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
    * @param annotationId Annotation ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteConversationRecordingAnnotationWithHttpInfo(String conversationId, String recordingId, String annotationId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling deleteConversationRecordingAnnotation");
-    }
-    
-    // verify the required parameter 'recordingId' is set
-    if (recordingId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'recordingId' when calling deleteConversationRecordingAnnotation");
-    }
-    
-    // verify the required parameter 'annotationId' is set
-    if (annotationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'annotationId' when calling deleteConversationRecordingAnnotation");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()))
-      .replaceAll("\\{" + "recordingId" + "\\}", pcapiClient.escapeString(recordingId.toString()))
-      .replaceAll("\\{" + "annotationId" + "\\}", pcapiClient.escapeString(annotationId.toString()));
+  public ApiResponse<Void> deleteConversationRecordingAnnotationWithHttpInfo(String conversationId, String recordingId, String annotationId) throws IOException {
+    return deleteConversationRecordingAnnotation(createDeleteConversationRecordingAnnotationRequest(conversationId, recordingId, annotationId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private DeleteConversationRecordingAnnotationRequest createDeleteConversationRecordingAnnotationRequest(String conversationId, String recordingId, String annotationId) {
+    return DeleteConversationRecordingAnnotationRequest.builder()
+            .withConversationId(conversationId)
 
+            .withRecordingId(recordingId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withAnnotationId(annotationId)
+            .build();
   }
 
   /**
    * Delete annotation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteConversationRecordingAnnotation(DeleteConversationRecordingAnnotationRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Delete annotation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteConversationRecordingAnnotation(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteConversationRecordingAnnotation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -174,10 +169,11 @@ public class RecordingApi {
    * 
    * @param orphanId Orphan ID (required)
    * @return OrphanRecording
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrphanRecording deleteOrphanrecording(String orphanId) throws IOException, ApiException {
-    return deleteOrphanrecordingWithHttpInfo(orphanId).getBody();
+    return  deleteOrphanrecording(createDeleteOrphanrecordingRequest(orphanId));
   }
 
   /**
@@ -185,61 +181,64 @@ public class RecordingApi {
    * 
    * @param orphanId Orphan ID (required)
    * @return OrphanRecording
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrphanRecording> deleteOrphanrecordingWithHttpInfo(String orphanId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'orphanId' is set
-    if (orphanId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'orphanId' when calling deleteOrphanrecording");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/orphanrecordings/{orphanId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "orphanId" + "\\}", pcapiClient.escapeString(orphanId.toString()));
+  public ApiResponse<OrphanRecording> deleteOrphanrecordingWithHttpInfo(String orphanId) throws IOException {
+    return deleteOrphanrecording(createDeleteOrphanrecordingRequest(orphanId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OrphanRecording>() {});
+  private DeleteOrphanrecordingRequest createDeleteOrphanrecordingRequest(String orphanId) {
+    return DeleteOrphanrecordingRequest.builder()
+            .withOrphanId(orphanId)
+            .build();
   }
 
   /**
    * Deletes a single orphan recording
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OrphanRecording
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrphanRecording deleteOrphanrecording(DeleteOrphanrecordingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrphanRecording>() {});
+    try {
+      ApiResponse<OrphanRecording> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrphanRecording>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Deletes a single orphan recording
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrphanRecording> deleteOrphanrecording(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<OrphanRecording>invokeAPIVerbose(request, new TypeReference<OrphanRecording>() {});
+  public ApiResponse<OrphanRecording> deleteOrphanrecording(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrphanRecording>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrphanRecording> response = (ApiResponse<OrphanRecording>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrphanRecording> response = (ApiResponse<OrphanRecording>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -247,10 +246,11 @@ public class RecordingApi {
    * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
    * @param ids  (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteRecordingMediaretentionpolicies(String ids) throws IOException, ApiException {
-    return deleteRecordingMediaretentionpoliciesWithHttpInfo(ids).getBody();
+    return  deleteRecordingMediaretentionpolicies(createDeleteRecordingMediaretentionpoliciesRequest(ids));
   }
 
   /**
@@ -258,61 +258,64 @@ public class RecordingApi {
    * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
    * @param ids  (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRecordingMediaretentionpoliciesWithHttpInfo(String ids) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'ids' is set
-    if (ids == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'ids' when calling deleteRecordingMediaretentionpolicies");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/recording/mediaretentionpolicies".replaceAll("\\{format\\}","json");
+  public ApiResponse<String> deleteRecordingMediaretentionpoliciesWithHttpInfo(String ids) throws IOException {
+    return deleteRecordingMediaretentionpolicies(createDeleteRecordingMediaretentionpoliciesRequest(ids).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "ids", ids));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteRecordingMediaretentionpoliciesRequest createDeleteRecordingMediaretentionpoliciesRequest(String ids) {
+    return DeleteRecordingMediaretentionpoliciesRequest.builder()
+            .withIds(ids)
+            .build();
   }
 
   /**
    * Delete media retention policies
    * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteRecordingMediaretentionpolicies(DeleteRecordingMediaretentionpoliciesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete media retention policies
    * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRecordingMediaretentionpolicies(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteRecordingMediaretentionpolicies(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -320,10 +323,11 @@ public class RecordingApi {
    * 
    * @param policyId Policy ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteRecordingMediaretentionpolicy(String policyId) throws IOException, ApiException {
-    return deleteRecordingMediaretentionpolicyWithHttpInfo(policyId).getBody();
+    return  deleteRecordingMediaretentionpolicy(createDeleteRecordingMediaretentionpolicyRequest(policyId));
   }
 
   /**
@@ -331,61 +335,64 @@ public class RecordingApi {
    * 
    * @param policyId Policy ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRecordingMediaretentionpolicyWithHttpInfo(String policyId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'policyId' is set
-    if (policyId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'policyId' when calling deleteRecordingMediaretentionpolicy");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/recording/mediaretentionpolicies/{policyId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "policyId" + "\\}", pcapiClient.escapeString(policyId.toString()));
+  public ApiResponse<String> deleteRecordingMediaretentionpolicyWithHttpInfo(String policyId) throws IOException {
+    return deleteRecordingMediaretentionpolicy(createDeleteRecordingMediaretentionpolicyRequest(policyId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteRecordingMediaretentionpolicyRequest createDeleteRecordingMediaretentionpolicyRequest(String policyId) {
+    return DeleteRecordingMediaretentionpolicyRequest.builder()
+            .withPolicyId(policyId)
+            .build();
   }
 
   /**
    * Delete a media retention policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteRecordingMediaretentionpolicy(DeleteRecordingMediaretentionpolicyRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete a media retention policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRecordingMediaretentionpolicy(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteRecordingMediaretentionpolicy(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -397,10 +404,11 @@ public class RecordingApi {
    * @param download requesting a download format of the recording (optional, default to false)
    * @param fileName the name of the downloaded fileName (optional)
    * @return Recording
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Recording getConversationRecording(String conversationId, String recordingId, String formatId, Boolean download, String fileName) throws IOException, ApiException {
-    return getConversationRecordingWithHttpInfo(conversationId, recordingId, formatId, download, fileName).getBody();
+    return  getConversationRecording(createGetConversationRecordingRequest(conversationId, recordingId, formatId, download, fileName));
   }
 
   /**
@@ -412,70 +420,72 @@ public class RecordingApi {
    * @param download requesting a download format of the recording (optional, default to false)
    * @param fileName the name of the downloaded fileName (optional)
    * @return Recording
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Recording> getConversationRecordingWithHttpInfo(String conversationId, String recordingId, String formatId, Boolean download, String fileName) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling getConversationRecording");
-    }
-    
-    // verify the required parameter 'recordingId' is set
-    if (recordingId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'recordingId' when calling getConversationRecording");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/{conversationId}/recordings/{recordingId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()))
-      .replaceAll("\\{" + "recordingId" + "\\}", pcapiClient.escapeString(recordingId.toString()));
+  public ApiResponse<Recording> getConversationRecordingWithHttpInfo(String conversationId, String recordingId, String formatId, Boolean download, String fileName) throws IOException {
+    return getConversationRecording(createGetConversationRecordingRequest(conversationId, recordingId, formatId, download, fileName).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConversationRecordingRequest createGetConversationRecordingRequest(String conversationId, String recordingId, String formatId, Boolean download, String fileName) {
+    return GetConversationRecordingRequest.builder()
+            .withConversationId(conversationId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "formatId", formatId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "download", download));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "fileName", fileName));
+            .withRecordingId(recordingId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withFormatId(formatId)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withDownload(download)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Recording>() {});
+            .withFileName(fileName)
+            .build();
   }
 
   /**
    * Gets a specific recording.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Recording
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Recording getConversationRecording(GetConversationRecordingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Recording>() {});
+    try {
+      ApiResponse<Recording> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Recording>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Gets a specific recording.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Recording> getConversationRecording(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Recording>invokeAPIVerbose(request, new TypeReference<Recording>() {});
+  public ApiResponse<Recording> getConversationRecording(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Recording>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -485,10 +495,11 @@ public class RecordingApi {
    * @param recordingId Recording ID (required)
    * @param annotationId Annotation ID (required)
    * @return Annotation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Annotation getConversationRecordingAnnotation(String conversationId, String recordingId, String annotationId) throws IOException, ApiException {
-    return getConversationRecordingAnnotationWithHttpInfo(conversationId, recordingId, annotationId).getBody();
+    return  getConversationRecordingAnnotation(createGetConversationRecordingAnnotationRequest(conversationId, recordingId, annotationId));
   }
 
   /**
@@ -498,73 +509,68 @@ public class RecordingApi {
    * @param recordingId Recording ID (required)
    * @param annotationId Annotation ID (required)
    * @return Annotation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Annotation> getConversationRecordingAnnotationWithHttpInfo(String conversationId, String recordingId, String annotationId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling getConversationRecordingAnnotation");
-    }
-    
-    // verify the required parameter 'recordingId' is set
-    if (recordingId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'recordingId' when calling getConversationRecordingAnnotation");
-    }
-    
-    // verify the required parameter 'annotationId' is set
-    if (annotationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'annotationId' when calling getConversationRecordingAnnotation");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()))
-      .replaceAll("\\{" + "recordingId" + "\\}", pcapiClient.escapeString(recordingId.toString()))
-      .replaceAll("\\{" + "annotationId" + "\\}", pcapiClient.escapeString(annotationId.toString()));
+  public ApiResponse<Annotation> getConversationRecordingAnnotationWithHttpInfo(String conversationId, String recordingId, String annotationId) throws IOException {
+    return getConversationRecordingAnnotation(createGetConversationRecordingAnnotationRequest(conversationId, recordingId, annotationId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConversationRecordingAnnotationRequest createGetConversationRecordingAnnotationRequest(String conversationId, String recordingId, String annotationId) {
+    return GetConversationRecordingAnnotationRequest.builder()
+            .withConversationId(conversationId)
 
+            .withRecordingId(recordingId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Annotation>() {});
+            .withAnnotationId(annotationId)
+            .build();
   }
 
   /**
    * Get annotation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Annotation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Annotation getConversationRecordingAnnotation(GetConversationRecordingAnnotationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Annotation>() {});
+    try {
+      ApiResponse<Annotation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Annotation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get annotation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Annotation> getConversationRecordingAnnotation(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Annotation>invokeAPIVerbose(request, new TypeReference<Annotation>() {});
+  public ApiResponse<Annotation> getConversationRecordingAnnotation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Annotation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Annotation> response = (ApiResponse<Annotation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Annotation> response = (ApiResponse<Annotation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -573,10 +579,11 @@ public class RecordingApi {
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
    * @return List<Annotation>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<Annotation> getConversationRecordingAnnotations(String conversationId, String recordingId) throws IOException, ApiException {
-    return getConversationRecordingAnnotationsWithHttpInfo(conversationId, recordingId).getBody();
+    return  getConversationRecordingAnnotations(createGetConversationRecordingAnnotationsRequest(conversationId, recordingId));
   }
 
   /**
@@ -585,67 +592,66 @@ public class RecordingApi {
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
    * @return List<Annotation>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<Annotation>> getConversationRecordingAnnotationsWithHttpInfo(String conversationId, String recordingId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling getConversationRecordingAnnotations");
-    }
-    
-    // verify the required parameter 'recordingId' is set
-    if (recordingId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'recordingId' when calling getConversationRecordingAnnotations");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()))
-      .replaceAll("\\{" + "recordingId" + "\\}", pcapiClient.escapeString(recordingId.toString()));
+  public ApiResponse<List<Annotation>> getConversationRecordingAnnotationsWithHttpInfo(String conversationId, String recordingId) throws IOException {
+    return getConversationRecordingAnnotations(createGetConversationRecordingAnnotationsRequest(conversationId, recordingId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConversationRecordingAnnotationsRequest createGetConversationRecordingAnnotationsRequest(String conversationId, String recordingId) {
+    return GetConversationRecordingAnnotationsRequest.builder()
+            .withConversationId(conversationId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<Annotation>>() {});
+            .withRecordingId(recordingId)
+            .build();
   }
 
   /**
    * Get annotations for recording
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<Annotation>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<Annotation> getConversationRecordingAnnotations(GetConversationRecordingAnnotationsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<Annotation>>() {});
+    try {
+      ApiResponse<List<Annotation>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<Annotation>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get annotations for recording
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<Annotation>> getConversationRecordingAnnotations(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<Annotation>>invokeAPIVerbose(request, new TypeReference<List<Annotation>>() {});
+  public ApiResponse<List<Annotation>> getConversationRecordingAnnotations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<Annotation>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<Annotation>> response = (ApiResponse<List<Annotation>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<Annotation>> response = (ApiResponse<List<Annotation>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -655,10 +661,11 @@ public class RecordingApi {
    * @param maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (optional, default to 5000)
    * @param formatId The desired media format (optional, default to WEBM)
    * @return List<Recording>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<Recording> getConversationRecordings(String conversationId, Integer maxWaitMs, String formatId) throws IOException, ApiException {
-    return getConversationRecordingsWithHttpInfo(conversationId, maxWaitMs, formatId).getBody();
+    return  getConversationRecordings(createGetConversationRecordingsRequest(conversationId, maxWaitMs, formatId));
   }
 
   /**
@@ -668,63 +675,68 @@ public class RecordingApi {
    * @param maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (optional, default to 5000)
    * @param formatId The desired media format (optional, default to WEBM)
    * @return List<Recording>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<Recording>> getConversationRecordingsWithHttpInfo(String conversationId, Integer maxWaitMs, String formatId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling getConversationRecordings");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/{conversationId}/recordings".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()));
+  public ApiResponse<List<Recording>> getConversationRecordingsWithHttpInfo(String conversationId, Integer maxWaitMs, String formatId) throws IOException {
+    return getConversationRecordings(createGetConversationRecordingsRequest(conversationId, maxWaitMs, formatId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetConversationRecordingsRequest createGetConversationRecordingsRequest(String conversationId, Integer maxWaitMs, String formatId) {
+    return GetConversationRecordingsRequest.builder()
+            .withConversationId(conversationId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "maxWaitMs", maxWaitMs));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "formatId", formatId));
+            .withMaxWaitMs(maxWaitMs)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<Recording>>() {});
+            .withFormatId(formatId)
+            .build();
   }
 
   /**
    * Get all of a Conversation&#39;s Recordings.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<Recording>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<Recording> getConversationRecordings(GetConversationRecordingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<Recording>>() {});
+    try {
+      ApiResponse<List<Recording>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<Recording>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get all of a Conversation&#39;s Recordings.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<Recording>> getConversationRecordings(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<Recording>>invokeAPIVerbose(request, new TypeReference<List<Recording>>() {});
+  public ApiResponse<List<Recording>> getConversationRecordings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<Recording>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<Recording>> response = (ApiResponse<List<Recording>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<Recording>> response = (ApiResponse<List<Recording>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -732,10 +744,11 @@ public class RecordingApi {
    * 
    * @param orphanId Orphan ID (required)
    * @return OrphanRecording
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrphanRecording getOrphanrecording(String orphanId) throws IOException, ApiException {
-    return getOrphanrecordingWithHttpInfo(orphanId).getBody();
+    return  getOrphanrecording(createGetOrphanrecordingRequest(orphanId));
   }
 
   /**
@@ -743,61 +756,64 @@ public class RecordingApi {
    * 
    * @param orphanId Orphan ID (required)
    * @return OrphanRecording
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrphanRecording> getOrphanrecordingWithHttpInfo(String orphanId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'orphanId' is set
-    if (orphanId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'orphanId' when calling getOrphanrecording");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/orphanrecordings/{orphanId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "orphanId" + "\\}", pcapiClient.escapeString(orphanId.toString()));
+  public ApiResponse<OrphanRecording> getOrphanrecordingWithHttpInfo(String orphanId) throws IOException {
+    return getOrphanrecording(createGetOrphanrecordingRequest(orphanId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OrphanRecording>() {});
+  private GetOrphanrecordingRequest createGetOrphanrecordingRequest(String orphanId) {
+    return GetOrphanrecordingRequest.builder()
+            .withOrphanId(orphanId)
+            .build();
   }
 
   /**
    * Gets a single orphan recording
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OrphanRecording
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrphanRecording getOrphanrecording(GetOrphanrecordingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrphanRecording>() {});
+    try {
+      ApiResponse<OrphanRecording> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrphanRecording>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Gets a single orphan recording
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrphanRecording> getOrphanrecording(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<OrphanRecording>invokeAPIVerbose(request, new TypeReference<OrphanRecording>() {});
+  public ApiResponse<OrphanRecording> getOrphanrecording(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrphanRecording>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrphanRecording> response = (ApiResponse<OrphanRecording>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrphanRecording> response = (ApiResponse<OrphanRecording>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -808,10 +824,11 @@ public class RecordingApi {
    * @param download requesting a download format of the recording (optional, default to false)
    * @param fileName the name of the downloaded fileName (optional)
    * @return Recording
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Recording getOrphanrecordingMedia(String orphanId, String formatId, Boolean download, String fileName) throws IOException, ApiException {
-    return getOrphanrecordingMediaWithHttpInfo(orphanId, formatId, download, fileName).getBody();
+    return  getOrphanrecordingMedia(createGetOrphanrecordingMediaRequest(orphanId, formatId, download, fileName));
   }
 
   /**
@@ -822,64 +839,70 @@ public class RecordingApi {
    * @param download requesting a download format of the recording (optional, default to false)
    * @param fileName the name of the downloaded fileName (optional)
    * @return Recording
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Recording> getOrphanrecordingMediaWithHttpInfo(String orphanId, String formatId, Boolean download, String fileName) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'orphanId' is set
-    if (orphanId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'orphanId' when calling getOrphanrecordingMedia");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/orphanrecordings/{orphanId}/media".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "orphanId" + "\\}", pcapiClient.escapeString(orphanId.toString()));
+  public ApiResponse<Recording> getOrphanrecordingMediaWithHttpInfo(String orphanId, String formatId, Boolean download, String fileName) throws IOException {
+    return getOrphanrecordingMedia(createGetOrphanrecordingMediaRequest(orphanId, formatId, download, fileName).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetOrphanrecordingMediaRequest createGetOrphanrecordingMediaRequest(String orphanId, String formatId, Boolean download, String fileName) {
+    return GetOrphanrecordingMediaRequest.builder()
+            .withOrphanId(orphanId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "formatId", formatId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "download", download));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "fileName", fileName));
+            .withFormatId(formatId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withDownload(download)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Recording>() {});
+            .withFileName(fileName)
+            .build();
   }
 
   /**
    * Gets the media of a single orphan recording
    * A 202 response means the orphaned media is currently transcoding and will be available shortly.A 200 response denotes the transcoded orphan media is available now and is contained in the response body.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Recording
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Recording getOrphanrecordingMedia(GetOrphanrecordingMediaRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Recording>() {});
+    try {
+      ApiResponse<Recording> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Recording>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Gets the media of a single orphan recording
    * A 202 response means the orphaned media is currently transcoding and will be available shortly.A 200 response denotes the transcoded orphan media is available now and is contained in the response body.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Recording> getOrphanrecordingMedia(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Recording>invokeAPIVerbose(request, new TypeReference<Recording>() {});
+  public ApiResponse<Recording> getOrphanrecordingMedia(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Recording>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -893,10 +916,11 @@ public class RecordingApi {
    * @param previousPage Previous page token (optional)
    * @param hasConversation Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. (optional, default to false)
    * @return OrphanRecordingListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrphanRecordingListing getOrphanrecordings(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Boolean hasConversation) throws IOException, ApiException {
-    return getOrphanrecordingsWithHttpInfo(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation).getBody();
+    return  getOrphanrecordings(createGetOrphanrecordingsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation));
   }
 
   /**
@@ -910,62 +934,76 @@ public class RecordingApi {
    * @param previousPage Previous page token (optional)
    * @param hasConversation Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. (optional, default to false)
    * @return OrphanRecordingListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrphanRecordingListing> getOrphanrecordingsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Boolean hasConversation) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/orphanrecordings".replaceAll("\\{format\\}","json");
+  public ApiResponse<OrphanRecordingListing> getOrphanrecordingsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Boolean hasConversation) throws IOException {
+    return getOrphanrecordings(createGetOrphanrecordingsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetOrphanrecordingsRequest createGetOrphanrecordingsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Boolean hasConversation) {
+    return GetOrphanrecordingsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "nextPage", nextPage));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "previousPage", previousPage));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "hasConversation", hasConversation));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withSortBy(sortBy)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withExpand(expand)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withNextPage(nextPage)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OrphanRecordingListing>() {});
+            .withPreviousPage(previousPage)
+
+            .withHasConversation(hasConversation)
+            .build();
   }
 
   /**
    * Gets all orphan recordings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OrphanRecordingListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OrphanRecordingListing getOrphanrecordings(GetOrphanrecordingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OrphanRecordingListing>() {});
+    try {
+      ApiResponse<OrphanRecordingListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrphanRecordingListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Gets all orphan recordings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrphanRecordingListing> getOrphanrecordings(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<OrphanRecordingListing>invokeAPIVerbose(request, new TypeReference<OrphanRecordingListing>() {});
+  public ApiResponse<OrphanRecordingListing> getOrphanrecordings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrphanRecordingListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrphanRecordingListing> response = (ApiResponse<OrphanRecordingListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrphanRecordingListing> response = (ApiResponse<OrphanRecordingListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -973,10 +1011,11 @@ public class RecordingApi {
    * 
    * @param settingsId Settings Id (required)
    * @return LocalEncryptionConfiguration
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LocalEncryptionConfiguration getRecordingLocalkeysSetting(String settingsId) throws IOException, ApiException {
-    return getRecordingLocalkeysSettingWithHttpInfo(settingsId).getBody();
+    return  getRecordingLocalkeysSetting(createGetRecordingLocalkeysSettingRequest(settingsId));
   }
 
   /**
@@ -984,126 +1023,137 @@ public class RecordingApi {
    * 
    * @param settingsId Settings Id (required)
    * @return LocalEncryptionConfiguration
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LocalEncryptionConfiguration> getRecordingLocalkeysSettingWithHttpInfo(String settingsId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'settingsId' is set
-    if (settingsId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'settingsId' when calling getRecordingLocalkeysSetting");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/recording/localkeys/settings/{settingsId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "settingsId" + "\\}", pcapiClient.escapeString(settingsId.toString()));
+  public ApiResponse<LocalEncryptionConfiguration> getRecordingLocalkeysSettingWithHttpInfo(String settingsId) throws IOException {
+    return getRecordingLocalkeysSetting(createGetRecordingLocalkeysSettingRequest(settingsId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<LocalEncryptionConfiguration>() {});
+  private GetRecordingLocalkeysSettingRequest createGetRecordingLocalkeysSettingRequest(String settingsId) {
+    return GetRecordingLocalkeysSettingRequest.builder()
+            .withSettingsId(settingsId)
+            .build();
   }
 
   /**
    * Get the local encryption settings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return LocalEncryptionConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LocalEncryptionConfiguration getRecordingLocalkeysSetting(GetRecordingLocalkeysSettingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {});
+    try {
+      ApiResponse<LocalEncryptionConfiguration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the local encryption settings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LocalEncryptionConfiguration> getRecordingLocalkeysSetting(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<LocalEncryptionConfiguration>invokeAPIVerbose(request, new TypeReference<LocalEncryptionConfiguration>() {});
+  public ApiResponse<LocalEncryptionConfiguration> getRecordingLocalkeysSetting(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LocalEncryptionConfiguration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LocalEncryptionConfiguration> response = (ApiResponse<LocalEncryptionConfiguration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LocalEncryptionConfiguration> response = (ApiResponse<LocalEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * gets a list local key settings data
    * 
    * @return LocalEncryptionConfigurationListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LocalEncryptionConfigurationListing getRecordingLocalkeysSettings() throws IOException, ApiException {
-    return getRecordingLocalkeysSettingsWithHttpInfo().getBody();
+    return  getRecordingLocalkeysSettings(createGetRecordingLocalkeysSettingsRequest());
   }
 
   /**
    * gets a list local key settings data
    * 
    * @return LocalEncryptionConfigurationListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LocalEncryptionConfigurationListing> getRecordingLocalkeysSettingsWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/recording/localkeys/settings".replaceAll("\\{format\\}","json");
+  public ApiResponse<LocalEncryptionConfigurationListing> getRecordingLocalkeysSettingsWithHttpInfo() throws IOException {
+    return getRecordingLocalkeysSettings(createGetRecordingLocalkeysSettingsRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<LocalEncryptionConfigurationListing>() {});
+  private GetRecordingLocalkeysSettingsRequest createGetRecordingLocalkeysSettingsRequest() {
+    return GetRecordingLocalkeysSettingsRequest.builder()            .build();
   }
 
   /**
    * gets a list local key settings data
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return LocalEncryptionConfigurationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LocalEncryptionConfigurationListing getRecordingLocalkeysSettings(GetRecordingLocalkeysSettingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LocalEncryptionConfigurationListing>() {});
+    try {
+      ApiResponse<LocalEncryptionConfigurationListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LocalEncryptionConfigurationListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * gets a list local key settings data
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LocalEncryptionConfigurationListing> getRecordingLocalkeysSettings(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<LocalEncryptionConfigurationListing>invokeAPIVerbose(request, new TypeReference<LocalEncryptionConfigurationListing>() {});
+  public ApiResponse<LocalEncryptionConfigurationListing> getRecordingLocalkeysSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LocalEncryptionConfigurationListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LocalEncryptionConfigurationListing> response = (ApiResponse<LocalEncryptionConfigurationListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LocalEncryptionConfigurationListing> response = (ApiResponse<LocalEncryptionConfigurationListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1120,10 +1170,11 @@ public class RecordingApi {
    * @param summary provides a less verbose response of policy lists. (optional, default to false)
    * @param hasErrors provides a way to fetch all policies with errors or policies that do not have errors (optional)
    * @return PolicyEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PolicyEntityListing getRecordingMediaretentionpolicies(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) throws IOException, ApiException {
-    return getRecordingMediaretentionpoliciesWithHttpInfo(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors).getBody();
+    return  getRecordingMediaretentionpolicies(createGetRecordingMediaretentionpoliciesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors));
   }
 
   /**
@@ -1140,65 +1191,82 @@ public class RecordingApi {
    * @param summary provides a less verbose response of policy lists. (optional, default to false)
    * @param hasErrors provides a way to fetch all policies with errors or policies that do not have errors (optional)
    * @return PolicyEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PolicyEntityListing> getRecordingMediaretentionpoliciesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/recording/mediaretentionpolicies".replaceAll("\\{format\\}","json");
+  public ApiResponse<PolicyEntityListing> getRecordingMediaretentionpoliciesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) throws IOException {
+    return getRecordingMediaretentionpolicies(createGetRecordingMediaretentionpoliciesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetRecordingMediaretentionpoliciesRequest createGetRecordingMediaretentionpoliciesRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) {
+    return GetRecordingMediaretentionpoliciesRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "nextPage", nextPage));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "previousPage", previousPage));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "enabled", enabled));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "summary", summary));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "hasErrors", hasErrors));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withSortBy(sortBy)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withExpand(expand)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withNextPage(nextPage)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<PolicyEntityListing>() {});
+            .withPreviousPage(previousPage)
+
+            .withName(name)
+
+            .withEnabled(enabled)
+
+            .withSummary(summary)
+
+            .withHasErrors(hasErrors)
+            .build();
   }
 
   /**
    * Gets media retention policy list with query options to filter on name and enabled.
    * for a less verbose response, add summary&#x3D;true to this endpoint
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return PolicyEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PolicyEntityListing getRecordingMediaretentionpolicies(GetRecordingMediaretentionpoliciesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PolicyEntityListing>() {});
+    try {
+      ApiResponse<PolicyEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PolicyEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Gets media retention policy list with query options to filter on name and enabled.
    * for a less verbose response, add summary&#x3D;true to this endpoint
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PolicyEntityListing> getRecordingMediaretentionpolicies(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<PolicyEntityListing>invokeAPIVerbose(request, new TypeReference<PolicyEntityListing>() {});
+  public ApiResponse<PolicyEntityListing> getRecordingMediaretentionpolicies(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PolicyEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PolicyEntityListing> response = (ApiResponse<PolicyEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PolicyEntityListing> response = (ApiResponse<PolicyEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1206,10 +1274,11 @@ public class RecordingApi {
    * 
    * @param policyId Policy ID (required)
    * @return Policy
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Policy getRecordingMediaretentionpolicy(String policyId) throws IOException, ApiException {
-    return getRecordingMediaretentionpolicyWithHttpInfo(policyId).getBody();
+    return  getRecordingMediaretentionpolicy(createGetRecordingMediaretentionpolicyRequest(policyId));
   }
 
   /**
@@ -1217,61 +1286,64 @@ public class RecordingApi {
    * 
    * @param policyId Policy ID (required)
    * @return Policy
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Policy> getRecordingMediaretentionpolicyWithHttpInfo(String policyId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'policyId' is set
-    if (policyId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'policyId' when calling getRecordingMediaretentionpolicy");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/recording/mediaretentionpolicies/{policyId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "policyId" + "\\}", pcapiClient.escapeString(policyId.toString()));
+  public ApiResponse<Policy> getRecordingMediaretentionpolicyWithHttpInfo(String policyId) throws IOException {
+    return getRecordingMediaretentionpolicy(createGetRecordingMediaretentionpolicyRequest(policyId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Policy>() {});
+  private GetRecordingMediaretentionpolicyRequest createGetRecordingMediaretentionpolicyRequest(String policyId) {
+    return GetRecordingMediaretentionpolicyRequest.builder()
+            .withPolicyId(policyId)
+            .build();
   }
 
   /**
    * Get a media retention policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Policy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Policy getRecordingMediaretentionpolicy(GetRecordingMediaretentionpolicyRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Policy>() {});
+    try {
+      ApiResponse<Policy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Policy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a media retention policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Policy> getRecordingMediaretentionpolicy(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Policy>invokeAPIVerbose(request, new TypeReference<Policy>() {});
+  public ApiResponse<Policy> getRecordingMediaretentionpolicy(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Policy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Policy> response = (ApiResponse<Policy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Policy> response = (ApiResponse<Policy>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1280,10 +1352,11 @@ public class RecordingApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return EncryptionKeyEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EncryptionKeyEntityListing getRecordingRecordingkeys(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getRecordingRecordingkeysWithHttpInfo(pageSize, pageNumber).getBody();
+    return  getRecordingRecordingkeys(createGetRecordingRecordingkeysRequest(pageSize, pageNumber));
   }
 
   /**
@@ -1292,122 +1365,139 @@ public class RecordingApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return EncryptionKeyEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EncryptionKeyEntityListing> getRecordingRecordingkeysWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/recording/recordingkeys".replaceAll("\\{format\\}","json");
+  public ApiResponse<EncryptionKeyEntityListing> getRecordingRecordingkeysWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getRecordingRecordingkeys(createGetRecordingRecordingkeysRequest(pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetRecordingRecordingkeysRequest createGetRecordingRecordingkeysRequest(Integer pageSize, Integer pageNumber) {
+    return GetRecordingRecordingkeysRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EncryptionKeyEntityListing>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * Get encryption key list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EncryptionKeyEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EncryptionKeyEntityListing getRecordingRecordingkeys(GetRecordingRecordingkeysRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EncryptionKeyEntityListing>() {});
+    try {
+      ApiResponse<EncryptionKeyEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EncryptionKeyEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get encryption key list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EncryptionKeyEntityListing> getRecordingRecordingkeys(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EncryptionKeyEntityListing>invokeAPIVerbose(request, new TypeReference<EncryptionKeyEntityListing>() {});
+  public ApiResponse<EncryptionKeyEntityListing> getRecordingRecordingkeys(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EncryptionKeyEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EncryptionKeyEntityListing> response = (ApiResponse<EncryptionKeyEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EncryptionKeyEntityListing> response = (ApiResponse<EncryptionKeyEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get key rotation schedule
    * 
    * @return KeyRotationSchedule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public KeyRotationSchedule getRecordingRecordingkeysRotationschedule() throws IOException, ApiException {
-    return getRecordingRecordingkeysRotationscheduleWithHttpInfo().getBody();
+    return  getRecordingRecordingkeysRotationschedule(createGetRecordingRecordingkeysRotationscheduleRequest());
   }
 
   /**
    * Get key rotation schedule
    * 
    * @return KeyRotationSchedule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KeyRotationSchedule> getRecordingRecordingkeysRotationscheduleWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/recording/recordingkeys/rotationschedule".replaceAll("\\{format\\}","json");
+  public ApiResponse<KeyRotationSchedule> getRecordingRecordingkeysRotationscheduleWithHttpInfo() throws IOException {
+    return getRecordingRecordingkeysRotationschedule(createGetRecordingRecordingkeysRotationscheduleRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<KeyRotationSchedule>() {});
+  private GetRecordingRecordingkeysRotationscheduleRequest createGetRecordingRecordingkeysRotationscheduleRequest() {
+    return GetRecordingRecordingkeysRotationscheduleRequest.builder()            .build();
   }
 
   /**
    * Get key rotation schedule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return KeyRotationSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public KeyRotationSchedule getRecordingRecordingkeysRotationschedule(GetRecordingRecordingkeysRotationscheduleRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<KeyRotationSchedule>() {});
+    try {
+      ApiResponse<KeyRotationSchedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KeyRotationSchedule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get key rotation schedule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KeyRotationSchedule> getRecordingRecordingkeysRotationschedule(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<KeyRotationSchedule>invokeAPIVerbose(request, new TypeReference<KeyRotationSchedule>() {});
+  public ApiResponse<KeyRotationSchedule> getRecordingRecordingkeysRotationschedule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KeyRotationSchedule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KeyRotationSchedule> response = (ApiResponse<KeyRotationSchedule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KeyRotationSchedule> response = (ApiResponse<KeyRotationSchedule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1415,10 +1505,11 @@ public class RecordingApi {
    * 
    * @param createDefault If no settings are found, a new one is created with default values (optional, default to false)
    * @return RecordingSettings
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RecordingSettings getRecordingSettings(Boolean createDefault) throws IOException, ApiException {
-    return getRecordingSettingsWithHttpInfo(createDefault).getBody();
+    return  getRecordingSettings(createGetRecordingSettingsRequest(createDefault));
   }
 
   /**
@@ -1426,56 +1517,64 @@ public class RecordingApi {
    * 
    * @param createDefault If no settings are found, a new one is created with default values (optional, default to false)
    * @return RecordingSettings
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RecordingSettings> getRecordingSettingsWithHttpInfo(Boolean createDefault) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/recording/settings".replaceAll("\\{format\\}","json");
+  public ApiResponse<RecordingSettings> getRecordingSettingsWithHttpInfo(Boolean createDefault) throws IOException {
+    return getRecordingSettings(createGetRecordingSettingsRequest(createDefault).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "createDefault", createDefault));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<RecordingSettings>() {});
+  private GetRecordingSettingsRequest createGetRecordingSettingsRequest(Boolean createDefault) {
+    return GetRecordingSettingsRequest.builder()
+            .withCreateDefault(createDefault)
+            .build();
   }
 
   /**
    * Get the Recording Settings for the Organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return RecordingSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RecordingSettings getRecordingSettings(GetRecordingSettingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RecordingSettings>() {});
+    try {
+      ApiResponse<RecordingSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RecordingSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the Recording Settings for the Organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RecordingSettings> getRecordingSettings(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<RecordingSettings>invokeAPIVerbose(request, new TypeReference<RecordingSettings>() {});
+  public ApiResponse<RecordingSettings> getRecordingSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RecordingSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingSettings> response = (ApiResponse<RecordingSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingSettings> response = (ApiResponse<RecordingSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1484,10 +1583,11 @@ public class RecordingApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return ScreenRecordingSessionListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ScreenRecordingSessionListing getRecordingsScreensessions(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getRecordingsScreensessionsWithHttpInfo(pageSize, pageNumber).getBody();
+    return  getRecordingsScreensessions(createGetRecordingsScreensessionsRequest(pageSize, pageNumber));
   }
 
   /**
@@ -1496,57 +1596,66 @@ public class RecordingApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return ScreenRecordingSessionListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScreenRecordingSessionListing> getRecordingsScreensessionsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/recordings/screensessions".replaceAll("\\{format\\}","json");
+  public ApiResponse<ScreenRecordingSessionListing> getRecordingsScreensessionsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getRecordingsScreensessions(createGetRecordingsScreensessionsRequest(pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetRecordingsScreensessionsRequest createGetRecordingsScreensessionsRequest(Integer pageSize, Integer pageNumber) {
+    return GetRecordingsScreensessionsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ScreenRecordingSessionListing>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * Retrieves a paged listing of screen recording sessions
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ScreenRecordingSessionListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ScreenRecordingSessionListing getRecordingsScreensessions(GetRecordingsScreensessionsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ScreenRecordingSessionListing>() {});
+    try {
+      ApiResponse<ScreenRecordingSessionListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScreenRecordingSessionListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Retrieves a paged listing of screen recording sessions
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScreenRecordingSessionListing> getRecordingsScreensessions(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ScreenRecordingSessionListing>invokeAPIVerbose(request, new TypeReference<ScreenRecordingSessionListing>() {});
+  public ApiResponse<ScreenRecordingSessionListing> getRecordingsScreensessions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScreenRecordingSessionListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScreenRecordingSessionListing> response = (ApiResponse<ScreenRecordingSessionListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScreenRecordingSessionListing> response = (ApiResponse<ScreenRecordingSessionListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1555,10 +1664,11 @@ public class RecordingApi {
    * @param policyId Policy ID (required)
    * @param body Policy (required)
    * @return Policy
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Policy patchRecordingMediaretentionpolicy(String policyId, Policy body) throws IOException, ApiException {
-    return patchRecordingMediaretentionpolicyWithHttpInfo(policyId, body).getBody();
+    return  patchRecordingMediaretentionpolicy(createPatchRecordingMediaretentionpolicyRequest(policyId, body));
   }
 
   /**
@@ -1567,66 +1677,66 @@ public class RecordingApi {
    * @param policyId Policy ID (required)
    * @param body Policy (required)
    * @return Policy
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Policy> patchRecordingMediaretentionpolicyWithHttpInfo(String policyId, Policy body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'policyId' is set
-    if (policyId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'policyId' when calling patchRecordingMediaretentionpolicy");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchRecordingMediaretentionpolicy");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/recording/mediaretentionpolicies/{policyId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "policyId" + "\\}", pcapiClient.escapeString(policyId.toString()));
+  public ApiResponse<Policy> patchRecordingMediaretentionpolicyWithHttpInfo(String policyId, Policy body) throws IOException {
+    return patchRecordingMediaretentionpolicy(createPatchRecordingMediaretentionpolicyRequest(policyId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchRecordingMediaretentionpolicyRequest createPatchRecordingMediaretentionpolicyRequest(String policyId, Policy body) {
+    return PatchRecordingMediaretentionpolicyRequest.builder()
+            .withPolicyId(policyId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Policy>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Patch a media retention policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Policy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Policy patchRecordingMediaretentionpolicy(PatchRecordingMediaretentionpolicyRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Policy>() {});
+    try {
+      ApiResponse<Policy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Policy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Patch a media retention policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Policy> patchRecordingMediaretentionpolicy(ApiRequest<Policy> request) throws IOException, ApiException {
-    return pcapiClient.<Policy>invokeAPIVerbose(request, new TypeReference<Policy>() {});
+  public ApiResponse<Policy> patchRecordingMediaretentionpolicy(ApiRequest<Policy> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Policy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Policy> response = (ApiResponse<Policy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Policy> response = (ApiResponse<Policy>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1634,10 +1744,11 @@ public class RecordingApi {
    * 
    * @param recordingSessionId Screen recording session ID (required)
    * @param body  (optional)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchRecordingsScreensession(String recordingSessionId, ScreenRecordingSessionRequest body) throws IOException, ApiException {
-    patchRecordingsScreensessionWithHttpInfo(recordingSessionId, body);
+     patchRecordingsScreensession(createPatchRecordingsScreensessionRequest(recordingSessionId, body));
   }
 
   /**
@@ -1645,61 +1756,65 @@ public class RecordingApi {
    * 
    * @param recordingSessionId Screen recording session ID (required)
    * @param body  (optional)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchRecordingsScreensessionWithHttpInfo(String recordingSessionId, ScreenRecordingSessionRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'recordingSessionId' is set
-    if (recordingSessionId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'recordingSessionId' when calling patchRecordingsScreensession");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/recordings/screensessions/{recordingSessionId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "recordingSessionId" + "\\}", pcapiClient.escapeString(recordingSessionId.toString()));
+  public ApiResponse<Void> patchRecordingsScreensessionWithHttpInfo(String recordingSessionId, ScreenRecordingSessionRequest body) throws IOException {
+    return patchRecordingsScreensession(createPatchRecordingsScreensessionRequest(recordingSessionId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchRecordingsScreensessionRequest createPatchRecordingsScreensessionRequest(String recordingSessionId, ScreenRecordingSessionRequest body) {
+    return PatchRecordingsScreensessionRequest.builder()
+            .withRecordingSessionId(recordingSessionId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a screen recording session
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchRecordingsScreensession(PatchRecordingsScreensessionRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Update a screen recording session
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchRecordingsScreensession(ApiRequest<ScreenRecordingSessionRequest> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> patchRecordingsScreensession(ApiRequest<ScreenRecordingSessionRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1709,10 +1824,11 @@ public class RecordingApi {
    * @param recordingId Recording ID (required)
    * @param body annotation (required)
    * @return Annotation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Annotation postConversationRecordingAnnotations(String conversationId, String recordingId, Annotation body) throws IOException, ApiException {
-    return postConversationRecordingAnnotationsWithHttpInfo(conversationId, recordingId, body).getBody();
+    return  postConversationRecordingAnnotations(createPostConversationRecordingAnnotationsRequest(conversationId, recordingId, body));
   }
 
   /**
@@ -1722,72 +1838,68 @@ public class RecordingApi {
    * @param recordingId Recording ID (required)
    * @param body annotation (required)
    * @return Annotation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Annotation> postConversationRecordingAnnotationsWithHttpInfo(String conversationId, String recordingId, Annotation body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling postConversationRecordingAnnotations");
-    }
-    
-    // verify the required parameter 'recordingId' is set
-    if (recordingId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'recordingId' when calling postConversationRecordingAnnotations");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postConversationRecordingAnnotations");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()))
-      .replaceAll("\\{" + "recordingId" + "\\}", pcapiClient.escapeString(recordingId.toString()));
+  public ApiResponse<Annotation> postConversationRecordingAnnotationsWithHttpInfo(String conversationId, String recordingId, Annotation body) throws IOException {
+    return postConversationRecordingAnnotations(createPostConversationRecordingAnnotationsRequest(conversationId, recordingId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostConversationRecordingAnnotationsRequest createPostConversationRecordingAnnotationsRequest(String conversationId, String recordingId, Annotation body) {
+    return PostConversationRecordingAnnotationsRequest.builder()
+            .withConversationId(conversationId)
 
+            .withRecordingId(recordingId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Annotation>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create annotation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Annotation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Annotation postConversationRecordingAnnotations(PostConversationRecordingAnnotationsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Annotation>() {});
+    try {
+      ApiResponse<Annotation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Annotation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create annotation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Annotation> postConversationRecordingAnnotations(ApiRequest<Annotation> request) throws IOException, ApiException {
-    return pcapiClient.<Annotation>invokeAPIVerbose(request, new TypeReference<Annotation>() {});
+  public ApiResponse<Annotation> postConversationRecordingAnnotations(ApiRequest<Annotation> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Annotation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Annotation> response = (ApiResponse<Annotation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Annotation> response = (ApiResponse<Annotation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1795,10 +1907,11 @@ public class RecordingApi {
    * 
    * @param body Local Encryption body (required)
    * @return EncryptionKey
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EncryptionKey postRecordingLocalkeys(LocalEncryptionKeyRequest body) throws IOException, ApiException {
-    return postRecordingLocalkeysWithHttpInfo(body).getBody();
+    return  postRecordingLocalkeys(createPostRecordingLocalkeysRequest(body));
   }
 
   /**
@@ -1806,60 +1919,64 @@ public class RecordingApi {
    * 
    * @param body Local Encryption body (required)
    * @return EncryptionKey
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EncryptionKey> postRecordingLocalkeysWithHttpInfo(LocalEncryptionKeyRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postRecordingLocalkeys");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/recording/localkeys".replaceAll("\\{format\\}","json");
+  public ApiResponse<EncryptionKey> postRecordingLocalkeysWithHttpInfo(LocalEncryptionKeyRequest body) throws IOException {
+    return postRecordingLocalkeys(createPostRecordingLocalkeysRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EncryptionKey>() {});
+  private PostRecordingLocalkeysRequest createPostRecordingLocalkeysRequest(LocalEncryptionKeyRequest body) {
+    return PostRecordingLocalkeysRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * create a local recording key
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EncryptionKey
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EncryptionKey postRecordingLocalkeys(PostRecordingLocalkeysRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EncryptionKey>() {});
+    try {
+      ApiResponse<EncryptionKey> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EncryptionKey>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * create a local recording key
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EncryptionKey> postRecordingLocalkeys(ApiRequest<LocalEncryptionKeyRequest> request) throws IOException, ApiException {
-    return pcapiClient.<EncryptionKey>invokeAPIVerbose(request, new TypeReference<EncryptionKey>() {});
+  public ApiResponse<EncryptionKey> postRecordingLocalkeys(ApiRequest<LocalEncryptionKeyRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EncryptionKey>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EncryptionKey> response = (ApiResponse<EncryptionKey>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EncryptionKey> response = (ApiResponse<EncryptionKey>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1867,10 +1984,11 @@ public class RecordingApi {
    * 
    * @param body Local Encryption Configuration (required)
    * @return LocalEncryptionConfiguration
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LocalEncryptionConfiguration postRecordingLocalkeysSettings(LocalEncryptionConfiguration body) throws IOException, ApiException {
-    return postRecordingLocalkeysSettingsWithHttpInfo(body).getBody();
+    return  postRecordingLocalkeysSettings(createPostRecordingLocalkeysSettingsRequest(body));
   }
 
   /**
@@ -1878,60 +1996,64 @@ public class RecordingApi {
    * 
    * @param body Local Encryption Configuration (required)
    * @return LocalEncryptionConfiguration
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LocalEncryptionConfiguration> postRecordingLocalkeysSettingsWithHttpInfo(LocalEncryptionConfiguration body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postRecordingLocalkeysSettings");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/recording/localkeys/settings".replaceAll("\\{format\\}","json");
+  public ApiResponse<LocalEncryptionConfiguration> postRecordingLocalkeysSettingsWithHttpInfo(LocalEncryptionConfiguration body) throws IOException {
+    return postRecordingLocalkeysSettings(createPostRecordingLocalkeysSettingsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<LocalEncryptionConfiguration>() {});
+  private PostRecordingLocalkeysSettingsRequest createPostRecordingLocalkeysSettingsRequest(LocalEncryptionConfiguration body) {
+    return PostRecordingLocalkeysSettingsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * create settings for local key creation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return LocalEncryptionConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LocalEncryptionConfiguration postRecordingLocalkeysSettings(PostRecordingLocalkeysSettingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {});
+    try {
+      ApiResponse<LocalEncryptionConfiguration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * create settings for local key creation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LocalEncryptionConfiguration> postRecordingLocalkeysSettings(ApiRequest<LocalEncryptionConfiguration> request) throws IOException, ApiException {
-    return pcapiClient.<LocalEncryptionConfiguration>invokeAPIVerbose(request, new TypeReference<LocalEncryptionConfiguration>() {});
+  public ApiResponse<LocalEncryptionConfiguration> postRecordingLocalkeysSettings(ApiRequest<LocalEncryptionConfiguration> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LocalEncryptionConfiguration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LocalEncryptionConfiguration> response = (ApiResponse<LocalEncryptionConfiguration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LocalEncryptionConfiguration> response = (ApiResponse<LocalEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1939,10 +2061,11 @@ public class RecordingApi {
    * 
    * @param body Policy (required)
    * @return Policy
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Policy postRecordingMediaretentionpolicies(PolicyCreate body) throws IOException, ApiException {
-    return postRecordingMediaretentionpoliciesWithHttpInfo(body).getBody();
+    return  postRecordingMediaretentionpolicies(createPostRecordingMediaretentionpoliciesRequest(body));
   }
 
   /**
@@ -1950,125 +2073,137 @@ public class RecordingApi {
    * 
    * @param body Policy (required)
    * @return Policy
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Policy> postRecordingMediaretentionpoliciesWithHttpInfo(PolicyCreate body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postRecordingMediaretentionpolicies");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/recording/mediaretentionpolicies".replaceAll("\\{format\\}","json");
+  public ApiResponse<Policy> postRecordingMediaretentionpoliciesWithHttpInfo(PolicyCreate body) throws IOException {
+    return postRecordingMediaretentionpolicies(createPostRecordingMediaretentionpoliciesRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Policy>() {});
+  private PostRecordingMediaretentionpoliciesRequest createPostRecordingMediaretentionpoliciesRequest(PolicyCreate body) {
+    return PostRecordingMediaretentionpoliciesRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Create media retention policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Policy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Policy postRecordingMediaretentionpolicies(PostRecordingMediaretentionpoliciesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Policy>() {});
+    try {
+      ApiResponse<Policy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Policy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create media retention policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Policy> postRecordingMediaretentionpolicies(ApiRequest<PolicyCreate> request) throws IOException, ApiException {
-    return pcapiClient.<Policy>invokeAPIVerbose(request, new TypeReference<Policy>() {});
+  public ApiResponse<Policy> postRecordingMediaretentionpolicies(ApiRequest<PolicyCreate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Policy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Policy> response = (ApiResponse<Policy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Policy> response = (ApiResponse<Policy>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Create encryption key
    * 
    * @return EncryptionKey
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EncryptionKey postRecordingRecordingkeys() throws IOException, ApiException {
-    return postRecordingRecordingkeysWithHttpInfo().getBody();
+    return  postRecordingRecordingkeys(createPostRecordingRecordingkeysRequest());
   }
 
   /**
    * Create encryption key
    * 
    * @return EncryptionKey
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EncryptionKey> postRecordingRecordingkeysWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/recording/recordingkeys".replaceAll("\\{format\\}","json");
+  public ApiResponse<EncryptionKey> postRecordingRecordingkeysWithHttpInfo() throws IOException {
+    return postRecordingRecordingkeys(createPostRecordingRecordingkeysRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<EncryptionKey>() {});
+  private PostRecordingRecordingkeysRequest createPostRecordingRecordingkeysRequest() {
+    return PostRecordingRecordingkeysRequest.builder()            .build();
   }
 
   /**
    * Create encryption key
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return EncryptionKey
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public EncryptionKey postRecordingRecordingkeys(PostRecordingRecordingkeysRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<EncryptionKey>() {});
+    try {
+      ApiResponse<EncryptionKey> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EncryptionKey>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create encryption key
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EncryptionKey> postRecordingRecordingkeys(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<EncryptionKey>invokeAPIVerbose(request, new TypeReference<EncryptionKey>() {});
+  public ApiResponse<EncryptionKey> postRecordingRecordingkeys(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EncryptionKey>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EncryptionKey> response = (ApiResponse<EncryptionKey>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EncryptionKey> response = (ApiResponse<EncryptionKey>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2078,10 +2213,11 @@ public class RecordingApi {
    * @param recordingId Recording ID (required)
    * @param body recording (required)
    * @return Recording
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Recording putConversationRecording(String conversationId, String recordingId, Recording body) throws IOException, ApiException {
-    return putConversationRecordingWithHttpInfo(conversationId, recordingId, body).getBody();
+    return  putConversationRecording(createPutConversationRecordingRequest(conversationId, recordingId, body));
   }
 
   /**
@@ -2091,72 +2227,68 @@ public class RecordingApi {
    * @param recordingId Recording ID (required)
    * @param body recording (required)
    * @return Recording
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Recording> putConversationRecordingWithHttpInfo(String conversationId, String recordingId, Recording body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling putConversationRecording");
-    }
-    
-    // verify the required parameter 'recordingId' is set
-    if (recordingId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'recordingId' when calling putConversationRecording");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putConversationRecording");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/{conversationId}/recordings/{recordingId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()))
-      .replaceAll("\\{" + "recordingId" + "\\}", pcapiClient.escapeString(recordingId.toString()));
+  public ApiResponse<Recording> putConversationRecordingWithHttpInfo(String conversationId, String recordingId, Recording body) throws IOException {
+    return putConversationRecording(createPutConversationRecordingRequest(conversationId, recordingId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutConversationRecordingRequest createPutConversationRecordingRequest(String conversationId, String recordingId, Recording body) {
+    return PutConversationRecordingRequest.builder()
+            .withConversationId(conversationId)
 
+            .withRecordingId(recordingId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Recording>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Updates the retention records on a recording.
    * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Recording
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Recording putConversationRecording(PutConversationRecordingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Recording>() {});
+    try {
+      ApiResponse<Recording> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Recording>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Updates the retention records on a recording.
    * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Recording> putConversationRecording(ApiRequest<Recording> request) throws IOException, ApiException {
-    return pcapiClient.<Recording>invokeAPIVerbose(request, new TypeReference<Recording>() {});
+  public ApiResponse<Recording> putConversationRecording(ApiRequest<Recording> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Recording>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2167,10 +2299,11 @@ public class RecordingApi {
    * @param annotationId Annotation ID (required)
    * @param body annotation (required)
    * @return Annotation
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Annotation putConversationRecordingAnnotation(String conversationId, String recordingId, String annotationId, Annotation body) throws IOException, ApiException {
-    return putConversationRecordingAnnotationWithHttpInfo(conversationId, recordingId, annotationId, body).getBody();
+    return  putConversationRecordingAnnotation(createPutConversationRecordingAnnotationRequest(conversationId, recordingId, annotationId, body));
   }
 
   /**
@@ -2181,78 +2314,70 @@ public class RecordingApi {
    * @param annotationId Annotation ID (required)
    * @param body annotation (required)
    * @return Annotation
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Annotation> putConversationRecordingAnnotationWithHttpInfo(String conversationId, String recordingId, String annotationId, Annotation body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'conversationId' is set
-    if (conversationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'conversationId' when calling putConversationRecordingAnnotation");
-    }
-    
-    // verify the required parameter 'recordingId' is set
-    if (recordingId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'recordingId' when calling putConversationRecordingAnnotation");
-    }
-    
-    // verify the required parameter 'annotationId' is set
-    if (annotationId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'annotationId' when calling putConversationRecordingAnnotation");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putConversationRecordingAnnotation");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "conversationId" + "\\}", pcapiClient.escapeString(conversationId.toString()))
-      .replaceAll("\\{" + "recordingId" + "\\}", pcapiClient.escapeString(recordingId.toString()))
-      .replaceAll("\\{" + "annotationId" + "\\}", pcapiClient.escapeString(annotationId.toString()));
+  public ApiResponse<Annotation> putConversationRecordingAnnotationWithHttpInfo(String conversationId, String recordingId, String annotationId, Annotation body) throws IOException {
+    return putConversationRecordingAnnotation(createPutConversationRecordingAnnotationRequest(conversationId, recordingId, annotationId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutConversationRecordingAnnotationRequest createPutConversationRecordingAnnotationRequest(String conversationId, String recordingId, String annotationId, Annotation body) {
+    return PutConversationRecordingAnnotationRequest.builder()
+            .withConversationId(conversationId)
 
+            .withRecordingId(recordingId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withAnnotationId(annotationId)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Annotation>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update annotation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Annotation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Annotation putConversationRecordingAnnotation(PutConversationRecordingAnnotationRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Annotation>() {});
+    try {
+      ApiResponse<Annotation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Annotation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update annotation
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Annotation> putConversationRecordingAnnotation(ApiRequest<Annotation> request) throws IOException, ApiException {
-    return pcapiClient.<Annotation>invokeAPIVerbose(request, new TypeReference<Annotation>() {});
+  public ApiResponse<Annotation> putConversationRecordingAnnotation(ApiRequest<Annotation> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Annotation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Annotation> response = (ApiResponse<Annotation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Annotation> response = (ApiResponse<Annotation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2261,10 +2386,11 @@ public class RecordingApi {
    * @param orphanId Orphan ID (required)
    * @param body  (optional)
    * @return Recording
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Recording putOrphanrecording(String orphanId, OrphanUpdateRequest body) throws IOException, ApiException {
-    return putOrphanrecordingWithHttpInfo(orphanId, body).getBody();
+    return  putOrphanrecording(createPutOrphanrecordingRequest(orphanId, body));
   }
 
   /**
@@ -2273,61 +2399,66 @@ public class RecordingApi {
    * @param orphanId Orphan ID (required)
    * @param body  (optional)
    * @return Recording
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Recording> putOrphanrecordingWithHttpInfo(String orphanId, OrphanUpdateRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'orphanId' is set
-    if (orphanId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'orphanId' when calling putOrphanrecording");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/orphanrecordings/{orphanId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "orphanId" + "\\}", pcapiClient.escapeString(orphanId.toString()));
+  public ApiResponse<Recording> putOrphanrecordingWithHttpInfo(String orphanId, OrphanUpdateRequest body) throws IOException {
+    return putOrphanrecording(createPutOrphanrecordingRequest(orphanId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutOrphanrecordingRequest createPutOrphanrecordingRequest(String orphanId, OrphanUpdateRequest body) {
+    return PutOrphanrecordingRequest.builder()
+            .withOrphanId(orphanId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Recording>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Updates an orphan recording to a regular recording with retention values
    * If this operation is successful the orphan will no longer exist. It will be replaced by the resulting recording in the response. This replacement recording is accessible by the normal Recording api.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Recording
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Recording putOrphanrecording(PutOrphanrecordingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Recording>() {});
+    try {
+      ApiResponse<Recording> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Recording>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Updates an orphan recording to a regular recording with retention values
    * If this operation is successful the orphan will no longer exist. It will be replaced by the resulting recording in the response. This replacement recording is accessible by the normal Recording api.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Recording> putOrphanrecording(ApiRequest<OrphanUpdateRequest> request) throws IOException, ApiException {
-    return pcapiClient.<Recording>invokeAPIVerbose(request, new TypeReference<Recording>() {});
+  public ApiResponse<Recording> putOrphanrecording(ApiRequest<OrphanUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Recording>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2336,10 +2467,11 @@ public class RecordingApi {
    * @param settingsId Settings Id (required)
    * @param body Local Encryption metadata (required)
    * @return LocalEncryptionConfiguration
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LocalEncryptionConfiguration putRecordingLocalkeysSetting(String settingsId, LocalEncryptionConfiguration body) throws IOException, ApiException {
-    return putRecordingLocalkeysSettingWithHttpInfo(settingsId, body).getBody();
+    return  putRecordingLocalkeysSetting(createPutRecordingLocalkeysSettingRequest(settingsId, body));
   }
 
   /**
@@ -2348,66 +2480,66 @@ public class RecordingApi {
    * @param settingsId Settings Id (required)
    * @param body Local Encryption metadata (required)
    * @return LocalEncryptionConfiguration
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LocalEncryptionConfiguration> putRecordingLocalkeysSettingWithHttpInfo(String settingsId, LocalEncryptionConfiguration body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'settingsId' is set
-    if (settingsId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'settingsId' when calling putRecordingLocalkeysSetting");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putRecordingLocalkeysSetting");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/recording/localkeys/settings/{settingsId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "settingsId" + "\\}", pcapiClient.escapeString(settingsId.toString()));
+  public ApiResponse<LocalEncryptionConfiguration> putRecordingLocalkeysSettingWithHttpInfo(String settingsId, LocalEncryptionConfiguration body) throws IOException {
+    return putRecordingLocalkeysSetting(createPutRecordingLocalkeysSettingRequest(settingsId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutRecordingLocalkeysSettingRequest createPutRecordingLocalkeysSettingRequest(String settingsId, LocalEncryptionConfiguration body) {
+    return PutRecordingLocalkeysSettingRequest.builder()
+            .withSettingsId(settingsId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<LocalEncryptionConfiguration>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update the local encryption settings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return LocalEncryptionConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public LocalEncryptionConfiguration putRecordingLocalkeysSetting(PutRecordingLocalkeysSettingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {});
+    try {
+      ApiResponse<LocalEncryptionConfiguration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update the local encryption settings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LocalEncryptionConfiguration> putRecordingLocalkeysSetting(ApiRequest<LocalEncryptionConfiguration> request) throws IOException, ApiException {
-    return pcapiClient.<LocalEncryptionConfiguration>invokeAPIVerbose(request, new TypeReference<LocalEncryptionConfiguration>() {});
+  public ApiResponse<LocalEncryptionConfiguration> putRecordingLocalkeysSetting(ApiRequest<LocalEncryptionConfiguration> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LocalEncryptionConfiguration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LocalEncryptionConfiguration> response = (ApiResponse<LocalEncryptionConfiguration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LocalEncryptionConfiguration> response = (ApiResponse<LocalEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2416,10 +2548,11 @@ public class RecordingApi {
    * @param policyId Policy ID (required)
    * @param body Policy (required)
    * @return Policy
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Policy putRecordingMediaretentionpolicy(String policyId, Policy body) throws IOException, ApiException {
-    return putRecordingMediaretentionpolicyWithHttpInfo(policyId, body).getBody();
+    return  putRecordingMediaretentionpolicy(createPutRecordingMediaretentionpolicyRequest(policyId, body));
   }
 
   /**
@@ -2428,66 +2561,66 @@ public class RecordingApi {
    * @param policyId Policy ID (required)
    * @param body Policy (required)
    * @return Policy
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Policy> putRecordingMediaretentionpolicyWithHttpInfo(String policyId, Policy body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'policyId' is set
-    if (policyId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'policyId' when calling putRecordingMediaretentionpolicy");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putRecordingMediaretentionpolicy");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/recording/mediaretentionpolicies/{policyId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "policyId" + "\\}", pcapiClient.escapeString(policyId.toString()));
+  public ApiResponse<Policy> putRecordingMediaretentionpolicyWithHttpInfo(String policyId, Policy body) throws IOException {
+    return putRecordingMediaretentionpolicy(createPutRecordingMediaretentionpolicyRequest(policyId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutRecordingMediaretentionpolicyRequest createPutRecordingMediaretentionpolicyRequest(String policyId, Policy body) {
+    return PutRecordingMediaretentionpolicyRequest.builder()
+            .withPolicyId(policyId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Policy>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a media retention policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Policy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Policy putRecordingMediaretentionpolicy(PutRecordingMediaretentionpolicyRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Policy>() {});
+    try {
+      ApiResponse<Policy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Policy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a media retention policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Policy> putRecordingMediaretentionpolicy(ApiRequest<Policy> request) throws IOException, ApiException {
-    return pcapiClient.<Policy>invokeAPIVerbose(request, new TypeReference<Policy>() {});
+  public ApiResponse<Policy> putRecordingMediaretentionpolicy(ApiRequest<Policy> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Policy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Policy> response = (ApiResponse<Policy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Policy> response = (ApiResponse<Policy>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2495,10 +2628,11 @@ public class RecordingApi {
    * 
    * @param body KeyRotationSchedule (required)
    * @return KeyRotationSchedule
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public KeyRotationSchedule putRecordingRecordingkeysRotationschedule(KeyRotationSchedule body) throws IOException, ApiException {
-    return putRecordingRecordingkeysRotationscheduleWithHttpInfo(body).getBody();
+    return  putRecordingRecordingkeysRotationschedule(createPutRecordingRecordingkeysRotationscheduleRequest(body));
   }
 
   /**
@@ -2506,60 +2640,64 @@ public class RecordingApi {
    * 
    * @param body KeyRotationSchedule (required)
    * @return KeyRotationSchedule
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KeyRotationSchedule> putRecordingRecordingkeysRotationscheduleWithHttpInfo(KeyRotationSchedule body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putRecordingRecordingkeysRotationschedule");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/recording/recordingkeys/rotationschedule".replaceAll("\\{format\\}","json");
+  public ApiResponse<KeyRotationSchedule> putRecordingRecordingkeysRotationscheduleWithHttpInfo(KeyRotationSchedule body) throws IOException {
+    return putRecordingRecordingkeysRotationschedule(createPutRecordingRecordingkeysRotationscheduleRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<KeyRotationSchedule>() {});
+  private PutRecordingRecordingkeysRotationscheduleRequest createPutRecordingRecordingkeysRotationscheduleRequest(KeyRotationSchedule body) {
+    return PutRecordingRecordingkeysRotationscheduleRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update key rotation schedule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return KeyRotationSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public KeyRotationSchedule putRecordingRecordingkeysRotationschedule(PutRecordingRecordingkeysRotationscheduleRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<KeyRotationSchedule>() {});
+    try {
+      ApiResponse<KeyRotationSchedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KeyRotationSchedule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update key rotation schedule
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KeyRotationSchedule> putRecordingRecordingkeysRotationschedule(ApiRequest<KeyRotationSchedule> request) throws IOException, ApiException {
-    return pcapiClient.<KeyRotationSchedule>invokeAPIVerbose(request, new TypeReference<KeyRotationSchedule>() {});
+  public ApiResponse<KeyRotationSchedule> putRecordingRecordingkeysRotationschedule(ApiRequest<KeyRotationSchedule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KeyRotationSchedule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KeyRotationSchedule> response = (ApiResponse<KeyRotationSchedule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KeyRotationSchedule> response = (ApiResponse<KeyRotationSchedule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -2567,10 +2705,11 @@ public class RecordingApi {
    * 
    * @param body Recording settings (required)
    * @return RecordingSettings
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RecordingSettings putRecordingSettings(RecordingSettings body) throws IOException, ApiException {
-    return putRecordingSettingsWithHttpInfo(body).getBody();
+    return  putRecordingSettings(createPutRecordingSettingsRequest(body));
   }
 
   /**
@@ -2578,60 +2717,64 @@ public class RecordingApi {
    * 
    * @param body Recording settings (required)
    * @return RecordingSettings
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RecordingSettings> putRecordingSettingsWithHttpInfo(RecordingSettings body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putRecordingSettings");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/recording/settings".replaceAll("\\{format\\}","json");
+  public ApiResponse<RecordingSettings> putRecordingSettingsWithHttpInfo(RecordingSettings body) throws IOException {
+    return putRecordingSettings(createPutRecordingSettingsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<RecordingSettings>() {});
+  private PutRecordingSettingsRequest createPutRecordingSettingsRequest(RecordingSettings body) {
+    return PutRecordingSettingsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update the Recording Settings for the Organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return RecordingSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public RecordingSettings putRecordingSettings(PutRecordingSettingsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<RecordingSettings>() {});
+    try {
+      ApiResponse<RecordingSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RecordingSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update the Recording Settings for the Organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RecordingSettings> putRecordingSettings(ApiRequest<RecordingSettings> request) throws IOException, ApiException {
-    return pcapiClient.<RecordingSettings>invokeAPIVerbose(request, new TypeReference<RecordingSettings>() {});
+  public ApiResponse<RecordingSettings> putRecordingSettings(ApiRequest<RecordingSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RecordingSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingSettings> response = (ApiResponse<RecordingSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingSettings> response = (ApiResponse<RecordingSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

@@ -60,9 +60,6 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PatchConversationsCobrowsesessionParticipantRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String cobrowseId;
 	public String getCobrowseId() {
 		return this.cobrowseId;
@@ -187,6 +184,17 @@ public class PatchConversationsCobrowsesessionParticipantRequest {
 
 
 		public PatchConversationsCobrowsesessionParticipantRequest build() {
+            
+            // verify the required parameter 'cobrowseId' is set
+            if (request.cobrowseId == null) {
+                throw new IllegalStateException("Missing the required parameter 'cobrowseId' when building request for PatchConversationsCobrowsesessionParticipantRequest.");
+            }
+            
+            // verify the required parameter 'participantId' is set
+            if (request.participantId == null) {
+                throw new IllegalStateException("Missing the required parameter 'participantId' when building request for PatchConversationsCobrowsesessionParticipantRequest.");
+            }
+            
 			return request;
 		}
 	}

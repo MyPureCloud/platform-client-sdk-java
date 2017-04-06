@@ -44,9 +44,6 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class PostRoutingLanguagesRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Language body;
 	public Language getBody() {
 		return this.body;
@@ -125,6 +122,12 @@ public class PostRoutingLanguagesRequest {
 
 
 		public PostRoutingLanguagesRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostRoutingLanguagesRequest.");
+            }
+            
 			return request;
 		}
 	}

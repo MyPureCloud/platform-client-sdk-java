@@ -25,9 +25,6 @@ import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
 import com.mypurecloud.sdk.v2.model.FeatureState;
 
 public class PutOrganizationsMeRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Organization body;
 	public Organization getBody() {
 		return this.body;
@@ -93,6 +90,7 @@ public class PutOrganizationsMeRequest {
 
 
 		public PutOrganizationsMeRequest build() {
+            
 			return request;
 		}
 	}

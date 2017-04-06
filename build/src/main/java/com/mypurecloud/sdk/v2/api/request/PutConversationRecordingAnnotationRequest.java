@@ -38,9 +38,6 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class PutConversationRecordingAnnotationRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -197,6 +194,27 @@ public class PutConversationRecordingAnnotationRequest {
 
 
 		public PutConversationRecordingAnnotationRequest build() {
+            
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PutConversationRecordingAnnotationRequest.");
+            }
+            
+            // verify the required parameter 'recordingId' is set
+            if (request.recordingId == null) {
+                throw new IllegalStateException("Missing the required parameter 'recordingId' when building request for PutConversationRecordingAnnotationRequest.");
+            }
+            
+            // verify the required parameter 'annotationId' is set
+            if (request.annotationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'annotationId' when building request for PutConversationRecordingAnnotationRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutConversationRecordingAnnotationRequest.");
+            }
+            
 			return request;
 		}
 	}

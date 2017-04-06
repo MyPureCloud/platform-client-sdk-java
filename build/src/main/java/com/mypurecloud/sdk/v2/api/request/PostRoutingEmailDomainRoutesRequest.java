@@ -44,9 +44,6 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class PostRoutingEmailDomainRoutesRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String domainName;
 	public String getDomainName() {
 		return this.domainName;
@@ -151,6 +148,17 @@ public class PostRoutingEmailDomainRoutesRequest {
 
 
 		public PostRoutingEmailDomainRoutesRequest build() {
+            
+            // verify the required parameter 'domainName' is set
+            if (request.domainName == null) {
+                throw new IllegalStateException("Missing the required parameter 'domainName' when building request for PostRoutingEmailDomainRoutesRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostRoutingEmailDomainRoutesRequest.");
+            }
+            
 			return request;
 		}
 	}

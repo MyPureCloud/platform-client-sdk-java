@@ -1,6 +1,8 @@
 package com.mypurecloud.sdk.v2.api;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.SettableFuture;
 
 import com.mypurecloud.sdk.v2.AsyncApiCallback;
 import com.mypurecloud.sdk.v2.ApiException;
@@ -69,441 +71,1681 @@ public class VoicemailApiAsync {
   /**
    * Delete a message.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<String> deleteVoicemailMessageAsync(DeleteVoicemailMessageRequest request, AsyncApiCallback<String> callback) {
-    return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<String> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete a message.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<String>> deleteVoicemailMessageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
-    return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete all voicemail messages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<String> deleteVoicemailMessagesAsync(DeleteVoicemailMessagesRequest request, AsyncApiCallback<String> callback) {
-    return pcapiClient.<String>invokeAPIAsync(request.withHttpInfo(), new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<String> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Delete all voicemail messages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<String>> deleteVoicemailMessagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
-    return pcapiClient.<String>invokeAPIVerboseAsync(request, new TypeReference<String>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the group&#39;s mailbox information
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VoicemailMailboxInfo> getVoicemailGroupMailboxAsync(GetVoicemailGroupMailboxRequest request, AsyncApiCallback<VoicemailMailboxInfo> callback) {
-    return pcapiClient.<VoicemailMailboxInfo>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailMailboxInfo>() {}, callback);
+    try {
+      SettableFuture<VoicemailMailboxInfo> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailMailboxInfo>() {}, new AsyncApiCallback<ApiResponse<VoicemailMailboxInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMailboxInfo> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the group&#39;s mailbox information
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VoicemailMailboxInfo>> getVoicemailGroupMailboxAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMailboxInfo>> callback) {
-    return pcapiClient.<VoicemailMailboxInfo>invokeAPIVerboseAsync(request, new TypeReference<VoicemailMailboxInfo>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VoicemailMailboxInfo>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailMailboxInfo>() {}, new AsyncApiCallback<ApiResponse<VoicemailMailboxInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMailboxInfo> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMailboxInfo> response = (ApiResponse<VoicemailMailboxInfo>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMailboxInfo> response = (ApiResponse<VoicemailMailboxInfo>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * List voicemail messages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VoicemailMessageEntityListing> getVoicemailGroupMessagesAsync(GetVoicemailGroupMessagesRequest request, AsyncApiCallback<VoicemailMessageEntityListing> callback) {
-    return pcapiClient.<VoicemailMessageEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {}, callback);
+    try {
+      SettableFuture<VoicemailMessageEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {}, new AsyncApiCallback<ApiResponse<VoicemailMessageEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMessageEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * List voicemail messages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VoicemailMessageEntityListing>> getVoicemailGroupMessagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMessageEntityListing>> callback) {
-    return pcapiClient.<VoicemailMessageEntityListing>invokeAPIVerboseAsync(request, new TypeReference<VoicemailMessageEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VoicemailMessageEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailMessageEntityListing>() {}, new AsyncApiCallback<ApiResponse<VoicemailMessageEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMessageEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMessageEntityListing> response = (ApiResponse<VoicemailMessageEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMessageEntityListing> response = (ApiResponse<VoicemailMessageEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a group&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VoicemailGroupPolicy> getVoicemailGroupPolicyAsync(GetVoicemailGroupPolicyRequest request, AsyncApiCallback<VoicemailGroupPolicy> callback) {
-    return pcapiClient.<VoicemailGroupPolicy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailGroupPolicy>() {}, callback);
+    try {
+      SettableFuture<VoicemailGroupPolicy> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailGroupPolicy>() {}, new AsyncApiCallback<ApiResponse<VoicemailGroupPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailGroupPolicy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a group&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VoicemailGroupPolicy>> getVoicemailGroupPolicyAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailGroupPolicy>> callback) {
-    return pcapiClient.<VoicemailGroupPolicy>invokeAPIVerboseAsync(request, new TypeReference<VoicemailGroupPolicy>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VoicemailGroupPolicy>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailGroupPolicy>() {}, new AsyncApiCallback<ApiResponse<VoicemailGroupPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailGroupPolicy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailGroupPolicy> response = (ApiResponse<VoicemailGroupPolicy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailGroupPolicy> response = (ApiResponse<VoicemailGroupPolicy>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the current user&#39;s mailbox information
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VoicemailMailboxInfo> getVoicemailMailboxAsync(GetVoicemailMailboxRequest request, AsyncApiCallback<VoicemailMailboxInfo> callback) {
-    return pcapiClient.<VoicemailMailboxInfo>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailMailboxInfo>() {}, callback);
+    try {
+      SettableFuture<VoicemailMailboxInfo> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailMailboxInfo>() {}, new AsyncApiCallback<ApiResponse<VoicemailMailboxInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMailboxInfo> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the current user&#39;s mailbox information
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VoicemailMailboxInfo>> getVoicemailMailboxAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMailboxInfo>> callback) {
-    return pcapiClient.<VoicemailMailboxInfo>invokeAPIVerboseAsync(request, new TypeReference<VoicemailMailboxInfo>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VoicemailMailboxInfo>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailMailboxInfo>() {}, new AsyncApiCallback<ApiResponse<VoicemailMailboxInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMailboxInfo> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMailboxInfo> response = (ApiResponse<VoicemailMailboxInfo>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMailboxInfo> response = (ApiResponse<VoicemailMailboxInfo>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the current user&#39;s mailbox information
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VoicemailMailboxInfo> getVoicemailMeMailboxAsync(GetVoicemailMeMailboxRequest request, AsyncApiCallback<VoicemailMailboxInfo> callback) {
-    return pcapiClient.<VoicemailMailboxInfo>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailMailboxInfo>() {}, callback);
+    try {
+      SettableFuture<VoicemailMailboxInfo> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailMailboxInfo>() {}, new AsyncApiCallback<ApiResponse<VoicemailMailboxInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMailboxInfo> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the current user&#39;s mailbox information
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VoicemailMailboxInfo>> getVoicemailMeMailboxAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMailboxInfo>> callback) {
-    return pcapiClient.<VoicemailMailboxInfo>invokeAPIVerboseAsync(request, new TypeReference<VoicemailMailboxInfo>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VoicemailMailboxInfo>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailMailboxInfo>() {}, new AsyncApiCallback<ApiResponse<VoicemailMailboxInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMailboxInfo> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMailboxInfo> response = (ApiResponse<VoicemailMailboxInfo>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMailboxInfo> response = (ApiResponse<VoicemailMailboxInfo>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * List voicemail messages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VoicemailMessageEntityListing> getVoicemailMeMessagesAsync(GetVoicemailMeMessagesRequest request, AsyncApiCallback<VoicemailMessageEntityListing> callback) {
-    return pcapiClient.<VoicemailMessageEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {}, callback);
+    try {
+      SettableFuture<VoicemailMessageEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {}, new AsyncApiCallback<ApiResponse<VoicemailMessageEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMessageEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * List voicemail messages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VoicemailMessageEntityListing>> getVoicemailMeMessagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMessageEntityListing>> callback) {
-    return pcapiClient.<VoicemailMessageEntityListing>invokeAPIVerboseAsync(request, new TypeReference<VoicemailMessageEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VoicemailMessageEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailMessageEntityListing>() {}, new AsyncApiCallback<ApiResponse<VoicemailMessageEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMessageEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMessageEntityListing> response = (ApiResponse<VoicemailMessageEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMessageEntityListing> response = (ApiResponse<VoicemailMessageEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the current user&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VoicemailUserPolicy> getVoicemailMePolicyAsync(GetVoicemailMePolicyRequest request, AsyncApiCallback<VoicemailUserPolicy> callback) {
-    return pcapiClient.<VoicemailUserPolicy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {}, callback);
+    try {
+      SettableFuture<VoicemailUserPolicy> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {}, new AsyncApiCallback<ApiResponse<VoicemailUserPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailUserPolicy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get the current user&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VoicemailUserPolicy>> getVoicemailMePolicyAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailUserPolicy>> callback) {
-    return pcapiClient.<VoicemailUserPolicy>invokeAPIVerboseAsync(request, new TypeReference<VoicemailUserPolicy>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VoicemailUserPolicy>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailUserPolicy>() {}, new AsyncApiCallback<ApiResponse<VoicemailUserPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailUserPolicy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailUserPolicy> response = (ApiResponse<VoicemailUserPolicy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailUserPolicy> response = (ApiResponse<VoicemailUserPolicy>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get message.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VoicemailMessage> getVoicemailMessageAsync(GetVoicemailMessageRequest request, AsyncApiCallback<VoicemailMessage> callback) {
-    return pcapiClient.<VoicemailMessage>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailMessage>() {}, callback);
+    try {
+      SettableFuture<VoicemailMessage> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailMessage>() {}, new AsyncApiCallback<ApiResponse<VoicemailMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMessage> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get message.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VoicemailMessage>> getVoicemailMessageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMessage>> callback) {
-    return pcapiClient.<VoicemailMessage>invokeAPIVerboseAsync(request, new TypeReference<VoicemailMessage>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VoicemailMessage>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailMessage>() {}, new AsyncApiCallback<ApiResponse<VoicemailMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMessage> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMessage> response = (ApiResponse<VoicemailMessage>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMessage> response = (ApiResponse<VoicemailMessage>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get media playback URI for this message
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VoicemailMediaInfo> getVoicemailMessageMediaAsync(GetVoicemailMessageMediaRequest request, AsyncApiCallback<VoicemailMediaInfo> callback) {
-    return pcapiClient.<VoicemailMediaInfo>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailMediaInfo>() {}, callback);
+    try {
+      SettableFuture<VoicemailMediaInfo> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailMediaInfo>() {}, new AsyncApiCallback<ApiResponse<VoicemailMediaInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMediaInfo> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get media playback URI for this message
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VoicemailMediaInfo>> getVoicemailMessageMediaAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMediaInfo>> callback) {
-    return pcapiClient.<VoicemailMediaInfo>invokeAPIVerboseAsync(request, new TypeReference<VoicemailMediaInfo>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VoicemailMediaInfo>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailMediaInfo>() {}, new AsyncApiCallback<ApiResponse<VoicemailMediaInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMediaInfo> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMediaInfo> response = (ApiResponse<VoicemailMediaInfo>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMediaInfo> response = (ApiResponse<VoicemailMediaInfo>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * List voicemail messages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VoicemailMessageEntityListing> getVoicemailMessagesAsync(GetVoicemailMessagesRequest request, AsyncApiCallback<VoicemailMessageEntityListing> callback) {
-    return pcapiClient.<VoicemailMessageEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {}, callback);
+    try {
+      SettableFuture<VoicemailMessageEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {}, new AsyncApiCallback<ApiResponse<VoicemailMessageEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMessageEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * List voicemail messages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VoicemailMessageEntityListing>> getVoicemailMessagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailMessageEntityListing>> callback) {
-    return pcapiClient.<VoicemailMessageEntityListing>invokeAPIVerboseAsync(request, new TypeReference<VoicemailMessageEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VoicemailMessageEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailMessageEntityListing>() {}, new AsyncApiCallback<ApiResponse<VoicemailMessageEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMessageEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMessageEntityListing> response = (ApiResponse<VoicemailMessageEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMessageEntityListing> response = (ApiResponse<VoicemailMessageEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VoicemailOrganizationPolicy> getVoicemailPolicyAsync(GetVoicemailPolicyRequest request, AsyncApiCallback<VoicemailOrganizationPolicy> callback) {
-    return pcapiClient.<VoicemailOrganizationPolicy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailOrganizationPolicy>() {}, callback);
+    try {
+      SettableFuture<VoicemailOrganizationPolicy> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailOrganizationPolicy>() {}, new AsyncApiCallback<ApiResponse<VoicemailOrganizationPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailOrganizationPolicy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VoicemailOrganizationPolicy>> getVoicemailPolicyAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailOrganizationPolicy>> callback) {
-    return pcapiClient.<VoicemailOrganizationPolicy>invokeAPIVerboseAsync(request, new TypeReference<VoicemailOrganizationPolicy>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VoicemailOrganizationPolicy>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailOrganizationPolicy>() {}, new AsyncApiCallback<ApiResponse<VoicemailOrganizationPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailOrganizationPolicy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailOrganizationPolicy> response = (ApiResponse<VoicemailOrganizationPolicy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailOrganizationPolicy> response = (ApiResponse<VoicemailOrganizationPolicy>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Search voicemails using the q64 value returned from a previous search
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VoicemailsSearchResponse> getVoicemailSearchAsync(GetVoicemailSearchRequest request, AsyncApiCallback<VoicemailsSearchResponse> callback) {
-    return pcapiClient.<VoicemailsSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailsSearchResponse>() {}, callback);
+    try {
+      SettableFuture<VoicemailsSearchResponse> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailsSearchResponse>() {}, new AsyncApiCallback<ApiResponse<VoicemailsSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailsSearchResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Search voicemails using the q64 value returned from a previous search
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VoicemailsSearchResponse>> getVoicemailSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailsSearchResponse>> callback) {
-    return pcapiClient.<VoicemailsSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<VoicemailsSearchResponse>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VoicemailsSearchResponse>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailsSearchResponse>() {}, new AsyncApiCallback<ApiResponse<VoicemailsSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailsSearchResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailsSearchResponse> response = (ApiResponse<VoicemailsSearchResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailsSearchResponse> response = (ApiResponse<VoicemailsSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a user&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VoicemailUserPolicy> getVoicemailUserpolicyAsync(GetVoicemailUserpolicyRequest request, AsyncApiCallback<VoicemailUserPolicy> callback) {
-    return pcapiClient.<VoicemailUserPolicy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {}, callback);
+    try {
+      SettableFuture<VoicemailUserPolicy> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {}, new AsyncApiCallback<ApiResponse<VoicemailUserPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailUserPolicy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a user&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VoicemailUserPolicy>> getVoicemailUserpolicyAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<VoicemailUserPolicy>> callback) {
-    return pcapiClient.<VoicemailUserPolicy>invokeAPIVerboseAsync(request, new TypeReference<VoicemailUserPolicy>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VoicemailUserPolicy>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailUserPolicy>() {}, new AsyncApiCallback<ApiResponse<VoicemailUserPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailUserPolicy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailUserPolicy> response = (ApiResponse<VoicemailUserPolicy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailUserPolicy> response = (ApiResponse<VoicemailUserPolicy>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a group&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VoicemailGroupPolicy> patchVoicemailGroupPolicyAsync(PatchVoicemailGroupPolicyRequest request, AsyncApiCallback<VoicemailGroupPolicy> callback) {
-    return pcapiClient.<VoicemailGroupPolicy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailGroupPolicy>() {}, callback);
+    try {
+      SettableFuture<VoicemailGroupPolicy> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailGroupPolicy>() {}, new AsyncApiCallback<ApiResponse<VoicemailGroupPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailGroupPolicy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a group&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VoicemailGroupPolicy>> patchVoicemailGroupPolicyAsync(ApiRequest<VoicemailGroupPolicy> request, AsyncApiCallback<ApiResponse<VoicemailGroupPolicy>> callback) {
-    return pcapiClient.<VoicemailGroupPolicy>invokeAPIVerboseAsync(request, new TypeReference<VoicemailGroupPolicy>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VoicemailGroupPolicy>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailGroupPolicy>() {}, new AsyncApiCallback<ApiResponse<VoicemailGroupPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailGroupPolicy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailGroupPolicy> response = (ApiResponse<VoicemailGroupPolicy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailGroupPolicy> response = (ApiResponse<VoicemailGroupPolicy>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update the current user&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VoicemailUserPolicy> patchVoicemailMePolicyAsync(PatchVoicemailMePolicyRequest request, AsyncApiCallback<VoicemailUserPolicy> callback) {
-    return pcapiClient.<VoicemailUserPolicy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {}, callback);
+    try {
+      SettableFuture<VoicemailUserPolicy> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {}, new AsyncApiCallback<ApiResponse<VoicemailUserPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailUserPolicy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update the current user&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VoicemailUserPolicy>> patchVoicemailMePolicyAsync(ApiRequest<VoicemailUserPolicy> request, AsyncApiCallback<ApiResponse<VoicemailUserPolicy>> callback) {
-    return pcapiClient.<VoicemailUserPolicy>invokeAPIVerboseAsync(request, new TypeReference<VoicemailUserPolicy>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VoicemailUserPolicy>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailUserPolicy>() {}, new AsyncApiCallback<ApiResponse<VoicemailUserPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailUserPolicy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailUserPolicy> response = (ApiResponse<VoicemailUserPolicy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailUserPolicy> response = (ApiResponse<VoicemailUserPolicy>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a user&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VoicemailUserPolicy> patchVoicemailUserpolicyAsync(PatchVoicemailUserpolicyRequest request, AsyncApiCallback<VoicemailUserPolicy> callback) {
-    return pcapiClient.<VoicemailUserPolicy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {}, callback);
+    try {
+      SettableFuture<VoicemailUserPolicy> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {}, new AsyncApiCallback<ApiResponse<VoicemailUserPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailUserPolicy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a user&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VoicemailUserPolicy>> patchVoicemailUserpolicyAsync(ApiRequest<VoicemailUserPolicy> request, AsyncApiCallback<ApiResponse<VoicemailUserPolicy>> callback) {
-    return pcapiClient.<VoicemailUserPolicy>invokeAPIVerboseAsync(request, new TypeReference<VoicemailUserPolicy>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VoicemailUserPolicy>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailUserPolicy>() {}, new AsyncApiCallback<ApiResponse<VoicemailUserPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailUserPolicy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailUserPolicy> response = (ApiResponse<VoicemailUserPolicy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailUserPolicy> response = (ApiResponse<VoicemailUserPolicy>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Copy a voicemail message to a user or group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VoicemailMessage> postVoicemailMessagesAsync(PostVoicemailMessagesRequest request, AsyncApiCallback<VoicemailMessage> callback) {
-    return pcapiClient.<VoicemailMessage>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailMessage>() {}, callback);
+    try {
+      SettableFuture<VoicemailMessage> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailMessage>() {}, new AsyncApiCallback<ApiResponse<VoicemailMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMessage> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Copy a voicemail message to a user or group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VoicemailMessage>> postVoicemailMessagesAsync(ApiRequest<CopyVoicemailMessage> request, AsyncApiCallback<ApiResponse<VoicemailMessage>> callback) {
-    return pcapiClient.<VoicemailMessage>invokeAPIVerboseAsync(request, new TypeReference<VoicemailMessage>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VoicemailMessage>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailMessage>() {}, new AsyncApiCallback<ApiResponse<VoicemailMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMessage> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMessage> response = (ApiResponse<VoicemailMessage>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMessage> response = (ApiResponse<VoicemailMessage>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Search voicemails
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VoicemailsSearchResponse> postVoicemailSearchAsync(PostVoicemailSearchRequest request, AsyncApiCallback<VoicemailsSearchResponse> callback) {
-    return pcapiClient.<VoicemailsSearchResponse>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailsSearchResponse>() {}, callback);
+    try {
+      SettableFuture<VoicemailsSearchResponse> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailsSearchResponse>() {}, new AsyncApiCallback<ApiResponse<VoicemailsSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailsSearchResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Search voicemails
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VoicemailsSearchResponse>> postVoicemailSearchAsync(ApiRequest<VoicemailSearchRequest> request, AsyncApiCallback<ApiResponse<VoicemailsSearchResponse>> callback) {
-    return pcapiClient.<VoicemailsSearchResponse>invokeAPIVerboseAsync(request, new TypeReference<VoicemailsSearchResponse>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VoicemailsSearchResponse>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailsSearchResponse>() {}, new AsyncApiCallback<ApiResponse<VoicemailsSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailsSearchResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailsSearchResponse> response = (ApiResponse<VoicemailsSearchResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailsSearchResponse> response = (ApiResponse<VoicemailsSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a message.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VoicemailMessage> putVoicemailMessageAsync(PutVoicemailMessageRequest request, AsyncApiCallback<VoicemailMessage> callback) {
-    return pcapiClient.<VoicemailMessage>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailMessage>() {}, callback);
+    try {
+      SettableFuture<VoicemailMessage> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailMessage>() {}, new AsyncApiCallback<ApiResponse<VoicemailMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMessage> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a message.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VoicemailMessage>> putVoicemailMessageAsync(ApiRequest<VoicemailMessage> request, AsyncApiCallback<ApiResponse<VoicemailMessage>> callback) {
-    return pcapiClient.<VoicemailMessage>invokeAPIVerboseAsync(request, new TypeReference<VoicemailMessage>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VoicemailMessage>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailMessage>() {}, new AsyncApiCallback<ApiResponse<VoicemailMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMessage> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMessage> response = (ApiResponse<VoicemailMessage>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMessage> response = (ApiResponse<VoicemailMessage>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<VoicemailOrganizationPolicy> putVoicemailPolicyAsync(PutVoicemailPolicyRequest request, AsyncApiCallback<VoicemailOrganizationPolicy> callback) {
-    return pcapiClient.<VoicemailOrganizationPolicy>invokeAPIAsync(request.withHttpInfo(), new TypeReference<VoicemailOrganizationPolicy>() {}, callback);
+    try {
+      SettableFuture<VoicemailOrganizationPolicy> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailOrganizationPolicy>() {}, new AsyncApiCallback<ApiResponse<VoicemailOrganizationPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailOrganizationPolicy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update a policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<VoicemailOrganizationPolicy>> putVoicemailPolicyAsync(ApiRequest<VoicemailOrganizationPolicy> request, AsyncApiCallback<ApiResponse<VoicemailOrganizationPolicy>> callback) {
-    return pcapiClient.<VoicemailOrganizationPolicy>invokeAPIVerboseAsync(request, new TypeReference<VoicemailOrganizationPolicy>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<VoicemailOrganizationPolicy>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailOrganizationPolicy>() {}, new AsyncApiCallback<ApiResponse<VoicemailOrganizationPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailOrganizationPolicy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailOrganizationPolicy> response = (ApiResponse<VoicemailOrganizationPolicy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailOrganizationPolicy> response = (ApiResponse<VoicemailOrganizationPolicy>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
+
+  private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
+    if (callback != null) {
+      try {
+        callback.onCompleted(result);
+        future.set(result);
+      }
+      catch (Throwable exception) {
+        future.setException(exception);
+      }
+    }
+    else {
+      future.set(result);
+    }
+  }
+
+  private <T> void notifyFailure(SettableFuture<T> future, AsyncApiCallback<T> callback, Throwable exception) {
+    if (callback != null) {
+      try {
+        callback.onFailed(exception);
+        future.setException(exception);
+      }
+      catch (Throwable callbackException) {
+        future.setException(callbackException);
+      }
+    }
+    else {
+      future.setException(exception);
+    }
+  }
 }

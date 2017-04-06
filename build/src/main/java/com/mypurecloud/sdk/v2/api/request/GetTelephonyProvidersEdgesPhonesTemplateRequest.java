@@ -84,9 +84,6 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesPhonesTemplateRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String phoneBaseSettingsId;
 	public String getPhoneBaseSettingsId() {
 		return this.phoneBaseSettingsId;
@@ -165,6 +162,12 @@ public class GetTelephonyProvidersEdgesPhonesTemplateRequest {
 
 
 		public GetTelephonyProvidersEdgesPhonesTemplateRequest build() {
+            
+            // verify the required parameter 'phoneBaseSettingsId' is set
+            if (request.phoneBaseSettingsId == null) {
+                throw new IllegalStateException("Missing the required parameter 'phoneBaseSettingsId' when building request for GetTelephonyProvidersEdgesPhonesTemplateRequest.");
+            }
+            
 			return request;
 		}
 	}

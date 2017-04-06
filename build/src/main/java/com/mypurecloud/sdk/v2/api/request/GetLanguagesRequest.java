@@ -24,9 +24,6 @@ import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.AvailableTranslations;
 
 public class GetLanguagesRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -152,6 +149,7 @@ public class GetLanguagesRequest {
 
 
 		public GetLanguagesRequest build() {
+            
 			return request;
 		}
 	}

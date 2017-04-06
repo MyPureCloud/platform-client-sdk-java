@@ -76,1235 +76,1387 @@ public class IdentityProviderApi {
    * Delete ADFS Identity Provider
    * 
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteIdentityprovidersAdfs() throws IOException, ApiException {
-    return deleteIdentityprovidersAdfsWithHttpInfo().getBody();
+    return  deleteIdentityprovidersAdfs(createDeleteIdentityprovidersAdfsRequest());
   }
 
   /**
    * Delete ADFS Identity Provider
    * 
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteIdentityprovidersAdfsWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/adfs".replaceAll("\\{format\\}","json");
+  public ApiResponse<Empty> deleteIdentityprovidersAdfsWithHttpInfo() throws IOException {
+    return deleteIdentityprovidersAdfs(createDeleteIdentityprovidersAdfsRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Empty>() {});
+  private DeleteIdentityprovidersAdfsRequest createDeleteIdentityprovidersAdfsRequest() {
+    return DeleteIdentityprovidersAdfsRequest.builder()            .build();
   }
 
   /**
    * Delete ADFS Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteIdentityprovidersAdfs(DeleteIdentityprovidersAdfsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete ADFS Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteIdentityprovidersAdfs(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
+  public ApiResponse<Empty> deleteIdentityprovidersAdfs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete Customer Interaction Center (CIC) Identity Provider
    * 
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteIdentityprovidersCic() throws IOException, ApiException {
-    return deleteIdentityprovidersCicWithHttpInfo().getBody();
+    return  deleteIdentityprovidersCic(createDeleteIdentityprovidersCicRequest());
   }
 
   /**
    * Delete Customer Interaction Center (CIC) Identity Provider
    * 
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteIdentityprovidersCicWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/cic".replaceAll("\\{format\\}","json");
+  public ApiResponse<Empty> deleteIdentityprovidersCicWithHttpInfo() throws IOException {
+    return deleteIdentityprovidersCic(createDeleteIdentityprovidersCicRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Empty>() {});
+  private DeleteIdentityprovidersCicRequest createDeleteIdentityprovidersCicRequest() {
+    return DeleteIdentityprovidersCicRequest.builder()            .build();
   }
 
   /**
    * Delete Customer Interaction Center (CIC) Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteIdentityprovidersCic(DeleteIdentityprovidersCicRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete Customer Interaction Center (CIC) Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteIdentityprovidersCic(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
+  public ApiResponse<Empty> deleteIdentityprovidersCic(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete G Suite Identity Provider
    * 
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteIdentityprovidersGsuite() throws IOException, ApiException {
-    return deleteIdentityprovidersGsuiteWithHttpInfo().getBody();
+    return  deleteIdentityprovidersGsuite(createDeleteIdentityprovidersGsuiteRequest());
   }
 
   /**
    * Delete G Suite Identity Provider
    * 
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteIdentityprovidersGsuiteWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/gsuite".replaceAll("\\{format\\}","json");
+  public ApiResponse<Empty> deleteIdentityprovidersGsuiteWithHttpInfo() throws IOException {
+    return deleteIdentityprovidersGsuite(createDeleteIdentityprovidersGsuiteRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Empty>() {});
+  private DeleteIdentityprovidersGsuiteRequest createDeleteIdentityprovidersGsuiteRequest() {
+    return DeleteIdentityprovidersGsuiteRequest.builder()            .build();
   }
 
   /**
    * Delete G Suite Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteIdentityprovidersGsuite(DeleteIdentityprovidersGsuiteRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete G Suite Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteIdentityprovidersGsuite(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
+  public ApiResponse<Empty> deleteIdentityprovidersGsuite(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete IdentityNow Provider
    * 
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteIdentityprovidersIdentitynow() throws IOException, ApiException {
-    return deleteIdentityprovidersIdentitynowWithHttpInfo().getBody();
+    return  deleteIdentityprovidersIdentitynow(createDeleteIdentityprovidersIdentitynowRequest());
   }
 
   /**
    * Delete IdentityNow Provider
    * 
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteIdentityprovidersIdentitynowWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/identitynow".replaceAll("\\{format\\}","json");
+  public ApiResponse<Empty> deleteIdentityprovidersIdentitynowWithHttpInfo() throws IOException {
+    return deleteIdentityprovidersIdentitynow(createDeleteIdentityprovidersIdentitynowRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Empty>() {});
+  private DeleteIdentityprovidersIdentitynowRequest createDeleteIdentityprovidersIdentitynowRequest() {
+    return DeleteIdentityprovidersIdentitynowRequest.builder()            .build();
   }
 
   /**
    * Delete IdentityNow Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteIdentityprovidersIdentitynow(DeleteIdentityprovidersIdentitynowRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete IdentityNow Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteIdentityprovidersIdentitynow(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
+  public ApiResponse<Empty> deleteIdentityprovidersIdentitynow(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete Okta Identity Provider
    * 
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteIdentityprovidersOkta() throws IOException, ApiException {
-    return deleteIdentityprovidersOktaWithHttpInfo().getBody();
+    return  deleteIdentityprovidersOkta(createDeleteIdentityprovidersOktaRequest());
   }
 
   /**
    * Delete Okta Identity Provider
    * 
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteIdentityprovidersOktaWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/okta".replaceAll("\\{format\\}","json");
+  public ApiResponse<Empty> deleteIdentityprovidersOktaWithHttpInfo() throws IOException {
+    return deleteIdentityprovidersOkta(createDeleteIdentityprovidersOktaRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Empty>() {});
+  private DeleteIdentityprovidersOktaRequest createDeleteIdentityprovidersOktaRequest() {
+    return DeleteIdentityprovidersOktaRequest.builder()            .build();
   }
 
   /**
    * Delete Okta Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteIdentityprovidersOkta(DeleteIdentityprovidersOktaRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete Okta Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteIdentityprovidersOkta(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
+  public ApiResponse<Empty> deleteIdentityprovidersOkta(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete OneLogin Identity Provider
    * 
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteIdentityprovidersOnelogin() throws IOException, ApiException {
-    return deleteIdentityprovidersOneloginWithHttpInfo().getBody();
+    return  deleteIdentityprovidersOnelogin(createDeleteIdentityprovidersOneloginRequest());
   }
 
   /**
    * Delete OneLogin Identity Provider
    * 
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteIdentityprovidersOneloginWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/onelogin".replaceAll("\\{format\\}","json");
+  public ApiResponse<Empty> deleteIdentityprovidersOneloginWithHttpInfo() throws IOException {
+    return deleteIdentityprovidersOnelogin(createDeleteIdentityprovidersOneloginRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Empty>() {});
+  private DeleteIdentityprovidersOneloginRequest createDeleteIdentityprovidersOneloginRequest() {
+    return DeleteIdentityprovidersOneloginRequest.builder()            .build();
   }
 
   /**
    * Delete OneLogin Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteIdentityprovidersOnelogin(DeleteIdentityprovidersOneloginRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete OneLogin Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteIdentityprovidersOnelogin(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
+  public ApiResponse<Empty> deleteIdentityprovidersOnelogin(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete Ping Identity Provider
    * 
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteIdentityprovidersPing() throws IOException, ApiException {
-    return deleteIdentityprovidersPingWithHttpInfo().getBody();
+    return  deleteIdentityprovidersPing(createDeleteIdentityprovidersPingRequest());
   }
 
   /**
    * Delete Ping Identity Provider
    * 
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteIdentityprovidersPingWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/ping".replaceAll("\\{format\\}","json");
+  public ApiResponse<Empty> deleteIdentityprovidersPingWithHttpInfo() throws IOException {
+    return deleteIdentityprovidersPing(createDeleteIdentityprovidersPingRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Empty>() {});
+  private DeleteIdentityprovidersPingRequest createDeleteIdentityprovidersPingRequest() {
+    return DeleteIdentityprovidersPingRequest.builder()            .build();
   }
 
   /**
    * Delete Ping Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteIdentityprovidersPing(DeleteIdentityprovidersPingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete Ping Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteIdentityprovidersPing(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
+  public ApiResponse<Empty> deleteIdentityprovidersPing(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete PureCloud Identity Provider
    * 
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteIdentityprovidersPurecloud() throws IOException, ApiException {
-    return deleteIdentityprovidersPurecloudWithHttpInfo().getBody();
+    return  deleteIdentityprovidersPurecloud(createDeleteIdentityprovidersPurecloudRequest());
   }
 
   /**
    * Delete PureCloud Identity Provider
    * 
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteIdentityprovidersPurecloudWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/purecloud".replaceAll("\\{format\\}","json");
+  public ApiResponse<Empty> deleteIdentityprovidersPurecloudWithHttpInfo() throws IOException {
+    return deleteIdentityprovidersPurecloud(createDeleteIdentityprovidersPurecloudRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Empty>() {});
+  private DeleteIdentityprovidersPurecloudRequest createDeleteIdentityprovidersPurecloudRequest() {
+    return DeleteIdentityprovidersPurecloudRequest.builder()            .build();
   }
 
   /**
    * Delete PureCloud Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteIdentityprovidersPurecloud(DeleteIdentityprovidersPurecloudRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete PureCloud Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteIdentityprovidersPurecloud(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
+  public ApiResponse<Empty> deleteIdentityprovidersPurecloud(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete Salesforce Identity Provider
    * 
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteIdentityprovidersSalesforce() throws IOException, ApiException {
-    return deleteIdentityprovidersSalesforceWithHttpInfo().getBody();
+    return  deleteIdentityprovidersSalesforce(createDeleteIdentityprovidersSalesforceRequest());
   }
 
   /**
    * Delete Salesforce Identity Provider
    * 
    * @return Empty
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteIdentityprovidersSalesforceWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/salesforce".replaceAll("\\{format\\}","json");
+  public ApiResponse<Empty> deleteIdentityprovidersSalesforceWithHttpInfo() throws IOException {
+    return deleteIdentityprovidersSalesforce(createDeleteIdentityprovidersSalesforceRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Empty>() {});
+  private DeleteIdentityprovidersSalesforceRequest createDeleteIdentityprovidersSalesforceRequest() {
+    return DeleteIdentityprovidersSalesforceRequest.builder()            .build();
   }
 
   /**
    * Delete Salesforce Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Empty deleteIdentityprovidersSalesforce(DeleteIdentityprovidersSalesforceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Empty>() {});
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete Salesforce Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Empty> deleteIdentityprovidersSalesforce(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Empty>invokeAPIVerbose(request, new TypeReference<Empty>() {});
+  public ApiResponse<Empty> deleteIdentityprovidersSalesforce(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * The list of identity providers
    * 
    * @return OAuthProviderEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthProviderEntityListing getIdentityproviders() throws IOException, ApiException {
-    return getIdentityprovidersWithHttpInfo().getBody();
+    return  getIdentityproviders(createGetIdentityprovidersRequest());
   }
 
   /**
    * The list of identity providers
    * 
    * @return OAuthProviderEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProviderEntityListing> getIdentityprovidersWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders".replaceAll("\\{format\\}","json");
+  public ApiResponse<OAuthProviderEntityListing> getIdentityprovidersWithHttpInfo() throws IOException {
+    return getIdentityproviders(createGetIdentityprovidersRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OAuthProviderEntityListing>() {});
+  private GetIdentityprovidersRequest createGetIdentityprovidersRequest() {
+    return GetIdentityprovidersRequest.builder()            .build();
   }
 
   /**
    * The list of identity providers
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OAuthProviderEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthProviderEntityListing getIdentityproviders(GetIdentityprovidersRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthProviderEntityListing>() {});
+    try {
+      ApiResponse<OAuthProviderEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProviderEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * The list of identity providers
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProviderEntityListing> getIdentityproviders(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<OAuthProviderEntityListing>invokeAPIVerbose(request, new TypeReference<OAuthProviderEntityListing>() {});
+  public ApiResponse<OAuthProviderEntityListing> getIdentityproviders(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthProviderEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProviderEntityListing> response = (ApiResponse<OAuthProviderEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProviderEntityListing> response = (ApiResponse<OAuthProviderEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get ADFS Identity Provider
    * 
    * @return ADFS
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ADFS getIdentityprovidersAdfs() throws IOException, ApiException {
-    return getIdentityprovidersAdfsWithHttpInfo().getBody();
+    return  getIdentityprovidersAdfs(createGetIdentityprovidersAdfsRequest());
   }
 
   /**
    * Get ADFS Identity Provider
    * 
    * @return ADFS
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ADFS> getIdentityprovidersAdfsWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/adfs".replaceAll("\\{format\\}","json");
+  public ApiResponse<ADFS> getIdentityprovidersAdfsWithHttpInfo() throws IOException {
+    return getIdentityprovidersAdfs(createGetIdentityprovidersAdfsRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ADFS>() {});
+  private GetIdentityprovidersAdfsRequest createGetIdentityprovidersAdfsRequest() {
+    return GetIdentityprovidersAdfsRequest.builder()            .build();
   }
 
   /**
    * Get ADFS Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ADFS
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ADFS getIdentityprovidersAdfs(GetIdentityprovidersAdfsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ADFS>() {});
+    try {
+      ApiResponse<ADFS> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ADFS>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get ADFS Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ADFS> getIdentityprovidersAdfs(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ADFS>invokeAPIVerbose(request, new TypeReference<ADFS>() {});
+  public ApiResponse<ADFS> getIdentityprovidersAdfs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ADFS>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ADFS> response = (ApiResponse<ADFS>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ADFS> response = (ApiResponse<ADFS>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get Customer Interaction Center (CIC) Identity Provider
    * 
    * @return CustomerInteractionCenter
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CustomerInteractionCenter getIdentityprovidersCic() throws IOException, ApiException {
-    return getIdentityprovidersCicWithHttpInfo().getBody();
+    return  getIdentityprovidersCic(createGetIdentityprovidersCicRequest());
   }
 
   /**
    * Get Customer Interaction Center (CIC) Identity Provider
    * 
    * @return CustomerInteractionCenter
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CustomerInteractionCenter> getIdentityprovidersCicWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/cic".replaceAll("\\{format\\}","json");
+  public ApiResponse<CustomerInteractionCenter> getIdentityprovidersCicWithHttpInfo() throws IOException {
+    return getIdentityprovidersCic(createGetIdentityprovidersCicRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<CustomerInteractionCenter>() {});
+  private GetIdentityprovidersCicRequest createGetIdentityprovidersCicRequest() {
+    return GetIdentityprovidersCicRequest.builder()            .build();
   }
 
   /**
    * Get Customer Interaction Center (CIC) Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return CustomerInteractionCenter
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public CustomerInteractionCenter getIdentityprovidersCic(GetIdentityprovidersCicRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<CustomerInteractionCenter>() {});
+    try {
+      ApiResponse<CustomerInteractionCenter> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CustomerInteractionCenter>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get Customer Interaction Center (CIC) Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CustomerInteractionCenter> getIdentityprovidersCic(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<CustomerInteractionCenter>invokeAPIVerbose(request, new TypeReference<CustomerInteractionCenter>() {});
+  public ApiResponse<CustomerInteractionCenter> getIdentityprovidersCic(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CustomerInteractionCenter>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CustomerInteractionCenter> response = (ApiResponse<CustomerInteractionCenter>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CustomerInteractionCenter> response = (ApiResponse<CustomerInteractionCenter>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get G Suite Identity Provider
    * 
    * @return GSuite
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public GSuite getIdentityprovidersGsuite() throws IOException, ApiException {
-    return getIdentityprovidersGsuiteWithHttpInfo().getBody();
+    return  getIdentityprovidersGsuite(createGetIdentityprovidersGsuiteRequest());
   }
 
   /**
    * Get G Suite Identity Provider
    * 
    * @return GSuite
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GSuite> getIdentityprovidersGsuiteWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/gsuite".replaceAll("\\{format\\}","json");
+  public ApiResponse<GSuite> getIdentityprovidersGsuiteWithHttpInfo() throws IOException {
+    return getIdentityprovidersGsuite(createGetIdentityprovidersGsuiteRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<GSuite>() {});
+  private GetIdentityprovidersGsuiteRequest createGetIdentityprovidersGsuiteRequest() {
+    return GetIdentityprovidersGsuiteRequest.builder()            .build();
   }
 
   /**
    * Get G Suite Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return GSuite
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public GSuite getIdentityprovidersGsuite(GetIdentityprovidersGsuiteRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<GSuite>() {});
+    try {
+      ApiResponse<GSuite> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GSuite>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get G Suite Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GSuite> getIdentityprovidersGsuite(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<GSuite>invokeAPIVerbose(request, new TypeReference<GSuite>() {});
+  public ApiResponse<GSuite> getIdentityprovidersGsuite(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GSuite>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GSuite> response = (ApiResponse<GSuite>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GSuite> response = (ApiResponse<GSuite>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get IdentityNow Provider
    * 
    * @return IdentityNow
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public IdentityNow getIdentityprovidersIdentitynow() throws IOException, ApiException {
-    return getIdentityprovidersIdentitynowWithHttpInfo().getBody();
+    return  getIdentityprovidersIdentitynow(createGetIdentityprovidersIdentitynowRequest());
   }
 
   /**
    * Get IdentityNow Provider
    * 
    * @return IdentityNow
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityNow> getIdentityprovidersIdentitynowWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/identitynow".replaceAll("\\{format\\}","json");
+  public ApiResponse<IdentityNow> getIdentityprovidersIdentitynowWithHttpInfo() throws IOException {
+    return getIdentityprovidersIdentitynow(createGetIdentityprovidersIdentitynowRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<IdentityNow>() {});
+  private GetIdentityprovidersIdentitynowRequest createGetIdentityprovidersIdentitynowRequest() {
+    return GetIdentityprovidersIdentitynowRequest.builder()            .build();
   }
 
   /**
    * Get IdentityNow Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return IdentityNow
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public IdentityNow getIdentityprovidersIdentitynow(GetIdentityprovidersIdentitynowRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<IdentityNow>() {});
+    try {
+      ApiResponse<IdentityNow> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityNow>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get IdentityNow Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityNow> getIdentityprovidersIdentitynow(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<IdentityNow>invokeAPIVerbose(request, new TypeReference<IdentityNow>() {});
+  public ApiResponse<IdentityNow> getIdentityprovidersIdentitynow(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IdentityNow>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityNow> response = (ApiResponse<IdentityNow>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityNow> response = (ApiResponse<IdentityNow>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get Okta Identity Provider
    * 
    * @return Okta
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Okta getIdentityprovidersOkta() throws IOException, ApiException {
-    return getIdentityprovidersOktaWithHttpInfo().getBody();
+    return  getIdentityprovidersOkta(createGetIdentityprovidersOktaRequest());
   }
 
   /**
    * Get Okta Identity Provider
    * 
    * @return Okta
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Okta> getIdentityprovidersOktaWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/okta".replaceAll("\\{format\\}","json");
+  public ApiResponse<Okta> getIdentityprovidersOktaWithHttpInfo() throws IOException {
+    return getIdentityprovidersOkta(createGetIdentityprovidersOktaRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Okta>() {});
+  private GetIdentityprovidersOktaRequest createGetIdentityprovidersOktaRequest() {
+    return GetIdentityprovidersOktaRequest.builder()            .build();
   }
 
   /**
    * Get Okta Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Okta
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Okta getIdentityprovidersOkta(GetIdentityprovidersOktaRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Okta>() {});
+    try {
+      ApiResponse<Okta> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Okta>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get Okta Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Okta> getIdentityprovidersOkta(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Okta>invokeAPIVerbose(request, new TypeReference<Okta>() {});
+  public ApiResponse<Okta> getIdentityprovidersOkta(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Okta>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Okta> response = (ApiResponse<Okta>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Okta> response = (ApiResponse<Okta>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get OneLogin Identity Provider
    * 
    * @return OneLogin
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OneLogin getIdentityprovidersOnelogin() throws IOException, ApiException {
-    return getIdentityprovidersOneloginWithHttpInfo().getBody();
+    return  getIdentityprovidersOnelogin(createGetIdentityprovidersOneloginRequest());
   }
 
   /**
    * Get OneLogin Identity Provider
    * 
    * @return OneLogin
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OneLogin> getIdentityprovidersOneloginWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/onelogin".replaceAll("\\{format\\}","json");
+  public ApiResponse<OneLogin> getIdentityprovidersOneloginWithHttpInfo() throws IOException {
+    return getIdentityprovidersOnelogin(createGetIdentityprovidersOneloginRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OneLogin>() {});
+  private GetIdentityprovidersOneloginRequest createGetIdentityprovidersOneloginRequest() {
+    return GetIdentityprovidersOneloginRequest.builder()            .build();
   }
 
   /**
    * Get OneLogin Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OneLogin
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OneLogin getIdentityprovidersOnelogin(GetIdentityprovidersOneloginRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OneLogin>() {});
+    try {
+      ApiResponse<OneLogin> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OneLogin>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get OneLogin Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OneLogin> getIdentityprovidersOnelogin(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<OneLogin>invokeAPIVerbose(request, new TypeReference<OneLogin>() {});
+  public ApiResponse<OneLogin> getIdentityprovidersOnelogin(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OneLogin>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OneLogin> response = (ApiResponse<OneLogin>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OneLogin> response = (ApiResponse<OneLogin>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get Ping Identity Provider
    * 
    * @return PingIdentity
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PingIdentity getIdentityprovidersPing() throws IOException, ApiException {
-    return getIdentityprovidersPingWithHttpInfo().getBody();
+    return  getIdentityprovidersPing(createGetIdentityprovidersPingRequest());
   }
 
   /**
    * Get Ping Identity Provider
    * 
    * @return PingIdentity
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PingIdentity> getIdentityprovidersPingWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/ping".replaceAll("\\{format\\}","json");
+  public ApiResponse<PingIdentity> getIdentityprovidersPingWithHttpInfo() throws IOException {
+    return getIdentityprovidersPing(createGetIdentityprovidersPingRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<PingIdentity>() {});
+  private GetIdentityprovidersPingRequest createGetIdentityprovidersPingRequest() {
+    return GetIdentityprovidersPingRequest.builder()            .build();
   }
 
   /**
    * Get Ping Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return PingIdentity
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PingIdentity getIdentityprovidersPing(GetIdentityprovidersPingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PingIdentity>() {});
+    try {
+      ApiResponse<PingIdentity> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PingIdentity>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get Ping Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PingIdentity> getIdentityprovidersPing(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<PingIdentity>invokeAPIVerbose(request, new TypeReference<PingIdentity>() {});
+  public ApiResponse<PingIdentity> getIdentityprovidersPing(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PingIdentity>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PingIdentity> response = (ApiResponse<PingIdentity>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PingIdentity> response = (ApiResponse<PingIdentity>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get PureCloud Identity Provider
    * 
    * @return PureCloud
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PureCloud getIdentityprovidersPurecloud() throws IOException, ApiException {
-    return getIdentityprovidersPurecloudWithHttpInfo().getBody();
+    return  getIdentityprovidersPurecloud(createGetIdentityprovidersPurecloudRequest());
   }
 
   /**
    * Get PureCloud Identity Provider
    * 
    * @return PureCloud
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PureCloud> getIdentityprovidersPurecloudWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/purecloud".replaceAll("\\{format\\}","json");
+  public ApiResponse<PureCloud> getIdentityprovidersPurecloudWithHttpInfo() throws IOException {
+    return getIdentityprovidersPurecloud(createGetIdentityprovidersPurecloudRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<PureCloud>() {});
+  private GetIdentityprovidersPurecloudRequest createGetIdentityprovidersPurecloudRequest() {
+    return GetIdentityprovidersPurecloudRequest.builder()            .build();
   }
 
   /**
    * Get PureCloud Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return PureCloud
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public PureCloud getIdentityprovidersPurecloud(GetIdentityprovidersPurecloudRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<PureCloud>() {});
+    try {
+      ApiResponse<PureCloud> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PureCloud>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get PureCloud Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PureCloud> getIdentityprovidersPurecloud(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<PureCloud>invokeAPIVerbose(request, new TypeReference<PureCloud>() {});
+  public ApiResponse<PureCloud> getIdentityprovidersPurecloud(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PureCloud>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PureCloud> response = (ApiResponse<PureCloud>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PureCloud> response = (ApiResponse<PureCloud>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get Salesforce Identity Provider
    * 
    * @return Salesforce
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Salesforce getIdentityprovidersSalesforce() throws IOException, ApiException {
-    return getIdentityprovidersSalesforceWithHttpInfo().getBody();
+    return  getIdentityprovidersSalesforce(createGetIdentityprovidersSalesforceRequest());
   }
 
   /**
    * Get Salesforce Identity Provider
    * 
    * @return Salesforce
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Salesforce> getIdentityprovidersSalesforceWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/salesforce".replaceAll("\\{format\\}","json");
+  public ApiResponse<Salesforce> getIdentityprovidersSalesforceWithHttpInfo() throws IOException {
+    return getIdentityprovidersSalesforce(createGetIdentityprovidersSalesforceRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Salesforce>() {});
+  private GetIdentityprovidersSalesforceRequest createGetIdentityprovidersSalesforceRequest() {
+    return GetIdentityprovidersSalesforceRequest.builder()            .build();
   }
 
   /**
    * Get Salesforce Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Salesforce
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Salesforce getIdentityprovidersSalesforce(GetIdentityprovidersSalesforceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Salesforce>() {});
+    try {
+      ApiResponse<Salesforce> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Salesforce>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get Salesforce Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Salesforce> getIdentityprovidersSalesforce(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Salesforce>invokeAPIVerbose(request, new TypeReference<Salesforce>() {});
+  public ApiResponse<Salesforce> getIdentityprovidersSalesforce(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Salesforce>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Salesforce> response = (ApiResponse<Salesforce>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Salesforce> response = (ApiResponse<Salesforce>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1312,10 +1464,11 @@ public class IdentityProviderApi {
    * 
    * @param body Provider (required)
    * @return OAuthProvider
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthProvider putIdentityprovidersAdfs(ADFS body) throws IOException, ApiException {
-    return putIdentityprovidersAdfsWithHttpInfo(body).getBody();
+    return  putIdentityprovidersAdfs(createPutIdentityprovidersAdfsRequest(body));
   }
 
   /**
@@ -1323,60 +1476,64 @@ public class IdentityProviderApi {
    * 
    * @param body Provider (required)
    * @return OAuthProvider
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersAdfsWithHttpInfo(ADFS body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putIdentityprovidersAdfs");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/adfs".replaceAll("\\{format\\}","json");
+  public ApiResponse<OAuthProvider> putIdentityprovidersAdfsWithHttpInfo(ADFS body) throws IOException {
+    return putIdentityprovidersAdfs(createPutIdentityprovidersAdfsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OAuthProvider>() {});
+  private PutIdentityprovidersAdfsRequest createPutIdentityprovidersAdfsRequest(ADFS body) {
+    return PutIdentityprovidersAdfsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update/Create ADFS Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OAuthProvider
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthProvider putIdentityprovidersAdfs(PutIdentityprovidersAdfsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+    try {
+      ApiResponse<OAuthProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update/Create ADFS Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersAdfs(ApiRequest<ADFS> request) throws IOException, ApiException {
-    return pcapiClient.<OAuthProvider>invokeAPIVerbose(request, new TypeReference<OAuthProvider>() {});
+  public ApiResponse<OAuthProvider> putIdentityprovidersAdfs(ApiRequest<ADFS> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1384,10 +1541,11 @@ public class IdentityProviderApi {
    * 
    * @param body Provider (required)
    * @return OAuthProvider
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthProvider putIdentityprovidersCic(CustomerInteractionCenter body) throws IOException, ApiException {
-    return putIdentityprovidersCicWithHttpInfo(body).getBody();
+    return  putIdentityprovidersCic(createPutIdentityprovidersCicRequest(body));
   }
 
   /**
@@ -1395,60 +1553,64 @@ public class IdentityProviderApi {
    * 
    * @param body Provider (required)
    * @return OAuthProvider
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersCicWithHttpInfo(CustomerInteractionCenter body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putIdentityprovidersCic");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/cic".replaceAll("\\{format\\}","json");
+  public ApiResponse<OAuthProvider> putIdentityprovidersCicWithHttpInfo(CustomerInteractionCenter body) throws IOException {
+    return putIdentityprovidersCic(createPutIdentityprovidersCicRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OAuthProvider>() {});
+  private PutIdentityprovidersCicRequest createPutIdentityprovidersCicRequest(CustomerInteractionCenter body) {
+    return PutIdentityprovidersCicRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update/Create Customer Interaction Center (CIC) Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OAuthProvider
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthProvider putIdentityprovidersCic(PutIdentityprovidersCicRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+    try {
+      ApiResponse<OAuthProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update/Create Customer Interaction Center (CIC) Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersCic(ApiRequest<CustomerInteractionCenter> request) throws IOException, ApiException {
-    return pcapiClient.<OAuthProvider>invokeAPIVerbose(request, new TypeReference<OAuthProvider>() {});
+  public ApiResponse<OAuthProvider> putIdentityprovidersCic(ApiRequest<CustomerInteractionCenter> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1456,10 +1618,11 @@ public class IdentityProviderApi {
    * 
    * @param body Provider (required)
    * @return OAuthProvider
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthProvider putIdentityprovidersGsuite(GSuite body) throws IOException, ApiException {
-    return putIdentityprovidersGsuiteWithHttpInfo(body).getBody();
+    return  putIdentityprovidersGsuite(createPutIdentityprovidersGsuiteRequest(body));
   }
 
   /**
@@ -1467,60 +1630,64 @@ public class IdentityProviderApi {
    * 
    * @param body Provider (required)
    * @return OAuthProvider
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersGsuiteWithHttpInfo(GSuite body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putIdentityprovidersGsuite");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/gsuite".replaceAll("\\{format\\}","json");
+  public ApiResponse<OAuthProvider> putIdentityprovidersGsuiteWithHttpInfo(GSuite body) throws IOException {
+    return putIdentityprovidersGsuite(createPutIdentityprovidersGsuiteRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OAuthProvider>() {});
+  private PutIdentityprovidersGsuiteRequest createPutIdentityprovidersGsuiteRequest(GSuite body) {
+    return PutIdentityprovidersGsuiteRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update/Create G Suite Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OAuthProvider
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthProvider putIdentityprovidersGsuite(PutIdentityprovidersGsuiteRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+    try {
+      ApiResponse<OAuthProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update/Create G Suite Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersGsuite(ApiRequest<GSuite> request) throws IOException, ApiException {
-    return pcapiClient.<OAuthProvider>invokeAPIVerbose(request, new TypeReference<OAuthProvider>() {});
+  public ApiResponse<OAuthProvider> putIdentityprovidersGsuite(ApiRequest<GSuite> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1528,10 +1695,11 @@ public class IdentityProviderApi {
    * 
    * @param body Provider (required)
    * @return IdentityNow
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public IdentityNow putIdentityprovidersIdentitynow(IdentityNow body) throws IOException, ApiException {
-    return putIdentityprovidersIdentitynowWithHttpInfo(body).getBody();
+    return  putIdentityprovidersIdentitynow(createPutIdentityprovidersIdentitynowRequest(body));
   }
 
   /**
@@ -1539,60 +1707,64 @@ public class IdentityProviderApi {
    * 
    * @param body Provider (required)
    * @return IdentityNow
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityNow> putIdentityprovidersIdentitynowWithHttpInfo(IdentityNow body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putIdentityprovidersIdentitynow");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/identitynow".replaceAll("\\{format\\}","json");
+  public ApiResponse<IdentityNow> putIdentityprovidersIdentitynowWithHttpInfo(IdentityNow body) throws IOException {
+    return putIdentityprovidersIdentitynow(createPutIdentityprovidersIdentitynowRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<IdentityNow>() {});
+  private PutIdentityprovidersIdentitynowRequest createPutIdentityprovidersIdentitynowRequest(IdentityNow body) {
+    return PutIdentityprovidersIdentitynowRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update/Create IdentityNow Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return IdentityNow
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public IdentityNow putIdentityprovidersIdentitynow(PutIdentityprovidersIdentitynowRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<IdentityNow>() {});
+    try {
+      ApiResponse<IdentityNow> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityNow>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update/Create IdentityNow Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IdentityNow> putIdentityprovidersIdentitynow(ApiRequest<IdentityNow> request) throws IOException, ApiException {
-    return pcapiClient.<IdentityNow>invokeAPIVerbose(request, new TypeReference<IdentityNow>() {});
+  public ApiResponse<IdentityNow> putIdentityprovidersIdentitynow(ApiRequest<IdentityNow> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IdentityNow>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityNow> response = (ApiResponse<IdentityNow>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IdentityNow> response = (ApiResponse<IdentityNow>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1600,10 +1772,11 @@ public class IdentityProviderApi {
    * 
    * @param body Provider (required)
    * @return OAuthProvider
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthProvider putIdentityprovidersOkta(Okta body) throws IOException, ApiException {
-    return putIdentityprovidersOktaWithHttpInfo(body).getBody();
+    return  putIdentityprovidersOkta(createPutIdentityprovidersOktaRequest(body));
   }
 
   /**
@@ -1611,60 +1784,64 @@ public class IdentityProviderApi {
    * 
    * @param body Provider (required)
    * @return OAuthProvider
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersOktaWithHttpInfo(Okta body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putIdentityprovidersOkta");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/okta".replaceAll("\\{format\\}","json");
+  public ApiResponse<OAuthProvider> putIdentityprovidersOktaWithHttpInfo(Okta body) throws IOException {
+    return putIdentityprovidersOkta(createPutIdentityprovidersOktaRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OAuthProvider>() {});
+  private PutIdentityprovidersOktaRequest createPutIdentityprovidersOktaRequest(Okta body) {
+    return PutIdentityprovidersOktaRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update/Create Okta Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OAuthProvider
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthProvider putIdentityprovidersOkta(PutIdentityprovidersOktaRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+    try {
+      ApiResponse<OAuthProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update/Create Okta Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersOkta(ApiRequest<Okta> request) throws IOException, ApiException {
-    return pcapiClient.<OAuthProvider>invokeAPIVerbose(request, new TypeReference<OAuthProvider>() {});
+  public ApiResponse<OAuthProvider> putIdentityprovidersOkta(ApiRequest<Okta> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1672,10 +1849,11 @@ public class IdentityProviderApi {
    * 
    * @param body Provider (required)
    * @return OAuthProvider
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthProvider putIdentityprovidersOnelogin(OneLogin body) throws IOException, ApiException {
-    return putIdentityprovidersOneloginWithHttpInfo(body).getBody();
+    return  putIdentityprovidersOnelogin(createPutIdentityprovidersOneloginRequest(body));
   }
 
   /**
@@ -1683,60 +1861,64 @@ public class IdentityProviderApi {
    * 
    * @param body Provider (required)
    * @return OAuthProvider
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersOneloginWithHttpInfo(OneLogin body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putIdentityprovidersOnelogin");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/onelogin".replaceAll("\\{format\\}","json");
+  public ApiResponse<OAuthProvider> putIdentityprovidersOneloginWithHttpInfo(OneLogin body) throws IOException {
+    return putIdentityprovidersOnelogin(createPutIdentityprovidersOneloginRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OAuthProvider>() {});
+  private PutIdentityprovidersOneloginRequest createPutIdentityprovidersOneloginRequest(OneLogin body) {
+    return PutIdentityprovidersOneloginRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update/Create OneLogin Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OAuthProvider
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthProvider putIdentityprovidersOnelogin(PutIdentityprovidersOneloginRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+    try {
+      ApiResponse<OAuthProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update/Create OneLogin Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersOnelogin(ApiRequest<OneLogin> request) throws IOException, ApiException {
-    return pcapiClient.<OAuthProvider>invokeAPIVerbose(request, new TypeReference<OAuthProvider>() {});
+  public ApiResponse<OAuthProvider> putIdentityprovidersOnelogin(ApiRequest<OneLogin> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1744,10 +1926,11 @@ public class IdentityProviderApi {
    * 
    * @param body Provider (required)
    * @return OAuthProvider
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthProvider putIdentityprovidersPing(PingIdentity body) throws IOException, ApiException {
-    return putIdentityprovidersPingWithHttpInfo(body).getBody();
+    return  putIdentityprovidersPing(createPutIdentityprovidersPingRequest(body));
   }
 
   /**
@@ -1755,60 +1938,64 @@ public class IdentityProviderApi {
    * 
    * @param body Provider (required)
    * @return OAuthProvider
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersPingWithHttpInfo(PingIdentity body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putIdentityprovidersPing");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/ping".replaceAll("\\{format\\}","json");
+  public ApiResponse<OAuthProvider> putIdentityprovidersPingWithHttpInfo(PingIdentity body) throws IOException {
+    return putIdentityprovidersPing(createPutIdentityprovidersPingRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OAuthProvider>() {});
+  private PutIdentityprovidersPingRequest createPutIdentityprovidersPingRequest(PingIdentity body) {
+    return PutIdentityprovidersPingRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update/Create Ping Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OAuthProvider
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthProvider putIdentityprovidersPing(PutIdentityprovidersPingRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+    try {
+      ApiResponse<OAuthProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update/Create Ping Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersPing(ApiRequest<PingIdentity> request) throws IOException, ApiException {
-    return pcapiClient.<OAuthProvider>invokeAPIVerbose(request, new TypeReference<OAuthProvider>() {});
+  public ApiResponse<OAuthProvider> putIdentityprovidersPing(ApiRequest<PingIdentity> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1816,10 +2003,11 @@ public class IdentityProviderApi {
    * 
    * @param body Provider (required)
    * @return OAuthProvider
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthProvider putIdentityprovidersPurecloud(PureCloud body) throws IOException, ApiException {
-    return putIdentityprovidersPurecloudWithHttpInfo(body).getBody();
+    return  putIdentityprovidersPurecloud(createPutIdentityprovidersPurecloudRequest(body));
   }
 
   /**
@@ -1827,60 +2015,64 @@ public class IdentityProviderApi {
    * 
    * @param body Provider (required)
    * @return OAuthProvider
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersPurecloudWithHttpInfo(PureCloud body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putIdentityprovidersPurecloud");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/purecloud".replaceAll("\\{format\\}","json");
+  public ApiResponse<OAuthProvider> putIdentityprovidersPurecloudWithHttpInfo(PureCloud body) throws IOException {
+    return putIdentityprovidersPurecloud(createPutIdentityprovidersPurecloudRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OAuthProvider>() {});
+  private PutIdentityprovidersPurecloudRequest createPutIdentityprovidersPurecloudRequest(PureCloud body) {
+    return PutIdentityprovidersPurecloudRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update/Create PureCloud Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OAuthProvider
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthProvider putIdentityprovidersPurecloud(PutIdentityprovidersPurecloudRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+    try {
+      ApiResponse<OAuthProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update/Create PureCloud Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersPurecloud(ApiRequest<PureCloud> request) throws IOException, ApiException {
-    return pcapiClient.<OAuthProvider>invokeAPIVerbose(request, new TypeReference<OAuthProvider>() {});
+  public ApiResponse<OAuthProvider> putIdentityprovidersPurecloud(ApiRequest<PureCloud> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1888,10 +2080,11 @@ public class IdentityProviderApi {
    * 
    * @param body Provider (required)
    * @return OAuthProvider
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthProvider putIdentityprovidersSalesforce(Salesforce body) throws IOException, ApiException {
-    return putIdentityprovidersSalesforceWithHttpInfo(body).getBody();
+    return  putIdentityprovidersSalesforce(createPutIdentityprovidersSalesforceRequest(body));
   }
 
   /**
@@ -1899,60 +2092,64 @@ public class IdentityProviderApi {
    * 
    * @param body Provider (required)
    * @return OAuthProvider
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersSalesforceWithHttpInfo(Salesforce body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putIdentityprovidersSalesforce");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/identityproviders/salesforce".replaceAll("\\{format\\}","json");
+  public ApiResponse<OAuthProvider> putIdentityprovidersSalesforceWithHttpInfo(Salesforce body) throws IOException {
+    return putIdentityprovidersSalesforce(createPutIdentityprovidersSalesforceRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<OAuthProvider>() {});
+  private PutIdentityprovidersSalesforceRequest createPutIdentityprovidersSalesforceRequest(Salesforce body) {
+    return PutIdentityprovidersSalesforceRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update/Create Salesforce Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return OAuthProvider
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public OAuthProvider putIdentityprovidersSalesforce(PutIdentityprovidersSalesforceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+    try {
+      ApiResponse<OAuthProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update/Create Salesforce Identity Provider
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersSalesforce(ApiRequest<Salesforce> request) throws IOException, ApiException {
-    return pcapiClient.<OAuthProvider>invokeAPIVerbose(request, new TypeReference<OAuthProvider>() {});
+  public ApiResponse<OAuthProvider> putIdentityprovidersSalesforce(ApiRequest<Salesforce> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

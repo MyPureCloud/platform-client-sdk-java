@@ -42,9 +42,6 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class PostFlowsActionsPublishRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String flow;
 	public String getFlow() {
 		return this.flow;
@@ -143,6 +140,12 @@ public class PostFlowsActionsPublishRequest {
 
 
 		public PostFlowsActionsPublishRequest build() {
+            
+            // verify the required parameter 'flow' is set
+            if (request.flow == null) {
+                throw new IllegalStateException("Missing the required parameter 'flow' when building request for PostFlowsActionsPublishRequest.");
+            }
+            
 			return request;
 		}
 	}

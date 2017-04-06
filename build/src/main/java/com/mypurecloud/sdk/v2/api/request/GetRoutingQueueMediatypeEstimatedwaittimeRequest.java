@@ -44,9 +44,6 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class GetRoutingQueueMediatypeEstimatedwaittimeRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String queueId;
 	public String getQueueId() {
 		return this.queueId;
@@ -151,6 +148,17 @@ public class GetRoutingQueueMediatypeEstimatedwaittimeRequest {
 
 
 		public GetRoutingQueueMediatypeEstimatedwaittimeRequest build() {
+            
+            // verify the required parameter 'queueId' is set
+            if (request.queueId == null) {
+                throw new IllegalStateException("Missing the required parameter 'queueId' when building request for GetRoutingQueueMediatypeEstimatedwaittimeRequest.");
+            }
+            
+            // verify the required parameter 'mediaType' is set
+            if (request.mediaType == null) {
+                throw new IllegalStateException("Missing the required parameter 'mediaType' when building request for GetRoutingQueueMediatypeEstimatedwaittimeRequest.");
+            }
+            
 			return request;
 		}
 	}

@@ -29,9 +29,6 @@ import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
 
 public class PostAuthorizationRolesRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private DomainOrganizationRoleCreate body;
 	public DomainOrganizationRoleCreate getBody() {
 		return this.body;
@@ -110,6 +107,12 @@ public class PostAuthorizationRolesRequest {
 
 
 		public PostAuthorizationRolesRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostAuthorizationRolesRequest.");
+            }
+            
 			return request;
 		}
 	}

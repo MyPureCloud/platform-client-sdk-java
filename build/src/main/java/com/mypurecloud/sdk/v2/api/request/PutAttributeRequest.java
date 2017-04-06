@@ -24,9 +24,6 @@ import com.mypurecloud.sdk.v2.model.AttributeEntityListing;
 import com.mypurecloud.sdk.v2.model.AttributeQueryRequest;
 
 public class PutAttributeRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String attributeId;
 	public String getAttributeId() {
 		return this.attributeId;
@@ -131,6 +128,17 @@ public class PutAttributeRequest {
 
 
 		public PutAttributeRequest build() {
+            
+            // verify the required parameter 'attributeId' is set
+            if (request.attributeId == null) {
+                throw new IllegalStateException("Missing the required parameter 'attributeId' when building request for PutAttributeRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutAttributeRequest.");
+            }
+            
 			return request;
 		}
 	}

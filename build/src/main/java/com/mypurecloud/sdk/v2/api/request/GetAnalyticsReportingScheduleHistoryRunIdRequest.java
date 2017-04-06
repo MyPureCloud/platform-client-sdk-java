@@ -40,9 +40,6 @@ import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.ObservationQueryResponse;
 
 public class GetAnalyticsReportingScheduleHistoryRunIdRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String runId;
 	public String getRunId() {
 		return this.runId;
@@ -147,6 +144,17 @@ public class GetAnalyticsReportingScheduleHistoryRunIdRequest {
 
 
 		public GetAnalyticsReportingScheduleHistoryRunIdRequest build() {
+            
+            // verify the required parameter 'runId' is set
+            if (request.runId == null) {
+                throw new IllegalStateException("Missing the required parameter 'runId' when building request for GetAnalyticsReportingScheduleHistoryRunIdRequest.");
+            }
+            
+            // verify the required parameter 'scheduleId' is set
+            if (request.scheduleId == null) {
+                throw new IllegalStateException("Missing the required parameter 'scheduleId' when building request for GetAnalyticsReportingScheduleHistoryRunIdRequest.");
+            }
+            
 			return request;
 		}
 	}

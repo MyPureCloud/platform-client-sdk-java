@@ -49,10 +49,11 @@ public class ScriptsApi {
    * 
    * @param scriptId Script ID (required)
    * @return Script
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Script getScript(String scriptId) throws IOException, ApiException {
-    return getScriptWithHttpInfo(scriptId).getBody();
+    return  getScript(createGetScriptRequest(scriptId));
   }
 
   /**
@@ -60,61 +61,64 @@ public class ScriptsApi {
    * 
    * @param scriptId Script ID (required)
    * @return Script
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Script> getScriptWithHttpInfo(String scriptId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'scriptId' is set
-    if (scriptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'scriptId' when calling getScript");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/scripts/{scriptId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "scriptId" + "\\}", pcapiClient.escapeString(scriptId.toString()));
+  public ApiResponse<Script> getScriptWithHttpInfo(String scriptId) throws IOException {
+    return getScript(createGetScriptRequest(scriptId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Script>() {});
+  private GetScriptRequest createGetScriptRequest(String scriptId) {
+    return GetScriptRequest.builder()
+            .withScriptId(scriptId)
+            .build();
   }
 
   /**
    * Get a script
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Script
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Script getScript(GetScriptRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Script>() {});
+    try {
+      ApiResponse<Script> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Script>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a script
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Script> getScript(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Script>invokeAPIVerbose(request, new TypeReference<Script>() {});
+  public ApiResponse<Script> getScript(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Script>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Script> response = (ApiResponse<Script>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Script> response = (ApiResponse<Script>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -123,10 +127,11 @@ public class ScriptsApi {
    * @param scriptId Script ID (required)
    * @param pageId Page ID (required)
    * @return Page
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Page getScriptPage(String scriptId, String pageId) throws IOException, ApiException {
-    return getScriptPageWithHttpInfo(scriptId, pageId).getBody();
+    return  getScriptPage(createGetScriptPageRequest(scriptId, pageId));
   }
 
   /**
@@ -135,67 +140,66 @@ public class ScriptsApi {
    * @param scriptId Script ID (required)
    * @param pageId Page ID (required)
    * @return Page
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Page> getScriptPageWithHttpInfo(String scriptId, String pageId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'scriptId' is set
-    if (scriptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'scriptId' when calling getScriptPage");
-    }
-    
-    // verify the required parameter 'pageId' is set
-    if (pageId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'pageId' when calling getScriptPage");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/scripts/{scriptId}/pages/{pageId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "scriptId" + "\\}", pcapiClient.escapeString(scriptId.toString()))
-      .replaceAll("\\{" + "pageId" + "\\}", pcapiClient.escapeString(pageId.toString()));
+  public ApiResponse<Page> getScriptPageWithHttpInfo(String scriptId, String pageId) throws IOException {
+    return getScriptPage(createGetScriptPageRequest(scriptId, pageId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetScriptPageRequest createGetScriptPageRequest(String scriptId, String pageId) {
+    return GetScriptPageRequest.builder()
+            .withScriptId(scriptId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Page>() {});
+            .withPageId(pageId)
+            .build();
   }
 
   /**
    * Get a page
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Page
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Page getScriptPage(GetScriptPageRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Page>() {});
+    try {
+      ApiResponse<Page> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Page>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a page
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Page> getScriptPage(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Page>invokeAPIVerbose(request, new TypeReference<Page>() {});
+  public ApiResponse<Page> getScriptPage(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Page>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Page> response = (ApiResponse<Page>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Page> response = (ApiResponse<Page>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -203,10 +207,11 @@ public class ScriptsApi {
    * 
    * @param scriptId Script ID (required)
    * @return List<Page>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<Page> getScriptPages(String scriptId) throws IOException, ApiException {
-    return getScriptPagesWithHttpInfo(scriptId).getBody();
+    return  getScriptPages(createGetScriptPagesRequest(scriptId));
   }
 
   /**
@@ -214,61 +219,64 @@ public class ScriptsApi {
    * 
    * @param scriptId Script ID (required)
    * @return List<Page>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<Page>> getScriptPagesWithHttpInfo(String scriptId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'scriptId' is set
-    if (scriptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'scriptId' when calling getScriptPages");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/scripts/{scriptId}/pages".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "scriptId" + "\\}", pcapiClient.escapeString(scriptId.toString()));
+  public ApiResponse<List<Page>> getScriptPagesWithHttpInfo(String scriptId) throws IOException {
+    return getScriptPages(createGetScriptPagesRequest(scriptId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<Page>>() {});
+  private GetScriptPagesRequest createGetScriptPagesRequest(String scriptId) {
+    return GetScriptPagesRequest.builder()
+            .withScriptId(scriptId)
+            .build();
   }
 
   /**
    * Get the list of pages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<Page>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<Page> getScriptPages(GetScriptPagesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<Page>>() {});
+    try {
+      ApiResponse<List<Page>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<Page>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the list of pages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<Page>> getScriptPages(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<Page>>invokeAPIVerbose(request, new TypeReference<List<Page>>() {});
+  public ApiResponse<List<Page>> getScriptPages(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<Page>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<Page>> response = (ApiResponse<List<Page>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<Page>> response = (ApiResponse<List<Page>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -283,10 +291,11 @@ public class ScriptsApi {
    * @param sortBy SortBy (optional)
    * @param sortOrder SortOrder (optional)
    * @return ScriptEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ScriptEntityListing getScripts(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder) throws IOException, ApiException {
-    return getScriptsWithHttpInfo(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder).getBody();
+    return  getScripts(createGetScriptsRequest(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder));
   }
 
   /**
@@ -301,63 +310,78 @@ public class ScriptsApi {
    * @param sortBy SortBy (optional)
    * @param sortOrder SortOrder (optional)
    * @return ScriptEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScriptEntityListing> getScriptsWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/scripts".replaceAll("\\{format\\}","json");
+  public ApiResponse<ScriptEntityListing> getScriptsWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder) throws IOException {
+    return getScripts(createGetScriptsRequest(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetScriptsRequest createGetScriptsRequest(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder) {
+    return GetScriptsRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "feature", feature));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "flowId", flowId));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortBy", sortBy));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "sortOrder", sortOrder));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withExpand(expand)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withName(name)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withFeature(feature)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ScriptEntityListing>() {});
+            .withFlowId(flowId)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+            .build();
   }
 
   /**
    * Get the list of scripts
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ScriptEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ScriptEntityListing getScripts(GetScriptsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ScriptEntityListing>() {});
+    try {
+      ApiResponse<ScriptEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScriptEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the list of scripts
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScriptEntityListing> getScripts(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ScriptEntityListing>invokeAPIVerbose(request, new TypeReference<ScriptEntityListing>() {});
+  public ApiResponse<ScriptEntityListing> getScripts(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScriptEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScriptEntityListing> response = (ApiResponse<ScriptEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScriptEntityListing> response = (ApiResponse<ScriptEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -370,10 +394,11 @@ public class ScriptsApi {
    * @param feature Feature filter (optional)
    * @param flowId Secure flow id filter (optional)
    * @return ScriptEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ScriptEntityListing getScriptsPublished(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId) throws IOException, ApiException {
-    return getScriptsPublishedWithHttpInfo(pageSize, pageNumber, expand, name, feature, flowId).getBody();
+    return  getScriptsPublished(createGetScriptsPublishedRequest(pageSize, pageNumber, expand, name, feature, flowId));
   }
 
   /**
@@ -386,61 +411,74 @@ public class ScriptsApi {
    * @param feature Feature filter (optional)
    * @param flowId Secure flow id filter (optional)
    * @return ScriptEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScriptEntityListing> getScriptsPublishedWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/scripts/published".replaceAll("\\{format\\}","json");
+  public ApiResponse<ScriptEntityListing> getScriptsPublishedWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId) throws IOException {
+    return getScriptsPublished(createGetScriptsPublishedRequest(pageSize, pageNumber, expand, name, feature, flowId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetScriptsPublishedRequest createGetScriptsPublishedRequest(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId) {
+    return GetScriptsPublishedRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "expand", expand));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "name", name));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "feature", feature));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "flowId", flowId));
+            .withPageNumber(pageNumber)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withExpand(expand)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
+            .withName(name)
 
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
+            .withFeature(feature)
 
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ScriptEntityListing>() {});
+            .withFlowId(flowId)
+            .build();
   }
 
   /**
    * Get the published scripts.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ScriptEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ScriptEntityListing getScriptsPublished(GetScriptsPublishedRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ScriptEntityListing>() {});
+    try {
+      ApiResponse<ScriptEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScriptEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the published scripts.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScriptEntityListing> getScriptsPublished(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ScriptEntityListing>invokeAPIVerbose(request, new TypeReference<ScriptEntityListing>() {});
+  public ApiResponse<ScriptEntityListing> getScriptsPublished(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScriptEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScriptEntityListing> response = (ApiResponse<ScriptEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScriptEntityListing> response = (ApiResponse<ScriptEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -448,10 +486,11 @@ public class ScriptsApi {
    * 
    * @param scriptId Script ID (required)
    * @return Script
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Script getScriptsPublishedScriptId(String scriptId) throws IOException, ApiException {
-    return getScriptsPublishedScriptIdWithHttpInfo(scriptId).getBody();
+    return  getScriptsPublishedScriptId(createGetScriptsPublishedScriptIdRequest(scriptId));
   }
 
   /**
@@ -459,61 +498,64 @@ public class ScriptsApi {
    * 
    * @param scriptId Script ID (required)
    * @return Script
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Script> getScriptsPublishedScriptIdWithHttpInfo(String scriptId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'scriptId' is set
-    if (scriptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'scriptId' when calling getScriptsPublishedScriptId");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/scripts/published/{scriptId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "scriptId" + "\\}", pcapiClient.escapeString(scriptId.toString()));
+  public ApiResponse<Script> getScriptsPublishedScriptIdWithHttpInfo(String scriptId) throws IOException {
+    return getScriptsPublishedScriptId(createGetScriptsPublishedScriptIdRequest(scriptId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Script>() {});
+  private GetScriptsPublishedScriptIdRequest createGetScriptsPublishedScriptIdRequest(String scriptId) {
+    return GetScriptsPublishedScriptIdRequest.builder()
+            .withScriptId(scriptId)
+            .build();
   }
 
   /**
    * Get the published script.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Script
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Script getScriptsPublishedScriptId(GetScriptsPublishedScriptIdRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Script>() {});
+    try {
+      ApiResponse<Script> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Script>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the published script.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Script> getScriptsPublishedScriptId(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Script>invokeAPIVerbose(request, new TypeReference<Script>() {});
+  public ApiResponse<Script> getScriptsPublishedScriptId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Script>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Script> response = (ApiResponse<Script>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Script> response = (ApiResponse<Script>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -522,10 +564,11 @@ public class ScriptsApi {
    * @param scriptId Script ID (required)
    * @param pageId Page ID (required)
    * @return Page
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Page getScriptsPublishedScriptIdPage(String scriptId, String pageId) throws IOException, ApiException {
-    return getScriptsPublishedScriptIdPageWithHttpInfo(scriptId, pageId).getBody();
+    return  getScriptsPublishedScriptIdPage(createGetScriptsPublishedScriptIdPageRequest(scriptId, pageId));
   }
 
   /**
@@ -534,67 +577,66 @@ public class ScriptsApi {
    * @param scriptId Script ID (required)
    * @param pageId Page ID (required)
    * @return Page
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Page> getScriptsPublishedScriptIdPageWithHttpInfo(String scriptId, String pageId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'scriptId' is set
-    if (scriptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'scriptId' when calling getScriptsPublishedScriptIdPage");
-    }
-    
-    // verify the required parameter 'pageId' is set
-    if (pageId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'pageId' when calling getScriptsPublishedScriptIdPage");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/scripts/published/{scriptId}/pages/{pageId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "scriptId" + "\\}", pcapiClient.escapeString(scriptId.toString()))
-      .replaceAll("\\{" + "pageId" + "\\}", pcapiClient.escapeString(pageId.toString()));
+  public ApiResponse<Page> getScriptsPublishedScriptIdPageWithHttpInfo(String scriptId, String pageId) throws IOException {
+    return getScriptsPublishedScriptIdPage(createGetScriptsPublishedScriptIdPageRequest(scriptId, pageId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetScriptsPublishedScriptIdPageRequest createGetScriptsPublishedScriptIdPageRequest(String scriptId, String pageId) {
+    return GetScriptsPublishedScriptIdPageRequest.builder()
+            .withScriptId(scriptId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Page>() {});
+            .withPageId(pageId)
+            .build();
   }
 
   /**
    * Get the published page.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Page
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Page getScriptsPublishedScriptIdPage(GetScriptsPublishedScriptIdPageRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Page>() {});
+    try {
+      ApiResponse<Page> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Page>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the published page.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Page> getScriptsPublishedScriptIdPage(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Page>invokeAPIVerbose(request, new TypeReference<Page>() {});
+  public ApiResponse<Page> getScriptsPublishedScriptIdPage(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Page>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Page> response = (ApiResponse<Page>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Page> response = (ApiResponse<Page>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -602,10 +644,11 @@ public class ScriptsApi {
    * 
    * @param scriptId Script ID (required)
    * @return List<Page>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<Page> getScriptsPublishedScriptIdPages(String scriptId) throws IOException, ApiException {
-    return getScriptsPublishedScriptIdPagesWithHttpInfo(scriptId).getBody();
+    return  getScriptsPublishedScriptIdPages(createGetScriptsPublishedScriptIdPagesRequest(scriptId));
   }
 
   /**
@@ -613,61 +656,64 @@ public class ScriptsApi {
    * 
    * @param scriptId Script ID (required)
    * @return List<Page>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<Page>> getScriptsPublishedScriptIdPagesWithHttpInfo(String scriptId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'scriptId' is set
-    if (scriptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'scriptId' when calling getScriptsPublishedScriptIdPages");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/scripts/published/{scriptId}/pages".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "scriptId" + "\\}", pcapiClient.escapeString(scriptId.toString()));
+  public ApiResponse<List<Page>> getScriptsPublishedScriptIdPagesWithHttpInfo(String scriptId) throws IOException {
+    return getScriptsPublishedScriptIdPages(createGetScriptsPublishedScriptIdPagesRequest(scriptId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<Page>>() {});
+  private GetScriptsPublishedScriptIdPagesRequest createGetScriptsPublishedScriptIdPagesRequest(String scriptId) {
+    return GetScriptsPublishedScriptIdPagesRequest.builder()
+            .withScriptId(scriptId)
+            .build();
   }
 
   /**
    * Get the list of published pages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<Page>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<Page> getScriptsPublishedScriptIdPages(GetScriptsPublishedScriptIdPagesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<Page>>() {});
+    try {
+      ApiResponse<List<Page>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<Page>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the list of published pages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<Page>> getScriptsPublishedScriptIdPages(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<Page>>invokeAPIVerbose(request, new TypeReference<List<Page>>() {});
+  public ApiResponse<List<Page>> getScriptsPublishedScriptIdPages(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<Page>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<Page>> response = (ApiResponse<List<Page>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<Page>> response = (ApiResponse<List<Page>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -678,10 +724,11 @@ public class ScriptsApi {
    * @param output output (optional)
    * @param type type (optional)
    * @return Object
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Object getScriptsPublishedScriptIdVariables(String scriptId, String input, String output, String type) throws IOException, ApiException {
-    return getScriptsPublishedScriptIdVariablesWithHttpInfo(scriptId, input, output, type).getBody();
+    return  getScriptsPublishedScriptIdVariables(createGetScriptsPublishedScriptIdVariablesRequest(scriptId, input, output, type));
   }
 
   /**
@@ -692,64 +739,70 @@ public class ScriptsApi {
    * @param output output (optional)
    * @param type type (optional)
    * @return Object
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Object> getScriptsPublishedScriptIdVariablesWithHttpInfo(String scriptId, String input, String output, String type) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'scriptId' is set
-    if (scriptId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'scriptId' when calling getScriptsPublishedScriptIdVariables");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/scripts/published/{scriptId}/variables".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "scriptId" + "\\}", pcapiClient.escapeString(scriptId.toString()));
+  public ApiResponse<Object> getScriptsPublishedScriptIdVariablesWithHttpInfo(String scriptId, String input, String output, String type) throws IOException {
+    return getScriptsPublishedScriptIdVariables(createGetScriptsPublishedScriptIdVariablesRequest(scriptId, input, output, type).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetScriptsPublishedScriptIdVariablesRequest createGetScriptsPublishedScriptIdVariablesRequest(String scriptId, String input, String output, String type) {
+    return GetScriptsPublishedScriptIdVariablesRequest.builder()
+            .withScriptId(scriptId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "input", input));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "output", output));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "type", type));
+            .withInput(input)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
+            .withOutput(output)
 
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Object>() {});
+            .withType(type)
+            .build();
   }
 
   /**
    * Get the published variables
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Object getScriptsPublishedScriptIdVariables(GetScriptsPublishedScriptIdVariablesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Object>() {});
+    try {
+      ApiResponse<Object> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Object>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the published variables
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Object> getScriptsPublishedScriptIdVariables(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Object>invokeAPIVerbose(request, new TypeReference<Object>() {});
+  public ApiResponse<Object> getScriptsPublishedScriptIdVariables(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Object>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

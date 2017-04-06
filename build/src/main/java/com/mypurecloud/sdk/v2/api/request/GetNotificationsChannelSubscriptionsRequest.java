@@ -26,9 +26,6 @@ import com.mypurecloud.sdk.v2.model.ChannelTopic;
 import com.mypurecloud.sdk.v2.model.Channel;
 
 public class GetNotificationsChannelSubscriptionsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String channelId;
 	public String getChannelId() {
 		return this.channelId;
@@ -107,6 +104,12 @@ public class GetNotificationsChannelSubscriptionsRequest {
 
 
 		public GetNotificationsChannelSubscriptionsRequest build() {
+            
+            // verify the required parameter 'channelId' is set
+            if (request.channelId == null) {
+                throw new IllegalStateException("Missing the required parameter 'channelId' when building request for GetNotificationsChannelSubscriptionsRequest.");
+            }
+            
 			return request;
 		}
 	}

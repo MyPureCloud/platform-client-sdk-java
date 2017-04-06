@@ -55,9 +55,6 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PostOutboundDnclistPhonenumbersRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String dncListId;
 	public String getDncListId() {
 		return this.dncListId;
@@ -162,6 +159,17 @@ public class PostOutboundDnclistPhonenumbersRequest {
 
 
 		public PostOutboundDnclistPhonenumbersRequest build() {
+            
+            // verify the required parameter 'dncListId' is set
+            if (request.dncListId == null) {
+                throw new IllegalStateException("Missing the required parameter 'dncListId' when building request for PostOutboundDnclistPhonenumbersRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostOutboundDnclistPhonenumbersRequest.");
+            }
+            
 			return request;
 		}
 	}

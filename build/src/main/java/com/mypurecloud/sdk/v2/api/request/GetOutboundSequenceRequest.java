@@ -55,9 +55,6 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class GetOutboundSequenceRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String sequenceId;
 	public String getSequenceId() {
 		return this.sequenceId;
@@ -136,6 +133,12 @@ public class GetOutboundSequenceRequest {
 
 
 		public GetOutboundSequenceRequest build() {
+            
+            // verify the required parameter 'sequenceId' is set
+            if (request.sequenceId == null) {
+                throw new IllegalStateException("Missing the required parameter 'sequenceId' when building request for GetOutboundSequenceRequest.");
+            }
+            
 			return request;
 		}
 	}

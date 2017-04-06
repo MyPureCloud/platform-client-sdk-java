@@ -84,9 +84,6 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PutTelephonyProvidersEdgesEndpointRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String endpointId;
 	public String getEndpointId() {
 		return this.endpointId;
@@ -191,6 +188,17 @@ public class PutTelephonyProvidersEdgesEndpointRequest {
 
 
 		public PutTelephonyProvidersEdgesEndpointRequest build() {
+            
+            // verify the required parameter 'endpointId' is set
+            if (request.endpointId == null) {
+                throw new IllegalStateException("Missing the required parameter 'endpointId' when building request for PutTelephonyProvidersEdgesEndpointRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutTelephonyProvidersEdgesEndpointRequest.");
+            }
+            
 			return request;
 		}
 	}

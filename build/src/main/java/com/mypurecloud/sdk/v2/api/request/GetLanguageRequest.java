@@ -24,9 +24,6 @@ import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.AvailableTranslations;
 
 public class GetLanguageRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String languageId;
 	public String getLanguageId() {
 		return this.languageId;
@@ -105,6 +102,12 @@ public class GetLanguageRequest {
 
 
 		public GetLanguageRequest build() {
+            
+            // verify the required parameter 'languageId' is set
+            if (request.languageId == null) {
+                throw new IllegalStateException("Missing the required parameter 'languageId' when building request for GetLanguageRequest.");
+            }
+            
 			return request;
 		}
 	}

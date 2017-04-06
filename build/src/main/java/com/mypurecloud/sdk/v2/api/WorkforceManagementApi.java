@@ -58,10 +58,11 @@ public class WorkforceManagementApi {
    * 
    * @param userId User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request (required)
    * @return List<UserScheduleAdherence>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<UserScheduleAdherence> getWorkforcemanagementAdherence(List<String> userId) throws IOException, ApiException {
-    return getWorkforcemanagementAdherenceWithHttpInfo(userId).getBody();
+    return  getWorkforcemanagementAdherence(createGetWorkforcemanagementAdherenceRequest(userId));
   }
 
   /**
@@ -69,61 +70,64 @@ public class WorkforceManagementApi {
    * 
    * @param userId User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request (required)
    * @return List<UserScheduleAdherence>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<UserScheduleAdherence>> getWorkforcemanagementAdherenceWithHttpInfo(List<String> userId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getWorkforcemanagementAdherence");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/workforcemanagement/adherence".replaceAll("\\{format\\}","json");
+  public ApiResponse<List<UserScheduleAdherence>> getWorkforcemanagementAdherenceWithHttpInfo(List<String> userId) throws IOException {
+    return getWorkforcemanagementAdherence(createGetWorkforcemanagementAdherenceRequest(userId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "userId", userId));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<UserScheduleAdherence>>() {});
+  private GetWorkforcemanagementAdherenceRequest createGetWorkforcemanagementAdherenceRequest(List<String> userId) {
+    return GetWorkforcemanagementAdherenceRequest.builder()
+            .withUserId(userId)
+            .build();
   }
 
   /**
    * Get a list of UserScheduleAdherence records for the requested users
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<UserScheduleAdherence>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<UserScheduleAdherence> getWorkforcemanagementAdherence(GetWorkforcemanagementAdherenceRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<UserScheduleAdherence>>() {});
+    try {
+      ApiResponse<List<UserScheduleAdherence>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<UserScheduleAdherence>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of UserScheduleAdherence records for the requested users
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<UserScheduleAdherence>> getWorkforcemanagementAdherence(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<UserScheduleAdherence>>invokeAPIVerbose(request, new TypeReference<List<UserScheduleAdherence>>() {});
+  public ApiResponse<List<UserScheduleAdherence>> getWorkforcemanagementAdherence(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<UserScheduleAdherence>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<UserScheduleAdherence>> response = (ApiResponse<List<UserScheduleAdherence>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<UserScheduleAdherence>> response = (ApiResponse<List<UserScheduleAdherence>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -131,10 +135,11 @@ public class WorkforceManagementApi {
    * 
    * @param muId The muId of the management unit. (required)
    * @return ActivityCodeContainer
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ActivityCodeContainer getWorkforcemanagementManagementunitActivitycodes(String muId) throws IOException, ApiException {
-    return getWorkforcemanagementManagementunitActivitycodesWithHttpInfo(muId).getBody();
+    return  getWorkforcemanagementManagementunitActivitycodes(createGetWorkforcemanagementManagementunitActivitycodesRequest(muId));
   }
 
   /**
@@ -142,61 +147,64 @@ public class WorkforceManagementApi {
    * 
    * @param muId The muId of the management unit. (required)
    * @return ActivityCodeContainer
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ActivityCodeContainer> getWorkforcemanagementManagementunitActivitycodesWithHttpInfo(String muId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'muId' is set
-    if (muId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'muId' when calling getWorkforcemanagementManagementunitActivitycodes");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/workforcemanagement/managementunits/{muId}/activitycodes".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "muId" + "\\}", pcapiClient.escapeString(muId.toString()));
+  public ApiResponse<ActivityCodeContainer> getWorkforcemanagementManagementunitActivitycodesWithHttpInfo(String muId) throws IOException {
+    return getWorkforcemanagementManagementunitActivitycodes(createGetWorkforcemanagementManagementunitActivitycodesRequest(muId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ActivityCodeContainer>() {});
+  private GetWorkforcemanagementManagementunitActivitycodesRequest createGetWorkforcemanagementManagementunitActivitycodesRequest(String muId) {
+    return GetWorkforcemanagementManagementunitActivitycodesRequest.builder()
+            .withMuId(muId)
+            .build();
   }
 
   /**
    * Get activity codes corresponding to a management unit
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ActivityCodeContainer
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ActivityCodeContainer getWorkforcemanagementManagementunitActivitycodes(GetWorkforcemanagementManagementunitActivitycodesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ActivityCodeContainer>() {});
+    try {
+      ApiResponse<ActivityCodeContainer> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityCodeContainer>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get activity codes corresponding to a management unit
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ActivityCodeContainer> getWorkforcemanagementManagementunitActivitycodes(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ActivityCodeContainer>invokeAPIVerbose(request, new TypeReference<ActivityCodeContainer>() {});
+  public ApiResponse<ActivityCodeContainer> getWorkforcemanagementManagementunitActivitycodes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityCodeContainer>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityCodeContainer> response = (ApiResponse<ActivityCodeContainer>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityCodeContainer> response = (ApiResponse<ActivityCodeContainer>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -206,10 +214,11 @@ public class WorkforceManagementApi {
    * @param userId The userId to whom the Time Off Request applies. (required)
    * @param timeOffRequestId Time Off Request Id (required)
    * @return TimeOffRequest
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TimeOffRequest getWorkforcemanagementManagementunitUserTimeoffrequest(String muId, String userId, String timeOffRequestId) throws IOException, ApiException {
-    return getWorkforcemanagementManagementunitUserTimeoffrequestWithHttpInfo(muId, userId, timeOffRequestId).getBody();
+    return  getWorkforcemanagementManagementunitUserTimeoffrequest(createGetWorkforcemanagementManagementunitUserTimeoffrequestRequest(muId, userId, timeOffRequestId));
   }
 
   /**
@@ -219,73 +228,68 @@ public class WorkforceManagementApi {
    * @param userId The userId to whom the Time Off Request applies. (required)
    * @param timeOffRequestId Time Off Request Id (required)
    * @return TimeOffRequest
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeOffRequest> getWorkforcemanagementManagementunitUserTimeoffrequestWithHttpInfo(String muId, String userId, String timeOffRequestId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'muId' is set
-    if (muId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'muId' when calling getWorkforcemanagementManagementunitUserTimeoffrequest");
-    }
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getWorkforcemanagementManagementunitUserTimeoffrequest");
-    }
-    
-    // verify the required parameter 'timeOffRequestId' is set
-    if (timeOffRequestId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'timeOffRequestId' when calling getWorkforcemanagementManagementunitUserTimeoffrequest");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "muId" + "\\}", pcapiClient.escapeString(muId.toString()))
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()))
-      .replaceAll("\\{" + "timeOffRequestId" + "\\}", pcapiClient.escapeString(timeOffRequestId.toString()));
+  public ApiResponse<TimeOffRequest> getWorkforcemanagementManagementunitUserTimeoffrequestWithHttpInfo(String muId, String userId, String timeOffRequestId) throws IOException {
+    return getWorkforcemanagementManagementunitUserTimeoffrequest(createGetWorkforcemanagementManagementunitUserTimeoffrequestRequest(muId, userId, timeOffRequestId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetWorkforcemanagementManagementunitUserTimeoffrequestRequest createGetWorkforcemanagementManagementunitUserTimeoffrequestRequest(String muId, String userId, String timeOffRequestId) {
+    return GetWorkforcemanagementManagementunitUserTimeoffrequestRequest.builder()
+            .withMuId(muId)
 
+            .withUserId(userId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<TimeOffRequest>() {});
+            .withTimeOffRequestId(timeOffRequestId)
+            .build();
   }
 
   /**
    * Get a time off request by id
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return TimeOffRequest
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TimeOffRequest getWorkforcemanagementManagementunitUserTimeoffrequest(GetWorkforcemanagementManagementunitUserTimeoffrequestRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TimeOffRequest>() {});
+    try {
+      ApiResponse<TimeOffRequest> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffRequest>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a time off request by id
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeOffRequest> getWorkforcemanagementManagementunitUserTimeoffrequest(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<TimeOffRequest>invokeAPIVerbose(request, new TypeReference<TimeOffRequest>() {});
+  public ApiResponse<TimeOffRequest> getWorkforcemanagementManagementunitUserTimeoffrequest(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeOffRequest>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffRequest> response = (ApiResponse<TimeOffRequest>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffRequest> response = (ApiResponse<TimeOffRequest>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -295,10 +299,11 @@ public class WorkforceManagementApi {
    * @param userId The userId to whom the Time Off Request applies. (required)
    * @param recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (optional, default to false)
    * @return TimeOffRequestList
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TimeOffRequestList getWorkforcemanagementManagementunitUserTimeoffrequests(String muId, String userId, Boolean recentlyReviewed) throws IOException, ApiException {
-    return getWorkforcemanagementManagementunitUserTimeoffrequestsWithHttpInfo(muId, userId, recentlyReviewed).getBody();
+    return  getWorkforcemanagementManagementunitUserTimeoffrequests(createGetWorkforcemanagementManagementunitUserTimeoffrequestsRequest(muId, userId, recentlyReviewed));
   }
 
   /**
@@ -308,68 +313,68 @@ public class WorkforceManagementApi {
    * @param userId The userId to whom the Time Off Request applies. (required)
    * @param recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (optional, default to false)
    * @return TimeOffRequestList
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeOffRequestList> getWorkforcemanagementManagementunitUserTimeoffrequestsWithHttpInfo(String muId, String userId, Boolean recentlyReviewed) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'muId' is set
-    if (muId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'muId' when calling getWorkforcemanagementManagementunitUserTimeoffrequests");
-    }
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getWorkforcemanagementManagementunitUserTimeoffrequests");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "muId" + "\\}", pcapiClient.escapeString(muId.toString()))
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<TimeOffRequestList> getWorkforcemanagementManagementunitUserTimeoffrequestsWithHttpInfo(String muId, String userId, Boolean recentlyReviewed) throws IOException {
+    return getWorkforcemanagementManagementunitUserTimeoffrequests(createGetWorkforcemanagementManagementunitUserTimeoffrequestsRequest(muId, userId, recentlyReviewed).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest createGetWorkforcemanagementManagementunitUserTimeoffrequestsRequest(String muId, String userId, Boolean recentlyReviewed) {
+    return GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest.builder()
+            .withMuId(muId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "recentlyReviewed", recentlyReviewed));
+            .withUserId(userId)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<TimeOffRequestList>() {});
+            .withRecentlyReviewed(recentlyReviewed)
+            .build();
   }
 
   /**
    * Get a list of time off requests for any user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return TimeOffRequestList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TimeOffRequestList getWorkforcemanagementManagementunitUserTimeoffrequests(GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TimeOffRequestList>() {});
+    try {
+      ApiResponse<TimeOffRequestList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffRequestList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of time off requests for any user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeOffRequestList> getWorkforcemanagementManagementunitUserTimeoffrequests(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<TimeOffRequestList>invokeAPIVerbose(request, new TypeReference<TimeOffRequestList>() {});
+  public ApiResponse<TimeOffRequestList> getWorkforcemanagementManagementunitUserTimeoffrequests(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeOffRequestList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffRequestList> response = (ApiResponse<TimeOffRequestList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffRequestList> response = (ApiResponse<TimeOffRequestList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -377,10 +382,11 @@ public class WorkforceManagementApi {
    * 
    * @param muId The muId of the management unit. (required)
    * @return WfmUserEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public WfmUserEntityListing getWorkforcemanagementManagementunitUsers(String muId) throws IOException, ApiException {
-    return getWorkforcemanagementManagementunitUsersWithHttpInfo(muId).getBody();
+    return  getWorkforcemanagementManagementunitUsers(createGetWorkforcemanagementManagementunitUsersRequest(muId));
   }
 
   /**
@@ -388,61 +394,64 @@ public class WorkforceManagementApi {
    * 
    * @param muId The muId of the management unit. (required)
    * @return WfmUserEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WfmUserEntityListing> getWorkforcemanagementManagementunitUsersWithHttpInfo(String muId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'muId' is set
-    if (muId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'muId' when calling getWorkforcemanagementManagementunitUsers");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/workforcemanagement/managementunits/{muId}/users".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "muId" + "\\}", pcapiClient.escapeString(muId.toString()));
+  public ApiResponse<WfmUserEntityListing> getWorkforcemanagementManagementunitUsersWithHttpInfo(String muId) throws IOException {
+    return getWorkforcemanagementManagementunitUsers(createGetWorkforcemanagementManagementunitUsersRequest(muId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<WfmUserEntityListing>() {});
+  private GetWorkforcemanagementManagementunitUsersRequest createGetWorkforcemanagementManagementunitUsersRequest(String muId) {
+    return GetWorkforcemanagementManagementunitUsersRequest.builder()
+            .withMuId(muId)
+            .build();
   }
 
   /**
    * Get agents in the management unit
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return WfmUserEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public WfmUserEntityListing getWorkforcemanagementManagementunitUsers(GetWorkforcemanagementManagementunitUsersRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<WfmUserEntityListing>() {});
+    try {
+      ApiResponse<WfmUserEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WfmUserEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get agents in the management unit
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WfmUserEntityListing> getWorkforcemanagementManagementunitUsers(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<WfmUserEntityListing>invokeAPIVerbose(request, new TypeReference<WfmUserEntityListing>() {});
+  public ApiResponse<WfmUserEntityListing> getWorkforcemanagementManagementunitUsers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WfmUserEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmUserEntityListing> response = (ApiResponse<WfmUserEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmUserEntityListing> response = (ApiResponse<WfmUserEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -452,10 +461,11 @@ public class WorkforceManagementApi {
    * @param pageSize  (optional, default to 25)
    * @param pageNumber  (optional, default to 1)
    * @return List<ManagementUnit>
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<ManagementUnit> getWorkforcemanagementManagementunits(String selector, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getWorkforcemanagementManagementunitsWithHttpInfo(selector, pageSize, pageNumber).getBody();
+    return  getWorkforcemanagementManagementunits(createGetWorkforcemanagementManagementunitsRequest(selector, pageSize, pageNumber));
   }
 
   /**
@@ -465,58 +475,68 @@ public class WorkforceManagementApi {
    * @param pageSize  (optional, default to 25)
    * @param pageNumber  (optional, default to 1)
    * @return List<ManagementUnit>
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<ManagementUnit>> getWorkforcemanagementManagementunitsWithHttpInfo(String selector, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/workforcemanagement/managementunits".replaceAll("\\{format\\}","json");
+  public ApiResponse<List<ManagementUnit>> getWorkforcemanagementManagementunitsWithHttpInfo(String selector, Integer pageSize, Integer pageNumber) throws IOException {
+    return getWorkforcemanagementManagementunits(createGetWorkforcemanagementManagementunitsRequest(selector, pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetWorkforcemanagementManagementunitsRequest createGetWorkforcemanagementManagementunitsRequest(String selector, Integer pageSize, Integer pageNumber) {
+    return GetWorkforcemanagementManagementunitsRequest.builder()
+            .withSelector(selector)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "selector", selector));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<List<ManagementUnit>>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * Get management units
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return List<ManagementUnit>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public List<ManagementUnit> getWorkforcemanagementManagementunits(GetWorkforcemanagementManagementunitsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<List<ManagementUnit>>() {});
+    try {
+      ApiResponse<List<ManagementUnit>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<ManagementUnit>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get management units
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<ManagementUnit>> getWorkforcemanagementManagementunits(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<List<ManagementUnit>>invokeAPIVerbose(request, new TypeReference<List<ManagementUnit>>() {});
+  public ApiResponse<List<ManagementUnit>> getWorkforcemanagementManagementunits(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<ManagementUnit>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<ManagementUnit>> response = (ApiResponse<List<ManagementUnit>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<ManagementUnit>> response = (ApiResponse<List<ManagementUnit>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -524,10 +544,11 @@ public class WorkforceManagementApi {
    * 
    * @param timeOffRequestId Time Off Request Id (required)
    * @return TimeOffRequest
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TimeOffRequest getWorkforcemanagementTimeoffrequest(String timeOffRequestId) throws IOException, ApiException {
-    return getWorkforcemanagementTimeoffrequestWithHttpInfo(timeOffRequestId).getBody();
+    return  getWorkforcemanagementTimeoffrequest(createGetWorkforcemanagementTimeoffrequestRequest(timeOffRequestId));
   }
 
   /**
@@ -535,61 +556,64 @@ public class WorkforceManagementApi {
    * 
    * @param timeOffRequestId Time Off Request Id (required)
    * @return TimeOffRequest
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeOffRequest> getWorkforcemanagementTimeoffrequestWithHttpInfo(String timeOffRequestId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'timeOffRequestId' is set
-    if (timeOffRequestId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'timeOffRequestId' when calling getWorkforcemanagementTimeoffrequest");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "timeOffRequestId" + "\\}", pcapiClient.escapeString(timeOffRequestId.toString()));
+  public ApiResponse<TimeOffRequest> getWorkforcemanagementTimeoffrequestWithHttpInfo(String timeOffRequestId) throws IOException {
+    return getWorkforcemanagementTimeoffrequest(createGetWorkforcemanagementTimeoffrequestRequest(timeOffRequestId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<TimeOffRequest>() {});
+  private GetWorkforcemanagementTimeoffrequestRequest createGetWorkforcemanagementTimeoffrequestRequest(String timeOffRequestId) {
+    return GetWorkforcemanagementTimeoffrequestRequest.builder()
+            .withTimeOffRequestId(timeOffRequestId)
+            .build();
   }
 
   /**
    * Get a time off request for the current user by id
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return TimeOffRequest
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TimeOffRequest getWorkforcemanagementTimeoffrequest(GetWorkforcemanagementTimeoffrequestRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TimeOffRequest>() {});
+    try {
+      ApiResponse<TimeOffRequest> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffRequest>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a time off request for the current user by id
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeOffRequest> getWorkforcemanagementTimeoffrequest(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<TimeOffRequest>invokeAPIVerbose(request, new TypeReference<TimeOffRequest>() {});
+  public ApiResponse<TimeOffRequest> getWorkforcemanagementTimeoffrequest(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeOffRequest>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffRequest> response = (ApiResponse<TimeOffRequest>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffRequest> response = (ApiResponse<TimeOffRequest>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -597,10 +621,11 @@ public class WorkforceManagementApi {
    * 
    * @param recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (optional, default to false)
    * @return TimeOffRequestList
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TimeOffRequestList getWorkforcemanagementTimeoffrequests(Boolean recentlyReviewed) throws IOException, ApiException {
-    return getWorkforcemanagementTimeoffrequestsWithHttpInfo(recentlyReviewed).getBody();
+    return  getWorkforcemanagementTimeoffrequests(createGetWorkforcemanagementTimeoffrequestsRequest(recentlyReviewed));
   }
 
   /**
@@ -608,56 +633,64 @@ public class WorkforceManagementApi {
    * 
    * @param recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (optional, default to false)
    * @return TimeOffRequestList
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeOffRequestList> getWorkforcemanagementTimeoffrequestsWithHttpInfo(Boolean recentlyReviewed) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/workforcemanagement/timeoffrequests".replaceAll("\\{format\\}","json");
+  public ApiResponse<TimeOffRequestList> getWorkforcemanagementTimeoffrequestsWithHttpInfo(Boolean recentlyReviewed) throws IOException {
+    return getWorkforcemanagementTimeoffrequests(createGetWorkforcemanagementTimeoffrequestsRequest(recentlyReviewed).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "recentlyReviewed", recentlyReviewed));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<TimeOffRequestList>() {});
+  private GetWorkforcemanagementTimeoffrequestsRequest createGetWorkforcemanagementTimeoffrequestsRequest(Boolean recentlyReviewed) {
+    return GetWorkforcemanagementTimeoffrequestsRequest.builder()
+            .withRecentlyReviewed(recentlyReviewed)
+            .build();
   }
 
   /**
    * Get a list of time off requests for the current user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return TimeOffRequestList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TimeOffRequestList getWorkforcemanagementTimeoffrequests(GetWorkforcemanagementTimeoffrequestsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TimeOffRequestList>() {});
+    try {
+      ApiResponse<TimeOffRequestList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffRequestList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a list of time off requests for the current user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeOffRequestList> getWorkforcemanagementTimeoffrequests(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<TimeOffRequestList>invokeAPIVerbose(request, new TypeReference<TimeOffRequestList>() {});
+  public ApiResponse<TimeOffRequestList> getWorkforcemanagementTimeoffrequests(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeOffRequestList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffRequestList> response = (ApiResponse<TimeOffRequestList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffRequestList> response = (ApiResponse<TimeOffRequestList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -665,10 +698,11 @@ public class WorkforceManagementApi {
    * 
    * @param timeOffRequestId Time Off Request Id (required)
    * @param body  (optional)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchWorkforcemanagementTimeoffrequest(String timeOffRequestId, TimeOffRequestPatch body) throws IOException, ApiException {
-    patchWorkforcemanagementTimeoffrequestWithHttpInfo(timeOffRequestId, body);
+     patchWorkforcemanagementTimeoffrequest(createPatchWorkforcemanagementTimeoffrequestRequest(timeOffRequestId, body));
   }
 
   /**
@@ -676,61 +710,65 @@ public class WorkforceManagementApi {
    * 
    * @param timeOffRequestId Time Off Request Id (required)
    * @param body  (optional)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchWorkforcemanagementTimeoffrequestWithHttpInfo(String timeOffRequestId, TimeOffRequestPatch body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'timeOffRequestId' is set
-    if (timeOffRequestId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'timeOffRequestId' when calling patchWorkforcemanagementTimeoffrequest");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "timeOffRequestId" + "\\}", pcapiClient.escapeString(timeOffRequestId.toString()));
+  public ApiResponse<Void> patchWorkforcemanagementTimeoffrequestWithHttpInfo(String timeOffRequestId, TimeOffRequestPatch body) throws IOException {
+    return patchWorkforcemanagementTimeoffrequest(createPatchWorkforcemanagementTimeoffrequestRequest(timeOffRequestId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchWorkforcemanagementTimeoffrequestRequest createPatchWorkforcemanagementTimeoffrequestRequest(String timeOffRequestId, TimeOffRequestPatch body) {
+    return PatchWorkforcemanagementTimeoffrequestRequest.builder()
+            .withTimeOffRequestId(timeOffRequestId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+            .withBody(body)
+            .build();
   }
 
   /**
    * Mark a time off request for the current user as read or unread
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void patchWorkforcemanagementTimeoffrequest(PatchWorkforcemanagementTimeoffrequestRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Mark a time off request for the current user as read or unread
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> patchWorkforcemanagementTimeoffrequest(ApiRequest<TimeOffRequestPatch> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> patchWorkforcemanagementTimeoffrequest(ApiRequest<TimeOffRequestPatch> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -739,10 +777,11 @@ public class WorkforceManagementApi {
    * @param muId The muId of the management unit. (required)
    * @param body body (optional)
    * @return UserScheduleContainer
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(String muId, UserListScheduleRequestBody body) throws IOException, ApiException {
-    return postWorkforcemanagementManagementunitSchedulesSearchWithHttpInfo(muId, body).getBody();
+    return  postWorkforcemanagementManagementunitSchedulesSearch(createPostWorkforcemanagementManagementunitSchedulesSearchRequest(muId, body));
   }
 
   /**
@@ -751,61 +790,66 @@ public class WorkforceManagementApi {
    * @param muId The muId of the management unit. (required)
    * @param body body (optional)
    * @return UserScheduleContainer
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserScheduleContainer> postWorkforcemanagementManagementunitSchedulesSearchWithHttpInfo(String muId, UserListScheduleRequestBody body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'muId' is set
-    if (muId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'muId' when calling postWorkforcemanagementManagementunitSchedulesSearch");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/workforcemanagement/managementunits/{muId}/schedules/search".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "muId" + "\\}", pcapiClient.escapeString(muId.toString()));
+  public ApiResponse<UserScheduleContainer> postWorkforcemanagementManagementunitSchedulesSearchWithHttpInfo(String muId, UserListScheduleRequestBody body) throws IOException {
+    return postWorkforcemanagementManagementunitSchedulesSearch(createPostWorkforcemanagementManagementunitSchedulesSearchRequest(muId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostWorkforcemanagementManagementunitSchedulesSearchRequest createPostWorkforcemanagementManagementunitSchedulesSearchRequest(String muId, UserListScheduleRequestBody body) {
+    return PostWorkforcemanagementManagementunitSchedulesSearchRequest.builder()
+            .withMuId(muId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserScheduleContainer>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Get user schedules within the given time range
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserScheduleContainer
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(PostWorkforcemanagementManagementunitSchedulesSearchRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserScheduleContainer>() {});
+    try {
+      ApiResponse<UserScheduleContainer> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserScheduleContainer>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get user schedules within the given time range
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserScheduleContainer> postWorkforcemanagementManagementunitSchedulesSearch(ApiRequest<UserListScheduleRequestBody> request) throws IOException, ApiException {
-    return pcapiClient.<UserScheduleContainer>invokeAPIVerbose(request, new TypeReference<UserScheduleContainer>() {});
+  public ApiResponse<UserScheduleContainer> postWorkforcemanagementManagementunitSchedulesSearch(ApiRequest<UserListScheduleRequestBody> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserScheduleContainer>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserScheduleContainer> response = (ApiResponse<UserScheduleContainer>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserScheduleContainer> response = (ApiResponse<UserScheduleContainer>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -813,10 +857,11 @@ public class WorkforceManagementApi {
    * 
    * @param body body (optional)
    * @return UserScheduleContainer
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserScheduleContainer postWorkforcemanagementSchedules(CurrentUserScheduleRequestBody body) throws IOException, ApiException {
-    return postWorkforcemanagementSchedulesWithHttpInfo(body).getBody();
+    return  postWorkforcemanagementSchedules(createPostWorkforcemanagementSchedulesRequest(body));
   }
 
   /**
@@ -824,55 +869,64 @@ public class WorkforceManagementApi {
    * 
    * @param body body (optional)
    * @return UserScheduleContainer
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserScheduleContainer> postWorkforcemanagementSchedulesWithHttpInfo(CurrentUserScheduleRequestBody body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/workforcemanagement/schedules".replaceAll("\\{format\\}","json");
+  public ApiResponse<UserScheduleContainer> postWorkforcemanagementSchedulesWithHttpInfo(CurrentUserScheduleRequestBody body) throws IOException {
+    return postWorkforcemanagementSchedules(createPostWorkforcemanagementSchedulesRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<UserScheduleContainer>() {});
+  private PostWorkforcemanagementSchedulesRequest createPostWorkforcemanagementSchedulesRequest(CurrentUserScheduleRequestBody body) {
+    return PostWorkforcemanagementSchedulesRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Get a schedule for the current user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return UserScheduleContainer
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public UserScheduleContainer postWorkforcemanagementSchedules(PostWorkforcemanagementSchedulesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<UserScheduleContainer>() {});
+    try {
+      ApiResponse<UserScheduleContainer> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserScheduleContainer>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a schedule for the current user
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserScheduleContainer> postWorkforcemanagementSchedules(ApiRequest<CurrentUserScheduleRequestBody> request) throws IOException, ApiException {
-    return pcapiClient.<UserScheduleContainer>invokeAPIVerbose(request, new TypeReference<UserScheduleContainer>() {});
+  public ApiResponse<UserScheduleContainer> postWorkforcemanagementSchedules(ApiRequest<CurrentUserScheduleRequestBody> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserScheduleContainer>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserScheduleContainer> response = (ApiResponse<UserScheduleContainer>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserScheduleContainer> response = (ApiResponse<UserScheduleContainer>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

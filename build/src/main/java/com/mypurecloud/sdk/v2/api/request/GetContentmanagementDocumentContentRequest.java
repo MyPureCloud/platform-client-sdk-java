@@ -50,9 +50,6 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class GetContentmanagementDocumentContentRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String documentId;
 	public String getDocumentId() {
 		return this.documentId;
@@ -171,6 +168,12 @@ public class GetContentmanagementDocumentContentRequest {
 
 
 		public GetContentmanagementDocumentContentRequest build() {
+            
+            // verify the required parameter 'documentId' is set
+            if (request.documentId == null) {
+                throw new IllegalStateException("Missing the required parameter 'documentId' when building request for GetContentmanagementDocumentContentRequest.");
+            }
+            
 			return request;
 		}
 	}

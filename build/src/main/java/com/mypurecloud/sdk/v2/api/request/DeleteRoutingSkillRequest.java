@@ -44,9 +44,6 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class DeleteRoutingSkillRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String skillId;
 	public String getSkillId() {
 		return this.skillId;
@@ -125,6 +122,12 @@ public class DeleteRoutingSkillRequest {
 
 
 		public DeleteRoutingSkillRequest build() {
+            
+            // verify the required parameter 'skillId' is set
+            if (request.skillId == null) {
+                throw new IllegalStateException("Missing the required parameter 'skillId' when building request for DeleteRoutingSkillRequest.");
+            }
+            
 			return request;
 		}
 	}

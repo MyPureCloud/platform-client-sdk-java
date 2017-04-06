@@ -31,9 +31,6 @@ import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 public class GetVoicemailMessagesRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String ids;
 	public String getIds() {
 		return this.ids;
@@ -119,6 +116,7 @@ public class GetVoicemailMessagesRequest {
 
 
 		public GetVoicemailMessagesRequest build() {
+            
 			return request;
 		}
 	}

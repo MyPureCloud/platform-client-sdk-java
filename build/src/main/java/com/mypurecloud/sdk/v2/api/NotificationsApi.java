@@ -48,71 +48,74 @@ public class NotificationsApi {
    * Remove all subscriptions
    * 
    * @param channelId Channel ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteNotificationsChannelSubscriptions(String channelId) throws IOException, ApiException {
-    deleteNotificationsChannelSubscriptionsWithHttpInfo(channelId);
+     deleteNotificationsChannelSubscriptions(createDeleteNotificationsChannelSubscriptionsRequest(channelId));
   }
 
   /**
    * Remove all subscriptions
    * 
    * @param channelId Channel ID (required)
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteNotificationsChannelSubscriptionsWithHttpInfo(String channelId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'channelId' is set
-    if (channelId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'channelId' when calling deleteNotificationsChannelSubscriptions");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/notifications/channels/{channelId}/subscriptions".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "channelId" + "\\}", pcapiClient.escapeString(channelId.toString()));
+  public ApiResponse<Void> deleteNotificationsChannelSubscriptionsWithHttpInfo(String channelId) throws IOException {
+    return deleteNotificationsChannelSubscriptions(createDeleteNotificationsChannelSubscriptionsRequest(channelId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, null);
+  private DeleteNotificationsChannelSubscriptionsRequest createDeleteNotificationsChannelSubscriptionsRequest(String channelId) {
+    return DeleteNotificationsChannelSubscriptionsRequest.builder()
+            .withChannelId(channelId)
+            .build();
   }
 
   /**
    * Remove all subscriptions
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public void deleteNotificationsChannelSubscriptions(DeleteNotificationsChannelSubscriptionsRequest request) throws IOException, ApiException {
-    pcapiClient.invokeAPI(request.withHttpInfo(), null);
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
   }
 
   /**
    * Remove all subscriptions
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteNotificationsChannelSubscriptions(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Void>invokeAPIVerbose(request, null);
+  public ApiResponse<Void> deleteNotificationsChannelSubscriptions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -120,10 +123,11 @@ public class NotificationsApi {
    * 
    * @param expand Which fields, if any, to expand (optional)
    * @return AvailableTopicEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AvailableTopicEntityListing getNotificationsAvailabletopics(List<String> expand) throws IOException, ApiException {
-    return getNotificationsAvailabletopicsWithHttpInfo(expand).getBody();
+    return  getNotificationsAvailabletopics(createGetNotificationsAvailabletopicsRequest(expand));
   }
 
   /**
@@ -131,56 +135,64 @@ public class NotificationsApi {
    * 
    * @param expand Which fields, if any, to expand (optional)
    * @return AvailableTopicEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AvailableTopicEntityListing> getNotificationsAvailabletopicsWithHttpInfo(List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/notifications/availabletopics".replaceAll("\\{format\\}","json");
+  public ApiResponse<AvailableTopicEntityListing> getNotificationsAvailabletopicsWithHttpInfo(List<String> expand) throws IOException {
+    return getNotificationsAvailabletopics(createGetNotificationsAvailabletopicsRequest(expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<AvailableTopicEntityListing>() {});
+  private GetNotificationsAvailabletopicsRequest createGetNotificationsAvailabletopicsRequest(List<String> expand) {
+    return GetNotificationsAvailabletopicsRequest.builder()
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get available notification topics.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return AvailableTopicEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public AvailableTopicEntityListing getNotificationsAvailabletopics(GetNotificationsAvailabletopicsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<AvailableTopicEntityListing>() {});
+    try {
+      ApiResponse<AvailableTopicEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AvailableTopicEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get available notification topics.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AvailableTopicEntityListing> getNotificationsAvailabletopics(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<AvailableTopicEntityListing>invokeAPIVerbose(request, new TypeReference<AvailableTopicEntityListing>() {});
+  public ApiResponse<AvailableTopicEntityListing> getNotificationsAvailabletopics(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AvailableTopicEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AvailableTopicEntityListing> response = (ApiResponse<AvailableTopicEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AvailableTopicEntityListing> response = (ApiResponse<AvailableTopicEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -188,10 +200,11 @@ public class NotificationsApi {
    * 
    * @param channelId Channel ID (required)
    * @return ChannelTopicEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ChannelTopicEntityListing getNotificationsChannelSubscriptions(String channelId) throws IOException, ApiException {
-    return getNotificationsChannelSubscriptionsWithHttpInfo(channelId).getBody();
+    return  getNotificationsChannelSubscriptions(createGetNotificationsChannelSubscriptionsRequest(channelId));
   }
 
   /**
@@ -199,126 +212,137 @@ public class NotificationsApi {
    * 
    * @param channelId Channel ID (required)
    * @return ChannelTopicEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChannelTopicEntityListing> getNotificationsChannelSubscriptionsWithHttpInfo(String channelId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'channelId' is set
-    if (channelId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'channelId' when calling getNotificationsChannelSubscriptions");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/notifications/channels/{channelId}/subscriptions".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "channelId" + "\\}", pcapiClient.escapeString(channelId.toString()));
+  public ApiResponse<ChannelTopicEntityListing> getNotificationsChannelSubscriptionsWithHttpInfo(String channelId) throws IOException {
+    return getNotificationsChannelSubscriptions(createGetNotificationsChannelSubscriptionsRequest(channelId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ChannelTopicEntityListing>() {});
+  private GetNotificationsChannelSubscriptionsRequest createGetNotificationsChannelSubscriptionsRequest(String channelId) {
+    return GetNotificationsChannelSubscriptionsRequest.builder()
+            .withChannelId(channelId)
+            .build();
   }
 
   /**
    * The list of all subscriptions for this channel
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ChannelTopicEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ChannelTopicEntityListing getNotificationsChannelSubscriptions(GetNotificationsChannelSubscriptionsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {});
+    try {
+      ApiResponse<ChannelTopicEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * The list of all subscriptions for this channel
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChannelTopicEntityListing> getNotificationsChannelSubscriptions(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ChannelTopicEntityListing>invokeAPIVerbose(request, new TypeReference<ChannelTopicEntityListing>() {});
+  public ApiResponse<ChannelTopicEntityListing> getNotificationsChannelSubscriptions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ChannelTopicEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChannelTopicEntityListing> response = (ApiResponse<ChannelTopicEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChannelTopicEntityListing> response = (ApiResponse<ChannelTopicEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * The list of existing channels
    * 
    * @return ChannelEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ChannelEntityListing getNotificationsChannels() throws IOException, ApiException {
-    return getNotificationsChannelsWithHttpInfo().getBody();
+    return  getNotificationsChannels(createGetNotificationsChannelsRequest());
   }
 
   /**
    * The list of existing channels
    * 
    * @return ChannelEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChannelEntityListing> getNotificationsChannelsWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/notifications/channels".replaceAll("\\{format\\}","json");
+  public ApiResponse<ChannelEntityListing> getNotificationsChannelsWithHttpInfo() throws IOException {
+    return getNotificationsChannels(createGetNotificationsChannelsRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ChannelEntityListing>() {});
+  private GetNotificationsChannelsRequest createGetNotificationsChannelsRequest() {
+    return GetNotificationsChannelsRequest.builder()            .build();
   }
 
   /**
    * The list of existing channels
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ChannelEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ChannelEntityListing getNotificationsChannels(GetNotificationsChannelsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ChannelEntityListing>() {});
+    try {
+      ApiResponse<ChannelEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ChannelEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * The list of existing channels
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChannelEntityListing> getNotificationsChannels(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ChannelEntityListing>invokeAPIVerbose(request, new TypeReference<ChannelEntityListing>() {});
+  public ApiResponse<ChannelEntityListing> getNotificationsChannels(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ChannelEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChannelEntityListing> response = (ApiResponse<ChannelEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChannelEntityListing> response = (ApiResponse<ChannelEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -327,10 +351,11 @@ public class NotificationsApi {
    * @param channelId Channel ID (required)
    * @param body Body (required)
    * @return ChannelTopicEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ChannelTopicEntityListing postNotificationsChannelSubscriptions(String channelId, List<ChannelTopic> body) throws IOException, ApiException {
-    return postNotificationsChannelSubscriptionsWithHttpInfo(channelId, body).getBody();
+    return  postNotificationsChannelSubscriptions(createPostNotificationsChannelSubscriptionsRequest(channelId, body));
   }
 
   /**
@@ -339,131 +364,139 @@ public class NotificationsApi {
    * @param channelId Channel ID (required)
    * @param body Body (required)
    * @return ChannelTopicEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChannelTopicEntityListing> postNotificationsChannelSubscriptionsWithHttpInfo(String channelId, List<ChannelTopic> body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'channelId' is set
-    if (channelId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'channelId' when calling postNotificationsChannelSubscriptions");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postNotificationsChannelSubscriptions");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/notifications/channels/{channelId}/subscriptions".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "channelId" + "\\}", pcapiClient.escapeString(channelId.toString()));
+  public ApiResponse<ChannelTopicEntityListing> postNotificationsChannelSubscriptionsWithHttpInfo(String channelId, List<ChannelTopic> body) throws IOException {
+    return postNotificationsChannelSubscriptions(createPostNotificationsChannelSubscriptionsRequest(channelId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PostNotificationsChannelSubscriptionsRequest createPostNotificationsChannelSubscriptionsRequest(String channelId, List<ChannelTopic> body) {
+    return PostNotificationsChannelSubscriptionsRequest.builder()
+            .withChannelId(channelId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ChannelTopicEntityListing>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Add a list of subscriptions to the existing list of subscriptions
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ChannelTopicEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ChannelTopicEntityListing postNotificationsChannelSubscriptions(PostNotificationsChannelSubscriptionsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {});
+    try {
+      ApiResponse<ChannelTopicEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Add a list of subscriptions to the existing list of subscriptions
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChannelTopicEntityListing> postNotificationsChannelSubscriptions(ApiRequest<List<ChannelTopic>> request) throws IOException, ApiException {
-    return pcapiClient.<ChannelTopicEntityListing>invokeAPIVerbose(request, new TypeReference<ChannelTopicEntityListing>() {});
+  public ApiResponse<ChannelTopicEntityListing> postNotificationsChannelSubscriptions(ApiRequest<List<ChannelTopic>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ChannelTopicEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChannelTopicEntityListing> response = (ApiResponse<ChannelTopicEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChannelTopicEntityListing> response = (ApiResponse<ChannelTopicEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Create a new channel
    * There is a limit of 10 channels. Creating an 11th channel will remove the channel with oldest last used date.
    * @return Channel
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Channel postNotificationsChannels() throws IOException, ApiException {
-    return postNotificationsChannelsWithHttpInfo().getBody();
+    return  postNotificationsChannels(createPostNotificationsChannelsRequest());
   }
 
   /**
    * Create a new channel
    * There is a limit of 10 channels. Creating an 11th channel will remove the channel with oldest last used date.
    * @return Channel
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Channel> postNotificationsChannelsWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/notifications/channels".replaceAll("\\{format\\}","json");
+  public ApiResponse<Channel> postNotificationsChannelsWithHttpInfo() throws IOException {
+    return postNotificationsChannels(createPostNotificationsChannelsRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<Channel>() {});
+  private PostNotificationsChannelsRequest createPostNotificationsChannelsRequest() {
+    return PostNotificationsChannelsRequest.builder()            .build();
   }
 
   /**
    * Create a new channel
    * There is a limit of 10 channels. Creating an 11th channel will remove the channel with oldest last used date.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return Channel
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public Channel postNotificationsChannels(PostNotificationsChannelsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<Channel>() {});
+    try {
+      ApiResponse<Channel> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Channel>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Create a new channel
    * There is a limit of 10 channels. Creating an 11th channel will remove the channel with oldest last used date.
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Channel> postNotificationsChannels(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<Channel>invokeAPIVerbose(request, new TypeReference<Channel>() {});
+  public ApiResponse<Channel> postNotificationsChannels(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Channel>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Channel> response = (ApiResponse<Channel>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Channel> response = (ApiResponse<Channel>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -472,10 +505,11 @@ public class NotificationsApi {
    * @param channelId Channel ID (required)
    * @param body Body (required)
    * @return ChannelTopicEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ChannelTopicEntityListing putNotificationsChannelSubscriptions(String channelId, List<ChannelTopic> body) throws IOException, ApiException {
-    return putNotificationsChannelSubscriptionsWithHttpInfo(channelId, body).getBody();
+    return  putNotificationsChannelSubscriptions(createPutNotificationsChannelSubscriptionsRequest(channelId, body));
   }
 
   /**
@@ -484,66 +518,66 @@ public class NotificationsApi {
    * @param channelId Channel ID (required)
    * @param body Body (required)
    * @return ChannelTopicEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChannelTopicEntityListing> putNotificationsChannelSubscriptionsWithHttpInfo(String channelId, List<ChannelTopic> body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'channelId' is set
-    if (channelId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'channelId' when calling putNotificationsChannelSubscriptions");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putNotificationsChannelSubscriptions");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/notifications/channels/{channelId}/subscriptions".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "channelId" + "\\}", pcapiClient.escapeString(channelId.toString()));
+  public ApiResponse<ChannelTopicEntityListing> putNotificationsChannelSubscriptionsWithHttpInfo(String channelId, List<ChannelTopic> body) throws IOException {
+    return putNotificationsChannelSubscriptions(createPutNotificationsChannelSubscriptionsRequest(channelId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutNotificationsChannelSubscriptionsRequest createPutNotificationsChannelSubscriptionsRequest(String channelId, List<ChannelTopic> body) {
+    return PutNotificationsChannelSubscriptionsRequest.builder()
+            .withChannelId(channelId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ChannelTopicEntityListing>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Replace the current list of subscriptions with a new list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ChannelTopicEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ChannelTopicEntityListing putNotificationsChannelSubscriptions(PutNotificationsChannelSubscriptionsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {});
+    try {
+      ApiResponse<ChannelTopicEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Replace the current list of subscriptions with a new list.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChannelTopicEntityListing> putNotificationsChannelSubscriptions(ApiRequest<List<ChannelTopic>> request) throws IOException, ApiException {
-    return pcapiClient.<ChannelTopicEntityListing>invokeAPIVerbose(request, new TypeReference<ChannelTopicEntityListing>() {});
+  public ApiResponse<ChannelTopicEntityListing> putNotificationsChannelSubscriptions(ApiRequest<List<ChannelTopic>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ChannelTopicEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChannelTopicEntityListing> response = (ApiResponse<ChannelTopicEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChannelTopicEntityListing> response = (ApiResponse<ChannelTopicEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

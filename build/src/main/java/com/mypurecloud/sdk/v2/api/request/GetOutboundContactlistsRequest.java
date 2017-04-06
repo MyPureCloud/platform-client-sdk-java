@@ -55,9 +55,6 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class GetOutboundContactlistsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Boolean includeImportStatus;
 	public Boolean getIncludeImportStatus() {
 		return this.includeImportStatus;
@@ -263,6 +260,7 @@ public class GetOutboundContactlistsRequest {
 
 
 		public GetOutboundContactlistsRequest build() {
+            
 			return request;
 		}
 	}

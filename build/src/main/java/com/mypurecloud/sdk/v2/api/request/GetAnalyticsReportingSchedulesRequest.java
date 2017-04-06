@@ -40,9 +40,6 @@ import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.ObservationQueryResponse;
 
 public class GetAnalyticsReportingSchedulesRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -128,6 +125,7 @@ public class GetAnalyticsReportingSchedulesRequest {
 
 
 		public GetAnalyticsReportingSchedulesRequest build() {
+            
 			return request;
 		}
 	}

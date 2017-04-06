@@ -31,9 +31,6 @@ import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 public class PutVoicemailPolicyRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private VoicemailOrganizationPolicy body;
 	public VoicemailOrganizationPolicy getBody() {
 		return this.body;
@@ -112,6 +109,12 @@ public class PutVoicemailPolicyRequest {
 
 
 		public PutVoicemailPolicyRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutVoicemailPolicyRequest.");
+            }
+            
 			return request;
 		}
 	}

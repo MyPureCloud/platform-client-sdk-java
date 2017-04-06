@@ -31,9 +31,6 @@ import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 
 public class GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String muId;
 	public String getMuId() {
 		return this.muId;
@@ -158,6 +155,17 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest {
 
 
 		public GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest build() {
+            
+            // verify the required parameter 'muId' is set
+            if (request.muId == null) {
+                throw new IllegalStateException("Missing the required parameter 'muId' when building request for GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest.");
+            }
+            
+            // verify the required parameter 'userId' is set
+            if (request.userId == null) {
+                throw new IllegalStateException("Missing the required parameter 'userId' when building request for GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest.");
+            }
+            
 			return request;
 		}
 	}

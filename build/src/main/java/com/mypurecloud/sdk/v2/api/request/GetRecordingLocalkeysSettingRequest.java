@@ -38,9 +38,6 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class GetRecordingLocalkeysSettingRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String settingsId;
 	public String getSettingsId() {
 		return this.settingsId;
@@ -119,6 +116,12 @@ public class GetRecordingLocalkeysSettingRequest {
 
 
 		public GetRecordingLocalkeysSettingRequest build() {
+            
+            // verify the required parameter 'settingsId' is set
+            if (request.settingsId == null) {
+                throw new IllegalStateException("Missing the required parameter 'settingsId' when building request for GetRecordingLocalkeysSettingRequest.");
+            }
+            
 			return request;
 		}
 	}

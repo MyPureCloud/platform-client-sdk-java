@@ -84,9 +84,6 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class DeleteTelephonyProvidersEdgesExtensionpoolRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String extensionPoolId;
 	public String getExtensionPoolId() {
 		return this.extensionPoolId;
@@ -165,6 +162,12 @@ public class DeleteTelephonyProvidersEdgesExtensionpoolRequest {
 
 
 		public DeleteTelephonyProvidersEdgesExtensionpoolRequest build() {
+            
+            // verify the required parameter 'extensionPoolId' is set
+            if (request.extensionPoolId == null) {
+                throw new IllegalStateException("Missing the required parameter 'extensionPoolId' when building request for DeleteTelephonyProvidersEdgesExtensionpoolRequest.");
+            }
+            
 			return request;
 		}
 	}

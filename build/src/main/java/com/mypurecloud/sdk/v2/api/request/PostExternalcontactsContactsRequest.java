@@ -31,9 +31,6 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class PostExternalcontactsContactsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private ExternalContact body;
 	public ExternalContact getBody() {
 		return this.body;
@@ -99,6 +96,7 @@ public class PostExternalcontactsContactsRequest {
 
 
 		public PostExternalcontactsContactsRequest build() {
+            
 			return request;
 		}
 	}

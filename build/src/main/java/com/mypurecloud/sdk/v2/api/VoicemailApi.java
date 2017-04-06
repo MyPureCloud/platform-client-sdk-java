@@ -69,10 +69,11 @@ public class VoicemailApi {
    * 
    * @param messageId Message ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteVoicemailMessage(String messageId) throws IOException, ApiException {
-    return deleteVoicemailMessageWithHttpInfo(messageId).getBody();
+    return  deleteVoicemailMessage(createDeleteVoicemailMessageRequest(messageId));
   }
 
   /**
@@ -80,126 +81,137 @@ public class VoicemailApi {
    * 
    * @param messageId Message ID (required)
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteVoicemailMessageWithHttpInfo(String messageId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'messageId' is set
-    if (messageId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'messageId' when calling deleteVoicemailMessage");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/messages/{messageId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "messageId" + "\\}", pcapiClient.escapeString(messageId.toString()));
+  public ApiResponse<String> deleteVoicemailMessageWithHttpInfo(String messageId) throws IOException {
+    return deleteVoicemailMessage(createDeleteVoicemailMessageRequest(messageId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteVoicemailMessageRequest createDeleteVoicemailMessageRequest(String messageId) {
+    return DeleteVoicemailMessageRequest.builder()
+            .withMessageId(messageId)
+            .build();
   }
 
   /**
    * Delete a message.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteVoicemailMessage(DeleteVoicemailMessageRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete a message.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteVoicemailMessage(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteVoicemailMessage(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Delete all voicemail messages
    * 
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteVoicemailMessages() throws IOException, ApiException {
-    return deleteVoicemailMessagesWithHttpInfo().getBody();
+    return  deleteVoicemailMessages(createDeleteVoicemailMessagesRequest());
   }
 
   /**
    * Delete all voicemail messages
    * 
    * @return String
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteVoicemailMessagesWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/messages".replaceAll("\\{format\\}","json");
+  public ApiResponse<String> deleteVoicemailMessagesWithHttpInfo() throws IOException {
+    return deleteVoicemailMessages(createDeleteVoicemailMessagesRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "DELETE", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<String>() {});
+  private DeleteVoicemailMessagesRequest createDeleteVoicemailMessagesRequest() {
+    return DeleteVoicemailMessagesRequest.builder()            .build();
   }
 
   /**
    * Delete all voicemail messages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public String deleteVoicemailMessages(DeleteVoicemailMessagesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<String>() {});
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Delete all voicemail messages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteVoicemailMessages(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<String>invokeAPIVerbose(request, new TypeReference<String>() {});
+  public ApiResponse<String> deleteVoicemailMessages(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -207,10 +219,11 @@ public class VoicemailApi {
    * 
    * @param groupId groupId (required)
    * @return VoicemailMailboxInfo
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailMailboxInfo getVoicemailGroupMailbox(String groupId) throws IOException, ApiException {
-    return getVoicemailGroupMailboxWithHttpInfo(groupId).getBody();
+    return  getVoicemailGroupMailbox(createGetVoicemailGroupMailboxRequest(groupId));
   }
 
   /**
@@ -218,61 +231,64 @@ public class VoicemailApi {
    * 
    * @param groupId groupId (required)
    * @return VoicemailMailboxInfo
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailMailboxInfo> getVoicemailGroupMailboxWithHttpInfo(String groupId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'groupId' is set
-    if (groupId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling getVoicemailGroupMailbox");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/groups/{groupId}/mailbox".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "groupId" + "\\}", pcapiClient.escapeString(groupId.toString()));
+  public ApiResponse<VoicemailMailboxInfo> getVoicemailGroupMailboxWithHttpInfo(String groupId) throws IOException {
+    return getVoicemailGroupMailbox(createGetVoicemailGroupMailboxRequest(groupId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VoicemailMailboxInfo>() {});
+  private GetVoicemailGroupMailboxRequest createGetVoicemailGroupMailboxRequest(String groupId) {
+    return GetVoicemailGroupMailboxRequest.builder()
+            .withGroupId(groupId)
+            .build();
   }
 
   /**
    * Get the group&#39;s mailbox information
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VoicemailMailboxInfo
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailMailboxInfo getVoicemailGroupMailbox(GetVoicemailGroupMailboxRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailMailboxInfo>() {});
+    try {
+      ApiResponse<VoicemailMailboxInfo> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailMailboxInfo>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the group&#39;s mailbox information
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailMailboxInfo> getVoicemailGroupMailbox(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<VoicemailMailboxInfo>invokeAPIVerbose(request, new TypeReference<VoicemailMailboxInfo>() {});
+  public ApiResponse<VoicemailMailboxInfo> getVoicemailGroupMailbox(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailMailboxInfo>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMailboxInfo> response = (ApiResponse<VoicemailMailboxInfo>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMailboxInfo> response = (ApiResponse<VoicemailMailboxInfo>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -282,10 +298,11 @@ public class VoicemailApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return VoicemailMessageEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailMessageEntityListing getVoicemailGroupMessages(String groupId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getVoicemailGroupMessagesWithHttpInfo(groupId, pageSize, pageNumber).getBody();
+    return  getVoicemailGroupMessages(createGetVoicemailGroupMessagesRequest(groupId, pageSize, pageNumber));
   }
 
   /**
@@ -295,63 +312,68 @@ public class VoicemailApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return VoicemailMessageEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailMessageEntityListing> getVoicemailGroupMessagesWithHttpInfo(String groupId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'groupId' is set
-    if (groupId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling getVoicemailGroupMessages");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/groups/{groupId}/messages".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "groupId" + "\\}", pcapiClient.escapeString(groupId.toString()));
+  public ApiResponse<VoicemailMessageEntityListing> getVoicemailGroupMessagesWithHttpInfo(String groupId, Integer pageSize, Integer pageNumber) throws IOException {
+    return getVoicemailGroupMessages(createGetVoicemailGroupMessagesRequest(groupId, pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetVoicemailGroupMessagesRequest createGetVoicemailGroupMessagesRequest(String groupId, Integer pageSize, Integer pageNumber) {
+    return GetVoicemailGroupMessagesRequest.builder()
+            .withGroupId(groupId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
+            .withPageSize(pageSize)
 
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VoicemailMessageEntityListing>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * List voicemail messages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VoicemailMessageEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailMessageEntityListing getVoicemailGroupMessages(GetVoicemailGroupMessagesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {});
+    try {
+      ApiResponse<VoicemailMessageEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * List voicemail messages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailMessageEntityListing> getVoicemailGroupMessages(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<VoicemailMessageEntityListing>invokeAPIVerbose(request, new TypeReference<VoicemailMessageEntityListing>() {});
+  public ApiResponse<VoicemailMessageEntityListing> getVoicemailGroupMessages(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailMessageEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMessageEntityListing> response = (ApiResponse<VoicemailMessageEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMessageEntityListing> response = (ApiResponse<VoicemailMessageEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -359,10 +381,11 @@ public class VoicemailApi {
    * 
    * @param groupId Group ID (required)
    * @return VoicemailGroupPolicy
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailGroupPolicy getVoicemailGroupPolicy(String groupId) throws IOException, ApiException {
-    return getVoicemailGroupPolicyWithHttpInfo(groupId).getBody();
+    return  getVoicemailGroupPolicy(createGetVoicemailGroupPolicyRequest(groupId));
   }
 
   /**
@@ -370,191 +393,210 @@ public class VoicemailApi {
    * 
    * @param groupId Group ID (required)
    * @return VoicemailGroupPolicy
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailGroupPolicy> getVoicemailGroupPolicyWithHttpInfo(String groupId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'groupId' is set
-    if (groupId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling getVoicemailGroupPolicy");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/groups/{groupId}/policy".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "groupId" + "\\}", pcapiClient.escapeString(groupId.toString()));
+  public ApiResponse<VoicemailGroupPolicy> getVoicemailGroupPolicyWithHttpInfo(String groupId) throws IOException {
+    return getVoicemailGroupPolicy(createGetVoicemailGroupPolicyRequest(groupId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VoicemailGroupPolicy>() {});
+  private GetVoicemailGroupPolicyRequest createGetVoicemailGroupPolicyRequest(String groupId) {
+    return GetVoicemailGroupPolicyRequest.builder()
+            .withGroupId(groupId)
+            .build();
   }
 
   /**
    * Get a group&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VoicemailGroupPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailGroupPolicy getVoicemailGroupPolicy(GetVoicemailGroupPolicyRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailGroupPolicy>() {});
+    try {
+      ApiResponse<VoicemailGroupPolicy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailGroupPolicy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a group&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailGroupPolicy> getVoicemailGroupPolicy(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<VoicemailGroupPolicy>invokeAPIVerbose(request, new TypeReference<VoicemailGroupPolicy>() {});
+  public ApiResponse<VoicemailGroupPolicy> getVoicemailGroupPolicy(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailGroupPolicy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailGroupPolicy> response = (ApiResponse<VoicemailGroupPolicy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailGroupPolicy> response = (ApiResponse<VoicemailGroupPolicy>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get the current user&#39;s mailbox information
    * 
    * @return VoicemailMailboxInfo
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailMailboxInfo getVoicemailMailbox() throws IOException, ApiException {
-    return getVoicemailMailboxWithHttpInfo().getBody();
+    return  getVoicemailMailbox(createGetVoicemailMailboxRequest());
   }
 
   /**
    * Get the current user&#39;s mailbox information
    * 
    * @return VoicemailMailboxInfo
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailMailboxInfo> getVoicemailMailboxWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/mailbox".replaceAll("\\{format\\}","json");
+  public ApiResponse<VoicemailMailboxInfo> getVoicemailMailboxWithHttpInfo() throws IOException {
+    return getVoicemailMailbox(createGetVoicemailMailboxRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VoicemailMailboxInfo>() {});
+  private GetVoicemailMailboxRequest createGetVoicemailMailboxRequest() {
+    return GetVoicemailMailboxRequest.builder()            .build();
   }
 
   /**
    * Get the current user&#39;s mailbox information
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VoicemailMailboxInfo
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailMailboxInfo getVoicemailMailbox(GetVoicemailMailboxRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailMailboxInfo>() {});
+    try {
+      ApiResponse<VoicemailMailboxInfo> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailMailboxInfo>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the current user&#39;s mailbox information
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailMailboxInfo> getVoicemailMailbox(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<VoicemailMailboxInfo>invokeAPIVerbose(request, new TypeReference<VoicemailMailboxInfo>() {});
+  public ApiResponse<VoicemailMailboxInfo> getVoicemailMailbox(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailMailboxInfo>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMailboxInfo> response = (ApiResponse<VoicemailMailboxInfo>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMailboxInfo> response = (ApiResponse<VoicemailMailboxInfo>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get the current user&#39;s mailbox information
    * 
    * @return VoicemailMailboxInfo
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailMailboxInfo getVoicemailMeMailbox() throws IOException, ApiException {
-    return getVoicemailMeMailboxWithHttpInfo().getBody();
+    return  getVoicemailMeMailbox(createGetVoicemailMeMailboxRequest());
   }
 
   /**
    * Get the current user&#39;s mailbox information
    * 
    * @return VoicemailMailboxInfo
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailMailboxInfo> getVoicemailMeMailboxWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/me/mailbox".replaceAll("\\{format\\}","json");
+  public ApiResponse<VoicemailMailboxInfo> getVoicemailMeMailboxWithHttpInfo() throws IOException {
+    return getVoicemailMeMailbox(createGetVoicemailMeMailboxRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VoicemailMailboxInfo>() {});
+  private GetVoicemailMeMailboxRequest createGetVoicemailMeMailboxRequest() {
+    return GetVoicemailMeMailboxRequest.builder()            .build();
   }
 
   /**
    * Get the current user&#39;s mailbox information
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VoicemailMailboxInfo
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailMailboxInfo getVoicemailMeMailbox(GetVoicemailMeMailboxRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailMailboxInfo>() {});
+    try {
+      ApiResponse<VoicemailMailboxInfo> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailMailboxInfo>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the current user&#39;s mailbox information
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailMailboxInfo> getVoicemailMeMailbox(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<VoicemailMailboxInfo>invokeAPIVerbose(request, new TypeReference<VoicemailMailboxInfo>() {});
+  public ApiResponse<VoicemailMailboxInfo> getVoicemailMeMailbox(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailMailboxInfo>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMailboxInfo> response = (ApiResponse<VoicemailMailboxInfo>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMailboxInfo> response = (ApiResponse<VoicemailMailboxInfo>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -563,10 +605,11 @@ public class VoicemailApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return VoicemailMessageEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailMessageEntityListing getVoicemailMeMessages(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getVoicemailMeMessagesWithHttpInfo(pageSize, pageNumber).getBody();
+    return  getVoicemailMeMessages(createGetVoicemailMeMessagesRequest(pageSize, pageNumber));
   }
 
   /**
@@ -575,122 +618,139 @@ public class VoicemailApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return VoicemailMessageEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailMessageEntityListing> getVoicemailMeMessagesWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/me/messages".replaceAll("\\{format\\}","json");
+  public ApiResponse<VoicemailMessageEntityListing> getVoicemailMeMessagesWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getVoicemailMeMessages(createGetVoicemailMeMessagesRequest(pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetVoicemailMeMessagesRequest createGetVoicemailMeMessagesRequest(Integer pageSize, Integer pageNumber) {
+    return GetVoicemailMeMessagesRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VoicemailMessageEntityListing>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * List voicemail messages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VoicemailMessageEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailMessageEntityListing getVoicemailMeMessages(GetVoicemailMeMessagesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {});
+    try {
+      ApiResponse<VoicemailMessageEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * List voicemail messages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailMessageEntityListing> getVoicemailMeMessages(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<VoicemailMessageEntityListing>invokeAPIVerbose(request, new TypeReference<VoicemailMessageEntityListing>() {});
+  public ApiResponse<VoicemailMessageEntityListing> getVoicemailMeMessages(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailMessageEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMessageEntityListing> response = (ApiResponse<VoicemailMessageEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMessageEntityListing> response = (ApiResponse<VoicemailMessageEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get the current user&#39;s voicemail policy
    * 
    * @return VoicemailUserPolicy
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailUserPolicy getVoicemailMePolicy() throws IOException, ApiException {
-    return getVoicemailMePolicyWithHttpInfo().getBody();
+    return  getVoicemailMePolicy(createGetVoicemailMePolicyRequest());
   }
 
   /**
    * Get the current user&#39;s voicemail policy
    * 
    * @return VoicemailUserPolicy
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailUserPolicy> getVoicemailMePolicyWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/me/policy".replaceAll("\\{format\\}","json");
+  public ApiResponse<VoicemailUserPolicy> getVoicemailMePolicyWithHttpInfo() throws IOException {
+    return getVoicemailMePolicy(createGetVoicemailMePolicyRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VoicemailUserPolicy>() {});
+  private GetVoicemailMePolicyRequest createGetVoicemailMePolicyRequest() {
+    return GetVoicemailMePolicyRequest.builder()            .build();
   }
 
   /**
    * Get the current user&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VoicemailUserPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailUserPolicy getVoicemailMePolicy(GetVoicemailMePolicyRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {});
+    try {
+      ApiResponse<VoicemailUserPolicy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the current user&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailUserPolicy> getVoicemailMePolicy(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<VoicemailUserPolicy>invokeAPIVerbose(request, new TypeReference<VoicemailUserPolicy>() {});
+  public ApiResponse<VoicemailUserPolicy> getVoicemailMePolicy(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailUserPolicy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailUserPolicy> response = (ApiResponse<VoicemailUserPolicy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailUserPolicy> response = (ApiResponse<VoicemailUserPolicy>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -699,10 +759,11 @@ public class VoicemailApi {
    * @param messageId Message ID (required)
    * @param expand If the caller is a known user, which fields, if any, to expand (optional)
    * @return VoicemailMessage
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailMessage getVoicemailMessage(String messageId, List<String> expand) throws IOException, ApiException {
-    return getVoicemailMessageWithHttpInfo(messageId, expand).getBody();
+    return  getVoicemailMessage(createGetVoicemailMessageRequest(messageId, expand));
   }
 
   /**
@@ -711,62 +772,66 @@ public class VoicemailApi {
    * @param messageId Message ID (required)
    * @param expand If the caller is a known user, which fields, if any, to expand (optional)
    * @return VoicemailMessage
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailMessage> getVoicemailMessageWithHttpInfo(String messageId, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'messageId' is set
-    if (messageId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'messageId' when calling getVoicemailMessage");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/messages/{messageId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "messageId" + "\\}", pcapiClient.escapeString(messageId.toString()));
+  public ApiResponse<VoicemailMessage> getVoicemailMessageWithHttpInfo(String messageId, List<String> expand) throws IOException {
+    return getVoicemailMessage(createGetVoicemailMessageRequest(messageId, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetVoicemailMessageRequest createGetVoicemailMessageRequest(String messageId, List<String> expand) {
+    return GetVoicemailMessageRequest.builder()
+            .withMessageId(messageId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VoicemailMessage>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Get message.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VoicemailMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailMessage getVoicemailMessage(GetVoicemailMessageRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailMessage>() {});
+    try {
+      ApiResponse<VoicemailMessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailMessage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get message.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailMessage> getVoicemailMessage(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<VoicemailMessage>invokeAPIVerbose(request, new TypeReference<VoicemailMessage>() {});
+  public ApiResponse<VoicemailMessage> getVoicemailMessage(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailMessage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMessage> response = (ApiResponse<VoicemailMessage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMessage> response = (ApiResponse<VoicemailMessage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -775,10 +840,11 @@ public class VoicemailApi {
    * @param messageId Message ID (required)
    * @param formatId The desired media format. (optional, default to WEBM)
    * @return VoicemailMediaInfo
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailMediaInfo getVoicemailMessageMedia(String messageId, String formatId) throws IOException, ApiException {
-    return getVoicemailMessageMediaWithHttpInfo(messageId, formatId).getBody();
+    return  getVoicemailMessageMedia(createGetVoicemailMessageMediaRequest(messageId, formatId));
   }
 
   /**
@@ -787,62 +853,66 @@ public class VoicemailApi {
    * @param messageId Message ID (required)
    * @param formatId The desired media format. (optional, default to WEBM)
    * @return VoicemailMediaInfo
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailMediaInfo> getVoicemailMessageMediaWithHttpInfo(String messageId, String formatId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'messageId' is set
-    if (messageId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'messageId' when calling getVoicemailMessageMedia");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/messages/{messageId}/media".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "messageId" + "\\}", pcapiClient.escapeString(messageId.toString()));
+  public ApiResponse<VoicemailMediaInfo> getVoicemailMessageMediaWithHttpInfo(String messageId, String formatId) throws IOException {
+    return getVoicemailMessageMedia(createGetVoicemailMessageMediaRequest(messageId, formatId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetVoicemailMessageMediaRequest createGetVoicemailMessageMediaRequest(String messageId, String formatId) {
+    return GetVoicemailMessageMediaRequest.builder()
+            .withMessageId(messageId)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "formatId", formatId));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VoicemailMediaInfo>() {});
+            .withFormatId(formatId)
+            .build();
   }
 
   /**
    * Get media playback URI for this message
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VoicemailMediaInfo
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailMediaInfo getVoicemailMessageMedia(GetVoicemailMessageMediaRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailMediaInfo>() {});
+    try {
+      ApiResponse<VoicemailMediaInfo> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailMediaInfo>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get media playback URI for this message
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailMediaInfo> getVoicemailMessageMedia(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<VoicemailMediaInfo>invokeAPIVerbose(request, new TypeReference<VoicemailMediaInfo>() {});
+  public ApiResponse<VoicemailMediaInfo> getVoicemailMessageMedia(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailMediaInfo>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMediaInfo> response = (ApiResponse<VoicemailMediaInfo>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMediaInfo> response = (ApiResponse<VoicemailMediaInfo>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -851,10 +921,11 @@ public class VoicemailApi {
    * @param ids An optional comma separated list of VoicemailMessage ids (optional)
    * @param expand If the caller is a known user, which fields, if any, to expand (optional)
    * @return VoicemailMessageEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailMessageEntityListing getVoicemailMessages(String ids, List<String> expand) throws IOException, ApiException {
-    return getVoicemailMessagesWithHttpInfo(ids, expand).getBody();
+    return  getVoicemailMessages(createGetVoicemailMessagesRequest(ids, expand));
   }
 
   /**
@@ -863,122 +934,139 @@ public class VoicemailApi {
    * @param ids An optional comma separated list of VoicemailMessage ids (optional)
    * @param expand If the caller is a known user, which fields, if any, to expand (optional)
    * @return VoicemailMessageEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailMessageEntityListing> getVoicemailMessagesWithHttpInfo(String ids, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/messages".replaceAll("\\{format\\}","json");
+  public ApiResponse<VoicemailMessageEntityListing> getVoicemailMessagesWithHttpInfo(String ids, List<String> expand) throws IOException {
+    return getVoicemailMessages(createGetVoicemailMessagesRequest(ids, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetVoicemailMessagesRequest createGetVoicemailMessagesRequest(String ids, List<String> expand) {
+    return GetVoicemailMessagesRequest.builder()
+            .withIds(ids)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "ids", ids));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VoicemailMessageEntityListing>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * List voicemail messages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VoicemailMessageEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailMessageEntityListing getVoicemailMessages(GetVoicemailMessagesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {});
+    try {
+      ApiResponse<VoicemailMessageEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * List voicemail messages
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailMessageEntityListing> getVoicemailMessages(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<VoicemailMessageEntityListing>invokeAPIVerbose(request, new TypeReference<VoicemailMessageEntityListing>() {});
+  public ApiResponse<VoicemailMessageEntityListing> getVoicemailMessages(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailMessageEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMessageEntityListing> response = (ApiResponse<VoicemailMessageEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMessageEntityListing> response = (ApiResponse<VoicemailMessageEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
    * Get a policy
    * 
    * @return VoicemailOrganizationPolicy
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailOrganizationPolicy getVoicemailPolicy() throws IOException, ApiException {
-    return getVoicemailPolicyWithHttpInfo().getBody();
+    return  getVoicemailPolicy(createGetVoicemailPolicyRequest());
   }
 
   /**
    * Get a policy
    * 
    * @return VoicemailOrganizationPolicy
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailOrganizationPolicy> getVoicemailPolicyWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/policy".replaceAll("\\{format\\}","json");
+  public ApiResponse<VoicemailOrganizationPolicy> getVoicemailPolicyWithHttpInfo() throws IOException {
+    return getVoicemailPolicy(createGetVoicemailPolicyRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VoicemailOrganizationPolicy>() {});
+  private GetVoicemailPolicyRequest createGetVoicemailPolicyRequest() {
+    return GetVoicemailPolicyRequest.builder()            .build();
   }
 
   /**
    * Get a policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VoicemailOrganizationPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailOrganizationPolicy getVoicemailPolicy(GetVoicemailPolicyRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailOrganizationPolicy>() {});
+    try {
+      ApiResponse<VoicemailOrganizationPolicy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailOrganizationPolicy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailOrganizationPolicy> getVoicemailPolicy(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<VoicemailOrganizationPolicy>invokeAPIVerbose(request, new TypeReference<VoicemailOrganizationPolicy>() {});
+  public ApiResponse<VoicemailOrganizationPolicy> getVoicemailPolicy(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailOrganizationPolicy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailOrganizationPolicy> response = (ApiResponse<VoicemailOrganizationPolicy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailOrganizationPolicy> response = (ApiResponse<VoicemailOrganizationPolicy>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -987,10 +1075,11 @@ public class VoicemailApi {
    * @param q64 q64 (required)
    * @param expand expand (optional)
    * @return VoicemailsSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailsSearchResponse getVoicemailSearch(String q64, List<String> expand) throws IOException, ApiException {
-    return getVoicemailSearchWithHttpInfo(q64, expand).getBody();
+    return  getVoicemailSearch(createGetVoicemailSearchRequest(q64, expand));
   }
 
   /**
@@ -999,62 +1088,66 @@ public class VoicemailApi {
    * @param q64 q64 (required)
    * @param expand expand (optional)
    * @return VoicemailsSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailsSearchResponse> getVoicemailSearchWithHttpInfo(String q64, List<String> expand) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'q64' is set
-    if (q64 == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'q64' when calling getVoicemailSearch");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/search".replaceAll("\\{format\\}","json");
+  public ApiResponse<VoicemailsSearchResponse> getVoicemailSearchWithHttpInfo(String q64, List<String> expand) throws IOException {
+    return getVoicemailSearch(createGetVoicemailSearchRequest(q64, expand).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetVoicemailSearchRequest createGetVoicemailSearchRequest(String q64, List<String> expand) {
+    return GetVoicemailSearchRequest.builder()
+            .withQ64(q64)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "q64", q64));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("multi", "expand", expand));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VoicemailsSearchResponse>() {});
+            .withExpand(expand)
+            .build();
   }
 
   /**
    * Search voicemails using the q64 value returned from a previous search
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VoicemailsSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailsSearchResponse getVoicemailSearch(GetVoicemailSearchRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailsSearchResponse>() {});
+    try {
+      ApiResponse<VoicemailsSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailsSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Search voicemails using the q64 value returned from a previous search
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailsSearchResponse> getVoicemailSearch(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<VoicemailsSearchResponse>invokeAPIVerbose(request, new TypeReference<VoicemailsSearchResponse>() {});
+  public ApiResponse<VoicemailsSearchResponse> getVoicemailSearch(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailsSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailsSearchResponse> response = (ApiResponse<VoicemailsSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailsSearchResponse> response = (ApiResponse<VoicemailsSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1062,10 +1155,11 @@ public class VoicemailApi {
    * 
    * @param userId User ID (required)
    * @return VoicemailUserPolicy
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailUserPolicy getVoicemailUserpolicy(String userId) throws IOException, ApiException {
-    return getVoicemailUserpolicyWithHttpInfo(userId).getBody();
+    return  getVoicemailUserpolicy(createGetVoicemailUserpolicyRequest(userId));
   }
 
   /**
@@ -1073,61 +1167,64 @@ public class VoicemailApi {
    * 
    * @param userId User ID (required)
    * @return VoicemailUserPolicy
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailUserPolicy> getVoicemailUserpolicyWithHttpInfo(String userId) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling getVoicemailUserpolicy");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/userpolicies/{userId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<VoicemailUserPolicy> getVoicemailUserpolicyWithHttpInfo(String userId) throws IOException {
+    return getVoicemailUserpolicy(createGetVoicemailUserpolicyRequest(userId).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VoicemailUserPolicy>() {});
+  private GetVoicemailUserpolicyRequest createGetVoicemailUserpolicyRequest(String userId) {
+    return GetVoicemailUserpolicyRequest.builder()
+            .withUserId(userId)
+            .build();
   }
 
   /**
    * Get a user&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VoicemailUserPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailUserPolicy getVoicemailUserpolicy(GetVoicemailUserpolicyRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {});
+    try {
+      ApiResponse<VoicemailUserPolicy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get a user&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailUserPolicy> getVoicemailUserpolicy(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<VoicemailUserPolicy>invokeAPIVerbose(request, new TypeReference<VoicemailUserPolicy>() {});
+  public ApiResponse<VoicemailUserPolicy> getVoicemailUserpolicy(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailUserPolicy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailUserPolicy> response = (ApiResponse<VoicemailUserPolicy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailUserPolicy> response = (ApiResponse<VoicemailUserPolicy>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1136,10 +1233,11 @@ public class VoicemailApi {
    * @param groupId Group ID (required)
    * @param body The group&#39;s voicemail policy (required)
    * @return VoicemailGroupPolicy
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailGroupPolicy patchVoicemailGroupPolicy(String groupId, VoicemailGroupPolicy body) throws IOException, ApiException {
-    return patchVoicemailGroupPolicyWithHttpInfo(groupId, body).getBody();
+    return  patchVoicemailGroupPolicy(createPatchVoicemailGroupPolicyRequest(groupId, body));
   }
 
   /**
@@ -1148,66 +1246,66 @@ public class VoicemailApi {
    * @param groupId Group ID (required)
    * @param body The group&#39;s voicemail policy (required)
    * @return VoicemailGroupPolicy
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailGroupPolicy> patchVoicemailGroupPolicyWithHttpInfo(String groupId, VoicemailGroupPolicy body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'groupId' is set
-    if (groupId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'groupId' when calling patchVoicemailGroupPolicy");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchVoicemailGroupPolicy");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/groups/{groupId}/policy".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "groupId" + "\\}", pcapiClient.escapeString(groupId.toString()));
+  public ApiResponse<VoicemailGroupPolicy> patchVoicemailGroupPolicyWithHttpInfo(String groupId, VoicemailGroupPolicy body) throws IOException {
+    return patchVoicemailGroupPolicy(createPatchVoicemailGroupPolicyRequest(groupId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchVoicemailGroupPolicyRequest createPatchVoicemailGroupPolicyRequest(String groupId, VoicemailGroupPolicy body) {
+    return PatchVoicemailGroupPolicyRequest.builder()
+            .withGroupId(groupId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VoicemailGroupPolicy>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a group&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VoicemailGroupPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailGroupPolicy patchVoicemailGroupPolicy(PatchVoicemailGroupPolicyRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailGroupPolicy>() {});
+    try {
+      ApiResponse<VoicemailGroupPolicy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailGroupPolicy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a group&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailGroupPolicy> patchVoicemailGroupPolicy(ApiRequest<VoicemailGroupPolicy> request) throws IOException, ApiException {
-    return pcapiClient.<VoicemailGroupPolicy>invokeAPIVerbose(request, new TypeReference<VoicemailGroupPolicy>() {});
+  public ApiResponse<VoicemailGroupPolicy> patchVoicemailGroupPolicy(ApiRequest<VoicemailGroupPolicy> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailGroupPolicy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailGroupPolicy> response = (ApiResponse<VoicemailGroupPolicy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailGroupPolicy> response = (ApiResponse<VoicemailGroupPolicy>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1215,10 +1313,11 @@ public class VoicemailApi {
    * 
    * @param body The user&#39;s voicemail policy (required)
    * @return VoicemailUserPolicy
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailUserPolicy patchVoicemailMePolicy(VoicemailUserPolicy body) throws IOException, ApiException {
-    return patchVoicemailMePolicyWithHttpInfo(body).getBody();
+    return  patchVoicemailMePolicy(createPatchVoicemailMePolicyRequest(body));
   }
 
   /**
@@ -1226,60 +1325,64 @@ public class VoicemailApi {
    * 
    * @param body The user&#39;s voicemail policy (required)
    * @return VoicemailUserPolicy
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailUserPolicy> patchVoicemailMePolicyWithHttpInfo(VoicemailUserPolicy body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchVoicemailMePolicy");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/me/policy".replaceAll("\\{format\\}","json");
+  public ApiResponse<VoicemailUserPolicy> patchVoicemailMePolicyWithHttpInfo(VoicemailUserPolicy body) throws IOException {
+    return patchVoicemailMePolicy(createPatchVoicemailMePolicyRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VoicemailUserPolicy>() {});
+  private PatchVoicemailMePolicyRequest createPatchVoicemailMePolicyRequest(VoicemailUserPolicy body) {
+    return PatchVoicemailMePolicyRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update the current user&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VoicemailUserPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailUserPolicy patchVoicemailMePolicy(PatchVoicemailMePolicyRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {});
+    try {
+      ApiResponse<VoicemailUserPolicy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update the current user&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailUserPolicy> patchVoicemailMePolicy(ApiRequest<VoicemailUserPolicy> request) throws IOException, ApiException {
-    return pcapiClient.<VoicemailUserPolicy>invokeAPIVerbose(request, new TypeReference<VoicemailUserPolicy>() {});
+  public ApiResponse<VoicemailUserPolicy> patchVoicemailMePolicy(ApiRequest<VoicemailUserPolicy> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailUserPolicy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailUserPolicy> response = (ApiResponse<VoicemailUserPolicy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailUserPolicy> response = (ApiResponse<VoicemailUserPolicy>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1288,10 +1391,11 @@ public class VoicemailApi {
    * @param userId User ID (required)
    * @param body The user&#39;s voicemail policy (required)
    * @return VoicemailUserPolicy
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailUserPolicy patchVoicemailUserpolicy(String userId, VoicemailUserPolicy body) throws IOException, ApiException {
-    return patchVoicemailUserpolicyWithHttpInfo(userId, body).getBody();
+    return  patchVoicemailUserpolicy(createPatchVoicemailUserpolicyRequest(userId, body));
   }
 
   /**
@@ -1300,66 +1404,66 @@ public class VoicemailApi {
    * @param userId User ID (required)
    * @param body The user&#39;s voicemail policy (required)
    * @return VoicemailUserPolicy
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailUserPolicy> patchVoicemailUserpolicyWithHttpInfo(String userId, VoicemailUserPolicy body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'userId' when calling patchVoicemailUserpolicy");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling patchVoicemailUserpolicy");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/userpolicies/{userId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "userId" + "\\}", pcapiClient.escapeString(userId.toString()));
+  public ApiResponse<VoicemailUserPolicy> patchVoicemailUserpolicyWithHttpInfo(String userId, VoicemailUserPolicy body) throws IOException {
+    return patchVoicemailUserpolicy(createPatchVoicemailUserpolicyRequest(userId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PatchVoicemailUserpolicyRequest createPatchVoicemailUserpolicyRequest(String userId, VoicemailUserPolicy body) {
+    return PatchVoicemailUserpolicyRequest.builder()
+            .withUserId(userId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PATCH", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VoicemailUserPolicy>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a user&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VoicemailUserPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailUserPolicy patchVoicemailUserpolicy(PatchVoicemailUserpolicyRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {});
+    try {
+      ApiResponse<VoicemailUserPolicy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a user&#39;s voicemail policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailUserPolicy> patchVoicemailUserpolicy(ApiRequest<VoicemailUserPolicy> request) throws IOException, ApiException {
-    return pcapiClient.<VoicemailUserPolicy>invokeAPIVerbose(request, new TypeReference<VoicemailUserPolicy>() {});
+  public ApiResponse<VoicemailUserPolicy> patchVoicemailUserpolicy(ApiRequest<VoicemailUserPolicy> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailUserPolicy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailUserPolicy> response = (ApiResponse<VoicemailUserPolicy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailUserPolicy> response = (ApiResponse<VoicemailUserPolicy>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1367,10 +1471,11 @@ public class VoicemailApi {
    * 
    * @param body  (optional)
    * @return VoicemailMessage
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailMessage postVoicemailMessages(CopyVoicemailMessage body) throws IOException, ApiException {
-    return postVoicemailMessagesWithHttpInfo(body).getBody();
+    return  postVoicemailMessages(createPostVoicemailMessagesRequest(body));
   }
 
   /**
@@ -1378,55 +1483,64 @@ public class VoicemailApi {
    * 
    * @param body  (optional)
    * @return VoicemailMessage
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailMessage> postVoicemailMessagesWithHttpInfo(CopyVoicemailMessage body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/messages".replaceAll("\\{format\\}","json");
+  public ApiResponse<VoicemailMessage> postVoicemailMessagesWithHttpInfo(CopyVoicemailMessage body) throws IOException {
+    return postVoicemailMessages(createPostVoicemailMessagesRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VoicemailMessage>() {});
+  private PostVoicemailMessagesRequest createPostVoicemailMessagesRequest(CopyVoicemailMessage body) {
+    return PostVoicemailMessagesRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Copy a voicemail message to a user or group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VoicemailMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailMessage postVoicemailMessages(PostVoicemailMessagesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailMessage>() {});
+    try {
+      ApiResponse<VoicemailMessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailMessage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Copy a voicemail message to a user or group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailMessage> postVoicemailMessages(ApiRequest<CopyVoicemailMessage> request) throws IOException, ApiException {
-    return pcapiClient.<VoicemailMessage>invokeAPIVerbose(request, new TypeReference<VoicemailMessage>() {});
+  public ApiResponse<VoicemailMessage> postVoicemailMessages(ApiRequest<CopyVoicemailMessage> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailMessage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMessage> response = (ApiResponse<VoicemailMessage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMessage> response = (ApiResponse<VoicemailMessage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1434,10 +1548,11 @@ public class VoicemailApi {
    * 
    * @param body Search request options (required)
    * @return VoicemailsSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailsSearchResponse postVoicemailSearch(VoicemailSearchRequest body) throws IOException, ApiException {
-    return postVoicemailSearchWithHttpInfo(body).getBody();
+    return  postVoicemailSearch(createPostVoicemailSearchRequest(body));
   }
 
   /**
@@ -1445,60 +1560,64 @@ public class VoicemailApi {
    * 
    * @param body Search request options (required)
    * @return VoicemailsSearchResponse
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailsSearchResponse> postVoicemailSearchWithHttpInfo(VoicemailSearchRequest body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postVoicemailSearch");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/search".replaceAll("\\{format\\}","json");
+  public ApiResponse<VoicemailsSearchResponse> postVoicemailSearchWithHttpInfo(VoicemailSearchRequest body) throws IOException {
+    return postVoicemailSearch(createPostVoicemailSearchRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VoicemailsSearchResponse>() {});
+  private PostVoicemailSearchRequest createPostVoicemailSearchRequest(VoicemailSearchRequest body) {
+    return PostVoicemailSearchRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Search voicemails
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VoicemailsSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailsSearchResponse postVoicemailSearch(PostVoicemailSearchRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailsSearchResponse>() {});
+    try {
+      ApiResponse<VoicemailsSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailsSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Search voicemails
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailsSearchResponse> postVoicemailSearch(ApiRequest<VoicemailSearchRequest> request) throws IOException, ApiException {
-    return pcapiClient.<VoicemailsSearchResponse>invokeAPIVerbose(request, new TypeReference<VoicemailsSearchResponse>() {});
+  public ApiResponse<VoicemailsSearchResponse> postVoicemailSearch(ApiRequest<VoicemailSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailsSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailsSearchResponse> response = (ApiResponse<VoicemailsSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailsSearchResponse> response = (ApiResponse<VoicemailsSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1507,10 +1626,11 @@ public class VoicemailApi {
    * @param messageId Message ID (required)
    * @param body VoicemailMessage (required)
    * @return VoicemailMessage
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailMessage putVoicemailMessage(String messageId, VoicemailMessage body) throws IOException, ApiException {
-    return putVoicemailMessageWithHttpInfo(messageId, body).getBody();
+    return  putVoicemailMessage(createPutVoicemailMessageRequest(messageId, body));
   }
 
   /**
@@ -1519,66 +1639,66 @@ public class VoicemailApi {
    * @param messageId Message ID (required)
    * @param body VoicemailMessage (required)
    * @return VoicemailMessage
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailMessage> putVoicemailMessageWithHttpInfo(String messageId, VoicemailMessage body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'messageId' is set
-    if (messageId == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'messageId' when calling putVoicemailMessage");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putVoicemailMessage");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/messages/{messageId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "messageId" + "\\}", pcapiClient.escapeString(messageId.toString()));
+  public ApiResponse<VoicemailMessage> putVoicemailMessageWithHttpInfo(String messageId, VoicemailMessage body) throws IOException {
+    return putVoicemailMessage(createPutVoicemailMessageRequest(messageId, body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private PutVoicemailMessageRequest createPutVoicemailMessageRequest(String messageId, VoicemailMessage body) {
+    return PutVoicemailMessageRequest.builder()
+            .withMessageId(messageId)
 
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VoicemailMessage>() {});
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a message.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VoicemailMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailMessage putVoicemailMessage(PutVoicemailMessageRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailMessage>() {});
+    try {
+      ApiResponse<VoicemailMessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailMessage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a message.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailMessage> putVoicemailMessage(ApiRequest<VoicemailMessage> request) throws IOException, ApiException {
-    return pcapiClient.<VoicemailMessage>invokeAPIVerbose(request, new TypeReference<VoicemailMessage>() {});
+  public ApiResponse<VoicemailMessage> putVoicemailMessage(ApiRequest<VoicemailMessage> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailMessage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMessage> response = (ApiResponse<VoicemailMessage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMessage> response = (ApiResponse<VoicemailMessage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -1586,10 +1706,11 @@ public class VoicemailApi {
    * 
    * @param body Policy (required)
    * @return VoicemailOrganizationPolicy
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailOrganizationPolicy putVoicemailPolicy(VoicemailOrganizationPolicy body) throws IOException, ApiException {
-    return putVoicemailPolicyWithHttpInfo(body).getBody();
+    return  putVoicemailPolicy(createPutVoicemailPolicyRequest(body));
   }
 
   /**
@@ -1597,60 +1718,64 @@ public class VoicemailApi {
    * 
    * @param body Policy (required)
    * @return VoicemailOrganizationPolicy
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailOrganizationPolicy> putVoicemailPolicyWithHttpInfo(VoicemailOrganizationPolicy body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling putVoicemailPolicy");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/voicemail/policy".replaceAll("\\{format\\}","json");
+  public ApiResponse<VoicemailOrganizationPolicy> putVoicemailPolicyWithHttpInfo(VoicemailOrganizationPolicy body) throws IOException {
+    return putVoicemailPolicy(createPutVoicemailPolicyRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "PUT", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<VoicemailOrganizationPolicy>() {});
+  private PutVoicemailPolicyRequest createPutVoicemailPolicyRequest(VoicemailOrganizationPolicy body) {
+    return PutVoicemailPolicyRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Update a policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return VoicemailOrganizationPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public VoicemailOrganizationPolicy putVoicemailPolicy(PutVoicemailPolicyRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<VoicemailOrganizationPolicy>() {});
+    try {
+      ApiResponse<VoicemailOrganizationPolicy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailOrganizationPolicy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Update a policy
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<VoicemailOrganizationPolicy> putVoicemailPolicy(ApiRequest<VoicemailOrganizationPolicy> request) throws IOException, ApiException {
-    return pcapiClient.<VoicemailOrganizationPolicy>invokeAPIVerbose(request, new TypeReference<VoicemailOrganizationPolicy>() {});
+  public ApiResponse<VoicemailOrganizationPolicy> putVoicemailPolicy(ApiRequest<VoicemailOrganizationPolicy> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailOrganizationPolicy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailOrganizationPolicy> response = (ApiResponse<VoicemailOrganizationPolicy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailOrganizationPolicy> response = (ApiResponse<VoicemailOrganizationPolicy>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

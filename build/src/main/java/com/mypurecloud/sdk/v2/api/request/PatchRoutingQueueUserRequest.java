@@ -44,9 +44,6 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class PatchRoutingQueueUserRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String queueId;
 	public String getQueueId() {
 		return this.queueId;
@@ -177,6 +174,22 @@ public class PatchRoutingQueueUserRequest {
 
 
 		public PatchRoutingQueueUserRequest build() {
+            
+            // verify the required parameter 'queueId' is set
+            if (request.queueId == null) {
+                throw new IllegalStateException("Missing the required parameter 'queueId' when building request for PatchRoutingQueueUserRequest.");
+            }
+            
+            // verify the required parameter 'memberId' is set
+            if (request.memberId == null) {
+                throw new IllegalStateException("Missing the required parameter 'memberId' when building request for PatchRoutingQueueUserRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchRoutingQueueUserRequest.");
+            }
+            
 			return request;
 		}
 	}

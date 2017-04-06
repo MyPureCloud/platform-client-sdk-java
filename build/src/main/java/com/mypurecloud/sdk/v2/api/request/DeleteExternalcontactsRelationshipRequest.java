@@ -31,9 +31,6 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class DeleteExternalcontactsRelationshipRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String relationshipId;
 	public String getRelationshipId() {
 		return this.relationshipId;
@@ -112,6 +109,12 @@ public class DeleteExternalcontactsRelationshipRequest {
 
 
 		public DeleteExternalcontactsRelationshipRequest build() {
+            
+            // verify the required parameter 'relationshipId' is set
+            if (request.relationshipId == null) {
+                throw new IllegalStateException("Missing the required parameter 'relationshipId' when building request for DeleteExternalcontactsRelationshipRequest.");
+            }
+            
 			return request;
 		}
 	}

@@ -43,65 +43,73 @@ public class UtilitiesApi {
    * Get the current system date/time
    * 
    * @return ServerDate
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ServerDate getDate() throws IOException, ApiException {
-    return getDateWithHttpInfo().getBody();
+    return  getDate(createGetDateRequest());
   }
 
   /**
    * Get the current system date/time
    * 
    * @return ServerDate
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ServerDate> getDateWithHttpInfo() throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/date".replaceAll("\\{format\\}","json");
+  public ApiResponse<ServerDate> getDateWithHttpInfo() throws IOException {
+    return getDate(createGetDateRequest().withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ServerDate>() {});
+  private GetDateRequest createGetDateRequest() {
+    return GetDateRequest.builder()            .build();
   }
 
   /**
    * Get the current system date/time
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ServerDate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ServerDate getDate(GetDateRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ServerDate>() {});
+    try {
+      ApiResponse<ServerDate> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ServerDate>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get the current system date/time
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ServerDate> getDate(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<ServerDate>invokeAPIVerbose(request, new TypeReference<ServerDate>() {});
+  public ApiResponse<ServerDate> getDate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ServerDate>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ServerDate> response = (ApiResponse<ServerDate>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ServerDate> response = (ApiResponse<ServerDate>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -110,10 +118,11 @@ public class UtilitiesApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return TimeZoneEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TimeZoneEntityListing getTimezones(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return getTimezonesWithHttpInfo(pageSize, pageNumber).getBody();
+    return  getTimezones(createGetTimezonesRequest(pageSize, pageNumber));
   }
 
   /**
@@ -122,57 +131,66 @@ public class UtilitiesApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return TimeZoneEntityListing
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeZoneEntityListing> getTimezonesWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    Object pclocalVarPostBody = null;
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/timezones".replaceAll("\\{format\\}","json");
+  public ApiResponse<TimeZoneEntityListing> getTimezonesWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getTimezones(createGetTimezonesRequest(pageSize, pageNumber).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
+  private GetTimezonesRequest createGetTimezonesRequest(Integer pageSize, Integer pageNumber) {
+    return GetTimezonesRequest.builder()
+            .withPageSize(pageSize)
 
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageSize", pageSize));
-    pclocalVarQueryParams.addAll(pcapiClient.parameterToPairs("", "pageNumber", pageNumber));
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "GET", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<TimeZoneEntityListing>() {});
+            .withPageNumber(pageNumber)
+            .build();
   }
 
   /**
    * Get time zones list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return TimeZoneEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public TimeZoneEntityListing getTimezones(GetTimezonesRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<TimeZoneEntityListing>() {});
+    try {
+      ApiResponse<TimeZoneEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeZoneEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Get time zones list
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeZoneEntityListing> getTimezones(ApiRequest<Void> request) throws IOException, ApiException {
-    return pcapiClient.<TimeZoneEntityListing>invokeAPIVerbose(request, new TypeReference<TimeZoneEntityListing>() {});
+  public ApiResponse<TimeZoneEntityListing> getTimezones(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeZoneEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeZoneEntityListing> response = (ApiResponse<TimeZoneEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeZoneEntityListing> response = (ApiResponse<TimeZoneEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -180,10 +198,11 @@ public class UtilitiesApi {
    * 
    * @param body Certificate (required)
    * @return ParsedCertificate
-   * @throws ApiException if fails to make API call
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ParsedCertificate postCertificateDetails(Certificate body) throws IOException, ApiException {
-    return postCertificateDetailsWithHttpInfo(body).getBody();
+    return  postCertificateDetails(createPostCertificateDetailsRequest(body));
   }
 
   /**
@@ -191,60 +210,64 @@ public class UtilitiesApi {
    * 
    * @param body Certificate (required)
    * @return ParsedCertificate
-   * @throws ApiException if fails to make API call
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ParsedCertificate> postCertificateDetailsWithHttpInfo(Certificate body) throws IOException, ApiException {
-    Object pclocalVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new IllegalArgumentException("Missing the required parameter 'body' when calling postCertificateDetails");
-    }
-    
-    // create path and map variables
-    String pclocalVarPath = "/api/v2/certificate/details".replaceAll("\\{format\\}","json");
+  public ApiResponse<ParsedCertificate> postCertificateDetailsWithHttpInfo(Certificate body) throws IOException {
+    return postCertificateDetails(createPostCertificateDetailsRequest(body).withHttpInfo());
+  }
 
-    // query params
-    List<Pair> pclocalVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> pclocalVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> pclocalVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] pclocalVarAccepts = {
-      "application/json"
-    };
-    final String pclocalVarAccept = pcapiClient.selectHeaderAccept(pclocalVarAccepts);
-
-    final String[] pclocalVarContentTypes = {
-      "application/json"
-    };
-    final String pclocalVarContentType = pcapiClient.selectHeaderContentType(pclocalVarContentTypes);
-
-    String[] pclocalVarAuthNames = new String[] { "PureCloud Auth" };
-
-    return pcapiClient.invokeAPIVerbose(pclocalVarPath, "POST", pclocalVarQueryParams, pclocalVarPostBody, pclocalVarHeaderParams, pclocalVarFormParams, pclocalVarAccept, pclocalVarContentType, pclocalVarAuthNames, new TypeReference<ParsedCertificate>() {});
+  private PostCertificateDetailsRequest createPostCertificateDetailsRequest(Certificate body) {
+    return PostCertificateDetailsRequest.builder()
+            .withBody(body)
+            .build();
   }
 
   /**
    * Returns the information about an X509 PEM encoded certificate or certificate chain.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return ParsedCertificate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
    */
   public ParsedCertificate postCertificateDetails(PostCertificateDetailsRequest request) throws IOException, ApiException {
-    return pcapiClient.invokeAPI(request.withHttpInfo(), new TypeReference<ParsedCertificate>() {});
+    try {
+      ApiResponse<ParsedCertificate> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ParsedCertificate>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
   }
 
   /**
    * Returns the information about an X509 PEM encoded certificate or certificate chain.
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ParsedCertificate> postCertificateDetails(ApiRequest<Certificate> request) throws IOException, ApiException {
-    return pcapiClient.<ParsedCertificate>invokeAPIVerbose(request, new TypeReference<ParsedCertificate>() {});
+  public ApiResponse<ParsedCertificate> postCertificateDetails(ApiRequest<Certificate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ParsedCertificate>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ParsedCertificate> response = (ApiResponse<ParsedCertificate>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ParsedCertificate> response = (ApiResponse<ParsedCertificate>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
 }

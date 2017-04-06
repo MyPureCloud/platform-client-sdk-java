@@ -84,9 +84,6 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesLinebasesettingsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -212,6 +209,7 @@ public class GetTelephonyProvidersEdgesLinebasesettingsRequest {
 
 
 		public GetTelephonyProvidersEdgesLinebasesettingsRequest build() {
+            
 			return request;
 		}
 	}

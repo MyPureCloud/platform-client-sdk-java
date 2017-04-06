@@ -31,9 +31,6 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class GetExternalcontactsReversewhitepageslookupRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private String lookupVal;
 	public String getLookupVal() {
 		return this.lookupVal;
@@ -132,6 +129,12 @@ public class GetExternalcontactsReversewhitepageslookupRequest {
 
 
 		public GetExternalcontactsReversewhitepageslookupRequest build() {
+            
+            // verify the required parameter 'lookupVal' is set
+            if (request.lookupVal == null) {
+                throw new IllegalStateException("Missing the required parameter 'lookupVal' when building request for GetExternalcontactsReversewhitepageslookupRequest.");
+            }
+            
 			return request;
 		}
 	}

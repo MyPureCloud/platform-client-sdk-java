@@ -27,9 +27,6 @@ import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
 
 public class PostResponsemanagementResponsesQueryRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private ResponseQueryRequest body;
 	public ResponseQueryRequest getBody() {
 		return this.body;
@@ -108,6 +105,12 @@ public class PostResponsemanagementResponsesQueryRequest {
 
 
 		public PostResponsemanagementResponsesQueryRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostResponsemanagementResponsesQueryRequest.");
+            }
+            
 			return request;
 		}
 	}

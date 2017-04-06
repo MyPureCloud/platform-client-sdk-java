@@ -25,9 +25,6 @@ import com.mypurecloud.sdk.v2.model.SystemPresence;
 import com.mypurecloud.sdk.v2.model.UserPresence;
 
 public class GetPresencedefinitionsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -153,6 +150,7 @@ public class GetPresencedefinitionsRequest {
 
 
 		public GetPresencedefinitionsRequest build() {
+            
 			return request;
 		}
 	}

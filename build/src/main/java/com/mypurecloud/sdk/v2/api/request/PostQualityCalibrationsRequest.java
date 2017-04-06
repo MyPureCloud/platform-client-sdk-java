@@ -38,9 +38,6 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class PostQualityCalibrationsRequest {
-    private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)application\\/json(;.*)?");
-    private static final String[] AUTH_NAMES = new String[] { };
-
 	private CalibrationCreate body;
 	public CalibrationCreate getBody() {
 		return this.body;
@@ -139,6 +136,12 @@ public class PostQualityCalibrationsRequest {
 
 
 		public PostQualityCalibrationsRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostQualityCalibrationsRequest.");
+            }
+            
 			return request;
 		}
 	}

@@ -1,6 +1,8 @@
 package com.mypurecloud.sdk.v2.api;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.SettableFuture;
 
 import com.mypurecloud.sdk.v2.AsyncApiCallback;
 import com.mypurecloud.sdk.v2.ApiException;
@@ -58,321 +60,1231 @@ public class GreetingsApiAsync {
   /**
    * Deletes a Greeting with the given GreetingId
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Void> deleteGreetingAsync(DeleteGreetingRequest request, AsyncApiCallback<Void> callback) {
-    return pcapiClient.<Void>invokeAPIAsync(request.withHttpInfo(), null, callback);
+    try {
+      SettableFuture<Void> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Deletes a Greeting with the given GreetingId
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteGreetingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
-    return pcapiClient.<Void>invokeAPIVerboseAsync(request, null, callback);
+    try {
+      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Greeting with the given GreetingId
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Greeting> getGreetingAsync(GetGreetingRequest request, AsyncApiCallback<Greeting> callback) {
-    return pcapiClient.<Greeting>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Greeting>() {}, callback);
+    try {
+      SettableFuture<Greeting> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Greeting>() {}, new AsyncApiCallback<ApiResponse<Greeting>>() {
+        @Override
+        public void onCompleted(ApiResponse<Greeting> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a Greeting with the given GreetingId
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Greeting>> getGreetingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Greeting>> callback) {
-    return pcapiClient.<Greeting>invokeAPIVerboseAsync(request, new TypeReference<Greeting>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Greeting>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Greeting>() {}, new AsyncApiCallback<ApiResponse<Greeting>>() {
+        @Override
+        public void onCompleted(ApiResponse<Greeting> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Greeting> response = (ApiResponse<Greeting>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Greeting> response = (ApiResponse<Greeting>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get media playback URI for this greeting
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<GreetingMediaInfo> getGreetingMediaAsync(GetGreetingMediaRequest request, AsyncApiCallback<GreetingMediaInfo> callback) {
-    return pcapiClient.<GreetingMediaInfo>invokeAPIAsync(request.withHttpInfo(), new TypeReference<GreetingMediaInfo>() {}, callback);
+    try {
+      SettableFuture<GreetingMediaInfo> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GreetingMediaInfo>() {}, new AsyncApiCallback<ApiResponse<GreetingMediaInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<GreetingMediaInfo> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get media playback URI for this greeting
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<GreetingMediaInfo>> getGreetingMediaAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GreetingMediaInfo>> callback) {
-    return pcapiClient.<GreetingMediaInfo>invokeAPIVerboseAsync(request, new TypeReference<GreetingMediaInfo>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<GreetingMediaInfo>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GreetingMediaInfo>() {}, new AsyncApiCallback<ApiResponse<GreetingMediaInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<GreetingMediaInfo> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GreetingMediaInfo> response = (ApiResponse<GreetingMediaInfo>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GreetingMediaInfo> response = (ApiResponse<GreetingMediaInfo>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets an Organization&#39;s Greetings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DomainEntityListing> getGreetingsAsync(GetGreetingsRequest request, AsyncApiCallback<DomainEntityListing> callback) {
-    return pcapiClient.<DomainEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainEntityListing>() {}, callback);
+    try {
+      SettableFuture<DomainEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainEntityListing>() {}, new AsyncApiCallback<ApiResponse<DomainEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Gets an Organization&#39;s Greetings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DomainEntityListing>> getGreetingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainEntityListing>> callback) {
-    return pcapiClient.<DomainEntityListing>invokeAPIVerboseAsync(request, new TypeReference<DomainEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DomainEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DomainEntityListing>() {}, new AsyncApiCallback<ApiResponse<DomainEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainEntityListing> response = (ApiResponse<DomainEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainEntityListing> response = (ApiResponse<DomainEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get an Organization&#39;s DefaultGreetingList
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DefaultGreetingList> getGreetingsDefaultsAsync(GetGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
-    return pcapiClient.<DefaultGreetingList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, callback);
+    try {
+      SettableFuture<DefaultGreetingList> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
+        @Override
+        public void onCompleted(ApiResponse<DefaultGreetingList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get an Organization&#39;s DefaultGreetingList
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DefaultGreetingList>> getGreetingsDefaultsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
-    return pcapiClient.<DefaultGreetingList>invokeAPIVerboseAsync(request, new TypeReference<DefaultGreetingList>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
+        @Override
+        public void onCompleted(ApiResponse<DefaultGreetingList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a list of the Group&#39;s Greetings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<GreetingListing> getGroupGreetingsAsync(GetGroupGreetingsRequest request, AsyncApiCallback<GreetingListing> callback) {
-    return pcapiClient.<GreetingListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<GreetingListing>() {}, callback);
+    try {
+      SettableFuture<GreetingListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GreetingListing>() {}, new AsyncApiCallback<ApiResponse<GreetingListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<GreetingListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a list of the Group&#39;s Greetings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<GreetingListing>> getGroupGreetingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GreetingListing>> callback) {
-    return pcapiClient.<GreetingListing>invokeAPIVerboseAsync(request, new TypeReference<GreetingListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<GreetingListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GreetingListing>() {}, new AsyncApiCallback<ApiResponse<GreetingListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<GreetingListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GreetingListing> response = (ApiResponse<GreetingListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GreetingListing> response = (ApiResponse<GreetingListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Grabs the list of Default Greetings given a Group&#39;s ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DefaultGreetingList> getGroupGreetingsDefaultsAsync(GetGroupGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
-    return pcapiClient.<DefaultGreetingList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, callback);
+    try {
+      SettableFuture<DefaultGreetingList> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
+        @Override
+        public void onCompleted(ApiResponse<DefaultGreetingList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Grabs the list of Default Greetings given a Group&#39;s ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DefaultGreetingList>> getGroupGreetingsDefaultsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
-    return pcapiClient.<DefaultGreetingList>invokeAPIVerboseAsync(request, new TypeReference<DefaultGreetingList>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
+        @Override
+        public void onCompleted(ApiResponse<DefaultGreetingList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a list of the User&#39;s Greetings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DomainEntityListing> getUserGreetingsAsync(GetUserGreetingsRequest request, AsyncApiCallback<DomainEntityListing> callback) {
-    return pcapiClient.<DomainEntityListing>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DomainEntityListing>() {}, callback);
+    try {
+      SettableFuture<DomainEntityListing> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainEntityListing>() {}, new AsyncApiCallback<ApiResponse<DomainEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Get a list of the User&#39;s Greetings
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DomainEntityListing>> getUserGreetingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainEntityListing>> callback) {
-    return pcapiClient.<DomainEntityListing>invokeAPIVerboseAsync(request, new TypeReference<DomainEntityListing>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DomainEntityListing>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DomainEntityListing>() {}, new AsyncApiCallback<ApiResponse<DomainEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DomainEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainEntityListing> response = (ApiResponse<DomainEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DomainEntityListing> response = (ApiResponse<DomainEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Grabs the list of Default Greetings given a User&#39;s ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DefaultGreetingList> getUserGreetingsDefaultsAsync(GetUserGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
-    return pcapiClient.<DefaultGreetingList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, callback);
+    try {
+      SettableFuture<DefaultGreetingList> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
+        @Override
+        public void onCompleted(ApiResponse<DefaultGreetingList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Grabs the list of Default Greetings given a User&#39;s ID
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DefaultGreetingList>> getUserGreetingsDefaultsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
-    return pcapiClient.<DefaultGreetingList>invokeAPIVerboseAsync(request, new TypeReference<DefaultGreetingList>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
+        @Override
+        public void onCompleted(ApiResponse<DefaultGreetingList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a Greeting for an Organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DefaultGreetingList> postGreetingsAsync(PostGreetingsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
-    return pcapiClient.<DefaultGreetingList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, callback);
+    try {
+      SettableFuture<DefaultGreetingList> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
+        @Override
+        public void onCompleted(ApiResponse<DefaultGreetingList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Create a Greeting for an Organization
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DefaultGreetingList>> postGreetingsAsync(ApiRequest<Greeting> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
-    return pcapiClient.<DefaultGreetingList>invokeAPIVerboseAsync(request, new TypeReference<DefaultGreetingList>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
+        @Override
+        public void onCompleted(ApiResponse<DefaultGreetingList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Creates a Greeting for a Group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Greeting> postGroupGreetingsAsync(PostGroupGreetingsRequest request, AsyncApiCallback<Greeting> callback) {
-    return pcapiClient.<Greeting>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Greeting>() {}, callback);
+    try {
+      SettableFuture<Greeting> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Greeting>() {}, new AsyncApiCallback<ApiResponse<Greeting>>() {
+        @Override
+        public void onCompleted(ApiResponse<Greeting> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Creates a Greeting for a Group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Greeting>> postGroupGreetingsAsync(ApiRequest<Greeting> request, AsyncApiCallback<ApiResponse<Greeting>> callback) {
-    return pcapiClient.<Greeting>invokeAPIVerboseAsync(request, new TypeReference<Greeting>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Greeting>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Greeting>() {}, new AsyncApiCallback<ApiResponse<Greeting>>() {
+        @Override
+        public void onCompleted(ApiResponse<Greeting> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Greeting> response = (ApiResponse<Greeting>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Greeting> response = (ApiResponse<Greeting>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Creates a Greeting for a User
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Greeting> postUserGreetingsAsync(PostUserGreetingsRequest request, AsyncApiCallback<Greeting> callback) {
-    return pcapiClient.<Greeting>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Greeting>() {}, callback);
+    try {
+      SettableFuture<Greeting> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Greeting>() {}, new AsyncApiCallback<ApiResponse<Greeting>>() {
+        @Override
+        public void onCompleted(ApiResponse<Greeting> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Creates a Greeting for a User
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Greeting>> postUserGreetingsAsync(ApiRequest<Greeting> request, AsyncApiCallback<ApiResponse<Greeting>> callback) {
-    return pcapiClient.<Greeting>invokeAPIVerboseAsync(request, new TypeReference<Greeting>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Greeting>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Greeting>() {}, new AsyncApiCallback<ApiResponse<Greeting>>() {
+        @Override
+        public void onCompleted(ApiResponse<Greeting> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Greeting> response = (ApiResponse<Greeting>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Greeting> response = (ApiResponse<Greeting>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Updates the Greeting with the given GreetingId
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<Greeting> putGreetingAsync(PutGreetingRequest request, AsyncApiCallback<Greeting> callback) {
-    return pcapiClient.<Greeting>invokeAPIAsync(request.withHttpInfo(), new TypeReference<Greeting>() {}, callback);
+    try {
+      SettableFuture<Greeting> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Greeting>() {}, new AsyncApiCallback<ApiResponse<Greeting>>() {
+        @Override
+        public void onCompleted(ApiResponse<Greeting> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Updates the Greeting with the given GreetingId
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Greeting>> putGreetingAsync(ApiRequest<Greeting> request, AsyncApiCallback<ApiResponse<Greeting>> callback) {
-    return pcapiClient.<Greeting>invokeAPIVerboseAsync(request, new TypeReference<Greeting>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<Greeting>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Greeting>() {}, new AsyncApiCallback<ApiResponse<Greeting>>() {
+        @Override
+        public void onCompleted(ApiResponse<Greeting> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Greeting> response = (ApiResponse<Greeting>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Greeting> response = (ApiResponse<Greeting>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update an Organization&#39;s DefaultGreetingList
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DefaultGreetingList> putGreetingsDefaultsAsync(PutGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
-    return pcapiClient.<DefaultGreetingList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, callback);
+    try {
+      SettableFuture<DefaultGreetingList> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
+        @Override
+        public void onCompleted(ApiResponse<DefaultGreetingList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Update an Organization&#39;s DefaultGreetingList
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DefaultGreetingList>> putGreetingsDefaultsAsync(ApiRequest<DefaultGreetingList> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
-    return pcapiClient.<DefaultGreetingList>invokeAPIVerboseAsync(request, new TypeReference<DefaultGreetingList>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
+        @Override
+        public void onCompleted(ApiResponse<DefaultGreetingList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Updates the DefaultGreetingList of the specified Group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DefaultGreetingList> putGroupGreetingsDefaultsAsync(PutGroupGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
-    return pcapiClient.<DefaultGreetingList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, callback);
+    try {
+      SettableFuture<DefaultGreetingList> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
+        @Override
+        public void onCompleted(ApiResponse<DefaultGreetingList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Updates the DefaultGreetingList of the specified Group
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DefaultGreetingList>> putGroupGreetingsDefaultsAsync(ApiRequest<DefaultGreetingList> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
-    return pcapiClient.<DefaultGreetingList>invokeAPIVerboseAsync(request, new TypeReference<DefaultGreetingList>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
+        @Override
+        public void onCompleted(ApiResponse<DefaultGreetingList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Updates the DefaultGreetingList of the specified User
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<DefaultGreetingList> putUserGreetingsDefaultsAsync(PutUserGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
-    return pcapiClient.<DefaultGreetingList>invokeAPIAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, callback);
+    try {
+      SettableFuture<DefaultGreetingList> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
+        @Override
+        public void onCompleted(ApiResponse<DefaultGreetingList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
    * Updates the DefaultGreetingList of the specified User
    * 
-   * @request The request object
-   * @throws ApiException if fails to make API call
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DefaultGreetingList>> putUserGreetingsDefaultsAsync(ApiRequest<DefaultGreetingList> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
-    return pcapiClient.<DefaultGreetingList>invokeAPIVerboseAsync(request, new TypeReference<DefaultGreetingList>() {}, callback);
+    try {
+      SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
+        @Override
+        public void onCompleted(ApiResponse<DefaultGreetingList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
+
+  private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
+    if (callback != null) {
+      try {
+        callback.onCompleted(result);
+        future.set(result);
+      }
+      catch (Throwable exception) {
+        future.setException(exception);
+      }
+    }
+    else {
+      future.set(result);
+    }
+  }
+
+  private <T> void notifyFailure(SettableFuture<T> future, AsyncApiCallback<T> callback, Throwable exception) {
+    if (callback != null) {
+      try {
+        callback.onFailed(exception);
+        future.setException(exception);
+      }
+      catch (Throwable callbackException) {
+        future.setException(callbackException);
+      }
+    }
+    else {
+      future.setException(exception);
+    }
+  }
 }
