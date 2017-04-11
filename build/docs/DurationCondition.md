@@ -1,6 +1,8 @@
 ---
 title: DurationCondition
 ---
+## DurationCondition
+
 
 ## Properties
 

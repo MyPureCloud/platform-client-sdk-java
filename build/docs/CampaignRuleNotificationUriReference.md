@@ -1,6 +1,8 @@
 ---
 title: CampaignRuleNotificationUriReference
 ---
+## CampaignRuleNotificationUriReference
+
 
 ## Properties
 

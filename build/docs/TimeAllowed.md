@@ -1,6 +1,8 @@
 ---
 title: TimeAllowed
 ---
+## TimeAllowed
+
 
 ## Properties
 

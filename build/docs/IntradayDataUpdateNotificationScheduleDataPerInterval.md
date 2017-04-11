@@ -1,6 +1,8 @@
 ---
 title: IntradayDataUpdateNotificationScheduleDataPerInterval
 ---
+## IntradayDataUpdateNotificationScheduleDataPerInterval
+
 
 ## Properties
 

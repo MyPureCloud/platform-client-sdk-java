@@ -1,6 +1,8 @@
 ---
 title: UserPresenceNotificationOrganizationPresence
 ---
+## UserPresenceNotificationOrganizationPresence
+
 
 ## Properties
 

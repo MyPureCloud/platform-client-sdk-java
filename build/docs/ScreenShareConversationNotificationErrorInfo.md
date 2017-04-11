@@ -1,6 +1,8 @@
 ---
 title: ScreenShareConversationNotificationErrorInfo
 ---
+## ScreenShareConversationNotificationErrorInfo
+
 
 ## Properties
 

@@ -40,6 +40,8 @@ public class Dependency  implements Serializable {
     OUTBOUNDCALLFLOW("OUTBOUNDCALLFLOW"),
     QUEUE("QUEUE"),
     RESPONSE("RESPONSE"),
+    SCHEDULE("SCHEDULE"),
+    SCHEDULEGROUP("SCHEDULEGROUP"),
     SECUREACTION("SECUREACTION"),
     SECURECALLFLOW("SECURECALLFLOW"),
     SYSTEMPROMPT("SYSTEMPROMPT"),
@@ -76,6 +78,7 @@ public class Dependency  implements Serializable {
   private TypeEnum type = null;
   private Boolean deleted = null;
   private Boolean updated = null;
+  private Boolean stateUnknown = null;
   private String selfUri = null;
 
   
@@ -171,6 +174,23 @@ public class Dependency  implements Serializable {
   }
 
 
+  /**
+   **/
+  public Dependency stateUnknown(Boolean stateUnknown) {
+    this.stateUnknown = stateUnknown;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("stateUnknown")
+  public Boolean getStateUnknown() {
+    return stateUnknown;
+  }
+  public void setStateUnknown(Boolean stateUnknown) {
+    this.stateUnknown = stateUnknown;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -193,12 +213,13 @@ public class Dependency  implements Serializable {
         Objects.equals(this.type, dependency.type) &&
         Objects.equals(this.deleted, dependency.deleted) &&
         Objects.equals(this.updated, dependency.updated) &&
+        Objects.equals(this.stateUnknown, dependency.stateUnknown) &&
         Objects.equals(this.selfUri, dependency.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, version, type, deleted, updated, selfUri);
+    return Objects.hash(id, name, version, type, deleted, updated, stateUnknown, selfUri);
   }
 
   @Override
@@ -212,6 +233,7 @@ public class Dependency  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
+    sb.append("    stateUnknown: ").append(toIndentedString(stateUnknown)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

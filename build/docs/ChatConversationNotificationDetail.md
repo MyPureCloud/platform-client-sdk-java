@@ -1,6 +1,8 @@
 ---
 title: ChatConversationNotificationDetail
 ---
+## ChatConversationNotificationDetail
+
 
 ## Properties
 

@@ -1,6 +1,8 @@
 ---
 title: Channel
 ---
+## Channel
+
 
 ## Properties
 

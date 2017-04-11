@@ -1,6 +1,8 @@
 ---
 title: LocationEmergencyNumber
 ---
+## LocationEmergencyNumber
+
 
 ## Properties
 

@@ -1,6 +1,8 @@
 ---
 title: FaxDataV2NotificationLockInfo
 ---
+## FaxDataV2NotificationLockInfo
+
 
 ## Properties
 

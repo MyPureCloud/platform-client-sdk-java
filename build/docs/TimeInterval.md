@@ -1,6 +1,8 @@
 ---
 title: TimeInterval
 ---
+## TimeInterval
+
 
 ## Properties
 

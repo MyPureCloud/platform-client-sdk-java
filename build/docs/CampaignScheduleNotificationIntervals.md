@@ -1,6 +1,8 @@
 ---
 title: CampaignScheduleNotificationIntervals
 ---
+## CampaignScheduleNotificationIntervals
+
 
 ## Properties
 

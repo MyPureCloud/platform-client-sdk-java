@@ -1,6 +1,8 @@
 ---
 title: QueryRequest
 ---
+## QueryRequest
+
 
 ## Properties
 

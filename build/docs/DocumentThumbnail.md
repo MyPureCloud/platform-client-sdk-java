@@ -1,6 +1,8 @@
 ---
 title: DocumentThumbnail
 ---
+## DocumentThumbnail
+
 
 ## Properties
 

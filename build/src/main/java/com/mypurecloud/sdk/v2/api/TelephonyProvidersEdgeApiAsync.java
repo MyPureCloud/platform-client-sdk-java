@@ -142,6 +142,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhonebaseset
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhonesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhonesTemplateRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhysicalinterfacesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteNumberplanRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteNumberplansRequest;
@@ -4932,6 +4933,81 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Phone> response = (ApiResponse<Phone>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get physical interfaces for edges.
+   * Retrieves a list of all configured physical interfaces for a list of edges. Only 100 edges can be requested at a time.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<DomainPhysicalInterface>> getTelephonyProvidersEdgesPhysicalinterfacesAsync(GetTelephonyProvidersEdgesPhysicalinterfacesRequest request, AsyncApiCallback<List<DomainPhysicalInterface>> callback) {
+    try {
+      SettableFuture<List<DomainPhysicalInterface>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<DomainPhysicalInterface>>() {}, new AsyncApiCallback<ApiResponse<List<DomainPhysicalInterface>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<DomainPhysicalInterface>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get physical interfaces for edges.
+   * Retrieves a list of all configured physical interfaces for a list of edges. Only 100 edges can be requested at a time.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<DomainPhysicalInterface>>> getTelephonyProvidersEdgesPhysicalinterfacesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<DomainPhysicalInterface>>> callback) {
+    try {
+      SettableFuture<ApiResponse<List<DomainPhysicalInterface>>> future = SettableFuture.create();
+      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<DomainPhysicalInterface>>() {}, new AsyncApiCallback<ApiResponse<List<DomainPhysicalInterface>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<DomainPhysicalInterface>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<DomainPhysicalInterface>> response = (ApiResponse<List<DomainPhysicalInterface>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<DomainPhysicalInterface>> response = (ApiResponse<List<DomainPhysicalInterface>>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

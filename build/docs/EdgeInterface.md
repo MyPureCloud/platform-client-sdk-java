@@ -1,6 +1,8 @@
 ---
 title: EdgeInterface
 ---
+## EdgeInterface
+
 
 ## Properties
 

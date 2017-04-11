@@ -1,6 +1,8 @@
 ---
 title: SearchAggregation
 ---
+## SearchAggregation
+
 
 ## Properties
 

@@ -1,6 +1,8 @@
 ---
 title: SuggestSearchCriteria
 ---
+## SuggestSearchCriteria
+
 
 ## Properties
 

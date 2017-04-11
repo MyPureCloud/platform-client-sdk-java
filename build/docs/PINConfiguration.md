@@ -1,6 +1,8 @@
 ---
 title: PINConfiguration
 ---
+## PINConfiguration
+
 
 ## Properties
 

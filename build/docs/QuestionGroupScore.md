@@ -1,6 +1,8 @@
 ---
 title: QuestionGroupScore
 ---
+## QuestionGroupScore
+
 
 ## Properties
 

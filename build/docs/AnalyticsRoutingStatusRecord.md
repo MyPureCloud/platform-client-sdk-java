@@ -1,6 +1,8 @@
 ---
 title: AnalyticsRoutingStatusRecord
 ---
+## AnalyticsRoutingStatusRecord
+
 
 ## Properties
 

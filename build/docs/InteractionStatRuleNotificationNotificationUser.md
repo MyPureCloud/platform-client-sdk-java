@@ -1,6 +1,8 @@
 ---
 title: InteractionStatRuleNotificationNotificationUser
 ---
+## InteractionStatRuleNotificationNotificationUser
+
 
 ## Properties
 

@@ -1,6 +1,8 @@
 ---
 title: UserScheduleShift
 ---
+## UserScheduleShift
+
 
 ## Properties
 

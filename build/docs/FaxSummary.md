@@ -1,6 +1,8 @@
 ---
 title: FaxSummary
 ---
+## FaxSummary
+
 
 ## Properties
 

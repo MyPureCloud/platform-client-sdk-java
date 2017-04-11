@@ -1,6 +1,8 @@
 ---
 title: CampaignRuleNotificationCampaignRuleEntities
 ---
+## CampaignRuleNotificationCampaignRuleEntities
+
 
 ## Properties
 

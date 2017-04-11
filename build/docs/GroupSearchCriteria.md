@@ -1,6 +1,8 @@
 ---
 title: GroupSearchCriteria
 ---
+## GroupSearchCriteria
+
 
 ## Properties
 

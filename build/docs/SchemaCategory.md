@@ -1,6 +1,8 @@
 ---
 title: SchemaCategory
 ---
+## SchemaCategory
+
 
 ## Properties
 

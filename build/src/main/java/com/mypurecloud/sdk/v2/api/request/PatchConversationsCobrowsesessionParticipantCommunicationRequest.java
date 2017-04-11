@@ -60,17 +60,17 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PatchConversationsCobrowsesessionParticipantCommunicationRequest {
-	private String cobrowseId;
-	public String getCobrowseId() {
-		return this.cobrowseId;
+	private String conversationId;
+	public String getConversationId() {
+		return this.conversationId;
 	}
 
-	public void setCobrowseId(String cobrowseId) {
-		this.cobrowseId = cobrowseId;
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
 	}
 
-	public PatchConversationsCobrowsesessionParticipantCommunicationRequest withCobrowseId(String cobrowseId) {
-	    this.setCobrowseId(cobrowseId);
+	public PatchConversationsCobrowsesessionParticipantCommunicationRequest withConversationId(String conversationId) {
+	    this.setConversationId(conversationId);
 	    return this;
 	}
 
@@ -137,9 +137,9 @@ public class PatchConversationsCobrowsesessionParticipantCommunicationRequest {
 
     public ApiRequest<MediaParticipantRequest> withHttpInfo() {
         
-        // verify the required parameter 'cobrowseId' is set
-        if (this.cobrowseId == null) {
-            throw new IllegalStateException("Missing the required parameter 'cobrowseId' when building request for PatchConversationsCobrowsesessionParticipantCommunicationRequest.");
+        // verify the required parameter 'conversationId' is set
+        if (this.conversationId == null) {
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PatchConversationsCobrowsesessionParticipantCommunicationRequest.");
         }
         
         // verify the required parameter 'participantId' is set
@@ -158,8 +158,8 @@ public class PatchConversationsCobrowsesessionParticipantCommunicationRequest {
         }
         
 
-        return ApiRequestBuilder.create("PATCH", "/api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/communications/{communicationId}")
-                .withPathParameter("cobrowseId", cobrowseId)
+        return ApiRequestBuilder.create("PATCH", "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}")
+                .withPathParameter("conversationId", conversationId)
         
                 .withPathParameter("participantId", participantId)
         
@@ -177,9 +177,9 @@ public class PatchConversationsCobrowsesessionParticipantCommunicationRequest {
 		return new Builder();
 	}
 
-	public static Builder builder(String cobrowseId, String participantId, String communicationId, MediaParticipantRequest body) {
+	public static Builder builder(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) {
 	    return new Builder()
-	            .withRequiredParams(cobrowseId, participantId, communicationId, body);
+	            .withRequiredParams(conversationId, participantId, communicationId, body);
 	}
 
 	public static class Builder {
@@ -189,8 +189,8 @@ public class PatchConversationsCobrowsesessionParticipantCommunicationRequest {
 			request = new PatchConversationsCobrowsesessionParticipantCommunicationRequest();
 		}
 
-		public Builder withCobrowseId(String cobrowseId) {
-			request.setCobrowseId(cobrowseId);
+		public Builder withConversationId(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 		public Builder withParticipantId(String participantId) {
@@ -206,8 +206,8 @@ public class PatchConversationsCobrowsesessionParticipantCommunicationRequest {
 			return this;
 		}
 
-		public Builder withRequiredParams(String cobrowseId, String participantId, String communicationId, MediaParticipantRequest body) {
-			request.setCobrowseId(cobrowseId);
+		public Builder withRequiredParams(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) {
+			request.setConversationId(conversationId);
 			request.setParticipantId(participantId);
 			request.setCommunicationId(communicationId);
 			request.setBody(body);
@@ -217,9 +217,9 @@ public class PatchConversationsCobrowsesessionParticipantCommunicationRequest {
 
 		public PatchConversationsCobrowsesessionParticipantCommunicationRequest build() {
             
-            // verify the required parameter 'cobrowseId' is set
-            if (request.cobrowseId == null) {
-                throw new IllegalStateException("Missing the required parameter 'cobrowseId' when building request for PatchConversationsCobrowsesessionParticipantCommunicationRequest.");
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PatchConversationsCobrowsesessionParticipantCommunicationRequest.");
             }
             
             // verify the required parameter 'participantId' is set

@@ -70,6 +70,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgesPhonebasesettingsTemplate**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesPhonebasesettingsTemplate) | Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance |
 | [**getTelephonyProvidersEdgesPhones**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesPhones) | Get a list of Phone Instances |
 | [**getTelephonyProvidersEdgesPhonesTemplate**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesPhonesTemplate) | Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance |
+| [**getTelephonyProvidersEdgesPhysicalinterfaces**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesPhysicalinterfaces) | Get physical interfaces for edges. |
 | [**getTelephonyProvidersEdgesSite**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSite) | Get a Site by ID. |
 | [**getTelephonyProvidersEdgesSiteNumberplan**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteNumberplan) | Get a Number Plan by ID. |
 | [**getTelephonyProvidersEdgesSiteNumberplans**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteNumberplans) | Get the list of Number Plans for this Site. |
@@ -3491,6 +3492,57 @@ try {
 ### Return type
 
 [**Phone**](Phone.html)
+
+<a name="getTelephonyProvidersEdgesPhysicalinterfaces"></a>
+
+# **getTelephonyProvidersEdgesPhysicalinterfaces**
+
+> [List&lt;DomainPhysicalInterface&gt;](DomainPhysicalInterface.html) getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds)
+
+Get physical interfaces for edges.
+
+Retrieves a list of all configured physical interfaces for a list of edges. Only 100 edges can be requested at a time.
+
+Wraps GET /api/v2/telephony/providers/edges/physicalinterfaces  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+String edgeIds = "edgeIds_example"; // String | Comma separated list of Edge Id's
+try {
+    List<DomainPhysicalInterface> result = apiInstance.getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesPhysicalinterfaces");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **edgeIds** | **String**| Comma separated list of Edge Id&#39;s | |
+{: class="table table-striped"}
+
+### Return type
+
+[**List&lt;DomainPhysicalInterface&gt;**](DomainPhysicalInterface.html)
 
 <a name="getTelephonyProvidersEdgesSite"></a>
 

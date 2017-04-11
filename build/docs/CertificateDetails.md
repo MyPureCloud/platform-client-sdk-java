@@ -1,6 +1,8 @@
 ---
 title: CertificateDetails
 ---
+## CertificateDetails
+
 
 ## Properties
 

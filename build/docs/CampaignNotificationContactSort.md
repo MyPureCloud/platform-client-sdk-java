@@ -1,6 +1,8 @@
 ---
 title: CampaignNotificationContactSort
 ---
+## CampaignNotificationContactSort
+
 
 ## Properties
 

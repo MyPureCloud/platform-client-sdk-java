@@ -1,6 +1,8 @@
 ---
 title: IntradayDataUpdateNotificationIntradayForecastData
 ---
+## IntradayDataUpdateNotificationIntradayForecastData
+
 
 ## Properties
 

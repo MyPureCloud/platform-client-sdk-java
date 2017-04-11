@@ -1,6 +1,8 @@
 ---
 title: UserPresenceNotificationPresenceDefinition
 ---
+## UserPresenceNotificationPresenceDefinition
+
 
 ## Properties
 

@@ -1,6 +1,8 @@
 ---
 title: AddressableLicenseDefinition
 ---
+## AddressableLicenseDefinition
+
 
 ## Properties
 

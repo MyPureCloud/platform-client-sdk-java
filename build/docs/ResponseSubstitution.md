@@ -1,6 +1,8 @@
 ---
 title: ResponseSubstitution
 ---
+## ResponseSubstitution
+
 
 ## Properties
 

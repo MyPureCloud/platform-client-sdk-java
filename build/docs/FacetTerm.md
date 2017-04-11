@@ -1,6 +1,8 @@
 ---
 title: FacetTerm
 ---
+## FacetTerm
+
 
 ## Properties
 

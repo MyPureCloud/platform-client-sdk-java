@@ -1,6 +1,8 @@
 ---
 title: UserSearchCriteria
 ---
+## UserSearchCriteria
+
 
 ## Properties
 

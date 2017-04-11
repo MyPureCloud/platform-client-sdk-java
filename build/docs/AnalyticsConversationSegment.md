@@ -1,6 +1,8 @@
 ---
 title: AnalyticsConversationSegment
 ---
+## AnalyticsConversationSegment
+
 
 ## Properties
 

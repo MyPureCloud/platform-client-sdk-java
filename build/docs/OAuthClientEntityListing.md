@@ -1,6 +1,8 @@
 ---
 title: OAuthClientEntityListing
 ---
+## OAuthClientEntityListing
+
 
 ## Properties
 
@@ -12,8 +14,8 @@ title: OAuthClientEntityListing
 | **total** | **Long** |  |  [optional] |
 | **selfUri** | **String** |  |  [optional] |
 | **firstUri** | **String** |  |  [optional] |
-| **previousUri** | **String** |  |  [optional] |
 | **nextUri** | **String** |  |  [optional] |
+| **previousUri** | **String** |  |  [optional] |
 | **lastUri** | **String** |  |  [optional] |
 | **pageCount** | **Integer** |  |  [optional] |
 {: class="table table-striped"}

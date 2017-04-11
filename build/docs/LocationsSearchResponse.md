@@ -1,6 +1,8 @@
 ---
 title: LocationsSearchResponse
 ---
+## LocationsSearchResponse
+
 
 ## Properties
 

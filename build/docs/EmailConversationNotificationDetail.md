@@ -1,6 +1,8 @@
 ---
 title: EmailConversationNotificationDetail
 ---
+## EmailConversationNotificationDetail
+
 
 ## Properties
 

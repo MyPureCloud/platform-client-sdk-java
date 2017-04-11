@@ -1,6 +1,8 @@
 ---
 title: GeolocationNotification
 ---
+## GeolocationNotification
+
 
 ## Properties
 

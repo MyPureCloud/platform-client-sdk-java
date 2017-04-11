@@ -1,6 +1,8 @@
 ---
 title: CampaignProgressNotification
 ---
+## CampaignProgressNotification
+
 
 ## Properties
 

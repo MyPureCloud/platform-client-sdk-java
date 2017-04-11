@@ -1,6 +1,8 @@
 ---
 title: AggregationResultEntry
 ---
+## AggregationResultEntry
+
 
 ## Properties
 

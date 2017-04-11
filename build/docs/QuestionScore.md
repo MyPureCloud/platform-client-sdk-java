@@ -1,6 +1,8 @@
 ---
 title: QuestionScore
 ---
+## QuestionScore
+
 
 ## Properties
 

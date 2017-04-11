@@ -1,6 +1,8 @@
 ---
 title: UserDetailsQuery
 ---
+## UserDetailsQuery
+
 
 ## Properties
 

@@ -60,17 +60,17 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class GetConversationsCallbackParticipantWrapupcodesRequest {
-	private String callbackId;
-	public String getCallbackId() {
-		return this.callbackId;
+	private String conversationId;
+	public String getConversationId() {
+		return this.conversationId;
 	}
 
-	public void setCallbackId(String callbackId) {
-		this.callbackId = callbackId;
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
 	}
 
-	public GetConversationsCallbackParticipantWrapupcodesRequest withCallbackId(String callbackId) {
-	    this.setCallbackId(callbackId);
+	public GetConversationsCallbackParticipantWrapupcodesRequest withConversationId(String conversationId) {
+	    this.setConversationId(conversationId);
 	    return this;
 	}
 
@@ -109,9 +109,9 @@ public class GetConversationsCallbackParticipantWrapupcodesRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
-        // verify the required parameter 'callbackId' is set
-        if (this.callbackId == null) {
-            throw new IllegalStateException("Missing the required parameter 'callbackId' when building request for GetConversationsCallbackParticipantWrapupcodesRequest.");
+        // verify the required parameter 'conversationId' is set
+        if (this.conversationId == null) {
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetConversationsCallbackParticipantWrapupcodesRequest.");
         }
         
         // verify the required parameter 'participantId' is set
@@ -120,8 +120,8 @@ public class GetConversationsCallbackParticipantWrapupcodesRequest {
         }
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/wrapupcodes")
-                .withPathParameter("callbackId", callbackId)
+        return ApiRequestBuilder.create("GET", "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes")
+                .withPathParameter("conversationId", conversationId)
         
                 .withPathParameter("participantId", participantId)
                         .withCustomHeaders(customHeaders)
@@ -135,9 +135,9 @@ public class GetConversationsCallbackParticipantWrapupcodesRequest {
 		return new Builder();
 	}
 
-	public static Builder builder(String callbackId, String participantId) {
+	public static Builder builder(String conversationId, String participantId) {
 	    return new Builder()
-	            .withRequiredParams(callbackId, participantId);
+	            .withRequiredParams(conversationId, participantId);
 	}
 
 	public static class Builder {
@@ -147,8 +147,8 @@ public class GetConversationsCallbackParticipantWrapupcodesRequest {
 			request = new GetConversationsCallbackParticipantWrapupcodesRequest();
 		}
 
-		public Builder withCallbackId(String callbackId) {
-			request.setCallbackId(callbackId);
+		public Builder withConversationId(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 		public Builder withParticipantId(String participantId) {
@@ -156,8 +156,8 @@ public class GetConversationsCallbackParticipantWrapupcodesRequest {
 			return this;
 		}
 
-		public Builder withRequiredParams(String callbackId, String participantId) {
-			request.setCallbackId(callbackId);
+		public Builder withRequiredParams(String conversationId, String participantId) {
+			request.setConversationId(conversationId);
 			request.setParticipantId(participantId);
 			return this;
 		}
@@ -165,9 +165,9 @@ public class GetConversationsCallbackParticipantWrapupcodesRequest {
 
 		public GetConversationsCallbackParticipantWrapupcodesRequest build() {
             
-            // verify the required parameter 'callbackId' is set
-            if (request.callbackId == null) {
-                throw new IllegalStateException("Missing the required parameter 'callbackId' when building request for GetConversationsCallbackParticipantWrapupcodesRequest.");
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetConversationsCallbackParticipantWrapupcodesRequest.");
             }
             
             // verify the required parameter 'participantId' is set

@@ -60,17 +60,17 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PatchConversationsEmailParticipantAttributesRequest {
-	private String emailId;
-	public String getEmailId() {
-		return this.emailId;
+	private String conversationId;
+	public String getConversationId() {
+		return this.conversationId;
 	}
 
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
 	}
 
-	public PatchConversationsEmailParticipantAttributesRequest withEmailId(String emailId) {
-	    this.setEmailId(emailId);
+	public PatchConversationsEmailParticipantAttributesRequest withConversationId(String conversationId) {
+	    this.setConversationId(conversationId);
 	    return this;
 	}
 
@@ -123,9 +123,9 @@ public class PatchConversationsEmailParticipantAttributesRequest {
 
     public ApiRequest<ParticipantAttributes> withHttpInfo() {
         
-        // verify the required parameter 'emailId' is set
-        if (this.emailId == null) {
-            throw new IllegalStateException("Missing the required parameter 'emailId' when building request for PatchConversationsEmailParticipantAttributesRequest.");
+        // verify the required parameter 'conversationId' is set
+        if (this.conversationId == null) {
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PatchConversationsEmailParticipantAttributesRequest.");
         }
         
         // verify the required parameter 'participantId' is set
@@ -139,8 +139,8 @@ public class PatchConversationsEmailParticipantAttributesRequest {
         }
         
 
-        return ApiRequestBuilder.create("PATCH", "/api/v2/conversations/emails/{emailId}/participants/{participantId}/attributes")
-                .withPathParameter("emailId", emailId)
+        return ApiRequestBuilder.create("PATCH", "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes")
+                .withPathParameter("conversationId", conversationId)
         
                 .withPathParameter("participantId", participantId)
         
@@ -156,9 +156,9 @@ public class PatchConversationsEmailParticipantAttributesRequest {
 		return new Builder();
 	}
 
-	public static Builder builder(String emailId, String participantId, ParticipantAttributes body) {
+	public static Builder builder(String conversationId, String participantId, ParticipantAttributes body) {
 	    return new Builder()
-	            .withRequiredParams(emailId, participantId, body);
+	            .withRequiredParams(conversationId, participantId, body);
 	}
 
 	public static class Builder {
@@ -168,8 +168,8 @@ public class PatchConversationsEmailParticipantAttributesRequest {
 			request = new PatchConversationsEmailParticipantAttributesRequest();
 		}
 
-		public Builder withEmailId(String emailId) {
-			request.setEmailId(emailId);
+		public Builder withConversationId(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 		public Builder withParticipantId(String participantId) {
@@ -181,8 +181,8 @@ public class PatchConversationsEmailParticipantAttributesRequest {
 			return this;
 		}
 
-		public Builder withRequiredParams(String emailId, String participantId, ParticipantAttributes body) {
-			request.setEmailId(emailId);
+		public Builder withRequiredParams(String conversationId, String participantId, ParticipantAttributes body) {
+			request.setConversationId(conversationId);
 			request.setParticipantId(participantId);
 			request.setBody(body);
 			return this;
@@ -191,9 +191,9 @@ public class PatchConversationsEmailParticipantAttributesRequest {
 
 		public PatchConversationsEmailParticipantAttributesRequest build() {
             
-            // verify the required parameter 'emailId' is set
-            if (request.emailId == null) {
-                throw new IllegalStateException("Missing the required parameter 'emailId' when building request for PatchConversationsEmailParticipantAttributesRequest.");
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PatchConversationsEmailParticipantAttributesRequest.");
             }
             
             // verify the required parameter 'participantId' is set

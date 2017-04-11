@@ -1,6 +1,8 @@
 ---
 title: WorkspaceMember
 ---
+## WorkspaceMember
+
 
 ## Properties
 

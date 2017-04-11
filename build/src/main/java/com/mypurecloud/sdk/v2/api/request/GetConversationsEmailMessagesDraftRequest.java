@@ -60,17 +60,17 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class GetConversationsEmailMessagesDraftRequest {
-	private String emailId;
-	public String getEmailId() {
-		return this.emailId;
+	private String conversationId;
+	public String getConversationId() {
+		return this.conversationId;
 	}
 
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
 	}
 
-	public GetConversationsEmailMessagesDraftRequest withEmailId(String emailId) {
-	    this.setEmailId(emailId);
+	public GetConversationsEmailMessagesDraftRequest withConversationId(String conversationId) {
+	    this.setConversationId(conversationId);
 	    return this;
 	}
 
@@ -95,14 +95,14 @@ public class GetConversationsEmailMessagesDraftRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
-        // verify the required parameter 'emailId' is set
-        if (this.emailId == null) {
-            throw new IllegalStateException("Missing the required parameter 'emailId' when building request for GetConversationsEmailMessagesDraftRequest.");
+        // verify the required parameter 'conversationId' is set
+        if (this.conversationId == null) {
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetConversationsEmailMessagesDraftRequest.");
         }
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/conversations/emails/{emailId}/messages/draft")
-                .withPathParameter("emailId", emailId)
+        return ApiRequestBuilder.create("GET", "/api/v2/conversations/emails/{conversationId}/messages/draft")
+                .withPathParameter("conversationId", conversationId)
                         .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -114,9 +114,9 @@ public class GetConversationsEmailMessagesDraftRequest {
 		return new Builder();
 	}
 
-	public static Builder builder(String emailId) {
+	public static Builder builder(String conversationId) {
 	    return new Builder()
-	            .withRequiredParams(emailId);
+	            .withRequiredParams(conversationId);
 	}
 
 	public static class Builder {
@@ -126,22 +126,22 @@ public class GetConversationsEmailMessagesDraftRequest {
 			request = new GetConversationsEmailMessagesDraftRequest();
 		}
 
-		public Builder withEmailId(String emailId) {
-			request.setEmailId(emailId);
+		public Builder withConversationId(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 
-		public Builder withRequiredParams(String emailId) {
-			request.setEmailId(emailId);
+		public Builder withRequiredParams(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 
 
 		public GetConversationsEmailMessagesDraftRequest build() {
             
-            // verify the required parameter 'emailId' is set
-            if (request.emailId == null) {
-                throw new IllegalStateException("Missing the required parameter 'emailId' when building request for GetConversationsEmailMessagesDraftRequest.");
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetConversationsEmailMessagesDraftRequest.");
             }
             
 			return request;

@@ -1,6 +1,8 @@
 ---
 title: FaxDataV2NotificationUserData
 ---
+## FaxDataV2NotificationUserData
+
 
 ## Properties
 

@@ -1,6 +1,8 @@
 ---
 title: GroupSearchRequest
 ---
+## GroupSearchRequest
+
 
 ## Properties
 

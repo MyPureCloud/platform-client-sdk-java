@@ -1,6 +1,8 @@
 ---
 title: CampaignRuleNotificationCampaignRuleCondition
 ---
+## CampaignRuleNotificationCampaignRuleCondition
+
 
 ## Properties
 

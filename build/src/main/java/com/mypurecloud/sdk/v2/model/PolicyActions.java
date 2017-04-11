@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CalibrationAssignment;
 import com.mypurecloud.sdk.v2.model.EvaluationAssignment;
 import com.mypurecloud.sdk.v2.model.InitiateScreenRecording;
+import com.mypurecloud.sdk.v2.model.MediaTranscription;
 import com.mypurecloud.sdk.v2.model.MeteredEvaluationAssignment;
 import com.mypurecloud.sdk.v2.model.RetentionDuration;
 import io.swagger.annotations.ApiModel;
@@ -29,6 +30,7 @@ public class PolicyActions  implements Serializable {
   private List<CalibrationAssignment> assignCalibrations = new ArrayList<CalibrationAssignment>();
   private RetentionDuration retentionDuration = null;
   private InitiateScreenRecording initiateScreenRecording = null;
+  private List<MediaTranscription> mediaTranscriptions = new ArrayList<MediaTranscription>();
 
   
   /**
@@ -170,6 +172,23 @@ public class PolicyActions  implements Serializable {
   }
 
 
+  /**
+   **/
+  public PolicyActions mediaTranscriptions(List<MediaTranscription> mediaTranscriptions) {
+    this.mediaTranscriptions = mediaTranscriptions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mediaTranscriptions")
+  public List<MediaTranscription> getMediaTranscriptions() {
+    return mediaTranscriptions;
+  }
+  public void setMediaTranscriptions(List<MediaTranscription> mediaTranscriptions) {
+    this.mediaTranscriptions = mediaTranscriptions;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -186,12 +205,13 @@ public class PolicyActions  implements Serializable {
         Objects.equals(this.assignMeteredEvaluations, policyActions.assignMeteredEvaluations) &&
         Objects.equals(this.assignCalibrations, policyActions.assignCalibrations) &&
         Objects.equals(this.retentionDuration, policyActions.retentionDuration) &&
-        Objects.equals(this.initiateScreenRecording, policyActions.initiateScreenRecording);
+        Objects.equals(this.initiateScreenRecording, policyActions.initiateScreenRecording) &&
+        Objects.equals(this.mediaTranscriptions, policyActions.mediaTranscriptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(retainRecording, deleteRecording, alwaysDelete, assignEvaluations, assignMeteredEvaluations, assignCalibrations, retentionDuration, initiateScreenRecording);
+    return Objects.hash(retainRecording, deleteRecording, alwaysDelete, assignEvaluations, assignMeteredEvaluations, assignCalibrations, retentionDuration, initiateScreenRecording, mediaTranscriptions);
   }
 
   @Override
@@ -207,6 +227,7 @@ public class PolicyActions  implements Serializable {
     sb.append("    assignCalibrations: ").append(toIndentedString(assignCalibrations)).append("\n");
     sb.append("    retentionDuration: ").append(toIndentedString(retentionDuration)).append("\n");
     sb.append("    initiateScreenRecording: ").append(toIndentedString(initiateScreenRecording)).append("\n");
+    sb.append("    mediaTranscriptions: ").append(toIndentedString(mediaTranscriptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

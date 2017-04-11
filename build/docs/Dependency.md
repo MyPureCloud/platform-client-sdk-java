@@ -1,6 +1,8 @@
 ---
 title: Dependency
 ---
+## Dependency
+
 
 ## Properties
 
@@ -12,6 +14,7 @@ title: Dependency
 | **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
 | **deleted** | **Boolean** |  |  [optional] |
 | **updated** | **Boolean** |  |  [optional] |
+| **stateUnknown** | **Boolean** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
@@ -39,6 +42,8 @@ title: Dependency
 | OUTBOUNDCALLFLOW | &quot;OUTBOUNDCALLFLOW&quot; |
 | QUEUE | &quot;QUEUE&quot; |
 | RESPONSE | &quot;RESPONSE&quot; |
+| SCHEDULE | &quot;SCHEDULE&quot; |
+| SCHEDULEGROUP | &quot;SCHEDULEGROUP&quot; |
 | SECUREACTION | &quot;SECUREACTION&quot; |
 | SECURECALLFLOW | &quot;SECURECALLFLOW&quot; |
 | SYSTEMPROMPT | &quot;SYSTEMPROMPT&quot; |

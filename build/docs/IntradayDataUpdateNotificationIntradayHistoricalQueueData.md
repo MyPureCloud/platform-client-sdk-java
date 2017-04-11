@@ -1,6 +1,8 @@
 ---
 title: IntradayDataUpdateNotificationIntradayHistoricalQueueData
 ---
+## IntradayDataUpdateNotificationIntradayHistoricalQueueData
+
 
 ## Properties
 

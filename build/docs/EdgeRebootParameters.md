@@ -1,6 +1,8 @@
 ---
 title: EdgeRebootParameters
 ---
+## EdgeRebootParameters
+
 
 ## Properties
 

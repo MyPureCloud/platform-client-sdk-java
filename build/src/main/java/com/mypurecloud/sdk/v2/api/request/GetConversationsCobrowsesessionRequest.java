@@ -60,17 +60,17 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class GetConversationsCobrowsesessionRequest {
-	private String cobrowseId;
-	public String getCobrowseId() {
-		return this.cobrowseId;
+	private String conversationId;
+	public String getConversationId() {
+		return this.conversationId;
 	}
 
-	public void setCobrowseId(String cobrowseId) {
-		this.cobrowseId = cobrowseId;
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
 	}
 
-	public GetConversationsCobrowsesessionRequest withCobrowseId(String cobrowseId) {
-	    this.setCobrowseId(cobrowseId);
+	public GetConversationsCobrowsesessionRequest withConversationId(String conversationId) {
+	    this.setConversationId(conversationId);
 	    return this;
 	}
 
@@ -95,14 +95,14 @@ public class GetConversationsCobrowsesessionRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
-        // verify the required parameter 'cobrowseId' is set
-        if (this.cobrowseId == null) {
-            throw new IllegalStateException("Missing the required parameter 'cobrowseId' when building request for GetConversationsCobrowsesessionRequest.");
+        // verify the required parameter 'conversationId' is set
+        if (this.conversationId == null) {
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetConversationsCobrowsesessionRequest.");
         }
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/conversations/cobrowsesessions/{cobrowseId}")
-                .withPathParameter("cobrowseId", cobrowseId)
+        return ApiRequestBuilder.create("GET", "/api/v2/conversations/cobrowsesessions/{conversationId}")
+                .withPathParameter("conversationId", conversationId)
                         .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -114,9 +114,9 @@ public class GetConversationsCobrowsesessionRequest {
 		return new Builder();
 	}
 
-	public static Builder builder(String cobrowseId) {
+	public static Builder builder(String conversationId) {
 	    return new Builder()
-	            .withRequiredParams(cobrowseId);
+	            .withRequiredParams(conversationId);
 	}
 
 	public static class Builder {
@@ -126,22 +126,22 @@ public class GetConversationsCobrowsesessionRequest {
 			request = new GetConversationsCobrowsesessionRequest();
 		}
 
-		public Builder withCobrowseId(String cobrowseId) {
-			request.setCobrowseId(cobrowseId);
+		public Builder withConversationId(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 
-		public Builder withRequiredParams(String cobrowseId) {
-			request.setCobrowseId(cobrowseId);
+		public Builder withRequiredParams(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 
 
 		public GetConversationsCobrowsesessionRequest build() {
             
-            // verify the required parameter 'cobrowseId' is set
-            if (request.cobrowseId == null) {
-                throw new IllegalStateException("Missing the required parameter 'cobrowseId' when building request for GetConversationsCobrowsesessionRequest.");
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetConversationsCobrowsesessionRequest.");
             }
             
 			return request;

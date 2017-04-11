@@ -1,6 +1,8 @@
 ---
 title: MaxParticipants
 ---
+## MaxParticipants
+
 
 ## Properties
 

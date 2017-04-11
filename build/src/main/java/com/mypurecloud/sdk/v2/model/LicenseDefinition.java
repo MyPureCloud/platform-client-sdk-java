@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableLicenseDefinition;
+import com.mypurecloud.sdk.v2.model.LicenseDefinition;
 import com.mypurecloud.sdk.v2.model.Permissions;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -22,6 +23,7 @@ public class LicenseDefinition  implements Serializable {
   private String description = null;
   private Permissions permissions = null;
   private List<AddressableLicenseDefinition> prerequisites = new ArrayList<AddressableLicenseDefinition>();
+  private List<LicenseDefinition> comprises = new ArrayList<LicenseDefinition>();
   private String selfUri = null;
 
   
@@ -83,6 +85,23 @@ public class LicenseDefinition  implements Serializable {
   }
 
 
+  /**
+   **/
+  public LicenseDefinition comprises(List<LicenseDefinition> comprises) {
+    this.comprises = comprises;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("comprises")
+  public List<LicenseDefinition> getComprises() {
+    return comprises;
+  }
+  public void setComprises(List<LicenseDefinition> comprises) {
+    this.comprises = comprises;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -103,12 +122,13 @@ public class LicenseDefinition  implements Serializable {
         Objects.equals(this.description, licenseDefinition.description) &&
         Objects.equals(this.permissions, licenseDefinition.permissions) &&
         Objects.equals(this.prerequisites, licenseDefinition.prerequisites) &&
+        Objects.equals(this.comprises, licenseDefinition.comprises) &&
         Objects.equals(this.selfUri, licenseDefinition.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, description, permissions, prerequisites, selfUri);
+    return Objects.hash(id, description, permissions, prerequisites, comprises, selfUri);
   }
 
   @Override
@@ -120,6 +140,7 @@ public class LicenseDefinition  implements Serializable {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
     sb.append("    prerequisites: ").append(toIndentedString(prerequisites)).append("\n");
+    sb.append("    comprises: ").append(toIndentedString(comprises)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

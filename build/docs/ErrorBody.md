@@ -1,6 +1,8 @@
 ---
 title: ErrorBody
 ---
+## ErrorBody
+
 
 ## Properties
 

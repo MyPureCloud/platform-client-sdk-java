@@ -1,6 +1,8 @@
 ---
 title: AggregationResult
 ---
+## AggregationResult
+
 
 ## Properties
 

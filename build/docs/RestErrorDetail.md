@@ -1,6 +1,8 @@
 ---
 title: RestErrorDetail
 ---
+## RestErrorDetail
+
 
 ## Properties
 

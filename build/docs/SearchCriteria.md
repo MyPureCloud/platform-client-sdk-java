@@ -1,6 +1,8 @@
 ---
 title: SearchCriteria
 ---
+## SearchCriteria
+
 
 ## Properties
 

@@ -1,6 +1,8 @@
 ---
 title: DomainPermissionCollection
 ---
+## DomainPermissionCollection
+
 
 ## Properties
 

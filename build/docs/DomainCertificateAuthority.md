@@ -1,6 +1,8 @@
 ---
 title: DomainCertificateAuthority
 ---
+## DomainCertificateAuthority
+
 
 ## Properties
 

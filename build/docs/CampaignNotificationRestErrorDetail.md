@@ -1,6 +1,8 @@
 ---
 title: CampaignNotificationRestErrorDetail
 ---
+## CampaignNotificationRestErrorDetail
+
 
 ## Properties
 

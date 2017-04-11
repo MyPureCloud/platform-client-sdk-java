@@ -60,17 +60,17 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PatchConversationsEmailRequest {
-	private String emailId;
-	public String getEmailId() {
-		return this.emailId;
+	private String conversationId;
+	public String getConversationId() {
+		return this.conversationId;
 	}
 
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
 	}
 
-	public PatchConversationsEmailRequest withEmailId(String emailId) {
-	    this.setEmailId(emailId);
+	public PatchConversationsEmailRequest withConversationId(String conversationId) {
+	    this.setConversationId(conversationId);
 	    return this;
 	}
 
@@ -109,9 +109,9 @@ public class PatchConversationsEmailRequest {
 
     public ApiRequest<Conversation> withHttpInfo() {
         
-        // verify the required parameter 'emailId' is set
-        if (this.emailId == null) {
-            throw new IllegalStateException("Missing the required parameter 'emailId' when building request for PatchConversationsEmailRequest.");
+        // verify the required parameter 'conversationId' is set
+        if (this.conversationId == null) {
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PatchConversationsEmailRequest.");
         }
         
         // verify the required parameter 'body' is set
@@ -120,8 +120,8 @@ public class PatchConversationsEmailRequest {
         }
         
 
-        return ApiRequestBuilder.create("PATCH", "/api/v2/conversations/emails/{emailId}")
-                .withPathParameter("emailId", emailId)
+        return ApiRequestBuilder.create("PATCH", "/api/v2/conversations/emails/{conversationId}")
+                .withPathParameter("conversationId", conversationId)
         
                 .withBody(body)
                 .withCustomHeaders(customHeaders)
@@ -135,9 +135,9 @@ public class PatchConversationsEmailRequest {
 		return new Builder();
 	}
 
-	public static Builder builder(String emailId, Conversation body) {
+	public static Builder builder(String conversationId, Conversation body) {
 	    return new Builder()
-	            .withRequiredParams(emailId, body);
+	            .withRequiredParams(conversationId, body);
 	}
 
 	public static class Builder {
@@ -147,8 +147,8 @@ public class PatchConversationsEmailRequest {
 			request = new PatchConversationsEmailRequest();
 		}
 
-		public Builder withEmailId(String emailId) {
-			request.setEmailId(emailId);
+		public Builder withConversationId(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 		public Builder withBody(Conversation body) {
@@ -156,8 +156,8 @@ public class PatchConversationsEmailRequest {
 			return this;
 		}
 
-		public Builder withRequiredParams(String emailId, Conversation body) {
-			request.setEmailId(emailId);
+		public Builder withRequiredParams(String conversationId, Conversation body) {
+			request.setConversationId(conversationId);
 			request.setBody(body);
 			return this;
 		}
@@ -165,9 +165,9 @@ public class PatchConversationsEmailRequest {
 
 		public PatchConversationsEmailRequest build() {
             
-            // verify the required parameter 'emailId' is set
-            if (request.emailId == null) {
-                throw new IllegalStateException("Missing the required parameter 'emailId' when building request for PatchConversationsEmailRequest.");
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PatchConversationsEmailRequest.");
             }
             
             // verify the required parameter 'body' is set

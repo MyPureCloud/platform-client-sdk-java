@@ -1,6 +1,8 @@
 ---
 title: GroupContact
 ---
+## GroupContact
+
 
 ## Properties
 

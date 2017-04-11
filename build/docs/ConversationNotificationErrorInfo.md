@@ -1,6 +1,8 @@
 ---
 title: ConversationNotificationErrorInfo
 ---
+## ConversationNotificationErrorInfo
+
 
 ## Properties
 

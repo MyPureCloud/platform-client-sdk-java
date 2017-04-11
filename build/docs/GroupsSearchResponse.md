@@ -1,6 +1,8 @@
 ---
 title: GroupsSearchResponse
 ---
+## GroupsSearchResponse
+
 
 ## Properties
 

@@ -60,17 +60,17 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class GetConversationsCallParticipantWrapupRequest {
-	private String callId;
-	public String getCallId() {
-		return this.callId;
+	private String conversationId;
+	public String getConversationId() {
+		return this.conversationId;
 	}
 
-	public void setCallId(String callId) {
-		this.callId = callId;
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
 	}
 
-	public GetConversationsCallParticipantWrapupRequest withCallId(String callId) {
-	    this.setCallId(callId);
+	public GetConversationsCallParticipantWrapupRequest withConversationId(String conversationId) {
+	    this.setConversationId(conversationId);
 	    return this;
 	}
 
@@ -123,9 +123,9 @@ public class GetConversationsCallParticipantWrapupRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
-        // verify the required parameter 'callId' is set
-        if (this.callId == null) {
-            throw new IllegalStateException("Missing the required parameter 'callId' when building request for GetConversationsCallParticipantWrapupRequest.");
+        // verify the required parameter 'conversationId' is set
+        if (this.conversationId == null) {
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetConversationsCallParticipantWrapupRequest.");
         }
         
         // verify the required parameter 'participantId' is set
@@ -134,8 +134,8 @@ public class GetConversationsCallParticipantWrapupRequest {
         }
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/conversations/calls/{callId}/participants/{participantId}/wrapup")
-                .withPathParameter("callId", callId)
+        return ApiRequestBuilder.create("GET", "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup")
+                .withPathParameter("conversationId", conversationId)
         
                 .withPathParameter("participantId", participantId)
         
@@ -151,9 +151,9 @@ public class GetConversationsCallParticipantWrapupRequest {
 		return new Builder();
 	}
 
-	public static Builder builder(String callId, String participantId) {
+	public static Builder builder(String conversationId, String participantId) {
 	    return new Builder()
-	            .withRequiredParams(callId, participantId);
+	            .withRequiredParams(conversationId, participantId);
 	}
 
 	public static class Builder {
@@ -163,8 +163,8 @@ public class GetConversationsCallParticipantWrapupRequest {
 			request = new GetConversationsCallParticipantWrapupRequest();
 		}
 
-		public Builder withCallId(String callId) {
-			request.setCallId(callId);
+		public Builder withConversationId(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 		public Builder withParticipantId(String participantId) {
@@ -176,8 +176,8 @@ public class GetConversationsCallParticipantWrapupRequest {
 			return this;
 		}
 
-		public Builder withRequiredParams(String callId, String participantId) {
-			request.setCallId(callId);
+		public Builder withRequiredParams(String conversationId, String participantId) {
+			request.setConversationId(conversationId);
 			request.setParticipantId(participantId);
 			return this;
 		}
@@ -185,9 +185,9 @@ public class GetConversationsCallParticipantWrapupRequest {
 
 		public GetConversationsCallParticipantWrapupRequest build() {
             
-            // verify the required parameter 'callId' is set
-            if (request.callId == null) {
-                throw new IllegalStateException("Missing the required parameter 'callId' when building request for GetConversationsCallParticipantWrapupRequest.");
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetConversationsCallParticipantWrapupRequest.");
             }
             
             // verify the required parameter 'participantId' is set

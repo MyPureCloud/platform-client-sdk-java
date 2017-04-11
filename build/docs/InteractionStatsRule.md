@@ -1,6 +1,8 @@
 ---
 title: InteractionStatsRule
 ---
+## InteractionStatsRule
+
 
 ## Properties
 

@@ -1,6 +1,8 @@
 ---
 title: DomainRole
 ---
+## DomainRole
+
 
 ## Properties
 

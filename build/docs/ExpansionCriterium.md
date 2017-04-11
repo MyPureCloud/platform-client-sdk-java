@@ -1,6 +1,8 @@
 ---
 title: ExpansionCriterium
 ---
+## ExpansionCriterium
+
 
 ## Properties
 

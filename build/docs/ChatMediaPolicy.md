@@ -1,6 +1,8 @@
 ---
 title: ChatMediaPolicy
 ---
+## ChatMediaPolicy
+
 
 ## Properties
 

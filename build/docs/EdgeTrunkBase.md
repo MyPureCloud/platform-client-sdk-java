@@ -1,6 +1,8 @@
 ---
 title: EdgeTrunkBase
 ---
+## EdgeTrunkBase
+
 
 ## Properties
 

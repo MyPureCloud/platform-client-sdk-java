@@ -1,6 +1,8 @@
 ---
 title: HeartBeatRuleNotificationNotificationUser
 ---
+## HeartBeatRuleNotificationNotificationUser
+
 
 ## Properties
 

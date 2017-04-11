@@ -1,6 +1,8 @@
 ---
 title: ScreenShareConversationNotificationDetail
 ---
+## ScreenShareConversationNotificationDetail
+
 
 ## Properties
 

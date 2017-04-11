@@ -1,6 +1,8 @@
 ---
 title: EmailConversationNotificationErrorBody
 ---
+## EmailConversationNotificationErrorBody
+
 
 ## Properties
 

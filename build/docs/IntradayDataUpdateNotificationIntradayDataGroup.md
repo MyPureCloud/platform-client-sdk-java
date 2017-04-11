@@ -1,6 +1,8 @@
 ---
 title: IntradayDataUpdateNotificationIntradayDataGroup
 ---
+## IntradayDataUpdateNotificationIntradayDataGroup
+
 
 ## Properties
 

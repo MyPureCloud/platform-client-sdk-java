@@ -60,17 +60,17 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class GetConversationsEmailParticipantWrapupRequest {
-	private String emailId;
-	public String getEmailId() {
-		return this.emailId;
+	private String conversationId;
+	public String getConversationId() {
+		return this.conversationId;
 	}
 
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
 	}
 
-	public GetConversationsEmailParticipantWrapupRequest withEmailId(String emailId) {
-	    this.setEmailId(emailId);
+	public GetConversationsEmailParticipantWrapupRequest withConversationId(String conversationId) {
+	    this.setConversationId(conversationId);
 	    return this;
 	}
 
@@ -123,9 +123,9 @@ public class GetConversationsEmailParticipantWrapupRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
-        // verify the required parameter 'emailId' is set
-        if (this.emailId == null) {
-            throw new IllegalStateException("Missing the required parameter 'emailId' when building request for GetConversationsEmailParticipantWrapupRequest.");
+        // verify the required parameter 'conversationId' is set
+        if (this.conversationId == null) {
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetConversationsEmailParticipantWrapupRequest.");
         }
         
         // verify the required parameter 'participantId' is set
@@ -134,8 +134,8 @@ public class GetConversationsEmailParticipantWrapupRequest {
         }
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/conversations/emails/{emailId}/participants/{participantId}/wrapup")
-                .withPathParameter("emailId", emailId)
+        return ApiRequestBuilder.create("GET", "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup")
+                .withPathParameter("conversationId", conversationId)
         
                 .withPathParameter("participantId", participantId)
         
@@ -151,9 +151,9 @@ public class GetConversationsEmailParticipantWrapupRequest {
 		return new Builder();
 	}
 
-	public static Builder builder(String emailId, String participantId) {
+	public static Builder builder(String conversationId, String participantId) {
 	    return new Builder()
-	            .withRequiredParams(emailId, participantId);
+	            .withRequiredParams(conversationId, participantId);
 	}
 
 	public static class Builder {
@@ -163,8 +163,8 @@ public class GetConversationsEmailParticipantWrapupRequest {
 			request = new GetConversationsEmailParticipantWrapupRequest();
 		}
 
-		public Builder withEmailId(String emailId) {
-			request.setEmailId(emailId);
+		public Builder withConversationId(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 		public Builder withParticipantId(String participantId) {
@@ -176,8 +176,8 @@ public class GetConversationsEmailParticipantWrapupRequest {
 			return this;
 		}
 
-		public Builder withRequiredParams(String emailId, String participantId) {
-			request.setEmailId(emailId);
+		public Builder withRequiredParams(String conversationId, String participantId) {
+			request.setConversationId(conversationId);
 			request.setParticipantId(participantId);
 			return this;
 		}
@@ -185,9 +185,9 @@ public class GetConversationsEmailParticipantWrapupRequest {
 
 		public GetConversationsEmailParticipantWrapupRequest build() {
             
-            // verify the required parameter 'emailId' is set
-            if (request.emailId == null) {
-                throw new IllegalStateException("Missing the required parameter 'emailId' when building request for GetConversationsEmailParticipantWrapupRequest.");
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetConversationsEmailParticipantWrapupRequest.");
             }
             
             // verify the required parameter 'participantId' is set

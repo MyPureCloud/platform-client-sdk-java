@@ -1,6 +1,8 @@
 ---
 title: RecordingDataV2NotificationWorkspaceData
 ---
+## RecordingDataV2NotificationWorkspaceData
+
 
 ## Properties
 

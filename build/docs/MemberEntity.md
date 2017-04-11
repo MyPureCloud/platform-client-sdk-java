@@ -1,6 +1,8 @@
 ---
 title: MemberEntity
 ---
+## MemberEntity
+
 
 ## Properties
 

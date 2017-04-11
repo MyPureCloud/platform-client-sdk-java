@@ -60,17 +60,17 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class DeleteConversationsEmailMessagesDraftAttachmentRequest {
-	private String emailId;
-	public String getEmailId() {
-		return this.emailId;
+	private String conversationId;
+	public String getConversationId() {
+		return this.conversationId;
 	}
 
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
 	}
 
-	public DeleteConversationsEmailMessagesDraftAttachmentRequest withEmailId(String emailId) {
-	    this.setEmailId(emailId);
+	public DeleteConversationsEmailMessagesDraftAttachmentRequest withConversationId(String conversationId) {
+	    this.setConversationId(conversationId);
 	    return this;
 	}
 
@@ -109,9 +109,9 @@ public class DeleteConversationsEmailMessagesDraftAttachmentRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
-        // verify the required parameter 'emailId' is set
-        if (this.emailId == null) {
-            throw new IllegalStateException("Missing the required parameter 'emailId' when building request for DeleteConversationsEmailMessagesDraftAttachmentRequest.");
+        // verify the required parameter 'conversationId' is set
+        if (this.conversationId == null) {
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for DeleteConversationsEmailMessagesDraftAttachmentRequest.");
         }
         
         // verify the required parameter 'attachmentId' is set
@@ -120,8 +120,8 @@ public class DeleteConversationsEmailMessagesDraftAttachmentRequest {
         }
         
 
-        return ApiRequestBuilder.create("DELETE", "/api/v2/conversations/emails/{emailId}/messages/draft/attachments/{attachmentId}")
-                .withPathParameter("emailId", emailId)
+        return ApiRequestBuilder.create("DELETE", "/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId}")
+                .withPathParameter("conversationId", conversationId)
         
                 .withPathParameter("attachmentId", attachmentId)
                         .withCustomHeaders(customHeaders)
@@ -135,9 +135,9 @@ public class DeleteConversationsEmailMessagesDraftAttachmentRequest {
 		return new Builder();
 	}
 
-	public static Builder builder(String emailId, String attachmentId) {
+	public static Builder builder(String conversationId, String attachmentId) {
 	    return new Builder()
-	            .withRequiredParams(emailId, attachmentId);
+	            .withRequiredParams(conversationId, attachmentId);
 	}
 
 	public static class Builder {
@@ -147,8 +147,8 @@ public class DeleteConversationsEmailMessagesDraftAttachmentRequest {
 			request = new DeleteConversationsEmailMessagesDraftAttachmentRequest();
 		}
 
-		public Builder withEmailId(String emailId) {
-			request.setEmailId(emailId);
+		public Builder withConversationId(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 		public Builder withAttachmentId(String attachmentId) {
@@ -156,8 +156,8 @@ public class DeleteConversationsEmailMessagesDraftAttachmentRequest {
 			return this;
 		}
 
-		public Builder withRequiredParams(String emailId, String attachmentId) {
-			request.setEmailId(emailId);
+		public Builder withRequiredParams(String conversationId, String attachmentId) {
+			request.setConversationId(conversationId);
 			request.setAttachmentId(attachmentId);
 			return this;
 		}
@@ -165,9 +165,9 @@ public class DeleteConversationsEmailMessagesDraftAttachmentRequest {
 
 		public DeleteConversationsEmailMessagesDraftAttachmentRequest build() {
             
-            // verify the required parameter 'emailId' is set
-            if (request.emailId == null) {
-                throw new IllegalStateException("Missing the required parameter 'emailId' when building request for DeleteConversationsEmailMessagesDraftAttachmentRequest.");
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for DeleteConversationsEmailMessagesDraftAttachmentRequest.");
             }
             
             // verify the required parameter 'attachmentId' is set

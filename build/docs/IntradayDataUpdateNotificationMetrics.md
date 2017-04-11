@@ -1,6 +1,8 @@
 ---
 title: IntradayDataUpdateNotificationMetrics
 ---
+## IntradayDataUpdateNotificationMetrics
+
 
 ## Properties
 

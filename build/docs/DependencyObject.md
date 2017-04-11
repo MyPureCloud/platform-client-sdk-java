@@ -1,6 +1,8 @@
 ---
 title: DependencyObject
 ---
+## DependencyObject
+
 
 ## Properties
 
@@ -12,6 +14,7 @@ title: DependencyObject
 | **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
 | **deleted** | **Boolean** |  |  [optional] |
 | **updated** | **Boolean** |  |  [optional] |
+| **stateUnknown** | **Boolean** |  |  [optional] |
 | **consumedResources** | [**List&lt;Dependency&gt;**](Dependency.html) |  |  [optional] |
 | **consumingResources** | [**List&lt;Dependency&gt;**](Dependency.html) |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
@@ -41,6 +44,8 @@ title: DependencyObject
 | OUTBOUNDCALLFLOW | &quot;OUTBOUNDCALLFLOW&quot; |
 | QUEUE | &quot;QUEUE&quot; |
 | RESPONSE | &quot;RESPONSE&quot; |
+| SCHEDULE | &quot;SCHEDULE&quot; |
+| SCHEDULEGROUP | &quot;SCHEDULEGROUP&quot; |
 | SECUREACTION | &quot;SECUREACTION&quot; |
 | SECURECALLFLOW | &quot;SECURECALLFLOW&quot; |
 | SYSTEMPROMPT | &quot;SYSTEMPROMPT&quot; |

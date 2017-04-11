@@ -1,6 +1,8 @@
 ---
 title: SocialConversationNotificationDetail
 ---
+## SocialConversationNotificationDetail
+
 
 ## Properties
 

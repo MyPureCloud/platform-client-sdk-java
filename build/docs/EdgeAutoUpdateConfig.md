@@ -1,6 +1,8 @@
 ---
 title: EdgeAutoUpdateConfig
 ---
+## EdgeAutoUpdateConfig
+
 
 ## Properties
 

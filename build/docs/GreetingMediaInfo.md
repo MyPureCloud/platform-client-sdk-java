@@ -1,6 +1,8 @@
 ---
 title: GreetingMediaInfo
 ---
+## GreetingMediaInfo
+
 
 ## Properties
 

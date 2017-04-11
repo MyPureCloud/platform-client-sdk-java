@@ -1,6 +1,8 @@
 ---
 title: PolicyActions
 ---
+## PolicyActions
+
 
 ## Properties
 
@@ -14,6 +16,7 @@ title: PolicyActions
 | **assignCalibrations** | [**List&lt;CalibrationAssignment&gt;**](CalibrationAssignment.html) |  |  [optional] |
 | **retentionDuration** | [**RetentionDuration**](RetentionDuration.html) |  |  [optional] |
 | **initiateScreenRecording** | [**InitiateScreenRecording**](InitiateScreenRecording.html) |  |  [optional] |
+| **mediaTranscriptions** | [**List&lt;MediaTranscription&gt;**](MediaTranscription.html) |  |  [optional] |
 {: class="table table-striped"}
 {: class="table table-striped"}
 

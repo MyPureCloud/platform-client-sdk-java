@@ -1,6 +1,8 @@
 ---
 title: DomainPermissionPolicy
 ---
+## DomainPermissionPolicy
+
 
 ## Properties
 

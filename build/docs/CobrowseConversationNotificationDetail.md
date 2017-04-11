@@ -1,6 +1,8 @@
 ---
 title: CobrowseConversationNotificationDetail
 ---
+## CobrowseConversationNotificationDetail
+
 
 ## Properties
 

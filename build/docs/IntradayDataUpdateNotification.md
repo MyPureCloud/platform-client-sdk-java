@@ -1,6 +1,8 @@
 ---
 title: IntradayDataUpdateNotification
 ---
+## IntradayDataUpdateNotification
+
 
 ## Properties
 

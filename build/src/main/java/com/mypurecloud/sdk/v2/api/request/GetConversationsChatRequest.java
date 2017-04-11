@@ -60,17 +60,17 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class GetConversationsChatRequest {
-	private String chatId;
-	public String getChatId() {
-		return this.chatId;
+	private String conversationId;
+	public String getConversationId() {
+		return this.conversationId;
 	}
 
-	public void setChatId(String chatId) {
-		this.chatId = chatId;
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
 	}
 
-	public GetConversationsChatRequest withChatId(String chatId) {
-	    this.setChatId(chatId);
+	public GetConversationsChatRequest withConversationId(String conversationId) {
+	    this.setConversationId(conversationId);
 	    return this;
 	}
 
@@ -95,14 +95,14 @@ public class GetConversationsChatRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
-        // verify the required parameter 'chatId' is set
-        if (this.chatId == null) {
-            throw new IllegalStateException("Missing the required parameter 'chatId' when building request for GetConversationsChatRequest.");
+        // verify the required parameter 'conversationId' is set
+        if (this.conversationId == null) {
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetConversationsChatRequest.");
         }
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/conversations/chats/{chatId}")
-                .withPathParameter("chatId", chatId)
+        return ApiRequestBuilder.create("GET", "/api/v2/conversations/chats/{conversationId}")
+                .withPathParameter("conversationId", conversationId)
                         .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -114,9 +114,9 @@ public class GetConversationsChatRequest {
 		return new Builder();
 	}
 
-	public static Builder builder(String chatId) {
+	public static Builder builder(String conversationId) {
 	    return new Builder()
-	            .withRequiredParams(chatId);
+	            .withRequiredParams(conversationId);
 	}
 
 	public static class Builder {
@@ -126,22 +126,22 @@ public class GetConversationsChatRequest {
 			request = new GetConversationsChatRequest();
 		}
 
-		public Builder withChatId(String chatId) {
-			request.setChatId(chatId);
+		public Builder withConversationId(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 
-		public Builder withRequiredParams(String chatId) {
-			request.setChatId(chatId);
+		public Builder withRequiredParams(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 
 
 		public GetConversationsChatRequest build() {
             
-            // verify the required parameter 'chatId' is set
-            if (request.chatId == null) {
-                throw new IllegalStateException("Missing the required parameter 'chatId' when building request for GetConversationsChatRequest.");
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetConversationsChatRequest.");
             }
             
 			return request;

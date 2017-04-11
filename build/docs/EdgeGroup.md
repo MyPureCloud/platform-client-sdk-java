@@ -1,6 +1,8 @@
 ---
 title: EdgeGroup
 ---
+## EdgeGroup
+
 
 ## Properties
 

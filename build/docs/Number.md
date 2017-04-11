@@ -1,6 +1,8 @@
 ---
 title: Number
 ---
+## Number
+
 
 ## Properties
 

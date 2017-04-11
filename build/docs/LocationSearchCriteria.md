@@ -1,6 +1,8 @@
 ---
 title: LocationSearchCriteria
 ---
+## LocationSearchCriteria
+
 
 ## Properties
 

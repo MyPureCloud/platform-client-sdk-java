@@ -60,17 +60,17 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PostConversationsCallbackParticipantReplaceRequest {
-	private String callbackId;
-	public String getCallbackId() {
-		return this.callbackId;
+	private String conversationId;
+	public String getConversationId() {
+		return this.conversationId;
 	}
 
-	public void setCallbackId(String callbackId) {
-		this.callbackId = callbackId;
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
 	}
 
-	public PostConversationsCallbackParticipantReplaceRequest withCallbackId(String callbackId) {
-	    this.setCallbackId(callbackId);
+	public PostConversationsCallbackParticipantReplaceRequest withConversationId(String conversationId) {
+	    this.setConversationId(conversationId);
 	    return this;
 	}
 
@@ -123,9 +123,9 @@ public class PostConversationsCallbackParticipantReplaceRequest {
 
     public ApiRequest<TransferRequest> withHttpInfo() {
         
-        // verify the required parameter 'callbackId' is set
-        if (this.callbackId == null) {
-            throw new IllegalStateException("Missing the required parameter 'callbackId' when building request for PostConversationsCallbackParticipantReplaceRequest.");
+        // verify the required parameter 'conversationId' is set
+        if (this.conversationId == null) {
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PostConversationsCallbackParticipantReplaceRequest.");
         }
         
         // verify the required parameter 'participantId' is set
@@ -139,8 +139,8 @@ public class PostConversationsCallbackParticipantReplaceRequest {
         }
         
 
-        return ApiRequestBuilder.create("POST", "/api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/replace")
-                .withPathParameter("callbackId", callbackId)
+        return ApiRequestBuilder.create("POST", "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace")
+                .withPathParameter("conversationId", conversationId)
         
                 .withPathParameter("participantId", participantId)
         
@@ -156,9 +156,9 @@ public class PostConversationsCallbackParticipantReplaceRequest {
 		return new Builder();
 	}
 
-	public static Builder builder(String callbackId, String participantId, TransferRequest body) {
+	public static Builder builder(String conversationId, String participantId, TransferRequest body) {
 	    return new Builder()
-	            .withRequiredParams(callbackId, participantId, body);
+	            .withRequiredParams(conversationId, participantId, body);
 	}
 
 	public static class Builder {
@@ -168,8 +168,8 @@ public class PostConversationsCallbackParticipantReplaceRequest {
 			request = new PostConversationsCallbackParticipantReplaceRequest();
 		}
 
-		public Builder withCallbackId(String callbackId) {
-			request.setCallbackId(callbackId);
+		public Builder withConversationId(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 		public Builder withParticipantId(String participantId) {
@@ -181,8 +181,8 @@ public class PostConversationsCallbackParticipantReplaceRequest {
 			return this;
 		}
 
-		public Builder withRequiredParams(String callbackId, String participantId, TransferRequest body) {
-			request.setCallbackId(callbackId);
+		public Builder withRequiredParams(String conversationId, String participantId, TransferRequest body) {
+			request.setConversationId(conversationId);
 			request.setParticipantId(participantId);
 			request.setBody(body);
 			return this;
@@ -191,9 +191,9 @@ public class PostConversationsCallbackParticipantReplaceRequest {
 
 		public PostConversationsCallbackParticipantReplaceRequest build() {
             
-            // verify the required parameter 'callbackId' is set
-            if (request.callbackId == null) {
-                throw new IllegalStateException("Missing the required parameter 'callbackId' when building request for PostConversationsCallbackParticipantReplaceRequest.");
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PostConversationsCallbackParticipantReplaceRequest.");
             }
             
             // verify the required parameter 'participantId' is set

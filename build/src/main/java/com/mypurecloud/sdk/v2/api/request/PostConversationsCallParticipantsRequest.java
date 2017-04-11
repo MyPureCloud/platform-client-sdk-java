@@ -60,17 +60,17 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PostConversationsCallParticipantsRequest {
-	private String callId;
-	public String getCallId() {
-		return this.callId;
+	private String conversationId;
+	public String getConversationId() {
+		return this.conversationId;
 	}
 
-	public void setCallId(String callId) {
-		this.callId = callId;
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
 	}
 
-	public PostConversationsCallParticipantsRequest withCallId(String callId) {
-	    this.setCallId(callId);
+	public PostConversationsCallParticipantsRequest withConversationId(String conversationId) {
+	    this.setConversationId(conversationId);
 	    return this;
 	}
 
@@ -109,9 +109,9 @@ public class PostConversationsCallParticipantsRequest {
 
     public ApiRequest<Conversation> withHttpInfo() {
         
-        // verify the required parameter 'callId' is set
-        if (this.callId == null) {
-            throw new IllegalStateException("Missing the required parameter 'callId' when building request for PostConversationsCallParticipantsRequest.");
+        // verify the required parameter 'conversationId' is set
+        if (this.conversationId == null) {
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PostConversationsCallParticipantsRequest.");
         }
         
         // verify the required parameter 'body' is set
@@ -120,8 +120,8 @@ public class PostConversationsCallParticipantsRequest {
         }
         
 
-        return ApiRequestBuilder.create("POST", "/api/v2/conversations/calls/{callId}/participants")
-                .withPathParameter("callId", callId)
+        return ApiRequestBuilder.create("POST", "/api/v2/conversations/calls/{conversationId}/participants")
+                .withPathParameter("conversationId", conversationId)
         
                 .withBody(body)
                 .withCustomHeaders(customHeaders)
@@ -135,9 +135,9 @@ public class PostConversationsCallParticipantsRequest {
 		return new Builder();
 	}
 
-	public static Builder builder(String callId, Conversation body) {
+	public static Builder builder(String conversationId, Conversation body) {
 	    return new Builder()
-	            .withRequiredParams(callId, body);
+	            .withRequiredParams(conversationId, body);
 	}
 
 	public static class Builder {
@@ -147,8 +147,8 @@ public class PostConversationsCallParticipantsRequest {
 			request = new PostConversationsCallParticipantsRequest();
 		}
 
-		public Builder withCallId(String callId) {
-			request.setCallId(callId);
+		public Builder withConversationId(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 		public Builder withBody(Conversation body) {
@@ -156,8 +156,8 @@ public class PostConversationsCallParticipantsRequest {
 			return this;
 		}
 
-		public Builder withRequiredParams(String callId, Conversation body) {
-			request.setCallId(callId);
+		public Builder withRequiredParams(String conversationId, Conversation body) {
+			request.setConversationId(conversationId);
 			request.setBody(body);
 			return this;
 		}
@@ -165,9 +165,9 @@ public class PostConversationsCallParticipantsRequest {
 
 		public PostConversationsCallParticipantsRequest build() {
             
-            // verify the required parameter 'callId' is set
-            if (request.callId == null) {
-                throw new IllegalStateException("Missing the required parameter 'callId' when building request for PostConversationsCallParticipantsRequest.");
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PostConversationsCallParticipantsRequest.");
             }
             
             // verify the required parameter 'body' is set

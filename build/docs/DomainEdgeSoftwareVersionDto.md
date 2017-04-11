@@ -1,6 +1,8 @@
 ---
 title: DomainEdgeSoftwareVersionDto
 ---
+## DomainEdgeSoftwareVersionDto
+
 
 ## Properties
 

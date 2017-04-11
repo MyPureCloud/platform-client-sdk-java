@@ -1,6 +1,8 @@
 ---
 title: FacetEntry
 ---
+## FacetEntry
+
 
 ## Properties
 

@@ -60,17 +60,17 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PatchConversationsCobrowsesessionRequest {
-	private String cobrowseId;
-	public String getCobrowseId() {
-		return this.cobrowseId;
+	private String conversationId;
+	public String getConversationId() {
+		return this.conversationId;
 	}
 
-	public void setCobrowseId(String cobrowseId) {
-		this.cobrowseId = cobrowseId;
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
 	}
 
-	public PatchConversationsCobrowsesessionRequest withCobrowseId(String cobrowseId) {
-	    this.setCobrowseId(cobrowseId);
+	public PatchConversationsCobrowsesessionRequest withConversationId(String conversationId) {
+	    this.setConversationId(conversationId);
 	    return this;
 	}
 
@@ -109,9 +109,9 @@ public class PatchConversationsCobrowsesessionRequest {
 
     public ApiRequest<Conversation> withHttpInfo() {
         
-        // verify the required parameter 'cobrowseId' is set
-        if (this.cobrowseId == null) {
-            throw new IllegalStateException("Missing the required parameter 'cobrowseId' when building request for PatchConversationsCobrowsesessionRequest.");
+        // verify the required parameter 'conversationId' is set
+        if (this.conversationId == null) {
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PatchConversationsCobrowsesessionRequest.");
         }
         
         // verify the required parameter 'body' is set
@@ -120,8 +120,8 @@ public class PatchConversationsCobrowsesessionRequest {
         }
         
 
-        return ApiRequestBuilder.create("PATCH", "/api/v2/conversations/cobrowsesessions/{cobrowseId}")
-                .withPathParameter("cobrowseId", cobrowseId)
+        return ApiRequestBuilder.create("PATCH", "/api/v2/conversations/cobrowsesessions/{conversationId}")
+                .withPathParameter("conversationId", conversationId)
         
                 .withBody(body)
                 .withCustomHeaders(customHeaders)
@@ -135,9 +135,9 @@ public class PatchConversationsCobrowsesessionRequest {
 		return new Builder();
 	}
 
-	public static Builder builder(String cobrowseId, Conversation body) {
+	public static Builder builder(String conversationId, Conversation body) {
 	    return new Builder()
-	            .withRequiredParams(cobrowseId, body);
+	            .withRequiredParams(conversationId, body);
 	}
 
 	public static class Builder {
@@ -147,8 +147,8 @@ public class PatchConversationsCobrowsesessionRequest {
 			request = new PatchConversationsCobrowsesessionRequest();
 		}
 
-		public Builder withCobrowseId(String cobrowseId) {
-			request.setCobrowseId(cobrowseId);
+		public Builder withConversationId(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 		public Builder withBody(Conversation body) {
@@ -156,8 +156,8 @@ public class PatchConversationsCobrowsesessionRequest {
 			return this;
 		}
 
-		public Builder withRequiredParams(String cobrowseId, Conversation body) {
-			request.setCobrowseId(cobrowseId);
+		public Builder withRequiredParams(String conversationId, Conversation body) {
+			request.setConversationId(conversationId);
 			request.setBody(body);
 			return this;
 		}
@@ -165,9 +165,9 @@ public class PatchConversationsCobrowsesessionRequest {
 
 		public PatchConversationsCobrowsesessionRequest build() {
             
-            // verify the required parameter 'cobrowseId' is set
-            if (request.cobrowseId == null) {
-                throw new IllegalStateException("Missing the required parameter 'cobrowseId' when building request for PatchConversationsCobrowsesessionRequest.");
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PatchConversationsCobrowsesessionRequest.");
             }
             
             // verify the required parameter 'body' is set

@@ -60,17 +60,17 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class GetConversationsEmailMessageRequest {
-	private String emailId;
-	public String getEmailId() {
-		return this.emailId;
+	private String conversationId;
+	public String getConversationId() {
+		return this.conversationId;
 	}
 
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
 	}
 
-	public GetConversationsEmailMessageRequest withEmailId(String emailId) {
-	    this.setEmailId(emailId);
+	public GetConversationsEmailMessageRequest withConversationId(String conversationId) {
+	    this.setConversationId(conversationId);
 	    return this;
 	}
 
@@ -109,9 +109,9 @@ public class GetConversationsEmailMessageRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
-        // verify the required parameter 'emailId' is set
-        if (this.emailId == null) {
-            throw new IllegalStateException("Missing the required parameter 'emailId' when building request for GetConversationsEmailMessageRequest.");
+        // verify the required parameter 'conversationId' is set
+        if (this.conversationId == null) {
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetConversationsEmailMessageRequest.");
         }
         
         // verify the required parameter 'messageId' is set
@@ -120,8 +120,8 @@ public class GetConversationsEmailMessageRequest {
         }
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/conversations/emails/{emailId}/messages/{messageId}")
-                .withPathParameter("emailId", emailId)
+        return ApiRequestBuilder.create("GET", "/api/v2/conversations/emails/{conversationId}/messages/{messageId}")
+                .withPathParameter("conversationId", conversationId)
         
                 .withPathParameter("messageId", messageId)
                         .withCustomHeaders(customHeaders)
@@ -135,9 +135,9 @@ public class GetConversationsEmailMessageRequest {
 		return new Builder();
 	}
 
-	public static Builder builder(String emailId, String messageId) {
+	public static Builder builder(String conversationId, String messageId) {
 	    return new Builder()
-	            .withRequiredParams(emailId, messageId);
+	            .withRequiredParams(conversationId, messageId);
 	}
 
 	public static class Builder {
@@ -147,8 +147,8 @@ public class GetConversationsEmailMessageRequest {
 			request = new GetConversationsEmailMessageRequest();
 		}
 
-		public Builder withEmailId(String emailId) {
-			request.setEmailId(emailId);
+		public Builder withConversationId(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 		public Builder withMessageId(String messageId) {
@@ -156,8 +156,8 @@ public class GetConversationsEmailMessageRequest {
 			return this;
 		}
 
-		public Builder withRequiredParams(String emailId, String messageId) {
-			request.setEmailId(emailId);
+		public Builder withRequiredParams(String conversationId, String messageId) {
+			request.setConversationId(conversationId);
 			request.setMessageId(messageId);
 			return this;
 		}
@@ -165,9 +165,9 @@ public class GetConversationsEmailMessageRequest {
 
 		public GetConversationsEmailMessageRequest build() {
             
-            // verify the required parameter 'emailId' is set
-            if (request.emailId == null) {
-                throw new IllegalStateException("Missing the required parameter 'emailId' when building request for GetConversationsEmailMessageRequest.");
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetConversationsEmailMessageRequest.");
             }
             
             // verify the required parameter 'messageId' is set

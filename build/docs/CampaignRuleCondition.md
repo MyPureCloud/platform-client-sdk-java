@@ -1,6 +1,8 @@
 ---
 title: CampaignRuleCondition
 ---
+## CampaignRuleCondition
+
 
 ## Properties
 

@@ -1,6 +1,8 @@
 ---
 title: ChannelTopic
 ---
+## ChannelTopic
+
 
 ## Properties
 

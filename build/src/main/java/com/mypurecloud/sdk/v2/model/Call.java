@@ -201,6 +201,7 @@ public class Call  implements Serializable {
   private List<DisconnectReason> disconnectReasons = new ArrayList<DisconnectReason>();
   private FaxStatus faxStatus = null;
   private String provider = null;
+  private String scriptId = null;
 
   
   /**
@@ -544,6 +545,24 @@ public class Call  implements Serializable {
   }
 
 
+  /**
+   * The UUID of the script to use.
+   **/
+  public Call scriptId(String scriptId) {
+    this.scriptId = scriptId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The UUID of the script to use.")
+  @JsonProperty("scriptId")
+  public String getScriptId() {
+    return scriptId;
+  }
+  public void setScriptId(String scriptId) {
+    this.scriptId = scriptId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -571,12 +590,13 @@ public class Call  implements Serializable {
         Objects.equals(this.disconnectedTime, call.disconnectedTime) &&
         Objects.equals(this.disconnectReasons, call.disconnectReasons) &&
         Objects.equals(this.faxStatus, call.faxStatus) &&
-        Objects.equals(this.provider, call.provider);
+        Objects.equals(this.provider, call.provider) &&
+        Objects.equals(this.scriptId, call.scriptId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, direction, recording, recordingState, muted, confined, held, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider);
+    return Objects.hash(state, id, direction, recording, recordingState, muted, confined, held, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId);
   }
 
   @Override
@@ -603,6 +623,7 @@ public class Call  implements Serializable {
     sb.append("    disconnectReasons: ").append(toIndentedString(disconnectReasons)).append("\n");
     sb.append("    faxStatus: ").append(toIndentedString(faxStatus)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

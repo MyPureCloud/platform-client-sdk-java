@@ -1,6 +1,8 @@
 ---
 title: Adjacents
 ---
+## Adjacents
+
 
 ## Properties
 

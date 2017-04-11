@@ -1,6 +1,8 @@
 ---
 title: CobrowseMediaParticipant
 ---
+## CobrowseMediaParticipant
+
 
 ## Properties
 

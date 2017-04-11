@@ -1,6 +1,8 @@
 ---
 title: ResponseQueryResults
 ---
+## ResponseQueryResults
+
 
 ## Properties
 

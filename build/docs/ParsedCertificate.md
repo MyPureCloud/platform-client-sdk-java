@@ -1,6 +1,8 @@
 ---
 title: ParsedCertificate
 ---
+## ParsedCertificate
+
 
 ## Properties
 

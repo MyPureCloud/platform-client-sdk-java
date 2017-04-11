@@ -144,13 +144,13 @@ null (empty response body)
 
 # **deleteConversationsCallParticipantConsult**
 
-> String deleteConversationsCallParticipantConsult(callId, participantId)
+> String deleteConversationsCallParticipantConsult(conversationId, participantId)
 
 Cancel the transfer
 
 
 
-Wraps DELETE /api/v2/conversations/calls/{callId}/participants/{participantId}/consult  
+Wraps DELETE /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult  
 
 ### Example
 
@@ -169,10 +169,10 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callId = "callId_example"; // String | callId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 try {
-    String result = apiInstance.deleteConversationsCallParticipantConsult(callId, participantId);
+    String result = apiInstance.deleteConversationsCallParticipantConsult(conversationId, participantId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#deleteConversationsCallParticipantConsult");
@@ -185,7 +185,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callId** | **String**| callId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 {: class="table table-striped"}
 
@@ -197,13 +197,13 @@ try {
 
 # **deleteConversationsEmailMessagesDraftAttachment**
 
-> String deleteConversationsEmailMessagesDraftAttachment(emailId, attachmentId)
+> String deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId)
 
 Delete attachment from draft
 
 
 
-Wraps DELETE /api/v2/conversations/emails/{emailId}/messages/draft/attachments/{attachmentId}  
+Wraps DELETE /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId}  
 
 ### Example
 
@@ -222,10 +222,10 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String emailId = "emailId_example"; // String | emailId
+String conversationId = "conversationId_example"; // String | conversationId
 String attachmentId = "attachmentId_example"; // String | attachmentId
 try {
-    String result = apiInstance.deleteConversationsEmailMessagesDraftAttachment(emailId, attachmentId);
+    String result = apiInstance.deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#deleteConversationsEmailMessagesDraftAttachment");
@@ -238,7 +238,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **emailId** | **String**| emailId | |
+| **conversationId** | **String**| conversationId | |
 | **attachmentId** | **String**| attachmentId | |
 {: class="table table-striped"}
 
@@ -511,13 +511,13 @@ try {
 
 # **getConversationsCall**
 
-> [CallConversation](CallConversation.html) getConversationsCall(callId)
+> [CallConversation](CallConversation.html) getConversationsCall(conversationId)
 
 Get call conversation
 
 
 
-Wraps GET /api/v2/conversations/calls/{callId}  
+Wraps GET /api/v2/conversations/calls/{conversationId}  
 
 ### Example
 
@@ -536,9 +536,9 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callId = "callId_example"; // String | callId
+String conversationId = "conversationId_example"; // String | conversationId
 try {
-    CallConversation result = apiInstance.getConversationsCall(callId);
+    CallConversation result = apiInstance.getConversationsCall(conversationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsCall");
@@ -551,7 +551,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callId** | **String**| callId | |
+| **conversationId** | **String**| conversationId | |
 {: class="table table-striped"}
 
 ### Return type
@@ -562,13 +562,13 @@ try {
 
 # **getConversationsCallParticipantWrapup**
 
-> [Wrapup](Wrapup.html) getConversationsCallParticipantWrapup(callId, participantId, provisional)
+> [Wrapup](Wrapup.html) getConversationsCallParticipantWrapup(conversationId, participantId, provisional)
 
 Get the wrap-up for this conversation participant. 
 
 
 
-Wraps GET /api/v2/conversations/calls/{callId}/participants/{participantId}/wrapup  
+Wraps GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup  
 
 ### Example
 
@@ -587,11 +587,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callId = "callId_example"; // String | callId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
 try {
-    Wrapup result = apiInstance.getConversationsCallParticipantWrapup(callId, participantId, provisional);
+    Wrapup result = apiInstance.getConversationsCallParticipantWrapup(conversationId, participantId, provisional);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsCallParticipantWrapup");
@@ -604,7 +604,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callId** | **String**| callId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
 {: class="table table-striped"}
@@ -617,13 +617,13 @@ try {
 
 # **getConversationsCallParticipantWrapupcodes**
 
-> [List&lt;WrapupCode&gt;](WrapupCode.html) getConversationsCallParticipantWrapupcodes(callId, participantId)
+> [List&lt;WrapupCode&gt;](WrapupCode.html) getConversationsCallParticipantWrapupcodes(conversationId, participantId)
 
 Get list of wrapup codes for this conversation participant
 
 
 
-Wraps GET /api/v2/conversations/calls/{callId}/participants/{participantId}/wrapupcodes  
+Wraps GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes  
 
 ### Example
 
@@ -642,10 +642,10 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callId = "callId_example"; // String | callId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 try {
-    List<WrapupCode> result = apiInstance.getConversationsCallParticipantWrapupcodes(callId, participantId);
+    List<WrapupCode> result = apiInstance.getConversationsCallParticipantWrapupcodes(conversationId, participantId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsCallParticipantWrapupcodes");
@@ -658,7 +658,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callId** | **String**| callId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 {: class="table table-striped"}
 
@@ -670,13 +670,13 @@ try {
 
 # **getConversationsCallback**
 
-> [CallbackConversation](CallbackConversation.html) getConversationsCallback(callbackId)
+> [CallbackConversation](CallbackConversation.html) getConversationsCallback(conversationId)
 
 Get callback conversation
 
 
 
-Wraps GET /api/v2/conversations/callbacks/{callbackId}  
+Wraps GET /api/v2/conversations/callbacks/{conversationId}  
 
 ### Example
 
@@ -695,9 +695,9 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callbackId = "callbackId_example"; // String | callbackId
+String conversationId = "conversationId_example"; // String | conversationId
 try {
-    CallbackConversation result = apiInstance.getConversationsCallback(callbackId);
+    CallbackConversation result = apiInstance.getConversationsCallback(conversationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsCallback");
@@ -710,7 +710,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callbackId** | **String**| callbackId | |
+| **conversationId** | **String**| conversationId | |
 {: class="table table-striped"}
 
 ### Return type
@@ -721,13 +721,13 @@ try {
 
 # **getConversationsCallbackParticipantWrapup**
 
-> [Wrapup](Wrapup.html) getConversationsCallbackParticipantWrapup(callbackId, participantId, provisional)
+> [Wrapup](Wrapup.html) getConversationsCallbackParticipantWrapup(conversationId, participantId, provisional)
 
 Get the wrap-up for this conversation participant. 
 
 
 
-Wraps GET /api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/wrapup  
+Wraps GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup  
 
 ### Example
 
@@ -746,11 +746,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callbackId = "callbackId_example"; // String | callbackId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
 try {
-    Wrapup result = apiInstance.getConversationsCallbackParticipantWrapup(callbackId, participantId, provisional);
+    Wrapup result = apiInstance.getConversationsCallbackParticipantWrapup(conversationId, participantId, provisional);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsCallbackParticipantWrapup");
@@ -763,7 +763,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callbackId** | **String**| callbackId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
 {: class="table table-striped"}
@@ -776,13 +776,13 @@ try {
 
 # **getConversationsCallbackParticipantWrapupcodes**
 
-> [List&lt;WrapupCode&gt;](WrapupCode.html) getConversationsCallbackParticipantWrapupcodes(callbackId, participantId)
+> [List&lt;WrapupCode&gt;](WrapupCode.html) getConversationsCallbackParticipantWrapupcodes(conversationId, participantId)
 
 Get list of wrapup codes for this conversation participant
 
 
 
-Wraps GET /api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/wrapupcodes  
+Wraps GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes  
 
 ### Example
 
@@ -801,10 +801,10 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callbackId = "callbackId_example"; // String | callbackId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 try {
-    List<WrapupCode> result = apiInstance.getConversationsCallbackParticipantWrapupcodes(callbackId, participantId);
+    List<WrapupCode> result = apiInstance.getConversationsCallbackParticipantWrapupcodes(conversationId, participantId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsCallbackParticipantWrapupcodes");
@@ -817,7 +817,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callbackId** | **String**| callbackId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 {: class="table table-striped"}
 
@@ -1025,13 +1025,13 @@ This endpoint does not require any parameters.
 
 # **getConversationsChat**
 
-> [ChatConversation](ChatConversation.html) getConversationsChat(chatId)
+> [ChatConversation](ChatConversation.html) getConversationsChat(conversationId)
 
 Get chat conversation
 
 
 
-Wraps GET /api/v2/conversations/chats/{chatId}  
+Wraps GET /api/v2/conversations/chats/{conversationId}  
 
 ### Example
 
@@ -1050,9 +1050,9 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String chatId = "chatId_example"; // String | chatId
+String conversationId = "conversationId_example"; // String | conversationId
 try {
-    ChatConversation result = apiInstance.getConversationsChat(chatId);
+    ChatConversation result = apiInstance.getConversationsChat(conversationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsChat");
@@ -1065,7 +1065,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **chatId** | **String**| chatId | |
+| **conversationId** | **String**| conversationId | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1076,13 +1076,13 @@ try {
 
 # **getConversationsChatParticipantWrapup**
 
-> [Wrapup](Wrapup.html) getConversationsChatParticipantWrapup(chatId, participantId, provisional)
+> [Wrapup](Wrapup.html) getConversationsChatParticipantWrapup(conversationId, participantId, provisional)
 
 Get the wrap-up for this conversation participant. 
 
 
 
-Wraps GET /api/v2/conversations/chats/{chatId}/participants/{participantId}/wrapup  
+Wraps GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup  
 
 ### Example
 
@@ -1101,11 +1101,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String chatId = "chatId_example"; // String | chatId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
 try {
-    Wrapup result = apiInstance.getConversationsChatParticipantWrapup(chatId, participantId, provisional);
+    Wrapup result = apiInstance.getConversationsChatParticipantWrapup(conversationId, participantId, provisional);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsChatParticipantWrapup");
@@ -1118,7 +1118,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **chatId** | **String**| chatId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
 {: class="table table-striped"}
@@ -1131,13 +1131,13 @@ try {
 
 # **getConversationsChatParticipantWrapupcodes**
 
-> [List&lt;WrapupCode&gt;](WrapupCode.html) getConversationsChatParticipantWrapupcodes(chatId, participantId)
+> [List&lt;WrapupCode&gt;](WrapupCode.html) getConversationsChatParticipantWrapupcodes(conversationId, participantId)
 
 Get list of wrapup codes for this conversation participant
 
 
 
-Wraps GET /api/v2/conversations/chats/{chatId}/participants/{participantId}/wrapupcodes  
+Wraps GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes  
 
 ### Example
 
@@ -1156,10 +1156,10 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String chatId = "chatId_example"; // String | chatId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 try {
-    List<WrapupCode> result = apiInstance.getConversationsChatParticipantWrapupcodes(chatId, participantId);
+    List<WrapupCode> result = apiInstance.getConversationsChatParticipantWrapupcodes(conversationId, participantId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsChatParticipantWrapupcodes");
@@ -1172,7 +1172,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **chatId** | **String**| chatId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 {: class="table table-striped"}
 
@@ -1231,13 +1231,13 @@ This endpoint does not require any parameters.
 
 # **getConversationsCobrowsesession**
 
-> [CobrowseConversation](CobrowseConversation.html) getConversationsCobrowsesession(cobrowseId)
+> [CobrowseConversation](CobrowseConversation.html) getConversationsCobrowsesession(conversationId)
 
 Get cobrowse conversation
 
 
 
-Wraps GET /api/v2/conversations/cobrowsesessions/{cobrowseId}  
+Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}  
 
 ### Example
 
@@ -1256,9 +1256,9 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String cobrowseId = "cobrowseId_example"; // String | cobrowseId
+String conversationId = "conversationId_example"; // String | conversationId
 try {
-    CobrowseConversation result = apiInstance.getConversationsCobrowsesession(cobrowseId);
+    CobrowseConversation result = apiInstance.getConversationsCobrowsesession(conversationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsCobrowsesession");
@@ -1271,7 +1271,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **cobrowseId** | **String**| cobrowseId | |
+| **conversationId** | **String**| conversationId | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1282,13 +1282,13 @@ try {
 
 # **getConversationsCobrowsesessionParticipantWrapup**
 
-> [Wrapup](Wrapup.html) getConversationsCobrowsesessionParticipantWrapup(cobrowseId, participantId, provisional)
+> [Wrapup](Wrapup.html) getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, provisional)
 
 Get the wrap-up for this conversation participant. 
 
 
 
-Wraps GET /api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/wrapup  
+Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup  
 
 ### Example
 
@@ -1307,11 +1307,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String cobrowseId = "cobrowseId_example"; // String | cobrowseId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
 try {
-    Wrapup result = apiInstance.getConversationsCobrowsesessionParticipantWrapup(cobrowseId, participantId, provisional);
+    Wrapup result = apiInstance.getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, provisional);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsCobrowsesessionParticipantWrapup");
@@ -1324,7 +1324,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **cobrowseId** | **String**| cobrowseId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
 {: class="table table-striped"}
@@ -1337,13 +1337,13 @@ try {
 
 # **getConversationsCobrowsesessionParticipantWrapupcodes**
 
-> [List&lt;WrapupCode&gt;](WrapupCode.html) getConversationsCobrowsesessionParticipantWrapupcodes(cobrowseId, participantId)
+> [List&lt;WrapupCode&gt;](WrapupCode.html) getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId)
 
 Get list of wrapup codes for this conversation participant
 
 
 
-Wraps GET /api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/wrapupcodes  
+Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes  
 
 ### Example
 
@@ -1362,10 +1362,10 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String cobrowseId = "cobrowseId_example"; // String | cobrowseId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 try {
-    List<WrapupCode> result = apiInstance.getConversationsCobrowsesessionParticipantWrapupcodes(cobrowseId, participantId);
+    List<WrapupCode> result = apiInstance.getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsCobrowsesessionParticipantWrapupcodes");
@@ -1378,7 +1378,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **cobrowseId** | **String**| cobrowseId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 {: class="table table-striped"}
 
@@ -1437,13 +1437,13 @@ This endpoint does not require any parameters.
 
 # **getConversationsEmail**
 
-> [EmailConversation](EmailConversation.html) getConversationsEmail(emailId)
+> [EmailConversation](EmailConversation.html) getConversationsEmail(conversationId)
 
 Get email conversation
 
 
 
-Wraps GET /api/v2/conversations/emails/{emailId}  
+Wraps GET /api/v2/conversations/emails/{conversationId}  
 
 ### Example
 
@@ -1462,9 +1462,9 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String emailId = "emailId_example"; // String | emailId
+String conversationId = "conversationId_example"; // String | conversationId
 try {
-    EmailConversation result = apiInstance.getConversationsEmail(emailId);
+    EmailConversation result = apiInstance.getConversationsEmail(conversationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsEmail");
@@ -1477,7 +1477,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **emailId** | **String**| emailId | |
+| **conversationId** | **String**| conversationId | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1488,13 +1488,13 @@ try {
 
 # **getConversationsEmailMessage**
 
-> [EmailMessage](EmailMessage.html) getConversationsEmailMessage(emailId, messageId)
+> [EmailMessage](EmailMessage.html) getConversationsEmailMessage(conversationId, messageId)
 
 Get conversation message
 
 
 
-Wraps GET /api/v2/conversations/emails/{emailId}/messages/{messageId}  
+Wraps GET /api/v2/conversations/emails/{conversationId}/messages/{messageId}  
 
 ### Example
 
@@ -1513,10 +1513,10 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String emailId = "emailId_example"; // String | emailId
+String conversationId = "conversationId_example"; // String | conversationId
 String messageId = "messageId_example"; // String | messageId
 try {
-    EmailMessage result = apiInstance.getConversationsEmailMessage(emailId, messageId);
+    EmailMessage result = apiInstance.getConversationsEmailMessage(conversationId, messageId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsEmailMessage");
@@ -1529,7 +1529,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **emailId** | **String**| emailId | |
+| **conversationId** | **String**| conversationId | |
 | **messageId** | **String**| messageId | |
 {: class="table table-striped"}
 
@@ -1541,13 +1541,13 @@ try {
 
 # **getConversationsEmailMessages**
 
-> [EmailMessageListing](EmailMessageListing.html) getConversationsEmailMessages(emailId)
+> [EmailMessageListing](EmailMessageListing.html) getConversationsEmailMessages(conversationId)
 
 Get conversation messages
 
 
 
-Wraps GET /api/v2/conversations/emails/{emailId}/messages  
+Wraps GET /api/v2/conversations/emails/{conversationId}/messages  
 
 ### Example
 
@@ -1566,9 +1566,9 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String emailId = "emailId_example"; // String | emailId
+String conversationId = "conversationId_example"; // String | conversationId
 try {
-    EmailMessageListing result = apiInstance.getConversationsEmailMessages(emailId);
+    EmailMessageListing result = apiInstance.getConversationsEmailMessages(conversationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsEmailMessages");
@@ -1581,7 +1581,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **emailId** | **String**| emailId | |
+| **conversationId** | **String**| conversationId | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1592,13 +1592,13 @@ try {
 
 # **getConversationsEmailMessagesDraft**
 
-> [EmailMessage](EmailMessage.html) getConversationsEmailMessagesDraft(emailId)
+> [EmailMessage](EmailMessage.html) getConversationsEmailMessagesDraft(conversationId)
 
 Get conversation draft reply
 
 
 
-Wraps GET /api/v2/conversations/emails/{emailId}/messages/draft  
+Wraps GET /api/v2/conversations/emails/{conversationId}/messages/draft  
 
 ### Example
 
@@ -1617,9 +1617,9 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String emailId = "emailId_example"; // String | emailId
+String conversationId = "conversationId_example"; // String | conversationId
 try {
-    EmailMessage result = apiInstance.getConversationsEmailMessagesDraft(emailId);
+    EmailMessage result = apiInstance.getConversationsEmailMessagesDraft(conversationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsEmailMessagesDraft");
@@ -1632,7 +1632,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **emailId** | **String**| emailId | |
+| **conversationId** | **String**| conversationId | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1643,13 +1643,13 @@ try {
 
 # **getConversationsEmailParticipantWrapup**
 
-> [Wrapup](Wrapup.html) getConversationsEmailParticipantWrapup(emailId, participantId, provisional)
+> [Wrapup](Wrapup.html) getConversationsEmailParticipantWrapup(conversationId, participantId, provisional)
 
 Get the wrap-up for this conversation participant. 
 
 
 
-Wraps GET /api/v2/conversations/emails/{emailId}/participants/{participantId}/wrapup  
+Wraps GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup  
 
 ### Example
 
@@ -1668,11 +1668,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String emailId = "emailId_example"; // String | emailId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
 try {
-    Wrapup result = apiInstance.getConversationsEmailParticipantWrapup(emailId, participantId, provisional);
+    Wrapup result = apiInstance.getConversationsEmailParticipantWrapup(conversationId, participantId, provisional);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsEmailParticipantWrapup");
@@ -1685,7 +1685,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **emailId** | **String**| emailId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
 {: class="table table-striped"}
@@ -1698,13 +1698,13 @@ try {
 
 # **getConversationsEmailParticipantWrapupcodes**
 
-> [List&lt;WrapupCode&gt;](WrapupCode.html) getConversationsEmailParticipantWrapupcodes(emailId, participantId)
+> [List&lt;WrapupCode&gt;](WrapupCode.html) getConversationsEmailParticipantWrapupcodes(conversationId, participantId)
 
 Get list of wrapup codes for this conversation participant
 
 
 
-Wraps GET /api/v2/conversations/emails/{emailId}/participants/{participantId}/wrapupcodes  
+Wraps GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes  
 
 ### Example
 
@@ -1723,10 +1723,10 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String emailId = "emailId_example"; // String | emailId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 try {
-    List<WrapupCode> result = apiInstance.getConversationsEmailParticipantWrapupcodes(emailId, participantId);
+    List<WrapupCode> result = apiInstance.getConversationsEmailParticipantWrapupcodes(conversationId, participantId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsEmailParticipantWrapupcodes");
@@ -1739,7 +1739,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **emailId** | **String**| emailId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 {: class="table table-striped"}
 
@@ -1906,13 +1906,13 @@ null (empty response body)
 
 # **patchConversationsCall**
 
-> [Conversation](Conversation.html) patchConversationsCall(callId, body)
+> [Conversation](Conversation.html) patchConversationsCall(conversationId, body)
 
 Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants
 
 
 
-Wraps PATCH /api/v2/conversations/calls/{callId}  
+Wraps PATCH /api/v2/conversations/calls/{conversationId}  
 
 ### Example
 
@@ -1931,10 +1931,10 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callId = "callId_example"; // String | callId
+String conversationId = "conversationId_example"; // String | conversationId
 Conversation body = new Conversation(); // Conversation | Conversation
 try {
-    Conversation result = apiInstance.patchConversationsCall(callId, body);
+    Conversation result = apiInstance.patchConversationsCall(conversationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsCall");
@@ -1947,7 +1947,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callId** | **String**| callId | |
+| **conversationId** | **String**| conversationId | |
 | **body** | [**Conversation**](Conversation.html)| Conversation | |
 {: class="table table-striped"}
 
@@ -1959,13 +1959,13 @@ try {
 
 # **patchConversationsCallParticipant**
 
-> Void patchConversationsCallParticipant(callId, participantId, body)
+> Void patchConversationsCallParticipant(conversationId, participantId, body)
 
 Update conversation participant
 
 
 
-Wraps PATCH /api/v2/conversations/calls/{callId}/participants/{participantId}  
+Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}  
 
 ### Example
 
@@ -1984,11 +1984,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callId = "callId_example"; // String | callId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 MediaParticipantRequest body = new MediaParticipantRequest(); // MediaParticipantRequest | Participant request
 try {
-    apiInstance.patchConversationsCallParticipant(callId, participantId, body);
+    apiInstance.patchConversationsCallParticipant(conversationId, participantId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsCallParticipant");
     e.printStackTrace();
@@ -2000,7 +2000,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callId** | **String**| callId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant request | |
 {: class="table table-striped"}
@@ -2013,13 +2013,13 @@ null (empty response body)
 
 # **patchConversationsCallParticipantAttributes**
 
-> Void patchConversationsCallParticipantAttributes(callId, participantId, body)
+> Void patchConversationsCallParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
 
 
 
-Wraps PATCH /api/v2/conversations/calls/{callId}/participants/{participantId}/attributes  
+Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes  
 
 ### Example
 
@@ -2038,11 +2038,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callId = "callId_example"; // String | callId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 ParticipantAttributes body = new ParticipantAttributes(); // ParticipantAttributes | Participant attributes
 try {
-    apiInstance.patchConversationsCallParticipantAttributes(callId, participantId, body);
+    apiInstance.patchConversationsCallParticipantAttributes(conversationId, participantId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsCallParticipantAttributes");
     e.printStackTrace();
@@ -2054,7 +2054,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callId** | **String**| callId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes | |
 {: class="table table-striped"}
@@ -2067,13 +2067,13 @@ null (empty response body)
 
 # **patchConversationsCallParticipantCommunication**
 
-> [Empty](Empty.html) patchConversationsCallParticipantCommunication(callId, participantId, communicationId, body)
+> [Empty](Empty.html) patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body)
 
 Update conversation participant&#39;s communication by disconnecting it.
 
 
 
-Wraps PATCH /api/v2/conversations/calls/{callId}/participants/{participantId}/communications/{communicationId}  
+Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}  
 
 ### Example
 
@@ -2092,12 +2092,12 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callId = "callId_example"; // String | callId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
 MediaParticipantRequest body = new MediaParticipantRequest(); // MediaParticipantRequest | Participant
 try {
-    Empty result = apiInstance.patchConversationsCallParticipantCommunication(callId, participantId, communicationId, body);
+    Empty result = apiInstance.patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsCallParticipantCommunication");
@@ -2110,7 +2110,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callId** | **String**| callId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **communicationId** | **String**| communicationId | |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
@@ -2124,13 +2124,13 @@ try {
 
 # **patchConversationsCallParticipantConsult**
 
-> [ConsultTransferResponse](ConsultTransferResponse.html) patchConversationsCallParticipantConsult(callId, participantId, body)
+> [ConsultTransferResponse](ConsultTransferResponse.html) patchConversationsCallParticipantConsult(conversationId, participantId, body)
 
 Change who can speak
 
 
 
-Wraps PATCH /api/v2/conversations/calls/{callId}/participants/{participantId}/consult  
+Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult  
 
 ### Example
 
@@ -2149,11 +2149,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callId = "callId_example"; // String | callId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 ConsultTransferUpdate body = new ConsultTransferUpdate(); // ConsultTransferUpdate | new speak to
 try {
-    ConsultTransferResponse result = apiInstance.patchConversationsCallParticipantConsult(callId, participantId, body);
+    ConsultTransferResponse result = apiInstance.patchConversationsCallParticipantConsult(conversationId, participantId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsCallParticipantConsult");
@@ -2166,7 +2166,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callId** | **String**| callId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **body** | [**ConsultTransferUpdate**](ConsultTransferUpdate.html)| new speak to | |
 {: class="table table-striped"}
@@ -2179,13 +2179,13 @@ try {
 
 # **patchConversationsCallback**
 
-> [Conversation](Conversation.html) patchConversationsCallback(callbackId, body)
+> [Conversation](Conversation.html) patchConversationsCallback(conversationId, body)
 
 Update a conversation by disconnecting all of the participants
 
 
 
-Wraps PATCH /api/v2/conversations/callbacks/{callbackId}  
+Wraps PATCH /api/v2/conversations/callbacks/{conversationId}  
 
 ### Example
 
@@ -2204,10 +2204,10 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callbackId = "callbackId_example"; // String | callbackId
+String conversationId = "conversationId_example"; // String | conversationId
 Conversation body = new Conversation(); // Conversation | Conversation
 try {
-    Conversation result = apiInstance.patchConversationsCallback(callbackId, body);
+    Conversation result = apiInstance.patchConversationsCallback(conversationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsCallback");
@@ -2220,7 +2220,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callbackId** | **String**| callbackId | |
+| **conversationId** | **String**| conversationId | |
 | **body** | [**Conversation**](Conversation.html)| Conversation | |
 {: class="table table-striped"}
 
@@ -2232,13 +2232,13 @@ try {
 
 # **patchConversationsCallbackParticipant**
 
-> Void patchConversationsCallbackParticipant(callbackId, participantId, body)
+> Void patchConversationsCallbackParticipant(conversationId, participantId, body)
 
 Update conversation participant
 
 
 
-Wraps PATCH /api/v2/conversations/callbacks/{callbackId}/participants/{participantId}  
+Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}  
 
 ### Example
 
@@ -2257,11 +2257,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callbackId = "callbackId_example"; // String | callbackId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 MediaParticipantRequest body = new MediaParticipantRequest(); // MediaParticipantRequest | Participant
 try {
-    apiInstance.patchConversationsCallbackParticipant(callbackId, participantId, body);
+    apiInstance.patchConversationsCallbackParticipant(conversationId, participantId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsCallbackParticipant");
     e.printStackTrace();
@@ -2273,7 +2273,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callbackId** | **String**| callbackId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
 {: class="table table-striped"}
@@ -2286,13 +2286,13 @@ null (empty response body)
 
 # **patchConversationsCallbackParticipantAttributes**
 
-> Void patchConversationsCallbackParticipantAttributes(callbackId, participantId, body)
+> Void patchConversationsCallbackParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
 
 
 
-Wraps PATCH /api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/attributes  
+Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes  
 
 ### Example
 
@@ -2311,11 +2311,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callbackId = "callbackId_example"; // String | callbackId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 ParticipantAttributes body = new ParticipantAttributes(); // ParticipantAttributes | Attributes
 try {
-    apiInstance.patchConversationsCallbackParticipantAttributes(callbackId, participantId, body);
+    apiInstance.patchConversationsCallbackParticipantAttributes(conversationId, participantId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsCallbackParticipantAttributes");
     e.printStackTrace();
@@ -2327,7 +2327,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callbackId** | **String**| callbackId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Attributes | |
 {: class="table table-striped"}
@@ -2340,13 +2340,13 @@ null (empty response body)
 
 # **patchConversationsCallbackParticipantCommunication**
 
-> [Empty](Empty.html) patchConversationsCallbackParticipantCommunication(callbackId, participantId, communicationId, body)
+> [Empty](Empty.html) patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body)
 
 Update conversation participant&#39;s communication by disconnecting it.
 
 
 
-Wraps PATCH /api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/communications/{communicationId}  
+Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}  
 
 ### Example
 
@@ -2365,12 +2365,12 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callbackId = "callbackId_example"; // String | callbackId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
 MediaParticipantRequest body = new MediaParticipantRequest(); // MediaParticipantRequest | Participant
 try {
-    Empty result = apiInstance.patchConversationsCallbackParticipantCommunication(callbackId, participantId, communicationId, body);
+    Empty result = apiInstance.patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsCallbackParticipantCommunication");
@@ -2383,7 +2383,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callbackId** | **String**| callbackId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **communicationId** | **String**| communicationId | |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
@@ -2397,13 +2397,13 @@ try {
 
 # **patchConversationsChat**
 
-> [Conversation](Conversation.html) patchConversationsChat(chatId, body)
+> [Conversation](Conversation.html) patchConversationsChat(conversationId, body)
 
 Update a conversation by disconnecting all of the participants
 
 
 
-Wraps PATCH /api/v2/conversations/chats/{chatId}  
+Wraps PATCH /api/v2/conversations/chats/{conversationId}  
 
 ### Example
 
@@ -2422,10 +2422,10 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String chatId = "chatId_example"; // String | chatId
+String conversationId = "conversationId_example"; // String | conversationId
 Conversation body = new Conversation(); // Conversation | Conversation
 try {
-    Conversation result = apiInstance.patchConversationsChat(chatId, body);
+    Conversation result = apiInstance.patchConversationsChat(conversationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsChat");
@@ -2438,7 +2438,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **chatId** | **String**| chatId | |
+| **conversationId** | **String**| conversationId | |
 | **body** | [**Conversation**](Conversation.html)| Conversation | |
 {: class="table table-striped"}
 
@@ -2450,13 +2450,13 @@ try {
 
 # **patchConversationsChatParticipant**
 
-> Void patchConversationsChatParticipant(chatId, participantId, body)
+> Void patchConversationsChatParticipant(conversationId, participantId, body)
 
 Update conversation participant
 
 
 
-Wraps PATCH /api/v2/conversations/chats/{chatId}/participants/{participantId}  
+Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}  
 
 ### Example
 
@@ -2475,11 +2475,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String chatId = "chatId_example"; // String | chatId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 MediaParticipantRequest body = new MediaParticipantRequest(); // MediaParticipantRequest | Update request
 try {
-    apiInstance.patchConversationsChatParticipant(chatId, participantId, body);
+    apiInstance.patchConversationsChatParticipant(conversationId, participantId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsChatParticipant");
     e.printStackTrace();
@@ -2491,7 +2491,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **chatId** | **String**| chatId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request | |
 {: class="table table-striped"}
@@ -2504,13 +2504,13 @@ null (empty response body)
 
 # **patchConversationsChatParticipantAttributes**
 
-> Void patchConversationsChatParticipantAttributes(chatId, participantId, body)
+> Void patchConversationsChatParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
 
 
 
-Wraps PATCH /api/v2/conversations/chats/{chatId}/participants/{participantId}/attributes  
+Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes  
 
 ### Example
 
@@ -2529,11 +2529,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String chatId = "chatId_example"; // String | chatId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 ParticipantAttributes body = new ParticipantAttributes(); // ParticipantAttributes | Participant attributes
 try {
-    apiInstance.patchConversationsChatParticipantAttributes(chatId, participantId, body);
+    apiInstance.patchConversationsChatParticipantAttributes(conversationId, participantId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsChatParticipantAttributes");
     e.printStackTrace();
@@ -2545,7 +2545,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **chatId** | **String**| chatId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes | |
 {: class="table table-striped"}
@@ -2558,13 +2558,13 @@ null (empty response body)
 
 # **patchConversationsChatParticipantCommunication**
 
-> [Empty](Empty.html) patchConversationsChatParticipantCommunication(chatId, participantId, communicationId, body)
+> [Empty](Empty.html) patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body)
 
 Update conversation participant&#39;s communication by disconnecting it.
 
 
 
-Wraps PATCH /api/v2/conversations/chats/{chatId}/participants/{participantId}/communications/{communicationId}  
+Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}  
 
 ### Example
 
@@ -2583,12 +2583,12 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String chatId = "chatId_example"; // String | chatId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
 MediaParticipantRequest body = new MediaParticipantRequest(); // MediaParticipantRequest | Participant
 try {
-    Empty result = apiInstance.patchConversationsChatParticipantCommunication(chatId, participantId, communicationId, body);
+    Empty result = apiInstance.patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsChatParticipantCommunication");
@@ -2601,7 +2601,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **chatId** | **String**| chatId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **communicationId** | **String**| communicationId | |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
@@ -2615,13 +2615,13 @@ try {
 
 # **patchConversationsCobrowsesession**
 
-> [Conversation](Conversation.html) patchConversationsCobrowsesession(cobrowseId, body)
+> [Conversation](Conversation.html) patchConversationsCobrowsesession(conversationId, body)
 
 Update a conversation by disconnecting all of the participants
 
 
 
-Wraps PATCH /api/v2/conversations/cobrowsesessions/{cobrowseId}  
+Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}  
 
 ### Example
 
@@ -2640,10 +2640,10 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String cobrowseId = "cobrowseId_example"; // String | cobrowseId
+String conversationId = "conversationId_example"; // String | conversationId
 Conversation body = new Conversation(); // Conversation | Conversation
 try {
-    Conversation result = apiInstance.patchConversationsCobrowsesession(cobrowseId, body);
+    Conversation result = apiInstance.patchConversationsCobrowsesession(conversationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsCobrowsesession");
@@ -2656,7 +2656,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **cobrowseId** | **String**| cobrowseId | |
+| **conversationId** | **String**| conversationId | |
 | **body** | [**Conversation**](Conversation.html)| Conversation | |
 {: class="table table-striped"}
 
@@ -2668,13 +2668,13 @@ try {
 
 # **patchConversationsCobrowsesessionParticipant**
 
-> Void patchConversationsCobrowsesessionParticipant(cobrowseId, participantId, body)
+> Void patchConversationsCobrowsesessionParticipant(conversationId, participantId, body)
 
 Update conversation participant
 
 
 
-Wraps PATCH /api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}  
+Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}  
 
 ### Example
 
@@ -2693,11 +2693,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String cobrowseId = "cobrowseId_example"; // String | cobrowseId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 MediaParticipantRequest body = new MediaParticipantRequest(); // MediaParticipantRequest | 
 try {
-    apiInstance.patchConversationsCobrowsesessionParticipant(cobrowseId, participantId, body);
+    apiInstance.patchConversationsCobrowsesessionParticipant(conversationId, participantId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsCobrowsesessionParticipant");
     e.printStackTrace();
@@ -2709,7 +2709,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **cobrowseId** | **String**| cobrowseId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)|  | [optional] |
 {: class="table table-striped"}
@@ -2722,13 +2722,13 @@ null (empty response body)
 
 # **patchConversationsCobrowsesessionParticipantAttributes**
 
-> Void patchConversationsCobrowsesessionParticipantAttributes(cobrowseId, participantId, body)
+> Void patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
 
 
 
-Wraps PATCH /api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/attributes  
+Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes  
 
 ### Example
 
@@ -2747,11 +2747,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String cobrowseId = "cobrowseId_example"; // String | cobrowseId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 ParticipantAttributes body = new ParticipantAttributes(); // ParticipantAttributes | 
 try {
-    apiInstance.patchConversationsCobrowsesessionParticipantAttributes(cobrowseId, participantId, body);
+    apiInstance.patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsCobrowsesessionParticipantAttributes");
     e.printStackTrace();
@@ -2763,7 +2763,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **cobrowseId** | **String**| cobrowseId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **body** | [**ParticipantAttributes**](ParticipantAttributes.html)|  | [optional] |
 {: class="table table-striped"}
@@ -2776,13 +2776,13 @@ null (empty response body)
 
 # **patchConversationsCobrowsesessionParticipantCommunication**
 
-> [Empty](Empty.html) patchConversationsCobrowsesessionParticipantCommunication(cobrowseId, participantId, communicationId, body)
+> [Empty](Empty.html) patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body)
 
 Update conversation participant&#39;s communication by disconnecting it.
 
 
 
-Wraps PATCH /api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/communications/{communicationId}  
+Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}  
 
 ### Example
 
@@ -2801,12 +2801,12 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String cobrowseId = "cobrowseId_example"; // String | cobrowseId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
 MediaParticipantRequest body = new MediaParticipantRequest(); // MediaParticipantRequest | Participant
 try {
-    Empty result = apiInstance.patchConversationsCobrowsesessionParticipantCommunication(cobrowseId, participantId, communicationId, body);
+    Empty result = apiInstance.patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsCobrowsesessionParticipantCommunication");
@@ -2819,7 +2819,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **cobrowseId** | **String**| cobrowseId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **communicationId** | **String**| communicationId | |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
@@ -2833,13 +2833,13 @@ try {
 
 # **patchConversationsEmail**
 
-> [Conversation](Conversation.html) patchConversationsEmail(emailId, body)
+> [Conversation](Conversation.html) patchConversationsEmail(conversationId, body)
 
 Update a conversation by disconnecting all of the participants
 
 
 
-Wraps PATCH /api/v2/conversations/emails/{emailId}  
+Wraps PATCH /api/v2/conversations/emails/{conversationId}  
 
 ### Example
 
@@ -2858,10 +2858,10 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String emailId = "emailId_example"; // String | emailId
+String conversationId = "conversationId_example"; // String | conversationId
 Conversation body = new Conversation(); // Conversation | Conversation
 try {
-    Conversation result = apiInstance.patchConversationsEmail(emailId, body);
+    Conversation result = apiInstance.patchConversationsEmail(conversationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsEmail");
@@ -2874,7 +2874,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **emailId** | **String**| emailId | |
+| **conversationId** | **String**| conversationId | |
 | **body** | [**Conversation**](Conversation.html)| Conversation | |
 {: class="table table-striped"}
 
@@ -2886,13 +2886,13 @@ try {
 
 # **patchConversationsEmailParticipant**
 
-> Void patchConversationsEmailParticipant(emailId, participantId, body)
+> Void patchConversationsEmailParticipant(conversationId, participantId, body)
 
 Update conversation participant
 
 
 
-Wraps PATCH /api/v2/conversations/emails/{emailId}/participants/{participantId}  
+Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}  
 
 ### Example
 
@@ -2911,11 +2911,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String emailId = "emailId_example"; // String | emailId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 MediaParticipantRequest body = new MediaParticipantRequest(); // MediaParticipantRequest | Update request
 try {
-    apiInstance.patchConversationsEmailParticipant(emailId, participantId, body);
+    apiInstance.patchConversationsEmailParticipant(conversationId, participantId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsEmailParticipant");
     e.printStackTrace();
@@ -2927,7 +2927,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **emailId** | **String**| emailId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request | |
 {: class="table table-striped"}
@@ -2940,13 +2940,13 @@ null (empty response body)
 
 # **patchConversationsEmailParticipantAttributes**
 
-> Void patchConversationsEmailParticipantAttributes(emailId, participantId, body)
+> Void patchConversationsEmailParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
 
 
 
-Wraps PATCH /api/v2/conversations/emails/{emailId}/participants/{participantId}/attributes  
+Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes  
 
 ### Example
 
@@ -2965,11 +2965,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String emailId = "emailId_example"; // String | emailId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 ParticipantAttributes body = new ParticipantAttributes(); // ParticipantAttributes | Participant attributes
 try {
-    apiInstance.patchConversationsEmailParticipantAttributes(emailId, participantId, body);
+    apiInstance.patchConversationsEmailParticipantAttributes(conversationId, participantId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsEmailParticipantAttributes");
     e.printStackTrace();
@@ -2981,7 +2981,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **emailId** | **String**| emailId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes | |
 {: class="table table-striped"}
@@ -2994,13 +2994,13 @@ null (empty response body)
 
 # **patchConversationsEmailParticipantCommunication**
 
-> [Empty](Empty.html) patchConversationsEmailParticipantCommunication(emailId, participantId, communicationId, body)
+> [Empty](Empty.html) patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body)
 
 Update conversation participant&#39;s communication by disconnecting it.
 
 
 
-Wraps PATCH /api/v2/conversations/emails/{emailId}/participants/{participantId}/communications/{communicationId}  
+Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}  
 
 ### Example
 
@@ -3019,12 +3019,12 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String emailId = "emailId_example"; // String | emailId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 String communicationId = "communicationId_example"; // String | communicationId
 MediaParticipantRequest body = new MediaParticipantRequest(); // MediaParticipantRequest | Participant
 try {
-    Empty result = apiInstance.patchConversationsEmailParticipantCommunication(emailId, participantId, communicationId, body);
+    Empty result = apiInstance.patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#patchConversationsEmailParticipantCommunication");
@@ -3037,7 +3037,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **emailId** | **String**| emailId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **communicationId** | **String**| communicationId | |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
@@ -3314,13 +3314,13 @@ null (empty response body)
 
 # **postConversationsCall**
 
-> [Conversation](Conversation.html) postConversationsCall(callId, body)
+> [Conversation](Conversation.html) postConversationsCall(conversationId, body)
 
 Add a new call to a conversation
 
 
 
-Wraps POST /api/v2/conversations/calls/{callId}  
+Wraps POST /api/v2/conversations/calls/{conversationId}  
 
 ### Example
 
@@ -3339,10 +3339,10 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callId = "callId_example"; // String | callId
+String conversationId = "conversationId_example"; // String | conversationId
 CallCommand body = new CallCommand(); // CallCommand | Conversation
 try {
-    Conversation result = apiInstance.postConversationsCall(callId, body);
+    Conversation result = apiInstance.postConversationsCall(conversationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsCall");
@@ -3355,7 +3355,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callId** | **String**| callId | |
+| **conversationId** | **String**| conversationId | |
 | **body** | [**CallCommand**](CallCommand.html)| Conversation | |
 {: class="table table-striped"}
 
@@ -3367,13 +3367,13 @@ try {
 
 # **postConversationsCallParticipantConsult**
 
-> [ConsultTransferResponse](ConsultTransferResponse.html) postConversationsCallParticipantConsult(callId, participantId, body)
+> [ConsultTransferResponse](ConsultTransferResponse.html) postConversationsCallParticipantConsult(conversationId, participantId, body)
 
 Initiate and update consult transfer
 
 
 
-Wraps POST /api/v2/conversations/calls/{callId}/participants/{participantId}/consult  
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult  
 
 ### Example
 
@@ -3392,11 +3392,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callId = "callId_example"; // String | callId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 ConsultTransfer body = new ConsultTransfer(); // ConsultTransfer | Destination address & initial speak to
 try {
-    ConsultTransferResponse result = apiInstance.postConversationsCallParticipantConsult(callId, participantId, body);
+    ConsultTransferResponse result = apiInstance.postConversationsCallParticipantConsult(conversationId, participantId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsCallParticipantConsult");
@@ -3409,7 +3409,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callId** | **String**| callId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **body** | [**ConsultTransfer**](ConsultTransfer.html)| Destination address &amp; initial speak to | |
 {: class="table table-striped"}
@@ -3422,13 +3422,13 @@ try {
 
 # **postConversationsCallParticipantMonitor**
 
-> Void postConversationsCallParticipantMonitor(callId, participantId)
+> Void postConversationsCallParticipantMonitor(conversationId, participantId)
 
 Listen in on the conversation from the point of view of a given participant.
 
 
 
-Wraps POST /api/v2/conversations/calls/{callId}/participants/{participantId}/monitor  
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor  
 
 ### Example
 
@@ -3447,10 +3447,10 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callId = "callId_example"; // String | callId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 try {
-    apiInstance.postConversationsCallParticipantMonitor(callId, participantId);
+    apiInstance.postConversationsCallParticipantMonitor(conversationId, participantId);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsCallParticipantMonitor");
     e.printStackTrace();
@@ -3462,7 +3462,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callId** | **String**| callId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 {: class="table table-striped"}
 
@@ -3474,13 +3474,13 @@ null (empty response body)
 
 # **postConversationsCallParticipantReplace**
 
-> Void postConversationsCallParticipantReplace(callId, participantId, body)
+> Void postConversationsCallParticipantReplace(conversationId, participantId, body)
 
 Replace this participant with the specified user and/or address
 
 
 
-Wraps POST /api/v2/conversations/calls/{callId}/participants/{participantId}/replace  
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace  
 
 ### Example
 
@@ -3499,11 +3499,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callId = "callId_example"; // String | callId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 TransferRequest body = new TransferRequest(); // TransferRequest | Transfer request
 try {
-    apiInstance.postConversationsCallParticipantReplace(callId, participantId, body);
+    apiInstance.postConversationsCallParticipantReplace(conversationId, participantId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsCallParticipantReplace");
     e.printStackTrace();
@@ -3515,7 +3515,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callId** | **String**| callId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | |
 {: class="table table-striped"}
@@ -3528,13 +3528,13 @@ null (empty response body)
 
 # **postConversationsCallParticipants**
 
-> [Conversation](Conversation.html) postConversationsCallParticipants(callId, body)
+> [Conversation](Conversation.html) postConversationsCallParticipants(conversationId, body)
 
 Add participants to a conversation
 
 
 
-Wraps POST /api/v2/conversations/calls/{callId}/participants  
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants  
 
 ### Example
 
@@ -3553,10 +3553,10 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callId = "callId_example"; // String | callId
+String conversationId = "conversationId_example"; // String | conversationId
 Conversation body = new Conversation(); // Conversation | Conversation
 try {
-    Conversation result = apiInstance.postConversationsCallParticipants(callId, body);
+    Conversation result = apiInstance.postConversationsCallParticipants(conversationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsCallParticipants");
@@ -3569,7 +3569,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callId** | **String**| callId | |
+| **conversationId** | **String**| conversationId | |
 | **body** | [**Conversation**](Conversation.html)| Conversation | |
 {: class="table table-striped"}
 
@@ -3581,13 +3581,13 @@ try {
 
 # **postConversationsCallbackParticipantReplace**
 
-> Void postConversationsCallbackParticipantReplace(callbackId, participantId, body)
+> Void postConversationsCallbackParticipantReplace(conversationId, participantId, body)
 
 Replace this participant with the specified user and/or address
 
 
 
-Wraps POST /api/v2/conversations/callbacks/{callbackId}/participants/{participantId}/replace  
+Wraps POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace  
 
 ### Example
 
@@ -3606,11 +3606,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String callbackId = "callbackId_example"; // String | callbackId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 TransferRequest body = new TransferRequest(); // TransferRequest | Transfer request
 try {
-    apiInstance.postConversationsCallbackParticipantReplace(callbackId, participantId, body);
+    apiInstance.postConversationsCallbackParticipantReplace(conversationId, participantId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsCallbackParticipantReplace");
     e.printStackTrace();
@@ -3622,7 +3622,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **callbackId** | **String**| callbackId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | |
 {: class="table table-striped"}
@@ -3737,13 +3737,13 @@ try {
 
 # **postConversationsChatParticipantReplace**
 
-> Void postConversationsChatParticipantReplace(chatId, participantId, body)
+> Void postConversationsChatParticipantReplace(conversationId, participantId, body)
 
 Replace this participant with the specified user and/or address
 
 
 
-Wraps POST /api/v2/conversations/chats/{chatId}/participants/{participantId}/replace  
+Wraps POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace  
 
 ### Example
 
@@ -3762,11 +3762,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String chatId = "chatId_example"; // String | chatId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 TransferRequest body = new TransferRequest(); // TransferRequest | Transfer request
 try {
-    apiInstance.postConversationsChatParticipantReplace(chatId, participantId, body);
+    apiInstance.postConversationsChatParticipantReplace(conversationId, participantId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsChatParticipantReplace");
     e.printStackTrace();
@@ -3778,7 +3778,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **chatId** | **String**| chatId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | |
 {: class="table table-striped"}
@@ -3842,13 +3842,13 @@ try {
 
 # **postConversationsCobrowsesessionParticipantReplace**
 
-> Void postConversationsCobrowsesessionParticipantReplace(cobrowseId, participantId, body)
+> Void postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, body)
 
 Replace this participant with the specified user and/or address
 
 
 
-Wraps POST /api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/replace  
+Wraps POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace  
 
 ### Example
 
@@ -3867,11 +3867,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String cobrowseId = "cobrowseId_example"; // String | cobrowseId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 TransferRequest body = new TransferRequest(); // TransferRequest | 
 try {
-    apiInstance.postConversationsCobrowsesessionParticipantReplace(cobrowseId, participantId, body);
+    apiInstance.postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsCobrowsesessionParticipantReplace");
     e.printStackTrace();
@@ -3883,7 +3883,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **cobrowseId** | **String**| cobrowseId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **body** | [**TransferRequest**](TransferRequest.html)|  | [optional] |
 {: class="table table-striped"}
@@ -3896,13 +3896,13 @@ null (empty response body)
 
 # **postConversationsEmailMessages**
 
-> [EmailMessage](EmailMessage.html) postConversationsEmailMessages(emailId, body)
+> [EmailMessage](EmailMessage.html) postConversationsEmailMessages(conversationId, body)
 
 Send an email reply
 
 
 
-Wraps POST /api/v2/conversations/emails/{emailId}/messages  
+Wraps POST /api/v2/conversations/emails/{conversationId}/messages  
 
 ### Example
 
@@ -3921,10 +3921,10 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String emailId = "emailId_example"; // String | emailId
+String conversationId = "conversationId_example"; // String | conversationId
 EmailMessage body = new EmailMessage(); // EmailMessage | Reply
 try {
-    EmailMessage result = apiInstance.postConversationsEmailMessages(emailId, body);
+    EmailMessage result = apiInstance.postConversationsEmailMessages(conversationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsEmailMessages");
@@ -3937,7 +3937,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **emailId** | **String**| emailId | |
+| **conversationId** | **String**| conversationId | |
 | **body** | [**EmailMessage**](EmailMessage.html)| Reply | |
 {: class="table table-striped"}
 
@@ -3949,13 +3949,13 @@ try {
 
 # **postConversationsEmailParticipantReplace**
 
-> Void postConversationsEmailParticipantReplace(emailId, participantId, body)
+> Void postConversationsEmailParticipantReplace(conversationId, participantId, body)
 
 Replace this participant with the specified user and/or address
 
 
 
-Wraps POST /api/v2/conversations/emails/{emailId}/participants/{participantId}/replace  
+Wraps POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace  
 
 ### Example
 
@@ -3974,11 +3974,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String emailId = "emailId_example"; // String | emailId
+String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 TransferRequest body = new TransferRequest(); // TransferRequest | Transfer request
 try {
-    apiInstance.postConversationsEmailParticipantReplace(emailId, participantId, body);
+    apiInstance.postConversationsEmailParticipantReplace(conversationId, participantId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsEmailParticipantReplace");
     e.printStackTrace();
@@ -3990,7 +3990,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **emailId** | **String**| emailId | |
+| **conversationId** | **String**| conversationId | |
 | **participantId** | **String**| participantId | |
 | **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | |
 {: class="table table-striped"}
@@ -4105,13 +4105,13 @@ try {
 
 # **putConversationsEmailMessagesDraft**
 
-> [EmailMessage](EmailMessage.html) putConversationsEmailMessagesDraft(emailId, body)
+> [EmailMessage](EmailMessage.html) putConversationsEmailMessagesDraft(conversationId, body)
 
 Update conversation draft reply
 
 
 
-Wraps PUT /api/v2/conversations/emails/{emailId}/messages/draft  
+Wraps PUT /api/v2/conversations/emails/{conversationId}/messages/draft  
 
 ### Example
 
@@ -4130,10 +4130,10 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-String emailId = "emailId_example"; // String | emailId
+String conversationId = "conversationId_example"; // String | conversationId
 EmailMessage body = new EmailMessage(); // EmailMessage | Draft
 try {
-    EmailMessage result = apiInstance.putConversationsEmailMessagesDraft(emailId, body);
+    EmailMessage result = apiInstance.putConversationsEmailMessagesDraft(conversationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#putConversationsEmailMessagesDraft");
@@ -4146,7 +4146,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **emailId** | **String**| emailId | |
+| **conversationId** | **String**| conversationId | |
 | **body** | [**EmailMessage**](EmailMessage.html)| Draft | |
 {: class="table table-striped"}
 

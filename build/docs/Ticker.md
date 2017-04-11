@@ -1,6 +1,8 @@
 ---
 title: Ticker
 ---
+## Ticker
+
 
 ## Properties
 

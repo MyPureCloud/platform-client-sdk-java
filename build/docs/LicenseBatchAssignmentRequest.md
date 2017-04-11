@@ -1,6 +1,8 @@
 ---
 title: LicenseBatchAssignmentRequest
 ---
+## LicenseBatchAssignmentRequest
+
 
 ## Properties
 

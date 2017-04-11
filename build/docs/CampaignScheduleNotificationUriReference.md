@@ -1,6 +1,8 @@
 ---
 title: CampaignScheduleNotificationUriReference
 ---
+## CampaignScheduleNotificationUriReference
+
 
 ## Properties
 

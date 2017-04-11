@@ -1,6 +1,8 @@
 ---
 title: CampaignRuleEntities
 ---
+## CampaignRuleEntities
+
 
 ## Properties
 

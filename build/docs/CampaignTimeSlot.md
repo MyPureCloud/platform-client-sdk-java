@@ -1,6 +1,8 @@
 ---
 title: CampaignTimeSlot
 ---
+## CampaignTimeSlot
+
 
 ## Properties
 

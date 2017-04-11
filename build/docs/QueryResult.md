@@ -1,6 +1,8 @@
 ---
 title: QueryResult
 ---
+## QueryResult
+
 
 ## Properties
 

@@ -1,6 +1,8 @@
 ---
 title: FacetInfo
 ---
+## FacetInfo
+
 
 ## Properties
 

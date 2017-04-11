@@ -1,6 +1,8 @@
 ---
 title: AnalyticsUserDetail
 ---
+## AnalyticsUserDetail
+
 
 ## Properties
 

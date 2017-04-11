@@ -1,6 +1,8 @@
 ---
 title: ScreenRecordingSession
 ---
+## ScreenRecordingSession
+
 
 ## Properties
 

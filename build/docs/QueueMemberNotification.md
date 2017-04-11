@@ -1,6 +1,8 @@
 ---
 title: QueueMemberNotification
 ---
+## QueueMemberNotification
+
 
 ## Properties
 

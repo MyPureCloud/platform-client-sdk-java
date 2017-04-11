@@ -1,6 +1,8 @@
 ---
 title: VideoConversationNotificationDetail
 ---
+## VideoConversationNotificationDetail
+
 
 ## Properties
 

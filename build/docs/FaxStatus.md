@@ -1,6 +1,8 @@
 ---
 title: FaxStatus
 ---
+## FaxStatus
+
 
 ## Properties
 

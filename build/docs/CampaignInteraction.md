@@ -1,6 +1,8 @@
 ---
 title: CampaignInteraction
 ---
+## CampaignInteraction
+
 
 ## Properties
 

@@ -1,6 +1,8 @@
 ---
 title: DisconnectReason
 ---
+## DisconnectReason
+
 
 ## Properties
 

@@ -1,6 +1,8 @@
 ---
 title: FacetStatistics
 ---
+## FacetStatistics
+
 
 ## Properties
 

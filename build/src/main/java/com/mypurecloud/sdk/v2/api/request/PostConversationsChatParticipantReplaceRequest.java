@@ -60,17 +60,17 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PostConversationsChatParticipantReplaceRequest {
-	private String chatId;
-	public String getChatId() {
-		return this.chatId;
+	private String conversationId;
+	public String getConversationId() {
+		return this.conversationId;
 	}
 
-	public void setChatId(String chatId) {
-		this.chatId = chatId;
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
 	}
 
-	public PostConversationsChatParticipantReplaceRequest withChatId(String chatId) {
-	    this.setChatId(chatId);
+	public PostConversationsChatParticipantReplaceRequest withConversationId(String conversationId) {
+	    this.setConversationId(conversationId);
 	    return this;
 	}
 
@@ -123,9 +123,9 @@ public class PostConversationsChatParticipantReplaceRequest {
 
     public ApiRequest<TransferRequest> withHttpInfo() {
         
-        // verify the required parameter 'chatId' is set
-        if (this.chatId == null) {
-            throw new IllegalStateException("Missing the required parameter 'chatId' when building request for PostConversationsChatParticipantReplaceRequest.");
+        // verify the required parameter 'conversationId' is set
+        if (this.conversationId == null) {
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PostConversationsChatParticipantReplaceRequest.");
         }
         
         // verify the required parameter 'participantId' is set
@@ -139,8 +139,8 @@ public class PostConversationsChatParticipantReplaceRequest {
         }
         
 
-        return ApiRequestBuilder.create("POST", "/api/v2/conversations/chats/{chatId}/participants/{participantId}/replace")
-                .withPathParameter("chatId", chatId)
+        return ApiRequestBuilder.create("POST", "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace")
+                .withPathParameter("conversationId", conversationId)
         
                 .withPathParameter("participantId", participantId)
         
@@ -156,9 +156,9 @@ public class PostConversationsChatParticipantReplaceRequest {
 		return new Builder();
 	}
 
-	public static Builder builder(String chatId, String participantId, TransferRequest body) {
+	public static Builder builder(String conversationId, String participantId, TransferRequest body) {
 	    return new Builder()
-	            .withRequiredParams(chatId, participantId, body);
+	            .withRequiredParams(conversationId, participantId, body);
 	}
 
 	public static class Builder {
@@ -168,8 +168,8 @@ public class PostConversationsChatParticipantReplaceRequest {
 			request = new PostConversationsChatParticipantReplaceRequest();
 		}
 
-		public Builder withChatId(String chatId) {
-			request.setChatId(chatId);
+		public Builder withConversationId(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 		public Builder withParticipantId(String participantId) {
@@ -181,8 +181,8 @@ public class PostConversationsChatParticipantReplaceRequest {
 			return this;
 		}
 
-		public Builder withRequiredParams(String chatId, String participantId, TransferRequest body) {
-			request.setChatId(chatId);
+		public Builder withRequiredParams(String conversationId, String participantId, TransferRequest body) {
+			request.setConversationId(conversationId);
 			request.setParticipantId(participantId);
 			request.setBody(body);
 			return this;
@@ -191,9 +191,9 @@ public class PostConversationsChatParticipantReplaceRequest {
 
 		public PostConversationsChatParticipantReplaceRequest build() {
             
-            // verify the required parameter 'chatId' is set
-            if (request.chatId == null) {
-                throw new IllegalStateException("Missing the required parameter 'chatId' when building request for PostConversationsChatParticipantReplaceRequest.");
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PostConversationsChatParticipantReplaceRequest.");
             }
             
             // verify the required parameter 'participantId' is set

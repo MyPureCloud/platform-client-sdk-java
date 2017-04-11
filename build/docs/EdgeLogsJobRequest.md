@@ -1,6 +1,8 @@
 ---
 title: EdgeLogsJobRequest
 ---
+## EdgeLogsJobRequest
+
 
 ## Properties
 

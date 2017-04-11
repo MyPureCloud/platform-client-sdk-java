@@ -1,6 +1,8 @@
 ---
 title: FaxSendResponse
 ---
+## FaxSendResponse
+
 
 ## Properties
 

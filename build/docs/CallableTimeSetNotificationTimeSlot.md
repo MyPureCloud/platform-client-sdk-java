@@ -1,6 +1,8 @@
 ---
 title: CallableTimeSetNotificationTimeSlot
 ---
+## CallableTimeSetNotificationTimeSlot
+
 
 ## Properties
 

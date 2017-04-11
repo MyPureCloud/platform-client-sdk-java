@@ -1,6 +1,8 @@
 ---
 title: StatisticalResponse
 ---
+## StatisticalResponse
+
 
 ## Properties
 

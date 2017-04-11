@@ -1,6 +1,8 @@
 ---
 title: ChatConversationNotificationErrorBody
 ---
+## ChatConversationNotificationErrorBody
+
 
 ## Properties
 

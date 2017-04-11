@@ -1,6 +1,8 @@
 ---
 title: Detail
 ---
+## Detail
+
 
 ## Properties
 

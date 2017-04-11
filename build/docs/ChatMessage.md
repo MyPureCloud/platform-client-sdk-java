@@ -1,6 +1,8 @@
 ---
 title: ChatMessage
 ---
+## ChatMessage
+
 
 ## Properties
 

@@ -1,6 +1,8 @@
 ---
 title: DocumentationSearchCriteria
 ---
+## DocumentationSearchCriteria
+
 
 ## Properties
 

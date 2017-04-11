@@ -1,6 +1,8 @@
 ---
 title: LicenseUpdateStatus
 ---
+## LicenseUpdateStatus
+
 
 ## Properties
 

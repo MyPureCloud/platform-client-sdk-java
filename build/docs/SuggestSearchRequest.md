@@ -1,6 +1,8 @@
 ---
 title: SuggestSearchRequest
 ---
+## SuggestSearchRequest
+
 
 ## Properties
 

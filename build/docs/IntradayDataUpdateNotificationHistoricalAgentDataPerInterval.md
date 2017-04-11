@@ -1,6 +1,8 @@
 ---
 title: IntradayDataUpdateNotificationHistoricalAgentDataPerInterval
 ---
+## IntradayDataUpdateNotificationHistoricalAgentDataPerInterval
+
 
 ## Properties
 

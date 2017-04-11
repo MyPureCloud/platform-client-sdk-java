@@ -1,6 +1,8 @@
 ---
 title: PresenceQueryResponse
 ---
+## PresenceQueryResponse
+
 
 ## Properties
 

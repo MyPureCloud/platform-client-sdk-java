@@ -1,6 +1,8 @@
 ---
 title: CallbackConversationNotificationErrorInfoDetails
 ---
+## CallbackConversationNotificationErrorInfoDetails
+
 
 ## Properties
 

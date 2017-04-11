@@ -1,6 +1,8 @@
 ---
 title: CampaignNotificationPhoneColumn
 ---
+## CampaignNotificationPhoneColumn
+
 
 ## Properties
 

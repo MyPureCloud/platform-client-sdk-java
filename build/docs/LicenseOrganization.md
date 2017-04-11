@@ -1,6 +1,8 @@
 ---
 title: LicenseOrganization
 ---
+## LicenseOrganization
+
 
 ## Properties
 

@@ -1,6 +1,8 @@
 ---
 title: ResponseText
 ---
+## ResponseText
+
 
 ## Properties
 

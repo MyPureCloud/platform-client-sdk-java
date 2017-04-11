@@ -139,6 +139,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhonebaseset
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhonesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhonesTemplateRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhysicalinterfacesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteNumberplanRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteNumberplansRequest;
@@ -5374,6 +5375,83 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Phone> response = (ApiResponse<Phone>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get physical interfaces for edges.
+   * Retrieves a list of all configured physical interfaces for a list of edges. Only 100 edges can be requested at a time.
+   * @param edgeIds Comma separated list of Edge Id&#39;s (required)
+   * @return List<DomainPhysicalInterface>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<DomainPhysicalInterface> getTelephonyProvidersEdgesPhysicalinterfaces(String edgeIds) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesPhysicalinterfaces(createGetTelephonyProvidersEdgesPhysicalinterfacesRequest(edgeIds));
+  }
+
+  /**
+   * Get physical interfaces for edges.
+   * Retrieves a list of all configured physical interfaces for a list of edges. Only 100 edges can be requested at a time.
+   * @param edgeIds Comma separated list of Edge Id&#39;s (required)
+   * @return List<DomainPhysicalInterface>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<DomainPhysicalInterface>> getTelephonyProvidersEdgesPhysicalinterfacesWithHttpInfo(String edgeIds) throws IOException {
+    return getTelephonyProvidersEdgesPhysicalinterfaces(createGetTelephonyProvidersEdgesPhysicalinterfacesRequest(edgeIds).withHttpInfo());
+  }
+
+  private GetTelephonyProvidersEdgesPhysicalinterfacesRequest createGetTelephonyProvidersEdgesPhysicalinterfacesRequest(String edgeIds) {
+    return GetTelephonyProvidersEdgesPhysicalinterfacesRequest.builder()
+            .withEdgeIds(edgeIds)
+            .build();
+  }
+
+  /**
+   * Get physical interfaces for edges.
+   * Retrieves a list of all configured physical interfaces for a list of edges. Only 100 edges can be requested at a time.
+   * @param request The request object
+   * @return List<DomainPhysicalInterface>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<DomainPhysicalInterface> getTelephonyProvidersEdgesPhysicalinterfaces(GetTelephonyProvidersEdgesPhysicalinterfacesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<DomainPhysicalInterface>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<DomainPhysicalInterface>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get physical interfaces for edges.
+   * Retrieves a list of all configured physical interfaces for a list of edges. Only 100 edges can be requested at a time.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<DomainPhysicalInterface>> getTelephonyProvidersEdgesPhysicalinterfaces(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<DomainPhysicalInterface>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<DomainPhysicalInterface>> response = (ApiResponse<List<DomainPhysicalInterface>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<DomainPhysicalInterface>> response = (ApiResponse<List<DomainPhysicalInterface>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -1,6 +1,8 @@
 ---
 title: Note
 ---
+## Note
+
 
 ## Properties
 

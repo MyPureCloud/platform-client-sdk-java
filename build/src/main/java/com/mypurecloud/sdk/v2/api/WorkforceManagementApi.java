@@ -13,11 +13,14 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.UserScheduleAdherence;
 import com.mypurecloud.sdk.v2.model.ActivityCodeContainer;
+import com.mypurecloud.sdk.v2.model.WfmIntradayQueueListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequest;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
 import com.mypurecloud.sdk.v2.model.ManagementUnit;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestPatch;
+import com.mypurecloud.sdk.v2.model.IntradayResponse;
+import com.mypurecloud.sdk.v2.model.IntradayQueryDataCommand;
 import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
 import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
@@ -25,6 +28,7 @@ import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitActivitycodesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitIntradayQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitUserTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitUsersRequest;
@@ -32,6 +36,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsR
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementTimeoffrequestRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitIntradayRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitSchedulesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSchedulesRequest;
 
@@ -203,6 +208,87 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ActivityCodeContainer> response = (ApiResponse<ActivityCodeContainer>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get intraday queues for the given date
+   * 
+   * @param muId The muId of the management unit. (required)
+   * @param date ISO-8601 date string with no time or timezone component, interpreted in the configured management unit time zone, e.g. 2017-01-23 (required)
+   * @return WfmIntradayQueueListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmIntradayQueueListing getWorkforcemanagementManagementunitIntradayQueues(String muId, String date) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitIntradayQueues(createGetWorkforcemanagementManagementunitIntradayQueuesRequest(muId, date));
+  }
+
+  /**
+   * Get intraday queues for the given date
+   * 
+   * @param muId The muId of the management unit. (required)
+   * @param date ISO-8601 date string with no time or timezone component, interpreted in the configured management unit time zone, e.g. 2017-01-23 (required)
+   * @return WfmIntradayQueueListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmIntradayQueueListing> getWorkforcemanagementManagementunitIntradayQueuesWithHttpInfo(String muId, String date) throws IOException {
+    return getWorkforcemanagementManagementunitIntradayQueues(createGetWorkforcemanagementManagementunitIntradayQueuesRequest(muId, date).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitIntradayQueuesRequest createGetWorkforcemanagementManagementunitIntradayQueuesRequest(String muId, String date) {
+    return GetWorkforcemanagementManagementunitIntradayQueuesRequest.builder()
+            .withMuId(muId)
+
+            .withDate(date)
+            .build();
+  }
+
+  /**
+   * Get intraday queues for the given date
+   * 
+   * @param request The request object
+   * @return WfmIntradayQueueListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmIntradayQueueListing getWorkforcemanagementManagementunitIntradayQueues(GetWorkforcemanagementManagementunitIntradayQueuesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WfmIntradayQueueListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WfmIntradayQueueListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get intraday queues for the given date
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmIntradayQueueListing> getWorkforcemanagementManagementunitIntradayQueues(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WfmIntradayQueueListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmIntradayQueueListing> response = (ApiResponse<WfmIntradayQueueListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmIntradayQueueListing> response = (ApiResponse<WfmIntradayQueueListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -767,6 +853,87 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get intraday data for the given date for the requested queueIds
+   * 
+   * @param muId The muId of the management unit. (required)
+   * @param body body (optional)
+   * @return IntradayResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IntradayResponse postWorkforcemanagementManagementunitIntraday(String muId, IntradayQueryDataCommand body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitIntraday(createPostWorkforcemanagementManagementunitIntradayRequest(muId, body));
+  }
+
+  /**
+   * Get intraday data for the given date for the requested queueIds
+   * 
+   * @param muId The muId of the management unit. (required)
+   * @param body body (optional)
+   * @return IntradayResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IntradayResponse> postWorkforcemanagementManagementunitIntradayWithHttpInfo(String muId, IntradayQueryDataCommand body) throws IOException {
+    return postWorkforcemanagementManagementunitIntraday(createPostWorkforcemanagementManagementunitIntradayRequest(muId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitIntradayRequest createPostWorkforcemanagementManagementunitIntradayRequest(String muId, IntradayQueryDataCommand body) {
+    return PostWorkforcemanagementManagementunitIntradayRequest.builder()
+            .withMuId(muId)
+
+            .withBody(body)
+            .build();
+  }
+
+  /**
+   * Get intraday data for the given date for the requested queueIds
+   * 
+   * @param request The request object
+   * @return IntradayResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IntradayResponse postWorkforcemanagementManagementunitIntraday(PostWorkforcemanagementManagementunitIntradayRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IntradayResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IntradayResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get intraday data for the given date for the requested queueIds
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IntradayResponse> postWorkforcemanagementManagementunitIntraday(ApiRequest<IntradayQueryDataCommand> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IntradayResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IntradayResponse> response = (ApiResponse<IntradayResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IntradayResponse> response = (ApiResponse<IntradayResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

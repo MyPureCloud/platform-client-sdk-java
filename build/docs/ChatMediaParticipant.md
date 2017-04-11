@@ -1,6 +1,8 @@
 ---
 title: ChatMediaParticipant
 ---
+## ChatMediaParticipant
+
 
 ## Properties
 

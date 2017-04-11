@@ -43,6 +43,8 @@ public class DependencyObject  implements Serializable {
     OUTBOUNDCALLFLOW("OUTBOUNDCALLFLOW"),
     QUEUE("QUEUE"),
     RESPONSE("RESPONSE"),
+    SCHEDULE("SCHEDULE"),
+    SCHEDULEGROUP("SCHEDULEGROUP"),
     SECUREACTION("SECUREACTION"),
     SECURECALLFLOW("SECURECALLFLOW"),
     SYSTEMPROMPT("SYSTEMPROMPT"),
@@ -79,6 +81,7 @@ public class DependencyObject  implements Serializable {
   private TypeEnum type = null;
   private Boolean deleted = null;
   private Boolean updated = null;
+  private Boolean stateUnknown = null;
   private List<Dependency> consumedResources = new ArrayList<Dependency>();
   private List<Dependency> consumingResources = new ArrayList<Dependency>();
   private String selfUri = null;
@@ -178,6 +181,23 @@ public class DependencyObject  implements Serializable {
 
   /**
    **/
+  public DependencyObject stateUnknown(Boolean stateUnknown) {
+    this.stateUnknown = stateUnknown;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("stateUnknown")
+  public Boolean getStateUnknown() {
+    return stateUnknown;
+  }
+  public void setStateUnknown(Boolean stateUnknown) {
+    this.stateUnknown = stateUnknown;
+  }
+
+
+  /**
+   **/
   public DependencyObject consumedResources(List<Dependency> consumedResources) {
     this.consumedResources = consumedResources;
     return this;
@@ -232,6 +252,7 @@ public class DependencyObject  implements Serializable {
         Objects.equals(this.type, dependencyObject.type) &&
         Objects.equals(this.deleted, dependencyObject.deleted) &&
         Objects.equals(this.updated, dependencyObject.updated) &&
+        Objects.equals(this.stateUnknown, dependencyObject.stateUnknown) &&
         Objects.equals(this.consumedResources, dependencyObject.consumedResources) &&
         Objects.equals(this.consumingResources, dependencyObject.consumingResources) &&
         Objects.equals(this.selfUri, dependencyObject.selfUri);
@@ -239,7 +260,7 @@ public class DependencyObject  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, version, type, deleted, updated, consumedResources, consumingResources, selfUri);
+    return Objects.hash(id, name, version, type, deleted, updated, stateUnknown, consumedResources, consumingResources, selfUri);
   }
 
   @Override
@@ -253,6 +274,7 @@ public class DependencyObject  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
+    sb.append("    stateUnknown: ").append(toIndentedString(stateUnknown)).append("\n");
     sb.append("    consumedResources: ").append(toIndentedString(consumedResources)).append("\n");
     sb.append("    consumingResources: ").append(toIndentedString(consumingResources)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

@@ -1,6 +1,8 @@
 ---
 title: IntradayDataUpdateNotificationForecastDataPerInterval
 ---
+## IntradayDataUpdateNotificationForecastDataPerInterval
+
 
 ## Properties
 

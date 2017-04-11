@@ -60,17 +60,17 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class GetConversationsCobrowsesessionParticipantWrapupRequest {
-	private String cobrowseId;
-	public String getCobrowseId() {
-		return this.cobrowseId;
+	private String conversationId;
+	public String getConversationId() {
+		return this.conversationId;
 	}
 
-	public void setCobrowseId(String cobrowseId) {
-		this.cobrowseId = cobrowseId;
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
 	}
 
-	public GetConversationsCobrowsesessionParticipantWrapupRequest withCobrowseId(String cobrowseId) {
-	    this.setCobrowseId(cobrowseId);
+	public GetConversationsCobrowsesessionParticipantWrapupRequest withConversationId(String conversationId) {
+	    this.setConversationId(conversationId);
 	    return this;
 	}
 
@@ -123,9 +123,9 @@ public class GetConversationsCobrowsesessionParticipantWrapupRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
-        // verify the required parameter 'cobrowseId' is set
-        if (this.cobrowseId == null) {
-            throw new IllegalStateException("Missing the required parameter 'cobrowseId' when building request for GetConversationsCobrowsesessionParticipantWrapupRequest.");
+        // verify the required parameter 'conversationId' is set
+        if (this.conversationId == null) {
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetConversationsCobrowsesessionParticipantWrapupRequest.");
         }
         
         // verify the required parameter 'participantId' is set
@@ -134,8 +134,8 @@ public class GetConversationsCobrowsesessionParticipantWrapupRequest {
         }
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/conversations/cobrowsesessions/{cobrowseId}/participants/{participantId}/wrapup")
-                .withPathParameter("cobrowseId", cobrowseId)
+        return ApiRequestBuilder.create("GET", "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup")
+                .withPathParameter("conversationId", conversationId)
         
                 .withPathParameter("participantId", participantId)
         
@@ -151,9 +151,9 @@ public class GetConversationsCobrowsesessionParticipantWrapupRequest {
 		return new Builder();
 	}
 
-	public static Builder builder(String cobrowseId, String participantId) {
+	public static Builder builder(String conversationId, String participantId) {
 	    return new Builder()
-	            .withRequiredParams(cobrowseId, participantId);
+	            .withRequiredParams(conversationId, participantId);
 	}
 
 	public static class Builder {
@@ -163,8 +163,8 @@ public class GetConversationsCobrowsesessionParticipantWrapupRequest {
 			request = new GetConversationsCobrowsesessionParticipantWrapupRequest();
 		}
 
-		public Builder withCobrowseId(String cobrowseId) {
-			request.setCobrowseId(cobrowseId);
+		public Builder withConversationId(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 		public Builder withParticipantId(String participantId) {
@@ -176,8 +176,8 @@ public class GetConversationsCobrowsesessionParticipantWrapupRequest {
 			return this;
 		}
 
-		public Builder withRequiredParams(String cobrowseId, String participantId) {
-			request.setCobrowseId(cobrowseId);
+		public Builder withRequiredParams(String conversationId, String participantId) {
+			request.setConversationId(conversationId);
 			request.setParticipantId(participantId);
 			return this;
 		}
@@ -185,9 +185,9 @@ public class GetConversationsCobrowsesessionParticipantWrapupRequest {
 
 		public GetConversationsCobrowsesessionParticipantWrapupRequest build() {
             
-            // verify the required parameter 'cobrowseId' is set
-            if (request.cobrowseId == null) {
-                throw new IllegalStateException("Missing the required parameter 'cobrowseId' when building request for GetConversationsCobrowsesessionParticipantWrapupRequest.");
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetConversationsCobrowsesessionParticipantWrapupRequest.");
             }
             
             // verify the required parameter 'participantId' is set

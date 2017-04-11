@@ -1,6 +1,8 @@
 ---
 title: DomainLogicalInterface
 ---
+## DomainLogicalInterface
+
 
 ## Properties
 

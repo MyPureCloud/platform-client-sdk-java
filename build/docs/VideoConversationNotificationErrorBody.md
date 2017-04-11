@@ -1,6 +1,8 @@
 ---
 title: VideoConversationNotificationErrorBody
 ---
+## VideoConversationNotificationErrorBody
+
 
 ## Properties
 

@@ -1,6 +1,8 @@
 ---
 title: ContactSort
 ---
+## ContactSort
+
 
 ## Properties
 

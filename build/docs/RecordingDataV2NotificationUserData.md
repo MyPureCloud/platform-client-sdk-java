@@ -1,6 +1,8 @@
 ---
 title: RecordingDataV2NotificationUserData
 ---
+## RecordingDataV2NotificationUserData
+
 
 ## Properties
 

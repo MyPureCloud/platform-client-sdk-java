@@ -1,6 +1,8 @@
 ---
 title: ErrorDetails
 ---
+## ErrorDetails
+
 
 ## Properties
 

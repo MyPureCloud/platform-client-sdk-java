@@ -1,6 +1,8 @@
 ---
 title: AggregateViewData
 ---
+## AggregateViewData
+
 
 ## Properties
 

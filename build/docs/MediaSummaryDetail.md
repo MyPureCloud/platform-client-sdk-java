@@ -1,6 +1,8 @@
 ---
 title: MediaSummaryDetail
 ---
+## MediaSummaryDetail
+
 
 ## Properties
 

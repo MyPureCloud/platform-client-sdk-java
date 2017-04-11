@@ -1,6 +1,8 @@
 ---
 title: CurrentUserScheduleRequestBody
 ---
+## CurrentUserScheduleRequestBody
+
 
 ## Properties
 

@@ -1,6 +1,8 @@
 ---
 title: AggregationQuery
 ---
+## AggregationQuery
+
 
 ## Properties
 

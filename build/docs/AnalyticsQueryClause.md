@@ -1,6 +1,8 @@
 ---
 title: AnalyticsQueryClause
 ---
+## AnalyticsQueryClause
+
 
 ## Properties
 

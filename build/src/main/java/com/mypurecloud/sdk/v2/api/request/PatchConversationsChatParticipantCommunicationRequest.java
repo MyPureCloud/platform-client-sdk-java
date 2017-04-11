@@ -60,17 +60,17 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PatchConversationsChatParticipantCommunicationRequest {
-	private String chatId;
-	public String getChatId() {
-		return this.chatId;
+	private String conversationId;
+	public String getConversationId() {
+		return this.conversationId;
 	}
 
-	public void setChatId(String chatId) {
-		this.chatId = chatId;
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
 	}
 
-	public PatchConversationsChatParticipantCommunicationRequest withChatId(String chatId) {
-	    this.setChatId(chatId);
+	public PatchConversationsChatParticipantCommunicationRequest withConversationId(String conversationId) {
+	    this.setConversationId(conversationId);
 	    return this;
 	}
 
@@ -137,9 +137,9 @@ public class PatchConversationsChatParticipantCommunicationRequest {
 
     public ApiRequest<MediaParticipantRequest> withHttpInfo() {
         
-        // verify the required parameter 'chatId' is set
-        if (this.chatId == null) {
-            throw new IllegalStateException("Missing the required parameter 'chatId' when building request for PatchConversationsChatParticipantCommunicationRequest.");
+        // verify the required parameter 'conversationId' is set
+        if (this.conversationId == null) {
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PatchConversationsChatParticipantCommunicationRequest.");
         }
         
         // verify the required parameter 'participantId' is set
@@ -158,8 +158,8 @@ public class PatchConversationsChatParticipantCommunicationRequest {
         }
         
 
-        return ApiRequestBuilder.create("PATCH", "/api/v2/conversations/chats/{chatId}/participants/{participantId}/communications/{communicationId}")
-                .withPathParameter("chatId", chatId)
+        return ApiRequestBuilder.create("PATCH", "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}")
+                .withPathParameter("conversationId", conversationId)
         
                 .withPathParameter("participantId", participantId)
         
@@ -177,9 +177,9 @@ public class PatchConversationsChatParticipantCommunicationRequest {
 		return new Builder();
 	}
 
-	public static Builder builder(String chatId, String participantId, String communicationId, MediaParticipantRequest body) {
+	public static Builder builder(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) {
 	    return new Builder()
-	            .withRequiredParams(chatId, participantId, communicationId, body);
+	            .withRequiredParams(conversationId, participantId, communicationId, body);
 	}
 
 	public static class Builder {
@@ -189,8 +189,8 @@ public class PatchConversationsChatParticipantCommunicationRequest {
 			request = new PatchConversationsChatParticipantCommunicationRequest();
 		}
 
-		public Builder withChatId(String chatId) {
-			request.setChatId(chatId);
+		public Builder withConversationId(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 		public Builder withParticipantId(String participantId) {
@@ -206,8 +206,8 @@ public class PatchConversationsChatParticipantCommunicationRequest {
 			return this;
 		}
 
-		public Builder withRequiredParams(String chatId, String participantId, String communicationId, MediaParticipantRequest body) {
-			request.setChatId(chatId);
+		public Builder withRequiredParams(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) {
+			request.setConversationId(conversationId);
 			request.setParticipantId(participantId);
 			request.setCommunicationId(communicationId);
 			request.setBody(body);
@@ -217,9 +217,9 @@ public class PatchConversationsChatParticipantCommunicationRequest {
 
 		public PatchConversationsChatParticipantCommunicationRequest build() {
             
-            // verify the required parameter 'chatId' is set
-            if (request.chatId == null) {
-                throw new IllegalStateException("Missing the required parameter 'chatId' when building request for PatchConversationsChatParticipantCommunicationRequest.");
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PatchConversationsChatParticipantCommunicationRequest.");
             }
             
             // verify the required parameter 'participantId' is set

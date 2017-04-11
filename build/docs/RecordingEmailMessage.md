@@ -1,6 +1,8 @@
 ---
 title: RecordingEmailMessage
 ---
+## RecordingEmailMessage
+
 
 ## Properties
 

@@ -1,6 +1,8 @@
 ---
 title: AnalyticsUserPresenceRecord
 ---
+## AnalyticsUserPresenceRecord
+
 
 ## Properties
 

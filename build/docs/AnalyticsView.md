@@ -1,6 +1,8 @@
 ---
 title: AnalyticsView
 ---
+## AnalyticsView
+
 
 ## Properties
 

@@ -1,6 +1,8 @@
 ---
 title: SharedEntity
 ---
+## SharedEntity
+
 
 ## Properties
 

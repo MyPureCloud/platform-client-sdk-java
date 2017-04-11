@@ -1,6 +1,8 @@
 ---
 title: ContentFacetFilterItem
 ---
+## ContentFacetFilterItem
+
 
 ## Properties
 

@@ -1,6 +1,8 @@
 ---
 title: FaxDocument
 ---
+## FaxDocument
+
 
 ## Properties
 

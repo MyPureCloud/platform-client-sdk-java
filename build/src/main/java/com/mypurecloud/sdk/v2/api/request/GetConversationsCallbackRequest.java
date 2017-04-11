@@ -60,17 +60,17 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class GetConversationsCallbackRequest {
-	private String callbackId;
-	public String getCallbackId() {
-		return this.callbackId;
+	private String conversationId;
+	public String getConversationId() {
+		return this.conversationId;
 	}
 
-	public void setCallbackId(String callbackId) {
-		this.callbackId = callbackId;
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
 	}
 
-	public GetConversationsCallbackRequest withCallbackId(String callbackId) {
-	    this.setCallbackId(callbackId);
+	public GetConversationsCallbackRequest withConversationId(String conversationId) {
+	    this.setConversationId(conversationId);
 	    return this;
 	}
 
@@ -95,14 +95,14 @@ public class GetConversationsCallbackRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
-        // verify the required parameter 'callbackId' is set
-        if (this.callbackId == null) {
-            throw new IllegalStateException("Missing the required parameter 'callbackId' when building request for GetConversationsCallbackRequest.");
+        // verify the required parameter 'conversationId' is set
+        if (this.conversationId == null) {
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetConversationsCallbackRequest.");
         }
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/conversations/callbacks/{callbackId}")
-                .withPathParameter("callbackId", callbackId)
+        return ApiRequestBuilder.create("GET", "/api/v2/conversations/callbacks/{conversationId}")
+                .withPathParameter("conversationId", conversationId)
                         .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -114,9 +114,9 @@ public class GetConversationsCallbackRequest {
 		return new Builder();
 	}
 
-	public static Builder builder(String callbackId) {
+	public static Builder builder(String conversationId) {
 	    return new Builder()
-	            .withRequiredParams(callbackId);
+	            .withRequiredParams(conversationId);
 	}
 
 	public static class Builder {
@@ -126,22 +126,22 @@ public class GetConversationsCallbackRequest {
 			request = new GetConversationsCallbackRequest();
 		}
 
-		public Builder withCallbackId(String callbackId) {
-			request.setCallbackId(callbackId);
+		public Builder withConversationId(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 
-		public Builder withRequiredParams(String callbackId) {
-			request.setCallbackId(callbackId);
+		public Builder withRequiredParams(String conversationId) {
+			request.setConversationId(conversationId);
 			return this;
 		}
 
 
 		public GetConversationsCallbackRequest build() {
             
-            // verify the required parameter 'callbackId' is set
-            if (request.callbackId == null) {
-                throw new IllegalStateException("Missing the required parameter 'callbackId' when building request for GetConversationsCallbackRequest.");
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for GetConversationsCallbackRequest.");
             }
             
 			return request;

@@ -1,6 +1,8 @@
 ---
 title: InitiateScreenRecording
 ---
+## InitiateScreenRecording
+
 
 ## Properties
 

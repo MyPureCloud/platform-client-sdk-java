@@ -1,6 +1,8 @@
 ---
 title: AggregationRange
 ---
+## AggregationRange
+
 
 ## Properties
 

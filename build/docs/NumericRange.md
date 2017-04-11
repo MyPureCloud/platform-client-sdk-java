@@ -1,6 +1,8 @@
 ---
 title: NumericRange
 ---
+## NumericRange
+
 
 ## Properties
 

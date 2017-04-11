@@ -1,6 +1,8 @@
 ---
 title: UserScheduleAdherenceUpdateNotificationUser
 ---
+## UserScheduleAdherenceUpdateNotificationUser
+
 
 ## Properties
 

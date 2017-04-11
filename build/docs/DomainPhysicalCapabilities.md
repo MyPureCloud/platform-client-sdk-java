@@ -1,6 +1,8 @@
 ---
 title: DomainPhysicalCapabilities
 ---
+## DomainPhysicalCapabilities
+
 
 ## Properties
 

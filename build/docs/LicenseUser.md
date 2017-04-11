@@ -1,6 +1,8 @@
 ---
 title: LicenseUser
 ---
+## LicenseUser
+
 
 ## Properties
 

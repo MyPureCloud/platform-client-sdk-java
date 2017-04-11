@@ -1,6 +1,8 @@
 ---
 title: InboundDomain
 ---
+## InboundDomain
+
 
 ## Properties
 

@@ -1,6 +1,8 @@
 ---
 title: QueryFacetInfo
 ---
+## QueryFacetInfo
+
 
 ## Properties
 

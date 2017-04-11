@@ -1,6 +1,8 @@
 ---
 title: EdgeLogsJobUploadRequest
 ---
+## EdgeLogsJobUploadRequest
+
 
 ## Properties
 

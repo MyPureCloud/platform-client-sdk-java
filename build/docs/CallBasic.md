@@ -1,6 +1,8 @@
 ---
 title: CallBasic
 ---
+## CallBasic
+
 
 ## Properties
 
@@ -25,6 +27,7 @@ title: CallBasic
 | **disconnectReasons** | [**List&lt;DisconnectReason&gt;**](DisconnectReason.html) | List of reasons that this call was disconnected. This will be set once the call disconnects. |  [optional] |
 | **faxStatus** | [**FaxStatus**](FaxStatus.html) | Extra information on fax transmission. |  [optional] |
 | **provider** | **String** | The source provider for the call. |  [optional] |
+| **scriptId** | **String** | The UUID of the script to use. |  [optional] |
 {: class="table table-striped"}
 
 

@@ -1,6 +1,8 @@
 ---
 title: HeartBeatAlert
 ---
+## HeartBeatAlert
+
 
 ## Properties
 

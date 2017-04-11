@@ -1,6 +1,8 @@
 ---
 title: GeolocationSettings
 ---
+## GeolocationSettings
+
 
 ## Properties
 

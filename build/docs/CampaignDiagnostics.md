@@ -1,6 +1,8 @@
 ---
 title: CampaignDiagnostics
 ---
+## CampaignDiagnostics
+
 
 ## Properties
 

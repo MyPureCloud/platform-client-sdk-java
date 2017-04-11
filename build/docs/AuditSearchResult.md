@@ -1,6 +1,8 @@
 ---
 title: AuditSearchResult
 ---
+## AuditSearchResult
+
 
 ## Properties
 

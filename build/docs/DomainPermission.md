@@ -1,6 +1,8 @@
 ---
 title: DomainPermission
 ---
+## DomainPermission
+
 
 ## Properties
 

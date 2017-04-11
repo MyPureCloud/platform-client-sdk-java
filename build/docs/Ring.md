@@ -1,6 +1,8 @@
 ---
 title: Ring
 ---
+## Ring
+
 
 ## Properties
 

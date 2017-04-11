@@ -1,6 +1,8 @@
 ---
 title: ReportRunEntry
 ---
+## ReportRunEntry
+
 
 ## Properties
 

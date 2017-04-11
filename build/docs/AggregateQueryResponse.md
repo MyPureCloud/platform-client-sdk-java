@@ -1,6 +1,8 @@
 ---
 title: AggregateQueryResponse
 ---
+## AggregateQueryResponse
+
 
 ## Properties
 

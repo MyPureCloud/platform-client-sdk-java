@@ -1,6 +1,8 @@
 ---
 title: SocialConversationNotificationErrorBody
 ---
+## SocialConversationNotificationErrorBody
+
 
 ## Properties
 

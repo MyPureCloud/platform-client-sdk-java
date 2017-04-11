@@ -24,8 +24,8 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
   private Long total = null;
   private String selfUri = null;
   private String firstUri = null;
-  private String previousUri = null;
   private String nextUri = null;
+  private String previousUri = null;
   private String lastUri = null;
   private Integer pageCount = null;
 
@@ -134,23 +134,6 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
 
   /**
    **/
-  public OrphanRecordingListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-
-  /**
-   **/
   public OrphanRecordingListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -163,6 +146,23 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
+  }
+
+
+  /**
+   **/
+  public OrphanRecordingListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
 
@@ -215,15 +215,15 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
         Objects.equals(this.total, orphanRecordingListing.total) &&
         Objects.equals(this.selfUri, orphanRecordingListing.selfUri) &&
         Objects.equals(this.firstUri, orphanRecordingListing.firstUri) &&
-        Objects.equals(this.previousUri, orphanRecordingListing.previousUri) &&
         Objects.equals(this.nextUri, orphanRecordingListing.nextUri) &&
+        Objects.equals(this.previousUri, orphanRecordingListing.previousUri) &&
         Objects.equals(this.lastUri, orphanRecordingListing.lastUri) &&
         Objects.equals(this.pageCount, orphanRecordingListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, previousUri, nextUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, nextUri, previousUri, lastUri, pageCount);
   }
 
   @Override
@@ -237,8 +237,8 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");

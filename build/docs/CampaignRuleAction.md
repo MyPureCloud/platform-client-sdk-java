@@ -1,6 +1,8 @@
 ---
 title: CampaignRuleAction
 ---
+## CampaignRuleAction
+
 
 ## Properties
 

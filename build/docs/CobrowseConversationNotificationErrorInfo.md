@@ -1,6 +1,8 @@
 ---
 title: CobrowseConversationNotificationErrorInfo
 ---
+## CobrowseConversationNotificationErrorInfo
+
 
 ## Properties
 

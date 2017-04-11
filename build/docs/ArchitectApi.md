@@ -524,7 +524,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **String**| Consuming object ID | |
 | **version** | **String**| Consuming object version | |
-| **objectType** | **String**| Consuming object type | [enum: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW] |
+| **objectType** | **String**| Consuming object type | [enum: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW] |
 | **resourceType** | [**List&lt;String&gt;**](String.html)| Types of consumed resources to show | [optional] |
 {: class="table table-striped"}
 
@@ -579,7 +579,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **String**| Consumed object ID | |
-| **objectType** | **String**| Consumed object type (only versioned object types are valid) | [enum: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW] |
+| **objectType** | **String**| Consumed object type (only versioned object types are valid) | [enum: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW] |
 | **resourceType** | [**List&lt;String&gt;**](String.html)| Types of consuming resources to show | [optional] |
 {: class="table table-striped"}
 
@@ -702,7 +702,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **String**| Object ID | |
 | **version** | **String**| Object version | [optional] |
-| **objectType** | **String**| Object type | [optional] [enum: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW] |
+| **objectType** | **String**| Object type | [optional] [enum: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW] |
 | **consumedResources** | **Boolean**| Include resources this item consumes | [optional] |
 | **consumingResources** | **Boolean**| Include resources that consume this item | [optional] |
 | **consumedResourceType** | [**List&lt;String&gt;**](String.html)| Types of consumed resources to return, if consumed resources are requested | [optional] |

@@ -1,6 +1,8 @@
 ---
 title: DomainEdgeSoftwareUpdateDto
 ---
+## DomainEdgeSoftwareUpdateDto
+
 
 ## Properties
 

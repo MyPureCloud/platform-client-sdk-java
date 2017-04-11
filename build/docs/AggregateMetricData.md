@@ -1,6 +1,8 @@
 ---
 title: AggregateMetricData
 ---
+## AggregateMetricData
+
 
 ## Properties
 

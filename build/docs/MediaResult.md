@@ -1,6 +1,8 @@
 ---
 title: MediaResult
 ---
+## MediaResult
+
 
 ## Properties
 
