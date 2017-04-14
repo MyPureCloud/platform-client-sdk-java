@@ -55,10 +55,10 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deletePresencedefinitionAsync(DeletePresencedefinitionRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deletePresencedefinitionAsync(DeletePresencedefinitionRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -89,10 +89,10 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deletePresencedefinitionAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deletePresencedefinitionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -130,10 +130,10 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OrganizationPresence> getPresencedefinitionAsync(GetPresencedefinitionRequest request, AsyncApiCallback<OrganizationPresence> callback) {
+  public Future<OrganizationPresence> getPresencedefinitionAsync(GetPresencedefinitionRequest request, final AsyncApiCallback<OrganizationPresence> callback) {
     try {
-      SettableFuture<OrganizationPresence> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OrganizationPresence> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrganizationPresence>() {}, new AsyncApiCallback<ApiResponse<OrganizationPresence>>() {
         @Override
         public void onCompleted(ApiResponse<OrganizationPresence> response) {
@@ -164,10 +164,10 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OrganizationPresence>> getPresencedefinitionAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrganizationPresence>> callback) {
+  public Future<ApiResponse<OrganizationPresence>> getPresencedefinitionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrganizationPresence>> callback) {
     try {
-      SettableFuture<ApiResponse<OrganizationPresence>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OrganizationPresence>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OrganizationPresence>() {}, new AsyncApiCallback<ApiResponse<OrganizationPresence>>() {
         @Override
         public void onCompleted(ApiResponse<OrganizationPresence> response) {
@@ -205,10 +205,10 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OrganizationPresenceEntityListing> getPresencedefinitionsAsync(GetPresencedefinitionsRequest request, AsyncApiCallback<OrganizationPresenceEntityListing> callback) {
+  public Future<OrganizationPresenceEntityListing> getPresencedefinitionsAsync(GetPresencedefinitionsRequest request, final AsyncApiCallback<OrganizationPresenceEntityListing> callback) {
     try {
-      SettableFuture<OrganizationPresenceEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OrganizationPresenceEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrganizationPresenceEntityListing>() {}, new AsyncApiCallback<ApiResponse<OrganizationPresenceEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<OrganizationPresenceEntityListing> response) {
@@ -239,10 +239,10 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OrganizationPresenceEntityListing>> getPresencedefinitionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrganizationPresenceEntityListing>> callback) {
+  public Future<ApiResponse<OrganizationPresenceEntityListing>> getPresencedefinitionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrganizationPresenceEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<OrganizationPresenceEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OrganizationPresenceEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OrganizationPresenceEntityListing>() {}, new AsyncApiCallback<ApiResponse<OrganizationPresenceEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<OrganizationPresenceEntityListing> response) {
@@ -280,10 +280,10 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<SystemPresence>> getSystempresencesAsync(GetSystempresencesRequest request, AsyncApiCallback<List<SystemPresence>> callback) {
+  public Future<List<SystemPresence>> getSystempresencesAsync(GetSystempresencesRequest request, final AsyncApiCallback<List<SystemPresence>> callback) {
     try {
-      SettableFuture<List<SystemPresence>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<SystemPresence>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<SystemPresence>>() {}, new AsyncApiCallback<ApiResponse<List<SystemPresence>>>() {
         @Override
         public void onCompleted(ApiResponse<List<SystemPresence>> response) {
@@ -314,10 +314,10 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<SystemPresence>>> getSystempresencesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<SystemPresence>>> callback) {
+  public Future<ApiResponse<List<SystemPresence>>> getSystempresencesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<SystemPresence>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<SystemPresence>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<SystemPresence>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<SystemPresence>>() {}, new AsyncApiCallback<ApiResponse<List<SystemPresence>>>() {
         @Override
         public void onCompleted(ApiResponse<List<SystemPresence>> response) {
@@ -355,10 +355,10 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UserPresence> getUserPresenceAsync(GetUserPresenceRequest request, AsyncApiCallback<UserPresence> callback) {
+  public Future<UserPresence> getUserPresenceAsync(GetUserPresenceRequest request, final AsyncApiCallback<UserPresence> callback) {
     try {
-      SettableFuture<UserPresence> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<UserPresence> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserPresence>() {}, new AsyncApiCallback<ApiResponse<UserPresence>>() {
         @Override
         public void onCompleted(ApiResponse<UserPresence> response) {
@@ -389,10 +389,10 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UserPresence>> getUserPresenceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserPresence>> callback) {
+  public Future<ApiResponse<UserPresence>> getUserPresenceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserPresence>> callback) {
     try {
-      SettableFuture<ApiResponse<UserPresence>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<UserPresence>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<UserPresence>() {}, new AsyncApiCallback<ApiResponse<UserPresence>>() {
         @Override
         public void onCompleted(ApiResponse<UserPresence> response) {
@@ -430,10 +430,10 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UserPresence> patchUserPresenceAsync(PatchUserPresenceRequest request, AsyncApiCallback<UserPresence> callback) {
+  public Future<UserPresence> patchUserPresenceAsync(PatchUserPresenceRequest request, final AsyncApiCallback<UserPresence> callback) {
     try {
-      SettableFuture<UserPresence> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<UserPresence> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserPresence>() {}, new AsyncApiCallback<ApiResponse<UserPresence>>() {
         @Override
         public void onCompleted(ApiResponse<UserPresence> response) {
@@ -464,10 +464,10 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UserPresence>> patchUserPresenceAsync(ApiRequest<UserPresence> request, AsyncApiCallback<ApiResponse<UserPresence>> callback) {
+  public Future<ApiResponse<UserPresence>> patchUserPresenceAsync(ApiRequest<UserPresence> request, final AsyncApiCallback<ApiResponse<UserPresence>> callback) {
     try {
-      SettableFuture<ApiResponse<UserPresence>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<UserPresence>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<UserPresence>() {}, new AsyncApiCallback<ApiResponse<UserPresence>>() {
         @Override
         public void onCompleted(ApiResponse<UserPresence> response) {
@@ -505,10 +505,10 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OrganizationPresence> postPresencedefinitionsAsync(PostPresencedefinitionsRequest request, AsyncApiCallback<OrganizationPresence> callback) {
+  public Future<OrganizationPresence> postPresencedefinitionsAsync(PostPresencedefinitionsRequest request, final AsyncApiCallback<OrganizationPresence> callback) {
     try {
-      SettableFuture<OrganizationPresence> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OrganizationPresence> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrganizationPresence>() {}, new AsyncApiCallback<ApiResponse<OrganizationPresence>>() {
         @Override
         public void onCompleted(ApiResponse<OrganizationPresence> response) {
@@ -539,10 +539,10 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OrganizationPresence>> postPresencedefinitionsAsync(ApiRequest<OrganizationPresence> request, AsyncApiCallback<ApiResponse<OrganizationPresence>> callback) {
+  public Future<ApiResponse<OrganizationPresence>> postPresencedefinitionsAsync(ApiRequest<OrganizationPresence> request, final AsyncApiCallback<ApiResponse<OrganizationPresence>> callback) {
     try {
-      SettableFuture<ApiResponse<OrganizationPresence>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OrganizationPresence>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OrganizationPresence>() {}, new AsyncApiCallback<ApiResponse<OrganizationPresence>>() {
         @Override
         public void onCompleted(ApiResponse<OrganizationPresence> response) {
@@ -580,10 +580,10 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OrganizationPresence> putPresencedefinitionAsync(PutPresencedefinitionRequest request, AsyncApiCallback<OrganizationPresence> callback) {
+  public Future<OrganizationPresence> putPresencedefinitionAsync(PutPresencedefinitionRequest request, final AsyncApiCallback<OrganizationPresence> callback) {
     try {
-      SettableFuture<OrganizationPresence> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OrganizationPresence> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrganizationPresence>() {}, new AsyncApiCallback<ApiResponse<OrganizationPresence>>() {
         @Override
         public void onCompleted(ApiResponse<OrganizationPresence> response) {
@@ -614,10 +614,10 @@ public class PresenceApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OrganizationPresence>> putPresencedefinitionAsync(ApiRequest<OrganizationPresence> request, AsyncApiCallback<ApiResponse<OrganizationPresence>> callback) {
+  public Future<ApiResponse<OrganizationPresence>> putPresencedefinitionAsync(ApiRequest<OrganizationPresence> request, final AsyncApiCallback<ApiResponse<OrganizationPresence>> callback) {
     try {
-      SettableFuture<ApiResponse<OrganizationPresence>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OrganizationPresence>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OrganizationPresence>() {}, new AsyncApiCallback<ApiResponse<OrganizationPresence>>() {
         @Override
         public void onCompleted(ApiResponse<OrganizationPresence> response) {

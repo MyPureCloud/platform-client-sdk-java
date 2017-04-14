@@ -28,7 +28,7 @@ public class AsyncHttpClientConnectorProvider implements ApiClientConnectorProvi
             builder.setRequestTimeout(connectionTimeout);
         }
 
-        Proxy proxy = properties.getProperty(ApiClientConnectorProperty.PROXY, Proxy.class, null);
+        final Proxy proxy = properties.getProperty(ApiClientConnectorProperty.PROXY, Proxy.class, null);
         if (proxy != null) {
             ProxySelector proxySelector = new ProxySelector() {
                 @Override

@@ -93,10 +93,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteConversationRecordingAnnotationAsync(DeleteConversationRecordingAnnotationRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteConversationRecordingAnnotationAsync(DeleteConversationRecordingAnnotationRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -127,10 +127,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteConversationRecordingAnnotationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteConversationRecordingAnnotationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -168,10 +168,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OrphanRecording> deleteOrphanrecordingAsync(DeleteOrphanrecordingRequest request, AsyncApiCallback<OrphanRecording> callback) {
+  public Future<OrphanRecording> deleteOrphanrecordingAsync(DeleteOrphanrecordingRequest request, final AsyncApiCallback<OrphanRecording> callback) {
     try {
-      SettableFuture<OrphanRecording> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OrphanRecording> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrphanRecording>() {}, new AsyncApiCallback<ApiResponse<OrphanRecording>>() {
         @Override
         public void onCompleted(ApiResponse<OrphanRecording> response) {
@@ -202,10 +202,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OrphanRecording>> deleteOrphanrecordingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrphanRecording>> callback) {
+  public Future<ApiResponse<OrphanRecording>> deleteOrphanrecordingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrphanRecording>> callback) {
     try {
-      SettableFuture<ApiResponse<OrphanRecording>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OrphanRecording>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OrphanRecording>() {}, new AsyncApiCallback<ApiResponse<OrphanRecording>>() {
         @Override
         public void onCompleted(ApiResponse<OrphanRecording> response) {
@@ -243,10 +243,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteRecordingMediaretentionpoliciesAsync(DeleteRecordingMediaretentionpoliciesRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteRecordingMediaretentionpoliciesAsync(DeleteRecordingMediaretentionpoliciesRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -277,10 +277,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteRecordingMediaretentionpoliciesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteRecordingMediaretentionpoliciesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -318,10 +318,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteRecordingMediaretentionpolicyAsync(DeleteRecordingMediaretentionpolicyRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteRecordingMediaretentionpolicyAsync(DeleteRecordingMediaretentionpolicyRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -352,10 +352,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteRecordingMediaretentionpolicyAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteRecordingMediaretentionpolicyAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -393,10 +393,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Recording> getConversationRecordingAsync(GetConversationRecordingRequest request, AsyncApiCallback<Recording> callback) {
+  public Future<Recording> getConversationRecordingAsync(GetConversationRecordingRequest request, final AsyncApiCallback<Recording> callback) {
     try {
-      SettableFuture<Recording> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Recording> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Recording>() {}, new AsyncApiCallback<ApiResponse<Recording>>() {
         @Override
         public void onCompleted(ApiResponse<Recording> response) {
@@ -427,10 +427,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Recording>> getConversationRecordingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Recording>> callback) {
+  public Future<ApiResponse<Recording>> getConversationRecordingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Recording>> callback) {
     try {
-      SettableFuture<ApiResponse<Recording>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Recording>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Recording>() {}, new AsyncApiCallback<ApiResponse<Recording>>() {
         @Override
         public void onCompleted(ApiResponse<Recording> response) {
@@ -468,10 +468,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Annotation> getConversationRecordingAnnotationAsync(GetConversationRecordingAnnotationRequest request, AsyncApiCallback<Annotation> callback) {
+  public Future<Annotation> getConversationRecordingAnnotationAsync(GetConversationRecordingAnnotationRequest request, final AsyncApiCallback<Annotation> callback) {
     try {
-      SettableFuture<Annotation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Annotation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Annotation>() {}, new AsyncApiCallback<ApiResponse<Annotation>>() {
         @Override
         public void onCompleted(ApiResponse<Annotation> response) {
@@ -502,10 +502,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Annotation>> getConversationRecordingAnnotationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Annotation>> callback) {
+  public Future<ApiResponse<Annotation>> getConversationRecordingAnnotationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Annotation>> callback) {
     try {
-      SettableFuture<ApiResponse<Annotation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Annotation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Annotation>() {}, new AsyncApiCallback<ApiResponse<Annotation>>() {
         @Override
         public void onCompleted(ApiResponse<Annotation> response) {
@@ -543,10 +543,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<Annotation>> getConversationRecordingAnnotationsAsync(GetConversationRecordingAnnotationsRequest request, AsyncApiCallback<List<Annotation>> callback) {
+  public Future<List<Annotation>> getConversationRecordingAnnotationsAsync(GetConversationRecordingAnnotationsRequest request, final AsyncApiCallback<List<Annotation>> callback) {
     try {
-      SettableFuture<List<Annotation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<Annotation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<Annotation>>() {}, new AsyncApiCallback<ApiResponse<List<Annotation>>>() {
         @Override
         public void onCompleted(ApiResponse<List<Annotation>> response) {
@@ -577,10 +577,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<Annotation>>> getConversationRecordingAnnotationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<Annotation>>> callback) {
+  public Future<ApiResponse<List<Annotation>>> getConversationRecordingAnnotationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<Annotation>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<Annotation>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<Annotation>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<Annotation>>() {}, new AsyncApiCallback<ApiResponse<List<Annotation>>>() {
         @Override
         public void onCompleted(ApiResponse<List<Annotation>> response) {
@@ -618,10 +618,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<Recording>> getConversationRecordingsAsync(GetConversationRecordingsRequest request, AsyncApiCallback<List<Recording>> callback) {
+  public Future<List<Recording>> getConversationRecordingsAsync(GetConversationRecordingsRequest request, final AsyncApiCallback<List<Recording>> callback) {
     try {
-      SettableFuture<List<Recording>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<Recording>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<Recording>>() {}, new AsyncApiCallback<ApiResponse<List<Recording>>>() {
         @Override
         public void onCompleted(ApiResponse<List<Recording>> response) {
@@ -652,10 +652,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<Recording>>> getConversationRecordingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<Recording>>> callback) {
+  public Future<ApiResponse<List<Recording>>> getConversationRecordingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<Recording>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<Recording>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<Recording>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<Recording>>() {}, new AsyncApiCallback<ApiResponse<List<Recording>>>() {
         @Override
         public void onCompleted(ApiResponse<List<Recording>> response) {
@@ -693,10 +693,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OrphanRecording> getOrphanrecordingAsync(GetOrphanrecordingRequest request, AsyncApiCallback<OrphanRecording> callback) {
+  public Future<OrphanRecording> getOrphanrecordingAsync(GetOrphanrecordingRequest request, final AsyncApiCallback<OrphanRecording> callback) {
     try {
-      SettableFuture<OrphanRecording> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OrphanRecording> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrphanRecording>() {}, new AsyncApiCallback<ApiResponse<OrphanRecording>>() {
         @Override
         public void onCompleted(ApiResponse<OrphanRecording> response) {
@@ -727,10 +727,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OrphanRecording>> getOrphanrecordingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrphanRecording>> callback) {
+  public Future<ApiResponse<OrphanRecording>> getOrphanrecordingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrphanRecording>> callback) {
     try {
-      SettableFuture<ApiResponse<OrphanRecording>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OrphanRecording>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OrphanRecording>() {}, new AsyncApiCallback<ApiResponse<OrphanRecording>>() {
         @Override
         public void onCompleted(ApiResponse<OrphanRecording> response) {
@@ -768,10 +768,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Recording> getOrphanrecordingMediaAsync(GetOrphanrecordingMediaRequest request, AsyncApiCallback<Recording> callback) {
+  public Future<Recording> getOrphanrecordingMediaAsync(GetOrphanrecordingMediaRequest request, final AsyncApiCallback<Recording> callback) {
     try {
-      SettableFuture<Recording> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Recording> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Recording>() {}, new AsyncApiCallback<ApiResponse<Recording>>() {
         @Override
         public void onCompleted(ApiResponse<Recording> response) {
@@ -802,10 +802,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Recording>> getOrphanrecordingMediaAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Recording>> callback) {
+  public Future<ApiResponse<Recording>> getOrphanrecordingMediaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Recording>> callback) {
     try {
-      SettableFuture<ApiResponse<Recording>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Recording>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Recording>() {}, new AsyncApiCallback<ApiResponse<Recording>>() {
         @Override
         public void onCompleted(ApiResponse<Recording> response) {
@@ -843,10 +843,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OrphanRecordingListing> getOrphanrecordingsAsync(GetOrphanrecordingsRequest request, AsyncApiCallback<OrphanRecordingListing> callback) {
+  public Future<OrphanRecordingListing> getOrphanrecordingsAsync(GetOrphanrecordingsRequest request, final AsyncApiCallback<OrphanRecordingListing> callback) {
     try {
-      SettableFuture<OrphanRecordingListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OrphanRecordingListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrphanRecordingListing>() {}, new AsyncApiCallback<ApiResponse<OrphanRecordingListing>>() {
         @Override
         public void onCompleted(ApiResponse<OrphanRecordingListing> response) {
@@ -877,10 +877,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OrphanRecordingListing>> getOrphanrecordingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrphanRecordingListing>> callback) {
+  public Future<ApiResponse<OrphanRecordingListing>> getOrphanrecordingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrphanRecordingListing>> callback) {
     try {
-      SettableFuture<ApiResponse<OrphanRecordingListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OrphanRecordingListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OrphanRecordingListing>() {}, new AsyncApiCallback<ApiResponse<OrphanRecordingListing>>() {
         @Override
         public void onCompleted(ApiResponse<OrphanRecordingListing> response) {
@@ -918,10 +918,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<LocalEncryptionConfiguration> getRecordingLocalkeysSettingAsync(GetRecordingLocalkeysSettingRequest request, AsyncApiCallback<LocalEncryptionConfiguration> callback) {
+  public Future<LocalEncryptionConfiguration> getRecordingLocalkeysSettingAsync(GetRecordingLocalkeysSettingRequest request, final AsyncApiCallback<LocalEncryptionConfiguration> callback) {
     try {
-      SettableFuture<LocalEncryptionConfiguration> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<LocalEncryptionConfiguration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>>() {
         @Override
         public void onCompleted(ApiResponse<LocalEncryptionConfiguration> response) {
@@ -952,10 +952,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LocalEncryptionConfiguration>> getRecordingLocalkeysSettingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>> callback) {
+  public Future<ApiResponse<LocalEncryptionConfiguration>> getRecordingLocalkeysSettingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>> callback) {
     try {
-      SettableFuture<ApiResponse<LocalEncryptionConfiguration>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<LocalEncryptionConfiguration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<LocalEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>>() {
         @Override
         public void onCompleted(ApiResponse<LocalEncryptionConfiguration> response) {
@@ -993,10 +993,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<LocalEncryptionConfigurationListing> getRecordingLocalkeysSettingsAsync(GetRecordingLocalkeysSettingsRequest request, AsyncApiCallback<LocalEncryptionConfigurationListing> callback) {
+  public Future<LocalEncryptionConfigurationListing> getRecordingLocalkeysSettingsAsync(GetRecordingLocalkeysSettingsRequest request, final AsyncApiCallback<LocalEncryptionConfigurationListing> callback) {
     try {
-      SettableFuture<LocalEncryptionConfigurationListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<LocalEncryptionConfigurationListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LocalEncryptionConfigurationListing>() {}, new AsyncApiCallback<ApiResponse<LocalEncryptionConfigurationListing>>() {
         @Override
         public void onCompleted(ApiResponse<LocalEncryptionConfigurationListing> response) {
@@ -1027,10 +1027,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LocalEncryptionConfigurationListing>> getRecordingLocalkeysSettingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LocalEncryptionConfigurationListing>> callback) {
+  public Future<ApiResponse<LocalEncryptionConfigurationListing>> getRecordingLocalkeysSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LocalEncryptionConfigurationListing>> callback) {
     try {
-      SettableFuture<ApiResponse<LocalEncryptionConfigurationListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<LocalEncryptionConfigurationListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<LocalEncryptionConfigurationListing>() {}, new AsyncApiCallback<ApiResponse<LocalEncryptionConfigurationListing>>() {
         @Override
         public void onCompleted(ApiResponse<LocalEncryptionConfigurationListing> response) {
@@ -1068,10 +1068,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<PolicyEntityListing> getRecordingMediaretentionpoliciesAsync(GetRecordingMediaretentionpoliciesRequest request, AsyncApiCallback<PolicyEntityListing> callback) {
+  public Future<PolicyEntityListing> getRecordingMediaretentionpoliciesAsync(GetRecordingMediaretentionpoliciesRequest request, final AsyncApiCallback<PolicyEntityListing> callback) {
     try {
-      SettableFuture<PolicyEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<PolicyEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PolicyEntityListing>() {}, new AsyncApiCallback<ApiResponse<PolicyEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<PolicyEntityListing> response) {
@@ -1102,10 +1102,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<PolicyEntityListing>> getRecordingMediaretentionpoliciesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PolicyEntityListing>> callback) {
+  public Future<ApiResponse<PolicyEntityListing>> getRecordingMediaretentionpoliciesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PolicyEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<PolicyEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<PolicyEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<PolicyEntityListing>() {}, new AsyncApiCallback<ApiResponse<PolicyEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<PolicyEntityListing> response) {
@@ -1143,10 +1143,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Policy> getRecordingMediaretentionpolicyAsync(GetRecordingMediaretentionpolicyRequest request, AsyncApiCallback<Policy> callback) {
+  public Future<Policy> getRecordingMediaretentionpolicyAsync(GetRecordingMediaretentionpolicyRequest request, final AsyncApiCallback<Policy> callback) {
     try {
-      SettableFuture<Policy> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Policy> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Policy>() {}, new AsyncApiCallback<ApiResponse<Policy>>() {
         @Override
         public void onCompleted(ApiResponse<Policy> response) {
@@ -1177,10 +1177,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Policy>> getRecordingMediaretentionpolicyAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Policy>> callback) {
+  public Future<ApiResponse<Policy>> getRecordingMediaretentionpolicyAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Policy>> callback) {
     try {
-      SettableFuture<ApiResponse<Policy>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Policy>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Policy>() {}, new AsyncApiCallback<ApiResponse<Policy>>() {
         @Override
         public void onCompleted(ApiResponse<Policy> response) {
@@ -1218,10 +1218,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EncryptionKeyEntityListing> getRecordingRecordingkeysAsync(GetRecordingRecordingkeysRequest request, AsyncApiCallback<EncryptionKeyEntityListing> callback) {
+  public Future<EncryptionKeyEntityListing> getRecordingRecordingkeysAsync(GetRecordingRecordingkeysRequest request, final AsyncApiCallback<EncryptionKeyEntityListing> callback) {
     try {
-      SettableFuture<EncryptionKeyEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EncryptionKeyEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EncryptionKeyEntityListing>() {}, new AsyncApiCallback<ApiResponse<EncryptionKeyEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<EncryptionKeyEntityListing> response) {
@@ -1252,10 +1252,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EncryptionKeyEntityListing>> getRecordingRecordingkeysAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EncryptionKeyEntityListing>> callback) {
+  public Future<ApiResponse<EncryptionKeyEntityListing>> getRecordingRecordingkeysAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EncryptionKeyEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<EncryptionKeyEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EncryptionKeyEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EncryptionKeyEntityListing>() {}, new AsyncApiCallback<ApiResponse<EncryptionKeyEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<EncryptionKeyEntityListing> response) {
@@ -1293,10 +1293,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<KeyRotationSchedule> getRecordingRecordingkeysRotationscheduleAsync(GetRecordingRecordingkeysRotationscheduleRequest request, AsyncApiCallback<KeyRotationSchedule> callback) {
+  public Future<KeyRotationSchedule> getRecordingRecordingkeysRotationscheduleAsync(GetRecordingRecordingkeysRotationscheduleRequest request, final AsyncApiCallback<KeyRotationSchedule> callback) {
     try {
-      SettableFuture<KeyRotationSchedule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<KeyRotationSchedule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KeyRotationSchedule>() {}, new AsyncApiCallback<ApiResponse<KeyRotationSchedule>>() {
         @Override
         public void onCompleted(ApiResponse<KeyRotationSchedule> response) {
@@ -1327,10 +1327,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<KeyRotationSchedule>> getRecordingRecordingkeysRotationscheduleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<KeyRotationSchedule>> callback) {
+  public Future<ApiResponse<KeyRotationSchedule>> getRecordingRecordingkeysRotationscheduleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KeyRotationSchedule>> callback) {
     try {
-      SettableFuture<ApiResponse<KeyRotationSchedule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<KeyRotationSchedule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<KeyRotationSchedule>() {}, new AsyncApiCallback<ApiResponse<KeyRotationSchedule>>() {
         @Override
         public void onCompleted(ApiResponse<KeyRotationSchedule> response) {
@@ -1368,10 +1368,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<RecordingSettings> getRecordingSettingsAsync(GetRecordingSettingsRequest request, AsyncApiCallback<RecordingSettings> callback) {
+  public Future<RecordingSettings> getRecordingSettingsAsync(GetRecordingSettingsRequest request, final AsyncApiCallback<RecordingSettings> callback) {
     try {
-      SettableFuture<RecordingSettings> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<RecordingSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RecordingSettings>() {}, new AsyncApiCallback<ApiResponse<RecordingSettings>>() {
         @Override
         public void onCompleted(ApiResponse<RecordingSettings> response) {
@@ -1402,10 +1402,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<RecordingSettings>> getRecordingSettingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RecordingSettings>> callback) {
+  public Future<ApiResponse<RecordingSettings>> getRecordingSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RecordingSettings>> callback) {
     try {
-      SettableFuture<ApiResponse<RecordingSettings>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<RecordingSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<RecordingSettings>() {}, new AsyncApiCallback<ApiResponse<RecordingSettings>>() {
         @Override
         public void onCompleted(ApiResponse<RecordingSettings> response) {
@@ -1443,10 +1443,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ScreenRecordingSessionListing> getRecordingsScreensessionsAsync(GetRecordingsScreensessionsRequest request, AsyncApiCallback<ScreenRecordingSessionListing> callback) {
+  public Future<ScreenRecordingSessionListing> getRecordingsScreensessionsAsync(GetRecordingsScreensessionsRequest request, final AsyncApiCallback<ScreenRecordingSessionListing> callback) {
     try {
-      SettableFuture<ScreenRecordingSessionListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ScreenRecordingSessionListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScreenRecordingSessionListing>() {}, new AsyncApiCallback<ApiResponse<ScreenRecordingSessionListing>>() {
         @Override
         public void onCompleted(ApiResponse<ScreenRecordingSessionListing> response) {
@@ -1477,10 +1477,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ScreenRecordingSessionListing>> getRecordingsScreensessionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ScreenRecordingSessionListing>> callback) {
+  public Future<ApiResponse<ScreenRecordingSessionListing>> getRecordingsScreensessionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScreenRecordingSessionListing>> callback) {
     try {
-      SettableFuture<ApiResponse<ScreenRecordingSessionListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ScreenRecordingSessionListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ScreenRecordingSessionListing>() {}, new AsyncApiCallback<ApiResponse<ScreenRecordingSessionListing>>() {
         @Override
         public void onCompleted(ApiResponse<ScreenRecordingSessionListing> response) {
@@ -1518,10 +1518,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Policy> patchRecordingMediaretentionpolicyAsync(PatchRecordingMediaretentionpolicyRequest request, AsyncApiCallback<Policy> callback) {
+  public Future<Policy> patchRecordingMediaretentionpolicyAsync(PatchRecordingMediaretentionpolicyRequest request, final AsyncApiCallback<Policy> callback) {
     try {
-      SettableFuture<Policy> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Policy> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Policy>() {}, new AsyncApiCallback<ApiResponse<Policy>>() {
         @Override
         public void onCompleted(ApiResponse<Policy> response) {
@@ -1552,10 +1552,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Policy>> patchRecordingMediaretentionpolicyAsync(ApiRequest<Policy> request, AsyncApiCallback<ApiResponse<Policy>> callback) {
+  public Future<ApiResponse<Policy>> patchRecordingMediaretentionpolicyAsync(ApiRequest<Policy> request, final AsyncApiCallback<ApiResponse<Policy>> callback) {
     try {
-      SettableFuture<ApiResponse<Policy>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Policy>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Policy>() {}, new AsyncApiCallback<ApiResponse<Policy>>() {
         @Override
         public void onCompleted(ApiResponse<Policy> response) {
@@ -1593,10 +1593,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> patchRecordingsScreensessionAsync(PatchRecordingsScreensessionRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> patchRecordingsScreensessionAsync(PatchRecordingsScreensessionRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -1627,10 +1627,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> patchRecordingsScreensessionAsync(ApiRequest<ScreenRecordingSessionRequest> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> patchRecordingsScreensessionAsync(ApiRequest<ScreenRecordingSessionRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -1668,10 +1668,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Annotation> postConversationRecordingAnnotationsAsync(PostConversationRecordingAnnotationsRequest request, AsyncApiCallback<Annotation> callback) {
+  public Future<Annotation> postConversationRecordingAnnotationsAsync(PostConversationRecordingAnnotationsRequest request, final AsyncApiCallback<Annotation> callback) {
     try {
-      SettableFuture<Annotation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Annotation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Annotation>() {}, new AsyncApiCallback<ApiResponse<Annotation>>() {
         @Override
         public void onCompleted(ApiResponse<Annotation> response) {
@@ -1702,10 +1702,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Annotation>> postConversationRecordingAnnotationsAsync(ApiRequest<Annotation> request, AsyncApiCallback<ApiResponse<Annotation>> callback) {
+  public Future<ApiResponse<Annotation>> postConversationRecordingAnnotationsAsync(ApiRequest<Annotation> request, final AsyncApiCallback<ApiResponse<Annotation>> callback) {
     try {
-      SettableFuture<ApiResponse<Annotation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Annotation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Annotation>() {}, new AsyncApiCallback<ApiResponse<Annotation>>() {
         @Override
         public void onCompleted(ApiResponse<Annotation> response) {
@@ -1743,10 +1743,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EncryptionKey> postRecordingLocalkeysAsync(PostRecordingLocalkeysRequest request, AsyncApiCallback<EncryptionKey> callback) {
+  public Future<EncryptionKey> postRecordingLocalkeysAsync(PostRecordingLocalkeysRequest request, final AsyncApiCallback<EncryptionKey> callback) {
     try {
-      SettableFuture<EncryptionKey> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EncryptionKey> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EncryptionKey>() {}, new AsyncApiCallback<ApiResponse<EncryptionKey>>() {
         @Override
         public void onCompleted(ApiResponse<EncryptionKey> response) {
@@ -1777,10 +1777,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EncryptionKey>> postRecordingLocalkeysAsync(ApiRequest<LocalEncryptionKeyRequest> request, AsyncApiCallback<ApiResponse<EncryptionKey>> callback) {
+  public Future<ApiResponse<EncryptionKey>> postRecordingLocalkeysAsync(ApiRequest<LocalEncryptionKeyRequest> request, final AsyncApiCallback<ApiResponse<EncryptionKey>> callback) {
     try {
-      SettableFuture<ApiResponse<EncryptionKey>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EncryptionKey>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EncryptionKey>() {}, new AsyncApiCallback<ApiResponse<EncryptionKey>>() {
         @Override
         public void onCompleted(ApiResponse<EncryptionKey> response) {
@@ -1818,10 +1818,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<LocalEncryptionConfiguration> postRecordingLocalkeysSettingsAsync(PostRecordingLocalkeysSettingsRequest request, AsyncApiCallback<LocalEncryptionConfiguration> callback) {
+  public Future<LocalEncryptionConfiguration> postRecordingLocalkeysSettingsAsync(PostRecordingLocalkeysSettingsRequest request, final AsyncApiCallback<LocalEncryptionConfiguration> callback) {
     try {
-      SettableFuture<LocalEncryptionConfiguration> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<LocalEncryptionConfiguration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>>() {
         @Override
         public void onCompleted(ApiResponse<LocalEncryptionConfiguration> response) {
@@ -1852,10 +1852,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LocalEncryptionConfiguration>> postRecordingLocalkeysSettingsAsync(ApiRequest<LocalEncryptionConfiguration> request, AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>> callback) {
+  public Future<ApiResponse<LocalEncryptionConfiguration>> postRecordingLocalkeysSettingsAsync(ApiRequest<LocalEncryptionConfiguration> request, final AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>> callback) {
     try {
-      SettableFuture<ApiResponse<LocalEncryptionConfiguration>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<LocalEncryptionConfiguration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<LocalEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>>() {
         @Override
         public void onCompleted(ApiResponse<LocalEncryptionConfiguration> response) {
@@ -1893,10 +1893,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Policy> postRecordingMediaretentionpoliciesAsync(PostRecordingMediaretentionpoliciesRequest request, AsyncApiCallback<Policy> callback) {
+  public Future<Policy> postRecordingMediaretentionpoliciesAsync(PostRecordingMediaretentionpoliciesRequest request, final AsyncApiCallback<Policy> callback) {
     try {
-      SettableFuture<Policy> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Policy> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Policy>() {}, new AsyncApiCallback<ApiResponse<Policy>>() {
         @Override
         public void onCompleted(ApiResponse<Policy> response) {
@@ -1927,10 +1927,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Policy>> postRecordingMediaretentionpoliciesAsync(ApiRequest<PolicyCreate> request, AsyncApiCallback<ApiResponse<Policy>> callback) {
+  public Future<ApiResponse<Policy>> postRecordingMediaretentionpoliciesAsync(ApiRequest<PolicyCreate> request, final AsyncApiCallback<ApiResponse<Policy>> callback) {
     try {
-      SettableFuture<ApiResponse<Policy>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Policy>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Policy>() {}, new AsyncApiCallback<ApiResponse<Policy>>() {
         @Override
         public void onCompleted(ApiResponse<Policy> response) {
@@ -1968,10 +1968,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EncryptionKey> postRecordingRecordingkeysAsync(PostRecordingRecordingkeysRequest request, AsyncApiCallback<EncryptionKey> callback) {
+  public Future<EncryptionKey> postRecordingRecordingkeysAsync(PostRecordingRecordingkeysRequest request, final AsyncApiCallback<EncryptionKey> callback) {
     try {
-      SettableFuture<EncryptionKey> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EncryptionKey> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EncryptionKey>() {}, new AsyncApiCallback<ApiResponse<EncryptionKey>>() {
         @Override
         public void onCompleted(ApiResponse<EncryptionKey> response) {
@@ -2002,10 +2002,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EncryptionKey>> postRecordingRecordingkeysAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EncryptionKey>> callback) {
+  public Future<ApiResponse<EncryptionKey>> postRecordingRecordingkeysAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EncryptionKey>> callback) {
     try {
-      SettableFuture<ApiResponse<EncryptionKey>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EncryptionKey>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EncryptionKey>() {}, new AsyncApiCallback<ApiResponse<EncryptionKey>>() {
         @Override
         public void onCompleted(ApiResponse<EncryptionKey> response) {
@@ -2043,10 +2043,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Recording> putConversationRecordingAsync(PutConversationRecordingRequest request, AsyncApiCallback<Recording> callback) {
+  public Future<Recording> putConversationRecordingAsync(PutConversationRecordingRequest request, final AsyncApiCallback<Recording> callback) {
     try {
-      SettableFuture<Recording> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Recording> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Recording>() {}, new AsyncApiCallback<ApiResponse<Recording>>() {
         @Override
         public void onCompleted(ApiResponse<Recording> response) {
@@ -2077,10 +2077,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Recording>> putConversationRecordingAsync(ApiRequest<Recording> request, AsyncApiCallback<ApiResponse<Recording>> callback) {
+  public Future<ApiResponse<Recording>> putConversationRecordingAsync(ApiRequest<Recording> request, final AsyncApiCallback<ApiResponse<Recording>> callback) {
     try {
-      SettableFuture<ApiResponse<Recording>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Recording>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Recording>() {}, new AsyncApiCallback<ApiResponse<Recording>>() {
         @Override
         public void onCompleted(ApiResponse<Recording> response) {
@@ -2118,10 +2118,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Annotation> putConversationRecordingAnnotationAsync(PutConversationRecordingAnnotationRequest request, AsyncApiCallback<Annotation> callback) {
+  public Future<Annotation> putConversationRecordingAnnotationAsync(PutConversationRecordingAnnotationRequest request, final AsyncApiCallback<Annotation> callback) {
     try {
-      SettableFuture<Annotation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Annotation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Annotation>() {}, new AsyncApiCallback<ApiResponse<Annotation>>() {
         @Override
         public void onCompleted(ApiResponse<Annotation> response) {
@@ -2152,10 +2152,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Annotation>> putConversationRecordingAnnotationAsync(ApiRequest<Annotation> request, AsyncApiCallback<ApiResponse<Annotation>> callback) {
+  public Future<ApiResponse<Annotation>> putConversationRecordingAnnotationAsync(ApiRequest<Annotation> request, final AsyncApiCallback<ApiResponse<Annotation>> callback) {
     try {
-      SettableFuture<ApiResponse<Annotation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Annotation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Annotation>() {}, new AsyncApiCallback<ApiResponse<Annotation>>() {
         @Override
         public void onCompleted(ApiResponse<Annotation> response) {
@@ -2193,10 +2193,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Recording> putOrphanrecordingAsync(PutOrphanrecordingRequest request, AsyncApiCallback<Recording> callback) {
+  public Future<Recording> putOrphanrecordingAsync(PutOrphanrecordingRequest request, final AsyncApiCallback<Recording> callback) {
     try {
-      SettableFuture<Recording> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Recording> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Recording>() {}, new AsyncApiCallback<ApiResponse<Recording>>() {
         @Override
         public void onCompleted(ApiResponse<Recording> response) {
@@ -2227,10 +2227,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Recording>> putOrphanrecordingAsync(ApiRequest<OrphanUpdateRequest> request, AsyncApiCallback<ApiResponse<Recording>> callback) {
+  public Future<ApiResponse<Recording>> putOrphanrecordingAsync(ApiRequest<OrphanUpdateRequest> request, final AsyncApiCallback<ApiResponse<Recording>> callback) {
     try {
-      SettableFuture<ApiResponse<Recording>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Recording>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Recording>() {}, new AsyncApiCallback<ApiResponse<Recording>>() {
         @Override
         public void onCompleted(ApiResponse<Recording> response) {
@@ -2268,10 +2268,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<LocalEncryptionConfiguration> putRecordingLocalkeysSettingAsync(PutRecordingLocalkeysSettingRequest request, AsyncApiCallback<LocalEncryptionConfiguration> callback) {
+  public Future<LocalEncryptionConfiguration> putRecordingLocalkeysSettingAsync(PutRecordingLocalkeysSettingRequest request, final AsyncApiCallback<LocalEncryptionConfiguration> callback) {
     try {
-      SettableFuture<LocalEncryptionConfiguration> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<LocalEncryptionConfiguration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LocalEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>>() {
         @Override
         public void onCompleted(ApiResponse<LocalEncryptionConfiguration> response) {
@@ -2302,10 +2302,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LocalEncryptionConfiguration>> putRecordingLocalkeysSettingAsync(ApiRequest<LocalEncryptionConfiguration> request, AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>> callback) {
+  public Future<ApiResponse<LocalEncryptionConfiguration>> putRecordingLocalkeysSettingAsync(ApiRequest<LocalEncryptionConfiguration> request, final AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>> callback) {
     try {
-      SettableFuture<ApiResponse<LocalEncryptionConfiguration>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<LocalEncryptionConfiguration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<LocalEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<LocalEncryptionConfiguration>>() {
         @Override
         public void onCompleted(ApiResponse<LocalEncryptionConfiguration> response) {
@@ -2343,10 +2343,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Policy> putRecordingMediaretentionpolicyAsync(PutRecordingMediaretentionpolicyRequest request, AsyncApiCallback<Policy> callback) {
+  public Future<Policy> putRecordingMediaretentionpolicyAsync(PutRecordingMediaretentionpolicyRequest request, final AsyncApiCallback<Policy> callback) {
     try {
-      SettableFuture<Policy> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Policy> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Policy>() {}, new AsyncApiCallback<ApiResponse<Policy>>() {
         @Override
         public void onCompleted(ApiResponse<Policy> response) {
@@ -2377,10 +2377,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Policy>> putRecordingMediaretentionpolicyAsync(ApiRequest<Policy> request, AsyncApiCallback<ApiResponse<Policy>> callback) {
+  public Future<ApiResponse<Policy>> putRecordingMediaretentionpolicyAsync(ApiRequest<Policy> request, final AsyncApiCallback<ApiResponse<Policy>> callback) {
     try {
-      SettableFuture<ApiResponse<Policy>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Policy>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Policy>() {}, new AsyncApiCallback<ApiResponse<Policy>>() {
         @Override
         public void onCompleted(ApiResponse<Policy> response) {
@@ -2418,10 +2418,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<KeyRotationSchedule> putRecordingRecordingkeysRotationscheduleAsync(PutRecordingRecordingkeysRotationscheduleRequest request, AsyncApiCallback<KeyRotationSchedule> callback) {
+  public Future<KeyRotationSchedule> putRecordingRecordingkeysRotationscheduleAsync(PutRecordingRecordingkeysRotationscheduleRequest request, final AsyncApiCallback<KeyRotationSchedule> callback) {
     try {
-      SettableFuture<KeyRotationSchedule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<KeyRotationSchedule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KeyRotationSchedule>() {}, new AsyncApiCallback<ApiResponse<KeyRotationSchedule>>() {
         @Override
         public void onCompleted(ApiResponse<KeyRotationSchedule> response) {
@@ -2452,10 +2452,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<KeyRotationSchedule>> putRecordingRecordingkeysRotationscheduleAsync(ApiRequest<KeyRotationSchedule> request, AsyncApiCallback<ApiResponse<KeyRotationSchedule>> callback) {
+  public Future<ApiResponse<KeyRotationSchedule>> putRecordingRecordingkeysRotationscheduleAsync(ApiRequest<KeyRotationSchedule> request, final AsyncApiCallback<ApiResponse<KeyRotationSchedule>> callback) {
     try {
-      SettableFuture<ApiResponse<KeyRotationSchedule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<KeyRotationSchedule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<KeyRotationSchedule>() {}, new AsyncApiCallback<ApiResponse<KeyRotationSchedule>>() {
         @Override
         public void onCompleted(ApiResponse<KeyRotationSchedule> response) {
@@ -2493,10 +2493,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<RecordingSettings> putRecordingSettingsAsync(PutRecordingSettingsRequest request, AsyncApiCallback<RecordingSettings> callback) {
+  public Future<RecordingSettings> putRecordingSettingsAsync(PutRecordingSettingsRequest request, final AsyncApiCallback<RecordingSettings> callback) {
     try {
-      SettableFuture<RecordingSettings> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<RecordingSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RecordingSettings>() {}, new AsyncApiCallback<ApiResponse<RecordingSettings>>() {
         @Override
         public void onCompleted(ApiResponse<RecordingSettings> response) {
@@ -2527,10 +2527,10 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<RecordingSettings>> putRecordingSettingsAsync(ApiRequest<RecordingSettings> request, AsyncApiCallback<ApiResponse<RecordingSettings>> callback) {
+  public Future<ApiResponse<RecordingSettings>> putRecordingSettingsAsync(ApiRequest<RecordingSettings> request, final AsyncApiCallback<ApiResponse<RecordingSettings>> callback) {
     try {
-      SettableFuture<ApiResponse<RecordingSettings>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<RecordingSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<RecordingSettings>() {}, new AsyncApiCallback<ApiResponse<RecordingSettings>>() {
         @Override
         public void onCompleted(ApiResponse<RecordingSettings> response) {

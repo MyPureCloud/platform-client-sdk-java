@@ -83,10 +83,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Empty> deleteIdentityprovidersAdfsAsync(DeleteIdentityprovidersAdfsRequest request, AsyncApiCallback<Empty> callback) {
+  public Future<Empty> deleteIdentityprovidersAdfsAsync(DeleteIdentityprovidersAdfsRequest request, final AsyncApiCallback<Empty> callback) {
     try {
-      SettableFuture<Empty> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -117,10 +117,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Empty>> deleteIdentityprovidersAdfsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
+  public Future<ApiResponse<Empty>> deleteIdentityprovidersAdfsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
-      SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -158,10 +158,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Empty> deleteIdentityprovidersCicAsync(DeleteIdentityprovidersCicRequest request, AsyncApiCallback<Empty> callback) {
+  public Future<Empty> deleteIdentityprovidersCicAsync(DeleteIdentityprovidersCicRequest request, final AsyncApiCallback<Empty> callback) {
     try {
-      SettableFuture<Empty> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -192,10 +192,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Empty>> deleteIdentityprovidersCicAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
+  public Future<ApiResponse<Empty>> deleteIdentityprovidersCicAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
-      SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -233,10 +233,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Empty> deleteIdentityprovidersGsuiteAsync(DeleteIdentityprovidersGsuiteRequest request, AsyncApiCallback<Empty> callback) {
+  public Future<Empty> deleteIdentityprovidersGsuiteAsync(DeleteIdentityprovidersGsuiteRequest request, final AsyncApiCallback<Empty> callback) {
     try {
-      SettableFuture<Empty> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -267,10 +267,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Empty>> deleteIdentityprovidersGsuiteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
+  public Future<ApiResponse<Empty>> deleteIdentityprovidersGsuiteAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
-      SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -308,10 +308,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Empty> deleteIdentityprovidersIdentitynowAsync(DeleteIdentityprovidersIdentitynowRequest request, AsyncApiCallback<Empty> callback) {
+  public Future<Empty> deleteIdentityprovidersIdentitynowAsync(DeleteIdentityprovidersIdentitynowRequest request, final AsyncApiCallback<Empty> callback) {
     try {
-      SettableFuture<Empty> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -342,10 +342,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Empty>> deleteIdentityprovidersIdentitynowAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
+  public Future<ApiResponse<Empty>> deleteIdentityprovidersIdentitynowAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
-      SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -383,10 +383,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Empty> deleteIdentityprovidersOktaAsync(DeleteIdentityprovidersOktaRequest request, AsyncApiCallback<Empty> callback) {
+  public Future<Empty> deleteIdentityprovidersOktaAsync(DeleteIdentityprovidersOktaRequest request, final AsyncApiCallback<Empty> callback) {
     try {
-      SettableFuture<Empty> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -417,10 +417,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Empty>> deleteIdentityprovidersOktaAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
+  public Future<ApiResponse<Empty>> deleteIdentityprovidersOktaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
-      SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -458,10 +458,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Empty> deleteIdentityprovidersOneloginAsync(DeleteIdentityprovidersOneloginRequest request, AsyncApiCallback<Empty> callback) {
+  public Future<Empty> deleteIdentityprovidersOneloginAsync(DeleteIdentityprovidersOneloginRequest request, final AsyncApiCallback<Empty> callback) {
     try {
-      SettableFuture<Empty> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -492,10 +492,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Empty>> deleteIdentityprovidersOneloginAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
+  public Future<ApiResponse<Empty>> deleteIdentityprovidersOneloginAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
-      SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -533,10 +533,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Empty> deleteIdentityprovidersPingAsync(DeleteIdentityprovidersPingRequest request, AsyncApiCallback<Empty> callback) {
+  public Future<Empty> deleteIdentityprovidersPingAsync(DeleteIdentityprovidersPingRequest request, final AsyncApiCallback<Empty> callback) {
     try {
-      SettableFuture<Empty> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -567,10 +567,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Empty>> deleteIdentityprovidersPingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
+  public Future<ApiResponse<Empty>> deleteIdentityprovidersPingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
-      SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -608,10 +608,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Empty> deleteIdentityprovidersPurecloudAsync(DeleteIdentityprovidersPurecloudRequest request, AsyncApiCallback<Empty> callback) {
+  public Future<Empty> deleteIdentityprovidersPurecloudAsync(DeleteIdentityprovidersPurecloudRequest request, final AsyncApiCallback<Empty> callback) {
     try {
-      SettableFuture<Empty> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -642,10 +642,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Empty>> deleteIdentityprovidersPurecloudAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
+  public Future<ApiResponse<Empty>> deleteIdentityprovidersPurecloudAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
-      SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -683,10 +683,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Empty> deleteIdentityprovidersSalesforceAsync(DeleteIdentityprovidersSalesforceRequest request, AsyncApiCallback<Empty> callback) {
+  public Future<Empty> deleteIdentityprovidersSalesforceAsync(DeleteIdentityprovidersSalesforceRequest request, final AsyncApiCallback<Empty> callback) {
     try {
-      SettableFuture<Empty> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -717,10 +717,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Empty>> deleteIdentityprovidersSalesforceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
+  public Future<ApiResponse<Empty>> deleteIdentityprovidersSalesforceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
-      SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -758,10 +758,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthProviderEntityListing> getIdentityprovidersAsync(GetIdentityprovidersRequest request, AsyncApiCallback<OAuthProviderEntityListing> callback) {
+  public Future<OAuthProviderEntityListing> getIdentityprovidersAsync(GetIdentityprovidersRequest request, final AsyncApiCallback<OAuthProviderEntityListing> callback) {
     try {
-      SettableFuture<OAuthProviderEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OAuthProviderEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProviderEntityListing>() {}, new AsyncApiCallback<ApiResponse<OAuthProviderEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthProviderEntityListing> response) {
@@ -792,10 +792,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProviderEntityListing>> getIdentityprovidersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OAuthProviderEntityListing>> callback) {
+  public Future<ApiResponse<OAuthProviderEntityListing>> getIdentityprovidersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OAuthProviderEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<OAuthProviderEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OAuthProviderEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OAuthProviderEntityListing>() {}, new AsyncApiCallback<ApiResponse<OAuthProviderEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthProviderEntityListing> response) {
@@ -833,10 +833,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ADFS> getIdentityprovidersAdfsAsync(GetIdentityprovidersAdfsRequest request, AsyncApiCallback<ADFS> callback) {
+  public Future<ADFS> getIdentityprovidersAdfsAsync(GetIdentityprovidersAdfsRequest request, final AsyncApiCallback<ADFS> callback) {
     try {
-      SettableFuture<ADFS> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ADFS> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ADFS>() {}, new AsyncApiCallback<ApiResponse<ADFS>>() {
         @Override
         public void onCompleted(ApiResponse<ADFS> response) {
@@ -867,10 +867,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ADFS>> getIdentityprovidersAdfsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ADFS>> callback) {
+  public Future<ApiResponse<ADFS>> getIdentityprovidersAdfsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ADFS>> callback) {
     try {
-      SettableFuture<ApiResponse<ADFS>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ADFS>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ADFS>() {}, new AsyncApiCallback<ApiResponse<ADFS>>() {
         @Override
         public void onCompleted(ApiResponse<ADFS> response) {
@@ -908,10 +908,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CustomerInteractionCenter> getIdentityprovidersCicAsync(GetIdentityprovidersCicRequest request, AsyncApiCallback<CustomerInteractionCenter> callback) {
+  public Future<CustomerInteractionCenter> getIdentityprovidersCicAsync(GetIdentityprovidersCicRequest request, final AsyncApiCallback<CustomerInteractionCenter> callback) {
     try {
-      SettableFuture<CustomerInteractionCenter> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CustomerInteractionCenter> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CustomerInteractionCenter>() {}, new AsyncApiCallback<ApiResponse<CustomerInteractionCenter>>() {
         @Override
         public void onCompleted(ApiResponse<CustomerInteractionCenter> response) {
@@ -942,10 +942,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CustomerInteractionCenter>> getIdentityprovidersCicAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CustomerInteractionCenter>> callback) {
+  public Future<ApiResponse<CustomerInteractionCenter>> getIdentityprovidersCicAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CustomerInteractionCenter>> callback) {
     try {
-      SettableFuture<ApiResponse<CustomerInteractionCenter>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CustomerInteractionCenter>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CustomerInteractionCenter>() {}, new AsyncApiCallback<ApiResponse<CustomerInteractionCenter>>() {
         @Override
         public void onCompleted(ApiResponse<CustomerInteractionCenter> response) {
@@ -983,10 +983,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<GSuite> getIdentityprovidersGsuiteAsync(GetIdentityprovidersGsuiteRequest request, AsyncApiCallback<GSuite> callback) {
+  public Future<GSuite> getIdentityprovidersGsuiteAsync(GetIdentityprovidersGsuiteRequest request, final AsyncApiCallback<GSuite> callback) {
     try {
-      SettableFuture<GSuite> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<GSuite> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GSuite>() {}, new AsyncApiCallback<ApiResponse<GSuite>>() {
         @Override
         public void onCompleted(ApiResponse<GSuite> response) {
@@ -1017,10 +1017,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<GSuite>> getIdentityprovidersGsuiteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GSuite>> callback) {
+  public Future<ApiResponse<GSuite>> getIdentityprovidersGsuiteAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GSuite>> callback) {
     try {
-      SettableFuture<ApiResponse<GSuite>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<GSuite>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<GSuite>() {}, new AsyncApiCallback<ApiResponse<GSuite>>() {
         @Override
         public void onCompleted(ApiResponse<GSuite> response) {
@@ -1058,10 +1058,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IdentityNow> getIdentityprovidersIdentitynowAsync(GetIdentityprovidersIdentitynowRequest request, AsyncApiCallback<IdentityNow> callback) {
+  public Future<IdentityNow> getIdentityprovidersIdentitynowAsync(GetIdentityprovidersIdentitynowRequest request, final AsyncApiCallback<IdentityNow> callback) {
     try {
-      SettableFuture<IdentityNow> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<IdentityNow> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityNow>() {}, new AsyncApiCallback<ApiResponse<IdentityNow>>() {
         @Override
         public void onCompleted(ApiResponse<IdentityNow> response) {
@@ -1092,10 +1092,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IdentityNow>> getIdentityprovidersIdentitynowAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<IdentityNow>> callback) {
+  public Future<ApiResponse<IdentityNow>> getIdentityprovidersIdentitynowAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityNow>> callback) {
     try {
-      SettableFuture<ApiResponse<IdentityNow>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<IdentityNow>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<IdentityNow>() {}, new AsyncApiCallback<ApiResponse<IdentityNow>>() {
         @Override
         public void onCompleted(ApiResponse<IdentityNow> response) {
@@ -1133,10 +1133,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Okta> getIdentityprovidersOktaAsync(GetIdentityprovidersOktaRequest request, AsyncApiCallback<Okta> callback) {
+  public Future<Okta> getIdentityprovidersOktaAsync(GetIdentityprovidersOktaRequest request, final AsyncApiCallback<Okta> callback) {
     try {
-      SettableFuture<Okta> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Okta> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Okta>() {}, new AsyncApiCallback<ApiResponse<Okta>>() {
         @Override
         public void onCompleted(ApiResponse<Okta> response) {
@@ -1167,10 +1167,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Okta>> getIdentityprovidersOktaAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Okta>> callback) {
+  public Future<ApiResponse<Okta>> getIdentityprovidersOktaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Okta>> callback) {
     try {
-      SettableFuture<ApiResponse<Okta>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Okta>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Okta>() {}, new AsyncApiCallback<ApiResponse<Okta>>() {
         @Override
         public void onCompleted(ApiResponse<Okta> response) {
@@ -1208,10 +1208,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OneLogin> getIdentityprovidersOneloginAsync(GetIdentityprovidersOneloginRequest request, AsyncApiCallback<OneLogin> callback) {
+  public Future<OneLogin> getIdentityprovidersOneloginAsync(GetIdentityprovidersOneloginRequest request, final AsyncApiCallback<OneLogin> callback) {
     try {
-      SettableFuture<OneLogin> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OneLogin> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OneLogin>() {}, new AsyncApiCallback<ApiResponse<OneLogin>>() {
         @Override
         public void onCompleted(ApiResponse<OneLogin> response) {
@@ -1242,10 +1242,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OneLogin>> getIdentityprovidersOneloginAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OneLogin>> callback) {
+  public Future<ApiResponse<OneLogin>> getIdentityprovidersOneloginAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OneLogin>> callback) {
     try {
-      SettableFuture<ApiResponse<OneLogin>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OneLogin>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OneLogin>() {}, new AsyncApiCallback<ApiResponse<OneLogin>>() {
         @Override
         public void onCompleted(ApiResponse<OneLogin> response) {
@@ -1283,10 +1283,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<PingIdentity> getIdentityprovidersPingAsync(GetIdentityprovidersPingRequest request, AsyncApiCallback<PingIdentity> callback) {
+  public Future<PingIdentity> getIdentityprovidersPingAsync(GetIdentityprovidersPingRequest request, final AsyncApiCallback<PingIdentity> callback) {
     try {
-      SettableFuture<PingIdentity> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<PingIdentity> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PingIdentity>() {}, new AsyncApiCallback<ApiResponse<PingIdentity>>() {
         @Override
         public void onCompleted(ApiResponse<PingIdentity> response) {
@@ -1317,10 +1317,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<PingIdentity>> getIdentityprovidersPingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PingIdentity>> callback) {
+  public Future<ApiResponse<PingIdentity>> getIdentityprovidersPingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PingIdentity>> callback) {
     try {
-      SettableFuture<ApiResponse<PingIdentity>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<PingIdentity>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<PingIdentity>() {}, new AsyncApiCallback<ApiResponse<PingIdentity>>() {
         @Override
         public void onCompleted(ApiResponse<PingIdentity> response) {
@@ -1358,10 +1358,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<PureCloud> getIdentityprovidersPurecloudAsync(GetIdentityprovidersPurecloudRequest request, AsyncApiCallback<PureCloud> callback) {
+  public Future<PureCloud> getIdentityprovidersPurecloudAsync(GetIdentityprovidersPurecloudRequest request, final AsyncApiCallback<PureCloud> callback) {
     try {
-      SettableFuture<PureCloud> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<PureCloud> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PureCloud>() {}, new AsyncApiCallback<ApiResponse<PureCloud>>() {
         @Override
         public void onCompleted(ApiResponse<PureCloud> response) {
@@ -1392,10 +1392,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<PureCloud>> getIdentityprovidersPurecloudAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PureCloud>> callback) {
+  public Future<ApiResponse<PureCloud>> getIdentityprovidersPurecloudAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PureCloud>> callback) {
     try {
-      SettableFuture<ApiResponse<PureCloud>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<PureCloud>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<PureCloud>() {}, new AsyncApiCallback<ApiResponse<PureCloud>>() {
         @Override
         public void onCompleted(ApiResponse<PureCloud> response) {
@@ -1433,10 +1433,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Salesforce> getIdentityprovidersSalesforceAsync(GetIdentityprovidersSalesforceRequest request, AsyncApiCallback<Salesforce> callback) {
+  public Future<Salesforce> getIdentityprovidersSalesforceAsync(GetIdentityprovidersSalesforceRequest request, final AsyncApiCallback<Salesforce> callback) {
     try {
-      SettableFuture<Salesforce> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Salesforce> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Salesforce>() {}, new AsyncApiCallback<ApiResponse<Salesforce>>() {
         @Override
         public void onCompleted(ApiResponse<Salesforce> response) {
@@ -1467,10 +1467,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Salesforce>> getIdentityprovidersSalesforceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Salesforce>> callback) {
+  public Future<ApiResponse<Salesforce>> getIdentityprovidersSalesforceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Salesforce>> callback) {
     try {
-      SettableFuture<ApiResponse<Salesforce>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Salesforce>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Salesforce>() {}, new AsyncApiCallback<ApiResponse<Salesforce>>() {
         @Override
         public void onCompleted(ApiResponse<Salesforce> response) {
@@ -1508,10 +1508,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthProvider> putIdentityprovidersAdfsAsync(PutIdentityprovidersAdfsRequest request, AsyncApiCallback<OAuthProvider> callback) {
+  public Future<OAuthProvider> putIdentityprovidersAdfsAsync(PutIdentityprovidersAdfsRequest request, final AsyncApiCallback<OAuthProvider> callback) {
     try {
-      SettableFuture<OAuthProvider> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OAuthProvider> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthProvider> response) {
@@ -1542,10 +1542,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersAdfsAsync(ApiRequest<ADFS> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersAdfsAsync(ApiRequest<ADFS> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
     try {
-      SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthProvider> response) {
@@ -1583,10 +1583,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthProvider> putIdentityprovidersCicAsync(PutIdentityprovidersCicRequest request, AsyncApiCallback<OAuthProvider> callback) {
+  public Future<OAuthProvider> putIdentityprovidersCicAsync(PutIdentityprovidersCicRequest request, final AsyncApiCallback<OAuthProvider> callback) {
     try {
-      SettableFuture<OAuthProvider> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OAuthProvider> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthProvider> response) {
@@ -1617,10 +1617,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersCicAsync(ApiRequest<CustomerInteractionCenter> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersCicAsync(ApiRequest<CustomerInteractionCenter> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
     try {
-      SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthProvider> response) {
@@ -1658,10 +1658,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthProvider> putIdentityprovidersGsuiteAsync(PutIdentityprovidersGsuiteRequest request, AsyncApiCallback<OAuthProvider> callback) {
+  public Future<OAuthProvider> putIdentityprovidersGsuiteAsync(PutIdentityprovidersGsuiteRequest request, final AsyncApiCallback<OAuthProvider> callback) {
     try {
-      SettableFuture<OAuthProvider> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OAuthProvider> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthProvider> response) {
@@ -1692,10 +1692,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersGsuiteAsync(ApiRequest<GSuite> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersGsuiteAsync(ApiRequest<GSuite> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
     try {
-      SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthProvider> response) {
@@ -1733,10 +1733,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IdentityNow> putIdentityprovidersIdentitynowAsync(PutIdentityprovidersIdentitynowRequest request, AsyncApiCallback<IdentityNow> callback) {
+  public Future<IdentityNow> putIdentityprovidersIdentitynowAsync(PutIdentityprovidersIdentitynowRequest request, final AsyncApiCallback<IdentityNow> callback) {
     try {
-      SettableFuture<IdentityNow> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<IdentityNow> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityNow>() {}, new AsyncApiCallback<ApiResponse<IdentityNow>>() {
         @Override
         public void onCompleted(ApiResponse<IdentityNow> response) {
@@ -1767,10 +1767,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IdentityNow>> putIdentityprovidersIdentitynowAsync(ApiRequest<IdentityNow> request, AsyncApiCallback<ApiResponse<IdentityNow>> callback) {
+  public Future<ApiResponse<IdentityNow>> putIdentityprovidersIdentitynowAsync(ApiRequest<IdentityNow> request, final AsyncApiCallback<ApiResponse<IdentityNow>> callback) {
     try {
-      SettableFuture<ApiResponse<IdentityNow>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<IdentityNow>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<IdentityNow>() {}, new AsyncApiCallback<ApiResponse<IdentityNow>>() {
         @Override
         public void onCompleted(ApiResponse<IdentityNow> response) {
@@ -1808,10 +1808,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthProvider> putIdentityprovidersOktaAsync(PutIdentityprovidersOktaRequest request, AsyncApiCallback<OAuthProvider> callback) {
+  public Future<OAuthProvider> putIdentityprovidersOktaAsync(PutIdentityprovidersOktaRequest request, final AsyncApiCallback<OAuthProvider> callback) {
     try {
-      SettableFuture<OAuthProvider> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OAuthProvider> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthProvider> response) {
@@ -1842,10 +1842,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersOktaAsync(ApiRequest<Okta> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersOktaAsync(ApiRequest<Okta> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
     try {
-      SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthProvider> response) {
@@ -1883,10 +1883,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthProvider> putIdentityprovidersOneloginAsync(PutIdentityprovidersOneloginRequest request, AsyncApiCallback<OAuthProvider> callback) {
+  public Future<OAuthProvider> putIdentityprovidersOneloginAsync(PutIdentityprovidersOneloginRequest request, final AsyncApiCallback<OAuthProvider> callback) {
     try {
-      SettableFuture<OAuthProvider> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OAuthProvider> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthProvider> response) {
@@ -1917,10 +1917,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersOneloginAsync(ApiRequest<OneLogin> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersOneloginAsync(ApiRequest<OneLogin> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
     try {
-      SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthProvider> response) {
@@ -1958,10 +1958,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthProvider> putIdentityprovidersPingAsync(PutIdentityprovidersPingRequest request, AsyncApiCallback<OAuthProvider> callback) {
+  public Future<OAuthProvider> putIdentityprovidersPingAsync(PutIdentityprovidersPingRequest request, final AsyncApiCallback<OAuthProvider> callback) {
     try {
-      SettableFuture<OAuthProvider> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OAuthProvider> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthProvider> response) {
@@ -1992,10 +1992,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersPingAsync(ApiRequest<PingIdentity> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersPingAsync(ApiRequest<PingIdentity> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
     try {
-      SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthProvider> response) {
@@ -2033,10 +2033,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthProvider> putIdentityprovidersPurecloudAsync(PutIdentityprovidersPurecloudRequest request, AsyncApiCallback<OAuthProvider> callback) {
+  public Future<OAuthProvider> putIdentityprovidersPurecloudAsync(PutIdentityprovidersPurecloudRequest request, final AsyncApiCallback<OAuthProvider> callback) {
     try {
-      SettableFuture<OAuthProvider> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OAuthProvider> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthProvider> response) {
@@ -2067,10 +2067,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersPurecloudAsync(ApiRequest<PureCloud> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersPurecloudAsync(ApiRequest<PureCloud> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
     try {
-      SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthProvider> response) {
@@ -2108,10 +2108,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthProvider> putIdentityprovidersSalesforceAsync(PutIdentityprovidersSalesforceRequest request, AsyncApiCallback<OAuthProvider> callback) {
+  public Future<OAuthProvider> putIdentityprovidersSalesforceAsync(PutIdentityprovidersSalesforceRequest request, final AsyncApiCallback<OAuthProvider> callback) {
     try {
-      SettableFuture<OAuthProvider> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OAuthProvider> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthProvider> response) {
@@ -2142,10 +2142,10 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersSalesforceAsync(ApiRequest<Salesforce> request, AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersSalesforceAsync(ApiRequest<Salesforce> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
     try {
-      SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthProvider> response) {

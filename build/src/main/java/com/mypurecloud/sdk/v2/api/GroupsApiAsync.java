@@ -63,10 +63,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteGroupAsync(DeleteGroupRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteGroupAsync(DeleteGroupRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -97,10 +97,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteGroupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteGroupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -138,10 +138,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Empty> deleteGroupMembersAsync(DeleteGroupMembersRequest request, AsyncApiCallback<Empty> callback) {
+  public Future<Empty> deleteGroupMembersAsync(DeleteGroupMembersRequest request, final AsyncApiCallback<Empty> callback) {
     try {
-      SettableFuture<Empty> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -172,10 +172,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Empty>> deleteGroupMembersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
+  public Future<ApiResponse<Empty>> deleteGroupMembersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
-      SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -213,10 +213,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<FieldConfig> getFieldconfigAsync(GetFieldconfigRequest request, AsyncApiCallback<FieldConfig> callback) {
+  public Future<FieldConfig> getFieldconfigAsync(GetFieldconfigRequest request, final AsyncApiCallback<FieldConfig> callback) {
     try {
-      SettableFuture<FieldConfig> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<FieldConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FieldConfig>() {}, new AsyncApiCallback<ApiResponse<FieldConfig>>() {
         @Override
         public void onCompleted(ApiResponse<FieldConfig> response) {
@@ -247,10 +247,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<FieldConfig>> getFieldconfigAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FieldConfig>> callback) {
+  public Future<ApiResponse<FieldConfig>> getFieldconfigAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FieldConfig>> callback) {
     try {
-      SettableFuture<ApiResponse<FieldConfig>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<FieldConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<FieldConfig>() {}, new AsyncApiCallback<ApiResponse<FieldConfig>>() {
         @Override
         public void onCompleted(ApiResponse<FieldConfig> response) {
@@ -288,10 +288,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Group> getGroupAsync(GetGroupRequest request, AsyncApiCallback<Group> callback) {
+  public Future<Group> getGroupAsync(GetGroupRequest request, final AsyncApiCallback<Group> callback) {
     try {
-      SettableFuture<Group> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Group> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Group>() {}, new AsyncApiCallback<ApiResponse<Group>>() {
         @Override
         public void onCompleted(ApiResponse<Group> response) {
@@ -322,10 +322,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Group>> getGroupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Group>> callback) {
+  public Future<ApiResponse<Group>> getGroupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Group>> callback) {
     try {
-      SettableFuture<ApiResponse<Group>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Group>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Group>() {}, new AsyncApiCallback<ApiResponse<Group>>() {
         @Override
         public void onCompleted(ApiResponse<Group> response) {
@@ -363,10 +363,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UserEntityListing> getGroupMembersAsync(GetGroupMembersRequest request, AsyncApiCallback<UserEntityListing> callback) {
+  public Future<UserEntityListing> getGroupMembersAsync(GetGroupMembersRequest request, final AsyncApiCallback<UserEntityListing> callback) {
     try {
-      SettableFuture<UserEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<UserEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<UserEntityListing> response) {
@@ -397,10 +397,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UserEntityListing>> getGroupMembersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserEntityListing>> callback) {
+  public Future<ApiResponse<UserEntityListing>> getGroupMembersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<UserEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<UserEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<UserEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<UserEntityListing> response) {
@@ -438,10 +438,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<GroupEntityListing> getGroupsAsync(GetGroupsRequest request, AsyncApiCallback<GroupEntityListing> callback) {
+  public Future<GroupEntityListing> getGroupsAsync(GetGroupsRequest request, final AsyncApiCallback<GroupEntityListing> callback) {
     try {
-      SettableFuture<GroupEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<GroupEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GroupEntityListing>() {}, new AsyncApiCallback<ApiResponse<GroupEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<GroupEntityListing> response) {
@@ -472,10 +472,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<GroupEntityListing>> getGroupsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GroupEntityListing>> callback) {
+  public Future<ApiResponse<GroupEntityListing>> getGroupsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GroupEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<GroupEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<GroupEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<GroupEntityListing>() {}, new AsyncApiCallback<ApiResponse<GroupEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<GroupEntityListing> response) {
@@ -513,10 +513,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<GroupsSearchResponse> getGroupsSearchAsync(GetGroupsSearchRequest request, AsyncApiCallback<GroupsSearchResponse> callback) {
+  public Future<GroupsSearchResponse> getGroupsSearchAsync(GetGroupsSearchRequest request, final AsyncApiCallback<GroupsSearchResponse> callback) {
     try {
-      SettableFuture<GroupsSearchResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<GroupsSearchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GroupsSearchResponse>() {}, new AsyncApiCallback<ApiResponse<GroupsSearchResponse>>() {
         @Override
         public void onCompleted(ApiResponse<GroupsSearchResponse> response) {
@@ -547,10 +547,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<GroupsSearchResponse>> getGroupsSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GroupsSearchResponse>> callback) {
+  public Future<ApiResponse<GroupsSearchResponse>> getGroupsSearchAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GroupsSearchResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<GroupsSearchResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<GroupsSearchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<GroupsSearchResponse>() {}, new AsyncApiCallback<ApiResponse<GroupsSearchResponse>>() {
         @Override
         public void onCompleted(ApiResponse<GroupsSearchResponse> response) {
@@ -588,10 +588,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Empty> postGroupMembersAsync(PostGroupMembersRequest request, AsyncApiCallback<Empty> callback) {
+  public Future<Empty> postGroupMembersAsync(PostGroupMembersRequest request, final AsyncApiCallback<Empty> callback) {
     try {
-      SettableFuture<Empty> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -622,10 +622,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Empty>> postGroupMembersAsync(ApiRequest<GroupMembersUpdate> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
+  public Future<ApiResponse<Empty>> postGroupMembersAsync(ApiRequest<GroupMembersUpdate> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
-      SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -663,10 +663,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Group> postGroupsAsync(PostGroupsRequest request, AsyncApiCallback<Group> callback) {
+  public Future<Group> postGroupsAsync(PostGroupsRequest request, final AsyncApiCallback<Group> callback) {
     try {
-      SettableFuture<Group> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Group> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Group>() {}, new AsyncApiCallback<ApiResponse<Group>>() {
         @Override
         public void onCompleted(ApiResponse<Group> response) {
@@ -697,10 +697,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Group>> postGroupsAsync(ApiRequest<Group> request, AsyncApiCallback<ApiResponse<Group>> callback) {
+  public Future<ApiResponse<Group>> postGroupsAsync(ApiRequest<Group> request, final AsyncApiCallback<ApiResponse<Group>> callback) {
     try {
-      SettableFuture<ApiResponse<Group>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Group>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Group>() {}, new AsyncApiCallback<ApiResponse<Group>>() {
         @Override
         public void onCompleted(ApiResponse<Group> response) {
@@ -738,10 +738,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<GroupsSearchResponse> postGroupsSearchAsync(PostGroupsSearchRequest request, AsyncApiCallback<GroupsSearchResponse> callback) {
+  public Future<GroupsSearchResponse> postGroupsSearchAsync(PostGroupsSearchRequest request, final AsyncApiCallback<GroupsSearchResponse> callback) {
     try {
-      SettableFuture<GroupsSearchResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<GroupsSearchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GroupsSearchResponse>() {}, new AsyncApiCallback<ApiResponse<GroupsSearchResponse>>() {
         @Override
         public void onCompleted(ApiResponse<GroupsSearchResponse> response) {
@@ -772,10 +772,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<GroupsSearchResponse>> postGroupsSearchAsync(ApiRequest<GroupSearchRequest> request, AsyncApiCallback<ApiResponse<GroupsSearchResponse>> callback) {
+  public Future<ApiResponse<GroupsSearchResponse>> postGroupsSearchAsync(ApiRequest<GroupSearchRequest> request, final AsyncApiCallback<ApiResponse<GroupsSearchResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<GroupsSearchResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<GroupsSearchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<GroupsSearchResponse>() {}, new AsyncApiCallback<ApiResponse<GroupsSearchResponse>>() {
         @Override
         public void onCompleted(ApiResponse<GroupsSearchResponse> response) {
@@ -813,10 +813,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Group> putGroupAsync(PutGroupRequest request, AsyncApiCallback<Group> callback) {
+  public Future<Group> putGroupAsync(PutGroupRequest request, final AsyncApiCallback<Group> callback) {
     try {
-      SettableFuture<Group> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Group> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Group>() {}, new AsyncApiCallback<ApiResponse<Group>>() {
         @Override
         public void onCompleted(ApiResponse<Group> response) {
@@ -847,10 +847,10 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Group>> putGroupAsync(ApiRequest<GroupUpdate> request, AsyncApiCallback<ApiResponse<Group>> callback) {
+  public Future<ApiResponse<Group>> putGroupAsync(ApiRequest<GroupUpdate> request, final AsyncApiCallback<ApiResponse<Group>> callback) {
     try {
-      SettableFuture<ApiResponse<Group>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Group>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Group>() {}, new AsyncApiCallback<ApiResponse<Group>>() {
         @Override
         public void onCompleted(ApiResponse<Group> response) {

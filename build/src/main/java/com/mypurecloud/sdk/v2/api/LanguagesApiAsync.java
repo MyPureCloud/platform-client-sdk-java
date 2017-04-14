@@ -56,10 +56,10 @@ public class LanguagesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteLanguageAsync(DeleteLanguageRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteLanguageAsync(DeleteLanguageRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -90,10 +90,10 @@ public class LanguagesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteLanguageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteLanguageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -131,10 +131,10 @@ public class LanguagesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteRoutingLanguageAsync(DeleteRoutingLanguageRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteRoutingLanguageAsync(DeleteRoutingLanguageRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -165,10 +165,10 @@ public class LanguagesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteRoutingLanguageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteRoutingLanguageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -206,10 +206,10 @@ public class LanguagesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Language> getLanguageAsync(GetLanguageRequest request, AsyncApiCallback<Language> callback) {
+  public Future<Language> getLanguageAsync(GetLanguageRequest request, final AsyncApiCallback<Language> callback) {
     try {
-      SettableFuture<Language> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Language> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Language>() {}, new AsyncApiCallback<ApiResponse<Language>>() {
         @Override
         public void onCompleted(ApiResponse<Language> response) {
@@ -240,10 +240,10 @@ public class LanguagesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Language>> getLanguageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Language>> callback) {
+  public Future<ApiResponse<Language>> getLanguageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Language>> callback) {
     try {
-      SettableFuture<ApiResponse<Language>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Language>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Language>() {}, new AsyncApiCallback<ApiResponse<Language>>() {
         @Override
         public void onCompleted(ApiResponse<Language> response) {
@@ -281,10 +281,10 @@ public class LanguagesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<LanguageEntityListing> getLanguagesAsync(GetLanguagesRequest request, AsyncApiCallback<LanguageEntityListing> callback) {
+  public Future<LanguageEntityListing> getLanguagesAsync(GetLanguagesRequest request, final AsyncApiCallback<LanguageEntityListing> callback) {
     try {
-      SettableFuture<LanguageEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<LanguageEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LanguageEntityListing>() {}, new AsyncApiCallback<ApiResponse<LanguageEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<LanguageEntityListing> response) {
@@ -315,10 +315,10 @@ public class LanguagesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LanguageEntityListing>> getLanguagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LanguageEntityListing>> callback) {
+  public Future<ApiResponse<LanguageEntityListing>> getLanguagesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LanguageEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<LanguageEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<LanguageEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<LanguageEntityListing>() {}, new AsyncApiCallback<ApiResponse<LanguageEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<LanguageEntityListing> response) {
@@ -356,10 +356,10 @@ public class LanguagesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AvailableTranslations> getLanguagesTranslationsAsync(GetLanguagesTranslationsRequest request, AsyncApiCallback<AvailableTranslations> callback) {
+  public Future<AvailableTranslations> getLanguagesTranslationsAsync(GetLanguagesTranslationsRequest request, final AsyncApiCallback<AvailableTranslations> callback) {
     try {
-      SettableFuture<AvailableTranslations> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<AvailableTranslations> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AvailableTranslations>() {}, new AsyncApiCallback<ApiResponse<AvailableTranslations>>() {
         @Override
         public void onCompleted(ApiResponse<AvailableTranslations> response) {
@@ -390,10 +390,10 @@ public class LanguagesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AvailableTranslations>> getLanguagesTranslationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AvailableTranslations>> callback) {
+  public Future<ApiResponse<AvailableTranslations>> getLanguagesTranslationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AvailableTranslations>> callback) {
     try {
-      SettableFuture<ApiResponse<AvailableTranslations>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<AvailableTranslations>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<AvailableTranslations>() {}, new AsyncApiCallback<ApiResponse<AvailableTranslations>>() {
         @Override
         public void onCompleted(ApiResponse<AvailableTranslations> response) {
@@ -431,10 +431,10 @@ public class LanguagesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Map<String, Object>> getLanguagesTranslationsBuiltinAsync(GetLanguagesTranslationsBuiltinRequest request, AsyncApiCallback<Map<String, Object>> callback) {
+  public Future<Map<String, Object>> getLanguagesTranslationsBuiltinAsync(GetLanguagesTranslationsBuiltinRequest request, final AsyncApiCallback<Map<String, Object>> callback) {
     try {
-      SettableFuture<Map<String, Object>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Map<String, Object>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Map<String, Object>>() {}, new AsyncApiCallback<ApiResponse<Map<String, Object>>>() {
         @Override
         public void onCompleted(ApiResponse<Map<String, Object>> response) {
@@ -465,10 +465,10 @@ public class LanguagesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Map<String, Object>>> getLanguagesTranslationsBuiltinAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Map<String, Object>>> callback) {
+  public Future<ApiResponse<Map<String, Object>>> getLanguagesTranslationsBuiltinAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Map<String, Object>>> callback) {
     try {
-      SettableFuture<ApiResponse<Map<String, Object>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Map<String, Object>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Map<String, Object>>() {}, new AsyncApiCallback<ApiResponse<Map<String, Object>>>() {
         @Override
         public void onCompleted(ApiResponse<Map<String, Object>> response) {
@@ -506,10 +506,10 @@ public class LanguagesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Map<String, Object>> getLanguagesTranslationsOrganizationAsync(GetLanguagesTranslationsOrganizationRequest request, AsyncApiCallback<Map<String, Object>> callback) {
+  public Future<Map<String, Object>> getLanguagesTranslationsOrganizationAsync(GetLanguagesTranslationsOrganizationRequest request, final AsyncApiCallback<Map<String, Object>> callback) {
     try {
-      SettableFuture<Map<String, Object>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Map<String, Object>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Map<String, Object>>() {}, new AsyncApiCallback<ApiResponse<Map<String, Object>>>() {
         @Override
         public void onCompleted(ApiResponse<Map<String, Object>> response) {
@@ -540,10 +540,10 @@ public class LanguagesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Map<String, Object>>> getLanguagesTranslationsOrganizationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Map<String, Object>>> callback) {
+  public Future<ApiResponse<Map<String, Object>>> getLanguagesTranslationsOrganizationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Map<String, Object>>> callback) {
     try {
-      SettableFuture<ApiResponse<Map<String, Object>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Map<String, Object>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Map<String, Object>>() {}, new AsyncApiCallback<ApiResponse<Map<String, Object>>>() {
         @Override
         public void onCompleted(ApiResponse<Map<String, Object>> response) {
@@ -581,10 +581,10 @@ public class LanguagesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Map<String, Object>> getLanguagesTranslationsUserAsync(GetLanguagesTranslationsUserRequest request, AsyncApiCallback<Map<String, Object>> callback) {
+  public Future<Map<String, Object>> getLanguagesTranslationsUserAsync(GetLanguagesTranslationsUserRequest request, final AsyncApiCallback<Map<String, Object>> callback) {
     try {
-      SettableFuture<Map<String, Object>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Map<String, Object>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Map<String, Object>>() {}, new AsyncApiCallback<ApiResponse<Map<String, Object>>>() {
         @Override
         public void onCompleted(ApiResponse<Map<String, Object>> response) {
@@ -615,10 +615,10 @@ public class LanguagesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Map<String, Object>>> getLanguagesTranslationsUserAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Map<String, Object>>> callback) {
+  public Future<ApiResponse<Map<String, Object>>> getLanguagesTranslationsUserAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Map<String, Object>>> callback) {
     try {
-      SettableFuture<ApiResponse<Map<String, Object>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Map<String, Object>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Map<String, Object>>() {}, new AsyncApiCallback<ApiResponse<Map<String, Object>>>() {
         @Override
         public void onCompleted(ApiResponse<Map<String, Object>> response) {
@@ -656,10 +656,10 @@ public class LanguagesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Language> getRoutingLanguageAsync(GetRoutingLanguageRequest request, AsyncApiCallback<Language> callback) {
+  public Future<Language> getRoutingLanguageAsync(GetRoutingLanguageRequest request, final AsyncApiCallback<Language> callback) {
     try {
-      SettableFuture<Language> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Language> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Language>() {}, new AsyncApiCallback<ApiResponse<Language>>() {
         @Override
         public void onCompleted(ApiResponse<Language> response) {
@@ -690,10 +690,10 @@ public class LanguagesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Language>> getRoutingLanguageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Language>> callback) {
+  public Future<ApiResponse<Language>> getRoutingLanguageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Language>> callback) {
     try {
-      SettableFuture<ApiResponse<Language>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Language>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Language>() {}, new AsyncApiCallback<ApiResponse<Language>>() {
         @Override
         public void onCompleted(ApiResponse<Language> response) {
@@ -731,10 +731,10 @@ public class LanguagesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Language> postLanguagesAsync(PostLanguagesRequest request, AsyncApiCallback<Language> callback) {
+  public Future<Language> postLanguagesAsync(PostLanguagesRequest request, final AsyncApiCallback<Language> callback) {
     try {
-      SettableFuture<Language> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Language> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Language>() {}, new AsyncApiCallback<ApiResponse<Language>>() {
         @Override
         public void onCompleted(ApiResponse<Language> response) {
@@ -765,10 +765,10 @@ public class LanguagesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Language>> postLanguagesAsync(ApiRequest<Language> request, AsyncApiCallback<ApiResponse<Language>> callback) {
+  public Future<ApiResponse<Language>> postLanguagesAsync(ApiRequest<Language> request, final AsyncApiCallback<ApiResponse<Language>> callback) {
     try {
-      SettableFuture<ApiResponse<Language>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Language>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Language>() {}, new AsyncApiCallback<ApiResponse<Language>>() {
         @Override
         public void onCompleted(ApiResponse<Language> response) {

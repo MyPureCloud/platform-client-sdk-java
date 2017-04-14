@@ -1,7 +1,7 @@
 
-# SDK changes
+# SDK Changes
 
-* Documentation updates
+* Using Java 7
 
 # Major Changes (0 changes)
 

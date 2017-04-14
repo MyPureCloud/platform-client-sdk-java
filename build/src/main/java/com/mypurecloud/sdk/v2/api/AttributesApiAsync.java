@@ -52,10 +52,10 @@ public class AttributesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteAttributeAsync(DeleteAttributeRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteAttributeAsync(DeleteAttributeRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -86,10 +86,10 @@ public class AttributesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteAttributeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteAttributeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -127,10 +127,10 @@ public class AttributesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Attribute> getAttributeAsync(GetAttributeRequest request, AsyncApiCallback<Attribute> callback) {
+  public Future<Attribute> getAttributeAsync(GetAttributeRequest request, final AsyncApiCallback<Attribute> callback) {
     try {
-      SettableFuture<Attribute> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Attribute> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Attribute>() {}, new AsyncApiCallback<ApiResponse<Attribute>>() {
         @Override
         public void onCompleted(ApiResponse<Attribute> response) {
@@ -161,10 +161,10 @@ public class AttributesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Attribute>> getAttributeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Attribute>> callback) {
+  public Future<ApiResponse<Attribute>> getAttributeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Attribute>> callback) {
     try {
-      SettableFuture<ApiResponse<Attribute>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Attribute>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Attribute>() {}, new AsyncApiCallback<ApiResponse<Attribute>>() {
         @Override
         public void onCompleted(ApiResponse<Attribute> response) {
@@ -202,10 +202,10 @@ public class AttributesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AttributeEntityListing> getAttributesAsync(GetAttributesRequest request, AsyncApiCallback<AttributeEntityListing> callback) {
+  public Future<AttributeEntityListing> getAttributesAsync(GetAttributesRequest request, final AsyncApiCallback<AttributeEntityListing> callback) {
     try {
-      SettableFuture<AttributeEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<AttributeEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AttributeEntityListing>() {}, new AsyncApiCallback<ApiResponse<AttributeEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<AttributeEntityListing> response) {
@@ -236,10 +236,10 @@ public class AttributesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AttributeEntityListing>> getAttributesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AttributeEntityListing>> callback) {
+  public Future<ApiResponse<AttributeEntityListing>> getAttributesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AttributeEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<AttributeEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<AttributeEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<AttributeEntityListing>() {}, new AsyncApiCallback<ApiResponse<AttributeEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<AttributeEntityListing> response) {
@@ -277,10 +277,10 @@ public class AttributesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Attribute> postAttributesAsync(PostAttributesRequest request, AsyncApiCallback<Attribute> callback) {
+  public Future<Attribute> postAttributesAsync(PostAttributesRequest request, final AsyncApiCallback<Attribute> callback) {
     try {
-      SettableFuture<Attribute> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Attribute> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Attribute>() {}, new AsyncApiCallback<ApiResponse<Attribute>>() {
         @Override
         public void onCompleted(ApiResponse<Attribute> response) {
@@ -311,10 +311,10 @@ public class AttributesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Attribute>> postAttributesAsync(ApiRequest<Attribute> request, AsyncApiCallback<ApiResponse<Attribute>> callback) {
+  public Future<ApiResponse<Attribute>> postAttributesAsync(ApiRequest<Attribute> request, final AsyncApiCallback<ApiResponse<Attribute>> callback) {
     try {
-      SettableFuture<ApiResponse<Attribute>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Attribute>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Attribute>() {}, new AsyncApiCallback<ApiResponse<Attribute>>() {
         @Override
         public void onCompleted(ApiResponse<Attribute> response) {
@@ -352,10 +352,10 @@ public class AttributesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AttributeEntityListing> postAttributesQueryAsync(PostAttributesQueryRequest request, AsyncApiCallback<AttributeEntityListing> callback) {
+  public Future<AttributeEntityListing> postAttributesQueryAsync(PostAttributesQueryRequest request, final AsyncApiCallback<AttributeEntityListing> callback) {
     try {
-      SettableFuture<AttributeEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<AttributeEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AttributeEntityListing>() {}, new AsyncApiCallback<ApiResponse<AttributeEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<AttributeEntityListing> response) {
@@ -386,10 +386,10 @@ public class AttributesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AttributeEntityListing>> postAttributesQueryAsync(ApiRequest<AttributeQueryRequest> request, AsyncApiCallback<ApiResponse<AttributeEntityListing>> callback) {
+  public Future<ApiResponse<AttributeEntityListing>> postAttributesQueryAsync(ApiRequest<AttributeQueryRequest> request, final AsyncApiCallback<ApiResponse<AttributeEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<AttributeEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<AttributeEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<AttributeEntityListing>() {}, new AsyncApiCallback<ApiResponse<AttributeEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<AttributeEntityListing> response) {
@@ -427,10 +427,10 @@ public class AttributesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Attribute> putAttributeAsync(PutAttributeRequest request, AsyncApiCallback<Attribute> callback) {
+  public Future<Attribute> putAttributeAsync(PutAttributeRequest request, final AsyncApiCallback<Attribute> callback) {
     try {
-      SettableFuture<Attribute> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Attribute> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Attribute>() {}, new AsyncApiCallback<ApiResponse<Attribute>>() {
         @Override
         public void onCompleted(ApiResponse<Attribute> response) {
@@ -461,10 +461,10 @@ public class AttributesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Attribute>> putAttributeAsync(ApiRequest<Attribute> request, AsyncApiCallback<ApiResponse<Attribute>> callback) {
+  public Future<ApiResponse<Attribute>> putAttributeAsync(ApiRequest<Attribute> request, final AsyncApiCallback<ApiResponse<Attribute>> callback) {
     try {
-      SettableFuture<ApiResponse<Attribute>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Attribute>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Attribute>() {}, new AsyncApiCallback<ApiResponse<Attribute>>() {
         @Override
         public void onCompleted(ApiResponse<Attribute> response) {

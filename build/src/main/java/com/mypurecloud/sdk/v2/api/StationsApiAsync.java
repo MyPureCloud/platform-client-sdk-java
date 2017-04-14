@@ -48,10 +48,10 @@ public class StationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteStationAssociateduserAsync(DeleteStationAssociateduserRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteStationAssociateduserAsync(DeleteStationAssociateduserRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -82,10 +82,10 @@ public class StationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteStationAssociateduserAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteStationAssociateduserAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -123,10 +123,10 @@ public class StationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Station> getStationAsync(GetStationRequest request, AsyncApiCallback<Station> callback) {
+  public Future<Station> getStationAsync(GetStationRequest request, final AsyncApiCallback<Station> callback) {
     try {
-      SettableFuture<Station> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Station> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Station>() {}, new AsyncApiCallback<ApiResponse<Station>>() {
         @Override
         public void onCompleted(ApiResponse<Station> response) {
@@ -157,10 +157,10 @@ public class StationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Station>> getStationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Station>> callback) {
+  public Future<ApiResponse<Station>> getStationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Station>> callback) {
     try {
-      SettableFuture<ApiResponse<Station>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Station>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Station>() {}, new AsyncApiCallback<ApiResponse<Station>>() {
         @Override
         public void onCompleted(ApiResponse<Station> response) {
@@ -198,10 +198,10 @@ public class StationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<StationEntityListing> getStationsAsync(GetStationsRequest request, AsyncApiCallback<StationEntityListing> callback) {
+  public Future<StationEntityListing> getStationsAsync(GetStationsRequest request, final AsyncApiCallback<StationEntityListing> callback) {
     try {
-      SettableFuture<StationEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<StationEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<StationEntityListing>() {}, new AsyncApiCallback<ApiResponse<StationEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<StationEntityListing> response) {
@@ -232,10 +232,10 @@ public class StationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<StationEntityListing>> getStationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<StationEntityListing>> callback) {
+  public Future<ApiResponse<StationEntityListing>> getStationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<StationEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<StationEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<StationEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<StationEntityListing>() {}, new AsyncApiCallback<ApiResponse<StationEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<StationEntityListing> response) {

@@ -364,7 +364,7 @@ public class ApiClient implements AutoCloseable {
         return url.toString();
     }
 
-    private ApiClientConnectorRequest prepareConnectorRequest(ApiRequest<?> request) throws IOException {
+    private ApiClientConnectorRequest prepareConnectorRequest(final ApiRequest<?> request) throws IOException {
         final String path = request.getPath();
         final List<Pair> queryParams = new ArrayList<>(request.getQueryParams());
 
@@ -488,8 +488,8 @@ public class ApiClient implements AutoCloseable {
         }
     }
 
-    private <T> Future<ApiResponse<T>> getAPIResponseAsync(ApiRequest<?> request, TypeReference<T> returnType, AsyncApiCallback<ApiResponse<T>> callback) {
-        SettableFuture<ApiResponse<T>> future = SettableFuture.create();
+    private <T> Future<ApiResponse<T>> getAPIResponseAsync(ApiRequest<?> request, final TypeReference<T> returnType, final AsyncApiCallback<ApiResponse<T>> callback) {
+        final SettableFuture<ApiResponse<T>> future = SettableFuture.create();
         try {
             ApiClientConnectorRequest connectorRequest = prepareConnectorRequest(request);
             connector.invokeAsync(connectorRequest, new AsyncApiCallback<ApiClientConnectorResponse>() {

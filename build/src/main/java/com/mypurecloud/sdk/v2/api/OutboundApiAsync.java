@@ -153,10 +153,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteOutboundAttemptlimitAsync(DeleteOutboundAttemptlimitRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteOutboundAttemptlimitAsync(DeleteOutboundAttemptlimitRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -187,10 +187,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteOutboundAttemptlimitAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteOutboundAttemptlimitAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -228,10 +228,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteOutboundCallabletimesetAsync(DeleteOutboundCallabletimesetRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteOutboundCallabletimesetAsync(DeleteOutboundCallabletimesetRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -262,10 +262,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteOutboundCallabletimesetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteOutboundCallabletimesetAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -303,10 +303,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteOutboundCallanalysisresponsesetAsync(DeleteOutboundCallanalysisresponsesetRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteOutboundCallanalysisresponsesetAsync(DeleteOutboundCallanalysisresponsesetRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -337,10 +337,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteOutboundCallanalysisresponsesetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteOutboundCallanalysisresponsesetAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -378,10 +378,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Campaign> deleteOutboundCampaignAsync(DeleteOutboundCampaignRequest request, AsyncApiCallback<Campaign> callback) {
+  public Future<Campaign> deleteOutboundCampaignAsync(DeleteOutboundCampaignRequest request, final AsyncApiCallback<Campaign> callback) {
     try {
-      SettableFuture<Campaign> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Campaign> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Campaign>() {}, new AsyncApiCallback<ApiResponse<Campaign>>() {
         @Override
         public void onCompleted(ApiResponse<Campaign> response) {
@@ -412,10 +412,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Campaign>> deleteOutboundCampaignAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Campaign>> callback) {
+  public Future<ApiResponse<Campaign>> deleteOutboundCampaignAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Campaign>> callback) {
     try {
-      SettableFuture<ApiResponse<Campaign>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Campaign>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Campaign>() {}, new AsyncApiCallback<ApiResponse<Campaign>>() {
         @Override
         public void onCompleted(ApiResponse<Campaign> response) {
@@ -453,10 +453,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteOutboundCampaignProgressAsync(DeleteOutboundCampaignProgressRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteOutboundCampaignProgressAsync(DeleteOutboundCampaignProgressRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -487,10 +487,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteOutboundCampaignProgressAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteOutboundCampaignProgressAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -528,10 +528,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteOutboundCampaignruleAsync(DeleteOutboundCampaignruleRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteOutboundCampaignruleAsync(DeleteOutboundCampaignruleRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -562,10 +562,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteOutboundCampaignruleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteOutboundCampaignruleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -603,10 +603,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteOutboundContactlistAsync(DeleteOutboundContactlistRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteOutboundContactlistAsync(DeleteOutboundContactlistRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -637,10 +637,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteOutboundContactlistAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteOutboundContactlistAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -678,10 +678,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteOutboundContactlistContactAsync(DeleteOutboundContactlistContactRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteOutboundContactlistContactAsync(DeleteOutboundContactlistContactRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -712,10 +712,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteOutboundContactlistContactAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteOutboundContactlistContactAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -753,10 +753,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteOutboundDnclistAsync(DeleteOutboundDnclistRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteOutboundDnclistAsync(DeleteOutboundDnclistRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -787,10 +787,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteOutboundDnclistAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteOutboundDnclistAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -828,10 +828,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteOutboundRulesetAsync(DeleteOutboundRulesetRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteOutboundRulesetAsync(DeleteOutboundRulesetRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -862,10 +862,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteOutboundRulesetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteOutboundRulesetAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -903,10 +903,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteOutboundSchedulesCampaignAsync(DeleteOutboundSchedulesCampaignRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteOutboundSchedulesCampaignAsync(DeleteOutboundSchedulesCampaignRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -937,10 +937,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteOutboundSchedulesCampaignAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteOutboundSchedulesCampaignAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -978,10 +978,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteOutboundSchedulesSequenceAsync(DeleteOutboundSchedulesSequenceRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteOutboundSchedulesSequenceAsync(DeleteOutboundSchedulesSequenceRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -1012,10 +1012,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteOutboundSchedulesSequenceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteOutboundSchedulesSequenceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -1053,10 +1053,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteOutboundSequenceAsync(DeleteOutboundSequenceRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteOutboundSequenceAsync(DeleteOutboundSequenceRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -1087,10 +1087,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteOutboundSequenceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteOutboundSequenceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -1128,10 +1128,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AttemptLimits> getOutboundAttemptlimitAsync(GetOutboundAttemptlimitRequest request, AsyncApiCallback<AttemptLimits> callback) {
+  public Future<AttemptLimits> getOutboundAttemptlimitAsync(GetOutboundAttemptlimitRequest request, final AsyncApiCallback<AttemptLimits> callback) {
     try {
-      SettableFuture<AttemptLimits> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<AttemptLimits> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AttemptLimits>() {}, new AsyncApiCallback<ApiResponse<AttemptLimits>>() {
         @Override
         public void onCompleted(ApiResponse<AttemptLimits> response) {
@@ -1162,10 +1162,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AttemptLimits>> getOutboundAttemptlimitAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AttemptLimits>> callback) {
+  public Future<ApiResponse<AttemptLimits>> getOutboundAttemptlimitAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AttemptLimits>> callback) {
     try {
-      SettableFuture<ApiResponse<AttemptLimits>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<AttemptLimits>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<AttemptLimits>() {}, new AsyncApiCallback<ApiResponse<AttemptLimits>>() {
         @Override
         public void onCompleted(ApiResponse<AttemptLimits> response) {
@@ -1203,10 +1203,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AttemptLimitsEntityListing> getOutboundAttemptlimitsAsync(GetOutboundAttemptlimitsRequest request, AsyncApiCallback<AttemptLimitsEntityListing> callback) {
+  public Future<AttemptLimitsEntityListing> getOutboundAttemptlimitsAsync(GetOutboundAttemptlimitsRequest request, final AsyncApiCallback<AttemptLimitsEntityListing> callback) {
     try {
-      SettableFuture<AttemptLimitsEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<AttemptLimitsEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AttemptLimitsEntityListing>() {}, new AsyncApiCallback<ApiResponse<AttemptLimitsEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<AttemptLimitsEntityListing> response) {
@@ -1237,10 +1237,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AttemptLimitsEntityListing>> getOutboundAttemptlimitsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AttemptLimitsEntityListing>> callback) {
+  public Future<ApiResponse<AttemptLimitsEntityListing>> getOutboundAttemptlimitsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AttemptLimitsEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<AttemptLimitsEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<AttemptLimitsEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<AttemptLimitsEntityListing>() {}, new AsyncApiCallback<ApiResponse<AttemptLimitsEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<AttemptLimitsEntityListing> response) {
@@ -1278,10 +1278,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CallableTimeSet> getOutboundCallabletimesetAsync(GetOutboundCallabletimesetRequest request, AsyncApiCallback<CallableTimeSet> callback) {
+  public Future<CallableTimeSet> getOutboundCallabletimesetAsync(GetOutboundCallabletimesetRequest request, final AsyncApiCallback<CallableTimeSet> callback) {
     try {
-      SettableFuture<CallableTimeSet> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CallableTimeSet> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CallableTimeSet>() {}, new AsyncApiCallback<ApiResponse<CallableTimeSet>>() {
         @Override
         public void onCompleted(ApiResponse<CallableTimeSet> response) {
@@ -1312,10 +1312,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CallableTimeSet>> getOutboundCallabletimesetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CallableTimeSet>> callback) {
+  public Future<ApiResponse<CallableTimeSet>> getOutboundCallabletimesetAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CallableTimeSet>> callback) {
     try {
-      SettableFuture<ApiResponse<CallableTimeSet>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CallableTimeSet>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CallableTimeSet>() {}, new AsyncApiCallback<ApiResponse<CallableTimeSet>>() {
         @Override
         public void onCompleted(ApiResponse<CallableTimeSet> response) {
@@ -1353,10 +1353,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CallableTimeSetEntityListing> getOutboundCallabletimesetsAsync(GetOutboundCallabletimesetsRequest request, AsyncApiCallback<CallableTimeSetEntityListing> callback) {
+  public Future<CallableTimeSetEntityListing> getOutboundCallabletimesetsAsync(GetOutboundCallabletimesetsRequest request, final AsyncApiCallback<CallableTimeSetEntityListing> callback) {
     try {
-      SettableFuture<CallableTimeSetEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CallableTimeSetEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CallableTimeSetEntityListing>() {}, new AsyncApiCallback<ApiResponse<CallableTimeSetEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<CallableTimeSetEntityListing> response) {
@@ -1387,10 +1387,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CallableTimeSetEntityListing>> getOutboundCallabletimesetsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CallableTimeSetEntityListing>> callback) {
+  public Future<ApiResponse<CallableTimeSetEntityListing>> getOutboundCallabletimesetsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CallableTimeSetEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<CallableTimeSetEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CallableTimeSetEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CallableTimeSetEntityListing>() {}, new AsyncApiCallback<ApiResponse<CallableTimeSetEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<CallableTimeSetEntityListing> response) {
@@ -1428,10 +1428,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ResponseSet> getOutboundCallanalysisresponsesetAsync(GetOutboundCallanalysisresponsesetRequest request, AsyncApiCallback<ResponseSet> callback) {
+  public Future<ResponseSet> getOutboundCallanalysisresponsesetAsync(GetOutboundCallanalysisresponsesetRequest request, final AsyncApiCallback<ResponseSet> callback) {
     try {
-      SettableFuture<ResponseSet> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ResponseSet> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ResponseSet>() {}, new AsyncApiCallback<ApiResponse<ResponseSet>>() {
         @Override
         public void onCompleted(ApiResponse<ResponseSet> response) {
@@ -1462,10 +1462,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ResponseSet>> getOutboundCallanalysisresponsesetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ResponseSet>> callback) {
+  public Future<ApiResponse<ResponseSet>> getOutboundCallanalysisresponsesetAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ResponseSet>> callback) {
     try {
-      SettableFuture<ApiResponse<ResponseSet>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ResponseSet>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ResponseSet>() {}, new AsyncApiCallback<ApiResponse<ResponseSet>>() {
         @Override
         public void onCompleted(ApiResponse<ResponseSet> response) {
@@ -1503,10 +1503,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ResponseSetEntityListing> getOutboundCallanalysisresponsesetsAsync(GetOutboundCallanalysisresponsesetsRequest request, AsyncApiCallback<ResponseSetEntityListing> callback) {
+  public Future<ResponseSetEntityListing> getOutboundCallanalysisresponsesetsAsync(GetOutboundCallanalysisresponsesetsRequest request, final AsyncApiCallback<ResponseSetEntityListing> callback) {
     try {
-      SettableFuture<ResponseSetEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ResponseSetEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ResponseSetEntityListing>() {}, new AsyncApiCallback<ApiResponse<ResponseSetEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ResponseSetEntityListing> response) {
@@ -1537,10 +1537,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ResponseSetEntityListing>> getOutboundCallanalysisresponsesetsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ResponseSetEntityListing>> callback) {
+  public Future<ApiResponse<ResponseSetEntityListing>> getOutboundCallanalysisresponsesetsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ResponseSetEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<ResponseSetEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ResponseSetEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ResponseSetEntityListing>() {}, new AsyncApiCallback<ApiResponse<ResponseSetEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ResponseSetEntityListing> response) {
@@ -1578,10 +1578,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Campaign> getOutboundCampaignAsync(GetOutboundCampaignRequest request, AsyncApiCallback<Campaign> callback) {
+  public Future<Campaign> getOutboundCampaignAsync(GetOutboundCampaignRequest request, final AsyncApiCallback<Campaign> callback) {
     try {
-      SettableFuture<Campaign> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Campaign> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Campaign>() {}, new AsyncApiCallback<ApiResponse<Campaign>>() {
         @Override
         public void onCompleted(ApiResponse<Campaign> response) {
@@ -1612,10 +1612,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Campaign>> getOutboundCampaignAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Campaign>> callback) {
+  public Future<ApiResponse<Campaign>> getOutboundCampaignAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Campaign>> callback) {
     try {
-      SettableFuture<ApiResponse<Campaign>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Campaign>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Campaign>() {}, new AsyncApiCallback<ApiResponse<Campaign>>() {
         @Override
         public void onCompleted(ApiResponse<Campaign> response) {
@@ -1653,10 +1653,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CampaignDiagnostics> getOutboundCampaignDiagnosticsAsync(GetOutboundCampaignDiagnosticsRequest request, AsyncApiCallback<CampaignDiagnostics> callback) {
+  public Future<CampaignDiagnostics> getOutboundCampaignDiagnosticsAsync(GetOutboundCampaignDiagnosticsRequest request, final AsyncApiCallback<CampaignDiagnostics> callback) {
     try {
-      SettableFuture<CampaignDiagnostics> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CampaignDiagnostics> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CampaignDiagnostics>() {}, new AsyncApiCallback<ApiResponse<CampaignDiagnostics>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignDiagnostics> response) {
@@ -1687,10 +1687,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CampaignDiagnostics>> getOutboundCampaignDiagnosticsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignDiagnostics>> callback) {
+  public Future<ApiResponse<CampaignDiagnostics>> getOutboundCampaignDiagnosticsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CampaignDiagnostics>> callback) {
     try {
-      SettableFuture<ApiResponse<CampaignDiagnostics>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CampaignDiagnostics>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CampaignDiagnostics>() {}, new AsyncApiCallback<ApiResponse<CampaignDiagnostics>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignDiagnostics> response) {
@@ -1728,10 +1728,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CampaignInteractions> getOutboundCampaignInteractionsAsync(GetOutboundCampaignInteractionsRequest request, AsyncApiCallback<CampaignInteractions> callback) {
+  public Future<CampaignInteractions> getOutboundCampaignInteractionsAsync(GetOutboundCampaignInteractionsRequest request, final AsyncApiCallback<CampaignInteractions> callback) {
     try {
-      SettableFuture<CampaignInteractions> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CampaignInteractions> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CampaignInteractions>() {}, new AsyncApiCallback<ApiResponse<CampaignInteractions>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignInteractions> response) {
@@ -1762,10 +1762,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CampaignInteractions>> getOutboundCampaignInteractionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignInteractions>> callback) {
+  public Future<ApiResponse<CampaignInteractions>> getOutboundCampaignInteractionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CampaignInteractions>> callback) {
     try {
-      SettableFuture<ApiResponse<CampaignInteractions>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CampaignInteractions>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CampaignInteractions>() {}, new AsyncApiCallback<ApiResponse<CampaignInteractions>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignInteractions> response) {
@@ -1803,10 +1803,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CampaignProgress> getOutboundCampaignProgressAsync(GetOutboundCampaignProgressRequest request, AsyncApiCallback<CampaignProgress> callback) {
+  public Future<CampaignProgress> getOutboundCampaignProgressAsync(GetOutboundCampaignProgressRequest request, final AsyncApiCallback<CampaignProgress> callback) {
     try {
-      SettableFuture<CampaignProgress> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CampaignProgress> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CampaignProgress>() {}, new AsyncApiCallback<ApiResponse<CampaignProgress>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignProgress> response) {
@@ -1837,10 +1837,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CampaignProgress>> getOutboundCampaignProgressAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignProgress>> callback) {
+  public Future<ApiResponse<CampaignProgress>> getOutboundCampaignProgressAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CampaignProgress>> callback) {
     try {
-      SettableFuture<ApiResponse<CampaignProgress>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CampaignProgress>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CampaignProgress>() {}, new AsyncApiCallback<ApiResponse<CampaignProgress>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignProgress> response) {
@@ -1878,10 +1878,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CampaignStats> getOutboundCampaignStatsAsync(GetOutboundCampaignStatsRequest request, AsyncApiCallback<CampaignStats> callback) {
+  public Future<CampaignStats> getOutboundCampaignStatsAsync(GetOutboundCampaignStatsRequest request, final AsyncApiCallback<CampaignStats> callback) {
     try {
-      SettableFuture<CampaignStats> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CampaignStats> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CampaignStats>() {}, new AsyncApiCallback<ApiResponse<CampaignStats>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignStats> response) {
@@ -1912,10 +1912,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CampaignStats>> getOutboundCampaignStatsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignStats>> callback) {
+  public Future<ApiResponse<CampaignStats>> getOutboundCampaignStatsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CampaignStats>> callback) {
     try {
-      SettableFuture<ApiResponse<CampaignStats>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CampaignStats>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CampaignStats>() {}, new AsyncApiCallback<ApiResponse<CampaignStats>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignStats> response) {
@@ -1953,10 +1953,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CampaignRule> getOutboundCampaignruleAsync(GetOutboundCampaignruleRequest request, AsyncApiCallback<CampaignRule> callback) {
+  public Future<CampaignRule> getOutboundCampaignruleAsync(GetOutboundCampaignruleRequest request, final AsyncApiCallback<CampaignRule> callback) {
     try {
-      SettableFuture<CampaignRule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CampaignRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CampaignRule>() {}, new AsyncApiCallback<ApiResponse<CampaignRule>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignRule> response) {
@@ -1987,10 +1987,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CampaignRule>> getOutboundCampaignruleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignRule>> callback) {
+  public Future<ApiResponse<CampaignRule>> getOutboundCampaignruleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CampaignRule>> callback) {
     try {
-      SettableFuture<ApiResponse<CampaignRule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CampaignRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CampaignRule>() {}, new AsyncApiCallback<ApiResponse<CampaignRule>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignRule> response) {
@@ -2028,10 +2028,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CampaignRuleEntityListing> getOutboundCampaignrulesAsync(GetOutboundCampaignrulesRequest request, AsyncApiCallback<CampaignRuleEntityListing> callback) {
+  public Future<CampaignRuleEntityListing> getOutboundCampaignrulesAsync(GetOutboundCampaignrulesRequest request, final AsyncApiCallback<CampaignRuleEntityListing> callback) {
     try {
-      SettableFuture<CampaignRuleEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CampaignRuleEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CampaignRuleEntityListing>() {}, new AsyncApiCallback<ApiResponse<CampaignRuleEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignRuleEntityListing> response) {
@@ -2062,10 +2062,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CampaignRuleEntityListing>> getOutboundCampaignrulesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignRuleEntityListing>> callback) {
+  public Future<ApiResponse<CampaignRuleEntityListing>> getOutboundCampaignrulesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CampaignRuleEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<CampaignRuleEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CampaignRuleEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CampaignRuleEntityListing>() {}, new AsyncApiCallback<ApiResponse<CampaignRuleEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignRuleEntityListing> response) {
@@ -2103,10 +2103,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CampaignEntityListing> getOutboundCampaignsAsync(GetOutboundCampaignsRequest request, AsyncApiCallback<CampaignEntityListing> callback) {
+  public Future<CampaignEntityListing> getOutboundCampaignsAsync(GetOutboundCampaignsRequest request, final AsyncApiCallback<CampaignEntityListing> callback) {
     try {
-      SettableFuture<CampaignEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CampaignEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CampaignEntityListing>() {}, new AsyncApiCallback<ApiResponse<CampaignEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignEntityListing> response) {
@@ -2137,10 +2137,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CampaignEntityListing>> getOutboundCampaignsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignEntityListing>> callback) {
+  public Future<ApiResponse<CampaignEntityListing>> getOutboundCampaignsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CampaignEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<CampaignEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CampaignEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CampaignEntityListing>() {}, new AsyncApiCallback<ApiResponse<CampaignEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignEntityListing> response) {
@@ -2178,10 +2178,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ContactList> getOutboundContactlistAsync(GetOutboundContactlistRequest request, AsyncApiCallback<ContactList> callback) {
+  public Future<ContactList> getOutboundContactlistAsync(GetOutboundContactlistRequest request, final AsyncApiCallback<ContactList> callback) {
     try {
-      SettableFuture<ContactList> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ContactList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactList>() {}, new AsyncApiCallback<ApiResponse<ContactList>>() {
         @Override
         public void onCompleted(ApiResponse<ContactList> response) {
@@ -2212,10 +2212,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ContactList>> getOutboundContactlistAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ContactList>> callback) {
+  public Future<ApiResponse<ContactList>> getOutboundContactlistAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ContactList>> callback) {
     try {
-      SettableFuture<ApiResponse<ContactList>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ContactList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ContactList>() {}, new AsyncApiCallback<ApiResponse<ContactList>>() {
         @Override
         public void onCompleted(ApiResponse<ContactList> response) {
@@ -2253,10 +2253,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DialerContact> getOutboundContactlistContactAsync(GetOutboundContactlistContactRequest request, AsyncApiCallback<DialerContact> callback) {
+  public Future<DialerContact> getOutboundContactlistContactAsync(GetOutboundContactlistContactRequest request, final AsyncApiCallback<DialerContact> callback) {
     try {
-      SettableFuture<DialerContact> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DialerContact> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DialerContact>() {}, new AsyncApiCallback<ApiResponse<DialerContact>>() {
         @Override
         public void onCompleted(ApiResponse<DialerContact> response) {
@@ -2287,10 +2287,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DialerContact>> getOutboundContactlistContactAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DialerContact>> callback) {
+  public Future<ApiResponse<DialerContact>> getOutboundContactlistContactAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DialerContact>> callback) {
     try {
-      SettableFuture<ApiResponse<DialerContact>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DialerContact>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DialerContact>() {}, new AsyncApiCallback<ApiResponse<DialerContact>>() {
         @Override
         public void onCompleted(ApiResponse<DialerContact> response) {
@@ -2328,10 +2328,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ExportUri> getOutboundContactlistExportAsync(GetOutboundContactlistExportRequest request, AsyncApiCallback<ExportUri> callback) {
+  public Future<ExportUri> getOutboundContactlistExportAsync(GetOutboundContactlistExportRequest request, final AsyncApiCallback<ExportUri> callback) {
     try {
-      SettableFuture<ExportUri> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ExportUri> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExportUri>() {}, new AsyncApiCallback<ApiResponse<ExportUri>>() {
         @Override
         public void onCompleted(ApiResponse<ExportUri> response) {
@@ -2362,10 +2362,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ExportUri>> getOutboundContactlistExportAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExportUri>> callback) {
+  public Future<ApiResponse<ExportUri>> getOutboundContactlistExportAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExportUri>> callback) {
     try {
-      SettableFuture<ApiResponse<ExportUri>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ExportUri>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ExportUri>() {}, new AsyncApiCallback<ApiResponse<ExportUri>>() {
         @Override
         public void onCompleted(ApiResponse<ExportUri> response) {
@@ -2403,10 +2403,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ImportStatus> getOutboundContactlistImportstatusAsync(GetOutboundContactlistImportstatusRequest request, AsyncApiCallback<ImportStatus> callback) {
+  public Future<ImportStatus> getOutboundContactlistImportstatusAsync(GetOutboundContactlistImportstatusRequest request, final AsyncApiCallback<ImportStatus> callback) {
     try {
-      SettableFuture<ImportStatus> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ImportStatus> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ImportStatus>() {}, new AsyncApiCallback<ApiResponse<ImportStatus>>() {
         @Override
         public void onCompleted(ApiResponse<ImportStatus> response) {
@@ -2437,10 +2437,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ImportStatus>> getOutboundContactlistImportstatusAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ImportStatus>> callback) {
+  public Future<ApiResponse<ImportStatus>> getOutboundContactlistImportstatusAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ImportStatus>> callback) {
     try {
-      SettableFuture<ApiResponse<ImportStatus>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ImportStatus>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ImportStatus>() {}, new AsyncApiCallback<ApiResponse<ImportStatus>>() {
         @Override
         public void onCompleted(ApiResponse<ImportStatus> response) {
@@ -2478,10 +2478,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ContactListEntityListing> getOutboundContactlistsAsync(GetOutboundContactlistsRequest request, AsyncApiCallback<ContactListEntityListing> callback) {
+  public Future<ContactListEntityListing> getOutboundContactlistsAsync(GetOutboundContactlistsRequest request, final AsyncApiCallback<ContactListEntityListing> callback) {
     try {
-      SettableFuture<ContactListEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ContactListEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactListEntityListing>() {}, new AsyncApiCallback<ApiResponse<ContactListEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ContactListEntityListing> response) {
@@ -2512,10 +2512,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ContactListEntityListing>> getOutboundContactlistsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ContactListEntityListing>> callback) {
+  public Future<ApiResponse<ContactListEntityListing>> getOutboundContactlistsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ContactListEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<ContactListEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ContactListEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ContactListEntityListing>() {}, new AsyncApiCallback<ApiResponse<ContactListEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ContactListEntityListing> response) {
@@ -2553,10 +2553,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DncList> getOutboundDnclistAsync(GetOutboundDnclistRequest request, AsyncApiCallback<DncList> callback) {
+  public Future<DncList> getOutboundDnclistAsync(GetOutboundDnclistRequest request, final AsyncApiCallback<DncList> callback) {
     try {
-      SettableFuture<DncList> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DncList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DncList>() {}, new AsyncApiCallback<ApiResponse<DncList>>() {
         @Override
         public void onCompleted(ApiResponse<DncList> response) {
@@ -2587,10 +2587,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DncList>> getOutboundDnclistAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DncList>> callback) {
+  public Future<ApiResponse<DncList>> getOutboundDnclistAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DncList>> callback) {
     try {
-      SettableFuture<ApiResponse<DncList>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DncList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DncList>() {}, new AsyncApiCallback<ApiResponse<DncList>>() {
         @Override
         public void onCompleted(ApiResponse<DncList> response) {
@@ -2628,10 +2628,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ExportUri> getOutboundDnclistExportAsync(GetOutboundDnclistExportRequest request, AsyncApiCallback<ExportUri> callback) {
+  public Future<ExportUri> getOutboundDnclistExportAsync(GetOutboundDnclistExportRequest request, final AsyncApiCallback<ExportUri> callback) {
     try {
-      SettableFuture<ExportUri> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ExportUri> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExportUri>() {}, new AsyncApiCallback<ApiResponse<ExportUri>>() {
         @Override
         public void onCompleted(ApiResponse<ExportUri> response) {
@@ -2662,10 +2662,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ExportUri>> getOutboundDnclistExportAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExportUri>> callback) {
+  public Future<ApiResponse<ExportUri>> getOutboundDnclistExportAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExportUri>> callback) {
     try {
-      SettableFuture<ApiResponse<ExportUri>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ExportUri>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ExportUri>() {}, new AsyncApiCallback<ApiResponse<ExportUri>>() {
         @Override
         public void onCompleted(ApiResponse<ExportUri> response) {
@@ -2703,10 +2703,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ImportStatus> getOutboundDnclistImportstatusAsync(GetOutboundDnclistImportstatusRequest request, AsyncApiCallback<ImportStatus> callback) {
+  public Future<ImportStatus> getOutboundDnclistImportstatusAsync(GetOutboundDnclistImportstatusRequest request, final AsyncApiCallback<ImportStatus> callback) {
     try {
-      SettableFuture<ImportStatus> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ImportStatus> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ImportStatus>() {}, new AsyncApiCallback<ApiResponse<ImportStatus>>() {
         @Override
         public void onCompleted(ApiResponse<ImportStatus> response) {
@@ -2737,10 +2737,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ImportStatus>> getOutboundDnclistImportstatusAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ImportStatus>> callback) {
+  public Future<ApiResponse<ImportStatus>> getOutboundDnclistImportstatusAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ImportStatus>> callback) {
     try {
-      SettableFuture<ApiResponse<ImportStatus>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ImportStatus>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ImportStatus>() {}, new AsyncApiCallback<ApiResponse<ImportStatus>>() {
         @Override
         public void onCompleted(ApiResponse<ImportStatus> response) {
@@ -2778,10 +2778,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DncListEntityListing> getOutboundDnclistsAsync(GetOutboundDnclistsRequest request, AsyncApiCallback<DncListEntityListing> callback) {
+  public Future<DncListEntityListing> getOutboundDnclistsAsync(GetOutboundDnclistsRequest request, final AsyncApiCallback<DncListEntityListing> callback) {
     try {
-      SettableFuture<DncListEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DncListEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DncListEntityListing>() {}, new AsyncApiCallback<ApiResponse<DncListEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<DncListEntityListing> response) {
@@ -2812,10 +2812,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DncListEntityListing>> getOutboundDnclistsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DncListEntityListing>> callback) {
+  public Future<ApiResponse<DncListEntityListing>> getOutboundDnclistsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DncListEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<DncListEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DncListEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DncListEntityListing>() {}, new AsyncApiCallback<ApiResponse<DncListEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<DncListEntityListing> response) {
@@ -2853,10 +2853,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<RuleSet> getOutboundRulesetAsync(GetOutboundRulesetRequest request, AsyncApiCallback<RuleSet> callback) {
+  public Future<RuleSet> getOutboundRulesetAsync(GetOutboundRulesetRequest request, final AsyncApiCallback<RuleSet> callback) {
     try {
-      SettableFuture<RuleSet> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<RuleSet> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RuleSet>() {}, new AsyncApiCallback<ApiResponse<RuleSet>>() {
         @Override
         public void onCompleted(ApiResponse<RuleSet> response) {
@@ -2887,10 +2887,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<RuleSet>> getOutboundRulesetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RuleSet>> callback) {
+  public Future<ApiResponse<RuleSet>> getOutboundRulesetAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RuleSet>> callback) {
     try {
-      SettableFuture<ApiResponse<RuleSet>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<RuleSet>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<RuleSet>() {}, new AsyncApiCallback<ApiResponse<RuleSet>>() {
         @Override
         public void onCompleted(ApiResponse<RuleSet> response) {
@@ -2928,10 +2928,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<RuleSetEntityListing> getOutboundRulesetsAsync(GetOutboundRulesetsRequest request, AsyncApiCallback<RuleSetEntityListing> callback) {
+  public Future<RuleSetEntityListing> getOutboundRulesetsAsync(GetOutboundRulesetsRequest request, final AsyncApiCallback<RuleSetEntityListing> callback) {
     try {
-      SettableFuture<RuleSetEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<RuleSetEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RuleSetEntityListing>() {}, new AsyncApiCallback<ApiResponse<RuleSetEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<RuleSetEntityListing> response) {
@@ -2962,10 +2962,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<RuleSetEntityListing>> getOutboundRulesetsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RuleSetEntityListing>> callback) {
+  public Future<ApiResponse<RuleSetEntityListing>> getOutboundRulesetsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RuleSetEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<RuleSetEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<RuleSetEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<RuleSetEntityListing>() {}, new AsyncApiCallback<ApiResponse<RuleSetEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<RuleSetEntityListing> response) {
@@ -3003,10 +3003,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CampaignSchedule> getOutboundSchedulesCampaignAsync(GetOutboundSchedulesCampaignRequest request, AsyncApiCallback<CampaignSchedule> callback) {
+  public Future<CampaignSchedule> getOutboundSchedulesCampaignAsync(GetOutboundSchedulesCampaignRequest request, final AsyncApiCallback<CampaignSchedule> callback) {
     try {
-      SettableFuture<CampaignSchedule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CampaignSchedule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CampaignSchedule>() {}, new AsyncApiCallback<ApiResponse<CampaignSchedule>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignSchedule> response) {
@@ -3037,10 +3037,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CampaignSchedule>> getOutboundSchedulesCampaignAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignSchedule>> callback) {
+  public Future<ApiResponse<CampaignSchedule>> getOutboundSchedulesCampaignAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CampaignSchedule>> callback) {
     try {
-      SettableFuture<ApiResponse<CampaignSchedule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CampaignSchedule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CampaignSchedule>() {}, new AsyncApiCallback<ApiResponse<CampaignSchedule>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignSchedule> response) {
@@ -3078,10 +3078,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<CampaignSchedule>> getOutboundSchedulesCampaignsAsync(GetOutboundSchedulesCampaignsRequest request, AsyncApiCallback<List<CampaignSchedule>> callback) {
+  public Future<List<CampaignSchedule>> getOutboundSchedulesCampaignsAsync(GetOutboundSchedulesCampaignsRequest request, final AsyncApiCallback<List<CampaignSchedule>> callback) {
     try {
-      SettableFuture<List<CampaignSchedule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<CampaignSchedule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<CampaignSchedule>>() {}, new AsyncApiCallback<ApiResponse<List<CampaignSchedule>>>() {
         @Override
         public void onCompleted(ApiResponse<List<CampaignSchedule>> response) {
@@ -3112,10 +3112,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<CampaignSchedule>>> getOutboundSchedulesCampaignsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<CampaignSchedule>>> callback) {
+  public Future<ApiResponse<List<CampaignSchedule>>> getOutboundSchedulesCampaignsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<CampaignSchedule>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<CampaignSchedule>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<CampaignSchedule>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<CampaignSchedule>>() {}, new AsyncApiCallback<ApiResponse<List<CampaignSchedule>>>() {
         @Override
         public void onCompleted(ApiResponse<List<CampaignSchedule>> response) {
@@ -3153,10 +3153,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<SequenceSchedule> getOutboundSchedulesSequenceAsync(GetOutboundSchedulesSequenceRequest request, AsyncApiCallback<SequenceSchedule> callback) {
+  public Future<SequenceSchedule> getOutboundSchedulesSequenceAsync(GetOutboundSchedulesSequenceRequest request, final AsyncApiCallback<SequenceSchedule> callback) {
     try {
-      SettableFuture<SequenceSchedule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<SequenceSchedule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SequenceSchedule>() {}, new AsyncApiCallback<ApiResponse<SequenceSchedule>>() {
         @Override
         public void onCompleted(ApiResponse<SequenceSchedule> response) {
@@ -3187,10 +3187,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<SequenceSchedule>> getOutboundSchedulesSequenceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SequenceSchedule>> callback) {
+  public Future<ApiResponse<SequenceSchedule>> getOutboundSchedulesSequenceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SequenceSchedule>> callback) {
     try {
-      SettableFuture<ApiResponse<SequenceSchedule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<SequenceSchedule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<SequenceSchedule>() {}, new AsyncApiCallback<ApiResponse<SequenceSchedule>>() {
         @Override
         public void onCompleted(ApiResponse<SequenceSchedule> response) {
@@ -3228,10 +3228,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<SequenceSchedule>> getOutboundSchedulesSequencesAsync(GetOutboundSchedulesSequencesRequest request, AsyncApiCallback<List<SequenceSchedule>> callback) {
+  public Future<List<SequenceSchedule>> getOutboundSchedulesSequencesAsync(GetOutboundSchedulesSequencesRequest request, final AsyncApiCallback<List<SequenceSchedule>> callback) {
     try {
-      SettableFuture<List<SequenceSchedule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<SequenceSchedule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<SequenceSchedule>>() {}, new AsyncApiCallback<ApiResponse<List<SequenceSchedule>>>() {
         @Override
         public void onCompleted(ApiResponse<List<SequenceSchedule>> response) {
@@ -3262,10 +3262,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<SequenceSchedule>>> getOutboundSchedulesSequencesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<SequenceSchedule>>> callback) {
+  public Future<ApiResponse<List<SequenceSchedule>>> getOutboundSchedulesSequencesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<SequenceSchedule>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<SequenceSchedule>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<SequenceSchedule>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<SequenceSchedule>>() {}, new AsyncApiCallback<ApiResponse<List<SequenceSchedule>>>() {
         @Override
         public void onCompleted(ApiResponse<List<SequenceSchedule>> response) {
@@ -3303,10 +3303,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CampaignSequence> getOutboundSequenceAsync(GetOutboundSequenceRequest request, AsyncApiCallback<CampaignSequence> callback) {
+  public Future<CampaignSequence> getOutboundSequenceAsync(GetOutboundSequenceRequest request, final AsyncApiCallback<CampaignSequence> callback) {
     try {
-      SettableFuture<CampaignSequence> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CampaignSequence> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CampaignSequence>() {}, new AsyncApiCallback<ApiResponse<CampaignSequence>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignSequence> response) {
@@ -3337,10 +3337,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CampaignSequence>> getOutboundSequenceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignSequence>> callback) {
+  public Future<ApiResponse<CampaignSequence>> getOutboundSequenceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CampaignSequence>> callback) {
     try {
-      SettableFuture<ApiResponse<CampaignSequence>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CampaignSequence>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CampaignSequence>() {}, new AsyncApiCallback<ApiResponse<CampaignSequence>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignSequence> response) {
@@ -3378,10 +3378,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CampaignSequenceEntityListing> getOutboundSequencesAsync(GetOutboundSequencesRequest request, AsyncApiCallback<CampaignSequenceEntityListing> callback) {
+  public Future<CampaignSequenceEntityListing> getOutboundSequencesAsync(GetOutboundSequencesRequest request, final AsyncApiCallback<CampaignSequenceEntityListing> callback) {
     try {
-      SettableFuture<CampaignSequenceEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CampaignSequenceEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CampaignSequenceEntityListing>() {}, new AsyncApiCallback<ApiResponse<CampaignSequenceEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignSequenceEntityListing> response) {
@@ -3412,10 +3412,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CampaignSequenceEntityListing>> getOutboundSequencesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CampaignSequenceEntityListing>> callback) {
+  public Future<ApiResponse<CampaignSequenceEntityListing>> getOutboundSequencesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CampaignSequenceEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<CampaignSequenceEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CampaignSequenceEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CampaignSequenceEntityListing>() {}, new AsyncApiCallback<ApiResponse<CampaignSequenceEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignSequenceEntityListing> response) {
@@ -3453,10 +3453,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<WrapUpCodeMapping> getOutboundWrapupcodemappingsAsync(GetOutboundWrapupcodemappingsRequest request, AsyncApiCallback<WrapUpCodeMapping> callback) {
+  public Future<WrapUpCodeMapping> getOutboundWrapupcodemappingsAsync(GetOutboundWrapupcodemappingsRequest request, final AsyncApiCallback<WrapUpCodeMapping> callback) {
     try {
-      SettableFuture<WrapUpCodeMapping> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<WrapUpCodeMapping> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WrapUpCodeMapping>() {}, new AsyncApiCallback<ApiResponse<WrapUpCodeMapping>>() {
         @Override
         public void onCompleted(ApiResponse<WrapUpCodeMapping> response) {
@@ -3487,10 +3487,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<WrapUpCodeMapping>> getOutboundWrapupcodemappingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<WrapUpCodeMapping>> callback) {
+  public Future<ApiResponse<WrapUpCodeMapping>> getOutboundWrapupcodemappingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WrapUpCodeMapping>> callback) {
     try {
-      SettableFuture<ApiResponse<WrapUpCodeMapping>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<WrapUpCodeMapping>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<WrapUpCodeMapping>() {}, new AsyncApiCallback<ApiResponse<WrapUpCodeMapping>>() {
         @Override
         public void onCompleted(ApiResponse<WrapUpCodeMapping> response) {
@@ -3528,10 +3528,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AttemptLimits> postOutboundAttemptlimitsAsync(PostOutboundAttemptlimitsRequest request, AsyncApiCallback<AttemptLimits> callback) {
+  public Future<AttemptLimits> postOutboundAttemptlimitsAsync(PostOutboundAttemptlimitsRequest request, final AsyncApiCallback<AttemptLimits> callback) {
     try {
-      SettableFuture<AttemptLimits> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<AttemptLimits> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AttemptLimits>() {}, new AsyncApiCallback<ApiResponse<AttemptLimits>>() {
         @Override
         public void onCompleted(ApiResponse<AttemptLimits> response) {
@@ -3562,10 +3562,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AttemptLimits>> postOutboundAttemptlimitsAsync(ApiRequest<AttemptLimits> request, AsyncApiCallback<ApiResponse<AttemptLimits>> callback) {
+  public Future<ApiResponse<AttemptLimits>> postOutboundAttemptlimitsAsync(ApiRequest<AttemptLimits> request, final AsyncApiCallback<ApiResponse<AttemptLimits>> callback) {
     try {
-      SettableFuture<ApiResponse<AttemptLimits>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<AttemptLimits>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<AttemptLimits>() {}, new AsyncApiCallback<ApiResponse<AttemptLimits>>() {
         @Override
         public void onCompleted(ApiResponse<AttemptLimits> response) {
@@ -3603,10 +3603,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AuditSearchResult> postOutboundAuditsAsync(PostOutboundAuditsRequest request, AsyncApiCallback<AuditSearchResult> callback) {
+  public Future<AuditSearchResult> postOutboundAuditsAsync(PostOutboundAuditsRequest request, final AsyncApiCallback<AuditSearchResult> callback) {
     try {
-      SettableFuture<AuditSearchResult> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<AuditSearchResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuditSearchResult>() {}, new AsyncApiCallback<ApiResponse<AuditSearchResult>>() {
         @Override
         public void onCompleted(ApiResponse<AuditSearchResult> response) {
@@ -3637,10 +3637,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AuditSearchResult>> postOutboundAuditsAsync(ApiRequest<DialerAuditRequest> request, AsyncApiCallback<ApiResponse<AuditSearchResult>> callback) {
+  public Future<ApiResponse<AuditSearchResult>> postOutboundAuditsAsync(ApiRequest<DialerAuditRequest> request, final AsyncApiCallback<ApiResponse<AuditSearchResult>> callback) {
     try {
-      SettableFuture<ApiResponse<AuditSearchResult>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<AuditSearchResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<AuditSearchResult>() {}, new AsyncApiCallback<ApiResponse<AuditSearchResult>>() {
         @Override
         public void onCompleted(ApiResponse<AuditSearchResult> response) {
@@ -3678,10 +3678,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CallableTimeSet> postOutboundCallabletimesetsAsync(PostOutboundCallabletimesetsRequest request, AsyncApiCallback<CallableTimeSet> callback) {
+  public Future<CallableTimeSet> postOutboundCallabletimesetsAsync(PostOutboundCallabletimesetsRequest request, final AsyncApiCallback<CallableTimeSet> callback) {
     try {
-      SettableFuture<CallableTimeSet> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CallableTimeSet> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CallableTimeSet>() {}, new AsyncApiCallback<ApiResponse<CallableTimeSet>>() {
         @Override
         public void onCompleted(ApiResponse<CallableTimeSet> response) {
@@ -3712,10 +3712,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CallableTimeSet>> postOutboundCallabletimesetsAsync(ApiRequest<CallableTimeSet> request, AsyncApiCallback<ApiResponse<CallableTimeSet>> callback) {
+  public Future<ApiResponse<CallableTimeSet>> postOutboundCallabletimesetsAsync(ApiRequest<CallableTimeSet> request, final AsyncApiCallback<ApiResponse<CallableTimeSet>> callback) {
     try {
-      SettableFuture<ApiResponse<CallableTimeSet>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CallableTimeSet>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CallableTimeSet>() {}, new AsyncApiCallback<ApiResponse<CallableTimeSet>>() {
         @Override
         public void onCompleted(ApiResponse<CallableTimeSet> response) {
@@ -3753,10 +3753,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ResponseSet> postOutboundCallanalysisresponsesetsAsync(PostOutboundCallanalysisresponsesetsRequest request, AsyncApiCallback<ResponseSet> callback) {
+  public Future<ResponseSet> postOutboundCallanalysisresponsesetsAsync(PostOutboundCallanalysisresponsesetsRequest request, final AsyncApiCallback<ResponseSet> callback) {
     try {
-      SettableFuture<ResponseSet> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ResponseSet> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ResponseSet>() {}, new AsyncApiCallback<ApiResponse<ResponseSet>>() {
         @Override
         public void onCompleted(ApiResponse<ResponseSet> response) {
@@ -3787,10 +3787,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ResponseSet>> postOutboundCallanalysisresponsesetsAsync(ApiRequest<ResponseSet> request, AsyncApiCallback<ApiResponse<ResponseSet>> callback) {
+  public Future<ApiResponse<ResponseSet>> postOutboundCallanalysisresponsesetsAsync(ApiRequest<ResponseSet> request, final AsyncApiCallback<ApiResponse<ResponseSet>> callback) {
     try {
-      SettableFuture<ApiResponse<ResponseSet>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ResponseSet>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ResponseSet>() {}, new AsyncApiCallback<ApiResponse<ResponseSet>>() {
         @Override
         public void onCompleted(ApiResponse<ResponseSet> response) {
@@ -3828,10 +3828,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ContactCallbackRequest> postOutboundCampaignCallbackScheduleAsync(PostOutboundCampaignCallbackScheduleRequest request, AsyncApiCallback<ContactCallbackRequest> callback) {
+  public Future<ContactCallbackRequest> postOutboundCampaignCallbackScheduleAsync(PostOutboundCampaignCallbackScheduleRequest request, final AsyncApiCallback<ContactCallbackRequest> callback) {
     try {
-      SettableFuture<ContactCallbackRequest> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ContactCallbackRequest> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactCallbackRequest>() {}, new AsyncApiCallback<ApiResponse<ContactCallbackRequest>>() {
         @Override
         public void onCompleted(ApiResponse<ContactCallbackRequest> response) {
@@ -3862,10 +3862,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ContactCallbackRequest>> postOutboundCampaignCallbackScheduleAsync(ApiRequest<ContactCallbackRequest> request, AsyncApiCallback<ApiResponse<ContactCallbackRequest>> callback) {
+  public Future<ApiResponse<ContactCallbackRequest>> postOutboundCampaignCallbackScheduleAsync(ApiRequest<ContactCallbackRequest> request, final AsyncApiCallback<ApiResponse<ContactCallbackRequest>> callback) {
     try {
-      SettableFuture<ApiResponse<ContactCallbackRequest>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ContactCallbackRequest>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ContactCallbackRequest>() {}, new AsyncApiCallback<ApiResponse<ContactCallbackRequest>>() {
         @Override
         public void onCompleted(ApiResponse<ContactCallbackRequest> response) {
@@ -3903,10 +3903,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CampaignRule> postOutboundCampaignrulesAsync(PostOutboundCampaignrulesRequest request, AsyncApiCallback<CampaignRule> callback) {
+  public Future<CampaignRule> postOutboundCampaignrulesAsync(PostOutboundCampaignrulesRequest request, final AsyncApiCallback<CampaignRule> callback) {
     try {
-      SettableFuture<CampaignRule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CampaignRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CampaignRule>() {}, new AsyncApiCallback<ApiResponse<CampaignRule>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignRule> response) {
@@ -3937,10 +3937,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CampaignRule>> postOutboundCampaignrulesAsync(ApiRequest<CampaignRule> request, AsyncApiCallback<ApiResponse<CampaignRule>> callback) {
+  public Future<ApiResponse<CampaignRule>> postOutboundCampaignrulesAsync(ApiRequest<CampaignRule> request, final AsyncApiCallback<ApiResponse<CampaignRule>> callback) {
     try {
-      SettableFuture<ApiResponse<CampaignRule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CampaignRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CampaignRule>() {}, new AsyncApiCallback<ApiResponse<CampaignRule>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignRule> response) {
@@ -3978,10 +3978,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Campaign> postOutboundCampaignsAsync(PostOutboundCampaignsRequest request, AsyncApiCallback<Campaign> callback) {
+  public Future<Campaign> postOutboundCampaignsAsync(PostOutboundCampaignsRequest request, final AsyncApiCallback<Campaign> callback) {
     try {
-      SettableFuture<Campaign> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Campaign> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Campaign>() {}, new AsyncApiCallback<ApiResponse<Campaign>>() {
         @Override
         public void onCompleted(ApiResponse<Campaign> response) {
@@ -4012,10 +4012,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Campaign>> postOutboundCampaignsAsync(ApiRequest<Campaign> request, AsyncApiCallback<ApiResponse<Campaign>> callback) {
+  public Future<ApiResponse<Campaign>> postOutboundCampaignsAsync(ApiRequest<Campaign> request, final AsyncApiCallback<ApiResponse<Campaign>> callback) {
     try {
-      SettableFuture<ApiResponse<Campaign>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Campaign>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Campaign>() {}, new AsyncApiCallback<ApiResponse<Campaign>>() {
         @Override
         public void onCompleted(ApiResponse<Campaign> response) {
@@ -4053,10 +4053,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<CampaignProgress>> postOutboundCampaignsProgressAsync(PostOutboundCampaignsProgressRequest request, AsyncApiCallback<List<CampaignProgress>> callback) {
+  public Future<List<CampaignProgress>> postOutboundCampaignsProgressAsync(PostOutboundCampaignsProgressRequest request, final AsyncApiCallback<List<CampaignProgress>> callback) {
     try {
-      SettableFuture<List<CampaignProgress>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<CampaignProgress>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<CampaignProgress>>() {}, new AsyncApiCallback<ApiResponse<List<CampaignProgress>>>() {
         @Override
         public void onCompleted(ApiResponse<List<CampaignProgress>> response) {
@@ -4087,10 +4087,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<CampaignProgress>>> postOutboundCampaignsProgressAsync(ApiRequest<List<String>> request, AsyncApiCallback<ApiResponse<List<CampaignProgress>>> callback) {
+  public Future<ApiResponse<List<CampaignProgress>>> postOutboundCampaignsProgressAsync(ApiRequest<List<String>> request, final AsyncApiCallback<ApiResponse<List<CampaignProgress>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<CampaignProgress>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<CampaignProgress>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<CampaignProgress>>() {}, new AsyncApiCallback<ApiResponse<List<CampaignProgress>>>() {
         @Override
         public void onCompleted(ApiResponse<List<CampaignProgress>> response) {
@@ -4128,10 +4128,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<DialerContact>> postOutboundContactlistContactsAsync(PostOutboundContactlistContactsRequest request, AsyncApiCallback<List<DialerContact>> callback) {
+  public Future<List<DialerContact>> postOutboundContactlistContactsAsync(PostOutboundContactlistContactsRequest request, final AsyncApiCallback<List<DialerContact>> callback) {
     try {
-      SettableFuture<List<DialerContact>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<DialerContact>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<DialerContact>>() {}, new AsyncApiCallback<ApiResponse<List<DialerContact>>>() {
         @Override
         public void onCompleted(ApiResponse<List<DialerContact>> response) {
@@ -4162,10 +4162,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<DialerContact>>> postOutboundContactlistContactsAsync(ApiRequest<List<DialerContact>> request, AsyncApiCallback<ApiResponse<List<DialerContact>>> callback) {
+  public Future<ApiResponse<List<DialerContact>>> postOutboundContactlistContactsAsync(ApiRequest<List<DialerContact>> request, final AsyncApiCallback<ApiResponse<List<DialerContact>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<DialerContact>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<DialerContact>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<DialerContact>>() {}, new AsyncApiCallback<ApiResponse<List<DialerContact>>>() {
         @Override
         public void onCompleted(ApiResponse<List<DialerContact>> response) {
@@ -4203,10 +4203,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UriReference> postOutboundContactlistExportAsync(PostOutboundContactlistExportRequest request, AsyncApiCallback<UriReference> callback) {
+  public Future<UriReference> postOutboundContactlistExportAsync(PostOutboundContactlistExportRequest request, final AsyncApiCallback<UriReference> callback) {
     try {
-      SettableFuture<UriReference> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<UriReference> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UriReference>() {}, new AsyncApiCallback<ApiResponse<UriReference>>() {
         @Override
         public void onCompleted(ApiResponse<UriReference> response) {
@@ -4237,10 +4237,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UriReference>> postOutboundContactlistExportAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UriReference>> callback) {
+  public Future<ApiResponse<UriReference>> postOutboundContactlistExportAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UriReference>> callback) {
     try {
-      SettableFuture<ApiResponse<UriReference>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<UriReference>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<UriReference>() {}, new AsyncApiCallback<ApiResponse<UriReference>>() {
         @Override
         public void onCompleted(ApiResponse<UriReference> response) {
@@ -4278,10 +4278,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ContactList> postOutboundContactlistsAsync(PostOutboundContactlistsRequest request, AsyncApiCallback<ContactList> callback) {
+  public Future<ContactList> postOutboundContactlistsAsync(PostOutboundContactlistsRequest request, final AsyncApiCallback<ContactList> callback) {
     try {
-      SettableFuture<ContactList> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ContactList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactList>() {}, new AsyncApiCallback<ApiResponse<ContactList>>() {
         @Override
         public void onCompleted(ApiResponse<ContactList> response) {
@@ -4312,10 +4312,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ContactList>> postOutboundContactlistsAsync(ApiRequest<ContactList> request, AsyncApiCallback<ApiResponse<ContactList>> callback) {
+  public Future<ApiResponse<ContactList>> postOutboundContactlistsAsync(ApiRequest<ContactList> request, final AsyncApiCallback<ApiResponse<ContactList>> callback) {
     try {
-      SettableFuture<ApiResponse<ContactList>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ContactList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ContactList>() {}, new AsyncApiCallback<ApiResponse<ContactList>>() {
         @Override
         public void onCompleted(ApiResponse<ContactList> response) {
@@ -4353,10 +4353,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> postOutboundConversationDncAsync(PostOutboundConversationDncRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> postOutboundConversationDncAsync(PostOutboundConversationDncRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -4387,10 +4387,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> postOutboundConversationDncAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> postOutboundConversationDncAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -4428,10 +4428,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UriReference> postOutboundDnclistExportAsync(PostOutboundDnclistExportRequest request, AsyncApiCallback<UriReference> callback) {
+  public Future<UriReference> postOutboundDnclistExportAsync(PostOutboundDnclistExportRequest request, final AsyncApiCallback<UriReference> callback) {
     try {
-      SettableFuture<UriReference> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<UriReference> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UriReference>() {}, new AsyncApiCallback<ApiResponse<UriReference>>() {
         @Override
         public void onCompleted(ApiResponse<UriReference> response) {
@@ -4462,10 +4462,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UriReference>> postOutboundDnclistExportAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UriReference>> callback) {
+  public Future<ApiResponse<UriReference>> postOutboundDnclistExportAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UriReference>> callback) {
     try {
-      SettableFuture<ApiResponse<UriReference>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<UriReference>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<UriReference>() {}, new AsyncApiCallback<ApiResponse<UriReference>>() {
         @Override
         public void onCompleted(ApiResponse<UriReference> response) {
@@ -4503,10 +4503,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> postOutboundDnclistPhonenumbersAsync(PostOutboundDnclistPhonenumbersRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> postOutboundDnclistPhonenumbersAsync(PostOutboundDnclistPhonenumbersRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -4537,10 +4537,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> postOutboundDnclistPhonenumbersAsync(ApiRequest<List<String>> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> postOutboundDnclistPhonenumbersAsync(ApiRequest<List<String>> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -4578,10 +4578,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DncList> postOutboundDnclistsAsync(PostOutboundDnclistsRequest request, AsyncApiCallback<DncList> callback) {
+  public Future<DncList> postOutboundDnclistsAsync(PostOutboundDnclistsRequest request, final AsyncApiCallback<DncList> callback) {
     try {
-      SettableFuture<DncList> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DncList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DncList>() {}, new AsyncApiCallback<ApiResponse<DncList>>() {
         @Override
         public void onCompleted(ApiResponse<DncList> response) {
@@ -4612,10 +4612,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DncList>> postOutboundDnclistsAsync(ApiRequest<DncListCreate> request, AsyncApiCallback<ApiResponse<DncList>> callback) {
+  public Future<ApiResponse<DncList>> postOutboundDnclistsAsync(ApiRequest<DncListCreate> request, final AsyncApiCallback<ApiResponse<DncList>> callback) {
     try {
-      SettableFuture<ApiResponse<DncList>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DncList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DncList>() {}, new AsyncApiCallback<ApiResponse<DncList>>() {
         @Override
         public void onCompleted(ApiResponse<DncList> response) {
@@ -4653,10 +4653,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<RuleSet> postOutboundRulesetsAsync(PostOutboundRulesetsRequest request, AsyncApiCallback<RuleSet> callback) {
+  public Future<RuleSet> postOutboundRulesetsAsync(PostOutboundRulesetsRequest request, final AsyncApiCallback<RuleSet> callback) {
     try {
-      SettableFuture<RuleSet> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<RuleSet> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RuleSet>() {}, new AsyncApiCallback<ApiResponse<RuleSet>>() {
         @Override
         public void onCompleted(ApiResponse<RuleSet> response) {
@@ -4687,10 +4687,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<RuleSet>> postOutboundRulesetsAsync(ApiRequest<RuleSet> request, AsyncApiCallback<ApiResponse<RuleSet>> callback) {
+  public Future<ApiResponse<RuleSet>> postOutboundRulesetsAsync(ApiRequest<RuleSet> request, final AsyncApiCallback<ApiResponse<RuleSet>> callback) {
     try {
-      SettableFuture<ApiResponse<RuleSet>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<RuleSet>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<RuleSet>() {}, new AsyncApiCallback<ApiResponse<RuleSet>>() {
         @Override
         public void onCompleted(ApiResponse<RuleSet> response) {
@@ -4728,10 +4728,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CampaignSequence> postOutboundSequencesAsync(PostOutboundSequencesRequest request, AsyncApiCallback<CampaignSequence> callback) {
+  public Future<CampaignSequence> postOutboundSequencesAsync(PostOutboundSequencesRequest request, final AsyncApiCallback<CampaignSequence> callback) {
     try {
-      SettableFuture<CampaignSequence> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CampaignSequence> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CampaignSequence>() {}, new AsyncApiCallback<ApiResponse<CampaignSequence>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignSequence> response) {
@@ -4762,10 +4762,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CampaignSequence>> postOutboundSequencesAsync(ApiRequest<CampaignSequence> request, AsyncApiCallback<ApiResponse<CampaignSequence>> callback) {
+  public Future<ApiResponse<CampaignSequence>> postOutboundSequencesAsync(ApiRequest<CampaignSequence> request, final AsyncApiCallback<ApiResponse<CampaignSequence>> callback) {
     try {
-      SettableFuture<ApiResponse<CampaignSequence>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CampaignSequence>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CampaignSequence>() {}, new AsyncApiCallback<ApiResponse<CampaignSequence>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignSequence> response) {
@@ -4803,10 +4803,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AttemptLimits> putOutboundAttemptlimitAsync(PutOutboundAttemptlimitRequest request, AsyncApiCallback<AttemptLimits> callback) {
+  public Future<AttemptLimits> putOutboundAttemptlimitAsync(PutOutboundAttemptlimitRequest request, final AsyncApiCallback<AttemptLimits> callback) {
     try {
-      SettableFuture<AttemptLimits> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<AttemptLimits> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AttemptLimits>() {}, new AsyncApiCallback<ApiResponse<AttemptLimits>>() {
         @Override
         public void onCompleted(ApiResponse<AttemptLimits> response) {
@@ -4837,10 +4837,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AttemptLimits>> putOutboundAttemptlimitAsync(ApiRequest<AttemptLimits> request, AsyncApiCallback<ApiResponse<AttemptLimits>> callback) {
+  public Future<ApiResponse<AttemptLimits>> putOutboundAttemptlimitAsync(ApiRequest<AttemptLimits> request, final AsyncApiCallback<ApiResponse<AttemptLimits>> callback) {
     try {
-      SettableFuture<ApiResponse<AttemptLimits>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<AttemptLimits>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<AttemptLimits>() {}, new AsyncApiCallback<ApiResponse<AttemptLimits>>() {
         @Override
         public void onCompleted(ApiResponse<AttemptLimits> response) {
@@ -4878,10 +4878,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CallableTimeSet> putOutboundCallabletimesetAsync(PutOutboundCallabletimesetRequest request, AsyncApiCallback<CallableTimeSet> callback) {
+  public Future<CallableTimeSet> putOutboundCallabletimesetAsync(PutOutboundCallabletimesetRequest request, final AsyncApiCallback<CallableTimeSet> callback) {
     try {
-      SettableFuture<CallableTimeSet> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CallableTimeSet> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CallableTimeSet>() {}, new AsyncApiCallback<ApiResponse<CallableTimeSet>>() {
         @Override
         public void onCompleted(ApiResponse<CallableTimeSet> response) {
@@ -4912,10 +4912,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CallableTimeSet>> putOutboundCallabletimesetAsync(ApiRequest<CallableTimeSet> request, AsyncApiCallback<ApiResponse<CallableTimeSet>> callback) {
+  public Future<ApiResponse<CallableTimeSet>> putOutboundCallabletimesetAsync(ApiRequest<CallableTimeSet> request, final AsyncApiCallback<ApiResponse<CallableTimeSet>> callback) {
     try {
-      SettableFuture<ApiResponse<CallableTimeSet>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CallableTimeSet>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CallableTimeSet>() {}, new AsyncApiCallback<ApiResponse<CallableTimeSet>>() {
         @Override
         public void onCompleted(ApiResponse<CallableTimeSet> response) {
@@ -4953,10 +4953,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ResponseSet> putOutboundCallanalysisresponsesetAsync(PutOutboundCallanalysisresponsesetRequest request, AsyncApiCallback<ResponseSet> callback) {
+  public Future<ResponseSet> putOutboundCallanalysisresponsesetAsync(PutOutboundCallanalysisresponsesetRequest request, final AsyncApiCallback<ResponseSet> callback) {
     try {
-      SettableFuture<ResponseSet> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ResponseSet> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ResponseSet>() {}, new AsyncApiCallback<ApiResponse<ResponseSet>>() {
         @Override
         public void onCompleted(ApiResponse<ResponseSet> response) {
@@ -4987,10 +4987,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ResponseSet>> putOutboundCallanalysisresponsesetAsync(ApiRequest<ResponseSet> request, AsyncApiCallback<ApiResponse<ResponseSet>> callback) {
+  public Future<ApiResponse<ResponseSet>> putOutboundCallanalysisresponsesetAsync(ApiRequest<ResponseSet> request, final AsyncApiCallback<ApiResponse<ResponseSet>> callback) {
     try {
-      SettableFuture<ApiResponse<ResponseSet>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ResponseSet>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ResponseSet>() {}, new AsyncApiCallback<ApiResponse<ResponseSet>>() {
         @Override
         public void onCompleted(ApiResponse<ResponseSet> response) {
@@ -5028,10 +5028,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Campaign> putOutboundCampaignAsync(PutOutboundCampaignRequest request, AsyncApiCallback<Campaign> callback) {
+  public Future<Campaign> putOutboundCampaignAsync(PutOutboundCampaignRequest request, final AsyncApiCallback<Campaign> callback) {
     try {
-      SettableFuture<Campaign> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Campaign> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Campaign>() {}, new AsyncApiCallback<ApiResponse<Campaign>>() {
         @Override
         public void onCompleted(ApiResponse<Campaign> response) {
@@ -5062,10 +5062,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Campaign>> putOutboundCampaignAsync(ApiRequest<Campaign> request, AsyncApiCallback<ApiResponse<Campaign>> callback) {
+  public Future<ApiResponse<Campaign>> putOutboundCampaignAsync(ApiRequest<Campaign> request, final AsyncApiCallback<ApiResponse<Campaign>> callback) {
     try {
-      SettableFuture<ApiResponse<Campaign>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Campaign>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Campaign>() {}, new AsyncApiCallback<ApiResponse<Campaign>>() {
         @Override
         public void onCompleted(ApiResponse<Campaign> response) {
@@ -5103,10 +5103,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> putOutboundCampaignAgentAsync(PutOutboundCampaignAgentRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> putOutboundCampaignAgentAsync(PutOutboundCampaignAgentRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -5137,10 +5137,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> putOutboundCampaignAgentAsync(ApiRequest<Agent> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> putOutboundCampaignAgentAsync(ApiRequest<Agent> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -5178,10 +5178,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CampaignRule> putOutboundCampaignruleAsync(PutOutboundCampaignruleRequest request, AsyncApiCallback<CampaignRule> callback) {
+  public Future<CampaignRule> putOutboundCampaignruleAsync(PutOutboundCampaignruleRequest request, final AsyncApiCallback<CampaignRule> callback) {
     try {
-      SettableFuture<CampaignRule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CampaignRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CampaignRule>() {}, new AsyncApiCallback<ApiResponse<CampaignRule>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignRule> response) {
@@ -5212,10 +5212,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CampaignRule>> putOutboundCampaignruleAsync(ApiRequest<CampaignRule> request, AsyncApiCallback<ApiResponse<CampaignRule>> callback) {
+  public Future<ApiResponse<CampaignRule>> putOutboundCampaignruleAsync(ApiRequest<CampaignRule> request, final AsyncApiCallback<ApiResponse<CampaignRule>> callback) {
     try {
-      SettableFuture<ApiResponse<CampaignRule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CampaignRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CampaignRule>() {}, new AsyncApiCallback<ApiResponse<CampaignRule>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignRule> response) {
@@ -5253,10 +5253,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ContactList> putOutboundContactlistAsync(PutOutboundContactlistRequest request, AsyncApiCallback<ContactList> callback) {
+  public Future<ContactList> putOutboundContactlistAsync(PutOutboundContactlistRequest request, final AsyncApiCallback<ContactList> callback) {
     try {
-      SettableFuture<ContactList> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ContactList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactList>() {}, new AsyncApiCallback<ApiResponse<ContactList>>() {
         @Override
         public void onCompleted(ApiResponse<ContactList> response) {
@@ -5287,10 +5287,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ContactList>> putOutboundContactlistAsync(ApiRequest<ContactList> request, AsyncApiCallback<ApiResponse<ContactList>> callback) {
+  public Future<ApiResponse<ContactList>> putOutboundContactlistAsync(ApiRequest<ContactList> request, final AsyncApiCallback<ApiResponse<ContactList>> callback) {
     try {
-      SettableFuture<ApiResponse<ContactList>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ContactList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ContactList>() {}, new AsyncApiCallback<ApiResponse<ContactList>>() {
         @Override
         public void onCompleted(ApiResponse<ContactList> response) {
@@ -5328,10 +5328,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DialerContact> putOutboundContactlistContactAsync(PutOutboundContactlistContactRequest request, AsyncApiCallback<DialerContact> callback) {
+  public Future<DialerContact> putOutboundContactlistContactAsync(PutOutboundContactlistContactRequest request, final AsyncApiCallback<DialerContact> callback) {
     try {
-      SettableFuture<DialerContact> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DialerContact> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DialerContact>() {}, new AsyncApiCallback<ApiResponse<DialerContact>>() {
         @Override
         public void onCompleted(ApiResponse<DialerContact> response) {
@@ -5362,10 +5362,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DialerContact>> putOutboundContactlistContactAsync(ApiRequest<DialerContact> request, AsyncApiCallback<ApiResponse<DialerContact>> callback) {
+  public Future<ApiResponse<DialerContact>> putOutboundContactlistContactAsync(ApiRequest<DialerContact> request, final AsyncApiCallback<ApiResponse<DialerContact>> callback) {
     try {
-      SettableFuture<ApiResponse<DialerContact>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DialerContact>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DialerContact>() {}, new AsyncApiCallback<ApiResponse<DialerContact>>() {
         @Override
         public void onCompleted(ApiResponse<DialerContact> response) {
@@ -5403,10 +5403,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DncList> putOutboundDnclistAsync(PutOutboundDnclistRequest request, AsyncApiCallback<DncList> callback) {
+  public Future<DncList> putOutboundDnclistAsync(PutOutboundDnclistRequest request, final AsyncApiCallback<DncList> callback) {
     try {
-      SettableFuture<DncList> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DncList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DncList>() {}, new AsyncApiCallback<ApiResponse<DncList>>() {
         @Override
         public void onCompleted(ApiResponse<DncList> response) {
@@ -5437,10 +5437,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DncList>> putOutboundDnclistAsync(ApiRequest<DncList> request, AsyncApiCallback<ApiResponse<DncList>> callback) {
+  public Future<ApiResponse<DncList>> putOutboundDnclistAsync(ApiRequest<DncList> request, final AsyncApiCallback<ApiResponse<DncList>> callback) {
     try {
-      SettableFuture<ApiResponse<DncList>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DncList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DncList>() {}, new AsyncApiCallback<ApiResponse<DncList>>() {
         @Override
         public void onCompleted(ApiResponse<DncList> response) {
@@ -5478,10 +5478,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<RuleSet> putOutboundRulesetAsync(PutOutboundRulesetRequest request, AsyncApiCallback<RuleSet> callback) {
+  public Future<RuleSet> putOutboundRulesetAsync(PutOutboundRulesetRequest request, final AsyncApiCallback<RuleSet> callback) {
     try {
-      SettableFuture<RuleSet> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<RuleSet> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RuleSet>() {}, new AsyncApiCallback<ApiResponse<RuleSet>>() {
         @Override
         public void onCompleted(ApiResponse<RuleSet> response) {
@@ -5512,10 +5512,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<RuleSet>> putOutboundRulesetAsync(ApiRequest<RuleSet> request, AsyncApiCallback<ApiResponse<RuleSet>> callback) {
+  public Future<ApiResponse<RuleSet>> putOutboundRulesetAsync(ApiRequest<RuleSet> request, final AsyncApiCallback<ApiResponse<RuleSet>> callback) {
     try {
-      SettableFuture<ApiResponse<RuleSet>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<RuleSet>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<RuleSet>() {}, new AsyncApiCallback<ApiResponse<RuleSet>>() {
         @Override
         public void onCompleted(ApiResponse<RuleSet> response) {
@@ -5553,10 +5553,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CampaignSchedule> putOutboundSchedulesCampaignAsync(PutOutboundSchedulesCampaignRequest request, AsyncApiCallback<CampaignSchedule> callback) {
+  public Future<CampaignSchedule> putOutboundSchedulesCampaignAsync(PutOutboundSchedulesCampaignRequest request, final AsyncApiCallback<CampaignSchedule> callback) {
     try {
-      SettableFuture<CampaignSchedule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CampaignSchedule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CampaignSchedule>() {}, new AsyncApiCallback<ApiResponse<CampaignSchedule>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignSchedule> response) {
@@ -5587,10 +5587,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CampaignSchedule>> putOutboundSchedulesCampaignAsync(ApiRequest<CampaignSchedule> request, AsyncApiCallback<ApiResponse<CampaignSchedule>> callback) {
+  public Future<ApiResponse<CampaignSchedule>> putOutboundSchedulesCampaignAsync(ApiRequest<CampaignSchedule> request, final AsyncApiCallback<ApiResponse<CampaignSchedule>> callback) {
     try {
-      SettableFuture<ApiResponse<CampaignSchedule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CampaignSchedule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CampaignSchedule>() {}, new AsyncApiCallback<ApiResponse<CampaignSchedule>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignSchedule> response) {
@@ -5628,10 +5628,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<SequenceSchedule> putOutboundSchedulesSequenceAsync(PutOutboundSchedulesSequenceRequest request, AsyncApiCallback<SequenceSchedule> callback) {
+  public Future<SequenceSchedule> putOutboundSchedulesSequenceAsync(PutOutboundSchedulesSequenceRequest request, final AsyncApiCallback<SequenceSchedule> callback) {
     try {
-      SettableFuture<SequenceSchedule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<SequenceSchedule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SequenceSchedule>() {}, new AsyncApiCallback<ApiResponse<SequenceSchedule>>() {
         @Override
         public void onCompleted(ApiResponse<SequenceSchedule> response) {
@@ -5662,10 +5662,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<SequenceSchedule>> putOutboundSchedulesSequenceAsync(ApiRequest<SequenceSchedule> request, AsyncApiCallback<ApiResponse<SequenceSchedule>> callback) {
+  public Future<ApiResponse<SequenceSchedule>> putOutboundSchedulesSequenceAsync(ApiRequest<SequenceSchedule> request, final AsyncApiCallback<ApiResponse<SequenceSchedule>> callback) {
     try {
-      SettableFuture<ApiResponse<SequenceSchedule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<SequenceSchedule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<SequenceSchedule>() {}, new AsyncApiCallback<ApiResponse<SequenceSchedule>>() {
         @Override
         public void onCompleted(ApiResponse<SequenceSchedule> response) {
@@ -5703,10 +5703,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CampaignSequence> putOutboundSequenceAsync(PutOutboundSequenceRequest request, AsyncApiCallback<CampaignSequence> callback) {
+  public Future<CampaignSequence> putOutboundSequenceAsync(PutOutboundSequenceRequest request, final AsyncApiCallback<CampaignSequence> callback) {
     try {
-      SettableFuture<CampaignSequence> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CampaignSequence> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CampaignSequence>() {}, new AsyncApiCallback<ApiResponse<CampaignSequence>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignSequence> response) {
@@ -5737,10 +5737,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CampaignSequence>> putOutboundSequenceAsync(ApiRequest<CampaignSequence> request, AsyncApiCallback<ApiResponse<CampaignSequence>> callback) {
+  public Future<ApiResponse<CampaignSequence>> putOutboundSequenceAsync(ApiRequest<CampaignSequence> request, final AsyncApiCallback<ApiResponse<CampaignSequence>> callback) {
     try {
-      SettableFuture<ApiResponse<CampaignSequence>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CampaignSequence>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CampaignSequence>() {}, new AsyncApiCallback<ApiResponse<CampaignSequence>>() {
         @Override
         public void onCompleted(ApiResponse<CampaignSequence> response) {
@@ -5778,10 +5778,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<WrapUpCodeMapping> putOutboundWrapupcodemappingsAsync(PutOutboundWrapupcodemappingsRequest request, AsyncApiCallback<WrapUpCodeMapping> callback) {
+  public Future<WrapUpCodeMapping> putOutboundWrapupcodemappingsAsync(PutOutboundWrapupcodemappingsRequest request, final AsyncApiCallback<WrapUpCodeMapping> callback) {
     try {
-      SettableFuture<WrapUpCodeMapping> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<WrapUpCodeMapping> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WrapUpCodeMapping>() {}, new AsyncApiCallback<ApiResponse<WrapUpCodeMapping>>() {
         @Override
         public void onCompleted(ApiResponse<WrapUpCodeMapping> response) {
@@ -5812,10 +5812,10 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<WrapUpCodeMapping>> putOutboundWrapupcodemappingsAsync(ApiRequest<WrapUpCodeMapping> request, AsyncApiCallback<ApiResponse<WrapUpCodeMapping>> callback) {
+  public Future<ApiResponse<WrapUpCodeMapping>> putOutboundWrapupcodemappingsAsync(ApiRequest<WrapUpCodeMapping> request, final AsyncApiCallback<ApiResponse<WrapUpCodeMapping>> callback) {
     try {
-      SettableFuture<ApiResponse<WrapUpCodeMapping>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<WrapUpCodeMapping>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<WrapUpCodeMapping>() {}, new AsyncApiCallback<ApiResponse<WrapUpCodeMapping>>() {
         @Override
         public void onCompleted(ApiResponse<WrapUpCodeMapping> response) {

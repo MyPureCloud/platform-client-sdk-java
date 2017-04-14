@@ -44,10 +44,10 @@ public class TokensApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteTokensMeAsync(DeleteTokensMeRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteTokensMeAsync(DeleteTokensMeRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -78,10 +78,10 @@ public class TokensApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteTokensMeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteTokensMeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {

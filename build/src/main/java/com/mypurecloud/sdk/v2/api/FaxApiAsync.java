@@ -53,10 +53,10 @@ public class FaxApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteFaxDocumentAsync(DeleteFaxDocumentRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteFaxDocumentAsync(DeleteFaxDocumentRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -87,10 +87,10 @@ public class FaxApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteFaxDocumentAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteFaxDocumentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -128,10 +128,10 @@ public class FaxApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<FaxDocument> getFaxDocumentAsync(GetFaxDocumentRequest request, AsyncApiCallback<FaxDocument> callback) {
+  public Future<FaxDocument> getFaxDocumentAsync(GetFaxDocumentRequest request, final AsyncApiCallback<FaxDocument> callback) {
     try {
-      SettableFuture<FaxDocument> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<FaxDocument> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FaxDocument>() {}, new AsyncApiCallback<ApiResponse<FaxDocument>>() {
         @Override
         public void onCompleted(ApiResponse<FaxDocument> response) {
@@ -162,10 +162,10 @@ public class FaxApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<FaxDocument>> getFaxDocumentAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FaxDocument>> callback) {
+  public Future<ApiResponse<FaxDocument>> getFaxDocumentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FaxDocument>> callback) {
     try {
-      SettableFuture<ApiResponse<FaxDocument>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<FaxDocument>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<FaxDocument>() {}, new AsyncApiCallback<ApiResponse<FaxDocument>>() {
         @Override
         public void onCompleted(ApiResponse<FaxDocument> response) {
@@ -203,10 +203,10 @@ public class FaxApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DownloadResponse> getFaxDocumentContentAsync(GetFaxDocumentContentRequest request, AsyncApiCallback<DownloadResponse> callback) {
+  public Future<DownloadResponse> getFaxDocumentContentAsync(GetFaxDocumentContentRequest request, final AsyncApiCallback<DownloadResponse> callback) {
     try {
-      SettableFuture<DownloadResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DownloadResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DownloadResponse>() {}, new AsyncApiCallback<ApiResponse<DownloadResponse>>() {
         @Override
         public void onCompleted(ApiResponse<DownloadResponse> response) {
@@ -237,10 +237,10 @@ public class FaxApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DownloadResponse>> getFaxDocumentContentAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DownloadResponse>> callback) {
+  public Future<ApiResponse<DownloadResponse>> getFaxDocumentContentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DownloadResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<DownloadResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DownloadResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DownloadResponse>() {}, new AsyncApiCallback<ApiResponse<DownloadResponse>>() {
         @Override
         public void onCompleted(ApiResponse<DownloadResponse> response) {
@@ -278,10 +278,10 @@ public class FaxApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<FaxDocumentEntityListing> getFaxDocumentsAsync(GetFaxDocumentsRequest request, AsyncApiCallback<FaxDocumentEntityListing> callback) {
+  public Future<FaxDocumentEntityListing> getFaxDocumentsAsync(GetFaxDocumentsRequest request, final AsyncApiCallback<FaxDocumentEntityListing> callback) {
     try {
-      SettableFuture<FaxDocumentEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<FaxDocumentEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FaxDocumentEntityListing>() {}, new AsyncApiCallback<ApiResponse<FaxDocumentEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<FaxDocumentEntityListing> response) {
@@ -312,10 +312,10 @@ public class FaxApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<FaxDocumentEntityListing>> getFaxDocumentsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FaxDocumentEntityListing>> callback) {
+  public Future<ApiResponse<FaxDocumentEntityListing>> getFaxDocumentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FaxDocumentEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<FaxDocumentEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<FaxDocumentEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<FaxDocumentEntityListing>() {}, new AsyncApiCallback<ApiResponse<FaxDocumentEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<FaxDocumentEntityListing> response) {
@@ -353,10 +353,10 @@ public class FaxApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<FaxSummary> getFaxSummaryAsync(GetFaxSummaryRequest request, AsyncApiCallback<FaxSummary> callback) {
+  public Future<FaxSummary> getFaxSummaryAsync(GetFaxSummaryRequest request, final AsyncApiCallback<FaxSummary> callback) {
     try {
-      SettableFuture<FaxSummary> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<FaxSummary> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FaxSummary>() {}, new AsyncApiCallback<ApiResponse<FaxSummary>>() {
         @Override
         public void onCompleted(ApiResponse<FaxSummary> response) {
@@ -387,10 +387,10 @@ public class FaxApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<FaxSummary>> getFaxSummaryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FaxSummary>> callback) {
+  public Future<ApiResponse<FaxSummary>> getFaxSummaryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FaxSummary>> callback) {
     try {
-      SettableFuture<ApiResponse<FaxSummary>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<FaxSummary>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<FaxSummary>() {}, new AsyncApiCallback<ApiResponse<FaxSummary>>() {
         @Override
         public void onCompleted(ApiResponse<FaxSummary> response) {
@@ -428,10 +428,10 @@ public class FaxApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<FaxDocument> putFaxDocumentAsync(PutFaxDocumentRequest request, AsyncApiCallback<FaxDocument> callback) {
+  public Future<FaxDocument> putFaxDocumentAsync(PutFaxDocumentRequest request, final AsyncApiCallback<FaxDocument> callback) {
     try {
-      SettableFuture<FaxDocument> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<FaxDocument> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FaxDocument>() {}, new AsyncApiCallback<ApiResponse<FaxDocument>>() {
         @Override
         public void onCompleted(ApiResponse<FaxDocument> response) {
@@ -462,10 +462,10 @@ public class FaxApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<FaxDocument>> putFaxDocumentAsync(ApiRequest<FaxDocument> request, AsyncApiCallback<ApiResponse<FaxDocument>> callback) {
+  public Future<ApiResponse<FaxDocument>> putFaxDocumentAsync(ApiRequest<FaxDocument> request, final AsyncApiCallback<ApiResponse<FaxDocument>> callback) {
     try {
-      SettableFuture<ApiResponse<FaxDocument>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<FaxDocument>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<FaxDocument>() {}, new AsyncApiCallback<ApiResponse<FaxDocument>>() {
         @Override
         public void onCompleted(ApiResponse<FaxDocument> response) {

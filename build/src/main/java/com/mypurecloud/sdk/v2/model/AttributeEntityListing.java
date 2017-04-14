@@ -25,8 +25,8 @@ public class AttributeEntityListing  implements Serializable, PagedResource<Attr
   private String selfUri = null;
   private String firstUri = null;
   private String previousUri = null;
-  private String nextUri = null;
   private String lastUri = null;
+  private String nextUri = null;
   private Integer pageCount = null;
 
   
@@ -151,23 +151,6 @@ public class AttributeEntityListing  implements Serializable, PagedResource<Attr
 
   /**
    **/
-  public AttributeEntityListing nextUri(String nextUri) {
-    this.nextUri = nextUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nextUri")
-  public String getNextUri() {
-    return nextUri;
-  }
-  public void setNextUri(String nextUri) {
-    this.nextUri = nextUri;
-  }
-
-
-  /**
-   **/
   public AttributeEntityListing lastUri(String lastUri) {
     this.lastUri = lastUri;
     return this;
@@ -180,6 +163,23 @@ public class AttributeEntityListing  implements Serializable, PagedResource<Attr
   }
   public void setLastUri(String lastUri) {
     this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public AttributeEntityListing nextUri(String nextUri) {
+    this.nextUri = nextUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nextUri")
+  public String getNextUri() {
+    return nextUri;
+  }
+  public void setNextUri(String nextUri) {
+    this.nextUri = nextUri;
   }
 
 
@@ -216,14 +216,14 @@ public class AttributeEntityListing  implements Serializable, PagedResource<Attr
         Objects.equals(this.selfUri, attributeEntityListing.selfUri) &&
         Objects.equals(this.firstUri, attributeEntityListing.firstUri) &&
         Objects.equals(this.previousUri, attributeEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, attributeEntityListing.nextUri) &&
         Objects.equals(this.lastUri, attributeEntityListing.lastUri) &&
+        Objects.equals(this.nextUri, attributeEntityListing.nextUri) &&
         Objects.equals(this.pageCount, attributeEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, previousUri, nextUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, previousUri, lastUri, nextUri, pageCount);
   }
 
   @Override
@@ -238,8 +238,8 @@ public class AttributeEntityListing  implements Serializable, PagedResource<Attr
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

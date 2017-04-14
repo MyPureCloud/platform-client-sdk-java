@@ -51,10 +51,10 @@ public class OAuthApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteOauthClientAsync(DeleteOauthClientRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteOauthClientAsync(DeleteOauthClientRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -85,10 +85,10 @@ public class OAuthApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteOauthClientAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteOauthClientAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -126,10 +126,10 @@ public class OAuthApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthClient> getOauthClientAsync(GetOauthClientRequest request, AsyncApiCallback<OAuthClient> callback) {
+  public Future<OAuthClient> getOauthClientAsync(GetOauthClientRequest request, final AsyncApiCallback<OAuthClient> callback) {
     try {
-      SettableFuture<OAuthClient> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OAuthClient> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthClient>() {}, new AsyncApiCallback<ApiResponse<OAuthClient>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthClient> response) {
@@ -160,10 +160,10 @@ public class OAuthApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthClient>> getOauthClientAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OAuthClient>> callback) {
+  public Future<ApiResponse<OAuthClient>> getOauthClientAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OAuthClient>> callback) {
     try {
-      SettableFuture<ApiResponse<OAuthClient>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OAuthClient>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OAuthClient>() {}, new AsyncApiCallback<ApiResponse<OAuthClient>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthClient> response) {
@@ -201,10 +201,10 @@ public class OAuthApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthClientEntityListing> getOauthClientsAsync(GetOauthClientsRequest request, AsyncApiCallback<OAuthClientEntityListing> callback) {
+  public Future<OAuthClientEntityListing> getOauthClientsAsync(GetOauthClientsRequest request, final AsyncApiCallback<OAuthClientEntityListing> callback) {
     try {
-      SettableFuture<OAuthClientEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OAuthClientEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthClientEntityListing>() {}, new AsyncApiCallback<ApiResponse<OAuthClientEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthClientEntityListing> response) {
@@ -235,10 +235,10 @@ public class OAuthApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthClientEntityListing>> getOauthClientsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OAuthClientEntityListing>> callback) {
+  public Future<ApiResponse<OAuthClientEntityListing>> getOauthClientsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OAuthClientEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<OAuthClientEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OAuthClientEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OAuthClientEntityListing>() {}, new AsyncApiCallback<ApiResponse<OAuthClientEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthClientEntityListing> response) {
@@ -276,10 +276,10 @@ public class OAuthApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthClient> postOauthClientSecretAsync(PostOauthClientSecretRequest request, AsyncApiCallback<OAuthClient> callback) {
+  public Future<OAuthClient> postOauthClientSecretAsync(PostOauthClientSecretRequest request, final AsyncApiCallback<OAuthClient> callback) {
     try {
-      SettableFuture<OAuthClient> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OAuthClient> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthClient>() {}, new AsyncApiCallback<ApiResponse<OAuthClient>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthClient> response) {
@@ -310,10 +310,10 @@ public class OAuthApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthClient>> postOauthClientSecretAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OAuthClient>> callback) {
+  public Future<ApiResponse<OAuthClient>> postOauthClientSecretAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OAuthClient>> callback) {
     try {
-      SettableFuture<ApiResponse<OAuthClient>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OAuthClient>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OAuthClient>() {}, new AsyncApiCallback<ApiResponse<OAuthClient>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthClient> response) {
@@ -351,10 +351,10 @@ public class OAuthApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthClient> postOauthClientsAsync(PostOauthClientsRequest request, AsyncApiCallback<OAuthClient> callback) {
+  public Future<OAuthClient> postOauthClientsAsync(PostOauthClientsRequest request, final AsyncApiCallback<OAuthClient> callback) {
     try {
-      SettableFuture<OAuthClient> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OAuthClient> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthClient>() {}, new AsyncApiCallback<ApiResponse<OAuthClient>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthClient> response) {
@@ -385,10 +385,10 @@ public class OAuthApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthClient>> postOauthClientsAsync(ApiRequest<OAuthClient> request, AsyncApiCallback<ApiResponse<OAuthClient>> callback) {
+  public Future<ApiResponse<OAuthClient>> postOauthClientsAsync(ApiRequest<OAuthClient> request, final AsyncApiCallback<ApiResponse<OAuthClient>> callback) {
     try {
-      SettableFuture<ApiResponse<OAuthClient>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OAuthClient>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OAuthClient>() {}, new AsyncApiCallback<ApiResponse<OAuthClient>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthClient> response) {
@@ -426,10 +426,10 @@ public class OAuthApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthClient> putOauthClientAsync(PutOauthClientRequest request, AsyncApiCallback<OAuthClient> callback) {
+  public Future<OAuthClient> putOauthClientAsync(PutOauthClientRequest request, final AsyncApiCallback<OAuthClient> callback) {
     try {
-      SettableFuture<OAuthClient> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OAuthClient> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthClient>() {}, new AsyncApiCallback<ApiResponse<OAuthClient>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthClient> response) {
@@ -460,10 +460,10 @@ public class OAuthApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthClient>> putOauthClientAsync(ApiRequest<OAuthClient> request, AsyncApiCallback<ApiResponse<OAuthClient>> callback) {
+  public Future<ApiResponse<OAuthClient>> putOauthClientAsync(ApiRequest<OAuthClient> request, final AsyncApiCallback<ApiResponse<OAuthClient>> callback) {
     try {
-      SettableFuture<ApiResponse<OAuthClient>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OAuthClient>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OAuthClient>() {}, new AsyncApiCallback<ApiResponse<OAuthClient>>() {
         @Override
         public void onCompleted(ApiResponse<OAuthClient> response) {

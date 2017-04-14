@@ -55,10 +55,10 @@ public class LicenseApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<LicenseDefinition> getLicenseDefinitionAsync(GetLicenseDefinitionRequest request, AsyncApiCallback<LicenseDefinition> callback) {
+  public Future<LicenseDefinition> getLicenseDefinitionAsync(GetLicenseDefinitionRequest request, final AsyncApiCallback<LicenseDefinition> callback) {
     try {
-      SettableFuture<LicenseDefinition> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<LicenseDefinition> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LicenseDefinition>() {}, new AsyncApiCallback<ApiResponse<LicenseDefinition>>() {
         @Override
         public void onCompleted(ApiResponse<LicenseDefinition> response) {
@@ -89,10 +89,10 @@ public class LicenseApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LicenseDefinition>> getLicenseDefinitionAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LicenseDefinition>> callback) {
+  public Future<ApiResponse<LicenseDefinition>> getLicenseDefinitionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LicenseDefinition>> callback) {
     try {
-      SettableFuture<ApiResponse<LicenseDefinition>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<LicenseDefinition>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<LicenseDefinition>() {}, new AsyncApiCallback<ApiResponse<LicenseDefinition>>() {
         @Override
         public void onCompleted(ApiResponse<LicenseDefinition> response) {
@@ -130,10 +130,10 @@ public class LicenseApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<LicenseDefinitionListing> getLicenseDefinitionsAsync(GetLicenseDefinitionsRequest request, AsyncApiCallback<LicenseDefinitionListing> callback) {
+  public Future<LicenseDefinitionListing> getLicenseDefinitionsAsync(GetLicenseDefinitionsRequest request, final AsyncApiCallback<LicenseDefinitionListing> callback) {
     try {
-      SettableFuture<LicenseDefinitionListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<LicenseDefinitionListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LicenseDefinitionListing>() {}, new AsyncApiCallback<ApiResponse<LicenseDefinitionListing>>() {
         @Override
         public void onCompleted(ApiResponse<LicenseDefinitionListing> response) {
@@ -164,10 +164,10 @@ public class LicenseApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LicenseDefinitionListing>> getLicenseDefinitionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LicenseDefinitionListing>> callback) {
+  public Future<ApiResponse<LicenseDefinitionListing>> getLicenseDefinitionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LicenseDefinitionListing>> callback) {
     try {
-      SettableFuture<ApiResponse<LicenseDefinitionListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<LicenseDefinitionListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<LicenseDefinitionListing>() {}, new AsyncApiCallback<ApiResponse<LicenseDefinitionListing>>() {
         @Override
         public void onCompleted(ApiResponse<LicenseDefinitionListing> response) {
@@ -205,10 +205,10 @@ public class LicenseApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<LicenseOrganization> getLicenseOrganizationAsync(GetLicenseOrganizationRequest request, AsyncApiCallback<LicenseOrganization> callback) {
+  public Future<LicenseOrganization> getLicenseOrganizationAsync(GetLicenseOrganizationRequest request, final AsyncApiCallback<LicenseOrganization> callback) {
     try {
-      SettableFuture<LicenseOrganization> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<LicenseOrganization> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LicenseOrganization>() {}, new AsyncApiCallback<ApiResponse<LicenseOrganization>>() {
         @Override
         public void onCompleted(ApiResponse<LicenseOrganization> response) {
@@ -239,10 +239,10 @@ public class LicenseApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LicenseOrganization>> getLicenseOrganizationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LicenseOrganization>> callback) {
+  public Future<ApiResponse<LicenseOrganization>> getLicenseOrganizationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LicenseOrganization>> callback) {
     try {
-      SettableFuture<ApiResponse<LicenseOrganization>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<LicenseOrganization>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<LicenseOrganization>() {}, new AsyncApiCallback<ApiResponse<LicenseOrganization>>() {
         @Override
         public void onCompleted(ApiResponse<LicenseOrganization> response) {
@@ -280,10 +280,10 @@ public class LicenseApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<LicenseUser> getLicenseUserAsync(GetLicenseUserRequest request, AsyncApiCallback<LicenseUser> callback) {
+  public Future<LicenseUser> getLicenseUserAsync(GetLicenseUserRequest request, final AsyncApiCallback<LicenseUser> callback) {
     try {
-      SettableFuture<LicenseUser> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<LicenseUser> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LicenseUser>() {}, new AsyncApiCallback<ApiResponse<LicenseUser>>() {
         @Override
         public void onCompleted(ApiResponse<LicenseUser> response) {
@@ -314,10 +314,10 @@ public class LicenseApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LicenseUser>> getLicenseUserAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LicenseUser>> callback) {
+  public Future<ApiResponse<LicenseUser>> getLicenseUserAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LicenseUser>> callback) {
     try {
-      SettableFuture<ApiResponse<LicenseUser>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<LicenseUser>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<LicenseUser>() {}, new AsyncApiCallback<ApiResponse<LicenseUser>>() {
         @Override
         public void onCompleted(ApiResponse<LicenseUser> response) {
@@ -355,10 +355,10 @@ public class LicenseApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<LicenseUpdateResponse> postLicenseOrganizationAsync(PostLicenseOrganizationRequest request, AsyncApiCallback<LicenseUpdateResponse> callback) {
+  public Future<LicenseUpdateResponse> postLicenseOrganizationAsync(PostLicenseOrganizationRequest request, final AsyncApiCallback<LicenseUpdateResponse> callback) {
     try {
-      SettableFuture<LicenseUpdateResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<LicenseUpdateResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LicenseUpdateResponse>() {}, new AsyncApiCallback<ApiResponse<LicenseUpdateResponse>>() {
         @Override
         public void onCompleted(ApiResponse<LicenseUpdateResponse> response) {
@@ -389,10 +389,10 @@ public class LicenseApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LicenseUpdateResponse>> postLicenseOrganizationAsync(ApiRequest<LicenseBatchAssignmentRequest> request, AsyncApiCallback<ApiResponse<LicenseUpdateResponse>> callback) {
+  public Future<ApiResponse<LicenseUpdateResponse>> postLicenseOrganizationAsync(ApiRequest<LicenseBatchAssignmentRequest> request, final AsyncApiCallback<ApiResponse<LicenseUpdateResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<LicenseUpdateResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<LicenseUpdateResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<LicenseUpdateResponse>() {}, new AsyncApiCallback<ApiResponse<LicenseUpdateResponse>>() {
         @Override
         public void onCompleted(ApiResponse<LicenseUpdateResponse> response) {
@@ -430,10 +430,10 @@ public class LicenseApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Map<String, Object>> postLicenseUsersAsync(PostLicenseUsersRequest request, AsyncApiCallback<Map<String, Object>> callback) {
+  public Future<Map<String, Object>> postLicenseUsersAsync(PostLicenseUsersRequest request, final AsyncApiCallback<Map<String, Object>> callback) {
     try {
-      SettableFuture<Map<String, Object>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Map<String, Object>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Map<String, Object>>() {}, new AsyncApiCallback<ApiResponse<Map<String, Object>>>() {
         @Override
         public void onCompleted(ApiResponse<Map<String, Object>> response) {
@@ -464,10 +464,10 @@ public class LicenseApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Map<String, Object>>> postLicenseUsersAsync(ApiRequest<List<String>> request, AsyncApiCallback<ApiResponse<Map<String, Object>>> callback) {
+  public Future<ApiResponse<Map<String, Object>>> postLicenseUsersAsync(ApiRequest<List<String>> request, final AsyncApiCallback<ApiResponse<Map<String, Object>>> callback) {
     try {
-      SettableFuture<ApiResponse<Map<String, Object>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Map<String, Object>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Map<String, Object>>() {}, new AsyncApiCallback<ApiResponse<Map<String, Object>>>() {
         @Override
         public void onCompleted(ApiResponse<Map<String, Object>> response) {

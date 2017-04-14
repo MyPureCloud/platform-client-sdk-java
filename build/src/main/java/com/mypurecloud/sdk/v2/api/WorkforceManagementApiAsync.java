@@ -69,10 +69,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<UserScheduleAdherence>> getWorkforcemanagementAdherenceAsync(GetWorkforcemanagementAdherenceRequest request, AsyncApiCallback<List<UserScheduleAdherence>> callback) {
+  public Future<List<UserScheduleAdherence>> getWorkforcemanagementAdherenceAsync(GetWorkforcemanagementAdherenceRequest request, final AsyncApiCallback<List<UserScheduleAdherence>> callback) {
     try {
-      SettableFuture<List<UserScheduleAdherence>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<UserScheduleAdherence>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<UserScheduleAdherence>>() {}, new AsyncApiCallback<ApiResponse<List<UserScheduleAdherence>>>() {
         @Override
         public void onCompleted(ApiResponse<List<UserScheduleAdherence>> response) {
@@ -103,10 +103,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<UserScheduleAdherence>>> getWorkforcemanagementAdherenceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<UserScheduleAdherence>>> callback) {
+  public Future<ApiResponse<List<UserScheduleAdherence>>> getWorkforcemanagementAdherenceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<UserScheduleAdherence>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<UserScheduleAdherence>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<UserScheduleAdherence>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<UserScheduleAdherence>>() {}, new AsyncApiCallback<ApiResponse<List<UserScheduleAdherence>>>() {
         @Override
         public void onCompleted(ApiResponse<List<UserScheduleAdherence>> response) {
@@ -144,10 +144,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ActivityCodeContainer> getWorkforcemanagementManagementunitActivitycodesAsync(GetWorkforcemanagementManagementunitActivitycodesRequest request, AsyncApiCallback<ActivityCodeContainer> callback) {
+  public Future<ActivityCodeContainer> getWorkforcemanagementManagementunitActivitycodesAsync(GetWorkforcemanagementManagementunitActivitycodesRequest request, final AsyncApiCallback<ActivityCodeContainer> callback) {
     try {
-      SettableFuture<ActivityCodeContainer> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ActivityCodeContainer> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActivityCodeContainer>() {}, new AsyncApiCallback<ApiResponse<ActivityCodeContainer>>() {
         @Override
         public void onCompleted(ApiResponse<ActivityCodeContainer> response) {
@@ -178,10 +178,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ActivityCodeContainer>> getWorkforcemanagementManagementunitActivitycodesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ActivityCodeContainer>> callback) {
+  public Future<ApiResponse<ActivityCodeContainer>> getWorkforcemanagementManagementunitActivitycodesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActivityCodeContainer>> callback) {
     try {
-      SettableFuture<ApiResponse<ActivityCodeContainer>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ActivityCodeContainer>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ActivityCodeContainer>() {}, new AsyncApiCallback<ApiResponse<ActivityCodeContainer>>() {
         @Override
         public void onCompleted(ApiResponse<ActivityCodeContainer> response) {
@@ -219,10 +219,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<WfmIntradayQueueListing> getWorkforcemanagementManagementunitIntradayQueuesAsync(GetWorkforcemanagementManagementunitIntradayQueuesRequest request, AsyncApiCallback<WfmIntradayQueueListing> callback) {
+  public Future<WfmIntradayQueueListing> getWorkforcemanagementManagementunitIntradayQueuesAsync(GetWorkforcemanagementManagementunitIntradayQueuesRequest request, final AsyncApiCallback<WfmIntradayQueueListing> callback) {
     try {
-      SettableFuture<WfmIntradayQueueListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<WfmIntradayQueueListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WfmIntradayQueueListing>() {}, new AsyncApiCallback<ApiResponse<WfmIntradayQueueListing>>() {
         @Override
         public void onCompleted(ApiResponse<WfmIntradayQueueListing> response) {
@@ -253,10 +253,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<WfmIntradayQueueListing>> getWorkforcemanagementManagementunitIntradayQueuesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<WfmIntradayQueueListing>> callback) {
+  public Future<ApiResponse<WfmIntradayQueueListing>> getWorkforcemanagementManagementunitIntradayQueuesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WfmIntradayQueueListing>> callback) {
     try {
-      SettableFuture<ApiResponse<WfmIntradayQueueListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<WfmIntradayQueueListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<WfmIntradayQueueListing>() {}, new AsyncApiCallback<ApiResponse<WfmIntradayQueueListing>>() {
         @Override
         public void onCompleted(ApiResponse<WfmIntradayQueueListing> response) {
@@ -294,10 +294,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<TimeOffRequest> getWorkforcemanagementManagementunitUserTimeoffrequestAsync(GetWorkforcemanagementManagementunitUserTimeoffrequestRequest request, AsyncApiCallback<TimeOffRequest> callback) {
+  public Future<TimeOffRequest> getWorkforcemanagementManagementunitUserTimeoffrequestAsync(GetWorkforcemanagementManagementunitUserTimeoffrequestRequest request, final AsyncApiCallback<TimeOffRequest> callback) {
     try {
-      SettableFuture<TimeOffRequest> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<TimeOffRequest> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TimeOffRequest>() {}, new AsyncApiCallback<ApiResponse<TimeOffRequest>>() {
         @Override
         public void onCompleted(ApiResponse<TimeOffRequest> response) {
@@ -328,10 +328,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<TimeOffRequest>> getWorkforcemanagementManagementunitUserTimeoffrequestAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TimeOffRequest>> callback) {
+  public Future<ApiResponse<TimeOffRequest>> getWorkforcemanagementManagementunitUserTimeoffrequestAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TimeOffRequest>> callback) {
     try {
-      SettableFuture<ApiResponse<TimeOffRequest>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<TimeOffRequest>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<TimeOffRequest>() {}, new AsyncApiCallback<ApiResponse<TimeOffRequest>>() {
         @Override
         public void onCompleted(ApiResponse<TimeOffRequest> response) {
@@ -369,10 +369,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<TimeOffRequestList> getWorkforcemanagementManagementunitUserTimeoffrequestsAsync(GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest request, AsyncApiCallback<TimeOffRequestList> callback) {
+  public Future<TimeOffRequestList> getWorkforcemanagementManagementunitUserTimeoffrequestsAsync(GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest request, final AsyncApiCallback<TimeOffRequestList> callback) {
     try {
-      SettableFuture<TimeOffRequestList> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<TimeOffRequestList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TimeOffRequestList>() {}, new AsyncApiCallback<ApiResponse<TimeOffRequestList>>() {
         @Override
         public void onCompleted(ApiResponse<TimeOffRequestList> response) {
@@ -403,10 +403,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<TimeOffRequestList>> getWorkforcemanagementManagementunitUserTimeoffrequestsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TimeOffRequestList>> callback) {
+  public Future<ApiResponse<TimeOffRequestList>> getWorkforcemanagementManagementunitUserTimeoffrequestsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TimeOffRequestList>> callback) {
     try {
-      SettableFuture<ApiResponse<TimeOffRequestList>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<TimeOffRequestList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<TimeOffRequestList>() {}, new AsyncApiCallback<ApiResponse<TimeOffRequestList>>() {
         @Override
         public void onCompleted(ApiResponse<TimeOffRequestList> response) {
@@ -444,10 +444,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<WfmUserEntityListing> getWorkforcemanagementManagementunitUsersAsync(GetWorkforcemanagementManagementunitUsersRequest request, AsyncApiCallback<WfmUserEntityListing> callback) {
+  public Future<WfmUserEntityListing> getWorkforcemanagementManagementunitUsersAsync(GetWorkforcemanagementManagementunitUsersRequest request, final AsyncApiCallback<WfmUserEntityListing> callback) {
     try {
-      SettableFuture<WfmUserEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<WfmUserEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WfmUserEntityListing>() {}, new AsyncApiCallback<ApiResponse<WfmUserEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<WfmUserEntityListing> response) {
@@ -478,10 +478,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<WfmUserEntityListing>> getWorkforcemanagementManagementunitUsersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<WfmUserEntityListing>> callback) {
+  public Future<ApiResponse<WfmUserEntityListing>> getWorkforcemanagementManagementunitUsersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WfmUserEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<WfmUserEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<WfmUserEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<WfmUserEntityListing>() {}, new AsyncApiCallback<ApiResponse<WfmUserEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<WfmUserEntityListing> response) {
@@ -519,10 +519,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<ManagementUnit>> getWorkforcemanagementManagementunitsAsync(GetWorkforcemanagementManagementunitsRequest request, AsyncApiCallback<List<ManagementUnit>> callback) {
+  public Future<List<ManagementUnit>> getWorkforcemanagementManagementunitsAsync(GetWorkforcemanagementManagementunitsRequest request, final AsyncApiCallback<List<ManagementUnit>> callback) {
     try {
-      SettableFuture<List<ManagementUnit>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<ManagementUnit>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<ManagementUnit>>() {}, new AsyncApiCallback<ApiResponse<List<ManagementUnit>>>() {
         @Override
         public void onCompleted(ApiResponse<List<ManagementUnit>> response) {
@@ -553,10 +553,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<ManagementUnit>>> getWorkforcemanagementManagementunitsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<ManagementUnit>>> callback) {
+  public Future<ApiResponse<List<ManagementUnit>>> getWorkforcemanagementManagementunitsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<ManagementUnit>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<ManagementUnit>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<ManagementUnit>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<ManagementUnit>>() {}, new AsyncApiCallback<ApiResponse<List<ManagementUnit>>>() {
         @Override
         public void onCompleted(ApiResponse<List<ManagementUnit>> response) {
@@ -594,10 +594,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<TimeOffRequest> getWorkforcemanagementTimeoffrequestAsync(GetWorkforcemanagementTimeoffrequestRequest request, AsyncApiCallback<TimeOffRequest> callback) {
+  public Future<TimeOffRequest> getWorkforcemanagementTimeoffrequestAsync(GetWorkforcemanagementTimeoffrequestRequest request, final AsyncApiCallback<TimeOffRequest> callback) {
     try {
-      SettableFuture<TimeOffRequest> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<TimeOffRequest> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TimeOffRequest>() {}, new AsyncApiCallback<ApiResponse<TimeOffRequest>>() {
         @Override
         public void onCompleted(ApiResponse<TimeOffRequest> response) {
@@ -628,10 +628,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<TimeOffRequest>> getWorkforcemanagementTimeoffrequestAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TimeOffRequest>> callback) {
+  public Future<ApiResponse<TimeOffRequest>> getWorkforcemanagementTimeoffrequestAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TimeOffRequest>> callback) {
     try {
-      SettableFuture<ApiResponse<TimeOffRequest>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<TimeOffRequest>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<TimeOffRequest>() {}, new AsyncApiCallback<ApiResponse<TimeOffRequest>>() {
         @Override
         public void onCompleted(ApiResponse<TimeOffRequest> response) {
@@ -669,10 +669,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<TimeOffRequestList> getWorkforcemanagementTimeoffrequestsAsync(GetWorkforcemanagementTimeoffrequestsRequest request, AsyncApiCallback<TimeOffRequestList> callback) {
+  public Future<TimeOffRequestList> getWorkforcemanagementTimeoffrequestsAsync(GetWorkforcemanagementTimeoffrequestsRequest request, final AsyncApiCallback<TimeOffRequestList> callback) {
     try {
-      SettableFuture<TimeOffRequestList> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<TimeOffRequestList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TimeOffRequestList>() {}, new AsyncApiCallback<ApiResponse<TimeOffRequestList>>() {
         @Override
         public void onCompleted(ApiResponse<TimeOffRequestList> response) {
@@ -703,10 +703,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<TimeOffRequestList>> getWorkforcemanagementTimeoffrequestsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TimeOffRequestList>> callback) {
+  public Future<ApiResponse<TimeOffRequestList>> getWorkforcemanagementTimeoffrequestsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TimeOffRequestList>> callback) {
     try {
-      SettableFuture<ApiResponse<TimeOffRequestList>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<TimeOffRequestList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<TimeOffRequestList>() {}, new AsyncApiCallback<ApiResponse<TimeOffRequestList>>() {
         @Override
         public void onCompleted(ApiResponse<TimeOffRequestList> response) {
@@ -744,10 +744,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> patchWorkforcemanagementTimeoffrequestAsync(PatchWorkforcemanagementTimeoffrequestRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> patchWorkforcemanagementTimeoffrequestAsync(PatchWorkforcemanagementTimeoffrequestRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -778,10 +778,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> patchWorkforcemanagementTimeoffrequestAsync(ApiRequest<TimeOffRequestPatch> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> patchWorkforcemanagementTimeoffrequestAsync(ApiRequest<TimeOffRequestPatch> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -819,10 +819,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<IntradayResponse> postWorkforcemanagementManagementunitIntradayAsync(PostWorkforcemanagementManagementunitIntradayRequest request, AsyncApiCallback<IntradayResponse> callback) {
+  public Future<IntradayResponse> postWorkforcemanagementManagementunitIntradayAsync(PostWorkforcemanagementManagementunitIntradayRequest request, final AsyncApiCallback<IntradayResponse> callback) {
     try {
-      SettableFuture<IntradayResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<IntradayResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IntradayResponse>() {}, new AsyncApiCallback<ApiResponse<IntradayResponse>>() {
         @Override
         public void onCompleted(ApiResponse<IntradayResponse> response) {
@@ -853,10 +853,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<IntradayResponse>> postWorkforcemanagementManagementunitIntradayAsync(ApiRequest<IntradayQueryDataCommand> request, AsyncApiCallback<ApiResponse<IntradayResponse>> callback) {
+  public Future<ApiResponse<IntradayResponse>> postWorkforcemanagementManagementunitIntradayAsync(ApiRequest<IntradayQueryDataCommand> request, final AsyncApiCallback<ApiResponse<IntradayResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<IntradayResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<IntradayResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<IntradayResponse>() {}, new AsyncApiCallback<ApiResponse<IntradayResponse>>() {
         @Override
         public void onCompleted(ApiResponse<IntradayResponse> response) {
@@ -894,10 +894,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UserScheduleContainer> postWorkforcemanagementManagementunitSchedulesSearchAsync(PostWorkforcemanagementManagementunitSchedulesSearchRequest request, AsyncApiCallback<UserScheduleContainer> callback) {
+  public Future<UserScheduleContainer> postWorkforcemanagementManagementunitSchedulesSearchAsync(PostWorkforcemanagementManagementunitSchedulesSearchRequest request, final AsyncApiCallback<UserScheduleContainer> callback) {
     try {
-      SettableFuture<UserScheduleContainer> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<UserScheduleContainer> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserScheduleContainer>() {}, new AsyncApiCallback<ApiResponse<UserScheduleContainer>>() {
         @Override
         public void onCompleted(ApiResponse<UserScheduleContainer> response) {
@@ -928,10 +928,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UserScheduleContainer>> postWorkforcemanagementManagementunitSchedulesSearchAsync(ApiRequest<UserListScheduleRequestBody> request, AsyncApiCallback<ApiResponse<UserScheduleContainer>> callback) {
+  public Future<ApiResponse<UserScheduleContainer>> postWorkforcemanagementManagementunitSchedulesSearchAsync(ApiRequest<UserListScheduleRequestBody> request, final AsyncApiCallback<ApiResponse<UserScheduleContainer>> callback) {
     try {
-      SettableFuture<ApiResponse<UserScheduleContainer>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<UserScheduleContainer>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<UserScheduleContainer>() {}, new AsyncApiCallback<ApiResponse<UserScheduleContainer>>() {
         @Override
         public void onCompleted(ApiResponse<UserScheduleContainer> response) {
@@ -969,10 +969,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UserScheduleContainer> postWorkforcemanagementSchedulesAsync(PostWorkforcemanagementSchedulesRequest request, AsyncApiCallback<UserScheduleContainer> callback) {
+  public Future<UserScheduleContainer> postWorkforcemanagementSchedulesAsync(PostWorkforcemanagementSchedulesRequest request, final AsyncApiCallback<UserScheduleContainer> callback) {
     try {
-      SettableFuture<UserScheduleContainer> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<UserScheduleContainer> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserScheduleContainer>() {}, new AsyncApiCallback<ApiResponse<UserScheduleContainer>>() {
         @Override
         public void onCompleted(ApiResponse<UserScheduleContainer> response) {
@@ -1003,10 +1003,10 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UserScheduleContainer>> postWorkforcemanagementSchedulesAsync(ApiRequest<CurrentUserScheduleRequestBody> request, AsyncApiCallback<ApiResponse<UserScheduleContainer>> callback) {
+  public Future<ApiResponse<UserScheduleContainer>> postWorkforcemanagementSchedulesAsync(ApiRequest<CurrentUserScheduleRequestBody> request, final AsyncApiCallback<ApiResponse<UserScheduleContainer>> callback) {
     try {
-      SettableFuture<ApiResponse<UserScheduleContainer>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<UserScheduleContainer>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<UserScheduleContainer>() {}, new AsyncApiCallback<ApiResponse<UserScheduleContainer>>() {
         @Override
         public void onCompleted(ApiResponse<UserScheduleContainer> response) {

@@ -68,10 +68,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteAuthorizationRoleAsync(DeleteAuthorizationRoleRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteAuthorizationRoleAsync(DeleteAuthorizationRoleRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -102,10 +102,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteAuthorizationRoleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteAuthorizationRoleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -143,10 +143,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteUserRolesAsync(DeleteUserRolesRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteUserRolesAsync(DeleteUserRolesRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -177,10 +177,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteUserRolesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteUserRolesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -218,10 +218,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<PermissionCollectionEntityListing> getAuthorizationPermissionsAsync(GetAuthorizationPermissionsRequest request, AsyncApiCallback<PermissionCollectionEntityListing> callback) {
+  public Future<PermissionCollectionEntityListing> getAuthorizationPermissionsAsync(GetAuthorizationPermissionsRequest request, final AsyncApiCallback<PermissionCollectionEntityListing> callback) {
     try {
-      SettableFuture<PermissionCollectionEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<PermissionCollectionEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PermissionCollectionEntityListing>() {}, new AsyncApiCallback<ApiResponse<PermissionCollectionEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<PermissionCollectionEntityListing> response) {
@@ -252,10 +252,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<PermissionCollectionEntityListing>> getAuthorizationPermissionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PermissionCollectionEntityListing>> callback) {
+  public Future<ApiResponse<PermissionCollectionEntityListing>> getAuthorizationPermissionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PermissionCollectionEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<PermissionCollectionEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<PermissionCollectionEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<PermissionCollectionEntityListing>() {}, new AsyncApiCallback<ApiResponse<PermissionCollectionEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<PermissionCollectionEntityListing> response) {
@@ -293,10 +293,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OrganizationProductEntityListing> getAuthorizationProductsAsync(GetAuthorizationProductsRequest request, AsyncApiCallback<OrganizationProductEntityListing> callback) {
+  public Future<OrganizationProductEntityListing> getAuthorizationProductsAsync(GetAuthorizationProductsRequest request, final AsyncApiCallback<OrganizationProductEntityListing> callback) {
     try {
-      SettableFuture<OrganizationProductEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OrganizationProductEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrganizationProductEntityListing>() {}, new AsyncApiCallback<ApiResponse<OrganizationProductEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<OrganizationProductEntityListing> response) {
@@ -327,10 +327,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OrganizationProductEntityListing>> getAuthorizationProductsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrganizationProductEntityListing>> callback) {
+  public Future<ApiResponse<OrganizationProductEntityListing>> getAuthorizationProductsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrganizationProductEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<OrganizationProductEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OrganizationProductEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OrganizationProductEntityListing>() {}, new AsyncApiCallback<ApiResponse<OrganizationProductEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<OrganizationProductEntityListing> response) {
@@ -368,10 +368,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DomainOrganizationRole> getAuthorizationRoleAsync(GetAuthorizationRoleRequest request, AsyncApiCallback<DomainOrganizationRole> callback) {
+  public Future<DomainOrganizationRole> getAuthorizationRoleAsync(GetAuthorizationRoleRequest request, final AsyncApiCallback<DomainOrganizationRole> callback) {
     try {
-      SettableFuture<DomainOrganizationRole> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DomainOrganizationRole> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainOrganizationRole>() {}, new AsyncApiCallback<ApiResponse<DomainOrganizationRole>>() {
         @Override
         public void onCompleted(ApiResponse<DomainOrganizationRole> response) {
@@ -402,10 +402,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DomainOrganizationRole>> getAuthorizationRoleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainOrganizationRole>> callback) {
+  public Future<ApiResponse<DomainOrganizationRole>> getAuthorizationRoleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DomainOrganizationRole>> callback) {
     try {
-      SettableFuture<ApiResponse<DomainOrganizationRole>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DomainOrganizationRole>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DomainOrganizationRole>() {}, new AsyncApiCallback<ApiResponse<DomainOrganizationRole>>() {
         @Override
         public void onCompleted(ApiResponse<DomainOrganizationRole> response) {
@@ -443,10 +443,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DomainOrgRoleDifference> getAuthorizationRoleComparedefaultRightRoleIdAsync(GetAuthorizationRoleComparedefaultRightRoleIdRequest request, AsyncApiCallback<DomainOrgRoleDifference> callback) {
+  public Future<DomainOrgRoleDifference> getAuthorizationRoleComparedefaultRightRoleIdAsync(GetAuthorizationRoleComparedefaultRightRoleIdRequest request, final AsyncApiCallback<DomainOrgRoleDifference> callback) {
     try {
-      SettableFuture<DomainOrgRoleDifference> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DomainOrgRoleDifference> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainOrgRoleDifference>() {}, new AsyncApiCallback<ApiResponse<DomainOrgRoleDifference>>() {
         @Override
         public void onCompleted(ApiResponse<DomainOrgRoleDifference> response) {
@@ -477,10 +477,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DomainOrgRoleDifference>> getAuthorizationRoleComparedefaultRightRoleIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainOrgRoleDifference>> callback) {
+  public Future<ApiResponse<DomainOrgRoleDifference>> getAuthorizationRoleComparedefaultRightRoleIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DomainOrgRoleDifference>> callback) {
     try {
-      SettableFuture<ApiResponse<DomainOrgRoleDifference>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DomainOrgRoleDifference>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DomainOrgRoleDifference>() {}, new AsyncApiCallback<ApiResponse<DomainOrgRoleDifference>>() {
         @Override
         public void onCompleted(ApiResponse<DomainOrgRoleDifference> response) {
@@ -518,10 +518,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OrganizationRoleEntityListing> getAuthorizationRolesAsync(GetAuthorizationRolesRequest request, AsyncApiCallback<OrganizationRoleEntityListing> callback) {
+  public Future<OrganizationRoleEntityListing> getAuthorizationRolesAsync(GetAuthorizationRolesRequest request, final AsyncApiCallback<OrganizationRoleEntityListing> callback) {
     try {
-      SettableFuture<OrganizationRoleEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OrganizationRoleEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrganizationRoleEntityListing>() {}, new AsyncApiCallback<ApiResponse<OrganizationRoleEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<OrganizationRoleEntityListing> response) {
@@ -552,10 +552,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OrganizationRoleEntityListing>> getAuthorizationRolesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrganizationRoleEntityListing>> callback) {
+  public Future<ApiResponse<OrganizationRoleEntityListing>> getAuthorizationRolesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrganizationRoleEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<OrganizationRoleEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OrganizationRoleEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OrganizationRoleEntityListing>() {}, new AsyncApiCallback<ApiResponse<OrganizationRoleEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<OrganizationRoleEntityListing> response) {
@@ -593,10 +593,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UserAuthorization> getUserRolesAsync(GetUserRolesRequest request, AsyncApiCallback<UserAuthorization> callback) {
+  public Future<UserAuthorization> getUserRolesAsync(GetUserRolesRequest request, final AsyncApiCallback<UserAuthorization> callback) {
     try {
-      SettableFuture<UserAuthorization> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<UserAuthorization> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserAuthorization>() {}, new AsyncApiCallback<ApiResponse<UserAuthorization>>() {
         @Override
         public void onCompleted(ApiResponse<UserAuthorization> response) {
@@ -627,10 +627,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UserAuthorization>> getUserRolesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserAuthorization>> callback) {
+  public Future<ApiResponse<UserAuthorization>> getUserRolesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserAuthorization>> callback) {
     try {
-      SettableFuture<ApiResponse<UserAuthorization>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<UserAuthorization>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<UserAuthorization>() {}, new AsyncApiCallback<ApiResponse<UserAuthorization>>() {
         @Override
         public void onCompleted(ApiResponse<UserAuthorization> response) {
@@ -668,10 +668,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DomainOrganizationRole> patchAuthorizationRoleAsync(PatchAuthorizationRoleRequest request, AsyncApiCallback<DomainOrganizationRole> callback) {
+  public Future<DomainOrganizationRole> patchAuthorizationRoleAsync(PatchAuthorizationRoleRequest request, final AsyncApiCallback<DomainOrganizationRole> callback) {
     try {
-      SettableFuture<DomainOrganizationRole> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DomainOrganizationRole> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainOrganizationRole>() {}, new AsyncApiCallback<ApiResponse<DomainOrganizationRole>>() {
         @Override
         public void onCompleted(ApiResponse<DomainOrganizationRole> response) {
@@ -702,10 +702,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DomainOrganizationRole>> patchAuthorizationRoleAsync(ApiRequest<DomainOrganizationRole> request, AsyncApiCallback<ApiResponse<DomainOrganizationRole>> callback) {
+  public Future<ApiResponse<DomainOrganizationRole>> patchAuthorizationRoleAsync(ApiRequest<DomainOrganizationRole> request, final AsyncApiCallback<ApiResponse<DomainOrganizationRole>> callback) {
     try {
-      SettableFuture<ApiResponse<DomainOrganizationRole>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DomainOrganizationRole>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DomainOrganizationRole>() {}, new AsyncApiCallback<ApiResponse<DomainOrganizationRole>>() {
         @Override
         public void onCompleted(ApiResponse<DomainOrganizationRole> response) {
@@ -743,10 +743,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DomainOrgRoleDifference> postAuthorizationRoleComparedefaultRightRoleIdAsync(PostAuthorizationRoleComparedefaultRightRoleIdRequest request, AsyncApiCallback<DomainOrgRoleDifference> callback) {
+  public Future<DomainOrgRoleDifference> postAuthorizationRoleComparedefaultRightRoleIdAsync(PostAuthorizationRoleComparedefaultRightRoleIdRequest request, final AsyncApiCallback<DomainOrgRoleDifference> callback) {
     try {
-      SettableFuture<DomainOrgRoleDifference> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DomainOrgRoleDifference> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainOrgRoleDifference>() {}, new AsyncApiCallback<ApiResponse<DomainOrgRoleDifference>>() {
         @Override
         public void onCompleted(ApiResponse<DomainOrgRoleDifference> response) {
@@ -777,10 +777,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DomainOrgRoleDifference>> postAuthorizationRoleComparedefaultRightRoleIdAsync(ApiRequest<DomainOrganizationRole> request, AsyncApiCallback<ApiResponse<DomainOrgRoleDifference>> callback) {
+  public Future<ApiResponse<DomainOrgRoleDifference>> postAuthorizationRoleComparedefaultRightRoleIdAsync(ApiRequest<DomainOrganizationRole> request, final AsyncApiCallback<ApiResponse<DomainOrgRoleDifference>> callback) {
     try {
-      SettableFuture<ApiResponse<DomainOrgRoleDifference>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DomainOrgRoleDifference>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DomainOrgRoleDifference>() {}, new AsyncApiCallback<ApiResponse<DomainOrgRoleDifference>>() {
         @Override
         public void onCompleted(ApiResponse<DomainOrgRoleDifference> response) {
@@ -818,10 +818,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DomainOrganizationRole> postAuthorizationRolesAsync(PostAuthorizationRolesRequest request, AsyncApiCallback<DomainOrganizationRole> callback) {
+  public Future<DomainOrganizationRole> postAuthorizationRolesAsync(PostAuthorizationRolesRequest request, final AsyncApiCallback<DomainOrganizationRole> callback) {
     try {
-      SettableFuture<DomainOrganizationRole> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DomainOrganizationRole> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainOrganizationRole>() {}, new AsyncApiCallback<ApiResponse<DomainOrganizationRole>>() {
         @Override
         public void onCompleted(ApiResponse<DomainOrganizationRole> response) {
@@ -852,10 +852,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DomainOrganizationRole>> postAuthorizationRolesAsync(ApiRequest<DomainOrganizationRoleCreate> request, AsyncApiCallback<ApiResponse<DomainOrganizationRole>> callback) {
+  public Future<ApiResponse<DomainOrganizationRole>> postAuthorizationRolesAsync(ApiRequest<DomainOrganizationRoleCreate> request, final AsyncApiCallback<ApiResponse<DomainOrganizationRole>> callback) {
     try {
-      SettableFuture<ApiResponse<DomainOrganizationRole>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DomainOrganizationRole>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DomainOrganizationRole>() {}, new AsyncApiCallback<ApiResponse<DomainOrganizationRole>>() {
         @Override
         public void onCompleted(ApiResponse<DomainOrganizationRole> response) {
@@ -893,10 +893,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OrganizationRoleEntityListing> postAuthorizationRolesDefaultAsync(PostAuthorizationRolesDefaultRequest request, AsyncApiCallback<OrganizationRoleEntityListing> callback) {
+  public Future<OrganizationRoleEntityListing> postAuthorizationRolesDefaultAsync(PostAuthorizationRolesDefaultRequest request, final AsyncApiCallback<OrganizationRoleEntityListing> callback) {
     try {
-      SettableFuture<OrganizationRoleEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OrganizationRoleEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrganizationRoleEntityListing>() {}, new AsyncApiCallback<ApiResponse<OrganizationRoleEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<OrganizationRoleEntityListing> response) {
@@ -927,10 +927,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OrganizationRoleEntityListing>> postAuthorizationRolesDefaultAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<OrganizationRoleEntityListing>> callback) {
+  public Future<ApiResponse<OrganizationRoleEntityListing>> postAuthorizationRolesDefaultAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrganizationRoleEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<OrganizationRoleEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OrganizationRoleEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OrganizationRoleEntityListing>() {}, new AsyncApiCallback<ApiResponse<OrganizationRoleEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<OrganizationRoleEntityListing> response) {
@@ -968,10 +968,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DomainOrganizationRole> putAuthorizationRoleAsync(PutAuthorizationRoleRequest request, AsyncApiCallback<DomainOrganizationRole> callback) {
+  public Future<DomainOrganizationRole> putAuthorizationRoleAsync(PutAuthorizationRoleRequest request, final AsyncApiCallback<DomainOrganizationRole> callback) {
     try {
-      SettableFuture<DomainOrganizationRole> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DomainOrganizationRole> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainOrganizationRole>() {}, new AsyncApiCallback<ApiResponse<DomainOrganizationRole>>() {
         @Override
         public void onCompleted(ApiResponse<DomainOrganizationRole> response) {
@@ -1002,10 +1002,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DomainOrganizationRole>> putAuthorizationRoleAsync(ApiRequest<DomainOrganizationRoleUpdate> request, AsyncApiCallback<ApiResponse<DomainOrganizationRole>> callback) {
+  public Future<ApiResponse<DomainOrganizationRole>> putAuthorizationRoleAsync(ApiRequest<DomainOrganizationRoleUpdate> request, final AsyncApiCallback<ApiResponse<DomainOrganizationRole>> callback) {
     try {
-      SettableFuture<ApiResponse<DomainOrganizationRole>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DomainOrganizationRole>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DomainOrganizationRole>() {}, new AsyncApiCallback<ApiResponse<DomainOrganizationRole>>() {
         @Override
         public void onCompleted(ApiResponse<DomainOrganizationRole> response) {
@@ -1043,10 +1043,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<String>> putAuthorizationRoleUsersAddAsync(PutAuthorizationRoleUsersAddRequest request, AsyncApiCallback<List<String>> callback) {
+  public Future<List<String>> putAuthorizationRoleUsersAddAsync(PutAuthorizationRoleUsersAddRequest request, final AsyncApiCallback<List<String>> callback) {
     try {
-      SettableFuture<List<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<String>>() {}, new AsyncApiCallback<ApiResponse<List<String>>>() {
         @Override
         public void onCompleted(ApiResponse<List<String>> response) {
@@ -1077,10 +1077,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<String>>> putAuthorizationRoleUsersAddAsync(ApiRequest<List<String>> request, AsyncApiCallback<ApiResponse<List<String>>> callback) {
+  public Future<ApiResponse<List<String>>> putAuthorizationRoleUsersAddAsync(ApiRequest<List<String>> request, final AsyncApiCallback<ApiResponse<List<String>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<String>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<String>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<String>>() {}, new AsyncApiCallback<ApiResponse<List<String>>>() {
         @Override
         public void onCompleted(ApiResponse<List<String>> response) {
@@ -1118,10 +1118,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<String>> putAuthorizationRoleUsersRemoveAsync(PutAuthorizationRoleUsersRemoveRequest request, AsyncApiCallback<List<String>> callback) {
+  public Future<List<String>> putAuthorizationRoleUsersRemoveAsync(PutAuthorizationRoleUsersRemoveRequest request, final AsyncApiCallback<List<String>> callback) {
     try {
-      SettableFuture<List<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<String>>() {}, new AsyncApiCallback<ApiResponse<List<String>>>() {
         @Override
         public void onCompleted(ApiResponse<List<String>> response) {
@@ -1152,10 +1152,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<String>>> putAuthorizationRoleUsersRemoveAsync(ApiRequest<List<String>> request, AsyncApiCallback<ApiResponse<List<String>>> callback) {
+  public Future<ApiResponse<List<String>>> putAuthorizationRoleUsersRemoveAsync(ApiRequest<List<String>> request, final AsyncApiCallback<ApiResponse<List<String>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<String>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<String>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<String>>() {}, new AsyncApiCallback<ApiResponse<List<String>>>() {
         @Override
         public void onCompleted(ApiResponse<List<String>> response) {
@@ -1193,10 +1193,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OrganizationRoleEntityListing> putAuthorizationRolesDefaultAsync(PutAuthorizationRolesDefaultRequest request, AsyncApiCallback<OrganizationRoleEntityListing> callback) {
+  public Future<OrganizationRoleEntityListing> putAuthorizationRolesDefaultAsync(PutAuthorizationRolesDefaultRequest request, final AsyncApiCallback<OrganizationRoleEntityListing> callback) {
     try {
-      SettableFuture<OrganizationRoleEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<OrganizationRoleEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrganizationRoleEntityListing>() {}, new AsyncApiCallback<ApiResponse<OrganizationRoleEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<OrganizationRoleEntityListing> response) {
@@ -1227,10 +1227,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OrganizationRoleEntityListing>> putAuthorizationRolesDefaultAsync(ApiRequest<List<DomainOrganizationRole>> request, AsyncApiCallback<ApiResponse<OrganizationRoleEntityListing>> callback) {
+  public Future<ApiResponse<OrganizationRoleEntityListing>> putAuthorizationRolesDefaultAsync(ApiRequest<List<DomainOrganizationRole>> request, final AsyncApiCallback<ApiResponse<OrganizationRoleEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<OrganizationRoleEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<OrganizationRoleEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<OrganizationRoleEntityListing>() {}, new AsyncApiCallback<ApiResponse<OrganizationRoleEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<OrganizationRoleEntityListing> response) {
@@ -1268,10 +1268,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UserAuthorization> putUserRolesAsync(PutUserRolesRequest request, AsyncApiCallback<UserAuthorization> callback) {
+  public Future<UserAuthorization> putUserRolesAsync(PutUserRolesRequest request, final AsyncApiCallback<UserAuthorization> callback) {
     try {
-      SettableFuture<UserAuthorization> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<UserAuthorization> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserAuthorization>() {}, new AsyncApiCallback<ApiResponse<UserAuthorization>>() {
         @Override
         public void onCompleted(ApiResponse<UserAuthorization> response) {
@@ -1302,10 +1302,10 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UserAuthorization>> putUserRolesAsync(ApiRequest<List<String>> request, AsyncApiCallback<ApiResponse<UserAuthorization>> callback) {
+  public Future<ApiResponse<UserAuthorization>> putUserRolesAsync(ApiRequest<List<String>> request, final AsyncApiCallback<ApiResponse<UserAuthorization>> callback) {
     try {
-      SettableFuture<ApiResponse<UserAuthorization>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<UserAuthorization>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<UserAuthorization>() {}, new AsyncApiCallback<ApiResponse<UserAuthorization>>() {
         @Override
         public void onCompleted(ApiResponse<UserAuthorization> response) {

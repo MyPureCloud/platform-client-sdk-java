@@ -74,8 +74,8 @@ public class ApacheHttpClientConnector implements ApiClientConnector {
     }
 
     @Override
-    public Future<ApiClientConnectorResponse> invokeAsync(ApiClientConnectorRequest request, AsyncApiCallback<ApiClientConnectorResponse> callback) {
-        SettableFuture<ApiClientConnectorResponse> future = SettableFuture.create();
+    public Future<ApiClientConnectorResponse> invokeAsync(final ApiClientConnectorRequest request, final AsyncApiCallback<ApiClientConnectorResponse> callback) {
+        final SettableFuture<ApiClientConnectorResponse> future = SettableFuture.create();
         Runnable task = new Runnable() {
             @Override
             public void run() {

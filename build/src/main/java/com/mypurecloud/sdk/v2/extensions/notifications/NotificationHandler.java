@@ -93,7 +93,7 @@ public class NotificationHandler extends Object {
                             if (specificType != null) {
                                 // Deserialize to specific type provided by listener
                                 JavaType specificEventType = objectMapper.getTypeFactory().constructParametricType(NotificationEvent.class, specificType.getEventBodyClass());
-                                specificType.onEvent(objectMapper.readValue(message, specificEventType));
+                                specificType.onEvent((NotificationEvent<?>) objectMapper.readValue(message, specificEventType));
                             } else {
                                 // Unhandled topic
                                 if (webSocketListener != null)

@@ -55,10 +55,10 @@ public class NotificationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteNotificationsChannelSubscriptionsAsync(DeleteNotificationsChannelSubscriptionsRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteNotificationsChannelSubscriptionsAsync(DeleteNotificationsChannelSubscriptionsRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -89,10 +89,10 @@ public class NotificationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteNotificationsChannelSubscriptionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteNotificationsChannelSubscriptionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -130,10 +130,10 @@ public class NotificationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AvailableTopicEntityListing> getNotificationsAvailabletopicsAsync(GetNotificationsAvailabletopicsRequest request, AsyncApiCallback<AvailableTopicEntityListing> callback) {
+  public Future<AvailableTopicEntityListing> getNotificationsAvailabletopicsAsync(GetNotificationsAvailabletopicsRequest request, final AsyncApiCallback<AvailableTopicEntityListing> callback) {
     try {
-      SettableFuture<AvailableTopicEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<AvailableTopicEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AvailableTopicEntityListing>() {}, new AsyncApiCallback<ApiResponse<AvailableTopicEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<AvailableTopicEntityListing> response) {
@@ -164,10 +164,10 @@ public class NotificationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AvailableTopicEntityListing>> getNotificationsAvailabletopicsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AvailableTopicEntityListing>> callback) {
+  public Future<ApiResponse<AvailableTopicEntityListing>> getNotificationsAvailabletopicsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AvailableTopicEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<AvailableTopicEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<AvailableTopicEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<AvailableTopicEntityListing>() {}, new AsyncApiCallback<ApiResponse<AvailableTopicEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<AvailableTopicEntityListing> response) {
@@ -205,10 +205,10 @@ public class NotificationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ChannelTopicEntityListing> getNotificationsChannelSubscriptionsAsync(GetNotificationsChannelSubscriptionsRequest request, AsyncApiCallback<ChannelTopicEntityListing> callback) {
+  public Future<ChannelTopicEntityListing> getNotificationsChannelSubscriptionsAsync(GetNotificationsChannelSubscriptionsRequest request, final AsyncApiCallback<ChannelTopicEntityListing> callback) {
     try {
-      SettableFuture<ChannelTopicEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ChannelTopicEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {}, new AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ChannelTopicEntityListing> response) {
@@ -239,10 +239,10 @@ public class NotificationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ChannelTopicEntityListing>> getNotificationsChannelSubscriptionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>> callback) {
+  public Future<ApiResponse<ChannelTopicEntityListing>> getNotificationsChannelSubscriptionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<ChannelTopicEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ChannelTopicEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ChannelTopicEntityListing>() {}, new AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ChannelTopicEntityListing> response) {
@@ -280,10 +280,10 @@ public class NotificationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ChannelEntityListing> getNotificationsChannelsAsync(GetNotificationsChannelsRequest request, AsyncApiCallback<ChannelEntityListing> callback) {
+  public Future<ChannelEntityListing> getNotificationsChannelsAsync(GetNotificationsChannelsRequest request, final AsyncApiCallback<ChannelEntityListing> callback) {
     try {
-      SettableFuture<ChannelEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ChannelEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ChannelEntityListing>() {}, new AsyncApiCallback<ApiResponse<ChannelEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ChannelEntityListing> response) {
@@ -314,10 +314,10 @@ public class NotificationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ChannelEntityListing>> getNotificationsChannelsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ChannelEntityListing>> callback) {
+  public Future<ApiResponse<ChannelEntityListing>> getNotificationsChannelsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ChannelEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<ChannelEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ChannelEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ChannelEntityListing>() {}, new AsyncApiCallback<ApiResponse<ChannelEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ChannelEntityListing> response) {
@@ -355,10 +355,10 @@ public class NotificationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ChannelTopicEntityListing> postNotificationsChannelSubscriptionsAsync(PostNotificationsChannelSubscriptionsRequest request, AsyncApiCallback<ChannelTopicEntityListing> callback) {
+  public Future<ChannelTopicEntityListing> postNotificationsChannelSubscriptionsAsync(PostNotificationsChannelSubscriptionsRequest request, final AsyncApiCallback<ChannelTopicEntityListing> callback) {
     try {
-      SettableFuture<ChannelTopicEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ChannelTopicEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {}, new AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ChannelTopicEntityListing> response) {
@@ -389,10 +389,10 @@ public class NotificationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ChannelTopicEntityListing>> postNotificationsChannelSubscriptionsAsync(ApiRequest<List<ChannelTopic>> request, AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>> callback) {
+  public Future<ApiResponse<ChannelTopicEntityListing>> postNotificationsChannelSubscriptionsAsync(ApiRequest<List<ChannelTopic>> request, final AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<ChannelTopicEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ChannelTopicEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ChannelTopicEntityListing>() {}, new AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ChannelTopicEntityListing> response) {
@@ -430,10 +430,10 @@ public class NotificationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Channel> postNotificationsChannelsAsync(PostNotificationsChannelsRequest request, AsyncApiCallback<Channel> callback) {
+  public Future<Channel> postNotificationsChannelsAsync(PostNotificationsChannelsRequest request, final AsyncApiCallback<Channel> callback) {
     try {
-      SettableFuture<Channel> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Channel> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Channel>() {}, new AsyncApiCallback<ApiResponse<Channel>>() {
         @Override
         public void onCompleted(ApiResponse<Channel> response) {
@@ -464,10 +464,10 @@ public class NotificationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Channel>> postNotificationsChannelsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Channel>> callback) {
+  public Future<ApiResponse<Channel>> postNotificationsChannelsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Channel>> callback) {
     try {
-      SettableFuture<ApiResponse<Channel>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Channel>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Channel>() {}, new AsyncApiCallback<ApiResponse<Channel>>() {
         @Override
         public void onCompleted(ApiResponse<Channel> response) {
@@ -505,10 +505,10 @@ public class NotificationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ChannelTopicEntityListing> putNotificationsChannelSubscriptionsAsync(PutNotificationsChannelSubscriptionsRequest request, AsyncApiCallback<ChannelTopicEntityListing> callback) {
+  public Future<ChannelTopicEntityListing> putNotificationsChannelSubscriptionsAsync(PutNotificationsChannelSubscriptionsRequest request, final AsyncApiCallback<ChannelTopicEntityListing> callback) {
     try {
-      SettableFuture<ChannelTopicEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ChannelTopicEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ChannelTopicEntityListing>() {}, new AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ChannelTopicEntityListing> response) {
@@ -539,10 +539,10 @@ public class NotificationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ChannelTopicEntityListing>> putNotificationsChannelSubscriptionsAsync(ApiRequest<List<ChannelTopic>> request, AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>> callback) {
+  public Future<ApiResponse<ChannelTopicEntityListing>> putNotificationsChannelSubscriptionsAsync(ApiRequest<List<ChannelTopic>> request, final AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<ChannelTopicEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ChannelTopicEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ChannelTopicEntityListing>() {}, new AsyncApiCallback<ApiResponse<ChannelTopicEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ChannelTopicEntityListing> response) {

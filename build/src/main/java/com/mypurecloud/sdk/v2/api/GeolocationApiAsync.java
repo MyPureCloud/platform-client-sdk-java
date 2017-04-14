@@ -49,10 +49,10 @@ public class GeolocationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<GeolocationSettings> getGeolocationsSettingsAsync(GetGeolocationsSettingsRequest request, AsyncApiCallback<GeolocationSettings> callback) {
+  public Future<GeolocationSettings> getGeolocationsSettingsAsync(GetGeolocationsSettingsRequest request, final AsyncApiCallback<GeolocationSettings> callback) {
     try {
-      SettableFuture<GeolocationSettings> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<GeolocationSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GeolocationSettings>() {}, new AsyncApiCallback<ApiResponse<GeolocationSettings>>() {
         @Override
         public void onCompleted(ApiResponse<GeolocationSettings> response) {
@@ -83,10 +83,10 @@ public class GeolocationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<GeolocationSettings>> getGeolocationsSettingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GeolocationSettings>> callback) {
+  public Future<ApiResponse<GeolocationSettings>> getGeolocationsSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GeolocationSettings>> callback) {
     try {
-      SettableFuture<ApiResponse<GeolocationSettings>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<GeolocationSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<GeolocationSettings>() {}, new AsyncApiCallback<ApiResponse<GeolocationSettings>>() {
         @Override
         public void onCompleted(ApiResponse<GeolocationSettings> response) {
@@ -124,10 +124,10 @@ public class GeolocationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Geolocation> getUserGeolocationAsync(GetUserGeolocationRequest request, AsyncApiCallback<Geolocation> callback) {
+  public Future<Geolocation> getUserGeolocationAsync(GetUserGeolocationRequest request, final AsyncApiCallback<Geolocation> callback) {
     try {
-      SettableFuture<Geolocation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Geolocation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Geolocation>() {}, new AsyncApiCallback<ApiResponse<Geolocation>>() {
         @Override
         public void onCompleted(ApiResponse<Geolocation> response) {
@@ -158,10 +158,10 @@ public class GeolocationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Geolocation>> getUserGeolocationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Geolocation>> callback) {
+  public Future<ApiResponse<Geolocation>> getUserGeolocationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Geolocation>> callback) {
     try {
-      SettableFuture<ApiResponse<Geolocation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Geolocation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Geolocation>() {}, new AsyncApiCallback<ApiResponse<Geolocation>>() {
         @Override
         public void onCompleted(ApiResponse<Geolocation> response) {
@@ -199,10 +199,10 @@ public class GeolocationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<GeolocationSettings> patchGeolocationsSettingsAsync(PatchGeolocationsSettingsRequest request, AsyncApiCallback<GeolocationSettings> callback) {
+  public Future<GeolocationSettings> patchGeolocationsSettingsAsync(PatchGeolocationsSettingsRequest request, final AsyncApiCallback<GeolocationSettings> callback) {
     try {
-      SettableFuture<GeolocationSettings> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<GeolocationSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GeolocationSettings>() {}, new AsyncApiCallback<ApiResponse<GeolocationSettings>>() {
         @Override
         public void onCompleted(ApiResponse<GeolocationSettings> response) {
@@ -233,10 +233,10 @@ public class GeolocationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<GeolocationSettings>> patchGeolocationsSettingsAsync(ApiRequest<GeolocationSettings> request, AsyncApiCallback<ApiResponse<GeolocationSettings>> callback) {
+  public Future<ApiResponse<GeolocationSettings>> patchGeolocationsSettingsAsync(ApiRequest<GeolocationSettings> request, final AsyncApiCallback<ApiResponse<GeolocationSettings>> callback) {
     try {
-      SettableFuture<ApiResponse<GeolocationSettings>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<GeolocationSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<GeolocationSettings>() {}, new AsyncApiCallback<ApiResponse<GeolocationSettings>>() {
         @Override
         public void onCompleted(ApiResponse<GeolocationSettings> response) {
@@ -274,10 +274,10 @@ public class GeolocationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Geolocation> patchUserGeolocationAsync(PatchUserGeolocationRequest request, AsyncApiCallback<Geolocation> callback) {
+  public Future<Geolocation> patchUserGeolocationAsync(PatchUserGeolocationRequest request, final AsyncApiCallback<Geolocation> callback) {
     try {
-      SettableFuture<Geolocation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Geolocation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Geolocation>() {}, new AsyncApiCallback<ApiResponse<Geolocation>>() {
         @Override
         public void onCompleted(ApiResponse<Geolocation> response) {
@@ -308,10 +308,10 @@ public class GeolocationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Geolocation>> patchUserGeolocationAsync(ApiRequest<Geolocation> request, AsyncApiCallback<ApiResponse<Geolocation>> callback) {
+  public Future<ApiResponse<Geolocation>> patchUserGeolocationAsync(ApiRequest<Geolocation> request, final AsyncApiCallback<ApiResponse<Geolocation>> callback) {
     try {
-      SettableFuture<ApiResponse<Geolocation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Geolocation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Geolocation>() {}, new AsyncApiCallback<ApiResponse<Geolocation>>() {
         @Override
         public void onCompleted(ApiResponse<Geolocation> response) {

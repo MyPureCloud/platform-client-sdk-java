@@ -272,15 +272,15 @@ public class ApiRequestBuilder<T> {
     }
 
     public ApiRequest<T> build() {
-        Map<String, String> pathParams = Collections.unmodifiableMap(this.pathParams);
-        Map<String, Object> formParams = Collections.unmodifiableMap(this.formParams);
-        List<Pair> queryParams = Collections.unmodifiableList(this.queryParams);
-        Map<String, String> headerParams = Collections.unmodifiableMap(this.headerParams);
-        Map<String, String> customHeaders = Collections.unmodifiableMap(this.customHeaders);
-        String contentType = selectHeaderContentType(this.contentTypes);
-        String accepts = selectHeaderAccept(this.accepts);
-        T body = this.body;
-        String[] authNames = this.authNames;
+        final Map<String, String> pathParams = Collections.unmodifiableMap(this.pathParams);
+        final Map<String, Object> formParams = Collections.unmodifiableMap(this.formParams);
+        final List<Pair> queryParams = Collections.unmodifiableList(this.queryParams);
+        final Map<String, String> headerParams = Collections.unmodifiableMap(this.headerParams);
+        final Map<String, String> customHeaders = Collections.unmodifiableMap(this.customHeaders);
+        final String contentType = selectHeaderContentType(this.contentTypes);
+        final String accepts = selectHeaderAccept(this.accepts);
+        final T body = this.body;
+        final String[] authNames = this.authNames;
         return new ApiRequest<T>() {
             @Override
             public String getPath() {

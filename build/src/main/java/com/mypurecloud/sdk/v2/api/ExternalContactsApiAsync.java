@@ -82,10 +82,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteExternalcontactsContactAsync(DeleteExternalcontactsContactRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteExternalcontactsContactAsync(DeleteExternalcontactsContactRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -116,10 +116,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteExternalcontactsContactAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteExternalcontactsContactAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -157,10 +157,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteExternalcontactsContactNoteAsync(DeleteExternalcontactsContactNoteRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteExternalcontactsContactNoteAsync(DeleteExternalcontactsContactNoteRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -191,10 +191,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteExternalcontactsContactNoteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteExternalcontactsContactNoteAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -232,10 +232,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteExternalcontactsOrganizationAsync(DeleteExternalcontactsOrganizationRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteExternalcontactsOrganizationAsync(DeleteExternalcontactsOrganizationRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -266,10 +266,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteExternalcontactsOrganizationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteExternalcontactsOrganizationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -307,10 +307,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteExternalcontactsOrganizationNoteAsync(DeleteExternalcontactsOrganizationNoteRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteExternalcontactsOrganizationNoteAsync(DeleteExternalcontactsOrganizationNoteRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -341,10 +341,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteExternalcontactsOrganizationNoteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteExternalcontactsOrganizationNoteAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -382,10 +382,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteExternalcontactsRelationshipAsync(DeleteExternalcontactsRelationshipRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteExternalcontactsRelationshipAsync(DeleteExternalcontactsRelationshipRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -416,10 +416,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteExternalcontactsRelationshipAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteExternalcontactsRelationshipAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -457,10 +457,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ExternalContact> getExternalcontactsContactAsync(GetExternalcontactsContactRequest request, AsyncApiCallback<ExternalContact> callback) {
+  public Future<ExternalContact> getExternalcontactsContactAsync(GetExternalcontactsContactRequest request, final AsyncApiCallback<ExternalContact> callback) {
     try {
-      SettableFuture<ExternalContact> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ExternalContact> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalContact>() {}, new AsyncApiCallback<ApiResponse<ExternalContact>>() {
         @Override
         public void onCompleted(ApiResponse<ExternalContact> response) {
@@ -491,10 +491,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ExternalContact>> getExternalcontactsContactAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExternalContact>> callback) {
+  public Future<ApiResponse<ExternalContact>> getExternalcontactsContactAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExternalContact>> callback) {
     try {
-      SettableFuture<ApiResponse<ExternalContact>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ExternalContact>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ExternalContact>() {}, new AsyncApiCallback<ApiResponse<ExternalContact>>() {
         @Override
         public void onCompleted(ApiResponse<ExternalContact> response) {
@@ -532,10 +532,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Note> getExternalcontactsContactNoteAsync(GetExternalcontactsContactNoteRequest request, AsyncApiCallback<Note> callback) {
+  public Future<Note> getExternalcontactsContactNoteAsync(GetExternalcontactsContactNoteRequest request, final AsyncApiCallback<Note> callback) {
     try {
-      SettableFuture<Note> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Note> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
         @Override
         public void onCompleted(ApiResponse<Note> response) {
@@ -566,10 +566,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Note>> getExternalcontactsContactNoteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Note>> callback) {
+  public Future<ApiResponse<Note>> getExternalcontactsContactNoteAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Note>> callback) {
     try {
-      SettableFuture<ApiResponse<Note>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Note>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
         @Override
         public void onCompleted(ApiResponse<Note> response) {
@@ -607,10 +607,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<NoteListing> getExternalcontactsContactNotesAsync(GetExternalcontactsContactNotesRequest request, AsyncApiCallback<NoteListing> callback) {
+  public Future<NoteListing> getExternalcontactsContactNotesAsync(GetExternalcontactsContactNotesRequest request, final AsyncApiCallback<NoteListing> callback) {
     try {
-      SettableFuture<NoteListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<NoteListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<NoteListing>() {}, new AsyncApiCallback<ApiResponse<NoteListing>>() {
         @Override
         public void onCompleted(ApiResponse<NoteListing> response) {
@@ -641,10 +641,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<NoteListing>> getExternalcontactsContactNotesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<NoteListing>> callback) {
+  public Future<ApiResponse<NoteListing>> getExternalcontactsContactNotesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<NoteListing>> callback) {
     try {
-      SettableFuture<ApiResponse<NoteListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<NoteListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<NoteListing>() {}, new AsyncApiCallback<ApiResponse<NoteListing>>() {
         @Override
         public void onCompleted(ApiResponse<NoteListing> response) {
@@ -682,10 +682,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ContactListing> getExternalcontactsContactsAsync(GetExternalcontactsContactsRequest request, AsyncApiCallback<ContactListing> callback) {
+  public Future<ContactListing> getExternalcontactsContactsAsync(GetExternalcontactsContactsRequest request, final AsyncApiCallback<ContactListing> callback) {
     try {
-      SettableFuture<ContactListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ContactListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactListing>() {}, new AsyncApiCallback<ApiResponse<ContactListing>>() {
         @Override
         public void onCompleted(ApiResponse<ContactListing> response) {
@@ -716,10 +716,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ContactListing>> getExternalcontactsContactsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ContactListing>> callback) {
+  public Future<ApiResponse<ContactListing>> getExternalcontactsContactsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ContactListing>> callback) {
     try {
-      SettableFuture<ApiResponse<ContactListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ContactListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ContactListing>() {}, new AsyncApiCallback<ApiResponse<ContactListing>>() {
         @Override
         public void onCompleted(ApiResponse<ContactListing> response) {
@@ -757,10 +757,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ExternalOrganization> getExternalcontactsOrganizationAsync(GetExternalcontactsOrganizationRequest request, AsyncApiCallback<ExternalOrganization> callback) {
+  public Future<ExternalOrganization> getExternalcontactsOrganizationAsync(GetExternalcontactsOrganizationRequest request, final AsyncApiCallback<ExternalOrganization> callback) {
     try {
-      SettableFuture<ExternalOrganization> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ExternalOrganization> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganization>>() {
         @Override
         public void onCompleted(ApiResponse<ExternalOrganization> response) {
@@ -791,10 +791,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ExternalOrganization>> getExternalcontactsOrganizationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExternalOrganization>> callback) {
+  public Future<ApiResponse<ExternalOrganization>> getExternalcontactsOrganizationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExternalOrganization>> callback) {
     try {
-      SettableFuture<ApiResponse<ExternalOrganization>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ExternalOrganization>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ExternalOrganization>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganization>>() {
         @Override
         public void onCompleted(ApiResponse<ExternalOrganization> response) {
@@ -832,10 +832,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ContactListing> getExternalcontactsOrganizationContactsAsync(GetExternalcontactsOrganizationContactsRequest request, AsyncApiCallback<ContactListing> callback) {
+  public Future<ContactListing> getExternalcontactsOrganizationContactsAsync(GetExternalcontactsOrganizationContactsRequest request, final AsyncApiCallback<ContactListing> callback) {
     try {
-      SettableFuture<ContactListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ContactListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactListing>() {}, new AsyncApiCallback<ApiResponse<ContactListing>>() {
         @Override
         public void onCompleted(ApiResponse<ContactListing> response) {
@@ -866,10 +866,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ContactListing>> getExternalcontactsOrganizationContactsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ContactListing>> callback) {
+  public Future<ApiResponse<ContactListing>> getExternalcontactsOrganizationContactsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ContactListing>> callback) {
     try {
-      SettableFuture<ApiResponse<ContactListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ContactListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ContactListing>() {}, new AsyncApiCallback<ApiResponse<ContactListing>>() {
         @Override
         public void onCompleted(ApiResponse<ContactListing> response) {
@@ -907,10 +907,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Note> getExternalcontactsOrganizationNoteAsync(GetExternalcontactsOrganizationNoteRequest request, AsyncApiCallback<Note> callback) {
+  public Future<Note> getExternalcontactsOrganizationNoteAsync(GetExternalcontactsOrganizationNoteRequest request, final AsyncApiCallback<Note> callback) {
     try {
-      SettableFuture<Note> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Note> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
         @Override
         public void onCompleted(ApiResponse<Note> response) {
@@ -941,10 +941,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Note>> getExternalcontactsOrganizationNoteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Note>> callback) {
+  public Future<ApiResponse<Note>> getExternalcontactsOrganizationNoteAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Note>> callback) {
     try {
-      SettableFuture<ApiResponse<Note>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Note>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
         @Override
         public void onCompleted(ApiResponse<Note> response) {
@@ -982,10 +982,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<NoteListing> getExternalcontactsOrganizationNotesAsync(GetExternalcontactsOrganizationNotesRequest request, AsyncApiCallback<NoteListing> callback) {
+  public Future<NoteListing> getExternalcontactsOrganizationNotesAsync(GetExternalcontactsOrganizationNotesRequest request, final AsyncApiCallback<NoteListing> callback) {
     try {
-      SettableFuture<NoteListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<NoteListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<NoteListing>() {}, new AsyncApiCallback<ApiResponse<NoteListing>>() {
         @Override
         public void onCompleted(ApiResponse<NoteListing> response) {
@@ -1016,10 +1016,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<NoteListing>> getExternalcontactsOrganizationNotesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<NoteListing>> callback) {
+  public Future<ApiResponse<NoteListing>> getExternalcontactsOrganizationNotesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<NoteListing>> callback) {
     try {
-      SettableFuture<ApiResponse<NoteListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<NoteListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<NoteListing>() {}, new AsyncApiCallback<ApiResponse<NoteListing>>() {
         @Override
         public void onCompleted(ApiResponse<NoteListing> response) {
@@ -1057,10 +1057,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<RelationshipListing> getExternalcontactsOrganizationRelationshipsAsync(GetExternalcontactsOrganizationRelationshipsRequest request, AsyncApiCallback<RelationshipListing> callback) {
+  public Future<RelationshipListing> getExternalcontactsOrganizationRelationshipsAsync(GetExternalcontactsOrganizationRelationshipsRequest request, final AsyncApiCallback<RelationshipListing> callback) {
     try {
-      SettableFuture<RelationshipListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<RelationshipListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RelationshipListing>() {}, new AsyncApiCallback<ApiResponse<RelationshipListing>>() {
         @Override
         public void onCompleted(ApiResponse<RelationshipListing> response) {
@@ -1091,10 +1091,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<RelationshipListing>> getExternalcontactsOrganizationRelationshipsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RelationshipListing>> callback) {
+  public Future<ApiResponse<RelationshipListing>> getExternalcontactsOrganizationRelationshipsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RelationshipListing>> callback) {
     try {
-      SettableFuture<ApiResponse<RelationshipListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<RelationshipListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<RelationshipListing>() {}, new AsyncApiCallback<ApiResponse<RelationshipListing>>() {
         @Override
         public void onCompleted(ApiResponse<RelationshipListing> response) {
@@ -1132,10 +1132,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ExternalOrganizationListing> getExternalcontactsOrganizationsAsync(GetExternalcontactsOrganizationsRequest request, AsyncApiCallback<ExternalOrganizationListing> callback) {
+  public Future<ExternalOrganizationListing> getExternalcontactsOrganizationsAsync(GetExternalcontactsOrganizationsRequest request, final AsyncApiCallback<ExternalOrganizationListing> callback) {
     try {
-      SettableFuture<ExternalOrganizationListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ExternalOrganizationListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalOrganizationListing>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganizationListing>>() {
         @Override
         public void onCompleted(ApiResponse<ExternalOrganizationListing> response) {
@@ -1166,10 +1166,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ExternalOrganizationListing>> getExternalcontactsOrganizationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ExternalOrganizationListing>> callback) {
+  public Future<ApiResponse<ExternalOrganizationListing>> getExternalcontactsOrganizationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExternalOrganizationListing>> callback) {
     try {
-      SettableFuture<ApiResponse<ExternalOrganizationListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ExternalOrganizationListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ExternalOrganizationListing>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganizationListing>>() {
         @Override
         public void onCompleted(ApiResponse<ExternalOrganizationListing> response) {
@@ -1207,10 +1207,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Relationship> getExternalcontactsRelationshipAsync(GetExternalcontactsRelationshipRequest request, AsyncApiCallback<Relationship> callback) {
+  public Future<Relationship> getExternalcontactsRelationshipAsync(GetExternalcontactsRelationshipRequest request, final AsyncApiCallback<Relationship> callback) {
     try {
-      SettableFuture<Relationship> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Relationship> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Relationship>() {}, new AsyncApiCallback<ApiResponse<Relationship>>() {
         @Override
         public void onCompleted(ApiResponse<Relationship> response) {
@@ -1241,10 +1241,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Relationship>> getExternalcontactsRelationshipAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Relationship>> callback) {
+  public Future<ApiResponse<Relationship>> getExternalcontactsRelationshipAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Relationship>> callback) {
     try {
-      SettableFuture<ApiResponse<Relationship>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Relationship>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Relationship>() {}, new AsyncApiCallback<ApiResponse<Relationship>>() {
         @Override
         public void onCompleted(ApiResponse<Relationship> response) {
@@ -1282,10 +1282,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ReverseWhitepagesLookupResult> getExternalcontactsReversewhitepageslookupAsync(GetExternalcontactsReversewhitepageslookupRequest request, AsyncApiCallback<ReverseWhitepagesLookupResult> callback) {
+  public Future<ReverseWhitepagesLookupResult> getExternalcontactsReversewhitepageslookupAsync(GetExternalcontactsReversewhitepageslookupRequest request, final AsyncApiCallback<ReverseWhitepagesLookupResult> callback) {
     try {
-      SettableFuture<ReverseWhitepagesLookupResult> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ReverseWhitepagesLookupResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReverseWhitepagesLookupResult>() {}, new AsyncApiCallback<ApiResponse<ReverseWhitepagesLookupResult>>() {
         @Override
         public void onCompleted(ApiResponse<ReverseWhitepagesLookupResult> response) {
@@ -1316,10 +1316,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ReverseWhitepagesLookupResult>> getExternalcontactsReversewhitepageslookupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReverseWhitepagesLookupResult>> callback) {
+  public Future<ApiResponse<ReverseWhitepagesLookupResult>> getExternalcontactsReversewhitepageslookupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReverseWhitepagesLookupResult>> callback) {
     try {
-      SettableFuture<ApiResponse<ReverseWhitepagesLookupResult>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ReverseWhitepagesLookupResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ReverseWhitepagesLookupResult>() {}, new AsyncApiCallback<ApiResponse<ReverseWhitepagesLookupResult>>() {
         @Override
         public void onCompleted(ApiResponse<ReverseWhitepagesLookupResult> response) {
@@ -1357,10 +1357,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> postExternalcontactsContactAssociateconversationAsync(PostExternalcontactsContactAssociateconversationRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> postExternalcontactsContactAssociateconversationAsync(PostExternalcontactsContactAssociateconversationRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -1391,10 +1391,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> postExternalcontactsContactAssociateconversationAsync(ApiRequest<ConversationAssociation> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> postExternalcontactsContactAssociateconversationAsync(ApiRequest<ConversationAssociation> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -1432,10 +1432,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Note> postExternalcontactsContactNotesAsync(PostExternalcontactsContactNotesRequest request, AsyncApiCallback<Note> callback) {
+  public Future<Note> postExternalcontactsContactNotesAsync(PostExternalcontactsContactNotesRequest request, final AsyncApiCallback<Note> callback) {
     try {
-      SettableFuture<Note> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Note> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
         @Override
         public void onCompleted(ApiResponse<Note> response) {
@@ -1466,10 +1466,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Note>> postExternalcontactsContactNotesAsync(ApiRequest<Note> request, AsyncApiCallback<ApiResponse<Note>> callback) {
+  public Future<ApiResponse<Note>> postExternalcontactsContactNotesAsync(ApiRequest<Note> request, final AsyncApiCallback<ApiResponse<Note>> callback) {
     try {
-      SettableFuture<ApiResponse<Note>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Note>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
         @Override
         public void onCompleted(ApiResponse<Note> response) {
@@ -1507,10 +1507,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ExternalContact> postExternalcontactsContactsAsync(PostExternalcontactsContactsRequest request, AsyncApiCallback<ExternalContact> callback) {
+  public Future<ExternalContact> postExternalcontactsContactsAsync(PostExternalcontactsContactsRequest request, final AsyncApiCallback<ExternalContact> callback) {
     try {
-      SettableFuture<ExternalContact> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ExternalContact> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalContact>() {}, new AsyncApiCallback<ApiResponse<ExternalContact>>() {
         @Override
         public void onCompleted(ApiResponse<ExternalContact> response) {
@@ -1541,10 +1541,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ExternalContact>> postExternalcontactsContactsAsync(ApiRequest<ExternalContact> request, AsyncApiCallback<ApiResponse<ExternalContact>> callback) {
+  public Future<ApiResponse<ExternalContact>> postExternalcontactsContactsAsync(ApiRequest<ExternalContact> request, final AsyncApiCallback<ApiResponse<ExternalContact>> callback) {
     try {
-      SettableFuture<ApiResponse<ExternalContact>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ExternalContact>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ExternalContact>() {}, new AsyncApiCallback<ApiResponse<ExternalContact>>() {
         @Override
         public void onCompleted(ApiResponse<ExternalContact> response) {
@@ -1582,10 +1582,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Note> postExternalcontactsOrganizationNotesAsync(PostExternalcontactsOrganizationNotesRequest request, AsyncApiCallback<Note> callback) {
+  public Future<Note> postExternalcontactsOrganizationNotesAsync(PostExternalcontactsOrganizationNotesRequest request, final AsyncApiCallback<Note> callback) {
     try {
-      SettableFuture<Note> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Note> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
         @Override
         public void onCompleted(ApiResponse<Note> response) {
@@ -1616,10 +1616,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Note>> postExternalcontactsOrganizationNotesAsync(ApiRequest<Note> request, AsyncApiCallback<ApiResponse<Note>> callback) {
+  public Future<ApiResponse<Note>> postExternalcontactsOrganizationNotesAsync(ApiRequest<Note> request, final AsyncApiCallback<ApiResponse<Note>> callback) {
     try {
-      SettableFuture<ApiResponse<Note>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Note>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
         @Override
         public void onCompleted(ApiResponse<Note> response) {
@@ -1657,10 +1657,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ExternalOrganization> postExternalcontactsOrganizationsAsync(PostExternalcontactsOrganizationsRequest request, AsyncApiCallback<ExternalOrganization> callback) {
+  public Future<ExternalOrganization> postExternalcontactsOrganizationsAsync(PostExternalcontactsOrganizationsRequest request, final AsyncApiCallback<ExternalOrganization> callback) {
     try {
-      SettableFuture<ExternalOrganization> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ExternalOrganization> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganization>>() {
         @Override
         public void onCompleted(ApiResponse<ExternalOrganization> response) {
@@ -1691,10 +1691,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ExternalOrganization>> postExternalcontactsOrganizationsAsync(ApiRequest<ExternalOrganization> request, AsyncApiCallback<ApiResponse<ExternalOrganization>> callback) {
+  public Future<ApiResponse<ExternalOrganization>> postExternalcontactsOrganizationsAsync(ApiRequest<ExternalOrganization> request, final AsyncApiCallback<ApiResponse<ExternalOrganization>> callback) {
     try {
-      SettableFuture<ApiResponse<ExternalOrganization>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ExternalOrganization>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ExternalOrganization>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganization>>() {
         @Override
         public void onCompleted(ApiResponse<ExternalOrganization> response) {
@@ -1732,10 +1732,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Relationship> postExternalcontactsRelationshipsAsync(PostExternalcontactsRelationshipsRequest request, AsyncApiCallback<Relationship> callback) {
+  public Future<Relationship> postExternalcontactsRelationshipsAsync(PostExternalcontactsRelationshipsRequest request, final AsyncApiCallback<Relationship> callback) {
     try {
-      SettableFuture<Relationship> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Relationship> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Relationship>() {}, new AsyncApiCallback<ApiResponse<Relationship>>() {
         @Override
         public void onCompleted(ApiResponse<Relationship> response) {
@@ -1766,10 +1766,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Relationship>> postExternalcontactsRelationshipsAsync(ApiRequest<Relationship> request, AsyncApiCallback<ApiResponse<Relationship>> callback) {
+  public Future<ApiResponse<Relationship>> postExternalcontactsRelationshipsAsync(ApiRequest<Relationship> request, final AsyncApiCallback<ApiResponse<Relationship>> callback) {
     try {
-      SettableFuture<ApiResponse<Relationship>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Relationship>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Relationship>() {}, new AsyncApiCallback<ApiResponse<Relationship>>() {
         @Override
         public void onCompleted(ApiResponse<Relationship> response) {
@@ -1807,10 +1807,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ExternalContact> putExternalcontactsContactAsync(PutExternalcontactsContactRequest request, AsyncApiCallback<ExternalContact> callback) {
+  public Future<ExternalContact> putExternalcontactsContactAsync(PutExternalcontactsContactRequest request, final AsyncApiCallback<ExternalContact> callback) {
     try {
-      SettableFuture<ExternalContact> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ExternalContact> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalContact>() {}, new AsyncApiCallback<ApiResponse<ExternalContact>>() {
         @Override
         public void onCompleted(ApiResponse<ExternalContact> response) {
@@ -1841,10 +1841,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ExternalContact>> putExternalcontactsContactAsync(ApiRequest<ExternalContact> request, AsyncApiCallback<ApiResponse<ExternalContact>> callback) {
+  public Future<ApiResponse<ExternalContact>> putExternalcontactsContactAsync(ApiRequest<ExternalContact> request, final AsyncApiCallback<ApiResponse<ExternalContact>> callback) {
     try {
-      SettableFuture<ApiResponse<ExternalContact>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ExternalContact>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ExternalContact>() {}, new AsyncApiCallback<ApiResponse<ExternalContact>>() {
         @Override
         public void onCompleted(ApiResponse<ExternalContact> response) {
@@ -1882,10 +1882,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Note> putExternalcontactsContactNoteAsync(PutExternalcontactsContactNoteRequest request, AsyncApiCallback<Note> callback) {
+  public Future<Note> putExternalcontactsContactNoteAsync(PutExternalcontactsContactNoteRequest request, final AsyncApiCallback<Note> callback) {
     try {
-      SettableFuture<Note> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Note> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
         @Override
         public void onCompleted(ApiResponse<Note> response) {
@@ -1916,10 +1916,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Note>> putExternalcontactsContactNoteAsync(ApiRequest<Note> request, AsyncApiCallback<ApiResponse<Note>> callback) {
+  public Future<ApiResponse<Note>> putExternalcontactsContactNoteAsync(ApiRequest<Note> request, final AsyncApiCallback<ApiResponse<Note>> callback) {
     try {
-      SettableFuture<ApiResponse<Note>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Note>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
         @Override
         public void onCompleted(ApiResponse<Note> response) {
@@ -1957,10 +1957,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> putExternalcontactsConversationAsync(PutExternalcontactsConversationRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> putExternalcontactsConversationAsync(PutExternalcontactsConversationRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -1991,10 +1991,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> putExternalcontactsConversationAsync(ApiRequest<ConversationAssociation> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> putExternalcontactsConversationAsync(ApiRequest<ConversationAssociation> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -2032,10 +2032,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ExternalOrganization> putExternalcontactsOrganizationAsync(PutExternalcontactsOrganizationRequest request, AsyncApiCallback<ExternalOrganization> callback) {
+  public Future<ExternalOrganization> putExternalcontactsOrganizationAsync(PutExternalcontactsOrganizationRequest request, final AsyncApiCallback<ExternalOrganization> callback) {
     try {
-      SettableFuture<ExternalOrganization> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ExternalOrganization> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganization>>() {
         @Override
         public void onCompleted(ApiResponse<ExternalOrganization> response) {
@@ -2066,10 +2066,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ExternalOrganization>> putExternalcontactsOrganizationAsync(ApiRequest<ExternalOrganization> request, AsyncApiCallback<ApiResponse<ExternalOrganization>> callback) {
+  public Future<ApiResponse<ExternalOrganization>> putExternalcontactsOrganizationAsync(ApiRequest<ExternalOrganization> request, final AsyncApiCallback<ApiResponse<ExternalOrganization>> callback) {
     try {
-      SettableFuture<ApiResponse<ExternalOrganization>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ExternalOrganization>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ExternalOrganization>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganization>>() {
         @Override
         public void onCompleted(ApiResponse<ExternalOrganization> response) {
@@ -2107,10 +2107,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Note> putExternalcontactsOrganizationNoteAsync(PutExternalcontactsOrganizationNoteRequest request, AsyncApiCallback<Note> callback) {
+  public Future<Note> putExternalcontactsOrganizationNoteAsync(PutExternalcontactsOrganizationNoteRequest request, final AsyncApiCallback<Note> callback) {
     try {
-      SettableFuture<Note> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Note> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
         @Override
         public void onCompleted(ApiResponse<Note> response) {
@@ -2141,10 +2141,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Note>> putExternalcontactsOrganizationNoteAsync(ApiRequest<Note> request, AsyncApiCallback<ApiResponse<Note>> callback) {
+  public Future<ApiResponse<Note>> putExternalcontactsOrganizationNoteAsync(ApiRequest<Note> request, final AsyncApiCallback<ApiResponse<Note>> callback) {
     try {
-      SettableFuture<ApiResponse<Note>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Note>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Note>() {}, new AsyncApiCallback<ApiResponse<Note>>() {
         @Override
         public void onCompleted(ApiResponse<Note> response) {
@@ -2182,10 +2182,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Relationship> putExternalcontactsRelationshipAsync(PutExternalcontactsRelationshipRequest request, AsyncApiCallback<Relationship> callback) {
+  public Future<Relationship> putExternalcontactsRelationshipAsync(PutExternalcontactsRelationshipRequest request, final AsyncApiCallback<Relationship> callback) {
     try {
-      SettableFuture<Relationship> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Relationship> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Relationship>() {}, new AsyncApiCallback<ApiResponse<Relationship>>() {
         @Override
         public void onCompleted(ApiResponse<Relationship> response) {
@@ -2216,10 +2216,10 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Relationship>> putExternalcontactsRelationshipAsync(ApiRequest<Relationship> request, AsyncApiCallback<ApiResponse<Relationship>> callback) {
+  public Future<ApiResponse<Relationship>> putExternalcontactsRelationshipAsync(ApiRequest<Relationship> request, final AsyncApiCallback<ApiResponse<Relationship>> callback) {
     try {
-      SettableFuture<ApiResponse<Relationship>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Relationship>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Relationship>() {}, new AsyncApiCallback<ApiResponse<Relationship>>() {
         @Override
         public void onCompleted(ApiResponse<Relationship> response) {

@@ -25,8 +25,8 @@ public class OkHttpClientConnector implements ApiClientConnector {
     }
 
     @Override
-    public Future<ApiClientConnectorResponse> invokeAsync(ApiClientConnectorRequest request, AsyncApiCallback<ApiClientConnectorResponse> callback) {
-        SettableFuture<ApiClientConnectorResponse> future = SettableFuture.create();
+    public Future<ApiClientConnectorResponse> invokeAsync(ApiClientConnectorRequest request, final AsyncApiCallback<ApiClientConnectorResponse> callback) {
+        final SettableFuture<ApiClientConnectorResponse> future = SettableFuture.create();
         try {
             Call call = client.newCall(buildRequest(request));
             call.enqueue(new Callback() {

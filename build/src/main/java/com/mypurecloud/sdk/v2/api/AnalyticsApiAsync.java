@@ -84,10 +84,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteAnalyticsReportingScheduleAsync(DeleteAnalyticsReportingScheduleRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteAnalyticsReportingScheduleAsync(DeleteAnalyticsReportingScheduleRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -118,10 +118,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteAnalyticsReportingScheduleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteAnalyticsReportingScheduleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -159,10 +159,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AnalyticsConversation> getAnalyticsConversationDetailsAsync(GetAnalyticsConversationDetailsRequest request, AsyncApiCallback<AnalyticsConversation> callback) {
+  public Future<AnalyticsConversation> getAnalyticsConversationDetailsAsync(GetAnalyticsConversationDetailsRequest request, final AsyncApiCallback<AnalyticsConversation> callback) {
     try {
-      SettableFuture<AnalyticsConversation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<AnalyticsConversation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AnalyticsConversation>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversation>>() {
         @Override
         public void onCompleted(ApiResponse<AnalyticsConversation> response) {
@@ -193,10 +193,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AnalyticsConversation>> getAnalyticsConversationDetailsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AnalyticsConversation>> callback) {
+  public Future<ApiResponse<AnalyticsConversation>> getAnalyticsConversationDetailsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AnalyticsConversation>> callback) {
     try {
-      SettableFuture<ApiResponse<AnalyticsConversation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<AnalyticsConversation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<AnalyticsConversation>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversation>>() {
         @Override
         public void onCompleted(ApiResponse<AnalyticsConversation> response) {
@@ -234,10 +234,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ReportMetaDataEntityListing> getAnalyticsReportingMetadataAsync(GetAnalyticsReportingMetadataRequest request, AsyncApiCallback<ReportMetaDataEntityListing> callback) {
+  public Future<ReportMetaDataEntityListing> getAnalyticsReportingMetadataAsync(GetAnalyticsReportingMetadataRequest request, final AsyncApiCallback<ReportMetaDataEntityListing> callback) {
     try {
-      SettableFuture<ReportMetaDataEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ReportMetaDataEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReportMetaDataEntityListing>() {}, new AsyncApiCallback<ApiResponse<ReportMetaDataEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ReportMetaDataEntityListing> response) {
@@ -268,10 +268,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ReportMetaDataEntityListing>> getAnalyticsReportingMetadataAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportMetaDataEntityListing>> callback) {
+  public Future<ApiResponse<ReportMetaDataEntityListing>> getAnalyticsReportingMetadataAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReportMetaDataEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<ReportMetaDataEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ReportMetaDataEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ReportMetaDataEntityListing>() {}, new AsyncApiCallback<ApiResponse<ReportMetaDataEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ReportMetaDataEntityListing> response) {
@@ -309,10 +309,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ReportMetaData> getAnalyticsReportingReportIdMetadataAsync(GetAnalyticsReportingReportIdMetadataRequest request, AsyncApiCallback<ReportMetaData> callback) {
+  public Future<ReportMetaData> getAnalyticsReportingReportIdMetadataAsync(GetAnalyticsReportingReportIdMetadataRequest request, final AsyncApiCallback<ReportMetaData> callback) {
     try {
-      SettableFuture<ReportMetaData> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ReportMetaData> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReportMetaData>() {}, new AsyncApiCallback<ApiResponse<ReportMetaData>>() {
         @Override
         public void onCompleted(ApiResponse<ReportMetaData> response) {
@@ -343,10 +343,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ReportMetaData>> getAnalyticsReportingReportIdMetadataAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportMetaData>> callback) {
+  public Future<ApiResponse<ReportMetaData>> getAnalyticsReportingReportIdMetadataAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReportMetaData>> callback) {
     try {
-      SettableFuture<ApiResponse<ReportMetaData>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ReportMetaData>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ReportMetaData>() {}, new AsyncApiCallback<ApiResponse<ReportMetaData>>() {
         @Override
         public void onCompleted(ApiResponse<ReportMetaData> response) {
@@ -384,10 +384,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<String>> getAnalyticsReportingReportformatsAsync(GetAnalyticsReportingReportformatsRequest request, AsyncApiCallback<List<String>> callback) {
+  public Future<List<String>> getAnalyticsReportingReportformatsAsync(GetAnalyticsReportingReportformatsRequest request, final AsyncApiCallback<List<String>> callback) {
     try {
-      SettableFuture<List<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<String>>() {}, new AsyncApiCallback<ApiResponse<List<String>>>() {
         @Override
         public void onCompleted(ApiResponse<List<String>> response) {
@@ -418,10 +418,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<String>>> getAnalyticsReportingReportformatsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<String>>> callback) {
+  public Future<ApiResponse<List<String>>> getAnalyticsReportingReportformatsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<String>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<String>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<String>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<String>>() {}, new AsyncApiCallback<ApiResponse<List<String>>>() {
         @Override
         public void onCompleted(ApiResponse<List<String>> response) {
@@ -459,10 +459,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ReportSchedule> getAnalyticsReportingScheduleAsync(GetAnalyticsReportingScheduleRequest request, AsyncApiCallback<ReportSchedule> callback) {
+  public Future<ReportSchedule> getAnalyticsReportingScheduleAsync(GetAnalyticsReportingScheduleRequest request, final AsyncApiCallback<ReportSchedule> callback) {
     try {
-      SettableFuture<ReportSchedule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ReportSchedule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReportSchedule>() {}, new AsyncApiCallback<ApiResponse<ReportSchedule>>() {
         @Override
         public void onCompleted(ApiResponse<ReportSchedule> response) {
@@ -493,10 +493,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ReportSchedule>> getAnalyticsReportingScheduleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportSchedule>> callback) {
+  public Future<ApiResponse<ReportSchedule>> getAnalyticsReportingScheduleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReportSchedule>> callback) {
     try {
-      SettableFuture<ApiResponse<ReportSchedule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ReportSchedule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ReportSchedule>() {}, new AsyncApiCallback<ApiResponse<ReportSchedule>>() {
         @Override
         public void onCompleted(ApiResponse<ReportSchedule> response) {
@@ -534,10 +534,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ReportRunEntryEntityDomainListing> getAnalyticsReportingScheduleHistoryAsync(GetAnalyticsReportingScheduleHistoryRequest request, AsyncApiCallback<ReportRunEntryEntityDomainListing> callback) {
+  public Future<ReportRunEntryEntityDomainListing> getAnalyticsReportingScheduleHistoryAsync(GetAnalyticsReportingScheduleHistoryRequest request, final AsyncApiCallback<ReportRunEntryEntityDomainListing> callback) {
     try {
-      SettableFuture<ReportRunEntryEntityDomainListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ReportRunEntryEntityDomainListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReportRunEntryEntityDomainListing>() {}, new AsyncApiCallback<ApiResponse<ReportRunEntryEntityDomainListing>>() {
         @Override
         public void onCompleted(ApiResponse<ReportRunEntryEntityDomainListing> response) {
@@ -568,10 +568,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ReportRunEntryEntityDomainListing>> getAnalyticsReportingScheduleHistoryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportRunEntryEntityDomainListing>> callback) {
+  public Future<ApiResponse<ReportRunEntryEntityDomainListing>> getAnalyticsReportingScheduleHistoryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReportRunEntryEntityDomainListing>> callback) {
     try {
-      SettableFuture<ApiResponse<ReportRunEntryEntityDomainListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ReportRunEntryEntityDomainListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ReportRunEntryEntityDomainListing>() {}, new AsyncApiCallback<ApiResponse<ReportRunEntryEntityDomainListing>>() {
         @Override
         public void onCompleted(ApiResponse<ReportRunEntryEntityDomainListing> response) {
@@ -609,10 +609,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ReportRunEntry> getAnalyticsReportingScheduleHistoryLatestAsync(GetAnalyticsReportingScheduleHistoryLatestRequest request, AsyncApiCallback<ReportRunEntry> callback) {
+  public Future<ReportRunEntry> getAnalyticsReportingScheduleHistoryLatestAsync(GetAnalyticsReportingScheduleHistoryLatestRequest request, final AsyncApiCallback<ReportRunEntry> callback) {
     try {
-      SettableFuture<ReportRunEntry> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ReportRunEntry> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReportRunEntry>() {}, new AsyncApiCallback<ApiResponse<ReportRunEntry>>() {
         @Override
         public void onCompleted(ApiResponse<ReportRunEntry> response) {
@@ -643,10 +643,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ReportRunEntry>> getAnalyticsReportingScheduleHistoryLatestAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportRunEntry>> callback) {
+  public Future<ApiResponse<ReportRunEntry>> getAnalyticsReportingScheduleHistoryLatestAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReportRunEntry>> callback) {
     try {
-      SettableFuture<ApiResponse<ReportRunEntry>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ReportRunEntry>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ReportRunEntry>() {}, new AsyncApiCallback<ApiResponse<ReportRunEntry>>() {
         @Override
         public void onCompleted(ApiResponse<ReportRunEntry> response) {
@@ -684,10 +684,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ReportRunEntry> getAnalyticsReportingScheduleHistoryRunIdAsync(GetAnalyticsReportingScheduleHistoryRunIdRequest request, AsyncApiCallback<ReportRunEntry> callback) {
+  public Future<ReportRunEntry> getAnalyticsReportingScheduleHistoryRunIdAsync(GetAnalyticsReportingScheduleHistoryRunIdRequest request, final AsyncApiCallback<ReportRunEntry> callback) {
     try {
-      SettableFuture<ReportRunEntry> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ReportRunEntry> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReportRunEntry>() {}, new AsyncApiCallback<ApiResponse<ReportRunEntry>>() {
         @Override
         public void onCompleted(ApiResponse<ReportRunEntry> response) {
@@ -718,10 +718,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ReportRunEntry>> getAnalyticsReportingScheduleHistoryRunIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportRunEntry>> callback) {
+  public Future<ApiResponse<ReportRunEntry>> getAnalyticsReportingScheduleHistoryRunIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReportRunEntry>> callback) {
     try {
-      SettableFuture<ApiResponse<ReportRunEntry>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ReportRunEntry>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ReportRunEntry>() {}, new AsyncApiCallback<ApiResponse<ReportRunEntry>>() {
         @Override
         public void onCompleted(ApiResponse<ReportRunEntry> response) {
@@ -759,10 +759,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ReportScheduleEntityListing> getAnalyticsReportingSchedulesAsync(GetAnalyticsReportingSchedulesRequest request, AsyncApiCallback<ReportScheduleEntityListing> callback) {
+  public Future<ReportScheduleEntityListing> getAnalyticsReportingSchedulesAsync(GetAnalyticsReportingSchedulesRequest request, final AsyncApiCallback<ReportScheduleEntityListing> callback) {
     try {
-      SettableFuture<ReportScheduleEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ReportScheduleEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReportScheduleEntityListing>() {}, new AsyncApiCallback<ApiResponse<ReportScheduleEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ReportScheduleEntityListing> response) {
@@ -793,10 +793,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ReportScheduleEntityListing>> getAnalyticsReportingSchedulesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ReportScheduleEntityListing>> callback) {
+  public Future<ApiResponse<ReportScheduleEntityListing>> getAnalyticsReportingSchedulesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReportScheduleEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<ReportScheduleEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ReportScheduleEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ReportScheduleEntityListing>() {}, new AsyncApiCallback<ApiResponse<ReportScheduleEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ReportScheduleEntityListing> response) {
@@ -834,10 +834,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<String>> getAnalyticsReportingTimeperiodsAsync(GetAnalyticsReportingTimeperiodsRequest request, AsyncApiCallback<List<String>> callback) {
+  public Future<List<String>> getAnalyticsReportingTimeperiodsAsync(GetAnalyticsReportingTimeperiodsRequest request, final AsyncApiCallback<List<String>> callback) {
     try {
-      SettableFuture<List<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<String>>() {}, new AsyncApiCallback<ApiResponse<List<String>>>() {
         @Override
         public void onCompleted(ApiResponse<List<String>> response) {
@@ -868,10 +868,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<String>>> getAnalyticsReportingTimeperiodsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<String>>> callback) {
+  public Future<ApiResponse<List<String>>> getAnalyticsReportingTimeperiodsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<String>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<String>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<String>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<String>>() {}, new AsyncApiCallback<ApiResponse<List<String>>>() {
         @Override
         public void onCompleted(ApiResponse<List<String>> response) {
@@ -909,10 +909,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<PropertyIndexRequest> postAnalyticsConversationDetailsPropertiesAsync(PostAnalyticsConversationDetailsPropertiesRequest request, AsyncApiCallback<PropertyIndexRequest> callback) {
+  public Future<PropertyIndexRequest> postAnalyticsConversationDetailsPropertiesAsync(PostAnalyticsConversationDetailsPropertiesRequest request, final AsyncApiCallback<PropertyIndexRequest> callback) {
     try {
-      SettableFuture<PropertyIndexRequest> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<PropertyIndexRequest> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PropertyIndexRequest>() {}, new AsyncApiCallback<ApiResponse<PropertyIndexRequest>>() {
         @Override
         public void onCompleted(ApiResponse<PropertyIndexRequest> response) {
@@ -943,10 +943,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<PropertyIndexRequest>> postAnalyticsConversationDetailsPropertiesAsync(ApiRequest<PropertyIndexRequest> request, AsyncApiCallback<ApiResponse<PropertyIndexRequest>> callback) {
+  public Future<ApiResponse<PropertyIndexRequest>> postAnalyticsConversationDetailsPropertiesAsync(ApiRequest<PropertyIndexRequest> request, final AsyncApiCallback<ApiResponse<PropertyIndexRequest>> callback) {
     try {
-      SettableFuture<ApiResponse<PropertyIndexRequest>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<PropertyIndexRequest>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<PropertyIndexRequest>() {}, new AsyncApiCallback<ApiResponse<PropertyIndexRequest>>() {
         @Override
         public void onCompleted(ApiResponse<PropertyIndexRequest> response) {
@@ -984,10 +984,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AggregateQueryResponse> postAnalyticsConversationsAggregatesQueryAsync(PostAnalyticsConversationsAggregatesQueryRequest request, AsyncApiCallback<AggregateQueryResponse> callback) {
+  public Future<AggregateQueryResponse> postAnalyticsConversationsAggregatesQueryAsync(PostAnalyticsConversationsAggregatesQueryRequest request, final AsyncApiCallback<AggregateQueryResponse> callback) {
     try {
-      SettableFuture<AggregateQueryResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<AggregateQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AggregateQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<AggregateQueryResponse> response) {
@@ -1018,10 +1018,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AggregateQueryResponse>> postAnalyticsConversationsAggregatesQueryAsync(ApiRequest<AggregationQuery> request, AsyncApiCallback<ApiResponse<AggregateQueryResponse>> callback) {
+  public Future<ApiResponse<AggregateQueryResponse>> postAnalyticsConversationsAggregatesQueryAsync(ApiRequest<AggregationQuery> request, final AsyncApiCallback<ApiResponse<AggregateQueryResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<AggregateQueryResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<AggregateQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<AggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AggregateQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<AggregateQueryResponse> response) {
@@ -1059,10 +1059,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AnalyticsConversationQueryResponse> postAnalyticsConversationsDetailsQueryAsync(PostAnalyticsConversationsDetailsQueryRequest request, AsyncApiCallback<AnalyticsConversationQueryResponse> callback) {
+  public Future<AnalyticsConversationQueryResponse> postAnalyticsConversationsDetailsQueryAsync(PostAnalyticsConversationsDetailsQueryRequest request, final AsyncApiCallback<AnalyticsConversationQueryResponse> callback) {
     try {
-      SettableFuture<AnalyticsConversationQueryResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<AnalyticsConversationQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AnalyticsConversationQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversationQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<AnalyticsConversationQueryResponse> response) {
@@ -1093,10 +1093,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AnalyticsConversationQueryResponse>> postAnalyticsConversationsDetailsQueryAsync(ApiRequest<ConversationQuery> request, AsyncApiCallback<ApiResponse<AnalyticsConversationQueryResponse>> callback) {
+  public Future<ApiResponse<AnalyticsConversationQueryResponse>> postAnalyticsConversationsDetailsQueryAsync(ApiRequest<ConversationQuery> request, final AsyncApiCallback<ApiResponse<AnalyticsConversationQueryResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<AnalyticsConversationQueryResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<AnalyticsConversationQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<AnalyticsConversationQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversationQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<AnalyticsConversationQueryResponse> response) {
@@ -1134,10 +1134,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AggregateQueryResponse> postAnalyticsEvaluationsAggregatesQueryAsync(PostAnalyticsEvaluationsAggregatesQueryRequest request, AsyncApiCallback<AggregateQueryResponse> callback) {
+  public Future<AggregateQueryResponse> postAnalyticsEvaluationsAggregatesQueryAsync(PostAnalyticsEvaluationsAggregatesQueryRequest request, final AsyncApiCallback<AggregateQueryResponse> callback) {
     try {
-      SettableFuture<AggregateQueryResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<AggregateQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AggregateQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<AggregateQueryResponse> response) {
@@ -1168,10 +1168,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AggregateQueryResponse>> postAnalyticsEvaluationsAggregatesQueryAsync(ApiRequest<AggregationQuery> request, AsyncApiCallback<ApiResponse<AggregateQueryResponse>> callback) {
+  public Future<ApiResponse<AggregateQueryResponse>> postAnalyticsEvaluationsAggregatesQueryAsync(ApiRequest<AggregationQuery> request, final AsyncApiCallback<ApiResponse<AggregateQueryResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<AggregateQueryResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<AggregateQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<AggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AggregateQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<AggregateQueryResponse> response) {
@@ -1209,10 +1209,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<QualifierMappingObservationQueryResponse> postAnalyticsQueuesObservationsQueryAsync(PostAnalyticsQueuesObservationsQueryRequest request, AsyncApiCallback<QualifierMappingObservationQueryResponse> callback) {
+  public Future<QualifierMappingObservationQueryResponse> postAnalyticsQueuesObservationsQueryAsync(PostAnalyticsQueuesObservationsQueryRequest request, final AsyncApiCallback<QualifierMappingObservationQueryResponse> callback) {
     try {
-      SettableFuture<QualifierMappingObservationQueryResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<QualifierMappingObservationQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QualifierMappingObservationQueryResponse>() {}, new AsyncApiCallback<ApiResponse<QualifierMappingObservationQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<QualifierMappingObservationQueryResponse> response) {
@@ -1243,10 +1243,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<QualifierMappingObservationQueryResponse>> postAnalyticsQueuesObservationsQueryAsync(ApiRequest<ObservationQuery> request, AsyncApiCallback<ApiResponse<QualifierMappingObservationQueryResponse>> callback) {
+  public Future<ApiResponse<QualifierMappingObservationQueryResponse>> postAnalyticsQueuesObservationsQueryAsync(ApiRequest<ObservationQuery> request, final AsyncApiCallback<ApiResponse<QualifierMappingObservationQueryResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<QualifierMappingObservationQueryResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<QualifierMappingObservationQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<QualifierMappingObservationQueryResponse>() {}, new AsyncApiCallback<ApiResponse<QualifierMappingObservationQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<QualifierMappingObservationQueryResponse> response) {
@@ -1284,10 +1284,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<RunNowResponse> postAnalyticsReportingScheduleRunreportAsync(PostAnalyticsReportingScheduleRunreportRequest request, AsyncApiCallback<RunNowResponse> callback) {
+  public Future<RunNowResponse> postAnalyticsReportingScheduleRunreportAsync(PostAnalyticsReportingScheduleRunreportRequest request, final AsyncApiCallback<RunNowResponse> callback) {
     try {
-      SettableFuture<RunNowResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<RunNowResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RunNowResponse>() {}, new AsyncApiCallback<ApiResponse<RunNowResponse>>() {
         @Override
         public void onCompleted(ApiResponse<RunNowResponse> response) {
@@ -1318,10 +1318,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<RunNowResponse>> postAnalyticsReportingScheduleRunreportAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RunNowResponse>> callback) {
+  public Future<ApiResponse<RunNowResponse>> postAnalyticsReportingScheduleRunreportAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RunNowResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<RunNowResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<RunNowResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<RunNowResponse>() {}, new AsyncApiCallback<ApiResponse<RunNowResponse>>() {
         @Override
         public void onCompleted(ApiResponse<RunNowResponse> response) {
@@ -1359,10 +1359,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ReportSchedule> postAnalyticsReportingSchedulesAsync(PostAnalyticsReportingSchedulesRequest request, AsyncApiCallback<ReportSchedule> callback) {
+  public Future<ReportSchedule> postAnalyticsReportingSchedulesAsync(PostAnalyticsReportingSchedulesRequest request, final AsyncApiCallback<ReportSchedule> callback) {
     try {
-      SettableFuture<ReportSchedule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ReportSchedule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReportSchedule>() {}, new AsyncApiCallback<ApiResponse<ReportSchedule>>() {
         @Override
         public void onCompleted(ApiResponse<ReportSchedule> response) {
@@ -1393,10 +1393,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ReportSchedule>> postAnalyticsReportingSchedulesAsync(ApiRequest<ReportSchedule> request, AsyncApiCallback<ApiResponse<ReportSchedule>> callback) {
+  public Future<ApiResponse<ReportSchedule>> postAnalyticsReportingSchedulesAsync(ApiRequest<ReportSchedule> request, final AsyncApiCallback<ApiResponse<ReportSchedule>> callback) {
     try {
-      SettableFuture<ApiResponse<ReportSchedule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ReportSchedule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ReportSchedule>() {}, new AsyncApiCallback<ApiResponse<ReportSchedule>>() {
         @Override
         public void onCompleted(ApiResponse<ReportSchedule> response) {
@@ -1434,10 +1434,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<PresenceQueryResponse> postAnalyticsUsersAggregatesQueryAsync(PostAnalyticsUsersAggregatesQueryRequest request, AsyncApiCallback<PresenceQueryResponse> callback) {
+  public Future<PresenceQueryResponse> postAnalyticsUsersAggregatesQueryAsync(PostAnalyticsUsersAggregatesQueryRequest request, final AsyncApiCallback<PresenceQueryResponse> callback) {
     try {
-      SettableFuture<PresenceQueryResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<PresenceQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PresenceQueryResponse>() {}, new AsyncApiCallback<ApiResponse<PresenceQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<PresenceQueryResponse> response) {
@@ -1468,10 +1468,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<PresenceQueryResponse>> postAnalyticsUsersAggregatesQueryAsync(ApiRequest<AggregationQuery> request, AsyncApiCallback<ApiResponse<PresenceQueryResponse>> callback) {
+  public Future<ApiResponse<PresenceQueryResponse>> postAnalyticsUsersAggregatesQueryAsync(ApiRequest<AggregationQuery> request, final AsyncApiCallback<ApiResponse<PresenceQueryResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<PresenceQueryResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<PresenceQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<PresenceQueryResponse>() {}, new AsyncApiCallback<ApiResponse<PresenceQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<PresenceQueryResponse> response) {
@@ -1509,10 +1509,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AnalyticsUserDetailsQueryResponse> postAnalyticsUsersDetailsQueryAsync(PostAnalyticsUsersDetailsQueryRequest request, AsyncApiCallback<AnalyticsUserDetailsQueryResponse> callback) {
+  public Future<AnalyticsUserDetailsQueryResponse> postAnalyticsUsersDetailsQueryAsync(PostAnalyticsUsersDetailsQueryRequest request, final AsyncApiCallback<AnalyticsUserDetailsQueryResponse> callback) {
     try {
-      SettableFuture<AnalyticsUserDetailsQueryResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<AnalyticsUserDetailsQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AnalyticsUserDetailsQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AnalyticsUserDetailsQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<AnalyticsUserDetailsQueryResponse> response) {
@@ -1543,10 +1543,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AnalyticsUserDetailsQueryResponse>> postAnalyticsUsersDetailsQueryAsync(ApiRequest<UserDetailsQuery> request, AsyncApiCallback<ApiResponse<AnalyticsUserDetailsQueryResponse>> callback) {
+  public Future<ApiResponse<AnalyticsUserDetailsQueryResponse>> postAnalyticsUsersDetailsQueryAsync(ApiRequest<UserDetailsQuery> request, final AsyncApiCallback<ApiResponse<AnalyticsUserDetailsQueryResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<AnalyticsUserDetailsQueryResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<AnalyticsUserDetailsQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<AnalyticsUserDetailsQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AnalyticsUserDetailsQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<AnalyticsUserDetailsQueryResponse> response) {
@@ -1584,10 +1584,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ObservationQueryResponse> postAnalyticsUsersObservationsQueryAsync(PostAnalyticsUsersObservationsQueryRequest request, AsyncApiCallback<ObservationQueryResponse> callback) {
+  public Future<ObservationQueryResponse> postAnalyticsUsersObservationsQueryAsync(PostAnalyticsUsersObservationsQueryRequest request, final AsyncApiCallback<ObservationQueryResponse> callback) {
     try {
-      SettableFuture<ObservationQueryResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ObservationQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ObservationQueryResponse>() {}, new AsyncApiCallback<ApiResponse<ObservationQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<ObservationQueryResponse> response) {
@@ -1618,10 +1618,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ObservationQueryResponse>> postAnalyticsUsersObservationsQueryAsync(ApiRequest<ObservationQuery> request, AsyncApiCallback<ApiResponse<ObservationQueryResponse>> callback) {
+  public Future<ApiResponse<ObservationQueryResponse>> postAnalyticsUsersObservationsQueryAsync(ApiRequest<ObservationQuery> request, final AsyncApiCallback<ApiResponse<ObservationQueryResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<ObservationQueryResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ObservationQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ObservationQueryResponse>() {}, new AsyncApiCallback<ApiResponse<ObservationQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<ObservationQueryResponse> response) {
@@ -1659,10 +1659,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ReportSchedule> putAnalyticsReportingScheduleAsync(PutAnalyticsReportingScheduleRequest request, AsyncApiCallback<ReportSchedule> callback) {
+  public Future<ReportSchedule> putAnalyticsReportingScheduleAsync(PutAnalyticsReportingScheduleRequest request, final AsyncApiCallback<ReportSchedule> callback) {
     try {
-      SettableFuture<ReportSchedule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ReportSchedule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReportSchedule>() {}, new AsyncApiCallback<ApiResponse<ReportSchedule>>() {
         @Override
         public void onCompleted(ApiResponse<ReportSchedule> response) {
@@ -1693,10 +1693,10 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ReportSchedule>> putAnalyticsReportingScheduleAsync(ApiRequest<ReportSchedule> request, AsyncApiCallback<ApiResponse<ReportSchedule>> callback) {
+  public Future<ApiResponse<ReportSchedule>> putAnalyticsReportingScheduleAsync(ApiRequest<ReportSchedule> request, final AsyncApiCallback<ApiResponse<ReportSchedule>> callback) {
     try {
-      SettableFuture<ApiResponse<ReportSchedule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ReportSchedule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ReportSchedule>() {}, new AsyncApiCallback<ApiResponse<ReportSchedule>>() {
         @Override
         public void onCompleted(ApiResponse<ReportSchedule> response) {

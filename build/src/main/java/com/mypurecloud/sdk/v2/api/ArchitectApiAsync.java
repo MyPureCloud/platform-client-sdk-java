@@ -109,10 +109,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteArchitectPromptAsync(DeleteArchitectPromptRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteArchitectPromptAsync(DeleteArchitectPromptRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -143,10 +143,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteArchitectPromptAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteArchitectPromptAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -184,10 +184,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteArchitectPromptResourceAsync(DeleteArchitectPromptResourceRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteArchitectPromptResourceAsync(DeleteArchitectPromptResourceRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -218,10 +218,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteArchitectPromptResourceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteArchitectPromptResourceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -259,10 +259,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Operation> deleteArchitectPromptsAsync(DeleteArchitectPromptsRequest request, AsyncApiCallback<Operation> callback) {
+  public Future<Operation> deleteArchitectPromptsAsync(DeleteArchitectPromptsRequest request, final AsyncApiCallback<Operation> callback) {
     try {
-      SettableFuture<Operation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Operation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Operation>() {}, new AsyncApiCallback<ApiResponse<Operation>>() {
         @Override
         public void onCompleted(ApiResponse<Operation> response) {
@@ -293,10 +293,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Operation>> deleteArchitectPromptsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Operation>> callback) {
+  public Future<ApiResponse<Operation>> deleteArchitectPromptsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Operation>> callback) {
     try {
-      SettableFuture<ApiResponse<Operation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Operation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Operation>() {}, new AsyncApiCallback<ApiResponse<Operation>>() {
         @Override
         public void onCompleted(ApiResponse<Operation> response) {
@@ -334,10 +334,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteArchitectSystempromptResourceAsync(DeleteArchitectSystempromptResourceRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteArchitectSystempromptResourceAsync(DeleteArchitectSystempromptResourceRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -368,10 +368,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteArchitectSystempromptResourceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteArchitectSystempromptResourceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -409,10 +409,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteFlowAsync(DeleteFlowRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteFlowAsync(DeleteFlowRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -443,10 +443,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteFlowAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteFlowAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -484,10 +484,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Operation> deleteFlowsAsync(DeleteFlowsRequest request, AsyncApiCallback<Operation> callback) {
+  public Future<Operation> deleteFlowsAsync(DeleteFlowsRequest request, final AsyncApiCallback<Operation> callback) {
     try {
-      SettableFuture<Operation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Operation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Operation>() {}, new AsyncApiCallback<ApiResponse<Operation>>() {
         @Override
         public void onCompleted(ApiResponse<Operation> response) {
@@ -518,10 +518,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Operation>> deleteFlowsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Operation>> callback) {
+  public Future<ApiResponse<Operation>> deleteFlowsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Operation>> callback) {
     try {
-      SettableFuture<ApiResponse<Operation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Operation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Operation>() {}, new AsyncApiCallback<ApiResponse<Operation>>() {
         @Override
         public void onCompleted(ApiResponse<Operation> response) {
@@ -559,10 +559,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DependencyObjectEntityListing> getArchitectDependencytrackingAsync(GetArchitectDependencytrackingRequest request, AsyncApiCallback<DependencyObjectEntityListing> callback) {
+  public Future<DependencyObjectEntityListing> getArchitectDependencytrackingAsync(GetArchitectDependencytrackingRequest request, final AsyncApiCallback<DependencyObjectEntityListing> callback) {
     try {
-      SettableFuture<DependencyObjectEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DependencyObjectEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DependencyObjectEntityListing>() {}, new AsyncApiCallback<ApiResponse<DependencyObjectEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<DependencyObjectEntityListing> response) {
@@ -593,10 +593,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DependencyObjectEntityListing>> getArchitectDependencytrackingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DependencyObjectEntityListing>> callback) {
+  public Future<ApiResponse<DependencyObjectEntityListing>> getArchitectDependencytrackingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DependencyObjectEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<DependencyObjectEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DependencyObjectEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DependencyObjectEntityListing>() {}, new AsyncApiCallback<ApiResponse<DependencyObjectEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<DependencyObjectEntityListing> response) {
@@ -634,10 +634,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DependencyStatus> getArchitectDependencytrackingBuildAsync(GetArchitectDependencytrackingBuildRequest request, AsyncApiCallback<DependencyStatus> callback) {
+  public Future<DependencyStatus> getArchitectDependencytrackingBuildAsync(GetArchitectDependencytrackingBuildRequest request, final AsyncApiCallback<DependencyStatus> callback) {
     try {
-      SettableFuture<DependencyStatus> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DependencyStatus> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DependencyStatus>() {}, new AsyncApiCallback<ApiResponse<DependencyStatus>>() {
         @Override
         public void onCompleted(ApiResponse<DependencyStatus> response) {
@@ -668,10 +668,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DependencyStatus>> getArchitectDependencytrackingBuildAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DependencyStatus>> callback) {
+  public Future<ApiResponse<DependencyStatus>> getArchitectDependencytrackingBuildAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DependencyStatus>> callback) {
     try {
-      SettableFuture<ApiResponse<DependencyStatus>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DependencyStatus>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DependencyStatus>() {}, new AsyncApiCallback<ApiResponse<DependencyStatus>>() {
         @Override
         public void onCompleted(ApiResponse<DependencyStatus> response) {
@@ -709,10 +709,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ConsumedResourcesEntityListing> getArchitectDependencytrackingConsumedresourcesAsync(GetArchitectDependencytrackingConsumedresourcesRequest request, AsyncApiCallback<ConsumedResourcesEntityListing> callback) {
+  public Future<ConsumedResourcesEntityListing> getArchitectDependencytrackingConsumedresourcesAsync(GetArchitectDependencytrackingConsumedresourcesRequest request, final AsyncApiCallback<ConsumedResourcesEntityListing> callback) {
     try {
-      SettableFuture<ConsumedResourcesEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ConsumedResourcesEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConsumedResourcesEntityListing>() {}, new AsyncApiCallback<ApiResponse<ConsumedResourcesEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ConsumedResourcesEntityListing> response) {
@@ -743,10 +743,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ConsumedResourcesEntityListing>> getArchitectDependencytrackingConsumedresourcesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ConsumedResourcesEntityListing>> callback) {
+  public Future<ApiResponse<ConsumedResourcesEntityListing>> getArchitectDependencytrackingConsumedresourcesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ConsumedResourcesEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<ConsumedResourcesEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ConsumedResourcesEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ConsumedResourcesEntityListing>() {}, new AsyncApiCallback<ApiResponse<ConsumedResourcesEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ConsumedResourcesEntityListing> response) {
@@ -784,10 +784,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ConsumingResourcesEntityListing> getArchitectDependencytrackingConsumingresourcesAsync(GetArchitectDependencytrackingConsumingresourcesRequest request, AsyncApiCallback<ConsumingResourcesEntityListing> callback) {
+  public Future<ConsumingResourcesEntityListing> getArchitectDependencytrackingConsumingresourcesAsync(GetArchitectDependencytrackingConsumingresourcesRequest request, final AsyncApiCallback<ConsumingResourcesEntityListing> callback) {
     try {
-      SettableFuture<ConsumingResourcesEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ConsumingResourcesEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConsumingResourcesEntityListing>() {}, new AsyncApiCallback<ApiResponse<ConsumingResourcesEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ConsumingResourcesEntityListing> response) {
@@ -818,10 +818,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ConsumingResourcesEntityListing>> getArchitectDependencytrackingConsumingresourcesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ConsumingResourcesEntityListing>> callback) {
+  public Future<ApiResponse<ConsumingResourcesEntityListing>> getArchitectDependencytrackingConsumingresourcesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ConsumingResourcesEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<ConsumingResourcesEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ConsumingResourcesEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ConsumingResourcesEntityListing>() {}, new AsyncApiCallback<ApiResponse<ConsumingResourcesEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ConsumingResourcesEntityListing> response) {
@@ -859,10 +859,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DependencyObjectEntityListing> getArchitectDependencytrackingDeletedresourceconsumersAsync(GetArchitectDependencytrackingDeletedresourceconsumersRequest request, AsyncApiCallback<DependencyObjectEntityListing> callback) {
+  public Future<DependencyObjectEntityListing> getArchitectDependencytrackingDeletedresourceconsumersAsync(GetArchitectDependencytrackingDeletedresourceconsumersRequest request, final AsyncApiCallback<DependencyObjectEntityListing> callback) {
     try {
-      SettableFuture<DependencyObjectEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DependencyObjectEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DependencyObjectEntityListing>() {}, new AsyncApiCallback<ApiResponse<DependencyObjectEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<DependencyObjectEntityListing> response) {
@@ -893,10 +893,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DependencyObjectEntityListing>> getArchitectDependencytrackingDeletedresourceconsumersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DependencyObjectEntityListing>> callback) {
+  public Future<ApiResponse<DependencyObjectEntityListing>> getArchitectDependencytrackingDeletedresourceconsumersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DependencyObjectEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<DependencyObjectEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DependencyObjectEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DependencyObjectEntityListing>() {}, new AsyncApiCallback<ApiResponse<DependencyObjectEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<DependencyObjectEntityListing> response) {
@@ -934,10 +934,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DependencyObject> getArchitectDependencytrackingObjectAsync(GetArchitectDependencytrackingObjectRequest request, AsyncApiCallback<DependencyObject> callback) {
+  public Future<DependencyObject> getArchitectDependencytrackingObjectAsync(GetArchitectDependencytrackingObjectRequest request, final AsyncApiCallback<DependencyObject> callback) {
     try {
-      SettableFuture<DependencyObject> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DependencyObject> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DependencyObject>() {}, new AsyncApiCallback<ApiResponse<DependencyObject>>() {
         @Override
         public void onCompleted(ApiResponse<DependencyObject> response) {
@@ -968,10 +968,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DependencyObject>> getArchitectDependencytrackingObjectAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DependencyObject>> callback) {
+  public Future<ApiResponse<DependencyObject>> getArchitectDependencytrackingObjectAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DependencyObject>> callback) {
     try {
-      SettableFuture<ApiResponse<DependencyObject>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DependencyObject>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DependencyObject>() {}, new AsyncApiCallback<ApiResponse<DependencyObject>>() {
         @Override
         public void onCompleted(ApiResponse<DependencyObject> response) {
@@ -1009,10 +1009,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DependencyType> getArchitectDependencytrackingTypeAsync(GetArchitectDependencytrackingTypeRequest request, AsyncApiCallback<DependencyType> callback) {
+  public Future<DependencyType> getArchitectDependencytrackingTypeAsync(GetArchitectDependencytrackingTypeRequest request, final AsyncApiCallback<DependencyType> callback) {
     try {
-      SettableFuture<DependencyType> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DependencyType> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DependencyType>() {}, new AsyncApiCallback<ApiResponse<DependencyType>>() {
         @Override
         public void onCompleted(ApiResponse<DependencyType> response) {
@@ -1043,10 +1043,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DependencyType>> getArchitectDependencytrackingTypeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DependencyType>> callback) {
+  public Future<ApiResponse<DependencyType>> getArchitectDependencytrackingTypeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DependencyType>> callback) {
     try {
-      SettableFuture<ApiResponse<DependencyType>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DependencyType>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DependencyType>() {}, new AsyncApiCallback<ApiResponse<DependencyType>>() {
         @Override
         public void onCompleted(ApiResponse<DependencyType> response) {
@@ -1084,10 +1084,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DependencyTypeEntityListing> getArchitectDependencytrackingTypesAsync(GetArchitectDependencytrackingTypesRequest request, AsyncApiCallback<DependencyTypeEntityListing> callback) {
+  public Future<DependencyTypeEntityListing> getArchitectDependencytrackingTypesAsync(GetArchitectDependencytrackingTypesRequest request, final AsyncApiCallback<DependencyTypeEntityListing> callback) {
     try {
-      SettableFuture<DependencyTypeEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DependencyTypeEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DependencyTypeEntityListing>() {}, new AsyncApiCallback<ApiResponse<DependencyTypeEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<DependencyTypeEntityListing> response) {
@@ -1118,10 +1118,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DependencyTypeEntityListing>> getArchitectDependencytrackingTypesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DependencyTypeEntityListing>> callback) {
+  public Future<ApiResponse<DependencyTypeEntityListing>> getArchitectDependencytrackingTypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DependencyTypeEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<DependencyTypeEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DependencyTypeEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DependencyTypeEntityListing>() {}, new AsyncApiCallback<ApiResponse<DependencyTypeEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<DependencyTypeEntityListing> response) {
@@ -1159,10 +1159,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DependencyObjectEntityListing> getArchitectDependencytrackingUpdatedresourceconsumersAsync(GetArchitectDependencytrackingUpdatedresourceconsumersRequest request, AsyncApiCallback<DependencyObjectEntityListing> callback) {
+  public Future<DependencyObjectEntityListing> getArchitectDependencytrackingUpdatedresourceconsumersAsync(GetArchitectDependencytrackingUpdatedresourceconsumersRequest request, final AsyncApiCallback<DependencyObjectEntityListing> callback) {
     try {
-      SettableFuture<DependencyObjectEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DependencyObjectEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DependencyObjectEntityListing>() {}, new AsyncApiCallback<ApiResponse<DependencyObjectEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<DependencyObjectEntityListing> response) {
@@ -1193,10 +1193,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DependencyObjectEntityListing>> getArchitectDependencytrackingUpdatedresourceconsumersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DependencyObjectEntityListing>> callback) {
+  public Future<ApiResponse<DependencyObjectEntityListing>> getArchitectDependencytrackingUpdatedresourceconsumersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DependencyObjectEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<DependencyObjectEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DependencyObjectEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DependencyObjectEntityListing>() {}, new AsyncApiCallback<ApiResponse<DependencyObjectEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<DependencyObjectEntityListing> response) {
@@ -1234,10 +1234,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Prompt> getArchitectPromptAsync(GetArchitectPromptRequest request, AsyncApiCallback<Prompt> callback) {
+  public Future<Prompt> getArchitectPromptAsync(GetArchitectPromptRequest request, final AsyncApiCallback<Prompt> callback) {
     try {
-      SettableFuture<Prompt> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Prompt> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Prompt>() {}, new AsyncApiCallback<ApiResponse<Prompt>>() {
         @Override
         public void onCompleted(ApiResponse<Prompt> response) {
@@ -1268,10 +1268,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Prompt>> getArchitectPromptAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Prompt>> callback) {
+  public Future<ApiResponse<Prompt>> getArchitectPromptAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Prompt>> callback) {
     try {
-      SettableFuture<ApiResponse<Prompt>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Prompt>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Prompt>() {}, new AsyncApiCallback<ApiResponse<Prompt>>() {
         @Override
         public void onCompleted(ApiResponse<Prompt> response) {
@@ -1309,10 +1309,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<PromptAsset> getArchitectPromptResourceAsync(GetArchitectPromptResourceRequest request, AsyncApiCallback<PromptAsset> callback) {
+  public Future<PromptAsset> getArchitectPromptResourceAsync(GetArchitectPromptResourceRequest request, final AsyncApiCallback<PromptAsset> callback) {
     try {
-      SettableFuture<PromptAsset> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<PromptAsset> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PromptAsset>() {}, new AsyncApiCallback<ApiResponse<PromptAsset>>() {
         @Override
         public void onCompleted(ApiResponse<PromptAsset> response) {
@@ -1343,10 +1343,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<PromptAsset>> getArchitectPromptResourceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PromptAsset>> callback) {
+  public Future<ApiResponse<PromptAsset>> getArchitectPromptResourceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PromptAsset>> callback) {
     try {
-      SettableFuture<ApiResponse<PromptAsset>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<PromptAsset>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<PromptAsset>() {}, new AsyncApiCallback<ApiResponse<PromptAsset>>() {
         @Override
         public void onCompleted(ApiResponse<PromptAsset> response) {
@@ -1384,10 +1384,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<PromptAssetEntityListing> getArchitectPromptResourcesAsync(GetArchitectPromptResourcesRequest request, AsyncApiCallback<PromptAssetEntityListing> callback) {
+  public Future<PromptAssetEntityListing> getArchitectPromptResourcesAsync(GetArchitectPromptResourcesRequest request, final AsyncApiCallback<PromptAssetEntityListing> callback) {
     try {
-      SettableFuture<PromptAssetEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<PromptAssetEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PromptAssetEntityListing>() {}, new AsyncApiCallback<ApiResponse<PromptAssetEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<PromptAssetEntityListing> response) {
@@ -1418,10 +1418,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<PromptAssetEntityListing>> getArchitectPromptResourcesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PromptAssetEntityListing>> callback) {
+  public Future<ApiResponse<PromptAssetEntityListing>> getArchitectPromptResourcesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PromptAssetEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<PromptAssetEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<PromptAssetEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<PromptAssetEntityListing>() {}, new AsyncApiCallback<ApiResponse<PromptAssetEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<PromptAssetEntityListing> response) {
@@ -1459,10 +1459,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<PromptEntityListing> getArchitectPromptsAsync(GetArchitectPromptsRequest request, AsyncApiCallback<PromptEntityListing> callback) {
+  public Future<PromptEntityListing> getArchitectPromptsAsync(GetArchitectPromptsRequest request, final AsyncApiCallback<PromptEntityListing> callback) {
     try {
-      SettableFuture<PromptEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<PromptEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PromptEntityListing>() {}, new AsyncApiCallback<ApiResponse<PromptEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<PromptEntityListing> response) {
@@ -1493,10 +1493,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<PromptEntityListing>> getArchitectPromptsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<PromptEntityListing>> callback) {
+  public Future<ApiResponse<PromptEntityListing>> getArchitectPromptsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PromptEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<PromptEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<PromptEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<PromptEntityListing>() {}, new AsyncApiCallback<ApiResponse<PromptEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<PromptEntityListing> response) {
@@ -1534,10 +1534,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<SystemPrompt> getArchitectSystempromptAsync(GetArchitectSystempromptRequest request, AsyncApiCallback<SystemPrompt> callback) {
+  public Future<SystemPrompt> getArchitectSystempromptAsync(GetArchitectSystempromptRequest request, final AsyncApiCallback<SystemPrompt> callback) {
     try {
-      SettableFuture<SystemPrompt> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<SystemPrompt> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SystemPrompt>() {}, new AsyncApiCallback<ApiResponse<SystemPrompt>>() {
         @Override
         public void onCompleted(ApiResponse<SystemPrompt> response) {
@@ -1568,10 +1568,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<SystemPrompt>> getArchitectSystempromptAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SystemPrompt>> callback) {
+  public Future<ApiResponse<SystemPrompt>> getArchitectSystempromptAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SystemPrompt>> callback) {
     try {
-      SettableFuture<ApiResponse<SystemPrompt>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<SystemPrompt>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<SystemPrompt>() {}, new AsyncApiCallback<ApiResponse<SystemPrompt>>() {
         @Override
         public void onCompleted(ApiResponse<SystemPrompt> response) {
@@ -1609,10 +1609,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<SystemPromptAsset> getArchitectSystempromptResourceAsync(GetArchitectSystempromptResourceRequest request, AsyncApiCallback<SystemPromptAsset> callback) {
+  public Future<SystemPromptAsset> getArchitectSystempromptResourceAsync(GetArchitectSystempromptResourceRequest request, final AsyncApiCallback<SystemPromptAsset> callback) {
     try {
-      SettableFuture<SystemPromptAsset> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<SystemPromptAsset> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SystemPromptAsset>() {}, new AsyncApiCallback<ApiResponse<SystemPromptAsset>>() {
         @Override
         public void onCompleted(ApiResponse<SystemPromptAsset> response) {
@@ -1643,10 +1643,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<SystemPromptAsset>> getArchitectSystempromptResourceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SystemPromptAsset>> callback) {
+  public Future<ApiResponse<SystemPromptAsset>> getArchitectSystempromptResourceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SystemPromptAsset>> callback) {
     try {
-      SettableFuture<ApiResponse<SystemPromptAsset>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<SystemPromptAsset>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<SystemPromptAsset>() {}, new AsyncApiCallback<ApiResponse<SystemPromptAsset>>() {
         @Override
         public void onCompleted(ApiResponse<SystemPromptAsset> response) {
@@ -1684,10 +1684,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<SystemPromptAssetEntityListing> getArchitectSystempromptResourcesAsync(GetArchitectSystempromptResourcesRequest request, AsyncApiCallback<SystemPromptAssetEntityListing> callback) {
+  public Future<SystemPromptAssetEntityListing> getArchitectSystempromptResourcesAsync(GetArchitectSystempromptResourcesRequest request, final AsyncApiCallback<SystemPromptAssetEntityListing> callback) {
     try {
-      SettableFuture<SystemPromptAssetEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<SystemPromptAssetEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SystemPromptAssetEntityListing>() {}, new AsyncApiCallback<ApiResponse<SystemPromptAssetEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<SystemPromptAssetEntityListing> response) {
@@ -1718,10 +1718,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<SystemPromptAssetEntityListing>> getArchitectSystempromptResourcesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SystemPromptAssetEntityListing>> callback) {
+  public Future<ApiResponse<SystemPromptAssetEntityListing>> getArchitectSystempromptResourcesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SystemPromptAssetEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<SystemPromptAssetEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<SystemPromptAssetEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<SystemPromptAssetEntityListing>() {}, new AsyncApiCallback<ApiResponse<SystemPromptAssetEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<SystemPromptAssetEntityListing> response) {
@@ -1759,10 +1759,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<SystemPromptEntityListing> getArchitectSystempromptsAsync(GetArchitectSystempromptsRequest request, AsyncApiCallback<SystemPromptEntityListing> callback) {
+  public Future<SystemPromptEntityListing> getArchitectSystempromptsAsync(GetArchitectSystempromptsRequest request, final AsyncApiCallback<SystemPromptEntityListing> callback) {
     try {
-      SettableFuture<SystemPromptEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<SystemPromptEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SystemPromptEntityListing>() {}, new AsyncApiCallback<ApiResponse<SystemPromptEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<SystemPromptEntityListing> response) {
@@ -1793,10 +1793,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<SystemPromptEntityListing>> getArchitectSystempromptsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SystemPromptEntityListing>> callback) {
+  public Future<ApiResponse<SystemPromptEntityListing>> getArchitectSystempromptsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SystemPromptEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<SystemPromptEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<SystemPromptEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<SystemPromptEntityListing>() {}, new AsyncApiCallback<ApiResponse<SystemPromptEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<SystemPromptEntityListing> response) {
@@ -1834,10 +1834,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Flow> getFlowAsync(GetFlowRequest request, AsyncApiCallback<Flow> callback) {
+  public Future<Flow> getFlowAsync(GetFlowRequest request, final AsyncApiCallback<Flow> callback) {
     try {
-      SettableFuture<Flow> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Flow> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Flow>() {}, new AsyncApiCallback<ApiResponse<Flow>>() {
         @Override
         public void onCompleted(ApiResponse<Flow> response) {
@@ -1868,10 +1868,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Flow>> getFlowAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Flow>> callback) {
+  public Future<ApiResponse<Flow>> getFlowAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Flow>> callback) {
     try {
-      SettableFuture<ApiResponse<Flow>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Flow>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Flow>() {}, new AsyncApiCallback<ApiResponse<Flow>>() {
         @Override
         public void onCompleted(ApiResponse<Flow> response) {
@@ -1909,10 +1909,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Object> getFlowLatestconfigurationAsync(GetFlowLatestconfigurationRequest request, AsyncApiCallback<Object> callback) {
+  public Future<Object> getFlowLatestconfigurationAsync(GetFlowLatestconfigurationRequest request, final AsyncApiCallback<Object> callback) {
     try {
-      SettableFuture<Object> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Object> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Object>() {}, new AsyncApiCallback<ApiResponse<Object>>() {
         @Override
         public void onCompleted(ApiResponse<Object> response) {
@@ -1943,10 +1943,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Object>> getFlowLatestconfigurationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Object>> callback) {
+  public Future<ApiResponse<Object>> getFlowLatestconfigurationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Object>> callback) {
     try {
-      SettableFuture<ApiResponse<Object>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Object>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Object>() {}, new AsyncApiCallback<ApiResponse<Object>>() {
         @Override
         public void onCompleted(ApiResponse<Object> response) {
@@ -1984,10 +1984,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<FlowVersion> getFlowVersionAsync(GetFlowVersionRequest request, AsyncApiCallback<FlowVersion> callback) {
+  public Future<FlowVersion> getFlowVersionAsync(GetFlowVersionRequest request, final AsyncApiCallback<FlowVersion> callback) {
     try {
-      SettableFuture<FlowVersion> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<FlowVersion> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowVersion>() {}, new AsyncApiCallback<ApiResponse<FlowVersion>>() {
         @Override
         public void onCompleted(ApiResponse<FlowVersion> response) {
@@ -2018,10 +2018,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<FlowVersion>> getFlowVersionAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FlowVersion>> callback) {
+  public Future<ApiResponse<FlowVersion>> getFlowVersionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowVersion>> callback) {
     try {
-      SettableFuture<ApiResponse<FlowVersion>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<FlowVersion>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<FlowVersion>() {}, new AsyncApiCallback<ApiResponse<FlowVersion>>() {
         @Override
         public void onCompleted(ApiResponse<FlowVersion> response) {
@@ -2059,10 +2059,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Object> getFlowVersionConfigurationAsync(GetFlowVersionConfigurationRequest request, AsyncApiCallback<Object> callback) {
+  public Future<Object> getFlowVersionConfigurationAsync(GetFlowVersionConfigurationRequest request, final AsyncApiCallback<Object> callback) {
     try {
-      SettableFuture<Object> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Object> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Object>() {}, new AsyncApiCallback<ApiResponse<Object>>() {
         @Override
         public void onCompleted(ApiResponse<Object> response) {
@@ -2093,10 +2093,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Object>> getFlowVersionConfigurationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Object>> callback) {
+  public Future<ApiResponse<Object>> getFlowVersionConfigurationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Object>> callback) {
     try {
-      SettableFuture<ApiResponse<Object>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Object>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Object>() {}, new AsyncApiCallback<ApiResponse<Object>>() {
         @Override
         public void onCompleted(ApiResponse<Object> response) {
@@ -2134,10 +2134,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<FlowVersionEntityListing> getFlowVersionsAsync(GetFlowVersionsRequest request, AsyncApiCallback<FlowVersionEntityListing> callback) {
+  public Future<FlowVersionEntityListing> getFlowVersionsAsync(GetFlowVersionsRequest request, final AsyncApiCallback<FlowVersionEntityListing> callback) {
     try {
-      SettableFuture<FlowVersionEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<FlowVersionEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowVersionEntityListing>() {}, new AsyncApiCallback<ApiResponse<FlowVersionEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<FlowVersionEntityListing> response) {
@@ -2168,10 +2168,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<FlowVersionEntityListing>> getFlowVersionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FlowVersionEntityListing>> callback) {
+  public Future<ApiResponse<FlowVersionEntityListing>> getFlowVersionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowVersionEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<FlowVersionEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<FlowVersionEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<FlowVersionEntityListing>() {}, new AsyncApiCallback<ApiResponse<FlowVersionEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<FlowVersionEntityListing> response) {
@@ -2209,10 +2209,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<FlowEntityListing> getFlowsAsync(GetFlowsRequest request, AsyncApiCallback<FlowEntityListing> callback) {
+  public Future<FlowEntityListing> getFlowsAsync(GetFlowsRequest request, final AsyncApiCallback<FlowEntityListing> callback) {
     try {
-      SettableFuture<FlowEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<FlowEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowEntityListing>() {}, new AsyncApiCallback<ApiResponse<FlowEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<FlowEntityListing> response) {
@@ -2243,10 +2243,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<FlowEntityListing>> getFlowsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<FlowEntityListing>> callback) {
+  public Future<ApiResponse<FlowEntityListing>> getFlowsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<FlowEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<FlowEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<FlowEntityListing>() {}, new AsyncApiCallback<ApiResponse<FlowEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<FlowEntityListing> response) {
@@ -2284,10 +2284,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> postArchitectDependencytrackingBuildAsync(PostArchitectDependencytrackingBuildRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> postArchitectDependencytrackingBuildAsync(PostArchitectDependencytrackingBuildRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -2318,10 +2318,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> postArchitectDependencytrackingBuildAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> postArchitectDependencytrackingBuildAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -2359,10 +2359,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<PromptAsset> postArchitectPromptResourcesAsync(PostArchitectPromptResourcesRequest request, AsyncApiCallback<PromptAsset> callback) {
+  public Future<PromptAsset> postArchitectPromptResourcesAsync(PostArchitectPromptResourcesRequest request, final AsyncApiCallback<PromptAsset> callback) {
     try {
-      SettableFuture<PromptAsset> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<PromptAsset> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PromptAsset>() {}, new AsyncApiCallback<ApiResponse<PromptAsset>>() {
         @Override
         public void onCompleted(ApiResponse<PromptAsset> response) {
@@ -2393,10 +2393,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<PromptAsset>> postArchitectPromptResourcesAsync(ApiRequest<PromptAssetCreate> request, AsyncApiCallback<ApiResponse<PromptAsset>> callback) {
+  public Future<ApiResponse<PromptAsset>> postArchitectPromptResourcesAsync(ApiRequest<PromptAssetCreate> request, final AsyncApiCallback<ApiResponse<PromptAsset>> callback) {
     try {
-      SettableFuture<ApiResponse<PromptAsset>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<PromptAsset>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<PromptAsset>() {}, new AsyncApiCallback<ApiResponse<PromptAsset>>() {
         @Override
         public void onCompleted(ApiResponse<PromptAsset> response) {
@@ -2434,10 +2434,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Prompt> postArchitectPromptsAsync(PostArchitectPromptsRequest request, AsyncApiCallback<Prompt> callback) {
+  public Future<Prompt> postArchitectPromptsAsync(PostArchitectPromptsRequest request, final AsyncApiCallback<Prompt> callback) {
     try {
-      SettableFuture<Prompt> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Prompt> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Prompt>() {}, new AsyncApiCallback<ApiResponse<Prompt>>() {
         @Override
         public void onCompleted(ApiResponse<Prompt> response) {
@@ -2468,10 +2468,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Prompt>> postArchitectPromptsAsync(ApiRequest<Prompt> request, AsyncApiCallback<ApiResponse<Prompt>> callback) {
+  public Future<ApiResponse<Prompt>> postArchitectPromptsAsync(ApiRequest<Prompt> request, final AsyncApiCallback<ApiResponse<Prompt>> callback) {
     try {
-      SettableFuture<ApiResponse<Prompt>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Prompt>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Prompt>() {}, new AsyncApiCallback<ApiResponse<Prompt>>() {
         @Override
         public void onCompleted(ApiResponse<Prompt> response) {
@@ -2509,10 +2509,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<SystemPromptAsset> postArchitectSystempromptResourcesAsync(PostArchitectSystempromptResourcesRequest request, AsyncApiCallback<SystemPromptAsset> callback) {
+  public Future<SystemPromptAsset> postArchitectSystempromptResourcesAsync(PostArchitectSystempromptResourcesRequest request, final AsyncApiCallback<SystemPromptAsset> callback) {
     try {
-      SettableFuture<SystemPromptAsset> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<SystemPromptAsset> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SystemPromptAsset>() {}, new AsyncApiCallback<ApiResponse<SystemPromptAsset>>() {
         @Override
         public void onCompleted(ApiResponse<SystemPromptAsset> response) {
@@ -2543,10 +2543,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<SystemPromptAsset>> postArchitectSystempromptResourcesAsync(ApiRequest<SystemPromptAsset> request, AsyncApiCallback<ApiResponse<SystemPromptAsset>> callback) {
+  public Future<ApiResponse<SystemPromptAsset>> postArchitectSystempromptResourcesAsync(ApiRequest<SystemPromptAsset> request, final AsyncApiCallback<ApiResponse<SystemPromptAsset>> callback) {
     try {
-      SettableFuture<ApiResponse<SystemPromptAsset>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<SystemPromptAsset>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<SystemPromptAsset>() {}, new AsyncApiCallback<ApiResponse<SystemPromptAsset>>() {
         @Override
         public void onCompleted(ApiResponse<SystemPromptAsset> response) {
@@ -2584,10 +2584,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<FlowVersion> postFlowVersionsAsync(PostFlowVersionsRequest request, AsyncApiCallback<FlowVersion> callback) {
+  public Future<FlowVersion> postFlowVersionsAsync(PostFlowVersionsRequest request, final AsyncApiCallback<FlowVersion> callback) {
     try {
-      SettableFuture<FlowVersion> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<FlowVersion> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowVersion>() {}, new AsyncApiCallback<ApiResponse<FlowVersion>>() {
         @Override
         public void onCompleted(ApiResponse<FlowVersion> response) {
@@ -2618,10 +2618,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<FlowVersion>> postFlowVersionsAsync(ApiRequest<Object> request, AsyncApiCallback<ApiResponse<FlowVersion>> callback) {
+  public Future<ApiResponse<FlowVersion>> postFlowVersionsAsync(ApiRequest<Object> request, final AsyncApiCallback<ApiResponse<FlowVersion>> callback) {
     try {
-      SettableFuture<ApiResponse<FlowVersion>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<FlowVersion>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<FlowVersion>() {}, new AsyncApiCallback<ApiResponse<FlowVersion>>() {
         @Override
         public void onCompleted(ApiResponse<FlowVersion> response) {
@@ -2659,10 +2659,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Flow> postFlowsAsync(PostFlowsRequest request, AsyncApiCallback<Flow> callback) {
+  public Future<Flow> postFlowsAsync(PostFlowsRequest request, final AsyncApiCallback<Flow> callback) {
     try {
-      SettableFuture<Flow> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Flow> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Flow>() {}, new AsyncApiCallback<ApiResponse<Flow>>() {
         @Override
         public void onCompleted(ApiResponse<Flow> response) {
@@ -2693,10 +2693,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Flow>> postFlowsAsync(ApiRequest<Flow> request, AsyncApiCallback<ApiResponse<Flow>> callback) {
+  public Future<ApiResponse<Flow>> postFlowsAsync(ApiRequest<Flow> request, final AsyncApiCallback<ApiResponse<Flow>> callback) {
     try {
-      SettableFuture<ApiResponse<Flow>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Flow>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Flow>() {}, new AsyncApiCallback<ApiResponse<Flow>>() {
         @Override
         public void onCompleted(ApiResponse<Flow> response) {
@@ -2734,10 +2734,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Flow> postFlowsActionsCheckinAsync(PostFlowsActionsCheckinRequest request, AsyncApiCallback<Flow> callback) {
+  public Future<Flow> postFlowsActionsCheckinAsync(PostFlowsActionsCheckinRequest request, final AsyncApiCallback<Flow> callback) {
     try {
-      SettableFuture<Flow> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Flow> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Flow>() {}, new AsyncApiCallback<ApiResponse<Flow>>() {
         @Override
         public void onCompleted(ApiResponse<Flow> response) {
@@ -2768,10 +2768,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Flow>> postFlowsActionsCheckinAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Flow>> callback) {
+  public Future<ApiResponse<Flow>> postFlowsActionsCheckinAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Flow>> callback) {
     try {
-      SettableFuture<ApiResponse<Flow>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Flow>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Flow>() {}, new AsyncApiCallback<ApiResponse<Flow>>() {
         @Override
         public void onCompleted(ApiResponse<Flow> response) {
@@ -2809,10 +2809,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Flow> postFlowsActionsCheckoutAsync(PostFlowsActionsCheckoutRequest request, AsyncApiCallback<Flow> callback) {
+  public Future<Flow> postFlowsActionsCheckoutAsync(PostFlowsActionsCheckoutRequest request, final AsyncApiCallback<Flow> callback) {
     try {
-      SettableFuture<Flow> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Flow> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Flow>() {}, new AsyncApiCallback<ApiResponse<Flow>>() {
         @Override
         public void onCompleted(ApiResponse<Flow> response) {
@@ -2843,10 +2843,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Flow>> postFlowsActionsCheckoutAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Flow>> callback) {
+  public Future<ApiResponse<Flow>> postFlowsActionsCheckoutAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Flow>> callback) {
     try {
-      SettableFuture<ApiResponse<Flow>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Flow>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Flow>() {}, new AsyncApiCallback<ApiResponse<Flow>>() {
         @Override
         public void onCompleted(ApiResponse<Flow> response) {
@@ -2884,10 +2884,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Flow> postFlowsActionsDeactivateAsync(PostFlowsActionsDeactivateRequest request, AsyncApiCallback<Flow> callback) {
+  public Future<Flow> postFlowsActionsDeactivateAsync(PostFlowsActionsDeactivateRequest request, final AsyncApiCallback<Flow> callback) {
     try {
-      SettableFuture<Flow> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Flow> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Flow>() {}, new AsyncApiCallback<ApiResponse<Flow>>() {
         @Override
         public void onCompleted(ApiResponse<Flow> response) {
@@ -2918,10 +2918,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Flow>> postFlowsActionsDeactivateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Flow>> callback) {
+  public Future<ApiResponse<Flow>> postFlowsActionsDeactivateAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Flow>> callback) {
     try {
-      SettableFuture<ApiResponse<Flow>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Flow>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Flow>() {}, new AsyncApiCallback<ApiResponse<Flow>>() {
         @Override
         public void onCompleted(ApiResponse<Flow> response) {
@@ -2959,10 +2959,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Operation> postFlowsActionsPublishAsync(PostFlowsActionsPublishRequest request, AsyncApiCallback<Operation> callback) {
+  public Future<Operation> postFlowsActionsPublishAsync(PostFlowsActionsPublishRequest request, final AsyncApiCallback<Operation> callback) {
     try {
-      SettableFuture<Operation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Operation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Operation>() {}, new AsyncApiCallback<ApiResponse<Operation>>() {
         @Override
         public void onCompleted(ApiResponse<Operation> response) {
@@ -2993,10 +2993,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Operation>> postFlowsActionsPublishAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Operation>> callback) {
+  public Future<ApiResponse<Operation>> postFlowsActionsPublishAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Operation>> callback) {
     try {
-      SettableFuture<ApiResponse<Operation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Operation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Operation>() {}, new AsyncApiCallback<ApiResponse<Operation>>() {
         @Override
         public void onCompleted(ApiResponse<Operation> response) {
@@ -3034,10 +3034,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Flow> postFlowsActionsRevertAsync(PostFlowsActionsRevertRequest request, AsyncApiCallback<Flow> callback) {
+  public Future<Flow> postFlowsActionsRevertAsync(PostFlowsActionsRevertRequest request, final AsyncApiCallback<Flow> callback) {
     try {
-      SettableFuture<Flow> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Flow> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Flow>() {}, new AsyncApiCallback<ApiResponse<Flow>>() {
         @Override
         public void onCompleted(ApiResponse<Flow> response) {
@@ -3068,10 +3068,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Flow>> postFlowsActionsRevertAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Flow>> callback) {
+  public Future<ApiResponse<Flow>> postFlowsActionsRevertAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Flow>> callback) {
     try {
-      SettableFuture<ApiResponse<Flow>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Flow>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Flow>() {}, new AsyncApiCallback<ApiResponse<Flow>>() {
         @Override
         public void onCompleted(ApiResponse<Flow> response) {
@@ -3109,10 +3109,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Flow> postFlowsActionsUnlockAsync(PostFlowsActionsUnlockRequest request, AsyncApiCallback<Flow> callback) {
+  public Future<Flow> postFlowsActionsUnlockAsync(PostFlowsActionsUnlockRequest request, final AsyncApiCallback<Flow> callback) {
     try {
-      SettableFuture<Flow> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Flow> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Flow>() {}, new AsyncApiCallback<ApiResponse<Flow>>() {
         @Override
         public void onCompleted(ApiResponse<Flow> response) {
@@ -3143,10 +3143,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Flow>> postFlowsActionsUnlockAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Flow>> callback) {
+  public Future<ApiResponse<Flow>> postFlowsActionsUnlockAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Flow>> callback) {
     try {
-      SettableFuture<ApiResponse<Flow>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Flow>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Flow>() {}, new AsyncApiCallback<ApiResponse<Flow>>() {
         @Override
         public void onCompleted(ApiResponse<Flow> response) {
@@ -3184,10 +3184,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Prompt> putArchitectPromptAsync(PutArchitectPromptRequest request, AsyncApiCallback<Prompt> callback) {
+  public Future<Prompt> putArchitectPromptAsync(PutArchitectPromptRequest request, final AsyncApiCallback<Prompt> callback) {
     try {
-      SettableFuture<Prompt> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Prompt> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Prompt>() {}, new AsyncApiCallback<ApiResponse<Prompt>>() {
         @Override
         public void onCompleted(ApiResponse<Prompt> response) {
@@ -3218,10 +3218,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Prompt>> putArchitectPromptAsync(ApiRequest<Prompt> request, AsyncApiCallback<ApiResponse<Prompt>> callback) {
+  public Future<ApiResponse<Prompt>> putArchitectPromptAsync(ApiRequest<Prompt> request, final AsyncApiCallback<ApiResponse<Prompt>> callback) {
     try {
-      SettableFuture<ApiResponse<Prompt>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Prompt>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Prompt>() {}, new AsyncApiCallback<ApiResponse<Prompt>>() {
         @Override
         public void onCompleted(ApiResponse<Prompt> response) {
@@ -3259,10 +3259,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<PromptAsset> putArchitectPromptResourceAsync(PutArchitectPromptResourceRequest request, AsyncApiCallback<PromptAsset> callback) {
+  public Future<PromptAsset> putArchitectPromptResourceAsync(PutArchitectPromptResourceRequest request, final AsyncApiCallback<PromptAsset> callback) {
     try {
-      SettableFuture<PromptAsset> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<PromptAsset> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PromptAsset>() {}, new AsyncApiCallback<ApiResponse<PromptAsset>>() {
         @Override
         public void onCompleted(ApiResponse<PromptAsset> response) {
@@ -3293,10 +3293,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<PromptAsset>> putArchitectPromptResourceAsync(ApiRequest<PromptAsset> request, AsyncApiCallback<ApiResponse<PromptAsset>> callback) {
+  public Future<ApiResponse<PromptAsset>> putArchitectPromptResourceAsync(ApiRequest<PromptAsset> request, final AsyncApiCallback<ApiResponse<PromptAsset>> callback) {
     try {
-      SettableFuture<ApiResponse<PromptAsset>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<PromptAsset>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<PromptAsset>() {}, new AsyncApiCallback<ApiResponse<PromptAsset>>() {
         @Override
         public void onCompleted(ApiResponse<PromptAsset> response) {
@@ -3334,10 +3334,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<SystemPromptAsset> putArchitectSystempromptResourceAsync(PutArchitectSystempromptResourceRequest request, AsyncApiCallback<SystemPromptAsset> callback) {
+  public Future<SystemPromptAsset> putArchitectSystempromptResourceAsync(PutArchitectSystempromptResourceRequest request, final AsyncApiCallback<SystemPromptAsset> callback) {
     try {
-      SettableFuture<SystemPromptAsset> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<SystemPromptAsset> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SystemPromptAsset>() {}, new AsyncApiCallback<ApiResponse<SystemPromptAsset>>() {
         @Override
         public void onCompleted(ApiResponse<SystemPromptAsset> response) {
@@ -3368,10 +3368,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<SystemPromptAsset>> putArchitectSystempromptResourceAsync(ApiRequest<SystemPromptAsset> request, AsyncApiCallback<ApiResponse<SystemPromptAsset>> callback) {
+  public Future<ApiResponse<SystemPromptAsset>> putArchitectSystempromptResourceAsync(ApiRequest<SystemPromptAsset> request, final AsyncApiCallback<ApiResponse<SystemPromptAsset>> callback) {
     try {
-      SettableFuture<ApiResponse<SystemPromptAsset>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<SystemPromptAsset>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<SystemPromptAsset>() {}, new AsyncApiCallback<ApiResponse<SystemPromptAsset>>() {
         @Override
         public void onCompleted(ApiResponse<SystemPromptAsset> response) {
@@ -3409,10 +3409,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Flow> putFlowAsync(PutFlowRequest request, AsyncApiCallback<Flow> callback) {
+  public Future<Flow> putFlowAsync(PutFlowRequest request, final AsyncApiCallback<Flow> callback) {
     try {
-      SettableFuture<Flow> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Flow> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Flow>() {}, new AsyncApiCallback<ApiResponse<Flow>>() {
         @Override
         public void onCompleted(ApiResponse<Flow> response) {
@@ -3443,10 +3443,10 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Flow>> putFlowAsync(ApiRequest<Flow> request, AsyncApiCallback<ApiResponse<Flow>> callback) {
+  public Future<ApiResponse<Flow>> putFlowAsync(ApiRequest<Flow> request, final AsyncApiCallback<ApiResponse<Flow>> callback) {
     try {
-      SettableFuture<ApiResponse<Flow>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Flow>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Flow>() {}, new AsyncApiCallback<ApiResponse<Flow>>() {
         @Override
         public void onCompleted(ApiResponse<Flow> response) {

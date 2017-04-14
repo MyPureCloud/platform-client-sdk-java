@@ -55,10 +55,10 @@ public class ScriptsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Script> getScriptAsync(GetScriptRequest request, AsyncApiCallback<Script> callback) {
+  public Future<Script> getScriptAsync(GetScriptRequest request, final AsyncApiCallback<Script> callback) {
     try {
-      SettableFuture<Script> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Script> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Script>() {}, new AsyncApiCallback<ApiResponse<Script>>() {
         @Override
         public void onCompleted(ApiResponse<Script> response) {
@@ -89,10 +89,10 @@ public class ScriptsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Script>> getScriptAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Script>> callback) {
+  public Future<ApiResponse<Script>> getScriptAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Script>> callback) {
     try {
-      SettableFuture<ApiResponse<Script>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Script>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Script>() {}, new AsyncApiCallback<ApiResponse<Script>>() {
         @Override
         public void onCompleted(ApiResponse<Script> response) {
@@ -130,10 +130,10 @@ public class ScriptsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Page> getScriptPageAsync(GetScriptPageRequest request, AsyncApiCallback<Page> callback) {
+  public Future<Page> getScriptPageAsync(GetScriptPageRequest request, final AsyncApiCallback<Page> callback) {
     try {
-      SettableFuture<Page> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Page> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Page>() {}, new AsyncApiCallback<ApiResponse<Page>>() {
         @Override
         public void onCompleted(ApiResponse<Page> response) {
@@ -164,10 +164,10 @@ public class ScriptsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Page>> getScriptPageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Page>> callback) {
+  public Future<ApiResponse<Page>> getScriptPageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Page>> callback) {
     try {
-      SettableFuture<ApiResponse<Page>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Page>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Page>() {}, new AsyncApiCallback<ApiResponse<Page>>() {
         @Override
         public void onCompleted(ApiResponse<Page> response) {
@@ -205,10 +205,10 @@ public class ScriptsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<Page>> getScriptPagesAsync(GetScriptPagesRequest request, AsyncApiCallback<List<Page>> callback) {
+  public Future<List<Page>> getScriptPagesAsync(GetScriptPagesRequest request, final AsyncApiCallback<List<Page>> callback) {
     try {
-      SettableFuture<List<Page>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<Page>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<Page>>() {}, new AsyncApiCallback<ApiResponse<List<Page>>>() {
         @Override
         public void onCompleted(ApiResponse<List<Page>> response) {
@@ -239,10 +239,10 @@ public class ScriptsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<Page>>> getScriptPagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<Page>>> callback) {
+  public Future<ApiResponse<List<Page>>> getScriptPagesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<Page>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<Page>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<Page>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<Page>>() {}, new AsyncApiCallback<ApiResponse<List<Page>>>() {
         @Override
         public void onCompleted(ApiResponse<List<Page>> response) {
@@ -280,10 +280,10 @@ public class ScriptsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ScriptEntityListing> getScriptsAsync(GetScriptsRequest request, AsyncApiCallback<ScriptEntityListing> callback) {
+  public Future<ScriptEntityListing> getScriptsAsync(GetScriptsRequest request, final AsyncApiCallback<ScriptEntityListing> callback) {
     try {
-      SettableFuture<ScriptEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ScriptEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScriptEntityListing>() {}, new AsyncApiCallback<ApiResponse<ScriptEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ScriptEntityListing> response) {
@@ -314,10 +314,10 @@ public class ScriptsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ScriptEntityListing>> getScriptsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ScriptEntityListing>> callback) {
+  public Future<ApiResponse<ScriptEntityListing>> getScriptsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScriptEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<ScriptEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ScriptEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ScriptEntityListing>() {}, new AsyncApiCallback<ApiResponse<ScriptEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ScriptEntityListing> response) {
@@ -355,10 +355,10 @@ public class ScriptsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ScriptEntityListing> getScriptsPublishedAsync(GetScriptsPublishedRequest request, AsyncApiCallback<ScriptEntityListing> callback) {
+  public Future<ScriptEntityListing> getScriptsPublishedAsync(GetScriptsPublishedRequest request, final AsyncApiCallback<ScriptEntityListing> callback) {
     try {
-      SettableFuture<ScriptEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ScriptEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScriptEntityListing>() {}, new AsyncApiCallback<ApiResponse<ScriptEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ScriptEntityListing> response) {
@@ -389,10 +389,10 @@ public class ScriptsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ScriptEntityListing>> getScriptsPublishedAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ScriptEntityListing>> callback) {
+  public Future<ApiResponse<ScriptEntityListing>> getScriptsPublishedAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScriptEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<ScriptEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ScriptEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ScriptEntityListing>() {}, new AsyncApiCallback<ApiResponse<ScriptEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ScriptEntityListing> response) {
@@ -430,10 +430,10 @@ public class ScriptsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Script> getScriptsPublishedScriptIdAsync(GetScriptsPublishedScriptIdRequest request, AsyncApiCallback<Script> callback) {
+  public Future<Script> getScriptsPublishedScriptIdAsync(GetScriptsPublishedScriptIdRequest request, final AsyncApiCallback<Script> callback) {
     try {
-      SettableFuture<Script> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Script> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Script>() {}, new AsyncApiCallback<ApiResponse<Script>>() {
         @Override
         public void onCompleted(ApiResponse<Script> response) {
@@ -464,10 +464,10 @@ public class ScriptsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Script>> getScriptsPublishedScriptIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Script>> callback) {
+  public Future<ApiResponse<Script>> getScriptsPublishedScriptIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Script>> callback) {
     try {
-      SettableFuture<ApiResponse<Script>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Script>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Script>() {}, new AsyncApiCallback<ApiResponse<Script>>() {
         @Override
         public void onCompleted(ApiResponse<Script> response) {
@@ -505,10 +505,10 @@ public class ScriptsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Page> getScriptsPublishedScriptIdPageAsync(GetScriptsPublishedScriptIdPageRequest request, AsyncApiCallback<Page> callback) {
+  public Future<Page> getScriptsPublishedScriptIdPageAsync(GetScriptsPublishedScriptIdPageRequest request, final AsyncApiCallback<Page> callback) {
     try {
-      SettableFuture<Page> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Page> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Page>() {}, new AsyncApiCallback<ApiResponse<Page>>() {
         @Override
         public void onCompleted(ApiResponse<Page> response) {
@@ -539,10 +539,10 @@ public class ScriptsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Page>> getScriptsPublishedScriptIdPageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Page>> callback) {
+  public Future<ApiResponse<Page>> getScriptsPublishedScriptIdPageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Page>> callback) {
     try {
-      SettableFuture<ApiResponse<Page>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Page>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Page>() {}, new AsyncApiCallback<ApiResponse<Page>>() {
         @Override
         public void onCompleted(ApiResponse<Page> response) {
@@ -580,10 +580,10 @@ public class ScriptsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<Page>> getScriptsPublishedScriptIdPagesAsync(GetScriptsPublishedScriptIdPagesRequest request, AsyncApiCallback<List<Page>> callback) {
+  public Future<List<Page>> getScriptsPublishedScriptIdPagesAsync(GetScriptsPublishedScriptIdPagesRequest request, final AsyncApiCallback<List<Page>> callback) {
     try {
-      SettableFuture<List<Page>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<Page>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<Page>>() {}, new AsyncApiCallback<ApiResponse<List<Page>>>() {
         @Override
         public void onCompleted(ApiResponse<List<Page>> response) {
@@ -614,10 +614,10 @@ public class ScriptsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<Page>>> getScriptsPublishedScriptIdPagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<Page>>> callback) {
+  public Future<ApiResponse<List<Page>>> getScriptsPublishedScriptIdPagesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<Page>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<Page>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<Page>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<Page>>() {}, new AsyncApiCallback<ApiResponse<List<Page>>>() {
         @Override
         public void onCompleted(ApiResponse<List<Page>> response) {
@@ -655,10 +655,10 @@ public class ScriptsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Object> getScriptsPublishedScriptIdVariablesAsync(GetScriptsPublishedScriptIdVariablesRequest request, AsyncApiCallback<Object> callback) {
+  public Future<Object> getScriptsPublishedScriptIdVariablesAsync(GetScriptsPublishedScriptIdVariablesRequest request, final AsyncApiCallback<Object> callback) {
     try {
-      SettableFuture<Object> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Object> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Object>() {}, new AsyncApiCallback<ApiResponse<Object>>() {
         @Override
         public void onCompleted(ApiResponse<Object> response) {
@@ -689,10 +689,10 @@ public class ScriptsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Object>> getScriptsPublishedScriptIdVariablesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Object>> callback) {
+  public Future<ApiResponse<Object>> getScriptsPublishedScriptIdVariablesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Object>> callback) {
     try {
-      SettableFuture<ApiResponse<Object>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Object>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Object>() {}, new AsyncApiCallback<ApiResponse<Object>>() {
         @Override
         public void onCompleted(ApiResponse<Object> response) {

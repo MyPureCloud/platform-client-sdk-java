@@ -159,10 +159,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteConversationParticipantCodeAsync(DeleteConversationParticipantCodeRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteConversationParticipantCodeAsync(DeleteConversationParticipantCodeRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -193,10 +193,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteConversationParticipantCodeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteConversationParticipantCodeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -234,10 +234,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteConversationsCallParticipantConsultAsync(DeleteConversationsCallParticipantConsultRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteConversationsCallParticipantConsultAsync(DeleteConversationsCallParticipantConsultRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -268,10 +268,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteConversationsCallParticipantConsultAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteConversationsCallParticipantConsultAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -309,10 +309,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteConversationsEmailMessagesDraftAttachmentAsync(DeleteConversationsEmailMessagesDraftAttachmentRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteConversationsEmailMessagesDraftAttachmentAsync(DeleteConversationsEmailMessagesDraftAttachmentRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -343,10 +343,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteConversationsEmailMessagesDraftAttachmentAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteConversationsEmailMessagesDraftAttachmentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -384,10 +384,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AnalyticsConversation> getAnalyticsConversationDetailsAsync(GetAnalyticsConversationDetailsRequest request, AsyncApiCallback<AnalyticsConversation> callback) {
+  public Future<AnalyticsConversation> getAnalyticsConversationDetailsAsync(GetAnalyticsConversationDetailsRequest request, final AsyncApiCallback<AnalyticsConversation> callback) {
     try {
-      SettableFuture<AnalyticsConversation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<AnalyticsConversation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AnalyticsConversation>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversation>>() {
         @Override
         public void onCompleted(ApiResponse<AnalyticsConversation> response) {
@@ -418,10 +418,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AnalyticsConversation>> getAnalyticsConversationDetailsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AnalyticsConversation>> callback) {
+  public Future<ApiResponse<AnalyticsConversation>> getAnalyticsConversationDetailsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AnalyticsConversation>> callback) {
     try {
-      SettableFuture<ApiResponse<AnalyticsConversation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<AnalyticsConversation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<AnalyticsConversation>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversation>>() {
         @Override
         public void onCompleted(ApiResponse<AnalyticsConversation> response) {
@@ -459,10 +459,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Conversation> getConversationAsync(GetConversationRequest request, AsyncApiCallback<Conversation> callback) {
+  public Future<Conversation> getConversationAsync(GetConversationRequest request, final AsyncApiCallback<Conversation> callback) {
     try {
-      SettableFuture<Conversation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Conversation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Conversation>() {}, new AsyncApiCallback<ApiResponse<Conversation>>() {
         @Override
         public void onCompleted(ApiResponse<Conversation> response) {
@@ -493,10 +493,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Conversation>> getConversationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Conversation>> callback) {
+  public Future<ApiResponse<Conversation>> getConversationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Conversation>> callback) {
     try {
-      SettableFuture<ApiResponse<Conversation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Conversation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Conversation>() {}, new AsyncApiCallback<ApiResponse<Conversation>>() {
         @Override
         public void onCompleted(ApiResponse<Conversation> response) {
@@ -534,10 +534,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<WrapupCode> getConversationParticipantWrapupAsync(GetConversationParticipantWrapupRequest request, AsyncApiCallback<WrapupCode> callback) {
+  public Future<WrapupCode> getConversationParticipantWrapupAsync(GetConversationParticipantWrapupRequest request, final AsyncApiCallback<WrapupCode> callback) {
     try {
-      SettableFuture<WrapupCode> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<WrapupCode> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WrapupCode>() {}, new AsyncApiCallback<ApiResponse<WrapupCode>>() {
         @Override
         public void onCompleted(ApiResponse<WrapupCode> response) {
@@ -568,10 +568,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<WrapupCode>> getConversationParticipantWrapupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<WrapupCode>> callback) {
+  public Future<ApiResponse<WrapupCode>> getConversationParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WrapupCode>> callback) {
     try {
-      SettableFuture<ApiResponse<WrapupCode>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<WrapupCode>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<WrapupCode>() {}, new AsyncApiCallback<ApiResponse<WrapupCode>>() {
         @Override
         public void onCompleted(ApiResponse<WrapupCode> response) {
@@ -609,10 +609,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<WrapupCode>> getConversationParticipantWrapupcodesAsync(GetConversationParticipantWrapupcodesRequest request, AsyncApiCallback<List<WrapupCode>> callback) {
+  public Future<List<WrapupCode>> getConversationParticipantWrapupcodesAsync(GetConversationParticipantWrapupcodesRequest request, final AsyncApiCallback<List<WrapupCode>> callback) {
     try {
-      SettableFuture<List<WrapupCode>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<WrapupCode>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {}, new AsyncApiCallback<ApiResponse<List<WrapupCode>>>() {
         @Override
         public void onCompleted(ApiResponse<List<WrapupCode>> response) {
@@ -643,10 +643,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<WrapupCode>>> getConversationParticipantWrapupcodesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<WrapupCode>>> callback) {
+  public Future<ApiResponse<List<WrapupCode>>> getConversationParticipantWrapupcodesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<WrapupCode>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<WrapupCode>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<WrapupCode>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<WrapupCode>>() {}, new AsyncApiCallback<ApiResponse<List<WrapupCode>>>() {
         @Override
         public void onCompleted(ApiResponse<List<WrapupCode>> response) {
@@ -684,10 +684,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ConversationEntityListing> getConversationsAsync(GetConversationsRequest request, AsyncApiCallback<ConversationEntityListing> callback) {
+  public Future<ConversationEntityListing> getConversationsAsync(GetConversationsRequest request, final AsyncApiCallback<ConversationEntityListing> callback) {
     try {
-      SettableFuture<ConversationEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ConversationEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConversationEntityListing>() {}, new AsyncApiCallback<ApiResponse<ConversationEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ConversationEntityListing> response) {
@@ -718,10 +718,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ConversationEntityListing>> getConversationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ConversationEntityListing>> callback) {
+  public Future<ApiResponse<ConversationEntityListing>> getConversationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ConversationEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<ConversationEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ConversationEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ConversationEntityListing>() {}, new AsyncApiCallback<ApiResponse<ConversationEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ConversationEntityListing> response) {
@@ -759,10 +759,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CallConversation> getConversationsCallAsync(GetConversationsCallRequest request, AsyncApiCallback<CallConversation> callback) {
+  public Future<CallConversation> getConversationsCallAsync(GetConversationsCallRequest request, final AsyncApiCallback<CallConversation> callback) {
     try {
-      SettableFuture<CallConversation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CallConversation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CallConversation>() {}, new AsyncApiCallback<ApiResponse<CallConversation>>() {
         @Override
         public void onCompleted(ApiResponse<CallConversation> response) {
@@ -793,10 +793,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CallConversation>> getConversationsCallAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CallConversation>> callback) {
+  public Future<ApiResponse<CallConversation>> getConversationsCallAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CallConversation>> callback) {
     try {
-      SettableFuture<ApiResponse<CallConversation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CallConversation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CallConversation>() {}, new AsyncApiCallback<ApiResponse<CallConversation>>() {
         @Override
         public void onCompleted(ApiResponse<CallConversation> response) {
@@ -834,10 +834,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Wrapup> getConversationsCallParticipantWrapupAsync(GetConversationsCallParticipantWrapupRequest request, AsyncApiCallback<Wrapup> callback) {
+  public Future<Wrapup> getConversationsCallParticipantWrapupAsync(GetConversationsCallParticipantWrapupRequest request, final AsyncApiCallback<Wrapup> callback) {
     try {
-      SettableFuture<Wrapup> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Wrapup> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
         @Override
         public void onCompleted(ApiResponse<Wrapup> response) {
@@ -868,10 +868,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Wrapup>> getConversationsCallParticipantWrapupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Wrapup>> callback) {
+  public Future<ApiResponse<Wrapup>> getConversationsCallParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Wrapup>> callback) {
     try {
-      SettableFuture<ApiResponse<Wrapup>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Wrapup>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
         @Override
         public void onCompleted(ApiResponse<Wrapup> response) {
@@ -909,10 +909,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<WrapupCode>> getConversationsCallParticipantWrapupcodesAsync(GetConversationsCallParticipantWrapupcodesRequest request, AsyncApiCallback<List<WrapupCode>> callback) {
+  public Future<List<WrapupCode>> getConversationsCallParticipantWrapupcodesAsync(GetConversationsCallParticipantWrapupcodesRequest request, final AsyncApiCallback<List<WrapupCode>> callback) {
     try {
-      SettableFuture<List<WrapupCode>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<WrapupCode>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {}, new AsyncApiCallback<ApiResponse<List<WrapupCode>>>() {
         @Override
         public void onCompleted(ApiResponse<List<WrapupCode>> response) {
@@ -943,10 +943,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<WrapupCode>>> getConversationsCallParticipantWrapupcodesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<WrapupCode>>> callback) {
+  public Future<ApiResponse<List<WrapupCode>>> getConversationsCallParticipantWrapupcodesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<WrapupCode>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<WrapupCode>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<WrapupCode>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<WrapupCode>>() {}, new AsyncApiCallback<ApiResponse<List<WrapupCode>>>() {
         @Override
         public void onCompleted(ApiResponse<List<WrapupCode>> response) {
@@ -984,10 +984,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CallbackConversation> getConversationsCallbackAsync(GetConversationsCallbackRequest request, AsyncApiCallback<CallbackConversation> callback) {
+  public Future<CallbackConversation> getConversationsCallbackAsync(GetConversationsCallbackRequest request, final AsyncApiCallback<CallbackConversation> callback) {
     try {
-      SettableFuture<CallbackConversation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CallbackConversation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CallbackConversation>() {}, new AsyncApiCallback<ApiResponse<CallbackConversation>>() {
         @Override
         public void onCompleted(ApiResponse<CallbackConversation> response) {
@@ -1018,10 +1018,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CallbackConversation>> getConversationsCallbackAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CallbackConversation>> callback) {
+  public Future<ApiResponse<CallbackConversation>> getConversationsCallbackAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CallbackConversation>> callback) {
     try {
-      SettableFuture<ApiResponse<CallbackConversation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CallbackConversation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CallbackConversation>() {}, new AsyncApiCallback<ApiResponse<CallbackConversation>>() {
         @Override
         public void onCompleted(ApiResponse<CallbackConversation> response) {
@@ -1059,10 +1059,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Wrapup> getConversationsCallbackParticipantWrapupAsync(GetConversationsCallbackParticipantWrapupRequest request, AsyncApiCallback<Wrapup> callback) {
+  public Future<Wrapup> getConversationsCallbackParticipantWrapupAsync(GetConversationsCallbackParticipantWrapupRequest request, final AsyncApiCallback<Wrapup> callback) {
     try {
-      SettableFuture<Wrapup> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Wrapup> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
         @Override
         public void onCompleted(ApiResponse<Wrapup> response) {
@@ -1093,10 +1093,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Wrapup>> getConversationsCallbackParticipantWrapupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Wrapup>> callback) {
+  public Future<ApiResponse<Wrapup>> getConversationsCallbackParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Wrapup>> callback) {
     try {
-      SettableFuture<ApiResponse<Wrapup>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Wrapup>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
         @Override
         public void onCompleted(ApiResponse<Wrapup> response) {
@@ -1134,10 +1134,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<WrapupCode>> getConversationsCallbackParticipantWrapupcodesAsync(GetConversationsCallbackParticipantWrapupcodesRequest request, AsyncApiCallback<List<WrapupCode>> callback) {
+  public Future<List<WrapupCode>> getConversationsCallbackParticipantWrapupcodesAsync(GetConversationsCallbackParticipantWrapupcodesRequest request, final AsyncApiCallback<List<WrapupCode>> callback) {
     try {
-      SettableFuture<List<WrapupCode>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<WrapupCode>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {}, new AsyncApiCallback<ApiResponse<List<WrapupCode>>>() {
         @Override
         public void onCompleted(ApiResponse<List<WrapupCode>> response) {
@@ -1168,10 +1168,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<WrapupCode>>> getConversationsCallbackParticipantWrapupcodesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<WrapupCode>>> callback) {
+  public Future<ApiResponse<List<WrapupCode>>> getConversationsCallbackParticipantWrapupcodesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<WrapupCode>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<WrapupCode>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<WrapupCode>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<WrapupCode>>() {}, new AsyncApiCallback<ApiResponse<List<WrapupCode>>>() {
         @Override
         public void onCompleted(ApiResponse<List<WrapupCode>> response) {
@@ -1209,10 +1209,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CallbackConversationEntityListing> getConversationsCallbacksAsync(GetConversationsCallbacksRequest request, AsyncApiCallback<CallbackConversationEntityListing> callback) {
+  public Future<CallbackConversationEntityListing> getConversationsCallbacksAsync(GetConversationsCallbacksRequest request, final AsyncApiCallback<CallbackConversationEntityListing> callback) {
     try {
-      SettableFuture<CallbackConversationEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CallbackConversationEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CallbackConversationEntityListing>() {}, new AsyncApiCallback<ApiResponse<CallbackConversationEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<CallbackConversationEntityListing> response) {
@@ -1243,10 +1243,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CallbackConversationEntityListing>> getConversationsCallbacksAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CallbackConversationEntityListing>> callback) {
+  public Future<ApiResponse<CallbackConversationEntityListing>> getConversationsCallbacksAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CallbackConversationEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<CallbackConversationEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CallbackConversationEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CallbackConversationEntityListing>() {}, new AsyncApiCallback<ApiResponse<CallbackConversationEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<CallbackConversationEntityListing> response) {
@@ -1284,10 +1284,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CallConversationEntityListing> getConversationsCallsAsync(GetConversationsCallsRequest request, AsyncApiCallback<CallConversationEntityListing> callback) {
+  public Future<CallConversationEntityListing> getConversationsCallsAsync(GetConversationsCallsRequest request, final AsyncApiCallback<CallConversationEntityListing> callback) {
     try {
-      SettableFuture<CallConversationEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CallConversationEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CallConversationEntityListing>() {}, new AsyncApiCallback<ApiResponse<CallConversationEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<CallConversationEntityListing> response) {
@@ -1318,10 +1318,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CallConversationEntityListing>> getConversationsCallsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CallConversationEntityListing>> callback) {
+  public Future<ApiResponse<CallConversationEntityListing>> getConversationsCallsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CallConversationEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<CallConversationEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CallConversationEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CallConversationEntityListing>() {}, new AsyncApiCallback<ApiResponse<CallConversationEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<CallConversationEntityListing> response) {
@@ -1359,10 +1359,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CallConversationEntityListing> getConversationsCallsHistoryAsync(GetConversationsCallsHistoryRequest request, AsyncApiCallback<CallConversationEntityListing> callback) {
+  public Future<CallConversationEntityListing> getConversationsCallsHistoryAsync(GetConversationsCallsHistoryRequest request, final AsyncApiCallback<CallConversationEntityListing> callback) {
     try {
-      SettableFuture<CallConversationEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CallConversationEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CallConversationEntityListing>() {}, new AsyncApiCallback<ApiResponse<CallConversationEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<CallConversationEntityListing> response) {
@@ -1393,10 +1393,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CallConversationEntityListing>> getConversationsCallsHistoryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CallConversationEntityListing>> callback) {
+  public Future<ApiResponse<CallConversationEntityListing>> getConversationsCallsHistoryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CallConversationEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<CallConversationEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CallConversationEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CallConversationEntityListing>() {}, new AsyncApiCallback<ApiResponse<CallConversationEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<CallConversationEntityListing> response) {
@@ -1434,10 +1434,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<MaxParticipants> getConversationsCallsMaximumconferencepartiesAsync(GetConversationsCallsMaximumconferencepartiesRequest request, AsyncApiCallback<MaxParticipants> callback) {
+  public Future<MaxParticipants> getConversationsCallsMaximumconferencepartiesAsync(GetConversationsCallsMaximumconferencepartiesRequest request, final AsyncApiCallback<MaxParticipants> callback) {
     try {
-      SettableFuture<MaxParticipants> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<MaxParticipants> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MaxParticipants>() {}, new AsyncApiCallback<ApiResponse<MaxParticipants>>() {
         @Override
         public void onCompleted(ApiResponse<MaxParticipants> response) {
@@ -1468,10 +1468,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<MaxParticipants>> getConversationsCallsMaximumconferencepartiesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<MaxParticipants>> callback) {
+  public Future<ApiResponse<MaxParticipants>> getConversationsCallsMaximumconferencepartiesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MaxParticipants>> callback) {
     try {
-      SettableFuture<ApiResponse<MaxParticipants>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<MaxParticipants>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<MaxParticipants>() {}, new AsyncApiCallback<ApiResponse<MaxParticipants>>() {
         @Override
         public void onCompleted(ApiResponse<MaxParticipants> response) {
@@ -1509,10 +1509,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ChatConversation> getConversationsChatAsync(GetConversationsChatRequest request, AsyncApiCallback<ChatConversation> callback) {
+  public Future<ChatConversation> getConversationsChatAsync(GetConversationsChatRequest request, final AsyncApiCallback<ChatConversation> callback) {
     try {
-      SettableFuture<ChatConversation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ChatConversation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ChatConversation>() {}, new AsyncApiCallback<ApiResponse<ChatConversation>>() {
         @Override
         public void onCompleted(ApiResponse<ChatConversation> response) {
@@ -1543,10 +1543,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ChatConversation>> getConversationsChatAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ChatConversation>> callback) {
+  public Future<ApiResponse<ChatConversation>> getConversationsChatAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ChatConversation>> callback) {
     try {
-      SettableFuture<ApiResponse<ChatConversation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ChatConversation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ChatConversation>() {}, new AsyncApiCallback<ApiResponse<ChatConversation>>() {
         @Override
         public void onCompleted(ApiResponse<ChatConversation> response) {
@@ -1584,10 +1584,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Wrapup> getConversationsChatParticipantWrapupAsync(GetConversationsChatParticipantWrapupRequest request, AsyncApiCallback<Wrapup> callback) {
+  public Future<Wrapup> getConversationsChatParticipantWrapupAsync(GetConversationsChatParticipantWrapupRequest request, final AsyncApiCallback<Wrapup> callback) {
     try {
-      SettableFuture<Wrapup> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Wrapup> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
         @Override
         public void onCompleted(ApiResponse<Wrapup> response) {
@@ -1618,10 +1618,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Wrapup>> getConversationsChatParticipantWrapupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Wrapup>> callback) {
+  public Future<ApiResponse<Wrapup>> getConversationsChatParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Wrapup>> callback) {
     try {
-      SettableFuture<ApiResponse<Wrapup>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Wrapup>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
         @Override
         public void onCompleted(ApiResponse<Wrapup> response) {
@@ -1659,10 +1659,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<WrapupCode>> getConversationsChatParticipantWrapupcodesAsync(GetConversationsChatParticipantWrapupcodesRequest request, AsyncApiCallback<List<WrapupCode>> callback) {
+  public Future<List<WrapupCode>> getConversationsChatParticipantWrapupcodesAsync(GetConversationsChatParticipantWrapupcodesRequest request, final AsyncApiCallback<List<WrapupCode>> callback) {
     try {
-      SettableFuture<List<WrapupCode>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<WrapupCode>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {}, new AsyncApiCallback<ApiResponse<List<WrapupCode>>>() {
         @Override
         public void onCompleted(ApiResponse<List<WrapupCode>> response) {
@@ -1693,10 +1693,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<WrapupCode>>> getConversationsChatParticipantWrapupcodesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<WrapupCode>>> callback) {
+  public Future<ApiResponse<List<WrapupCode>>> getConversationsChatParticipantWrapupcodesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<WrapupCode>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<WrapupCode>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<WrapupCode>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<WrapupCode>>() {}, new AsyncApiCallback<ApiResponse<List<WrapupCode>>>() {
         @Override
         public void onCompleted(ApiResponse<List<WrapupCode>> response) {
@@ -1734,10 +1734,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ChatConversationEntityListing> getConversationsChatsAsync(GetConversationsChatsRequest request, AsyncApiCallback<ChatConversationEntityListing> callback) {
+  public Future<ChatConversationEntityListing> getConversationsChatsAsync(GetConversationsChatsRequest request, final AsyncApiCallback<ChatConversationEntityListing> callback) {
     try {
-      SettableFuture<ChatConversationEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ChatConversationEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ChatConversationEntityListing>() {}, new AsyncApiCallback<ApiResponse<ChatConversationEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ChatConversationEntityListing> response) {
@@ -1768,10 +1768,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ChatConversationEntityListing>> getConversationsChatsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ChatConversationEntityListing>> callback) {
+  public Future<ApiResponse<ChatConversationEntityListing>> getConversationsChatsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ChatConversationEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<ChatConversationEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ChatConversationEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ChatConversationEntityListing>() {}, new AsyncApiCallback<ApiResponse<ChatConversationEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ChatConversationEntityListing> response) {
@@ -1809,10 +1809,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CobrowseConversation> getConversationsCobrowsesessionAsync(GetConversationsCobrowsesessionRequest request, AsyncApiCallback<CobrowseConversation> callback) {
+  public Future<CobrowseConversation> getConversationsCobrowsesessionAsync(GetConversationsCobrowsesessionRequest request, final AsyncApiCallback<CobrowseConversation> callback) {
     try {
-      SettableFuture<CobrowseConversation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CobrowseConversation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CobrowseConversation>() {}, new AsyncApiCallback<ApiResponse<CobrowseConversation>>() {
         @Override
         public void onCompleted(ApiResponse<CobrowseConversation> response) {
@@ -1843,10 +1843,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CobrowseConversation>> getConversationsCobrowsesessionAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CobrowseConversation>> callback) {
+  public Future<ApiResponse<CobrowseConversation>> getConversationsCobrowsesessionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CobrowseConversation>> callback) {
     try {
-      SettableFuture<ApiResponse<CobrowseConversation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CobrowseConversation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CobrowseConversation>() {}, new AsyncApiCallback<ApiResponse<CobrowseConversation>>() {
         @Override
         public void onCompleted(ApiResponse<CobrowseConversation> response) {
@@ -1884,10 +1884,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Wrapup> getConversationsCobrowsesessionParticipantWrapupAsync(GetConversationsCobrowsesessionParticipantWrapupRequest request, AsyncApiCallback<Wrapup> callback) {
+  public Future<Wrapup> getConversationsCobrowsesessionParticipantWrapupAsync(GetConversationsCobrowsesessionParticipantWrapupRequest request, final AsyncApiCallback<Wrapup> callback) {
     try {
-      SettableFuture<Wrapup> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Wrapup> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
         @Override
         public void onCompleted(ApiResponse<Wrapup> response) {
@@ -1918,10 +1918,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Wrapup>> getConversationsCobrowsesessionParticipantWrapupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Wrapup>> callback) {
+  public Future<ApiResponse<Wrapup>> getConversationsCobrowsesessionParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Wrapup>> callback) {
     try {
-      SettableFuture<ApiResponse<Wrapup>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Wrapup>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
         @Override
         public void onCompleted(ApiResponse<Wrapup> response) {
@@ -1959,10 +1959,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<WrapupCode>> getConversationsCobrowsesessionParticipantWrapupcodesAsync(GetConversationsCobrowsesessionParticipantWrapupcodesRequest request, AsyncApiCallback<List<WrapupCode>> callback) {
+  public Future<List<WrapupCode>> getConversationsCobrowsesessionParticipantWrapupcodesAsync(GetConversationsCobrowsesessionParticipantWrapupcodesRequest request, final AsyncApiCallback<List<WrapupCode>> callback) {
     try {
-      SettableFuture<List<WrapupCode>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<WrapupCode>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {}, new AsyncApiCallback<ApiResponse<List<WrapupCode>>>() {
         @Override
         public void onCompleted(ApiResponse<List<WrapupCode>> response) {
@@ -1993,10 +1993,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<WrapupCode>>> getConversationsCobrowsesessionParticipantWrapupcodesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<WrapupCode>>> callback) {
+  public Future<ApiResponse<List<WrapupCode>>> getConversationsCobrowsesessionParticipantWrapupcodesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<WrapupCode>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<WrapupCode>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<WrapupCode>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<WrapupCode>>() {}, new AsyncApiCallback<ApiResponse<List<WrapupCode>>>() {
         @Override
         public void onCompleted(ApiResponse<List<WrapupCode>> response) {
@@ -2034,10 +2034,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CobrowseConversationEntityListing> getConversationsCobrowsesessionsAsync(GetConversationsCobrowsesessionsRequest request, AsyncApiCallback<CobrowseConversationEntityListing> callback) {
+  public Future<CobrowseConversationEntityListing> getConversationsCobrowsesessionsAsync(GetConversationsCobrowsesessionsRequest request, final AsyncApiCallback<CobrowseConversationEntityListing> callback) {
     try {
-      SettableFuture<CobrowseConversationEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CobrowseConversationEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CobrowseConversationEntityListing>() {}, new AsyncApiCallback<ApiResponse<CobrowseConversationEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<CobrowseConversationEntityListing> response) {
@@ -2068,10 +2068,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CobrowseConversationEntityListing>> getConversationsCobrowsesessionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CobrowseConversationEntityListing>> callback) {
+  public Future<ApiResponse<CobrowseConversationEntityListing>> getConversationsCobrowsesessionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CobrowseConversationEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<CobrowseConversationEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CobrowseConversationEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CobrowseConversationEntityListing>() {}, new AsyncApiCallback<ApiResponse<CobrowseConversationEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<CobrowseConversationEntityListing> response) {
@@ -2109,10 +2109,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EmailConversation> getConversationsEmailAsync(GetConversationsEmailRequest request, AsyncApiCallback<EmailConversation> callback) {
+  public Future<EmailConversation> getConversationsEmailAsync(GetConversationsEmailRequest request, final AsyncApiCallback<EmailConversation> callback) {
     try {
-      SettableFuture<EmailConversation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EmailConversation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmailConversation>() {}, new AsyncApiCallback<ApiResponse<EmailConversation>>() {
         @Override
         public void onCompleted(ApiResponse<EmailConversation> response) {
@@ -2143,10 +2143,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EmailConversation>> getConversationsEmailAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EmailConversation>> callback) {
+  public Future<ApiResponse<EmailConversation>> getConversationsEmailAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EmailConversation>> callback) {
     try {
-      SettableFuture<ApiResponse<EmailConversation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EmailConversation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EmailConversation>() {}, new AsyncApiCallback<ApiResponse<EmailConversation>>() {
         @Override
         public void onCompleted(ApiResponse<EmailConversation> response) {
@@ -2184,10 +2184,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EmailMessage> getConversationsEmailMessageAsync(GetConversationsEmailMessageRequest request, AsyncApiCallback<EmailMessage> callback) {
+  public Future<EmailMessage> getConversationsEmailMessageAsync(GetConversationsEmailMessageRequest request, final AsyncApiCallback<EmailMessage> callback) {
     try {
-      SettableFuture<EmailMessage> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EmailMessage> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmailMessage>() {}, new AsyncApiCallback<ApiResponse<EmailMessage>>() {
         @Override
         public void onCompleted(ApiResponse<EmailMessage> response) {
@@ -2218,10 +2218,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EmailMessage>> getConversationsEmailMessageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EmailMessage>> callback) {
+  public Future<ApiResponse<EmailMessage>> getConversationsEmailMessageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EmailMessage>> callback) {
     try {
-      SettableFuture<ApiResponse<EmailMessage>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EmailMessage>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EmailMessage>() {}, new AsyncApiCallback<ApiResponse<EmailMessage>>() {
         @Override
         public void onCompleted(ApiResponse<EmailMessage> response) {
@@ -2259,10 +2259,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EmailMessageListing> getConversationsEmailMessagesAsync(GetConversationsEmailMessagesRequest request, AsyncApiCallback<EmailMessageListing> callback) {
+  public Future<EmailMessageListing> getConversationsEmailMessagesAsync(GetConversationsEmailMessagesRequest request, final AsyncApiCallback<EmailMessageListing> callback) {
     try {
-      SettableFuture<EmailMessageListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EmailMessageListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmailMessageListing>() {}, new AsyncApiCallback<ApiResponse<EmailMessageListing>>() {
         @Override
         public void onCompleted(ApiResponse<EmailMessageListing> response) {
@@ -2293,10 +2293,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EmailMessageListing>> getConversationsEmailMessagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EmailMessageListing>> callback) {
+  public Future<ApiResponse<EmailMessageListing>> getConversationsEmailMessagesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EmailMessageListing>> callback) {
     try {
-      SettableFuture<ApiResponse<EmailMessageListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EmailMessageListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EmailMessageListing>() {}, new AsyncApiCallback<ApiResponse<EmailMessageListing>>() {
         @Override
         public void onCompleted(ApiResponse<EmailMessageListing> response) {
@@ -2334,10 +2334,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EmailMessage> getConversationsEmailMessagesDraftAsync(GetConversationsEmailMessagesDraftRequest request, AsyncApiCallback<EmailMessage> callback) {
+  public Future<EmailMessage> getConversationsEmailMessagesDraftAsync(GetConversationsEmailMessagesDraftRequest request, final AsyncApiCallback<EmailMessage> callback) {
     try {
-      SettableFuture<EmailMessage> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EmailMessage> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmailMessage>() {}, new AsyncApiCallback<ApiResponse<EmailMessage>>() {
         @Override
         public void onCompleted(ApiResponse<EmailMessage> response) {
@@ -2368,10 +2368,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EmailMessage>> getConversationsEmailMessagesDraftAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EmailMessage>> callback) {
+  public Future<ApiResponse<EmailMessage>> getConversationsEmailMessagesDraftAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EmailMessage>> callback) {
     try {
-      SettableFuture<ApiResponse<EmailMessage>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EmailMessage>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EmailMessage>() {}, new AsyncApiCallback<ApiResponse<EmailMessage>>() {
         @Override
         public void onCompleted(ApiResponse<EmailMessage> response) {
@@ -2409,10 +2409,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Wrapup> getConversationsEmailParticipantWrapupAsync(GetConversationsEmailParticipantWrapupRequest request, AsyncApiCallback<Wrapup> callback) {
+  public Future<Wrapup> getConversationsEmailParticipantWrapupAsync(GetConversationsEmailParticipantWrapupRequest request, final AsyncApiCallback<Wrapup> callback) {
     try {
-      SettableFuture<Wrapup> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Wrapup> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
         @Override
         public void onCompleted(ApiResponse<Wrapup> response) {
@@ -2443,10 +2443,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Wrapup>> getConversationsEmailParticipantWrapupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Wrapup>> callback) {
+  public Future<ApiResponse<Wrapup>> getConversationsEmailParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Wrapup>> callback) {
     try {
-      SettableFuture<ApiResponse<Wrapup>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Wrapup>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
         @Override
         public void onCompleted(ApiResponse<Wrapup> response) {
@@ -2484,10 +2484,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<WrapupCode>> getConversationsEmailParticipantWrapupcodesAsync(GetConversationsEmailParticipantWrapupcodesRequest request, AsyncApiCallback<List<WrapupCode>> callback) {
+  public Future<List<WrapupCode>> getConversationsEmailParticipantWrapupcodesAsync(GetConversationsEmailParticipantWrapupcodesRequest request, final AsyncApiCallback<List<WrapupCode>> callback) {
     try {
-      SettableFuture<List<WrapupCode>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<WrapupCode>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {}, new AsyncApiCallback<ApiResponse<List<WrapupCode>>>() {
         @Override
         public void onCompleted(ApiResponse<List<WrapupCode>> response) {
@@ -2518,10 +2518,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<WrapupCode>>> getConversationsEmailParticipantWrapupcodesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<WrapupCode>>> callback) {
+  public Future<ApiResponse<List<WrapupCode>>> getConversationsEmailParticipantWrapupcodesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<WrapupCode>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<WrapupCode>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<WrapupCode>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<WrapupCode>>() {}, new AsyncApiCallback<ApiResponse<List<WrapupCode>>>() {
         @Override
         public void onCompleted(ApiResponse<List<WrapupCode>> response) {
@@ -2559,10 +2559,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EmailConversationEntityListing> getConversationsEmailsAsync(GetConversationsEmailsRequest request, AsyncApiCallback<EmailConversationEntityListing> callback) {
+  public Future<EmailConversationEntityListing> getConversationsEmailsAsync(GetConversationsEmailsRequest request, final AsyncApiCallback<EmailConversationEntityListing> callback) {
     try {
-      SettableFuture<EmailConversationEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EmailConversationEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmailConversationEntityListing>() {}, new AsyncApiCallback<ApiResponse<EmailConversationEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<EmailConversationEntityListing> response) {
@@ -2593,10 +2593,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EmailConversationEntityListing>> getConversationsEmailsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EmailConversationEntityListing>> callback) {
+  public Future<ApiResponse<EmailConversationEntityListing>> getConversationsEmailsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EmailConversationEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<EmailConversationEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EmailConversationEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EmailConversationEntityListing>() {}, new AsyncApiCallback<ApiResponse<EmailConversationEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<EmailConversationEntityListing> response) {
@@ -2634,10 +2634,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> patchConversationParticipantAsync(PatchConversationParticipantRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> patchConversationParticipantAsync(PatchConversationParticipantRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -2668,10 +2668,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> patchConversationParticipantAsync(ApiRequest<MediaParticipantRequest> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> patchConversationParticipantAsync(ApiRequest<MediaParticipantRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -2709,10 +2709,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> patchConversationParticipantAttributesAsync(PatchConversationParticipantAttributesRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> patchConversationParticipantAttributesAsync(PatchConversationParticipantAttributesRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -2743,10 +2743,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> patchConversationParticipantAttributesAsync(ApiRequest<ParticipantAttributes> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> patchConversationParticipantAttributesAsync(ApiRequest<ParticipantAttributes> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -2784,10 +2784,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Conversation> patchConversationsCallAsync(PatchConversationsCallRequest request, AsyncApiCallback<Conversation> callback) {
+  public Future<Conversation> patchConversationsCallAsync(PatchConversationsCallRequest request, final AsyncApiCallback<Conversation> callback) {
     try {
-      SettableFuture<Conversation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Conversation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Conversation>() {}, new AsyncApiCallback<ApiResponse<Conversation>>() {
         @Override
         public void onCompleted(ApiResponse<Conversation> response) {
@@ -2818,10 +2818,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Conversation>> patchConversationsCallAsync(ApiRequest<Conversation> request, AsyncApiCallback<ApiResponse<Conversation>> callback) {
+  public Future<ApiResponse<Conversation>> patchConversationsCallAsync(ApiRequest<Conversation> request, final AsyncApiCallback<ApiResponse<Conversation>> callback) {
     try {
-      SettableFuture<ApiResponse<Conversation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Conversation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Conversation>() {}, new AsyncApiCallback<ApiResponse<Conversation>>() {
         @Override
         public void onCompleted(ApiResponse<Conversation> response) {
@@ -2859,10 +2859,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> patchConversationsCallParticipantAsync(PatchConversationsCallParticipantRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> patchConversationsCallParticipantAsync(PatchConversationsCallParticipantRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -2893,10 +2893,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> patchConversationsCallParticipantAsync(ApiRequest<MediaParticipantRequest> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> patchConversationsCallParticipantAsync(ApiRequest<MediaParticipantRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -2934,10 +2934,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> patchConversationsCallParticipantAttributesAsync(PatchConversationsCallParticipantAttributesRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> patchConversationsCallParticipantAttributesAsync(PatchConversationsCallParticipantAttributesRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -2968,10 +2968,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> patchConversationsCallParticipantAttributesAsync(ApiRequest<ParticipantAttributes> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> patchConversationsCallParticipantAttributesAsync(ApiRequest<ParticipantAttributes> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -3009,10 +3009,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Empty> patchConversationsCallParticipantCommunicationAsync(PatchConversationsCallParticipantCommunicationRequest request, AsyncApiCallback<Empty> callback) {
+  public Future<Empty> patchConversationsCallParticipantCommunicationAsync(PatchConversationsCallParticipantCommunicationRequest request, final AsyncApiCallback<Empty> callback) {
     try {
-      SettableFuture<Empty> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -3043,10 +3043,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Empty>> patchConversationsCallParticipantCommunicationAsync(ApiRequest<MediaParticipantRequest> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
+  public Future<ApiResponse<Empty>> patchConversationsCallParticipantCommunicationAsync(ApiRequest<MediaParticipantRequest> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
-      SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -3084,10 +3084,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ConsultTransferResponse> patchConversationsCallParticipantConsultAsync(PatchConversationsCallParticipantConsultRequest request, AsyncApiCallback<ConsultTransferResponse> callback) {
+  public Future<ConsultTransferResponse> patchConversationsCallParticipantConsultAsync(PatchConversationsCallParticipantConsultRequest request, final AsyncApiCallback<ConsultTransferResponse> callback) {
     try {
-      SettableFuture<ConsultTransferResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ConsultTransferResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConsultTransferResponse>() {}, new AsyncApiCallback<ApiResponse<ConsultTransferResponse>>() {
         @Override
         public void onCompleted(ApiResponse<ConsultTransferResponse> response) {
@@ -3118,10 +3118,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ConsultTransferResponse>> patchConversationsCallParticipantConsultAsync(ApiRequest<ConsultTransferUpdate> request, AsyncApiCallback<ApiResponse<ConsultTransferResponse>> callback) {
+  public Future<ApiResponse<ConsultTransferResponse>> patchConversationsCallParticipantConsultAsync(ApiRequest<ConsultTransferUpdate> request, final AsyncApiCallback<ApiResponse<ConsultTransferResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<ConsultTransferResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ConsultTransferResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ConsultTransferResponse>() {}, new AsyncApiCallback<ApiResponse<ConsultTransferResponse>>() {
         @Override
         public void onCompleted(ApiResponse<ConsultTransferResponse> response) {
@@ -3159,10 +3159,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Conversation> patchConversationsCallbackAsync(PatchConversationsCallbackRequest request, AsyncApiCallback<Conversation> callback) {
+  public Future<Conversation> patchConversationsCallbackAsync(PatchConversationsCallbackRequest request, final AsyncApiCallback<Conversation> callback) {
     try {
-      SettableFuture<Conversation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Conversation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Conversation>() {}, new AsyncApiCallback<ApiResponse<Conversation>>() {
         @Override
         public void onCompleted(ApiResponse<Conversation> response) {
@@ -3193,10 +3193,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Conversation>> patchConversationsCallbackAsync(ApiRequest<Conversation> request, AsyncApiCallback<ApiResponse<Conversation>> callback) {
+  public Future<ApiResponse<Conversation>> patchConversationsCallbackAsync(ApiRequest<Conversation> request, final AsyncApiCallback<ApiResponse<Conversation>> callback) {
     try {
-      SettableFuture<ApiResponse<Conversation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Conversation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Conversation>() {}, new AsyncApiCallback<ApiResponse<Conversation>>() {
         @Override
         public void onCompleted(ApiResponse<Conversation> response) {
@@ -3234,10 +3234,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> patchConversationsCallbackParticipantAsync(PatchConversationsCallbackParticipantRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> patchConversationsCallbackParticipantAsync(PatchConversationsCallbackParticipantRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -3268,10 +3268,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> patchConversationsCallbackParticipantAsync(ApiRequest<MediaParticipantRequest> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> patchConversationsCallbackParticipantAsync(ApiRequest<MediaParticipantRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -3309,10 +3309,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> patchConversationsCallbackParticipantAttributesAsync(PatchConversationsCallbackParticipantAttributesRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> patchConversationsCallbackParticipantAttributesAsync(PatchConversationsCallbackParticipantAttributesRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -3343,10 +3343,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> patchConversationsCallbackParticipantAttributesAsync(ApiRequest<ParticipantAttributes> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> patchConversationsCallbackParticipantAttributesAsync(ApiRequest<ParticipantAttributes> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -3384,10 +3384,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Empty> patchConversationsCallbackParticipantCommunicationAsync(PatchConversationsCallbackParticipantCommunicationRequest request, AsyncApiCallback<Empty> callback) {
+  public Future<Empty> patchConversationsCallbackParticipantCommunicationAsync(PatchConversationsCallbackParticipantCommunicationRequest request, final AsyncApiCallback<Empty> callback) {
     try {
-      SettableFuture<Empty> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -3418,10 +3418,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Empty>> patchConversationsCallbackParticipantCommunicationAsync(ApiRequest<MediaParticipantRequest> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
+  public Future<ApiResponse<Empty>> patchConversationsCallbackParticipantCommunicationAsync(ApiRequest<MediaParticipantRequest> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
-      SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -3459,10 +3459,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Conversation> patchConversationsChatAsync(PatchConversationsChatRequest request, AsyncApiCallback<Conversation> callback) {
+  public Future<Conversation> patchConversationsChatAsync(PatchConversationsChatRequest request, final AsyncApiCallback<Conversation> callback) {
     try {
-      SettableFuture<Conversation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Conversation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Conversation>() {}, new AsyncApiCallback<ApiResponse<Conversation>>() {
         @Override
         public void onCompleted(ApiResponse<Conversation> response) {
@@ -3493,10 +3493,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Conversation>> patchConversationsChatAsync(ApiRequest<Conversation> request, AsyncApiCallback<ApiResponse<Conversation>> callback) {
+  public Future<ApiResponse<Conversation>> patchConversationsChatAsync(ApiRequest<Conversation> request, final AsyncApiCallback<ApiResponse<Conversation>> callback) {
     try {
-      SettableFuture<ApiResponse<Conversation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Conversation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Conversation>() {}, new AsyncApiCallback<ApiResponse<Conversation>>() {
         @Override
         public void onCompleted(ApiResponse<Conversation> response) {
@@ -3534,10 +3534,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> patchConversationsChatParticipantAsync(PatchConversationsChatParticipantRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> patchConversationsChatParticipantAsync(PatchConversationsChatParticipantRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -3568,10 +3568,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> patchConversationsChatParticipantAsync(ApiRequest<MediaParticipantRequest> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> patchConversationsChatParticipantAsync(ApiRequest<MediaParticipantRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -3609,10 +3609,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> patchConversationsChatParticipantAttributesAsync(PatchConversationsChatParticipantAttributesRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> patchConversationsChatParticipantAttributesAsync(PatchConversationsChatParticipantAttributesRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -3643,10 +3643,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> patchConversationsChatParticipantAttributesAsync(ApiRequest<ParticipantAttributes> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> patchConversationsChatParticipantAttributesAsync(ApiRequest<ParticipantAttributes> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -3684,10 +3684,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Empty> patchConversationsChatParticipantCommunicationAsync(PatchConversationsChatParticipantCommunicationRequest request, AsyncApiCallback<Empty> callback) {
+  public Future<Empty> patchConversationsChatParticipantCommunicationAsync(PatchConversationsChatParticipantCommunicationRequest request, final AsyncApiCallback<Empty> callback) {
     try {
-      SettableFuture<Empty> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -3718,10 +3718,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Empty>> patchConversationsChatParticipantCommunicationAsync(ApiRequest<MediaParticipantRequest> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
+  public Future<ApiResponse<Empty>> patchConversationsChatParticipantCommunicationAsync(ApiRequest<MediaParticipantRequest> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
-      SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -3759,10 +3759,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Conversation> patchConversationsCobrowsesessionAsync(PatchConversationsCobrowsesessionRequest request, AsyncApiCallback<Conversation> callback) {
+  public Future<Conversation> patchConversationsCobrowsesessionAsync(PatchConversationsCobrowsesessionRequest request, final AsyncApiCallback<Conversation> callback) {
     try {
-      SettableFuture<Conversation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Conversation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Conversation>() {}, new AsyncApiCallback<ApiResponse<Conversation>>() {
         @Override
         public void onCompleted(ApiResponse<Conversation> response) {
@@ -3793,10 +3793,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Conversation>> patchConversationsCobrowsesessionAsync(ApiRequest<Conversation> request, AsyncApiCallback<ApiResponse<Conversation>> callback) {
+  public Future<ApiResponse<Conversation>> patchConversationsCobrowsesessionAsync(ApiRequest<Conversation> request, final AsyncApiCallback<ApiResponse<Conversation>> callback) {
     try {
-      SettableFuture<ApiResponse<Conversation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Conversation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Conversation>() {}, new AsyncApiCallback<ApiResponse<Conversation>>() {
         @Override
         public void onCompleted(ApiResponse<Conversation> response) {
@@ -3834,10 +3834,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> patchConversationsCobrowsesessionParticipantAsync(PatchConversationsCobrowsesessionParticipantRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> patchConversationsCobrowsesessionParticipantAsync(PatchConversationsCobrowsesessionParticipantRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -3868,10 +3868,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> patchConversationsCobrowsesessionParticipantAsync(ApiRequest<MediaParticipantRequest> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> patchConversationsCobrowsesessionParticipantAsync(ApiRequest<MediaParticipantRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -3909,10 +3909,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> patchConversationsCobrowsesessionParticipantAttributesAsync(PatchConversationsCobrowsesessionParticipantAttributesRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> patchConversationsCobrowsesessionParticipantAttributesAsync(PatchConversationsCobrowsesessionParticipantAttributesRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -3943,10 +3943,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> patchConversationsCobrowsesessionParticipantAttributesAsync(ApiRequest<ParticipantAttributes> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> patchConversationsCobrowsesessionParticipantAttributesAsync(ApiRequest<ParticipantAttributes> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -3984,10 +3984,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Empty> patchConversationsCobrowsesessionParticipantCommunicationAsync(PatchConversationsCobrowsesessionParticipantCommunicationRequest request, AsyncApiCallback<Empty> callback) {
+  public Future<Empty> patchConversationsCobrowsesessionParticipantCommunicationAsync(PatchConversationsCobrowsesessionParticipantCommunicationRequest request, final AsyncApiCallback<Empty> callback) {
     try {
-      SettableFuture<Empty> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -4018,10 +4018,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Empty>> patchConversationsCobrowsesessionParticipantCommunicationAsync(ApiRequest<MediaParticipantRequest> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
+  public Future<ApiResponse<Empty>> patchConversationsCobrowsesessionParticipantCommunicationAsync(ApiRequest<MediaParticipantRequest> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
-      SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -4059,10 +4059,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Conversation> patchConversationsEmailAsync(PatchConversationsEmailRequest request, AsyncApiCallback<Conversation> callback) {
+  public Future<Conversation> patchConversationsEmailAsync(PatchConversationsEmailRequest request, final AsyncApiCallback<Conversation> callback) {
     try {
-      SettableFuture<Conversation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Conversation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Conversation>() {}, new AsyncApiCallback<ApiResponse<Conversation>>() {
         @Override
         public void onCompleted(ApiResponse<Conversation> response) {
@@ -4093,10 +4093,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Conversation>> patchConversationsEmailAsync(ApiRequest<Conversation> request, AsyncApiCallback<ApiResponse<Conversation>> callback) {
+  public Future<ApiResponse<Conversation>> patchConversationsEmailAsync(ApiRequest<Conversation> request, final AsyncApiCallback<ApiResponse<Conversation>> callback) {
     try {
-      SettableFuture<ApiResponse<Conversation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Conversation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Conversation>() {}, new AsyncApiCallback<ApiResponse<Conversation>>() {
         @Override
         public void onCompleted(ApiResponse<Conversation> response) {
@@ -4134,10 +4134,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> patchConversationsEmailParticipantAsync(PatchConversationsEmailParticipantRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> patchConversationsEmailParticipantAsync(PatchConversationsEmailParticipantRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -4168,10 +4168,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> patchConversationsEmailParticipantAsync(ApiRequest<MediaParticipantRequest> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> patchConversationsEmailParticipantAsync(ApiRequest<MediaParticipantRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -4209,10 +4209,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> patchConversationsEmailParticipantAttributesAsync(PatchConversationsEmailParticipantAttributesRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> patchConversationsEmailParticipantAttributesAsync(PatchConversationsEmailParticipantAttributesRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -4243,10 +4243,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> patchConversationsEmailParticipantAttributesAsync(ApiRequest<ParticipantAttributes> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> patchConversationsEmailParticipantAttributesAsync(ApiRequest<ParticipantAttributes> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -4284,10 +4284,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Empty> patchConversationsEmailParticipantCommunicationAsync(PatchConversationsEmailParticipantCommunicationRequest request, AsyncApiCallback<Empty> callback) {
+  public Future<Empty> patchConversationsEmailParticipantCommunicationAsync(PatchConversationsEmailParticipantCommunicationRequest request, final AsyncApiCallback<Empty> callback) {
     try {
-      SettableFuture<Empty> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -4318,10 +4318,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Empty>> patchConversationsEmailParticipantCommunicationAsync(ApiRequest<MediaParticipantRequest> request, AsyncApiCallback<ApiResponse<Empty>> callback) {
+  public Future<ApiResponse<Empty>> patchConversationsEmailParticipantCommunicationAsync(ApiRequest<MediaParticipantRequest> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
-      SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
         @Override
         public void onCompleted(ApiResponse<Empty> response) {
@@ -4359,10 +4359,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<PropertyIndexRequest> postAnalyticsConversationDetailsPropertiesAsync(PostAnalyticsConversationDetailsPropertiesRequest request, AsyncApiCallback<PropertyIndexRequest> callback) {
+  public Future<PropertyIndexRequest> postAnalyticsConversationDetailsPropertiesAsync(PostAnalyticsConversationDetailsPropertiesRequest request, final AsyncApiCallback<PropertyIndexRequest> callback) {
     try {
-      SettableFuture<PropertyIndexRequest> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<PropertyIndexRequest> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PropertyIndexRequest>() {}, new AsyncApiCallback<ApiResponse<PropertyIndexRequest>>() {
         @Override
         public void onCompleted(ApiResponse<PropertyIndexRequest> response) {
@@ -4393,10 +4393,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<PropertyIndexRequest>> postAnalyticsConversationDetailsPropertiesAsync(ApiRequest<PropertyIndexRequest> request, AsyncApiCallback<ApiResponse<PropertyIndexRequest>> callback) {
+  public Future<ApiResponse<PropertyIndexRequest>> postAnalyticsConversationDetailsPropertiesAsync(ApiRequest<PropertyIndexRequest> request, final AsyncApiCallback<ApiResponse<PropertyIndexRequest>> callback) {
     try {
-      SettableFuture<ApiResponse<PropertyIndexRequest>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<PropertyIndexRequest>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<PropertyIndexRequest>() {}, new AsyncApiCallback<ApiResponse<PropertyIndexRequest>>() {
         @Override
         public void onCompleted(ApiResponse<PropertyIndexRequest> response) {
@@ -4434,10 +4434,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AggregateQueryResponse> postAnalyticsConversationsAggregatesQueryAsync(PostAnalyticsConversationsAggregatesQueryRequest request, AsyncApiCallback<AggregateQueryResponse> callback) {
+  public Future<AggregateQueryResponse> postAnalyticsConversationsAggregatesQueryAsync(PostAnalyticsConversationsAggregatesQueryRequest request, final AsyncApiCallback<AggregateQueryResponse> callback) {
     try {
-      SettableFuture<AggregateQueryResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<AggregateQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AggregateQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<AggregateQueryResponse> response) {
@@ -4468,10 +4468,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AggregateQueryResponse>> postAnalyticsConversationsAggregatesQueryAsync(ApiRequest<AggregationQuery> request, AsyncApiCallback<ApiResponse<AggregateQueryResponse>> callback) {
+  public Future<ApiResponse<AggregateQueryResponse>> postAnalyticsConversationsAggregatesQueryAsync(ApiRequest<AggregationQuery> request, final AsyncApiCallback<ApiResponse<AggregateQueryResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<AggregateQueryResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<AggregateQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<AggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AggregateQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<AggregateQueryResponse> response) {
@@ -4509,10 +4509,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AnalyticsConversationQueryResponse> postAnalyticsConversationsDetailsQueryAsync(PostAnalyticsConversationsDetailsQueryRequest request, AsyncApiCallback<AnalyticsConversationQueryResponse> callback) {
+  public Future<AnalyticsConversationQueryResponse> postAnalyticsConversationsDetailsQueryAsync(PostAnalyticsConversationsDetailsQueryRequest request, final AsyncApiCallback<AnalyticsConversationQueryResponse> callback) {
     try {
-      SettableFuture<AnalyticsConversationQueryResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<AnalyticsConversationQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AnalyticsConversationQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversationQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<AnalyticsConversationQueryResponse> response) {
@@ -4543,10 +4543,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AnalyticsConversationQueryResponse>> postAnalyticsConversationsDetailsQueryAsync(ApiRequest<ConversationQuery> request, AsyncApiCallback<ApiResponse<AnalyticsConversationQueryResponse>> callback) {
+  public Future<ApiResponse<AnalyticsConversationQueryResponse>> postAnalyticsConversationsDetailsQueryAsync(ApiRequest<ConversationQuery> request, final AsyncApiCallback<ApiResponse<AnalyticsConversationQueryResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<AnalyticsConversationQueryResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<AnalyticsConversationQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<AnalyticsConversationQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversationQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<AnalyticsConversationQueryResponse> response) {
@@ -4584,10 +4584,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> postConversationParticipantCallbacksAsync(PostConversationParticipantCallbacksRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> postConversationParticipantCallbacksAsync(PostConversationParticipantCallbacksRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -4618,10 +4618,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> postConversationParticipantCallbacksAsync(ApiRequest<CreateCallbackCommand> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> postConversationParticipantCallbacksAsync(ApiRequest<CreateCallbackCommand> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -4659,10 +4659,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> postConversationParticipantReplaceAsync(PostConversationParticipantReplaceRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> postConversationParticipantReplaceAsync(PostConversationParticipantReplaceRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -4693,10 +4693,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> postConversationParticipantReplaceAsync(ApiRequest<TransferRequest> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> postConversationParticipantReplaceAsync(ApiRequest<TransferRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -4734,10 +4734,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Conversation> postConversationsCallAsync(PostConversationsCallRequest request, AsyncApiCallback<Conversation> callback) {
+  public Future<Conversation> postConversationsCallAsync(PostConversationsCallRequest request, final AsyncApiCallback<Conversation> callback) {
     try {
-      SettableFuture<Conversation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Conversation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Conversation>() {}, new AsyncApiCallback<ApiResponse<Conversation>>() {
         @Override
         public void onCompleted(ApiResponse<Conversation> response) {
@@ -4768,10 +4768,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Conversation>> postConversationsCallAsync(ApiRequest<CallCommand> request, AsyncApiCallback<ApiResponse<Conversation>> callback) {
+  public Future<ApiResponse<Conversation>> postConversationsCallAsync(ApiRequest<CallCommand> request, final AsyncApiCallback<ApiResponse<Conversation>> callback) {
     try {
-      SettableFuture<ApiResponse<Conversation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Conversation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Conversation>() {}, new AsyncApiCallback<ApiResponse<Conversation>>() {
         @Override
         public void onCompleted(ApiResponse<Conversation> response) {
@@ -4809,10 +4809,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ConsultTransferResponse> postConversationsCallParticipantConsultAsync(PostConversationsCallParticipantConsultRequest request, AsyncApiCallback<ConsultTransferResponse> callback) {
+  public Future<ConsultTransferResponse> postConversationsCallParticipantConsultAsync(PostConversationsCallParticipantConsultRequest request, final AsyncApiCallback<ConsultTransferResponse> callback) {
     try {
-      SettableFuture<ConsultTransferResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ConsultTransferResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConsultTransferResponse>() {}, new AsyncApiCallback<ApiResponse<ConsultTransferResponse>>() {
         @Override
         public void onCompleted(ApiResponse<ConsultTransferResponse> response) {
@@ -4843,10 +4843,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ConsultTransferResponse>> postConversationsCallParticipantConsultAsync(ApiRequest<ConsultTransfer> request, AsyncApiCallback<ApiResponse<ConsultTransferResponse>> callback) {
+  public Future<ApiResponse<ConsultTransferResponse>> postConversationsCallParticipantConsultAsync(ApiRequest<ConsultTransfer> request, final AsyncApiCallback<ApiResponse<ConsultTransferResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<ConsultTransferResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ConsultTransferResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ConsultTransferResponse>() {}, new AsyncApiCallback<ApiResponse<ConsultTransferResponse>>() {
         @Override
         public void onCompleted(ApiResponse<ConsultTransferResponse> response) {
@@ -4884,10 +4884,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> postConversationsCallParticipantMonitorAsync(PostConversationsCallParticipantMonitorRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> postConversationsCallParticipantMonitorAsync(PostConversationsCallParticipantMonitorRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -4918,10 +4918,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> postConversationsCallParticipantMonitorAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> postConversationsCallParticipantMonitorAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -4959,10 +4959,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> postConversationsCallParticipantReplaceAsync(PostConversationsCallParticipantReplaceRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> postConversationsCallParticipantReplaceAsync(PostConversationsCallParticipantReplaceRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -4993,10 +4993,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> postConversationsCallParticipantReplaceAsync(ApiRequest<TransferRequest> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> postConversationsCallParticipantReplaceAsync(ApiRequest<TransferRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -5034,10 +5034,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Conversation> postConversationsCallParticipantsAsync(PostConversationsCallParticipantsRequest request, AsyncApiCallback<Conversation> callback) {
+  public Future<Conversation> postConversationsCallParticipantsAsync(PostConversationsCallParticipantsRequest request, final AsyncApiCallback<Conversation> callback) {
     try {
-      SettableFuture<Conversation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Conversation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Conversation>() {}, new AsyncApiCallback<ApiResponse<Conversation>>() {
         @Override
         public void onCompleted(ApiResponse<Conversation> response) {
@@ -5068,10 +5068,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Conversation>> postConversationsCallParticipantsAsync(ApiRequest<Conversation> request, AsyncApiCallback<ApiResponse<Conversation>> callback) {
+  public Future<ApiResponse<Conversation>> postConversationsCallParticipantsAsync(ApiRequest<Conversation> request, final AsyncApiCallback<ApiResponse<Conversation>> callback) {
     try {
-      SettableFuture<ApiResponse<Conversation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Conversation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Conversation>() {}, new AsyncApiCallback<ApiResponse<Conversation>>() {
         @Override
         public void onCompleted(ApiResponse<Conversation> response) {
@@ -5109,10 +5109,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> postConversationsCallbackParticipantReplaceAsync(PostConversationsCallbackParticipantReplaceRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> postConversationsCallbackParticipantReplaceAsync(PostConversationsCallbackParticipantReplaceRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -5143,10 +5143,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> postConversationsCallbackParticipantReplaceAsync(ApiRequest<TransferRequest> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> postConversationsCallbackParticipantReplaceAsync(ApiRequest<TransferRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -5184,10 +5184,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CreateCallbackResponse> postConversationsCallbacksAsync(PostConversationsCallbacksRequest request, AsyncApiCallback<CreateCallbackResponse> callback) {
+  public Future<CreateCallbackResponse> postConversationsCallbacksAsync(PostConversationsCallbacksRequest request, final AsyncApiCallback<CreateCallbackResponse> callback) {
     try {
-      SettableFuture<CreateCallbackResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CreateCallbackResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CreateCallbackResponse>() {}, new AsyncApiCallback<ApiResponse<CreateCallbackResponse>>() {
         @Override
         public void onCompleted(ApiResponse<CreateCallbackResponse> response) {
@@ -5218,10 +5218,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CreateCallbackResponse>> postConversationsCallbacksAsync(ApiRequest<CreateCallbackCommand> request, AsyncApiCallback<ApiResponse<CreateCallbackResponse>> callback) {
+  public Future<ApiResponse<CreateCallbackResponse>> postConversationsCallbacksAsync(ApiRequest<CreateCallbackCommand> request, final AsyncApiCallback<ApiResponse<CreateCallbackResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<CreateCallbackResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CreateCallbackResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CreateCallbackResponse>() {}, new AsyncApiCallback<ApiResponse<CreateCallbackResponse>>() {
         @Override
         public void onCompleted(ApiResponse<CreateCallbackResponse> response) {
@@ -5259,10 +5259,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CreateCallResponse> postConversationsCallsAsync(PostConversationsCallsRequest request, AsyncApiCallback<CreateCallResponse> callback) {
+  public Future<CreateCallResponse> postConversationsCallsAsync(PostConversationsCallsRequest request, final AsyncApiCallback<CreateCallResponse> callback) {
     try {
-      SettableFuture<CreateCallResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CreateCallResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CreateCallResponse>() {}, new AsyncApiCallback<ApiResponse<CreateCallResponse>>() {
         @Override
         public void onCompleted(ApiResponse<CreateCallResponse> response) {
@@ -5293,10 +5293,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CreateCallResponse>> postConversationsCallsAsync(ApiRequest<CreateCallRequest> request, AsyncApiCallback<ApiResponse<CreateCallResponse>> callback) {
+  public Future<ApiResponse<CreateCallResponse>> postConversationsCallsAsync(ApiRequest<CreateCallRequest> request, final AsyncApiCallback<ApiResponse<CreateCallResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<CreateCallResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CreateCallResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CreateCallResponse>() {}, new AsyncApiCallback<ApiResponse<CreateCallResponse>>() {
         @Override
         public void onCompleted(ApiResponse<CreateCallResponse> response) {
@@ -5334,10 +5334,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> postConversationsChatParticipantReplaceAsync(PostConversationsChatParticipantReplaceRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> postConversationsChatParticipantReplaceAsync(PostConversationsChatParticipantReplaceRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -5368,10 +5368,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> postConversationsChatParticipantReplaceAsync(ApiRequest<TransferRequest> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> postConversationsChatParticipantReplaceAsync(ApiRequest<TransferRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -5409,10 +5409,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ChatConversation> postConversationsChatsAsync(PostConversationsChatsRequest request, AsyncApiCallback<ChatConversation> callback) {
+  public Future<ChatConversation> postConversationsChatsAsync(PostConversationsChatsRequest request, final AsyncApiCallback<ChatConversation> callback) {
     try {
-      SettableFuture<ChatConversation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ChatConversation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ChatConversation>() {}, new AsyncApiCallback<ApiResponse<ChatConversation>>() {
         @Override
         public void onCompleted(ApiResponse<ChatConversation> response) {
@@ -5443,10 +5443,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ChatConversation>> postConversationsChatsAsync(ApiRequest<CreateWebChatRequest> request, AsyncApiCallback<ApiResponse<ChatConversation>> callback) {
+  public Future<ApiResponse<ChatConversation>> postConversationsChatsAsync(ApiRequest<CreateWebChatRequest> request, final AsyncApiCallback<ApiResponse<ChatConversation>> callback) {
     try {
-      SettableFuture<ApiResponse<ChatConversation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ChatConversation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ChatConversation>() {}, new AsyncApiCallback<ApiResponse<ChatConversation>>() {
         @Override
         public void onCompleted(ApiResponse<ChatConversation> response) {
@@ -5484,10 +5484,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> postConversationsCobrowsesessionParticipantReplaceAsync(PostConversationsCobrowsesessionParticipantReplaceRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> postConversationsCobrowsesessionParticipantReplaceAsync(PostConversationsCobrowsesessionParticipantReplaceRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -5518,10 +5518,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> postConversationsCobrowsesessionParticipantReplaceAsync(ApiRequest<TransferRequest> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> postConversationsCobrowsesessionParticipantReplaceAsync(ApiRequest<TransferRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -5559,10 +5559,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EmailMessage> postConversationsEmailMessagesAsync(PostConversationsEmailMessagesRequest request, AsyncApiCallback<EmailMessage> callback) {
+  public Future<EmailMessage> postConversationsEmailMessagesAsync(PostConversationsEmailMessagesRequest request, final AsyncApiCallback<EmailMessage> callback) {
     try {
-      SettableFuture<EmailMessage> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EmailMessage> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmailMessage>() {}, new AsyncApiCallback<ApiResponse<EmailMessage>>() {
         @Override
         public void onCompleted(ApiResponse<EmailMessage> response) {
@@ -5593,10 +5593,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EmailMessage>> postConversationsEmailMessagesAsync(ApiRequest<EmailMessage> request, AsyncApiCallback<ApiResponse<EmailMessage>> callback) {
+  public Future<ApiResponse<EmailMessage>> postConversationsEmailMessagesAsync(ApiRequest<EmailMessage> request, final AsyncApiCallback<ApiResponse<EmailMessage>> callback) {
     try {
-      SettableFuture<ApiResponse<EmailMessage>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EmailMessage>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EmailMessage>() {}, new AsyncApiCallback<ApiResponse<EmailMessage>>() {
         @Override
         public void onCompleted(ApiResponse<EmailMessage> response) {
@@ -5634,10 +5634,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> postConversationsEmailParticipantReplaceAsync(PostConversationsEmailParticipantReplaceRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> postConversationsEmailParticipantReplaceAsync(PostConversationsEmailParticipantReplaceRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -5668,10 +5668,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> postConversationsEmailParticipantReplaceAsync(ApiRequest<TransferRequest> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> postConversationsEmailParticipantReplaceAsync(ApiRequest<TransferRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -5709,10 +5709,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EmailConversation> postConversationsEmailsAsync(PostConversationsEmailsRequest request, AsyncApiCallback<EmailConversation> callback) {
+  public Future<EmailConversation> postConversationsEmailsAsync(PostConversationsEmailsRequest request, final AsyncApiCallback<EmailConversation> callback) {
     try {
-      SettableFuture<EmailConversation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EmailConversation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmailConversation>() {}, new AsyncApiCallback<ApiResponse<EmailConversation>>() {
         @Override
         public void onCompleted(ApiResponse<EmailConversation> response) {
@@ -5743,10 +5743,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EmailConversation>> postConversationsEmailsAsync(ApiRequest<CreateEmailRequest> request, AsyncApiCallback<ApiResponse<EmailConversation>> callback) {
+  public Future<ApiResponse<EmailConversation>> postConversationsEmailsAsync(ApiRequest<CreateEmailRequest> request, final AsyncApiCallback<ApiResponse<EmailConversation>> callback) {
     try {
-      SettableFuture<ApiResponse<EmailConversation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EmailConversation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EmailConversation>() {}, new AsyncApiCallback<ApiResponse<EmailConversation>>() {
         @Override
         public void onCompleted(ApiResponse<EmailConversation> response) {
@@ -5784,10 +5784,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<FaxSendResponse> postConversationsFaxesAsync(PostConversationsFaxesRequest request, AsyncApiCallback<FaxSendResponse> callback) {
+  public Future<FaxSendResponse> postConversationsFaxesAsync(PostConversationsFaxesRequest request, final AsyncApiCallback<FaxSendResponse> callback) {
     try {
-      SettableFuture<FaxSendResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<FaxSendResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FaxSendResponse>() {}, new AsyncApiCallback<ApiResponse<FaxSendResponse>>() {
         @Override
         public void onCompleted(ApiResponse<FaxSendResponse> response) {
@@ -5818,10 +5818,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<FaxSendResponse>> postConversationsFaxesAsync(ApiRequest<FaxSendRequest> request, AsyncApiCallback<ApiResponse<FaxSendResponse>> callback) {
+  public Future<ApiResponse<FaxSendResponse>> postConversationsFaxesAsync(ApiRequest<FaxSendRequest> request, final AsyncApiCallback<ApiResponse<FaxSendResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<FaxSendResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<FaxSendResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<FaxSendResponse>() {}, new AsyncApiCallback<ApiResponse<FaxSendResponse>>() {
         @Override
         public void onCompleted(ApiResponse<FaxSendResponse> response) {
@@ -5859,10 +5859,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EmailMessage> putConversationsEmailMessagesDraftAsync(PutConversationsEmailMessagesDraftRequest request, AsyncApiCallback<EmailMessage> callback) {
+  public Future<EmailMessage> putConversationsEmailMessagesDraftAsync(PutConversationsEmailMessagesDraftRequest request, final AsyncApiCallback<EmailMessage> callback) {
     try {
-      SettableFuture<EmailMessage> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EmailMessage> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmailMessage>() {}, new AsyncApiCallback<ApiResponse<EmailMessage>>() {
         @Override
         public void onCompleted(ApiResponse<EmailMessage> response) {
@@ -5893,10 +5893,10 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EmailMessage>> putConversationsEmailMessagesDraftAsync(ApiRequest<EmailMessage> request, AsyncApiCallback<ApiResponse<EmailMessage>> callback) {
+  public Future<ApiResponse<EmailMessage>> putConversationsEmailMessagesDraftAsync(ApiRequest<EmailMessage> request, final AsyncApiCallback<ApiResponse<EmailMessage>> callback) {
     try {
-      SettableFuture<ApiResponse<EmailMessage>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EmailMessage>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EmailMessage>() {}, new AsyncApiCallback<ApiResponse<EmailMessage>>() {
         @Override
         public void onCompleted(ApiResponse<EmailMessage> response) {

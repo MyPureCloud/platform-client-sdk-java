@@ -110,10 +110,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteRoutingEmailDomainAsync(DeleteRoutingEmailDomainRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteRoutingEmailDomainAsync(DeleteRoutingEmailDomainRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -144,10 +144,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteRoutingEmailDomainAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteRoutingEmailDomainAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -185,10 +185,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteRoutingEmailDomainRouteAsync(DeleteRoutingEmailDomainRouteRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteRoutingEmailDomainRouteAsync(DeleteRoutingEmailDomainRouteRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -219,10 +219,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteRoutingEmailDomainRouteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteRoutingEmailDomainRouteAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -260,10 +260,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteRoutingQueueAsync(DeleteRoutingQueueRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteRoutingQueueAsync(DeleteRoutingQueueRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -294,10 +294,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteRoutingQueueAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteRoutingQueueAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -335,10 +335,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteRoutingQueueUserAsync(DeleteRoutingQueueUserRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteRoutingQueueUserAsync(DeleteRoutingQueueUserRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -369,10 +369,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteRoutingQueueUserAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteRoutingQueueUserAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -410,10 +410,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteRoutingQueueWrapupcodeAsync(DeleteRoutingQueueWrapupcodeRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteRoutingQueueWrapupcodeAsync(DeleteRoutingQueueWrapupcodeRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -444,10 +444,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteRoutingQueueWrapupcodeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteRoutingQueueWrapupcodeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -485,10 +485,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteRoutingSkillAsync(DeleteRoutingSkillRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteRoutingSkillAsync(DeleteRoutingSkillRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -519,10 +519,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteRoutingSkillAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteRoutingSkillAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -560,10 +560,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteRoutingUtilizationAsync(DeleteRoutingUtilizationRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteRoutingUtilizationAsync(DeleteRoutingUtilizationRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -594,10 +594,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteRoutingUtilizationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteRoutingUtilizationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -635,10 +635,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteRoutingWrapupcodeAsync(DeleteRoutingWrapupcodeRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteRoutingWrapupcodeAsync(DeleteRoutingWrapupcodeRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -669,10 +669,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteRoutingWrapupcodeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteRoutingWrapupcodeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -710,10 +710,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteUserRoutingskillAsync(DeleteUserRoutingskillRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteUserRoutingskillAsync(DeleteUserRoutingskillRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -744,10 +744,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteUserRoutingskillAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteUserRoutingskillAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -785,10 +785,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<InboundDomain> getRoutingEmailDomainAsync(GetRoutingEmailDomainRequest request, AsyncApiCallback<InboundDomain> callback) {
+  public Future<InboundDomain> getRoutingEmailDomainAsync(GetRoutingEmailDomainRequest request, final AsyncApiCallback<InboundDomain> callback) {
     try {
-      SettableFuture<InboundDomain> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<InboundDomain> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InboundDomain>() {}, new AsyncApiCallback<ApiResponse<InboundDomain>>() {
         @Override
         public void onCompleted(ApiResponse<InboundDomain> response) {
@@ -819,10 +819,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<InboundDomain>> getRoutingEmailDomainAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<InboundDomain>> callback) {
+  public Future<ApiResponse<InboundDomain>> getRoutingEmailDomainAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InboundDomain>> callback) {
     try {
-      SettableFuture<ApiResponse<InboundDomain>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<InboundDomain>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<InboundDomain>() {}, new AsyncApiCallback<ApiResponse<InboundDomain>>() {
         @Override
         public void onCompleted(ApiResponse<InboundDomain> response) {
@@ -860,10 +860,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<InboundRoute> getRoutingEmailDomainRouteAsync(GetRoutingEmailDomainRouteRequest request, AsyncApiCallback<InboundRoute> callback) {
+  public Future<InboundRoute> getRoutingEmailDomainRouteAsync(GetRoutingEmailDomainRouteRequest request, final AsyncApiCallback<InboundRoute> callback) {
     try {
-      SettableFuture<InboundRoute> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<InboundRoute> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InboundRoute>() {}, new AsyncApiCallback<ApiResponse<InboundRoute>>() {
         @Override
         public void onCompleted(ApiResponse<InboundRoute> response) {
@@ -894,10 +894,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<InboundRoute>> getRoutingEmailDomainRouteAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<InboundRoute>> callback) {
+  public Future<ApiResponse<InboundRoute>> getRoutingEmailDomainRouteAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InboundRoute>> callback) {
     try {
-      SettableFuture<ApiResponse<InboundRoute>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<InboundRoute>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<InboundRoute>() {}, new AsyncApiCallback<ApiResponse<InboundRoute>>() {
         @Override
         public void onCompleted(ApiResponse<InboundRoute> response) {
@@ -935,10 +935,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<InboundRouteEntityListing> getRoutingEmailDomainRoutesAsync(GetRoutingEmailDomainRoutesRequest request, AsyncApiCallback<InboundRouteEntityListing> callback) {
+  public Future<InboundRouteEntityListing> getRoutingEmailDomainRoutesAsync(GetRoutingEmailDomainRoutesRequest request, final AsyncApiCallback<InboundRouteEntityListing> callback) {
     try {
-      SettableFuture<InboundRouteEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<InboundRouteEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InboundRouteEntityListing>() {}, new AsyncApiCallback<ApiResponse<InboundRouteEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<InboundRouteEntityListing> response) {
@@ -969,10 +969,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<InboundRouteEntityListing>> getRoutingEmailDomainRoutesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<InboundRouteEntityListing>> callback) {
+  public Future<ApiResponse<InboundRouteEntityListing>> getRoutingEmailDomainRoutesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InboundRouteEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<InboundRouteEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<InboundRouteEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<InboundRouteEntityListing>() {}, new AsyncApiCallback<ApiResponse<InboundRouteEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<InboundRouteEntityListing> response) {
@@ -1010,10 +1010,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<InboundDomainEntityListing> getRoutingEmailDomainsAsync(GetRoutingEmailDomainsRequest request, AsyncApiCallback<InboundDomainEntityListing> callback) {
+  public Future<InboundDomainEntityListing> getRoutingEmailDomainsAsync(GetRoutingEmailDomainsRequest request, final AsyncApiCallback<InboundDomainEntityListing> callback) {
     try {
-      SettableFuture<InboundDomainEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<InboundDomainEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InboundDomainEntityListing>() {}, new AsyncApiCallback<ApiResponse<InboundDomainEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<InboundDomainEntityListing> response) {
@@ -1044,10 +1044,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<InboundDomainEntityListing>> getRoutingEmailDomainsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<InboundDomainEntityListing>> callback) {
+  public Future<ApiResponse<InboundDomainEntityListing>> getRoutingEmailDomainsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InboundDomainEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<InboundDomainEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<InboundDomainEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<InboundDomainEntityListing>() {}, new AsyncApiCallback<ApiResponse<InboundDomainEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<InboundDomainEntityListing> response) {
@@ -1085,10 +1085,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EmailSetup> getRoutingEmailSetupAsync(GetRoutingEmailSetupRequest request, AsyncApiCallback<EmailSetup> callback) {
+  public Future<EmailSetup> getRoutingEmailSetupAsync(GetRoutingEmailSetupRequest request, final AsyncApiCallback<EmailSetup> callback) {
     try {
-      SettableFuture<EmailSetup> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EmailSetup> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmailSetup>() {}, new AsyncApiCallback<ApiResponse<EmailSetup>>() {
         @Override
         public void onCompleted(ApiResponse<EmailSetup> response) {
@@ -1119,10 +1119,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EmailSetup>> getRoutingEmailSetupAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EmailSetup>> callback) {
+  public Future<ApiResponse<EmailSetup>> getRoutingEmailSetupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EmailSetup>> callback) {
     try {
-      SettableFuture<ApiResponse<EmailSetup>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EmailSetup>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EmailSetup>() {}, new AsyncApiCallback<ApiResponse<EmailSetup>>() {
         @Override
         public void onCompleted(ApiResponse<EmailSetup> response) {
@@ -1160,10 +1160,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<LanguageEntityListing> getRoutingLanguagesAsync(GetRoutingLanguagesRequest request, AsyncApiCallback<LanguageEntityListing> callback) {
+  public Future<LanguageEntityListing> getRoutingLanguagesAsync(GetRoutingLanguagesRequest request, final AsyncApiCallback<LanguageEntityListing> callback) {
     try {
-      SettableFuture<LanguageEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<LanguageEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LanguageEntityListing>() {}, new AsyncApiCallback<ApiResponse<LanguageEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<LanguageEntityListing> response) {
@@ -1194,10 +1194,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LanguageEntityListing>> getRoutingLanguagesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LanguageEntityListing>> callback) {
+  public Future<ApiResponse<LanguageEntityListing>> getRoutingLanguagesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LanguageEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<LanguageEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<LanguageEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<LanguageEntityListing>() {}, new AsyncApiCallback<ApiResponse<LanguageEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<LanguageEntityListing> response) {
@@ -1235,10 +1235,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Queue> getRoutingQueueAsync(GetRoutingQueueRequest request, AsyncApiCallback<Queue> callback) {
+  public Future<Queue> getRoutingQueueAsync(GetRoutingQueueRequest request, final AsyncApiCallback<Queue> callback) {
     try {
-      SettableFuture<Queue> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Queue> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Queue>() {}, new AsyncApiCallback<ApiResponse<Queue>>() {
         @Override
         public void onCompleted(ApiResponse<Queue> response) {
@@ -1269,10 +1269,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Queue>> getRoutingQueueAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Queue>> callback) {
+  public Future<ApiResponse<Queue>> getRoutingQueueAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Queue>> callback) {
     try {
-      SettableFuture<ApiResponse<Queue>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Queue>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Queue>() {}, new AsyncApiCallback<ApiResponse<Queue>>() {
         @Override
         public void onCompleted(ApiResponse<Queue> response) {
@@ -1310,10 +1310,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EstimatedWaitTimePredictions> getRoutingQueueEstimatedwaittimeAsync(GetRoutingQueueEstimatedwaittimeRequest request, AsyncApiCallback<EstimatedWaitTimePredictions> callback) {
+  public Future<EstimatedWaitTimePredictions> getRoutingQueueEstimatedwaittimeAsync(GetRoutingQueueEstimatedwaittimeRequest request, final AsyncApiCallback<EstimatedWaitTimePredictions> callback) {
     try {
-      SettableFuture<EstimatedWaitTimePredictions> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EstimatedWaitTimePredictions> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EstimatedWaitTimePredictions>() {}, new AsyncApiCallback<ApiResponse<EstimatedWaitTimePredictions>>() {
         @Override
         public void onCompleted(ApiResponse<EstimatedWaitTimePredictions> response) {
@@ -1344,10 +1344,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EstimatedWaitTimePredictions>> getRoutingQueueEstimatedwaittimeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EstimatedWaitTimePredictions>> callback) {
+  public Future<ApiResponse<EstimatedWaitTimePredictions>> getRoutingQueueEstimatedwaittimeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EstimatedWaitTimePredictions>> callback) {
     try {
-      SettableFuture<ApiResponse<EstimatedWaitTimePredictions>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EstimatedWaitTimePredictions>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EstimatedWaitTimePredictions>() {}, new AsyncApiCallback<ApiResponse<EstimatedWaitTimePredictions>>() {
         @Override
         public void onCompleted(ApiResponse<EstimatedWaitTimePredictions> response) {
@@ -1385,10 +1385,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EstimatedWaitTimePredictions> getRoutingQueueMediatypeEstimatedwaittimeAsync(GetRoutingQueueMediatypeEstimatedwaittimeRequest request, AsyncApiCallback<EstimatedWaitTimePredictions> callback) {
+  public Future<EstimatedWaitTimePredictions> getRoutingQueueMediatypeEstimatedwaittimeAsync(GetRoutingQueueMediatypeEstimatedwaittimeRequest request, final AsyncApiCallback<EstimatedWaitTimePredictions> callback) {
     try {
-      SettableFuture<EstimatedWaitTimePredictions> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EstimatedWaitTimePredictions> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EstimatedWaitTimePredictions>() {}, new AsyncApiCallback<ApiResponse<EstimatedWaitTimePredictions>>() {
         @Override
         public void onCompleted(ApiResponse<EstimatedWaitTimePredictions> response) {
@@ -1419,10 +1419,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EstimatedWaitTimePredictions>> getRoutingQueueMediatypeEstimatedwaittimeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EstimatedWaitTimePredictions>> callback) {
+  public Future<ApiResponse<EstimatedWaitTimePredictions>> getRoutingQueueMediatypeEstimatedwaittimeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EstimatedWaitTimePredictions>> callback) {
     try {
-      SettableFuture<ApiResponse<EstimatedWaitTimePredictions>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EstimatedWaitTimePredictions>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EstimatedWaitTimePredictions>() {}, new AsyncApiCallback<ApiResponse<EstimatedWaitTimePredictions>>() {
         @Override
         public void onCompleted(ApiResponse<EstimatedWaitTimePredictions> response) {
@@ -1460,10 +1460,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<QueueMemberEntityListing> getRoutingQueueUsersAsync(GetRoutingQueueUsersRequest request, AsyncApiCallback<QueueMemberEntityListing> callback) {
+  public Future<QueueMemberEntityListing> getRoutingQueueUsersAsync(GetRoutingQueueUsersRequest request, final AsyncApiCallback<QueueMemberEntityListing> callback) {
     try {
-      SettableFuture<QueueMemberEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<QueueMemberEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QueueMemberEntityListing>() {}, new AsyncApiCallback<ApiResponse<QueueMemberEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<QueueMemberEntityListing> response) {
@@ -1494,10 +1494,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<QueueMemberEntityListing>> getRoutingQueueUsersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<QueueMemberEntityListing>> callback) {
+  public Future<ApiResponse<QueueMemberEntityListing>> getRoutingQueueUsersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<QueueMemberEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<QueueMemberEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<QueueMemberEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<QueueMemberEntityListing>() {}, new AsyncApiCallback<ApiResponse<QueueMemberEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<QueueMemberEntityListing> response) {
@@ -1535,10 +1535,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<WrapupCodeEntityListing> getRoutingQueueWrapupcodesAsync(GetRoutingQueueWrapupcodesRequest request, AsyncApiCallback<WrapupCodeEntityListing> callback) {
+  public Future<WrapupCodeEntityListing> getRoutingQueueWrapupcodesAsync(GetRoutingQueueWrapupcodesRequest request, final AsyncApiCallback<WrapupCodeEntityListing> callback) {
     try {
-      SettableFuture<WrapupCodeEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<WrapupCodeEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WrapupCodeEntityListing>() {}, new AsyncApiCallback<ApiResponse<WrapupCodeEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<WrapupCodeEntityListing> response) {
@@ -1569,10 +1569,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<WrapupCodeEntityListing>> getRoutingQueueWrapupcodesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<WrapupCodeEntityListing>> callback) {
+  public Future<ApiResponse<WrapupCodeEntityListing>> getRoutingQueueWrapupcodesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WrapupCodeEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<WrapupCodeEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<WrapupCodeEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<WrapupCodeEntityListing>() {}, new AsyncApiCallback<ApiResponse<WrapupCodeEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<WrapupCodeEntityListing> response) {
@@ -1610,10 +1610,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<QueueEntityListing> getRoutingQueuesAsync(GetRoutingQueuesRequest request, AsyncApiCallback<QueueEntityListing> callback) {
+  public Future<QueueEntityListing> getRoutingQueuesAsync(GetRoutingQueuesRequest request, final AsyncApiCallback<QueueEntityListing> callback) {
     try {
-      SettableFuture<QueueEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<QueueEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QueueEntityListing>() {}, new AsyncApiCallback<ApiResponse<QueueEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<QueueEntityListing> response) {
@@ -1644,10 +1644,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<QueueEntityListing>> getRoutingQueuesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<QueueEntityListing>> callback) {
+  public Future<ApiResponse<QueueEntityListing>> getRoutingQueuesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<QueueEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<QueueEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<QueueEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<QueueEntityListing>() {}, new AsyncApiCallback<ApiResponse<QueueEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<QueueEntityListing> response) {
@@ -1685,10 +1685,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<RoutingSkill> getRoutingSkillAsync(GetRoutingSkillRequest request, AsyncApiCallback<RoutingSkill> callback) {
+  public Future<RoutingSkill> getRoutingSkillAsync(GetRoutingSkillRequest request, final AsyncApiCallback<RoutingSkill> callback) {
     try {
-      SettableFuture<RoutingSkill> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<RoutingSkill> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RoutingSkill>() {}, new AsyncApiCallback<ApiResponse<RoutingSkill>>() {
         @Override
         public void onCompleted(ApiResponse<RoutingSkill> response) {
@@ -1719,10 +1719,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<RoutingSkill>> getRoutingSkillAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RoutingSkill>> callback) {
+  public Future<ApiResponse<RoutingSkill>> getRoutingSkillAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RoutingSkill>> callback) {
     try {
-      SettableFuture<ApiResponse<RoutingSkill>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<RoutingSkill>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<RoutingSkill>() {}, new AsyncApiCallback<ApiResponse<RoutingSkill>>() {
         @Override
         public void onCompleted(ApiResponse<RoutingSkill> response) {
@@ -1760,10 +1760,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<SkillEntityListing> getRoutingSkillsAsync(GetRoutingSkillsRequest request, AsyncApiCallback<SkillEntityListing> callback) {
+  public Future<SkillEntityListing> getRoutingSkillsAsync(GetRoutingSkillsRequest request, final AsyncApiCallback<SkillEntityListing> callback) {
     try {
-      SettableFuture<SkillEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<SkillEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SkillEntityListing>() {}, new AsyncApiCallback<ApiResponse<SkillEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<SkillEntityListing> response) {
@@ -1794,10 +1794,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<SkillEntityListing>> getRoutingSkillsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SkillEntityListing>> callback) {
+  public Future<ApiResponse<SkillEntityListing>> getRoutingSkillsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SkillEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<SkillEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<SkillEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<SkillEntityListing>() {}, new AsyncApiCallback<ApiResponse<SkillEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<SkillEntityListing> response) {
@@ -1835,10 +1835,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Utilization> getRoutingUtilizationAsync(GetRoutingUtilizationRequest request, AsyncApiCallback<Utilization> callback) {
+  public Future<Utilization> getRoutingUtilizationAsync(GetRoutingUtilizationRequest request, final AsyncApiCallback<Utilization> callback) {
     try {
-      SettableFuture<Utilization> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Utilization> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Utilization>() {}, new AsyncApiCallback<ApiResponse<Utilization>>() {
         @Override
         public void onCompleted(ApiResponse<Utilization> response) {
@@ -1869,10 +1869,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Utilization>> getRoutingUtilizationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Utilization>> callback) {
+  public Future<ApiResponse<Utilization>> getRoutingUtilizationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Utilization>> callback) {
     try {
-      SettableFuture<ApiResponse<Utilization>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Utilization>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Utilization>() {}, new AsyncApiCallback<ApiResponse<Utilization>>() {
         @Override
         public void onCompleted(ApiResponse<Utilization> response) {
@@ -1910,10 +1910,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<WrapupCode> getRoutingWrapupcodeAsync(GetRoutingWrapupcodeRequest request, AsyncApiCallback<WrapupCode> callback) {
+  public Future<WrapupCode> getRoutingWrapupcodeAsync(GetRoutingWrapupcodeRequest request, final AsyncApiCallback<WrapupCode> callback) {
     try {
-      SettableFuture<WrapupCode> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<WrapupCode> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WrapupCode>() {}, new AsyncApiCallback<ApiResponse<WrapupCode>>() {
         @Override
         public void onCompleted(ApiResponse<WrapupCode> response) {
@@ -1944,10 +1944,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<WrapupCode>> getRoutingWrapupcodeAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<WrapupCode>> callback) {
+  public Future<ApiResponse<WrapupCode>> getRoutingWrapupcodeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WrapupCode>> callback) {
     try {
-      SettableFuture<ApiResponse<WrapupCode>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<WrapupCode>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<WrapupCode>() {}, new AsyncApiCallback<ApiResponse<WrapupCode>>() {
         @Override
         public void onCompleted(ApiResponse<WrapupCode> response) {
@@ -1985,10 +1985,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<WrapupCodeEntityListing> getRoutingWrapupcodesAsync(GetRoutingWrapupcodesRequest request, AsyncApiCallback<WrapupCodeEntityListing> callback) {
+  public Future<WrapupCodeEntityListing> getRoutingWrapupcodesAsync(GetRoutingWrapupcodesRequest request, final AsyncApiCallback<WrapupCodeEntityListing> callback) {
     try {
-      SettableFuture<WrapupCodeEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<WrapupCodeEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WrapupCodeEntityListing>() {}, new AsyncApiCallback<ApiResponse<WrapupCodeEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<WrapupCodeEntityListing> response) {
@@ -2019,10 +2019,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<WrapupCodeEntityListing>> getRoutingWrapupcodesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<WrapupCodeEntityListing>> callback) {
+  public Future<ApiResponse<WrapupCodeEntityListing>> getRoutingWrapupcodesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WrapupCodeEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<WrapupCodeEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<WrapupCodeEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<WrapupCodeEntityListing>() {}, new AsyncApiCallback<ApiResponse<WrapupCodeEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<WrapupCodeEntityListing> response) {
@@ -2060,10 +2060,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UserSkillEntityListing> getUserRoutingskillsAsync(GetUserRoutingskillsRequest request, AsyncApiCallback<UserSkillEntityListing> callback) {
+  public Future<UserSkillEntityListing> getUserRoutingskillsAsync(GetUserRoutingskillsRequest request, final AsyncApiCallback<UserSkillEntityListing> callback) {
     try {
-      SettableFuture<UserSkillEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<UserSkillEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserSkillEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserSkillEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<UserSkillEntityListing> response) {
@@ -2094,10 +2094,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UserSkillEntityListing>> getUserRoutingskillsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserSkillEntityListing>> callback) {
+  public Future<ApiResponse<UserSkillEntityListing>> getUserRoutingskillsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserSkillEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<UserSkillEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<UserSkillEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<UserSkillEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserSkillEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<UserSkillEntityListing> response) {
@@ -2135,10 +2135,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<QueueMember> patchRoutingQueueUserAsync(PatchRoutingQueueUserRequest request, AsyncApiCallback<QueueMember> callback) {
+  public Future<QueueMember> patchRoutingQueueUserAsync(PatchRoutingQueueUserRequest request, final AsyncApiCallback<QueueMember> callback) {
     try {
-      SettableFuture<QueueMember> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<QueueMember> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QueueMember>() {}, new AsyncApiCallback<ApiResponse<QueueMember>>() {
         @Override
         public void onCompleted(ApiResponse<QueueMember> response) {
@@ -2169,10 +2169,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<QueueMember>> patchRoutingQueueUserAsync(ApiRequest<QueueMember> request, AsyncApiCallback<ApiResponse<QueueMember>> callback) {
+  public Future<ApiResponse<QueueMember>> patchRoutingQueueUserAsync(ApiRequest<QueueMember> request, final AsyncApiCallback<ApiResponse<QueueMember>> callback) {
     try {
-      SettableFuture<ApiResponse<QueueMember>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<QueueMember>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<QueueMember>() {}, new AsyncApiCallback<ApiResponse<QueueMember>>() {
         @Override
         public void onCompleted(ApiResponse<QueueMember> response) {
@@ -2210,10 +2210,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<QueueMemberEntityListing> patchRoutingQueueUsersAsync(PatchRoutingQueueUsersRequest request, AsyncApiCallback<QueueMemberEntityListing> callback) {
+  public Future<QueueMemberEntityListing> patchRoutingQueueUsersAsync(PatchRoutingQueueUsersRequest request, final AsyncApiCallback<QueueMemberEntityListing> callback) {
     try {
-      SettableFuture<QueueMemberEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<QueueMemberEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QueueMemberEntityListing>() {}, new AsyncApiCallback<ApiResponse<QueueMemberEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<QueueMemberEntityListing> response) {
@@ -2244,10 +2244,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<QueueMemberEntityListing>> patchRoutingQueueUsersAsync(ApiRequest<List<QueueMember>> request, AsyncApiCallback<ApiResponse<QueueMemberEntityListing>> callback) {
+  public Future<ApiResponse<QueueMemberEntityListing>> patchRoutingQueueUsersAsync(ApiRequest<List<QueueMember>> request, final AsyncApiCallback<ApiResponse<QueueMemberEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<QueueMemberEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<QueueMemberEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<QueueMemberEntityListing>() {}, new AsyncApiCallback<ApiResponse<QueueMemberEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<QueueMemberEntityListing> response) {
@@ -2285,10 +2285,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<QualifierMappingObservationQueryResponse> postAnalyticsQueuesObservationsQueryAsync(PostAnalyticsQueuesObservationsQueryRequest request, AsyncApiCallback<QualifierMappingObservationQueryResponse> callback) {
+  public Future<QualifierMappingObservationQueryResponse> postAnalyticsQueuesObservationsQueryAsync(PostAnalyticsQueuesObservationsQueryRequest request, final AsyncApiCallback<QualifierMappingObservationQueryResponse> callback) {
     try {
-      SettableFuture<QualifierMappingObservationQueryResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<QualifierMappingObservationQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QualifierMappingObservationQueryResponse>() {}, new AsyncApiCallback<ApiResponse<QualifierMappingObservationQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<QualifierMappingObservationQueryResponse> response) {
@@ -2319,10 +2319,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<QualifierMappingObservationQueryResponse>> postAnalyticsQueuesObservationsQueryAsync(ApiRequest<ObservationQuery> request, AsyncApiCallback<ApiResponse<QualifierMappingObservationQueryResponse>> callback) {
+  public Future<ApiResponse<QualifierMappingObservationQueryResponse>> postAnalyticsQueuesObservationsQueryAsync(ApiRequest<ObservationQuery> request, final AsyncApiCallback<ApiResponse<QualifierMappingObservationQueryResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<QualifierMappingObservationQueryResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<QualifierMappingObservationQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<QualifierMappingObservationQueryResponse>() {}, new AsyncApiCallback<ApiResponse<QualifierMappingObservationQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<QualifierMappingObservationQueryResponse> response) {
@@ -2360,10 +2360,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<InboundRoute> postRoutingEmailDomainRoutesAsync(PostRoutingEmailDomainRoutesRequest request, AsyncApiCallback<InboundRoute> callback) {
+  public Future<InboundRoute> postRoutingEmailDomainRoutesAsync(PostRoutingEmailDomainRoutesRequest request, final AsyncApiCallback<InboundRoute> callback) {
     try {
-      SettableFuture<InboundRoute> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<InboundRoute> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InboundRoute>() {}, new AsyncApiCallback<ApiResponse<InboundRoute>>() {
         @Override
         public void onCompleted(ApiResponse<InboundRoute> response) {
@@ -2394,10 +2394,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<InboundRoute>> postRoutingEmailDomainRoutesAsync(ApiRequest<InboundRoute> request, AsyncApiCallback<ApiResponse<InboundRoute>> callback) {
+  public Future<ApiResponse<InboundRoute>> postRoutingEmailDomainRoutesAsync(ApiRequest<InboundRoute> request, final AsyncApiCallback<ApiResponse<InboundRoute>> callback) {
     try {
-      SettableFuture<ApiResponse<InboundRoute>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<InboundRoute>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<InboundRoute>() {}, new AsyncApiCallback<ApiResponse<InboundRoute>>() {
         @Override
         public void onCompleted(ApiResponse<InboundRoute> response) {
@@ -2435,10 +2435,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<InboundDomain> postRoutingEmailDomainsAsync(PostRoutingEmailDomainsRequest request, AsyncApiCallback<InboundDomain> callback) {
+  public Future<InboundDomain> postRoutingEmailDomainsAsync(PostRoutingEmailDomainsRequest request, final AsyncApiCallback<InboundDomain> callback) {
     try {
-      SettableFuture<InboundDomain> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<InboundDomain> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InboundDomain>() {}, new AsyncApiCallback<ApiResponse<InboundDomain>>() {
         @Override
         public void onCompleted(ApiResponse<InboundDomain> response) {
@@ -2469,10 +2469,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<InboundDomain>> postRoutingEmailDomainsAsync(ApiRequest<InboundDomain> request, AsyncApiCallback<ApiResponse<InboundDomain>> callback) {
+  public Future<ApiResponse<InboundDomain>> postRoutingEmailDomainsAsync(ApiRequest<InboundDomain> request, final AsyncApiCallback<ApiResponse<InboundDomain>> callback) {
     try {
-      SettableFuture<ApiResponse<InboundDomain>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<InboundDomain>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<InboundDomain>() {}, new AsyncApiCallback<ApiResponse<InboundDomain>>() {
         @Override
         public void onCompleted(ApiResponse<InboundDomain> response) {
@@ -2510,10 +2510,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Language> postRoutingLanguagesAsync(PostRoutingLanguagesRequest request, AsyncApiCallback<Language> callback) {
+  public Future<Language> postRoutingLanguagesAsync(PostRoutingLanguagesRequest request, final AsyncApiCallback<Language> callback) {
     try {
-      SettableFuture<Language> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Language> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Language>() {}, new AsyncApiCallback<ApiResponse<Language>>() {
         @Override
         public void onCompleted(ApiResponse<Language> response) {
@@ -2544,10 +2544,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Language>> postRoutingLanguagesAsync(ApiRequest<Language> request, AsyncApiCallback<ApiResponse<Language>> callback) {
+  public Future<ApiResponse<Language>> postRoutingLanguagesAsync(ApiRequest<Language> request, final AsyncApiCallback<ApiResponse<Language>> callback) {
     try {
-      SettableFuture<ApiResponse<Language>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Language>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Language>() {}, new AsyncApiCallback<ApiResponse<Language>>() {
         @Override
         public void onCompleted(ApiResponse<Language> response) {
@@ -2585,10 +2585,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> postRoutingQueueUsersAsync(PostRoutingQueueUsersRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> postRoutingQueueUsersAsync(PostRoutingQueueUsersRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -2619,10 +2619,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> postRoutingQueueUsersAsync(ApiRequest<List<QueueMember>> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> postRoutingQueueUsersAsync(ApiRequest<List<QueueMember>> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -2660,10 +2660,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<WrapupCode>> postRoutingQueueWrapupcodesAsync(PostRoutingQueueWrapupcodesRequest request, AsyncApiCallback<List<WrapupCode>> callback) {
+  public Future<List<WrapupCode>> postRoutingQueueWrapupcodesAsync(PostRoutingQueueWrapupcodesRequest request, final AsyncApiCallback<List<WrapupCode>> callback) {
     try {
-      SettableFuture<List<WrapupCode>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<WrapupCode>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {}, new AsyncApiCallback<ApiResponse<List<WrapupCode>>>() {
         @Override
         public void onCompleted(ApiResponse<List<WrapupCode>> response) {
@@ -2694,10 +2694,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<WrapupCode>>> postRoutingQueueWrapupcodesAsync(ApiRequest<List<WrapupCode>> request, AsyncApiCallback<ApiResponse<List<WrapupCode>>> callback) {
+  public Future<ApiResponse<List<WrapupCode>>> postRoutingQueueWrapupcodesAsync(ApiRequest<List<WrapupCode>> request, final AsyncApiCallback<ApiResponse<List<WrapupCode>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<WrapupCode>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<WrapupCode>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<WrapupCode>>() {}, new AsyncApiCallback<ApiResponse<List<WrapupCode>>>() {
         @Override
         public void onCompleted(ApiResponse<List<WrapupCode>> response) {
@@ -2735,10 +2735,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Queue> postRoutingQueuesAsync(PostRoutingQueuesRequest request, AsyncApiCallback<Queue> callback) {
+  public Future<Queue> postRoutingQueuesAsync(PostRoutingQueuesRequest request, final AsyncApiCallback<Queue> callback) {
     try {
-      SettableFuture<Queue> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Queue> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Queue>() {}, new AsyncApiCallback<ApiResponse<Queue>>() {
         @Override
         public void onCompleted(ApiResponse<Queue> response) {
@@ -2769,10 +2769,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Queue>> postRoutingQueuesAsync(ApiRequest<CreateQueueRequest> request, AsyncApiCallback<ApiResponse<Queue>> callback) {
+  public Future<ApiResponse<Queue>> postRoutingQueuesAsync(ApiRequest<CreateQueueRequest> request, final AsyncApiCallback<ApiResponse<Queue>> callback) {
     try {
-      SettableFuture<ApiResponse<Queue>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Queue>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Queue>() {}, new AsyncApiCallback<ApiResponse<Queue>>() {
         @Override
         public void onCompleted(ApiResponse<Queue> response) {
@@ -2810,10 +2810,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<RoutingSkill> postRoutingSkillsAsync(PostRoutingSkillsRequest request, AsyncApiCallback<RoutingSkill> callback) {
+  public Future<RoutingSkill> postRoutingSkillsAsync(PostRoutingSkillsRequest request, final AsyncApiCallback<RoutingSkill> callback) {
     try {
-      SettableFuture<RoutingSkill> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<RoutingSkill> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RoutingSkill>() {}, new AsyncApiCallback<ApiResponse<RoutingSkill>>() {
         @Override
         public void onCompleted(ApiResponse<RoutingSkill> response) {
@@ -2844,10 +2844,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<RoutingSkill>> postRoutingSkillsAsync(ApiRequest<RoutingSkill> request, AsyncApiCallback<ApiResponse<RoutingSkill>> callback) {
+  public Future<ApiResponse<RoutingSkill>> postRoutingSkillsAsync(ApiRequest<RoutingSkill> request, final AsyncApiCallback<ApiResponse<RoutingSkill>> callback) {
     try {
-      SettableFuture<ApiResponse<RoutingSkill>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<RoutingSkill>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<RoutingSkill>() {}, new AsyncApiCallback<ApiResponse<RoutingSkill>>() {
         @Override
         public void onCompleted(ApiResponse<RoutingSkill> response) {
@@ -2885,10 +2885,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<WrapupCode> postRoutingWrapupcodesAsync(PostRoutingWrapupcodesRequest request, AsyncApiCallback<WrapupCode> callback) {
+  public Future<WrapupCode> postRoutingWrapupcodesAsync(PostRoutingWrapupcodesRequest request, final AsyncApiCallback<WrapupCode> callback) {
     try {
-      SettableFuture<WrapupCode> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<WrapupCode> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WrapupCode>() {}, new AsyncApiCallback<ApiResponse<WrapupCode>>() {
         @Override
         public void onCompleted(ApiResponse<WrapupCode> response) {
@@ -2919,10 +2919,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<WrapupCode>> postRoutingWrapupcodesAsync(ApiRequest<WrapupCode> request, AsyncApiCallback<ApiResponse<WrapupCode>> callback) {
+  public Future<ApiResponse<WrapupCode>> postRoutingWrapupcodesAsync(ApiRequest<WrapupCode> request, final AsyncApiCallback<ApiResponse<WrapupCode>> callback) {
     try {
-      SettableFuture<ApiResponse<WrapupCode>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<WrapupCode>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<WrapupCode>() {}, new AsyncApiCallback<ApiResponse<WrapupCode>>() {
         @Override
         public void onCompleted(ApiResponse<WrapupCode> response) {
@@ -2960,10 +2960,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UserRoutingSkill> postUserRoutingskillsAsync(PostUserRoutingskillsRequest request, AsyncApiCallback<UserRoutingSkill> callback) {
+  public Future<UserRoutingSkill> postUserRoutingskillsAsync(PostUserRoutingskillsRequest request, final AsyncApiCallback<UserRoutingSkill> callback) {
     try {
-      SettableFuture<UserRoutingSkill> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<UserRoutingSkill> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserRoutingSkill>() {}, new AsyncApiCallback<ApiResponse<UserRoutingSkill>>() {
         @Override
         public void onCompleted(ApiResponse<UserRoutingSkill> response) {
@@ -2994,10 +2994,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UserRoutingSkill>> postUserRoutingskillsAsync(ApiRequest<UserRoutingSkillPost> request, AsyncApiCallback<ApiResponse<UserRoutingSkill>> callback) {
+  public Future<ApiResponse<UserRoutingSkill>> postUserRoutingskillsAsync(ApiRequest<UserRoutingSkillPost> request, final AsyncApiCallback<ApiResponse<UserRoutingSkill>> callback) {
     try {
-      SettableFuture<ApiResponse<UserRoutingSkill>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<UserRoutingSkill>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<UserRoutingSkill>() {}, new AsyncApiCallback<ApiResponse<UserRoutingSkill>>() {
         @Override
         public void onCompleted(ApiResponse<UserRoutingSkill> response) {
@@ -3035,10 +3035,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<InboundRoute> putRoutingEmailDomainRouteAsync(PutRoutingEmailDomainRouteRequest request, AsyncApiCallback<InboundRoute> callback) {
+  public Future<InboundRoute> putRoutingEmailDomainRouteAsync(PutRoutingEmailDomainRouteRequest request, final AsyncApiCallback<InboundRoute> callback) {
     try {
-      SettableFuture<InboundRoute> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<InboundRoute> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InboundRoute>() {}, new AsyncApiCallback<ApiResponse<InboundRoute>>() {
         @Override
         public void onCompleted(ApiResponse<InboundRoute> response) {
@@ -3069,10 +3069,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<InboundRoute>> putRoutingEmailDomainRouteAsync(ApiRequest<InboundRoute> request, AsyncApiCallback<ApiResponse<InboundRoute>> callback) {
+  public Future<ApiResponse<InboundRoute>> putRoutingEmailDomainRouteAsync(ApiRequest<InboundRoute> request, final AsyncApiCallback<ApiResponse<InboundRoute>> callback) {
     try {
-      SettableFuture<ApiResponse<InboundRoute>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<InboundRoute>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<InboundRoute>() {}, new AsyncApiCallback<ApiResponse<InboundRoute>>() {
         @Override
         public void onCompleted(ApiResponse<InboundRoute> response) {
@@ -3110,10 +3110,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Queue> putRoutingQueueAsync(PutRoutingQueueRequest request, AsyncApiCallback<Queue> callback) {
+  public Future<Queue> putRoutingQueueAsync(PutRoutingQueueRequest request, final AsyncApiCallback<Queue> callback) {
     try {
-      SettableFuture<Queue> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Queue> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Queue>() {}, new AsyncApiCallback<ApiResponse<Queue>>() {
         @Override
         public void onCompleted(ApiResponse<Queue> response) {
@@ -3144,10 +3144,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Queue>> putRoutingQueueAsync(ApiRequest<Queue> request, AsyncApiCallback<ApiResponse<Queue>> callback) {
+  public Future<ApiResponse<Queue>> putRoutingQueueAsync(ApiRequest<Queue> request, final AsyncApiCallback<ApiResponse<Queue>> callback) {
     try {
-      SettableFuture<ApiResponse<Queue>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Queue>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Queue>() {}, new AsyncApiCallback<ApiResponse<Queue>>() {
         @Override
         public void onCompleted(ApiResponse<Queue> response) {
@@ -3185,10 +3185,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Utilization> putRoutingUtilizationAsync(PutRoutingUtilizationRequest request, AsyncApiCallback<Utilization> callback) {
+  public Future<Utilization> putRoutingUtilizationAsync(PutRoutingUtilizationRequest request, final AsyncApiCallback<Utilization> callback) {
     try {
-      SettableFuture<Utilization> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Utilization> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Utilization>() {}, new AsyncApiCallback<ApiResponse<Utilization>>() {
         @Override
         public void onCompleted(ApiResponse<Utilization> response) {
@@ -3219,10 +3219,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Utilization>> putRoutingUtilizationAsync(ApiRequest<Utilization> request, AsyncApiCallback<ApiResponse<Utilization>> callback) {
+  public Future<ApiResponse<Utilization>> putRoutingUtilizationAsync(ApiRequest<Utilization> request, final AsyncApiCallback<ApiResponse<Utilization>> callback) {
     try {
-      SettableFuture<ApiResponse<Utilization>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Utilization>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Utilization>() {}, new AsyncApiCallback<ApiResponse<Utilization>>() {
         @Override
         public void onCompleted(ApiResponse<Utilization> response) {
@@ -3260,10 +3260,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<WrapupCode> putRoutingWrapupcodeAsync(PutRoutingWrapupcodeRequest request, AsyncApiCallback<WrapupCode> callback) {
+  public Future<WrapupCode> putRoutingWrapupcodeAsync(PutRoutingWrapupcodeRequest request, final AsyncApiCallback<WrapupCode> callback) {
     try {
-      SettableFuture<WrapupCode> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<WrapupCode> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WrapupCode>() {}, new AsyncApiCallback<ApiResponse<WrapupCode>>() {
         @Override
         public void onCompleted(ApiResponse<WrapupCode> response) {
@@ -3294,10 +3294,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<WrapupCode>> putRoutingWrapupcodeAsync(ApiRequest<WrapupCode> request, AsyncApiCallback<ApiResponse<WrapupCode>> callback) {
+  public Future<ApiResponse<WrapupCode>> putRoutingWrapupcodeAsync(ApiRequest<WrapupCode> request, final AsyncApiCallback<ApiResponse<WrapupCode>> callback) {
     try {
-      SettableFuture<ApiResponse<WrapupCode>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<WrapupCode>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<WrapupCode>() {}, new AsyncApiCallback<ApiResponse<WrapupCode>>() {
         @Override
         public void onCompleted(ApiResponse<WrapupCode> response) {
@@ -3335,10 +3335,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UserRoutingSkill> putUserRoutingskillAsync(PutUserRoutingskillRequest request, AsyncApiCallback<UserRoutingSkill> callback) {
+  public Future<UserRoutingSkill> putUserRoutingskillAsync(PutUserRoutingskillRequest request, final AsyncApiCallback<UserRoutingSkill> callback) {
     try {
-      SettableFuture<UserRoutingSkill> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<UserRoutingSkill> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserRoutingSkill>() {}, new AsyncApiCallback<ApiResponse<UserRoutingSkill>>() {
         @Override
         public void onCompleted(ApiResponse<UserRoutingSkill> response) {
@@ -3369,10 +3369,10 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UserRoutingSkill>> putUserRoutingskillAsync(ApiRequest<UserRoutingSkill> request, AsyncApiCallback<ApiResponse<UserRoutingSkill>> callback) {
+  public Future<ApiResponse<UserRoutingSkill>> putUserRoutingskillAsync(ApiRequest<UserRoutingSkill> request, final AsyncApiCallback<ApiResponse<UserRoutingSkill>> callback) {
     try {
-      SettableFuture<ApiResponse<UserRoutingSkill>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<UserRoutingSkill>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<UserRoutingSkill>() {}, new AsyncApiCallback<ApiResponse<UserRoutingSkill>>() {
         @Override
         public void onCompleted(ApiResponse<UserRoutingSkill> response) {

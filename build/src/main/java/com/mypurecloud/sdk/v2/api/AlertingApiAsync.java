@@ -95,10 +95,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteAlertingHeartbeatAlertAsync(DeleteAlertingHeartbeatAlertRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteAlertingHeartbeatAlertAsync(DeleteAlertingHeartbeatAlertRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -129,10 +129,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteAlertingHeartbeatAlertAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteAlertingHeartbeatAlertAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -170,10 +170,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteAlertingHeartbeatRuleAsync(DeleteAlertingHeartbeatRuleRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteAlertingHeartbeatRuleAsync(DeleteAlertingHeartbeatRuleRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -204,10 +204,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteAlertingHeartbeatRuleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteAlertingHeartbeatRuleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -245,10 +245,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteAlertingInteractionstatsAlertAsync(DeleteAlertingInteractionstatsAlertRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteAlertingInteractionstatsAlertAsync(DeleteAlertingInteractionstatsAlertRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -279,10 +279,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteAlertingInteractionstatsAlertAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteAlertingInteractionstatsAlertAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -320,10 +320,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteAlertingInteractionstatsRuleAsync(DeleteAlertingInteractionstatsRuleRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteAlertingInteractionstatsRuleAsync(DeleteAlertingInteractionstatsRuleRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -354,10 +354,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteAlertingInteractionstatsRuleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteAlertingInteractionstatsRuleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -395,10 +395,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteAlertingRoutingstatusAlertAsync(DeleteAlertingRoutingstatusAlertRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteAlertingRoutingstatusAlertAsync(DeleteAlertingRoutingstatusAlertRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -429,10 +429,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteAlertingRoutingstatusAlertAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteAlertingRoutingstatusAlertAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -470,10 +470,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteAlertingRoutingstatusRuleAsync(DeleteAlertingRoutingstatusRuleRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteAlertingRoutingstatusRuleAsync(DeleteAlertingRoutingstatusRuleRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -504,10 +504,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteAlertingRoutingstatusRuleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteAlertingRoutingstatusRuleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -545,10 +545,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteAlertingUserpresenceAlertAsync(DeleteAlertingUserpresenceAlertRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteAlertingUserpresenceAlertAsync(DeleteAlertingUserpresenceAlertRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -579,10 +579,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteAlertingUserpresenceAlertAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteAlertingUserpresenceAlertAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -620,10 +620,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteAlertingUserpresenceRuleAsync(DeleteAlertingUserpresenceRuleRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteAlertingUserpresenceRuleAsync(DeleteAlertingUserpresenceRuleRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -654,10 +654,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteAlertingUserpresenceRuleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteAlertingUserpresenceRuleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -695,10 +695,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<HeartBeatAlert> getAlertingHeartbeatAlertAsync(GetAlertingHeartbeatAlertRequest request, AsyncApiCallback<HeartBeatAlert> callback) {
+  public Future<HeartBeatAlert> getAlertingHeartbeatAlertAsync(GetAlertingHeartbeatAlertRequest request, final AsyncApiCallback<HeartBeatAlert> callback) {
     try {
-      SettableFuture<HeartBeatAlert> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<HeartBeatAlert> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<HeartBeatAlert>() {}, new AsyncApiCallback<ApiResponse<HeartBeatAlert>>() {
         @Override
         public void onCompleted(ApiResponse<HeartBeatAlert> response) {
@@ -729,10 +729,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<HeartBeatAlert>> getAlertingHeartbeatAlertAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<HeartBeatAlert>> callback) {
+  public Future<ApiResponse<HeartBeatAlert>> getAlertingHeartbeatAlertAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<HeartBeatAlert>> callback) {
     try {
-      SettableFuture<ApiResponse<HeartBeatAlert>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<HeartBeatAlert>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<HeartBeatAlert>() {}, new AsyncApiCallback<ApiResponse<HeartBeatAlert>>() {
         @Override
         public void onCompleted(ApiResponse<HeartBeatAlert> response) {
@@ -770,10 +770,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<HeartBeatAlertContainer> getAlertingHeartbeatAlertsAsync(GetAlertingHeartbeatAlertsRequest request, AsyncApiCallback<HeartBeatAlertContainer> callback) {
+  public Future<HeartBeatAlertContainer> getAlertingHeartbeatAlertsAsync(GetAlertingHeartbeatAlertsRequest request, final AsyncApiCallback<HeartBeatAlertContainer> callback) {
     try {
-      SettableFuture<HeartBeatAlertContainer> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<HeartBeatAlertContainer> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<HeartBeatAlertContainer>() {}, new AsyncApiCallback<ApiResponse<HeartBeatAlertContainer>>() {
         @Override
         public void onCompleted(ApiResponse<HeartBeatAlertContainer> response) {
@@ -804,10 +804,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<HeartBeatAlertContainer>> getAlertingHeartbeatAlertsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<HeartBeatAlertContainer>> callback) {
+  public Future<ApiResponse<HeartBeatAlertContainer>> getAlertingHeartbeatAlertsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<HeartBeatAlertContainer>> callback) {
     try {
-      SettableFuture<ApiResponse<HeartBeatAlertContainer>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<HeartBeatAlertContainer>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<HeartBeatAlertContainer>() {}, new AsyncApiCallback<ApiResponse<HeartBeatAlertContainer>>() {
         @Override
         public void onCompleted(ApiResponse<HeartBeatAlertContainer> response) {
@@ -845,10 +845,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<HeartBeatRule> getAlertingHeartbeatRuleAsync(GetAlertingHeartbeatRuleRequest request, AsyncApiCallback<HeartBeatRule> callback) {
+  public Future<HeartBeatRule> getAlertingHeartbeatRuleAsync(GetAlertingHeartbeatRuleRequest request, final AsyncApiCallback<HeartBeatRule> callback) {
     try {
-      SettableFuture<HeartBeatRule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<HeartBeatRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<HeartBeatRule>() {}, new AsyncApiCallback<ApiResponse<HeartBeatRule>>() {
         @Override
         public void onCompleted(ApiResponse<HeartBeatRule> response) {
@@ -879,10 +879,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<HeartBeatRule>> getAlertingHeartbeatRuleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<HeartBeatRule>> callback) {
+  public Future<ApiResponse<HeartBeatRule>> getAlertingHeartbeatRuleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<HeartBeatRule>> callback) {
     try {
-      SettableFuture<ApiResponse<HeartBeatRule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<HeartBeatRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<HeartBeatRule>() {}, new AsyncApiCallback<ApiResponse<HeartBeatRule>>() {
         @Override
         public void onCompleted(ApiResponse<HeartBeatRule> response) {
@@ -920,10 +920,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<HeartBeatRuleContainer> getAlertingHeartbeatRulesAsync(GetAlertingHeartbeatRulesRequest request, AsyncApiCallback<HeartBeatRuleContainer> callback) {
+  public Future<HeartBeatRuleContainer> getAlertingHeartbeatRulesAsync(GetAlertingHeartbeatRulesRequest request, final AsyncApiCallback<HeartBeatRuleContainer> callback) {
     try {
-      SettableFuture<HeartBeatRuleContainer> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<HeartBeatRuleContainer> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<HeartBeatRuleContainer>() {}, new AsyncApiCallback<ApiResponse<HeartBeatRuleContainer>>() {
         @Override
         public void onCompleted(ApiResponse<HeartBeatRuleContainer> response) {
@@ -954,10 +954,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<HeartBeatRuleContainer>> getAlertingHeartbeatRulesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<HeartBeatRuleContainer>> callback) {
+  public Future<ApiResponse<HeartBeatRuleContainer>> getAlertingHeartbeatRulesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<HeartBeatRuleContainer>> callback) {
     try {
-      SettableFuture<ApiResponse<HeartBeatRuleContainer>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<HeartBeatRuleContainer>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<HeartBeatRuleContainer>() {}, new AsyncApiCallback<ApiResponse<HeartBeatRuleContainer>>() {
         @Override
         public void onCompleted(ApiResponse<HeartBeatRuleContainer> response) {
@@ -995,10 +995,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<InteractionStatsAlert> getAlertingInteractionstatsAlertAsync(GetAlertingInteractionstatsAlertRequest request, AsyncApiCallback<InteractionStatsAlert> callback) {
+  public Future<InteractionStatsAlert> getAlertingInteractionstatsAlertAsync(GetAlertingInteractionstatsAlertRequest request, final AsyncApiCallback<InteractionStatsAlert> callback) {
     try {
-      SettableFuture<InteractionStatsAlert> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<InteractionStatsAlert> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InteractionStatsAlert>() {}, new AsyncApiCallback<ApiResponse<InteractionStatsAlert>>() {
         @Override
         public void onCompleted(ApiResponse<InteractionStatsAlert> response) {
@@ -1029,10 +1029,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<InteractionStatsAlert>> getAlertingInteractionstatsAlertAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<InteractionStatsAlert>> callback) {
+  public Future<ApiResponse<InteractionStatsAlert>> getAlertingInteractionstatsAlertAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InteractionStatsAlert>> callback) {
     try {
-      SettableFuture<ApiResponse<InteractionStatsAlert>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<InteractionStatsAlert>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<InteractionStatsAlert>() {}, new AsyncApiCallback<ApiResponse<InteractionStatsAlert>>() {
         @Override
         public void onCompleted(ApiResponse<InteractionStatsAlert> response) {
@@ -1070,10 +1070,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<InteractionStatsAlertContainer> getAlertingInteractionstatsAlertsAsync(GetAlertingInteractionstatsAlertsRequest request, AsyncApiCallback<InteractionStatsAlertContainer> callback) {
+  public Future<InteractionStatsAlertContainer> getAlertingInteractionstatsAlertsAsync(GetAlertingInteractionstatsAlertsRequest request, final AsyncApiCallback<InteractionStatsAlertContainer> callback) {
     try {
-      SettableFuture<InteractionStatsAlertContainer> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<InteractionStatsAlertContainer> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InteractionStatsAlertContainer>() {}, new AsyncApiCallback<ApiResponse<InteractionStatsAlertContainer>>() {
         @Override
         public void onCompleted(ApiResponse<InteractionStatsAlertContainer> response) {
@@ -1104,10 +1104,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<InteractionStatsAlertContainer>> getAlertingInteractionstatsAlertsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<InteractionStatsAlertContainer>> callback) {
+  public Future<ApiResponse<InteractionStatsAlertContainer>> getAlertingInteractionstatsAlertsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InteractionStatsAlertContainer>> callback) {
     try {
-      SettableFuture<ApiResponse<InteractionStatsAlertContainer>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<InteractionStatsAlertContainer>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<InteractionStatsAlertContainer>() {}, new AsyncApiCallback<ApiResponse<InteractionStatsAlertContainer>>() {
         @Override
         public void onCompleted(ApiResponse<InteractionStatsAlertContainer> response) {
@@ -1145,10 +1145,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UnreadMetric> getAlertingInteractionstatsAlertsUnreadAsync(GetAlertingInteractionstatsAlertsUnreadRequest request, AsyncApiCallback<UnreadMetric> callback) {
+  public Future<UnreadMetric> getAlertingInteractionstatsAlertsUnreadAsync(GetAlertingInteractionstatsAlertsUnreadRequest request, final AsyncApiCallback<UnreadMetric> callback) {
     try {
-      SettableFuture<UnreadMetric> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<UnreadMetric> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UnreadMetric>() {}, new AsyncApiCallback<ApiResponse<UnreadMetric>>() {
         @Override
         public void onCompleted(ApiResponse<UnreadMetric> response) {
@@ -1179,10 +1179,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UnreadMetric>> getAlertingInteractionstatsAlertsUnreadAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UnreadMetric>> callback) {
+  public Future<ApiResponse<UnreadMetric>> getAlertingInteractionstatsAlertsUnreadAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UnreadMetric>> callback) {
     try {
-      SettableFuture<ApiResponse<UnreadMetric>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<UnreadMetric>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<UnreadMetric>() {}, new AsyncApiCallback<ApiResponse<UnreadMetric>>() {
         @Override
         public void onCompleted(ApiResponse<UnreadMetric> response) {
@@ -1220,10 +1220,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<InteractionStatsRule> getAlertingInteractionstatsRuleAsync(GetAlertingInteractionstatsRuleRequest request, AsyncApiCallback<InteractionStatsRule> callback) {
+  public Future<InteractionStatsRule> getAlertingInteractionstatsRuleAsync(GetAlertingInteractionstatsRuleRequest request, final AsyncApiCallback<InteractionStatsRule> callback) {
     try {
-      SettableFuture<InteractionStatsRule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<InteractionStatsRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InteractionStatsRule>() {}, new AsyncApiCallback<ApiResponse<InteractionStatsRule>>() {
         @Override
         public void onCompleted(ApiResponse<InteractionStatsRule> response) {
@@ -1254,10 +1254,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<InteractionStatsRule>> getAlertingInteractionstatsRuleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<InteractionStatsRule>> callback) {
+  public Future<ApiResponse<InteractionStatsRule>> getAlertingInteractionstatsRuleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InteractionStatsRule>> callback) {
     try {
-      SettableFuture<ApiResponse<InteractionStatsRule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<InteractionStatsRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<InteractionStatsRule>() {}, new AsyncApiCallback<ApiResponse<InteractionStatsRule>>() {
         @Override
         public void onCompleted(ApiResponse<InteractionStatsRule> response) {
@@ -1295,10 +1295,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<InteractionStatsRuleContainer> getAlertingInteractionstatsRulesAsync(GetAlertingInteractionstatsRulesRequest request, AsyncApiCallback<InteractionStatsRuleContainer> callback) {
+  public Future<InteractionStatsRuleContainer> getAlertingInteractionstatsRulesAsync(GetAlertingInteractionstatsRulesRequest request, final AsyncApiCallback<InteractionStatsRuleContainer> callback) {
     try {
-      SettableFuture<InteractionStatsRuleContainer> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<InteractionStatsRuleContainer> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InteractionStatsRuleContainer>() {}, new AsyncApiCallback<ApiResponse<InteractionStatsRuleContainer>>() {
         @Override
         public void onCompleted(ApiResponse<InteractionStatsRuleContainer> response) {
@@ -1329,10 +1329,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<InteractionStatsRuleContainer>> getAlertingInteractionstatsRulesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<InteractionStatsRuleContainer>> callback) {
+  public Future<ApiResponse<InteractionStatsRuleContainer>> getAlertingInteractionstatsRulesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<InteractionStatsRuleContainer>> callback) {
     try {
-      SettableFuture<ApiResponse<InteractionStatsRuleContainer>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<InteractionStatsRuleContainer>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<InteractionStatsRuleContainer>() {}, new AsyncApiCallback<ApiResponse<InteractionStatsRuleContainer>>() {
         @Override
         public void onCompleted(ApiResponse<InteractionStatsRuleContainer> response) {
@@ -1370,10 +1370,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<RoutingStatusAlert> getAlertingRoutingstatusAlertAsync(GetAlertingRoutingstatusAlertRequest request, AsyncApiCallback<RoutingStatusAlert> callback) {
+  public Future<RoutingStatusAlert> getAlertingRoutingstatusAlertAsync(GetAlertingRoutingstatusAlertRequest request, final AsyncApiCallback<RoutingStatusAlert> callback) {
     try {
-      SettableFuture<RoutingStatusAlert> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<RoutingStatusAlert> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RoutingStatusAlert>() {}, new AsyncApiCallback<ApiResponse<RoutingStatusAlert>>() {
         @Override
         public void onCompleted(ApiResponse<RoutingStatusAlert> response) {
@@ -1404,10 +1404,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<RoutingStatusAlert>> getAlertingRoutingstatusAlertAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RoutingStatusAlert>> callback) {
+  public Future<ApiResponse<RoutingStatusAlert>> getAlertingRoutingstatusAlertAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RoutingStatusAlert>> callback) {
     try {
-      SettableFuture<ApiResponse<RoutingStatusAlert>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<RoutingStatusAlert>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<RoutingStatusAlert>() {}, new AsyncApiCallback<ApiResponse<RoutingStatusAlert>>() {
         @Override
         public void onCompleted(ApiResponse<RoutingStatusAlert> response) {
@@ -1445,10 +1445,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<RoutingStatusAlertContainer> getAlertingRoutingstatusAlertsAsync(GetAlertingRoutingstatusAlertsRequest request, AsyncApiCallback<RoutingStatusAlertContainer> callback) {
+  public Future<RoutingStatusAlertContainer> getAlertingRoutingstatusAlertsAsync(GetAlertingRoutingstatusAlertsRequest request, final AsyncApiCallback<RoutingStatusAlertContainer> callback) {
     try {
-      SettableFuture<RoutingStatusAlertContainer> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<RoutingStatusAlertContainer> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RoutingStatusAlertContainer>() {}, new AsyncApiCallback<ApiResponse<RoutingStatusAlertContainer>>() {
         @Override
         public void onCompleted(ApiResponse<RoutingStatusAlertContainer> response) {
@@ -1479,10 +1479,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<RoutingStatusAlertContainer>> getAlertingRoutingstatusAlertsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RoutingStatusAlertContainer>> callback) {
+  public Future<ApiResponse<RoutingStatusAlertContainer>> getAlertingRoutingstatusAlertsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RoutingStatusAlertContainer>> callback) {
     try {
-      SettableFuture<ApiResponse<RoutingStatusAlertContainer>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<RoutingStatusAlertContainer>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<RoutingStatusAlertContainer>() {}, new AsyncApiCallback<ApiResponse<RoutingStatusAlertContainer>>() {
         @Override
         public void onCompleted(ApiResponse<RoutingStatusAlertContainer> response) {
@@ -1520,10 +1520,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<RoutingStatusRule> getAlertingRoutingstatusRuleAsync(GetAlertingRoutingstatusRuleRequest request, AsyncApiCallback<RoutingStatusRule> callback) {
+  public Future<RoutingStatusRule> getAlertingRoutingstatusRuleAsync(GetAlertingRoutingstatusRuleRequest request, final AsyncApiCallback<RoutingStatusRule> callback) {
     try {
-      SettableFuture<RoutingStatusRule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<RoutingStatusRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RoutingStatusRule>() {}, new AsyncApiCallback<ApiResponse<RoutingStatusRule>>() {
         @Override
         public void onCompleted(ApiResponse<RoutingStatusRule> response) {
@@ -1554,10 +1554,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<RoutingStatusRule>> getAlertingRoutingstatusRuleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RoutingStatusRule>> callback) {
+  public Future<ApiResponse<RoutingStatusRule>> getAlertingRoutingstatusRuleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RoutingStatusRule>> callback) {
     try {
-      SettableFuture<ApiResponse<RoutingStatusRule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<RoutingStatusRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<RoutingStatusRule>() {}, new AsyncApiCallback<ApiResponse<RoutingStatusRule>>() {
         @Override
         public void onCompleted(ApiResponse<RoutingStatusRule> response) {
@@ -1595,10 +1595,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<RoutingStatusRuleContainer> getAlertingRoutingstatusRulesAsync(GetAlertingRoutingstatusRulesRequest request, AsyncApiCallback<RoutingStatusRuleContainer> callback) {
+  public Future<RoutingStatusRuleContainer> getAlertingRoutingstatusRulesAsync(GetAlertingRoutingstatusRulesRequest request, final AsyncApiCallback<RoutingStatusRuleContainer> callback) {
     try {
-      SettableFuture<RoutingStatusRuleContainer> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<RoutingStatusRuleContainer> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RoutingStatusRuleContainer>() {}, new AsyncApiCallback<ApiResponse<RoutingStatusRuleContainer>>() {
         @Override
         public void onCompleted(ApiResponse<RoutingStatusRuleContainer> response) {
@@ -1629,10 +1629,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<RoutingStatusRuleContainer>> getAlertingRoutingstatusRulesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<RoutingStatusRuleContainer>> callback) {
+  public Future<ApiResponse<RoutingStatusRuleContainer>> getAlertingRoutingstatusRulesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RoutingStatusRuleContainer>> callback) {
     try {
-      SettableFuture<ApiResponse<RoutingStatusRuleContainer>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<RoutingStatusRuleContainer>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<RoutingStatusRuleContainer>() {}, new AsyncApiCallback<ApiResponse<RoutingStatusRuleContainer>>() {
         @Override
         public void onCompleted(ApiResponse<RoutingStatusRuleContainer> response) {
@@ -1670,10 +1670,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UserPresenceAlert> getAlertingUserpresenceAlertAsync(GetAlertingUserpresenceAlertRequest request, AsyncApiCallback<UserPresenceAlert> callback) {
+  public Future<UserPresenceAlert> getAlertingUserpresenceAlertAsync(GetAlertingUserpresenceAlertRequest request, final AsyncApiCallback<UserPresenceAlert> callback) {
     try {
-      SettableFuture<UserPresenceAlert> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<UserPresenceAlert> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserPresenceAlert>() {}, new AsyncApiCallback<ApiResponse<UserPresenceAlert>>() {
         @Override
         public void onCompleted(ApiResponse<UserPresenceAlert> response) {
@@ -1704,10 +1704,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UserPresenceAlert>> getAlertingUserpresenceAlertAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserPresenceAlert>> callback) {
+  public Future<ApiResponse<UserPresenceAlert>> getAlertingUserpresenceAlertAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserPresenceAlert>> callback) {
     try {
-      SettableFuture<ApiResponse<UserPresenceAlert>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<UserPresenceAlert>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<UserPresenceAlert>() {}, new AsyncApiCallback<ApiResponse<UserPresenceAlert>>() {
         @Override
         public void onCompleted(ApiResponse<UserPresenceAlert> response) {
@@ -1745,10 +1745,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UserPresenceAlertContainer> getAlertingUserpresenceAlertsAsync(GetAlertingUserpresenceAlertsRequest request, AsyncApiCallback<UserPresenceAlertContainer> callback) {
+  public Future<UserPresenceAlertContainer> getAlertingUserpresenceAlertsAsync(GetAlertingUserpresenceAlertsRequest request, final AsyncApiCallback<UserPresenceAlertContainer> callback) {
     try {
-      SettableFuture<UserPresenceAlertContainer> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<UserPresenceAlertContainer> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserPresenceAlertContainer>() {}, new AsyncApiCallback<ApiResponse<UserPresenceAlertContainer>>() {
         @Override
         public void onCompleted(ApiResponse<UserPresenceAlertContainer> response) {
@@ -1779,10 +1779,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UserPresenceAlertContainer>> getAlertingUserpresenceAlertsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserPresenceAlertContainer>> callback) {
+  public Future<ApiResponse<UserPresenceAlertContainer>> getAlertingUserpresenceAlertsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserPresenceAlertContainer>> callback) {
     try {
-      SettableFuture<ApiResponse<UserPresenceAlertContainer>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<UserPresenceAlertContainer>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<UserPresenceAlertContainer>() {}, new AsyncApiCallback<ApiResponse<UserPresenceAlertContainer>>() {
         @Override
         public void onCompleted(ApiResponse<UserPresenceAlertContainer> response) {
@@ -1820,10 +1820,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UserPresenceRule> getAlertingUserpresenceRuleAsync(GetAlertingUserpresenceRuleRequest request, AsyncApiCallback<UserPresenceRule> callback) {
+  public Future<UserPresenceRule> getAlertingUserpresenceRuleAsync(GetAlertingUserpresenceRuleRequest request, final AsyncApiCallback<UserPresenceRule> callback) {
     try {
-      SettableFuture<UserPresenceRule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<UserPresenceRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserPresenceRule>() {}, new AsyncApiCallback<ApiResponse<UserPresenceRule>>() {
         @Override
         public void onCompleted(ApiResponse<UserPresenceRule> response) {
@@ -1854,10 +1854,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UserPresenceRule>> getAlertingUserpresenceRuleAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserPresenceRule>> callback) {
+  public Future<ApiResponse<UserPresenceRule>> getAlertingUserpresenceRuleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserPresenceRule>> callback) {
     try {
-      SettableFuture<ApiResponse<UserPresenceRule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<UserPresenceRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<UserPresenceRule>() {}, new AsyncApiCallback<ApiResponse<UserPresenceRule>>() {
         @Override
         public void onCompleted(ApiResponse<UserPresenceRule> response) {
@@ -1895,10 +1895,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UserPresenceRuleContainer> getAlertingUserpresenceRulesAsync(GetAlertingUserpresenceRulesRequest request, AsyncApiCallback<UserPresenceRuleContainer> callback) {
+  public Future<UserPresenceRuleContainer> getAlertingUserpresenceRulesAsync(GetAlertingUserpresenceRulesRequest request, final AsyncApiCallback<UserPresenceRuleContainer> callback) {
     try {
-      SettableFuture<UserPresenceRuleContainer> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<UserPresenceRuleContainer> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserPresenceRuleContainer>() {}, new AsyncApiCallback<ApiResponse<UserPresenceRuleContainer>>() {
         @Override
         public void onCompleted(ApiResponse<UserPresenceRuleContainer> response) {
@@ -1929,10 +1929,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UserPresenceRuleContainer>> getAlertingUserpresenceRulesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<UserPresenceRuleContainer>> callback) {
+  public Future<ApiResponse<UserPresenceRuleContainer>> getAlertingUserpresenceRulesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserPresenceRuleContainer>> callback) {
     try {
-      SettableFuture<ApiResponse<UserPresenceRuleContainer>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<UserPresenceRuleContainer>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<UserPresenceRuleContainer>() {}, new AsyncApiCallback<ApiResponse<UserPresenceRuleContainer>>() {
         @Override
         public void onCompleted(ApiResponse<UserPresenceRuleContainer> response) {
@@ -1970,10 +1970,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<HeartBeatRule> postAlertingHeartbeatRulesAsync(PostAlertingHeartbeatRulesRequest request, AsyncApiCallback<HeartBeatRule> callback) {
+  public Future<HeartBeatRule> postAlertingHeartbeatRulesAsync(PostAlertingHeartbeatRulesRequest request, final AsyncApiCallback<HeartBeatRule> callback) {
     try {
-      SettableFuture<HeartBeatRule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<HeartBeatRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<HeartBeatRule>() {}, new AsyncApiCallback<ApiResponse<HeartBeatRule>>() {
         @Override
         public void onCompleted(ApiResponse<HeartBeatRule> response) {
@@ -2004,10 +2004,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<HeartBeatRule>> postAlertingHeartbeatRulesAsync(ApiRequest<HeartBeatRule> request, AsyncApiCallback<ApiResponse<HeartBeatRule>> callback) {
+  public Future<ApiResponse<HeartBeatRule>> postAlertingHeartbeatRulesAsync(ApiRequest<HeartBeatRule> request, final AsyncApiCallback<ApiResponse<HeartBeatRule>> callback) {
     try {
-      SettableFuture<ApiResponse<HeartBeatRule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<HeartBeatRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<HeartBeatRule>() {}, new AsyncApiCallback<ApiResponse<HeartBeatRule>>() {
         @Override
         public void onCompleted(ApiResponse<HeartBeatRule> response) {
@@ -2045,10 +2045,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<InteractionStatsRule> postAlertingInteractionstatsRulesAsync(PostAlertingInteractionstatsRulesRequest request, AsyncApiCallback<InteractionStatsRule> callback) {
+  public Future<InteractionStatsRule> postAlertingInteractionstatsRulesAsync(PostAlertingInteractionstatsRulesRequest request, final AsyncApiCallback<InteractionStatsRule> callback) {
     try {
-      SettableFuture<InteractionStatsRule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<InteractionStatsRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InteractionStatsRule>() {}, new AsyncApiCallback<ApiResponse<InteractionStatsRule>>() {
         @Override
         public void onCompleted(ApiResponse<InteractionStatsRule> response) {
@@ -2079,10 +2079,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<InteractionStatsRule>> postAlertingInteractionstatsRulesAsync(ApiRequest<InteractionStatsRule> request, AsyncApiCallback<ApiResponse<InteractionStatsRule>> callback) {
+  public Future<ApiResponse<InteractionStatsRule>> postAlertingInteractionstatsRulesAsync(ApiRequest<InteractionStatsRule> request, final AsyncApiCallback<ApiResponse<InteractionStatsRule>> callback) {
     try {
-      SettableFuture<ApiResponse<InteractionStatsRule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<InteractionStatsRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<InteractionStatsRule>() {}, new AsyncApiCallback<ApiResponse<InteractionStatsRule>>() {
         @Override
         public void onCompleted(ApiResponse<InteractionStatsRule> response) {
@@ -2120,10 +2120,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<RoutingStatusRule> postAlertingRoutingstatusRulesAsync(PostAlertingRoutingstatusRulesRequest request, AsyncApiCallback<RoutingStatusRule> callback) {
+  public Future<RoutingStatusRule> postAlertingRoutingstatusRulesAsync(PostAlertingRoutingstatusRulesRequest request, final AsyncApiCallback<RoutingStatusRule> callback) {
     try {
-      SettableFuture<RoutingStatusRule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<RoutingStatusRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RoutingStatusRule>() {}, new AsyncApiCallback<ApiResponse<RoutingStatusRule>>() {
         @Override
         public void onCompleted(ApiResponse<RoutingStatusRule> response) {
@@ -2154,10 +2154,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<RoutingStatusRule>> postAlertingRoutingstatusRulesAsync(ApiRequest<RoutingStatusRule> request, AsyncApiCallback<ApiResponse<RoutingStatusRule>> callback) {
+  public Future<ApiResponse<RoutingStatusRule>> postAlertingRoutingstatusRulesAsync(ApiRequest<RoutingStatusRule> request, final AsyncApiCallback<ApiResponse<RoutingStatusRule>> callback) {
     try {
-      SettableFuture<ApiResponse<RoutingStatusRule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<RoutingStatusRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<RoutingStatusRule>() {}, new AsyncApiCallback<ApiResponse<RoutingStatusRule>>() {
         @Override
         public void onCompleted(ApiResponse<RoutingStatusRule> response) {
@@ -2195,10 +2195,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UserPresenceRule> postAlertingUserpresenceRulesAsync(PostAlertingUserpresenceRulesRequest request, AsyncApiCallback<UserPresenceRule> callback) {
+  public Future<UserPresenceRule> postAlertingUserpresenceRulesAsync(PostAlertingUserpresenceRulesRequest request, final AsyncApiCallback<UserPresenceRule> callback) {
     try {
-      SettableFuture<UserPresenceRule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<UserPresenceRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserPresenceRule>() {}, new AsyncApiCallback<ApiResponse<UserPresenceRule>>() {
         @Override
         public void onCompleted(ApiResponse<UserPresenceRule> response) {
@@ -2229,10 +2229,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UserPresenceRule>> postAlertingUserpresenceRulesAsync(ApiRequest<UserPresenceRule> request, AsyncApiCallback<ApiResponse<UserPresenceRule>> callback) {
+  public Future<ApiResponse<UserPresenceRule>> postAlertingUserpresenceRulesAsync(ApiRequest<UserPresenceRule> request, final AsyncApiCallback<ApiResponse<UserPresenceRule>> callback) {
     try {
-      SettableFuture<ApiResponse<UserPresenceRule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<UserPresenceRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<UserPresenceRule>() {}, new AsyncApiCallback<ApiResponse<UserPresenceRule>>() {
         @Override
         public void onCompleted(ApiResponse<UserPresenceRule> response) {
@@ -2270,10 +2270,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<HeartBeatRule> putAlertingHeartbeatRuleAsync(PutAlertingHeartbeatRuleRequest request, AsyncApiCallback<HeartBeatRule> callback) {
+  public Future<HeartBeatRule> putAlertingHeartbeatRuleAsync(PutAlertingHeartbeatRuleRequest request, final AsyncApiCallback<HeartBeatRule> callback) {
     try {
-      SettableFuture<HeartBeatRule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<HeartBeatRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<HeartBeatRule>() {}, new AsyncApiCallback<ApiResponse<HeartBeatRule>>() {
         @Override
         public void onCompleted(ApiResponse<HeartBeatRule> response) {
@@ -2304,10 +2304,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<HeartBeatRule>> putAlertingHeartbeatRuleAsync(ApiRequest<HeartBeatRule> request, AsyncApiCallback<ApiResponse<HeartBeatRule>> callback) {
+  public Future<ApiResponse<HeartBeatRule>> putAlertingHeartbeatRuleAsync(ApiRequest<HeartBeatRule> request, final AsyncApiCallback<ApiResponse<HeartBeatRule>> callback) {
     try {
-      SettableFuture<ApiResponse<HeartBeatRule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<HeartBeatRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<HeartBeatRule>() {}, new AsyncApiCallback<ApiResponse<HeartBeatRule>>() {
         @Override
         public void onCompleted(ApiResponse<HeartBeatRule> response) {
@@ -2345,10 +2345,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UnreadStatus> putAlertingInteractionstatsAlertAsync(PutAlertingInteractionstatsAlertRequest request, AsyncApiCallback<UnreadStatus> callback) {
+  public Future<UnreadStatus> putAlertingInteractionstatsAlertAsync(PutAlertingInteractionstatsAlertRequest request, final AsyncApiCallback<UnreadStatus> callback) {
     try {
-      SettableFuture<UnreadStatus> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<UnreadStatus> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UnreadStatus>() {}, new AsyncApiCallback<ApiResponse<UnreadStatus>>() {
         @Override
         public void onCompleted(ApiResponse<UnreadStatus> response) {
@@ -2379,10 +2379,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UnreadStatus>> putAlertingInteractionstatsAlertAsync(ApiRequest<UnreadStatus> request, AsyncApiCallback<ApiResponse<UnreadStatus>> callback) {
+  public Future<ApiResponse<UnreadStatus>> putAlertingInteractionstatsAlertAsync(ApiRequest<UnreadStatus> request, final AsyncApiCallback<ApiResponse<UnreadStatus>> callback) {
     try {
-      SettableFuture<ApiResponse<UnreadStatus>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<UnreadStatus>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<UnreadStatus>() {}, new AsyncApiCallback<ApiResponse<UnreadStatus>>() {
         @Override
         public void onCompleted(ApiResponse<UnreadStatus> response) {
@@ -2420,10 +2420,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<InteractionStatsRule> putAlertingInteractionstatsRuleAsync(PutAlertingInteractionstatsRuleRequest request, AsyncApiCallback<InteractionStatsRule> callback) {
+  public Future<InteractionStatsRule> putAlertingInteractionstatsRuleAsync(PutAlertingInteractionstatsRuleRequest request, final AsyncApiCallback<InteractionStatsRule> callback) {
     try {
-      SettableFuture<InteractionStatsRule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<InteractionStatsRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<InteractionStatsRule>() {}, new AsyncApiCallback<ApiResponse<InteractionStatsRule>>() {
         @Override
         public void onCompleted(ApiResponse<InteractionStatsRule> response) {
@@ -2454,10 +2454,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<InteractionStatsRule>> putAlertingInteractionstatsRuleAsync(ApiRequest<InteractionStatsRule> request, AsyncApiCallback<ApiResponse<InteractionStatsRule>> callback) {
+  public Future<ApiResponse<InteractionStatsRule>> putAlertingInteractionstatsRuleAsync(ApiRequest<InteractionStatsRule> request, final AsyncApiCallback<ApiResponse<InteractionStatsRule>> callback) {
     try {
-      SettableFuture<ApiResponse<InteractionStatsRule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<InteractionStatsRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<InteractionStatsRule>() {}, new AsyncApiCallback<ApiResponse<InteractionStatsRule>>() {
         @Override
         public void onCompleted(ApiResponse<InteractionStatsRule> response) {
@@ -2495,10 +2495,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<RoutingStatusRule> putAlertingRoutingstatusRuleAsync(PutAlertingRoutingstatusRuleRequest request, AsyncApiCallback<RoutingStatusRule> callback) {
+  public Future<RoutingStatusRule> putAlertingRoutingstatusRuleAsync(PutAlertingRoutingstatusRuleRequest request, final AsyncApiCallback<RoutingStatusRule> callback) {
     try {
-      SettableFuture<RoutingStatusRule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<RoutingStatusRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RoutingStatusRule>() {}, new AsyncApiCallback<ApiResponse<RoutingStatusRule>>() {
         @Override
         public void onCompleted(ApiResponse<RoutingStatusRule> response) {
@@ -2529,10 +2529,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<RoutingStatusRule>> putAlertingRoutingstatusRuleAsync(ApiRequest<RoutingStatusRule> request, AsyncApiCallback<ApiResponse<RoutingStatusRule>> callback) {
+  public Future<ApiResponse<RoutingStatusRule>> putAlertingRoutingstatusRuleAsync(ApiRequest<RoutingStatusRule> request, final AsyncApiCallback<ApiResponse<RoutingStatusRule>> callback) {
     try {
-      SettableFuture<ApiResponse<RoutingStatusRule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<RoutingStatusRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<RoutingStatusRule>() {}, new AsyncApiCallback<ApiResponse<RoutingStatusRule>>() {
         @Override
         public void onCompleted(ApiResponse<RoutingStatusRule> response) {
@@ -2570,10 +2570,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UserPresenceRule> putAlertingUserpresenceRuleAsync(PutAlertingUserpresenceRuleRequest request, AsyncApiCallback<UserPresenceRule> callback) {
+  public Future<UserPresenceRule> putAlertingUserpresenceRuleAsync(PutAlertingUserpresenceRuleRequest request, final AsyncApiCallback<UserPresenceRule> callback) {
     try {
-      SettableFuture<UserPresenceRule> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<UserPresenceRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserPresenceRule>() {}, new AsyncApiCallback<ApiResponse<UserPresenceRule>>() {
         @Override
         public void onCompleted(ApiResponse<UserPresenceRule> response) {
@@ -2604,10 +2604,10 @@ public class AlertingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UserPresenceRule>> putAlertingUserpresenceRuleAsync(ApiRequest<UserPresenceRule> request, AsyncApiCallback<ApiResponse<UserPresenceRule>> callback) {
+  public Future<ApiResponse<UserPresenceRule>> putAlertingUserpresenceRuleAsync(ApiRequest<UserPresenceRule> request, final AsyncApiCallback<ApiResponse<UserPresenceRule>> callback) {
     try {
-      SettableFuture<ApiResponse<UserPresenceRule>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<UserPresenceRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<UserPresenceRule>() {}, new AsyncApiCallback<ApiResponse<UserPresenceRule>>() {
         @Override
         public void onCompleted(ApiResponse<UserPresenceRule> response) {

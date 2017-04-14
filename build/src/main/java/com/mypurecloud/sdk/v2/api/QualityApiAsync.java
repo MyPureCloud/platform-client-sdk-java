@@ -91,10 +91,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Calibration> deleteQualityCalibrationAsync(DeleteQualityCalibrationRequest request, AsyncApiCallback<Calibration> callback) {
+  public Future<Calibration> deleteQualityCalibrationAsync(DeleteQualityCalibrationRequest request, final AsyncApiCallback<Calibration> callback) {
     try {
-      SettableFuture<Calibration> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Calibration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Calibration>() {}, new AsyncApiCallback<ApiResponse<Calibration>>() {
         @Override
         public void onCompleted(ApiResponse<Calibration> response) {
@@ -125,10 +125,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Calibration>> deleteQualityCalibrationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Calibration>> callback) {
+  public Future<ApiResponse<Calibration>> deleteQualityCalibrationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Calibration>> callback) {
     try {
-      SettableFuture<ApiResponse<Calibration>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Calibration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Calibration>() {}, new AsyncApiCallback<ApiResponse<Calibration>>() {
         @Override
         public void onCompleted(ApiResponse<Calibration> response) {
@@ -166,10 +166,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Evaluation> deleteQualityConversationEvaluationAsync(DeleteQualityConversationEvaluationRequest request, AsyncApiCallback<Evaluation> callback) {
+  public Future<Evaluation> deleteQualityConversationEvaluationAsync(DeleteQualityConversationEvaluationRequest request, final AsyncApiCallback<Evaluation> callback) {
     try {
-      SettableFuture<Evaluation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Evaluation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Evaluation>() {}, new AsyncApiCallback<ApiResponse<Evaluation>>() {
         @Override
         public void onCompleted(ApiResponse<Evaluation> response) {
@@ -200,10 +200,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Evaluation>> deleteQualityConversationEvaluationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Evaluation>> callback) {
+  public Future<ApiResponse<Evaluation>> deleteQualityConversationEvaluationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Evaluation>> callback) {
     try {
-      SettableFuture<ApiResponse<Evaluation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Evaluation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Evaluation>() {}, new AsyncApiCallback<ApiResponse<Evaluation>>() {
         @Override
         public void onCompleted(ApiResponse<Evaluation> response) {
@@ -241,10 +241,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteQualityFormAsync(DeleteQualityFormRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteQualityFormAsync(DeleteQualityFormRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -275,10 +275,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteQualityFormAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteQualityFormAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -316,10 +316,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteQualityKeywordsetAsync(DeleteQualityKeywordsetRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteQualityKeywordsetAsync(DeleteQualityKeywordsetRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -350,10 +350,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteQualityKeywordsetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteQualityKeywordsetAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -391,10 +391,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteQualityKeywordsetsAsync(DeleteQualityKeywordsetsRequest request, AsyncApiCallback<String> callback) {
+  public Future<String> deleteQualityKeywordsetsAsync(DeleteQualityKeywordsetsRequest request, final AsyncApiCallback<String> callback) {
     try {
-      SettableFuture<String> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -425,10 +425,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteQualityKeywordsetsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<String>> deleteQualityKeywordsetsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {
-      SettableFuture<ApiResponse<String>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
         @Override
         public void onCompleted(ApiResponse<String> response) {
@@ -466,10 +466,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AgentActivityEntityListing> getQualityAgentsActivityAsync(GetQualityAgentsActivityRequest request, AsyncApiCallback<AgentActivityEntityListing> callback) {
+  public Future<AgentActivityEntityListing> getQualityAgentsActivityAsync(GetQualityAgentsActivityRequest request, final AsyncApiCallback<AgentActivityEntityListing> callback) {
     try {
-      SettableFuture<AgentActivityEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<AgentActivityEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentActivityEntityListing>() {}, new AsyncApiCallback<ApiResponse<AgentActivityEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<AgentActivityEntityListing> response) {
@@ -500,10 +500,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AgentActivityEntityListing>> getQualityAgentsActivityAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<AgentActivityEntityListing>> callback) {
+  public Future<ApiResponse<AgentActivityEntityListing>> getQualityAgentsActivityAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AgentActivityEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<AgentActivityEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<AgentActivityEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<AgentActivityEntityListing>() {}, new AsyncApiCallback<ApiResponse<AgentActivityEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<AgentActivityEntityListing> response) {
@@ -541,10 +541,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Calibration> getQualityCalibrationAsync(GetQualityCalibrationRequest request, AsyncApiCallback<Calibration> callback) {
+  public Future<Calibration> getQualityCalibrationAsync(GetQualityCalibrationRequest request, final AsyncApiCallback<Calibration> callback) {
     try {
-      SettableFuture<Calibration> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Calibration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Calibration>() {}, new AsyncApiCallback<ApiResponse<Calibration>>() {
         @Override
         public void onCompleted(ApiResponse<Calibration> response) {
@@ -575,10 +575,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Calibration>> getQualityCalibrationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Calibration>> callback) {
+  public Future<ApiResponse<Calibration>> getQualityCalibrationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Calibration>> callback) {
     try {
-      SettableFuture<ApiResponse<Calibration>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Calibration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Calibration>() {}, new AsyncApiCallback<ApiResponse<Calibration>>() {
         @Override
         public void onCompleted(ApiResponse<Calibration> response) {
@@ -616,10 +616,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CalibrationEntityListing> getQualityCalibrationsAsync(GetQualityCalibrationsRequest request, AsyncApiCallback<CalibrationEntityListing> callback) {
+  public Future<CalibrationEntityListing> getQualityCalibrationsAsync(GetQualityCalibrationsRequest request, final AsyncApiCallback<CalibrationEntityListing> callback) {
     try {
-      SettableFuture<CalibrationEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CalibrationEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CalibrationEntityListing>() {}, new AsyncApiCallback<ApiResponse<CalibrationEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<CalibrationEntityListing> response) {
@@ -650,10 +650,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CalibrationEntityListing>> getQualityCalibrationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CalibrationEntityListing>> callback) {
+  public Future<ApiResponse<CalibrationEntityListing>> getQualityCalibrationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CalibrationEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<CalibrationEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CalibrationEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CalibrationEntityListing>() {}, new AsyncApiCallback<ApiResponse<CalibrationEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<CalibrationEntityListing> response) {
@@ -691,10 +691,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<QualityAuditPage> getQualityConversationAuditsAsync(GetQualityConversationAuditsRequest request, AsyncApiCallback<QualityAuditPage> callback) {
+  public Future<QualityAuditPage> getQualityConversationAuditsAsync(GetQualityConversationAuditsRequest request, final AsyncApiCallback<QualityAuditPage> callback) {
     try {
-      SettableFuture<QualityAuditPage> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<QualityAuditPage> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QualityAuditPage>() {}, new AsyncApiCallback<ApiResponse<QualityAuditPage>>() {
         @Override
         public void onCompleted(ApiResponse<QualityAuditPage> response) {
@@ -725,10 +725,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<QualityAuditPage>> getQualityConversationAuditsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<QualityAuditPage>> callback) {
+  public Future<ApiResponse<QualityAuditPage>> getQualityConversationAuditsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<QualityAuditPage>> callback) {
     try {
-      SettableFuture<ApiResponse<QualityAuditPage>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<QualityAuditPage>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<QualityAuditPage>() {}, new AsyncApiCallback<ApiResponse<QualityAuditPage>>() {
         @Override
         public void onCompleted(ApiResponse<QualityAuditPage> response) {
@@ -766,10 +766,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Evaluation> getQualityConversationEvaluationAsync(GetQualityConversationEvaluationRequest request, AsyncApiCallback<Evaluation> callback) {
+  public Future<Evaluation> getQualityConversationEvaluationAsync(GetQualityConversationEvaluationRequest request, final AsyncApiCallback<Evaluation> callback) {
     try {
-      SettableFuture<Evaluation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Evaluation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Evaluation>() {}, new AsyncApiCallback<ApiResponse<Evaluation>>() {
         @Override
         public void onCompleted(ApiResponse<Evaluation> response) {
@@ -800,10 +800,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Evaluation>> getQualityConversationEvaluationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Evaluation>> callback) {
+  public Future<ApiResponse<Evaluation>> getQualityConversationEvaluationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Evaluation>> callback) {
     try {
-      SettableFuture<ApiResponse<Evaluation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Evaluation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Evaluation>() {}, new AsyncApiCallback<ApiResponse<Evaluation>>() {
         @Override
         public void onCompleted(ApiResponse<Evaluation> response) {
@@ -841,10 +841,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EvaluationEntityListing> getQualityEvaluationsQueryAsync(GetQualityEvaluationsQueryRequest request, AsyncApiCallback<EvaluationEntityListing> callback) {
+  public Future<EvaluationEntityListing> getQualityEvaluationsQueryAsync(GetQualityEvaluationsQueryRequest request, final AsyncApiCallback<EvaluationEntityListing> callback) {
     try {
-      SettableFuture<EvaluationEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EvaluationEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationEntityListing>() {}, new AsyncApiCallback<ApiResponse<EvaluationEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluationEntityListing> response) {
@@ -875,10 +875,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EvaluationEntityListing>> getQualityEvaluationsQueryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluationEntityListing>> callback) {
+  public Future<ApiResponse<EvaluationEntityListing>> getQualityEvaluationsQueryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EvaluationEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<EvaluationEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EvaluationEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EvaluationEntityListing>() {}, new AsyncApiCallback<ApiResponse<EvaluationEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluationEntityListing> response) {
@@ -916,10 +916,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EvaluatorActivityEntityListing> getQualityEvaluatorsActivityAsync(GetQualityEvaluatorsActivityRequest request, AsyncApiCallback<EvaluatorActivityEntityListing> callback) {
+  public Future<EvaluatorActivityEntityListing> getQualityEvaluatorsActivityAsync(GetQualityEvaluatorsActivityRequest request, final AsyncApiCallback<EvaluatorActivityEntityListing> callback) {
     try {
-      SettableFuture<EvaluatorActivityEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EvaluatorActivityEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluatorActivityEntityListing>() {}, new AsyncApiCallback<ApiResponse<EvaluatorActivityEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluatorActivityEntityListing> response) {
@@ -950,10 +950,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EvaluatorActivityEntityListing>> getQualityEvaluatorsActivityAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluatorActivityEntityListing>> callback) {
+  public Future<ApiResponse<EvaluatorActivityEntityListing>> getQualityEvaluatorsActivityAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EvaluatorActivityEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<EvaluatorActivityEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EvaluatorActivityEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EvaluatorActivityEntityListing>() {}, new AsyncApiCallback<ApiResponse<EvaluatorActivityEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluatorActivityEntityListing> response) {
@@ -991,10 +991,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EvaluationForm> getQualityFormAsync(GetQualityFormRequest request, AsyncApiCallback<EvaluationForm> callback) {
+  public Future<EvaluationForm> getQualityFormAsync(GetQualityFormRequest request, final AsyncApiCallback<EvaluationForm> callback) {
     try {
-      SettableFuture<EvaluationForm> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EvaluationForm> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationForm>() {}, new AsyncApiCallback<ApiResponse<EvaluationForm>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluationForm> response) {
@@ -1025,10 +1025,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EvaluationForm>> getQualityFormAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
+  public Future<ApiResponse<EvaluationForm>> getQualityFormAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
     try {
-      SettableFuture<ApiResponse<EvaluationForm>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EvaluationForm>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EvaluationForm>() {}, new AsyncApiCallback<ApiResponse<EvaluationForm>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluationForm> response) {
@@ -1066,10 +1066,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EvaluationFormEntityListing> getQualityFormVersionsAsync(GetQualityFormVersionsRequest request, AsyncApiCallback<EvaluationFormEntityListing> callback) {
+  public Future<EvaluationFormEntityListing> getQualityFormVersionsAsync(GetQualityFormVersionsRequest request, final AsyncApiCallback<EvaluationFormEntityListing> callback) {
     try {
-      SettableFuture<EvaluationFormEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EvaluationFormEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluationFormEntityListing> response) {
@@ -1100,10 +1100,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EvaluationFormEntityListing>> getQualityFormVersionsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>> callback) {
+  public Future<ApiResponse<EvaluationFormEntityListing>> getQualityFormVersionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<EvaluationFormEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EvaluationFormEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EvaluationFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluationFormEntityListing> response) {
@@ -1141,10 +1141,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EvaluationFormEntityListing> getQualityFormsAsync(GetQualityFormsRequest request, AsyncApiCallback<EvaluationFormEntityListing> callback) {
+  public Future<EvaluationFormEntityListing> getQualityFormsAsync(GetQualityFormsRequest request, final AsyncApiCallback<EvaluationFormEntityListing> callback) {
     try {
-      SettableFuture<EvaluationFormEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EvaluationFormEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluationFormEntityListing> response) {
@@ -1175,10 +1175,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EvaluationFormEntityListing>> getQualityFormsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>> callback) {
+  public Future<ApiResponse<EvaluationFormEntityListing>> getQualityFormsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<EvaluationFormEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EvaluationFormEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EvaluationFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluationFormEntityListing> response) {
@@ -1216,10 +1216,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<KeywordSet> getQualityKeywordsetAsync(GetQualityKeywordsetRequest request, AsyncApiCallback<KeywordSet> callback) {
+  public Future<KeywordSet> getQualityKeywordsetAsync(GetQualityKeywordsetRequest request, final AsyncApiCallback<KeywordSet> callback) {
     try {
-      SettableFuture<KeywordSet> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<KeywordSet> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KeywordSet>() {}, new AsyncApiCallback<ApiResponse<KeywordSet>>() {
         @Override
         public void onCompleted(ApiResponse<KeywordSet> response) {
@@ -1250,10 +1250,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<KeywordSet>> getQualityKeywordsetAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<KeywordSet>> callback) {
+  public Future<ApiResponse<KeywordSet>> getQualityKeywordsetAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KeywordSet>> callback) {
     try {
-      SettableFuture<ApiResponse<KeywordSet>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<KeywordSet>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<KeywordSet>() {}, new AsyncApiCallback<ApiResponse<KeywordSet>>() {
         @Override
         public void onCompleted(ApiResponse<KeywordSet> response) {
@@ -1291,10 +1291,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<KeywordSetEntityListing> getQualityKeywordsetsAsync(GetQualityKeywordsetsRequest request, AsyncApiCallback<KeywordSetEntityListing> callback) {
+  public Future<KeywordSetEntityListing> getQualityKeywordsetsAsync(GetQualityKeywordsetsRequest request, final AsyncApiCallback<KeywordSetEntityListing> callback) {
     try {
-      SettableFuture<KeywordSetEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<KeywordSetEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KeywordSetEntityListing>() {}, new AsyncApiCallback<ApiResponse<KeywordSetEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<KeywordSetEntityListing> response) {
@@ -1325,10 +1325,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<KeywordSetEntityListing>> getQualityKeywordsetsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<KeywordSetEntityListing>> callback) {
+  public Future<ApiResponse<KeywordSetEntityListing>> getQualityKeywordsetsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KeywordSetEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<KeywordSetEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<KeywordSetEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<KeywordSetEntityListing>() {}, new AsyncApiCallback<ApiResponse<KeywordSetEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<KeywordSetEntityListing> response) {
@@ -1366,10 +1366,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EvaluationForm> getQualityPublishedformAsync(GetQualityPublishedformRequest request, AsyncApiCallback<EvaluationForm> callback) {
+  public Future<EvaluationForm> getQualityPublishedformAsync(GetQualityPublishedformRequest request, final AsyncApiCallback<EvaluationForm> callback) {
     try {
-      SettableFuture<EvaluationForm> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EvaluationForm> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationForm>() {}, new AsyncApiCallback<ApiResponse<EvaluationForm>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluationForm> response) {
@@ -1400,10 +1400,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EvaluationForm>> getQualityPublishedformAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
+  public Future<ApiResponse<EvaluationForm>> getQualityPublishedformAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
     try {
-      SettableFuture<ApiResponse<EvaluationForm>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EvaluationForm>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EvaluationForm>() {}, new AsyncApiCallback<ApiResponse<EvaluationForm>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluationForm> response) {
@@ -1441,10 +1441,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EvaluationFormEntityListing> getQualityPublishedformsAsync(GetQualityPublishedformsRequest request, AsyncApiCallback<EvaluationFormEntityListing> callback) {
+  public Future<EvaluationFormEntityListing> getQualityPublishedformsAsync(GetQualityPublishedformsRequest request, final AsyncApiCallback<EvaluationFormEntityListing> callback) {
     try {
-      SettableFuture<EvaluationFormEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EvaluationFormEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluationFormEntityListing> response) {
@@ -1475,10 +1475,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EvaluationFormEntityListing>> getQualityPublishedformsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>> callback) {
+  public Future<ApiResponse<EvaluationFormEntityListing>> getQualityPublishedformsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<EvaluationFormEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EvaluationFormEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EvaluationFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluationFormEntityListing> response) {
@@ -1516,10 +1516,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AggregateQueryResponse> postAnalyticsEvaluationsAggregatesQueryAsync(PostAnalyticsEvaluationsAggregatesQueryRequest request, AsyncApiCallback<AggregateQueryResponse> callback) {
+  public Future<AggregateQueryResponse> postAnalyticsEvaluationsAggregatesQueryAsync(PostAnalyticsEvaluationsAggregatesQueryRequest request, final AsyncApiCallback<AggregateQueryResponse> callback) {
     try {
-      SettableFuture<AggregateQueryResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<AggregateQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AggregateQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<AggregateQueryResponse> response) {
@@ -1550,10 +1550,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AggregateQueryResponse>> postAnalyticsEvaluationsAggregatesQueryAsync(ApiRequest<AggregationQuery> request, AsyncApiCallback<ApiResponse<AggregateQueryResponse>> callback) {
+  public Future<ApiResponse<AggregateQueryResponse>> postAnalyticsEvaluationsAggregatesQueryAsync(ApiRequest<AggregationQuery> request, final AsyncApiCallback<ApiResponse<AggregateQueryResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<AggregateQueryResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<AggregateQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<AggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AggregateQueryResponse>>() {
         @Override
         public void onCompleted(ApiResponse<AggregateQueryResponse> response) {
@@ -1591,10 +1591,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Calibration> postQualityCalibrationsAsync(PostQualityCalibrationsRequest request, AsyncApiCallback<Calibration> callback) {
+  public Future<Calibration> postQualityCalibrationsAsync(PostQualityCalibrationsRequest request, final AsyncApiCallback<Calibration> callback) {
     try {
-      SettableFuture<Calibration> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Calibration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Calibration>() {}, new AsyncApiCallback<ApiResponse<Calibration>>() {
         @Override
         public void onCompleted(ApiResponse<Calibration> response) {
@@ -1625,10 +1625,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Calibration>> postQualityCalibrationsAsync(ApiRequest<CalibrationCreate> request, AsyncApiCallback<ApiResponse<Calibration>> callback) {
+  public Future<ApiResponse<Calibration>> postQualityCalibrationsAsync(ApiRequest<CalibrationCreate> request, final AsyncApiCallback<ApiResponse<Calibration>> callback) {
     try {
-      SettableFuture<ApiResponse<Calibration>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Calibration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Calibration>() {}, new AsyncApiCallback<ApiResponse<Calibration>>() {
         @Override
         public void onCompleted(ApiResponse<Calibration> response) {
@@ -1666,10 +1666,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Evaluation> postQualityConversationEvaluationsAsync(PostQualityConversationEvaluationsRequest request, AsyncApiCallback<Evaluation> callback) {
+  public Future<Evaluation> postQualityConversationEvaluationsAsync(PostQualityConversationEvaluationsRequest request, final AsyncApiCallback<Evaluation> callback) {
     try {
-      SettableFuture<Evaluation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Evaluation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Evaluation>() {}, new AsyncApiCallback<ApiResponse<Evaluation>>() {
         @Override
         public void onCompleted(ApiResponse<Evaluation> response) {
@@ -1700,10 +1700,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Evaluation>> postQualityConversationEvaluationsAsync(ApiRequest<Evaluation> request, AsyncApiCallback<ApiResponse<Evaluation>> callback) {
+  public Future<ApiResponse<Evaluation>> postQualityConversationEvaluationsAsync(ApiRequest<Evaluation> request, final AsyncApiCallback<ApiResponse<Evaluation>> callback) {
     try {
-      SettableFuture<ApiResponse<Evaluation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Evaluation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Evaluation>() {}, new AsyncApiCallback<ApiResponse<Evaluation>>() {
         @Override
         public void onCompleted(ApiResponse<Evaluation> response) {
@@ -1741,10 +1741,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EvaluationScoringSet> postQualityEvaluationsScoringAsync(PostQualityEvaluationsScoringRequest request, AsyncApiCallback<EvaluationScoringSet> callback) {
+  public Future<EvaluationScoringSet> postQualityEvaluationsScoringAsync(PostQualityEvaluationsScoringRequest request, final AsyncApiCallback<EvaluationScoringSet> callback) {
     try {
-      SettableFuture<EvaluationScoringSet> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EvaluationScoringSet> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationScoringSet>() {}, new AsyncApiCallback<ApiResponse<EvaluationScoringSet>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluationScoringSet> response) {
@@ -1775,10 +1775,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EvaluationScoringSet>> postQualityEvaluationsScoringAsync(ApiRequest<EvaluationFormAndScoringSet> request, AsyncApiCallback<ApiResponse<EvaluationScoringSet>> callback) {
+  public Future<ApiResponse<EvaluationScoringSet>> postQualityEvaluationsScoringAsync(ApiRequest<EvaluationFormAndScoringSet> request, final AsyncApiCallback<ApiResponse<EvaluationScoringSet>> callback) {
     try {
-      SettableFuture<ApiResponse<EvaluationScoringSet>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EvaluationScoringSet>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EvaluationScoringSet>() {}, new AsyncApiCallback<ApiResponse<EvaluationScoringSet>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluationScoringSet> response) {
@@ -1816,10 +1816,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EvaluationForm> postQualityFormsAsync(PostQualityFormsRequest request, AsyncApiCallback<EvaluationForm> callback) {
+  public Future<EvaluationForm> postQualityFormsAsync(PostQualityFormsRequest request, final AsyncApiCallback<EvaluationForm> callback) {
     try {
-      SettableFuture<EvaluationForm> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EvaluationForm> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationForm>() {}, new AsyncApiCallback<ApiResponse<EvaluationForm>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluationForm> response) {
@@ -1850,10 +1850,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EvaluationForm>> postQualityFormsAsync(ApiRequest<EvaluationForm> request, AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
+  public Future<ApiResponse<EvaluationForm>> postQualityFormsAsync(ApiRequest<EvaluationForm> request, final AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
     try {
-      SettableFuture<ApiResponse<EvaluationForm>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EvaluationForm>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EvaluationForm>() {}, new AsyncApiCallback<ApiResponse<EvaluationForm>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluationForm> response) {
@@ -1891,10 +1891,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<KeywordSet> postQualityKeywordsetsAsync(PostQualityKeywordsetsRequest request, AsyncApiCallback<KeywordSet> callback) {
+  public Future<KeywordSet> postQualityKeywordsetsAsync(PostQualityKeywordsetsRequest request, final AsyncApiCallback<KeywordSet> callback) {
     try {
-      SettableFuture<KeywordSet> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<KeywordSet> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KeywordSet>() {}, new AsyncApiCallback<ApiResponse<KeywordSet>>() {
         @Override
         public void onCompleted(ApiResponse<KeywordSet> response) {
@@ -1925,10 +1925,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<KeywordSet>> postQualityKeywordsetsAsync(ApiRequest<KeywordSet> request, AsyncApiCallback<ApiResponse<KeywordSet>> callback) {
+  public Future<ApiResponse<KeywordSet>> postQualityKeywordsetsAsync(ApiRequest<KeywordSet> request, final AsyncApiCallback<ApiResponse<KeywordSet>> callback) {
     try {
-      SettableFuture<ApiResponse<KeywordSet>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<KeywordSet>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<KeywordSet>() {}, new AsyncApiCallback<ApiResponse<KeywordSet>>() {
         @Override
         public void onCompleted(ApiResponse<KeywordSet> response) {
@@ -1966,10 +1966,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EvaluationForm> postQualityPublishedformsAsync(PostQualityPublishedformsRequest request, AsyncApiCallback<EvaluationForm> callback) {
+  public Future<EvaluationForm> postQualityPublishedformsAsync(PostQualityPublishedformsRequest request, final AsyncApiCallback<EvaluationForm> callback) {
     try {
-      SettableFuture<EvaluationForm> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EvaluationForm> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationForm>() {}, new AsyncApiCallback<ApiResponse<EvaluationForm>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluationForm> response) {
@@ -2000,10 +2000,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EvaluationForm>> postQualityPublishedformsAsync(ApiRequest<EvaluationForm> request, AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
+  public Future<ApiResponse<EvaluationForm>> postQualityPublishedformsAsync(ApiRequest<EvaluationForm> request, final AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
     try {
-      SettableFuture<ApiResponse<EvaluationForm>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EvaluationForm>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EvaluationForm>() {}, new AsyncApiCallback<ApiResponse<EvaluationForm>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluationForm> response) {
@@ -2041,10 +2041,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<KeywordSet> postQualitySpotabilityAsync(PostQualitySpotabilityRequest request, AsyncApiCallback<KeywordSet> callback) {
+  public Future<KeywordSet> postQualitySpotabilityAsync(PostQualitySpotabilityRequest request, final AsyncApiCallback<KeywordSet> callback) {
     try {
-      SettableFuture<KeywordSet> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<KeywordSet> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KeywordSet>() {}, new AsyncApiCallback<ApiResponse<KeywordSet>>() {
         @Override
         public void onCompleted(ApiResponse<KeywordSet> response) {
@@ -2075,10 +2075,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<KeywordSet>> postQualitySpotabilityAsync(ApiRequest<KeywordSet> request, AsyncApiCallback<ApiResponse<KeywordSet>> callback) {
+  public Future<ApiResponse<KeywordSet>> postQualitySpotabilityAsync(ApiRequest<KeywordSet> request, final AsyncApiCallback<ApiResponse<KeywordSet>> callback) {
     try {
-      SettableFuture<ApiResponse<KeywordSet>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<KeywordSet>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<KeywordSet>() {}, new AsyncApiCallback<ApiResponse<KeywordSet>>() {
         @Override
         public void onCompleted(ApiResponse<KeywordSet> response) {
@@ -2116,10 +2116,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Calibration> putQualityCalibrationAsync(PutQualityCalibrationRequest request, AsyncApiCallback<Calibration> callback) {
+  public Future<Calibration> putQualityCalibrationAsync(PutQualityCalibrationRequest request, final AsyncApiCallback<Calibration> callback) {
     try {
-      SettableFuture<Calibration> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Calibration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Calibration>() {}, new AsyncApiCallback<ApiResponse<Calibration>>() {
         @Override
         public void onCompleted(ApiResponse<Calibration> response) {
@@ -2150,10 +2150,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Calibration>> putQualityCalibrationAsync(ApiRequest<Calibration> request, AsyncApiCallback<ApiResponse<Calibration>> callback) {
+  public Future<ApiResponse<Calibration>> putQualityCalibrationAsync(ApiRequest<Calibration> request, final AsyncApiCallback<ApiResponse<Calibration>> callback) {
     try {
-      SettableFuture<ApiResponse<Calibration>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Calibration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Calibration>() {}, new AsyncApiCallback<ApiResponse<Calibration>>() {
         @Override
         public void onCompleted(ApiResponse<Calibration> response) {
@@ -2191,10 +2191,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Evaluation> putQualityConversationEvaluationAsync(PutQualityConversationEvaluationRequest request, AsyncApiCallback<Evaluation> callback) {
+  public Future<Evaluation> putQualityConversationEvaluationAsync(PutQualityConversationEvaluationRequest request, final AsyncApiCallback<Evaluation> callback) {
     try {
-      SettableFuture<Evaluation> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Evaluation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Evaluation>() {}, new AsyncApiCallback<ApiResponse<Evaluation>>() {
         @Override
         public void onCompleted(ApiResponse<Evaluation> response) {
@@ -2225,10 +2225,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Evaluation>> putQualityConversationEvaluationAsync(ApiRequest<Evaluation> request, AsyncApiCallback<ApiResponse<Evaluation>> callback) {
+  public Future<ApiResponse<Evaluation>> putQualityConversationEvaluationAsync(ApiRequest<Evaluation> request, final AsyncApiCallback<ApiResponse<Evaluation>> callback) {
     try {
-      SettableFuture<ApiResponse<Evaluation>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Evaluation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Evaluation>() {}, new AsyncApiCallback<ApiResponse<Evaluation>>() {
         @Override
         public void onCompleted(ApiResponse<Evaluation> response) {
@@ -2266,10 +2266,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EvaluationForm> putQualityFormAsync(PutQualityFormRequest request, AsyncApiCallback<EvaluationForm> callback) {
+  public Future<EvaluationForm> putQualityFormAsync(PutQualityFormRequest request, final AsyncApiCallback<EvaluationForm> callback) {
     try {
-      SettableFuture<EvaluationForm> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<EvaluationForm> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationForm>() {}, new AsyncApiCallback<ApiResponse<EvaluationForm>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluationForm> response) {
@@ -2300,10 +2300,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EvaluationForm>> putQualityFormAsync(ApiRequest<EvaluationForm> request, AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
+  public Future<ApiResponse<EvaluationForm>> putQualityFormAsync(ApiRequest<EvaluationForm> request, final AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
     try {
-      SettableFuture<ApiResponse<EvaluationForm>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<EvaluationForm>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<EvaluationForm>() {}, new AsyncApiCallback<ApiResponse<EvaluationForm>>() {
         @Override
         public void onCompleted(ApiResponse<EvaluationForm> response) {
@@ -2341,10 +2341,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<KeywordSet> putQualityKeywordsetAsync(PutQualityKeywordsetRequest request, AsyncApiCallback<KeywordSet> callback) {
+  public Future<KeywordSet> putQualityKeywordsetAsync(PutQualityKeywordsetRequest request, final AsyncApiCallback<KeywordSet> callback) {
     try {
-      SettableFuture<KeywordSet> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<KeywordSet> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KeywordSet>() {}, new AsyncApiCallback<ApiResponse<KeywordSet>>() {
         @Override
         public void onCompleted(ApiResponse<KeywordSet> response) {
@@ -2375,10 +2375,10 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<KeywordSet>> putQualityKeywordsetAsync(ApiRequest<KeywordSet> request, AsyncApiCallback<ApiResponse<KeywordSet>> callback) {
+  public Future<ApiResponse<KeywordSet>> putQualityKeywordsetAsync(ApiRequest<KeywordSet> request, final AsyncApiCallback<ApiResponse<KeywordSet>> callback) {
     try {
-      SettableFuture<ApiResponse<KeywordSet>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<KeywordSet>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<KeywordSet>() {}, new AsyncApiCallback<ApiResponse<KeywordSet>>() {
         @Override
         public void onCompleted(ApiResponse<KeywordSet> response) {

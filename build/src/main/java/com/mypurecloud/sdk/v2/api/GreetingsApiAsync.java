@@ -64,10 +64,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteGreetingAsync(DeleteGreetingRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteGreetingAsync(DeleteGreetingRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -98,10 +98,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteGreetingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteGreetingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -139,10 +139,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Greeting> getGreetingAsync(GetGreetingRequest request, AsyncApiCallback<Greeting> callback) {
+  public Future<Greeting> getGreetingAsync(GetGreetingRequest request, final AsyncApiCallback<Greeting> callback) {
     try {
-      SettableFuture<Greeting> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Greeting> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Greeting>() {}, new AsyncApiCallback<ApiResponse<Greeting>>() {
         @Override
         public void onCompleted(ApiResponse<Greeting> response) {
@@ -173,10 +173,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Greeting>> getGreetingAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Greeting>> callback) {
+  public Future<ApiResponse<Greeting>> getGreetingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Greeting>> callback) {
     try {
-      SettableFuture<ApiResponse<Greeting>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Greeting>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Greeting>() {}, new AsyncApiCallback<ApiResponse<Greeting>>() {
         @Override
         public void onCompleted(ApiResponse<Greeting> response) {
@@ -214,10 +214,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<GreetingMediaInfo> getGreetingMediaAsync(GetGreetingMediaRequest request, AsyncApiCallback<GreetingMediaInfo> callback) {
+  public Future<GreetingMediaInfo> getGreetingMediaAsync(GetGreetingMediaRequest request, final AsyncApiCallback<GreetingMediaInfo> callback) {
     try {
-      SettableFuture<GreetingMediaInfo> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<GreetingMediaInfo> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GreetingMediaInfo>() {}, new AsyncApiCallback<ApiResponse<GreetingMediaInfo>>() {
         @Override
         public void onCompleted(ApiResponse<GreetingMediaInfo> response) {
@@ -248,10 +248,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<GreetingMediaInfo>> getGreetingMediaAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GreetingMediaInfo>> callback) {
+  public Future<ApiResponse<GreetingMediaInfo>> getGreetingMediaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GreetingMediaInfo>> callback) {
     try {
-      SettableFuture<ApiResponse<GreetingMediaInfo>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<GreetingMediaInfo>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<GreetingMediaInfo>() {}, new AsyncApiCallback<ApiResponse<GreetingMediaInfo>>() {
         @Override
         public void onCompleted(ApiResponse<GreetingMediaInfo> response) {
@@ -289,10 +289,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DomainEntityListing> getGreetingsAsync(GetGreetingsRequest request, AsyncApiCallback<DomainEntityListing> callback) {
+  public Future<DomainEntityListing> getGreetingsAsync(GetGreetingsRequest request, final AsyncApiCallback<DomainEntityListing> callback) {
     try {
-      SettableFuture<DomainEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DomainEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainEntityListing>() {}, new AsyncApiCallback<ApiResponse<DomainEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<DomainEntityListing> response) {
@@ -323,10 +323,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DomainEntityListing>> getGreetingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainEntityListing>> callback) {
+  public Future<ApiResponse<DomainEntityListing>> getGreetingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DomainEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<DomainEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DomainEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DomainEntityListing>() {}, new AsyncApiCallback<ApiResponse<DomainEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<DomainEntityListing> response) {
@@ -364,10 +364,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DefaultGreetingList> getGreetingsDefaultsAsync(GetGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
+  public Future<DefaultGreetingList> getGreetingsDefaultsAsync(GetGreetingsDefaultsRequest request, final AsyncApiCallback<DefaultGreetingList> callback) {
     try {
-      SettableFuture<DefaultGreetingList> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DefaultGreetingList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
         @Override
         public void onCompleted(ApiResponse<DefaultGreetingList> response) {
@@ -398,10 +398,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DefaultGreetingList>> getGreetingsDefaultsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
+  public Future<ApiResponse<DefaultGreetingList>> getGreetingsDefaultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
     try {
-      SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
         @Override
         public void onCompleted(ApiResponse<DefaultGreetingList> response) {
@@ -439,10 +439,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<GreetingListing> getGroupGreetingsAsync(GetGroupGreetingsRequest request, AsyncApiCallback<GreetingListing> callback) {
+  public Future<GreetingListing> getGroupGreetingsAsync(GetGroupGreetingsRequest request, final AsyncApiCallback<GreetingListing> callback) {
     try {
-      SettableFuture<GreetingListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<GreetingListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GreetingListing>() {}, new AsyncApiCallback<ApiResponse<GreetingListing>>() {
         @Override
         public void onCompleted(ApiResponse<GreetingListing> response) {
@@ -473,10 +473,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<GreetingListing>> getGroupGreetingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<GreetingListing>> callback) {
+  public Future<ApiResponse<GreetingListing>> getGroupGreetingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GreetingListing>> callback) {
     try {
-      SettableFuture<ApiResponse<GreetingListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<GreetingListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<GreetingListing>() {}, new AsyncApiCallback<ApiResponse<GreetingListing>>() {
         @Override
         public void onCompleted(ApiResponse<GreetingListing> response) {
@@ -514,10 +514,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DefaultGreetingList> getGroupGreetingsDefaultsAsync(GetGroupGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
+  public Future<DefaultGreetingList> getGroupGreetingsDefaultsAsync(GetGroupGreetingsDefaultsRequest request, final AsyncApiCallback<DefaultGreetingList> callback) {
     try {
-      SettableFuture<DefaultGreetingList> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DefaultGreetingList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
         @Override
         public void onCompleted(ApiResponse<DefaultGreetingList> response) {
@@ -548,10 +548,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DefaultGreetingList>> getGroupGreetingsDefaultsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
+  public Future<ApiResponse<DefaultGreetingList>> getGroupGreetingsDefaultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
     try {
-      SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
         @Override
         public void onCompleted(ApiResponse<DefaultGreetingList> response) {
@@ -589,10 +589,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DomainEntityListing> getUserGreetingsAsync(GetUserGreetingsRequest request, AsyncApiCallback<DomainEntityListing> callback) {
+  public Future<DomainEntityListing> getUserGreetingsAsync(GetUserGreetingsRequest request, final AsyncApiCallback<DomainEntityListing> callback) {
     try {
-      SettableFuture<DomainEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DomainEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainEntityListing>() {}, new AsyncApiCallback<ApiResponse<DomainEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<DomainEntityListing> response) {
@@ -623,10 +623,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DomainEntityListing>> getUserGreetingsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DomainEntityListing>> callback) {
+  public Future<ApiResponse<DomainEntityListing>> getUserGreetingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DomainEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<DomainEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DomainEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DomainEntityListing>() {}, new AsyncApiCallback<ApiResponse<DomainEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<DomainEntityListing> response) {
@@ -664,10 +664,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DefaultGreetingList> getUserGreetingsDefaultsAsync(GetUserGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
+  public Future<DefaultGreetingList> getUserGreetingsDefaultsAsync(GetUserGreetingsDefaultsRequest request, final AsyncApiCallback<DefaultGreetingList> callback) {
     try {
-      SettableFuture<DefaultGreetingList> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DefaultGreetingList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
         @Override
         public void onCompleted(ApiResponse<DefaultGreetingList> response) {
@@ -698,10 +698,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DefaultGreetingList>> getUserGreetingsDefaultsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
+  public Future<ApiResponse<DefaultGreetingList>> getUserGreetingsDefaultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
     try {
-      SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
         @Override
         public void onCompleted(ApiResponse<DefaultGreetingList> response) {
@@ -739,10 +739,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DefaultGreetingList> postGreetingsAsync(PostGreetingsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
+  public Future<DefaultGreetingList> postGreetingsAsync(PostGreetingsRequest request, final AsyncApiCallback<DefaultGreetingList> callback) {
     try {
-      SettableFuture<DefaultGreetingList> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DefaultGreetingList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
         @Override
         public void onCompleted(ApiResponse<DefaultGreetingList> response) {
@@ -773,10 +773,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DefaultGreetingList>> postGreetingsAsync(ApiRequest<Greeting> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
+  public Future<ApiResponse<DefaultGreetingList>> postGreetingsAsync(ApiRequest<Greeting> request, final AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
     try {
-      SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
         @Override
         public void onCompleted(ApiResponse<DefaultGreetingList> response) {
@@ -814,10 +814,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Greeting> postGroupGreetingsAsync(PostGroupGreetingsRequest request, AsyncApiCallback<Greeting> callback) {
+  public Future<Greeting> postGroupGreetingsAsync(PostGroupGreetingsRequest request, final AsyncApiCallback<Greeting> callback) {
     try {
-      SettableFuture<Greeting> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Greeting> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Greeting>() {}, new AsyncApiCallback<ApiResponse<Greeting>>() {
         @Override
         public void onCompleted(ApiResponse<Greeting> response) {
@@ -848,10 +848,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Greeting>> postGroupGreetingsAsync(ApiRequest<Greeting> request, AsyncApiCallback<ApiResponse<Greeting>> callback) {
+  public Future<ApiResponse<Greeting>> postGroupGreetingsAsync(ApiRequest<Greeting> request, final AsyncApiCallback<ApiResponse<Greeting>> callback) {
     try {
-      SettableFuture<ApiResponse<Greeting>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Greeting>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Greeting>() {}, new AsyncApiCallback<ApiResponse<Greeting>>() {
         @Override
         public void onCompleted(ApiResponse<Greeting> response) {
@@ -889,10 +889,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Greeting> postUserGreetingsAsync(PostUserGreetingsRequest request, AsyncApiCallback<Greeting> callback) {
+  public Future<Greeting> postUserGreetingsAsync(PostUserGreetingsRequest request, final AsyncApiCallback<Greeting> callback) {
     try {
-      SettableFuture<Greeting> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Greeting> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Greeting>() {}, new AsyncApiCallback<ApiResponse<Greeting>>() {
         @Override
         public void onCompleted(ApiResponse<Greeting> response) {
@@ -923,10 +923,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Greeting>> postUserGreetingsAsync(ApiRequest<Greeting> request, AsyncApiCallback<ApiResponse<Greeting>> callback) {
+  public Future<ApiResponse<Greeting>> postUserGreetingsAsync(ApiRequest<Greeting> request, final AsyncApiCallback<ApiResponse<Greeting>> callback) {
     try {
-      SettableFuture<ApiResponse<Greeting>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Greeting>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Greeting>() {}, new AsyncApiCallback<ApiResponse<Greeting>>() {
         @Override
         public void onCompleted(ApiResponse<Greeting> response) {
@@ -964,10 +964,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Greeting> putGreetingAsync(PutGreetingRequest request, AsyncApiCallback<Greeting> callback) {
+  public Future<Greeting> putGreetingAsync(PutGreetingRequest request, final AsyncApiCallback<Greeting> callback) {
     try {
-      SettableFuture<Greeting> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Greeting> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Greeting>() {}, new AsyncApiCallback<ApiResponse<Greeting>>() {
         @Override
         public void onCompleted(ApiResponse<Greeting> response) {
@@ -998,10 +998,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Greeting>> putGreetingAsync(ApiRequest<Greeting> request, AsyncApiCallback<ApiResponse<Greeting>> callback) {
+  public Future<ApiResponse<Greeting>> putGreetingAsync(ApiRequest<Greeting> request, final AsyncApiCallback<ApiResponse<Greeting>> callback) {
     try {
-      SettableFuture<ApiResponse<Greeting>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Greeting>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Greeting>() {}, new AsyncApiCallback<ApiResponse<Greeting>>() {
         @Override
         public void onCompleted(ApiResponse<Greeting> response) {
@@ -1039,10 +1039,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DefaultGreetingList> putGreetingsDefaultsAsync(PutGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
+  public Future<DefaultGreetingList> putGreetingsDefaultsAsync(PutGreetingsDefaultsRequest request, final AsyncApiCallback<DefaultGreetingList> callback) {
     try {
-      SettableFuture<DefaultGreetingList> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DefaultGreetingList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
         @Override
         public void onCompleted(ApiResponse<DefaultGreetingList> response) {
@@ -1073,10 +1073,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DefaultGreetingList>> putGreetingsDefaultsAsync(ApiRequest<DefaultGreetingList> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
+  public Future<ApiResponse<DefaultGreetingList>> putGreetingsDefaultsAsync(ApiRequest<DefaultGreetingList> request, final AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
     try {
-      SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
         @Override
         public void onCompleted(ApiResponse<DefaultGreetingList> response) {
@@ -1114,10 +1114,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DefaultGreetingList> putGroupGreetingsDefaultsAsync(PutGroupGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
+  public Future<DefaultGreetingList> putGroupGreetingsDefaultsAsync(PutGroupGreetingsDefaultsRequest request, final AsyncApiCallback<DefaultGreetingList> callback) {
     try {
-      SettableFuture<DefaultGreetingList> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DefaultGreetingList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
         @Override
         public void onCompleted(ApiResponse<DefaultGreetingList> response) {
@@ -1148,10 +1148,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DefaultGreetingList>> putGroupGreetingsDefaultsAsync(ApiRequest<DefaultGreetingList> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
+  public Future<ApiResponse<DefaultGreetingList>> putGroupGreetingsDefaultsAsync(ApiRequest<DefaultGreetingList> request, final AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
     try {
-      SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
         @Override
         public void onCompleted(ApiResponse<DefaultGreetingList> response) {
@@ -1189,10 +1189,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DefaultGreetingList> putUserGreetingsDefaultsAsync(PutUserGreetingsDefaultsRequest request, AsyncApiCallback<DefaultGreetingList> callback) {
+  public Future<DefaultGreetingList> putUserGreetingsDefaultsAsync(PutUserGreetingsDefaultsRequest request, final AsyncApiCallback<DefaultGreetingList> callback) {
     try {
-      SettableFuture<DefaultGreetingList> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DefaultGreetingList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
         @Override
         public void onCompleted(ApiResponse<DefaultGreetingList> response) {
@@ -1223,10 +1223,10 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DefaultGreetingList>> putUserGreetingsDefaultsAsync(ApiRequest<DefaultGreetingList> request, AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
+  public Future<ApiResponse<DefaultGreetingList>> putUserGreetingsDefaultsAsync(ApiRequest<DefaultGreetingList> request, final AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
     try {
-      SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
         @Override
         public void onCompleted(ApiResponse<DefaultGreetingList> response) {

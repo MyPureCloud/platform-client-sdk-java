@@ -50,10 +50,10 @@ public class UtilitiesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ServerDate> getDateAsync(GetDateRequest request, AsyncApiCallback<ServerDate> callback) {
+  public Future<ServerDate> getDateAsync(GetDateRequest request, final AsyncApiCallback<ServerDate> callback) {
     try {
-      SettableFuture<ServerDate> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ServerDate> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ServerDate>() {}, new AsyncApiCallback<ApiResponse<ServerDate>>() {
         @Override
         public void onCompleted(ApiResponse<ServerDate> response) {
@@ -84,10 +84,10 @@ public class UtilitiesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ServerDate>> getDateAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ServerDate>> callback) {
+  public Future<ApiResponse<ServerDate>> getDateAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ServerDate>> callback) {
     try {
-      SettableFuture<ApiResponse<ServerDate>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ServerDate>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ServerDate>() {}, new AsyncApiCallback<ApiResponse<ServerDate>>() {
         @Override
         public void onCompleted(ApiResponse<ServerDate> response) {
@@ -125,10 +125,10 @@ public class UtilitiesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<TimeZoneEntityListing> getTimezonesAsync(GetTimezonesRequest request, AsyncApiCallback<TimeZoneEntityListing> callback) {
+  public Future<TimeZoneEntityListing> getTimezonesAsync(GetTimezonesRequest request, final AsyncApiCallback<TimeZoneEntityListing> callback) {
     try {
-      SettableFuture<TimeZoneEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<TimeZoneEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TimeZoneEntityListing>() {}, new AsyncApiCallback<ApiResponse<TimeZoneEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<TimeZoneEntityListing> response) {
@@ -159,10 +159,10 @@ public class UtilitiesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<TimeZoneEntityListing>> getTimezonesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TimeZoneEntityListing>> callback) {
+  public Future<ApiResponse<TimeZoneEntityListing>> getTimezonesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TimeZoneEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<TimeZoneEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<TimeZoneEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<TimeZoneEntityListing>() {}, new AsyncApiCallback<ApiResponse<TimeZoneEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<TimeZoneEntityListing> response) {
@@ -200,10 +200,10 @@ public class UtilitiesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ParsedCertificate> postCertificateDetailsAsync(PostCertificateDetailsRequest request, AsyncApiCallback<ParsedCertificate> callback) {
+  public Future<ParsedCertificate> postCertificateDetailsAsync(PostCertificateDetailsRequest request, final AsyncApiCallback<ParsedCertificate> callback) {
     try {
-      SettableFuture<ParsedCertificate> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ParsedCertificate> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ParsedCertificate>() {}, new AsyncApiCallback<ApiResponse<ParsedCertificate>>() {
         @Override
         public void onCompleted(ApiResponse<ParsedCertificate> response) {
@@ -234,10 +234,10 @@ public class UtilitiesApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ParsedCertificate>> postCertificateDetailsAsync(ApiRequest<Certificate> request, AsyncApiCallback<ApiResponse<ParsedCertificate>> callback) {
+  public Future<ApiResponse<ParsedCertificate>> postCertificateDetailsAsync(ApiRequest<Certificate> request, final AsyncApiCallback<ApiResponse<ParsedCertificate>> callback) {
     try {
-      SettableFuture<ApiResponse<ParsedCertificate>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ParsedCertificate>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ParsedCertificate>() {}, new AsyncApiCallback<ApiResponse<ParsedCertificate>>() {
         @Override
         public void onCompleted(ApiResponse<ParsedCertificate> response) {

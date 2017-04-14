@@ -50,10 +50,10 @@ public class SuggestApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<JsonNodeSearchResponse> getSearchAsync(GetSearchRequest request, AsyncApiCallback<JsonNodeSearchResponse> callback) {
+  public Future<JsonNodeSearchResponse> getSearchAsync(GetSearchRequest request, final AsyncApiCallback<JsonNodeSearchResponse> callback) {
     try {
-      SettableFuture<JsonNodeSearchResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<JsonNodeSearchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {}, new AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>>() {
         @Override
         public void onCompleted(ApiResponse<JsonNodeSearchResponse> response) {
@@ -84,10 +84,10 @@ public class SuggestApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<JsonNodeSearchResponse>> getSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>> callback) {
+  public Future<ApiResponse<JsonNodeSearchResponse>> getSearchAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<JsonNodeSearchResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<JsonNodeSearchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<JsonNodeSearchResponse>() {}, new AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>>() {
         @Override
         public void onCompleted(ApiResponse<JsonNodeSearchResponse> response) {
@@ -125,10 +125,10 @@ public class SuggestApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<JsonNodeSearchResponse> getSearchSuggestAsync(GetSearchSuggestRequest request, AsyncApiCallback<JsonNodeSearchResponse> callback) {
+  public Future<JsonNodeSearchResponse> getSearchSuggestAsync(GetSearchSuggestRequest request, final AsyncApiCallback<JsonNodeSearchResponse> callback) {
     try {
-      SettableFuture<JsonNodeSearchResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<JsonNodeSearchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {}, new AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>>() {
         @Override
         public void onCompleted(ApiResponse<JsonNodeSearchResponse> response) {
@@ -159,10 +159,10 @@ public class SuggestApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<JsonNodeSearchResponse>> getSearchSuggestAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>> callback) {
+  public Future<ApiResponse<JsonNodeSearchResponse>> getSearchSuggestAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<JsonNodeSearchResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<JsonNodeSearchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<JsonNodeSearchResponse>() {}, new AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>>() {
         @Override
         public void onCompleted(ApiResponse<JsonNodeSearchResponse> response) {
@@ -200,10 +200,10 @@ public class SuggestApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<JsonNodeSearchResponse> postSearchAsync(PostSearchRequest request, AsyncApiCallback<JsonNodeSearchResponse> callback) {
+  public Future<JsonNodeSearchResponse> postSearchAsync(PostSearchRequest request, final AsyncApiCallback<JsonNodeSearchResponse> callback) {
     try {
-      SettableFuture<JsonNodeSearchResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<JsonNodeSearchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {}, new AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>>() {
         @Override
         public void onCompleted(ApiResponse<JsonNodeSearchResponse> response) {
@@ -234,10 +234,10 @@ public class SuggestApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<JsonNodeSearchResponse>> postSearchAsync(ApiRequest<SearchRequest> request, AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>> callback) {
+  public Future<ApiResponse<JsonNodeSearchResponse>> postSearchAsync(ApiRequest<SearchRequest> request, final AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<JsonNodeSearchResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<JsonNodeSearchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<JsonNodeSearchResponse>() {}, new AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>>() {
         @Override
         public void onCompleted(ApiResponse<JsonNodeSearchResponse> response) {
@@ -275,10 +275,10 @@ public class SuggestApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<JsonNodeSearchResponse> postSearchSuggestAsync(PostSearchSuggestRequest request, AsyncApiCallback<JsonNodeSearchResponse> callback) {
+  public Future<JsonNodeSearchResponse> postSearchSuggestAsync(PostSearchSuggestRequest request, final AsyncApiCallback<JsonNodeSearchResponse> callback) {
     try {
-      SettableFuture<JsonNodeSearchResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<JsonNodeSearchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JsonNodeSearchResponse>() {}, new AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>>() {
         @Override
         public void onCompleted(ApiResponse<JsonNodeSearchResponse> response) {
@@ -309,10 +309,10 @@ public class SuggestApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<JsonNodeSearchResponse>> postSearchSuggestAsync(ApiRequest<SuggestSearchRequest> request, AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>> callback) {
+  public Future<ApiResponse<JsonNodeSearchResponse>> postSearchSuggestAsync(ApiRequest<SuggestSearchRequest> request, final AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<JsonNodeSearchResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<JsonNodeSearchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<JsonNodeSearchResponse>() {}, new AsyncApiCallback<ApiResponse<JsonNodeSearchResponse>>() {
         @Override
         public void onCompleted(ApiResponse<JsonNodeSearchResponse> response) {

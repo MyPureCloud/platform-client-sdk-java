@@ -110,10 +110,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteContentmanagementDocumentAsync(DeleteContentmanagementDocumentRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteContentmanagementDocumentAsync(DeleteContentmanagementDocumentRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -144,10 +144,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteContentmanagementDocumentAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteContentmanagementDocumentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -185,10 +185,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteContentmanagementShareAsync(DeleteContentmanagementShareRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteContentmanagementShareAsync(DeleteContentmanagementShareRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -219,10 +219,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteContentmanagementShareAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteContentmanagementShareAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -260,10 +260,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteContentmanagementStatusStatusIdAsync(DeleteContentmanagementStatusStatusIdRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteContentmanagementStatusStatusIdAsync(DeleteContentmanagementStatusStatusIdRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -294,10 +294,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteContentmanagementStatusStatusIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteContentmanagementStatusStatusIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -335,10 +335,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteContentmanagementWorkspaceAsync(DeleteContentmanagementWorkspaceRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteContentmanagementWorkspaceAsync(DeleteContentmanagementWorkspaceRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -369,10 +369,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteContentmanagementWorkspaceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteContentmanagementWorkspaceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -410,10 +410,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteContentmanagementWorkspaceMemberAsync(DeleteContentmanagementWorkspaceMemberRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteContentmanagementWorkspaceMemberAsync(DeleteContentmanagementWorkspaceMemberRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -444,10 +444,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteContentmanagementWorkspaceMemberAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteContentmanagementWorkspaceMemberAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -485,10 +485,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteContentmanagementWorkspaceTagvalueAsync(DeleteContentmanagementWorkspaceTagvalueRequest request, AsyncApiCallback<Void> callback) {
+  public Future<Void> deleteContentmanagementWorkspaceTagvalueAsync(DeleteContentmanagementWorkspaceTagvalueRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      SettableFuture<Void> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -519,10 +519,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteContentmanagementWorkspaceTagvalueAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<Void>> deleteContentmanagementWorkspaceTagvalueAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
         public void onCompleted(ApiResponse<Void> response) {
@@ -560,10 +560,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Document> getContentmanagementDocumentAsync(GetContentmanagementDocumentRequest request, AsyncApiCallback<Document> callback) {
+  public Future<Document> getContentmanagementDocumentAsync(GetContentmanagementDocumentRequest request, final AsyncApiCallback<Document> callback) {
     try {
-      SettableFuture<Document> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Document> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Document>() {}, new AsyncApiCallback<ApiResponse<Document>>() {
         @Override
         public void onCompleted(ApiResponse<Document> response) {
@@ -594,10 +594,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Document>> getContentmanagementDocumentAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Document>> callback) {
+  public Future<ApiResponse<Document>> getContentmanagementDocumentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Document>> callback) {
     try {
-      SettableFuture<ApiResponse<Document>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Document>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Document>() {}, new AsyncApiCallback<ApiResponse<Document>>() {
         @Override
         public void onCompleted(ApiResponse<Document> response) {
@@ -635,10 +635,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DocumentAuditEntityListing> getContentmanagementDocumentAuditsAsync(GetContentmanagementDocumentAuditsRequest request, AsyncApiCallback<DocumentAuditEntityListing> callback) {
+  public Future<DocumentAuditEntityListing> getContentmanagementDocumentAuditsAsync(GetContentmanagementDocumentAuditsRequest request, final AsyncApiCallback<DocumentAuditEntityListing> callback) {
     try {
-      SettableFuture<DocumentAuditEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DocumentAuditEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DocumentAuditEntityListing>() {}, new AsyncApiCallback<ApiResponse<DocumentAuditEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<DocumentAuditEntityListing> response) {
@@ -669,10 +669,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DocumentAuditEntityListing>> getContentmanagementDocumentAuditsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DocumentAuditEntityListing>> callback) {
+  public Future<ApiResponse<DocumentAuditEntityListing>> getContentmanagementDocumentAuditsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DocumentAuditEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<DocumentAuditEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DocumentAuditEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DocumentAuditEntityListing>() {}, new AsyncApiCallback<ApiResponse<DocumentAuditEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<DocumentAuditEntityListing> response) {
@@ -710,10 +710,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DownloadResponse> getContentmanagementDocumentContentAsync(GetContentmanagementDocumentContentRequest request, AsyncApiCallback<DownloadResponse> callback) {
+  public Future<DownloadResponse> getContentmanagementDocumentContentAsync(GetContentmanagementDocumentContentRequest request, final AsyncApiCallback<DownloadResponse> callback) {
     try {
-      SettableFuture<DownloadResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DownloadResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DownloadResponse>() {}, new AsyncApiCallback<ApiResponse<DownloadResponse>>() {
         @Override
         public void onCompleted(ApiResponse<DownloadResponse> response) {
@@ -744,10 +744,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DownloadResponse>> getContentmanagementDocumentContentAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DownloadResponse>> callback) {
+  public Future<ApiResponse<DownloadResponse>> getContentmanagementDocumentContentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DownloadResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<DownloadResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DownloadResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DownloadResponse>() {}, new AsyncApiCallback<ApiResponse<DownloadResponse>>() {
         @Override
         public void onCompleted(ApiResponse<DownloadResponse> response) {
@@ -785,10 +785,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DocumentEntityListing> getContentmanagementDocumentsAsync(GetContentmanagementDocumentsRequest request, AsyncApiCallback<DocumentEntityListing> callback) {
+  public Future<DocumentEntityListing> getContentmanagementDocumentsAsync(GetContentmanagementDocumentsRequest request, final AsyncApiCallback<DocumentEntityListing> callback) {
     try {
-      SettableFuture<DocumentEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DocumentEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DocumentEntityListing>() {}, new AsyncApiCallback<ApiResponse<DocumentEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<DocumentEntityListing> response) {
@@ -819,10 +819,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DocumentEntityListing>> getContentmanagementDocumentsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DocumentEntityListing>> callback) {
+  public Future<ApiResponse<DocumentEntityListing>> getContentmanagementDocumentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DocumentEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<DocumentEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DocumentEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DocumentEntityListing>() {}, new AsyncApiCallback<ApiResponse<DocumentEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<DocumentEntityListing> response) {
@@ -860,10 +860,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<QueryResults> getContentmanagementQueryAsync(GetContentmanagementQueryRequest request, AsyncApiCallback<QueryResults> callback) {
+  public Future<QueryResults> getContentmanagementQueryAsync(GetContentmanagementQueryRequest request, final AsyncApiCallback<QueryResults> callback) {
     try {
-      SettableFuture<QueryResults> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<QueryResults> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QueryResults>() {}, new AsyncApiCallback<ApiResponse<QueryResults>>() {
         @Override
         public void onCompleted(ApiResponse<QueryResults> response) {
@@ -894,10 +894,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<QueryResults>> getContentmanagementQueryAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<QueryResults>> callback) {
+  public Future<ApiResponse<QueryResults>> getContentmanagementQueryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<QueryResults>> callback) {
     try {
-      SettableFuture<ApiResponse<QueryResults>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<QueryResults>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<QueryResults>() {}, new AsyncApiCallback<ApiResponse<QueryResults>>() {
         @Override
         public void onCompleted(ApiResponse<QueryResults> response) {
@@ -935,10 +935,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<SecurityProfile> getContentmanagementSecurityprofileAsync(GetContentmanagementSecurityprofileRequest request, AsyncApiCallback<SecurityProfile> callback) {
+  public Future<SecurityProfile> getContentmanagementSecurityprofileAsync(GetContentmanagementSecurityprofileRequest request, final AsyncApiCallback<SecurityProfile> callback) {
     try {
-      SettableFuture<SecurityProfile> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<SecurityProfile> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SecurityProfile>() {}, new AsyncApiCallback<ApiResponse<SecurityProfile>>() {
         @Override
         public void onCompleted(ApiResponse<SecurityProfile> response) {
@@ -969,10 +969,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<SecurityProfile>> getContentmanagementSecurityprofileAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SecurityProfile>> callback) {
+  public Future<ApiResponse<SecurityProfile>> getContentmanagementSecurityprofileAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SecurityProfile>> callback) {
     try {
-      SettableFuture<ApiResponse<SecurityProfile>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<SecurityProfile>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<SecurityProfile>() {}, new AsyncApiCallback<ApiResponse<SecurityProfile>>() {
         @Override
         public void onCompleted(ApiResponse<SecurityProfile> response) {
@@ -1010,10 +1010,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<SecurityProfileEntityListing> getContentmanagementSecurityprofilesAsync(GetContentmanagementSecurityprofilesRequest request, AsyncApiCallback<SecurityProfileEntityListing> callback) {
+  public Future<SecurityProfileEntityListing> getContentmanagementSecurityprofilesAsync(GetContentmanagementSecurityprofilesRequest request, final AsyncApiCallback<SecurityProfileEntityListing> callback) {
     try {
-      SettableFuture<SecurityProfileEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<SecurityProfileEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SecurityProfileEntityListing>() {}, new AsyncApiCallback<ApiResponse<SecurityProfileEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<SecurityProfileEntityListing> response) {
@@ -1044,10 +1044,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<SecurityProfileEntityListing>> getContentmanagementSecurityprofilesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SecurityProfileEntityListing>> callback) {
+  public Future<ApiResponse<SecurityProfileEntityListing>> getContentmanagementSecurityprofilesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SecurityProfileEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<SecurityProfileEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<SecurityProfileEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<SecurityProfileEntityListing>() {}, new AsyncApiCallback<ApiResponse<SecurityProfileEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<SecurityProfileEntityListing> response) {
@@ -1085,10 +1085,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Share> getContentmanagementShareAsync(GetContentmanagementShareRequest request, AsyncApiCallback<Share> callback) {
+  public Future<Share> getContentmanagementShareAsync(GetContentmanagementShareRequest request, final AsyncApiCallback<Share> callback) {
     try {
-      SettableFuture<Share> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Share> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Share>() {}, new AsyncApiCallback<ApiResponse<Share>>() {
         @Override
         public void onCompleted(ApiResponse<Share> response) {
@@ -1119,10 +1119,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Share>> getContentmanagementShareAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Share>> callback) {
+  public Future<ApiResponse<Share>> getContentmanagementShareAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Share>> callback) {
     try {
-      SettableFuture<ApiResponse<Share>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Share>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Share>() {}, new AsyncApiCallback<ApiResponse<Share>>() {
         @Override
         public void onCompleted(ApiResponse<Share> response) {
@@ -1160,10 +1160,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<SharedResponse> getContentmanagementSharedSharedIdAsync(GetContentmanagementSharedSharedIdRequest request, AsyncApiCallback<SharedResponse> callback) {
+  public Future<SharedResponse> getContentmanagementSharedSharedIdAsync(GetContentmanagementSharedSharedIdRequest request, final AsyncApiCallback<SharedResponse> callback) {
     try {
-      SettableFuture<SharedResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<SharedResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SharedResponse>() {}, new AsyncApiCallback<ApiResponse<SharedResponse>>() {
         @Override
         public void onCompleted(ApiResponse<SharedResponse> response) {
@@ -1194,10 +1194,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<SharedResponse>> getContentmanagementSharedSharedIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<SharedResponse>> callback) {
+  public Future<ApiResponse<SharedResponse>> getContentmanagementSharedSharedIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SharedResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<SharedResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<SharedResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<SharedResponse>() {}, new AsyncApiCallback<ApiResponse<SharedResponse>>() {
         @Override
         public void onCompleted(ApiResponse<SharedResponse> response) {
@@ -1235,10 +1235,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ShareEntityListing> getContentmanagementSharesAsync(GetContentmanagementSharesRequest request, AsyncApiCallback<ShareEntityListing> callback) {
+  public Future<ShareEntityListing> getContentmanagementSharesAsync(GetContentmanagementSharesRequest request, final AsyncApiCallback<ShareEntityListing> callback) {
     try {
-      SettableFuture<ShareEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ShareEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ShareEntityListing>() {}, new AsyncApiCallback<ApiResponse<ShareEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ShareEntityListing> response) {
@@ -1269,10 +1269,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ShareEntityListing>> getContentmanagementSharesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<ShareEntityListing>> callback) {
+  public Future<ApiResponse<ShareEntityListing>> getContentmanagementSharesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ShareEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<ShareEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ShareEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ShareEntityListing>() {}, new AsyncApiCallback<ApiResponse<ShareEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<ShareEntityListing> response) {
@@ -1310,10 +1310,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CommandStatusEntityListing> getContentmanagementStatusAsync(GetContentmanagementStatusRequest request, AsyncApiCallback<CommandStatusEntityListing> callback) {
+  public Future<CommandStatusEntityListing> getContentmanagementStatusAsync(GetContentmanagementStatusRequest request, final AsyncApiCallback<CommandStatusEntityListing> callback) {
     try {
-      SettableFuture<CommandStatusEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CommandStatusEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CommandStatusEntityListing>() {}, new AsyncApiCallback<ApiResponse<CommandStatusEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<CommandStatusEntityListing> response) {
@@ -1344,10 +1344,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CommandStatusEntityListing>> getContentmanagementStatusAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CommandStatusEntityListing>> callback) {
+  public Future<ApiResponse<CommandStatusEntityListing>> getContentmanagementStatusAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CommandStatusEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<CommandStatusEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CommandStatusEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CommandStatusEntityListing>() {}, new AsyncApiCallback<ApiResponse<CommandStatusEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<CommandStatusEntityListing> response) {
@@ -1385,10 +1385,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CommandStatus> getContentmanagementStatusStatusIdAsync(GetContentmanagementStatusStatusIdRequest request, AsyncApiCallback<CommandStatus> callback) {
+  public Future<CommandStatus> getContentmanagementStatusStatusIdAsync(GetContentmanagementStatusStatusIdRequest request, final AsyncApiCallback<CommandStatus> callback) {
     try {
-      SettableFuture<CommandStatus> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CommandStatus> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CommandStatus>() {}, new AsyncApiCallback<ApiResponse<CommandStatus>>() {
         @Override
         public void onCompleted(ApiResponse<CommandStatus> response) {
@@ -1419,10 +1419,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CommandStatus>> getContentmanagementStatusStatusIdAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<CommandStatus>> callback) {
+  public Future<ApiResponse<CommandStatus>> getContentmanagementStatusStatusIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CommandStatus>> callback) {
     try {
-      SettableFuture<ApiResponse<CommandStatus>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CommandStatus>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CommandStatus>() {}, new AsyncApiCallback<ApiResponse<CommandStatus>>() {
         @Override
         public void onCompleted(ApiResponse<CommandStatus> response) {
@@ -1460,10 +1460,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Usage> getContentmanagementUsageAsync(GetContentmanagementUsageRequest request, AsyncApiCallback<Usage> callback) {
+  public Future<Usage> getContentmanagementUsageAsync(GetContentmanagementUsageRequest request, final AsyncApiCallback<Usage> callback) {
     try {
-      SettableFuture<Usage> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Usage> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Usage>() {}, new AsyncApiCallback<ApiResponse<Usage>>() {
         @Override
         public void onCompleted(ApiResponse<Usage> response) {
@@ -1494,10 +1494,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Usage>> getContentmanagementUsageAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Usage>> callback) {
+  public Future<ApiResponse<Usage>> getContentmanagementUsageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Usage>> callback) {
     try {
-      SettableFuture<ApiResponse<Usage>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Usage>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Usage>() {}, new AsyncApiCallback<ApiResponse<Usage>>() {
         @Override
         public void onCompleted(ApiResponse<Usage> response) {
@@ -1535,10 +1535,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Workspace> getContentmanagementWorkspaceAsync(GetContentmanagementWorkspaceRequest request, AsyncApiCallback<Workspace> callback) {
+  public Future<Workspace> getContentmanagementWorkspaceAsync(GetContentmanagementWorkspaceRequest request, final AsyncApiCallback<Workspace> callback) {
     try {
-      SettableFuture<Workspace> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Workspace> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Workspace>() {}, new AsyncApiCallback<ApiResponse<Workspace>>() {
         @Override
         public void onCompleted(ApiResponse<Workspace> response) {
@@ -1569,10 +1569,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Workspace>> getContentmanagementWorkspaceAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<Workspace>> callback) {
+  public Future<ApiResponse<Workspace>> getContentmanagementWorkspaceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Workspace>> callback) {
     try {
-      SettableFuture<ApiResponse<Workspace>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Workspace>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Workspace>() {}, new AsyncApiCallback<ApiResponse<Workspace>>() {
         @Override
         public void onCompleted(ApiResponse<Workspace> response) {
@@ -1610,10 +1610,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DocumentEntityListing> getContentmanagementWorkspaceDocumentsAsync(GetContentmanagementWorkspaceDocumentsRequest request, AsyncApiCallback<DocumentEntityListing> callback) {
+  public Future<DocumentEntityListing> getContentmanagementWorkspaceDocumentsAsync(GetContentmanagementWorkspaceDocumentsRequest request, final AsyncApiCallback<DocumentEntityListing> callback) {
     try {
-      SettableFuture<DocumentEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<DocumentEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DocumentEntityListing>() {}, new AsyncApiCallback<ApiResponse<DocumentEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<DocumentEntityListing> response) {
@@ -1644,10 +1644,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DocumentEntityListing>> getContentmanagementWorkspaceDocumentsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<DocumentEntityListing>> callback) {
+  public Future<ApiResponse<DocumentEntityListing>> getContentmanagementWorkspaceDocumentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DocumentEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<DocumentEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<DocumentEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<DocumentEntityListing>() {}, new AsyncApiCallback<ApiResponse<DocumentEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<DocumentEntityListing> response) {
@@ -1685,10 +1685,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<WorkspaceMember> getContentmanagementWorkspaceMemberAsync(GetContentmanagementWorkspaceMemberRequest request, AsyncApiCallback<WorkspaceMember> callback) {
+  public Future<WorkspaceMember> getContentmanagementWorkspaceMemberAsync(GetContentmanagementWorkspaceMemberRequest request, final AsyncApiCallback<WorkspaceMember> callback) {
     try {
-      SettableFuture<WorkspaceMember> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<WorkspaceMember> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkspaceMember>() {}, new AsyncApiCallback<ApiResponse<WorkspaceMember>>() {
         @Override
         public void onCompleted(ApiResponse<WorkspaceMember> response) {
@@ -1719,10 +1719,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<WorkspaceMember>> getContentmanagementWorkspaceMemberAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<WorkspaceMember>> callback) {
+  public Future<ApiResponse<WorkspaceMember>> getContentmanagementWorkspaceMemberAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkspaceMember>> callback) {
     try {
-      SettableFuture<ApiResponse<WorkspaceMember>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<WorkspaceMember>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<WorkspaceMember>() {}, new AsyncApiCallback<ApiResponse<WorkspaceMember>>() {
         @Override
         public void onCompleted(ApiResponse<WorkspaceMember> response) {
@@ -1760,10 +1760,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<WorkspaceMemberEntityListing> getContentmanagementWorkspaceMembersAsync(GetContentmanagementWorkspaceMembersRequest request, AsyncApiCallback<WorkspaceMemberEntityListing> callback) {
+  public Future<WorkspaceMemberEntityListing> getContentmanagementWorkspaceMembersAsync(GetContentmanagementWorkspaceMembersRequest request, final AsyncApiCallback<WorkspaceMemberEntityListing> callback) {
     try {
-      SettableFuture<WorkspaceMemberEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<WorkspaceMemberEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkspaceMemberEntityListing>() {}, new AsyncApiCallback<ApiResponse<WorkspaceMemberEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<WorkspaceMemberEntityListing> response) {
@@ -1794,10 +1794,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<WorkspaceMemberEntityListing>> getContentmanagementWorkspaceMembersAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<WorkspaceMemberEntityListing>> callback) {
+  public Future<ApiResponse<WorkspaceMemberEntityListing>> getContentmanagementWorkspaceMembersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkspaceMemberEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<WorkspaceMemberEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<WorkspaceMemberEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<WorkspaceMemberEntityListing>() {}, new AsyncApiCallback<ApiResponse<WorkspaceMemberEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<WorkspaceMemberEntityListing> response) {
@@ -1835,10 +1835,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<TagValue> getContentmanagementWorkspaceTagvalueAsync(GetContentmanagementWorkspaceTagvalueRequest request, AsyncApiCallback<TagValue> callback) {
+  public Future<TagValue> getContentmanagementWorkspaceTagvalueAsync(GetContentmanagementWorkspaceTagvalueRequest request, final AsyncApiCallback<TagValue> callback) {
     try {
-      SettableFuture<TagValue> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<TagValue> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TagValue>() {}, new AsyncApiCallback<ApiResponse<TagValue>>() {
         @Override
         public void onCompleted(ApiResponse<TagValue> response) {
@@ -1869,10 +1869,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<TagValue>> getContentmanagementWorkspaceTagvalueAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TagValue>> callback) {
+  public Future<ApiResponse<TagValue>> getContentmanagementWorkspaceTagvalueAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TagValue>> callback) {
     try {
-      SettableFuture<ApiResponse<TagValue>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<TagValue>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<TagValue>() {}, new AsyncApiCallback<ApiResponse<TagValue>>() {
         @Override
         public void onCompleted(ApiResponse<TagValue> response) {
@@ -1910,10 +1910,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<TagValueEntityListing> getContentmanagementWorkspaceTagvaluesAsync(GetContentmanagementWorkspaceTagvaluesRequest request, AsyncApiCallback<TagValueEntityListing> callback) {
+  public Future<TagValueEntityListing> getContentmanagementWorkspaceTagvaluesAsync(GetContentmanagementWorkspaceTagvaluesRequest request, final AsyncApiCallback<TagValueEntityListing> callback) {
     try {
-      SettableFuture<TagValueEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<TagValueEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TagValueEntityListing>() {}, new AsyncApiCallback<ApiResponse<TagValueEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<TagValueEntityListing> response) {
@@ -1944,10 +1944,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<TagValueEntityListing>> getContentmanagementWorkspaceTagvaluesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<TagValueEntityListing>> callback) {
+  public Future<ApiResponse<TagValueEntityListing>> getContentmanagementWorkspaceTagvaluesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TagValueEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<TagValueEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<TagValueEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<TagValueEntityListing>() {}, new AsyncApiCallback<ApiResponse<TagValueEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<TagValueEntityListing> response) {
@@ -1985,10 +1985,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<WorkspaceEntityListing> getContentmanagementWorkspacesAsync(GetContentmanagementWorkspacesRequest request, AsyncApiCallback<WorkspaceEntityListing> callback) {
+  public Future<WorkspaceEntityListing> getContentmanagementWorkspacesAsync(GetContentmanagementWorkspacesRequest request, final AsyncApiCallback<WorkspaceEntityListing> callback) {
     try {
-      SettableFuture<WorkspaceEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<WorkspaceEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkspaceEntityListing>() {}, new AsyncApiCallback<ApiResponse<WorkspaceEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<WorkspaceEntityListing> response) {
@@ -2019,10 +2019,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<WorkspaceEntityListing>> getContentmanagementWorkspacesAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<WorkspaceEntityListing>> callback) {
+  public Future<ApiResponse<WorkspaceEntityListing>> getContentmanagementWorkspacesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkspaceEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<WorkspaceEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<WorkspaceEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<WorkspaceEntityListing>() {}, new AsyncApiCallback<ApiResponse<WorkspaceEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<WorkspaceEntityListing> response) {
@@ -2060,10 +2060,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<QueryResults> postContentmanagementAuditqueryAsync(PostContentmanagementAuditqueryRequest request, AsyncApiCallback<QueryResults> callback) {
+  public Future<QueryResults> postContentmanagementAuditqueryAsync(PostContentmanagementAuditqueryRequest request, final AsyncApiCallback<QueryResults> callback) {
     try {
-      SettableFuture<QueryResults> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<QueryResults> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QueryResults>() {}, new AsyncApiCallback<ApiResponse<QueryResults>>() {
         @Override
         public void onCompleted(ApiResponse<QueryResults> response) {
@@ -2094,10 +2094,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<QueryResults>> postContentmanagementAuditqueryAsync(ApiRequest<ContentQueryRequest> request, AsyncApiCallback<ApiResponse<QueryResults>> callback) {
+  public Future<ApiResponse<QueryResults>> postContentmanagementAuditqueryAsync(ApiRequest<ContentQueryRequest> request, final AsyncApiCallback<ApiResponse<QueryResults>> callback) {
     try {
-      SettableFuture<ApiResponse<QueryResults>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<QueryResults>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<QueryResults>() {}, new AsyncApiCallback<ApiResponse<QueryResults>>() {
         @Override
         public void onCompleted(ApiResponse<QueryResults> response) {
@@ -2135,10 +2135,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Document> postContentmanagementDocumentAsync(PostContentmanagementDocumentRequest request, AsyncApiCallback<Document> callback) {
+  public Future<Document> postContentmanagementDocumentAsync(PostContentmanagementDocumentRequest request, final AsyncApiCallback<Document> callback) {
     try {
-      SettableFuture<Document> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Document> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Document>() {}, new AsyncApiCallback<ApiResponse<Document>>() {
         @Override
         public void onCompleted(ApiResponse<Document> response) {
@@ -2169,10 +2169,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Document>> postContentmanagementDocumentAsync(ApiRequest<DocumentUpdate> request, AsyncApiCallback<ApiResponse<Document>> callback) {
+  public Future<ApiResponse<Document>> postContentmanagementDocumentAsync(ApiRequest<DocumentUpdate> request, final AsyncApiCallback<ApiResponse<Document>> callback) {
     try {
-      SettableFuture<ApiResponse<Document>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Document>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Document>() {}, new AsyncApiCallback<ApiResponse<Document>>() {
         @Override
         public void onCompleted(ApiResponse<Document> response) {
@@ -2210,10 +2210,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ReplaceResponse> postContentmanagementDocumentContentAsync(PostContentmanagementDocumentContentRequest request, AsyncApiCallback<ReplaceResponse> callback) {
+  public Future<ReplaceResponse> postContentmanagementDocumentContentAsync(PostContentmanagementDocumentContentRequest request, final AsyncApiCallback<ReplaceResponse> callback) {
     try {
-      SettableFuture<ReplaceResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ReplaceResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReplaceResponse>() {}, new AsyncApiCallback<ApiResponse<ReplaceResponse>>() {
         @Override
         public void onCompleted(ApiResponse<ReplaceResponse> response) {
@@ -2244,10 +2244,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ReplaceResponse>> postContentmanagementDocumentContentAsync(ApiRequest<ReplaceRequest> request, AsyncApiCallback<ApiResponse<ReplaceResponse>> callback) {
+  public Future<ApiResponse<ReplaceResponse>> postContentmanagementDocumentContentAsync(ApiRequest<ReplaceRequest> request, final AsyncApiCallback<ApiResponse<ReplaceResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<ReplaceResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<ReplaceResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<ReplaceResponse>() {}, new AsyncApiCallback<ApiResponse<ReplaceResponse>>() {
         @Override
         public void onCompleted(ApiResponse<ReplaceResponse> response) {
@@ -2285,10 +2285,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Document> postContentmanagementDocumentsAsync(PostContentmanagementDocumentsRequest request, AsyncApiCallback<Document> callback) {
+  public Future<Document> postContentmanagementDocumentsAsync(PostContentmanagementDocumentsRequest request, final AsyncApiCallback<Document> callback) {
     try {
-      SettableFuture<Document> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Document> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Document>() {}, new AsyncApiCallback<ApiResponse<Document>>() {
         @Override
         public void onCompleted(ApiResponse<Document> response) {
@@ -2319,10 +2319,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Document>> postContentmanagementDocumentsAsync(ApiRequest<DocumentUpload> request, AsyncApiCallback<ApiResponse<Document>> callback) {
+  public Future<ApiResponse<Document>> postContentmanagementDocumentsAsync(ApiRequest<DocumentUpload> request, final AsyncApiCallback<ApiResponse<Document>> callback) {
     try {
-      SettableFuture<ApiResponse<Document>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Document>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Document>() {}, new AsyncApiCallback<ApiResponse<Document>>() {
         @Override
         public void onCompleted(ApiResponse<Document> response) {
@@ -2360,10 +2360,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<QueryResults> postContentmanagementQueryAsync(PostContentmanagementQueryRequest request, AsyncApiCallback<QueryResults> callback) {
+  public Future<QueryResults> postContentmanagementQueryAsync(PostContentmanagementQueryRequest request, final AsyncApiCallback<QueryResults> callback) {
     try {
-      SettableFuture<QueryResults> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<QueryResults> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QueryResults>() {}, new AsyncApiCallback<ApiResponse<QueryResults>>() {
         @Override
         public void onCompleted(ApiResponse<QueryResults> response) {
@@ -2394,10 +2394,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<QueryResults>> postContentmanagementQueryAsync(ApiRequest<QueryRequest> request, AsyncApiCallback<ApiResponse<QueryResults>> callback) {
+  public Future<ApiResponse<QueryResults>> postContentmanagementQueryAsync(ApiRequest<QueryRequest> request, final AsyncApiCallback<ApiResponse<QueryResults>> callback) {
     try {
-      SettableFuture<ApiResponse<QueryResults>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<QueryResults>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<QueryResults>() {}, new AsyncApiCallback<ApiResponse<QueryResults>>() {
         @Override
         public void onCompleted(ApiResponse<QueryResults> response) {
@@ -2435,10 +2435,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CreateShareResponse> postContentmanagementSharesAsync(PostContentmanagementSharesRequest request, AsyncApiCallback<CreateShareResponse> callback) {
+  public Future<CreateShareResponse> postContentmanagementSharesAsync(PostContentmanagementSharesRequest request, final AsyncApiCallback<CreateShareResponse> callback) {
     try {
-      SettableFuture<CreateShareResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<CreateShareResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CreateShareResponse>() {}, new AsyncApiCallback<ApiResponse<CreateShareResponse>>() {
         @Override
         public void onCompleted(ApiResponse<CreateShareResponse> response) {
@@ -2469,10 +2469,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CreateShareResponse>> postContentmanagementSharesAsync(ApiRequest<CreateShareRequest> request, AsyncApiCallback<ApiResponse<CreateShareResponse>> callback) {
+  public Future<ApiResponse<CreateShareResponse>> postContentmanagementSharesAsync(ApiRequest<CreateShareRequest> request, final AsyncApiCallback<ApiResponse<CreateShareResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<CreateShareResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<CreateShareResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<CreateShareResponse>() {}, new AsyncApiCallback<ApiResponse<CreateShareResponse>>() {
         @Override
         public void onCompleted(ApiResponse<CreateShareResponse> response) {
@@ -2510,10 +2510,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<TagValue> postContentmanagementWorkspaceTagvaluesAsync(PostContentmanagementWorkspaceTagvaluesRequest request, AsyncApiCallback<TagValue> callback) {
+  public Future<TagValue> postContentmanagementWorkspaceTagvaluesAsync(PostContentmanagementWorkspaceTagvaluesRequest request, final AsyncApiCallback<TagValue> callback) {
     try {
-      SettableFuture<TagValue> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<TagValue> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TagValue>() {}, new AsyncApiCallback<ApiResponse<TagValue>>() {
         @Override
         public void onCompleted(ApiResponse<TagValue> response) {
@@ -2544,10 +2544,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<TagValue>> postContentmanagementWorkspaceTagvaluesAsync(ApiRequest<TagValue> request, AsyncApiCallback<ApiResponse<TagValue>> callback) {
+  public Future<ApiResponse<TagValue>> postContentmanagementWorkspaceTagvaluesAsync(ApiRequest<TagValue> request, final AsyncApiCallback<ApiResponse<TagValue>> callback) {
     try {
-      SettableFuture<ApiResponse<TagValue>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<TagValue>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<TagValue>() {}, new AsyncApiCallback<ApiResponse<TagValue>>() {
         @Override
         public void onCompleted(ApiResponse<TagValue> response) {
@@ -2585,10 +2585,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<TagValueEntityListing> postContentmanagementWorkspaceTagvaluesQueryAsync(PostContentmanagementWorkspaceTagvaluesQueryRequest request, AsyncApiCallback<TagValueEntityListing> callback) {
+  public Future<TagValueEntityListing> postContentmanagementWorkspaceTagvaluesQueryAsync(PostContentmanagementWorkspaceTagvaluesQueryRequest request, final AsyncApiCallback<TagValueEntityListing> callback) {
     try {
-      SettableFuture<TagValueEntityListing> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<TagValueEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TagValueEntityListing>() {}, new AsyncApiCallback<ApiResponse<TagValueEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<TagValueEntityListing> response) {
@@ -2619,10 +2619,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<TagValueEntityListing>> postContentmanagementWorkspaceTagvaluesQueryAsync(ApiRequest<TagQueryRequest> request, AsyncApiCallback<ApiResponse<TagValueEntityListing>> callback) {
+  public Future<ApiResponse<TagValueEntityListing>> postContentmanagementWorkspaceTagvaluesQueryAsync(ApiRequest<TagQueryRequest> request, final AsyncApiCallback<ApiResponse<TagValueEntityListing>> callback) {
     try {
-      SettableFuture<ApiResponse<TagValueEntityListing>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<TagValueEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<TagValueEntityListing>() {}, new AsyncApiCallback<ApiResponse<TagValueEntityListing>>() {
         @Override
         public void onCompleted(ApiResponse<TagValueEntityListing> response) {
@@ -2660,10 +2660,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Workspace> postContentmanagementWorkspacesAsync(PostContentmanagementWorkspacesRequest request, AsyncApiCallback<Workspace> callback) {
+  public Future<Workspace> postContentmanagementWorkspacesAsync(PostContentmanagementWorkspacesRequest request, final AsyncApiCallback<Workspace> callback) {
     try {
-      SettableFuture<Workspace> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Workspace> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Workspace>() {}, new AsyncApiCallback<ApiResponse<Workspace>>() {
         @Override
         public void onCompleted(ApiResponse<Workspace> response) {
@@ -2694,10 +2694,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Workspace>> postContentmanagementWorkspacesAsync(ApiRequest<WorkspaceCreate> request, AsyncApiCallback<ApiResponse<Workspace>> callback) {
+  public Future<ApiResponse<Workspace>> postContentmanagementWorkspacesAsync(ApiRequest<WorkspaceCreate> request, final AsyncApiCallback<ApiResponse<Workspace>> callback) {
     try {
-      SettableFuture<ApiResponse<Workspace>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Workspace>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Workspace>() {}, new AsyncApiCallback<ApiResponse<Workspace>>() {
         @Override
         public void onCompleted(ApiResponse<Workspace> response) {
@@ -2735,10 +2735,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Workspace> putContentmanagementWorkspaceAsync(PutContentmanagementWorkspaceRequest request, AsyncApiCallback<Workspace> callback) {
+  public Future<Workspace> putContentmanagementWorkspaceAsync(PutContentmanagementWorkspaceRequest request, final AsyncApiCallback<Workspace> callback) {
     try {
-      SettableFuture<Workspace> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<Workspace> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Workspace>() {}, new AsyncApiCallback<ApiResponse<Workspace>>() {
         @Override
         public void onCompleted(ApiResponse<Workspace> response) {
@@ -2769,10 +2769,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Workspace>> putContentmanagementWorkspaceAsync(ApiRequest<Workspace> request, AsyncApiCallback<ApiResponse<Workspace>> callback) {
+  public Future<ApiResponse<Workspace>> putContentmanagementWorkspaceAsync(ApiRequest<Workspace> request, final AsyncApiCallback<ApiResponse<Workspace>> callback) {
     try {
-      SettableFuture<ApiResponse<Workspace>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<Workspace>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<Workspace>() {}, new AsyncApiCallback<ApiResponse<Workspace>>() {
         @Override
         public void onCompleted(ApiResponse<Workspace> response) {
@@ -2810,10 +2810,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<WorkspaceMember> putContentmanagementWorkspaceMemberAsync(PutContentmanagementWorkspaceMemberRequest request, AsyncApiCallback<WorkspaceMember> callback) {
+  public Future<WorkspaceMember> putContentmanagementWorkspaceMemberAsync(PutContentmanagementWorkspaceMemberRequest request, final AsyncApiCallback<WorkspaceMember> callback) {
     try {
-      SettableFuture<WorkspaceMember> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<WorkspaceMember> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkspaceMember>() {}, new AsyncApiCallback<ApiResponse<WorkspaceMember>>() {
         @Override
         public void onCompleted(ApiResponse<WorkspaceMember> response) {
@@ -2844,10 +2844,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<WorkspaceMember>> putContentmanagementWorkspaceMemberAsync(ApiRequest<WorkspaceMember> request, AsyncApiCallback<ApiResponse<WorkspaceMember>> callback) {
+  public Future<ApiResponse<WorkspaceMember>> putContentmanagementWorkspaceMemberAsync(ApiRequest<WorkspaceMember> request, final AsyncApiCallback<ApiResponse<WorkspaceMember>> callback) {
     try {
-      SettableFuture<ApiResponse<WorkspaceMember>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<WorkspaceMember>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<WorkspaceMember>() {}, new AsyncApiCallback<ApiResponse<WorkspaceMember>>() {
         @Override
         public void onCompleted(ApiResponse<WorkspaceMember> response) {
@@ -2885,10 +2885,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<TagValue> putContentmanagementWorkspaceTagvalueAsync(PutContentmanagementWorkspaceTagvalueRequest request, AsyncApiCallback<TagValue> callback) {
+  public Future<TagValue> putContentmanagementWorkspaceTagvalueAsync(PutContentmanagementWorkspaceTagvalueRequest request, final AsyncApiCallback<TagValue> callback) {
     try {
-      SettableFuture<TagValue> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<TagValue> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TagValue>() {}, new AsyncApiCallback<ApiResponse<TagValue>>() {
         @Override
         public void onCompleted(ApiResponse<TagValue> response) {
@@ -2919,10 +2919,10 @@ public class ContentManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<TagValue>> putContentmanagementWorkspaceTagvalueAsync(ApiRequest<TagValue> request, AsyncApiCallback<ApiResponse<TagValue>> callback) {
+  public Future<ApiResponse<TagValue>> putContentmanagementWorkspaceTagvalueAsync(ApiRequest<TagValue> request, final AsyncApiCallback<ApiResponse<TagValue>> callback) {
     try {
-      SettableFuture<ApiResponse<TagValue>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<TagValue>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<TagValue>() {}, new AsyncApiCallback<ApiResponse<TagValue>>() {
         @Override
         public void onCompleted(ApiResponse<TagValue> response) {

@@ -50,10 +50,10 @@ public class LocationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<LocationDefinition> getLocationAsync(GetLocationRequest request, AsyncApiCallback<LocationDefinition> callback) {
+  public Future<LocationDefinition> getLocationAsync(GetLocationRequest request, final AsyncApiCallback<LocationDefinition> callback) {
     try {
-      SettableFuture<LocationDefinition> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<LocationDefinition> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LocationDefinition>() {}, new AsyncApiCallback<ApiResponse<LocationDefinition>>() {
         @Override
         public void onCompleted(ApiResponse<LocationDefinition> response) {
@@ -84,10 +84,10 @@ public class LocationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LocationDefinition>> getLocationAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LocationDefinition>> callback) {
+  public Future<ApiResponse<LocationDefinition>> getLocationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LocationDefinition>> callback) {
     try {
-      SettableFuture<ApiResponse<LocationDefinition>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<LocationDefinition>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<LocationDefinition>() {}, new AsyncApiCallback<ApiResponse<LocationDefinition>>() {
         @Override
         public void onCompleted(ApiResponse<LocationDefinition> response) {
@@ -125,10 +125,10 @@ public class LocationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<LocationDefinition>> getLocationsAsync(GetLocationsRequest request, AsyncApiCallback<List<LocationDefinition>> callback) {
+  public Future<List<LocationDefinition>> getLocationsAsync(GetLocationsRequest request, final AsyncApiCallback<List<LocationDefinition>> callback) {
     try {
-      SettableFuture<List<LocationDefinition>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<List<LocationDefinition>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<LocationDefinition>>() {}, new AsyncApiCallback<ApiResponse<List<LocationDefinition>>>() {
         @Override
         public void onCompleted(ApiResponse<List<LocationDefinition>> response) {
@@ -159,10 +159,10 @@ public class LocationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<LocationDefinition>>> getLocationsAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<List<LocationDefinition>>> callback) {
+  public Future<ApiResponse<List<LocationDefinition>>> getLocationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<LocationDefinition>>> callback) {
     try {
-      SettableFuture<ApiResponse<List<LocationDefinition>>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<List<LocationDefinition>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<List<LocationDefinition>>() {}, new AsyncApiCallback<ApiResponse<List<LocationDefinition>>>() {
         @Override
         public void onCompleted(ApiResponse<List<LocationDefinition>> response) {
@@ -200,10 +200,10 @@ public class LocationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<LocationsSearchResponse> getLocationsSearchAsync(GetLocationsSearchRequest request, AsyncApiCallback<LocationsSearchResponse> callback) {
+  public Future<LocationsSearchResponse> getLocationsSearchAsync(GetLocationsSearchRequest request, final AsyncApiCallback<LocationsSearchResponse> callback) {
     try {
-      SettableFuture<LocationsSearchResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<LocationsSearchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LocationsSearchResponse>() {}, new AsyncApiCallback<ApiResponse<LocationsSearchResponse>>() {
         @Override
         public void onCompleted(ApiResponse<LocationsSearchResponse> response) {
@@ -234,10 +234,10 @@ public class LocationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LocationsSearchResponse>> getLocationsSearchAsync(ApiRequest<Void> request, AsyncApiCallback<ApiResponse<LocationsSearchResponse>> callback) {
+  public Future<ApiResponse<LocationsSearchResponse>> getLocationsSearchAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LocationsSearchResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<LocationsSearchResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<LocationsSearchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<LocationsSearchResponse>() {}, new AsyncApiCallback<ApiResponse<LocationsSearchResponse>>() {
         @Override
         public void onCompleted(ApiResponse<LocationsSearchResponse> response) {
@@ -275,10 +275,10 @@ public class LocationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<LocationsSearchResponse> postLocationsSearchAsync(PostLocationsSearchRequest request, AsyncApiCallback<LocationsSearchResponse> callback) {
+  public Future<LocationsSearchResponse> postLocationsSearchAsync(PostLocationsSearchRequest request, final AsyncApiCallback<LocationsSearchResponse> callback) {
     try {
-      SettableFuture<LocationsSearchResponse> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<LocationsSearchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LocationsSearchResponse>() {}, new AsyncApiCallback<ApiResponse<LocationsSearchResponse>>() {
         @Override
         public void onCompleted(ApiResponse<LocationsSearchResponse> response) {
@@ -309,10 +309,10 @@ public class LocationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LocationsSearchResponse>> postLocationsSearchAsync(ApiRequest<LocationSearchRequest> request, AsyncApiCallback<ApiResponse<LocationsSearchResponse>> callback) {
+  public Future<ApiResponse<LocationsSearchResponse>> postLocationsSearchAsync(ApiRequest<LocationSearchRequest> request, final AsyncApiCallback<ApiResponse<LocationsSearchResponse>> callback) {
     try {
-      SettableFuture<ApiResponse<LocationsSearchResponse>> future = SettableFuture.create();
-      boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      final SettableFuture<ApiResponse<LocationsSearchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
       pcapiClient.invokeAsync(request, new TypeReference<LocationsSearchResponse>() {}, new AsyncApiCallback<ApiResponse<LocationsSearchResponse>>() {
         @Override
         public void onCompleted(ApiResponse<LocationsSearchResponse> response) {
