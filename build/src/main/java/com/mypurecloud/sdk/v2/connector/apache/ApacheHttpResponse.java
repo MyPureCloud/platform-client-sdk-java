@@ -20,14 +20,15 @@ class ApacheHttpResponse implements ApiClientConnectorResponse {
 
     public ApacheHttpResponse(CloseableHttpResponse response) {
         this.response = response;
-
         HttpEntity entity = response.getEntity();
-        if (!entity.isRepeatable()) {
-            try {
-                response.setEntity(new BufferedHttpEntity(entity));
-            }
-            catch (Exception exception) {
-                LOG.error("Failed to buffer HTTP entity.", exception);
+        if (entity != null) {
+            if (!entity.isRepeatable()) {
+                try {
+                    response.setEntity(new BufferedHttpEntity(entity));
+                }
+                catch (Exception exception) {
+                    LOG.error("Failed to buffer HTTP entity.", exception);
+                }
             }
         }
     }
@@ -44,7 +45,8 @@ class ApacheHttpResponse implements ApiClientConnectorResponse {
 
     @Override
     public boolean hasBody() {
-        return (response.getEntity() != null);
+        HttpEntity entity = response.getEntity();
+        return (entity != null && entity.getContentLength() != 0L);
     }
 
     @Override

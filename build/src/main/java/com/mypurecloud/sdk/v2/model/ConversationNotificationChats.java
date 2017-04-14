@@ -59,6 +59,7 @@ public class ConversationNotificationChats  implements Serializable {
   private StateEnum state = null;
   private String id = null;
   private String provider = null;
+  private String scriptId = null;
   private String roomId = null;
   private Boolean held = null;
 
@@ -164,6 +165,23 @@ public class ConversationNotificationChats  implements Serializable {
   }
   public void setProvider(String provider) {
     this.provider = provider;
+  }
+
+
+  /**
+   **/
+  public ConversationNotificationChats scriptId(String scriptId) {
+    this.scriptId = scriptId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("scriptId")
+  public String getScriptId() {
+    return scriptId;
+  }
+  public void setScriptId(String scriptId) {
+    this.scriptId = scriptId;
   }
 
 
@@ -298,6 +316,7 @@ public class ConversationNotificationChats  implements Serializable {
     return Objects.equals(this.state, conversationNotificationChats.state) &&
         Objects.equals(this.id, conversationNotificationChats.id) &&
         Objects.equals(this.provider, conversationNotificationChats.provider) &&
+        Objects.equals(this.scriptId, conversationNotificationChats.scriptId) &&
         Objects.equals(this.roomId, conversationNotificationChats.roomId) &&
         Objects.equals(this.held, conversationNotificationChats.held) &&
         Objects.equals(this.disconnectType, conversationNotificationChats.disconnectType) &&
@@ -309,7 +328,7 @@ public class ConversationNotificationChats  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, provider, roomId, held, disconnectType, startHoldTime, connectedTime, disconnectedTime, additionalProperties);
+    return Objects.hash(state, id, provider, scriptId, roomId, held, disconnectType, startHoldTime, connectedTime, disconnectedTime, additionalProperties);
   }
 
   @Override
@@ -320,6 +339,7 @@ public class ConversationNotificationChats  implements Serializable {
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
     sb.append("    held: ").append(toIndentedString(held)).append("\n");
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");

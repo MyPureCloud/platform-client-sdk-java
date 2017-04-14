@@ -17,6 +17,7 @@ title: ConversationNotificationSocialExpressions
 | **recordingId** | **String** |  |  [optional] |
 | **held** | **Boolean** |  |  [optional] |
 | **provider** | **String** |  |  [optional] |
+| **scriptId** | **String** |  |  [optional] |
 | **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) |  |  [optional] |
 | **startHoldTime** | [**Date**](Date.html) |  |  [optional] |
 | **connectedTime** | [**Date**](Date.html) |  |  [optional] |

@@ -24,8 +24,8 @@ public class EncryptionKeyEntityListing  implements Serializable, PagedResource<
   private Long total = null;
   private String selfUri = null;
   private String firstUri = null;
-  private String nextUri = null;
   private String previousUri = null;
+  private String nextUri = null;
   private String lastUri = null;
   private Integer pageCount = null;
 
@@ -134,23 +134,6 @@ public class EncryptionKeyEntityListing  implements Serializable, PagedResource<
 
   /**
    **/
-  public EncryptionKeyEntityListing nextUri(String nextUri) {
-    this.nextUri = nextUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nextUri")
-  public String getNextUri() {
-    return nextUri;
-  }
-  public void setNextUri(String nextUri) {
-    this.nextUri = nextUri;
-  }
-
-
-  /**
-   **/
   public EncryptionKeyEntityListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -163,6 +146,23 @@ public class EncryptionKeyEntityListing  implements Serializable, PagedResource<
   }
   public void setPreviousUri(String previousUri) {
     this.previousUri = previousUri;
+  }
+
+
+  /**
+   **/
+  public EncryptionKeyEntityListing nextUri(String nextUri) {
+    this.nextUri = nextUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nextUri")
+  public String getNextUri() {
+    return nextUri;
+  }
+  public void setNextUri(String nextUri) {
+    this.nextUri = nextUri;
   }
 
 
@@ -215,15 +215,15 @@ public class EncryptionKeyEntityListing  implements Serializable, PagedResource<
         Objects.equals(this.total, encryptionKeyEntityListing.total) &&
         Objects.equals(this.selfUri, encryptionKeyEntityListing.selfUri) &&
         Objects.equals(this.firstUri, encryptionKeyEntityListing.firstUri) &&
-        Objects.equals(this.nextUri, encryptionKeyEntityListing.nextUri) &&
         Objects.equals(this.previousUri, encryptionKeyEntityListing.previousUri) &&
+        Objects.equals(this.nextUri, encryptionKeyEntityListing.nextUri) &&
         Objects.equals(this.lastUri, encryptionKeyEntityListing.lastUri) &&
         Objects.equals(this.pageCount, encryptionKeyEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, nextUri, previousUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, previousUri, nextUri, lastUri, pageCount);
   }
 
   @Override
@@ -237,8 +237,8 @@ public class EncryptionKeyEntityListing  implements Serializable, PagedResource<
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");

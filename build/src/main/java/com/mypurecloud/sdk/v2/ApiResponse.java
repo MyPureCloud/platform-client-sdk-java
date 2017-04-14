@@ -4,7 +4,7 @@ import java.util.Map;
 
 public interface ApiResponse<T> extends AutoCloseable {
     Exception getException();
-    Integer getStatusCode();
+    int getStatusCode();
     String getStatusReasonPhrase();
     boolean hasRawBody();
     String getRawBody();

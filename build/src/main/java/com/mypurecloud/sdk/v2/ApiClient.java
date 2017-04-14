@@ -452,18 +452,13 @@ public class ApiClient implements AutoCloseable {
         Map<String, String> headers = response.getHeaders();
 
         if (statusCode >= 200 && statusCode < 300) {
-            String body = response.readBody();
-            final T entity;
-            if (statusCode != 204 && body != null && returnType != null) {
-                if (returnType.getType() != Void.class) {
+            String body = null;
+            T entity = null;
+            if (statusCode != 204 && returnType != null && returnType.getType() != Void.class && response.hasBody()) {
+                body = response.readBody();
+                if (body != null && body.length() > 0) {
                     entity = objectMapper.readValue(body, returnType);
                 }
-                else {
-                    entity = null;
-                }
-            }
-            else {
-                entity = null;
             }
             return new ApiResponseWrapper<>(statusCode, reasonPhrase, headers, body, entity);
         }
@@ -844,7 +839,7 @@ public class ApiClient implements AutoCloseable {
         }
 
         @Override
-        public Integer getStatusCode() {
+        public int getStatusCode() {
             return statusCode;
         }
 

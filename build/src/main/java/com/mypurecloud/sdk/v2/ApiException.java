@@ -5,7 +5,7 @@ import java.util.Map;
 
 
 public class ApiException extends Exception implements ApiResponse<Object> {
-    private final Integer statusCode;
+    private final int statusCode;
     private final Map<String, String> headers;
     private final String body;
 
@@ -18,7 +18,7 @@ public class ApiException extends Exception implements ApiResponse<Object> {
 
     public ApiException(Throwable cause) {
         super(cause);
-        this.statusCode = null;
+        this.statusCode = -1;
         this.headers = Collections.emptyMap();
         this.body = null;
     }
@@ -29,7 +29,7 @@ public class ApiException extends Exception implements ApiResponse<Object> {
     }
 
     @Override
-    public Integer getStatusCode() {
+    public int getStatusCode() {
         return statusCode;
     }
 

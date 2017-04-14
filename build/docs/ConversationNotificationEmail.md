@@ -13,6 +13,7 @@ title: ConversationNotificationEmail
 | **held** | **Boolean** |  |  [optional] |
 | **subject** | **String** |  |  [optional] |
 | **provider** | **String** |  |  [optional] |
+| **scriptId** | **String** |  |  [optional] |
 | **messagesSent** | **Integer** |  |  [optional] |
 | **errorInfo** | [**ConversationNotificationErrorDetails**](ConversationNotificationErrorDetails.html) |  |  [optional] |
 | **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) |  |  [optional] |

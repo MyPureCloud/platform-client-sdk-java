@@ -16,6 +16,7 @@ title: ConversationNotificationVideos
 | **videoMuted** | **Boolean** |  |  [optional] |
 | **sharingScreen** | **Boolean** |  |  [optional] |
 | **provider** | **String** |  |  [optional] |
+| **scriptId** | **String** |  |  [optional] |
 | **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) |  |  [optional] |
 | **connectedTime** | [**Date**](Date.html) |  |  [optional] |
 | **disconnectedTime** | [**Date**](Date.html) |  |  [optional] |

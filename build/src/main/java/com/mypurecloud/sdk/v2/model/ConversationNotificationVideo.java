@@ -65,6 +65,7 @@ public class ConversationNotificationVideo  implements Serializable {
   private Boolean videoMuted = null;
   private Boolean sharingScreen = null;
   private String provider = null;
+  private String scriptId = null;
 
   /**
    * Gets or Sets disconnectType
@@ -257,6 +258,23 @@ public class ConversationNotificationVideo  implements Serializable {
 
   /**
    **/
+  public ConversationNotificationVideo scriptId(String scriptId) {
+    this.scriptId = scriptId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("scriptId")
+  public String getScriptId() {
+    return scriptId;
+  }
+  public void setScriptId(String scriptId) {
+    this.scriptId = scriptId;
+  }
+
+
+  /**
+   **/
   public ConversationNotificationVideo disconnectType(DisconnectTypeEnum disconnectType) {
     this.disconnectType = disconnectType;
     return this;
@@ -340,6 +358,7 @@ public class ConversationNotificationVideo  implements Serializable {
         Objects.equals(this.videoMuted, conversationNotificationVideo.videoMuted) &&
         Objects.equals(this.sharingScreen, conversationNotificationVideo.sharingScreen) &&
         Objects.equals(this.provider, conversationNotificationVideo.provider) &&
+        Objects.equals(this.scriptId, conversationNotificationVideo.scriptId) &&
         Objects.equals(this.disconnectType, conversationNotificationVideo.disconnectType) &&
         Objects.equals(this.connectedTime, conversationNotificationVideo.connectedTime) &&
         Objects.equals(this.disconnectedTime, conversationNotificationVideo.disconnectedTime) &&
@@ -348,7 +367,7 @@ public class ConversationNotificationVideo  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, self, id, context, audioMuted, videoMuted, sharingScreen, provider, disconnectType, connectedTime, disconnectedTime, additionalProperties);
+    return Objects.hash(state, self, id, context, audioMuted, videoMuted, sharingScreen, provider, scriptId, disconnectType, connectedTime, disconnectedTime, additionalProperties);
   }
 
   @Override
@@ -364,6 +383,7 @@ public class ConversationNotificationVideo  implements Serializable {
     sb.append("    videoMuted: ").append(toIndentedString(videoMuted)).append("\n");
     sb.append("    sharingScreen: ").append(toIndentedString(sharingScreen)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");

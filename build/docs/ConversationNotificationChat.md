@@ -11,6 +11,7 @@ title: ConversationNotificationChat
 | **state** | [**StateEnum**](#StateEnum) |  |  [optional] |
 | **id** | **String** |  |  [optional] |
 | **provider** | **String** |  |  [optional] |
+| **scriptId** | **String** |  |  [optional] |
 | **roomId** | **String** |  |  [optional] |
 | **held** | **Boolean** |  |  [optional] |
 | **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) |  |  [optional] |

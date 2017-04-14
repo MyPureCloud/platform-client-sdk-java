@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserPresenceNotificationPresenceDefinition;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -19,6 +20,7 @@ public class UserPresenceNotification  implements Serializable {
   private UserPresenceNotificationPresenceDefinition presenceDefinition = null;
   private Boolean primary = null;
   private String message = null;
+  private Date modifiedDate = null;
 
   
   /**
@@ -89,6 +91,23 @@ public class UserPresenceNotification  implements Serializable {
   }
 
 
+  /**
+   **/
+  public UserPresenceNotification modifiedDate(Date modifiedDate) {
+    this.modifiedDate = modifiedDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("modifiedDate")
+  public Date getModifiedDate() {
+    return modifiedDate;
+  }
+  public void setModifiedDate(Date modifiedDate) {
+    this.modifiedDate = modifiedDate;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -101,12 +120,13 @@ public class UserPresenceNotification  implements Serializable {
     return Objects.equals(this.source, userPresenceNotification.source) &&
         Objects.equals(this.presenceDefinition, userPresenceNotification.presenceDefinition) &&
         Objects.equals(this.primary, userPresenceNotification.primary) &&
-        Objects.equals(this.message, userPresenceNotification.message);
+        Objects.equals(this.message, userPresenceNotification.message) &&
+        Objects.equals(this.modifiedDate, userPresenceNotification.modifiedDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(source, presenceDefinition, primary, message);
+    return Objects.hash(source, presenceDefinition, primary, message, modifiedDate);
   }
 
   @Override
@@ -118,6 +138,7 @@ public class UserPresenceNotification  implements Serializable {
     sb.append("    presenceDefinition: ").append(toIndentedString(presenceDefinition)).append("\n");
     sb.append("    primary: ").append(toIndentedString(primary)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

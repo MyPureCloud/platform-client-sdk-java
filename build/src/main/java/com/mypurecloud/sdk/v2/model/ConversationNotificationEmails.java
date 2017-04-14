@@ -58,6 +58,7 @@ public class ConversationNotificationEmails  implements Serializable {
   private Boolean held = null;
   private String subject = null;
   private String provider = null;
+  private String scriptId = null;
   private Integer messagesSent = null;
   private ConversationNotificationErrorDetails errorInfo = null;
 
@@ -202,6 +203,23 @@ public class ConversationNotificationEmails  implements Serializable {
 
   /**
    **/
+  public ConversationNotificationEmails scriptId(String scriptId) {
+    this.scriptId = scriptId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("scriptId")
+  public String getScriptId() {
+    return scriptId;
+  }
+  public void setScriptId(String scriptId) {
+    this.scriptId = scriptId;
+  }
+
+
+  /**
+   **/
   public ConversationNotificationEmails messagesSent(Integer messagesSent) {
     this.messagesSent = messagesSent;
     return this;
@@ -333,6 +351,7 @@ public class ConversationNotificationEmails  implements Serializable {
         Objects.equals(this.held, conversationNotificationEmails.held) &&
         Objects.equals(this.subject, conversationNotificationEmails.subject) &&
         Objects.equals(this.provider, conversationNotificationEmails.provider) &&
+        Objects.equals(this.scriptId, conversationNotificationEmails.scriptId) &&
         Objects.equals(this.messagesSent, conversationNotificationEmails.messagesSent) &&
         Objects.equals(this.errorInfo, conversationNotificationEmails.errorInfo) &&
         Objects.equals(this.disconnectType, conversationNotificationEmails.disconnectType) &&
@@ -344,7 +363,7 @@ public class ConversationNotificationEmails  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, held, subject, provider, messagesSent, errorInfo, disconnectType, startHoldTime, connectedTime, disconnectedTime, additionalProperties);
+    return Objects.hash(id, state, held, subject, provider, scriptId, messagesSent, errorInfo, disconnectType, startHoldTime, connectedTime, disconnectedTime, additionalProperties);
   }
 
   @Override
@@ -357,6 +376,7 @@ public class ConversationNotificationEmails  implements Serializable {
     sb.append("    held: ").append(toIndentedString(held)).append("\n");
     sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    messagesSent: ").append(toIndentedString(messagesSent)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
