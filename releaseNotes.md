@@ -1,7 +1,7 @@
 
 # SDK Changes
 
-* Using Java 7
+* lazy load default config to prevent apache from being loaded always
 
 # Major Changes (0 changes)
 
