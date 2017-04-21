@@ -34,8 +34,8 @@ public class FaxDocument  implements Serializable {
   private String callerAddress = null;
   private String receiverAddress = null;
   private List<DocumentThumbnail> thumbnails = new ArrayList<DocumentThumbnail>();
-  private String downloadSharingUri = null;
   private String sharingUri = null;
+  private String downloadSharingUri = null;
   private String selfUri = null;
 
   
@@ -288,23 +288,6 @@ public class FaxDocument  implements Serializable {
 
   /**
    **/
-  public FaxDocument downloadSharingUri(String downloadSharingUri) {
-    this.downloadSharingUri = downloadSharingUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("downloadSharingUri")
-  public String getDownloadSharingUri() {
-    return downloadSharingUri;
-  }
-  public void setDownloadSharingUri(String downloadSharingUri) {
-    this.downloadSharingUri = downloadSharingUri;
-  }
-
-
-  /**
-   **/
   public FaxDocument sharingUri(String sharingUri) {
     this.sharingUri = sharingUri;
     return this;
@@ -317,6 +300,23 @@ public class FaxDocument  implements Serializable {
   }
   public void setSharingUri(String sharingUri) {
     this.sharingUri = sharingUri;
+  }
+
+
+  /**
+   **/
+  public FaxDocument downloadSharingUri(String downloadSharingUri) {
+    this.downloadSharingUri = downloadSharingUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("downloadSharingUri")
+  public String getDownloadSharingUri() {
+    return downloadSharingUri;
+  }
+  public void setDownloadSharingUri(String downloadSharingUri) {
+    this.downloadSharingUri = downloadSharingUri;
   }
 
 
@@ -351,14 +351,14 @@ public class FaxDocument  implements Serializable {
         Objects.equals(this.callerAddress, faxDocument.callerAddress) &&
         Objects.equals(this.receiverAddress, faxDocument.receiverAddress) &&
         Objects.equals(this.thumbnails, faxDocument.thumbnails) &&
-        Objects.equals(this.downloadSharingUri, faxDocument.downloadSharingUri) &&
         Objects.equals(this.sharingUri, faxDocument.sharingUri) &&
+        Objects.equals(this.downloadSharingUri, faxDocument.downloadSharingUri) &&
         Objects.equals(this.selfUri, faxDocument.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, contentUri, workspace, createdBy, contentType, contentLength, filename, read, pageCount, callerAddress, receiverAddress, thumbnails, downloadSharingUri, sharingUri, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, contentUri, workspace, createdBy, contentType, contentLength, filename, read, pageCount, callerAddress, receiverAddress, thumbnails, sharingUri, downloadSharingUri, selfUri);
   }
 
   @Override
@@ -381,8 +381,8 @@ public class FaxDocument  implements Serializable {
     sb.append("    callerAddress: ").append(toIndentedString(callerAddress)).append("\n");
     sb.append("    receiverAddress: ").append(toIndentedString(receiverAddress)).append("\n");
     sb.append("    thumbnails: ").append(toIndentedString(thumbnails)).append("\n");
-    sb.append("    downloadSharingUri: ").append(toIndentedString(downloadSharingUri)).append("\n");
     sb.append("    sharingUri: ").append(toIndentedString(sharingUri)).append("\n");
+    sb.append("    downloadSharingUri: ").append(toIndentedString(downloadSharingUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

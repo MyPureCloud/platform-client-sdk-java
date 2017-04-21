@@ -12,7 +12,7 @@ Install the library from maven via the package [com.mypurecloud:platform-client-
 
 ## Android Support
 
-The SDK may be used in Android as of SDK version 5.0.1. This requires Java 8 support in Android Studio (2.4 Preview 6 or later). For more information, see the Android Developers Blog: [Java 8 Language Features Support Update]](https://android-developers.googleblog.com/2017/04/java-8-language-features-support-update.html)
+The SDK may be used in Android as of SDK version 5.0.1. This requires Java 8 support in Android Studio (2.4 Preview 6 or later). For more information, see the Android Developers Blog: [Java 8 Language Features Support Update](https://android-developers.googleblog.com/2017/04/java-8-language-features-support-update.html)
 
 ## Using the SDK
 
@@ -20,7 +20,7 @@ The SDK may be used in Android as of SDK version 5.0.1. This requires Java 8 sup
 
 Import the necessary packages:
 
-~~~java
+~~~ java
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.api.UsersApi;
@@ -37,7 +37,7 @@ The Java SDK does not currently contain helper methods to complete an OAuth flow
 
 `ApiClient` implements a builder pattern to construct new instances:
 
-~~~java
+~~~ java
 // Create ApiClient instance
 ApiClient apiClient = ApiClient.Builder.standard()
 		.withAccessToken(accessToken)
@@ -52,7 +52,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 Provide the access token to use for API requests:
 
-~~~java
+~~~ java
 .withAccessToken("aisuefh89734hfkhsaldkh348jf")
 ~~~
 
@@ -60,7 +60,7 @@ Provide the access token to use for API requests:
 
 Provide the full base url if not using `https://api.mypurecloud.com`:
 
-~~~java
+~~~ java
 .withBasePath("https://api.mypurecloud.ie")
 ~~~
 
@@ -74,7 +74,7 @@ The SDK supports the following HTTP connectors:
 
 Specify the connector in the builder:
 
-~~~java
+~~~ java
 .withProperty(ApiClientConnectorProperty.CONNECTOR_PROVIDER, new OkHttpClientConnectorProvider())
 ~~~
 
@@ -101,7 +101,7 @@ Example of getting the authenticated user's information:
 
 Request builders allow requests to be constructed by only providing values for the properties you want to set. This is useful for methods with long signatures when you only need to set some properties and will help future-proof your code if the method signature changes (i.e. new parameters added).
 
-~~~java
+~~~ java
 UsersApi usersApi = new UsersApi();
 GetUsersMeRequest request = GetUsersMeRequest.builder()
         .withExpand(Collections.singletonList("presence"))
@@ -114,7 +114,7 @@ System.out.println("Hello " + me.getName());
 
 This request is identical to the request above, but uses the method with explicit parameters instead of a builder. These methods construct the request builder behind the scenes.
 
-~~~java
+~~~ java
 UsersApi usersApi = new UsersApi();
 UserMe me = usersApi.getUsersMe(Collections.singletonList("presence"));
 System.out.println("Hello " + me.getName());
@@ -130,7 +130,7 @@ The Java SDK includes a helper class, `NotificationHandler`, to assist in managi
 
 The preferred way to create a `NotificationHandler` instance is to use its builder to construct a new instance. This comes with the advantage of being able to set listeners and add subscriptions before the websocket is opened.
 
-~~~java
+~~~ java
 NotificationHandler notificationHandler = NotificationHandler.Builder.standard()
         .withWebSocketListener(new MyWebSocketListener())
         .withNotificationListener(new UserPresenceListener(me.getId()))
@@ -141,7 +141,7 @@ NotificationHandler notificationHandler = NotificationHandler.Builder.standard()
 
 Alternatively, the `NotificationHandler` instance can be constructed with the default constructor and will connect to the websocket automatically. Listeners and subscriptions can then be managed from the instance regardless of how it was constructed. The following example is equivalent to the builder except that the socket will be connected in the constructor and the listeners and subscriptions will be added after it is connected:
 
-~~~java
+~~~ java
 NotificationHandler notificationHandler = new NotificationHandler();
 notificationHandler.setWebSocketListener(new MyWebSocketListener());
 notificationHandler.addSubscription(new PresenceListener(me.getId()));
@@ -152,7 +152,7 @@ notificationHandler.addSubscription(new ChannelMetadataListener());
 
 To test the connection, you may send a ping. For more information about this ping, see [Use the notification service](https://developer.mypurecloud.com/api/rest/v2/notifications/notification_service.html) under the _WebSocket Health Check_ heading.
 
-~~~java
+~~~ java
 notificationHandler.sendPing();
 ~~~
 
@@ -160,7 +160,7 @@ notificationHandler.sendPing();
 
 To handle incoming events, implement the `NotificationListener<T>` interface to handle registered topics and the `WebSocketListener` interface for information about the websocket itself. This is a basic example of how to handle user presence events:
 
-~~~java
+~~~ java
 public class UserPresenceListener implements NotificationListener<UserPresenceNotification> {
     private String topic;
 
@@ -184,7 +184,7 @@ public class UserPresenceListener implements NotificationListener<UserPresenceNo
 
 And an example of listening to the channel metadata events (periodic heartbeat and ping/pong message):
 
-~~~java
+~~~ java
 public class ChannelMetadataListener implements NotificationListener<ChannelMetadataNotification> {
     public String getTopic() {
         return "channel.metadata";

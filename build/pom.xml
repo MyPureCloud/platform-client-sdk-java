@@ -5,7 +5,7 @@
   <artifactId>platform-client-v2</artifactId>
   <packaging>jar</packaging>
   <name>platform-client-v2</name>
-  <version>5.0.2</version>
+  <version>5.0.3</version>
   <description>A Java package to interface with the PureCloud Platform API</description>
   <url>https://developer.mypurecloud.com/api/rest/client-libraries/java/latest/</url>
 
