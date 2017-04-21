@@ -1,7 +1,7 @@
 
 # SDK Changes
 
-* lazy load default config to prevent apache from being loaded always
+* Documentation updates
 
 # Major Changes (0 changes)
 
