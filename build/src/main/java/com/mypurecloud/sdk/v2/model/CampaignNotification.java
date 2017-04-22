@@ -9,7 +9,7 @@ import com.mypurecloud.sdk.v2.model.CampaignNotificationContactSort;
 import com.mypurecloud.sdk.v2.model.CampaignNotificationErrors;
 import com.mypurecloud.sdk.v2.model.CampaignNotificationPhoneColumns;
 import com.mypurecloud.sdk.v2.model.CampaignNotificationUriReference;
-import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationCreatedBy;
+import com.mypurecloud.sdk.v2.model.DependencyTrackingBuildNotificationNotificationUser;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
@@ -29,7 +29,7 @@ public class CampaignNotification  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer version = null;
-  private DocumentDataV2NotificationCreatedBy contactList = null;
+  private DependencyTrackingBuildNotificationNotificationUser contactList = null;
   private CampaignNotificationUriReference queue = null;
 
   /**
@@ -218,17 +218,17 @@ public class CampaignNotification  implements Serializable {
 
   /**
    **/
-  public CampaignNotification contactList(DocumentDataV2NotificationCreatedBy contactList) {
+  public CampaignNotification contactList(DependencyTrackingBuildNotificationNotificationUser contactList) {
     this.contactList = contactList;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("contactList")
-  public DocumentDataV2NotificationCreatedBy getContactList() {
+  public DependencyTrackingBuildNotificationNotificationUser getContactList() {
     return contactList;
   }
-  public void setContactList(DocumentDataV2NotificationCreatedBy contactList) {
+  public void setContactList(DependencyTrackingBuildNotificationNotificationUser contactList) {
     this.contactList = contactList;
   }
 

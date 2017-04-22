@@ -253,8 +253,8 @@ public class ArchitectApiAsync {
   }
 
   /**
-   * Batch-delete a list of prompts asynchronously
-   * Multiple IDs can be specified, in which case all specified prompts will be deleted.
+   * Batch-delete a list of prompts
+   * Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -287,8 +287,8 @@ public class ArchitectApiAsync {
   }
 
   /**
-   * Batch-delete a list of prompts asynchronously
-   * Multiple IDs can be specified, in which case all specified prompts will be deleted.
+   * Batch-delete a list of prompts
+   * Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -334,13 +334,13 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteArchitectSystempromptResourceAsync(DeleteArchitectSystempromptResourceRequest request, final AsyncApiCallback<String> callback) {
+  public Future<Void> deleteArchitectSystempromptResourceAsync(DeleteArchitectSystempromptResourceRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      final SettableFuture<String> future = SettableFuture.create();
+      final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -368,13 +368,13 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteArchitectSystempromptResourceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<Void>> deleteArchitectSystempromptResourceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -382,7 +382,7 @@ public class ArchitectApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -390,7 +390,7 @@ public class ArchitectApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -478,8 +478,8 @@ public class ArchitectApiAsync {
   }
 
   /**
-   * Batch-delete a list of flows asynchronously
-   * Multiple IDs can be specified, in which case all specified flows will be deleted.
+   * Batch-delete a list of flows
+   * Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -512,8 +512,8 @@ public class ArchitectApiAsync {
   }
 
   /**
-   * Batch-delete a list of flows asynchronously
-   * Multiple IDs can be specified, in which case all specified flows will be deleted.
+   * Batch-delete a list of flows
+   * Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2279,7 +2279,7 @@ public class ArchitectApiAsync {
 
   /**
    * Rebuild Dependency Tracking data for an organization
-   * 
+   * Asynchronous.  Notification topic: v2.architect.dependencytracking.build
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2313,7 +2313,7 @@ public class ArchitectApiAsync {
 
   /**
    * Rebuild Dependency Tracking data for an organization
-   * 
+   * Asynchronous.  Notification topic: v2.architect.dependencytracking.build
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2729,7 +2729,7 @@ public class ArchitectApiAsync {
 
   /**
    * Check-in flow
-   * 
+   * Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2763,7 +2763,7 @@ public class ArchitectApiAsync {
 
   /**
    * Check-in flow
-   * 
+   * Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2954,7 +2954,7 @@ public class ArchitectApiAsync {
 
   /**
    * Publish flow
-   * 
+   * Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2988,7 +2988,7 @@ public class ArchitectApiAsync {
 
   /**
    * Publish flow
-   * 
+   * Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

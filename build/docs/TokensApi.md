@@ -14,7 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteTokensMe**
 
-> String deleteTokensMe()
+> Void deleteTokensMe()
 
 Delete  auth token used to make the request.
 
@@ -40,8 +40,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 TokensApi apiInstance = new TokensApi();
 try {
-    String result = apiInstance.deleteTokensMe();
-    System.out.println(result);
+    apiInstance.deleteTokensMe();
 } catch (ApiException e) {
     System.err.println("Exception when calling TokensApi#deleteTokensMe");
     e.printStackTrace();
@@ -55,5 +54,5 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-**String**
+null (empty response body)
 

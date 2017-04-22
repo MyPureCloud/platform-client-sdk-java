@@ -79,6 +79,20 @@ public class GetStationsRequest {
 	    return this;
 	}
 
+	private String webRtcUserId;
+	public String getWebRtcUserId() {
+		return this.webRtcUserId;
+	}
+
+	public void setWebRtcUserId(String webRtcUserId) {
+		this.webRtcUserId = webRtcUserId;
+	}
+
+	public GetStationsRequest withWebRtcUserId(String webRtcUserId) {
+	    this.setWebRtcUserId(webRtcUserId);
+	    return this;
+	}
+
 	private String id;
 	public String getId() {
 		return this.id;
@@ -138,6 +152,8 @@ public class GetStationsRequest {
         
                 .withQueryParameters("name", "", name)
         
+                .withQueryParameters("webRtcUserId", "", webRtcUserId)
+        
                 .withQueryParameters("id", "", id)
         
                 .withQueryParameters("lineAppearanceId", "", lineAppearanceId)
@@ -174,6 +190,10 @@ public class GetStationsRequest {
 		}
 		public Builder withName(String name) {
 			request.setName(name);
+			return this;
+		}
+		public Builder withWebRtcUserId(String webRtcUserId) {
+			request.setWebRtcUserId(webRtcUserId);
 			return this;
 		}
 		public Builder withId(String id) {

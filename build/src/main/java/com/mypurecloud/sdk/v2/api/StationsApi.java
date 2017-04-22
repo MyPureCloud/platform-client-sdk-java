@@ -41,22 +41,20 @@ public class StationsApi {
    * Unassigns the user assigned to this station
    * 
    * @param stationId Station ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteStationAssociateduser(String stationId) throws IOException, ApiException {
-    return  deleteStationAssociateduser(createDeleteStationAssociateduserRequest(stationId));
+  public void deleteStationAssociateduser(String stationId) throws IOException, ApiException {
+     deleteStationAssociateduser(createDeleteStationAssociateduserRequest(stationId));
   }
 
   /**
    * Unassigns the user assigned to this station
    * 
    * @param stationId Station ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteStationAssociateduserWithHttpInfo(String stationId) throws IOException {
+  public ApiResponse<Void> deleteStationAssociateduserWithHttpInfo(String stationId) throws IOException {
     return deleteStationAssociateduser(createDeleteStationAssociateduserRequest(stationId).withHttpInfo());
   }
 
@@ -70,18 +68,17 @@ public class StationsApi {
    * Unassigns the user assigned to this station
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteStationAssociateduser(DeleteStationAssociateduserRequest request) throws IOException, ApiException {
+  public void deleteStationAssociateduser(DeleteStationAssociateduserRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -92,13 +89,13 @@ public class StationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteStationAssociateduser(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteStationAssociateduser(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -109,7 +106,7 @@ public class StationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -198,14 +195,15 @@ public class StationsApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to name)
    * @param name Name (optional)
+   * @param webRtcUserId Filter for the webRtc station of the webRtcUserId (optional)
    * @param id Comma separated list of stationIds (optional)
    * @param lineAppearanceId lineAppearanceId (optional)
    * @return StationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public StationEntityListing getStations(Integer pageSize, Integer pageNumber, String sortBy, String name, String id, String lineAppearanceId) throws IOException, ApiException {
-    return  getStations(createGetStationsRequest(pageSize, pageNumber, sortBy, name, id, lineAppearanceId));
+  public StationEntityListing getStations(Integer pageSize, Integer pageNumber, String sortBy, String name, String webRtcUserId, String id, String lineAppearanceId) throws IOException, ApiException {
+    return  getStations(createGetStationsRequest(pageSize, pageNumber, sortBy, name, webRtcUserId, id, lineAppearanceId));
   }
 
   /**
@@ -215,16 +213,17 @@ public class StationsApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to name)
    * @param name Name (optional)
+   * @param webRtcUserId Filter for the webRtc station of the webRtcUserId (optional)
    * @param id Comma separated list of stationIds (optional)
    * @param lineAppearanceId lineAppearanceId (optional)
    * @return StationEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<StationEntityListing> getStationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String name, String id, String lineAppearanceId) throws IOException {
-    return getStations(createGetStationsRequest(pageSize, pageNumber, sortBy, name, id, lineAppearanceId).withHttpInfo());
+  public ApiResponse<StationEntityListing> getStationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String name, String webRtcUserId, String id, String lineAppearanceId) throws IOException {
+    return getStations(createGetStationsRequest(pageSize, pageNumber, sortBy, name, webRtcUserId, id, lineAppearanceId).withHttpInfo());
   }
 
-  private GetStationsRequest createGetStationsRequest(Integer pageSize, Integer pageNumber, String sortBy, String name, String id, String lineAppearanceId) {
+  private GetStationsRequest createGetStationsRequest(Integer pageSize, Integer pageNumber, String sortBy, String name, String webRtcUserId, String id, String lineAppearanceId) {
     return GetStationsRequest.builder()
             .withPageSize(pageSize)
 
@@ -233,6 +232,8 @@ public class StationsApi {
             .withSortBy(sortBy)
 
             .withName(name)
+
+            .withWebRtcUserId(webRtcUserId)
 
             .withId(id)
 

@@ -22,7 +22,7 @@ title: VideoConversationNotificationVideoMediaParticipant
 | **held** | **Boolean** |  |  [optional] |
 | **wrapupRequired** | **Boolean** |  |  [optional] |
 | **wrapupPrompt** | **String** |  |  [optional] |
-| **user** | [**DocumentDataV2NotificationCreatedBy**](DocumentDataV2NotificationCreatedBy.html) |  |  [optional] |
+| **user** | [**DependencyTrackingBuildNotificationNotificationUser**](DependencyTrackingBuildNotificationNotificationUser.html) |  |  [optional] |
 | **queue** | [**VideoConversationNotificationUriReference**](VideoConversationNotificationUriReference.html) |  |  [optional] |
 | **attributes** | **Map&lt;String, String&gt;** |  |  [optional] |
 | **errorInfo** | [**VideoConversationNotificationErrorInfo**](VideoConversationNotificationErrorInfo.html) |  |  [optional] |

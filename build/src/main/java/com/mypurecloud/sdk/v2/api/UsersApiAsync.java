@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.RoutingStatus;
 import com.mypurecloud.sdk.v2.model.UserStations;
 import com.mypurecloud.sdk.v2.model.UserMe;
 import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
+import com.mypurecloud.sdk.v2.model.UpdateUser;
 import com.mypurecloud.sdk.v2.model.UserQueue;
 import com.mypurecloud.sdk.v2.model.AggregationQuery;
 import com.mypurecloud.sdk.v2.model.PresenceQueryResponse;
@@ -261,13 +262,13 @@ public class UsersApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteUserRoutingskillAsync(DeleteUserRoutingskillRequest request, final AsyncApiCallback<String> callback) {
+  public Future<Void> deleteUserRoutingskillAsync(DeleteUserRoutingskillRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      final SettableFuture<String> future = SettableFuture.create();
+      final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -295,13 +296,13 @@ public class UsersApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteUserRoutingskillAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<Void>> deleteUserRoutingskillAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -309,7 +310,7 @@ public class UsersApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -317,7 +318,7 @@ public class UsersApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1870,7 +1871,7 @@ public class UsersApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<User>> patchUserAsync(ApiRequest<User> request, final AsyncApiCallback<ApiResponse<User>> callback) {
+  public Future<ApiResponse<User>> patchUserAsync(ApiRequest<UpdateUser> request, final AsyncApiCallback<ApiResponse<User>> callback) {
     try {
       final SettableFuture<ApiResponse<User>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

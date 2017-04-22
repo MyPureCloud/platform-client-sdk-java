@@ -13,7 +13,7 @@ title: DocumentDataV2Notification
 | **dateCreated** | [**Date**](Date.html) |  |  [optional] |
 | **dateModified** | [**Date**](Date.html) |  |  [optional] |
 | **workspace** | [**DocumentDataV2NotificationWorkspace**](DocumentDataV2NotificationWorkspace.html) |  |  [optional] |
-| **createdBy** | [**DocumentDataV2NotificationCreatedBy**](DocumentDataV2NotificationCreatedBy.html) |  |  [optional] |
+| **createdBy** | [**DependencyTrackingBuildNotificationNotificationUser**](DependencyTrackingBuildNotificationNotificationUser.html) |  |  [optional] |
 | **contentType** | **String** |  |  [optional] |
 | **contentLength** | **Integer** |  |  [optional] |
 | **filename** | **String** |  |  [optional] |

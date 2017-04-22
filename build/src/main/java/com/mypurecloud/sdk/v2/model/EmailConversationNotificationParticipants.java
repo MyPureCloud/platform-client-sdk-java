@@ -6,7 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationWrapup;
-import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationCreatedBy;
+import com.mypurecloud.sdk.v2.model.DependencyTrackingBuildNotificationNotificationUser;
 import com.mypurecloud.sdk.v2.model.EmailConversationNotificationErrorInfo;
 import com.mypurecloud.sdk.v2.model.EmailConversationNotificationUriReference;
 import io.swagger.annotations.ApiModel;
@@ -163,7 +163,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
   private Boolean held = null;
   private Boolean wrapupRequired = null;
   private String wrapupPrompt = null;
-  private DocumentDataV2NotificationCreatedBy user = null;
+  private DependencyTrackingBuildNotificationNotificationUser user = null;
   private EmailConversationNotificationUriReference queue = null;
   private Map<String, String> attributes = new HashMap<String, String>();
   private EmailConversationNotificationErrorInfo errorInfo = null;
@@ -418,17 +418,17 @@ public class EmailConversationNotificationParticipants  implements Serializable 
 
   /**
    **/
-  public EmailConversationNotificationParticipants user(DocumentDataV2NotificationCreatedBy user) {
+  public EmailConversationNotificationParticipants user(DependencyTrackingBuildNotificationNotificationUser user) {
     this.user = user;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("user")
-  public DocumentDataV2NotificationCreatedBy getUser() {
+  public DependencyTrackingBuildNotificationNotificationUser getUser() {
     return user;
   }
-  public void setUser(DocumentDataV2NotificationCreatedBy user) {
+  public void setUser(DependencyTrackingBuildNotificationNotificationUser user) {
     this.user = user;
   }
 

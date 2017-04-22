@@ -226,13 +226,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteTelephonyProvidersEdgeAsync(DeleteTelephonyProvidersEdgeRequest request, final AsyncApiCallback<String> callback) {
+  public Future<Void> deleteTelephonyProvidersEdgeAsync(DeleteTelephonyProvidersEdgeRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      final SettableFuture<String> future = SettableFuture.create();
+      final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -260,13 +260,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<Void>> deleteTelephonyProvidersEdgeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -274,7 +274,7 @@ public class TelephonyProvidersEdgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -282,7 +282,7 @@ public class TelephonyProvidersEdgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -376,13 +376,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteTelephonyProvidersEdgeSoftwareupdateAsync(DeleteTelephonyProvidersEdgeSoftwareupdateRequest request, final AsyncApiCallback<String> callback) {
+  public Future<Void> deleteTelephonyProvidersEdgeSoftwareupdateAsync(DeleteTelephonyProvidersEdgeSoftwareupdateRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      final SettableFuture<String> future = SettableFuture.create();
+      final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -410,13 +410,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgeSoftwareupdateAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<Void>> deleteTelephonyProvidersEdgeSoftwareupdateAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -424,7 +424,7 @@ public class TelephonyProvidersEdgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -432,7 +432,7 @@ public class TelephonyProvidersEdgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -451,13 +451,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteTelephonyProvidersEdgesCertificateauthorityAsync(DeleteTelephonyProvidersEdgesCertificateauthorityRequest request, final AsyncApiCallback<String> callback) {
+  public Future<Void> deleteTelephonyProvidersEdgesCertificateauthorityAsync(DeleteTelephonyProvidersEdgesCertificateauthorityRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      final SettableFuture<String> future = SettableFuture.create();
+      final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -485,13 +485,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesCertificateauthorityAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<Void>> deleteTelephonyProvidersEdgesCertificateauthorityAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -499,7 +499,7 @@ public class TelephonyProvidersEdgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -507,7 +507,7 @@ public class TelephonyProvidersEdgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -526,13 +526,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteTelephonyProvidersEdgesDidpoolAsync(DeleteTelephonyProvidersEdgesDidpoolRequest request, final AsyncApiCallback<String> callback) {
+  public Future<Void> deleteTelephonyProvidersEdgesDidpoolAsync(DeleteTelephonyProvidersEdgesDidpoolRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      final SettableFuture<String> future = SettableFuture.create();
+      final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -560,13 +560,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesDidpoolAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<Void>> deleteTelephonyProvidersEdgesDidpoolAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -574,7 +574,7 @@ public class TelephonyProvidersEdgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -582,7 +582,7 @@ public class TelephonyProvidersEdgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -601,13 +601,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteTelephonyProvidersEdgesEdgegroupAsync(DeleteTelephonyProvidersEdgesEdgegroupRequest request, final AsyncApiCallback<String> callback) {
+  public Future<Void> deleteTelephonyProvidersEdgesEdgegroupAsync(DeleteTelephonyProvidersEdgesEdgegroupRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      final SettableFuture<String> future = SettableFuture.create();
+      final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -635,13 +635,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesEdgegroupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<Void>> deleteTelephonyProvidersEdgesEdgegroupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -649,7 +649,7 @@ public class TelephonyProvidersEdgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -657,7 +657,7 @@ public class TelephonyProvidersEdgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -676,13 +676,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteTelephonyProvidersEdgesEndpointAsync(DeleteTelephonyProvidersEdgesEndpointRequest request, final AsyncApiCallback<String> callback) {
+  public Future<Void> deleteTelephonyProvidersEdgesEndpointAsync(DeleteTelephonyProvidersEdgesEndpointRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      final SettableFuture<String> future = SettableFuture.create();
+      final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -710,13 +710,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesEndpointAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<Void>> deleteTelephonyProvidersEdgesEndpointAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -724,7 +724,7 @@ public class TelephonyProvidersEdgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -732,7 +732,7 @@ public class TelephonyProvidersEdgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -751,13 +751,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteTelephonyProvidersEdgesExtensionpoolAsync(DeleteTelephonyProvidersEdgesExtensionpoolRequest request, final AsyncApiCallback<String> callback) {
+  public Future<Void> deleteTelephonyProvidersEdgesExtensionpoolAsync(DeleteTelephonyProvidersEdgesExtensionpoolRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      final SettableFuture<String> future = SettableFuture.create();
+      final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -785,13 +785,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesExtensionpoolAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<Void>> deleteTelephonyProvidersEdgesExtensionpoolAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -799,7 +799,7 @@ public class TelephonyProvidersEdgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -807,7 +807,7 @@ public class TelephonyProvidersEdgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -826,13 +826,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteTelephonyProvidersEdgesOutboundrouteAsync(DeleteTelephonyProvidersEdgesOutboundrouteRequest request, final AsyncApiCallback<String> callback) {
+  public Future<Void> deleteTelephonyProvidersEdgesOutboundrouteAsync(DeleteTelephonyProvidersEdgesOutboundrouteRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      final SettableFuture<String> future = SettableFuture.create();
+      final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -860,13 +860,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesOutboundrouteAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<Void>> deleteTelephonyProvidersEdgesOutboundrouteAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -874,7 +874,7 @@ public class TelephonyProvidersEdgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -882,7 +882,7 @@ public class TelephonyProvidersEdgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -901,13 +901,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteTelephonyProvidersEdgesPhoneAsync(DeleteTelephonyProvidersEdgesPhoneRequest request, final AsyncApiCallback<String> callback) {
+  public Future<Void> deleteTelephonyProvidersEdgesPhoneAsync(DeleteTelephonyProvidersEdgesPhoneRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      final SettableFuture<String> future = SettableFuture.create();
+      final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -935,13 +935,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesPhoneAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<Void>> deleteTelephonyProvidersEdgesPhoneAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -949,7 +949,7 @@ public class TelephonyProvidersEdgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -957,7 +957,7 @@ public class TelephonyProvidersEdgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -976,13 +976,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteTelephonyProvidersEdgesPhonebasesettingAsync(DeleteTelephonyProvidersEdgesPhonebasesettingRequest request, final AsyncApiCallback<String> callback) {
+  public Future<Void> deleteTelephonyProvidersEdgesPhonebasesettingAsync(DeleteTelephonyProvidersEdgesPhonebasesettingRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      final SettableFuture<String> future = SettableFuture.create();
+      final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1010,13 +1010,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesPhonebasesettingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<Void>> deleteTelephonyProvidersEdgesPhonebasesettingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1024,7 +1024,7 @@ public class TelephonyProvidersEdgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1032,7 +1032,7 @@ public class TelephonyProvidersEdgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1051,13 +1051,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteTelephonyProvidersEdgesSiteAsync(DeleteTelephonyProvidersEdgesSiteRequest request, final AsyncApiCallback<String> callback) {
+  public Future<Void> deleteTelephonyProvidersEdgesSiteAsync(DeleteTelephonyProvidersEdgesSiteRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      final SettableFuture<String> future = SettableFuture.create();
+      final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1085,13 +1085,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesSiteAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<Void>> deleteTelephonyProvidersEdgesSiteAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1099,7 +1099,7 @@ public class TelephonyProvidersEdgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1107,7 +1107,7 @@ public class TelephonyProvidersEdgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1126,13 +1126,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteTelephonyProvidersEdgesSiteOutboundrouteAsync(DeleteTelephonyProvidersEdgesSiteOutboundrouteRequest request, final AsyncApiCallback<String> callback) {
+  public Future<Void> deleteTelephonyProvidersEdgesSiteOutboundrouteAsync(DeleteTelephonyProvidersEdgesSiteOutboundrouteRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      final SettableFuture<String> future = SettableFuture.create();
+      final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1160,13 +1160,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesSiteOutboundrouteAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<Void>> deleteTelephonyProvidersEdgesSiteOutboundrouteAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1174,7 +1174,7 @@ public class TelephonyProvidersEdgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1182,7 +1182,7 @@ public class TelephonyProvidersEdgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1201,13 +1201,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> deleteTelephonyProvidersEdgesTrunkbasesettingAsync(DeleteTelephonyProvidersEdgesTrunkbasesettingRequest request, final AsyncApiCallback<String> callback) {
+  public Future<Void> deleteTelephonyProvidersEdgesTrunkbasesettingAsync(DeleteTelephonyProvidersEdgesTrunkbasesettingRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      final SettableFuture<String> future = SettableFuture.create();
+      final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1235,13 +1235,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> deleteTelephonyProvidersEdgesTrunkbasesettingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<Void>> deleteTelephonyProvidersEdgesTrunkbasesettingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1249,7 +1249,7 @@ public class TelephonyProvidersEdgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1257,7 +1257,7 @@ public class TelephonyProvidersEdgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -4951,13 +4951,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<DomainPhysicalInterface>> getTelephonyProvidersEdgesPhysicalinterfacesAsync(GetTelephonyProvidersEdgesPhysicalinterfacesRequest request, final AsyncApiCallback<List<DomainPhysicalInterface>> callback) {
+  public Future<PhysicalInterfaceEntityListing> getTelephonyProvidersEdgesPhysicalinterfacesAsync(GetTelephonyProvidersEdgesPhysicalinterfacesRequest request, final AsyncApiCallback<PhysicalInterfaceEntityListing> callback) {
     try {
-      final SettableFuture<List<DomainPhysicalInterface>> future = SettableFuture.create();
+      final SettableFuture<PhysicalInterfaceEntityListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<DomainPhysicalInterface>>() {}, new AsyncApiCallback<ApiResponse<List<DomainPhysicalInterface>>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PhysicalInterfaceEntityListing>() {}, new AsyncApiCallback<ApiResponse<PhysicalInterfaceEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<List<DomainPhysicalInterface>> response) {
+        public void onCompleted(ApiResponse<PhysicalInterfaceEntityListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -4985,13 +4985,13 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<DomainPhysicalInterface>>> getTelephonyProvidersEdgesPhysicalinterfacesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<DomainPhysicalInterface>>> callback) {
+  public Future<ApiResponse<PhysicalInterfaceEntityListing>> getTelephonyProvidersEdgesPhysicalinterfacesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PhysicalInterfaceEntityListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<List<DomainPhysicalInterface>>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<PhysicalInterfaceEntityListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<List<DomainPhysicalInterface>>() {}, new AsyncApiCallback<ApiResponse<List<DomainPhysicalInterface>>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<PhysicalInterfaceEntityListing>() {}, new AsyncApiCallback<ApiResponse<PhysicalInterfaceEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<List<DomainPhysicalInterface>> response) {
+        public void onCompleted(ApiResponse<PhysicalInterfaceEntityListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -4999,7 +4999,7 @@ public class TelephonyProvidersEdgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<List<DomainPhysicalInterface>> response = (ApiResponse<List<DomainPhysicalInterface>>)(ApiResponse<?>)exception;
+            ApiResponse<PhysicalInterfaceEntityListing> response = (ApiResponse<PhysicalInterfaceEntityListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -5007,7 +5007,7 @@ public class TelephonyProvidersEdgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<List<DomainPhysicalInterface>> response = (ApiResponse<List<DomainPhysicalInterface>>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<PhysicalInterfaceEntityListing> response = (ApiResponse<PhysicalInterfaceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

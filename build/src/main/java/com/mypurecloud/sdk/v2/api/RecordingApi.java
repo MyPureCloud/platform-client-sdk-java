@@ -245,22 +245,20 @@ public class RecordingApi {
    * Delete media retention policies
    * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
    * @param ids  (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteRecordingMediaretentionpolicies(String ids) throws IOException, ApiException {
-    return  deleteRecordingMediaretentionpolicies(createDeleteRecordingMediaretentionpoliciesRequest(ids));
+  public void deleteRecordingMediaretentionpolicies(String ids) throws IOException, ApiException {
+     deleteRecordingMediaretentionpolicies(createDeleteRecordingMediaretentionpoliciesRequest(ids));
   }
 
   /**
    * Delete media retention policies
    * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
    * @param ids  (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRecordingMediaretentionpoliciesWithHttpInfo(String ids) throws IOException {
+  public ApiResponse<Void> deleteRecordingMediaretentionpoliciesWithHttpInfo(String ids) throws IOException {
     return deleteRecordingMediaretentionpolicies(createDeleteRecordingMediaretentionpoliciesRequest(ids).withHttpInfo());
   }
 
@@ -274,18 +272,17 @@ public class RecordingApi {
    * Delete media retention policies
    * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteRecordingMediaretentionpolicies(DeleteRecordingMediaretentionpoliciesRequest request) throws IOException, ApiException {
+  public void deleteRecordingMediaretentionpolicies(DeleteRecordingMediaretentionpoliciesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -296,13 +293,13 @@ public class RecordingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRecordingMediaretentionpolicies(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteRecordingMediaretentionpolicies(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -313,7 +310,7 @@ public class RecordingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -322,22 +319,20 @@ public class RecordingApi {
    * Delete a media retention policy
    * 
    * @param policyId Policy ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteRecordingMediaretentionpolicy(String policyId) throws IOException, ApiException {
-    return  deleteRecordingMediaretentionpolicy(createDeleteRecordingMediaretentionpolicyRequest(policyId));
+  public void deleteRecordingMediaretentionpolicy(String policyId) throws IOException, ApiException {
+     deleteRecordingMediaretentionpolicy(createDeleteRecordingMediaretentionpolicyRequest(policyId));
   }
 
   /**
    * Delete a media retention policy
    * 
    * @param policyId Policy ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRecordingMediaretentionpolicyWithHttpInfo(String policyId) throws IOException {
+  public ApiResponse<Void> deleteRecordingMediaretentionpolicyWithHttpInfo(String policyId) throws IOException {
     return deleteRecordingMediaretentionpolicy(createDeleteRecordingMediaretentionpolicyRequest(policyId).withHttpInfo());
   }
 
@@ -351,18 +346,17 @@ public class RecordingApi {
    * Delete a media retention policy
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteRecordingMediaretentionpolicy(DeleteRecordingMediaretentionpolicyRequest request) throws IOException, ApiException {
+  public void deleteRecordingMediaretentionpolicy(DeleteRecordingMediaretentionpolicyRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -373,13 +367,13 @@ public class RecordingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRecordingMediaretentionpolicy(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteRecordingMediaretentionpolicy(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -390,7 +384,7 @@ public class RecordingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

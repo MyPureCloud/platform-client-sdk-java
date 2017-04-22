@@ -334,7 +334,7 @@ try {
 
 # **getAuthorizationRoles**
 
-> [OrganizationRoleEntityListing](OrganizationRoleEntityListing.html) getAuthorizationRoles(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, permission, userCount)
+> [OrganizationRoleEntityListing](OrganizationRoleEntityListing.html) getAuthorizationRoles(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, permission, defaultRoleId, userCount)
 
 Retrieve a list of all roles defined for the organization
 
@@ -366,9 +366,10 @@ List<Object> expand = null; // List<Object> | variable name requested by expand 
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 List<Object> permission = null; // List<Object> | 
+List<Object> defaultRoleId = null; // List<Object> | 
 Boolean userCount = true; // Boolean | 
 try {
-    OrganizationRoleEntityListing result = apiInstance.getAuthorizationRoles(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, permission, userCount);
+    OrganizationRoleEntityListing result = apiInstance.getAuthorizationRoles(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, permission, defaultRoleId, userCount);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthorizationApi#getAuthorizationRoles");
@@ -388,6 +389,7 @@ try {
 | **nextPage** | **String**| next page token | [optional] |
 | **previousPage** | **String**| Previous page token | [optional] |
 | **permission** | [**List&lt;Object&gt;**](Object.html)|  | [optional] |
+| **defaultRoleId** | [**List&lt;Object&gt;**](Object.html)|  | [optional] |
 | **userCount** | **Boolean**|  | [optional] [default to true] |
 {: class="table table-striped"}
 

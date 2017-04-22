@@ -250,22 +250,20 @@ public class QualityApi {
    * Delete an evaluation form.
    * 
    * @param formId Form ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteQualityForm(String formId) throws IOException, ApiException {
-    return  deleteQualityForm(createDeleteQualityFormRequest(formId));
+  public void deleteQualityForm(String formId) throws IOException, ApiException {
+     deleteQualityForm(createDeleteQualityFormRequest(formId));
   }
 
   /**
    * Delete an evaluation form.
    * 
    * @param formId Form ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteQualityFormWithHttpInfo(String formId) throws IOException {
+  public ApiResponse<Void> deleteQualityFormWithHttpInfo(String formId) throws IOException {
     return deleteQualityForm(createDeleteQualityFormRequest(formId).withHttpInfo());
   }
 
@@ -279,18 +277,17 @@ public class QualityApi {
    * Delete an evaluation form.
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteQualityForm(DeleteQualityFormRequest request) throws IOException, ApiException {
+  public void deleteQualityForm(DeleteQualityFormRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -301,13 +298,13 @@ public class QualityApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteQualityForm(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteQualityForm(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -318,7 +315,7 @@ public class QualityApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -401,22 +398,20 @@ public class QualityApi {
    * Delete keyword sets
    * Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
    * @param ids A comma-delimited list of valid KeywordSet ids (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteQualityKeywordsets(String ids) throws IOException, ApiException {
-    return  deleteQualityKeywordsets(createDeleteQualityKeywordsetsRequest(ids));
+  public void deleteQualityKeywordsets(String ids) throws IOException, ApiException {
+     deleteQualityKeywordsets(createDeleteQualityKeywordsetsRequest(ids));
   }
 
   /**
    * Delete keyword sets
    * Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
    * @param ids A comma-delimited list of valid KeywordSet ids (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteQualityKeywordsetsWithHttpInfo(String ids) throws IOException {
+  public ApiResponse<Void> deleteQualityKeywordsetsWithHttpInfo(String ids) throws IOException {
     return deleteQualityKeywordsets(createDeleteQualityKeywordsetsRequest(ids).withHttpInfo());
   }
 
@@ -430,18 +425,17 @@ public class QualityApi {
    * Delete keyword sets
    * Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteQualityKeywordsets(DeleteQualityKeywordsetsRequest request) throws IOException, ApiException {
+  public void deleteQualityKeywordsets(DeleteQualityKeywordsetsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -452,13 +446,13 @@ public class QualityApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteQualityKeywordsets(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteQualityKeywordsets(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -469,7 +463,7 @@ public class QualityApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -800,7 +794,7 @@ public class QualityApi {
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
    * @param recordingId id of the recording (optional)
-   * @param entityType entity type options: Recording, Calibration, Evaluation, Annotation (optional, default to RECORDING)
+   * @param entityType entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording (optional, default to RECORDING)
    * @return QualityAuditPage
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -820,7 +814,7 @@ public class QualityApi {
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
    * @param recordingId id of the recording (optional)
-   * @param entityType entity type options: Recording, Calibration, Evaluation, Annotation (optional, default to RECORDING)
+   * @param entityType entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording (optional, default to RECORDING)
    * @return QualityAuditPage
    * @throws IOException if the request fails to be processed
    */

@@ -77,22 +77,20 @@ public class AnalyticsApi {
    * Delete a scheduled report job.
    * 
    * @param scheduleId Schedule ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteAnalyticsReportingSchedule(String scheduleId) throws IOException, ApiException {
-    return  deleteAnalyticsReportingSchedule(createDeleteAnalyticsReportingScheduleRequest(scheduleId));
+  public void deleteAnalyticsReportingSchedule(String scheduleId) throws IOException, ApiException {
+     deleteAnalyticsReportingSchedule(createDeleteAnalyticsReportingScheduleRequest(scheduleId));
   }
 
   /**
    * Delete a scheduled report job.
    * 
    * @param scheduleId Schedule ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteAnalyticsReportingScheduleWithHttpInfo(String scheduleId) throws IOException {
+  public ApiResponse<Void> deleteAnalyticsReportingScheduleWithHttpInfo(String scheduleId) throws IOException {
     return deleteAnalyticsReportingSchedule(createDeleteAnalyticsReportingScheduleRequest(scheduleId).withHttpInfo());
   }
 
@@ -106,18 +104,17 @@ public class AnalyticsApi {
    * Delete a scheduled report job.
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteAnalyticsReportingSchedule(DeleteAnalyticsReportingScheduleRequest request) throws IOException, ApiException {
+  public void deleteAnalyticsReportingSchedule(DeleteAnalyticsReportingScheduleRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -128,13 +125,13 @@ public class AnalyticsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteAnalyticsReportingSchedule(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteAnalyticsReportingSchedule(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -145,7 +142,7 @@ public class AnalyticsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Group;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,6 +22,43 @@ public class VoicemailGroupPolicy  implements Serializable {
   private Boolean sendEmailNotifications = null;
   private Integer rotateCallsSecs = null;
   private Integer stopRingingAfterRotations = null;
+  private String overflowGroupId = null;
+
+  /**
+   * Specifies if the members in this group should be contacted randomly, in a specific order, or by round-robin.
+   */
+  public enum GroupAlertTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    RANDOM("RANDOM"),
+    ROUND_ROBIN("ROUND_ROBIN"),
+    SEQUENTIAL("SEQUENTIAL");
+
+    private String value;
+
+    GroupAlertTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static GroupAlertTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (GroupAlertTypeEnum value : GroupAlertTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return GroupAlertTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private GroupAlertTypeEnum groupAlertType = null;
 
   
   /**
@@ -130,6 +168,42 @@ public class VoicemailGroupPolicy  implements Serializable {
   }
 
 
+  /**
+   *  A fallback group to contact when all of the members in this group did not answer the call.
+   **/
+  public VoicemailGroupPolicy overflowGroupId(String overflowGroupId) {
+    this.overflowGroupId = overflowGroupId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = " A fallback group to contact when all of the members in this group did not answer the call.")
+  @JsonProperty("overflowGroupId")
+  public String getOverflowGroupId() {
+    return overflowGroupId;
+  }
+  public void setOverflowGroupId(String overflowGroupId) {
+    this.overflowGroupId = overflowGroupId;
+  }
+
+
+  /**
+   * Specifies if the members in this group should be contacted randomly, in a specific order, or by round-robin.
+   **/
+  public VoicemailGroupPolicy groupAlertType(GroupAlertTypeEnum groupAlertType) {
+    this.groupAlertType = groupAlertType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Specifies if the members in this group should be contacted randomly, in a specific order, or by round-robin.")
+  @JsonProperty("groupAlertType")
+  public GroupAlertTypeEnum getGroupAlertType() {
+    return groupAlertType;
+  }
+  public void setGroupAlertType(GroupAlertTypeEnum groupAlertType) {
+    this.groupAlertType = groupAlertType;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -144,12 +218,14 @@ public class VoicemailGroupPolicy  implements Serializable {
         Objects.equals(this.enabled, voicemailGroupPolicy.enabled) &&
         Objects.equals(this.sendEmailNotifications, voicemailGroupPolicy.sendEmailNotifications) &&
         Objects.equals(this.rotateCallsSecs, voicemailGroupPolicy.rotateCallsSecs) &&
-        Objects.equals(this.stopRingingAfterRotations, voicemailGroupPolicy.stopRingingAfterRotations);
+        Objects.equals(this.stopRingingAfterRotations, voicemailGroupPolicy.stopRingingAfterRotations) &&
+        Objects.equals(this.overflowGroupId, voicemailGroupPolicy.overflowGroupId) &&
+        Objects.equals(this.groupAlertType, voicemailGroupPolicy.groupAlertType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, group, enabled, sendEmailNotifications, rotateCallsSecs, stopRingingAfterRotations);
+    return Objects.hash(name, group, enabled, sendEmailNotifications, rotateCallsSecs, stopRingingAfterRotations, overflowGroupId, groupAlertType);
   }
 
   @Override
@@ -163,6 +239,8 @@ public class VoicemailGroupPolicy  implements Serializable {
     sb.append("    sendEmailNotifications: ").append(toIndentedString(sendEmailNotifications)).append("\n");
     sb.append("    rotateCallsSecs: ").append(toIndentedString(rotateCallsSecs)).append("\n");
     sb.append("    stopRingingAfterRotations: ").append(toIndentedString(stopRingingAfterRotations)).append("\n");
+    sb.append("    overflowGroupId: ").append(toIndentedString(overflowGroupId)).append("\n");
+    sb.append("    groupAlertType: ").append(toIndentedString(groupAlertType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

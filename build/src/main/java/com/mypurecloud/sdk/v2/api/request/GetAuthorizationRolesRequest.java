@@ -127,6 +127,20 @@ public class GetAuthorizationRolesRequest {
 	    return this;
 	}
 
+	private List<Object> defaultRoleId;
+	public List<Object> getDefaultRoleId() {
+		return this.defaultRoleId;
+	}
+
+	public void setDefaultRoleId(List<Object> defaultRoleId) {
+		this.defaultRoleId = defaultRoleId;
+	}
+
+	public GetAuthorizationRolesRequest withDefaultRoleId(List<Object> defaultRoleId) {
+	    this.setDefaultRoleId(defaultRoleId);
+	    return this;
+	}
+
 	private Boolean userCount;
 	public Boolean getUserCount() {
 		return this.userCount;
@@ -178,6 +192,8 @@ public class GetAuthorizationRolesRequest {
         
                 .withQueryParameters("permission", "multi", permission)
         
+                .withQueryParameters("defaultRoleId", "multi", defaultRoleId)
+        
                 .withQueryParameters("userCount", "", userCount)
                         .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -224,6 +240,10 @@ public class GetAuthorizationRolesRequest {
 		}
 		public Builder withPermission(List<Object> permission) {
 			request.setPermission(permission);
+			return this;
+		}
+		public Builder withDefaultRoleId(List<Object> defaultRoleId) {
+			request.setDefaultRoleId(defaultRoleId);
 			return this;
 		}
 		public Builder withUserCount(Boolean userCount) {

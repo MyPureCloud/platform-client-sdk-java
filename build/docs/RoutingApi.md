@@ -57,7 +57,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteRoutingEmailDomain**
 
-> String deleteRoutingEmailDomain(domainId)
+> Void deleteRoutingEmailDomain(domainId)
 
 Delete a domain
 
@@ -84,8 +84,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 RoutingApi apiInstance = new RoutingApi();
 String domainId = "domainId_example"; // String | domain ID
 try {
-    String result = apiInstance.deleteRoutingEmailDomain(domainId);
-    System.out.println(result);
+    apiInstance.deleteRoutingEmailDomain(domainId);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#deleteRoutingEmailDomain");
     e.printStackTrace();
@@ -102,13 +101,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteRoutingEmailDomainRoute"></a>
 
 # **deleteRoutingEmailDomainRoute**
 
-> String deleteRoutingEmailDomainRoute(domainName, routeId)
+> Void deleteRoutingEmailDomainRoute(domainName, routeId)
 
 Delete a route
 
@@ -136,8 +135,7 @@ RoutingApi apiInstance = new RoutingApi();
 String domainName = "domainName_example"; // String | email domain
 String routeId = "routeId_example"; // String | route ID
 try {
-    String result = apiInstance.deleteRoutingEmailDomainRoute(domainName, routeId);
-    System.out.println(result);
+    apiInstance.deleteRoutingEmailDomainRoute(domainName, routeId);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#deleteRoutingEmailDomainRoute");
     e.printStackTrace();
@@ -155,13 +153,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteRoutingQueue"></a>
 
 # **deleteRoutingQueue**
 
-> String deleteRoutingQueue(queueId, forceDelete)
+> Void deleteRoutingQueue(queueId, forceDelete)
 
 Delete a queue
 
@@ -189,8 +187,7 @@ RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
 Boolean forceDelete = true; // Boolean | forceDelete
 try {
-    String result = apiInstance.deleteRoutingQueue(queueId, forceDelete);
-    System.out.println(result);
+    apiInstance.deleteRoutingQueue(queueId, forceDelete);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#deleteRoutingQueue");
     e.printStackTrace();
@@ -208,13 +205,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteRoutingQueueUser"></a>
 
 # **deleteRoutingQueueUser**
 
-> String deleteRoutingQueueUser(queueId, memberId)
+> Void deleteRoutingQueueUser(queueId, memberId)
 
 Delete queue member
 
@@ -242,8 +239,7 @@ RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
 String memberId = "memberId_example"; // String | Member ID
 try {
-    String result = apiInstance.deleteRoutingQueueUser(queueId, memberId);
-    System.out.println(result);
+    apiInstance.deleteRoutingQueueUser(queueId, memberId);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#deleteRoutingQueueUser");
     e.printStackTrace();
@@ -261,13 +257,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteRoutingQueueWrapupcode"></a>
 
 # **deleteRoutingQueueWrapupcode**
 
-> String deleteRoutingQueueWrapupcode(queueId, codeId)
+> Void deleteRoutingQueueWrapupcode(queueId, codeId)
 
 Delete a wrap-up code from a queue
 
@@ -295,8 +291,7 @@ RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
 String codeId = "codeId_example"; // String | Code ID
 try {
-    String result = apiInstance.deleteRoutingQueueWrapupcode(queueId, codeId);
-    System.out.println(result);
+    apiInstance.deleteRoutingQueueWrapupcode(queueId, codeId);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#deleteRoutingQueueWrapupcode");
     e.printStackTrace();
@@ -314,13 +309,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteRoutingSkill"></a>
 
 # **deleteRoutingSkill**
 
-> String deleteRoutingSkill(skillId)
+> Void deleteRoutingSkill(skillId)
 
 Delete Routing Skill
 
@@ -347,8 +342,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 RoutingApi apiInstance = new RoutingApi();
 String skillId = "skillId_example"; // String | Skill ID
 try {
-    String result = apiInstance.deleteRoutingSkill(skillId);
-    System.out.println(result);
+    apiInstance.deleteRoutingSkill(skillId);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#deleteRoutingSkill");
     e.printStackTrace();
@@ -365,13 +359,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteRoutingUtilization"></a>
 
 # **deleteRoutingUtilization**
 
-> String deleteRoutingUtilization()
+> Void deleteRoutingUtilization()
 
 Delete utilization settings and revert to system defaults.
 
@@ -397,8 +391,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 try {
-    String result = apiInstance.deleteRoutingUtilization();
-    System.out.println(result);
+    apiInstance.deleteRoutingUtilization();
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#deleteRoutingUtilization");
     e.printStackTrace();
@@ -412,13 +405,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteRoutingWrapupcode"></a>
 
 # **deleteRoutingWrapupcode**
 
-> String deleteRoutingWrapupcode(codeId)
+> Void deleteRoutingWrapupcode(codeId)
 
 Delete wrap-up code
 
@@ -445,8 +438,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 RoutingApi apiInstance = new RoutingApi();
 String codeId = "codeId_example"; // String | Wrapup Code ID
 try {
-    String result = apiInstance.deleteRoutingWrapupcode(codeId);
-    System.out.println(result);
+    apiInstance.deleteRoutingWrapupcode(codeId);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#deleteRoutingWrapupcode");
     e.printStackTrace();
@@ -463,13 +455,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteUserRoutingskill"></a>
 
 # **deleteUserRoutingskill**
 
-> String deleteUserRoutingskill(userId, skillId)
+> Void deleteUserRoutingskill(userId, skillId)
 
 Remove routing skill from user
 
@@ -497,8 +489,7 @@ RoutingApi apiInstance = new RoutingApi();
 String userId = "userId_example"; // String | User ID
 String skillId = "skillId_example"; // String | skillId
 try {
-    String result = apiInstance.deleteUserRoutingskill(userId, skillId);
-    System.out.println(result);
+    apiInstance.deleteUserRoutingskill(userId, skillId);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#deleteUserRoutingskill");
     e.printStackTrace();
@@ -516,7 +507,7 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="getRoutingEmailDomain"></a>
 

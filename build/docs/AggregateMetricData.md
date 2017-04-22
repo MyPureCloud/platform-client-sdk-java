@@ -61,6 +61,8 @@ title: AggregateMetricData
 | OWAITING | &quot;oWaiting&quot; |
 | OONQUEUEUSERS | &quot;oOnQueueUsers&quot; |
 | OOFFQUEUEUSERS | &quot;oOffQueueUsers&quot; |
+| OUSERPRESENCES | &quot;oUserPresences&quot; |
+| OUSERROUTINGSTATUSES | &quot;oUserRoutingStatuses&quot; |
 {: class="table table-striped"}
 
 

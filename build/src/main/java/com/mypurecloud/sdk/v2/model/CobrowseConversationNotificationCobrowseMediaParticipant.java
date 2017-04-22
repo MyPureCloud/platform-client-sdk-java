@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CobrowseConversationNotificationErrorInfo;
 import com.mypurecloud.sdk.v2.model.CobrowseConversationNotificationUriReference;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationWrapup;
-import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationCreatedBy;
+import com.mypurecloud.sdk.v2.model.DependencyTrackingBuildNotificationNotificationUser;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -164,7 +164,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
   private Boolean held = null;
   private Boolean wrapupRequired = null;
   private String wrapupPrompt = null;
-  private DocumentDataV2NotificationCreatedBy user = null;
+  private DependencyTrackingBuildNotificationNotificationUser user = null;
   private CobrowseConversationNotificationUriReference queue = null;
   private Map<String, String> attributes = new HashMap<String, String>();
   private CobrowseConversationNotificationErrorInfo errorInfo = null;
@@ -422,17 +422,17 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
 
   /**
    **/
-  public CobrowseConversationNotificationCobrowseMediaParticipant user(DocumentDataV2NotificationCreatedBy user) {
+  public CobrowseConversationNotificationCobrowseMediaParticipant user(DependencyTrackingBuildNotificationNotificationUser user) {
     this.user = user;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("user")
-  public DocumentDataV2NotificationCreatedBy getUser() {
+  public DependencyTrackingBuildNotificationNotificationUser getUser() {
     return user;
   }
-  public void setUser(DocumentDataV2NotificationCreatedBy user) {
+  public void setUser(DependencyTrackingBuildNotificationNotificationUser user) {
     this.user = user;
   }
 

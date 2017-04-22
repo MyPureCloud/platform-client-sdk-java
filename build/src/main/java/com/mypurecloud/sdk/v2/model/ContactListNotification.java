@@ -6,7 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactListNotificationImportStatus;
 import com.mypurecloud.sdk.v2.model.ContactListNotificationPhoneColumns;
-import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationCreatedBy;
+import com.mypurecloud.sdk.v2.model.DependencyTrackingBuildNotificationNotificationUser;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -31,7 +31,7 @@ public class ContactListNotification  implements Serializable {
   private String previewModeColumnName = null;
   private List<String> previewModeAcceptedValues = new ArrayList<String>();
   private Integer size = null;
-  private DocumentDataV2NotificationCreatedBy attemptLimits = null;
+  private DependencyTrackingBuildNotificationNotificationUser attemptLimits = null;
   private Object additionalProperties = null;
 
   
@@ -224,17 +224,17 @@ public class ContactListNotification  implements Serializable {
 
   /**
    **/
-  public ContactListNotification attemptLimits(DocumentDataV2NotificationCreatedBy attemptLimits) {
+  public ContactListNotification attemptLimits(DependencyTrackingBuildNotificationNotificationUser attemptLimits) {
     this.attemptLimits = attemptLimits;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("attemptLimits")
-  public DocumentDataV2NotificationCreatedBy getAttemptLimits() {
+  public DependencyTrackingBuildNotificationNotificationUser getAttemptLimits() {
     return attemptLimits;
   }
-  public void setAttemptLimits(DocumentDataV2NotificationCreatedBy attemptLimits) {
+  public void setAttemptLimits(DependencyTrackingBuildNotificationNotificationUser attemptLimits) {
     this.attemptLimits = attemptLimits;
   }
 

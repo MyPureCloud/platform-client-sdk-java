@@ -8,6 +8,7 @@ title: ConversationAssociation
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
+| **externalContactId** | **String** | External Contact ID; populated from url |  [optional] |
 | **conversationId** | **String** | Conversation ID |  |
 | **communicationId** | **String** | Communication ID |  |
 | **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum) | Media type |  |

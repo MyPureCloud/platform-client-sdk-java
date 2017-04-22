@@ -68,22 +68,20 @@ public class VoicemailApi {
    * Delete a message.
    * 
    * @param messageId Message ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteVoicemailMessage(String messageId) throws IOException, ApiException {
-    return  deleteVoicemailMessage(createDeleteVoicemailMessageRequest(messageId));
+  public void deleteVoicemailMessage(String messageId) throws IOException, ApiException {
+     deleteVoicemailMessage(createDeleteVoicemailMessageRequest(messageId));
   }
 
   /**
    * Delete a message.
    * 
    * @param messageId Message ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteVoicemailMessageWithHttpInfo(String messageId) throws IOException {
+  public ApiResponse<Void> deleteVoicemailMessageWithHttpInfo(String messageId) throws IOException {
     return deleteVoicemailMessage(createDeleteVoicemailMessageRequest(messageId).withHttpInfo());
   }
 
@@ -97,18 +95,17 @@ public class VoicemailApi {
    * Delete a message.
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteVoicemailMessage(DeleteVoicemailMessageRequest request) throws IOException, ApiException {
+  public void deleteVoicemailMessage(DeleteVoicemailMessageRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -119,13 +116,13 @@ public class VoicemailApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteVoicemailMessage(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteVoicemailMessage(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -136,7 +133,7 @@ public class VoicemailApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -144,21 +141,19 @@ public class VoicemailApi {
   /**
    * Delete all voicemail messages
    * 
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteVoicemailMessages() throws IOException, ApiException {
-    return  deleteVoicemailMessages(createDeleteVoicemailMessagesRequest());
+  public void deleteVoicemailMessages() throws IOException, ApiException {
+     deleteVoicemailMessages(createDeleteVoicemailMessagesRequest());
   }
 
   /**
    * Delete all voicemail messages
    * 
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteVoicemailMessagesWithHttpInfo() throws IOException {
+  public ApiResponse<Void> deleteVoicemailMessagesWithHttpInfo() throws IOException {
     return deleteVoicemailMessages(createDeleteVoicemailMessagesRequest().withHttpInfo());
   }
 
@@ -170,18 +165,17 @@ public class VoicemailApi {
    * Delete all voicemail messages
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteVoicemailMessages(DeleteVoicemailMessagesRequest request) throws IOException, ApiException {
+  public void deleteVoicemailMessages(DeleteVoicemailMessagesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -192,13 +186,13 @@ public class VoicemailApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteVoicemailMessages(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteVoicemailMessages(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -209,7 +203,7 @@ public class VoicemailApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

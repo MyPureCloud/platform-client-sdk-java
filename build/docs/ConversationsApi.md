@@ -144,7 +144,7 @@ null (empty response body)
 
 # **deleteConversationsCallParticipantConsult**
 
-> String deleteConversationsCallParticipantConsult(conversationId, participantId)
+> Void deleteConversationsCallParticipantConsult(conversationId, participantId)
 
 Cancel the transfer
 
@@ -172,8 +172,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 try {
-    String result = apiInstance.deleteConversationsCallParticipantConsult(conversationId, participantId);
-    System.out.println(result);
+    apiInstance.deleteConversationsCallParticipantConsult(conversationId, participantId);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#deleteConversationsCallParticipantConsult");
     e.printStackTrace();
@@ -191,13 +190,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteConversationsEmailMessagesDraftAttachment"></a>
 
 # **deleteConversationsEmailMessagesDraftAttachment**
 
-> String deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId)
+> Void deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId)
 
 Delete attachment from draft
 
@@ -225,8 +224,7 @@ ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String attachmentId = "attachmentId_example"; // String | attachmentId
 try {
-    String result = apiInstance.deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId);
-    System.out.println(result);
+    apiInstance.deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#deleteConversationsEmailMessagesDraftAttachment");
     e.printStackTrace();
@@ -244,7 +242,7 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="getAnalyticsConversationDetails"></a>
 

@@ -9,10 +9,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteArchitectPrompt**](ArchitectApi.html#deleteArchitectPrompt) | Delete specified user prompt |
 | [**deleteArchitectPromptResource**](ArchitectApi.html#deleteArchitectPromptResource) | Delete specified user prompt resource |
-| [**deleteArchitectPrompts**](ArchitectApi.html#deleteArchitectPrompts) | Batch-delete a list of prompts asynchronously |
+| [**deleteArchitectPrompts**](ArchitectApi.html#deleteArchitectPrompts) | Batch-delete a list of prompts |
 | [**deleteArchitectSystempromptResource**](ArchitectApi.html#deleteArchitectSystempromptResource) | Delete a system prompt resource override. |
 | [**deleteFlow**](ArchitectApi.html#deleteFlow) | Delete flow |
-| [**deleteFlows**](ArchitectApi.html#deleteFlows) | Batch-delete a list of flows asynchronously |
+| [**deleteFlows**](ArchitectApi.html#deleteFlows) | Batch-delete a list of flows |
 | [**getArchitectDependencytracking**](ArchitectApi.html#getArchitectDependencytracking) | Get Dependency Tracking objects that have a given display name |
 | [**getArchitectDependencytrackingBuild**](ArchitectApi.html#getArchitectDependencytrackingBuild) | Get Dependency Tracking build status for an organization |
 | [**getArchitectDependencytrackingConsumedresources**](ArchitectApi.html#getArchitectDependencytrackingConsumedresources) | Get resources that are consumed by a given Dependency Tracking object |
@@ -164,9 +164,9 @@ null (empty response body)
 
 > [Operation](Operation.html) deleteArchitectPrompts(id)
 
-Batch-delete a list of prompts asynchronously
+Batch-delete a list of prompts
 
-Multiple IDs can be specified, in which case all specified prompts will be deleted.
+Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
 
 Wraps DELETE /api/v2/architect/prompts  
 
@@ -213,7 +213,7 @@ try {
 
 # **deleteArchitectSystempromptResource**
 
-> String deleteArchitectSystempromptResource(promptId, languageCode)
+> Void deleteArchitectSystempromptResource(promptId, languageCode)
 
 Delete a system prompt resource override.
 
@@ -241,8 +241,7 @@ ArchitectApi apiInstance = new ArchitectApi();
 String promptId = "promptId_example"; // String | Prompt ID
 String languageCode = "languageCode_example"; // String | Language
 try {
-    String result = apiInstance.deleteArchitectSystempromptResource(promptId, languageCode);
-    System.out.println(result);
+    apiInstance.deleteArchitectSystempromptResource(promptId, languageCode);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#deleteArchitectSystempromptResource");
     e.printStackTrace();
@@ -260,7 +259,7 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteFlow"></a>
 
@@ -318,9 +317,9 @@ null (empty response body)
 
 > [Operation](Operation.html) deleteFlows(id)
 
-Batch-delete a list of flows asynchronously
+Batch-delete a list of flows
 
-Multiple IDs can be specified, in which case all specified flows will be deleted.
+Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
 
 Wraps DELETE /api/v2/flows  
 
@@ -1682,7 +1681,7 @@ try {
 
 Rebuild Dependency Tracking data for an organization
 
-
+Asynchronous.  Notification topic: v2.architect.dependencytracking.build
 
 Wraps POST /api/v2/architect/dependencytracking/build  
 
@@ -1989,7 +1988,7 @@ try {
 
 Check-in flow
 
-
+Asynchronous.  Notification topic: v2.flows.{flowId}
 
 Wraps POST /api/v2/flows/actions/checkin  
 
@@ -2142,7 +2141,7 @@ try {
 
 Publish flow
 
-
+Asynchronous.  Notification topic: v2.flows.{flowId}
 
 Wraps POST /api/v2/flows/actions/publish  
 

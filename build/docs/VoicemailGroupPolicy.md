@@ -14,7 +14,21 @@ title: VoicemailGroupPolicy
 | **sendEmailNotifications** | **Boolean** | Whether email notifications are sent to group members when a new voicemail is received |  [optional] |
 | **rotateCallsSecs** | **Integer** | How many seconds to ring before rotating to the next member in the group |  [optional] |
 | **stopRingingAfterRotations** | **Integer** | How many rotations to go through |  [optional] |
+| **overflowGroupId** | **String** |  A fallback group to contact when all of the members in this group did not answer the call. |  [optional] |
+| **groupAlertType** | [**GroupAlertTypeEnum**](#GroupAlertTypeEnum) | Specifies if the members in this group should be contacted randomly, in a specific order, or by round-robin. |  [optional] |
 {: class="table table-striped"}
+
+
+<a name="GroupAlertTypeEnum"></a>
+
+## Enum: GroupAlertTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| RANDOM | &quot;RANDOM&quot; |
+| ROUND_ROBIN | &quot;ROUND_ROBIN&quot; |
+| SEQUENTIAL | &quot;SEQUENTIAL&quot; |
 {: class="table table-striped"}
 
 

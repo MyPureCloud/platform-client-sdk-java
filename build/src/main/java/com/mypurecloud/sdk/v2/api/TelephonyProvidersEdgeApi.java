@@ -219,22 +219,20 @@ public class TelephonyProvidersEdgeApi {
    * Delete a edge.
    * 
    * @param edgeId Edge ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdge(String edgeId) throws IOException, ApiException {
-    return  deleteTelephonyProvidersEdge(createDeleteTelephonyProvidersEdgeRequest(edgeId));
+  public void deleteTelephonyProvidersEdge(String edgeId) throws IOException, ApiException {
+     deleteTelephonyProvidersEdge(createDeleteTelephonyProvidersEdgeRequest(edgeId));
   }
 
   /**
    * Delete a edge.
    * 
    * @param edgeId Edge ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgeWithHttpInfo(String edgeId) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgeWithHttpInfo(String edgeId) throws IOException {
     return deleteTelephonyProvidersEdge(createDeleteTelephonyProvidersEdgeRequest(edgeId).withHttpInfo());
   }
 
@@ -248,18 +246,17 @@ public class TelephonyProvidersEdgeApi {
    * Delete a edge.
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdge(DeleteTelephonyProvidersEdgeRequest request) throws IOException, ApiException {
+  public void deleteTelephonyProvidersEdge(DeleteTelephonyProvidersEdgeRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -270,13 +267,13 @@ public class TelephonyProvidersEdgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdge(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdge(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -287,7 +284,7 @@ public class TelephonyProvidersEdgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -374,22 +371,20 @@ public class TelephonyProvidersEdgeApi {
    * Cancels any in-progress update for this edge.
    * 
    * @param edgeId Edge ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgeSoftwareupdate(String edgeId) throws IOException, ApiException {
-    return  deleteTelephonyProvidersEdgeSoftwareupdate(createDeleteTelephonyProvidersEdgeSoftwareupdateRequest(edgeId));
+  public void deleteTelephonyProvidersEdgeSoftwareupdate(String edgeId) throws IOException, ApiException {
+     deleteTelephonyProvidersEdgeSoftwareupdate(createDeleteTelephonyProvidersEdgeSoftwareupdateRequest(edgeId));
   }
 
   /**
    * Cancels any in-progress update for this edge.
    * 
    * @param edgeId Edge ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgeSoftwareupdateWithHttpInfo(String edgeId) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgeSoftwareupdateWithHttpInfo(String edgeId) throws IOException {
     return deleteTelephonyProvidersEdgeSoftwareupdate(createDeleteTelephonyProvidersEdgeSoftwareupdateRequest(edgeId).withHttpInfo());
   }
 
@@ -403,18 +398,17 @@ public class TelephonyProvidersEdgeApi {
    * Cancels any in-progress update for this edge.
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgeSoftwareupdate(DeleteTelephonyProvidersEdgeSoftwareupdateRequest request) throws IOException, ApiException {
+  public void deleteTelephonyProvidersEdgeSoftwareupdate(DeleteTelephonyProvidersEdgeSoftwareupdateRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -425,13 +419,13 @@ public class TelephonyProvidersEdgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgeSoftwareupdate(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgeSoftwareupdate(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -442,7 +436,7 @@ public class TelephonyProvidersEdgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -451,22 +445,20 @@ public class TelephonyProvidersEdgeApi {
    * Delete a certificate authority.
    * 
    * @param certificateId Certificate ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesCertificateauthority(String certificateId) throws IOException, ApiException {
-    return  deleteTelephonyProvidersEdgesCertificateauthority(createDeleteTelephonyProvidersEdgesCertificateauthorityRequest(certificateId));
+  public void deleteTelephonyProvidersEdgesCertificateauthority(String certificateId) throws IOException, ApiException {
+     deleteTelephonyProvidersEdgesCertificateauthority(createDeleteTelephonyProvidersEdgesCertificateauthorityRequest(certificateId));
   }
 
   /**
    * Delete a certificate authority.
    * 
    * @param certificateId Certificate ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesCertificateauthorityWithHttpInfo(String certificateId) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesCertificateauthorityWithHttpInfo(String certificateId) throws IOException {
     return deleteTelephonyProvidersEdgesCertificateauthority(createDeleteTelephonyProvidersEdgesCertificateauthorityRequest(certificateId).withHttpInfo());
   }
 
@@ -480,18 +472,17 @@ public class TelephonyProvidersEdgeApi {
    * Delete a certificate authority.
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesCertificateauthority(DeleteTelephonyProvidersEdgesCertificateauthorityRequest request) throws IOException, ApiException {
+  public void deleteTelephonyProvidersEdgesCertificateauthority(DeleteTelephonyProvidersEdgesCertificateauthorityRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -502,13 +493,13 @@ public class TelephonyProvidersEdgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesCertificateauthority(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesCertificateauthority(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -519,7 +510,7 @@ public class TelephonyProvidersEdgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -528,22 +519,20 @@ public class TelephonyProvidersEdgeApi {
    * Delete a DID Pool by ID.
    * 
    * @param didPoolId DID pool ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesDidpool(String didPoolId) throws IOException, ApiException {
-    return  deleteTelephonyProvidersEdgesDidpool(createDeleteTelephonyProvidersEdgesDidpoolRequest(didPoolId));
+  public void deleteTelephonyProvidersEdgesDidpool(String didPoolId) throws IOException, ApiException {
+     deleteTelephonyProvidersEdgesDidpool(createDeleteTelephonyProvidersEdgesDidpoolRequest(didPoolId));
   }
 
   /**
    * Delete a DID Pool by ID.
    * 
    * @param didPoolId DID pool ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesDidpoolWithHttpInfo(String didPoolId) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesDidpoolWithHttpInfo(String didPoolId) throws IOException {
     return deleteTelephonyProvidersEdgesDidpool(createDeleteTelephonyProvidersEdgesDidpoolRequest(didPoolId).withHttpInfo());
   }
 
@@ -557,18 +546,17 @@ public class TelephonyProvidersEdgeApi {
    * Delete a DID Pool by ID.
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesDidpool(DeleteTelephonyProvidersEdgesDidpoolRequest request) throws IOException, ApiException {
+  public void deleteTelephonyProvidersEdgesDidpool(DeleteTelephonyProvidersEdgesDidpoolRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -579,13 +567,13 @@ public class TelephonyProvidersEdgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesDidpool(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesDidpool(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -596,7 +584,7 @@ public class TelephonyProvidersEdgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -605,22 +593,20 @@ public class TelephonyProvidersEdgeApi {
    * Delete an edge group.
    * 
    * @param edgeGroupId Edge group ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesEdgegroup(String edgeGroupId) throws IOException, ApiException {
-    return  deleteTelephonyProvidersEdgesEdgegroup(createDeleteTelephonyProvidersEdgesEdgegroupRequest(edgeGroupId));
+  public void deleteTelephonyProvidersEdgesEdgegroup(String edgeGroupId) throws IOException, ApiException {
+     deleteTelephonyProvidersEdgesEdgegroup(createDeleteTelephonyProvidersEdgesEdgegroupRequest(edgeGroupId));
   }
 
   /**
    * Delete an edge group.
    * 
    * @param edgeGroupId Edge group ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesEdgegroupWithHttpInfo(String edgeGroupId) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesEdgegroupWithHttpInfo(String edgeGroupId) throws IOException {
     return deleteTelephonyProvidersEdgesEdgegroup(createDeleteTelephonyProvidersEdgesEdgegroupRequest(edgeGroupId).withHttpInfo());
   }
 
@@ -634,18 +620,17 @@ public class TelephonyProvidersEdgeApi {
    * Delete an edge group.
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesEdgegroup(DeleteTelephonyProvidersEdgesEdgegroupRequest request) throws IOException, ApiException {
+  public void deleteTelephonyProvidersEdgesEdgegroup(DeleteTelephonyProvidersEdgesEdgegroupRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -656,13 +641,13 @@ public class TelephonyProvidersEdgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesEdgegroup(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesEdgegroup(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -673,7 +658,7 @@ public class TelephonyProvidersEdgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -682,22 +667,20 @@ public class TelephonyProvidersEdgeApi {
    * Delete endpoint
    * 
    * @param endpointId Endpoint ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesEndpoint(String endpointId) throws IOException, ApiException {
-    return  deleteTelephonyProvidersEdgesEndpoint(createDeleteTelephonyProvidersEdgesEndpointRequest(endpointId));
+  public void deleteTelephonyProvidersEdgesEndpoint(String endpointId) throws IOException, ApiException {
+     deleteTelephonyProvidersEdgesEndpoint(createDeleteTelephonyProvidersEdgesEndpointRequest(endpointId));
   }
 
   /**
    * Delete endpoint
    * 
    * @param endpointId Endpoint ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesEndpointWithHttpInfo(String endpointId) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesEndpointWithHttpInfo(String endpointId) throws IOException {
     return deleteTelephonyProvidersEdgesEndpoint(createDeleteTelephonyProvidersEdgesEndpointRequest(endpointId).withHttpInfo());
   }
 
@@ -711,18 +694,17 @@ public class TelephonyProvidersEdgeApi {
    * Delete endpoint
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesEndpoint(DeleteTelephonyProvidersEdgesEndpointRequest request) throws IOException, ApiException {
+  public void deleteTelephonyProvidersEdgesEndpoint(DeleteTelephonyProvidersEdgesEndpointRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -733,13 +715,13 @@ public class TelephonyProvidersEdgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesEndpoint(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesEndpoint(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -750,7 +732,7 @@ public class TelephonyProvidersEdgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -759,22 +741,20 @@ public class TelephonyProvidersEdgeApi {
    * Delete an extension pool by ID
    * 
    * @param extensionPoolId Extension pool ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesExtensionpool(String extensionPoolId) throws IOException, ApiException {
-    return  deleteTelephonyProvidersEdgesExtensionpool(createDeleteTelephonyProvidersEdgesExtensionpoolRequest(extensionPoolId));
+  public void deleteTelephonyProvidersEdgesExtensionpool(String extensionPoolId) throws IOException, ApiException {
+     deleteTelephonyProvidersEdgesExtensionpool(createDeleteTelephonyProvidersEdgesExtensionpoolRequest(extensionPoolId));
   }
 
   /**
    * Delete an extension pool by ID
    * 
    * @param extensionPoolId Extension pool ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesExtensionpoolWithHttpInfo(String extensionPoolId) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesExtensionpoolWithHttpInfo(String extensionPoolId) throws IOException {
     return deleteTelephonyProvidersEdgesExtensionpool(createDeleteTelephonyProvidersEdgesExtensionpoolRequest(extensionPoolId).withHttpInfo());
   }
 
@@ -788,18 +768,17 @@ public class TelephonyProvidersEdgeApi {
    * Delete an extension pool by ID
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesExtensionpool(DeleteTelephonyProvidersEdgesExtensionpoolRequest request) throws IOException, ApiException {
+  public void deleteTelephonyProvidersEdgesExtensionpool(DeleteTelephonyProvidersEdgesExtensionpoolRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -810,13 +789,13 @@ public class TelephonyProvidersEdgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesExtensionpool(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesExtensionpool(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -827,7 +806,7 @@ public class TelephonyProvidersEdgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -836,22 +815,20 @@ public class TelephonyProvidersEdgeApi {
    * Delete Outbound Route
    * 
    * @param outboundRouteId Outbound route ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesOutboundroute(String outboundRouteId) throws IOException, ApiException {
-    return  deleteTelephonyProvidersEdgesOutboundroute(createDeleteTelephonyProvidersEdgesOutboundrouteRequest(outboundRouteId));
+  public void deleteTelephonyProvidersEdgesOutboundroute(String outboundRouteId) throws IOException, ApiException {
+     deleteTelephonyProvidersEdgesOutboundroute(createDeleteTelephonyProvidersEdgesOutboundrouteRequest(outboundRouteId));
   }
 
   /**
    * Delete Outbound Route
    * 
    * @param outboundRouteId Outbound route ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesOutboundrouteWithHttpInfo(String outboundRouteId) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesOutboundrouteWithHttpInfo(String outboundRouteId) throws IOException {
     return deleteTelephonyProvidersEdgesOutboundroute(createDeleteTelephonyProvidersEdgesOutboundrouteRequest(outboundRouteId).withHttpInfo());
   }
 
@@ -865,18 +842,17 @@ public class TelephonyProvidersEdgeApi {
    * Delete Outbound Route
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesOutboundroute(DeleteTelephonyProvidersEdgesOutboundrouteRequest request) throws IOException, ApiException {
+  public void deleteTelephonyProvidersEdgesOutboundroute(DeleteTelephonyProvidersEdgesOutboundrouteRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -887,13 +863,13 @@ public class TelephonyProvidersEdgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesOutboundroute(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesOutboundroute(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -904,7 +880,7 @@ public class TelephonyProvidersEdgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -913,22 +889,20 @@ public class TelephonyProvidersEdgeApi {
    * Delete a Phone by ID
    * 
    * @param phoneId Phone ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesPhone(String phoneId) throws IOException, ApiException {
-    return  deleteTelephonyProvidersEdgesPhone(createDeleteTelephonyProvidersEdgesPhoneRequest(phoneId));
+  public void deleteTelephonyProvidersEdgesPhone(String phoneId) throws IOException, ApiException {
+     deleteTelephonyProvidersEdgesPhone(createDeleteTelephonyProvidersEdgesPhoneRequest(phoneId));
   }
 
   /**
    * Delete a Phone by ID
    * 
    * @param phoneId Phone ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesPhoneWithHttpInfo(String phoneId) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesPhoneWithHttpInfo(String phoneId) throws IOException {
     return deleteTelephonyProvidersEdgesPhone(createDeleteTelephonyProvidersEdgesPhoneRequest(phoneId).withHttpInfo());
   }
 
@@ -942,18 +916,17 @@ public class TelephonyProvidersEdgeApi {
    * Delete a Phone by ID
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesPhone(DeleteTelephonyProvidersEdgesPhoneRequest request) throws IOException, ApiException {
+  public void deleteTelephonyProvidersEdgesPhone(DeleteTelephonyProvidersEdgesPhoneRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -964,13 +937,13 @@ public class TelephonyProvidersEdgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesPhone(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesPhone(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -981,7 +954,7 @@ public class TelephonyProvidersEdgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -990,22 +963,20 @@ public class TelephonyProvidersEdgeApi {
    * Delete a Phone Base Settings by ID
    * 
    * @param phoneBaseId Phone base ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesPhonebasesetting(String phoneBaseId) throws IOException, ApiException {
-    return  deleteTelephonyProvidersEdgesPhonebasesetting(createDeleteTelephonyProvidersEdgesPhonebasesettingRequest(phoneBaseId));
+  public void deleteTelephonyProvidersEdgesPhonebasesetting(String phoneBaseId) throws IOException, ApiException {
+     deleteTelephonyProvidersEdgesPhonebasesetting(createDeleteTelephonyProvidersEdgesPhonebasesettingRequest(phoneBaseId));
   }
 
   /**
    * Delete a Phone Base Settings by ID
    * 
    * @param phoneBaseId Phone base ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesPhonebasesettingWithHttpInfo(String phoneBaseId) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesPhonebasesettingWithHttpInfo(String phoneBaseId) throws IOException {
     return deleteTelephonyProvidersEdgesPhonebasesetting(createDeleteTelephonyProvidersEdgesPhonebasesettingRequest(phoneBaseId).withHttpInfo());
   }
 
@@ -1019,18 +990,17 @@ public class TelephonyProvidersEdgeApi {
    * Delete a Phone Base Settings by ID
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesPhonebasesetting(DeleteTelephonyProvidersEdgesPhonebasesettingRequest request) throws IOException, ApiException {
+  public void deleteTelephonyProvidersEdgesPhonebasesetting(DeleteTelephonyProvidersEdgesPhonebasesettingRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -1041,13 +1011,13 @@ public class TelephonyProvidersEdgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesPhonebasesetting(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesPhonebasesetting(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1058,7 +1028,7 @@ public class TelephonyProvidersEdgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1067,22 +1037,20 @@ public class TelephonyProvidersEdgeApi {
    * Delete a Site by ID
    * 
    * @param siteId Site ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesSite(String siteId) throws IOException, ApiException {
-    return  deleteTelephonyProvidersEdgesSite(createDeleteTelephonyProvidersEdgesSiteRequest(siteId));
+  public void deleteTelephonyProvidersEdgesSite(String siteId) throws IOException, ApiException {
+     deleteTelephonyProvidersEdgesSite(createDeleteTelephonyProvidersEdgesSiteRequest(siteId));
   }
 
   /**
    * Delete a Site by ID
    * 
    * @param siteId Site ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesSiteWithHttpInfo(String siteId) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesSiteWithHttpInfo(String siteId) throws IOException {
     return deleteTelephonyProvidersEdgesSite(createDeleteTelephonyProvidersEdgesSiteRequest(siteId).withHttpInfo());
   }
 
@@ -1096,18 +1064,17 @@ public class TelephonyProvidersEdgeApi {
    * Delete a Site by ID
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesSite(DeleteTelephonyProvidersEdgesSiteRequest request) throws IOException, ApiException {
+  public void deleteTelephonyProvidersEdgesSite(DeleteTelephonyProvidersEdgesSiteRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -1118,13 +1085,13 @@ public class TelephonyProvidersEdgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesSite(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesSite(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1135,7 +1102,7 @@ public class TelephonyProvidersEdgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1145,12 +1112,11 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param siteId Site ID (required)
    * @param outboundRouteId Outbound route ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesSiteOutboundroute(String siteId, String outboundRouteId) throws IOException, ApiException {
-    return  deleteTelephonyProvidersEdgesSiteOutboundroute(createDeleteTelephonyProvidersEdgesSiteOutboundrouteRequest(siteId, outboundRouteId));
+  public void deleteTelephonyProvidersEdgesSiteOutboundroute(String siteId, String outboundRouteId) throws IOException, ApiException {
+     deleteTelephonyProvidersEdgesSiteOutboundroute(createDeleteTelephonyProvidersEdgesSiteOutboundrouteRequest(siteId, outboundRouteId));
   }
 
   /**
@@ -1158,10 +1124,9 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param siteId Site ID (required)
    * @param outboundRouteId Outbound route ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesSiteOutboundrouteWithHttpInfo(String siteId, String outboundRouteId) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesSiteOutboundrouteWithHttpInfo(String siteId, String outboundRouteId) throws IOException {
     return deleteTelephonyProvidersEdgesSiteOutboundroute(createDeleteTelephonyProvidersEdgesSiteOutboundrouteRequest(siteId, outboundRouteId).withHttpInfo());
   }
 
@@ -1177,18 +1142,17 @@ public class TelephonyProvidersEdgeApi {
    * Delete Outbound Route
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesSiteOutboundroute(DeleteTelephonyProvidersEdgesSiteOutboundrouteRequest request) throws IOException, ApiException {
+  public void deleteTelephonyProvidersEdgesSiteOutboundroute(DeleteTelephonyProvidersEdgesSiteOutboundrouteRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -1199,13 +1163,13 @@ public class TelephonyProvidersEdgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesSiteOutboundroute(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesSiteOutboundroute(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1216,7 +1180,7 @@ public class TelephonyProvidersEdgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1225,22 +1189,20 @@ public class TelephonyProvidersEdgeApi {
    * Delete a Trunk Base Settings object by ID
    * 
    * @param trunkBaseSettingsId Trunk Base ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesTrunkbasesetting(String trunkBaseSettingsId) throws IOException, ApiException {
-    return  deleteTelephonyProvidersEdgesTrunkbasesetting(createDeleteTelephonyProvidersEdgesTrunkbasesettingRequest(trunkBaseSettingsId));
+  public void deleteTelephonyProvidersEdgesTrunkbasesetting(String trunkBaseSettingsId) throws IOException, ApiException {
+     deleteTelephonyProvidersEdgesTrunkbasesetting(createDeleteTelephonyProvidersEdgesTrunkbasesettingRequest(trunkBaseSettingsId));
   }
 
   /**
    * Delete a Trunk Base Settings object by ID
    * 
    * @param trunkBaseSettingsId Trunk Base ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesTrunkbasesettingWithHttpInfo(String trunkBaseSettingsId) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesTrunkbasesettingWithHttpInfo(String trunkBaseSettingsId) throws IOException {
     return deleteTelephonyProvidersEdgesTrunkbasesetting(createDeleteTelephonyProvidersEdgesTrunkbasesettingRequest(trunkBaseSettingsId).withHttpInfo());
   }
 
@@ -1254,18 +1216,17 @@ public class TelephonyProvidersEdgeApi {
    * Delete a Trunk Base Settings object by ID
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTelephonyProvidersEdgesTrunkbasesetting(DeleteTelephonyProvidersEdgesTrunkbasesettingRequest request) throws IOException, ApiException {
+  public void deleteTelephonyProvidersEdgesTrunkbasesetting(DeleteTelephonyProvidersEdgesTrunkbasesettingRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -1276,13 +1237,13 @@ public class TelephonyProvidersEdgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTelephonyProvidersEdgesTrunkbasesetting(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesTrunkbasesetting(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1293,7 +1254,7 @@ public class TelephonyProvidersEdgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5383,11 +5344,11 @@ public class TelephonyProvidersEdgeApi {
    * Get physical interfaces for edges.
    * Retrieves a list of all configured physical interfaces for a list of edges. Only 100 edges can be requested at a time.
    * @param edgeIds Comma separated list of Edge Id&#39;s (required)
-   * @return List<DomainPhysicalInterface>
+   * @return PhysicalInterfaceEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<DomainPhysicalInterface> getTelephonyProvidersEdgesPhysicalinterfaces(String edgeIds) throws IOException, ApiException {
+  public PhysicalInterfaceEntityListing getTelephonyProvidersEdgesPhysicalinterfaces(String edgeIds) throws IOException, ApiException {
     return  getTelephonyProvidersEdgesPhysicalinterfaces(createGetTelephonyProvidersEdgesPhysicalinterfacesRequest(edgeIds));
   }
 
@@ -5395,10 +5356,10 @@ public class TelephonyProvidersEdgeApi {
    * Get physical interfaces for edges.
    * Retrieves a list of all configured physical interfaces for a list of edges. Only 100 edges can be requested at a time.
    * @param edgeIds Comma separated list of Edge Id&#39;s (required)
-   * @return List<DomainPhysicalInterface>
+   * @return PhysicalInterfaceEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<DomainPhysicalInterface>> getTelephonyProvidersEdgesPhysicalinterfacesWithHttpInfo(String edgeIds) throws IOException {
+  public ApiResponse<PhysicalInterfaceEntityListing> getTelephonyProvidersEdgesPhysicalinterfacesWithHttpInfo(String edgeIds) throws IOException {
     return getTelephonyProvidersEdgesPhysicalinterfaces(createGetTelephonyProvidersEdgesPhysicalinterfacesRequest(edgeIds).withHttpInfo());
   }
 
@@ -5412,13 +5373,13 @@ public class TelephonyProvidersEdgeApi {
    * Get physical interfaces for edges.
    * Retrieves a list of all configured physical interfaces for a list of edges. Only 100 edges can be requested at a time.
    * @param request The request object
-   * @return List<DomainPhysicalInterface>
+   * @return PhysicalInterfaceEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<DomainPhysicalInterface> getTelephonyProvidersEdgesPhysicalinterfaces(GetTelephonyProvidersEdgesPhysicalinterfacesRequest request) throws IOException, ApiException {
+  public PhysicalInterfaceEntityListing getTelephonyProvidersEdgesPhysicalinterfaces(GetTelephonyProvidersEdgesPhysicalinterfacesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<List<DomainPhysicalInterface>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<DomainPhysicalInterface>>() {});
+      ApiResponse<PhysicalInterfaceEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PhysicalInterfaceEntityListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -5434,13 +5395,13 @@ public class TelephonyProvidersEdgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<DomainPhysicalInterface>> getTelephonyProvidersEdgesPhysicalinterfaces(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<PhysicalInterfaceEntityListing> getTelephonyProvidersEdgesPhysicalinterfaces(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<List<DomainPhysicalInterface>>() {});
+      return pcapiClient.invoke(request, new TypeReference<PhysicalInterfaceEntityListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<List<DomainPhysicalInterface>> response = (ApiResponse<List<DomainPhysicalInterface>>)(ApiResponse<?>)exception;
+      ApiResponse<PhysicalInterfaceEntityListing> response = (ApiResponse<PhysicalInterfaceEntityListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -5451,7 +5412,7 @@ public class TelephonyProvidersEdgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<List<DomainPhysicalInterface>> response = (ApiResponse<List<DomainPhysicalInterface>>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<PhysicalInterfaceEntityListing> response = (ApiResponse<PhysicalInterfaceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

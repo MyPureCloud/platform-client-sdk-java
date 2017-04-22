@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.RoutingStatus;
 import com.mypurecloud.sdk.v2.model.UserStations;
 import com.mypurecloud.sdk.v2.model.UserMe;
 import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
+import com.mypurecloud.sdk.v2.model.UpdateUser;
 import com.mypurecloud.sdk.v2.model.UserQueue;
 import com.mypurecloud.sdk.v2.model.AggregationQuery;
 import com.mypurecloud.sdk.v2.model.PresenceQueryResponse;
@@ -256,12 +257,11 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @param skillId skillId (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteUserRoutingskill(String userId, String skillId) throws IOException, ApiException {
-    return  deleteUserRoutingskill(createDeleteUserRoutingskillRequest(userId, skillId));
+  public void deleteUserRoutingskill(String userId, String skillId) throws IOException, ApiException {
+     deleteUserRoutingskill(createDeleteUserRoutingskillRequest(userId, skillId));
   }
 
   /**
@@ -269,10 +269,9 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @param skillId skillId (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteUserRoutingskillWithHttpInfo(String userId, String skillId) throws IOException {
+  public ApiResponse<Void> deleteUserRoutingskillWithHttpInfo(String userId, String skillId) throws IOException {
     return deleteUserRoutingskill(createDeleteUserRoutingskillRequest(userId, skillId).withHttpInfo());
   }
 
@@ -288,18 +287,17 @@ public class UsersApi {
    * Remove routing skill from user
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteUserRoutingskill(DeleteUserRoutingskillRequest request) throws IOException, ApiException {
+  public void deleteUserRoutingskill(DeleteUserRoutingskillRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -310,13 +308,13 @@ public class UsersApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteUserRoutingskill(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteUserRoutingskill(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -327,7 +325,7 @@ public class UsersApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1955,7 +1953,7 @@ public class UsersApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public User patchUser(String userId, User body) throws IOException, ApiException {
+  public User patchUser(String userId, UpdateUser body) throws IOException, ApiException {
     return  patchUser(createPatchUserRequest(userId, body));
   }
 
@@ -1967,11 +1965,11 @@ public class UsersApi {
    * @return User
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<User> patchUserWithHttpInfo(String userId, User body) throws IOException {
+  public ApiResponse<User> patchUserWithHttpInfo(String userId, UpdateUser body) throws IOException {
     return patchUser(createPatchUserRequest(userId, body).withHttpInfo());
   }
 
-  private PatchUserRequest createPatchUserRequest(String userId, User body) {
+  private PatchUserRequest createPatchUserRequest(String userId, UpdateUser body) {
     return PatchUserRequest.builder()
             .withUserId(userId)
 
@@ -2005,7 +2003,7 @@ public class UsersApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<User> patchUser(ApiRequest<User> request) throws IOException {
+  public ApiResponse<User> patchUser(ApiRequest<UpdateUser> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<User>() {});
     }

@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.RoutingStatus;
 import com.mypurecloud.sdk.v2.model.UserStations;
 import com.mypurecloud.sdk.v2.model.UserMe;
 import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
+import com.mypurecloud.sdk.v2.model.UpdateUser;
 import com.mypurecloud.sdk.v2.model.UserQueue;
 import com.mypurecloud.sdk.v2.model.AggregationQuery;
 import com.mypurecloud.sdk.v2.model.PresenceQueryResponse;
@@ -61,16 +62,16 @@ public class PatchUserRequest {
 	    return this;
 	}
 
-	private User body;
-	public User getBody() {
+	private UpdateUser body;
+	public UpdateUser getBody() {
 		return this.body;
 	}
 
-	public void setBody(User body) {
+	public void setBody(UpdateUser body) {
 		this.body = body;
 	}
 
-	public PatchUserRequest withBody(User body) {
+	public PatchUserRequest withBody(UpdateUser body) {
 	    this.setBody(body);
 	    return this;
 	}
@@ -94,7 +95,7 @@ public class PatchUserRequest {
         return this;
     }
 
-    public ApiRequest<User> withHttpInfo() {
+    public ApiRequest<UpdateUser> withHttpInfo() {
         
         // verify the required parameter 'userId' is set
         if (this.userId == null) {
@@ -122,7 +123,7 @@ public class PatchUserRequest {
 		return new Builder();
 	}
 
-	public static Builder builder(String userId, User body) {
+	public static Builder builder(String userId, UpdateUser body) {
 	    return new Builder()
 	            .withRequiredParams(userId, body);
 	}
@@ -138,12 +139,12 @@ public class PatchUserRequest {
 			request.setUserId(userId);
 			return this;
 		}
-		public Builder withBody(User body) {
+		public Builder withBody(UpdateUser body) {
 			request.setBody(body);
 			return this;
 		}
 
-		public Builder withRequiredParams(String userId, User body) {
+		public Builder withRequiredParams(String userId, UpdateUser body) {
 			request.setUserId(userId);
 			request.setBody(body);
 			return this;

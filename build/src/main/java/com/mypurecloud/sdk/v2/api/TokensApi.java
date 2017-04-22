@@ -36,21 +36,19 @@ public class TokensApi {
   /**
    * Delete  auth token used to make the request.
    * 
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTokensMe() throws IOException, ApiException {
-    return  deleteTokensMe(createDeleteTokensMeRequest());
+  public void deleteTokensMe() throws IOException, ApiException {
+     deleteTokensMe(createDeleteTokensMeRequest());
   }
 
   /**
    * Delete  auth token used to make the request.
    * 
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTokensMeWithHttpInfo() throws IOException {
+  public ApiResponse<Void> deleteTokensMeWithHttpInfo() throws IOException {
     return deleteTokensMe(createDeleteTokensMeRequest().withHttpInfo());
   }
 
@@ -62,18 +60,17 @@ public class TokensApi {
    * Delete  auth token used to make the request.
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteTokensMe(DeleteTokensMeRequest request) throws IOException, ApiException {
+  public void deleteTokensMe(DeleteTokensMeRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -84,13 +81,13 @@ public class TokensApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteTokensMe(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteTokensMe(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -101,7 +98,7 @@ public class TokensApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

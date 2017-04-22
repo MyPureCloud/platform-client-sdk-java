@@ -151,7 +151,7 @@ try {
 
 # **deleteRecordingMediaretentionpolicies**
 
-> String deleteRecordingMediaretentionpolicies(ids)
+> Void deleteRecordingMediaretentionpolicies(ids)
 
 Delete media retention policies
 
@@ -178,8 +178,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 RecordingApi apiInstance = new RecordingApi();
 String ids = "ids_example"; // String | 
 try {
-    String result = apiInstance.deleteRecordingMediaretentionpolicies(ids);
-    System.out.println(result);
+    apiInstance.deleteRecordingMediaretentionpolicies(ids);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#deleteRecordingMediaretentionpolicies");
     e.printStackTrace();
@@ -196,13 +195,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteRecordingMediaretentionpolicy"></a>
 
 # **deleteRecordingMediaretentionpolicy**
 
-> String deleteRecordingMediaretentionpolicy(policyId)
+> Void deleteRecordingMediaretentionpolicy(policyId)
 
 Delete a media retention policy
 
@@ -229,8 +228,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 RecordingApi apiInstance = new RecordingApi();
 String policyId = "policyId_example"; // String | Policy ID
 try {
-    String result = apiInstance.deleteRecordingMediaretentionpolicy(policyId);
-    System.out.println(result);
+    apiInstance.deleteRecordingMediaretentionpolicy(policyId);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#deleteRecordingMediaretentionpolicy");
     e.printStackTrace();
@@ -247,7 +245,7 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="getConversationRecording"></a>
 

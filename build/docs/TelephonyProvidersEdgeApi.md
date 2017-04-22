@@ -133,7 +133,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteTelephonyProvidersEdge**
 
-> String deleteTelephonyProvidersEdge(edgeId)
+> Void deleteTelephonyProvidersEdge(edgeId)
 
 Delete a edge.
 
@@ -160,8 +160,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String edgeId = "edgeId_example"; // String | Edge ID
 try {
-    String result = apiInstance.deleteTelephonyProvidersEdge(edgeId);
-    System.out.println(result);
+    apiInstance.deleteTelephonyProvidersEdge(edgeId);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdge");
     e.printStackTrace();
@@ -178,7 +177,7 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteTelephonyProvidersEdgeLogicalinterface"></a>
 
@@ -236,7 +235,7 @@ null (empty response body)
 
 # **deleteTelephonyProvidersEdgeSoftwareupdate**
 
-> String deleteTelephonyProvidersEdgeSoftwareupdate(edgeId)
+> Void deleteTelephonyProvidersEdgeSoftwareupdate(edgeId)
 
 Cancels any in-progress update for this edge.
 
@@ -263,8 +262,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String edgeId = "edgeId_example"; // String | Edge ID
 try {
-    String result = apiInstance.deleteTelephonyProvidersEdgeSoftwareupdate(edgeId);
-    System.out.println(result);
+    apiInstance.deleteTelephonyProvidersEdgeSoftwareupdate(edgeId);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgeSoftwareupdate");
     e.printStackTrace();
@@ -281,13 +279,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteTelephonyProvidersEdgesCertificateauthority"></a>
 
 # **deleteTelephonyProvidersEdgesCertificateauthority**
 
-> String deleteTelephonyProvidersEdgesCertificateauthority(certificateId)
+> Void deleteTelephonyProvidersEdgesCertificateauthority(certificateId)
 
 Delete a certificate authority.
 
@@ -314,8 +312,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String certificateId = "certificateId_example"; // String | Certificate ID
 try {
-    String result = apiInstance.deleteTelephonyProvidersEdgesCertificateauthority(certificateId);
-    System.out.println(result);
+    apiInstance.deleteTelephonyProvidersEdgesCertificateauthority(certificateId);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgesCertificateauthority");
     e.printStackTrace();
@@ -332,13 +329,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteTelephonyProvidersEdgesDidpool"></a>
 
 # **deleteTelephonyProvidersEdgesDidpool**
 
-> String deleteTelephonyProvidersEdgesDidpool(didPoolId)
+> Void deleteTelephonyProvidersEdgesDidpool(didPoolId)
 
 Delete a DID Pool by ID.
 
@@ -365,8 +362,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String didPoolId = "didPoolId_example"; // String | DID pool ID
 try {
-    String result = apiInstance.deleteTelephonyProvidersEdgesDidpool(didPoolId);
-    System.out.println(result);
+    apiInstance.deleteTelephonyProvidersEdgesDidpool(didPoolId);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgesDidpool");
     e.printStackTrace();
@@ -383,13 +379,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteTelephonyProvidersEdgesEdgegroup"></a>
 
 # **deleteTelephonyProvidersEdgesEdgegroup**
 
-> String deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId)
+> Void deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId)
 
 Delete an edge group.
 
@@ -416,8 +412,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String edgeGroupId = "edgeGroupId_example"; // String | Edge group ID
 try {
-    String result = apiInstance.deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId);
-    System.out.println(result);
+    apiInstance.deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgesEdgegroup");
     e.printStackTrace();
@@ -434,13 +429,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteTelephonyProvidersEdgesEndpoint"></a>
 
 # **deleteTelephonyProvidersEdgesEndpoint**
 
-> String deleteTelephonyProvidersEdgesEndpoint(endpointId)
+> Void deleteTelephonyProvidersEdgesEndpoint(endpointId)
 
 Delete endpoint
 
@@ -467,8 +462,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String endpointId = "endpointId_example"; // String | Endpoint ID
 try {
-    String result = apiInstance.deleteTelephonyProvidersEdgesEndpoint(endpointId);
-    System.out.println(result);
+    apiInstance.deleteTelephonyProvidersEdgesEndpoint(endpointId);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgesEndpoint");
     e.printStackTrace();
@@ -485,13 +479,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteTelephonyProvidersEdgesExtensionpool"></a>
 
 # **deleteTelephonyProvidersEdgesExtensionpool**
 
-> String deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId)
+> Void deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId)
 
 Delete an extension pool by ID
 
@@ -518,8 +512,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String extensionPoolId = "extensionPoolId_example"; // String | Extension pool ID
 try {
-    String result = apiInstance.deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId);
-    System.out.println(result);
+    apiInstance.deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgesExtensionpool");
     e.printStackTrace();
@@ -536,13 +529,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteTelephonyProvidersEdgesOutboundroute"></a>
 
 # **deleteTelephonyProvidersEdgesOutboundroute**
 
-> String deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId)
+> Void deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId)
 
 Delete Outbound Route
 
@@ -569,8 +562,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
 try {
-    String result = apiInstance.deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId);
-    System.out.println(result);
+    apiInstance.deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgesOutboundroute");
     e.printStackTrace();
@@ -587,13 +579,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteTelephonyProvidersEdgesPhone"></a>
 
 # **deleteTelephonyProvidersEdgesPhone**
 
-> String deleteTelephonyProvidersEdgesPhone(phoneId)
+> Void deleteTelephonyProvidersEdgesPhone(phoneId)
 
 Delete a Phone by ID
 
@@ -620,8 +612,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String phoneId = "phoneId_example"; // String | Phone ID
 try {
-    String result = apiInstance.deleteTelephonyProvidersEdgesPhone(phoneId);
-    System.out.println(result);
+    apiInstance.deleteTelephonyProvidersEdgesPhone(phoneId);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgesPhone");
     e.printStackTrace();
@@ -638,13 +629,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteTelephonyProvidersEdgesPhonebasesetting"></a>
 
 # **deleteTelephonyProvidersEdgesPhonebasesetting**
 
-> String deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
+> Void deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
 
 Delete a Phone Base Settings by ID
 
@@ -671,8 +662,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String phoneBaseId = "phoneBaseId_example"; // String | Phone base ID
 try {
-    String result = apiInstance.deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId);
-    System.out.println(result);
+    apiInstance.deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgesPhonebasesetting");
     e.printStackTrace();
@@ -689,13 +679,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteTelephonyProvidersEdgesSite"></a>
 
 # **deleteTelephonyProvidersEdgesSite**
 
-> String deleteTelephonyProvidersEdgesSite(siteId)
+> Void deleteTelephonyProvidersEdgesSite(siteId)
 
 Delete a Site by ID
 
@@ -722,8 +712,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String siteId = "siteId_example"; // String | Site ID
 try {
-    String result = apiInstance.deleteTelephonyProvidersEdgesSite(siteId);
-    System.out.println(result);
+    apiInstance.deleteTelephonyProvidersEdgesSite(siteId);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgesSite");
     e.printStackTrace();
@@ -740,13 +729,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteTelephonyProvidersEdgesSiteOutboundroute"></a>
 
 # **deleteTelephonyProvidersEdgesSiteOutboundroute**
 
-> String deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
+> Void deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
 
 Delete Outbound Route
 
@@ -774,8 +763,7 @@ TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String siteId = "siteId_example"; // String | Site ID
 String outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
 try {
-    String result = apiInstance.deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId);
-    System.out.println(result);
+    apiInstance.deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgesSiteOutboundroute");
     e.printStackTrace();
@@ -793,13 +781,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteTelephonyProvidersEdgesTrunkbasesetting"></a>
 
 # **deleteTelephonyProvidersEdgesTrunkbasesetting**
 
-> String deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId)
+> Void deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId)
 
 Delete a Trunk Base Settings object by ID
 
@@ -826,8 +814,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String trunkBaseSettingsId = "trunkBaseSettingsId_example"; // String | Trunk Base ID
 try {
-    String result = apiInstance.deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId);
-    System.out.println(result);
+    apiInstance.deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgesTrunkbasesetting");
     e.printStackTrace();
@@ -844,7 +831,7 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="getConfigurationSchemasEdgesVnext"></a>
 
@@ -3497,7 +3484,7 @@ try {
 
 # **getTelephonyProvidersEdgesPhysicalinterfaces**
 
-> [List&lt;DomainPhysicalInterface&gt;](DomainPhysicalInterface.html) getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds)
+> [PhysicalInterfaceEntityListing](PhysicalInterfaceEntityListing.html) getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds)
 
 Get physical interfaces for edges.
 
@@ -3524,7 +3511,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String edgeIds = "edgeIds_example"; // String | Comma separated list of Edge Id's
 try {
-    List<DomainPhysicalInterface> result = apiInstance.getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds);
+    PhysicalInterfaceEntityListing result = apiInstance.getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesPhysicalinterfaces");
@@ -3542,7 +3529,7 @@ try {
 
 ### Return type
 
-[**List&lt;DomainPhysicalInterface&gt;**](DomainPhysicalInterface.html)
+[**PhysicalInterfaceEntityListing**](PhysicalInterfaceEntityListing.html)
 
 <a name="getTelephonyProvidersEdgesSite"></a>
 

@@ -156,7 +156,7 @@ null (empty response body)
 
 # **deleteUserRoutingskill**
 
-> String deleteUserRoutingskill(userId, skillId)
+> Void deleteUserRoutingskill(userId, skillId)
 
 Remove routing skill from user
 
@@ -184,8 +184,7 @@ UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | User ID
 String skillId = "skillId_example"; // String | skillId
 try {
-    String result = apiInstance.deleteUserRoutingskill(userId, skillId);
-    System.out.println(result);
+    apiInstance.deleteUserRoutingskill(userId, skillId);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#deleteUserRoutingskill");
     e.printStackTrace();
@@ -203,7 +202,7 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteUserStationAssociatedstation"></a>
 
@@ -1293,7 +1292,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | User ID
-User body = new User(); // User | User
+UpdateUser body = new UpdateUser(); // UpdateUser | User
 try {
     User result = apiInstance.patchUser(userId, body);
     System.out.println(result);
@@ -1309,7 +1308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | |
-| **body** | [**User**](User.html)| User | |
+| **body** | [**UpdateUser**](UpdateUser.html)| User | |
 {: class="table table-striped"}
 
 ### Return type

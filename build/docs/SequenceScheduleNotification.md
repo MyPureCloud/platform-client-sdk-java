@@ -15,7 +15,7 @@ title: SequenceScheduleNotification
 | **version** | **Integer** |  |  [optional] |
 | **intervals** | [**List&lt;CampaignScheduleNotificationIntervals&gt;**](CampaignScheduleNotificationIntervals.html) |  |  [optional] |
 | **timeZone** | **String** |  |  [optional] |
-| **sequence** | [**DocumentDataV2NotificationCreatedBy**](DocumentDataV2NotificationCreatedBy.html) |  |  [optional] |
+| **sequence** | [**DependencyTrackingBuildNotificationNotificationUser**](DependencyTrackingBuildNotificationNotificationUser.html) |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
 {: class="table table-striped"}

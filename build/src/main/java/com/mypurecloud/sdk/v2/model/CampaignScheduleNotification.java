@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CampaignScheduleNotificationIntervals;
-import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationCreatedBy;
+import com.mypurecloud.sdk.v2.model.DependencyTrackingBuildNotificationNotificationUser;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public class CampaignScheduleNotification  implements Serializable {
   private Integer version = null;
   private List<CampaignScheduleNotificationIntervals> intervals = new ArrayList<CampaignScheduleNotificationIntervals>();
   private String timeZone = null;
-  private DocumentDataV2NotificationCreatedBy campaign = null;
+  private DependencyTrackingBuildNotificationNotificationUser campaign = null;
   private Object additionalProperties = null;
 
   
@@ -151,17 +151,17 @@ public class CampaignScheduleNotification  implements Serializable {
 
   /**
    **/
-  public CampaignScheduleNotification campaign(DocumentDataV2NotificationCreatedBy campaign) {
+  public CampaignScheduleNotification campaign(DependencyTrackingBuildNotificationNotificationUser campaign) {
     this.campaign = campaign;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("campaign")
-  public DocumentDataV2NotificationCreatedBy getCampaign() {
+  public DependencyTrackingBuildNotificationNotificationUser getCampaign() {
     return campaign;
   }
-  public void setCampaign(DocumentDataV2NotificationCreatedBy campaign) {
+  public void setCampaign(DependencyTrackingBuildNotificationNotificationUser campaign) {
     this.campaign = campaign;
   }
 

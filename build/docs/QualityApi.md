@@ -152,7 +152,7 @@ try {
 
 # **deleteQualityForm**
 
-> String deleteQualityForm(formId)
+> Void deleteQualityForm(formId)
 
 Delete an evaluation form.
 
@@ -179,8 +179,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 QualityApi apiInstance = new QualityApi();
 String formId = "formId_example"; // String | Form ID
 try {
-    String result = apiInstance.deleteQualityForm(formId);
-    System.out.println(result);
+    apiInstance.deleteQualityForm(formId);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#deleteQualityForm");
     e.printStackTrace();
@@ -197,7 +196,7 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteQualityKeywordset"></a>
 
@@ -253,7 +252,7 @@ null (empty response body)
 
 # **deleteQualityKeywordsets**
 
-> String deleteQualityKeywordsets(ids)
+> Void deleteQualityKeywordsets(ids)
 
 Delete keyword sets
 
@@ -280,8 +279,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 QualityApi apiInstance = new QualityApi();
 String ids = "ids_example"; // String | A comma-delimited list of valid KeywordSet ids
 try {
-    String result = apiInstance.deleteQualityKeywordsets(ids);
-    System.out.println(result);
+    apiInstance.deleteQualityKeywordsets(ids);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#deleteQualityKeywordsets");
     e.printStackTrace();
@@ -298,7 +296,7 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="getQualityAgentsActivity"></a>
 
@@ -532,7 +530,7 @@ List<Object> expand = null; // List<Object> | variable name requested by expand 
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 String recordingId = "recordingId_example"; // String | id of the recording
-String entityType = "RECORDING"; // String | entity type options: Recording, Calibration, Evaluation, Annotation
+String entityType = "RECORDING"; // String | entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording
 try {
     QualityAuditPage result = apiInstance.getQualityConversationAudits(conversationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, recordingId, entityType);
     System.out.println(result);
@@ -555,7 +553,7 @@ try {
 | **nextPage** | **String**| next page token | [optional] |
 | **previousPage** | **String**| Previous page token | [optional] |
 | **recordingId** | **String**| id of the recording | [optional] |
-| **entityType** | **String**| entity type options: Recording, Calibration, Evaluation, Annotation | [optional] [default to RECORDING] |
+| **entityType** | **String**| entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording | [optional] [default to RECORDING] |
 {: class="table table-striped"}
 
 ### Return type

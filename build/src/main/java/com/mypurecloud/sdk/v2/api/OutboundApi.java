@@ -146,22 +146,20 @@ public class OutboundApi {
    * Delete attempt limits
    * 
    * @param attemptLimitsId Attempt limits ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundAttemptlimit(String attemptLimitsId) throws IOException, ApiException {
-    return  deleteOutboundAttemptlimit(createDeleteOutboundAttemptlimitRequest(attemptLimitsId));
+  public void deleteOutboundAttemptlimit(String attemptLimitsId) throws IOException, ApiException {
+     deleteOutboundAttemptlimit(createDeleteOutboundAttemptlimitRequest(attemptLimitsId));
   }
 
   /**
    * Delete attempt limits
    * 
    * @param attemptLimitsId Attempt limits ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundAttemptlimitWithHttpInfo(String attemptLimitsId) throws IOException {
+  public ApiResponse<Void> deleteOutboundAttemptlimitWithHttpInfo(String attemptLimitsId) throws IOException {
     return deleteOutboundAttemptlimit(createDeleteOutboundAttemptlimitRequest(attemptLimitsId).withHttpInfo());
   }
 
@@ -175,18 +173,17 @@ public class OutboundApi {
    * Delete attempt limits
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundAttemptlimit(DeleteOutboundAttemptlimitRequest request) throws IOException, ApiException {
+  public void deleteOutboundAttemptlimit(DeleteOutboundAttemptlimitRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -197,13 +194,13 @@ public class OutboundApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundAttemptlimit(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteOutboundAttemptlimit(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -214,7 +211,7 @@ public class OutboundApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -223,22 +220,20 @@ public class OutboundApi {
    * Delete callable time set
    * 
    * @param callableTimeSetId Callable Time Set ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundCallabletimeset(String callableTimeSetId) throws IOException, ApiException {
-    return  deleteOutboundCallabletimeset(createDeleteOutboundCallabletimesetRequest(callableTimeSetId));
+  public void deleteOutboundCallabletimeset(String callableTimeSetId) throws IOException, ApiException {
+     deleteOutboundCallabletimeset(createDeleteOutboundCallabletimesetRequest(callableTimeSetId));
   }
 
   /**
    * Delete callable time set
    * 
    * @param callableTimeSetId Callable Time Set ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundCallabletimesetWithHttpInfo(String callableTimeSetId) throws IOException {
+  public ApiResponse<Void> deleteOutboundCallabletimesetWithHttpInfo(String callableTimeSetId) throws IOException {
     return deleteOutboundCallabletimeset(createDeleteOutboundCallabletimesetRequest(callableTimeSetId).withHttpInfo());
   }
 
@@ -252,18 +247,17 @@ public class OutboundApi {
    * Delete callable time set
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundCallabletimeset(DeleteOutboundCallabletimesetRequest request) throws IOException, ApiException {
+  public void deleteOutboundCallabletimeset(DeleteOutboundCallabletimesetRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -274,13 +268,13 @@ public class OutboundApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundCallabletimeset(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteOutboundCallabletimeset(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -291,7 +285,7 @@ public class OutboundApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -300,22 +294,20 @@ public class OutboundApi {
    * Delete a dialer call analysis response set.
    * 
    * @param callAnalysisSetId Call Analysis Response Set ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundCallanalysisresponseset(String callAnalysisSetId) throws IOException, ApiException {
-    return  deleteOutboundCallanalysisresponseset(createDeleteOutboundCallanalysisresponsesetRequest(callAnalysisSetId));
+  public void deleteOutboundCallanalysisresponseset(String callAnalysisSetId) throws IOException, ApiException {
+     deleteOutboundCallanalysisresponseset(createDeleteOutboundCallanalysisresponsesetRequest(callAnalysisSetId));
   }
 
   /**
    * Delete a dialer call analysis response set.
    * 
    * @param callAnalysisSetId Call Analysis Response Set ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundCallanalysisresponsesetWithHttpInfo(String callAnalysisSetId) throws IOException {
+  public ApiResponse<Void> deleteOutboundCallanalysisresponsesetWithHttpInfo(String callAnalysisSetId) throws IOException {
     return deleteOutboundCallanalysisresponseset(createDeleteOutboundCallanalysisresponsesetRequest(callAnalysisSetId).withHttpInfo());
   }
 
@@ -329,18 +321,17 @@ public class OutboundApi {
    * Delete a dialer call analysis response set.
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundCallanalysisresponseset(DeleteOutboundCallanalysisresponsesetRequest request) throws IOException, ApiException {
+  public void deleteOutboundCallanalysisresponseset(DeleteOutboundCallanalysisresponsesetRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -351,13 +342,13 @@ public class OutboundApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundCallanalysisresponseset(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteOutboundCallanalysisresponseset(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -368,7 +359,7 @@ public class OutboundApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -528,22 +519,20 @@ public class OutboundApi {
    * Delete Campaign Rule
    * 
    * @param campaignRuleId Campaign Rule ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundCampaignrule(String campaignRuleId) throws IOException, ApiException {
-    return  deleteOutboundCampaignrule(createDeleteOutboundCampaignruleRequest(campaignRuleId));
+  public void deleteOutboundCampaignrule(String campaignRuleId) throws IOException, ApiException {
+     deleteOutboundCampaignrule(createDeleteOutboundCampaignruleRequest(campaignRuleId));
   }
 
   /**
    * Delete Campaign Rule
    * 
    * @param campaignRuleId Campaign Rule ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundCampaignruleWithHttpInfo(String campaignRuleId) throws IOException {
+  public ApiResponse<Void> deleteOutboundCampaignruleWithHttpInfo(String campaignRuleId) throws IOException {
     return deleteOutboundCampaignrule(createDeleteOutboundCampaignruleRequest(campaignRuleId).withHttpInfo());
   }
 
@@ -557,18 +546,17 @@ public class OutboundApi {
    * Delete Campaign Rule
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundCampaignrule(DeleteOutboundCampaignruleRequest request) throws IOException, ApiException {
+  public void deleteOutboundCampaignrule(DeleteOutboundCampaignruleRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -579,13 +567,13 @@ public class OutboundApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundCampaignrule(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteOutboundCampaignrule(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -596,7 +584,7 @@ public class OutboundApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -605,22 +593,20 @@ public class OutboundApi {
    * Delete a contact list.
    * 
    * @param contactListId ContactList ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundContactlist(String contactListId) throws IOException, ApiException {
-    return  deleteOutboundContactlist(createDeleteOutboundContactlistRequest(contactListId));
+  public void deleteOutboundContactlist(String contactListId) throws IOException, ApiException {
+     deleteOutboundContactlist(createDeleteOutboundContactlistRequest(contactListId));
   }
 
   /**
    * Delete a contact list.
    * 
    * @param contactListId ContactList ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundContactlistWithHttpInfo(String contactListId) throws IOException {
+  public ApiResponse<Void> deleteOutboundContactlistWithHttpInfo(String contactListId) throws IOException {
     return deleteOutboundContactlist(createDeleteOutboundContactlistRequest(contactListId).withHttpInfo());
   }
 
@@ -634,18 +620,17 @@ public class OutboundApi {
    * Delete a contact list.
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundContactlist(DeleteOutboundContactlistRequest request) throws IOException, ApiException {
+  public void deleteOutboundContactlist(DeleteOutboundContactlistRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -656,13 +641,13 @@ public class OutboundApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundContactlist(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteOutboundContactlist(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -673,7 +658,7 @@ public class OutboundApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -683,12 +668,11 @@ public class OutboundApi {
    * 
    * @param contactListId Contact List ID (required)
    * @param contactId Contact ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundContactlistContact(String contactListId, String contactId) throws IOException, ApiException {
-    return  deleteOutboundContactlistContact(createDeleteOutboundContactlistContactRequest(contactListId, contactId));
+  public void deleteOutboundContactlistContact(String contactListId, String contactId) throws IOException, ApiException {
+     deleteOutboundContactlistContact(createDeleteOutboundContactlistContactRequest(contactListId, contactId));
   }
 
   /**
@@ -696,10 +680,9 @@ public class OutboundApi {
    * 
    * @param contactListId Contact List ID (required)
    * @param contactId Contact ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundContactlistContactWithHttpInfo(String contactListId, String contactId) throws IOException {
+  public ApiResponse<Void> deleteOutboundContactlistContactWithHttpInfo(String contactListId, String contactId) throws IOException {
     return deleteOutboundContactlistContact(createDeleteOutboundContactlistContactRequest(contactListId, contactId).withHttpInfo());
   }
 
@@ -715,18 +698,17 @@ public class OutboundApi {
    * Delete a contact.
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundContactlistContact(DeleteOutboundContactlistContactRequest request) throws IOException, ApiException {
+  public void deleteOutboundContactlistContact(DeleteOutboundContactlistContactRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -737,13 +719,13 @@ public class OutboundApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundContactlistContact(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteOutboundContactlistContact(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -754,7 +736,7 @@ public class OutboundApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -763,22 +745,20 @@ public class OutboundApi {
    * Delete dialer DNC list
    * 
    * @param dncListId DncList ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundDnclist(String dncListId) throws IOException, ApiException {
-    return  deleteOutboundDnclist(createDeleteOutboundDnclistRequest(dncListId));
+  public void deleteOutboundDnclist(String dncListId) throws IOException, ApiException {
+     deleteOutboundDnclist(createDeleteOutboundDnclistRequest(dncListId));
   }
 
   /**
    * Delete dialer DNC list
    * 
    * @param dncListId DncList ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundDnclistWithHttpInfo(String dncListId) throws IOException {
+  public ApiResponse<Void> deleteOutboundDnclistWithHttpInfo(String dncListId) throws IOException {
     return deleteOutboundDnclist(createDeleteOutboundDnclistRequest(dncListId).withHttpInfo());
   }
 
@@ -792,18 +772,17 @@ public class OutboundApi {
    * Delete dialer DNC list
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundDnclist(DeleteOutboundDnclistRequest request) throws IOException, ApiException {
+  public void deleteOutboundDnclist(DeleteOutboundDnclistRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -814,13 +793,13 @@ public class OutboundApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundDnclist(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteOutboundDnclist(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -831,7 +810,7 @@ public class OutboundApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -840,22 +819,20 @@ public class OutboundApi {
    * Delete a Rule set.
    * 
    * @param ruleSetId Rule Set ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundRuleset(String ruleSetId) throws IOException, ApiException {
-    return  deleteOutboundRuleset(createDeleteOutboundRulesetRequest(ruleSetId));
+  public void deleteOutboundRuleset(String ruleSetId) throws IOException, ApiException {
+     deleteOutboundRuleset(createDeleteOutboundRulesetRequest(ruleSetId));
   }
 
   /**
    * Delete a Rule set.
    * 
    * @param ruleSetId Rule Set ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundRulesetWithHttpInfo(String ruleSetId) throws IOException {
+  public ApiResponse<Void> deleteOutboundRulesetWithHttpInfo(String ruleSetId) throws IOException {
     return deleteOutboundRuleset(createDeleteOutboundRulesetRequest(ruleSetId).withHttpInfo());
   }
 
@@ -869,18 +846,17 @@ public class OutboundApi {
    * Delete a Rule set.
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundRuleset(DeleteOutboundRulesetRequest request) throws IOException, ApiException {
+  public void deleteOutboundRuleset(DeleteOutboundRulesetRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -891,13 +867,13 @@ public class OutboundApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundRuleset(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteOutboundRuleset(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -908,7 +884,7 @@ public class OutboundApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -917,22 +893,20 @@ public class OutboundApi {
    * Delete a dialer campaign schedule.
    * 
    * @param campaignId Campaign ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundSchedulesCampaign(String campaignId) throws IOException, ApiException {
-    return  deleteOutboundSchedulesCampaign(createDeleteOutboundSchedulesCampaignRequest(campaignId));
+  public void deleteOutboundSchedulesCampaign(String campaignId) throws IOException, ApiException {
+     deleteOutboundSchedulesCampaign(createDeleteOutboundSchedulesCampaignRequest(campaignId));
   }
 
   /**
    * Delete a dialer campaign schedule.
    * 
    * @param campaignId Campaign ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundSchedulesCampaignWithHttpInfo(String campaignId) throws IOException {
+  public ApiResponse<Void> deleteOutboundSchedulesCampaignWithHttpInfo(String campaignId) throws IOException {
     return deleteOutboundSchedulesCampaign(createDeleteOutboundSchedulesCampaignRequest(campaignId).withHttpInfo());
   }
 
@@ -946,18 +920,17 @@ public class OutboundApi {
    * Delete a dialer campaign schedule.
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundSchedulesCampaign(DeleteOutboundSchedulesCampaignRequest request) throws IOException, ApiException {
+  public void deleteOutboundSchedulesCampaign(DeleteOutboundSchedulesCampaignRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -968,13 +941,13 @@ public class OutboundApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundSchedulesCampaign(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteOutboundSchedulesCampaign(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -985,7 +958,7 @@ public class OutboundApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -994,22 +967,20 @@ public class OutboundApi {
    * Delete a dialer sequence schedule.
    * 
    * @param sequenceId Sequence ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundSchedulesSequence(String sequenceId) throws IOException, ApiException {
-    return  deleteOutboundSchedulesSequence(createDeleteOutboundSchedulesSequenceRequest(sequenceId));
+  public void deleteOutboundSchedulesSequence(String sequenceId) throws IOException, ApiException {
+     deleteOutboundSchedulesSequence(createDeleteOutboundSchedulesSequenceRequest(sequenceId));
   }
 
   /**
    * Delete a dialer sequence schedule.
    * 
    * @param sequenceId Sequence ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundSchedulesSequenceWithHttpInfo(String sequenceId) throws IOException {
+  public ApiResponse<Void> deleteOutboundSchedulesSequenceWithHttpInfo(String sequenceId) throws IOException {
     return deleteOutboundSchedulesSequence(createDeleteOutboundSchedulesSequenceRequest(sequenceId).withHttpInfo());
   }
 
@@ -1023,18 +994,17 @@ public class OutboundApi {
    * Delete a dialer sequence schedule.
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundSchedulesSequence(DeleteOutboundSchedulesSequenceRequest request) throws IOException, ApiException {
+  public void deleteOutboundSchedulesSequence(DeleteOutboundSchedulesSequenceRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -1045,13 +1015,13 @@ public class OutboundApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundSchedulesSequence(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteOutboundSchedulesSequence(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1062,7 +1032,7 @@ public class OutboundApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1071,22 +1041,20 @@ public class OutboundApi {
    * Delete a dialer campaign sequence.
    * 
    * @param sequenceId Campaign Sequence ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundSequence(String sequenceId) throws IOException, ApiException {
-    return  deleteOutboundSequence(createDeleteOutboundSequenceRequest(sequenceId));
+  public void deleteOutboundSequence(String sequenceId) throws IOException, ApiException {
+     deleteOutboundSequence(createDeleteOutboundSequenceRequest(sequenceId));
   }
 
   /**
    * Delete a dialer campaign sequence.
    * 
    * @param sequenceId Campaign Sequence ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundSequenceWithHttpInfo(String sequenceId) throws IOException {
+  public ApiResponse<Void> deleteOutboundSequenceWithHttpInfo(String sequenceId) throws IOException {
     return deleteOutboundSequence(createDeleteOutboundSequenceRequest(sequenceId).withHttpInfo());
   }
 
@@ -1100,18 +1068,17 @@ public class OutboundApi {
    * Delete a dialer campaign sequence.
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteOutboundSequence(DeleteOutboundSequenceRequest request) throws IOException, ApiException {
+  public void deleteOutboundSequence(DeleteOutboundSequenceRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -1122,13 +1089,13 @@ public class OutboundApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteOutboundSequence(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteOutboundSequence(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1139,7 +1106,7 @@ public class OutboundApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

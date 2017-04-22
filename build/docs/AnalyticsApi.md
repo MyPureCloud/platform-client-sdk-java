@@ -35,7 +35,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteAnalyticsReportingSchedule**
 
-> String deleteAnalyticsReportingSchedule(scheduleId)
+> Void deleteAnalyticsReportingSchedule(scheduleId)
 
 Delete a scheduled report job.
 
@@ -62,8 +62,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 AnalyticsApi apiInstance = new AnalyticsApi();
 String scheduleId = "scheduleId_example"; // String | Schedule ID
 try {
-    String result = apiInstance.deleteAnalyticsReportingSchedule(scheduleId);
-    System.out.println(result);
+    apiInstance.deleteAnalyticsReportingSchedule(scheduleId);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsReportingSchedule");
     e.printStackTrace();
@@ -80,7 +79,7 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="getAnalyticsConversationDetails"></a>
 

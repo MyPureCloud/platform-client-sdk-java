@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationCreatedBy;
+import com.mypurecloud.sdk.v2.model.DependencyTrackingBuildNotificationNotificationUser;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 public class CampaignProgressNotification  implements Serializable {
   
-  private DocumentDataV2NotificationCreatedBy campaign = null;
+  private DependencyTrackingBuildNotificationNotificationUser campaign = null;
   private BigDecimal numberOfContactsCalled = null;
   private BigDecimal totalNumberOfContacts = null;
   private Integer percentage = null;
@@ -25,17 +25,17 @@ public class CampaignProgressNotification  implements Serializable {
   
   /**
    **/
-  public CampaignProgressNotification campaign(DocumentDataV2NotificationCreatedBy campaign) {
+  public CampaignProgressNotification campaign(DependencyTrackingBuildNotificationNotificationUser campaign) {
     this.campaign = campaign;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("campaign")
-  public DocumentDataV2NotificationCreatedBy getCampaign() {
+  public DependencyTrackingBuildNotificationNotificationUser getCampaign() {
     return campaign;
   }
-  public void setCampaign(DocumentDataV2NotificationCreatedBy campaign) {
+  public void setCampaign(DependencyTrackingBuildNotificationNotificationUser campaign) {
     this.campaign = campaign;
   }
 

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationCreatedBy;
+import com.mypurecloud.sdk.v2.model.DependencyTrackingBuildNotificationNotificationUser;
 import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationWorkspace;
 import com.mypurecloud.sdk.v2.model.FaxDataV2NotificationLockInfo;
 import com.mypurecloud.sdk.v2.model.FaxDataV2NotificationUserData;
@@ -24,7 +24,7 @@ public class FaxDataV2Notification  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private DocumentDataV2NotificationWorkspace workspace = null;
-  private DocumentDataV2NotificationCreatedBy createdBy = null;
+  private DependencyTrackingBuildNotificationNotificationUser createdBy = null;
   private String contentType = null;
   private Integer contentLength = null;
   private String filename = null;
@@ -125,17 +125,17 @@ public class FaxDataV2Notification  implements Serializable {
 
   /**
    **/
-  public FaxDataV2Notification createdBy(DocumentDataV2NotificationCreatedBy createdBy) {
+  public FaxDataV2Notification createdBy(DependencyTrackingBuildNotificationNotificationUser createdBy) {
     this.createdBy = createdBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("createdBy")
-  public DocumentDataV2NotificationCreatedBy getCreatedBy() {
+  public DependencyTrackingBuildNotificationNotificationUser getCreatedBy() {
     return createdBy;
   }
-  public void setCreatedBy(DocumentDataV2NotificationCreatedBy createdBy) {
+  public void setCreatedBy(DependencyTrackingBuildNotificationNotificationUser createdBy) {
     this.createdBy = createdBy;
   }
 

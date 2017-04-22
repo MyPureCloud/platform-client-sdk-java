@@ -224,7 +224,9 @@ public class AnalyticsQueryPredicate  implements Serializable {
     OINTERACTING("oInteracting"),
     OWAITING("oWaiting"),
     OONQUEUEUSERS("oOnQueueUsers"),
-    OOFFQUEUEUSERS("oOffQueueUsers");
+    OOFFQUEUEUSERS("oOffQueueUsers"),
+    OUSERPRESENCES("oUserPresences"),
+    OUSERROUTINGSTATUSES("oUserRoutingStatuses");
 
     private String value;
 

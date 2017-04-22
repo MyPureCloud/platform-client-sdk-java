@@ -22,7 +22,7 @@ title: ChatConversationNotificationParticipants
 | **held** | **Boolean** |  |  [optional] |
 | **wrapupRequired** | **Boolean** |  |  [optional] |
 | **wrapupPrompt** | **String** |  |  [optional] |
-| **user** | [**DocumentDataV2NotificationCreatedBy**](DocumentDataV2NotificationCreatedBy.html) |  |  [optional] |
+| **user** | [**DependencyTrackingBuildNotificationNotificationUser**](DependencyTrackingBuildNotificationNotificationUser.html) |  |  [optional] |
 | **queue** | [**ChatConversationNotificationUriReference**](ChatConversationNotificationUriReference.html) |  |  [optional] |
 | **attributes** | **Map&lt;String, String&gt;** |  |  [optional] |
 | **errorInfo** | [**ChatConversationNotificationErrorInfo**](ChatConversationNotificationErrorInfo.html) |  |  [optional] |

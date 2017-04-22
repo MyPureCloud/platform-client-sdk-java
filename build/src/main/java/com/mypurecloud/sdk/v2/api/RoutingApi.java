@@ -103,22 +103,20 @@ public class RoutingApi {
    * Delete a domain
    * 
    * @param domainId domain ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteRoutingEmailDomain(String domainId) throws IOException, ApiException {
-    return  deleteRoutingEmailDomain(createDeleteRoutingEmailDomainRequest(domainId));
+  public void deleteRoutingEmailDomain(String domainId) throws IOException, ApiException {
+     deleteRoutingEmailDomain(createDeleteRoutingEmailDomainRequest(domainId));
   }
 
   /**
    * Delete a domain
    * 
    * @param domainId domain ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRoutingEmailDomainWithHttpInfo(String domainId) throws IOException {
+  public ApiResponse<Void> deleteRoutingEmailDomainWithHttpInfo(String domainId) throws IOException {
     return deleteRoutingEmailDomain(createDeleteRoutingEmailDomainRequest(domainId).withHttpInfo());
   }
 
@@ -132,18 +130,17 @@ public class RoutingApi {
    * Delete a domain
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteRoutingEmailDomain(DeleteRoutingEmailDomainRequest request) throws IOException, ApiException {
+  public void deleteRoutingEmailDomain(DeleteRoutingEmailDomainRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -154,13 +151,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRoutingEmailDomain(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteRoutingEmailDomain(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -171,7 +168,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -181,12 +178,11 @@ public class RoutingApi {
    * 
    * @param domainName email domain (required)
    * @param routeId route ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteRoutingEmailDomainRoute(String domainName, String routeId) throws IOException, ApiException {
-    return  deleteRoutingEmailDomainRoute(createDeleteRoutingEmailDomainRouteRequest(domainName, routeId));
+  public void deleteRoutingEmailDomainRoute(String domainName, String routeId) throws IOException, ApiException {
+     deleteRoutingEmailDomainRoute(createDeleteRoutingEmailDomainRouteRequest(domainName, routeId));
   }
 
   /**
@@ -194,10 +190,9 @@ public class RoutingApi {
    * 
    * @param domainName email domain (required)
    * @param routeId route ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRoutingEmailDomainRouteWithHttpInfo(String domainName, String routeId) throws IOException {
+  public ApiResponse<Void> deleteRoutingEmailDomainRouteWithHttpInfo(String domainName, String routeId) throws IOException {
     return deleteRoutingEmailDomainRoute(createDeleteRoutingEmailDomainRouteRequest(domainName, routeId).withHttpInfo());
   }
 
@@ -213,18 +208,17 @@ public class RoutingApi {
    * Delete a route
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteRoutingEmailDomainRoute(DeleteRoutingEmailDomainRouteRequest request) throws IOException, ApiException {
+  public void deleteRoutingEmailDomainRoute(DeleteRoutingEmailDomainRouteRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -235,13 +229,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRoutingEmailDomainRoute(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteRoutingEmailDomainRoute(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -252,7 +246,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -262,12 +256,11 @@ public class RoutingApi {
    * 
    * @param queueId Queue ID (required)
    * @param forceDelete forceDelete (optional)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteRoutingQueue(String queueId, Boolean forceDelete) throws IOException, ApiException {
-    return  deleteRoutingQueue(createDeleteRoutingQueueRequest(queueId, forceDelete));
+  public void deleteRoutingQueue(String queueId, Boolean forceDelete) throws IOException, ApiException {
+     deleteRoutingQueue(createDeleteRoutingQueueRequest(queueId, forceDelete));
   }
 
   /**
@@ -275,10 +268,9 @@ public class RoutingApi {
    * 
    * @param queueId Queue ID (required)
    * @param forceDelete forceDelete (optional)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRoutingQueueWithHttpInfo(String queueId, Boolean forceDelete) throws IOException {
+  public ApiResponse<Void> deleteRoutingQueueWithHttpInfo(String queueId, Boolean forceDelete) throws IOException {
     return deleteRoutingQueue(createDeleteRoutingQueueRequest(queueId, forceDelete).withHttpInfo());
   }
 
@@ -294,18 +286,17 @@ public class RoutingApi {
    * Delete a queue
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteRoutingQueue(DeleteRoutingQueueRequest request) throws IOException, ApiException {
+  public void deleteRoutingQueue(DeleteRoutingQueueRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -316,13 +307,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRoutingQueue(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteRoutingQueue(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -333,7 +324,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -343,12 +334,11 @@ public class RoutingApi {
    * 
    * @param queueId Queue ID (required)
    * @param memberId Member ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteRoutingQueueUser(String queueId, String memberId) throws IOException, ApiException {
-    return  deleteRoutingQueueUser(createDeleteRoutingQueueUserRequest(queueId, memberId));
+  public void deleteRoutingQueueUser(String queueId, String memberId) throws IOException, ApiException {
+     deleteRoutingQueueUser(createDeleteRoutingQueueUserRequest(queueId, memberId));
   }
 
   /**
@@ -356,10 +346,9 @@ public class RoutingApi {
    * 
    * @param queueId Queue ID (required)
    * @param memberId Member ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRoutingQueueUserWithHttpInfo(String queueId, String memberId) throws IOException {
+  public ApiResponse<Void> deleteRoutingQueueUserWithHttpInfo(String queueId, String memberId) throws IOException {
     return deleteRoutingQueueUser(createDeleteRoutingQueueUserRequest(queueId, memberId).withHttpInfo());
   }
 
@@ -375,18 +364,17 @@ public class RoutingApi {
    * Delete queue member
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteRoutingQueueUser(DeleteRoutingQueueUserRequest request) throws IOException, ApiException {
+  public void deleteRoutingQueueUser(DeleteRoutingQueueUserRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -397,13 +385,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRoutingQueueUser(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteRoutingQueueUser(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -414,7 +402,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -424,12 +412,11 @@ public class RoutingApi {
    * 
    * @param queueId Queue ID (required)
    * @param codeId Code ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteRoutingQueueWrapupcode(String queueId, String codeId) throws IOException, ApiException {
-    return  deleteRoutingQueueWrapupcode(createDeleteRoutingQueueWrapupcodeRequest(queueId, codeId));
+  public void deleteRoutingQueueWrapupcode(String queueId, String codeId) throws IOException, ApiException {
+     deleteRoutingQueueWrapupcode(createDeleteRoutingQueueWrapupcodeRequest(queueId, codeId));
   }
 
   /**
@@ -437,10 +424,9 @@ public class RoutingApi {
    * 
    * @param queueId Queue ID (required)
    * @param codeId Code ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRoutingQueueWrapupcodeWithHttpInfo(String queueId, String codeId) throws IOException {
+  public ApiResponse<Void> deleteRoutingQueueWrapupcodeWithHttpInfo(String queueId, String codeId) throws IOException {
     return deleteRoutingQueueWrapupcode(createDeleteRoutingQueueWrapupcodeRequest(queueId, codeId).withHttpInfo());
   }
 
@@ -456,18 +442,17 @@ public class RoutingApi {
    * Delete a wrap-up code from a queue
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteRoutingQueueWrapupcode(DeleteRoutingQueueWrapupcodeRequest request) throws IOException, ApiException {
+  public void deleteRoutingQueueWrapupcode(DeleteRoutingQueueWrapupcodeRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -478,13 +463,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRoutingQueueWrapupcode(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteRoutingQueueWrapupcode(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -495,7 +480,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -504,22 +489,20 @@ public class RoutingApi {
    * Delete Routing Skill
    * 
    * @param skillId Skill ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteRoutingSkill(String skillId) throws IOException, ApiException {
-    return  deleteRoutingSkill(createDeleteRoutingSkillRequest(skillId));
+  public void deleteRoutingSkill(String skillId) throws IOException, ApiException {
+     deleteRoutingSkill(createDeleteRoutingSkillRequest(skillId));
   }
 
   /**
    * Delete Routing Skill
    * 
    * @param skillId Skill ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRoutingSkillWithHttpInfo(String skillId) throws IOException {
+  public ApiResponse<Void> deleteRoutingSkillWithHttpInfo(String skillId) throws IOException {
     return deleteRoutingSkill(createDeleteRoutingSkillRequest(skillId).withHttpInfo());
   }
 
@@ -533,18 +516,17 @@ public class RoutingApi {
    * Delete Routing Skill
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteRoutingSkill(DeleteRoutingSkillRequest request) throws IOException, ApiException {
+  public void deleteRoutingSkill(DeleteRoutingSkillRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -555,13 +537,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRoutingSkill(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteRoutingSkill(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -572,7 +554,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -580,21 +562,19 @@ public class RoutingApi {
   /**
    * Delete utilization settings and revert to system defaults.
    * 
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteRoutingUtilization() throws IOException, ApiException {
-    return  deleteRoutingUtilization(createDeleteRoutingUtilizationRequest());
+  public void deleteRoutingUtilization() throws IOException, ApiException {
+     deleteRoutingUtilization(createDeleteRoutingUtilizationRequest());
   }
 
   /**
    * Delete utilization settings and revert to system defaults.
    * 
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRoutingUtilizationWithHttpInfo() throws IOException {
+  public ApiResponse<Void> deleteRoutingUtilizationWithHttpInfo() throws IOException {
     return deleteRoutingUtilization(createDeleteRoutingUtilizationRequest().withHttpInfo());
   }
 
@@ -606,18 +586,17 @@ public class RoutingApi {
    * Delete utilization settings and revert to system defaults.
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteRoutingUtilization(DeleteRoutingUtilizationRequest request) throws IOException, ApiException {
+  public void deleteRoutingUtilization(DeleteRoutingUtilizationRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -628,13 +607,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRoutingUtilization(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteRoutingUtilization(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -645,7 +624,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -654,22 +633,20 @@ public class RoutingApi {
    * Delete wrap-up code
    * 
    * @param codeId Wrapup Code ID (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteRoutingWrapupcode(String codeId) throws IOException, ApiException {
-    return  deleteRoutingWrapupcode(createDeleteRoutingWrapupcodeRequest(codeId));
+  public void deleteRoutingWrapupcode(String codeId) throws IOException, ApiException {
+     deleteRoutingWrapupcode(createDeleteRoutingWrapupcodeRequest(codeId));
   }
 
   /**
    * Delete wrap-up code
    * 
    * @param codeId Wrapup Code ID (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRoutingWrapupcodeWithHttpInfo(String codeId) throws IOException {
+  public ApiResponse<Void> deleteRoutingWrapupcodeWithHttpInfo(String codeId) throws IOException {
     return deleteRoutingWrapupcode(createDeleteRoutingWrapupcodeRequest(codeId).withHttpInfo());
   }
 
@@ -683,18 +660,17 @@ public class RoutingApi {
    * Delete wrap-up code
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteRoutingWrapupcode(DeleteRoutingWrapupcodeRequest request) throws IOException, ApiException {
+  public void deleteRoutingWrapupcode(DeleteRoutingWrapupcodeRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -705,13 +681,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteRoutingWrapupcode(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteRoutingWrapupcode(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -722,7 +698,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -732,12 +708,11 @@ public class RoutingApi {
    * 
    * @param userId User ID (required)
    * @param skillId skillId (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteUserRoutingskill(String userId, String skillId) throws IOException, ApiException {
-    return  deleteUserRoutingskill(createDeleteUserRoutingskillRequest(userId, skillId));
+  public void deleteUserRoutingskill(String userId, String skillId) throws IOException, ApiException {
+     deleteUserRoutingskill(createDeleteUserRoutingskillRequest(userId, skillId));
   }
 
   /**
@@ -745,10 +720,9 @@ public class RoutingApi {
    * 
    * @param userId User ID (required)
    * @param skillId skillId (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteUserRoutingskillWithHttpInfo(String userId, String skillId) throws IOException {
+  public ApiResponse<Void> deleteUserRoutingskillWithHttpInfo(String userId, String skillId) throws IOException {
     return deleteUserRoutingskill(createDeleteUserRoutingskillRequest(userId, skillId).withHttpInfo());
   }
 
@@ -764,18 +738,17 @@ public class RoutingApi {
    * Remove routing skill from user
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteUserRoutingskill(DeleteUserRoutingskillRequest request) throws IOException, ApiException {
+  public void deleteUserRoutingskill(DeleteUserRoutingskillRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -786,13 +759,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteUserRoutingskill(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteUserRoutingskill(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -803,7 +776,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

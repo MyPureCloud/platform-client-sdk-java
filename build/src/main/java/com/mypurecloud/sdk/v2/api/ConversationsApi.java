@@ -235,12 +235,11 @@ public class ConversationsApi {
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteConversationsCallParticipantConsult(String conversationId, String participantId) throws IOException, ApiException {
-    return  deleteConversationsCallParticipantConsult(createDeleteConversationsCallParticipantConsultRequest(conversationId, participantId));
+  public void deleteConversationsCallParticipantConsult(String conversationId, String participantId) throws IOException, ApiException {
+     deleteConversationsCallParticipantConsult(createDeleteConversationsCallParticipantConsultRequest(conversationId, participantId));
   }
 
   /**
@@ -248,10 +247,9 @@ public class ConversationsApi {
    * 
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteConversationsCallParticipantConsultWithHttpInfo(String conversationId, String participantId) throws IOException {
+  public ApiResponse<Void> deleteConversationsCallParticipantConsultWithHttpInfo(String conversationId, String participantId) throws IOException {
     return deleteConversationsCallParticipantConsult(createDeleteConversationsCallParticipantConsultRequest(conversationId, participantId).withHttpInfo());
   }
 
@@ -267,18 +265,17 @@ public class ConversationsApi {
    * Cancel the transfer
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteConversationsCallParticipantConsult(DeleteConversationsCallParticipantConsultRequest request) throws IOException, ApiException {
+  public void deleteConversationsCallParticipantConsult(DeleteConversationsCallParticipantConsultRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -289,13 +286,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteConversationsCallParticipantConsult(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteConversationsCallParticipantConsult(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -306,7 +303,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -316,12 +313,11 @@ public class ConversationsApi {
    * 
    * @param conversationId conversationId (required)
    * @param attachmentId attachmentId (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteConversationsEmailMessagesDraftAttachment(String conversationId, String attachmentId) throws IOException, ApiException {
-    return  deleteConversationsEmailMessagesDraftAttachment(createDeleteConversationsEmailMessagesDraftAttachmentRequest(conversationId, attachmentId));
+  public void deleteConversationsEmailMessagesDraftAttachment(String conversationId, String attachmentId) throws IOException, ApiException {
+     deleteConversationsEmailMessagesDraftAttachment(createDeleteConversationsEmailMessagesDraftAttachmentRequest(conversationId, attachmentId));
   }
 
   /**
@@ -329,10 +325,9 @@ public class ConversationsApi {
    * 
    * @param conversationId conversationId (required)
    * @param attachmentId attachmentId (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteConversationsEmailMessagesDraftAttachmentWithHttpInfo(String conversationId, String attachmentId) throws IOException {
+  public ApiResponse<Void> deleteConversationsEmailMessagesDraftAttachmentWithHttpInfo(String conversationId, String attachmentId) throws IOException {
     return deleteConversationsEmailMessagesDraftAttachment(createDeleteConversationsEmailMessagesDraftAttachmentRequest(conversationId, attachmentId).withHttpInfo());
   }
 
@@ -348,18 +343,17 @@ public class ConversationsApi {
    * Delete attachment from draft
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteConversationsEmailMessagesDraftAttachment(DeleteConversationsEmailMessagesDraftAttachmentRequest request) throws IOException, ApiException {
+  public void deleteConversationsEmailMessagesDraftAttachment(DeleteConversationsEmailMessagesDraftAttachmentRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -370,13 +364,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteConversationsEmailMessagesDraftAttachment(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteConversationsEmailMessagesDraftAttachment(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -387,7 +381,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

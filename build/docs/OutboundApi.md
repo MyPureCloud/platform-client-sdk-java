@@ -89,7 +89,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteOutboundAttemptlimit**
 
-> String deleteOutboundAttemptlimit(attemptLimitsId)
+> Void deleteOutboundAttemptlimit(attemptLimitsId)
 
 Delete attempt limits
 
@@ -116,8 +116,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 OutboundApi apiInstance = new OutboundApi();
 String attemptLimitsId = "attemptLimitsId_example"; // String | Attempt limits ID
 try {
-    String result = apiInstance.deleteOutboundAttemptlimit(attemptLimitsId);
-    System.out.println(result);
+    apiInstance.deleteOutboundAttemptlimit(attemptLimitsId);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#deleteOutboundAttemptlimit");
     e.printStackTrace();
@@ -134,13 +133,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteOutboundCallabletimeset"></a>
 
 # **deleteOutboundCallabletimeset**
 
-> String deleteOutboundCallabletimeset(callableTimeSetId)
+> Void deleteOutboundCallabletimeset(callableTimeSetId)
 
 Delete callable time set
 
@@ -167,8 +166,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 OutboundApi apiInstance = new OutboundApi();
 String callableTimeSetId = "callableTimeSetId_example"; // String | Callable Time Set ID
 try {
-    String result = apiInstance.deleteOutboundCallabletimeset(callableTimeSetId);
-    System.out.println(result);
+    apiInstance.deleteOutboundCallabletimeset(callableTimeSetId);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#deleteOutboundCallabletimeset");
     e.printStackTrace();
@@ -185,13 +183,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteOutboundCallanalysisresponseset"></a>
 
 # **deleteOutboundCallanalysisresponseset**
 
-> String deleteOutboundCallanalysisresponseset(callAnalysisSetId)
+> Void deleteOutboundCallanalysisresponseset(callAnalysisSetId)
 
 Delete a dialer call analysis response set.
 
@@ -218,8 +216,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 OutboundApi apiInstance = new OutboundApi();
 String callAnalysisSetId = "callAnalysisSetId_example"; // String | Call Analysis Response Set ID
 try {
-    String result = apiInstance.deleteOutboundCallanalysisresponseset(callAnalysisSetId);
-    System.out.println(result);
+    apiInstance.deleteOutboundCallanalysisresponseset(callAnalysisSetId);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#deleteOutboundCallanalysisresponseset");
     e.printStackTrace();
@@ -236,7 +233,7 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteOutboundCampaign"></a>
 
@@ -343,7 +340,7 @@ null (empty response body)
 
 # **deleteOutboundCampaignrule**
 
-> String deleteOutboundCampaignrule(campaignRuleId)
+> Void deleteOutboundCampaignrule(campaignRuleId)
 
 Delete Campaign Rule
 
@@ -370,8 +367,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 OutboundApi apiInstance = new OutboundApi();
 String campaignRuleId = "campaignRuleId_example"; // String | Campaign Rule ID
 try {
-    String result = apiInstance.deleteOutboundCampaignrule(campaignRuleId);
-    System.out.println(result);
+    apiInstance.deleteOutboundCampaignrule(campaignRuleId);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#deleteOutboundCampaignrule");
     e.printStackTrace();
@@ -388,13 +384,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteOutboundContactlist"></a>
 
 # **deleteOutboundContactlist**
 
-> String deleteOutboundContactlist(contactListId)
+> Void deleteOutboundContactlist(contactListId)
 
 Delete a contact list.
 
@@ -421,8 +417,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | ContactList ID
 try {
-    String result = apiInstance.deleteOutboundContactlist(contactListId);
-    System.out.println(result);
+    apiInstance.deleteOutboundContactlist(contactListId);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#deleteOutboundContactlist");
     e.printStackTrace();
@@ -439,13 +434,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteOutboundContactlistContact"></a>
 
 # **deleteOutboundContactlistContact**
 
-> String deleteOutboundContactlistContact(contactListId, contactId)
+> Void deleteOutboundContactlistContact(contactListId, contactId)
 
 Delete a contact.
 
@@ -473,8 +468,7 @@ OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | Contact List ID
 String contactId = "contactId_example"; // String | Contact ID
 try {
-    String result = apiInstance.deleteOutboundContactlistContact(contactListId, contactId);
-    System.out.println(result);
+    apiInstance.deleteOutboundContactlistContact(contactListId, contactId);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#deleteOutboundContactlistContact");
     e.printStackTrace();
@@ -492,13 +486,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteOutboundDnclist"></a>
 
 # **deleteOutboundDnclist**
 
-> String deleteOutboundDnclist(dncListId)
+> Void deleteOutboundDnclist(dncListId)
 
 Delete dialer DNC list
 
@@ -525,8 +519,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 OutboundApi apiInstance = new OutboundApi();
 String dncListId = "dncListId_example"; // String | DncList ID
 try {
-    String result = apiInstance.deleteOutboundDnclist(dncListId);
-    System.out.println(result);
+    apiInstance.deleteOutboundDnclist(dncListId);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#deleteOutboundDnclist");
     e.printStackTrace();
@@ -543,13 +536,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteOutboundRuleset"></a>
 
 # **deleteOutboundRuleset**
 
-> String deleteOutboundRuleset(ruleSetId)
+> Void deleteOutboundRuleset(ruleSetId)
 
 Delete a Rule set.
 
@@ -576,8 +569,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 OutboundApi apiInstance = new OutboundApi();
 String ruleSetId = "ruleSetId_example"; // String | Rule Set ID
 try {
-    String result = apiInstance.deleteOutboundRuleset(ruleSetId);
-    System.out.println(result);
+    apiInstance.deleteOutboundRuleset(ruleSetId);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#deleteOutboundRuleset");
     e.printStackTrace();
@@ -594,13 +586,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteOutboundSchedulesCampaign"></a>
 
 # **deleteOutboundSchedulesCampaign**
 
-> String deleteOutboundSchedulesCampaign(campaignId)
+> Void deleteOutboundSchedulesCampaign(campaignId)
 
 Delete a dialer campaign schedule.
 
@@ -627,8 +619,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 OutboundApi apiInstance = new OutboundApi();
 String campaignId = "campaignId_example"; // String | Campaign ID
 try {
-    String result = apiInstance.deleteOutboundSchedulesCampaign(campaignId);
-    System.out.println(result);
+    apiInstance.deleteOutboundSchedulesCampaign(campaignId);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#deleteOutboundSchedulesCampaign");
     e.printStackTrace();
@@ -645,13 +636,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteOutboundSchedulesSequence"></a>
 
 # **deleteOutboundSchedulesSequence**
 
-> String deleteOutboundSchedulesSequence(sequenceId)
+> Void deleteOutboundSchedulesSequence(sequenceId)
 
 Delete a dialer sequence schedule.
 
@@ -678,8 +669,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 OutboundApi apiInstance = new OutboundApi();
 String sequenceId = "sequenceId_example"; // String | Sequence ID
 try {
-    String result = apiInstance.deleteOutboundSchedulesSequence(sequenceId);
-    System.out.println(result);
+    apiInstance.deleteOutboundSchedulesSequence(sequenceId);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#deleteOutboundSchedulesSequence");
     e.printStackTrace();
@@ -696,13 +686,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteOutboundSequence"></a>
 
 # **deleteOutboundSequence**
 
-> String deleteOutboundSequence(sequenceId)
+> Void deleteOutboundSequence(sequenceId)
 
 Delete a dialer campaign sequence.
 
@@ -729,8 +719,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 OutboundApi apiInstance = new OutboundApi();
 String sequenceId = "sequenceId_example"; // String | Campaign Sequence ID
 try {
-    String result = apiInstance.deleteOutboundSequence(sequenceId);
-    System.out.println(result);
+    apiInstance.deleteOutboundSequence(sequenceId);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#deleteOutboundSequence");
     e.printStackTrace();
@@ -747,7 +736,7 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="getOutboundAttemptlimit"></a>
 

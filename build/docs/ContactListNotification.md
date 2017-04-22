@@ -19,7 +19,7 @@ title: ContactListNotification
 | **previewModeColumnName** | **String** |  |  [optional] |
 | **previewModeAcceptedValues** | **List&lt;String&gt;** |  |  [optional] |
 | **size** | **Integer** |  |  [optional] |
-| **attemptLimits** | [**DocumentDataV2NotificationCreatedBy**](DocumentDataV2NotificationCreatedBy.html) |  |  [optional] |
+| **attemptLimits** | [**DependencyTrackingBuildNotificationNotificationUser**](DependencyTrackingBuildNotificationNotificationUser.html) |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
 {: class="table table-striped"}

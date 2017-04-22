@@ -6,7 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationWrapup;
-import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationCreatedBy;
+import com.mypurecloud.sdk.v2.model.DependencyTrackingBuildNotificationNotificationUser;
 import com.mypurecloud.sdk.v2.model.VideoConversationNotificationErrorInfo;
 import com.mypurecloud.sdk.v2.model.VideoConversationNotificationUriReference;
 import io.swagger.annotations.ApiModel;
@@ -163,7 +163,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
   private Boolean held = null;
   private Boolean wrapupRequired = null;
   private String wrapupPrompt = null;
-  private DocumentDataV2NotificationCreatedBy user = null;
+  private DependencyTrackingBuildNotificationNotificationUser user = null;
   private VideoConversationNotificationUriReference queue = null;
   private Map<String, String> attributes = new HashMap<String, String>();
   private VideoConversationNotificationErrorInfo errorInfo = null;
@@ -421,17 +421,17 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
 
   /**
    **/
-  public VideoConversationNotificationVideoMediaParticipant user(DocumentDataV2NotificationCreatedBy user) {
+  public VideoConversationNotificationVideoMediaParticipant user(DependencyTrackingBuildNotificationNotificationUser user) {
     this.user = user;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("user")
-  public DocumentDataV2NotificationCreatedBy getUser() {
+  public DependencyTrackingBuildNotificationNotificationUser getUser() {
     return user;
   }
-  public void setUser(DocumentDataV2NotificationCreatedBy user) {
+  public void setUser(DependencyTrackingBuildNotificationNotificationUser user) {
     this.user = user;
   }
 

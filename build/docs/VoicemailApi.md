@@ -35,7 +35,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteVoicemailMessage**
 
-> String deleteVoicemailMessage(messageId)
+> Void deleteVoicemailMessage(messageId)
 
 Delete a message.
 
@@ -62,8 +62,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 VoicemailApi apiInstance = new VoicemailApi();
 String messageId = "messageId_example"; // String | Message ID
 try {
-    String result = apiInstance.deleteVoicemailMessage(messageId);
-    System.out.println(result);
+    apiInstance.deleteVoicemailMessage(messageId);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoicemailApi#deleteVoicemailMessage");
     e.printStackTrace();
@@ -80,13 +79,13 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="deleteVoicemailMessages"></a>
 
 # **deleteVoicemailMessages**
 
-> String deleteVoicemailMessages()
+> Void deleteVoicemailMessages()
 
 Delete all voicemail messages
 
@@ -112,8 +111,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 VoicemailApi apiInstance = new VoicemailApi();
 try {
-    String result = apiInstance.deleteVoicemailMessages();
-    System.out.println(result);
+    apiInstance.deleteVoicemailMessages();
 } catch (ApiException e) {
     System.err.println("Exception when calling VoicemailApi#deleteVoicemailMessages");
     e.printStackTrace();
@@ -127,7 +125,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="getVoicemailGroupMailbox"></a>
 

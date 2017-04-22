@@ -255,8 +255,8 @@ public class ArchitectApi {
   }
 
   /**
-   * Batch-delete a list of prompts asynchronously
-   * Multiple IDs can be specified, in which case all specified prompts will be deleted.
+   * Batch-delete a list of prompts
+   * Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
    * @param id List of Prompt IDs (required)
    * @return Operation
    * @throws ApiException if the request fails on the server
@@ -267,8 +267,8 @@ public class ArchitectApi {
   }
 
   /**
-   * Batch-delete a list of prompts asynchronously
-   * Multiple IDs can be specified, in which case all specified prompts will be deleted.
+   * Batch-delete a list of prompts
+   * Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
    * @param id List of Prompt IDs (required)
    * @return Operation
    * @throws IOException if the request fails to be processed
@@ -284,8 +284,8 @@ public class ArchitectApi {
   }
 
   /**
-   * Batch-delete a list of prompts asynchronously
-   * Multiple IDs can be specified, in which case all specified prompts will be deleted.
+   * Batch-delete a list of prompts
+   * Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
    * @param request The request object
    * @return Operation
    * @throws ApiException if the request fails on the server
@@ -303,8 +303,8 @@ public class ArchitectApi {
   }
 
   /**
-   * Batch-delete a list of prompts asynchronously
-   * Multiple IDs can be specified, in which case all specified prompts will be deleted.
+   * Batch-delete a list of prompts
+   * Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -336,12 +336,11 @@ public class ArchitectApi {
    * 
    * @param promptId Prompt ID (required)
    * @param languageCode Language (required)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteArchitectSystempromptResource(String promptId, String languageCode) throws IOException, ApiException {
-    return  deleteArchitectSystempromptResource(createDeleteArchitectSystempromptResourceRequest(promptId, languageCode));
+  public void deleteArchitectSystempromptResource(String promptId, String languageCode) throws IOException, ApiException {
+     deleteArchitectSystempromptResource(createDeleteArchitectSystempromptResourceRequest(promptId, languageCode));
   }
 
   /**
@@ -349,10 +348,9 @@ public class ArchitectApi {
    * 
    * @param promptId Prompt ID (required)
    * @param languageCode Language (required)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteArchitectSystempromptResourceWithHttpInfo(String promptId, String languageCode) throws IOException {
+  public ApiResponse<Void> deleteArchitectSystempromptResourceWithHttpInfo(String promptId, String languageCode) throws IOException {
     return deleteArchitectSystempromptResource(createDeleteArchitectSystempromptResourceRequest(promptId, languageCode).withHttpInfo());
   }
 
@@ -368,18 +366,17 @@ public class ArchitectApi {
    * Delete a system prompt resource override.
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String deleteArchitectSystempromptResource(DeleteArchitectSystempromptResourceRequest request) throws IOException, ApiException {
+  public void deleteArchitectSystempromptResource(DeleteArchitectSystempromptResourceRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -390,13 +387,13 @@ public class ArchitectApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> deleteArchitectSystempromptResource(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> deleteArchitectSystempromptResource(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -407,7 +404,7 @@ public class ArchitectApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -487,8 +484,8 @@ public class ArchitectApi {
   }
 
   /**
-   * Batch-delete a list of flows asynchronously
-   * Multiple IDs can be specified, in which case all specified flows will be deleted.
+   * Batch-delete a list of flows
+   * Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param id List of Flow IDs (required)
    * @return Operation
    * @throws ApiException if the request fails on the server
@@ -499,8 +496,8 @@ public class ArchitectApi {
   }
 
   /**
-   * Batch-delete a list of flows asynchronously
-   * Multiple IDs can be specified, in which case all specified flows will be deleted.
+   * Batch-delete a list of flows
+   * Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param id List of Flow IDs (required)
    * @return Operation
    * @throws IOException if the request fails to be processed
@@ -516,8 +513,8 @@ public class ArchitectApi {
   }
 
   /**
-   * Batch-delete a list of flows asynchronously
-   * Multiple IDs can be specified, in which case all specified flows will be deleted.
+   * Batch-delete a list of flows
+   * Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param request The request object
    * @return Operation
    * @throws ApiException if the request fails on the server
@@ -535,8 +532,8 @@ public class ArchitectApi {
   }
 
   /**
-   * Batch-delete a list of flows asynchronously
-   * Multiple IDs can be specified, in which case all specified flows will be deleted.
+   * Batch-delete a list of flows
+   * Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2616,7 +2613,7 @@ public class ArchitectApi {
 
   /**
    * Rebuild Dependency Tracking data for an organization
-   * 
+   * Asynchronous.  Notification topic: v2.architect.dependencytracking.build
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
@@ -2626,7 +2623,7 @@ public class ArchitectApi {
 
   /**
    * Rebuild Dependency Tracking data for an organization
-   * 
+   * Asynchronous.  Notification topic: v2.architect.dependencytracking.build
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> postArchitectDependencytrackingBuildWithHttpInfo() throws IOException {
@@ -2639,7 +2636,7 @@ public class ArchitectApi {
 
   /**
    * Rebuild Dependency Tracking data for an organization
-   * 
+   * Asynchronous.  Notification topic: v2.architect.dependencytracking.build
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2657,7 +2654,7 @@ public class ArchitectApi {
 
   /**
    * Rebuild Dependency Tracking data for an organization
-   * 
+   * Asynchronous.  Notification topic: v2.architect.dependencytracking.build
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3083,7 +3080,7 @@ public class ArchitectApi {
 
   /**
    * Check-in flow
-   * 
+   * Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param flow Flow ID (required)
    * @return Flow
    * @throws ApiException if the request fails on the server
@@ -3095,7 +3092,7 @@ public class ArchitectApi {
 
   /**
    * Check-in flow
-   * 
+   * Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param flow Flow ID (required)
    * @return Flow
    * @throws IOException if the request fails to be processed
@@ -3112,7 +3109,7 @@ public class ArchitectApi {
 
   /**
    * Check-in flow
-   * 
+   * Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param request The request object
    * @return Flow
    * @throws ApiException if the request fails on the server
@@ -3131,7 +3128,7 @@ public class ArchitectApi {
 
   /**
    * Check-in flow
-   * 
+   * Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3314,7 +3311,7 @@ public class ArchitectApi {
 
   /**
    * Publish flow
-   * 
+   * Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param flow Flow ID (required)
    * @param version version (optional)
    * @return Operation
@@ -3327,7 +3324,7 @@ public class ArchitectApi {
 
   /**
    * Publish flow
-   * 
+   * Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param flow Flow ID (required)
    * @param version version (optional)
    * @return Operation
@@ -3347,7 +3344,7 @@ public class ArchitectApi {
 
   /**
    * Publish flow
-   * 
+   * Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param request The request object
    * @return Operation
    * @throws ApiException if the request fails on the server
@@ -3366,7 +3363,7 @@ public class ArchitectApi {
 
   /**
    * Publish flow
-   * 
+   * Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

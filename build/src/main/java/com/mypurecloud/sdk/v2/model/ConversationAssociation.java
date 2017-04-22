@@ -15,6 +15,7 @@ import java.io.Serializable;
 
 public class ConversationAssociation  implements Serializable {
   
+  private String externalContactId = null;
   private String conversationId = null;
   private String communicationId = null;
 
@@ -60,6 +61,13 @@ public class ConversationAssociation  implements Serializable {
   private MediaTypeEnum mediaType = null;
 
   
+  @ApiModelProperty(example = "null", value = "External Contact ID; populated from url")
+  @JsonProperty("externalContactId")
+  public String getExternalContactId() {
+    return externalContactId;
+  }
+
+
   /**
    * Conversation ID
    **/
@@ -123,14 +131,15 @@ public class ConversationAssociation  implements Serializable {
       return false;
     }
     ConversationAssociation conversationAssociation = (ConversationAssociation) o;
-    return Objects.equals(this.conversationId, conversationAssociation.conversationId) &&
+    return Objects.equals(this.externalContactId, conversationAssociation.externalContactId) &&
+        Objects.equals(this.conversationId, conversationAssociation.conversationId) &&
         Objects.equals(this.communicationId, conversationAssociation.communicationId) &&
         Objects.equals(this.mediaType, conversationAssociation.mediaType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, communicationId, mediaType);
+    return Objects.hash(externalContactId, conversationId, communicationId, mediaType);
   }
 
   @Override
@@ -138,6 +147,7 @@ public class ConversationAssociation  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConversationAssociation {\n");
     
+    sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
     sb.append("    communicationId: ").append(toIndentedString(communicationId)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");

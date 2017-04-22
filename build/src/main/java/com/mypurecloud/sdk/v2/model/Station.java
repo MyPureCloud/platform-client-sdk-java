@@ -55,6 +55,7 @@ public class Station  implements Serializable {
   }
   private StatusEnum status = null;
   private String userId = null;
+  private String webRtcUserId = null;
   private UriReference primaryEdge = null;
   private UriReference secondaryEdge = null;
   private String type = null;
@@ -121,19 +122,38 @@ public class Station  implements Serializable {
 
 
   /**
+   * The Id of the user currently logged in and associated with the station.
    **/
   public Station userId(String userId) {
     this.userId = userId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The Id of the user currently logged in and associated with the station.")
   @JsonProperty("userId")
   public String getUserId() {
     return userId;
   }
   public void setUserId(String userId) {
     this.userId = userId;
+  }
+
+
+  /**
+   * The Id of the user configured for the station if it is of type inin_webrtc_softphone. Empty if station type is not inin_webrtc_softphone.
+   **/
+  public Station webRtcUserId(String webRtcUserId) {
+    this.webRtcUserId = webRtcUserId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Id of the user configured for the station if it is of type inin_webrtc_softphone. Empty if station type is not inin_webrtc_softphone.")
+  @JsonProperty("webRtcUserId")
+  public String getWebRtcUserId() {
+    return webRtcUserId;
+  }
+  public void setWebRtcUserId(String webRtcUserId) {
+    this.webRtcUserId = webRtcUserId;
   }
 
 
@@ -226,6 +246,7 @@ public class Station  implements Serializable {
         Objects.equals(this.description, station.description) &&
         Objects.equals(this.status, station.status) &&
         Objects.equals(this.userId, station.userId) &&
+        Objects.equals(this.webRtcUserId, station.webRtcUserId) &&
         Objects.equals(this.primaryEdge, station.primaryEdge) &&
         Objects.equals(this.secondaryEdge, station.secondaryEdge) &&
         Objects.equals(this.type, station.type) &&
@@ -235,7 +256,7 @@ public class Station  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, status, userId, primaryEdge, secondaryEdge, type, lineAppearanceId, selfUri);
+    return Objects.hash(id, name, description, status, userId, webRtcUserId, primaryEdge, secondaryEdge, type, lineAppearanceId, selfUri);
   }
 
   @Override
@@ -248,6 +269,7 @@ public class Station  implements Serializable {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    webRtcUserId: ").append(toIndentedString(webRtcUserId)).append("\n");
     sb.append("    primaryEdge: ").append(toIndentedString(primaryEdge)).append("\n");
     sb.append("    secondaryEdge: ").append(toIndentedString(secondaryEdge)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");

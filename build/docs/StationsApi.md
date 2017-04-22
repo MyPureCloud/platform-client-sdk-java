@@ -16,7 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteStationAssociateduser**
 
-> String deleteStationAssociateduser(stationId)
+> Void deleteStationAssociateduser(stationId)
 
 Unassigns the user assigned to this station
 
@@ -43,8 +43,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 StationsApi apiInstance = new StationsApi();
 String stationId = "stationId_example"; // String | Station ID
 try {
-    String result = apiInstance.deleteStationAssociateduser(stationId);
-    System.out.println(result);
+    apiInstance.deleteStationAssociateduser(stationId);
 } catch (ApiException e) {
     System.err.println("Exception when calling StationsApi#deleteStationAssociateduser");
     e.printStackTrace();
@@ -61,7 +60,7 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="getStation"></a>
 
@@ -118,7 +117,7 @@ try {
 
 # **getStations**
 
-> [StationEntityListing](StationEntityListing.html) getStations(pageSize, pageNumber, sortBy, name, id, lineAppearanceId)
+> [StationEntityListing](StationEntityListing.html) getStations(pageSize, pageNumber, sortBy, name, webRtcUserId, id, lineAppearanceId)
 
 Get the list of available stations.
 
@@ -147,10 +146,11 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortBy = "name"; // String | Sort by
 String name = "name_example"; // String | Name
+String webRtcUserId = "webRtcUserId_example"; // String | Filter for the webRtc station of the webRtcUserId
 String id = "id_example"; // String | Comma separated list of stationIds
 String lineAppearanceId = "lineAppearanceId_example"; // String | lineAppearanceId
 try {
-    StationEntityListing result = apiInstance.getStations(pageSize, pageNumber, sortBy, name, id, lineAppearanceId);
+    StationEntityListing result = apiInstance.getStations(pageSize, pageNumber, sortBy, name, webRtcUserId, id, lineAppearanceId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StationsApi#getStations");
@@ -167,6 +167,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **sortBy** | **String**| Sort by | [optional] [default to name] |
 | **name** | **String**| Name | [optional] |
+| **webRtcUserId** | **String**| Filter for the webRtc station of the webRtcUserId | [optional] |
 | **id** | **String**| Comma separated list of stationIds | [optional] |
 | **lineAppearanceId** | **String**| lineAppearanceId | [optional] |
 {: class="table table-striped"}
